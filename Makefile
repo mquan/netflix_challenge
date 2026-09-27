@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp | build
+$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
