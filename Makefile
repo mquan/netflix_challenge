@@ -6,7 +6,7 @@ ARCHIVE := data/raw/nf_prize_dataset.tar.gz
 DATASET := data/processed/netflix.bin
 EXTRACTED := data/raw/extracted/.complete
 
-.PHONY: all download verify extract ingest baseline time-baseline test clean
+.PHONY: all download verify extract ingest baseline time-baseline svdpp svdpp-f32 svdpp-seed42 time-svdpp blend test clean
 
 all: $(BIN)
 
@@ -51,6 +51,36 @@ baseline: $(BIN) $(DATASET)
 time-baseline: $(BIN) $(DATASET)
 	$(BIN) time-baseline --data $(DATASET) \
 		--model artifacts/time-baseline.bin --iterations 40
+
+svdpp: $(BIN) $(DATASET)
+	$(BIN) svdpp --data $(DATASET) \
+		--time-model artifacts/time-baseline.bin \
+		--model artifacts/svdpp-f64.bin --factors 64 --iterations 10
+
+svdpp-f32: $(BIN) $(DATASET)
+	$(BIN) svdpp --data $(DATASET) \
+		--time-model artifacts/time-baseline.bin \
+		--model artifacts/svdpp-f32-best.bin --factors 32 --iterations 7
+
+svdpp-seed42: $(BIN) $(DATASET)
+	$(BIN) svdpp --data $(DATASET) \
+		--time-model artifacts/time-baseline.bin \
+		--model artifacts/svdpp-f64-seed42.bin --factors 64 --iterations 7 \
+		--seed 42
+
+time-svdpp: $(BIN) $(DATASET)
+	$(BIN) time-svdpp --data $(DATASET) \
+		--time-model artifacts/time-baseline.bin \
+		--svd-model artifacts/svdpp-f64.bin \
+		--model artifacts/time-svdpp-f64.bin --iterations 6
+
+blend: $(BIN) $(DATASET)
+	$(BIN) blend-svdpp --data $(DATASET) \
+		--time-model artifacts/time-baseline.bin \
+		--model-a artifacts/svdpp-f32-best.bin \
+		--model-b artifacts/svdpp-f64.bin \
+		--time-svd-model-b artifacts/time-svdpp-f64.bin \
+		--model-c artifacts/svdpp-f64-seed42.bin
 
 test: $(BIN)
 	bash tests/smoke.sh

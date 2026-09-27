@@ -23,6 +23,8 @@ constexpr uint32_t kNumMovies = 17770;
 constexpr char kDatasetMagic[8] = {'N', 'F', 'P', 'D', 'A', 'T', '2', '\0'};
 constexpr char kBaselineMagic[8] = {'N', 'F', 'P', 'B', 'A', 'S', '1', '\0'};
 constexpr char kTimeBaselineMagic[8] = {'N', 'F', 'P', 'T', 'I', 'M', '1', '\0'};
+constexpr char kSvdppMagic[8] = {'N', 'F', 'P', 'S', 'V', 'D', '1', '\0'};
+constexpr char kTimeSvdppMagic[8] = {'N', 'F', 'P', 'T', 'S', 'V', '1', '\0'};
 
 struct TrainRec {
   uint32_t user;
@@ -93,6 +95,40 @@ struct TimeBaselineModel {
   std::vector<float> item_frequency_bias;
 };
 
+struct SvdppHeader {
+  char magic[8];
+  uint32_t users;
+  uint32_t items;
+  uint32_t factors;
+  uint32_t iterations;
+  double learning_rate;
+  double regularization;
+  double bias_learning_rate;
+  double bias_regularization;
+};
+
+struct SvdppModel {
+  std::vector<float> user_factors;
+  std::vector<float> item_factors;
+  std::vector<float> implicit_factors;
+  std::vector<float> user_bias;
+  std::vector<float> item_bias;
+};
+
+struct TimeSvdppHeader {
+  char magic[8];
+  uint32_t users;
+  uint32_t items;
+  uint32_t factors;
+  uint32_t iterations;
+  double learning_rate;
+  double regularization;
+};
+
+struct TimeSvdppModel {
+  std::vector<float> user_drift;
+};
+
 struct Dataset {
   DatasetHeader header{};
   std::vector<uint64_t> train_offsets;
@@ -148,6 +184,14 @@ std::string value_after(const std::vector<std::string> &args,
   }
   if (!fallback.empty()) return fallback;
   fail("missing required argument " + flag);
+}
+
+std::string optional_value_after(const std::vector<std::string> &args,
+                                 const std::string &flag) {
+  for (size_t i = 0; i + 1 < args.size(); ++i) {
+    if (args[i] == flag) return args[i + 1];
+  }
+  return "";
 }
 
 uint32_t uint_after(const std::vector<std::string> &args,
@@ -900,6 +944,667 @@ void command_eval_time_baseline(const std::vector<std::string> &args) {
             << " iterations=" << header.iterations << '\n';
 }
 
+float temporal_base_at_session(const Dataset &data,
+                               const TemporalIndex &index,
+                               const TimeBaselineModel &model, uint32_t user,
+                               uint32_t item, uint16_t day,
+                               uint64_t session) {
+  const uint32_t tbin = time_bin(data, day);
+  const uint32_t fbin = frequency_bin(index.session_counts[session]);
+  const float stable_item =
+      model.item_bias[item] + model.item_bin_bias[item * kTimeBins + tbin];
+  const float scale = model.user_scale[user] + model.day_scale[session];
+  return static_cast<float>(data.header.mean) + model.user_bias[user] +
+         model.user_alpha[user] * time_deviation(day, index.mean_day[user]) +
+         model.day_bias[session] + stable_item * scale +
+         model.item_frequency_bias[item * kFrequencyBins + fbin];
+}
+
+double svdpp_rmse(const Dataset &data, const TemporalIndex &index,
+                  const TimeBaselineModel &baseline, const SvdppModel &model,
+                  uint32_t factors, std::vector<float> &effective_users) {
+  effective_users.assign(
+      static_cast<size_t>(data.header.users) * factors, 0.0F);
+  for (uint32_t user = 0; user < data.header.users; ++user) {
+    const uint64_t begin = data.implicit_offsets[user];
+    const uint64_t end = data.implicit_offsets[user + 1];
+    const float normalization =
+        end == begin ? 0.0F : 1.0F / std::sqrt(static_cast<float>(end - begin));
+    float *destination =
+        effective_users.data() + static_cast<size_t>(user) * factors;
+    const float *personal =
+        model.user_factors.data() + static_cast<size_t>(user) * factors;
+    std::copy(personal, personal + factors, destination);
+    for (uint64_t pos = begin; pos < end; ++pos) {
+      const uint32_t item = data.implicit_items[pos] - 1;
+      const float *implicit =
+          model.implicit_factors.data() + static_cast<size_t>(item) * factors;
+      for (uint32_t factor = 0; factor < factors; ++factor) {
+        destination[factor] += normalization * implicit[factor];
+      }
+    }
+  }
+
+  long double squared_error = 0;
+  for (const auto &row : data.probe) {
+    const uint32_t item = row.item - 1;
+    const uint64_t session = find_session(index, row.user, row.day);
+    double prediction = temporal_base_at_session(
+        data, index, baseline, row.user, item, row.day, session);
+    prediction += model.user_bias[row.user] + model.item_bias[item];
+    const float *user_factors = effective_users.data() +
+                                static_cast<size_t>(row.user) * factors;
+    const float *item_factors =
+        model.item_factors.data() + static_cast<size_t>(item) * factors;
+    for (uint32_t factor = 0; factor < factors; ++factor) {
+      prediction += user_factors[factor] * item_factors[factor];
+    }
+    prediction = clipped(prediction);
+    const double error = static_cast<double>(row.rating) - prediction;
+    squared_error += error * error;
+  }
+  return std::sqrt(static_cast<double>(squared_error / data.probe.size()));
+}
+
+void save_svdpp(const fs::path &path, const Dataset &data,
+                const SvdppModel &model, uint32_t factors,
+                uint32_t iterations, double learning_rate,
+                double regularization, double bias_learning_rate,
+                double bias_regularization) {
+  SvdppHeader header{};
+  std::memcpy(header.magic, kSvdppMagic, sizeof(kSvdppMagic));
+  header.users = data.header.users;
+  header.items = data.header.items;
+  header.factors = factors;
+  header.iterations = iterations;
+  header.learning_rate = learning_rate;
+  header.regularization = regularization;
+  header.bias_learning_rate = bias_learning_rate;
+  header.bias_regularization = bias_regularization;
+  fs::create_directories(path.parent_path());
+  const fs::path temporary = path.string() + ".tmp";
+  std::ofstream out(temporary, std::ios::binary | std::ios::trunc);
+  if (!out) fail("cannot create SVD++ model");
+  write_pod(out, header);
+  write_vector(out, model.user_factors);
+  write_vector(out, model.item_factors);
+  write_vector(out, model.implicit_factors);
+  write_vector(out, model.user_bias);
+  write_vector(out, model.item_bias);
+  out.close();
+  if (!out) fail("failed closing SVD++ model");
+  fs::rename(temporary, path);
+}
+
+SvdppModel load_svdpp(const fs::path &path, const Dataset &data,
+                      SvdppHeader &header) {
+  std::ifstream in(path, std::ios::binary);
+  if (!in) fail("cannot open SVD++ model");
+  read_pod(in, header);
+  if (std::memcmp(header.magic, kSvdppMagic, sizeof(kSvdppMagic)) != 0 ||
+      header.users != data.header.users || header.items != data.header.items ||
+      header.factors == 0) {
+    fail("SVD++ model is incompatible with dataset");
+  }
+  SvdppModel model;
+  read_vector(in, model.user_factors,
+              static_cast<size_t>(header.users) * header.factors);
+  read_vector(in, model.item_factors,
+              static_cast<size_t>(header.items) * header.factors);
+  read_vector(in, model.implicit_factors,
+              static_cast<size_t>(header.items) * header.factors);
+  read_vector(in, model.user_bias, header.users);
+  read_vector(in, model.item_bias, header.items);
+  return model;
+}
+
+void command_svdpp(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path time_model_path = value_after(args, "--time-model");
+  const fs::path model_path = value_after(args, "--model");
+  const uint32_t factors = uint_after(args, "--factors", 32);
+  const uint32_t iterations = uint_after(args, "--iterations", 12);
+  const uint32_t seed = uint_after(args, "--seed", 2009);
+  const double initial_learning_rate = double_after(args, "--learning-rate", 0.008);
+  const double regularization = double_after(args, "--regularization", 0.0015);
+  const double bias_learning_rate =
+      double_after(args, "--bias-learning-rate", 0.003);
+  const double bias_regularization =
+      double_after(args, "--bias-regularization", 0.02);
+  const double decay = double_after(args, "--decay", 0.9);
+  if (factors == 0 || factors > 2048 || iterations == 0) {
+    fail("invalid SVD++ factors or iterations");
+  }
+
+  const Dataset data = load_dataset(data_path);
+  const TemporalIndex index = build_temporal_index(data);
+  TimeBaselineHeader time_header{};
+  const TimeBaselineModel baseline =
+      load_time_baseline(time_model_path, data, index, time_header);
+
+  SvdppModel model;
+  model.user_factors.resize(
+      static_cast<size_t>(data.header.users) * factors);
+  model.item_factors.resize(
+      static_cast<size_t>(data.header.items) * factors);
+  model.implicit_factors.assign(
+      static_cast<size_t>(data.header.items) * factors, 0.0F);
+  model.user_bias.assign(data.header.users, 0.0F);
+  model.item_bias.assign(data.header.items, 0.0F);
+  std::mt19937 random(seed);
+  std::normal_distribution<float> initializer(
+      0.0F, 0.03F / std::sqrt(static_cast<float>(factors)));
+  for (float &value : model.user_factors) value = initializer(random);
+  for (float &value : model.item_factors) value = initializer(random);
+
+  std::vector<uint32_t> users(data.header.users);
+  std::iota(users.begin(), users.end(), 0);
+  std::vector<float> implicit_sum(factors);
+  std::vector<float> error_item_sum(factors);
+  std::vector<float> effective_users;
+  double learning_rate = initial_learning_rate;
+  double best_probe_rmse = std::numeric_limits<double>::infinity();
+  uint32_t best_iteration = 0;
+
+  for (uint32_t iteration = 1; iteration <= iterations; ++iteration) {
+    std::shuffle(users.begin(), users.end(), random);
+    long double train_squared_error = 0;
+    for (const uint32_t user : users) {
+      const uint64_t implicit_begin = data.implicit_offsets[user];
+      const uint64_t implicit_end = data.implicit_offsets[user + 1];
+      const uint64_t implicit_count = implicit_end - implicit_begin;
+      const float normalization =
+          implicit_count == 0
+              ? 0.0F
+              : 1.0F / std::sqrt(static_cast<float>(implicit_count));
+      std::fill(implicit_sum.begin(), implicit_sum.end(), 0.0F);
+      std::fill(error_item_sum.begin(), error_item_sum.end(), 0.0F);
+      for (uint64_t pos = implicit_begin; pos < implicit_end; ++pos) {
+        const uint32_t item = data.implicit_items[pos] - 1;
+        const float *implicit = model.implicit_factors.data() +
+                                static_cast<size_t>(item) * factors;
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          implicit_sum[factor] += normalization * implicit[factor];
+        }
+      }
+
+      uint64_t session = index.session_offsets[user];
+      const uint64_t session_end = index.session_offsets[user + 1];
+      const uint64_t train_begin = data.train_offsets[user];
+      const uint64_t train_end = data.train_offsets[user + 1];
+      float *personal = model.user_factors.data() +
+                        static_cast<size_t>(user) * factors;
+      for (uint64_t pos = train_begin; pos < train_end; ++pos) {
+        const uint16_t day = data.train_days[pos];
+        while (session < session_end && index.session_days[session] < day) {
+          ++session;
+        }
+        if (session == session_end || index.session_days[session] != day) {
+          fail("training day absent from SVD++ temporal index");
+        }
+        const uint32_t item = data.train_items[pos] - 1;
+        float *item_vector = model.item_factors.data() +
+                             static_cast<size_t>(item) * factors;
+        float prediction = temporal_base_at_session(
+            data, index, baseline, user, item, day, session);
+        prediction += model.user_bias[user] + model.item_bias[item];
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          prediction +=
+              item_vector[factor] * (personal[factor] + implicit_sum[factor]);
+        }
+        const float error = static_cast<float>(data.train_ratings[pos]) - prediction;
+        train_squared_error += static_cast<double>(error) * error;
+        model.user_bias[user] += static_cast<float>(
+            bias_learning_rate *
+            (error - bias_regularization * model.user_bias[user]));
+        model.item_bias[item] += static_cast<float>(
+            bias_learning_rate *
+            (error - bias_regularization * model.item_bias[item]));
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          const float old_item = item_vector[factor];
+          const float effective_user = personal[factor] + implicit_sum[factor];
+          item_vector[factor] += static_cast<float>(
+              learning_rate *
+              (error * effective_user - regularization * old_item));
+          personal[factor] += static_cast<float>(
+              learning_rate *
+              (error * old_item - regularization * personal[factor]));
+          error_item_sum[factor] += error * old_item;
+        }
+      }
+      const float rated_count = static_cast<float>(train_end - train_begin);
+      for (uint64_t pos = implicit_begin; pos < implicit_end; ++pos) {
+        const uint32_t item = data.implicit_items[pos] - 1;
+        float *implicit = model.implicit_factors.data() +
+                          static_cast<size_t>(item) * factors;
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          implicit[factor] += static_cast<float>(
+              learning_rate *
+              (normalization * error_item_sum[factor] -
+               regularization * rated_count * implicit[factor]));
+        }
+      }
+    }
+    const double train_rmse = std::sqrt(
+        static_cast<double>(train_squared_error / data.header.train_count));
+    const double probe_rmse =
+        svdpp_rmse(data, index, baseline, model, factors, effective_users);
+    std::cout << "iteration=" << iteration << " learning_rate=" << std::fixed
+              << std::setprecision(7) << learning_rate
+              << " train_rmse=" << std::setprecision(8) << train_rmse
+              << " probe_rmse=" << probe_rmse << std::endl;
+    if (probe_rmse < best_probe_rmse) {
+      best_probe_rmse = probe_rmse;
+      best_iteration = iteration;
+      save_svdpp(model_path, data, model, factors, iteration,
+                 initial_learning_rate, regularization, bias_learning_rate,
+                 bias_regularization);
+    }
+    learning_rate *= decay;
+  }
+  std::cout << "best_iteration=" << best_iteration << " best_probe_rmse="
+            << std::fixed << std::setprecision(8) << best_probe_rmse
+            << std::endl;
+}
+
+void command_eval_svdpp(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path time_model_path = value_after(args, "--time-model");
+  const fs::path model_path = value_after(args, "--model");
+  const Dataset data = load_dataset(data_path);
+  const TemporalIndex index = build_temporal_index(data);
+  TimeBaselineHeader time_header{};
+  const TimeBaselineModel baseline =
+      load_time_baseline(time_model_path, data, index, time_header);
+  SvdppHeader header{};
+  const SvdppModel model = load_svdpp(model_path, data, header);
+  std::vector<float> effective_users;
+  const double rmse = svdpp_rmse(data, index, baseline, model, header.factors,
+                                 effective_users);
+  std::cout << std::fixed << std::setprecision(8) << "probe_rmse=" << rmse
+            << " count=" << data.probe.size()
+            << " factors=" << header.factors
+            << " iterations=" << header.iterations << '\n';
+}
+
+void build_effective_users(const Dataset &data, const SvdppModel &model,
+                           uint32_t factors,
+                           std::vector<float> &effective_users) {
+  effective_users.assign(
+      static_cast<size_t>(data.header.users) * factors, 0.0F);
+  for (uint32_t user = 0; user < data.header.users; ++user) {
+    const uint64_t begin = data.implicit_offsets[user];
+    const uint64_t end = data.implicit_offsets[user + 1];
+    const float normalization =
+        end == begin ? 0.0F : 1.0F / std::sqrt(static_cast<float>(end - begin));
+    float *destination =
+        effective_users.data() + static_cast<size_t>(user) * factors;
+    const float *personal =
+        model.user_factors.data() + static_cast<size_t>(user) * factors;
+    std::copy(personal, personal + factors, destination);
+    for (uint64_t pos = begin; pos < end; ++pos) {
+      const uint32_t item = data.implicit_items[pos] - 1;
+      const float *implicit =
+          model.implicit_factors.data() + static_cast<size_t>(item) * factors;
+      for (uint32_t factor = 0; factor < factors; ++factor) {
+        destination[factor] += normalization * implicit[factor];
+      }
+    }
+  }
+}
+
+double time_svdpp_rmse(const Dataset &data, const TemporalIndex &index,
+                       const TimeBaselineModel &baseline,
+                       const SvdppModel &static_model,
+                       const TimeSvdppModel &time_model, uint32_t factors,
+                       const std::vector<float> &effective_users) {
+  long double squared_error = 0;
+  for (const auto &row : data.probe) {
+    const uint32_t item = row.item - 1;
+    const uint64_t session = find_session(index, row.user, row.day);
+    double prediction = temporal_base_at_session(
+        data, index, baseline, row.user, item, row.day, session);
+    prediction +=
+        static_model.user_bias[row.user] + static_model.item_bias[item];
+    const float dev = time_deviation(row.day, index.mean_day[row.user]);
+    const float *user_factors = effective_users.data() +
+                                static_cast<size_t>(row.user) * factors;
+    const float *user_drift = time_model.user_drift.data() +
+                              static_cast<size_t>(row.user) * factors;
+    const float *item_factors = static_model.item_factors.data() +
+                                static_cast<size_t>(item) * factors;
+    for (uint32_t factor = 0; factor < factors; ++factor) {
+      prediction +=
+          item_factors[factor] *
+          (user_factors[factor] + user_drift[factor] * dev);
+    }
+    prediction = clipped(prediction);
+    const double error = static_cast<double>(row.rating) - prediction;
+    squared_error += error * error;
+  }
+  return std::sqrt(static_cast<double>(squared_error / data.probe.size()));
+}
+
+void save_time_svdpp(const fs::path &path, const Dataset &data,
+                     const TimeSvdppModel &model, uint32_t factors,
+                     uint32_t iterations, double learning_rate,
+                     double regularization) {
+  TimeSvdppHeader header{};
+  std::memcpy(header.magic, kTimeSvdppMagic, sizeof(kTimeSvdppMagic));
+  header.users = data.header.users;
+  header.items = data.header.items;
+  header.factors = factors;
+  header.iterations = iterations;
+  header.learning_rate = learning_rate;
+  header.regularization = regularization;
+  fs::create_directories(path.parent_path());
+  const fs::path temporary = path.string() + ".tmp";
+  std::ofstream out(temporary, std::ios::binary | std::ios::trunc);
+  if (!out) fail("cannot create timeSVD++ model");
+  write_pod(out, header);
+  write_vector(out, model.user_drift);
+  out.close();
+  if (!out) fail("failed closing timeSVD++ model");
+  fs::rename(temporary, path);
+}
+
+TimeSvdppModel load_time_svdpp(const fs::path &path, const Dataset &data,
+                               uint32_t expected_factors,
+                               TimeSvdppHeader &header) {
+  std::ifstream in(path, std::ios::binary);
+  if (!in) fail("cannot open timeSVD++ model");
+  read_pod(in, header);
+  if (std::memcmp(header.magic, kTimeSvdppMagic,
+                  sizeof(kTimeSvdppMagic)) != 0 ||
+      header.users != data.header.users || header.items != data.header.items ||
+      header.factors != expected_factors) {
+    fail("timeSVD++ model is incompatible with dataset/static model");
+  }
+  TimeSvdppModel model;
+  read_vector(in, model.user_drift,
+              static_cast<size_t>(header.users) * header.factors);
+  return model;
+}
+
+void command_time_svdpp(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path time_model_path = value_after(args, "--time-model");
+  const fs::path svd_model_path = value_after(args, "--svd-model");
+  const fs::path model_path = value_after(args, "--model");
+  const uint32_t iterations = uint_after(args, "--iterations", 6);
+  const double learning_rate = double_after(args, "--learning-rate", 1e-5);
+  const double regularization = double_after(args, "--regularization", 50.0);
+  if (iterations == 0) fail("timeSVD++ iterations must be positive");
+
+  const Dataset data = load_dataset(data_path);
+  const TemporalIndex index = build_temporal_index(data);
+  TimeBaselineHeader time_header{};
+  const TimeBaselineModel baseline =
+      load_time_baseline(time_model_path, data, index, time_header);
+  SvdppHeader svd_header{};
+  const SvdppModel static_model =
+      load_svdpp(svd_model_path, data, svd_header);
+  const uint32_t factors = svd_header.factors;
+  std::vector<float> effective_users;
+  build_effective_users(data, static_model, factors, effective_users);
+
+  TimeSvdppModel model;
+  model.user_drift.assign(
+      static_cast<size_t>(data.header.users) * factors, 0.0F);
+  double best_probe_rmse = std::numeric_limits<double>::infinity();
+  uint32_t best_iteration = 0;
+  for (uint32_t iteration = 1; iteration <= iterations; ++iteration) {
+    long double train_squared_error = 0;
+    for (uint32_t user = 0; user < data.header.users; ++user) {
+      float *drift = model.user_drift.data() +
+                     static_cast<size_t>(user) * factors;
+      const float *effective = effective_users.data() +
+                               static_cast<size_t>(user) * factors;
+      uint64_t session = index.session_offsets[user];
+      const uint64_t session_end = index.session_offsets[user + 1];
+      for (uint64_t pos = data.train_offsets[user];
+           pos < data.train_offsets[user + 1]; ++pos) {
+        const uint16_t day = data.train_days[pos];
+        while (session < session_end && index.session_days[session] < day) {
+          ++session;
+        }
+        if (session == session_end || index.session_days[session] != day) {
+          fail("training day absent from timeSVD++ temporal index");
+        }
+        const uint32_t item = data.train_items[pos] - 1;
+        const float *item_factors = static_model.item_factors.data() +
+                                    static_cast<size_t>(item) * factors;
+        const float dev = time_deviation(day, index.mean_day[user]);
+        float prediction = temporal_base_at_session(
+            data, index, baseline, user, item, day, session);
+        prediction +=
+            static_model.user_bias[user] + static_model.item_bias[item];
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          prediction += item_factors[factor] *
+                        (effective[factor] + drift[factor] * dev);
+        }
+        const float error =
+            static_cast<float>(data.train_ratings[pos]) - prediction;
+        train_squared_error += static_cast<double>(error) * error;
+        for (uint32_t factor = 0; factor < factors; ++factor) {
+          drift[factor] += static_cast<float>(
+              learning_rate *
+              (error * item_factors[factor] * dev -
+               regularization * drift[factor]));
+        }
+      }
+    }
+    const double train_rmse = std::sqrt(
+        static_cast<double>(train_squared_error / data.header.train_count));
+    const double probe_rmse = time_svdpp_rmse(
+        data, index, baseline, static_model, model, factors, effective_users);
+    std::cout << "iteration=" << iteration << " train_rmse=" << std::fixed
+              << std::setprecision(8) << train_rmse
+              << " probe_rmse=" << probe_rmse << std::endl;
+    if (probe_rmse < best_probe_rmse) {
+      best_probe_rmse = probe_rmse;
+      best_iteration = iteration;
+      save_time_svdpp(model_path, data, model, factors, iteration,
+                      learning_rate, regularization);
+    }
+  }
+  std::cout << "best_iteration=" << best_iteration << " best_probe_rmse="
+            << std::fixed << std::setprecision(8) << best_probe_rmse
+            << std::endl;
+}
+
+void command_eval_time_svdpp(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path time_model_path = value_after(args, "--time-model");
+  const fs::path svd_model_path = value_after(args, "--svd-model");
+  const fs::path model_path = value_after(args, "--model");
+  const Dataset data = load_dataset(data_path);
+  const TemporalIndex index = build_temporal_index(data);
+  TimeBaselineHeader time_header{};
+  const TimeBaselineModel baseline =
+      load_time_baseline(time_model_path, data, index, time_header);
+  SvdppHeader svd_header{};
+  const SvdppModel static_model =
+      load_svdpp(svd_model_path, data, svd_header);
+  TimeSvdppHeader header{};
+  const TimeSvdppModel model =
+      load_time_svdpp(model_path, data, svd_header.factors, header);
+  std::vector<float> effective_users;
+  build_effective_users(data, static_model, svd_header.factors,
+                        effective_users);
+  const double rmse = time_svdpp_rmse(data, index, baseline, static_model,
+                                      model, svd_header.factors,
+                                      effective_users);
+  std::cout << std::fixed << std::setprecision(8) << "probe_rmse=" << rmse
+            << " count=" << data.probe.size()
+            << " factors=" << header.factors
+            << " iterations=" << header.iterations << '\n';
+}
+
+void command_blend_svdpp(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path time_model_path = value_after(args, "--time-model");
+  const fs::path model_a_path = value_after(args, "--model-a");
+  const fs::path model_b_path = value_after(args, "--model-b");
+  const std::string model_c_text = optional_value_after(args, "--model-c");
+  const std::string time_b_text =
+      optional_value_after(args, "--time-svd-model-b");
+  const Dataset data = load_dataset(data_path);
+  const TemporalIndex index = build_temporal_index(data);
+  TimeBaselineHeader time_header{};
+  const TimeBaselineModel baseline =
+      load_time_baseline(time_model_path, data, index, time_header);
+  SvdppHeader header_a{};
+  SvdppHeader header_b{};
+  const SvdppModel model_a = load_svdpp(model_a_path, data, header_a);
+  const SvdppModel model_b = load_svdpp(model_b_path, data, header_b);
+  std::vector<float> effective_a;
+  std::vector<float> effective_b;
+  build_effective_users(data, model_a, header_a.factors, effective_a);
+  build_effective_users(data, model_b, header_b.factors, effective_b);
+
+  TimeSvdppModel time_b;
+  bool use_time_b = !time_b_text.empty();
+  if (use_time_b) {
+    TimeSvdppHeader time_svd_header{};
+    time_b = load_time_svdpp(time_b_text, data, header_b.factors,
+                             time_svd_header);
+  }
+  std::vector<float> predictions_a(data.probe.size());
+  std::vector<float> predictions_b(data.probe.size());
+  for (size_t row_index = 0; row_index < data.probe.size(); ++row_index) {
+    const auto &row = data.probe[row_index];
+    const uint32_t item = row.item - 1;
+    const uint64_t session = find_session(index, row.user, row.day);
+    const float common = temporal_base_at_session(
+        data, index, baseline, row.user, item, row.day, session);
+    double prediction_a =
+        common + model_a.user_bias[row.user] + model_a.item_bias[item];
+    const float *user_a = effective_a.data() +
+                          static_cast<size_t>(row.user) * header_a.factors;
+    const float *item_a = model_a.item_factors.data() +
+                          static_cast<size_t>(item) * header_a.factors;
+    for (uint32_t factor = 0; factor < header_a.factors; ++factor) {
+      prediction_a += user_a[factor] * item_a[factor];
+    }
+    predictions_a[row_index] = static_cast<float>(prediction_a);
+
+    double prediction_b =
+        common + model_b.user_bias[row.user] + model_b.item_bias[item];
+    const float *user_b = effective_b.data() +
+                          static_cast<size_t>(row.user) * header_b.factors;
+    const float *item_b = model_b.item_factors.data() +
+                          static_cast<size_t>(item) * header_b.factors;
+    const float dev = time_deviation(row.day, index.mean_day[row.user]);
+    const float *drift_b =
+        use_time_b ? time_b.user_drift.data() +
+                         static_cast<size_t>(row.user) * header_b.factors
+                   : nullptr;
+    for (uint32_t factor = 0; factor < header_b.factors; ++factor) {
+      const float temporal = use_time_b ? drift_b[factor] * dev : 0.0F;
+      prediction_b += (user_b[factor] + temporal) * item_b[factor];
+    }
+    predictions_b[row_index] = static_cast<float>(prediction_b);
+  }
+
+  if (!model_c_text.empty()) {
+    SvdppHeader header_c{};
+    const SvdppModel model_c = load_svdpp(model_c_text, data, header_c);
+    std::vector<float> effective_c;
+    build_effective_users(data, model_c, header_c.factors, effective_c);
+    std::vector<float> predictions_c(data.probe.size());
+    for (size_t row_index = 0; row_index < data.probe.size(); ++row_index) {
+      const auto &row = data.probe[row_index];
+      const uint32_t item = row.item - 1;
+      const uint64_t session = find_session(index, row.user, row.day);
+      double prediction = temporal_base_at_session(
+          data, index, baseline, row.user, item, row.day, session);
+      prediction +=
+          model_c.user_bias[row.user] + model_c.item_bias[item];
+      const float *user_c = effective_c.data() +
+                            static_cast<size_t>(row.user) * header_c.factors;
+      const float *item_c = model_c.item_factors.data() +
+                            static_cast<size_t>(item) * header_c.factors;
+      for (uint32_t factor = 0; factor < header_c.factors; ++factor) {
+        prediction += user_c[factor] * item_c[factor];
+      }
+      predictions_c[row_index] = static_cast<float>(prediction);
+    }
+    long double s_bb = 0;
+    long double s_cc = 0;
+    long double s_bc = 0;
+    long double t_b = 0;
+    long double t_c = 0;
+    for (size_t i = 0; i < data.probe.size(); ++i) {
+      const double delta_b = predictions_b[i] - predictions_a[i];
+      const double delta_c = predictions_c[i] - predictions_a[i];
+      const double target = data.probe[i].rating - predictions_a[i];
+      s_bb += delta_b * delta_b;
+      s_cc += delta_c * delta_c;
+      s_bc += delta_b * delta_c;
+      t_b += target * delta_b;
+      t_c += target * delta_c;
+    }
+    const long double determinant = s_bb * s_cc - s_bc * s_bc;
+    if (std::abs(determinant) < 1e-18L) fail("singular three-model blend");
+    const double weight_b =
+        static_cast<double>((t_b * s_cc - t_c * s_bc) / determinant);
+    const double weight_c =
+        static_cast<double>((t_c * s_bb - t_b * s_bc) / determinant);
+    const double weight_a = 1.0 - weight_b - weight_c;
+    long double squared_error = 0;
+    for (size_t i = 0; i < data.probe.size(); ++i) {
+      const double prediction =
+          clipped(weight_a * predictions_a[i] + weight_b * predictions_b[i] +
+                  weight_c * predictions_c[i]);
+      const double error = data.probe[i].rating - prediction;
+      squared_error += error * error;
+    }
+    const double rmse =
+        std::sqrt(static_cast<double>(squared_error / data.probe.size()));
+    std::cout << std::fixed << std::setprecision(8)
+              << "model_a_weight=" << weight_a
+              << " model_b_weight=" << weight_b
+              << " model_c_weight=" << weight_c << " probe_rmse=" << rmse
+              << " count=" << data.probe.size() << '\n';
+    return;
+  }
+
+  double numerator = 0;
+  double denominator = 0;
+  for (size_t i = 0; i < data.probe.size(); ++i) {
+    const double delta = predictions_b[i] - predictions_a[i];
+    numerator += (data.probe[i].rating - predictions_a[i]) * delta;
+    denominator += delta * delta;
+  }
+  const double analytic_weight =
+      denominator == 0 ? 0.5 : std::clamp(numerator / denominator, 0.0, 1.0);
+  double best_weight = 0;
+  double best_rmse = std::numeric_limits<double>::infinity();
+  for (int step = 0; step <= 1000; ++step) {
+    const double weight = step / 1000.0;
+    long double squared_error = 0;
+    for (size_t i = 0; i < data.probe.size(); ++i) {
+      const double prediction = clipped(
+          predictions_a[i] + weight * (predictions_b[i] - predictions_a[i]));
+      const double error = data.probe[i].rating - prediction;
+      squared_error += error * error;
+    }
+    const double rmse =
+        std::sqrt(static_cast<double>(squared_error / data.probe.size()));
+    if (rmse < best_rmse) {
+      best_rmse = rmse;
+      best_weight = weight;
+    }
+  }
+  std::cout << std::fixed << std::setprecision(8)
+            << "model_a_weight=" << (1.0 - best_weight)
+            << " model_b_weight=" << best_weight
+            << " analytic_model_b_weight=" << analytic_weight
+            << " probe_rmse=" << best_rmse << " count=" << data.probe.size()
+            << '\n';
+}
+
 void usage() {
   std::cerr
       << "usage:\n"
@@ -910,7 +1615,16 @@ void usage() {
       << "  netflix eval-baseline --data FILE --model FILE\n"
       << "  netflix time-baseline --data FILE --model FILE "
          "[--iterations N] [--rate-scale X]\n"
-      << "  netflix eval-time-baseline --data FILE --model FILE\n";
+      << "  netflix eval-time-baseline --data FILE --model FILE\n"
+      << "  netflix svdpp --data FILE --time-model FILE --model FILE "
+         "[--factors N] [--iterations N]\n"
+      << "  netflix eval-svdpp --data FILE --time-model FILE --model FILE\n"
+      << "  netflix time-svdpp --data FILE --time-model FILE --svd-model "
+         "FILE --model FILE [--iterations N]\n"
+      << "  netflix eval-time-svdpp --data FILE --time-model FILE "
+         "--svd-model FILE --model FILE\n"
+      << "  netflix blend-svdpp --data FILE --time-model FILE --model-a "
+         "FILE --model-b FILE [--time-svd-model-b FILE] [--model-c FILE]\n";
 }
 
 }  // namespace
@@ -934,6 +1648,16 @@ int main(int argc, char **argv) {
       command_time_baseline(args);
     } else if (command == "eval-time-baseline") {
       command_eval_time_baseline(args);
+    } else if (command == "svdpp") {
+      command_svdpp(args);
+    } else if (command == "eval-svdpp") {
+      command_eval_svdpp(args);
+    } else if (command == "time-svdpp") {
+      command_time_svdpp(args);
+    } else if (command == "eval-time-svdpp") {
+      command_eval_time_svdpp(args);
+    } else if (command == "blend-svdpp") {
+      command_blend_svdpp(args);
     } else {
       usage();
       return 2;

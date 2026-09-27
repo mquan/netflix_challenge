@@ -24,6 +24,12 @@ make time-baseline
 build/netflix eval-time-baseline \
   --data data/processed/netflix.bin \
   --model artifacts/time-baseline.bin
+# Advanced checkpoints (longer-running)
+make svdpp-f32
+make svdpp
+make time-svdpp
+make svdpp-seed42
+make blend
 ```
 
 The published checkpoints to keep in mind are:
@@ -46,11 +52,21 @@ quiz/test labels must be a final, isolated audit—not a training signal.
 - regularized user/movie bias baseline
 - frequency-aware temporal baseline with item time bins, user drift,
   per-user-day effects, and time-varying rating-scale effects
+- SVD++ residual factorization with train/probe/qualifying interactions used as
+  unlabeled implicit feedback
 
 Verified local checkpoints on the leakage-free probe split:
 
 - static regularized baseline: `0.98256528`
 - 40-epoch temporal baseline: `0.93506871` (best observed epoch: `0.93491601`)
+- 32-factor SVD++: `0.90267216` (best observed epoch: 7)
+- 64-factor SVD++: `0.90079729` (best observed epoch: 7)
+- 64-factor timeSVD++ drift: `0.90055257` (best observed epoch: 5)
+- 32/64-factor blend: `0.90019305`
+- three-model SVD++/timeSVD++ blend: `0.89970985`
 
-The next model stages are SVD++, timeSVD++, the neighborhood residual model,
-and leakage-safe stacking.
+The next model stages are timeSVD++, the neighborhood residual model, and
+leakage-safe stacking.
+
+See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
+strategy summaries, and next-step decisions.

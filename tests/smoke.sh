@@ -54,3 +54,14 @@ build/netflix time-baseline --data "$tmp/netflix.bin" \
   --model "$tmp/time-baseline.bin" --iterations 2
 build/netflix eval-time-baseline --data "$tmp/netflix.bin" \
   --model "$tmp/time-baseline.bin"
+build/netflix svdpp --data "$tmp/netflix.bin" \
+  --time-model "$tmp/time-baseline.bin" --model "$tmp/svdpp.bin" \
+  --factors 4 --iterations 2
+build/netflix eval-svdpp --data "$tmp/netflix.bin" \
+  --time-model "$tmp/time-baseline.bin" --model "$tmp/svdpp.bin"
+build/netflix time-svdpp --data "$tmp/netflix.bin" \
+  --time-model "$tmp/time-baseline.bin" --svd-model "$tmp/svdpp.bin" \
+  --model "$tmp/time-svdpp.bin" --iterations 2
+build/netflix eval-time-svdpp --data "$tmp/netflix.bin" \
+  --time-model "$tmp/time-baseline.bin" --svd-model "$tmp/svdpp.bin" \
+  --model "$tmp/time-svdpp.bin"
