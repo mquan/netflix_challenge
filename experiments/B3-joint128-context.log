@@ -1,0 +1,20 @@
+column=artifacts/legacy.a.f32 probe_rmse=0.9026721576
+column=artifacts/legacy.b.f32 probe_rmse=0.9005525684
+column=artifacts/legacy.c.f32 probe_rmse=0.9010021148
+column=artifacts/joint64.f32 probe_rmse=0.9000114063
+column=artifacts/joint128-reg005.f32 probe_rmse=0.8978688266
+column=artifacts/joint128-reg02.f32 probe_rmse=0.8961722036
+column=artifacts/joint128-day128.f32 probe_rmse=0.8970498562
+heldout_user_fold=0 count=281675 rmse=0.8907233722
+heldout_user_fold=1 count=281390 rmse=0.8902453068
+heldout_user_fold=2 count=283006 rmse=0.8867824931
+heldout_user_fold=3 count=281688 rmse=0.8915697566
+heldout_user_fold=4 count=280636 rmse=0.891362127
+blend_cv_rmse=0.8901342372 blend_fit_rmse=0.8900970503 ridge=1e-05 centered_intercept=-0.02410575894 contexts=5
+weight=-0.118519581 column=artifacts/legacy.a.f32
+weight=0.1995342963 column=artifacts/legacy.b.f32
+weight=0.08151079029 column=artifacts/legacy.c.f32
+weight=0.1161166549 column=artifacts/joint64.f32
+weight=0.01101506067 column=artifacts/joint128-reg005.f32
+weight=0.4348209492 column=artifacts/joint128-reg02.f32
+weight=0.271160961 column=artifacts/joint128-day128.f32

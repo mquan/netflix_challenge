@@ -1,0 +1,42 @@
+{
+  "name": "J1-joint64",
+  "strategy": "Joint temporal biases, SVD++, and user-factor drift from scratch; exact deferred implicit SGD; shuffled user ratings. Test whether staged training caused the 0.90 plateau.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint64.bin",
+    "--factors",
+    "64",
+    "--iterations",
+    "30",
+    "--decay",
+    "0.95",
+    "--predictions",
+    "artifacts/joint64.f32"
+  ],
+  "started_utc": "2026-09-27T16:20:21.359860+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "2853256a9e9e985e6ad4e0eac29f81515d8d04bf1add6f65db4e5cac3c461e73",
+    "src/joint.hpp": "daf4ef43bca271cc05cdc9762bc846cb525b213d091add57a945c09160c7276c"
+  },
+  "binary_sha256": "3bf3ad3adf0a72db295b196cc8803dde6f529b96b3d901a39b0528be78115f60",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": -15,
+  "elapsed_seconds": 215.25303399999999,
+  "log_sha256": "0965d050edadd3f82110efa4387e455cc78e0357d99d8307629924f8c9d87ce9",
+  "model_artifact": {
+    "path": "artifacts/joint64.bin",
+    "sha256": "f0e86e22e80eb907f60574564ced3ec7d1cc0dcd459f8503c4dda239e28eb96c",
+    "bytes": 408581372
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint64.f32",
+    "sha256": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+    "bytes": 5633580
+  }
+}

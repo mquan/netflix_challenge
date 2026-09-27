@@ -5,15 +5,60 @@ labels are removed before training, predictions are clipped to `[1, 5]`, and
 RMSE is computed over the complete probe set. Quiz/test numbers from the 2009
 leaderboard are never mixed into this table.
 
+**Interpretation correction:** C5/C6 fit blend weights and report their error on
+the same probe rows. They are development fit scores. From B1 onward, blending
+also reports five-fold error with folds assigned by user. This prevents a row's
+label from fitting its own blend weights, but base-model epoch selection still
+uses the probe. Neither number is an untouched final-test score, and percentage
+improvements against Cinematch's different quiz/test sets are not justified.
+
+The legacy `time-svdpp` command fits drift after freezing all static parameters;
+it is a staged approximation, not the published jointly trained timeSVD++ model.
+The new `joint` command trains the temporal baseline, latent factors, implicit
+feedback and user-factor drift together. Prior claims that static factorization
+was at its limit were premature: the optimization scheme also needed testing.
+
+## Joint-training experiments (2026-09-27)
+
+Commands, source/binary hashes, timings and complete epoch logs are kept in
+[`experiments/`](experiments/). Best models and raw probe prediction columns are
+saved locally under `artifacts/`. No recovered quiz/test labels are used.
+
+| Run | Strategy and outcome | Probe RMSE |
+|---|---|---:|
+| J1 | Joint 64-factor model with exact deferred implicit SGD and shuffled ratings. Regularization 0.0015; best epoch 6. Stopped manually after epoch 12 because six consecutive epochs worsened. | 0.9000114063 |
+| B1 | Ridge blend with intercept of the three legacy components and J1; weights cross-fitted in five user folds. Gains demonstrate complementary errors. | **0.8936900925 CV** (0.8936836795 fit) |
+| J2 | Joint 128 factors, stronger regularization 0.02, 40 epochs; best epoch 40. Regularization needs more training than the old residual model. | 0.8961722036 |
+| J3 | Joint 128 factors, regularization 0.005; best epoch 9, automatic stop after epoch 15. Improves J1 but eventually overfits. | 0.8978688266 |
+| B2 | Add J3 to B1 and allow blending weights to depend on history counts, movie popularity, date and daily activity. This combines two changes; it is not a pure context ablation. | 0.8914751148 CV (0.8914446469 fit) |
+| J4 | Warm-start J3 with 128 per-user-day factors. Best at first new epoch; subsequent epochs overfit, stopped after epoch 6. About 9 GB extra parameters; modest standalone gain. | 0.8970498562 |
+| B3 | Add J2 and retained J4 to B2; same five user-fold contextual blending. | **0.8901342372 CV** (0.8900970503 fit) |
+| J5 | Joint 256 factors, regularization 0.01: capacity ablation, currently running. Do not blend a column while it is being updated. | Pending |
+| G1 | Build a top-64 item-neighbor graph from training residuals, using capped histories for discovery. Graph construction has no rating-prediction RMSE. | Not applicable |
+| N1 | Learn explicit/implicit neighbor weights over G1 and frozen temporal baseline. Best epoch 4, stopped after epoch 8. Weaker alone but useful in B4. | 0.9100421231 |
+| B4 | Controlled addition of N1 to B3's seven-column contextual blend. All five user folds improve; local movie relationships add complementary signal. | **0.8866646513 CV** (0.8866238775 fit) |
+
+J1's log has an intentional SIGTERM exit, not a numerical failure; its best
+checkpoint and predictions were saved before termination. Subsequent joint runs
+support automatic early stopping. The legacy residual-model regularization
+results do not transfer automatically to joint optimization.
+
+The next structural experiment is learned item-item neighborhood regression:
+directly model relationships among movies, rather than compressing every
+relationship into the same latent space. The graph is approximate and temporal
+biases are frozen, so this is not a faithful reproduction of the full published
+integrated neighborhood/factor model. A weaker standalone predictor can still
+help the blend, but no step-change in score is promised.
+
 ## Checkpoints
 
 | Checkpoint | Strategy | Best probe RMSE | Change | Conclusion |
 |---|---|---:|---:|---|
 | C0 | Regularized global, user, and movie biases | 0.98256528 | — | Validates parsing, holdout removal, persistence, and the scorer. Main effects alone are insufficient. |
-| C1 | BellKor-style temporal/frequency baseline: item time bins, user drift, per-user-day effects, and rating-scale drift | 0.93491601 | -0.04764927 | Temporal behavior is a large signal and beats Cinematch, but has no user–movie interaction model. |
+| C1 | BellKor-style temporal/frequency baseline: item time bins, user drift, per-user-day effects, and rating-scale drift | 0.93491601 | -0.04764927 | Temporal behavior is a large signal, but has no user–movie interaction model. Cinematch used a different evaluation split. |
 | C2 | 32-factor SVD++ residual model over C1, with qualifying/probe pairs used only as unlabeled implicit feedback | 0.90267216 | -0.03224385 | Collaborative factors produce another large gain. Validation bottoms out at epoch 7 while training error keeps falling, so regularization—not more epochs—is the next lever. |
 | E1 (rejected) | C2 with factor regularization raised `0.0015→0.01` and bias regularization `0.02→0.05` | 0.91221075 | +0.00953859 | Excess shrinkage prevents the factor model from fitting useful interactions. Reject this branch and restore the original regularization. |
-| C3 | Increase SVD++ capacity from 32 to 64 factors with C2 regularization restored | 0.90079729 | -0.00187487 | Additional factors help, but the curve again bottoms at epoch 7. Static user factors are near their limit; add temporal user-factor drift next. |
+| C3 | Increase SVD++ capacity from 32 to 64 factors with C2 regularization restored | 0.90079729 | -0.00187487 | Additional factors help, but this configuration again bottoms at epoch 7. Add temporal drift next; this does not establish a factorization ceiling. |
 | C4 | Add timeSVD++ user-factor drift `αᵤ·devᵤ(t)` to the retained C3 model, holding static factors fixed | 0.90055257 | -0.00024472 | Preference drift is measurable but small at this capacity. Retain it as a distinct ensemble component; pursue diversity through blending next. |
 | C5 | Blend C2's 32-factor model with C4's 64-factor time-aware model; fit one global weight on probe | 0.90019305 | -0.00035952 | A 27.6%/72.4% blend improves both components, confirming useful residual diversity. Add an independently initialized factor model next. |
 | E2 (ensemble-only) | Independently initialize C3 with seed `42` instead of `2009` | 0.90100211 | +0.00044954 vs. C4 | Slightly worse alone, but its different errors make it useful to the ensemble. |

@@ -1,0 +1,45 @@
+{
+  "name": "J2-joint128-reg02",
+  "strategy": "Increase joint model to 128 factors with 0.02 regularization; test whether joint optimization supports stronger shrinkage than the old frozen-baseline residual model.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint128-reg02.bin",
+    "--factors",
+    "128",
+    "--iterations",
+    "40",
+    "--regularization",
+    "0.02",
+    "--decay",
+    "0.95",
+    "--predictions",
+    "artifacts/joint128-reg02.f32"
+  ],
+  "started_utc": "2026-09-27T16:22:10.410617+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "28896adc52cb9fd17e1fc6d6ae67af1a6df3ecc56e2ac8e82f5aa6cd38d4b1ae",
+    "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+    "src/joint.hpp": "daf4ef43bca271cc05cdc9762bc846cb525b213d091add57a945c09160c7276c"
+  },
+  "binary_sha256": "97308c01b90f52462d22690cd63af953974d2469bf90ae75c5542c02bda26b99",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 1257.115533542,
+  "log_sha256": "c368bfdbab89af5338ba285b933da8d94a35a87685c2927a4430f8d01b1dd7bf",
+  "model_artifact": {
+    "path": "artifacts/joint128-reg02.bin",
+    "sha256": "5b4610131eb2fd2fc1f5d612844eb9a36c3298bb284c51c54bc7fa728462abc7",
+    "bytes": 663536380
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint128-reg02.f32",
+    "sha256": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+    "bytes": 5633580
+  }
+}

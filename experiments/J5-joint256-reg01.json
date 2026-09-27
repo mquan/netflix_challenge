@@ -1,0 +1,34 @@
+{
+  "name": "J5-joint256-reg01",
+  "strategy": "Double joint factor capacity to 256 with intermediate regularization 0.01. Test higher latent capacity independently of the per-day-factor branch.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint256-reg01.bin",
+    "--factors",
+    "256",
+    "--iterations",
+    "35",
+    "--regularization",
+    "0.01",
+    "--decay",
+    "0.95",
+    "--patience",
+    "5",
+    "--predictions",
+    "artifacts/joint256-reg01.f32"
+  ],
+  "started_utc": "2026-09-27T22:43:49.687486+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+    "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "985babc15ed3912b2bb146c5a43113fa8ae17f40edd5fbba51f7f4c4c0846613",
+  "metric": "Full Netflix probe development RMSE; no independent test claim"
+}

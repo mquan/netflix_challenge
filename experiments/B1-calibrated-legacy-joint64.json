@@ -1,0 +1,40 @@
+{
+  "name": "B1-calibrated-legacy-joint64",
+  "strategy": "Five user-disjoint folds for ridge blend weights and intercept calibration; compare legacy components with joint64. Scores remain development CV because base checkpoints used probe labels.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--predictions",
+    "artifacts/blend-b1.f32",
+    "--weights",
+    "artifacts/blend-b1.weights"
+  ],
+  "started_utc": "2026-09-27T16:23:40.519851+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+    "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+    "src/joint.hpp": "62fdf4aba9e343acf27b19980e211bb2b6685133232758611b5ab1c45c31e712"
+  },
+  "binary_sha256": "4e0d769900a73fb4d888c6856e5318fab68e97c50afb564f3eaea050bbb1bbd5",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 0.410774584,
+  "log_sha256": "68b20f258e6243231df4397d789506ee279657f4c8756495e7a5ebaa5d8f841c",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b1.f32",
+    "sha256": "bc523122fb72d6f8702e2b250c7b6779789e87feaf79b827a851ca5db6f8d1df",
+    "bytes": 5633580
+  }
+}

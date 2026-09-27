@@ -1,0 +1,88 @@
+{
+  "name": "B3-joint128-context",
+  "strategy": "Add completed strongly regularized J2 and best per-day J4 to B2; measure complementary errors using five user-fold contextual ridge blend weights.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--prediction",
+    "artifacts/joint128-reg02.f32",
+    "--prediction",
+    "artifacts/joint128-day128.f32",
+    "--contexts",
+    "1",
+    "--predictions",
+    "artifacts/blend-b3.f32",
+    "--weights",
+    "artifacts/blend-b3.weights"
+  ],
+  "started_utc": "2026-09-27T22:52:53.280748+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c75fcf74f6f1fd89b392f09f8f408918efa73a62489d0a7be5fe6caa15a364ce",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/legacy.a.f32": {
+      "sha256": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.b.f32": {
+      "sha256": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.c.f32": {
+      "sha256": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+      "bytes": 5633580
+    },
+    "artifacts/joint64.f32": {
+      "sha256": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg005.f32": {
+      "sha256": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg02.f32": {
+      "sha256": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-day128.f32": {
+      "sha256": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+      "bytes": 5633580
+    }
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1.220216916,
+  "log_sha256": "8347a29c591d76e515450aaf23b1e444ddde3fb9460d3c917a94ecb8d739be81",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b3.f32",
+    "sha256": "b2cbd1ebd776863098bc393a6d7f1fa7c2299a74fbaffe27f7000f26ffa1f234",
+    "bytes": 5633580
+  },
+  "weights_artifact": {
+    "path": "artifacts/blend-b3.weights",
+    "sha256": "453e94f469b0d430c16f9b14eed02801ec458f662b1beb0a40da05c3392851dc",
+    "bytes": 1859
+  }
+}

@@ -1,0 +1,9 @@
+joint factors=128 seed=2026 regularization=0.005 decay=0.95 fingerprint=12499777815975055846
+day_factors=128 init_model=artifacts/joint128-reg005.bin
+epoch=1 train_rmse=0.671767202 probe_rmse=0.8970498562 best=0.8970498562 seconds=84.48244892
+epoch=2 train_rmse=0.6398628375 probe_rmse=0.8981746213 best=0.8970498562 seconds=73.36462854
+epoch=3 train_rmse=0.6094509065 probe_rmse=0.8992559496 best=0.8970498562 seconds=69.52319413
+epoch=4 train_rmse=0.5809992207 probe_rmse=0.9006353255 best=0.8970498562 seconds=68.52392025
+epoch=5 train_rmse=0.5546455093 probe_rmse=0.9021873102 best=0.8970498562 seconds=64.65967783
+epoch=6 train_rmse=0.5304505715 probe_rmse=0.9034951715 best=0.8970498562 seconds=64.45969683
+early_stop patience=5

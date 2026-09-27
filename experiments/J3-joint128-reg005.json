@@ -1,0 +1,47 @@
+{
+  "name": "J3-joint128-reg005",
+  "strategy": "Intermediate regularization 0.005 with 128 joint factors. J1 overfit at epoch 6, while J2 shrinks more strongly; test the middle regime with six-epoch early stopping.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint128-reg005.bin",
+    "--factors",
+    "128",
+    "--iterations",
+    "40",
+    "--regularization",
+    "0.005",
+    "--decay",
+    "0.95",
+    "--patience",
+    "6",
+    "--predictions",
+    "artifacts/joint128-reg005.f32"
+  ],
+  "started_utc": "2026-09-27T16:23:56.960781+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+    "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+    "src/joint.hpp": "62fdf4aba9e343acf27b19980e211bb2b6685133232758611b5ab1c45c31e712"
+  },
+  "binary_sha256": "4e0d769900a73fb4d888c6856e5318fab68e97c50afb564f3eaea050bbb1bbd5",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 471.070419792,
+  "log_sha256": "0390bb96b4456208b1c7adce531ae1ee5ab9a06a81f6260c2a83e5a80fc53cb8",
+  "model_artifact": {
+    "path": "artifacts/joint128-reg005.bin",
+    "sha256": "a11fb1f69f32aa6962d2caffa9c4dd3060ab4567fd4333438370a0cd7996044f",
+    "bytes": 663536380
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint128-reg005.f32",
+    "sha256": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+    "bytes": 5633580
+  }
+}

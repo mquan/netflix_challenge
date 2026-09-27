@@ -1,0 +1,41 @@
+{
+  "name": "G1-residual-neighbors64",
+  "strategy": "Find a structurally different signal: top-64 item neighbors from training-only residual cosine, sampling at most 256 ratings per user for graph discovery. Learned weights will use the complete training split.",
+  "command": [
+    "build/netflix",
+    "graph",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--neighbors",
+    "64",
+    "--history-cap",
+    "256"
+  ],
+  "started_utc": "2026-09-27T22:52:52.123658+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c75fcf74f6f1fd89b392f09f8f408918efa73a62489d0a7be5fe6caa15a364ce",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 61.847495957999996,
+  "log_sha256": "da0ca5fb26e570acc88d4c811a60da4c366fcbfbd4bc88ff076fb35f1b94924f",
+  "graph_artifact": {
+    "path": "artifacts/neighbors64.bin",
+    "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "bytes": 6823704
+  }
+}

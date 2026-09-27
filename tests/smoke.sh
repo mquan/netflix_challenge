@@ -65,3 +65,9 @@ build/netflix time-svdpp --data "$tmp/netflix.bin" \
 build/netflix eval-time-svdpp --data "$tmp/netflix.bin" \
   --time-model "$tmp/time-baseline.bin" --svd-model "$tmp/svdpp.bin" \
   --model "$tmp/time-svdpp.bin"
+build/netflix check-implicit
+build/netflix joint --data "$tmp/netflix.bin" --model "$tmp/joint.bin" \
+  --factors 4 --iterations 2 --predictions "$tmp/train-pred.f32"
+build/netflix eval-joint --data "$tmp/netflix.bin" --model "$tmp/joint.bin" \
+  --predictions "$tmp/reload-pred.f32"
+cmp "$tmp/train-pred.f32" "$tmp/reload-pred.f32"

@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <cmath>
+#include <chrono>
 #include <cstdint>
 #include <cstring>
 #include <filesystem>
@@ -1530,6 +1531,14 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
       }
       predictions_c[row_index] = static_cast<float>(prediction);
     }
+    const auto column_prefix = optional_value_after(args, "--column-prefix");
+    if (!column_prefix.empty()) {
+      std::ofstream aout(column_prefix+".a.f32", std::ios::binary);
+      std::ofstream bout(column_prefix+".b.f32", std::ios::binary);
+      std::ofstream cout(column_prefix+".c.f32", std::ios::binary);
+      write_vector(aout, predictions_a); write_vector(bout, predictions_b);
+      write_vector(cout, predictions_c);
+    }
     long double s_bb = 0;
     long double s_cc = 0;
     long double s_bc = 0;
@@ -1562,6 +1571,13 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
     }
     const double rmse =
         std::sqrt(static_cast<double>(squared_error / data.probe.size()));
+    const auto output_path = optional_value_after(args, "--predictions");
+    if (!output_path.empty()) {
+      std::vector<float> blended(data.probe.size());
+      for (size_t i = 0; i < blended.size(); ++i)
+        blended[i] = float(weight_a*predictions_a[i]+weight_b*predictions_b[i]+weight_c*predictions_c[i]);
+      std::ofstream out(output_path, std::ios::binary); write_vector(out, blended);
+    }
     std::cout << std::fixed << std::setprecision(8)
               << "model_a_weight=" << weight_a
               << " model_b_weight=" << weight_b
@@ -1605,6 +1621,10 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
             << '\n';
 }
 
+#include "joint.hpp"
+#include "ensemble.hpp"
+#include "neighborhood.hpp"
+
 void usage() {
   std::cerr
       << "usage:\n"
@@ -1624,7 +1644,18 @@ void usage() {
       << "  netflix eval-time-svdpp --data FILE --time-model FILE "
          "--svd-model FILE --model FILE\n"
       << "  netflix blend-svdpp --data FILE --time-model FILE --model-a "
-         "FILE --model-b FILE [--time-svd-model-b FILE] [--model-c FILE]\n";
+         "FILE --model-b FILE [--time-svd-model-b FILE] [--model-c FILE]\n"
+      << "  netflix joint --data FILE --model FILE [--factors N] [--iterations N] "
+         "[--day-factors N] [--init-model FILE] [--predictions FILE]\n"
+      << "  netflix eval-joint --data FILE --model FILE [--predictions FILE]\n"
+      << "  netflix ensemble --data FILE --prediction FILE [--prediction FILE ...] "
+         "[--contexts 1] [--predictions FILE] [--weights FILE]\n"
+      << "  netflix graph --data FILE --graph FILE [--neighbors N] [--history-cap N]\n"
+      << "  netflix neighborhood --data FILE --graph FILE --time-model FILE "
+         "--model FILE --predictions FILE [--iterations N]\n"
+      << "  netflix eval-neighborhood --data FILE --graph FILE --time-model FILE "
+         "--model FILE --predictions FILE\n"
+      << "  netflix check-implicit\n";
 }
 
 }  // namespace
@@ -1658,6 +1689,20 @@ int main(int argc, char **argv) {
       command_eval_time_svdpp(args);
     } else if (command == "blend-svdpp") {
       command_blend_svdpp(args);
+    } else if (command == "joint") {
+      command_joint(args, false);
+    } else if (command == "eval-joint") {
+      command_joint(args, true);
+    } else if (command == "check-implicit") {
+      check_implicit_update();
+    } else if (command == "ensemble") {
+      command_ensemble(args);
+    } else if (command == "graph") {
+      command_graph(args);
+    } else if (command == "neighborhood") {
+      command_neighborhood(args, false);
+    } else if (command == "eval-neighborhood") {
+      command_neighborhood(args, true);
     } else {
       usage();
       return 2;

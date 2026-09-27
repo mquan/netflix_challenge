@@ -1,0 +1,46 @@
+{
+  "name": "B2-joint128-context",
+  "strategy": "Feature-weighted stacking with five user folds: blend weights vary with training support, movie popularity, rating-date deviation, and session size. Include completed J3 checkpoint.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--contexts",
+    "1",
+    "--ridge",
+    "0.00001",
+    "--predictions",
+    "artifacts/blend-b2.f32",
+    "--weights",
+    "artifacts/blend-b2.weights"
+  ],
+  "started_utc": "2026-09-27T22:44:59.669497+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "f379867a42dd8d926f7ae4946e50ec6a3d45749e759c608c0087b9989003b71a",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 2.0441827079999997,
+  "log_sha256": "3c5a7c23f18b21974197a53363eddf0b0ba7328cd9c23ea25727a69d851c3b36",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b2.f32",
+    "sha256": "dd1ebbcf3281257537034bcfd23f5f36018ffb45c9b2ea54aee909d050c74bde",
+    "bytes": 5633580
+  }
+}

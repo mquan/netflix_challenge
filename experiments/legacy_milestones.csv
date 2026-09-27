@@ -1,0 +1,10 @@
+milestone,score,metric,timestamp_utc,timestamp_basis,source,strategy
+C0,0.98256528,single_model_probe,2026-09-27T15:45:41+00:00,git_commit_upper_bound,4e7f656:README.md,Regularized user and movie biases
+C1,0.93491601,single_model_probe,2026-09-27T15:45:41+00:00,git_commit_upper_bound,4e7f656:README.md,Temporal and frequency-aware baseline; best observed epoch 33
+C2,0.90267216,single_model_probe,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,32-factor SVD++
+E1,0.91221075,single_model_probe,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,Stronger regularization; rejected branch
+C3,0.90079729,single_model_probe,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,64-factor SVD++
+C4,0.90055257,single_model_probe,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,Post-hoc user-factor temporal drift
+C5,0.90019305,blend_probe_fit,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,Two-model blend fitted and scored on probe
+E2,0.90100211,single_model_probe,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,64-factor model with alternate seed
+C6,0.89970985,blend_probe_fit,2026-09-27T16:10:33+00:00,git_commit_upper_bound,66591d0:RESULTS.md,Three-model blend fitted and scored on probe

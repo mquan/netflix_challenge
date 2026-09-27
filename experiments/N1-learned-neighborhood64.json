@@ -1,0 +1,63 @@
+{
+  "name": "N1-learned-neighborhood64",
+  "strategy": "Learn explicit residual and implicit item-neighbor weights on every training rating, using G1 graph and frozen temporal baseline. Test local movie relationships complementary to latent factors.",
+  "command": [
+    "build/netflix",
+    "neighborhood",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--time-model",
+    "artifacts/time-baseline.bin",
+    "--model",
+    "artifacts/neighborhood64.bin",
+    "--predictions",
+    "artifacts/neighborhood64.f32",
+    "--iterations",
+    "12"
+  ],
+  "started_utc": "2026-09-27T22:55:56.880942+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c75fcf74f6f1fd89b392f09f8f408918efa73a62489d0a7be5fe6caa15a364ce",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors64.bin": {
+      "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "bytes": 6823704
+    },
+    "artifacts/time-baseline.bin": {
+      "sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "bytes": 153626284
+    }
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 357.182324458,
+  "log_sha256": "132d4a6731bbaa14455b4b0197cb5f482dacbe5c552ca5090c4304e290b25579",
+  "model_artifact": {
+    "path": "artifacts/neighborhood64.bin",
+    "sha256": "7e1feecc61a63c2af8a619756e14696296fe320c564b8f9ae7c8699170180c69",
+    "bytes": 9098276
+  },
+  "predictions_artifact": {
+    "path": "artifacts/neighborhood64.f32",
+    "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "bytes": 5633580
+  },
+  "graph_artifact": {
+    "path": "artifacts/neighbors64.bin",
+    "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "bytes": 6823704
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "J4-joint128-day128",
+  "strategy": "Warm-start best J3; add all 128 per-user-day latent factors and jointly refit. Full BellKor-style short-lived preference component, about 9 GB of additional parameters.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint128-day128.bin",
+    "--init-model",
+    "artifacts/joint128-reg005.bin",
+    "--factors",
+    "128",
+    "--day-factors",
+    "128",
+    "--iterations",
+    "20",
+    "--learning-rate",
+    "0.003",
+    "--regularization",
+    "0.005",
+    "--decay",
+    "0.95",
+    "--patience",
+    "5",
+    "--predictions",
+    "artifacts/joint128-day128.f32"
+  ],
+  "started_utc": "2026-09-27T22:43:22.977750+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "66591d002dbaa4a45524457e162ce49ffa255c29",
+  "sources": {
+    "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+    "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "985babc15ed3912b2bb146c5a43113fa8ae17f40edd5fbba51f7f4c4c0846613",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 429.620225875,
+  "log_sha256": "6c3f8f43d8bee986a83ca84531528b00eadc69839ec2c2af4f696d29192c95d7",
+  "model_artifact": {
+    "path": "artifacts/joint128-day128.bin",
+    "sha256": "832cc21f5cd9797fe3317d94b57308aadbcfe6863a57b571f82f73f7525de545",
+    "bytes": 9949415176
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint128-day128.f32",
+    "sha256": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+    "bytes": 5633580
+  }
+}
