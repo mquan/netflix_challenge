@@ -130,6 +130,26 @@ class JointTests(unittest.TestCase):
             self.assertIn('conditional_biases=1', out)
             run('eval-rbm', '--data', p/'b.bin', '--model', p/'warm.model', ok=False)
 
+    def test_knn_external_base_isolation_and_size_check(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            for name in ('a', 'b'):
+                dataset(p/(name+'.bin'), change_fold=0 if name == 'b' else None, correlated_train=True)
+                run('rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.rbm'), '--hidden', 4,
+                    '--iterations', 1, '--conditional-biases', '--predictions', p/(name+'.probe'))
+                run('eval-rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.rbm'),
+                    '--predictions', p/(name+'.probe2'), '--train-predictions', p/(name+'.train'))
+                run('graph', '--data', p/(name+'.bin'), '--graph', p/(name+'.graph'), '--neighbors', 2, '--history-cap', 3)
+                run('knn', '--data', p/(name+'.bin'), '--graph', p/(name+'.graph'), '--base-train', p/(name+'.train'),
+                    '--base-probe', p/(name+'.probe'), '--power', 1, '--shrink', .5, '--predictions', p/(name+'.knn'))
+            self.assertEqual((p/'a.train').read_bytes(), (p/'b.train').read_bytes())
+            self.assertEqual((p/'a.knn').read_bytes(), (p/'b.knn').read_bytes())
+            self.assertEqual(len((p/'a.train').read_bytes()), 4*300)
+            run('knn', '--data', p/'a.bin', '--graph', p/'a.graph', '--base-train', p/'a.probe',
+                '--base-probe', p/'a.probe', '--predictions', p/'bad.knn', ok=False)
+            run('knn', '--data', p/'a.bin', '--graph', p/'a.graph', '--base-train', p/'a.train',
+                '--predictions', p/'bad.knn', ok=False)
+
     def test_blend_heldout_users_do_not_fit_their_weights(self):
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)

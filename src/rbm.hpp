@@ -156,6 +156,30 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
       fail("rbm conditional bias dimensions mismatch");
     const double score = eval_rbm(d, m, threads, po, probe_order, pred, &f);
     export_predictions();
+    // --train-predictions writes the expected rating of every training row in
+    // training order, for residual kNN over this model (in-sample: the hidden
+    // units saw the row's own rating, as in the published RBM+kNN chains).
+    const std::string train_out = optional_value_after(args, "--train-predictions");
+    if (!train_out.empty()) {
+      std::vector<float> train_pred(d.header.train_count);
+      std::vector<std::vector<float>> hidden(threads);
+      parallel_for(threads, d.header.users, [&](uint32_t t, size_t u) {
+        const uint64_t b = d.train_offsets[u], e = d.train_offsets[u+1];
+        if (b == e) return;
+        rbm_hidden(d, m, uint32_t(u), &d.train_ratings[b], hidden[t]);
+        for (uint64_t p = b; p < e; ++p) {
+          float prob[5], extra[5]; const uint32_t i = d.train_items[p]-1;
+          if (m.conditional()) {
+            const uint32_t s = f.train_session[p];
+            rbm_extra_bias(m, uint32_t(u), s, i, f.freq[s], extra);
+          }
+          rbm_visible(m, i, hidden[t].data(), prob, m.conditional() ? extra : nullptr);
+          float ex = 0; for (int k = 0; k < 5; ++k) ex += (k+1)*prob[k];
+          train_pred[p] = ex;
+        }
+      });
+      std::ofstream out(train_out, std::ios::binary); write_vector(out, train_pred);
+    }
     std::cout << std::setprecision(10) << "probe_rmse=" << score << " epoch=" << m.epoch << '\n';
     return;
   }

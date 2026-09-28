@@ -96,6 +96,9 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | **R6-RBM** | R5-meta columns + R4D + R4C, single seed 2026 | **0.8738203523** dev CV vs 0.8748094089 (−0.0009891); every fold improves |
 | **R6-RBM-s3** | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | **0.8737149186** vs 0.8747153673 (−0.0010005); folds .8746445 .8735128 .8701031 .8752357 .8750900, every fold better. Output `artifacts/r6/R6-RBM-s3.refit.f32` |
 | P1 | conditional-bias RBM, 500 hidden units, from scratch | running |
+| P2 | conditional-bias RBM-200 from scratch, bias rates active from epoch 1 | running |
+| kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
+| R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | running |
 
 R6-RBM fold RMSEs: .8747686 .8736287 .8702200 .8753575 .8751383 against
 R5-meta's .8759153 .8744987 .8711588 .8763427 .8761425 (−0.0011, −0.0009,
