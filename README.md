@@ -186,3 +186,10 @@ user fold. See [COMBINED_BRANCHES.md](COMBINED_BRANCHES.md) for the comparison,
 verified snapshot provenance, and experiments combining the raw predictor banks.
 Combining the raw banks reaches `0.8788478728` with neural blending; averaging
 that result equally with B6 reaches **`0.8782199562`**, again improving every fold.
+
+The next retained bet is a boosted-tree correction to contextual ridge over the
+same frozen union bank. Selecting tree count on inner users and refitting on all
+outer training users reaches **`0.8774504869` development CV**, improving all five
+folds over 0.87822. A predeclared equal average of the neural, direct-tree and
+residual-tree outputs reaches **`0.8773860815`**. [ROUND3.md](ROUND3.md) records
+the controls, weak user-kernel/distributional bets, and remaining research ideas.

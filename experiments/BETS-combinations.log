@@ -1,0 +1,239 @@
+[
+  {
+    "name": "reference",
+    "rmse": 0.8782199560788642,
+    "fold_rmse": [
+      0.8795592794787372,
+      0.8780111510018537,
+      0.8747569014415691,
+      0.87940908431685,
+      0.8793742527160681
+    ]
+  },
+  {
+    "name": "neural",
+    "rmse": 0.8788478728427008,
+    "fold_rmse": [
+      0.880043420601738,
+      0.8786086000779246,
+      0.8753539078700083,
+      0.8801877658415315,
+      0.8800566611643682
+    ]
+  },
+  {
+    "name": "BOOST-direct-v2-selected",
+    "rmse": 0.8786048800644314,
+    "fold_rmse": [
+      0.8797817102549061,
+      0.8784687320018447,
+      0.8748609162007366,
+      0.8798417066145056,
+      0.8800833620369182
+    ]
+  },
+  {
+    "name": "BOOST-direct-v2-refit",
+    "rmse": 0.8783968224163325,
+    "fold_rmse": [
+      0.8795659990982129,
+      0.8781850131191288,
+      0.8747578202100472,
+      0.8795874907742243,
+      0.8798997938261175
+    ]
+  },
+  {
+    "name": "BOOST-residual-selected",
+    "rmse": 0.8775907197054644,
+    "fold_rmse": [
+      0.878572303059239,
+      0.8775316074723812,
+      0.8739282998227179,
+      0.8790161909266722,
+      0.8789168842063427
+    ]
+  },
+  {
+    "name": "BOOST-residual-refit",
+    "rmse": 0.87745048671957,
+    "fold_rmse": [
+      0.8784766919295712,
+      0.8773365700062664,
+      0.8737960060844296,
+      0.8787960821815619,
+      0.8788589581742323
+    ]
+  },
+  {
+    "name": "BETS-equal-BOOST-direct-v2-selected",
+    "rmse": 0.8777597548827706,
+    "fold_rmse": [
+      0.8790191465792946,
+      0.877548522512405,
+      0.8741004903010341,
+      0.8790305278754564,
+      0.8791115427879661
+    ],
+    "components": [
+      "neural",
+      "BOOST-direct-v2-selected"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-BOOST-direct-v2-selected.f32",
+    "sha256": "b1469a890cc62005088d300e45a345b01e534e64cecba90fd3d128e63d41ba5c"
+  },
+  {
+    "name": "BETS-equal-BOOST-direct-v2-refit",
+    "rmse": 0.8777146815178425,
+    "fold_rmse": [
+      0.8789596426800821,
+      0.8774652982516498,
+      0.8741209368206787,
+      0.8789596197661073,
+      0.8790793654509673
+    ],
+    "components": [
+      "neural",
+      "BOOST-direct-v2-refit"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-BOOST-direct-v2-refit.f32",
+    "sha256": "a2f43bd1361ea64218741887ec0b64f642cb055211e8748d6e6867121c916402"
+  },
+  {
+    "name": "BETS-equal-BOOST-residual-selected",
+    "rmse": 0.877735974920459,
+    "fold_rmse": [
+      0.8788892807813451,
+      0.8776041060605954,
+      0.8741554814735364,
+      0.8790960908118872,
+      0.8789461120446093
+    ],
+    "components": [
+      "neural",
+      "BOOST-residual-selected"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-BOOST-residual-selected.f32",
+    "sha256": "e223a2dd752864525a914561bd5104dbf3e4abf75ada19cc29214ae2a4106555"
+  },
+  {
+    "name": "BETS-equal-BOOST-residual-refit",
+    "rmse": 0.8776890856077548,
+    "fold_rmse": [
+      0.878849666083308,
+      0.877528583851722,
+      0.874115615076375,
+      0.8790188358022574,
+      0.8789440260213343
+    ],
+    "components": [
+      "neural",
+      "BOOST-residual-refit"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-BOOST-residual-refit.f32",
+    "sha256": "2f684cbc6372240c25da29c1edf1dd3e3739e6bc8b27388821b54d7e11c981d8"
+  },
+  {
+    "name": "BETS-three-way",
+    "rmse": 0.8773860814741421,
+    "fold_rmse": [
+      0.8785696682912345,
+      0.8771920233144826,
+      0.873777036349361,
+      0.8786571212869272,
+      0.8787461251859394
+    ],
+    "components": [
+      "neural",
+      "BOOST-direct-v2-refit",
+      "BOOST-residual-refit"
+    ],
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "output": "artifacts/BETS-three-way.f32",
+    "sha256": "2a67a7e90bcef23e98f87f9af6b2d36c8c721ab51689ad0f0d36730e0a650771"
+  },
+  {
+    "name": "DIST-mean",
+    "rmse": 0.8782273970851299,
+    "fold_rmse": [
+      0.8791799770238211,
+      0.8781649408999349,
+      0.874710227653569,
+      0.8795851415398169,
+      0.8795083418119157
+    ]
+  },
+  {
+    "name": "BETS-equal-DIST-mean",
+    "rmse": 0.8773995093182482,
+    "fold_rmse": [
+      0.8784193580582548,
+      0.8772782300068209,
+      0.8738364132466626,
+      0.8787511590699567,
+      0.8787240161696842
+    ],
+    "components": [
+      "DIST-mean",
+      "BOOST-residual-refit"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-DIST-mean.f32",
+    "sha256": "290570e3328b79bd79760883950be1b881e584f75c1c75fbb6ca5f748412bdfb"
+  },
+  {
+    "name": "DIST-probability",
+    "rmse": 0.8796294477937967,
+    "fold_rmse": [
+      0.8808147206456126,
+      0.8795061867846056,
+      0.8761404813225774,
+      0.8808815049744575,
+      0.8808155772842657
+    ]
+  },
+  {
+    "name": "BETS-equal-DIST-probability",
+    "rmse": 0.8780590364961242,
+    "fold_rmse": [
+      0.8792194147374317,
+      0.8779779484753047,
+      0.8745005945348359,
+      0.8793198222276367,
+      0.8792888349744709
+    ],
+    "components": [
+      "DIST-probability",
+      "BOOST-residual-refit"
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "output": "artifacts/BETS-equal-DIST-probability.f32",
+    "sha256": "dd124ab8f349e515ca2ed7c7d3b98c20bd1b3cda22ebb638a7d30d97c2cedb1a"
+  }
+]

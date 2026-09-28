@@ -13,7 +13,6 @@ import json
 import pathlib
 import time
 import numpy as np
-import torch
 from gbdt_blend import load, blend_fold
 
 
@@ -61,6 +60,7 @@ def ridge_fit(x, y):
 
 
 def fit_nn(x, y, baseline, *, hidden, epochs, seed, validation=None, patience=6):
+    import torch
     torch.manual_seed(seed)
     mean, std = x.mean(0, dtype=np.float64), np.maximum(x.std(0, dtype=np.float64), .01)
     tx = torch.from_numpy(((x-mean)/std).astype(np.float32))
@@ -98,6 +98,7 @@ def fit_nn(x, y, baseline, *, hidden, epochs, seed, validation=None, patience=6)
 
 
 def infer(model, mean, std, x):
+    import torch
     model.eval()
     with torch.no_grad():
         tx = torch.from_numpy(((x-mean)/std).astype(np.float32))
@@ -105,6 +106,7 @@ def infer(model, mean, std, x):
 
 
 def cross_fit(predictions, context, y, users, *, hidden=16, epochs=60, seed=20260928):
+    import torch
     torch.set_num_threads(1)
     x, nx = design(predictions, context)
     outer = blend_fold(users)
