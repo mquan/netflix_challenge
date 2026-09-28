@@ -98,7 +98,7 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | P1 | conditional-bias RBM, 500 hidden units, from scratch | running |
 | P2 | conditional-bias RBM-200 from scratch, bias rates active from epoch 1 | running |
 | kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
-| R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | running |
+| R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | 0.8737760415 (−0.0000444 vs R6-RBM): noise level. The neighborhood correction's information is already in the bank's thirteen kNN columns; the RBM itself, not its kNN, carried the round-6 gain |
 
 R6-RBM fold RMSEs: .8747686 .8736287 .8702200 .8753575 .8751383 against
 R5-meta's .8759153 .8744987 .8711588 .8763427 .8761425 (−0.0011, −0.0009,
