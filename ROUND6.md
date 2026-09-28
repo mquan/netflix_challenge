@@ -96,7 +96,10 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | **R6-RBM** | R5-meta columns + R4D + R4C, single seed 2026 | **0.8738203523** dev CV vs 0.8748094089 (−0.0009891); every fold improves |
 | **R6-RBM-s3** | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | **0.8737149186** vs 0.8747153673 (−0.0010005); folds .8746445 .8735128 .8701031 .8752357 .8750900, every fold better. Output `artifacts/r6/R6-RBM-s3.refit.f32` |
 | P1 | conditional-bias RBM, 500 hidden units, from scratch; stopped at epoch 37 | 0.9056827896 and improving only ≈0.0002/epoch at ≈5 min/epoch, with training RMSE 0.72 versus 0.75 for the 200-unit model at a better probe score: it overfits at the 200-unit rates and would need a larger weight cost (`--weight-cost`) or dropout-like noise to pay off |
-| P2 | conditional-bias RBM-200 from scratch, bias rates active from epoch 1 | running |
+| P2 | conditional-bias RBM-200 from scratch, bias rates active from epoch 1; best epoch 72, early stop at 78 | 0.9034196404: worse than the warm-started R4D (0.8994851) at a similar epoch count, so a plain RBM followed by bias training is the better recipe; kept as a diversity candidate |
+| **R6-RBM2** | R6-RBM columns + P2, single seed | **0.8735898809** (−0.0002305 vs R6-RBM; every fold better; ridge 0.876421). A third, standalone-weaker conditional RBM still pays: RBM diversity is the live axis |
+| R2C | conditional biases warm-started on the R2 RBM-100 checkpoint (0.9126516) | running |
+| P3 | plain RBM-200 with seed 7 (to receive conditional biases afterwards, the R4D recipe) | running |
 | kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
 | R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | 0.8737760415 (−0.0000444 vs R6-RBM): noise level. The neighborhood correction's information is already in the bank's thirteen kNN columns; the RBM itself, not its kNN, carried the round-6 gain |
 
@@ -115,6 +118,7 @@ of round 5, and R4D was still improving when it hit its epoch cap. Output:
 |---|---:|
 | Start of round 6 (R5-meta) | 0.8748094 |
 | Round 6 so far (R6-RBM-s3, three seeds) | 0.8737149 |
+| Round 6 so far, single seed (R6-RBM2) | 0.8735899 |
 | Proxy for the 0.85725 test target | ≈0.865 |
 
 The remaining gap is about 0.009 on the development metric. The evidence in
