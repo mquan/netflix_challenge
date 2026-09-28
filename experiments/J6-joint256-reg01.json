@@ -39,5 +39,20 @@
     }
   },
   "launched_utc": "2026-09-27T23:35:31.127023+00:00",
-  "events_path": "experiments/J6-joint256-reg01.events.jsonl"
+  "events_path": "experiments/J6-joint256-reg01.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 5924.654813959001,
+  "finished_utc": "2026-09-28T01:14:15.829915+00:00",
+  "log_sha256": "3a0405f6bb8ecbb00a2fda6e8e7d6ff01b868368b7968da9eb2b533627cebf36",
+  "events_sha256": "decb189aeb6351538516285ea23a130bacf4ea73618a4d9e80bb2bc3cbf54c33",
+  "model_artifact": {
+    "path": "artifacts/joint256-reg01.bin",
+    "sha256": "a34d82047f92b7a43587977591b88dfb56caa059b1c4e1641a8ef7579a9c2fed",
+    "bytes": 1173446408
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint256-reg01.f32",
+    "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+    "bytes": 5633580
+  }
 }
