@@ -1,0 +1,46 @@
+{
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "inputs": {
+    "artifacts/other-branch/blend-b6.f32": "a062279a663a9284819aefbbae996e7fc4508d3cef3df654b14450405fb16651",
+    "artifacts/NN2-blend.f32": "e4fa999f30922818303057dee70cee567909c3fd3b07bbec53189432b1ee3437"
+  },
+  "scores": [
+    {
+      "name": "artifacts/other-branch/blend-b6.f32",
+      "rmse": 0.8804020935035585,
+      "fold_rmse": [
+        0.8817188464219283,
+        0.8802252867529818,
+        0.8769466642838967,
+        0.881463898985648,
+        0.8816671762300555
+      ]
+    },
+    {
+      "name": "artifacts/NN2-blend.f32",
+      "rmse": 0.8803262842857676,
+      "fold_rmse": [
+        0.8815939817243522,
+        0.8800801347670815,
+        0.87666378189441,
+        0.8815028047125387,
+        0.8818025454947007
+      ]
+    },
+    {
+      "name": "artifacts/UNION-equal.f32",
+      "rmse": 0.878668521750796,
+      "fold_rmse": [
+        0.8800110468229462,
+        0.8784535384024309,
+        0.8751088452049777,
+        0.8797645402779614,
+        0.8800161517156408
+      ]
+    }
+  ],
+  "protocol": "Fixed equal average; no additional fitting or weight search. Development CV."
+}

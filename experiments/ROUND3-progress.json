@@ -1,0 +1,694 @@
+{
+  "recorded_utc": "2026-09-28T02:24:22.933273+00:00",
+  "parent_commit": "0183dba",
+  "reports": {
+    "BOOST-direct-v2": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "output": "artifacts/BOOST-direct-v2",
+        "residual": false,
+        "rounds": 3000
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+        "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_rounds": 487,
+          "seconds": 273.6065662500041,
+          "selected_rmse": 0.8797817101976163,
+          "refit_rmse": 0.8795659988805922
+        },
+        {
+          "fold": 1,
+          "chosen_rounds": 563,
+          "seconds": 261.0500162919925,
+          "selected_rmse": 0.8784687318815586,
+          "refit_rmse": 0.8781850131018596
+        },
+        {
+          "fold": 2,
+          "chosen_rounds": 614,
+          "seconds": 323.52012195799034,
+          "selected_rmse": 0.8748609162232719,
+          "refit_rmse": 0.874757820374275
+        },
+        {
+          "fold": 3,
+          "chosen_rounds": 612,
+          "seconds": 205.78635804200894,
+          "selected_rmse": 0.8798417068531453,
+          "refit_rmse": 0.8795874911824757
+        },
+        {
+          "fold": 4,
+          "chosen_rounds": 434,
+          "seconds": 191.8924345000123,
+          "selected_rmse": 0.8800833619074139,
+          "refit_rmse": 0.8798997939773677
+        }
+      ],
+      "lightgbm_version": "4.7.0",
+      "feature_cache_sha256": "066f01482f1d08112da3022b6d3694376ee1ea1a9c7d93b0d86bebd95cc890a8",
+      "selected_rmse": 0.8786048800553867,
+      "refit_rmse": 0.8783968225141184
+    },
+    "BOOST-residual": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "output": "artifacts/BOOST-residual",
+        "residual": true,
+        "rounds": 3000
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+        "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_rounds": 202,
+          "seconds": 178.0801820839988,
+          "selected_rmse": 0.8785723030270021,
+          "refit_rmse": 0.8784766920157673
+        },
+        {
+          "fold": 1,
+          "chosen_rounds": 221,
+          "seconds": 108.46267308300594,
+          "selected_rmse": 0.8775316075240184,
+          "refit_rmse": 0.8773365702944913
+        },
+        {
+          "fold": 2,
+          "chosen_rounds": 256,
+          "seconds": 95.28830716697848,
+          "selected_rmse": 0.8739282996237738,
+          "refit_rmse": 0.873796006336948
+        },
+        {
+          "fold": 3,
+          "chosen_rounds": 306,
+          "seconds": 113.8433008340071,
+          "selected_rmse": 0.8790161913127185,
+          "refit_rmse": 0.8787960821576956
+        },
+        {
+          "fold": 4,
+          "chosen_rounds": 331,
+          "seconds": 139.45359479199396,
+          "selected_rmse": 0.8789168841646678,
+          "refit_rmse": 0.8788589585014787
+        }
+      ],
+      "lightgbm_version": "4.7.0",
+      "feature_cache_sha256": "066f01482f1d08112da3022b6d3694376ee1ea1a9c7d93b0d86bebd95cc890a8",
+      "selected_rmse": 0.8775907197385371,
+      "refit_rmse": 0.8774504869054686
+    },
+    "DIST-probability": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "output": "artifacts/DIST-probability",
+        "head": "distribution",
+        "epochs": 60
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+        "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_epochs": 0,
+          "rmse": 0.880814720598792,
+          "seconds": 7.471211999974912
+        },
+        {
+          "fold": 1,
+          "chosen_epochs": 0,
+          "rmse": 0.8795061870471055,
+          "seconds": 5.84335037501296
+        },
+        {
+          "fold": 2,
+          "chosen_epochs": 0,
+          "rmse": 0.8761404814272964,
+          "seconds": 4.983150209009182
+        },
+        {
+          "fold": 3,
+          "chosen_epochs": 0,
+          "rmse": 0.8808815046943,
+          "seconds": 5.772666749980999
+        },
+        {
+          "fold": 4,
+          "chosen_epochs": 0,
+          "rmse": 0.8808155773522307,
+          "seconds": 5.622663666988956
+        }
+      ],
+      "rmse": 0.8796294478152658
+    },
+    "DIST-mean": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "output": "artifacts/DIST-mean",
+        "head": "mean",
+        "epochs": 60
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+        "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_epochs": 36,
+          "rmse": 0.8791799770186594,
+          "seconds": 46.0446365000098
+        },
+        {
+          "fold": 1,
+          "chosen_epochs": 38,
+          "rmse": 0.8781649411597989,
+          "seconds": 50.13234533299692
+        },
+        {
+          "fold": 2,
+          "chosen_epochs": 17,
+          "rmse": 0.87471022765727,
+          "seconds": 31.354656292009167
+        },
+        {
+          "fold": 3,
+          "chosen_epochs": 19,
+          "rmse": 0.8795851416077289,
+          "seconds": 33.41586970901699
+        },
+        {
+          "fold": 4,
+          "chosen_epochs": 30,
+          "rmse": 0.8795083416210431,
+          "seconds": 41.98733641701983
+        }
+      ],
+      "rmse": 0.878227397112268
+    }
+  },
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "scripts/moonshot_boost.py": "3928c513bc4d3aff01f79ed96287cf1285234c992608f247b2f84f2a368fe698",
+    "scripts/moonshot_distribution.py": "2a5dadbc622875d8e29980c5f00c67772cbede68b4d66159d72f9085a6be6498",
+    "scripts/moonshot_nn_blend.py": "31f44a1f2e4cb18c393c302891b936d2e7dee6b0f17b38ee346e9ef8f2ec770c",
+    "scripts/moonshot_bet_summary.py": "1c5682e0310d0e8fc824c8dd8872b77383e7f628e72efa7ca35a31da0ceb8bc4",
+    "scripts/moonshot_user_compare.py": "b84108f26bfca4da57feab008f64d2c17a3ca2a8e8bf67e18b960698ae1b2810",
+    "tests/test_moonshot_bets.py": "33a586b419e17dc07b5cdf95e93fa25561382e687aa1c7dd5699ca45e417d545",
+    "tests/test_moonshot_distribution.py": "383d95657e9aa1002575fbbaa861eb231ed1a95d1028fc9a9aeff5a56a830ebd"
+  },
+  "outputs": {
+    "artifacts/BOOST-direct-v2.selected.f32": {
+      "sha256": "9c572d65909212c02d56b4b364cf2206d7ad1aea1821a670bd037ea1e06ed3d0",
+      "bytes": 5633580
+    },
+    "artifacts/BOOST-direct-v2.refit.f32": {
+      "sha256": "b6fcb08ad4b93bdd087a48198c8e1e53e70b7fab1dfb0b4ce387e76dd177c224",
+      "bytes": 5633580
+    },
+    "artifacts/BOOST-residual.selected.f32": {
+      "sha256": "687bcbd09837a64ad1e882a9f637324dc60916972853344c6f82c839762f9d8d",
+      "bytes": 5633580
+    },
+    "artifacts/BOOST-residual.refit.f32": {
+      "sha256": "e1513a8860e255da44ec54b67340658cd6b0a62912f37f42ffd7b6243cf143ab",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.0.f32": {
+      "sha256": "c761b89872b6ff82f1eab333e9006fb333127b8525213cb789de678ebc5cfe0e",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.1.f32": {
+      "sha256": "9d2e14dc59df0f0292f91a4e0a319132b54607d517bb116a1bb09a11cddca8e3",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.2.f32": {
+      "sha256": "b2d5ae0b127b38b2a1335c35673c76a1ba28448c05a6873cd5460e731c59dbd6",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.3.f32": {
+      "sha256": "6179ccfd8d3cd27878612978eea51567ccccfcca5aeba240e56b08f57f855539",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.4.f32": {
+      "sha256": "c89165c402a6f033bac9ad36e80076f3763022184683d95009f10334bfd2c6e2",
+      "bytes": 5633580
+    },
+    "artifacts/USER-kernel64.5.f32": {
+      "sha256": "8edb729b0f86909d4311c517efbc105795f583b186d36a58bf7b5ad485fbff7b",
+      "bytes": 5633580
+    },
+    "artifacts/USER-bank-linear.f32": {
+      "sha256": "d608adeb1b811b442c8ff656f40939e3fe102d95928671069f3cfd0fa1546758",
+      "bytes": 5633580
+    },
+    "artifacts/USER-bank-rbf.f32": {
+      "sha256": "e09c8dc629337ecb32368237a8b97ac7edcf6838d6d2562b0d241c08afffbde2",
+      "bytes": 5633580
+    },
+    "artifacts/USER-bank-both.f32": {
+      "sha256": "a3b47c4e12cb81a653f66643cc69651c50195da813c7e47c21c0bdbe5c2bd799",
+      "bytes": 5633580
+    },
+    "artifacts/DIST-probability.f32": {
+      "sha256": "3a088ffcf510cee8fb74f185000d647b55f34a54265ada274fcbb71a16cacc61",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-BOOST-direct-v2-selected.f32": {
+      "sha256": "b1469a890cc62005088d300e45a345b01e534e64cecba90fd3d128e63d41ba5c",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-BOOST-direct-v2-refit.f32": {
+      "sha256": "a2f43bd1361ea64218741887ec0b64f642cb055211e8748d6e6867121c916402",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-BOOST-residual-selected.f32": {
+      "sha256": "e223a2dd752864525a914561bd5104dbf3e4abf75ada19cc29214ae2a4106555",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-BOOST-residual-refit.f32": {
+      "sha256": "2f684cbc6372240c25da29c1edf1dd3e3739e6bc8b27388821b54d7e11c981d8",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-three-way.f32": {
+      "sha256": "2a67a7e90bcef23e98f87f9af6b2d36c8c721ab51689ad0f0d36730e0a650771",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-DIST-mean.f32": {
+      "sha256": "290570e3328b79bd79760883950be1b881e584f75c1c75fbb6ca5f748412bdfb",
+      "bytes": 5633580
+    },
+    "artifacts/BETS-equal-DIST-probability.f32": {
+      "sha256": "dd124ab8f349e515ca2ed7c7d3b98c20bd1b3cda22ebb638a7d30d97c2cedb1a",
+      "bytes": 5633580
+    },
+    "artifacts/DIST-mean.f32": {
+      "sha256": "aab66ea6399628031b04baabe68f109ae86dced23741064bf9e5c8c86341bccb",
+      "bytes": 5633580
+    }
+  },
+  "data": {
+    "path": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  },
+  "user_kernel": {
+    "binary_sha256": "9efcc7966a2cd9fc3c156e29b373f3806b6e40450b84f4c204fb72d216d30ce2",
+    "model_sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+    "features": 64,
+    "gamma": 4,
+    "penalties": [
+      1,
+      10,
+      100
+    ],
+    "seed": 20260928,
+    "log": "experiments/USER-kernel64.log",
+    "ablations": "experiments/USER-bank.json"
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0"
+  },
+  "device": "CPU",
+  "threads_per_job": 1,
+  "niceness": 15,
+  "retained": {
+    "predictions": "artifacts/BETS-three-way.f32",
+    "rmse": 0.8773860814741421,
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "components": [
+      "artifacts/UNION-union.f32",
+      "artifacts/BOOST-direct-v2.refit.f32",
+      "artifacts/BOOST-residual.refit.f32"
+    ]
+  },
+  "pending": [],
+  "verification": [
+    "BETS-tests.log: 2 pass",
+    "BETS-neural-import-test.log: 1 pass",
+    "DIST-test-calibrated.log: 2 pass",
+    "all raw input hashes rechecked"
+  ],
+  "limitations": "Development CV; base checkpoint and repeated research selection use probe. No new-pair inference model is exported. Distribution source includes optional calibrated prior added after the initial uncalibrated run; its default remains unchanged.",
+  "combinations": {
+    "protocol": "Predeclared equal weights; no fitting on CV outputs. Development comparison, not independent test.",
+    "inputs": {
+      "artifacts/UNION-combined-equal.f32": "f01acb8ab3221acc385c3ed7c9b22978def42037bffb69e261a43a691a66cd9a",
+      "artifacts/UNION-union.f32": "030f882dec6de7c4425e9a81e8b937b4bd062cb02fd2c4a2b80b8c08b6dead26",
+      "artifacts/BOOST-direct-v2.selected.f32": "9c572d65909212c02d56b4b364cf2206d7ad1aea1821a670bd037ea1e06ed3d0",
+      "artifacts/BOOST-direct-v2.refit.f32": "b6fcb08ad4b93bdd087a48198c8e1e53e70b7fab1dfb0b4ce387e76dd177c224",
+      "artifacts/BOOST-residual.selected.f32": "687bcbd09837a64ad1e882a9f637324dc60916972853344c6f82c839762f9d8d",
+      "artifacts/BOOST-residual.refit.f32": "e1513a8860e255da44ec54b67340658cd6b0a62912f37f42ffd7b6243cf143ab",
+      "artifacts/DIST-mean.f32": "aab66ea6399628031b04baabe68f109ae86dced23741064bf9e5c8c86341bccb",
+      "artifacts/DIST-probability.f32": "3a088ffcf510cee8fb74f185000d647b55f34a54265ada274fcbb71a16cacc61"
+    },
+    "results": [
+      {
+        "name": "reference",
+        "rmse": 0.8782199560788642,
+        "fold_rmse": [
+          0.8795592794787372,
+          0.8780111510018537,
+          0.8747569014415691,
+          0.87940908431685,
+          0.8793742527160681
+        ]
+      },
+      {
+        "name": "neural",
+        "rmse": 0.8788478728427008,
+        "fold_rmse": [
+          0.880043420601738,
+          0.8786086000779246,
+          0.8753539078700083,
+          0.8801877658415315,
+          0.8800566611643682
+        ]
+      },
+      {
+        "name": "BOOST-direct-v2-selected",
+        "rmse": 0.8786048800644314,
+        "fold_rmse": [
+          0.8797817102549061,
+          0.8784687320018447,
+          0.8748609162007366,
+          0.8798417066145056,
+          0.8800833620369182
+        ]
+      },
+      {
+        "name": "BOOST-direct-v2-refit",
+        "rmse": 0.8783968224163325,
+        "fold_rmse": [
+          0.8795659990982129,
+          0.8781850131191288,
+          0.8747578202100472,
+          0.8795874907742243,
+          0.8798997938261175
+        ]
+      },
+      {
+        "name": "BOOST-residual-selected",
+        "rmse": 0.8775907197054644,
+        "fold_rmse": [
+          0.878572303059239,
+          0.8775316074723812,
+          0.8739282998227179,
+          0.8790161909266722,
+          0.8789168842063427
+        ]
+      },
+      {
+        "name": "BOOST-residual-refit",
+        "rmse": 0.87745048671957,
+        "fold_rmse": [
+          0.8784766919295712,
+          0.8773365700062664,
+          0.8737960060844296,
+          0.8787960821815619,
+          0.8788589581742323
+        ]
+      },
+      {
+        "name": "BETS-equal-BOOST-direct-v2-selected",
+        "rmse": 0.8777597548827706,
+        "fold_rmse": [
+          0.8790191465792946,
+          0.877548522512405,
+          0.8741004903010341,
+          0.8790305278754564,
+          0.8791115427879661
+        ],
+        "components": [
+          "neural",
+          "BOOST-direct-v2-selected"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-BOOST-direct-v2-selected.f32",
+        "sha256": "b1469a890cc62005088d300e45a345b01e534e64cecba90fd3d128e63d41ba5c"
+      },
+      {
+        "name": "BETS-equal-BOOST-direct-v2-refit",
+        "rmse": 0.8777146815178425,
+        "fold_rmse": [
+          0.8789596426800821,
+          0.8774652982516498,
+          0.8741209368206787,
+          0.8789596197661073,
+          0.8790793654509673
+        ],
+        "components": [
+          "neural",
+          "BOOST-direct-v2-refit"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-BOOST-direct-v2-refit.f32",
+        "sha256": "a2f43bd1361ea64218741887ec0b64f642cb055211e8748d6e6867121c916402"
+      },
+      {
+        "name": "BETS-equal-BOOST-residual-selected",
+        "rmse": 0.877735974920459,
+        "fold_rmse": [
+          0.8788892807813451,
+          0.8776041060605954,
+          0.8741554814735364,
+          0.8790960908118872,
+          0.8789461120446093
+        ],
+        "components": [
+          "neural",
+          "BOOST-residual-selected"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-BOOST-residual-selected.f32",
+        "sha256": "e223a2dd752864525a914561bd5104dbf3e4abf75ada19cc29214ae2a4106555"
+      },
+      {
+        "name": "BETS-equal-BOOST-residual-refit",
+        "rmse": 0.8776890856077548,
+        "fold_rmse": [
+          0.878849666083308,
+          0.877528583851722,
+          0.874115615076375,
+          0.8790188358022574,
+          0.8789440260213343
+        ],
+        "components": [
+          "neural",
+          "BOOST-residual-refit"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-BOOST-residual-refit.f32",
+        "sha256": "2f684cbc6372240c25da29c1edf1dd3e3739e6bc8b27388821b54d7e11c981d8"
+      },
+      {
+        "name": "BETS-three-way",
+        "rmse": 0.8773860814741421,
+        "fold_rmse": [
+          0.8785696682912345,
+          0.8771920233144826,
+          0.873777036349361,
+          0.8786571212869272,
+          0.8787461251859394
+        ],
+        "components": [
+          "neural",
+          "BOOST-direct-v2-refit",
+          "BOOST-residual-refit"
+        ],
+        "weights": [
+          0.3333333333333333,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "output": "artifacts/BETS-three-way.f32",
+        "sha256": "2a67a7e90bcef23e98f87f9af6b2d36c8c721ab51689ad0f0d36730e0a650771"
+      },
+      {
+        "name": "DIST-mean",
+        "rmse": 0.8782273970851299,
+        "fold_rmse": [
+          0.8791799770238211,
+          0.8781649408999349,
+          0.874710227653569,
+          0.8795851415398169,
+          0.8795083418119157
+        ]
+      },
+      {
+        "name": "BETS-equal-DIST-mean",
+        "rmse": 0.8773995093182482,
+        "fold_rmse": [
+          0.8784193580582548,
+          0.8772782300068209,
+          0.8738364132466626,
+          0.8787511590699567,
+          0.8787240161696842
+        ],
+        "components": [
+          "DIST-mean",
+          "BOOST-residual-refit"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-DIST-mean.f32",
+        "sha256": "290570e3328b79bd79760883950be1b881e584f75c1c75fbb6ca5f748412bdfb"
+      },
+      {
+        "name": "DIST-probability",
+        "rmse": 0.8796294477937967,
+        "fold_rmse": [
+          0.8808147206456126,
+          0.8795061867846056,
+          0.8761404813225774,
+          0.8808815049744575,
+          0.8808155772842657
+        ]
+      },
+      {
+        "name": "BETS-equal-DIST-probability",
+        "rmse": 0.8780590364961242,
+        "fold_rmse": [
+          0.8792194147374317,
+          0.8779779484753047,
+          0.8745005945348359,
+          0.8793198222276367,
+          0.8792888349744709
+        ],
+        "components": [
+          "DIST-probability",
+          "BOOST-residual-refit"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "output": "artifacts/BETS-equal-DIST-probability.f32",
+        "sha256": "dd124ab8f349e515ca2ed7c7d3b98c20bd1b3cda22ebb638a7d30d97c2cedb1a"
+      }
+    ]
+  },
+  "future_bets": [
+    "Run the implemented mean-calibrated probability prior against the matched mean head."
+  ],
+  "retained_residual_tree": {
+    "predictions": "artifacts/BOOST-residual.refit.f32",
+    "rmse": 0.8774504869054686
+  },
+  "completed_record_utc": "2026-09-28T02:28:03.171953+00:00"
+}

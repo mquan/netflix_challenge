@@ -241,3 +241,74 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     if (stale >= 4) break;
   }
 }
+
+// Training-free item kNN over the temporal-baseline residuals: a probe rating is
+// the baseline plus a shrunk, similarity^power-weighted mean of the user's
+// residuals on rated graph neighbors. Also writes the neighbor support
+// (sum of weights) as a blending feature. Probe ratings are never read.
+void command_knn(const std::vector<std::string> &args) {
+  const auto d = load_dataset(value_after(args, "--data"));
+  const auto t = build_temporal_index(d);
+  const auto f = joint_features(d, t);
+  // With --joint-model, neighbors correct the full factor model's residuals
+  // instead of the temporal baseline's.
+  const auto joint_path = optional_value_after(args, "--joint-model");
+  JointModel base;
+  if (joint_path.empty()) {
+    TimeBaselineHeader header{};
+    base.base = load_time_baseline(value_after(args, "--time-model"), d, t, header);
+  } else {
+    base = load_joint(joint_path, d, t, joint_fingerprint(d));
+  }
+  std::vector<float> effective;
+  if (base.rank) build_effective_users(d, base.factors, base.rank, effective);
+  auto predict = [&](uint32_t u, uint32_t i, uint16_t day, uint32_t s) {
+    float x = joint_base(d, f, base, u, i, day, s);
+    const float *p = base.rank ? &effective[size_t(u)*base.rank] : nullptr;
+    for (uint32_t k = 0; k < base.rank; ++k)
+      x += base.factors.item_factors[size_t(i)*base.rank+k]*(p[k]+base.drift[size_t(u)*base.rank+k]*f.dev[s]);
+    for (uint32_t k = 0; k < base.day_rank; ++k)
+      x += base.factors.item_factors[size_t(i)*base.rank+k]*base.day_factors[size_t(s)*base.day_rank+k];
+    return x;
+  };
+  const auto g = load_graph(value_after(args, "--graph"), d.header.items, joint_fingerprint(d));
+  const auto output = value_after(args, "--predictions");
+  const auto support_path = optional_value_after(args, "--support");
+  const uint32_t k = std::min(g.k, uint_after(args, "--neighbors", g.k));
+  const float power = float(double_after(args, "--power", 2));
+  const float shrink = float(double_after(args, "--shrink", .05));
+  std::vector<uint64_t> po(d.header.users+1, 0);
+  for (const auto &r : d.probe) ++po[r.user+1];
+  std::partial_sum(po.begin(), po.end(), po.begin());
+  auto cursor = po; std::vector<uint32_t> probe_order(d.probe.size());
+  for (size_t p = 0; p < d.probe.size(); ++p) probe_order[cursor[d.probe[p].user]++] = uint32_t(p);
+  std::vector<uint32_t> rated(d.header.items, UINT32_MAX);
+  std::vector<float> known_residual(d.header.items), pred(d.probe.size()), support(d.probe.size());
+  double sse = 0;
+  for (uint32_t u = 0; u < d.header.users; ++u) {
+    if (po[u] == po[u+1]) continue;
+    for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
+      const uint32_t i = d.train_items[p]-1; rated[i] = u;
+      known_residual[i] = d.train_ratings[p]-predict(u, i, d.train_days[p], f.train_session[p]);
+    }
+    for (uint64_t q = po[u]; q < po[u+1]; ++q) {
+      const uint32_t p = probe_order[q];
+      const auto &r = d.probe[p];
+      const uint32_t i = r.item-1;
+      float num = 0, den = 0;
+      for (uint32_t j = i*g.k; j < i*g.k+k; ++j) {
+        const uint32_t other = g.neighbor[j];
+        if (rated[other] != u || g.similarity[j] <= 0) continue;
+        const float s = std::pow(g.similarity[j], power);
+        num += s*known_residual[other]; den += s;
+      }
+      pred[p] = predict(r.user, i, r.day, f.probe_session[p]) + num/(den+shrink);
+      support[p] = den;
+      const double err = r.rating-clipped(pred[p]); sse += err*err;
+    }
+  }
+  std::ofstream out(output, std::ios::binary); write_vector(out, pred);
+  if (!support_path.empty()) { std::ofstream s(support_path, std::ios::binary); write_vector(s, support); }
+  std::cout << std::setprecision(10) << "knn base=" << (joint_path.empty() ? "time" : joint_path) << " neighbors=" << k << " power=" << power
+            << " shrink=" << shrink << " probe_rmse=" << std::sqrt(sse/d.probe.size()) << std::endl;
+}

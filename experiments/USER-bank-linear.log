@@ -1,0 +1,54 @@
+column=artifacts/other-branch/joint64.f32 probe_rmse=0.9000114051
+column=artifacts/other-branch/joint128-reg005.f32 probe_rmse=0.8978688248
+column=artifacts/other-branch/joint128-reg02.f32 probe_rmse=0.896172204
+column=artifacts/other-branch/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/other-branch/joint256-snap.f32 probe_rmse=0.8951664052
+column=artifacts/other-branch/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/other-branch/knn64-p1.f32 probe_rmse=0.9173704659
+column=artifacts/other-branch/knn64-j64-p1.f32 probe_rmse=0.8965213139
+column=artifacts/other-branch/knn64-j128r005.f32 probe_rmse=0.895059761
+column=artifacts/other-branch/knn64-j128r02.f32 probe_rmse=0.8927611155
+column=artifacts/other-branch/knn64-j128day.f32 probe_rmse=0.894902175
+column=artifacts/other-branch/knn64-j256snap.f32 probe_rmse=0.8930184131
+column=artifacts/other-branch/rbm100-fast.f32 probe_rmse=0.9126515614
+column=artifacts/other-branch/autorec512-a3-snap.f32 probe_rmse=0.9174942436
+column=artifacts/other-branch/autorec512-a2.f32 probe_rmse=0.9317932132
+column=artifacts/gp-full.0.f32 probe_rmse=0.8957827986
+column=artifacts/gp-full.1.f32 probe_rmse=0.8937029033
+column=artifacts/gp-full.2.f32 probe_rmse=0.8961579074
+column=artifacts/gp2-persistent-full.0.f32 probe_rmse=0.8922935424
+column=artifacts/local-global.epoch6.f32 probe_rmse=0.8984542466
+column=artifacts/local-local.epoch6.f32 probe_rmse=0.8973776647
+column=artifacts/USER-kernel64.0.f32 probe_rmse=0.9107616361
+column=artifacts/USER-kernel64.1.f32 probe_rmse=0.9077592188
+column=artifacts/USER-kernel64.2.f32 probe_rmse=0.9035923848
+heldout_user_fold=0 count=281675 rmse=0.8807400356
+heldout_user_fold=1 count=281390 rmse=0.8794604075
+heldout_user_fold=2 count=283006 rmse=0.8760850549
+heldout_user_fold=3 count=281688 rmse=0.8808720258
+heldout_user_fold=4 count=280636 rmse=0.880760189
+blend_cv_rmse=0.8795813025 blend_fit_rmse=0.8794978986 ridge=1e-05 centered_intercept=-0.03835143086 contexts=5
+weight=-0.04468934413 column=artifacts/other-branch/joint64.f32
+weight=0.8300322557 column=artifacts/other-branch/joint128-reg005.f32
+weight=-0.02015136542 column=artifacts/other-branch/joint128-reg02.f32
+weight=-0.1784268891 column=artifacts/other-branch/joint128-day128.f32
+weight=-0.1822130534 column=artifacts/other-branch/joint256-snap.f32
+weight=0.2715278159 column=artifacts/other-branch/neighborhood64.f32
+weight=-0.1036822344 column=artifacts/other-branch/knn64-p1.f32
+weight=0.1502953911 column=artifacts/other-branch/knn64-j64-p1.f32
+weight=-0.6833362729 column=artifacts/other-branch/knn64-j128r005.f32
+weight=0.3153484931 column=artifacts/other-branch/knn64-j128r02.f32
+weight=0.3088142859 column=artifacts/other-branch/knn64-j128day.f32
+weight=0.3163768558 column=artifacts/other-branch/knn64-j256snap.f32
+weight=0.1388306351 column=artifacts/other-branch/rbm100-fast.f32
+weight=0.1279744608 column=artifacts/other-branch/autorec512-a3-snap.f32
+weight=-0.07552431441 column=artifacts/other-branch/autorec512-a2.f32
+weight=-0.08551148941 column=artifacts/gp-full.0.f32
+weight=0.005835366701 column=artifacts/gp-full.1.f32
+weight=-0.9749548316 column=artifacts/gp-full.2.f32
+weight=0.962309178 column=artifacts/gp2-persistent-full.0.f32
+weight=-0.01781519619 column=artifacts/local-global.epoch6.f32
+weight=0.05316249003 column=artifacts/local-local.epoch6.f32
+weight=-0.1899537959 column=artifacts/USER-kernel64.0.f32
+weight=0.2297725031 column=artifacts/USER-kernel64.1.f32
+weight=-0.1543267104 column=artifacts/USER-kernel64.2.f32

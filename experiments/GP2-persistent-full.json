@@ -1,0 +1,51 @@
+{
+  "name": "GP2-persistent-full",
+  "strategy": "Promote the two-timescale pilot: half permanent and half 30-day covariance, 32 nearest training movies, fixed noise settings.",
+  "command": [
+    "build/moonshot_gp",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "--model",
+    "artifacts/snapshot/joint128-reg005.bin",
+    "--output",
+    "artifacts/gp2-persistent-full",
+    "--neighbors",
+    "32",
+    "--time-scale",
+    "30",
+    "--persistent",
+    ".5"
+  ],
+  "started_utc": "2026-09-28T00:56:48.132346+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "git_commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "12dc7129957cc7ce39a3a5ab68e9d3d147feb3fa73d0df25bc6c3e3e07dbe455",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T00:56:48.941692+00:00",
+  "events_path": "experiments/GP2-persistent-full.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 104.72286224999698,
+  "finished_utc": "2026-09-28T00:58:33.665744+00:00",
+  "log_sha256": "95876ef0afe367df7767c2e7beebda2da1ea317cbbb931fc793ebfb4715f298f",
+  "events_sha256": "b0d7a1c5bf0fc214f81350a9554030257a4402a746e41cac7d1811bcc6c5d6d5",
+  "model_artifact": {
+    "path": "artifacts/snapshot/joint128-reg005.bin",
+    "sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+    "bytes": 663536392
+  }
+}
