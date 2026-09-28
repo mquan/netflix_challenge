@@ -55,6 +55,25 @@ class JointTests(unittest.TestCase):
     def test_implicit_matches_naive(self):
         run('check-implicit')
 
+    def test_legacy_joint_versions_still_predict_identically(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            dataset(p/'data.bin')
+            for day_rank, version in ((0, 1), (2, 2)):
+                run('joint', '--data', p/'data.bin', '--model', p/'new.model',
+                    '--iterations', 1, '--factors', 4, '--day-factors', day_rank,
+                    '--predictions', p/'new.f32')
+                raw = (p/'new.model').read_bytes()
+                self.assertEqual(raw[-8:], bytes(8))  # no frequency factors
+                # V2 ends after daily vectors; V1 has neither daily nor
+                # frequency sections. Preserve every learned parameter.
+                tail = 20 if version == 1 else 8
+                magic = 0x4E46504A4F494E30 + version
+                (p/'old.model').write_bytes(struct.pack('<Q', magic)+raw[8:-tail])
+                run('eval-joint', '--data', p/'data.bin', '--model', p/'old.model',
+                    '--predictions', p/'old.f32')
+                self.assertEqual((p/'new.f32').read_bytes(), (p/'old.f32').read_bytes())
+
     def test_probe_labels_do_not_change_one_epoch_training(self):
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)
@@ -62,7 +81,8 @@ class JointTests(unittest.TestCase):
             dataset(p/'b.bin', change_fold=0)
             for name in ('a', 'b'):
                 run('joint', '--data', p/(name+'.bin'), '--model', p/(name+'.model'),
-                    '--iterations', 1, '--factors', 4, '--day-factors', 2, '--predictions', p/(name+'.f32'))
+                    '--iterations', 1, '--factors', 4, '--day-factors', 2,
+                    '--frequency-factors', 1, '--predictions', p/(name+'.f32'))
             # First 16 bytes contain magic+dataset fingerprint; all parameters
             # must be bit-identical even though validation labels changed.
             self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
@@ -82,11 +102,11 @@ class JointTests(unittest.TestCase):
                     '--neighbors', 2, '--history-cap', 3)
                 run('neighborhood', '--data', p/(name+'.bin'), '--time-model', p/(name+'.base'),
                     '--graph', p/(name+'.graph'), '--model', p/(name+'.model'),
-                    '--predictions', p/(name+'.f32'), '--iterations', 1)
+                    '--predictions', p/(name+'.f32'), '--iterations', 1, '--time-decay', .2)
             self.assertEqual((p/'a.graph').read_bytes()[16:], (p/'b.graph').read_bytes()[16:])
             self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
             self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
-            weights = array.array('f'); weights.frombytes((p/'a.model').read_bytes()[36:])
+            weights = array.array('f'); weights.frombytes((p/'a.model').read_bytes()[40:])
             self.assertTrue(any(abs(w) > 1e-6 for w in weights))
             run('eval-neighborhood', '--data', p/'a.bin', '--time-model', p/'a.base',
                 '--graph', p/'a.graph', '--model', p/'a.model', '--predictions', p/'reload.f32')
@@ -105,7 +125,7 @@ class JointTests(unittest.TestCase):
                 (p/('p'+str(j))).write_bytes(pred.tobytes())
             for name in ('a', 'b'):
                 run('ensemble', '--data', p/(name+'.bin'), '--prediction', p/'p0',
-                    '--prediction', p/'p1', '--predictions', p/(name+'.f32'))
+                    '--prediction', p/'p1', '--predictions', p/(name+'.f32'), '--contexts', 1, '--quadratic', 1)
             a = array.array('f'); a.frombytes((p/'a.f32').read_bytes())
             b = array.array('f'); b.frombytes((p/'b.f32').read_bytes())
             for n, row in enumerate(rows):

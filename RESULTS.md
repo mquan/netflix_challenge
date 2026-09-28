@@ -33,10 +33,19 @@ saved locally under `artifacts/`. No recovered quiz/test labels are used.
 | B2 | Add J3 to B1 and allow blending weights to depend on history counts, movie popularity, date and daily activity. This combines two changes; it is not a pure context ablation. | 0.8914751148 CV (0.8914446469 fit) |
 | J4 | Warm-start J3 with 128 per-user-day factors. Best at first new epoch; subsequent epochs overfit, stopped after epoch 6. About 9 GB extra parameters; modest standalone gain. | 0.8970498562 |
 | B3 | Add J2 and retained J4 to B2; same five user-fold contextual blending. | **0.8901342372 CV** (0.8900970503 fit) |
-| J5 | Joint 256 factors, regularization 0.01: capacity ablation, currently running. Do not blend a column while it is being updated. | Pending |
+| J5 | Joint 256 factors, regularization 0.01: best epoch 17, early stop at 22. Strongest standalone factor model so far, but relatively small blend gain in B6. | 0.8951664067 |
 | G1 | Build a top-64 item-neighbor graph from training residuals, using capped histories for discovery. Graph construction has no rating-prediction RMSE. | Not applicable |
 | N1 | Learn explicit/implicit neighbor weights over G1 and frozen temporal baseline. Best epoch 4, stopped after epoch 8. Weaker alone but useful in B4. | 0.9100421231 |
 | B4 | Controlled addition of N1 to B3's seven-column contextual blend. All five user folds improve; local movie relationships add complementary signal. | **0.8866646513 CV** (0.8866238775 fit) |
+| B5 | Nonlinear calibration: same B4 inputs, plus pairwise products of centered model predictions. Small improvement in all five user folds, much smaller than adding the neighborhood family. | **0.8865814901 CV** (0.8865091808 fit) |
+| B6 | Add completed J5 to B5 with identical blending settings. Another small but consistent improvement in all five folds. | **0.8863207420 CV** (0.8862375747 fit) |
+| G2 | Same training-only sampled graph discovery as G1, retaining 128 neighbors rather than 64. | Not applicable |
+| N2 | Capacity ablation: learn 128-neighbor model with N1 optimizer unchanged. Best epoch 5; later epochs worsened. | 0.9072719035 |
+| N2i | Evaluate a frozen copy of N2's epoch-5 checkpoint while training continues; preserve its exact prediction column for blending. | 0.9072719035 |
+| B7 | Add frozen N2i to B6's quadratic contextual blend. Each of five held-out user folds improves over B6. | **0.8858460517 CV** (0.8857544990 fit) |
+| N3 | Temporal-locality ablation: 64 neighbors, with explicit/implicit contributions multiplied by `exp(-0.002 * absolute_day_gap)`. Best epoch 8; worse standalone than N1. | 0.9108568308 |
+| J6 | Six-epoch warm-start pilot from J2, adding movie-by-rating-frequency latent factors; rate 2e-5, regularization 0.02. | 0.8958286794 |
+| J7 | Matched J6 continuation control without frequency factors; same initial model, seed, rates and iteration budget. J6 improves on this by 0.0001167435 RMSE. | 0.8959454229 |
 
 J1's log has an intentional SIGTERM exit, not a numerical failure; its best
 checkpoint and predictions were saved before termination. Subsequent joint runs
@@ -49,6 +58,21 @@ relationship into the same latent space. The graph is approximate and temporal
 biases are frozen, so this is not a faithful reproduction of the full published
 integrated neighborhood/factor model. A weaker standalone predictor can still
 help the blend, but no step-change in score is promised.
+
+**Observed neighborhood outcome:** N1 is worse alone than the factor models,
+yet B4 improves over B3 by `0.0034695859` RMSE. All five folds improve. B5's
+quadratic calibration adds only `0.0000831612`; model diversity delivered the
+larger gain. B4 code is retained in commit `cffd6bf`, tagged
+`milestone-probe-cv-0.886665`. From N2 onward, each experiment also archives
+actual code/build/test files in `.source.zip`, not just source hashes.
+
+As of the 2026-09-27 progress checkpoint, B7 is the best recorded user-fold
+blend score. It uses the frozen N2i epoch-5 column, adding `0.0004746903` RMSE
+improvement over B6. N2i's model and prediction hashes are in its manifest;
+the completed N2 run may have continued changing its conventional artifact.
+The next comparison is a blend using N3's temporal neighborhood and a direct
+test of J6's frequency-factor column against the matched J7 control. Both must
+use frozen prediction columns and the same five user folds.
 
 ## Checkpoints
 

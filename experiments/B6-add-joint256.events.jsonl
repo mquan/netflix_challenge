@@ -1,0 +1,24 @@
+{"observed_utc": "2026-09-27T23:16:06.254314+00:00", "line": "column=artifacts/legacy.a.f32 probe_rmse=0.9026721576"}
+{"observed_utc": "2026-09-27T23:16:06.254579+00:00", "line": "column=artifacts/legacy.b.f32 probe_rmse=0.9005525684"}
+{"observed_utc": "2026-09-27T23:16:06.254600+00:00", "line": "column=artifacts/legacy.c.f32 probe_rmse=0.9010021148"}
+{"observed_utc": "2026-09-27T23:16:06.254617+00:00", "line": "column=artifacts/joint64.f32 probe_rmse=0.9000114063"}
+{"observed_utc": "2026-09-27T23:16:06.254630+00:00", "line": "column=artifacts/joint128-reg005.f32 probe_rmse=0.8978688266"}
+{"observed_utc": "2026-09-27T23:16:06.254642+00:00", "line": "column=artifacts/joint128-reg02.f32 probe_rmse=0.8961722036"}
+{"observed_utc": "2026-09-27T23:16:06.254655+00:00", "line": "column=artifacts/joint128-day128.f32 probe_rmse=0.8970498562"}
+{"observed_utc": "2026-09-27T23:16:06.254666+00:00", "line": "column=artifacts/neighborhood64.f32 probe_rmse=0.9100421231"}
+{"observed_utc": "2026-09-27T23:16:06.254678+00:00", "line": "column=artifacts/joint256-reg01.f32 probe_rmse=0.8951664067"}
+{"observed_utc": "2026-09-27T23:16:06.254689+00:00", "line": "heldout_user_fold=0 count=281675 rmse=0.8872987447"}
+{"observed_utc": "2026-09-27T23:16:06.254702+00:00", "line": "heldout_user_fold=1 count=281390 rmse=0.8862098682"}
+{"observed_utc": "2026-09-27T23:16:06.254713+00:00", "line": "heldout_user_fold=2 count=283006 rmse=0.8829966511"}
+{"observed_utc": "2026-09-27T23:16:06.254724+00:00", "line": "heldout_user_fold=3 count=281688 rmse=0.8876631789"}
+{"observed_utc": "2026-09-27T23:16:06.254736+00:00", "line": "heldout_user_fold=4 count=280636 rmse=0.8874464141"}
+{"observed_utc": "2026-09-27T23:16:06.254748+00:00", "line": "blend_cv_rmse=0.886320742 blend_fit_rmse=0.8862375747 ridge=1e-05 centered_intercept=-0.01077977669 contexts=5 quadratic=1 features=95"}
+{"observed_utc": "2026-09-27T23:16:06.254766+00:00", "line": "weight=-0.127387171 column=artifacts/legacy.a.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254778+00:00", "line": "weight=0.111964526 column=artifacts/legacy.b.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254789+00:00", "line": "weight=-0.01263699701 column=artifacts/legacy.c.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254802+00:00", "line": "weight=0.1062429241 column=artifacts/joint64.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254814+00:00", "line": "weight=-0.0511842665 column=artifacts/joint128-reg005.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254827+00:00", "line": "weight=0.1326928508 column=artifacts/joint128-reg02.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254843+00:00", "line": "weight=0.2321332226 column=artifacts/joint128-day128.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254857+00:00", "line": "weight=0.3722003328 column=artifacts/neighborhood64.f32"}
+{"observed_utc": "2026-09-27T23:16:06.254870+00:00", "line": "weight=0.2623543411 column=artifacts/joint256-reg01.f32"}

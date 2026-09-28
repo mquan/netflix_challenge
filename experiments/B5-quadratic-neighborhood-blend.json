@@ -1,0 +1,106 @@
+{
+  "name": "B5-quadratic-neighborhood-blend",
+  "strategy": "Nonlinear calibration ablation: B4 columns and contexts unchanged; add all pairwise products of centered predictions with ridge 1e-5 and five held-out user folds.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--prediction",
+    "artifacts/joint128-reg02.f32",
+    "--prediction",
+    "artifacts/joint128-day128.f32",
+    "--prediction",
+    "artifacts/neighborhood64.f32",
+    "--contexts",
+    "1",
+    "--quadratic",
+    "1",
+    "--predictions",
+    "artifacts/blend-b5.f32",
+    "--weights",
+    "artifacts/blend-b5.weights"
+  ],
+  "started_utc": "2026-09-27T23:12:09.930729+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "69994b330b2198d5bfa6efa70227372e30a79e1708dde8b33b1eb6d9b6f1ed91",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M experiments/J5-joint256-reg01.log\n M scripts/experiment.py\n M src/ensemble.hpp\n M src/neighborhood.hpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n?? experiments/N2-learned-neighborhood128.events.jsonl\n?? experiments/N2-learned-neighborhood128.json\n?? experiments/N2-learned-neighborhood128.log\n?? experiments/N2-learned-neighborhood128.source.zip\n?? experiments/N3-temporal-neighborhood64.events.jsonl\n?? experiments/N3-temporal-neighborhood64.json\n?? experiments/N3-temporal-neighborhood64.log\n?? experiments/N3-temporal-neighborhood64.source.zip\n",
+  "source_archive": {
+    "path": "experiments/B5-quadratic-neighborhood-blend.source.zip",
+    "sha256": "d015f0598a4fc03a3cbbde6e2c42df396f33d423414dfbafcf313c887c5fdac0",
+    "bytes": 33544
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/legacy.a.f32": {
+      "sha256": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.b.f32": {
+      "sha256": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.c.f32": {
+      "sha256": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+      "bytes": 5633580
+    },
+    "artifacts/joint64.f32": {
+      "sha256": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg005.f32": {
+      "sha256": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg02.f32": {
+      "sha256": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-day128.f32": {
+      "sha256": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+      "bytes": 5633580
+    },
+    "artifacts/neighborhood64.f32": {
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "bytes": 5633580
+    }
+  },
+  "launched_utc": "2026-09-27T23:12:10.495385+00:00",
+  "events_path": "experiments/B5-quadratic-neighborhood-blend.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 2.821339708,
+  "finished_utc": "2026-09-27T23:12:13.317190+00:00",
+  "log_sha256": "528ad9150b9b965818a68e6b56abcb423633f5a5321ba1c38d7d318438a1313e",
+  "events_sha256": "b33177c76fb9a20413dfa907fea72e2b98b51e22f102cf495ea2b46e23a92526",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b5.f32",
+    "sha256": "916be15c760b6af36470f7e924fd2d8525ca8c64cb903f9b933099a3c54c745f",
+    "bytes": 5633580
+  },
+  "weights_artifact": {
+    "path": "artifacts/blend-b5.weights",
+    "sha256": "8eb1c379c1a3fa0400875e6195bb7f6a9d9982cbf1ca0464bf156630eeeb3c24",
+    "bytes": 5201
+  }
+}

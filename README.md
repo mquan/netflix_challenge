@@ -69,6 +69,9 @@ but used for epoch selection):
 - jointly trained temporal SVD++, 128 factors: `0.89617220`
 - seven-model contextual ridge ensemble: `0.89013424` development CV
 - add learned item-neighborhood predictions: **`0.88666465` development CV**
+- add quadratic blend calibration: **`0.88658149` development CV**
+- add 256-factor checkpoint: **`0.88632074` development CV**
+- add frozen 128-neighbor checkpoint: **`0.88584605` development CV**
 
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
@@ -91,12 +94,23 @@ build/netflix eval-joint --data data/processed/netflix.bin \
 
 Experiment names must be new. Each run records its strategy, exact command,
 source/binary hashes, input hashes, epoch log and output hashes in `experiments/`.
+New runs also retain an actual `.source.zip` snapshot of source, runner, tests
+and build recipe, so uncommitted implementations remain recoverable. Earlier
+hash-only runs cannot be reconstructed from hashes alone. Major milestones
+have Git tags, starting with `milestone-probe-cv-0.886665`.
 Artifacts and original data remain local and untracked. Logs measure wall time,
 which can include computer sleep. Models retain the best probe epoch.
 `--init-model` is a warm start: it resets the learning-rate schedule, random
 generator and epoch counter, so it is not an exact interrupted-run resume.
 `--day-factors 128` adds about 9 GB of parameters on the original data; leave it
 at zero for lower memory use.
+`--frequency-factors 1` adds movie factors specific to the user's daily rating
+frequency bin, as in equation 16 of the
+[BellKor report](https://www.asc.ohio-state.edu/statistics/dmsl/GrandPrize2009_BPC_BellKor.pdf).
+It uses `--frequency-rate .00002` and `--frequency-regularization .02` by default
+and adds about 73 MB at rank 128. This component is experimental; a matched
+continuation control tests its benefit. Version-3 joint checkpoints retain it,
+and older version-1/2 checkpoints remain readable.
 
 Raw prediction files are float32 columns in processed probe order. Only blend
 columns from this exact dataset and row order; do not read a column while its
@@ -121,6 +135,11 @@ movie popularity, date and same-day activity. These features contain no probe
 rating values. **CV is still a development estimate:** base-model checkpoint
 selection uses the whole probe. It is not an untouched final-test evaluation.
 
+Optional `--quadratic 1` adds pairwise products of centered predictions to the
+ridge blend. This captures nonlinear calibration and agreement patterns while
+fitting all coefficients separately in each user fold. Weight exports include
+these interaction coefficients. It costs more than the linear blend.
+
 ## Structurally different model: learned neighborhoods
 
 ```sh
@@ -143,6 +162,10 @@ frozen temporal baseline. The graph, dataset and original temporal baseline
 must accompany the neighborhood checkpoint when evaluating it.
 Its success criterion is improvement when added to the existing ensemble,
 not necessarily a better standalone score.
+Optional `--time-decay 0.002` multiplies explicit and implicit neighbor inputs
+by `exp(-0.002 * absolute_day_gap)`. This is a temporal-locality experiment;
+the default zero preserves static neighborhoods. Saved checkpoints retain this
+setting and old static neighborhood checkpoints remain readable.
 
 See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
 strategy summaries, and next-step decisions.

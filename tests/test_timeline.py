@@ -9,6 +9,7 @@ import pathlib
 import sys
 import tempfile
 import unittest
+import zipfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]/'scripts'))
 import experiment
@@ -16,6 +17,20 @@ import score_timeline as timeline
 
 
 class TimelineTests(unittest.TestCase):
+    def test_source_snapshot_keeps_code_not_artifacts(self):
+        with tempfile.TemporaryDirectory() as folder:
+            p = pathlib.Path(folder)
+            (p/'src').mkdir(); (p/'artifacts').mkdir()
+            (p/'src/model.cpp').write_text('version one')
+            (p/'Makefile').write_text('build recipe')
+            (p/'artifacts/model.bin').write_bytes(b'large weights')
+            record = experiment.snapshot_sources(p, p/'snapshot.zip')
+            (p/'src/model.cpp').write_text('version two')
+            with zipfile.ZipFile(p/'snapshot.zip') as archive:
+                self.assertEqual(set(archive.namelist()), {'Makefile', 'src/model.cpp'})
+                self.assertEqual(archive.read('src/model.cpp'), b'version one')
+            self.assertEqual(record['sha256'], experiment.digest(p/'snapshot.zip'))
+
     def test_capture_has_timezone_and_preserves_log(self):
         with tempfile.TemporaryDirectory() as folder:
             p = pathlib.Path(folder)

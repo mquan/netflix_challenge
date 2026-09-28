@@ -42,8 +42,11 @@ void command_ensemble(const std::vector<std::string> &args) {
     if (args[i] == "--prediction") paths.push_back(args[i+1]);
   if (paths.empty() || paths.size() > 32) fail("supply 1..32 prediction columns");
   const bool use_contexts = uint_after(args, "--contexts", 0) != 0;
+  const bool quadratic = uint_after(args, "--quadratic", 0) != 0;
   const size_t rows = d.probe.size(), width = paths.size()+1;
-  const size_t contexts = use_contexts ? 5 : 1, n = width*contexts;
+  const size_t contexts = use_contexts ? 5 : 1;
+  const size_t interaction_count = quadratic ? paths.size()*(paths.size()+1)/2 : 0;
+  const size_t n = width*contexts+interaction_count;
   std::vector<float> context(rows*contexts, 1);
   if (use_contexts) {
     std::vector<uint64_t> item_count(d.header.items, 0);
@@ -89,6 +92,12 @@ void command_ensemble(const std::vector<std::string> &args) {
       for (size_t j = 1; j < width; ++j)
         x[c*width+j] = (preds[j-1][r]-3.6)*context[r*contexts+c];
     }
+    if (quadratic) {
+      size_t index = width*contexts;
+      for (size_t a = 0; a < paths.size(); ++a)
+        for (size_t b = a; b < paths.size(); ++b)
+          x[index++] = (preds[a][r]-3.6)*(preds[b][r]-3.6);
+    }
   };
   for (size_t r = 0; r < rows; ++r) {
     uint32_t fold = blend_fold(d.probe[r].user); ++counts[fold];
@@ -130,7 +139,8 @@ void command_ensemble(const std::vector<std::string> &args) {
               << " rmse=" << std::sqrt(fold_sse[fold]/counts[fold]) << '\n';
   std::cout << "blend_cv_rmse=" << std::sqrt(cv_sse/rows)
             << " blend_fit_rmse=" << std::sqrt(fit_sse/rows) << " ridge=" << ridge
-            << " centered_intercept=" << weights[5][0] << " contexts=" << contexts << '\n';
+            << " centered_intercept=" << weights[5][0] << " contexts=" << contexts
+            << " quadratic=" << quadratic << " features=" << n << '\n';
   for (size_t j = 1; j < width; ++j)
     std::cout << "weight=" << weights[5][j] << " column=" << paths[j-1] << '\n';
   const auto outpath = optional_value_after(args, "--predictions");
@@ -142,11 +152,17 @@ void command_ensemble(const std::vector<std::string> &args) {
   if (!config.empty()) {
     std::ofstream out(config);
     if (!out) fail("cannot save blend weights");
-    out << std::setprecision(17) << "center=3.6\ncontexts=" << contexts << '\n';
+    out << std::setprecision(17) << "center=3.6\ncontexts=" << contexts << "\nquadratic=" << quadratic << '\n';
     for (size_t c = 0; c < contexts; ++c) {
       out << "context=" << c << " intercept=" << weights[5][c*width] << '\n';
       for (size_t j = 1; j < width; ++j)
         out << weights[5][c*width+j] << '\t' << paths[j-1] << '\n';
+    }
+    if (quadratic) {
+      size_t index = width*contexts;
+      for (size_t a = 0; a < paths.size(); ++a)
+        for (size_t b = a; b < paths.size(); ++b)
+          out << "interaction=" << weights[5][index++] << '\t' << paths[a] << '\t' << paths[b] << '\n';
     }
     if (!out) fail("failed writing blend weights");
   }
