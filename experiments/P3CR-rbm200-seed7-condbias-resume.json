@@ -1,0 +1,86 @@
+{
+  "name": "P3CR-rbm200-seed7-condbias-resume",
+  "strategy": "Resume P3C (seed-7 conditional RBM-200, best epoch 118 = 0.8995764, killed by a session restart) from epoch 119 on the same schedule",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--init-model",
+    "artifacts/P3C-rbm200-s7-cond.bin",
+    "--start-epoch",
+    "119",
+    "--model",
+    "artifacts/P3CR-rbm200-s7-cond.bin",
+    "--predictions",
+    "artifacts/P3CR-rbm200-s7-cond.f32",
+    "--hidden",
+    "200",
+    "--iterations",
+    "180",
+    "--threads",
+    "6",
+    "--patience",
+    "6",
+    "--seed",
+    "7",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985",
+    "--conditional-biases",
+    "--user-bias-rate",
+    ".01",
+    "--day-bias-rate",
+    ".03",
+    "--frequency-bias-rate",
+    ".012"
+  ],
+  "started_utc": "2026-09-28T17:00:07.022722+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "7c10b3a7d01e5b4a3ceeab1e455fb50c38edeb7c",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "fce1fff23ef653c274be60154e07bc97576a47c584f2480535f42ccd5acff147",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/P3C-rbm200-s7-cond.bin": {
+      "sha256": "7c98712ba39f669f1a7267855956398099798f4502b7473df667bed94c0f91b5",
+      "bytes": 460828868
+    }
+  },
+  "launched_utc": "2026-09-28T17:00:07.675268+00:00",
+  "events_path": "experiments/P3CR-rbm200-seed7-condbias-resume.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 1805.3652255830239,
+  "finished_utc": "2026-09-28T17:30:13.072113+00:00",
+  "log_sha256": "b5a36af8404c47718e40ba13ac7624254944e0b226ca92231304cdb04dc01e0f",
+  "events_sha256": "adeb2fb2e324557b00fe2d976496478739b49ff962e0b10265ea58fa34053a9f",
+  "model_artifact": {
+    "path": "artifacts/P3CR-rbm200-s7-cond.bin",
+    "sha256": "c9a42dea629f1f7bb671dc28a36e46e510feb23398be1705080faa0ceda179ae",
+    "bytes": 460828868
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P3CR-rbm200-s7-cond.f32",
+    "sha256": "4e1f2517f7b5c55dc7fa35674f9b312fb349efde59bbb1ef4ccef3c57d639ffa",
+    "bytes": 5633580
+  }
+}

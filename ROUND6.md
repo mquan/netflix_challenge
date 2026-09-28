@@ -101,7 +101,7 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | R2C | conditional biases warm-started on the R2 RBM-100 checkpoint (0.9126516) | 0.9019844771 at the 130-epoch cap; continued as R2CR to the 200-epoch cap: 0.9014447639, still improving ≈0.0001/epoch |
 | R6-RBM3 | R6-RBM2 columns + R2C, single seed | 0.8735404097 (−0.0000495 vs R6-RBM2; four folds better, one worse; ridge 0.8762463). Marginal: a fourth RBM that is a smaller version of the others adds little |
 | P3 | plain RBM-200 with seed 7 (R3 schedule); best epoch 58 | 0.9087060586 |
-| P3C | conditional biases warm-started on P3 from epoch 59; reached epoch 118 before a session restart killed it; resumed as P3CR | 0.8995764497 at epoch 118 |
+| P3C | conditional biases warm-started on P3 from epoch 59; reached epoch 118 before a session restart killed it; resumed as P3CR | 0.8995764497 at epoch 118; P3CR converged at 0.8995275229 (early stop). Not re-blended: R6-RBMR showed the last few RBM epochs do not move the blend |
 | **R6-RBM4** | R6-RBM3 columns + P3C, single seed | **0.8733859228** (−0.0001545 vs R6-RBM3; every fold better; ridge 0.8760405). A fifth conditional RBM from a different seed still pays more than the fourth did |
 | P4 | plain RBM-300, weight cost .001; best epoch 54 | 0.9088497173: no overfit, but not better than 200 units at this epoch |
 | P4C | conditional biases warm-started on P4 | running |
