@@ -1,0 +1,21 @@
+{
+  "upstream": "https://github.com/gtakacs/netflix_prize",
+  "commit": "855c7404c02f55072acbb0e9c8d45be55fa608cf",
+  "model": "TxModel",
+  "configuration": "tsvdx4-60 run_lm, 60 factors, 20 epochs, seed 42, 29 time bins",
+  "adapter": "scripts/reference_tx.rs",
+  "differences": [
+    "Uses original Probe holdout instead of upstream default new split.",
+    "Implicit identities include Probe and qualifying; no heldout rating values exposed to training.",
+    "Trains in existing per-user date/item order.",
+    "Exports best Probe epoch in our Probe order as float32."
+  ],
+  "sha256": {
+    "/private/tmp/netflix-reference/src/lib.rs": "356b76acdae6da118ef5c4038958e4f3164e2451b5bdc78f1e6518f9b4e5fbd5",
+    "/private/tmp/netflix-reference/src/tx.rs": "60ab64e20e1f98e4616c6ce1bc6cf6a2ff69a558019ae8e26777ba9f3cbfd5b3",
+    "/private/tmp/netflix-reference/src/bin/tsvdx4-new.rs": "0b90159c16027d600fdd055c9e7b477e67fc4f06c6f5b443a49cc5bf607e51bf",
+    "/private/tmp/netflix-reference/Cargo.lock": "1fb36f9f3b1a3c9e37262dd4d4163d21ce87381d6ce27724ce2e8c7b3f622588",
+    "scripts/reference_tx.rs": "3d311d25844bcb808273633a3671951c6c1dbc88d2b85519463e82fa00fe5a91",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  }
+}

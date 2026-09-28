@@ -110,3 +110,9 @@ build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/joint.hpp src/e
 moonshot-user-kernel: build/moonshot_user_kernel
 build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
+
+.PHONY: test-push
+test-push: $(BIN)
+	python3 tests/test_push.py
+	$(CXX) $(CXXFLAGS) tests/check_temporal_neighbor.cpp -o build/check-temporal-neighbor
+	build/check-temporal-neighbor

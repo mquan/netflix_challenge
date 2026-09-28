@@ -8,6 +8,7 @@
 
 struct RbmModel {
   uint32_t hidden = 0, epoch = 0;
+  std::vector<float> user_bias, day_bias, frequency_bias;
   std::vector<float> w, vbias, hbias, d; // w: item*5*hidden, d: item*hidden
 };
 
@@ -39,12 +40,15 @@ void rbm_hidden(const Dataset &d, const RbmModel &m, uint32_t u,
 }
 
 // Softmax over the five ratings of item i, given hidden activations h.
-void rbm_visible(const RbmModel &m, uint32_t i, const float *h, float *prob) {
+void rbm_visible(const RbmModel &m, uint32_t i, const float *h, float *prob,
+                 uint32_t u = 0, uint32_t session = 0, uint32_t freq = 0) {
   const uint32_t F = m.hidden;
   float best = -1e30F;
   for (int k = 0; k < 5; ++k) {
     const float *row = &m.w[(size_t(i)*5+k)*F];
     float x = m.vbias[i*5+k];
+    if (!m.user_bias.empty()) x += m.user_bias[size_t(u)*5+k] + m.day_bias[size_t(session)*5+k]
+      + m.frequency_bias[(size_t(i)*kFrequencyBins+freq)*5+k];
     for (uint32_t j = 0; j < F; ++j) x += h[j]*row[j];
     prob[k] = x; best = std::max(best, x);
   }
@@ -53,7 +57,7 @@ void rbm_visible(const RbmModel &m, uint32_t i, const float *h, float *prob) {
   for (int k = 0; k < 5; ++k) prob[k] /= sum;
 }
 
-double eval_rbm(const Dataset &d, const RbmModel &m, uint32_t threads,
+double eval_rbm(const Dataset &d, const JointFeatures &f, const RbmModel &m, uint32_t threads,
                 const std::vector<uint64_t> &po, const std::vector<uint32_t> &probe_order,
                 std::vector<float> &pred) {
   pred.resize(d.probe.size());
@@ -64,7 +68,7 @@ double eval_rbm(const Dataset &d, const RbmModel &m, uint32_t threads,
     rbm_hidden(d, m, uint32_t(u), &d.train_ratings[d.train_offsets[u]], hidden[t]);
     for (uint64_t q = po[u]; q < po[u+1]; ++q) {
       const auto p = probe_order[q]; float prob[5];
-      rbm_visible(m, d.probe[p].item-1, hidden[t].data(), prob);
+      rbm_visible(m, d.probe[p].item-1, hidden[t].data(), prob, uint32_t(u), f.probe_session[p], f.freq[f.probe_session[p]]);
       float e = 0; for (int k = 0; k < 5; ++k) e += (k+1)*prob[k];
       pred[p] = e; const double err = d.probe[p].rating-clipped(e); sse[t] += err*err;
     }
@@ -75,22 +79,27 @@ double eval_rbm(const Dataset &d, const RbmModel &m, uint32_t threads,
 void save_rbm(const fs::path &path, const RbmModel &m, uint64_t fingerprint) {
   std::ofstream out(path.string()+".tmp", std::ios::binary);
   if (!out) fail("cannot write rbm model");
-  write_pod(out, uint64_t(0x4E4650524253314DULL)); write_pod(out, fingerprint);
+  write_pod(out, uint64_t(m.user_bias.empty() ? 0x4E4650524253314DULL : 0x4E4650524253324DULL)); write_pod(out, fingerprint);
   write_pod(out, m.hidden); write_pod(out, m.epoch);
   write_vector(out, m.w); write_vector(out, m.vbias); write_vector(out, m.hbias); write_vector(out, m.d);
+  if (!m.user_bias.empty()) { write_vector(out, m.user_bias); write_vector(out, m.day_bias); write_vector(out, m.frequency_bias); }
   out.close(); if (!out) fail("rbm model write failed");
   fs::rename(path.string()+".tmp", path);
 }
 
-RbmModel load_rbm(const fs::path &path, uint32_t items, uint64_t fingerprint) {
+RbmModel load_rbm(const fs::path &path, uint32_t items, uint64_t fingerprint, uint32_t users, size_t sessions) {
   std::ifstream in(path, std::ios::binary);
   uint64_t magic = 0, hash = 0; RbmModel m;
   read_pod(in, magic); read_pod(in, hash); read_pod(in, m.hidden); read_pod(in, m.epoch);
-  if (magic != 0x4E4650524253314DULL || hash != fingerprint || !m.hidden || m.hidden > 4096)
+  if ((magic != 0x4E4650524253314DULL && magic != 0x4E4650524253324DULL) || hash != fingerprint || !m.hidden || m.hidden > 4096)
     fail("rbm model format or dataset fingerprint mismatch");
   const size_t F = m.hidden;
   read_vector(in, m.w, items*5*F); read_vector(in, m.vbias, items*5);
   read_vector(in, m.hbias, F); read_vector(in, m.d, items*F);
+  if (magic == 0x4E4650524253324DULL) {
+    read_vector(in, m.user_bias, size_t(users)*5); read_vector(in, m.day_bias, sessions*5);
+    read_vector(in, m.frequency_bias, size_t(items)*kFrequencyBins*5);
+  }
   if (in.peek() != std::char_traits<char>::eof()) fail("trailing rbm model data");
   return m;
 }
@@ -100,6 +109,8 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   const fs::path model_path = value_after(args, "--model");
   const std::string output = optional_value_after(args, "--predictions");
   const uint64_t fingerprint = joint_fingerprint(d);
+  const auto temporal = build_temporal_index(d);
+  const auto f = joint_features(d, temporal);
   const uint32_t threads = std::max(1U, uint_after(args, "--threads", 8));
   const uint32_t items = d.header.items;
   std::vector<uint64_t> po(d.header.users+1, 0);
@@ -112,8 +123,8 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
     if (!output.empty()) { std::ofstream out(output, std::ios::binary); write_vector(out, pred); }
   };
   if (eval_only) {
-    const auto m = load_rbm(model_path, items, fingerprint);
-    const double score = eval_rbm(d, m, threads, po, probe_order, pred);
+    const auto m = load_rbm(model_path, items, fingerprint, d.header.users, temporal.session_days.size());
+    const double score = eval_rbm(d, f, m, threads, po, probe_order, pred);
     export_predictions();
     std::cout << std::setprecision(10) << "probe_rmse=" << score << " epoch=" << m.epoch << '\n';
     return;
@@ -143,7 +154,7 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   if (!init.empty()) {
     // Warm start: momentum velocities restart at zero; the epoch-indexed
     // CD length and annealing continue from --start-epoch.
-    m = load_rbm(init, items, fingerprint);
+    m = load_rbm(init, items, fingerprint, d.header.users, temporal.session_days.size());
     if (m.hidden != F) fail("initial rbm hidden size differs from --hidden");
   } else {
     std::mt19937 rng(seed); std::normal_distribution<float> normal(0, .01F);
@@ -156,6 +167,20 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
       for (int k = 0; k < 5; ++k) m.vbias[i*5+k] = float(std::log(counts[i*5+k]/total));
     }
   }
+  const bool context = uint_after(args, "--visible-context", m.user_bias.empty() ? 0 : 1) != 0;
+  if (context && m.user_bias.empty()) {
+    m.user_bias.assign(size_t(d.header.users)*5, 0);
+    m.day_bias.assign(temporal.session_days.size()*5, 0);
+    m.frequency_bias.assign(size_t(items)*kFrequencyBins*5, 0);
+  }
+  if (!context && !m.user_bias.empty()) fail("cannot disable context in a contextual checkpoint");
+  const float user_rate = float(double_after(args, "--user-visible-rate", .0025));
+  const float day_rate = float(double_after(args, "--day-visible-rate", .008));
+  const float frequency_rate = float(double_after(args, "--frequency-visible-rate", .0012))/100;
+  const float context_reg = float(double_after(args, "--context-regularization", .001));
+  if (user_rate < 0 || day_rate < 0 || frequency_rate < 0 || context_reg < 0) fail("invalid context rates");
+  std::vector<std::vector<float>> g_freq(threads, std::vector<float>(m.frequency_bias.size(), 0));
+  std::vector<std::vector<uint32_t>> freq_count(threads, std::vector<uint32_t>(m.frequency_bias.size()/5, 0));
   std::vector<float> vel_w(m.w.size(), 0), vel_vb(m.vbias.size(), 0), vel_hb(F, 0), vel_d(m.d.size(), 0);
   // Per-thread gradient buffers, touched item rows tracked for sparse reduction.
   std::vector<std::vector<float>> g_w(threads, std::vector<float>(m.w.size(), 0));
@@ -168,11 +193,12 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   std::mt19937 order_rng(seed+1);
   double best = std::numeric_limits<double>::infinity(); uint32_t stale = 0;
   std::cout << "rbm hidden=" << F << " batch=" << batch << " threads=" << threads
-            << " seed=" << seed << " fingerprint=" << fingerprint << std::endl;
+            << " context=" << context << " seed=" << seed << " fingerprint=" << fingerprint << std::endl;
   for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     const uint32_t cd = std::min(cd_max, 1+2*((epoch-1)/cd_every));
     const float scale = std::pow(anneal, float(epoch-1));
+    const float context_scale = std::pow(anneal, float(epoch-start_epoch));
     const float mom = epoch <= 5 ? .5F : momentum;
     std::shuffle(users.begin(), users.end(), order_rng);
     std::vector<double> sse(threads, 0);
@@ -198,7 +224,7 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
             for (uint32_t j = 0; j < F; ++j) h[j] = uni(rng) < nh[j] ? 1.F : 0.F;
             for (uint64_t p = b; p < e; ++p) {
               const uint32_t i = d.train_items[p]-1;
-              rbm_visible(m, i, h.data(), prob.data());
+              rbm_visible(m, i, h.data(), prob.data(), u, f.train_session[p], f.freq[f.train_session[p]]);
               if (step == 0) {
                 float mean = 0; for (int k = 0; k < 5; ++k) mean += (k+1)*prob[k];
                 const double err = d.train_ratings[p]-mean; sse[t] += err*err;
@@ -215,6 +241,18 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
             float *pos = &gw[(size_t(i)*5+r)*F], *neg = &gw[(size_t(i)*5+s)*F];
             for (uint32_t j = 0; j < F; ++j) { pos[j] += ph[j]; neg[j] -= nh[j]; }
             gvb[i*5+r] += 1; gvb[i*5+s] -= 1;
+            if (context) {
+              const size_t session = f.train_session[p], freq = size_t(i)*kFrequencyBins+f.freq[session];
+              for (uint32_t k = 0; k < 5; ++k) {
+                const float grad = float(k == r)-float(k == s);
+                float &ub = m.user_bias[size_t(u)*5+k], &db = m.day_bias[session*5+k];
+                // User/session parameters are exclusively owned by this user's thread.
+                ub += context_scale*user_rate*(grad-context_reg*ub);
+                db += context_scale*day_rate*(grad-context_reg*db);
+                g_freq[t][freq*5+k] += grad;
+              }
+              ++freq_count[t][freq];
+            }
           }
           const uint64_t ib = d.implicit_offsets[u], ie = d.implicit_offsets[u+1];
           const float norm = 1/std::sqrt(float(ie-ib));
@@ -229,6 +267,15 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
       for (auto &x : pool) x.join();
       // Parallel over items: reduce thread gradients in thread order and apply momentum updates.
       parallel_for(threads, items, [&](uint32_t, size_t i) {
+        if (context) for (uint32_t fbin = 0; fbin < kFrequencyBins; ++fbin) {
+          const size_t x = i*kFrequencyBins+fbin;
+          uint32_t count = 0; for (uint32_t t = 0; t < threads; ++t) {count += freq_count[t][x]; freq_count[t][x] = 0;}
+          for (uint32_t k = 0; k < 5; ++k) {
+            float grad = 0; for (uint32_t t = 0; t < threads; ++t) {grad += g_freq[t][x*5+k]; g_freq[t][x*5+k] = 0;}
+            float &v = m.frequency_bias[x*5+k];
+            v += context_scale*frequency_rate*(grad-context_reg*count*v);
+          }
+        }
         const size_t wb = i*5*F, we = wb+5*F;
         // Velocity update: v = mom*v + lr*(g - cost*w).
         for (size_t x = wb; x < we; ++x) vel_w[x] *= mom;
@@ -255,7 +302,7 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
       }
     }
     m.epoch = epoch;
-    const double score = eval_rbm(d, m, threads, po, probe_order, pred);
+    const double score = eval_rbm(d, f, m, threads, po, probe_order, pred);
     if (!std::isfinite(score)) fail("non-finite rbm run");
     if (score < best) { best = score; stale = 0; save_rbm(model_path, m, fingerprint); export_predictions(); }
     else ++stale;

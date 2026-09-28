@@ -198,7 +198,8 @@ std::string optional_value_after(const std::vector<std::string> &args,
 
 uint32_t uint_after(const std::vector<std::string> &args,
                     const std::string &flag, uint32_t fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const auto result = std::stoul(text, &used);
   if (used != text.size() || result > std::numeric_limits<uint32_t>::max()) {
@@ -209,7 +210,8 @@ uint32_t uint_after(const std::vector<std::string> &args,
 
 double double_after(const std::vector<std::string> &args,
                     const std::string &flag, double fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const double result = std::stod(text, &used);
   if (used != text.size() || !std::isfinite(result)) {
