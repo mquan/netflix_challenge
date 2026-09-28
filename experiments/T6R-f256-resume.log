@@ -1,0 +1,19 @@
+joint factors=256 seed=2026 regularization=0.015 decay=0.93 fingerprint=12499777815975055846
+day_factors=0 init_model=artifacts/T6-f256.bin
+epoch=12 train_rmse=0.7156712664 probe_rmse=0.8983406917 best=0.8983406917 seconds=85.24515804
+epoch=13 train_rmse=0.7072361301 probe_rmse=0.8977761147 best=0.8977761147 seconds=96.483066
+epoch=14 train_rmse=0.6991236068 probe_rmse=0.896990752 best=0.896990752 seconds=101.1174003
+epoch=15 train_rmse=0.6913460569 probe_rmse=0.8965065186 best=0.8965065186 seconds=117.9539091
+epoch=16 train_rmse=0.68391354 probe_rmse=0.8959620211 best=0.8959620211 seconds=227.4012477
+epoch=17 train_rmse=0.6768950174 probe_rmse=0.8955687879 best=0.8955687879 seconds=153.0208235
+epoch=18 train_rmse=0.6701601379 probe_rmse=0.8955789698 best=0.8955687879 seconds=119.7328703
+epoch=19 train_rmse=0.6638993409 probe_rmse=0.8951619374 best=0.8951619374 seconds=123.647494
+epoch=20 train_rmse=0.6580072552 probe_rmse=0.8951271188 best=0.8951271188 seconds=198.5850216
+epoch=21 train_rmse=0.652455143 probe_rmse=0.8949791042 best=0.8949791042 seconds=100.9741135
+epoch=22 train_rmse=0.6472962395 probe_rmse=0.8949694839 best=0.8949694839 seconds=76.60820233
+epoch=23 train_rmse=0.6425087626 probe_rmse=0.8949392273 best=0.8949392273 seconds=80.65595337
+epoch=24 train_rmse=0.6380039875 probe_rmse=0.894763029 best=0.894763029 seconds=76.82194517
+epoch=25 train_rmse=0.6338007455 probe_rmse=0.8949789636 best=0.894763029 seconds=72.44064254
+epoch=26 train_rmse=0.6298886134 probe_rmse=0.8947947688 best=0.894763029 seconds=73.48142637
+epoch=27 train_rmse=0.6262661252 probe_rmse=0.8948404261 best=0.894763029 seconds=74.51043129
+early_stop patience=3
