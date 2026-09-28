@@ -119,10 +119,10 @@ of round 5, and R4D was still improving when it hit its epoch cap. Output:
 |---|---:|
 | Start of round 6 (R5-meta) | 0.8748094 |
 | Round 6 so far (R6-RBM-s3, three seeds) | 0.8737149 |
-| Round 6 so far, single seed (R6-RBM2) | 0.8735899 |
+| Round 6 so far, single seed (R6-RBM3, four conditional RBM columns) | 0.8735404 |
 | Proxy for the 0.85725 test target | ≈0.865 |
 
-The remaining gap is about 0.009 on the development metric. The evidence in
+The remaining gap is about 0.0085 on the development metric. The evidence in
 this round says where it has to come from: not from more factor models, but
 from (1) the RBM family reaching BellKor's 0.893–0.895 range (larger hidden
 layers, longer schedules, day-specific hidden units were reported unhelpful),
@@ -158,3 +158,33 @@ checkpoint warm-starts with zero biases, so its first evaluation is unchanged;
 
 Results and the blend comparison against R5-meta are appended below as they
 complete.
+
+## What round 6 established
+
+| Question | Answer from the controlled comparisons |
+|---|---|
+| Does a better timeSVD++ help the blend? | No. K1 is the best joint model (0.894117) and its kNN the best column (0.892289); adding them changed the blend by +0.00001. |
+| Do more factors help? | No. 512 factors traced the 256-factor curve exactly through epoch 15. |
+| Do conditional visible biases help the RBM? | Yes, by 0.0085 standalone (0.908347 → 0.899485), and they carry into the blend (−0.0010, every fold). |
+| Does the RBM's kNN help the blend? | No (−0.00004); the bank's kNN columns already hold that information. |
+| Do more RBMs help? | Yes, with diminishing returns: third RBM −0.00023 (every fold), fourth −0.00005. |
+| Warm start or from scratch for the biases? | Warm start. A plain RBM followed by bias training (0.899485) beat biases-from-epoch-1 (0.903420) at similar epoch counts. |
+| Larger hidden layer? | Not at the 200-unit rates: 500 units overfit (0.905683 at epoch 37, training RMSE 0.72). Needs a larger weight cost. |
+| Seed averaging in the blender? | Worth −0.0001, every fold. |
+
+Compute per run on this 14-core machine: joint 256 factors ≈50–110 s/epoch at
+6 threads; RBM-200 ≈50–100 s/epoch at 6–8 threads; a single-seed blend of
+≈60 columns ≈10 min when the machine is otherwise idle.
+
+## Next steps, in order of expected value
+
+1. Conditional RBMs with 300–500 hidden units trained with a weight cost of
+   about 10⁻³ and the same warm-start-then-biases recipe; BellKor's reported
+   0.893–0.895 quiz for this family is ≈0.005 beyond R4D on our metric.
+2. The masked categorical history predictor described in `RESEARCH_NEXT.md`,
+   which is the first family since the RBM whose training objective differs
+   from everything in the bank.
+3. Blender variance: average round selection over several inner splits or
+   seeds; treat this as part of the algorithm.
+4. Stage C (retraining on train+probe at the selected epochs) is required for
+   any test-set number and is expected to be worth 0.007–0.009 by itself.
