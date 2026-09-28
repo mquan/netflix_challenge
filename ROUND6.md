@@ -92,7 +92,7 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | R4DR | R4D continued from epoch 131 | running |
 | R5-meta-s3 (other session) | R5-meta averaged over LightGBM seeds 2026, 7, 13 | 0.8747153673, every fold better than 0.8748094 |
 | **R6-RBM** | R5-meta columns + R4D + R4C, single seed 2026 | **0.8738203523** dev CV vs 0.8748094089 (−0.0009891); every fold improves |
-| R6-RBM-s3 | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | running |
+| **R6-RBM-s3** | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | **0.8737149186** vs 0.8747153673 (−0.0010005); folds .8746445 .8735128 .8701031 .8752357 .8750900, every fold better. Output `artifacts/r6/R6-RBM-s3.refit.f32` |
 | P1 | conditional-bias RBM, 500 hidden units, from scratch | running |
 
 R6-RBM fold RMSEs: .8747686 .8736287 .8702200 .8753575 .8751383 against
@@ -109,7 +109,7 @@ of round 5, and R4D was still improving when it hit its epoch cap. Output:
 | Milestone | Probe dev CV |
 |---|---:|
 | Start of round 6 (R5-meta) | 0.8748094 |
-| Round 6 so far (R6-RBM) | 0.8738204 |
+| Round 6 so far (R6-RBM-s3, three seeds) | 0.8737149 |
 | Proxy for the 0.85725 test target | ≈0.865 |
 
 The remaining gap is about 0.009 on the development metric. The evidence in

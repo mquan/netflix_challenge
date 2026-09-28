@@ -1,0 +1,457 @@
+{
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "output": "artifacts/r6/R6-RBM-s3",
+    "bank_root": "/private/tmp/netflix-moonshot",
+    "no_union": false,
+    "extra": [
+      "artifacts/joint256-reg01.f32",
+      "artifacts/T2-f64-lr005-reg015-d97.f32",
+      "artifacts/T3-f64-lr008-reg008.f32",
+      "artifacts/T4-f64-lr012-reg015-d93.f32",
+      "artifacts/T6-f256.f32",
+      "artifacts/I2-integrated-f64-koren.f32",
+      "artifacts/knn64-T4.f32",
+      "artifacts/r4/knn-J6-p1.f32",
+      "artifacts/r4/knn-J6-p2.f32",
+      "artifacts/r4/knn-J6-k16.f32",
+      "artifacts/r4/knn-J6-s5.f32",
+      "artifacts/r4/knn-T2-p1.f32",
+      "artifacts/r4/knn-T3-p1.f32",
+      "artifacts/r4/knn-T6-p1.f32",
+      "artifacts/rbm200.f32",
+      "artifacts/autorec512-a3.f32",
+      "artifacts/knn64-p2.f32",
+      "artifacts/knn64-j64-p2.f32",
+      "artifacts/rbm100.f32",
+      "artifacts/r4/knn-J6-td.003.f32",
+      "artifacts/r4/knn-J6-td.1.f32",
+      "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "artifacts/r4/knn256td-T2.f32",
+      "artifacts/r4/knn256td-T4.f32",
+      "artifacts/r4/knn256td-J2.f32",
+      "artifacts/r4/knn256td-J4.f32",
+      "artifacts/r4/knn256td-J3.f32",
+      "artifacts/r4/knn256td-J1.f32",
+      "artifacts/I2R-integrated.f32",
+      "artifacts/T6R-f256.f32",
+      "artifacts/r4/knn-T6R-p1.f32",
+      "artifacts/r4/knn256td-T6R.f32",
+      "artifacts/R4D-rbm200-cond.f32",
+      "artifacts/R4C-rbm200-cond.f32"
+    ],
+    "extra_support": [
+      "artifacts/r4/knn-J6-p1.support.f32",
+      "artifacts/r4/knn-J6-td.1.support.f32",
+      "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+      "artifacts/r4/knn256td-T6R.support.f32"
+    ],
+    "rounds": 8000,
+    "learning_rate": 0.02,
+    "leaves": 63,
+    "min_leaf": 200,
+    "processes": 5,
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "extra_meta": true
+  },
+  "inputs": {
+    "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+    "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+    "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+    "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+    "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+    "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+    "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+    "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+    "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+    "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+    "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+    "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+    "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+    "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+    "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+    "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+    "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+    "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+    "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+    "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+    "artifacts/joint256-reg01.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+    "artifacts/T2-f64-lr005-reg015-d97.f32": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+    "artifacts/T3-f64-lr008-reg008.f32": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+    "artifacts/T4-f64-lr012-reg015-d93.f32": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+    "artifacts/T6-f256.f32": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+    "artifacts/I2-integrated-f64-koren.f32": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+    "artifacts/knn64-T4.f32": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f",
+    "artifacts/r4/knn-J6-p1.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+    "artifacts/r4/knn-J6-p2.f32": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5",
+    "artifacts/r4/knn-J6-k16.f32": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834",
+    "artifacts/r4/knn-J6-s5.f32": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a",
+    "artifacts/r4/knn-T2-p1.f32": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7",
+    "artifacts/r4/knn-T3-p1.f32": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8",
+    "artifacts/r4/knn-T6-p1.f32": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad",
+    "artifacts/rbm200.f32": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e",
+    "artifacts/autorec512-a3.f32": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+    "artifacts/knn64-p2.f32": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd",
+    "artifacts/knn64-j64-p2.f32": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641",
+    "artifacts/rbm100.f32": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3",
+    "artifacts/r4/knn-J6-td.003.f32": "8ef145b9a4d189969bfc86a525d0a562046e20b99634c43c070019630f15d255",
+    "artifacts/r4/knn-J6-td.1.f32": "22b5470f47325e7f2179a9de63c7c0a74c2e5e2e94625ec4ab5ac45a676d26bd",
+    "artifacts/r4/knn256-J6-k256-p1-s.5.f32": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e",
+    "artifacts/r4/knn256-J6-k128-p1-s.5.f32": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4",
+    "artifacts/r4/knn256-J6-k256-p2-s.5.f32": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7",
+    "artifacts/r4/knn256td-T2.f32": "8ef0b6d0850c844a970dcf9fcdb47fde7f93e46ce70d14a76fa567ef3b1b240b",
+    "artifacts/r4/knn256td-T4.f32": "02c76260c42ee4ae4942f03664d8912c1e541404c63ad43e6d8a66fbdaa165cf",
+    "artifacts/r4/knn256td-J2.f32": "4218c749bb1d014c89cef863926bd8c02f44d9fd5b449ad5a5d67573bc072f58",
+    "artifacts/r4/knn256td-J4.f32": "64934d6a4e8e53d95ecf7b13b910668b949bd143014e28aabafaec5f7da55ff0",
+    "artifacts/r4/knn256td-J3.f32": "905d4edc05fbedeab3b38ebe5e7bdb57597454ed5dabb88e202175a18531f244",
+    "artifacts/r4/knn256td-J1.f32": "a47186e6abf03d82b51c48057179dccb0c5cb12b91d2a2611d80e181bf828c89",
+    "artifacts/I2R-integrated.f32": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+    "artifacts/T6R-f256.f32": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+    "artifacts/r4/knn-T6R-p1.f32": "bb2dccd6d99fcf5cc9bae13df3a9eea8da7be8a476f90228dc1571414606ffd2",
+    "artifacts/r4/knn256td-T6R.f32": "0ab9e2d5b6f48d9c908d8c8480f6c36b06cc1ac224c7956deb3d76d48846a1d6",
+    "artifacts/R4D-rbm200-cond.f32": "34b40abbd3cbec04dd69877692008f10b9a2c053e8171306f65aae9bd6a06a74",
+    "artifacts/R4C-rbm200-cond.f32": "5dc6dcf3ea6f7d66a19c277d603ecd88e29563033a1303c58556a719e54961fb",
+    "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/r4/knn-J6-p1.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/r4/knn-J6-td.1.support.f32": "805f736a076ca5cec114f69ddc59da063d084d66220a4bb10e407b058df0aec2",
+    "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+    "artifacts/r4/knn256td-T6R.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "chosen_rounds": [
+        1014,
+        1312,
+        825
+      ],
+      "seconds": 1976.356034166005,
+      "inner_ridge_rmse": 0.8776922833008188,
+      "ridge_rmse": 0.8776717360014601,
+      "refit_rmse": 0.8746444741147125,
+      "top_gain": [
+        [
+          0.0393,
+          "meta4"
+        ],
+        [
+          0.0361,
+          "item_std"
+        ],
+        [
+          0.0332,
+          "movie_age"
+        ],
+        [
+          0.0331,
+          "user_frac5"
+        ],
+        [
+          0.0299,
+          "same_day_ratio"
+        ],
+        [
+          0.0292,
+          "user_frac1"
+        ],
+        [
+          0.0291,
+          "meta6"
+        ],
+        [
+          0.0289,
+          "meta3"
+        ],
+        [
+          0.0288,
+          "meta5"
+        ],
+        [
+          0.0275,
+          "meta1"
+        ],
+        [
+          0.0272,
+          "meta0"
+        ],
+        [
+          0.0257,
+          "artifacts/autorec512-a3.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 1,
+      "chosen_rounds": [
+        1161,
+        1217,
+        1254
+      ],
+      "seconds": 1766.4827880830271,
+      "inner_ridge_rmse": 0.8764036515538915,
+      "ridge_rmse": 0.8764060283722847,
+      "refit_rmse": 0.8735127930565814,
+      "top_gain": [
+        [
+          0.0373,
+          "meta4"
+        ],
+        [
+          0.0348,
+          "user_frac5"
+        ],
+        [
+          0.0341,
+          "item_std"
+        ],
+        [
+          0.0313,
+          "movie_age"
+        ],
+        [
+          0.0304,
+          "user_frac1"
+        ],
+        [
+          0.029,
+          "meta3"
+        ],
+        [
+          0.0289,
+          "same_day_ratio"
+        ],
+        [
+          0.0287,
+          "meta6"
+        ],
+        [
+          0.0286,
+          "meta5"
+        ],
+        [
+          0.0276,
+          "meta0"
+        ],
+        [
+          0.0273,
+          "meta1"
+        ],
+        [
+          0.0239,
+          "artifacts/autorec512-a3.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen_rounds": [
+        1283,
+        1380,
+        927
+      ],
+      "seconds": 1634.3540189999621,
+      "inner_ridge_rmse": 0.8730934664867646,
+      "ridge_rmse": 0.873083602176674,
+      "refit_rmse": 0.8701030796571123,
+      "top_gain": [
+        [
+          0.0383,
+          "meta4"
+        ],
+        [
+          0.0348,
+          "item_std"
+        ],
+        [
+          0.0346,
+          "user_frac5"
+        ],
+        [
+          0.0322,
+          "movie_age"
+        ],
+        [
+          0.031,
+          "user_frac1"
+        ],
+        [
+          0.0306,
+          "same_day_ratio"
+        ],
+        [
+          0.0293,
+          "meta3"
+        ],
+        [
+          0.0284,
+          "meta5"
+        ],
+        [
+          0.0281,
+          "meta6"
+        ],
+        [
+          0.0281,
+          "meta0"
+        ],
+        [
+          0.0278,
+          "meta1"
+        ],
+        [
+          0.0243,
+          "artifacts/autorec512-a3.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen_rounds": [
+        1226,
+        1095,
+        959
+      ],
+      "seconds": 1444.3534095829818,
+      "inner_ridge_rmse": 0.8780302451982348,
+      "ridge_rmse": 0.8779938135367857,
+      "refit_rmse": 0.8752356722684757,
+      "top_gain": [
+        [
+          0.038,
+          "meta4"
+        ],
+        [
+          0.0339,
+          "item_std"
+        ],
+        [
+          0.0336,
+          "user_frac5"
+        ],
+        [
+          0.0329,
+          "movie_age"
+        ],
+        [
+          0.0307,
+          "user_frac1"
+        ],
+        [
+          0.0301,
+          "same_day_ratio"
+        ],
+        [
+          0.0301,
+          "meta6"
+        ],
+        [
+          0.0293,
+          "meta3"
+        ],
+        [
+          0.0285,
+          "meta5"
+        ],
+        [
+          0.0273,
+          "meta1"
+        ],
+        [
+          0.0272,
+          "meta0"
+        ],
+        [
+          0.0253,
+          "artifacts/autorec512-a3.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen_rounds": [
+        975,
+        1339,
+        1213
+      ],
+      "seconds": 1632.7088374999585,
+      "inner_ridge_rmse": 0.8779026715737316,
+      "ridge_rmse": 0.877896144817328,
+      "refit_rmse": 0.8750900180169885,
+      "top_gain": [
+        [
+          0.0388,
+          "meta4"
+        ],
+        [
+          0.0346,
+          "item_std"
+        ],
+        [
+          0.0339,
+          "user_frac5"
+        ],
+        [
+          0.0321,
+          "movie_age"
+        ],
+        [
+          0.0306,
+          "user_frac1"
+        ],
+        [
+          0.0301,
+          "meta6"
+        ],
+        [
+          0.03,
+          "same_day_ratio"
+        ],
+        [
+          0.0292,
+          "meta5"
+        ],
+        [
+          0.029,
+          "meta1"
+        ],
+        [
+          0.0288,
+          "meta3"
+        ],
+        [
+          0.0268,
+          "meta0"
+        ],
+        [
+          0.0241,
+          "artifacts/autorec512-a3.f32"
+        ]
+      ]
+    }
+  ],
+  "lightgbm_version": "4.7.0",
+  "refit_rmse": 0.8737149185507536,
+  "refit_fold_rmse": [
+    0.8746444741147125,
+    0.8735127930565814,
+    0.8701030796571123,
+    0.8752356722684757,
+    0.8750900180169885
+  ],
+  "ridge_rmse": 0.8766080026596071,
+  "ridge_fold_rmse": [
+    0.8776717360014601,
+    0.8764060283722847,
+    0.873083602176674,
+    0.8779938135367857,
+    0.877896144817328
+  ]
+}
