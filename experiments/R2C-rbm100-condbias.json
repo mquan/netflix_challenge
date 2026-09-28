@@ -65,5 +65,20 @@
     }
   },
   "launched_utc": "2026-09-28T11:54:49.308359+00:00",
-  "events_path": "experiments/R2C-rbm100-condbias.events.jsonl"
+  "events_path": "experiments/R2C-rbm100-condbias.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3205.852287790971,
+  "finished_utc": "2026-09-28T12:48:15.172708+00:00",
+  "log_sha256": "903a637940929f293033741ef798a841981dcf420e67e3622f7b3f2872ae7a0f",
+  "events_sha256": "c40201e106dca57b9a3a60cf9c675288bd98f0e549aff6c5bd2837a6b44a0503",
+  "model_artifact": {
+    "path": "artifacts/R2C-rbm100-cond.bin",
+    "sha256": "64ee9a1b1e823b19d39ec9653636baf56e3e22cba0f3e87ef1af0f10a256372e",
+    "bytes": 418180468
+  },
+  "predictions_artifact": {
+    "path": "artifacts/R2C-rbm100-cond.f32",
+    "sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c",
+    "bytes": 5633580
+  }
 }
