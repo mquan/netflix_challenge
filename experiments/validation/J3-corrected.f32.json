@@ -1,0 +1,32 @@
+{
+  "config": {
+    "holdout_data": "artifacts/validation/train-matched-20260927.bin",
+    "holdout_pred": "artifacts/validation/J3-matched-fixed9.f32",
+    "target_data": "data/processed/netflix.bin",
+    "target_pred": "artifacts/joint128-reg005.f32",
+    "output": "artifacts/validation/J3-corrected.f32",
+    "rounds": 2000,
+    "min_leaf": 500,
+    "seed": 20260927
+  },
+  "inputs": {
+    "artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "artifacts/validation/J3-matched-fixed9.f32": "57385254e115041b2ececd4401272a84182c8b780cd51daaf49268b3a566e8af",
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "artifacts/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066"
+  },
+  "lightgbm_version": "4.7.0",
+  "chosen_rounds": 1323,
+  "holdout_inner_base_rmse": 0.8756356835365295,
+  "holdout_inner_corrected_rmse": 0.870353247390481,
+  "target_base_rmse": 0.897868812084198,
+  "target_corrected_rmse": 0.8934085321125893,
+  "target_user_fold_rmse": [
+    0.8939829166158109,
+    0.8936718224736361,
+    0.8897815229359494,
+    0.8947433853694176,
+    0.8948759509981598
+  ],
+  "output_sha256": "c15f011e7f2bc32127767494f22b0bec6405cd25be0834b4ee450bbd0a859a41"
+}

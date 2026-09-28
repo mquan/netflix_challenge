@@ -72,6 +72,19 @@ class JointTests(unittest.TestCase):
             self.assertEqual((p/'a.f32').read_bytes(), (p/'reload.f32').read_bytes())
             run('eval-joint', '--data', p/'b.bin', '--model', p/'a.model', ok=False)
 
+    def test_fixed_epoch_does_not_select_on_probe_labels(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            dataset(p/'a.bin')
+            dataset(p/'b.bin', change_fold=0)
+            for name in ('a', 'b'):
+                run('joint', '--data', p/(name+'.bin'), '--model', p/(name+'.model'),
+                    '--iterations', 3, '--factors', 4, '--fixed-epoch',
+                    '--predictions', p/(name+'.f32'))
+            self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
+            self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
+            self.assertEqual(struct.unpack_from('<I', (p/'a.model').read_bytes(), 20)[0], 3)
+
     def test_neighborhood_reload_and_probe_label_isolation(self):
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)

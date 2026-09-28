@@ -200,3 +200,10 @@ outer training users reaches **`0.8774504869` development CV**, improving all fi
 folds over 0.87822. A predeclared equal average of the neural, direct-tree and
 residual-tree outputs reaches **`0.8773860815`**. [ROUND3.md](ROUND3.md) records
 the controls, weak user-kernel/distributional bets, and remaining research ideas.
+
+Combining the two branches' raw predictors and stronger temporal/kNN columns
+reaches **`0.8754534170` development CV** with the residual tree. Seven more
+user/movie context features bring the latest result to **`0.8748094089`**,
+improving all five user folds. See [ROUND4.md](ROUND4.md) and
+[ROUND5.md](ROUND5.md). A separate training-only validation pilot is documented
+in [HOLDOUT.md](HOLDOUT.md).

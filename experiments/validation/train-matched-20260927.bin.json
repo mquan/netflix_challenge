@@ -1,0 +1,22 @@
+{
+  "source": "data/processed/netflix.bin",
+  "source_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "output": "artifacts/validation/train-matched-20260927.bin",
+  "output_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "strategy": "matched",
+  "fraction": null,
+  "seed": 20260927,
+  "train_count": 97664546,
+  "holdout_count": 1407566,
+  "source_probe_count": 1408395,
+  "implicit_count": 103297638,
+  "users_left_without_train": 0,
+  "holdout_rating_histogram": [
+    0,
+    67795,
+    132419,
+    358496,
+    465719,
+    383137
+  ]
+}
