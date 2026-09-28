@@ -160,3 +160,43 @@ Historical timestamps have explicit provenance/uncertainty; new experiment
 runs timestamp every output line. The CSV also supports elapsed time minus
 recorded idle/rate-limit/timeout intervals, without assuming unknown gaps are
 idle. See [timing and activity accounting](experiments/TIMING.md).
+
+## Independent local-kernel experiments
+
+The `moonshot-local-kernels` branch adds a separate research binary using local
+Gaussian-process residual inference over a frozen joint model. A six-component
+frozen ensemble improves from `0.8860971552` to `0.8850493143` development CV
+with the first GP family, then to `0.8842984317` with one GP combining persistent
+and 30-day taste effects. Adding two residual-factor controls reaches
+`0.8841835475`, with only a small additional gain. These are controlled comparisons within this branch;
+the control differs from the historical B4 ensemble above.
+
+`make test-moonshot-gp` builds the macOS Accelerate implementation and runs its
+numeric and probe-label isolation tests. `make moonshot-local` builds a separate
+experimental mixture of local residual factorizations. See
+[MOONSHOTS.md](MOONSHOTS.md) for the research and first round, and
+[ROUND2.md](ROUND2.md) for the additional bets, ablations, commands and limitations.
+Predictions and copied input checkpoints remain local under `artifacts/`.
+
+The next round tests predictor diversity and nonlinear blending separately.
+The same 12-column bank reaches `0.8835714199` with a shallow neural correction.
+Adding the other agent's completed RBM gives `0.8811258732` with contextual
+ridge and **`0.8803262843` with neural blending**, improving all five user folds.
+Epoch selection is nested inside each outer fold; base checkpoint selection
+still makes these development CV estimates. See [NEURAL_BLEND.md](NEURAL_BLEND.md)
+for the Netflix research, controlled comparisons, attribution and reproduction
+requirements.
+
+A fixed 50/50 average of this neural ensemble and the other branch's B6
+LightGBM ensemble reaches **`0.8786685218` development CV**, beating both in every
+user fold. See [COMBINED_BRANCHES.md](COMBINED_BRANCHES.md) for the comparison,
+verified snapshot provenance, and experiments combining the raw predictor banks.
+Combining the raw banks reaches `0.8788478728` with neural blending; averaging
+that result equally with B6 reaches **`0.8782199562`**, again improving every fold.
+
+The next retained bet is a boosted-tree correction to contextual ridge over the
+same frozen union bank. Selecting tree count on inner users and refitting on all
+outer training users reaches **`0.8774504869` development CV**, improving all five
+folds over 0.87822. A predeclared equal average of the neural, direct-tree and
+residual-tree outputs reaches **`0.8773860815`**. [ROUND3.md](ROUND3.md) records
+the controls, weak user-kernel/distributional bets, and remaining research ideas.

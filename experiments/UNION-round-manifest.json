@@ -1,0 +1,334 @@
+{
+  "completed_record_utc": "2026-09-28T01:30:24.587834+00:00",
+  "training_runner_revision": "443b0f0",
+  "sources": {
+    "scripts/moonshot_nn_blend.py": "1320ae709781056bec75a33652481233302ef6d3ff8736669ce0338e659a260a",
+    "scripts/moonshot_union_bet.py": "a998759ee0d175e3c5079994e6ff9cc61b0dd68699d34a0c8fa3c4df6ae9bb7e",
+    "scripts/gbdt_blend.py": "e4a2f0f7d864f8c776b9aff94c3bca4dd2f18534400cf22bbef9da02c3f31f62",
+    "scripts/moonshot_paired.py": "b735740e0f3a524ea1a247e9321bf5c55e4b0289bfb4d55b1f253550ccf2804f"
+  },
+  "data": {
+    "path": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  },
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.5.3",
+    "torch": "2.14.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "device": "CPU",
+  "threads": 1,
+  "reports": {
+    "other": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "prediction": [
+          "artifacts/other-branch/joint64.f32",
+          "artifacts/other-branch/joint128-reg005.f32",
+          "artifacts/other-branch/joint128-reg02.f32",
+          "artifacts/other-branch/joint128-day128.f32",
+          "artifacts/other-branch/joint256-snap.f32",
+          "artifacts/other-branch/neighborhood64.f32",
+          "artifacts/other-branch/knn64-p1.f32",
+          "artifacts/other-branch/knn64-j64-p1.f32",
+          "artifacts/other-branch/knn64-j128r005.f32",
+          "artifacts/other-branch/knn64-j128r02.f32",
+          "artifacts/other-branch/knn64-j128day.f32",
+          "artifacts/other-branch/knn64-j256snap.f32",
+          "artifacts/other-branch/rbm100-fast.f32",
+          "artifacts/other-branch/autorec512-a3-snap.f32",
+          "artifacts/other-branch/autorec512-a2.f32"
+        ],
+        "output": "artifacts/UNION-other",
+        "hidden": 16,
+        "epochs": 60,
+        "seed": 20260928
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_epochs": 37,
+          "rows": 281675,
+          "ridge_rmse": 0.8830580088273634,
+          "neural_rmse": 0.8820850527685136,
+          "seconds": 18.466318708000472
+        },
+        {
+          "fold": 1,
+          "chosen_epochs": 29,
+          "rows": 281390,
+          "ridge_rmse": 0.8815971888427431,
+          "neural_rmse": 0.8807374173153603,
+          "seconds": 14.243605625000782
+        },
+        {
+          "fold": 2,
+          "chosen_epochs": 21,
+          "rows": 283006,
+          "ridge_rmse": 0.8782554708489655,
+          "neural_rmse": 0.8774396923411644,
+          "seconds": 11.168220999999903
+        },
+        {
+          "fold": 3,
+          "chosen_epochs": 32,
+          "rows": 281688,
+          "ridge_rmse": 0.8828451776739824,
+          "neural_rmse": 0.8820929257025514,
+          "seconds": 15.79635629200493
+        },
+        {
+          "fold": 4,
+          "chosen_epochs": 32,
+          "rows": 280636,
+          "ridge_rmse": 0.8827058542077804,
+          "neural_rmse": 0.8820637830240634,
+          "seconds": 35.20885720799561
+        }
+      ],
+      "ridge_cv_rmse": 0.8816901996642054,
+      "neural_cv_rmse": 0.8808815322945753
+    },
+    "union": {
+      "config": {
+        "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "prediction": [
+          "artifacts/other-branch/joint64.f32",
+          "artifacts/other-branch/joint128-reg005.f32",
+          "artifacts/other-branch/joint128-reg02.f32",
+          "artifacts/other-branch/joint128-day128.f32",
+          "artifacts/other-branch/joint256-snap.f32",
+          "artifacts/other-branch/neighborhood64.f32",
+          "artifacts/other-branch/knn64-p1.f32",
+          "artifacts/other-branch/knn64-j64-p1.f32",
+          "artifacts/other-branch/knn64-j128r005.f32",
+          "artifacts/other-branch/knn64-j128r02.f32",
+          "artifacts/other-branch/knn64-j128day.f32",
+          "artifacts/other-branch/knn64-j256snap.f32",
+          "artifacts/other-branch/rbm100-fast.f32",
+          "artifacts/other-branch/autorec512-a3-snap.f32",
+          "artifacts/other-branch/autorec512-a2.f32",
+          "artifacts/gp-full.0.f32",
+          "artifacts/gp-full.1.f32",
+          "artifacts/gp-full.2.f32",
+          "artifacts/gp2-persistent-full.0.f32",
+          "artifacts/local-global.epoch6.f32",
+          "artifacts/local-local.epoch6.f32"
+        ],
+        "output": "artifacts/UNION-union",
+        "hidden": 16,
+        "epochs": 60,
+        "seed": 20260928
+      },
+      "inputs": {
+        "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7"
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "chosen_epochs": 34,
+          "rows": 281675,
+          "ridge_rmse": 0.880814720598792,
+          "neural_rmse": 0.8800434201938074,
+          "seconds": 126.05170804201043
+        },
+        {
+          "fold": 1,
+          "chosen_epochs": 35,
+          "rows": 281390,
+          "ridge_rmse": 0.8795061870471055,
+          "neural_rmse": 0.8786086002291782,
+          "seconds": 80.30554929201026
+        },
+        {
+          "fold": 2,
+          "chosen_epochs": 24,
+          "rows": 283006,
+          "ridge_rmse": 0.8761404814272964,
+          "neural_rmse": 0.8753539080562077,
+          "seconds": 29.403519457991933
+        },
+        {
+          "fold": 3,
+          "chosen_epochs": 26,
+          "rows": 281688,
+          "ridge_rmse": 0.8808815046943,
+          "neural_rmse": 0.8801877661018275,
+          "seconds": 26.449953208997613
+        },
+        {
+          "fold": 4,
+          "chosen_epochs": 33,
+          "rows": 280636,
+          "ridge_rmse": 0.8808155773522307,
+          "neural_rmse": 0.8800566611664484,
+          "seconds": 59.00327379099326
+        }
+      ],
+      "ridge_cv_rmse": 0.8796294478152658,
+      "neural_cv_rmse": 0.878847872881038
+    }
+  },
+  "equal_blends": {
+    "UNION-equal": {
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "inputs": {
+        "artifacts/other-branch/blend-b6.f32": "a062279a663a9284819aefbbae996e7fc4508d3cef3df654b14450405fb16651",
+        "artifacts/NN2-blend.f32": "e4fa999f30922818303057dee70cee567909c3fd3b07bbec53189432b1ee3437"
+      },
+      "scores": [
+        {
+          "name": "artifacts/other-branch/blend-b6.f32",
+          "rmse": 0.8804020935035585,
+          "fold_rmse": [
+            0.8817188464219283,
+            0.8802252867529818,
+            0.8769466642838967,
+            0.881463898985648,
+            0.8816671762300555
+          ]
+        },
+        {
+          "name": "artifacts/NN2-blend.f32",
+          "rmse": 0.8803262842857676,
+          "fold_rmse": [
+            0.8815939817243522,
+            0.8800801347670815,
+            0.87666378189441,
+            0.8815028047125387,
+            0.8818025454947007
+          ]
+        },
+        {
+          "name": "artifacts/UNION-equal.f32",
+          "rmse": 0.878668521750796,
+          "fold_rmse": [
+            0.8800110468229462,
+            0.8784535384024309,
+            0.8751088452049777,
+            0.8797645402779614,
+            0.8800161517156408
+          ]
+        }
+      ],
+      "protocol": "Fixed equal average; no additional fitting or weight search. Development CV."
+    },
+    "UNION-combined-equal": {
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "inputs": {
+        "artifacts/other-branch/blend-b6.f32": "a062279a663a9284819aefbbae996e7fc4508d3cef3df654b14450405fb16651",
+        "artifacts/UNION-union.f32": "030f882dec6de7c4425e9a81e8b937b4bd062cb02fd2c4a2b80b8c08b6dead26"
+      },
+      "scores": [
+        {
+          "name": "artifacts/other-branch/blend-b6.f32",
+          "rmse": 0.8804020935035585,
+          "fold_rmse": [
+            0.8817188464219283,
+            0.8802252867529818,
+            0.8769466642838967,
+            0.881463898985648,
+            0.8816671762300555
+          ]
+        },
+        {
+          "name": "artifacts/UNION-union.f32",
+          "rmse": 0.8788478728427008,
+          "fold_rmse": [
+            0.880043420601738,
+            0.8786086000779246,
+            0.8753539078700083,
+            0.8801877658415315,
+            0.8800566611643682
+          ]
+        },
+        {
+          "name": "artifacts/UNION-combined-equal.f32",
+          "rmse": 0.878219956167871,
+          "fold_rmse": [
+            0.8795592799163765,
+            0.8780111507584643,
+            0.8747569012920058,
+            0.8794090845711441,
+            0.8793742528612603
+          ]
+        }
+      ],
+      "protocol": "Fixed equal average; no additional fitting or weight search. Development CV."
+    }
+  },
+  "outputs": {
+    "artifacts/UNION-equal.f32": {
+      "sha256": "950d1e9607ed7c5f8c46ce84de34cdfd2d0f7ac893fe58a6cc40b8f9d371e6c7",
+      "bytes": 5633580
+    },
+    "artifacts/UNION-combined-equal.f32": {
+      "sha256": "f01acb8ab3221acc385c3ed7c9b22978def42037bffb69e261a43a691a66cd9a",
+      "bytes": 5633580
+    },
+    "artifacts/UNION-other.f32": {
+      "sha256": "e85029cfb4965c10ef1a98d75a50c14a4ec908fc823b52ea86b027625820c644",
+      "bytes": 5633580
+    },
+    "artifacts/UNION-other.control.f32": {
+      "sha256": "8204c8294fa92b2f831301405aa9901b275d54e59d5fae7d707fb3d322697c29",
+      "bytes": 5633580
+    },
+    "artifacts/UNION-union.f32": {
+      "sha256": "030f882dec6de7c4425e9a81e8b937b4bd062cb02fd2c4a2b80b8c08b6dead26",
+      "bytes": 5633580
+    },
+    "artifacts/UNION-union.control.f32": {
+      "sha256": "3a088ffcf510cee8fb74f185000d647b55f34a54265ada274fcbb71a16cacc61",
+      "bytes": 5633580
+    }
+  },
+  "source_branch_manifest": "experiments/UNION-b6-source.json",
+  "verification": "All raw input hashes rechecked; neural isolation test passed in NN-test.log; all four runner modes completed.",
+  "protocol": "Same five outer user folds and nested epoch selection for each raw-bank neural run. Equal blend weights fixed at 0.5 without fitting or search. Base checkpoint/research selection uses probe, so these remain development CV estimates.",
+  "attribution": "B6, its raw predictors and LightGBM code come from the other agent on score-iteration-2. Moonshot GP/residual-factor predictors, nested neural blend and these combination experiments come from this worktree."
+}
