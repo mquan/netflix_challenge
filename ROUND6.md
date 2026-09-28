@@ -95,7 +95,7 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | R5-meta-s3 (other session) | R5-meta averaged over LightGBM seeds 2026, 7, 13 | 0.8747153673, every fold better than 0.8748094 |
 | **R6-RBM** | R5-meta columns + R4D + R4C, single seed 2026 | **0.8738203523** dev CV vs 0.8748094089 (−0.0009891); every fold improves |
 | **R6-RBM-s3** | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | **0.8737149186** vs 0.8747153673 (−0.0010005); folds .8746445 .8735128 .8701031 .8752357 .8750900, every fold better. Output `artifacts/r6/R6-RBM-s3.refit.f32` |
-| P1 | conditional-bias RBM, 500 hidden units, from scratch | running |
+| P1 | conditional-bias RBM, 500 hidden units, from scratch; stopped at epoch 37 | 0.9056827896 and improving only ≈0.0002/epoch at ≈5 min/epoch, with training RMSE 0.72 versus 0.75 for the 200-unit model at a better probe score: it overfits at the 200-unit rates and would need a larger weight cost (`--weight-cost`) or dropout-like noise to pay off |
 | P2 | conditional-bias RBM-200 from scratch, bias rates active from epoch 1 | running |
 | kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
 | R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | 0.8737760415 (−0.0000444 vs R6-RBM): noise level. The neighborhood correction's information is already in the bank's thirteen kNN columns; the RBM itself, not its kNN, carried the round-6 gain |

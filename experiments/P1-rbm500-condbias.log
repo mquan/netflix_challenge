@@ -32,3 +32,8 @@ epoch=30 cd=3 train_rmse=0.7272984013 probe_rmse=0.9060349454 best=0.9060349454 
 epoch=31 cd=5 train_rmse=0.7265216106 probe_rmse=0.9063897453 best=0.9060349454 seconds=198.6720663
 epoch=32 cd=5 train_rmse=0.7234387402 probe_rmse=0.9063404938 best=0.9060349454 seconds=294.6744793
 epoch=33 cd=5 train_rmse=0.7228651323 probe_rmse=0.9060519193 best=0.9060349454 seconds=253.9252839
+epoch=34 cd=5 train_rmse=0.7192828212 probe_rmse=0.9059623136 best=0.9059623136 seconds=288.4377409
+epoch=35 cd=5 train_rmse=0.7185086775 probe_rmse=0.9060730504 best=0.9059623136 seconds=407.3869436
+epoch=36 cd=5 train_rmse=0.7149067835 probe_rmse=0.9057860191 best=0.9057860191 seconds=317.4589712
+epoch=37 cd=5 train_rmse=0.7140887402 probe_rmse=0.9056827896 best=0.9056827896 seconds=277.2835541
+stopped_manually reason=0.9056828 at epoch 37 with train_rmse 0.72 (200-unit model had 0.75 at 0.9000): overfitting at these rates, ~5 min/epoch; compute reallocated to P2
