@@ -1,0 +1,20 @@
+column=artifacts/snapshot/joint64.f32 probe_rmse=0.9000114051
+column=artifacts/snapshot/joint128-reg005.f32 probe_rmse=0.8978688248
+column=artifacts/snapshot/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/snapshot/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/snapshot/knn64-j128r005.f32 probe_rmse=0.895059761
+column=artifacts/snapshot/knn64-j128day.f32 probe_rmse=0.894902175
+column=artifacts/gp-full.3.f32 probe_rmse=0.895701384
+heldout_user_fold=0 count=281675 rmse=0.8864333536
+heldout_user_fold=1 count=281390 rmse=0.8854573126
+heldout_user_fold=2 count=283006 rmse=0.8820675084
+heldout_user_fold=3 count=281688 rmse=0.8868098703
+heldout_user_fold=4 count=280636 rmse=0.8864250213
+blend_cv_rmse=0.8854364317 blend_fit_rmse=0.8854059168 ridge=1e-05 centered_intercept=-0.03343630357 contexts=5
+weight=0.1769706309 column=artifacts/snapshot/joint64.f32
+weight=0.08230414965 column=artifacts/snapshot/joint128-reg005.f32
+weight=-0.5678077076 column=artifacts/snapshot/joint128-day128.f32
+weight=0.3686691841 column=artifacts/snapshot/neighborhood64.f32
+weight=-0.2979657605 column=artifacts/snapshot/knn64-j128r005.f32
+weight=0.8548846479 column=artifacts/snapshot/knn64-j128day.f32
+weight=0.3812097193 column=artifacts/gp-full.3.f32

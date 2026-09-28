@@ -89,3 +89,13 @@ test: $(BIN)
 
 clean:
 	rm -rf build
+
+# Isolated macOS research binary; one-thread runs recommended alongside training.
+.PHONY: moonshot-gp test-moonshot-gp
+moonshot-gp: build/moonshot_gp
+
+build/moonshot_gp: src/moonshot_gp.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
+
+test-moonshot-gp: $(BIN) build/moonshot_gp
+	VECLIB_MAXIMUM_THREADS=1 python3 tests/test_moonshot_gp.py
