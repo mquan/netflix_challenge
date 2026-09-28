@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-09-28T00:49:37.758588+00:00",
+  "base_commit": "8de6482",
+  "branch": "moonshot-local-kernels",
+  "worktree": "/private/tmp/netflix-moonshot",
+  "dataset": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+  "input_hashes": "moonshot-inputs.sha256",
+  "data_and_binary_hashes": "moonshot-code-data.sha256",
+  "source_and_binary_sha256": {
+    "Makefile": "7c9260cd0c92c839029915a7b07a0ee0bda2207d7b4f7d14b7f3f17372bf4a8b",
+    "src/moonshot_gp.cpp": "27fa2097464361586ee8b7fdcd060e463b875e660d2f1c924d35f9fe77a4892f",
+    "scripts/moonshot_evaluate.py": "750a8fb5c58dcecd1ba37adcd7ee0696a14489de6d6e18ac94237584d8b685b7",
+    "scripts/moonshot_compare.sh": "07675a6913590bfb623b90de71418e047cb10e1c439b7994eb3d6f8e100ac20a",
+    "scripts/moonshot_paired.py": "b735740e0f3a524ea1a247e9321bf5c55e4b0289bfb4d55b1f253550ccf2804f",
+    "tests/test_moonshot_gp.py": "4a67280cdf6bd68181bda867da9a6278e2bc7224abffec6727df17dc2614a7be",
+    "build/moonshot_gp": "d3631ac1a09c59d033da7769a929ac72ca6d4e9487fe3fb6fb4188dbd4a2305f",
+    "build/netflix": "1707cd16c8828ff462764af0bd6c300eac82ea1dbb7ef0c027812c69d4886a29"
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "command": "VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 build/moonshot_gp --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --model artifacts/snapshot/joint128-reg005.bin --output artifacts/gp-full --neighbors 32",
+  "comparison": "bash scripts/moonshot_compare.sh /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin artifacts/gp-full gp-six",
+  "pilot": "same GP command with --user-modulo 10 and --output artifacts/gp-pilot; nice was denied, process ran at ordinary priority",
+  "validation": "make test-moonshot-gp: two tests passed",
+  "outputs": {
+    "artifacts/gp-six-control.f32": "3a1c80fb26db96ceed16b98bfaa56ba0fad793190991f9d488734e2b1e89a046",
+    "artifacts/gp-pilot.mask.f32": "56537f598d153ce40a3e0e787d1e06b2509dca38ada8e07fb651eb690da3594a",
+    "artifacts/gp-full.3.f32": "12345ba51538dc9ffb525c8e94d98fc749e7664a407f67bc7bd558d4435679ac",
+    "artifacts/gp-pilot.1.f32": "5f09911c6cd86facd84b878fbb794249c36ed3bf4e7c920eb25629b8d6305c77",
+    "artifacts/gp-pilot.0.f32": "248c3a87996146cc360b60c0bc4aa12e3f2fd8f2c8a689027b16f8b8cb5fb4a3",
+    "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+    "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+    "artifacts/gp-pilot.2.f32": "99872b76f4f5e9868462d4f7fe488afffdf2e567012e3dcb060322935ba4ac74",
+    "artifacts/gp-pilot.base.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+    "artifacts/gp-pilot.3.f32": "b79f0564888b6a329d72af2a4e0485a18e17afd2a2b169a7187378f1deca25b9",
+    "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+    "artifacts/gp-six-3.f32": "22d2058ff44849169075307c8cc26f655ffbcf3d65757ce4a2724cf908f406c4",
+    "artifacts/gp-six-2.f32": "8e23346596097813bbfa102d8c21ab557c9371ce63025f4bb5a09ecde5037f3d",
+    "artifacts/gp-six-0.f32": "68312597b1a692174deac6231e142adc3eb640f1867e43c7e981d67faf2471c5",
+    "artifacts/gp-six-1.f32": "39e71407a914b1b7f4122e8bcf5f4987066dfa9f34a8ef849473cc241033abdd",
+    "artifacts/gp-full.mask.f32": "1b0c10bbe6f605f528ed3f3a716f72061bc9475318309e1554f2f5a96215ae9f",
+    "artifacts/gp-six-all.f32": "fe5d473cbec65fd0af0a52f5b939befeecd2c06856aa818c66cd1dcaa82784c8",
+    "artifacts/gp-full.base.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066"
+  },
+  "limitations": [
+    "Development CV; source models selected checkpoints using all probe labels.",
+    "Reported paired intervals do not adjust for hypothesis selection.",
+    "Frozen six-model control differs from historical B4 and active ongoing experiments."
+  ]
+}

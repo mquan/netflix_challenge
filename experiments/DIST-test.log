@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_held_labels_do_not_fit_or_select_head (__main__.DistributionTests.test_held_labels_do_not_fit_or_select_head)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/netflix-moonshot/tests/test_moonshot_distribution.py", line 21, in test_held_labels_do_not_fit_or_select_head
+    self.assertGreater(epoch,0)
+AssertionError: 0 not greater than 0
+
+----------------------------------------------------------------------
+Ran 1 test in 1.587s
+
+FAILED (failures=1)

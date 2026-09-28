@@ -134,10 +134,18 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   const uint32_t cd_max = uint_after(args, "--cd-max", 5);
   const uint32_t cd_every = uint_after(args, "--cd-every", 15);
   if (!F || F > 4096 || !epochs || !batch || cd_max < 1 || !cd_every) fail("invalid rbm settings");
+  const std::string init = optional_value_after(args, "--init-model");
+  const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
+  if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
   RbmModel m; m.hidden = F;
   m.w.resize(size_t(items)*5*F); m.vbias.assign(size_t(items)*5, 0);
   m.hbias.assign(F, 0); m.d.assign(size_t(items)*F, 0);
-  {
+  if (!init.empty()) {
+    // Warm start: momentum velocities restart at zero; the epoch-indexed
+    // CD length and annealing continue from --start-epoch.
+    m = load_rbm(init, items, fingerprint);
+    if (m.hidden != F) fail("initial rbm hidden size differs from --hidden");
+  } else {
     std::mt19937 rng(seed); std::normal_distribution<float> normal(0, .01F);
     for (float &x : m.w) x = normal(rng);
     std::vector<double> counts(size_t(items)*5, 1);
@@ -161,7 +169,7 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   double best = std::numeric_limits<double>::infinity(); uint32_t stale = 0;
   std::cout << "rbm hidden=" << F << " batch=" << batch << " threads=" << threads
             << " seed=" << seed << " fingerprint=" << fingerprint << std::endl;
-  for (uint32_t epoch = 1; epoch <= epochs; ++epoch) {
+  for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     const uint32_t cd = std::min(cd_max, 1+2*((epoch-1)/cd_every));
     const float scale = std::pow(anneal, float(epoch-1));

@@ -1,0 +1,65 @@
+{
+  "name": "R2-rbm100-fast",
+  "strategy": "R1 learned too slowly (0.943 at epoch 14; stopped). Conditional RBM 100 hidden with ~3x learning rates (w .005, visible .004, conditional .003) and slower annealing .98.",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/rbm100-fast.bin",
+    "--hidden",
+    "100",
+    "--iterations",
+    "60",
+    "--threads",
+    "8",
+    "--patience",
+    "5",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".98",
+    "--predictions",
+    "artifacts/rbm100-fast.f32"
+  ],
+  "started_utc": "2026-09-27T23:47:29.158455+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "106ad7d8f616e6c5807241ab3a60e538cc7e4d9052268479c386b5a4c14c0ec5",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-27T23:47:30.046470+00:00",
+  "events_path": "experiments/R2-rbm100-fast.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3840.872937833017,
+  "finished_utc": "2026-09-28T00:51:30.962973+00:00",
+  "log_sha256": "e97bfa942c5c180456c4bbd15a7121ef16f5d9ea476c8ec45dd6b65ce775ad99",
+  "events_sha256": "d4ef491857abe055b4022f5e9e6935a26c4db075ca3c0798d1123091ab9a131d",
+  "model_artifact": {
+    "path": "artifacts/rbm100-fast.bin",
+    "sha256": "04f13d04ed6d0343c603b50893c07a12b493f09806aaa881820d93904cc170a4",
+    "bytes": 43003824
+  },
+  "predictions_artifact": {
+    "path": "artifacts/rbm100-fast.f32",
+    "sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+    "bytes": 5633580
+  }
+}
