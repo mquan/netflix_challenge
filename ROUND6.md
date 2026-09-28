@@ -105,7 +105,8 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | **R6-RBM4** | R6-RBM3 columns + P3C, single seed | **0.8733859228** (−0.0001545 vs R6-RBM3; every fold better; ridge 0.8760405). A fifth conditional RBM from a different seed still pays more than the fourth did |
 | P4 | plain RBM-300, weight cost .001; best epoch 54 | 0.9088497173: no overfit, but not better than 200 units at this epoch |
 | P4C | conditional biases warm-started on P4 from epoch 55; best epoch 108, early stop at 114 | 0.9006442975: weight cost .001 prevents the P1 overfit but 300 units end 0.0012 behind the 200-unit R4D |
-| R6-RBM5 | R6-RBM4 columns + P4C, single seed | running |
+| **R6-RBM5** | R6-RBM4 columns + P4C, single seed | **0.8731934913** (−0.0001924 vs R6-RBM4; every fold better; ridge 0.8759384). A different hidden size adds more than another seed did |
+| R6-RBM5-s3 | R6-RBM5 averaged over seeds 2026, 7, 13 | running |
 | P5 | plain RBM-200, seed 13, then conditional biases (the seed-diversity recipe that gave R6-RBM4 its gain) | running |
 | kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
 | R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | 0.8737760415 (−0.0000444 vs R6-RBM): noise level. The neighborhood correction's information is already in the bank's thirteen kNN columns; the RBM itself, not its kNN, carried the round-6 gain |
@@ -125,7 +126,7 @@ of round 5, and R4D was still improving when it hit its epoch cap. Output:
 |---|---:|
 | Start of round 6 (R5-meta) | 0.8748094 |
 | Round 6 so far (R6-RBM-s3, three seeds) | 0.8737149 |
-| Round 6 so far, single seed (R6-RBM4, five conditional RBM columns) | 0.8733859 |
+| Round 6 so far, single seed (R6-RBM5, six conditional RBM columns) | 0.8731935 |
 | Proxy for the 0.85725 test target | ≈0.865 |
 
 The remaining gap is about 0.0085 on the development metric. The evidence in
