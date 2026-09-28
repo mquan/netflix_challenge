@@ -18,6 +18,33 @@ The new `joint` command trains the temporal baseline, latent factors, implicit
 feedback and user-factor drift together. Prior claims that static factorization
 was at its limit were premature: the optimization scheme also needed testing.
 
+## Single-model iteration (stopped, 2026-09-28)
+
+Goal: close the ≈0.017 gap between our 64-factor joint model and published
+timeSVD++ results. Halted by decision: gains were small relative to compute.
+All runs were stopped manually except T2–T5, which completed. Best checkpoints
+are kept locally. No new blend was run, so B6 remains the best development CV.
+
+| Run | Strategy | Best probe RMSE |
+|---|---|---:|
+| T1 | 64 factors, lr .007, reg .015, decay .90 (Koren-like) | 0.9025 (stopped) |
+| T2 | lr .005, reg .015, decay .97, 40 epochs | 0.8969742665 |
+| T3 | lr .008, reg .008, decay .95 | 0.8982873560 |
+| T4 | lr .012, reg .015, decay .93 | 0.8975343589 |
+| T5 | T1 + 3× bias learning rates | 0.9067923285 (worse) |
+| kNN on T4 | residual kNN, power 1, shrink .5 | 0.8949025772 |
+| T6 | T4 settings at 256 factors; stopped at epoch 11, still improving | 0.8994939730 |
+| I1 | integrated model, neighbor lr .005, reg .002 | 0.9088 (stopped, behind control) |
+| I2 | integrated model, T4 settings + Koren neighbor lr .001, reg .015; stopped at epoch 17, still improving | 0.8950571618 |
+| I3 | I2 recipe at 128 factors; stopped at epoch 2 | 0.9235 |
+| R3 | RBM, 200 hidden; stopped at epoch 30, still improving | 0.9117705910 |
+
+Findings: learning-rate/regularization tuning gains only ≈0.003 at 64 factors,
+so it does not explain the gap to published numbers. The integrated model
+(I2) beats its factor-only control (T4) by ≈0.0025 at the stopped epoch. A
+larger RBM improves on R2. None of these changes the conclusion that reaching
+≈0.855 would need far more models and compute than this approach.
+
 ## Blend-diversity iteration (branch `score-iteration-2`, 2026-09-27)
 
 Best development CV fell from **0.8866646513** (B4) to **0.8804020935** (B6).
