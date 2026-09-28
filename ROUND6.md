@@ -91,7 +91,7 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | R4D | R4C with 3× bias rates (user .01, day .03, frequency .012) | **0.8998687596** at the 130-epoch cap, still improving (−0.0085 vs R3R) |
 | R4DR | R4D continued from epoch 131; best epoch 166, early stop at 172 | 0.8994851020 |
 | R6-RBMR | R6-RBM with the converged R4DR column in place of R4D, single seed | 0.8738017605: within noise of R6-RBM (0.8738204); the extra 42 RBM epochs do not matter to the blend |
-| R6-IA | R6-RBM columns + the other session's item AutoRec (IA1, 0.9581633 at its best epoch 3), single seed | running |
+| R6-IA | R6-RBM columns + the other session's item AutoRec (IA1, 0.9581633 at its best epoch 3), single seed | 0.8737383951 (−0.0000820 vs R6-RBM; four folds better, one equal). Below the 0.0005 retention threshold; a better-trained item AutoRec may earn its place |
 | R5-meta-s3 (other session) | R5-meta averaged over LightGBM seeds 2026, 7, 13 | 0.8747153673, every fold better than 0.8748094 |
 | **R6-RBM** | R5-meta columns + R4D + R4C, single seed 2026 | **0.8738203523** dev CV vs 0.8748094089 (−0.0009891); every fold improves |
 | **R6-RBM-s3** | R6-RBM averaged over seeds 2026, 7, 13 (comparable to R5-meta-s3) | **0.8737149186** vs 0.8747153673 (−0.0010005); folds .8746445 .8735128 .8701031 .8752357 .8750900, every fold better. Output `artifacts/r6/R6-RBM-s3.refit.f32` |
