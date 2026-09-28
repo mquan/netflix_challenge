@@ -52,5 +52,20 @@
     }
   },
   "launched_utc": "2026-09-28T12:05:56.941285+00:00",
-  "events_path": "experiments/P3-rbm200-seed7.events.jsonl"
+  "events_path": "experiments/P3-rbm200-seed7.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 6998.168499291991,
+  "finished_utc": "2026-09-28T14:02:35.159420+00:00",
+  "log_sha256": "67fa8a8568e2402e9b9094f5c6628f79af22cb0a7dafac05e8e594ef8b572889",
+  "events_sha256": "529099a6de3dbe9cbe8c38fa1b0882270441e7fe2a5aa927e07d7b49f132cd05",
+  "model_artifact": {
+    "path": "artifacts/P3-rbm200-s7.bin",
+    "sha256": "32f0e8e3c3500c3a1eae507f511342d70d79d18945fedb18e29094e4039c5db0",
+    "bytes": 85652224
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P3-rbm200-s7.f32",
+    "sha256": "35736a4784aa4cb982525d4f68e7cb616325d71063d252983e3a73d2856f3388",
+    "bytes": 5633580
+  }
 }
