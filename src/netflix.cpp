@@ -1626,6 +1626,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "ensemble.hpp"
 #include "neighborhood.hpp"
 #include "rbm.hpp"
+#include "bar.hpp"
 
 void usage() {
   std::cerr
@@ -1662,6 +1663,9 @@ void usage() {
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
          "[--threads N] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
+      << "  netflix bar --data FILE --model FILE [--attributes N] [--movies N] "
+         "[--iterations N] [--threads N] [--predictions FILE]\n"
+      << "  netflix eval-bar --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix check-implicit\n";
 }
 
@@ -1716,6 +1720,10 @@ int main(int argc, char **argv) {
       command_rbm(args, false);
     } else if (command == "eval-rbm") {
       command_rbm(args, true);
+    } else if (command == "bar") {
+      command_bar(args, false);
+    } else if (command == "eval-bar") {
+      command_bar(args, true);
     } else {
       usage();
       return 2;

@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/bar.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
@@ -86,6 +86,7 @@ test: $(BIN)
 	bash tests/smoke.sh
 	python3 tests/test_joint.py
 	python3 tests/test_timeline.py
+	python3 tests/test_bar.py
 
 clean:
 	rm -rf build

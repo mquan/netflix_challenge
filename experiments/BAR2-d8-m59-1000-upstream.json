@@ -1,0 +1,62 @@
+{
+  "name": "BAR2-d8-m59-1000-upstream",
+  "strategy": "BAR dense RRR matching upstream projection-to-center inside tolerance and rounded-concur bit extraction; 8 attributes, 59 movies, 1000 iterations. Train-only means, subset and movie weights; training-error checkpoint selection; float32 replicas, safeguarded bilinear root solver, ridge 0.001.",
+  "command": [
+    "build/netflix",
+    "bar",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "--model",
+    "artifacts/bar2-d8-m59.bin",
+    "--predictions",
+    "artifacts/bar2-d8-m59.f32",
+    "--attributes",
+    "8",
+    "--movies",
+    "59",
+    "--iterations",
+    "1000",
+    "--eval-every",
+    "50",
+    "--threads",
+    "4",
+    "--projection",
+    "upstream"
+  ],
+  "started_utc": "2026-09-28T02:45:15.795890+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "b16e79d04cd4bc65daadbd3eaf886a37d4132891dd8fc4ea625b834202f59a2e",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+    "src/bar.hpp": "2cb3217dc1310712f718b7af6cb4d092a146971c369d78816b30c94fc80945b2"
+  },
+  "binary_sha256": "ff8e44d9a2d2f294b0bf3c3ccefaee129c62155eed05fc500a4e20c3b5facc17",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T02:45:16.900649+00:00",
+  "events_path": "experiments/BAR2-d8-m59-1000-upstream.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 897.2846137909801,
+  "finished_utc": "2026-09-28T03:00:14.191454+00:00",
+  "log_sha256": "c5799abac2336b96613c2437ca3dd7b8a5e85cc372f014120cb2ca6908d7163f",
+  "events_sha256": "d379651aafb92fa9c7890abdc8e9295b309beede4178007fe6d5cca7b6503d2c",
+  "model_artifact": {
+    "path": "artifacts/bar2-d8-m59.bin",
+    "sha256": "96da97cece0184fbd7216689707c6cf2c6920bfad87d8388553a277fc86374d0",
+    "bytes": 7041732
+  },
+  "predictions_artifact": {
+    "path": "artifacts/bar2-d8-m59.f32",
+    "sha256": "ff5d291e1bd1d3619dd4d181ef1140f0597f8295badbf663699f2b7f46df9dc7",
+    "bytes": 5633580
+  }
+}
