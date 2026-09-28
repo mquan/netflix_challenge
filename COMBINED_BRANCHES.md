@@ -49,6 +49,30 @@ On the original 15-column bank, contextual ridge reproduces B5 at
 is better on that bank, so the evidence supports combining the approaches rather
 than replacing its blender with the neural implementation.
 
+The completed comparison shows that the raw moonshot predictors transfer:
+
+| Raw predictor bank | Contextual ridge | Ridge + neural correction |
+| --- | ---: | ---: |
+| B6's 15 raw columns | 0.8816901997 | 0.8808815323 |
+| Same 15 + six moonshot columns | 0.8796294478 | **0.8788478728** |
+
+Holding the blender fixed, adding the six columns improves RMSE by 0.0020607518
+for ridge and 0.0020336595 for neural correction. Every fold improves for both
+methods. This ablation establishes usefulness of the six-column group, without
+attributing the gain to any one member.
+
+Applying the same predeclared 50/50 rule to B6 and the combined-bank neural
+ensemble reaches **0.8782199562**, better than both components in all five
+folds. That is 0.0021821373 below B6 and 0.0004485656 below the first equal blend.
+The final output is `artifacts/UNION-combined-equal.f32`. No blend weights were
+searched. These are single-seed results on the development probe.
+
+**Transfer recommendation:** retain B6, add the six raw moonshot columns, fit the
+nested neural correction, and average those two predictions equally. Future
+work can test the GP columns directly in LightGBM or ablate individual members;
+neither result is claimed here. Model weights for inference on new pairs are
+not exported by this experimental neural script.
+
 ## Provenance and reproduction
 
 The completed B6 manifest is copied to `experiments/UNION-b6-source.json`.
@@ -65,8 +89,12 @@ DATA=/path/to/netflix.bin
 "$MOONSHOT_PYTHON" scripts/moonshot_union_bet.py --data "$DATA" --mode average
 nice -n 15 "$MOONSHOT_PYTHON" scripts/moonshot_union_bet.py --data "$DATA" --mode other
 nice -n 15 "$MOONSHOT_PYTHON" scripts/moonshot_union_bet.py --data "$DATA" --mode union
+"$MOONSHOT_PYTHON" scripts/moonshot_union_bet.py --data "$DATA" --mode union-average
 ```
 
 The fixed-average output is `artifacts/UNION-equal.f32`; its report is
 `experiments/UNION-equal.json`. The run requires the frozen input files; large
 prediction artifacts are local and not committed.
+Complete raw-bank reports, source/output hashes and software versions are
+recorded in `experiments/UNION-round-manifest.json`. Final paired statistics
+against B6 are in `experiments/UNION-combined-paired.json`.

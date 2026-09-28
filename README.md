@@ -184,3 +184,5 @@ A fixed 50/50 average of this neural ensemble and the other branch's B6
 LightGBM ensemble reaches **`0.8786685218` development CV**, beating both in every
 user fold. See [COMBINED_BRANCHES.md](COMBINED_BRANCHES.md) for the comparison,
 verified snapshot provenance, and experiments combining the raw predictor banks.
+Combining the raw banks reaches `0.8788478728` with neural blending; averaging
+that result equally with B6 reaches **`0.8782199562`**, again improving every fold.

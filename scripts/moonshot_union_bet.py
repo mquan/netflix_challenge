@@ -18,7 +18,7 @@ from gbdt_blend import load, blend_fold
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data', required=True)
-    p.add_argument('--mode', choices=['average', 'other', 'union'], required=True)
+    p.add_argument('--mode', choices=['average', 'other', 'union', 'union-average'], required=True)
     a = p.parse_args()
     source = json.loads(pathlib.Path('experiments/UNION-b6-source.json').read_text())
     own = json.loads(pathlib.Path('experiments/NN-round-manifest.json').read_text())
@@ -29,27 +29,36 @@ def main():
         path = pathlib.Path('artifacts/other-branch') / pathlib.Path(name).name
         assert hashlib.sha256(path.read_bytes()).hexdigest() == record['sha256'], path
         columns.append(str(path))
-    if a.mode == 'average':
-        names = ['artifacts/other-branch/blend-b6.f32', 'artifacts/NN2-blend.f32']
-        expected = [source['predictions_artifact']['sha256'], own['outputs'][names[1]]['sha256']]
+    if a.mode in ('average', 'union-average'):
+        combined = a.mode == 'union-average'
+        prefix = 'artifacts/UNION-union' if combined else 'artifacts/NN2-blend'
+        report_path = pathlib.Path(prefix+'.json')
+        if not report_path.exists():
+            p.error('neural run must have finished and written its report: '+str(report_path))
+        names = ['artifacts/other-branch/blend-b6.f32', prefix+'.f32']
+        expected = [source['predictions_artifact']['sha256'],
+                    None if combined else own['outputs'][names[1]]['sha256']]
         raw = [pathlib.Path(name).read_bytes() for name in names]
         for value, sha in zip(raw, expected):
-            assert hashlib.sha256(value).hexdigest() == sha
+            if sha is not None:
+                assert hashlib.sha256(value).hexdigest() == sha
+        hashes = [hashlib.sha256(value).hexdigest() for value in raw]
         d = load(a.data); y = d['probe']['rating'].astype(np.float64)
         predictions = [np.frombuffer(value, dtype='<f4').astype(np.float64) for value in raw]
         assert all(len(col) == len(y) and np.isfinite(col).all() for col in predictions)
         # A predeclared 50/50 average, with clipping applied after combining.
         average = (predictions[0] + predictions[1]) / 2
-        average.astype('<f4').tofile('artifacts/UNION-equal.f32')
+        output = 'UNION-combined-equal' if combined else 'UNION-equal'
+        average.astype('<f4').tofile('artifacts/'+output+'.f32')
         folds = blend_fold(d['probe']['user'])
         scores = []
-        for name, col in zip(names + ['artifacts/UNION-equal.f32'], predictions + [average]):
+        for name, col in zip(names + ['artifacts/'+output+'.f32'], predictions + [average]):
             error = (np.clip(col, 1, 5) - y)**2
             scores.append(dict(name=name, rmse=float(np.sqrt(error.mean())),
                                fold_rmse=[float(np.sqrt(error[folds == f].mean())) for f in range(5)]))
-        report = dict(weights=[.5, .5], inputs=dict(zip(names, expected)), scores=scores,
+        report = dict(weights=[.5, .5], inputs=dict(zip(names, hashes)), scores=scores,
                       protocol='Fixed equal average; no additional fitting or weight search. Development CV.')
-        pathlib.Path('experiments/UNION-equal.json').write_text(json.dumps(report, indent=2)+'\n')
+        pathlib.Path('experiments/'+output+'.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report), flush=True)
         return
     if a.mode == 'union':
