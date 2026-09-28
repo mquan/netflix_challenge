@@ -1,0 +1,55 @@
+{
+  "name": "I3-integrated-f128-koren",
+  "strategy": "Step 2: I2 recipe (T4 factor settings + Koren neighbor lr .001 reg .015) at 128 factors. I1 (neighbor lr .005, reg .002) stopped at epoch 24, 0.9088, clearly behind I2.",
+  "command": [
+    "build/netflix",
+    "integrated",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--model",
+    "artifacts/I3-integrated-f128-koren.bin",
+    "--predictions",
+    "artifacts/I3-integrated-f128-koren.f32",
+    "--factors",
+    "128",
+    "--iterations",
+    "40",
+    "--learning-rate",
+    ".012",
+    "--regularization",
+    ".015",
+    "--decay",
+    ".93",
+    "--neighbor-rate",
+    ".001",
+    "--neighbor-regularization",
+    ".015"
+  ],
+  "started_utc": "2026-09-28T02:32:52.425676+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/integrated.hpp": "474801e770a2f15027434d35dc07f9757e61de48ee11c83aaea4b3825f3ea717",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "46438fe43fd3fd244aa3928b21edbb272da2aae4d8c82ce2ab807e0593e28a34",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors64.bin": {
+      "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "bytes": 6823704
+    }
+  },
+  "launched_utc": "2026-09-28T02:32:53.283330+00:00",
+  "events_path": "experiments/I3-integrated-f128-koren.events.jsonl"
+}

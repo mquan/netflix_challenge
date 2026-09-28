@@ -1626,6 +1626,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "ensemble.hpp"
 #include "neighborhood.hpp"
 #include "rbm.hpp"
+#include "integrated.hpp"
 
 void usage() {
   std::cerr
@@ -1659,6 +1660,9 @@ void usage() {
          "--model FILE --predictions FILE\n"
       << "  netflix knn --data FILE --graph FILE --time-model FILE "
          "--predictions FILE [--support FILE] [--neighbors N] [--power X] [--shrink X]\n"
+      << "  netflix integrated --data FILE --graph FILE --model FILE "
+         "[--factors N] [--init-model FILE] [--neighbor-rate X] [--predictions FILE]\n"
+      << "  netflix eval-integrated --data FILE --graph FILE --model FILE [--predictions FILE]\n"
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
          "[--threads N] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
@@ -1712,6 +1716,10 @@ int main(int argc, char **argv) {
       command_neighborhood(args, true);
     } else if (command == "knn") {
       command_knn(args);
+    } else if (command == "integrated") {
+      command_integrated(args, false);
+    } else if (command == "eval-integrated") {
+      command_integrated(args, true);
     } else if (command == "rbm") {
       command_rbm(args, false);
     } else if (command == "eval-rbm") {

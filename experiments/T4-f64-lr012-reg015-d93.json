@@ -1,0 +1,61 @@
+{
+  "name": "T4-f64-lr012-reg015-d93",
+  "strategy": "Step-1 ablation: higher lr .012 with reg .015, decay .93 (faster convergence at strong reg).",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/T4-f64-lr012-reg015-d93.bin",
+    "--predictions",
+    "artifacts/T4-f64-lr012-reg015-d93.f32",
+    "--factors",
+    "64",
+    "--patience",
+    "4",
+    "--learning-rate",
+    ".012",
+    "--regularization",
+    ".015",
+    "--decay",
+    ".93",
+    "--iterations",
+    "40"
+  ],
+  "started_utc": "2026-09-28T01:22:24.611850+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:22:25.828570+00:00",
+  "events_path": "experiments/T4-f64-lr012-reg015-d93.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 2321.2920182910166,
+  "finished_utc": "2026-09-28T02:01:07.149561+00:00",
+  "log_sha256": "3603f1e255cb9fea384ff43851673dff81ade7181149957eff509bb0ebabf36c",
+  "events_sha256": "6dbfa041ad861b82166c3fb1a3bbee32f6cac0fa010389206b1abaf09dfb0f38",
+  "model_artifact": {
+    "path": "artifacts/T4-f64-lr012-reg015-d93.bin",
+    "sha256": "a356df37af55ebd290bcf19275f7b0092f28ef7cc27447e2e72044afdaa2bb1b",
+    "bytes": 408581384
+  },
+  "predictions_artifact": {
+    "path": "artifacts/T4-f64-lr012-reg015-d93.f32",
+    "sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+    "bytes": 5633580
+  }
+}

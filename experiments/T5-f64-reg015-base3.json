@@ -1,0 +1,63 @@
+{
+  "name": "T5-f64-reg015-base3",
+  "strategy": "Step-1 ablation: T1 settings plus 3x bias learning rates (base-rate 3).",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/T5-f64-reg015-base3.bin",
+    "--predictions",
+    "artifacts/T5-f64-reg015-base3.f32",
+    "--factors",
+    "64",
+    "--patience",
+    "4",
+    "--learning-rate",
+    ".007",
+    "--regularization",
+    ".015",
+    "--decay",
+    ".90",
+    "--base-rate",
+    "3",
+    "--iterations",
+    "40"
+  ],
+  "started_utc": "2026-09-28T01:22:24.611627+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:22:25.682185+00:00",
+  "events_path": "experiments/T5-f64-reg015-base3.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 2198.021137417003,
+  "finished_utc": "2026-09-28T01:59:03.729500+00:00",
+  "log_sha256": "106eb42a1d6fbb113fe62b735a6647da65c0e7359cd39824bd9b09ef646b9371",
+  "events_sha256": "e97933169e399311e98af03aa31fb5a1315291e89bfadc9c016b29fb09842ec6",
+  "model_artifact": {
+    "path": "artifacts/T5-f64-reg015-base3.bin",
+    "sha256": "bbd1da41d99011e840555aecafed21f2e394e62171260a0d234f2e9667d58ac7",
+    "bytes": 408581384
+  },
+  "predictions_artifact": {
+    "path": "artifacts/T5-f64-reg015-base3.f32",
+    "sha256": "a96475fae4e1f03fdc3936e1015dcfa37a98589c40488794d60ed8dda7aedafd",
+    "bytes": 5633580
+  }
+}

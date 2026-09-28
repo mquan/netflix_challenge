@@ -1,0 +1,61 @@
+{
+  "name": "T1-f64-lr007-reg015-d90",
+  "strategy": "Step-1 ablation vs J1: Koren-like factor lr .007, reg .015, decay .90.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/T1-f64-lr007-reg015-d90.bin",
+    "--predictions",
+    "artifacts/T1-f64-lr007-reg015-d90.f32",
+    "--factors",
+    "64",
+    "--patience",
+    "4",
+    "--learning-rate",
+    ".007",
+    "--regularization",
+    ".015",
+    "--decay",
+    ".90",
+    "--iterations",
+    "40"
+  ],
+  "started_utc": "2026-09-28T01:22:24.611478+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:22:25.661753+00:00",
+  "events_path": "experiments/T1-f64-lr007-reg015-d90.events.jsonl",
+  "exit_code": -15,
+  "elapsed_seconds": 2412.5852277090016,
+  "finished_utc": "2026-09-28T02:02:38.277316+00:00",
+  "log_sha256": "ef5d088b263af441c76e07ab0da5621abb4d4bdb0c4f50f23119bb648ab525e0",
+  "events_sha256": "dcf96130e30776dd9c0a99ad35a37a1270faf8c728af8ada3041d3fe24870a77",
+  "model_artifact": {
+    "path": "artifacts/T1-f64-lr007-reg015-d90.bin",
+    "sha256": "6ad8abb97141dbd347b9dc7a6df695b13e89c6d0a0e40850b7912f53dc7f315b",
+    "bytes": 408581384
+  },
+  "predictions_artifact": {
+    "path": "artifacts/T1-f64-lr007-reg015-d90.f32",
+    "sha256": "b478971fd25cced4ae96d51655965cea369fdab0d08f0ac51a8733b5d0f276d9",
+    "bytes": 5633580
+  }
+}
