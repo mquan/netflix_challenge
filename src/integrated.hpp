@@ -131,6 +131,9 @@ void command_integrated(const std::vector<std::string> &args, bool eval_only) {
   const std::string init = optional_value_after(args, "--init-model");
   JointModel m = init.empty() ? new_joint(d, t, rank, seed) : load_joint(init, d, t, fingerprint);
   if (m.rank != rank || m.day_rank) fail("integrated requires matching rank and no day factors");
+  if (!init.empty() && fs::exists(init+".nbr")) load_integrated_neighbors(init+".nbr", n, graph_hash);
+  const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
+  if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
   std::mt19937 rng(seed);
   std::vector<uint32_t> users(d.header.users); std::iota(users.begin(), users.end(), 0);
   std::vector<uint64_t> order;
@@ -140,7 +143,7 @@ void command_integrated(const std::vector<std::string> &args, bool eval_only) {
   std::cout << "integrated factors=" << rank << " seed=" << seed << " lr=" << lr0 << " regularization=" << reg
             << " decay=" << decay << " neighbor_rate=" << nlr0 << " neighbor_reg=" << nreg
             << " k=" << g.k << " init_model=" << init << std::endl;
-  for (uint32_t epoch = 1; epoch <= epochs; ++epoch) {
+  for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     const float lr = lr0*std::pow(decay, float(epoch-1)), nlr = nlr0*std::pow(decay, float(epoch-1));
     const float c = 1-lr*reg;

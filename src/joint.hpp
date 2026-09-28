@@ -242,7 +242,10 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   std::cout << "joint factors=" << rank << " seed=" << seed << " regularization=" << reg
             << " decay=" << decay << " fingerprint=" << fingerprint << std::endl;
   std::cout << "day_factors=" << day_rank << " init_model=" << init << std::endl;
-  for (uint32_t epoch = 1; epoch <= epochs; ++epoch) {
+  // --start-epoch continues a warm start on the original learning-rate schedule.
+  const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
+  if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
+  for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     float lr = lr0*std::pow(decay, float(epoch-1));
     float c = 1-lr*reg;
