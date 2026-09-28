@@ -209,7 +209,7 @@ improving all five user folds. See [ROUND4.md](ROUND4.md) and
 in [HOLDOUT.md](HOLDOUT.md).
 
 Round 6 adds multithreaded joint training and conditional RBM output biases;
-two conditional RBM columns move the blend to **`0.8737149186` development CV**
-(three LightGBM seeds; 0.8738203523 with one seed).
+six conditional RBM columns (two seeds and three hidden sizes) move the blend to
+**`0.8731159148` development CV** (three LightGBM seeds; 0.8731934913 with one seed).
 [ROUND6.md](ROUND6.md) states the 10%-over-Cinematch target, the full
 three-stage algorithm, and the evidence for where the remaining gap must come from.
