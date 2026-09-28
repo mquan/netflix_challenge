@@ -1,0 +1,9 @@
+{"observed_utc": "2026-09-27T23:54:38.520601+00:00", "line": "autorec hidden=512 layers=2 batch=512 lr=0.001 input_drop=0.25 dropout=0.5 wd=0.0 device=mps"}
+{"observed_utc": "2026-09-27T23:54:41.788034+00:00", "line": "/Users/quan/workspace/netflix_challenge/scripts/autorec.py:119: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior."}
+{"observed_utc": "2026-09-27T23:54:41.788182+00:00", "line": "Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)"}
+{"observed_utc": "2026-09-27T23:54:41.788214+00:00", "line": "  sse += float(loss) * len(vals); n += len(vals)"}
+{"observed_utc": "2026-09-27T23:56:26.317820+00:00", "line": "epoch=1 train_rmse=0.9990441079 probe_rmse=0.9445935443 best=0.9445935443 seconds=107.8"}
+{"observed_utc": "2026-09-27T23:58:57.252555+00:00", "line": "epoch=2 train_rmse=1.3290840130 probe_rmse=0.9729896555 best=0.9445935443 seconds=150.9"}
+{"observed_utc": "2026-09-28T00:01:14.240340+00:00", "line": "epoch=3 train_rmse=1.4699474725 probe_rmse=0.9843578952 best=0.9445935443 seconds=137.0"}
+{"observed_utc": "2026-09-28T00:03:35.168026+00:00", "line": "epoch=4 train_rmse=1.3369384901 probe_rmse=0.9730028626 best=0.9445935443 seconds=140.9"}
+{"observed_utc": "2026-09-28T00:06:04.393421+00:00", "line": "epoch=5 train_rmse=1.1422876777 probe_rmse=0.9723417746 best=0.9445935443 seconds=149.2"}

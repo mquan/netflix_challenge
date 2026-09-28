@@ -1,0 +1,3 @@
+autorec hidden=512 layers=2 batch=512 lr=0.0003 input_drop=0.25 dropout=0.5 wd=0.0 device=mps
+epoch=1 train_rmse=0.8565446937 probe_rmse=0.9317932132 best=0.9317932132 seconds=223.9
+epoch=2 train_rmse=0.7890253948 probe_rmse=0.9359350100 best=0.9317932132 seconds=249.1

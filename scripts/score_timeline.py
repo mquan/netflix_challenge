@@ -23,7 +23,8 @@ FIELDS = ['milestone', 'run', 'epoch', 'score', 'metric', 'timestamp_utc',
           'timestamp_basis', 'earliest_utc', 'status', 'best_so_far_in_metric',
           'source', 'strategy']
 METRICS = {'probe_rmse': 'single_model_probe',
-           'blend_cv_rmse': 'blend_probe_user_cv', 'blend_fit_rmse': 'blend_probe_fit'}
+           'blend_cv_rmse': 'blend_probe_user_cv', 'blend_fit_rmse': 'blend_probe_fit',
+           'gbdt_blend_cv_rmse': 'blend_probe_user_cv'}
 
 
 def parse_time(value):

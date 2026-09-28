@@ -1,0 +1,58 @@
+{
+  "name": "J7-joint512-reg015",
+  "strategy": "Capacity: joint 512 factors with stronger regularization 0.015, 40 epochs, patience 5.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint512-reg015.bin",
+    "--factors",
+    "512",
+    "--iterations",
+    "40",
+    "--regularization",
+    "0.015",
+    "--decay",
+    "0.95",
+    "--patience",
+    "5",
+    "--predictions",
+    "artifacts/joint512-reg015.f32"
+  ],
+  "started_utc": "2026-09-27T23:35:30.516249+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c1fcc4e00610f92b235ec3876aacf7991108de3f702d41d7148b17184d3928b9",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-27T23:35:31.127040+00:00",
+  "events_path": "experiments/J7-joint512-reg015.events.jsonl",
+  "exit_code": -15,
+  "elapsed_seconds": 1053.5806593330053,
+  "finished_utc": "2026-09-27T23:53:04.703679+00:00",
+  "log_sha256": "3a8880a1fe5c02ab2179391eed7205c5763ce8254a9a4a2533061b3d04f8fea6",
+  "events_sha256": "71ef9fc5db74275b2a76f992d24652bec9c19232e773aead8a84d4ee89f81d0c",
+  "model_artifact": {
+    "path": "artifacts/joint512-reg015.bin",
+    "sha256": "7fbb718c5c86b1d33afe799d494ae3e4b25e7dc98a47f05bd179067a9166bb59",
+    "bytes": 2193266440
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint512-reg015.f32",
+    "sha256": "a50df9258588113d609989abe4acc40934508cb0cca6cb77df543103c3257896",
+    "bytes": 5633580
+  }
+}

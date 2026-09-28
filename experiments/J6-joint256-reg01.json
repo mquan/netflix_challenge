@@ -1,0 +1,43 @@
+{
+  "name": "J6-joint256-reg01",
+  "strategy": "Complete the interrupted J5 capacity ablation: joint 256 factors, regularization 0.01, 35 epochs with patience 5.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint256-reg01.bin",
+    "--factors",
+    "256",
+    "--iterations",
+    "35",
+    "--regularization",
+    "0.01",
+    "--decay",
+    "0.95",
+    "--patience",
+    "5",
+    "--predictions",
+    "artifacts/joint256-reg01.f32"
+  ],
+  "started_utc": "2026-09-27T23:35:30.516252+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c1fcc4e00610f92b235ec3876aacf7991108de3f702d41d7148b17184d3928b9",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-27T23:35:31.127023+00:00",
+  "events_path": "experiments/J6-joint256-reg01.events.jsonl"
+}

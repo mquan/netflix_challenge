@@ -1,0 +1,32 @@
+{
+  "name": "A2-autorec512-norm",
+  "strategy": "A1 diverged after epoch 1 (train RMSE rose to 1.47). Normalize rating and implicit input blocks by 1/sqrt(count), lr 3e-4, gradient-norm clip 1.",
+  "command": [
+    "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+    "scripts/autorec.py",
+    "--data",
+    "data/processed/netflix.bin",
+    "--predictions",
+    "artifacts/autorec512.f32"
+  ],
+  "started_utc": "2026-09-28T00:07:01.768053+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T00:07:02.962555+00:00",
+  "events_path": "experiments/A2-autorec512-norm.events.jsonl"
+}

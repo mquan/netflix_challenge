@@ -1,0 +1,18 @@
+autorec hidden=512 layers=2 batch=512 lr=0.0002 input_drop=0.5 dropout=0.5 wd=1e-05 device=mps
+epoch=1 train_rmse=0.8826961470 probe_rmse=0.9338101441 best=0.9338101441 seconds=263.0
+epoch=2 train_rmse=0.8301290750 probe_rmse=0.9270823797 best=0.9270823797 seconds=216.6
+epoch=3 train_rmse=0.8134870469 probe_rmse=0.9236618818 best=0.9236618818 seconds=237.9
+epoch=4 train_rmse=0.8038876567 probe_rmse=0.9225538676 best=0.9225538676 seconds=190.0
+epoch=5 train_rmse=0.7973079611 probe_rmse=0.9221979471 best=0.9221979471 seconds=189.8
+epoch=6 train_rmse=0.7928002886 probe_rmse=0.9217233071 best=0.9217233071 seconds=197.6
+epoch=7 train_rmse=0.7894829035 probe_rmse=0.9200633633 best=0.9200633633 seconds=204.8
+epoch=8 train_rmse=0.7866480727 probe_rmse=0.9200843563 best=0.9200633633 seconds=185.4
+epoch=9 train_rmse=0.7844201546 probe_rmse=0.9196398404 best=0.9196398404 seconds=198.6
+epoch=10 train_rmse=0.7823540753 probe_rmse=0.9186845316 best=0.9186845316 seconds=136.4
+epoch=11 train_rmse=0.7808231490 probe_rmse=0.9185927516 best=0.9185927516 seconds=166.1
+epoch=12 train_rmse=0.7795351334 probe_rmse=0.9204456006 best=0.9185927516 seconds=121.4
+epoch=13 train_rmse=0.7782384701 probe_rmse=0.9180819161 best=0.9180819161 seconds=160.4
+epoch=14 train_rmse=0.7767399255 probe_rmse=0.9174942436 best=0.9174942436 seconds=135.1
+epoch=15 train_rmse=0.7756201418 probe_rmse=0.9175842816 best=0.9174942436 seconds=131.1
+epoch=16 train_rmse=0.7752614343 probe_rmse=0.9179084987 best=0.9174942436 seconds=156.4
+epoch=17 train_rmse=0.7741014735 probe_rmse=0.9185189848 best=0.9174942436 seconds=123.7

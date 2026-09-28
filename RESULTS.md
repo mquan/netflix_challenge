@@ -18,6 +18,41 @@ The new `joint` command trains the temporal baseline, latent factors, implicit
 feedback and user-factor drift together. Prior claims that static factorization
 was at its limit were premature: the optimization scheme also needed testing.
 
+## Blend-diversity iteration (branch `score-iteration-2`, 2026-09-27)
+
+Best development CV fell from **0.8866646513** (B4) to **0.8804020935** (B6).
+Metric and caveats are unchanged: full probe split, user-fold cross-fitted blend
+weights, base-model epochs chosen on probe. The missing B4 input columns were
+regenerated deterministically and match their logged scores (J1–J4, N1). The
+three legacy SVD++ columns were not regenerated and are not in B5/B6.
+
+| Run | Strategy and outcome | Probe RMSE |
+|---|---|---:|
+| J6 | Completed J5: joint 256 factors, regularization 0.01. Best epoch 17; best single model so far. | 0.8951664052 |
+| J7 | Joint 512 factors, regularization 0.015. Stopped manually after epoch 2 (≈500 s/epoch under load, 40 epochs budgeted); compute reallocated to diverse models. | stopped (0.9479 at epoch 2) |
+| R1 | Conditional RBM, 100 hidden, conditioned on all known movies. Learned too slowly (0.9431 at epoch 14); stopped. | stopped |
+| R2 | R1 with ≈3× learning rates and annealing 0.98. Still improving slowly at the 60-epoch budget. | 0.9126515614 |
+| A1 | User denoising autoencoder (PyTorch/MPS), 2×512 SELU. Diverged after epoch 1. | stopped (0.9446) |
+| A2 | Inputs scaled by 1/√count, lr 3e-4, gradient clipping. Stable but overfit after epoch 1. | 0.9317932132 |
+| A3 | A2 with 50% input-rating drop and weight decay 1e-5. | 0.9174942436 |
+| kNN | Training-free item kNN over the G1 graph (`netflix knn`), similarity-weighted residuals, power 1, shrink 0.5. On time-baseline residuals: 0.9174. On joint-model residuals it improves every factor model by ≈0.003: J1 0.9000→0.8965, J3 0.8979→0.8951, J4 0.8970→0.8949, J2 0.8962→0.8928, J6 0.8952→0.8930. | see text |
+| B5 | Contextual ridge (B4 method) over 15 columns: J1, J3, J2, J4, J6, N1, six kNNs, R2, A3, A2. | 0.8816901996 CV (0.8816373212 fit) |
+| B6 | LightGBM blend (`scripts/gbdt_blend.py`) over the B5 columns + two kNN support columns + user/movie meta-features (support counts, rating mean/std, dates, same-day activity). Same five user folds as `ensemble`; early stopping uses a user-disjoint slice of the training folds, never the scored fold. All five folds beat B5. | **0.8804020935 CV** |
+
+Findings: residual kNN columns dominate GBDT gain importance (≈85%). Local
+item relationships are the signal that factor models miss. The nonlinear
+blender adds ≈0.0013 over ridge on identical columns (≈0.003 with a single
+column). RBM and AutoRec are weak alone but receive nonzero importance.
+
+kNN columns were produced directly (seconds each, deterministic):
+
+```sh
+build/netflix knn --data data/processed/netflix.bin --graph artifacts/neighbors64.bin \
+  --joint-model artifacts/joint128-reg02.bin --power 1 --shrink .5 \
+  --predictions artifacts/knn64-j128r02.f32 [--support FILE]
+# baseline variant: --time-model artifacts/time-baseline.bin instead of --joint-model
+```
+
 ## Joint-training experiments (2026-09-27)
 
 Commands, source/binary hashes, timings and complete epoch logs are kept in
@@ -33,7 +68,7 @@ saved locally under `artifacts/`. No recovered quiz/test labels are used.
 | B2 | Add J3 to B1 and allow blending weights to depend on history counts, movie popularity, date and daily activity. This combines two changes; it is not a pure context ablation. | 0.8914751148 CV (0.8914446469 fit) |
 | J4 | Warm-start J3 with 128 per-user-day factors. Best at first new epoch; subsequent epochs overfit, stopped after epoch 6. About 9 GB extra parameters; modest standalone gain. | 0.8970498562 |
 | B3 | Add J2 and retained J4 to B2; same five user-fold contextual blending. | **0.8901342372 CV** (0.8900970503 fit) |
-| J5 | Joint 256 factors, regularization 0.01: capacity ablation, currently running. Do not blend a column while it is being updated. | Pending |
+| J5 | Joint 256 factors, regularization 0.01: capacity ablation; interrupted, completed as J6 below. | See J6 |
 | G1 | Build a top-64 item-neighbor graph from training residuals, using capped histories for discovery. Graph construction has no rating-prediction RMSE. | Not applicable |
 | N1 | Learn explicit/implicit neighbor weights over G1 and frozen temporal baseline. Best epoch 4, stopped after epoch 8. Weaker alone but useful in B4. | 0.9100421231 |
 | B4 | Controlled addition of N1 to B3's seven-column contextual blend. All five user folds improve; local movie relationships add complementary signal. | **0.8866646513 CV** (0.8866238775 fit) |
