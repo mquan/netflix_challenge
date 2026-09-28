@@ -265,10 +265,14 @@ void command_knn(const std::vector<std::string> &args) {
   auto predict = [&](uint32_t u, uint32_t i, uint16_t day, uint32_t s) {
     float x = joint_base(d, f, base, u, i, day, s);
     const float *p = base.rank ? &effective[size_t(u)*base.rank] : nullptr;
+    const float *fq = base.frequency_factors.empty() ? nullptr :
+        &base.frequency_factors[(size_t(i)*kFrequencyBins+f.freq[s])*base.rank];
     for (uint32_t k = 0; k < base.rank; ++k)
-      x += base.factors.item_factors[size_t(i)*base.rank+k]*(p[k]+base.drift[size_t(u)*base.rank+k]*f.dev[s]);
+      x += (base.factors.item_factors[size_t(i)*base.rank+k]+(fq ? fq[k] : 0))
+          *(p[k]+base.drift[size_t(u)*base.rank+k]*f.dev[s]);
     for (uint32_t k = 0; k < base.day_rank; ++k)
-      x += base.factors.item_factors[size_t(i)*base.rank+k]*base.day_factors[size_t(s)*base.day_rank+k];
+      x += (base.factors.item_factors[size_t(i)*base.rank+k]+(fq ? fq[k] : 0))
+          *base.day_factors[size_t(s)*base.day_rank+k];
     return x;
   };
   const auto g = load_graph(value_after(args, "--graph"), d.header.items, joint_fingerprint(d));
@@ -277,18 +281,22 @@ void command_knn(const std::vector<std::string> &args) {
   const uint32_t k = std::min(g.k, uint_after(args, "--neighbors", g.k));
   const float power = float(double_after(args, "--power", 2));
   const float shrink = float(double_after(args, "--shrink", .05));
+  // Optional BellKor-style temporal weighting: a neighbor rated d days away
+  // from the probe date is down-weighted by exp(-time_decay*d). 0 disables it.
+  const float time_decay = float(double_after(args, "--time-decay", 0));
+  if (time_decay < 0) fail("invalid --time-decay");
   std::vector<uint64_t> po(d.header.users+1, 0);
   for (const auto &r : d.probe) ++po[r.user+1];
   std::partial_sum(po.begin(), po.end(), po.begin());
   auto cursor = po; std::vector<uint32_t> probe_order(d.probe.size());
   for (size_t p = 0; p < d.probe.size(); ++p) probe_order[cursor[d.probe[p].user]++] = uint32_t(p);
   std::vector<uint32_t> rated(d.header.items, UINT32_MAX);
-  std::vector<float> known_residual(d.header.items), pred(d.probe.size()), support(d.probe.size());
+  std::vector<float> known_residual(d.header.items), known_day(d.header.items), pred(d.probe.size()), support(d.probe.size());
   double sse = 0;
   for (uint32_t u = 0; u < d.header.users; ++u) {
     if (po[u] == po[u+1]) continue;
     for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
-      const uint32_t i = d.train_items[p]-1; rated[i] = u;
+      const uint32_t i = d.train_items[p]-1; rated[i] = u; known_day[i] = float(d.train_days[p]);
       known_residual[i] = d.train_ratings[p]-predict(u, i, d.train_days[p], f.train_session[p]);
     }
     for (uint64_t q = po[u]; q < po[u+1]; ++q) {
@@ -299,7 +307,8 @@ void command_knn(const std::vector<std::string> &args) {
       for (uint32_t j = i*g.k; j < i*g.k+k; ++j) {
         const uint32_t other = g.neighbor[j];
         if (rated[other] != u || g.similarity[j] <= 0) continue;
-        const float s = std::pow(g.similarity[j], power);
+        float s = std::pow(g.similarity[j], power);
+        if (time_decay > 0) s *= std::exp(-time_decay*std::fabs(float(r.day)-known_day[other]));
         num += s*known_residual[other]; den += s;
       }
       pred[p] = predict(r.user, i, r.day, f.probe_session[p]) + num/(den+shrink);
@@ -310,5 +319,5 @@ void command_knn(const std::vector<std::string> &args) {
   std::ofstream out(output, std::ios::binary); write_vector(out, pred);
   if (!support_path.empty()) { std::ofstream s(support_path, std::ios::binary); write_vector(s, support); }
   std::cout << std::setprecision(10) << "knn base=" << (joint_path.empty() ? "time" : joint_path) << " neighbors=" << k << " power=" << power
-            << " shrink=" << shrink << " probe_rmse=" << std::sqrt(sse/d.probe.size()) << std::endl;
+            << " shrink=" << shrink << " time_decay=" << time_decay << " probe_rmse=" << std::sqrt(sse/d.probe.size()) << std::endl;
 }

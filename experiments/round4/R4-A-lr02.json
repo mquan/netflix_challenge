@@ -1,0 +1,391 @@
+{
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "output": "artifacts/r4/R4-A-lr02",
+    "bank_root": "/private/tmp/netflix-moonshot",
+    "no_union": false,
+    "extra": [
+      "artifacts/joint256-reg01.f32",
+      "artifacts/T2-f64-lr005-reg015-d97.f32",
+      "artifacts/T3-f64-lr008-reg008.f32",
+      "artifacts/T4-f64-lr012-reg015-d93.f32",
+      "artifacts/T6-f256.f32",
+      "artifacts/I2-integrated-f64-koren.f32",
+      "artifacts/knn64-T4.f32",
+      "artifacts/r4/knn-J6-p1.f32",
+      "artifacts/r4/knn-J6-p2.f32",
+      "artifacts/r4/knn-J6-k16.f32",
+      "artifacts/r4/knn-J6-s5.f32",
+      "artifacts/r4/knn-T2-p1.f32",
+      "artifacts/r4/knn-T3-p1.f32",
+      "artifacts/r4/knn-T6-p1.f32",
+      "artifacts/rbm200.f32",
+      "artifacts/autorec512-a3.f32",
+      "artifacts/knn64-p2.f32",
+      "artifacts/knn64-j64-p2.f32",
+      "artifacts/rbm100.f32"
+    ],
+    "extra_support": [
+      "artifacts/r4/knn-J6-p1.support.f32"
+    ],
+    "rounds": 8000,
+    "learning_rate": 0.02,
+    "leaves": 63,
+    "min_leaf": 200,
+    "processes": 5
+  },
+  "inputs": {
+    "artifacts/other-branch/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+    "artifacts/other-branch/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+    "artifacts/other-branch/joint128-reg02.f32": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+    "artifacts/other-branch/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+    "artifacts/other-branch/joint256-snap.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+    "artifacts/other-branch/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "artifacts/other-branch/knn64-p1.f32": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+    "artifacts/other-branch/knn64-j64-p1.f32": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+    "artifacts/other-branch/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+    "artifacts/other-branch/knn64-j128r02.f32": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+    "artifacts/other-branch/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+    "artifacts/other-branch/knn64-j256snap.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+    "artifacts/other-branch/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+    "artifacts/other-branch/autorec512-a3-snap.f32": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+    "artifacts/other-branch/autorec512-a2.f32": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+    "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+    "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+    "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+    "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+    "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+    "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+    "artifacts/joint256-reg01.f32": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+    "artifacts/T2-f64-lr005-reg015-d97.f32": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+    "artifacts/T3-f64-lr008-reg008.f32": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+    "artifacts/T4-f64-lr012-reg015-d93.f32": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+    "artifacts/T6-f256.f32": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+    "artifacts/I2-integrated-f64-koren.f32": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+    "artifacts/knn64-T4.f32": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f",
+    "artifacts/r4/knn-J6-p1.f32": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+    "artifacts/r4/knn-J6-p2.f32": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5",
+    "artifacts/r4/knn-J6-k16.f32": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834",
+    "artifacts/r4/knn-J6-s5.f32": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a",
+    "artifacts/r4/knn-T2-p1.f32": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7",
+    "artifacts/r4/knn-T3-p1.f32": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8",
+    "artifacts/r4/knn-T6-p1.f32": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad",
+    "artifacts/rbm200.f32": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e",
+    "artifacts/autorec512-a3.f32": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+    "artifacts/knn64-p2.f32": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd",
+    "artifacts/knn64-j64-p2.f32": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641",
+    "artifacts/rbm100.f32": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3",
+    "artifacts/other-branch/knn64-j128day.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/other-branch/knn64-j256snap.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/r4/knn-J6-p1.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "chosen_rounds": 1186,
+      "seconds": 562.6362778330222,
+      "inner_ridge_rmse": 0.8796584254775361,
+      "ridge_rmse": 0.8796487232757986,
+      "refit_rmse": 0.8769937405957995,
+      "top_gain": [
+        [
+          0.0599,
+          "meta4"
+        ],
+        [
+          0.0486,
+          "meta3"
+        ],
+        [
+          0.0414,
+          "artifacts/other-branch/knn64-j128day.support.f32"
+        ],
+        [
+          0.0396,
+          "meta0"
+        ],
+        [
+          0.0384,
+          "meta5"
+        ],
+        [
+          0.0367,
+          "artifacts/I2-integrated-f64-koren.f32"
+        ],
+        [
+          0.0364,
+          "meta1"
+        ],
+        [
+          0.0347,
+          "artifacts/autorec512-a3.f32"
+        ],
+        [
+          0.0329,
+          "meta6"
+        ],
+        [
+          0.0315,
+          "artifacts/rbm200.f32"
+        ],
+        [
+          0.0293,
+          "artifacts/other-branch/rbm100-fast.f32"
+        ],
+        [
+          0.0281,
+          "artifacts/other-branch/neighborhood64.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 1,
+      "chosen_rounds": 915,
+      "seconds": 439.5873800830159,
+      "inner_ridge_rmse": 0.87825405121239,
+      "ridge_rmse": 0.8782637088150884,
+      "refit_rmse": 0.8758236038247819,
+      "top_gain": [
+        [
+          0.0597,
+          "meta4"
+        ],
+        [
+          0.05,
+          "meta3"
+        ],
+        [
+          0.043,
+          "artifacts/other-branch/knn64-j128day.support.f32"
+        ],
+        [
+          0.0421,
+          "meta5"
+        ],
+        [
+          0.0396,
+          "meta0"
+        ],
+        [
+          0.038,
+          "artifacts/I2-integrated-f64-koren.f32"
+        ],
+        [
+          0.037,
+          "meta1"
+        ],
+        [
+          0.0349,
+          "artifacts/autorec512-a3.f32"
+        ],
+        [
+          0.034,
+          "meta6"
+        ],
+        [
+          0.033,
+          "artifacts/rbm200.f32"
+        ],
+        [
+          0.0301,
+          "meta10"
+        ],
+        [
+          0.0287,
+          "artifacts/other-branch/rbm100-fast.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen_rounds": 1071,
+      "seconds": 484.74326220797957,
+      "inner_ridge_rmse": 0.8748488302221615,
+      "ridge_rmse": 0.8748344732423852,
+      "refit_rmse": 0.8721179363256287,
+      "top_gain": [
+        [
+          0.061,
+          "meta4"
+        ],
+        [
+          0.0477,
+          "meta3"
+        ],
+        [
+          0.0402,
+          "meta0"
+        ],
+        [
+          0.0401,
+          "artifacts/other-branch/knn64-j128day.support.f32"
+        ],
+        [
+          0.0398,
+          "meta1"
+        ],
+        [
+          0.0393,
+          "meta5"
+        ],
+        [
+          0.0362,
+          "artifacts/I2-integrated-f64-koren.f32"
+        ],
+        [
+          0.0326,
+          "artifacts/autorec512-a3.f32"
+        ],
+        [
+          0.0318,
+          "artifacts/rbm200.f32"
+        ],
+        [
+          0.0307,
+          "meta6"
+        ],
+        [
+          0.03,
+          "artifacts/other-branch/rbm100-fast.f32"
+        ],
+        [
+          0.0295,
+          "artifacts/rbm100.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen_rounds": 1127,
+      "seconds": 523.581105624995,
+      "inner_ridge_rmse": 0.879689275793435,
+      "ridge_rmse": 0.8796568246802885,
+      "refit_rmse": 0.8774180050306283,
+      "top_gain": [
+        [
+          0.0593,
+          "meta4"
+        ],
+        [
+          0.0511,
+          "meta3"
+        ],
+        [
+          0.0422,
+          "artifacts/other-branch/knn64-j128day.support.f32"
+        ],
+        [
+          0.0401,
+          "meta5"
+        ],
+        [
+          0.0387,
+          "meta1"
+        ],
+        [
+          0.037,
+          "artifacts/I2-integrated-f64-koren.f32"
+        ],
+        [
+          0.0352,
+          "meta0"
+        ],
+        [
+          0.0334,
+          "artifacts/autorec512-a3.f32"
+        ],
+        [
+          0.033,
+          "meta6"
+        ],
+        [
+          0.0304,
+          "artifacts/other-branch/rbm100-fast.f32"
+        ],
+        [
+          0.0303,
+          "artifacts/rbm200.f32"
+        ],
+        [
+          0.0295,
+          "artifacts/other-branch/neighborhood64.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen_rounds": 891,
+      "seconds": 410.76486991599086,
+      "inner_ridge_rmse": 0.8794669561967932,
+      "ridge_rmse": 0.8794617305040672,
+      "refit_rmse": 0.8772085270818198,
+      "top_gain": [
+        [
+          0.0597,
+          "meta4"
+        ],
+        [
+          0.0532,
+          "meta3"
+        ],
+        [
+          0.0439,
+          "artifacts/other-branch/knn64-j128day.support.f32"
+        ],
+        [
+          0.0409,
+          "meta5"
+        ],
+        [
+          0.0389,
+          "meta1"
+        ],
+        [
+          0.0384,
+          "meta0"
+        ],
+        [
+          0.0379,
+          "artifacts/I2-integrated-f64-koren.f32"
+        ],
+        [
+          0.033,
+          "meta6"
+        ],
+        [
+          0.0326,
+          "artifacts/rbm200.f32"
+        ],
+        [
+          0.0317,
+          "artifacts/autorec512-a3.f32"
+        ],
+        [
+          0.0298,
+          "meta10"
+        ],
+        [
+          0.0294,
+          "artifacts/other-branch/rbm100-fast.f32"
+        ]
+      ]
+    }
+  ],
+  "lightgbm_version": "4.7.0",
+  "refit_rmse": 0.8759100881020415,
+  "refit_fold_rmse": [
+    0.8769937405957995,
+    0.8758236038247819,
+    0.8721179363256287,
+    0.8774180050306283,
+    0.8772085270818198
+  ],
+  "ridge_rmse": 0.8783709197586494,
+  "ridge_fold_rmse": [
+    0.8796487232757986,
+    0.8782637088150884,
+    0.8748344732423852,
+    0.8796568246802885,
+    0.8794617305040672
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "T3-f64-lr008-reg008",
+  "strategy": "Step-1 ablation: intermediate reg .008, lr .008, decay .95.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/T3-f64-lr008-reg008.bin",
+    "--predictions",
+    "artifacts/T3-f64-lr008-reg008.f32",
+    "--factors",
+    "64",
+    "--patience",
+    "4",
+    "--learning-rate",
+    ".008",
+    "--regularization",
+    ".008",
+    "--decay",
+    ".95",
+    "--iterations",
+    "40"
+  ],
+  "started_utc": "2026-09-28T01:22:24.611757+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:22:25.800931+00:00",
+  "events_path": "experiments/T3-f64-lr008-reg008.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 1692.4640967500163,
+  "finished_utc": "2026-09-28T01:50:38.284270+00:00",
+  "log_sha256": "a7078f07d52abd12d6ffa14d95320d2da5aa0770f2f63bb5dbb9a7c8dcd8c508",
+  "events_sha256": "b0bfffa84a2966fcf4802a326e2936fe59bd425ff5daa4b0747b31c6b32b140b",
+  "model_artifact": {
+    "path": "artifacts/T3-f64-lr008-reg008.bin",
+    "sha256": "d41d07b0055a448872ec05eb032aefd8a09463728ab412c1500ed22dd2b2f125",
+    "bytes": 408581384
+  },
+  "predictions_artifact": {
+    "path": "artifacts/T3-f64-lr008-reg008.f32",
+    "sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+    "bytes": 5633580
+  }
+}

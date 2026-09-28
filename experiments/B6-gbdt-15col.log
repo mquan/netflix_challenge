@@ -1,0 +1,22 @@
+column=artifacts/joint64.f32 probe_rmse=0.9000114051
+column=artifacts/joint128-reg005.f32 probe_rmse=0.8978688248
+column=artifacts/joint128-reg02.f32 probe_rmse=0.8961722040
+column=artifacts/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/joint256-snap.f32 probe_rmse=0.8951664052
+column=artifacts/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/knn64-p1.f32 probe_rmse=0.9173704659
+column=artifacts/knn64-j64-p1.f32 probe_rmse=0.8965213139
+column=artifacts/knn64-j128r005.f32 probe_rmse=0.8950597610
+column=artifacts/knn64-j128r02.f32 probe_rmse=0.8927611155
+column=artifacts/knn64-j128day.f32 probe_rmse=0.8949021750
+column=artifacts/knn64-j256snap.f32 probe_rmse=0.8930184131
+column=artifacts/rbm100-fast.f32 probe_rmse=0.9126515614
+column=artifacts/autorec512-a3-snap.f32 probe_rmse=0.9174942436
+column=artifacts/autorec512-a2.f32 probe_rmse=0.9317932132
+heldout_user_fold=0 count=281675 rounds=491 rmse=0.8817188464
+importance {"knn64-j128r02": 0.3573, "knn64-j256snap": 0.2962, "knn64-j64-p1": 0.1955, "knn64-j128day": 0.0351, "neighborhood64": 0.0272, "rbm100-fast": 0.0193, "autorec512-a3-snap": 0.0105, "user_std": 0.0055, "log_user_n": 0.0051, "item_mean": 0.0047, "user_mean": 0.0043, "log_item_n": 0.004, "knn64-j128day.support": 0.0038, "knn64-p1": 0.0035, "day": 0.0032, "autorec512-a2": 0.0028, "knn64-j128r005": 0.0027, "day_minus_user_mean": 0.0026, "log_same_day": 0.0026, "user_span": 0.0022, "day_minus_first": 0.0022, "joint64": 0.0019, "joint128-reg02": 0.0017, "joint128-reg005": 0.0015, "joint256-snap": 0.0015, "joint128-day128": 0.0012, "log_implicit_n": 0.001, "knn64-j256snap.support": 0.0009}
+heldout_user_fold=1 count=281390 rounds=556 rmse=0.8802252865
+heldout_user_fold=2 count=283006 rounds=449 rmse=0.8769466644
+heldout_user_fold=3 count=281688 rounds=536 rmse=0.8814638988
+heldout_user_fold=4 count=280636 rounds=568 rmse=0.8816671764
+gbdt_blend_cv_rmse=0.8804020935 columns=15 meta=True rounds=[491, 556, 449, 536, 568]

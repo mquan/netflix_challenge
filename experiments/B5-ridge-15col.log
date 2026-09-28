@@ -1,0 +1,36 @@
+column=artifacts/joint64.f32 probe_rmse=0.9000114051
+column=artifacts/joint128-reg005.f32 probe_rmse=0.8978688248
+column=artifacts/joint128-reg02.f32 probe_rmse=0.896172204
+column=artifacts/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/joint256-snap.f32 probe_rmse=0.8951664052
+column=artifacts/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/knn64-p1.f32 probe_rmse=0.9173704659
+column=artifacts/knn64-j64-p1.f32 probe_rmse=0.8965213139
+column=artifacts/knn64-j128r005.f32 probe_rmse=0.895059761
+column=artifacts/knn64-j128r02.f32 probe_rmse=0.8927611155
+column=artifacts/knn64-j128day.f32 probe_rmse=0.894902175
+column=artifacts/knn64-j256snap.f32 probe_rmse=0.8930184131
+column=artifacts/rbm100-fast.f32 probe_rmse=0.9126515614
+column=artifacts/autorec512-a3-snap.f32 probe_rmse=0.9174942436
+column=artifacts/autorec512-a2.f32 probe_rmse=0.9317932132
+heldout_user_fold=0 count=281675 rmse=0.8830580088
+heldout_user_fold=1 count=281390 rmse=0.8815971889
+heldout_user_fold=2 count=283006 rmse=0.8782554709
+heldout_user_fold=3 count=281688 rmse=0.8828451776
+heldout_user_fold=4 count=280636 rmse=0.882705854
+blend_cv_rmse=0.8816901996 blend_fit_rmse=0.8816373212 ridge=1e-05 centered_intercept=-0.04010985049 contexts=5
+weight=-0.03052606432 column=artifacts/joint64.f32
+weight=0.228775906 column=artifacts/joint128-reg005.f32
+weight=0.1045283331 column=artifacts/joint128-reg02.f32
+weight=-0.4733286128 column=artifacts/joint128-day128.f32
+weight=-0.2520476767 column=artifacts/joint256-snap.f32
+weight=0.3318972679 column=artifacts/neighborhood64.f32
+weight=-0.1370501312 column=artifacts/knn64-p1.f32
+weight=0.1198256661 column=artifacts/knn64-j64-p1.f32
+weight=-0.3468740488 column=artifacts/knn64-j128r005.f32
+weight=0.1735157376 column=artifacts/knn64-j128r02.f32
+weight=0.6890800704 column=artifacts/knn64-j128day.f32
+weight=0.4340720849 column=artifacts/knn64-j256snap.f32
+weight=0.1329118397 column=artifacts/rbm100-fast.f32
+weight=0.1223503068 column=artifacts/autorec512-a3-snap.f32
+weight=-0.09426628266 column=artifacts/autorec512-a2.f32

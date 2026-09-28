@@ -1,0 +1,50 @@
+{
+  "name": "R3-rbm200-long",
+  "strategy": "Step 3: R2 was still improving at its 60-epoch budget. 200 hidden units, 120 epochs, anneal .985, same R2 learning rates.",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/rbm200.bin",
+    "--hidden",
+    "200",
+    "--iterations",
+    "120",
+    "--threads",
+    "4",
+    "--patience",
+    "6",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985",
+    "--predictions",
+    "artifacts/rbm200.f32"
+  ],
+  "started_utc": "2026-09-28T01:22:33.660719+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:22:34.529487+00:00",
+  "events_path": "experiments/R3-rbm200-long.events.jsonl"
+}

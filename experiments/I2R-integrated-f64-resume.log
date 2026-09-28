@@ -1,0 +1,11 @@
+integrated factors=64 seed=2026 lr=0.012 regularization=0.015 decay=0.93 neighbor_rate=0.001 neighbor_reg=0.015 k=64 init_model=artifacts/I2-integrated-f64-koren.bin
+epoch=18 train_rmse=0.7118763308 probe_rmse=0.894832029 best=0.894832029 seconds=50.16219662
+epoch=19 train_rmse=0.708292649 probe_rmse=0.8949341418 best=0.894832029 seconds=59.61108046
+epoch=20 train_rmse=0.7049358523 probe_rmse=0.8947668344 best=0.8947668344 seconds=61.97712975
+epoch=21 train_rmse=0.7017907501 probe_rmse=0.8946727723 best=0.8946727723 seconds=61.92752267
+epoch=22 train_rmse=0.6988371331 probe_rmse=0.894646054 best=0.894646054 seconds=80.22051658
+epoch=23 train_rmse=0.6961150291 probe_rmse=0.8945819821 best=0.8945819821 seconds=95.55327742
+epoch=24 train_rmse=0.6935043521 probe_rmse=0.8947457197 best=0.8945819821 seconds=153.5212349
+epoch=25 train_rmse=0.6911201687 probe_rmse=0.8947433628 best=0.8945819821 seconds=121.9287778
+epoch=26 train_rmse=0.6888822703 probe_rmse=0.8947946149 best=0.8945819821 seconds=97.55138638
+early_stop patience=3

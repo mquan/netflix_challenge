@@ -1,0 +1,42 @@
+{
+  "name": "R1-rbm100",
+  "strategy": "Conditional RBM, 100 hidden units, CD-1..5, conditioned on train/probe/qualifying implicit items; new model class for blend diversity.",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/rbm100.bin",
+    "--hidden",
+    "100",
+    "--iterations",
+    "60",
+    "--threads",
+    "8",
+    "--patience",
+    "6",
+    "--predictions",
+    "artifacts/rbm100.f32"
+  ],
+  "started_utc": "2026-09-27T23:40:02.981150+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "5970c826b68edfd0f02133de805e5dad24fab4faa69959e645e8075e937ace20",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "482d302d20aaefaee0053cff8beb04e57326392fa0023eea2446a6d0bdf8a3fc",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-27T23:40:04.830717+00:00",
+  "events_path": "experiments/R1-rbm100.events.jsonl"
+}

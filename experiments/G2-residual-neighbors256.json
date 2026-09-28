@@ -1,0 +1,50 @@
+{
+  "name": "G2-residual-neighbors256",
+  "strategy": "Top-256 item-neighbor graph, same recipe as G1",
+  "command": [
+    "build/netflix",
+    "graph",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/r4/neighbors256.bin",
+    "--neighbors",
+    "256",
+    "--history-cap",
+    "256"
+  ],
+  "started_utc": "2026-09-28T02:50:33.784002+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "0f1836feffaed9fe3e071c3fef08d9396a63ccf2",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee"
+  },
+  "binary_sha256": "9b0fda95c5419014f9bac9b33a85ed6d719c11198c5286c08a40dc58901bf368",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T02:50:34.686772+00:00",
+  "events_path": "experiments/G2-residual-neighbors256.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 97.6473796669743,
+  "finished_utc": "2026-09-28T02:52:12.335309+00:00",
+  "log_sha256": "6e1b3a7c9f2934791178a8367f5994e3c1d1d1e0cc73988105d27acf1518599c",
+  "events_sha256": "257f13159bba483a73b036ef41cae0fb2c256fe87624a388d1127bd95b173336",
+  "graph_artifact": {
+    "path": "artifacts/r4/neighbors256.bin",
+    "sha256": "4d00cfab0b2edf67a6e09aba27b8578035a2cb2704875241b570341dd85879d6",
+    "bytes": 27294744
+  }
+}

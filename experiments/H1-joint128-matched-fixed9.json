@@ -1,0 +1,62 @@
+{
+  "name": "H1-joint128-matched-fixed9",
+  "strategy": "Training-only user/date matched holdout; J3 architecture at preselected epoch 9; fixed epoch prevents holdout checkpoint selection",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "artifacts/validation/train-matched-20260927.bin",
+    "--model",
+    "artifacts/validation/J3-matched-fixed9.bin",
+    "--factors",
+    "128",
+    "--iterations",
+    "9",
+    "--fixed-epoch",
+    "--regularization",
+    "0.005",
+    "--decay",
+    "0.95",
+    "--predictions",
+    "artifacts/validation/J3-matched-fixed9.f32"
+  ],
+  "started_utc": "2026-09-28T04:33:34.516411+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "e860c07c4026aed2e6d273e70d8237a171b71a31",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "6c7a5566165844b85d38d67eacea3c2ee15070e88c234faaf01287083ee2d12d"
+  },
+  "binary_sha256": "090ae9240263bbab32208996cd33355ca7361808c81493db2f095f27a5778109",
+  "metric": "Training-only user/date matched holdout RMSE at fixed epoch; not original probe or hidden-test RMSE",
+  "inputs": {
+    "artifacts/validation/train-matched-20260927.bin": {
+      "sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+      "bytes": 926087170
+    }
+  },
+  "launched_utc": "2026-09-28T04:33:35.565610+00:00",
+  "events_path": "experiments/H1-joint128-matched-fixed9.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 722.6244734579814,
+  "finished_utc": "2026-09-28T04:45:38.191822+00:00",
+  "log_sha256": "3d9a6f99c890f0ab56b84a648ef0eed161bd46d13b7fa2b86e565a97e6804651",
+  "events_sha256": "ede3e6229ac117555bf8e21fec0eb62c648d2fd0c6e32160d61027229322153b",
+  "model_artifact": {
+    "path": "artifacts/validation/J3-matched-fixed9.bin",
+    "sha256": "86a8d6c4c798377924d00d64679b0f3fa80b501bbbd95056447664bd153728a9",
+    "bytes": 663536392
+  },
+  "predictions_artifact": {
+    "path": "artifacts/validation/J3-matched-fixed9.f32",
+    "sha256": "57385254e115041b2ececd4401272a84182c8b780cd51daaf49268b3a566e8af",
+    "bytes": 5630264
+  }
+}

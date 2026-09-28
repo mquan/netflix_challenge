@@ -221,6 +221,7 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   const uint32_t rank = uint_after(args, "--factors", 64);
   const uint32_t epochs = uint_after(args, "--iterations", 30);
   const uint32_t patience = uint_after(args, "--patience", 6);
+  const bool fixed_epoch = std::find(args.begin(), args.end(), "--fixed-epoch") != args.end();
   const uint32_t seed = uint_after(args, "--seed", 2026);
   const float lr0 = float(double_after(args, "--learning-rate", .008));
   const float reg = float(double_after(args, "--regularization", .0015));
@@ -260,7 +261,10 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
             << " decay=" << decay << " fingerprint=" << fingerprint << std::endl;
   std::cout << "day_factors=" << day_rank << " frequency_factors=" << frequency_factors
             << " init_model=" << init << std::endl;
-  for (uint32_t epoch = 1; epoch <= epochs; ++epoch) {
+  // --start-epoch continues a warm start on the original learning-rate schedule.
+  const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
+  if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
+  for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     float lr = lr0*std::pow(decay, float(epoch-1));
     float c = 1-lr*reg;
@@ -327,15 +331,15 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
     m.epoch = epoch;
     double score = eval_joint(d, f, m, predictions);
     if (!std::isfinite(sse) || !std::isfinite(score)) fail("non-finite training run");
-    if (score < best) {
-      best = score; stale = 0; save_joint(model_path, m, fingerprint); export_predictions();
+    if (fixed_epoch || score < best) {
+      best = std::min(best, score); stale = 0; save_joint(model_path, m, fingerprint); export_predictions();
     } else {
       ++stale;
     }
     double seconds = std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     std::cout << std::setprecision(10) << "epoch=" << epoch << " train_rmse=" << std::sqrt(sse/d.header.train_count)
               << " probe_rmse=" << score << " best=" << best << " seconds=" << seconds << std::endl;
-    if (patience && stale >= patience) {
+    if (!fixed_epoch && patience && stale >= patience) {
       std::cout << "early_stop patience=" << patience << std::endl;
       break;
     }

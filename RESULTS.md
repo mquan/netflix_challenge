@@ -18,6 +18,72 @@ The new `joint` command trains the temporal baseline, latent factors, implicit
 feedback and user-factor drift together. Prior claims that static factorization
 was at its limit were premature: the optimization scheme also needed testing.
 
+## Single-model iteration (stopped, 2026-09-28)
+
+Goal: close the ≈0.017 gap between our 64-factor joint model and published
+timeSVD++ results. Halted by decision: gains were small relative to compute.
+All runs were stopped manually except T2–T5, which completed. Best checkpoints
+are kept locally. No new blend was run in that single-model iteration.
+
+| Run | Strategy | Best probe RMSE |
+|---|---|---:|
+| T1 | 64 factors, lr .007, reg .015, decay .90 (Koren-like) | 0.9025 (stopped) |
+| T2 | lr .005, reg .015, decay .97, 40 epochs | 0.8969742665 |
+| T3 | lr .008, reg .008, decay .95 | 0.8982873560 |
+| T4 | lr .012, reg .015, decay .93 | 0.8975343589 |
+| T5 | T1 + 3× bias learning rates | 0.9067923285 (worse) |
+| kNN on T4 | residual kNN, power 1, shrink .5 | 0.8949025772 |
+| T6 | T4 settings at 256 factors; stopped at epoch 11, still improving | 0.8994939730 |
+| I1 | integrated model, neighbor lr .005, reg .002 | 0.9088 (stopped, behind control) |
+| I2 | integrated model, T4 settings + Koren neighbor lr .001, reg .015; stopped at epoch 17, still improving | 0.8950571618 |
+| I3 | I2 recipe at 128 factors; stopped at epoch 2 | 0.9235 |
+| R3 | RBM, 200 hidden; stopped at epoch 30, still improving | 0.9117705910 |
+
+Findings: learning-rate/regularization tuning gains only ≈0.003 at 64 factors,
+so it does not explain the gap to published numbers. The integrated model
+(I2) beats its factor-only control (T4) by ≈0.0025 at the stopped epoch. A
+larger RBM improves on R2. None of these changes the conclusion that reaching
+≈0.855 would need far more models and compute than this approach.
+
+## Blend-diversity iteration (branch `score-iteration-2`, 2026-09-27)
+
+Run IDs in this section are local to `score-iteration-2`: its J6/J7 and B5/B6
+are separate runs from the identically labeled experiments in the joint-training
+table below. The manifests and logs identify the exact runs and checkpoints.
+
+Best development CV fell from **0.8866646513** (B4) to **0.8804020935** (B6).
+Metric and caveats are unchanged: full probe split, user-fold cross-fitted blend
+weights, base-model epochs chosen on probe. The missing B4 input columns were
+regenerated deterministically and match their logged scores (J1–J4, N1). The
+three legacy SVD++ columns were not regenerated and are not in B5/B6.
+
+| Run | Strategy and outcome | Probe RMSE |
+|---|---|---:|
+| J6 | Completed J5: joint 256 factors, regularization 0.01. Best epoch 17; best single model so far. | 0.8951664052 |
+| J7 | Joint 512 factors, regularization 0.015. Stopped manually after epoch 2 (≈500 s/epoch under load, 40 epochs budgeted); compute reallocated to diverse models. | stopped (0.9479 at epoch 2) |
+| R1 | Conditional RBM, 100 hidden, conditioned on all known movies. Learned too slowly (0.9431 at epoch 14); stopped. | stopped |
+| R2 | R1 with ≈3× learning rates and annealing 0.98. Still improving slowly at the 60-epoch budget. | 0.9126515614 |
+| A1 | User denoising autoencoder (PyTorch/MPS), 2×512 SELU. Diverged after epoch 1. | stopped (0.9446) |
+| A2 | Inputs scaled by 1/√count, lr 3e-4, gradient clipping. Stable but overfit after epoch 1. | 0.9317932132 |
+| A3 | A2 with 50% input-rating drop and weight decay 1e-5. | 0.9174942436 |
+| kNN | Training-free item kNN over the G1 graph (`netflix knn`), similarity-weighted residuals, power 1, shrink 0.5. On time-baseline residuals: 0.9174. On joint-model residuals it improves every factor model by ≈0.003: J1 0.9000→0.8965, J3 0.8979→0.8951, J4 0.8970→0.8949, J2 0.8962→0.8928, J6 0.8952→0.8930. | see text |
+| B5 | Contextual ridge (B4 method) over 15 columns: J1, J3, J2, J4, J6, N1, six kNNs, R2, A3, A2. | 0.8816901996 CV (0.8816373212 fit) |
+| B6 | LightGBM blend (`scripts/gbdt_blend.py`) over the B5 columns + two kNN support columns + user/movie meta-features (support counts, rating mean/std, dates, same-day activity). Same five user folds as `ensemble`; early stopping uses a user-disjoint slice of the training folds, never the scored fold. All five folds beat B5. | **0.8804020935 CV** |
+
+Findings: residual kNN columns dominate GBDT gain importance (≈85%). Local
+item relationships are the signal that factor models miss. The nonlinear
+blender adds ≈0.0013 over ridge on identical columns (≈0.003 with a single
+column). RBM and AutoRec are weak alone but receive nonzero importance.
+
+kNN columns were produced directly (seconds each, deterministic):
+
+```sh
+build/netflix knn --data data/processed/netflix.bin --graph artifacts/neighbors64.bin \
+  --joint-model artifacts/joint128-reg02.bin --power 1 --shrink .5 \
+  --predictions artifacts/knn64-j128r02.f32 [--support FILE]
+# baseline variant: --time-model artifacts/time-baseline.bin instead of --joint-model
+```
+
 ## Joint-training experiments (2026-09-27)
 
 Commands, source/binary hashes, timings and complete epoch logs are kept in
@@ -66,7 +132,7 @@ larger gain. B4 code is retained in commit `cffd6bf`, tagged
 `milestone-probe-cv-0.886665`. From N2 onward, each experiment also archives
 actual code/build/test files in `.source.zip`, not just source hashes.
 
-As of the 2026-09-27 progress checkpoint, B7 is the best recorded user-fold
+At the 2026-09-27 local progress checkpoint, B7 was the best recorded user-fold
 blend score. It uses the frozen N2i epoch-5 column, adding `0.0004746903` RMSE
 improvement over B6. N2i's model and prediction hashes are in its manifest;
 the completed N2 run may have continued changing its conventional artifact.

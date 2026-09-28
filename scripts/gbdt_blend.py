@@ -31,7 +31,8 @@ def load(path):
         out = raw[pos:pos+size].view(dtype)
         pos += size
         return out
-    d = dict(users=users, items=int(h['items']), mean=float(h['mean']))
+    d = dict(users=users, items=int(h['items']), mean=float(h['mean']),
+             min_day=int(h['min_day']), max_day=int(h['max_day']))
     d['train_offsets'] = take('<u8', users+1)
     d['train_items'] = take('<u2', n)
     d['train_days'] = take('<u2', n)

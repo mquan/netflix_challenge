@@ -1,0 +1,134 @@
+{
+  "name": "B5-ridge-15col",
+  "strategy": "Contextual ridge (B4 method) over 15 columns: 5 joint models, N1, 6 residual/baseline kNNs, RBM, 2 AutoRec. Control for the GBDT blend.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--prediction",
+    "artifacts/joint128-reg02.f32",
+    "--prediction",
+    "artifacts/joint128-day128.f32",
+    "--prediction",
+    "artifacts/joint256-snap.f32",
+    "--prediction",
+    "artifacts/neighborhood64.f32",
+    "--prediction",
+    "artifacts/knn64-p1.f32",
+    "--prediction",
+    "artifacts/knn64-j64-p1.f32",
+    "--prediction",
+    "artifacts/knn64-j128r005.f32",
+    "--prediction",
+    "artifacts/knn64-j128r02.f32",
+    "--prediction",
+    "artifacts/knn64-j128day.f32",
+    "--prediction",
+    "artifacts/knn64-j256snap.f32",
+    "--prediction",
+    "artifacts/rbm100-fast.f32",
+    "--prediction",
+    "artifacts/autorec512-a3-snap.f32",
+    "--prediction",
+    "artifacts/autorec512-a2.f32",
+    "--contexts",
+    "1",
+    "--predictions",
+    "artifacts/blend-b5.f32"
+  ],
+  "started_utc": "2026-09-28T01:05:51.268206+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/joint64.f32": {
+      "sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg005.f32": {
+      "sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg02.f32": {
+      "sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-day128.f32": {
+      "sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "bytes": 5633580
+    },
+    "artifacts/joint256-snap.f32": {
+      "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "bytes": 5633580
+    },
+    "artifacts/neighborhood64.f32": {
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-p1.f32": {
+      "sha256": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-j64-p1.f32": {
+      "sha256": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-j128r005.f32": {
+      "sha256": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-j128r02.f32": {
+      "sha256": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-j128day.f32": {
+      "sha256": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+      "bytes": 5633580
+    },
+    "artifacts/knn64-j256snap.f32": {
+      "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+      "bytes": 5633580
+    },
+    "artifacts/rbm100-fast.f32": {
+      "sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+      "bytes": 5633580
+    },
+    "artifacts/autorec512-a3-snap.f32": {
+      "sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+      "bytes": 5633580
+    },
+    "artifacts/autorec512-a2.f32": {
+      "sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+      "bytes": 5633580
+    }
+  },
+  "launched_utc": "2026-09-28T01:05:52.097427+00:00",
+  "events_path": "experiments/B5-ridge-15col.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 5.714428749983199,
+  "finished_utc": "2026-09-28T01:05:57.812683+00:00",
+  "log_sha256": "463e4adda86e447156f507024ab28ac5bbaa27d81cf740a5eb9348c1470ec055",
+  "events_sha256": "d552caea96170b960afd3c3a339f3565a01eb5a89a7f4b939d2512235892ef02",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b5.f32",
+    "sha256": "064333dbeb68b627b89aa2edcfdbab58f04695ce9491ce7520b75e2a162e974c",
+    "bytes": 5633580
+  }
+}

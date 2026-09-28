@@ -68,15 +68,24 @@ but used for epoch selection):
 
 - jointly trained temporal SVD++, 128 factors: `0.89617220`
 - seven-model contextual ridge ensemble: `0.89013424` development CV
-- add learned item-neighborhood predictions: **`0.88666465` development CV**
+- add learned item-neighborhood predictions: `0.88666465` development CV
 - add quadratic blend calibration: **`0.88658149` development CV**
 - add 256-factor checkpoint: **`0.88632074` development CV**
 - add frozen 128-neighbor checkpoint: **`0.88584605` development CV**
+- residual item kNN on every joint model, conditional RBM, denoising
+  autoencoder, and a LightGBM blender with meta-features:
+  `0.88040209` development CV (see `RESULTS.md`)
+- cross-branch predictor bank and residual-tree blend: `0.87545342` development CV
+- seven more user/movie context features: **`0.87480941` development CV**
 
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
 jointly trains temporal biases, user/item factors, implicit feedback and user
 factor drift. Optional per-user-day factors model short-lived preferences.
+
+`scripts/gbdt_blend.py` needs `numpy` and `lightgbm`; `scripts/autorec.py`
+needs `numpy` and `torch` (MPS is used when available). Install them in a
+virtualenv; the C++ tool has no extra dependencies.
 
 ## Joint training and reproducible experiments
 
@@ -216,3 +225,10 @@ outer training users reaches **`0.8774504869` development CV**, improving all fi
 folds over 0.87822. A predeclared equal average of the neural, direct-tree and
 residual-tree outputs reaches **`0.8773860815`**. [ROUND3.md](ROUND3.md) records
 the controls, weak user-kernel/distributional bets, and remaining research ideas.
+
+Combining the two branches' raw predictors and stronger temporal/kNN columns
+reaches **`0.8754534170` development CV** with the residual tree. Seven more
+user/movie context features bring the latest result to **`0.8748094089`**,
+improving all five user folds. See [ROUND4.md](ROUND4.md) and
+[ROUND5.md](ROUND5.md). A separate training-only validation pilot is documented
+in [HOLDOUT.md](HOLDOUT.md).
