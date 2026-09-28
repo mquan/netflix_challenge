@@ -1,0 +1,71 @@
+{
+  "name": "P4-rbm300-wc001",
+  "strategy": "Round 6 next step 1: plain RBM-300 with weight cost .001 (10x R3) to avoid the P1 overfit, R3 schedule otherwise; base for a conditional-bias warm start",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/P4-rbm300.bin",
+    "--predictions",
+    "artifacts/P4-rbm300.f32",
+    "--hidden",
+    "300",
+    "--iterations",
+    "120",
+    "--threads",
+    "6",
+    "--patience",
+    "6",
+    "--weight-cost",
+    ".001",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985"
+  ],
+  "started_utc": "2026-09-28T13:00:55.024835+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "f334f32bb9300161c2a4b96b76a1ce5830ba5baf",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "fce1fff23ef653c274be60154e07bc97576a47c584f2480535f42ccd5acff147",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T13:00:55.794650+00:00",
+  "events_path": "experiments/P4-rbm300-wc001.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 10350.088873916015,
+  "finished_utc": "2026-09-28T16:57:41.091068+00:00",
+  "log_sha256": "9db82e6973031f85f78f3c3afdcfcda45798c4412b5c6a90be0b22970350e993",
+  "events_sha256": "4f898b193e137e73f45c531f948be3591aff14863dbb7ff41c93067f6951e41b",
+  "model_artifact": {
+    "path": "artifacts/P4-rbm300.bin",
+    "sha256": "81cf00b59dbfa60e839bfa5c8a1a330da04d3cd153cc63e20098c4a9ba4ba64b",
+    "bytes": 128300624
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P4-rbm300.f32",
+    "sha256": "6f3d16fadc744b1f5d3b4dc56dfe8e401cd0298214488a9b3188d3c64238de96",
+    "bytes": 5633580
+  }
+}
