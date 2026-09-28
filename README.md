@@ -170,3 +170,17 @@ experimental mixture of local residual factorizations. See
 [MOONSHOTS.md](MOONSHOTS.md) for the research and first round, and
 [ROUND2.md](ROUND2.md) for the additional bets, ablations, commands and limitations.
 Predictions and copied input checkpoints remain local under `artifacts/`.
+
+The next round tests predictor diversity and nonlinear blending separately.
+The same 12-column bank reaches `0.8835714199` with a shallow neural correction.
+Adding the other agent's completed RBM gives `0.8811258732` with contextual
+ridge and **`0.8803262843` with neural blending**, improving all five user folds.
+Epoch selection is nested inside each outer fold; base checkpoint selection
+still makes these development CV estimates. See [NEURAL_BLEND.md](NEURAL_BLEND.md)
+for the Netflix research, controlled comparisons, attribution and reproduction
+requirements.
+
+A fixed 50/50 average of this neural ensemble and the other branch's B6
+LightGBM ensemble reaches **`0.8786685218` development CV**, beating both in every
+user fold. See [COMBINED_BRANCHES.md](COMBINED_BRANCHES.md) for the comparison,
+verified snapshot provenance, and experiments combining the raw predictor banks.

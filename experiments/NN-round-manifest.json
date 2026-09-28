@@ -1,0 +1,220 @@
+{
+  "observed_utc": "2026-09-28T01:15:14.210071+00:00",
+  "parent_commit": "75e6ec9",
+  "sources": {
+    "scripts/moonshot_nn_blend.py": "1320ae709781056bec75a33652481233302ef6d3ff8736669ce0338e659a260a",
+    "scripts/moonshot_nn_bet.sh": "70130efe1a4911879413d553879177143df8a16ae81e2c1549f6d31aa900ad3c",
+    "tests/test_moonshot_nn.py": "ebd6252219d92486aaf356ec9a0587281deebc2f1bbb75ee9b24b0972077099f"
+  },
+  "nn1_report": {
+    "config": {
+      "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+      "prediction": [
+        "artifacts/snapshot/joint64.f32",
+        "artifacts/snapshot/joint128-reg005.f32",
+        "artifacts/snapshot/joint128-day128.f32",
+        "artifacts/snapshot/neighborhood64.f32",
+        "artifacts/snapshot/knn64-j128r005.f32",
+        "artifacts/snapshot/knn64-j128day.f32",
+        "artifacts/gp-full.0.f32",
+        "artifacts/gp-full.1.f32",
+        "artifacts/gp-full.2.f32",
+        "artifacts/gp2-persistent-full.0.f32",
+        "artifacts/local-global.epoch6.f32",
+        "artifacts/local-local.epoch6.f32"
+      ],
+      "output": "artifacts/NN1-blend",
+      "hidden": 16,
+      "epochs": 60,
+      "seed": 20260928
+    },
+    "inputs": {
+      "artifacts/snapshot/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "artifacts/snapshot/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "artifacts/snapshot/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "artifacts/snapshot/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "artifacts/snapshot/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+      "artifacts/snapshot/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+      "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+      "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+      "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+      "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+      "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+      "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7"
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "chosen_epochs": 37,
+        "rows": 281675,
+        "ridge_rmse": 0.8849969684915359,
+        "neural_rmse": 0.8843905072224655,
+        "seconds": 21.44889712499571
+      },
+      {
+        "fold": 1,
+        "chosen_epochs": 55,
+        "rows": 281390,
+        "ridge_rmse": 0.8842438733166769,
+        "neural_rmse": 0.8834159596341011,
+        "seconds": 35.45362041701446
+      },
+      {
+        "fold": 2,
+        "chosen_epochs": 37,
+        "rows": 283006,
+        "ridge_rmse": 0.8808165909650918,
+        "neural_rmse": 0.8801282938190899,
+        "seconds": 24.386892790993443
+      },
+      {
+        "fold": 3,
+        "chosen_epochs": 36,
+        "rows": 281688,
+        "ridge_rmse": 0.8856238313420159,
+        "neural_rmse": 0.8851601141970634,
+        "seconds": 26.969073333020788
+      },
+      {
+        "fold": 4,
+        "chosen_epochs": 31,
+        "rows": 280636,
+        "ridge_rmse": 0.8852476745646215,
+        "neural_rmse": 0.8847733208948096,
+        "seconds": 26.96050399998785
+      }
+    ],
+    "ridge_cv_rmse": 0.8841835474610695,
+    "neural_cv_rmse": 0.8835714199211
+  },
+  "rbm_source_record": "experiments/NN2-rbm-source.json",
+  "protocol": "Nested epoch selection inside five outer user folds; raw prediction inputs only. Original base checkpoint selection still used probe.",
+  "device": "CPU",
+  "threads": 1,
+  "completed_record_utc": "2026-09-28T01:19:14.434751+00:00",
+  "nn2_report": {
+    "config": {
+      "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+      "prediction": [
+        "artifacts/snapshot/joint64.f32",
+        "artifacts/snapshot/joint128-reg005.f32",
+        "artifacts/snapshot/joint128-day128.f32",
+        "artifacts/snapshot/neighborhood64.f32",
+        "artifacts/snapshot/knn64-j128r005.f32",
+        "artifacts/snapshot/knn64-j128day.f32",
+        "artifacts/gp-full.0.f32",
+        "artifacts/gp-full.1.f32",
+        "artifacts/gp-full.2.f32",
+        "artifacts/gp2-persistent-full.0.f32",
+        "artifacts/local-global.epoch6.f32",
+        "artifacts/local-local.epoch6.f32",
+        "artifacts/snapshot/rbm100-fast.f32"
+      ],
+      "output": "artifacts/NN2-blend",
+      "hidden": 16,
+      "epochs": 60,
+      "seed": 20260928
+    },
+    "inputs": {
+      "artifacts/snapshot/joint64.f32": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "artifacts/snapshot/joint128-reg005.f32": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "artifacts/snapshot/joint128-day128.f32": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "artifacts/snapshot/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "artifacts/snapshot/knn64-j128r005.f32": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+      "artifacts/snapshot/knn64-j128day.f32": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+      "artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+      "artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+      "artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+      "artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+      "artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+      "artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+      "artifacts/snapshot/rbm100-fast.f32": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e"
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "chosen_epochs": 32,
+        "rows": 281675,
+        "ridge_rmse": 0.8822882399402926,
+        "neural_rmse": 0.881593981725403,
+        "seconds": 16.63189579200116
+      },
+      {
+        "fold": 1,
+        "chosen_epochs": 46,
+        "rows": 281390,
+        "ridge_rmse": 0.8810548630800732,
+        "neural_rmse": 0.8800801345614641,
+        "seconds": 23.612273707985878
+      },
+      {
+        "fold": 2,
+        "chosen_epochs": 38,
+        "rows": 283006,
+        "ridge_rmse": 0.8775504046768478,
+        "neural_rmse": 0.876663781880718,
+        "seconds": 18.34254458299256
+      },
+      {
+        "fold": 3,
+        "chosen_epochs": 38,
+        "rows": 281688,
+        "ridge_rmse": 0.8823115905461224,
+        "neural_rmse": 0.8815028044769635,
+        "seconds": 19.261745333991712
+      },
+      {
+        "fold": 4,
+        "chosen_epochs": 38,
+        "rows": 280636,
+        "ridge_rmse": 0.8824360418662162,
+        "neural_rmse": 0.8818025452216267,
+        "seconds": 34.46686820901232
+      }
+    ],
+    "ridge_cv_rmse": 0.8811258730453784,
+    "neural_cv_rmse": 0.880326284140485
+  },
+  "environment": {
+    "python": "3.12.9",
+    "numpy": "2.5.3",
+    "torch": "2.14.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "outputs": {
+    "artifacts/NN1-blend.f32": {
+      "sha256": "99c1cb9227f710c3e6aaef1a468f04e22b1881487300406f5d79fd38782b0753",
+      "bytes": 5633580
+    },
+    "artifacts/NN1-blend.control.f32": {
+      "sha256": "9d15d2cae101f0c413946ba6d77adf515a751da9e123ac1e5e667559d6e3511b",
+      "bytes": 5633580
+    },
+    "artifacts/NN2-blend.f32": {
+      "sha256": "e4fa999f30922818303057dee70cee567909c3fd3b07bbec53189432b1ee3437",
+      "bytes": 5633580
+    },
+    "artifacts/NN2-blend.control.f32": {
+      "sha256": "8119aa2989a077f5917db60eec33da6bc2db31334638ea8fad7c2940869bf632",
+      "bytes": 5633580
+    },
+    "artifacts/NN2-rbm-ridge.f32": {
+      "sha256": "0e9a21f4c0677be7ffbbeeee39c285bfae288f4a1af72922e170bc7b7c4589f2",
+      "bytes": 5633580
+    }
+  },
+  "data": {
+    "path": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  },
+  "verification": {
+    "neural_outer_label_isolation": "PASS; nonzero selected epoch; exact prediction and selection invariance",
+    "test_log": "experiments/NN-test.log",
+    "all_input_hashes_rechecked": true,
+    "paired_reports": [
+      "experiments/NN1-paired.json",
+      "experiments/NN2-paired.json"
+    ]
+  },
+  "attribution": "RBM R2 training belongs to concurrent score-iteration-2 work; this branch imports its completed, hash-verified predictions for blending only."
+}
