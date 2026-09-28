@@ -1,0 +1,28 @@
+column=artifacts/snapshot/joint64.f32 probe_rmse=0.9000114051
+column=artifacts/snapshot/joint128-reg005.f32 probe_rmse=0.8978688248
+column=artifacts/snapshot/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/snapshot/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/snapshot/knn64-j128r005.f32 probe_rmse=0.895059761
+column=artifacts/snapshot/knn64-j128day.f32 probe_rmse=0.894902175
+column=artifacts/gp-full.0.f32 probe_rmse=0.8957827986
+column=artifacts/gp-full.1.f32 probe_rmse=0.8937029033
+column=artifacts/gp-full.2.f32 probe_rmse=0.8961579074
+column=artifacts/gp2-persistent-full.0.f32 probe_rmse=0.8922935424
+column=artifacts/local-local.epoch6.f32 probe_rmse=0.8973776647
+heldout_user_fold=0 count=281675 rmse=0.8850547376
+heldout_user_fold=1 count=281390 rmse=0.8843170509
+heldout_user_fold=2 count=283006 rmse=0.8808391584
+heldout_user_fold=3 count=281688 rmse=0.8856737512
+heldout_user_fold=4 count=280636 rmse=0.885269238
+blend_cv_rmse=0.8842285534 blend_fit_rmse=0.8841874558 ridge=1e-05 centered_intercept=-0.02737804438 contexts=5
+weight=0.1897199663 column=artifacts/snapshot/joint64.f32
+weight=0.3253043422 column=artifacts/snapshot/joint128-reg005.f32
+weight=-0.3509130725 column=artifacts/snapshot/joint128-day128.f32
+weight=0.3393333305 column=artifacts/snapshot/neighborhood64.f32
+weight=-0.2627988846 column=artifacts/snapshot/knn64-j128r005.f32
+weight=0.547070336 column=artifacts/snapshot/knn64-j128day.f32
+weight=-0.05753416536 column=artifacts/gp-full.0.f32
+weight=-0.165976091 column=artifacts/gp-full.1.f32
+weight=-0.5796042604 column=artifacts/gp-full.2.f32
+weight=0.9076498386 column=artifacts/gp2-persistent-full.0.f32
+weight=0.100768239 column=artifacts/local-local.epoch6.f32

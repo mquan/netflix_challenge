@@ -23,7 +23,7 @@ class LocalGPTests(unittest.TestCase):
                 subprocess.run([GP, '--data', str(p/(name+'.bin')),
                                 '--model', str(p/(name+'.model')),
                                 '--output', str(p/name), '--neighbors', '2',
-                                '--time-scale', '30'], check=True, capture_output=True)
+                                '--time-scale', '30', '--persistent', '.5', '--implicit-mix', '.5'], check=True, capture_output=True)
             for suffix in ('.0.f32', '.1.f32', '.2.f32', '.3.f32', '.base.f32'):
                 self.assertEqual((p/('a'+suffix)).read_bytes(), (p/('b'+suffix)).read_bytes())
             mask = array.array('f', (p/'a.mask.f32').read_bytes())

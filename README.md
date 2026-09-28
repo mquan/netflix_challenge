@@ -153,3 +153,20 @@ Historical timestamps have explicit provenance/uncertainty; new experiment
 runs timestamp every output line. The CSV also supports elapsed time minus
 recorded idle/rate-limit/timeout intervals, without assuming unknown gaps are
 idle. See [timing and activity accounting](experiments/TIMING.md).
+
+## Independent local-kernel experiments
+
+The `moonshot-local-kernels` branch adds a separate research binary using local
+Gaussian-process residual inference over a frozen joint model. A six-component
+frozen ensemble improves from `0.8860971552` to `0.8850493143` development CV
+with the first GP family, then to `0.8842984317` with one GP combining persistent
+and 30-day taste effects. Adding two residual-factor controls reaches
+`0.8841835475`, with only a small additional gain. These are controlled comparisons within this branch;
+the control differs from the historical B4 ensemble above.
+
+`make test-moonshot-gp` builds the macOS Accelerate implementation and runs its
+numeric and probe-label isolation tests. `make moonshot-local` builds a separate
+experimental mixture of local residual factorizations. See
+[MOONSHOTS.md](MOONSHOTS.md) for the research and first round, and
+[ROUND2.md](ROUND2.md) for the additional bets, ablations, commands and limitations.
+Predictions and copied input checkpoints remain local under `artifacts/`.

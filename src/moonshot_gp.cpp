@@ -50,7 +50,12 @@ int main(int argc, char **argv) {
     const unsigned modulo = uint_after(args, "--user-modulo", 1);
     const double gamma = double_after(args, "--gamma", 4);
     const double time_scale = double_after(args, "--time-scale", 0);
-    if (!cap || cap > 256 || !modulo || !(gamma > 0) || time_scale < 0)
+    const double persistent = double_after(args, "--persistent", 0);
+    const double implicit_mix = double_after(args, "--implicit-mix", 0);
+    if (!cap || cap > 256 || !modulo || !std::isfinite(gamma) || !(gamma > 0)
+        || !std::isfinite(time_scale) || time_scale < 0 || !std::isfinite(persistent)
+        || persistent < 0 || persistent > 1 || !std::isfinite(implicit_mix)
+        || implicit_mix < 0 || implicit_mix > 1)
       fail("invalid parameters");
     std::vector<float> effective, base;
     build_effective_users(d, m.factors, m.rank, effective);
@@ -65,25 +70,34 @@ int main(int argc, char **argv) {
       return x;
     };
     const size_t items = d.header.items;
-    auto embeddings = m.factors.item_factors;
-    for (size_t i = 0; i < items; ++i) {
-      double norm = 0;
-      for (size_t k = 0; k < m.rank; ++k) norm += std::pow(embeddings[i*m.rank+k], 2);
-      norm = std::sqrt(std::max(norm, 1e-20));
-      for (size_t k = 0; k < m.rank; ++k) embeddings[i*m.rank+k] /= norm;
+    auto make_kernel = [&](std::vector<float> embeddings) {
+      for (size_t i = 0; i < items; ++i) {
+        double norm = 0;
+        for (size_t k = 0; k < m.rank; ++k) norm += std::pow(embeddings[i*m.rank+k], 2);
+        norm = std::sqrt(std::max(norm, 1e-20));
+        for (size_t k = 0; k < m.rank; ++k) embeddings[i*m.rank+k] /= norm;
+      }
+      std::vector<float> kernel(items*items);
+      cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, int(items), int(items),
+                  int(m.rank), 1, embeddings.data(), int(m.rank), embeddings.data(),
+                  int(m.rank), 0, kernel.data(), int(items));
+      for (auto &x : kernel) x = float(std::exp(gamma*(std::clamp(double(x), -1., 1.)-1)));
+      for (size_t i = 0; i < items; ++i) kernel[i*items+i] = 1;
+      return kernel;
+    };
+    auto kernel = make_kernel(implicit_mix == 1 ? m.factors.implicit_factors : m.factors.item_factors);
+    if (implicit_mix > 0 && implicit_mix < 1) {
+      const auto other = make_kernel(m.factors.implicit_factors);
+      for (size_t i = 0; i < kernel.size(); ++i)
+        kernel[i] = float((1-implicit_mix)*kernel[i]+implicit_mix*other[i]);
     }
-    std::vector<float> kernel(items*items);
-    cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasTrans, int(items), int(items),
-                int(m.rank), 1, embeddings.data(), int(m.rank), embeddings.data(),
-                int(m.rank), 0, kernel.data(), int(items));
-    for (auto &x : kernel) x = float(std::exp(gamma*(std::clamp(double(x), -1., 1.)-1)));
-    for (size_t i = 0; i < items; ++i) kernel[i*items+i] = 1;
     auto cov = [&](uint32_t i, uint16_t day, uint32_t j, uint16_t other_day) {
       return double(kernel[i*items+j])*(time_scale == 0 ? 1 :
-             std::exp(-std::abs(int(day)-int(other_day))/time_scale));
+             persistent + (1-persistent)*std::exp(-std::abs(int(day)-int(other_day))/time_scale));
     };
     std::cout << "kernel_ready items=" << items << " gamma=" << gamma
-              << " time_scale=" << time_scale << " neighbors=" << cap
+              << " time_scale=" << time_scale << " persistent=" << persistent
+              << " implicit_mix=" << implicit_mix << " neighbors=" << cap
               << " user_modulo=" << modulo << std::endl;
     std::vector<std::vector<uint32_t>> queries(d.header.users);
     for (uint32_t p = 0; p < d.probe.size(); ++p) queries[d.probe[p].user].push_back(p);
