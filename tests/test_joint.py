@@ -107,6 +107,29 @@ class JointTests(unittest.TestCase):
             run('eval-neighborhood', '--data', p/'b.bin', '--time-model', p/'b.base',
                 '--graph', p/'b.graph', '--model', p/'a.model', '--predictions', p/'bad.f32', ok=False)
 
+    def test_conditional_rbm_isolation_reload_and_warm_start(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            dataset(p/'a.bin', correlated_train=True)
+            dataset(p/'b.bin', change_fold=0, correlated_train=True)
+            for name in ('a', 'b'):
+                run('rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.model'), '--hidden', 4,
+                    '--iterations', 2, '--threads', 2, '--conditional-biases', '--predictions', p/(name+'.f32'))
+            self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
+            self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
+            run('eval-rbm', '--data', p/'a.bin', '--model', p/'a.model', '--predictions', p/'reload.f32')
+            self.assertEqual((p/'a.f32').read_bytes(), (p/'reload.f32').read_bytes())
+            # Plain model warm-started with zero conditional biases evaluates identically.
+            run('rbm', '--data', p/'a.bin', '--model', p/'plain.model', '--hidden', 4, '--iterations', 1,
+                '--predictions', p/'plain.f32')
+            run('eval-rbm', '--data', p/'a.bin', '--model', p/'plain.model', '--predictions', p/'plain2.f32')
+            self.assertEqual((p/'plain.f32').read_bytes(), (p/'plain2.f32').read_bytes())
+            out = run('rbm', '--data', p/'a.bin', '--model', p/'warm.model', '--hidden', 4, '--iterations', 2,
+                      '--start-epoch', 2, '--init-model', p/'plain.model', '--conditional-biases',
+                      '--predictions', p/'warm.f32').stdout
+            self.assertIn('conditional_biases=1', out)
+            run('eval-rbm', '--data', p/'b.bin', '--model', p/'warm.model', ok=False)
+
     def test_blend_heldout_users_do_not_fit_their_weights(self):
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)

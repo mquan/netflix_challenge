@@ -1,0 +1,52 @@
+{
+  "name": "K2-joint512-reg02-d97-mt",
+  "strategy": "Round 6: K1 recipe at 512 factors (reg .02, decay .97, 80 epochs, patience 8), 8 Hogwild threads; tests whether factor count still pays at converged schedules",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/K2-joint512.bin",
+    "--predictions",
+    "artifacts/K2-joint512.f32",
+    "--factors",
+    "512",
+    "--iterations",
+    "80",
+    "--learning-rate",
+    ".008",
+    "--regularization",
+    ".02",
+    "--decay",
+    ".97",
+    "--patience",
+    "8",
+    "--threads",
+    "8"
+  ],
+  "started_utc": "2026-09-28T06:08:14.282073+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "03e662e9621a6db83841a819ff5b892246a74b20feeaa64837d01cebd6e8cdcb",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T06:08:16.151277+00:00",
+  "events_path": "experiments/K2-joint512-reg02-d97-mt.events.jsonl"
+}
