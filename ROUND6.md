@@ -111,7 +111,8 @@ LightGBM seeds are averaged. The held-out fold is scored only once.
 | P5C | conditional biases warm-started on P5 from epoch 87; process ended at epoch 128 (best 126), still improving ≈0.0001/epoch | 0.9008728143 |
 | R6-RBM6 | R6-RBM5 columns + P5C, single seed | 0.8732290738 (+0.0000356 vs R6-RBM5; three folds equal or better, two worse). A third seed of the same 200-unit architecture no longer pays: seed diversity saturates at two, hidden-size diversity is what is left. Not retained |
 | P6 | plain RBM-400, weight cost .001; best epoch 44 | 0.9100369611 |
-| P6C | conditional biases warm-started on P6 | running |
+| P6C | conditional biases warm-started on P6 from epoch 45; process ended at epoch 88 (best 84), training RMSE 0.698: 400 units overfit even with weight cost .001 | 0.9020269612 |
+| R6-RBM7 | R6-RBM5 columns + P6C, single seed | running |
 | kNN on R4D | `eval-rbm --train-predictions` exports the RBM's training-row expectations; `knn --base-train/--base-probe` corrects them over the 256-neighbor graph (power 1, shrink .5, time decay .003) / 64-neighbor graph | **0.8945192302** / 0.8944648575 (from 0.8998688) |
 | R6-RBMK | R6-RBM columns + both kNN-on-RBM columns (+ support), single seed | 0.8737760415 (−0.0000444 vs R6-RBM): noise level. The neighborhood correction's information is already in the bank's thirteen kNN columns; the RBM itself, not its kNN, carried the round-6 gain |
 
