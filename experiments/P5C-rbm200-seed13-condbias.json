@@ -1,0 +1,86 @@
+{
+  "name": "P5C-rbm200-seed13-condbias",
+  "strategy": "Conditional visible biases warm-started on P5 (seed-13 RBM-200, best epoch 86); R4D bias rates",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--init-model",
+    "artifacts/P5-rbm200-s13.bin",
+    "--start-epoch",
+    "87",
+    "--model",
+    "artifacts/P5C-rbm200-s13-cond.bin",
+    "--predictions",
+    "artifacts/P5C-rbm200-s13-cond.f32",
+    "--hidden",
+    "200",
+    "--iterations",
+    "156",
+    "--threads",
+    "8",
+    "--patience",
+    "6",
+    "--seed",
+    "13",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985",
+    "--conditional-biases",
+    "--user-bias-rate",
+    ".01",
+    "--day-bias-rate",
+    ".03",
+    "--frequency-bias-rate",
+    ".012"
+  ],
+  "started_utc": "2026-09-29T00:47:56.015079+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "9a5d991f2f43850e1517db99440aed80df853460",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "fce1fff23ef653c274be60154e07bc97576a47c584f2480535f42ccd5acff147",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/P5-rbm200-s13.bin": {
+      "sha256": "f841cf35a985de0762366be36d321e1b64ab75408614e9773966b5c2d8a70ecc",
+      "bytes": 85652224
+    }
+  },
+  "launched_utc": "2026-09-29T00:47:56.768924+00:00",
+  "events_path": "experiments/P5C-rbm200-seed13-condbias.events.jsonl",
+  "exit_code": -9,
+  "elapsed_seconds": 5404.740228583978,
+  "finished_utc": "2026-09-29T02:57:02.438328+00:00",
+  "log_sha256": "48b7ff2e68f68cb86a69d4bce380fc8bf61102d8bb8e8fa65756f69f8c65c3c6",
+  "events_sha256": "8316f4ca00b202a13a0c74a0b08ff1e9b3e2c889f05adcebb5e6fb352d9e86c0",
+  "model_artifact": {
+    "path": "artifacts/P5C-rbm200-s13-cond.bin",
+    "sha256": "0999e5c889f04ac12c98e5ca83e9aed98524bc700abbb17033ca9853d2948baf",
+    "bytes": 460828868
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P5C-rbm200-s13-cond.f32",
+    "sha256": "9248957b8f1f3c9a90e970b550a56b6908fdd8892c699afdc6b78c4227b098c9",
+    "bytes": 5633580
+  }
+}

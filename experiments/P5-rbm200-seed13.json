@@ -52,5 +52,20 @@
     }
   },
   "launched_utc": "2026-09-28T19:38:11.094285+00:00",
-  "events_path": "experiments/P5-rbm200-seed13.events.jsonl"
+  "events_path": "experiments/P5-rbm200-seed13.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 8853.998416125018,
+  "finished_utc": "2026-09-29T00:45:05.689268+00:00",
+  "log_sha256": "56ced418613b295a4b3905ddb38510112dc7cfc4cab5fda2492009d8623ec72f",
+  "events_sha256": "e66ccf8664cf047ca3e95da1c28c18d993932b432e869010cebff587f7a70e3e",
+  "model_artifact": {
+    "path": "artifacts/P5-rbm200-s13.bin",
+    "sha256": "f841cf35a985de0762366be36d321e1b64ab75408614e9773966b5c2d8a70ecc",
+    "bytes": 85652224
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P5-rbm200-s13.f32",
+    "sha256": "e5aabab40225bfb76c7446222f2a45b0c44579298127f8beaf1c6c187237edee",
+    "bytes": 5633580
+  }
 }
