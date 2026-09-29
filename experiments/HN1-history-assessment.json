@@ -1,0 +1,57 @@
+{
+  "name": "HN1-history",
+  "slices": {
+    "all": {
+      "rows": 1408395,
+      "control_rmse": 0.8858460516573531,
+      "candidate_rmse": 0.8838616854628475
+    },
+    "user_lt20": {
+      "rows": 155061,
+      "control_rmse": 0.9941945419007887,
+      "candidate_rmse": 0.9897067153381358
+    },
+    "user_20_49": {
+      "rows": 295524,
+      "control_rmse": 0.9496572785965182,
+      "candidate_rmse": 0.9462249247434988
+    },
+    "user_ge50": {
+      "rows": 957810,
+      "control_rmse": 0.845936129048044,
+      "candidate_rmse": 0.84492207418294
+    },
+    "fold0": {
+      "rows": 281675,
+      "control_rmse": 0.8867356726304275,
+      "candidate_rmse": 0.8848704793510118
+    },
+    "fold1": {
+      "rows": 281390,
+      "control_rmse": 0.885712157927698,
+      "candidate_rmse": 0.8836463588795075
+    },
+    "fold2": {
+      "rows": 283006,
+      "control_rmse": 0.8826309434059253,
+      "candidate_rmse": 0.8805951499526851
+    },
+    "fold3": {
+      "rows": 281688,
+      "control_rmse": 0.8871865568716297,
+      "candidate_rmse": 0.885051640420895
+    },
+    "fold4": {
+      "rows": 280636,
+      "control_rmse": 0.8869760393702985,
+      "candidate_rmse": 0.8851563244609173
+    }
+  },
+  "mse_difference": -0.003511748207696391,
+  "descriptive_user_cluster_95_interval": [
+    -0.0037362236083992102,
+    -0.003287272806993572
+  ],
+  "predictions_sha256": "16be96c60b5baf2d1134e3038f89105d3eb94b43a6058cc5e2906d556ea7f498",
+  "limitation": "Base/candidate epochs use probe. Interval does not adjust for model selection. This is not R5."
+}

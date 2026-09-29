@@ -179,6 +179,15 @@ setting and old static neighborhood checkpoints remain readable.
 See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
 strategy summaries, and next-step decisions.
 
+See [ENRICHMENT.md](ENRICHMENT.md) for the dataset enrichment literature review,
+local metadata/support audit, and proposed controlled experiments. This research
+has not yet produced an enriched-model RMSE result.
+
+The completed neural-history, sparse-user and session-context pilots are
+described in [HISTORY_EXPERIMENTS.md](HISTORY_EXPERIMENTS.md). The date-local
+variant was strongest among these three under the frozen B7 control. The final
+queue state is stored in `experiments/history-queue-status.json`.
+
 For score over time, run `python3 scripts/score_timeline.py` and plot
 [`experiments/score_timeline.csv`](experiments/score_timeline.csv).
 Historical timestamps have explicit provenance/uncertainty; new experiment

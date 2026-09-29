@@ -1,0 +1,53 @@
+{
+  "pid": 91599,
+  "started_utc": "2026-09-28T05:38:21.354658+00:00",
+  "status": "complete",
+  "stage": "done",
+  "completed": [
+    {
+      "name": "HN1-history",
+      "summary": {
+        "rows": 1408395,
+        "control_rmse": 0.8858460516573531,
+        "candidate_rmse": 0.8838616854628475
+      }
+    },
+    {
+      "name": "HN2-sparse",
+      "summary": {
+        "rows": 1408395,
+        "control_rmse": 0.8858460516573531,
+        "candidate_rmse": 0.8839328903094879
+      }
+    },
+    {
+      "name": "HN3-session",
+      "summary": {
+        "rows": 1408395,
+        "control_rmse": 0.8858460516573531,
+        "candidate_rmse": 0.8830615353925879
+      }
+    }
+  ],
+  "order": [
+    "HN1-history",
+    "HN2-sparse",
+    "HN3-session"
+  ],
+  "bank": {
+    "artifacts/legacy.a.f32": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+    "artifacts/legacy.b.f32": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+    "artifacts/legacy.c.f32": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+    "artifacts/joint64.f32": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+    "artifacts/joint128-reg005.f32": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+    "artifacts/joint128-reg02.f32": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+    "artifacts/joint128-day128.f32": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+    "artifacts/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "artifacts/joint256-reg01.f32": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+    "artifacts/neighborhood128-interim1.f32": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985"
+  },
+  "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "updated_utc": "2026-09-29T01:42:31.271693+00:00",
+  "control_verified": true,
+  "finished_utc": "2026-09-29T01:42:31.271687+00:00"
+}

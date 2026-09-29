@@ -1,0 +1,107 @@
+{
+  "inputs": {
+    "data/raw/extracted/download/movie_titles.txt": "5c1b39b39ed1f5b58da872414a49b77e921fa8a069f15b3d36f78a0705e6a153",
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  },
+  "users": 480189,
+  "items": 17770,
+  "train_rows": 99072112,
+  "probe_rows": 1408395,
+  "counted_train_rows": 99072112,
+  "counted_probe_rows": 1408395,
+  "release_year_range": [
+    1896,
+    2005
+  ],
+  "missing_year": {
+    "items": 7,
+    "probe_rows": 21,
+    "probe_fraction": 1.4910589713823182e-05
+  },
+  "package_marker": {
+    "items": 1174,
+    "probe_rows": 77955,
+    "probe_fraction": 0.05535023910195648
+  },
+  "duplicate_normalized_title_year_groups": [
+    [
+      696,
+      11530
+    ],
+    [
+      1507,
+      5712
+    ],
+    [
+      3218,
+      11740
+    ],
+    [
+      3831,
+      17399
+    ],
+    [
+      4872,
+      9629
+    ],
+    [
+      5203,
+      9827
+    ],
+    [
+      5608,
+      6063
+    ],
+    [
+      6840,
+      7351
+    ],
+    [
+      9708,
+      10789
+    ]
+  ],
+  "duplicate_normalized_title_year": {
+    "items": 18,
+    "probe_rows": 376,
+    "probe_fraction": 0.000266970558685596
+  },
+  "item_support": {
+    "1": {
+      "items": 0,
+      "probe_rows": 0,
+      "probe_fraction": 0.0
+    },
+    "10": {
+      "items": 5,
+      "probe_rows": 9,
+      "probe_fraction": 6.390252734495649e-06
+    },
+    "20": {
+      "items": 12,
+      "probe_rows": 61,
+      "probe_fraction": 4.331171297824829e-05
+    },
+    "50": {
+      "items": 81,
+      "probe_rows": 631,
+      "probe_fraction": 0.00044802771949630605
+    },
+    "100": {
+      "items": 1102,
+      "probe_rows": 4625,
+      "probe_fraction": 0.0032838798774491532
+    },
+    "500": {
+      "items": 8559,
+      "probe_rows": 50350,
+      "probe_fraction": 0.035749913909095106
+    },
+    "1000": {
+      "items": 10712,
+      "probe_rows": 84965,
+      "probe_fraction": 0.06032753595404698
+    }
+  },
+  "note": "Support thresholds are exclusive; package markers are only lexical heuristics. No rating values used."
+}
