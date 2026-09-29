@@ -1627,6 +1627,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "neighborhood.hpp"
 #include "rbm.hpp"
 #include "integrated.hpp"
+#include "temporal_neighborhood.hpp"
 
 void usage() {
   std::cerr
@@ -1658,6 +1659,10 @@ void usage() {
          "--model FILE --predictions FILE [--iterations N] [--time-decay X]\n"
       << "  netflix eval-neighborhood --data FILE --graph FILE --time-model FILE "
          "--model FILE --predictions FILE\n"
+      << "  netflix temporal-neighborhood --data FILE --graph FILE --model FILE "
+         "--predictions FILE [--time-model FILE] [--iterations N] [--fixed-epoch]\n"
+      << "  netflix eval-temporal-neighborhood --data FILE --graph FILE --model FILE "
+         "--predictions FILE\n"
       << "  netflix knn --data FILE --graph FILE --time-model FILE "
          "--predictions FILE [--support FILE] [--neighbors N] [--power X] [--shrink X]\n"
       << "  netflix integrated --data FILE --graph FILE --model FILE "
@@ -1714,6 +1719,10 @@ int main(int argc, char **argv) {
       command_neighborhood(args, false);
     } else if (command == "eval-neighborhood") {
       command_neighborhood(args, true);
+    } else if (command == "temporal-neighborhood") {
+      command_temporal_neighborhood(args, false);
+    } else if (command == "eval-temporal-neighborhood") {
+      command_temporal_neighborhood(args, true);
     } else if (command == "knn") {
       command_knn(args);
     } else if (command == "integrated") {

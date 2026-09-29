@@ -78,6 +78,11 @@ but used for epoch selection):
 - cross-branch predictor bank and residual-tree blend: `0.87545342` development CV
 - seven more user/movie context features: **`0.87480941` development CV**
 
+The R5 input bank for that historical best is absent from this checkout. The
+strongest currently reproducible local reference is the 14-column compact C1
+residual-tree ensemble at **`0.87929844` development CV**; see
+[STRATEGY_RESET.md](STRATEGY_RESET.md) for its provenance and limitations.
+
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
 jointly trains temporal biases, user/item factors, implicit feedback and user
@@ -86,6 +91,7 @@ factor drift. Optional per-user-day factors model short-lived preferences.
 `scripts/gbdt_blend.py` needs `numpy` and `lightgbm`; `scripts/autorec.py`
 needs `numpy` and `torch` (MPS is used when available). Install them in a
 virtualenv; the C++ tool has no extra dependencies.
+On this macOS setup, LightGBM also needs Homebrew `libomp` (`brew install libomp`).
 
 ## Joint training and reproducible experiments
 
@@ -178,6 +184,9 @@ setting and old static neighborhood checkpoints remain readable.
 
 See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
 strategy summaries, and next-step decisions.
+
+The current reproduction plan, including the missing R5 artifact audit and the
+published-method continuation gate, is in [STRATEGY_RESET.md](STRATEGY_RESET.md).
 
 See [ENRICHMENT.md](ENRICHMENT.md) for the dataset enrichment literature review,
 local metadata/support audit, and proposed controlled experiments. This research

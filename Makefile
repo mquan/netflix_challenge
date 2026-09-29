@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/integrated.hpp | build
+$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/integrated.hpp src/temporal_neighborhood.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
@@ -85,6 +85,7 @@ blend: $(BIN) $(DATASET)
 test: $(BIN)
 	bash tests/smoke.sh
 	python3 tests/test_joint.py
+	python3 tests/test_temporal_neighborhood.py
 	python3 tests/test_timeline.py
 
 clean:
