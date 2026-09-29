@@ -77,6 +77,15 @@ HN2 is 0.0000712 RMSE worse than HN1 in the ensemble, so the sparse weighting
 change did not help this pilot. The checkpoints for all three arms came from
 epoch 20, the configured cap; this does not establish convergence.
 
+An exploratory combination using the same frozen bank improved HN3 slightly:
+HN1 + HN3 scored **0.8830122**, and HN1 + HN2 + HN3 scored **0.8829985**.
+Each of the five folds improved over HN3 alone. The all-history combination's
+RMSE gain over HN3 was only 0.0000630; its descriptive paired user-cluster
+interval for the MSE difference was [−0.0001564, −0.0000661]. The full run
+records are `experiments/HN4-history-session-blend.json` and
+`experiments/HN5-all-history-blend.json`. This exploratory reuse of the probe
+adds another selection step and remains well behind R5.
+
 These are repeatedly selected original-probe development results. The interval
 does not correct for checkpoint or architecture selection, and the user folds
 only separate ensemble fitting rows. The strongest recorded result in the
