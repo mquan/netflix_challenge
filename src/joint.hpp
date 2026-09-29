@@ -248,86 +248,115 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
     m.day_rank = day_rank;
     m.day_factors.assign(t.session_days.size()*day_rank, 0);
   }
-  if (!m.frequency_factors.empty() && !frequency_factors) fail("initial model has frequency factors; enable --frequency-factors 1");
+  if (!m.frequency_factors.empty() && !frequency_factors)
+    fail("initial model has frequency factors; enable --frequency-factors 1");
   if (frequency_factors && m.frequency_factors.empty())
     m.frequency_factors.assign(size_t(d.header.items)*kFrequencyBins*rank, 0);
+  const float implicit_reg = float(double_after(args, "--implicit-regularization", double(reg)));
+  const uint32_t threads = std::max(1U, uint_after(args, "--threads", 1));
+  if (implicit_reg < 0 || lr0*implicit_reg >= 1) fail("invalid --implicit-regularization");
   std::mt19937 rng(seed);
   std::vector<uint32_t> users(d.header.users); std::iota(users.begin(), users.end(), 0);
-  std::vector<uint64_t> order;
-  std::vector<float> h(rank), h0(rank);
   double best = std::numeric_limits<double>::infinity();
   uint32_t stale = 0;
   std::cout << "joint factors=" << rank << " seed=" << seed << " regularization=" << reg
             << " decay=" << decay << " fingerprint=" << fingerprint << std::endl;
   std::cout << "day_factors=" << day_rank << " frequency_factors=" << frequency_factors
-            << " init_model=" << init << std::endl;
+            << " init_model=" << init
+            << " implicit_regularization=" << implicit_reg << " threads=" << threads << std::endl;
+  // Per-worker scratch. With --threads 1 the main generator drives every
+  // shuffle in the original order, so results match the single-threaded code.
+  // With more threads, users are split into contiguous chunks of the shuffled
+  // order and updated Hogwild-style: user-owned parameters are private to one
+  // worker, item-owned parameters (q, y, item biases) race benignly.
+  struct Worker { std::mt19937 rng; std::vector<float> h, h0; std::vector<uint64_t> order; double sse = 0; };
+  std::vector<Worker> workers(threads);
+  for (auto &w : workers) { w.h.resize(rank); w.h0.resize(rank); }
+  auto train_user = [&](Worker &w, uint32_t u, float lr, float cy) {
+    auto &h = w.h; auto &h0 = w.h0; auto &order = w.order;
+    uint64_t ib = d.implicit_offsets[u], ie = d.implicit_offsets[u+1];
+    uint64_t begin = d.train_offsets[u], end = d.train_offsets[u+1];
+    if (begin == end) return;
+    float norm = 1/std::sqrt(float(ie-ib));
+    std::fill(h.begin(), h.end(), 0);
+    for (uint64_t j = ib; j < ie; ++j) {
+      const float *y = &m.factors.implicit_factors[size_t(d.implicit_items[j]-1)*rank];
+      for (uint32_t k = 0; k < rank; ++k) h[k] += y[k];
+    }
+    for (float &x : h) x *= norm;
+    h0 = h;
+    order.resize(end-begin); std::iota(order.begin(), order.end(), begin);
+    std::shuffle(order.begin(), order.end(), w.rng);
+    float *p = &m.factors.user_factors[size_t(u)*rank];
+    float *a = &m.drift[size_t(u)*rank];
+    auto &b = m.base;
+    for (uint64_t pos : order) {
+      uint32_t i = d.train_items[pos]-1, s = f.train_session[pos];
+      auto day = d.train_days[pos]; float dev = f.dev[s];
+      float *q = &m.factors.item_factors[size_t(i)*rank];
+      uint32_t bin = i*kTimeBins+time_bin(d, day), freq = i*kFrequencyBins+f.freq[s];
+      float *fq = frequency_factors ? &m.frequency_factors[size_t(freq)*rank] : nullptr;
+      float item = b.item_bias[i]+b.item_bin_bias[bin], scale = b.user_scale[u]+b.day_scale[s];
+      float pred = float(d.header.mean)+b.user_bias[u]+b.user_alpha[u]*dev+b.day_bias[s]
+                   +item*scale+b.item_frequency_bias[freq];
+      for (uint32_t k = 0; k < rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*(p[k]+a[k]*dev+h[k]);
+      float *daily = day_rank ? &m.day_factors[size_t(s)*day_rank] : nullptr;
+      for (uint32_t k = 0; k < day_rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*daily[k];
+      float err = float(d.train_ratings[pos])-pred;
+      w.sse += double(err)*err;
+      b.user_bias[u] += base_rate*.00267F*(err-.0255F*b.user_bias[u]);
+      b.user_alpha[u] += base_rate*.00000311F*(err*dev-3.95F*b.user_alpha[u]);
+      b.day_bias[s] += base_rate*.00257F*(err-.00231F*b.day_bias[s]);
+      b.item_bias[i] += base_rate*.000488F*(err*scale-.0255F*b.item_bias[i]);
+      b.item_bin_bias[bin] += base_rate*.000115F*(err*scale-.0929F*b.item_bin_bias[bin]);
+      b.user_scale[u] += base_rate*.00564F*(err*item-.0476F*(b.user_scale[u]-1));
+      b.day_scale[s] += base_rate*.00103F*(err*item-.019F*b.day_scale[s]);
+      b.item_frequency_bias[freq] += base_rate*.00236F*(err-1.1e-8F*b.item_frequency_bias[freq]);
+      for (uint32_t k = 0; k < rank; ++k) {
+        float oldq = q[k], oldp = p[k];
+        float effective_q = oldq+(fq ? fq[k] : 0);
+        const float dayvalue = k < day_rank ? daily[k] : 0;
+        q[k] += lr*(err*(oldp+a[k]*dev+h[k]+dayvalue)-reg*oldq);
+        if (fq) fq[k] += frequency_rate*(err*(oldp+a[k]*dev+h[k]+dayvalue)-frequency_reg*fq[k]);
+        p[k] += lr*(err*effective_q-reg*oldp);
+        a[k] += drift_rate*(err*effective_q*dev-50*a[k]);
+        h[k] = cy*h[k]+lr*err*effective_q;
+        if (k < day_rank) daily[k] += day_rate*(err*effective_q-day_reg*dayvalue);
+      }
+    }
+    float shrink = std::pow(cy, float(end-begin));
+    for (uint32_t k = 0; k < rank; ++k) h[k] = norm*(h[k]-shrink*h0[k]);
+    for (uint64_t j = ib; j < ie; ++j) {
+      float *y = &m.factors.implicit_factors[size_t(d.implicit_items[j]-1)*rank];
+      for (uint32_t k = 0; k < rank; ++k) y[k] = shrink*y[k]+h[k];
+    }
+  };
   // --start-epoch continues a warm start on the original learning-rate schedule.
   const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
   if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
   for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     float lr = lr0*std::pow(decay, float(epoch-1));
-    float c = 1-lr*reg;
+    const float cy = 1-lr*implicit_reg;
     std::shuffle(users.begin(), users.end(), rng);
-    double sse = 0;
-    for (uint32_t u : users) {
-      uint64_t ib = d.implicit_offsets[u], ie = d.implicit_offsets[u+1];
-      uint64_t begin = d.train_offsets[u], end = d.train_offsets[u+1];
-      if (begin == end) continue;
-      float norm = 1/std::sqrt(float(ie-ib));
-      std::fill(h.begin(), h.end(), 0);
-      for (uint64_t j = ib; j < ie; ++j) {
-        const float *y = &m.factors.implicit_factors[size_t(d.implicit_items[j]-1)*rank];
-        for (uint32_t k = 0; k < rank; ++k) h[k] += y[k];
-      }
-      for (float &x : h) x *= norm;
-      h0 = h;
-      order.resize(end-begin); std::iota(order.begin(), order.end(), begin);
-      std::shuffle(order.begin(), order.end(), rng);
-      float *p = &m.factors.user_factors[size_t(u)*rank];
-      float *a = &m.drift[size_t(u)*rank];
-      auto &b = m.base;
-      for (uint64_t pos : order) {
-        uint32_t i = d.train_items[pos]-1, s = f.train_session[pos];
-        auto day = d.train_days[pos]; float dev = f.dev[s];
-        float *q = &m.factors.item_factors[size_t(i)*rank];
-        uint32_t bin = i*kTimeBins+time_bin(d, day), freq = i*kFrequencyBins+f.freq[s];
-        float *fq = frequency_factors ? &m.frequency_factors[size_t(freq)*rank] : nullptr;
-        float item = b.item_bias[i]+b.item_bin_bias[bin], scale = b.user_scale[u]+b.day_scale[s];
-        float pred = float(d.header.mean)+b.user_bias[u]+b.user_alpha[u]*dev+b.day_bias[s]
-                     +item*scale+b.item_frequency_bias[freq];
-        for (uint32_t k = 0; k < rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*(p[k]+a[k]*dev+h[k]);
-        float *daily = day_rank ? &m.day_factors[size_t(s)*day_rank] : nullptr;
-        for (uint32_t k = 0; k < day_rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*daily[k];
-        float err = float(d.train_ratings[pos])-pred;
-        sse += double(err)*err;
-        b.user_bias[u] += base_rate*.00267F*(err-.0255F*b.user_bias[u]);
-        b.user_alpha[u] += base_rate*.00000311F*(err*dev-3.95F*b.user_alpha[u]);
-        b.day_bias[s] += base_rate*.00257F*(err-.00231F*b.day_bias[s]);
-        b.item_bias[i] += base_rate*.000488F*(err*scale-.0255F*b.item_bias[i]);
-        b.item_bin_bias[bin] += base_rate*.000115F*(err*scale-.0929F*b.item_bin_bias[bin]);
-        b.user_scale[u] += base_rate*.00564F*(err*item-.0476F*(b.user_scale[u]-1));
-        b.day_scale[s] += base_rate*.00103F*(err*item-.019F*b.day_scale[s]);
-        b.item_frequency_bias[freq] += base_rate*.00236F*(err-1.1e-8F*b.item_frequency_bias[freq]);
-        for (uint32_t k = 0; k < rank; ++k) {
-          float oldq = q[k], oldp = p[k];
-          float effective_q = oldq+(fq ? fq[k] : 0);
-          const float dayvalue = k < day_rank ? daily[k] : 0;
-          q[k] += lr*(err*(oldp+a[k]*dev+h[k]+dayvalue)-reg*oldq);
-          if (fq) fq[k] += frequency_rate*(err*(oldp+a[k]*dev+h[k]+dayvalue)-frequency_reg*fq[k]);
-          p[k] += lr*(err*effective_q-reg*oldp);
-          a[k] += drift_rate*(err*effective_q*dev-50*a[k]);
-          h[k] = c*h[k]+lr*err*effective_q;
-          if (k < day_rank) daily[k] += day_rate*(err*effective_q-day_reg*dayvalue);
-        }
-      }
-      float shrink = std::pow(c, float(end-begin));
-      for (uint32_t k = 0; k < rank; ++k) h[k] = norm*(h[k]-shrink*h0[k]);
-      for (uint64_t j = ib; j < ie; ++j) {
-        float *y = &m.factors.implicit_factors[size_t(d.implicit_items[j]-1)*rank];
-        for (uint32_t k = 0; k < rank; ++k) y[k] = shrink*y[k]+h[k];
-      }
+    for (auto &w : workers) w.sse = 0;
+    if (threads == 1) {
+      workers[0].rng = rng; // continue the main sequence, then hand it back
+      for (uint32_t u : users) train_user(workers[0], u, lr, cy);
+      rng = workers[0].rng;
+    } else {
+      for (auto &w : workers) w.rng.seed(rng());
+      std::vector<std::thread> pool;
+      const size_t chunk = (users.size()+threads-1)/threads;
+      for (uint32_t t = 0; t < threads; ++t)
+        pool.emplace_back([&, t]() {
+          const size_t lo = std::min(users.size(), t*chunk), hi = std::min(users.size(), lo+chunk);
+          for (size_t n = lo; n < hi; ++n) train_user(workers[t], users[n], lr, cy);
+        });
+      for (auto &th : pool) th.join();
     }
+    double sse = 0;
+    for (const auto &w : workers) sse += w.sse;
     m.epoch = epoch;
     double score = eval_joint(d, f, m, predictions);
     if (!std::isfinite(sse) || !std::isfinite(score)) fail("non-finite training run");

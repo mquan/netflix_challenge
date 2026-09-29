@@ -1,0 +1,84 @@
+{
+  "name": "R2C-rbm100-condbias",
+  "strategy": "Round 6: conditional visible biases warm-started on the R2 RBM-100 checkpoint (epoch 60, 0.9126516, decay .98); a second, smaller conditional RBM for blend diversity using the recipe that worked for R4D",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--init-model",
+    "artifacts/rbm100-fast.bin",
+    "--start-epoch",
+    "61",
+    "--model",
+    "artifacts/R2C-rbm100-cond.bin",
+    "--predictions",
+    "artifacts/R2C-rbm100-cond.f32",
+    "--hidden",
+    "100",
+    "--iterations",
+    "130",
+    "--threads",
+    "8",
+    "--patience",
+    "6",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".98",
+    "--conditional-biases",
+    "--user-bias-rate",
+    ".01",
+    "--day-bias-rate",
+    ".03",
+    "--frequency-bias-rate",
+    ".012"
+  ],
+  "started_utc": "2026-09-28T11:54:48.829844+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "35a7ed070bf30b5009bd4ecd5d2964caaaf3a6f1",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "fce1fff23ef653c274be60154e07bc97576a47c584f2480535f42ccd5acff147",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/rbm100-fast.bin": {
+      "sha256": "04f13d04ed6d0343c603b50893c07a12b493f09806aaa881820d93904cc170a4",
+      "bytes": 43003824
+    }
+  },
+  "launched_utc": "2026-09-28T11:54:49.308359+00:00",
+  "events_path": "experiments/R2C-rbm100-condbias.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3205.852287790971,
+  "finished_utc": "2026-09-28T12:48:15.172708+00:00",
+  "log_sha256": "903a637940929f293033741ef798a841981dcf420e67e3622f7b3f2872ae7a0f",
+  "events_sha256": "c40201e106dca57b9a3a60cf9c675288bd98f0e549aff6c5bd2837a6b44a0503",
+  "model_artifact": {
+    "path": "artifacts/R2C-rbm100-cond.bin",
+    "sha256": "64ee9a1b1e823b19d39ec9653636baf56e3e22cba0f3e87ef1af0f10a256372e",
+    "bytes": 418180468
+  },
+  "predictions_artifact": {
+    "path": "artifacts/R2C-rbm100-cond.f32",
+    "sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c",
+    "bytes": 5633580
+  }
+}

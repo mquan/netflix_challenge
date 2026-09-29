@@ -1,0 +1,84 @@
+{
+  "name": "R4DR-rbm200-condbias-x3-resume",
+  "strategy": "Continue R4D (conditional-bias RBM, 3x bias rates) past the 130-epoch cap while it still improves; same schedule from epoch 131",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--init-model",
+    "artifacts/R4D-rbm200-cond.bin",
+    "--start-epoch",
+    "131",
+    "--model",
+    "artifacts/R4DR-rbm200-cond.bin",
+    "--predictions",
+    "artifacts/R4DR-rbm200-cond.f32",
+    "--hidden",
+    "200",
+    "--iterations",
+    "200",
+    "--threads",
+    "8",
+    "--patience",
+    "6",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985",
+    "--conditional-biases",
+    "--user-bias-rate",
+    ".01",
+    "--day-bias-rate",
+    ".03",
+    "--frequency-bias-rate",
+    ".012"
+  ],
+  "started_utc": "2026-09-28T08:31:54.568518+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "59f954e7db9c48d189a27af2e5af1bae2e96a60cafb066723ac58884e92024f1",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/R4D-rbm200-cond.bin": {
+      "sha256": "f136c45060b8a23222adfaf4077dddb8ac1f0a908f1d17f9537860edbf7905b5",
+      "bytes": 460828868
+    }
+  },
+  "launched_utc": "2026-09-28T08:31:55.203885+00:00",
+  "events_path": "experiments/R4DR-rbm200-condbias-x3-resume.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 5318.047674082976,
+  "finished_utc": "2026-09-28T10:00:33.279323+00:00",
+  "log_sha256": "e7fbb6b205dd16d39a29996ccc14312f1856778329aab765efe731dbf1c73991",
+  "events_sha256": "ccf8e11322ec292fe22afc0b865ef5bc72236e5f94cdca62b3bd7571b271967a",
+  "model_artifact": {
+    "path": "artifacts/R4DR-rbm200-cond.bin",
+    "sha256": "c11a8074b0fdf2cf82e79ab310ad1ea925d964d2232e84035871a8cddda51700",
+    "bytes": 460828868
+  },
+  "predictions_artifact": {
+    "path": "artifacts/R4DR-rbm200-cond.f32",
+    "sha256": "6148b8ce61682ed0c85e06fe6e73e3779982d22338b82e69088f7668a963973a",
+    "bytes": 5633580
+  }
+}

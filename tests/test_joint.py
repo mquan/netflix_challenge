@@ -105,6 +105,18 @@ class JointTests(unittest.TestCase):
             self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
             self.assertEqual(struct.unpack_from('<I', (p/'a.model').read_bytes(), 20)[0], 3)
 
+    def test_frequency_factors_with_threaded_joint_training(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            dataset(p/'data.bin')
+            run('joint', '--data', p/'data.bin', '--model', p/'joint.model',
+                '--iterations', 2, '--factors', 4, '--threads', 2,
+                '--frequency-factors', 1, '--implicit-regularization', .02,
+                '--predictions', p/'train.f32')
+            run('eval-joint', '--data', p/'data.bin', '--model', p/'joint.model',
+                '--predictions', p/'reload.f32')
+            self.assertEqual((p/'train.f32').read_bytes(), (p/'reload.f32').read_bytes())
+
     def test_knn_uses_frequency_factors_from_joint_checkpoint(self):
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)
@@ -147,6 +159,49 @@ class JointTests(unittest.TestCase):
             self.assertEqual((p/'a.f32').read_bytes(), (p/'reload.f32').read_bytes())
             run('eval-neighborhood', '--data', p/'b.bin', '--time-model', p/'b.base',
                 '--graph', p/'b.graph', '--model', p/'a.model', '--predictions', p/'bad.f32', ok=False)
+
+    def test_conditional_rbm_isolation_reload_and_warm_start(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            dataset(p/'a.bin', correlated_train=True)
+            dataset(p/'b.bin', change_fold=0, correlated_train=True)
+            for name in ('a', 'b'):
+                run('rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.model'), '--hidden', 4,
+                    '--iterations', 2, '--threads', 2, '--conditional-biases', '--predictions', p/(name+'.f32'))
+            self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
+            self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
+            run('eval-rbm', '--data', p/'a.bin', '--model', p/'a.model', '--predictions', p/'reload.f32')
+            self.assertEqual((p/'a.f32').read_bytes(), (p/'reload.f32').read_bytes())
+            # Plain model warm-started with zero conditional biases evaluates identically.
+            run('rbm', '--data', p/'a.bin', '--model', p/'plain.model', '--hidden', 4, '--iterations', 1,
+                '--predictions', p/'plain.f32')
+            run('eval-rbm', '--data', p/'a.bin', '--model', p/'plain.model', '--predictions', p/'plain2.f32')
+            self.assertEqual((p/'plain.f32').read_bytes(), (p/'plain2.f32').read_bytes())
+            out = run('rbm', '--data', p/'a.bin', '--model', p/'warm.model', '--hidden', 4, '--iterations', 2,
+                      '--start-epoch', 2, '--init-model', p/'plain.model', '--conditional-biases',
+                      '--predictions', p/'warm.f32').stdout
+            self.assertIn('conditional_biases=1', out)
+            run('eval-rbm', '--data', p/'b.bin', '--model', p/'warm.model', ok=False)
+
+    def test_knn_external_base_isolation_and_size_check(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp)
+            for name in ('a', 'b'):
+                dataset(p/(name+'.bin'), change_fold=0 if name == 'b' else None, correlated_train=True)
+                run('rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.rbm'), '--hidden', 4,
+                    '--iterations', 1, '--conditional-biases', '--predictions', p/(name+'.probe'))
+                run('eval-rbm', '--data', p/(name+'.bin'), '--model', p/(name+'.rbm'),
+                    '--predictions', p/(name+'.probe2'), '--train-predictions', p/(name+'.train'))
+                run('graph', '--data', p/(name+'.bin'), '--graph', p/(name+'.graph'), '--neighbors', 2, '--history-cap', 3)
+                run('knn', '--data', p/(name+'.bin'), '--graph', p/(name+'.graph'), '--base-train', p/(name+'.train'),
+                    '--base-probe', p/(name+'.probe'), '--power', 1, '--shrink', .5, '--predictions', p/(name+'.knn'))
+            self.assertEqual((p/'a.train').read_bytes(), (p/'b.train').read_bytes())
+            self.assertEqual((p/'a.knn').read_bytes(), (p/'b.knn').read_bytes())
+            self.assertEqual(len((p/'a.train').read_bytes()), 4*300)
+            run('knn', '--data', p/'a.bin', '--graph', p/'a.graph', '--base-train', p/'a.probe',
+                '--base-probe', p/'a.probe', '--predictions', p/'bad.knn', ok=False)
+            run('knn', '--data', p/'a.bin', '--graph', p/'a.graph', '--base-train', p/'a.train',
+                '--predictions', p/'bad.knn', ok=False)
 
     def test_blend_heldout_users_do_not_fit_their_weights(self):
         with tempfile.TemporaryDirectory() as temp:

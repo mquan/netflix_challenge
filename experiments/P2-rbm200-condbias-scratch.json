@@ -1,0 +1,76 @@
+{
+  "name": "P2-rbm200-condbias-scratch",
+  "strategy": "Round 6: conditional-bias RBM-200 trained from scratch with the R4D bias rates active from epoch 1 (R4D only added biases at epoch 76 under a 0.32x annealed rate); tests whether early bias learning beats the warm start",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/P2-rbm200-cond.bin",
+    "--predictions",
+    "artifacts/P2-rbm200-cond.f32",
+    "--hidden",
+    "200",
+    "--iterations",
+    "150",
+    "--threads",
+    "6",
+    "--patience",
+    "6",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985",
+    "--conditional-biases",
+    "--user-bias-rate",
+    ".01",
+    "--day-bias-rate",
+    ".03",
+    "--frequency-bias-rate",
+    ".012"
+  ],
+  "started_utc": "2026-09-28T10:22:34.058242+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "1bf9d19cc518a616f5dd10a27c67a55f72762779",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "59f954e7db9c48d189a27af2e5af1bae2e96a60cafb066723ac58884e92024f1",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T10:22:34.602999+00:00",
+  "events_path": "experiments/P2-rbm200-condbias-scratch.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 5350.361850416986,
+  "finished_utc": "2026-09-28T11:51:45.032607+00:00",
+  "log_sha256": "4a11e43fd070333ecf9f2184f760ebdd889f9ea6a6402eb2efe970c3fe3304f8",
+  "events_sha256": "7f24ce1254c5bde2767d238e327f16b1c80f7f1a5d60f60f52f424501e23d7bd",
+  "model_artifact": {
+    "path": "artifacts/P2-rbm200-cond.bin",
+    "sha256": "debf36b5da764c6a79732d802321f24bd828205c82ce2ecf868776b1eb46e6ed",
+    "bytes": 460828868
+  },
+  "predictions_artifact": {
+    "path": "artifacts/P2-rbm200-cond.f32",
+    "sha256": "c54a35daf5d9533fe039bf6a11e5050122ea4346c61192ca3800107f947723d9",
+    "bytes": 5633580
+  }
+}

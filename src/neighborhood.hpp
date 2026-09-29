@@ -253,8 +253,26 @@ void command_knn(const std::vector<std::string> &args) {
   // With --joint-model, neighbors correct the full factor model's residuals
   // instead of the temporal baseline's.
   const auto joint_path = optional_value_after(args, "--joint-model");
+  // --base-train/--base-probe: float32 predictions of any model for every
+  // training row (training order) and probe row, replacing the joint model.
+  const auto base_train_path = optional_value_after(args, "--base-train");
+  const auto base_probe_path = optional_value_after(args, "--base-probe");
+  const bool external = !base_train_path.empty();
+  if (external != !base_probe_path.empty()) fail("--base-train and --base-probe go together");
+  std::vector<float> base_train, base_probe;
+  if (external) {
+    std::ifstream tin(base_train_path, std::ios::binary), pin(base_probe_path, std::ios::binary);
+    if (!tin || !pin) fail("cannot read base prediction files");
+    read_vector(tin, base_train, d.header.train_count); read_vector(pin, base_probe, d.probe.size());
+    if (tin.peek() != std::char_traits<char>::eof() || pin.peek() != std::char_traits<char>::eof())
+      fail("base prediction file size mismatch");
+    for (float x : base_train) if (!std::isfinite(x)) fail("non-finite base prediction");
+    for (float x : base_probe) if (!std::isfinite(x)) fail("non-finite base prediction");
+  }
   JointModel base;
-  if (joint_path.empty()) {
+  if (external) {
+    // no model needed
+  } else if (joint_path.empty()) {
     TimeBaselineHeader header{};
     base.base = load_time_baseline(value_after(args, "--time-model"), d, t, header);
   } else {
@@ -297,7 +315,7 @@ void command_knn(const std::vector<std::string> &args) {
     if (po[u] == po[u+1]) continue;
     for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
       const uint32_t i = d.train_items[p]-1; rated[i] = u; known_day[i] = float(d.train_days[p]);
-      known_residual[i] = d.train_ratings[p]-predict(u, i, d.train_days[p], f.train_session[p]);
+      known_residual[i] = d.train_ratings[p]-(external ? base_train[p] : predict(u, i, d.train_days[p], f.train_session[p]));
     }
     for (uint64_t q = po[u]; q < po[u+1]; ++q) {
       const uint32_t p = probe_order[q];
@@ -311,13 +329,13 @@ void command_knn(const std::vector<std::string> &args) {
         if (time_decay > 0) s *= std::exp(-time_decay*std::fabs(float(r.day)-known_day[other]));
         num += s*known_residual[other]; den += s;
       }
-      pred[p] = predict(r.user, i, r.day, f.probe_session[p]) + num/(den+shrink);
+      pred[p] = (external ? base_probe[p] : predict(r.user, i, r.day, f.probe_session[p])) + num/(den+shrink);
       support[p] = den;
       const double err = r.rating-clipped(pred[p]); sse += err*err;
     }
   }
   std::ofstream out(output, std::ios::binary); write_vector(out, pred);
   if (!support_path.empty()) { std::ofstream s(support_path, std::ios::binary); write_vector(s, support); }
-  std::cout << std::setprecision(10) << "knn base=" << (joint_path.empty() ? "time" : joint_path) << " neighbors=" << k << " power=" << power
+  std::cout << std::setprecision(10) << "knn base=" << (external ? base_probe_path : joint_path.empty() ? "time" : joint_path) << " neighbors=" << k << " power=" << power
             << " shrink=" << shrink << " time_decay=" << time_decay << " probe_rmse=" << std::sqrt(sse/d.probe.size()) << std::endl;
 }
