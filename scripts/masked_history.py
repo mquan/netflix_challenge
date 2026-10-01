@@ -42,6 +42,7 @@ class Config:
     context: str = 'none'
     suffix_prob: float = 0.
     time_bins: int = 0
+    week_days: int = 0
 
 
 def digest(path):
@@ -100,19 +101,19 @@ def suffix_mask(keep, rows, days, offsets, users, c, rng):
 SESSION_KEY = 65536
 
 
-def session_inputs(d, rows, index, keep, explicit_index, implicit_rows, implicit_index,
-                   target_rows, target_days, users):
-    """Per-(user, day) context for each target: other movies the user touched
-    that day (implicit, own item removed by the model) and visible same-day
-    ratings, plus date features. No hidden rating value enters."""
+def session_channel(d, rows, index, keep, explicit_index, implicit_rows, implicit_index,
+                    target_rows, target_days, width, prefix):
+    """Context for each target from the user's interactions in the same
+    width-day period: implicit movies (own movie removed by the model) and
+    visible ratings. No hidden rating value enters."""
     imp_days = d['implicit_days'][implicit_index].astype(np.int64)
-    imp_key = implicit_rows * SESSION_KEY + imp_days
+    imp_key = implicit_rows * SESSION_KEY + imp_days // width
     imp_order = np.argsort(imp_key, kind='stable')
     imp_unique, imp_start = np.unique(imp_key[imp_order], return_index=True)
-    ctx_key = rows[keep] * SESSION_KEY + d['train_days'][index][keep].astype(np.int64)
+    ctx_key = rows[keep] * SESSION_KEY + d['train_days'][index][keep].astype(np.int64) // width
     ctx_order = np.argsort(ctx_key, kind='stable')
     ctx_unique, ctx_start = np.unique(ctx_key[ctx_order], return_index=True)
-    target_key = target_rows * SESSION_KEY + target_days
+    target_key = target_rows * SESSION_KEY + target_days // width
 
     def lookup(unique, key):
         if not len(unique):
@@ -126,24 +127,39 @@ def session_inputs(d, rows, index, keep, explicit_index, implicit_rows, implicit
     ctx_counts = np.r_[np.diff(np.r_[ctx_start, len(ctx_key)]), 0]
     n_imp = np.maximum(imp_counts[imp_session] - 1, 0)
     n_ctx = ctx_counts[ctx_session]
+    out = {prefix + '_imp_index': d['implicit_items'][implicit_index][imp_order].astype(np.int64) - 1,
+           prefix + '_imp_offsets': np.r_[imp_start, len(imp_key)],
+           prefix + '_exp_index': explicit_index[ctx_order],
+           prefix + '_exp_offsets': np.r_[ctx_start, len(ctx_key)],
+           prefix + '_imp_session': imp_session, prefix + '_exp_session': ctx_session,
+           prefix + '_imp_present': (imp_session < len(imp_unique)).astype(np.float32),
+           prefix + '_imp_counts': n_imp.astype(np.float32),
+           prefix + '_exp_counts': n_ctx.astype(np.float32)}
+    return out, n_imp, n_ctx
+
+
+def session_inputs(d, rows, index, keep, explicit_index, implicit_rows, implicit_index,
+                   target_rows, target_days, users, week_days=0):
+    """Same-day (and optionally week_days-period) context plus date features."""
+    args = (d, rows, index, keep, explicit_index, implicit_rows, implicit_index, target_rows, target_days)
+    out, n_imp, n_ctx = session_channel(*args, 1, 'day')
+    columns = [np.log1p(n_imp) / 5, np.log1p(n_ctx) / 4]
+    if week_days > 1:
+        week, w_imp, w_ctx = session_channel(*args, week_days, 'week')
+        out.update(week)
+        columns += [np.log1p(w_imp) / 6, np.log1p(w_ctx) / 5]
+    imp_days = d['implicit_days'][implicit_index].astype(np.int64)
     first = np.full(len(users), d['max_day'], dtype=np.int64)
     last = np.full(len(users), d['min_day'], dtype=np.int64)
     np.minimum.at(first, implicit_rows, imp_days)
     np.maximum.at(last, implicit_rows, imp_days)
     span = max(d['max_day'] - d['min_day'], 1)
-    feats = np.column_stack([np.log1p(n_imp) / 5, np.log1p(n_ctx) / 4,
-                             (target_days - first[target_rows]) / span,
-                             (last[target_rows] - target_days) / span,
-                             (target_days - d['min_day']) / span]).astype(np.float32)
-    return dict(session_imp_index=(d['implicit_items'][implicit_index][imp_order].astype(np.int64) - 1),
-                session_imp_offsets=np.r_[imp_start, len(imp_key)],
-                session_exp_index=explicit_index[ctx_order],
-                session_exp_offsets=np.r_[ctx_start, len(ctx_key)],
-                target_imp_session=imp_session, target_exp_session=ctx_session,
-                target_imp_present=(imp_session < len(imp_unique)).astype(np.float32),
-                target_imp_counts=n_imp.astype(np.float32), target_exp_counts=n_ctx.astype(np.float32),
-                target_features=feats,
-                target_bins=((target_days - d['min_day']) * max(d.get('time_bins', 1), 1) // (span + 1)))
+    columns += [(target_days - first[target_rows]) / span,
+                (last[target_rows] - target_days) / span,
+                (target_days - d['min_day']) / span]
+    out.update(target_features=np.column_stack(columns).astype(np.float32),
+               target_bins=((target_days - d['min_day']) * max(d.get('time_bins', 1), 1) // (span + 1)))
+    return out
 
 
 def prepare(d, users, c, rng=None, keep=None, queries=None):
@@ -199,7 +215,8 @@ def prepare(d, users, c, rng=None, keep=None, queries=None):
     if c.context == 'session':
         visible = (items * 5 + ratings)[keep]
         data.update(session_inputs(dict(d, time_bins=c.time_bins), rows, index, keep, visible,
-                                   implicit_rows, implicit_index, target_rows, target_days, users))
+                                   implicit_rows, implicit_index, target_rows, target_days, users,
+                                   c.week_days))
     return {k: torch.from_numpy(np.ascontiguousarray(v)).to(c.device) for k, v in data.items()}
 
 
@@ -220,9 +237,15 @@ class HistoryModel(nn.Module):
         if c.context == 'session':
             self.session_implicit = nn.Parameter(torch.empty(items, c.rank))
             self.session_explicit = nn.Parameter(torch.empty(items * 5, c.rank))
-            for p in (self.session_implicit, self.session_explicit):
-                nn.init.normal_(p, std=.04)
-            self.session_net = nn.Sequential(nn.Linear(c.rank * 3 + 5, c.hidden), nn.Tanh(),
+            channels, n_features = 1, 5
+            if c.week_days > 1:
+                self.week_implicit = nn.Parameter(torch.empty(items, c.rank))
+                self.week_explicit = nn.Parameter(torch.empty(items * 5, c.rank))
+                channels, n_features = 2, 7
+            for name in ('session_implicit', 'session_explicit', 'week_implicit', 'week_explicit'):
+                if hasattr(self, name):
+                    nn.init.normal_(getattr(self, name), std=.04)
+            self.session_net = nn.Sequential(nn.Linear(c.rank * (1 + 2 * channels) + n_features, c.hidden), nn.Tanh(),
                                              nn.Dropout(c.dropout), nn.Linear(c.hidden, c.rank))
             nn.init.zeros_(self.session_net[-1].weight)
             nn.init.zeros_(self.session_net[-1].bias)
@@ -251,21 +274,27 @@ class HistoryModel(nn.Module):
         z = z * b['implicit_counts'].clamp(min=1).rsqrt()[:, None]
         return self.encoder(torch.cat([x, z, b['features']], 1))
 
+    def channel(self, b, prefix, implicit, explicit, items, zero):
+        imp = F.embedding_bag(b[prefix + '_imp_index'], implicit, b[prefix + '_imp_offsets'],
+                              mode='sum', include_last_offset=True)
+        imp = torch.cat([imp, zero])[b[prefix + '_imp_session']]
+        imp = imp - implicit[items] * b[prefix + '_imp_present'][:, None]
+        imp = imp * b[prefix + '_imp_counts'].clamp(min=1).rsqrt()[:, None]
+        # Period ratings come from visible context only.
+        exp = F.embedding_bag(b[prefix + '_exp_index'], explicit, b[prefix + '_exp_offsets'],
+                              mode='sum', include_last_offset=True)
+        exp = torch.cat([exp, zero])[b[prefix + '_exp_session']]
+        exp = exp * b[prefix + '_exp_counts'].clamp(min=1).rsqrt()[:, None]
+        return [imp, exp]
+
     def target_code(self, code, b):
-        """Shift each target's user code by its same-day session context."""
+        """Shift each target's user code by its same-day (and period) context."""
         rows, items = b['target_rows'], b['target_items']
         zero = torch.zeros(1, self.config.rank, dtype=code.dtype, device=code.device)
-        imp = F.embedding_bag(b['session_imp_index'], self.session_implicit, b['session_imp_offsets'],
-                              mode='sum', include_last_offset=True)
-        imp = torch.cat([imp, zero])[b['target_imp_session']]
-        imp = imp - self.session_implicit[items] * b['target_imp_present'][:, None]
-        imp = imp * b['target_imp_counts'].clamp(min=1).rsqrt()[:, None]
-        # Same-day ratings come from visible context only.
-        exp = F.embedding_bag(b['session_exp_index'], self.session_explicit, b['session_exp_offsets'],
-                              mode='sum', include_last_offset=True)
-        exp = torch.cat([exp, zero])[b['target_exp_session']]
-        exp = exp * b['target_exp_counts'].clamp(min=1).rsqrt()[:, None]
-        shift = self.session_net(torch.cat([code[rows], imp, exp, b['target_features']], 1))
+        parts = [code[rows]] + self.channel(b, 'day', self.session_implicit, self.session_explicit, items, zero)
+        if self.config.week_days > 1:
+            parts += self.channel(b, 'week', self.week_implicit, self.week_explicit, items, zero)
+        shift = self.session_net(torch.cat(parts + [b['target_features']], 1))
         return code[rows] + shift
 
     def decode(self, code, features, rows, items, b=None):

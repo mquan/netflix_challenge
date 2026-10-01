@@ -92,7 +92,7 @@ class MaskedHistoryTests(unittest.TestCase):
         self.assertTrue(all(torch.equal(a[k], b[k]) for k in a))
 
     def test_session_variant_isolates_hidden_values_and_probe_labels(self):
-        c = dataclasses.replace(self.c, context='session', suffix_prob=.5, time_bins=4)
+        c = dataclasses.replace(self.c, context='session', suffix_prob=.5, time_bins=4, week_days=7)
         users = np.array([0, 1, 2])
         keep = np.array([True, False, True] * 3)
         changed = dict(self.d)
@@ -124,7 +124,8 @@ class MaskedHistoryTests(unittest.TestCase):
                 '--output', str(self.root / (filename + '-session')),
                 '--epochs', '2', '--threads', '1', '--rank', '4', '--hidden', '8',
                 '--batch-users', '25', '--nnz-budget', '80', '--dropout', '0',
-                '--context', 'session', '--suffix-prob', '.5', '--time-bins', '4', '--save-epochs'])
+                '--context', 'session', '--suffix-prob', '.5', '--time-bins', '4', '--week-days', '7',
+                '--save-epochs'])
             reports.append(run(args))
         self.assertEqual((self.root / 'data-session.f32').read_bytes(),
                          (self.root / 'changed-session.f32').read_bytes())
