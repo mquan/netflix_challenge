@@ -1,0 +1,52 @@
+{
+  "name": "IA1-autorec-item512",
+  "strategy": "Item-based AutoRec (I-AutoRec) with rater-indicator input: new model axis for the round-4 blend; 512 hidden, input drop .25, code dropout .2, AdamW wd .01, lr 3e-3, 250k-rating batches",
+  "command": [
+    "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+    "scripts/autorec_item.py",
+    "--data",
+    "data/processed/netflix.bin",
+    "--predictions",
+    "artifacts/autorec-item512.f32",
+    "--hidden",
+    "512",
+    "--dropout",
+    ".2",
+    "--weight-decay",
+    ".01"
+  ],
+  "started_utc": "2026-09-28T03:51:39.729769+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "e860c07c4026aed2e6d273e70d8237a171b71a31",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T03:51:40.975802+00:00",
+  "events_path": "experiments/IA1-autorec-item512.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 7789.866042040987,
+  "finished_utc": "2026-09-28T06:12:52.749222+00:00",
+  "log_sha256": "ddbd93a6175fda6b9f979dd1a1983baad22f5d6f1b647a5ba3c15c69a81e5fb7",
+  "events_sha256": "4565af941f0dde3eff7de025d0da4eb4968003c4e183048986f644a43e9ab3f3",
+  "predictions_artifact": {
+    "path": "artifacts/autorec-item512.f32",
+    "sha256": "cc1ef857d8bbc91a6c440555425dc24b32ec51364ed4f091d9902cf493b0db50",
+    "bytes": 5633580
+  }
+}

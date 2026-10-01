@@ -1,0 +1,10 @@
+autorec-item hidden=512 nnz_budget=250000 lr=0.003 input_drop=0.25 dropout=0.2 wd=0.01 implicit=True device=mps
+epoch=1 train_rmse=0.9417031387 probe_rmse=0.9828702029 best=0.9828702029 seconds=1234.6
+epoch=2 train_rmse=0.8682068964 probe_rmse=0.9628552674 best=0.9628552674 seconds=1346.3
+epoch=3 train_rmse=0.8400026219 probe_rmse=0.9581633008 best=0.9581633008 seconds=913.1
+epoch=4 train_rmse=0.8184499055 probe_rmse=0.9587616730 best=0.9581633008 seconds=1008.9
+epoch=5 train_rmse=0.7982551544 probe_rmse=0.9631719360 best=0.9581633008 seconds=955.7
+epoch=6 train_rmse=0.7803292132 probe_rmse=0.9676520752 best=0.9581633008 seconds=961.3
+epoch=7 train_rmse=0.7651340978 probe_rmse=0.9726406439 best=0.9581633008 seconds=976.9
+epoch=8 train_rmse=0.7512381463 probe_rmse=0.9768265750 best=0.9581633008 seconds=943.0
+early_stop patience=5

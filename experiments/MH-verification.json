@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "tests": 3,
+  "checks": [
+    "masked target values cannot affect scalar/categorical inputs or predictions",
+    "nonzero gradients and updates; all four head/loss settings; empty context",
+    "checkpoint reload and query-order preservation",
+    "selection and full-data refit predictions unchanged by original-probe labels"
+  ],
+  "sources": {
+    "scripts/masked_history.py": "67752dcf5f7f322624bad2789e23a43d8914a04bda23167cbb92bb8898750f1a",
+    "tests/test_masked_history.py": "8182ee9c9e6c82e4ad2327811f3af7dd5cfdea78938a901e6468cb9ec22f31f5"
+  }
+}

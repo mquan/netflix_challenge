@@ -1,0 +1,77 @@
+{
+  "name": "R3R-rbm200-resume",
+  "strategy": "Warm-start RBM-200 from epoch 30 (velocities reset), continue schedule",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--init-model",
+    "artifacts/rbm200.bin",
+    "--start-epoch",
+    "31",
+    "--model",
+    "artifacts/R3R-rbm200.bin",
+    "--predictions",
+    "artifacts/R3R-rbm200.f32",
+    "--hidden",
+    "200",
+    "--iterations",
+    "120",
+    "--threads",
+    "4",
+    "--patience",
+    "6",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".985"
+  ],
+  "started_utc": "2026-09-28T02:40:56.892520+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "0f1836feffaed9fe3e071c3fef08d9396a63ccf2",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee"
+  },
+  "binary_sha256": "79c00e0abc61526fd7cd3317950cf61f1124954ea088888ae2f3aeaacd0a0100",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/rbm200.bin": {
+      "sha256": "12cadbf5793fc5b25fffe611503f1676cee2f1c897676bfb30f24eaaad605c83",
+      "bytes": 85652224
+    }
+  },
+  "launched_utc": "2026-09-28T02:40:57.359537+00:00",
+  "events_path": "experiments/R3R-rbm200-resume.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 12518.26547016701,
+  "finished_utc": "2026-09-28T06:20:57.569190+00:00",
+  "log_sha256": "0965fcdc02a65ebd04fbf741cfddb63ca79672c48506e6fea7e6f57dfce2d2ef",
+  "events_sha256": "09f8e3149d61ab75815bc8d377879fa86b315e657e794eab0548ebd22ec836bc",
+  "model_artifact": {
+    "path": "artifacts/R3R-rbm200.bin",
+    "sha256": "6cf64dafae00dca0d100bf807e8a23d38a15d401dfd709caae3b1da8059d4560",
+    "bytes": 85652224
+  },
+  "predictions_artifact": {
+    "path": "artifacts/R3R-rbm200.f32",
+    "sha256": "428f9f3ef0a04c2e2b4f68e14eee5c7851e34f9e331ed12f2c6ee7d75d4efb29",
+    "bytes": 5633580
+  }
+}

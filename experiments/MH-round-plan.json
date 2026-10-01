@@ -1,0 +1,33 @@
+{
+  "reference": "experiments/MH-reference.json",
+  "primary": "MH1-categorical-ce",
+  "scalar_control": "MH2-scalar-mse",
+  "loss_control": "MH3-categorical-mse",
+  "selection": "artifacts/validation/train-matched-20260927.bin",
+  "max_selection_epochs": 4,
+  "patience": 3,
+  "refit": "full original training at selected epoch; no original-probe epoch selection",
+  "blend": {
+    "recipe": "scripts/round4_boost.py",
+    "seeds": [
+      2026
+    ],
+    "learning_rate": 0.02,
+    "rounds": 8000,
+    "extra_meta": true,
+    "folds": 5,
+    "reference_rmse": 0.8748094089310758
+  },
+  "comparison": "Each of three raw columns individually and all three together added to frozen R5; exact control reproduction required.",
+  "hypotheses": [
+    "categorical masked history can add to the ensemble",
+    "MSE versus cross entropy on identical categorical architecture"
+  ],
+  "limitations": [
+    "scalar/categorical comparison changes both representation and output head",
+    "no reconstruction-objective control in this initial round",
+    "matched selection split is easier than original probe; original probe remains a development set"
+  ],
+  "initial_max_selection_epochs": 12,
+  "budget_amendment": "After measuring 2.5\u20136.5 minutes per full epoch under load, bound first pilot to the first four completed training-only selection epochs; original probe not scored. Stop own selection workers, then fresh refit at best epoch among those four."
+}
