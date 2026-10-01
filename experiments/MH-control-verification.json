@@ -1,0 +1,21 @@
+{
+  "verification_only": true,
+  "full_probe_reproduced": false,
+  "scope": "Completed control folds listed below, plus exact hashes of all 61 frozen inputs. Full comparisons reuse the original completed R5 cross-fitted predictions.",
+  "reason": "Stop redundant control fitting after exact reproduction to release resources for candidate evaluation.",
+  "folds": [
+    {
+      "fold": 1,
+      "control_rmse": 0.8744987237587174,
+      "candidate_rmse": 0.8744987237587174,
+      "delta_rmse": 0.0
+    }
+  ],
+  "comparison": {
+    "fold": 1,
+    "control_rmse": 0.8744987237587174,
+    "candidate_rmse": 0.8744987237587174,
+    "delta_rmse": 0.0
+  },
+  "reference": "experiments/MH-reference.json"
+}

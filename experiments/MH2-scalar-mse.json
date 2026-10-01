@@ -1,0 +1,57 @@
+{
+  "name": "MH2-scalar-mse",
+  "strategy": "Masked scalar history control, rank64 hidden256; choose epoch on matched training-only holdout then refit; same masking normalization and batch budgets as categorical pilot",
+  "command": [
+    "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+    "scripts/masked_history.py",
+    "--data",
+    "data/processed/netflix.bin",
+    "--selection-data",
+    "artifacts/validation/train-matched-20260927.bin",
+    "--output",
+    "artifacts/masked/MH2-scalar-mse",
+    "--epochs",
+    "12",
+    "--patience",
+    "3",
+    "--threads",
+    "2",
+    "--device",
+    "cpu",
+    "--representation",
+    "scalar",
+    "--head",
+    "scalar",
+    "--loss",
+    "mse"
+  ],
+  "started_utc": "2026-09-28T05:14:02.817981+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T05:14:04.506986+00:00",
+  "events_path": "experiments/MH2-scalar-mse.events.jsonl",
+  "exit_code": -15,
+  "elapsed_seconds": 812.8711917920155,
+  "finished_utc": "2026-09-28T05:27:37.388498+00:00",
+  "log_sha256": "e40f73d8756b0b5cca910e327ffbb5ab11bffc44ca93e80a18141590b5dd55d4",
+  "events_sha256": "e4ac5e64724e8458cae45ee10a00f21b6ae151f6d6099136fdd2ade3df3ef86f"
+}

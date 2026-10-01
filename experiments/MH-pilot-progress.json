@@ -1,0 +1,459 @@
+{
+  "selection_epoch_budget": 4,
+  "rationale": "Bound first pilot after measured full-epoch throughput",
+  "jobs": [
+    {
+      "name": "MH1-categorical-ce",
+      "pid": 88978,
+      "phase": "complete",
+      "selection": [
+        {
+          "epoch": 1,
+          "loss": 1.1763915778948806,
+          "train_rmse": 0.8838601195908096,
+          "users": 480189,
+          "targets": 48823824,
+          "train_seconds": 307.7597204579506,
+          "validation_rmse": 0.9211529814226926,
+          "seconds": 390.96841208299156
+        },
+        {
+          "epoch": 2,
+          "loss": 1.1397381991110251,
+          "train_rmse": 0.8575476997961056,
+          "users": 480189,
+          "targets": 48831837,
+          "train_seconds": 309.97349679202307,
+          "validation_rmse": 0.9111818543638087,
+          "seconds": 394.94469516701065
+        },
+        {
+          "epoch": 3,
+          "loss": 1.126226430961479,
+          "train_rmse": 0.848036937665644,
+          "users": 480189,
+          "targets": 48834945,
+          "train_seconds": 356.8090678329463,
+          "validation_rmse": 0.9048589401900631,
+          "seconds": 432.37257974996464
+        },
+        {
+          "epoch": 4,
+          "loss": 1.1165574773091638,
+          "train_rmse": 0.841050511756199,
+          "users": 480189,
+          "targets": 48835710,
+          "train_seconds": 373.16427579097217,
+          "validation_rmse": 0.9007755210735241,
+          "seconds": 459.88932349998504
+        }
+      ],
+      "selected_epoch": 4,
+      "refit_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/experiment.py",
+        "--name",
+        "MH1-categorical-ce-refit",
+        "--strategy",
+        "Fresh full-data refit at epoch 4, selected only from first 4 training-holdout epochs of MH1-categorical-ce",
+        "--",
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/masked_history.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--output",
+        "artifacts/masked/MH1-categorical-ce-refit",
+        "--epochs",
+        "4",
+        "--threads",
+        "1",
+        "--representation",
+        "categorical",
+        "--head",
+        "distribution",
+        "--loss",
+        "ce",
+        "--objective",
+        "masked",
+        "--rank",
+        "64",
+        "--hidden",
+        "256",
+        "--dropout",
+        "0.1",
+        "--input-drop",
+        "0.5",
+        "--lr",
+        "0.001",
+        "--weight-decay",
+        "0.001",
+        "--batch-users",
+        "512",
+        "--nnz-budget",
+        "131072",
+        "--seed",
+        "20260928",
+        "--device",
+        "mps"
+      ],
+      "prediction": "artifacts/masked/MH1-categorical-ce-refit.f32",
+      "probe_rmse": 0.9227929644203775,
+      "blend_output": "artifacts/masked/MHB-MH1",
+      "blend_result": {
+        "control_rmse": 0.8748094090388031,
+        "candidate_rmse": 0.8744102404024351,
+        "delta_rmse": -0.00039916863636801914,
+        "fold_delta_rmse": [
+          -0.0003193073405853841,
+          -0.00041664807815200433,
+          -0.00029919845882508955,
+          -0.00064161625178627,
+          -0.0003186918029104424
+        ],
+        "delta_mse": -0.000698233622175601,
+        "descriptive_user_cluster_95_mse": [
+          -0.0008344685872911988,
+          -0.0005619986570600032
+        ],
+        "history_slices": {
+          "under20": {
+            "rows": 155061,
+            "control_rmse": 0.9838996247626981,
+            "candidate_rmse": 0.9825042148075996
+          },
+          "20to49": {
+            "rows": 295524,
+            "control_rmse": 0.9369588690939354,
+            "candidate_rmse": 0.9362692276823659
+          },
+          "50to499": {
+            "rows": 795877,
+            "control_rmse": 0.8509422638161855,
+            "candidate_rmse": 0.8508155456969353
+          },
+          "500plus": {
+            "rows": 161933,
+            "control_rmse": 0.753706173799664,
+            "candidate_rmse": 0.7536876948817348
+          }
+        }
+      }
+    },
+    {
+      "name": "MH2-scalar-mse",
+      "pid": 88979,
+      "phase": "complete",
+      "selection": [
+        {
+          "epoch": 1,
+          "loss": 0.7560054154991822,
+          "train_rmse": 0.8694857186543391,
+          "users": 480189,
+          "targets": 48823824,
+          "train_seconds": 155.01208416599547,
+          "validation_rmse": 0.9103182409033976,
+          "seconds": 177.5352662500227
+        },
+        {
+          "epoch": 2,
+          "loss": 0.7166542589308016,
+          "train_rmse": 0.8465543455690504,
+          "users": 480189,
+          "targets": 48831837,
+          "train_seconds": 122.0167887500138,
+          "validation_rmse": 0.902673928898139,
+          "seconds": 141.58622275001835
+        },
+        {
+          "epoch": 3,
+          "loss": 0.7025872477590236,
+          "train_rmse": 0.8382047772887389,
+          "users": 480189,
+          "targets": 48834945,
+          "train_seconds": 120.49295649997657,
+          "validation_rmse": 0.8983508464108405,
+          "seconds": 141.9046956669772
+        },
+        {
+          "epoch": 4,
+          "loss": 0.6942871462935277,
+          "train_rmse": 0.8332389490891957,
+          "users": 480189,
+          "targets": 48835710,
+          "train_seconds": 135.72295308398316,
+          "validation_rmse": 0.8961030730720507,
+          "seconds": 163.35843716701493
+        }
+      ],
+      "selected_epoch": 4,
+      "refit_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/experiment.py",
+        "--name",
+        "MH2-scalar-mse-refit",
+        "--strategy",
+        "Fresh full-data refit at epoch 4, selected only from first 4 training-holdout epochs of MH2-scalar-mse",
+        "--",
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/masked_history.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--output",
+        "artifacts/masked/MH2-scalar-mse-refit",
+        "--epochs",
+        "4",
+        "--threads",
+        "2",
+        "--representation",
+        "scalar",
+        "--head",
+        "scalar",
+        "--loss",
+        "mse",
+        "--objective",
+        "masked",
+        "--rank",
+        "64",
+        "--hidden",
+        "256",
+        "--dropout",
+        "0.1",
+        "--input-drop",
+        "0.5",
+        "--lr",
+        "0.001",
+        "--weight-decay",
+        "0.001",
+        "--batch-users",
+        "512",
+        "--nnz-budget",
+        "131072",
+        "--seed",
+        "20260928",
+        "--device",
+        "cpu"
+      ],
+      "prediction": "artifacts/masked/MH2-scalar-mse-refit.f32",
+      "probe_rmse": 0.9171090629257226,
+      "blend_output": "artifacts/masked/MHB-MH2",
+      "blend_result": {
+        "control_rmse": 0.8748094090388031,
+        "candidate_rmse": 0.874453034828114,
+        "delta_rmse": -0.00035637421068912545,
+        "fold_delta_rmse": [
+          -0.00029747102842070383,
+          -0.00030753819837181506,
+          -0.0004086257794170267,
+          -0.0005177162580498607,
+          -0.00025000926478357943
+        ],
+        "delta_mse": -0.0006233920227213387,
+        "descriptive_user_cluster_95_mse": [
+          -0.0007567193814708468,
+          -0.0004900646639718305
+        ],
+        "history_slices": {
+          "under20": {
+            "rows": 155061,
+            "control_rmse": 0.9838996247626981,
+            "candidate_rmse": 0.9827293052780803
+          },
+          "20to49": {
+            "rows": 295524,
+            "control_rmse": 0.9369588690939354,
+            "candidate_rmse": 0.9363482954734931
+          },
+          "50to499": {
+            "rows": 795877,
+            "control_rmse": 0.8509422638161855,
+            "candidate_rmse": 0.8508089792111788
+          },
+          "500plus": {
+            "rows": 161933,
+            "control_rmse": 0.753706173799664,
+            "candidate_rmse": 0.7536956875562344
+          }
+        }
+      }
+    },
+    {
+      "name": "MH3-categorical-mse",
+      "pid": 89156,
+      "phase": "complete",
+      "selection": [
+        {
+          "epoch": 1,
+          "loss": 0.7635009502209034,
+          "train_rmse": 0.8737854138082793,
+          "users": 480189,
+          "targets": 48823824,
+          "train_seconds": 223.8141309589846,
+          "validation_rmse": 0.912748193536434,
+          "seconds": 247.94177395902807
+        },
+        {
+          "epoch": 2,
+          "loss": 0.723221696036285,
+          "train_rmse": 0.8504244212943173,
+          "users": 480189,
+          "targets": 48831837,
+          "train_seconds": 263.2830314169987,
+          "validation_rmse": 0.9039264670214046,
+          "seconds": 288.8415319999913
+        },
+        {
+          "epoch": 3,
+          "loss": 0.7064485041300997,
+          "train_rmse": 0.8405049100119916,
+          "users": 480189,
+          "targets": 48834945,
+          "train_seconds": 302.9125335839926,
+          "validation_rmse": 0.8988262533271527,
+          "seconds": 330.194068999961
+        },
+        {
+          "epoch": 4,
+          "loss": 0.6953864241006958,
+          "train_rmse": 0.8338983299158764,
+          "users": 480189,
+          "targets": 48835710,
+          "train_seconds": 261.37911670905305,
+          "validation_rmse": 0.8957721701612772,
+          "seconds": 285.1791230420349
+        }
+      ],
+      "selected_epoch": 4,
+      "refit_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/experiment.py",
+        "--name",
+        "MH3-categorical-mse-refit",
+        "--strategy",
+        "Fresh full-data refit at epoch 4, selected only from first 4 training-holdout epochs of MH3-categorical-mse",
+        "--",
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/masked_history.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--output",
+        "artifacts/masked/MH3-categorical-mse-refit",
+        "--epochs",
+        "4",
+        "--threads",
+        "2",
+        "--representation",
+        "categorical",
+        "--head",
+        "distribution",
+        "--loss",
+        "mse",
+        "--objective",
+        "masked",
+        "--rank",
+        "64",
+        "--hidden",
+        "256",
+        "--dropout",
+        "0.1",
+        "--input-drop",
+        "0.5",
+        "--lr",
+        "0.001",
+        "--weight-decay",
+        "0.001",
+        "--batch-users",
+        "512",
+        "--nnz-budget",
+        "131072",
+        "--seed",
+        "20260928",
+        "--device",
+        "cpu"
+      ],
+      "prediction": "artifacts/masked/MH3-categorical-mse-refit.f32",
+      "probe_rmse": 0.9174102382702785,
+      "blend_output": "artifacts/masked/MHB-MH3",
+      "blend_result": {
+        "control_rmse": 0.8748094090388031,
+        "candidate_rmse": 0.8741354143345642,
+        "delta_rmse": -0.0006739947042389005,
+        "fold_delta_rmse": [
+          -0.0005681221641223866,
+          -0.0007594708741097689,
+          -0.0007119072925133585,
+          -0.0006859833294264872,
+          -0.0006446556240586876
+        ],
+        "delta_mse": -0.0011787795489596484,
+        "descriptive_user_cluster_95_mse": [
+          -0.0013396959647857,
+          -0.0010178631331335967
+        ],
+        "history_slices": {
+          "under20": {
+            "rows": 155061,
+            "control_rmse": 0.9838996247626981,
+            "candidate_rmse": 0.9819211175310786
+          },
+          "20to49": {
+            "rows": 295524,
+            "control_rmse": 0.9369588690939354,
+            "candidate_rmse": 0.9358470724770382
+          },
+          "50to499": {
+            "rows": 795877,
+            "control_rmse": 0.8509422638161855,
+            "candidate_rmse": 0.8506192630878959
+          },
+          "500plus": {
+            "rows": 161933,
+            "control_rmse": 0.753706173799664,
+            "candidate_rmse": 0.7536883857439575
+          }
+        }
+      }
+    }
+  ],
+  "combined": "all three completed raw predictions",
+  "started": 1790573257.273365,
+  "combined_result": {
+    "control_rmse": 0.8748094090388031,
+    "candidate_rmse": 0.874035303630451,
+    "delta_rmse": -0.0007741054083520993,
+    "fold_delta_rmse": [
+      -0.0005947698404289437,
+      -0.0009069393332878928,
+      -0.0007706940387639527,
+      -0.0008295681410179778,
+      -0.0007688946015299569
+    ],
+    "delta_mse": -0.0013537901504452592,
+    "descriptive_user_cluster_95_mse": [
+      -0.0015243641528908977,
+      -0.0011832161479996208
+    ],
+    "history_slices": {
+      "under20": {
+        "rows": 155061,
+        "control_rmse": 0.9838996247626981,
+        "candidate_rmse": 0.9817461064140006
+      },
+      "20to49": {
+        "rows": 295524,
+        "control_rmse": 0.9369588690939354,
+        "candidate_rmse": 0.935668105334706
+      },
+      "50to499": {
+        "rows": 795877,
+        "control_rmse": 0.8509422638161855,
+        "candidate_rmse": 0.8505751906927834
+      },
+      "500plus": {
+        "rows": 161933,
+        "control_rmse": 0.753706173799664,
+        "candidate_rmse": 0.7535468652665133
+      }
+    }
+  },
+  "finished": 1790580942.288023
+}
