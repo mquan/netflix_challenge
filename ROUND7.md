@@ -36,11 +36,25 @@ for the new inputs):
   used is the one at the epoch chosen by the separate training-only selection
   run, so the two run concurrently without the probe influencing the choice.
 
-| Arm | Change | Holdout RMSE by epoch (train-matched selection set) |
-|---|---|---|
-| MT0 | MH3, 12-epoch budget | .912748 .903926 .898826 .895772 .893511 … |
-| MT1 | MT0 + session context + 32 time bins | .898199 … |
-| MT2 | MT1 + suffix masking (p = 0.5) | .900775 … |
+Each arm: selection run on the train-matched holdout (12-epoch budget,
+patience 3) and a concurrent full refit saving every epoch; the blended
+column is the refit at the holdout-selected epoch.
 
-At one epoch session context is 0.0145 better than the control, already ahead
-of the control's third epoch.
+| Arm | Change | Holdout by epoch | Selected | Standalone probe |
+|---|---|---|---|---|
+| MT0 | MH3, 12-epoch budget | .9127 .9039 .8988 .8958 .8935 .8919 .8905 .8897 .8890 .8879 .8882 .8876 | 12 | 0.911022 |
+| MT1 | MT0 + session context + 32 time bins | .8982 .8885 .8834 .8808 .8788 .8768 .8764 .8763 .8760 .8750 .8755 .8754 | 10 | **0.898931** |
+| MT2 | MT1 + suffix masking (p = 0.5) | .9008 .8916 .8861 .8846 .8813 .8792 .8782 .8780 .8778 .8779 .8779 .8774 | 12 | 0.901488 |
+
+Session context is worth 0.012 standalone (0.9110 → 0.8989), which puts a
+single masked-history network level with the best conditional RBM.
+
+| Blend | Bank | Dev CV | Δ | Fold Δ |
+|---|---|---|---|---|
+| R7-MT0 | R7-MH3 + MT0 | 0.8721300 | −0.0004549 vs R7-MH3 | −.000527 −.000348 −.000383 −.000496 −.000520 |
+| R7-MT1 | R7-MT0 + MT1 | **0.8711298** | −0.0010002 vs R7-MT0 | −.000833 −.001000 −.001100 −.000923 −.001145 |
+| R7-MT2 | R7-MT0 + MT2 | 0.8712032 | −0.0009268 vs R7-MT0 | −.000800 −.000893 −.000999 −.000996 −.000947 |
+
+Suffix masking scores worse on the holdout (which is not a temporal suffix)
+but nearly matches MT1 in the blend; whether the two are complementary is
+the next blend.
