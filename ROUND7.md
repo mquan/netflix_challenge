@@ -67,6 +67,11 @@ gain. Seed replicates MT5 (MT1 config, seed 7) and MT6 (MT2 config, seed 7)
 are refit at the epochs their configurations' holdout selections chose
 (10 and 12), without a new selection run.
 
+| R7-MT4 | R7-MT12 + MT4 (`--week-days 7`, epoch 10, standalone 0.899098) | 0.8707087 | −0.0001163 vs R7-MT12; +0.0000729 vs R7-MT3 | −.000046 −.000096 −.000296 −.000066 −.000078 |
+
+A 7-day period channel adds nothing beyond same-day context, standalone or in
+the blend. Not retained.
+
 Round 7 so far: 0.8731935 → **0.8708250** (−0.0023685, single seed), every
 fold better at each step. Next arms, judged against R7-MT12: MT3 (MT1 at
 rank 128 / hidden 512) and MT4 (MT1 + 7-day period channel, `--week-days 7`).
