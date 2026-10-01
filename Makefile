@@ -86,6 +86,7 @@ test: $(BIN)
 	bash tests/smoke.sh
 	python3 tests/test_joint.py
 	python3 tests/test_temporal_neighborhood.py
+	python3 tests/test_rbm.py
 	python3 tests/test_timeline.py
 
 clean:

@@ -1669,7 +1669,7 @@ void usage() {
          "[--factors N] [--init-model FILE] [--neighbor-rate X] [--predictions FILE]\n"
       << "  netflix eval-integrated --data FILE --graph FILE --model FILE [--predictions FILE]\n"
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
-         "[--threads N] [--predictions FILE]\n"
+         "[--threads N] [--visible-context 0..7] [--fixed-epoch] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix check-implicit\n";
 }
