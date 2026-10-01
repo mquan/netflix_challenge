@@ -91,6 +91,48 @@ class MaskedHistoryTests(unittest.TestCase):
         b = torch.load(self.root / 'changed-run.refit.pt', weights_only=True)['state']
         self.assertTrue(all(torch.equal(a[k], b[k]) for k in a))
 
+    def test_session_variant_isolates_hidden_values_and_probe_labels(self):
+        c = dataclasses.replace(self.c, context='session', suffix_prob=.5, time_bins=4)
+        users = np.array([0, 1, 2])
+        keep = np.array([True, False, True] * 3)
+        changed = dict(self.d)
+        changed['train_ratings'] = self.d['train_ratings'].copy()
+        changed['train_ratings'][[1, 4, 7]] = 6 - changed['train_ratings'][[1, 4, 7]]
+        a, b = prepare(self.d, users, c, keep=keep), prepare(changed, users, c, keep=keep)
+        for key in a:
+            if key != 'target_ratings':
+                self.assertTrue(torch.equal(a[key], b[key]), key)
+        torch.manual_seed(1)
+        model = HistoryModel(self.d['items'], c)
+        with torch.no_grad():
+            model.session_net[-1].weight.normal_()
+        model.eval()
+        pa = model.decode(model.encode(a), a['features'], a['target_rows'], a['target_items'], a)
+        pb = model.decode(model.encode(b), b['features'], b['target_rows'], b['target_items'], b)
+        self.assertTrue(torch.equal(pa, pb))
+        # Suffix masking decisions depend on dates and the RNG, not ratings.
+        ka = prepare(self.d, users, c, rng=np.random.default_rng(3))['target_items']
+        kb = prepare(changed, users, c, rng=np.random.default_rng(3))['target_items']
+        self.assertTrue(torch.equal(ka, kb))
+        dataset(self.root / 'changed.bin', correlated_train=True, change_fold=0)
+        create(self.root / 'data.bin', self.root / 'holdout.bin', .014, 7)
+        reports = []
+        for filename in ('data', 'changed'):
+            args = parser().parse_args([
+                '--data', str(self.root / (filename + '.bin')),
+                '--selection-data', str(self.root / 'holdout.bin'),
+                '--output', str(self.root / (filename + '-session')),
+                '--epochs', '2', '--threads', '1', '--rank', '4', '--hidden', '8',
+                '--batch-users', '25', '--nnz-budget', '80', '--dropout', '0',
+                '--context', 'session', '--suffix-prob', '.5', '--time-bins', '4', '--save-epochs'])
+            reports.append(run(args))
+        self.assertEqual((self.root / 'data-session.f32').read_bytes(),
+                         (self.root / 'changed-session.f32').read_bytes())
+        self.assertNotEqual(reports[0]['probe_rmse'], reports[1]['probe_rmse'])
+        epoch = reports[0]['selected_epoch']
+        self.assertEqual((self.root / f'data-session.refit.e{epoch}.f32').read_bytes(),
+                         (self.root / 'data-session.f32').read_bytes())
+
 
 if __name__ == '__main__':
     unittest.main()

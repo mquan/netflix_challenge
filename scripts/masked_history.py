@@ -38,6 +38,10 @@ class Config:
     nnz_budget: int = 131072
     seed: int = 20260928
     device: str = 'cpu'
+    # Opt-in temporal extensions; defaults reproduce the round-7 pilot exactly.
+    context: str = 'none'
+    suffix_prob: float = 0.
+    time_bins: int = 0
 
 
 def digest(path):
@@ -77,13 +81,82 @@ def batches(d, users, c):
         yield np.array(group, dtype=np.int64)
 
 
-def prepare(d, users, c, rng=None, keep=None):
-    """Mask values before constructing all explicit inputs and summary features."""
+def suffix_mask(keep, rows, days, offsets, users, c, rng):
+    """For a random subset of users, hide the latest ratings by date, as the
+    probe does. Uses dates and random tie-breaks only, never rating values."""
+    chosen = rng.random(len(users)) < c.suffix_prob
+    fraction = rng.uniform(.1, .4, len(users))
+    order = np.lexsort((rng.random(len(rows)), days, rows))
+    counts = np.diff(offsets)
+    position = np.empty(len(rows), dtype=np.int64)
+    position[order] = np.arange(len(rows)) - offsets[rows[order]]
+    late = position >= np.ceil(counts * (1 - fraction))[rows]
+    keep = keep.copy()
+    sel = chosen[rows]
+    keep[sel] = ~late[sel]
+    return keep
+
+
+SESSION_KEY = 65536
+
+
+def session_inputs(d, rows, index, keep, explicit_index, implicit_rows, implicit_index,
+                   target_rows, target_days, users):
+    """Per-(user, day) context for each target: other movies the user touched
+    that day (implicit, own item removed by the model) and visible same-day
+    ratings, plus date features. No hidden rating value enters."""
+    imp_days = d['implicit_days'][implicit_index].astype(np.int64)
+    imp_key = implicit_rows * SESSION_KEY + imp_days
+    imp_order = np.argsort(imp_key, kind='stable')
+    imp_unique, imp_start = np.unique(imp_key[imp_order], return_index=True)
+    ctx_key = rows[keep] * SESSION_KEY + d['train_days'][index][keep].astype(np.int64)
+    ctx_order = np.argsort(ctx_key, kind='stable')
+    ctx_unique, ctx_start = np.unique(ctx_key[ctx_order], return_index=True)
+    target_key = target_rows * SESSION_KEY + target_days
+
+    def lookup(unique, key):
+        if not len(unique):
+            return np.zeros(len(key), dtype=np.int64)
+        pos = np.minimum(np.searchsorted(unique, key), len(unique) - 1)
+        return np.where(unique[pos] == key, pos, len(unique))
+
+    imp_session = lookup(imp_unique, target_key)
+    ctx_session = lookup(ctx_unique, target_key)
+    imp_counts = np.r_[np.diff(np.r_[imp_start, len(imp_key)]), 0]
+    ctx_counts = np.r_[np.diff(np.r_[ctx_start, len(ctx_key)]), 0]
+    n_imp = np.maximum(imp_counts[imp_session] - 1, 0)
+    n_ctx = ctx_counts[ctx_session]
+    first = np.full(len(users), d['max_day'], dtype=np.int64)
+    last = np.full(len(users), d['min_day'], dtype=np.int64)
+    np.minimum.at(first, implicit_rows, imp_days)
+    np.maximum.at(last, implicit_rows, imp_days)
+    span = max(d['max_day'] - d['min_day'], 1)
+    feats = np.column_stack([np.log1p(n_imp) / 5, np.log1p(n_ctx) / 4,
+                             (target_days - first[target_rows]) / span,
+                             (last[target_rows] - target_days) / span,
+                             (target_days - d['min_day']) / span]).astype(np.float32)
+    return dict(session_imp_index=(d['implicit_items'][implicit_index][imp_order].astype(np.int64) - 1),
+                session_imp_offsets=np.r_[imp_start, len(imp_key)],
+                session_exp_index=explicit_index[ctx_order],
+                session_exp_offsets=np.r_[ctx_start, len(ctx_key)],
+                target_imp_session=imp_session, target_exp_session=ctx_session,
+                target_imp_present=(imp_session < len(imp_unique)).astype(np.float32),
+                target_imp_counts=n_imp.astype(np.float32), target_exp_counts=n_ctx.astype(np.float32),
+                target_features=feats,
+                target_bins=((target_days - d['min_day']) * max(d.get('time_bins', 1), 1) // (span + 1)))
+
+
+def prepare(d, users, c, rng=None, keep=None, queries=None):
+    """Mask values before constructing all explicit inputs and summary features.
+
+    queries, when given, is (rows, items, days) for prediction targets."""
     rows, index, offsets = gather(d['train_offsets'], users)
     items = d['train_items'][index].astype(np.int64) - 1
     ratings = d['train_ratings'][index].astype(np.int64) - 1
     if keep is None:
         keep = np.ones(len(index), dtype=bool) if rng is None else rng.random(len(index)) >= c.input_drop
+        if rng is not None and c.suffix_prob > 0:
+            keep = suffix_mask(keep, rows, d['train_days'][index].astype(np.int64), offsets, users, c, rng)
         if rng is not None:
             # Every nonempty user supplies a target. Keep a context rating when
             # possible, without making any decision using its rating value.
@@ -110,12 +183,23 @@ def prepare(d, users, c, rng=None, keep=None):
     values = ratings[keep].astype(np.float32) + 1 - 3.6
     explicit_index = items[keep] if c.representation == 'scalar' else items[keep] * 5 + ratings[keep]
     targets = ~keep if c.objective == 'masked' else np.ones(len(keep), dtype=bool)
+    if queries is None:
+        target_rows, target_items = rows[targets], items[targets]
+        target_ratings = ratings[targets]
+        target_days = d['train_days'][index][targets].astype(np.int64)
+    else:
+        target_rows, target_items, target_days = (np.asarray(q, dtype=np.int64) for q in queries)
+        target_ratings = np.zeros(0, dtype=np.int64)
     data = dict(explicit_index=explicit_index, explicit_offsets=context_offsets,
                 explicit_values=values, implicit_index=implicit_items,
                 implicit_offsets=implicit_offsets, features=features,
-                target_rows=rows[targets], target_items=items[targets],
-                target_ratings=ratings[targets], counts=context_counts.astype(np.float32),
+                target_rows=target_rows, target_items=target_items,
+                target_ratings=target_ratings, counts=context_counts.astype(np.float32),
                 implicit_counts=np.diff(implicit_offsets).astype(np.float32))
+    if c.context == 'session':
+        visible = (items * 5 + ratings)[keep]
+        data.update(session_inputs(dict(d, time_bins=c.time_bins), rows, index, keep, visible,
+                                   implicit_rows, implicit_index, target_rows, target_days, users))
     return {k: torch.from_numpy(np.ascontiguousarray(v)).to(c.device) for k, v in data.items()}
 
 
@@ -133,6 +217,17 @@ class HistoryModel(nn.Module):
                                      nn.Dropout(c.dropout), nn.Linear(c.hidden, c.rank), nn.Tanh())
         for p in (self.explicit, self.implicit, self.output):
             nn.init.normal_(p, std=.04)
+        if c.context == 'session':
+            self.session_implicit = nn.Parameter(torch.empty(items, c.rank))
+            self.session_explicit = nn.Parameter(torch.empty(items * 5, c.rank))
+            for p in (self.session_implicit, self.session_explicit):
+                nn.init.normal_(p, std=.04)
+            self.session_net = nn.Sequential(nn.Linear(c.rank * 3 + 5, c.hidden), nn.Tanh(),
+                                             nn.Dropout(c.dropout), nn.Linear(c.hidden, c.rank))
+            nn.init.zeros_(self.session_net[-1].weight)
+            nn.init.zeros_(self.session_net[-1].bias)
+        if c.time_bins > 0:
+            self.time_bias = nn.Parameter(torch.zeros(items * c.time_bins, classes))
 
     def initialize_bias(self, d):
         counts = np.zeros((d['items'], 5), dtype=np.float64)
@@ -156,8 +251,31 @@ class HistoryModel(nn.Module):
         z = z * b['implicit_counts'].clamp(min=1).rsqrt()[:, None]
         return self.encoder(torch.cat([x, z, b['features']], 1))
 
-    def decode(self, code, features, rows, items):
-        raw = (self.output[items] * code[rows, None, :]).sum(2) + self.bias[items]
+    def target_code(self, code, b):
+        """Shift each target's user code by its same-day session context."""
+        rows, items = b['target_rows'], b['target_items']
+        zero = torch.zeros(1, self.config.rank, dtype=code.dtype, device=code.device)
+        imp = F.embedding_bag(b['session_imp_index'], self.session_implicit, b['session_imp_offsets'],
+                              mode='sum', include_last_offset=True)
+        imp = torch.cat([imp, zero])[b['target_imp_session']]
+        imp = imp - self.session_implicit[items] * b['target_imp_present'][:, None]
+        imp = imp * b['target_imp_counts'].clamp(min=1).rsqrt()[:, None]
+        # Same-day ratings come from visible context only.
+        exp = F.embedding_bag(b['session_exp_index'], self.session_explicit, b['session_exp_offsets'],
+                              mode='sum', include_last_offset=True)
+        exp = torch.cat([exp, zero])[b['target_exp_session']]
+        exp = exp * b['target_exp_counts'].clamp(min=1).rsqrt()[:, None]
+        shift = self.session_net(torch.cat([code[rows], imp, exp, b['target_features']], 1))
+        return code[rows] + shift
+
+    def decode(self, code, features, rows, items, b=None):
+        if b is not None and self.config.context == 'session':
+            vector = self.target_code(code, b)
+        else:
+            vector = code[rows]
+        raw = (self.output[items] * vector[:, None, :]).sum(2) + self.bias[items]
+        if b is not None and self.config.time_bins > 0:
+            raw = raw + self.time_bias[items * self.config.time_bins + b['target_bins']]
         stars = torch.arange(1, 6, dtype=features.dtype, device=features.device)
         user_shift = features[rows, :5] @ stars - 3.65
         if self.config.head == 'scalar':
@@ -193,20 +311,19 @@ def predict(model, d, queries=None):
     result = np.empty(len(queries), dtype=np.float32)
     model.eval()
     for group in batches(d, np.unique(users), model.config):
-        b = prepare(d, group, model.config)
-        code = model.encode(b)
         rows, index, _ = gather(offsets, group)
         q = order[index]
         items = queries['item'][q].astype(np.int64) - 1
-        raw = model.decode(code, b['features'], torch.from_numpy(rows).to(model.config.device),
-                           torch.from_numpy(items).to(model.config.device))
+        b = prepare(d, group, model.config, queries=(rows, items, queries['day'][q]))
+        code = model.encode(b)
+        raw = model.decode(code, b['features'], b['target_rows'], b['target_items'], b)
         result[q] = model.expected(raw).cpu().numpy()
     if not np.isfinite(result).all():
         raise FloatingPointError('nonfinite predictions')
     return result
 
 
-def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0):
+def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0, save_epochs=False):
     torch.manual_seed(c.seed)
     model = HistoryModel(d['items'], c).to(c.device)
     model.initialize_bias(d)
@@ -224,7 +341,7 @@ def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0):
             b = prepare(d, group, c, rng=rng)
             if b['target_ratings'].numel() == 0:
                 continue
-            raw = model.decode(model.encode(b), b['features'], b['target_rows'], b['target_items'])
+            raw = model.decode(model.encode(b), b['features'], b['target_rows'], b['target_items'], b)
             loss = loss_value(model, raw, b['target_ratings'])
             if not torch.isfinite(loss):
                 raise FloatingPointError('nonfinite training loss')
@@ -252,6 +369,10 @@ def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0):
             rec['validation_rmse'] = score
         else:
             score = 0.
+            if save_epochs:
+                # Selection never reads these; the holdout-selected epoch's
+                # column is picked afterwards, so refit can run concurrently.
+                write_f32(str(prefix) + f'.e{epoch}.f32', predict(model, d))
         if score < best or not select:
             best, best_epoch = score, epoch
             temporary = pathlib.Path(str(selected_path) + '.tmp')
@@ -268,6 +389,12 @@ def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0):
     saved = torch.load(selected_path, map_location=c.device, weights_only=True)
     model.load_state_dict(saved['state'])
     return model, records, best_epoch
+
+
+def write_f32(path, values):
+    tmp = pathlib.Path(str(path) + '.tmp')
+    values.astype('<f4').tofile(tmp)
+    os.replace(tmp, path)
 
 
 def run(a):
@@ -308,7 +435,8 @@ def run(a):
     elif a.selection_only:
         raise ValueError('--selection-only requires --selection-data')
     d = load(a.data)
-    model, records, _ = fit(d, c, epochs, str(output) + '.refit', max_batches=a.max_batches)
+    model, records, _ = fit(d, c, epochs, str(output) + '.refit', max_batches=a.max_batches,
+                            save_epochs=a.save_epochs)
     pred = predict(model, d)
     pred_path = pathlib.Path(str(output) + '.f32')
     tmp = pathlib.Path(str(pred_path) + '.tmp')
@@ -331,9 +459,12 @@ def parser():
     p.add_argument('--epochs', type=int, default=16)
     p.add_argument('--patience', type=int, default=3)
     p.add_argument('--threads', type=int, default=2)
+    p.add_argument('--save-epochs', action='store_true',
+                   help='write each refit epoch\'s probe predictions (choose later by holdout selection)')
     p.add_argument('--max-batches', type=int, default=0, help='throughput/smoke pilot only; 0 means complete epochs')
     choices = dict(representation=['scalar', 'categorical'], head=['scalar', 'distribution'],
-                   loss=['mse', 'ce', 'ordinal'], objective=['masked', 'reconstruct'])
+                   loss=['mse', 'ce', 'ordinal'], objective=['masked', 'reconstruct'],
+                   context=['none', 'session'])
     for field in dataclasses.fields(Config):
         p.add_argument('--' + field.name.replace('_', '-'), default=field.default,
                        type=type(field.default), **({'choices': choices[field.name]} if field.name in choices else {}))
