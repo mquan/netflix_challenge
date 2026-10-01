@@ -55,6 +55,10 @@ single masked-history network level with the best conditional RBM.
 | R7-MT1 | R7-MT0 + MT1 | **0.8711298** | −0.0010002 vs R7-MT0 | −.000833 −.001000 −.001100 −.000923 −.001145 |
 | R7-MT2 | R7-MT0 + MT2 | 0.8712032 | −0.0009268 vs R7-MT0 | −.000800 −.000893 −.000999 −.000996 −.000947 |
 
+| **R7-MT12** | R7-MT0 + MT1 + MT2 | **0.8708250** | −0.0003048 vs R7-MT1 | −.000245 −.000343 −.000180 −.000422 −.000334 |
+
 Suffix masking scores worse on the holdout (which is not a temporal suffix)
-but nearly matches MT1 in the blend; whether the two are complementary is
-the next blend.
+but nearly matches MT1 in the blend, and the two are complementary.
+Round 7 so far: 0.8731935 → **0.8708250** (−0.0023685, single seed), every
+fold better at each step. Next arms, judged against R7-MT12: MT3 (MT1 at
+rank 128 / hidden 512) and MT4 (MT1 + 7-day period channel, `--week-days 7`).
