@@ -79,6 +79,10 @@ Seed replicates add a small, consistent gain, as they did for the RBMs.
 Masking only the latest ratings of every user is worse standalone and adds
 nothing; mixing suffix and random masks (p = 0.5) is what pays. Not retained.
 
+Three-seed blender (LightGBM seeds 2026, 7, 13) over the R7-MT56 bank:
+**0.8703893** (R7-MT56-s3), against R6-RBM5-s3 0.8731159: −0.0027267, folds
+−.002440 −.002768 −.002836 −.002769 −.002821. Output `artifacts/r7/R7-MT56-s3.refit.f32`.
+
 Round 7 so far: 0.8731935 → **0.8704870** (−0.0027065, single seed), every
 fold better at each step. Next arms, judged against R7-MT12: MT3 (MT1 at
 rank 128 / hidden 512) and MT4 (MT1 + 7-day period channel, `--week-days 7`).
