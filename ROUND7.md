@@ -72,6 +72,13 @@ are refit at the epochs their configurations' holdout selections chose
 A 7-day period channel adds nothing beyond same-day context, standalone or in
 the blend. Not retained.
 
-Round 7 so far: 0.8731935 → **0.8708250** (−0.0023685, single seed), every
+| **R7-MT56** | R7-MT3 + MT5 (MT1 cfg, seed 7, standalone 0.901658) + MT6 (MT2 cfg, seed 7, standalone 0.898791) | **0.8704870** | −0.0001488 vs R7-MT3 | −.000068 −.000156 −.000163 −.000172 −.000184 |
+| R7-MT7 | R7-MT56 + MT7 (suffix masking for all users, holdout epoch 5, standalone 0.913018) | 0.8704920 | +0.0000050 | −.000134 +.000090 +.000050 −.000040 +.000059 |
+
+Seed replicates add a small, consistent gain, as they did for the RBMs.
+Masking only the latest ratings of every user is worse standalone and adds
+nothing; mixing suffix and random masks (p = 0.5) is what pays. Not retained.
+
+Round 7 so far: 0.8731935 → **0.8704870** (−0.0027065, single seed), every
 fold better at each step. Next arms, judged against R7-MT12: MT3 (MT1 at
 rank 128 / hidden 512) and MT4 (MT1 + 7-day period channel, `--week-days 7`).
