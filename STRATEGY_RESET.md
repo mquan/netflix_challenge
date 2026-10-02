@@ -111,12 +111,46 @@ See the [C0 report](artifacts/compact/C0.json) and
 verifies all fourteen column hashes. The local artifacts are ignored by Git;
 the manifests are small enough to track in Git.
 
-C1 is the strongest **currently reproducible** local reference, still
-0.00449 RMSE behind historical R5. New predictor bets must beat C1 under the
-same folds, then be checked against R5 once its bank exists. The next major
-project choice is a deliberate R5 rebuild or a faithful later neural model
-using C1 as the interim control. Further two-epoch neighborhood variants and
-minor tree-feature changes do not meet the measured payoff threshold.
+C1 was the strongest reproducible local reference at this audit, still 0.00449
+RMSE behind historical R5. New predictor bets should be checked on the same
+folds, then against R5 once its bank exists. Further two-epoch neighborhood
+variants and minor tree-feature changes do not meet the measured payoff
+threshold.
+
+**2026-09-30 update:** A conditioned RBM added to the same compact bank gives
+C3 at **0.8785454268** development CV, improving all five user folds over C1.
+The added gain is 0.0007530103. Adding a saved DeepRecommender snapshot gives
+C4 at **0.8783242000**, another 0.0002212268 gain. C4 was the strongest
+reproducible local result at that point; R5 remained the stronger historical result. See
+[RBM_CONTEXT.md](RBM_CONTEXT.md).
+
+**Later 2026-09-30 update:** A regenerated local GP predictor adds 0.0024214076
+to C4's matched residual-tree ensemble, producing C5 at **0.8759027924**.
+C5 is now the strongest reproducible local result, 0.0010933835 above R5.
+See [GP_COMPACT.md](GP_COMPACT.md).
+
+**Latest 2026-09-30 update:** Three label-free GP support features give C6
+at **0.8755711017**, improving C5 in all five folds. C6 is now the strongest
+reproducible local result at that point, 0.0007616932 above historical R5. See
+[GP_COMPACT.md](GP_COMPACT.md).
+
+**Later 2026-09-30 update:** An item-graph support feature gives a clean
+0.8754457423 C7a score. The lowest observed score, C7 at **0.8754260110**,
+uses the same support feature twice, changing feature-sampling odds rather
+than adding a distinct signal. C7 is 0.0006166021 above historical R5. See
+[GP_COMPACT.md](GP_COMPACT.md).
+
+**Final 2026-09-30 checkpoint:** Replacing C7a's epoch-30 conditioned RBM
+column with the fixed epoch-45 continuation yields C8 at **0.8752712189**.
+Every other input hash matches C7a. C8 is 0.0004618100 above historical R5
+and 0.0202712189 above the 0.855 target. Four of five user folds improve.
+The full report is `experiments/RBM-C8-45e-blend.json`.
+
+**Subsequent fixed epoch-60 checkpoint:** Replacing only the RBM column in C8
+gives C9 at **0.8750626363**, improving all five user folds by a total
+0.0002085827 RMSE. Every other input hash matches C8. C9 is 0.0002532274
+above historical R5 and 0.0200626363 above the 0.855 target. See
+`experiments/RBM-C9-60e-blend.json`.
 
 The original R5 bank should be rebuilt only through a dependency-aware batch
 that validates every input hash and preserves the resulting files. It involves
@@ -125,3 +159,22 @@ a partial bank and label its score R5.
 Seven identifiable source runs for missing R5 inputs alone total 6.7 hours of
 recorded wall time, before upstream dependencies, dozens of derived columns,
 or the R5 blender itself. Recorded wall time can include idle machine time.
+
+**Bank recovery update:** A fresh audit found five exact R5 input hashes in
+the current artifact tree under other names. They were copied to the paths
+specified by the R5 manifest and independently rehashed: **5 of 61 inputs are
+now at their expected paths; 56 remain unavailable**. See
+`experiments/reference/R5-input-audit-current.json` and
+`experiments/reference/R5-input-audit-restored.json`. This does not reproduce
+or change R5's historical development score.
+
+**Training-day context update:** Six training-only session features added to
+the matched C9 tree blend give C10 at **0.8749217647**. All five user folds
+improve. This is 0.0001123558 above historical R5 and 0.0199217647 above
+the 0.855 target. See [SESSION_META.md](SESSION_META.md).
+
+**2026-10-01 update:** Two same-day joint-residual features give C11 at
+0.8748606495. A fixed equal average of C10 and C11 gives C12 at
+**0.8747780516**, 0.0000313573 below historical R5 and 0.0197780516 above
+0.855. The margin to R5 is small and all scores remain probe-guided
+development results. See [SESSION_META.md](SESSION_META.md).

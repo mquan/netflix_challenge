@@ -104,6 +104,7 @@ int main(int argc, char **argv) {
     const std::vector<double> noises{.1, 1, 10};
     std::vector<std::vector<float>> pred(4, base);
     std::vector<float> mask(base.size(), 0);
+    std::vector<float> support(base.size(), 0), strongest(base.size(), 0), effective_neighbors(base.size(), 0);
     std::vector<double> sse(5, 0);
     uint64_t count = 0;
     for (uint32_t u = 0; u < d.header.users; ++u) {
@@ -136,6 +137,11 @@ int main(int argc, char **argv) {
                           d.train_items[h2]-1, d.train_days[h2]);
           }
         }
+        double mass = 0, mass_sq = 0;
+        for (const auto &entry : near) { mass += entry.first; mass_sq += entry.first*entry.first; }
+        support[p] = float(mass);
+        strongest[p] = n ? float(near.front().first) : 0;
+        effective_neighbors[p] = float(mass*mass/std::max(mass_sq, 1e-20));
         for (size_t z = 0; z < noises.size(); ++z) {
           const auto weights = posterior(a, y, noises[z]);
           double correction = 0;
@@ -161,6 +167,9 @@ int main(int argc, char **argv) {
                 << std::sqrt(sse[z]/count) << " count=" << count << std::endl;
     }
     save(".base.f32", base); save(".mask.f32", mask);
+    save(".support.f32", support);
+    save(".strongest.f32", strongest);
+    save(".effective-neighbors.f32", effective_neighbors);
     std::cout << std::setprecision(10) << "base_sampled_rmse=" << std::sqrt(sse[4]/count)
               << " seconds=" << std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count()
               << std::endl;

@@ -111,3 +111,13 @@ build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/joint.hpp src/e
 moonshot-user-kernel: build/moonshot_user_kernel
 build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
+
+.PHONY: moonshot-adaptive
+moonshot-adaptive: build/moonshot_adaptive
+build/moonshot_adaptive: src/moonshot_adaptive.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+.PHONY: moonshot-session-meta
+moonshot-session-meta: build/moonshot_session_meta
+build/moonshot_session_meta: src/moonshot_session_meta.cpp src/netflix.cpp src/joint.hpp | build
+	$(CXX) $(CXXFLAGS) $< -o $@

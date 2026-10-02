@@ -87,9 +87,10 @@ def main():
     # even if a later experiment overwrites a conventional artifact filename.
     record['inputs'] = {}
     for i, arg in enumerate(command[:-1]):
-        if (arg in ('--data', '--prediction', '--init-model', '--time-model', '--svd-model')
+        if (arg in ('--data', '--prediction', '--init-model', '--time-model', '--svd-model', '--joint-model')
                 or (arg == '--graph' and 'graph' != command[1])
-                or (arg == '--model' and command[1].startswith('eval-'))):
+                or (arg == '--model' and (command[1].startswith('eval-')
+                    or pathlib.Path(command[0]).name.startswith('moonshot_')))):
             path = pathlib.Path(command[i+1])
             record['inputs'][str(path)] = dict(sha256=digest(path), bytes=path.stat().st_size)
     record['launched_utc'] = utc_now()

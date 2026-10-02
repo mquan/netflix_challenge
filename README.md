@@ -79,9 +79,15 @@ but used for epoch selection):
 - seven more user/movie context features: **`0.87480941` development CV**
 
 The R5 input bank for that historical best is absent from this checkout. The
-strongest currently reproducible local reference is the 14-column compact C1
-residual-tree ensemble at **`0.87929844` development CV**; see
-[STRATEGY_RESET.md](STRATEGY_RESET.md) for its provenance and limitations.
+lowest currently reproducible local development result is C12 at
+**`0.87477805` RMSE**, a fixed equal average of two compact ensembles using
+the C1 bank plus
+a conditioned RBM, a frozen DeepRecommender snapshot, and a local GP predictor
+with support features, one unique kNN graph-support feature and same-day
+training context. See
+[GP_COMPACT.md](GP_COMPACT.md), [RBM_CONTEXT.md](RBM_CONTEXT.md) and
+[SESSION_META.md](SESSION_META.md) for
+the matched comparison and limitations.
 
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
