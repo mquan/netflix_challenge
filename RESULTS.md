@@ -1,5 +1,94 @@
 # Score progression
 
+## Fixed average of two session-context ensembles (2026-10-01)
+
+C11 adds two training-only same-day joint-residual features to C10 and scores
+0.8748606495 development CV. Four folds improve and one worsens. A fixed
+50/50 average of the saved C10 and C11 out-of-fold columns scores
+**0.8747780516** (C12), independently 0.8747780515 from the saved float32
+column. This is 0.0000313573 below historical R5, but remains 0.0197780516
+above 0.855. The R5 margin is small and probe-guided selection remains.
+See [SESSION_META.md](SESSION_META.md) and
+`experiments/SESSION-C12-fixed-half.json`.
+
+## Training-day context added to C9 (2026-09-30)
+
+Six features derived only from same-user training ratings on or near the
+probe day lower matched C9 from 0.8750626363 to **0.8749217647** (C10).
+All five held-out user folds improve; independent float32 scoring agrees.
+The seventeen prediction hashes and four existing support hashes match C9.
+C10 is 0.0001123558 above historical R5 and 0.0199217647 above 0.855.
+See [SESSION_META.md](SESSION_META.md) and `experiments/SESSION-C10-blend.json`.
+
+## Fixed epoch-60 conditioned RBM in clean C7a bank (2026-09-30)
+
+C9 replaces only C8's epoch-45 conditioned RBM input with its fixed epoch-60
+continuation. It scores **0.8750626363** development CV, down 0.0002085827.
+All five held-out user folds improve. Independent float32 scoring gives
+0.8750626363; the saved out-of-fold SHA-256 is
+`4404cfb596eb87c2fdb426c84cc292d243888494953e73785e63ef65a3bad435`.
+All other input hashes match C8. C9 is 0.0002532274 above historical R5 and
+0.0200626363 above the 0.855 target. See [RBM_CONTEXT.md](RBM_CONTEXT.md)
+and `experiments/RBM-C9-60e-blend.json`.
+
+## Longer conditioned RBM in clean C7a bank (2026-09-30)
+
+Replacing only the epoch-30 conditioned RBM prediction with its fixed epoch-45
+continuation in the clean C7a bank scores **0.8752712189** five-user-fold
+development CV (C8), down 0.0001745234. The other input hashes match C7a.
+Four folds improve; one worsens by 0.00001396. Independent float32 scoring gives
+0.8752712190. This was the strongest reproducible local result at that checkpoint, 0.0004618100
+above historical R5 and 0.0202712189 above the 0.855 target. The probe still
+influenced model selection, so this is not an independent test. See
+[RBM_CONTEXT.md](RBM_CONTEXT.md) and `experiments/RBM-C8-45e-blend.json`.
+
+## Item-graph support added to C6 (2026-09-30)
+
+One unique kNN graph-support feature lowers C6 from 0.8755711017 to
+**0.8754457423** in the same five user folds. The first C7 run supplied that
+same feature twice and scored **0.8754260110**, the lowest observed reproducible
+development result at that checkpoint. Both improve all five folds. The duplicate affects feature
+sampling, so its extra 0.0000197 should not be read as distinct information.
+Independent scoring of both saved columns agrees. C7 remains 0.0006166021
+above historical R5. See [GP_COMPACT.md](GP_COMPACT.md).
+
+## Local GP support features (2026-09-30)
+
+Adding three label-free GP support features to C5's identical seventeen raw
+prediction columns and tree settings scores **0.8755711017** development CV,
+down 0.0003316907. All five held-out user folds improve. The GP prediction
+hash is unchanged, and independent scoring of C6 agrees. This was the strongest
+reproducible local result, 0.0007616932 above historical R5. See
+[GP_COMPACT.md](GP_COMPACT.md).
+
+## Local Gaussian-process addition (2026-09-30)
+
+The reproducible C4 bank scores 0.8783242000 development CV. Adding a
+regenerated persistent/30-day local GP prediction as its seventeenth input,
+with all other input hashes and tree settings matched, scores **0.8759027924**.
+All five held-out user folds improve by 0.00222–0.00260 RMSE. Independent
+float32 scoring agrees. This was the best reproducible local result at the C5 checkpoint, about
+0.00109 above the historical R5 score of 0.8748094089. See
+[GP_COMPACT.md](GP_COMPACT.md) for the run evidence and limitations.
+
+## Conditioned RBM addition (2026-09-30)
+
+The reproducible compact C1 residual-tree ensemble scored 0.8792984370 in
+five held-out user folds. Adding the fixed epoch-30 visible-context RBM as its
+fifteenth prediction column, with the same tree settings and matching original
+fourteen input hashes, scored **0.8785454268**. All five folds improved; the
+gain is 0.0007530103. An independent read of the saved float32 out-of-fold
+column scores 0.8785454267. This was the best reproducible local result at that checkpoint, but it
+does not beat the historical R5 result of 0.8748094089, whose 61-input bank
+is missing. Full configuration, source snapshots and limitations are in
+[RBM_CONTEXT.md](RBM_CONTEXT.md).
+
+Adding the frozen epoch-13 DeepRecommender snapshot as a sixteenth column to
+that same tree blend gives **0.8783242000**, another 0.0002212268 gain with
+all five user folds improving. Independent float32 scoring gives 0.8783241999.
+This C4 result was the best reproducible local score at that checkpoint, still behind R5. The
+DeepRecommender training run did not complete, so the snapshot is exploratory.
+
 All development scores use the original Netflix **probe split**: its 1,408,395
 labels are removed before training, predictions are clipped to `[1, 5]`, and
 RMSE is computed over the complete probe set. Quiz/test numbers from the 2009

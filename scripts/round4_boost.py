@@ -124,9 +124,16 @@ def main():
     if pathlib.Path(a.output+'.json').exists():
         ap.error('output already exists; use a new experiment name')
     root = pathlib.Path(a.bank_root)
-    manifest = json.loads((root/'experiments/UNION-round-manifest.json').read_text())
-    bank = {} if a.no_union else manifest['reports']['union']['inputs']
-    support = json.loads((root/'experiments/BOOST-support-inputs.json').read_text())
+    # A local compact bank can be built from --extra columns when the old
+    # moonshot bank has been lost. No external manifest is needed in that case.
+    if a.no_union:
+        bank, support = {}, {}
+    else:
+        manifest = json.loads((root/'experiments/UNION-round-manifest.json').read_text())
+        bank = manifest['reports']['union']['inputs']
+        support = json.loads((root/'experiments/BOOST-support-inputs.json').read_text())
+    if not bank and not a.extra:
+        ap.error('at least one prediction column is required')
     names, cols, hashes = [], [], {}
     for name, expected in list(bank.items()):
         path = root/name
@@ -149,6 +156,7 @@ def main():
     else:
         meta = np.column_stack(list(meta_features(d).values())).astype(np.float32)
         context = contexts(d)
+        cache.parent.mkdir(parents=True, exist_ok=True)
         np.savez(cache, meta=meta, context=context)
     tree_names += ['meta%d' % k for k in range(meta.shape[1])]
     blocks = [meta]

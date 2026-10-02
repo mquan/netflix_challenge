@@ -1,0 +1,361 @@
+{
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "output": "artifacts/compact/C3-RBM30",
+    "bank_root": "/private/tmp/netflix-moonshot",
+    "no_union": true,
+    "extra": [
+      "artifacts/legacy.a.f32",
+      "artifacts/legacy.b.f32",
+      "artifacts/legacy.c.f32",
+      "artifacts/joint64.f32",
+      "artifacts/joint128-reg005.f32",
+      "artifacts/joint128-reg02.f32",
+      "artifacts/joint128-day128.f32",
+      "artifacts/neighborhood64.f32",
+      "artifacts/joint256-reg01.f32",
+      "artifacts/neighborhood128-interim1.f32",
+      "artifacts/history/HN1-history.f32",
+      "artifacts/history/HN3-session.f32",
+      "artifacts/tn0-temporal-neighborhood.f32",
+      "artifacts/pq2-factor200-frequency.f32",
+      "artifacts/rbm-context/visible-30e.f32"
+    ],
+    "extra_support": [],
+    "rounds": 2500,
+    "learning_rate": 0.03,
+    "leaves": 63,
+    "min_leaf": 200,
+    "processes": 5,
+    "seeds": [
+      2026
+    ],
+    "extra_meta": true
+  },
+  "inputs": {
+    "artifacts/legacy.a.f32": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+    "artifacts/legacy.b.f32": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+    "artifacts/legacy.c.f32": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+    "artifacts/joint64.f32": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+    "artifacts/joint128-reg005.f32": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+    "artifacts/joint128-reg02.f32": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+    "artifacts/joint128-day128.f32": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+    "artifacts/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "artifacts/joint256-reg01.f32": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+    "artifacts/neighborhood128-interim1.f32": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985",
+    "artifacts/history/HN1-history.f32": "ff0f49146618a3c024eb6e64277257296410f250b7e7c68d4f2429a83fa7becc",
+    "artifacts/history/HN3-session.f32": "99390dbe68920948123c2618e8a1ce7a76537a90a77715de72b466e51a4bc3dc",
+    "artifacts/tn0-temporal-neighborhood.f32": "e02763cf54966cc272d6840c2580561e60982c5c777adbab46a5ef48c63dfafb",
+    "artifacts/pq2-factor200-frequency.f32": "27f1787f29efcf8888ac0221d446c78f8bda14c33d25ef09715a75ec8c4d07f7",
+    "artifacts/rbm-context/visible-30e.f32": "8e0db9d5891c6cfe047771d783202a204a41b891916eb8be115ad687c39e99a5"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "chosen_rounds": 571,
+      "seconds": 88.45035795902368,
+      "inner_ridge_rmse": 0.8824092944633616,
+      "ridge_rmse": 0.8824222752921,
+      "refit_rmse": 0.8795530091805634,
+      "top_gain": [
+        [
+          0.0492,
+          "meta4"
+        ],
+        [
+          0.0489,
+          "meta5"
+        ],
+        [
+          0.0469,
+          "user_frac5"
+        ],
+        [
+          0.0444,
+          "movie_age"
+        ],
+        [
+          0.0437,
+          "meta1"
+        ],
+        [
+          0.0434,
+          "item_std"
+        ],
+        [
+          0.0407,
+          "meta3"
+        ],
+        [
+          0.0398,
+          "same_day_ratio"
+        ],
+        [
+          0.0377,
+          "meta0"
+        ],
+        [
+          0.0373,
+          "user_frac1"
+        ],
+        [
+          0.037,
+          "meta6"
+        ],
+        [
+          0.0351,
+          "artifacts/rbm-context/visible-30e.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 1,
+      "chosen_rounds": 608,
+      "seconds": 89.16503862501122,
+      "inner_ridge_rmse": 0.8808184061288942,
+      "ridge_rmse": 0.8808218653773762,
+      "refit_rmse": 0.8780670148277621,
+      "top_gain": [
+        [
+          0.0482,
+          "meta4"
+        ],
+        [
+          0.0481,
+          "user_frac5"
+        ],
+        [
+          0.0462,
+          "meta5"
+        ],
+        [
+          0.0441,
+          "meta1"
+        ],
+        [
+          0.0427,
+          "movie_age"
+        ],
+        [
+          0.0423,
+          "item_std"
+        ],
+        [
+          0.0409,
+          "meta3"
+        ],
+        [
+          0.0388,
+          "same_day_ratio"
+        ],
+        [
+          0.0387,
+          "meta0"
+        ],
+        [
+          0.0374,
+          "user_frac1"
+        ],
+        [
+          0.0364,
+          "meta6"
+        ],
+        [
+          0.0341,
+          "artifacts/rbm-context/visible-30e.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen_rounds": 495,
+      "seconds": 78.80080137506593,
+      "inner_ridge_rmse": 0.8783218931008165,
+      "ridge_rmse": 0.8783153469173149,
+      "refit_rmse": 0.8754412158876947,
+      "top_gain": [
+        [
+          0.0494,
+          "meta5"
+        ],
+        [
+          0.0486,
+          "meta4"
+        ],
+        [
+          0.048,
+          "user_frac5"
+        ],
+        [
+          0.045,
+          "meta1"
+        ],
+        [
+          0.0449,
+          "movie_age"
+        ],
+        [
+          0.0447,
+          "item_std"
+        ],
+        [
+          0.0408,
+          "meta3"
+        ],
+        [
+          0.0406,
+          "same_day_ratio"
+        ],
+        [
+          0.039,
+          "meta0"
+        ],
+        [
+          0.0382,
+          "meta6"
+        ],
+        [
+          0.0381,
+          "user_frac1"
+        ],
+        [
+          0.0363,
+          "artifacts/neighborhood128-interim1.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen_rounds": 675,
+      "seconds": 96.24695962492842,
+      "inner_ridge_rmse": 0.8825575022419767,
+      "ridge_rmse": 0.8825422168552144,
+      "refit_rmse": 0.8798073946641718,
+      "top_gain": [
+        [
+          0.0506,
+          "meta4"
+        ],
+        [
+          0.0485,
+          "user_frac5"
+        ],
+        [
+          0.0469,
+          "meta5"
+        ],
+        [
+          0.0435,
+          "movie_age"
+        ],
+        [
+          0.042,
+          "meta1"
+        ],
+        [
+          0.041,
+          "item_std"
+        ],
+        [
+          0.0403,
+          "meta6"
+        ],
+        [
+          0.0401,
+          "same_day_ratio"
+        ],
+        [
+          0.0401,
+          "meta3"
+        ],
+        [
+          0.0391,
+          "user_frac1"
+        ],
+        [
+          0.0343,
+          "meta0"
+        ],
+        [
+          0.0343,
+          "artifacts/neighborhood128-interim1.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen_rounds": 754,
+      "seconds": 105.28696958301589,
+      "inner_ridge_rmse": 0.8825223014543143,
+      "ridge_rmse": 0.8825219865171335,
+      "refit_rmse": 0.8798693907280585,
+      "top_gain": [
+        [
+          0.0498,
+          "meta4"
+        ],
+        [
+          0.046,
+          "meta5"
+        ],
+        [
+          0.045,
+          "user_frac5"
+        ],
+        [
+          0.0444,
+          "item_std"
+        ],
+        [
+          0.044,
+          "meta1"
+        ],
+        [
+          0.0424,
+          "movie_age"
+        ],
+        [
+          0.0405,
+          "meta3"
+        ],
+        [
+          0.0397,
+          "meta6"
+        ],
+        [
+          0.0396,
+          "meta0"
+        ],
+        [
+          0.0381,
+          "same_day_ratio"
+        ],
+        [
+          0.0369,
+          "user_frac1"
+        ],
+        [
+          0.0338,
+          "artifacts/neighborhood128-interim1.f32"
+        ]
+      ]
+    }
+  ],
+  "lightgbm_version": "4.7.0",
+  "refit_rmse": 0.8785454267812675,
+  "refit_fold_rmse": [
+    0.8795530091805634,
+    0.8780670148277621,
+    0.8754412158876947,
+    0.8798073946641718,
+    0.8798693907280585
+  ],
+  "ridge_rmse": 0.8813226519426335,
+  "ridge_fold_rmse": [
+    0.8824222752921,
+    0.8808218653773762,
+    0.8783153469173149,
+    0.8825422168552144,
+    0.8825219865171335
+  ]
+}

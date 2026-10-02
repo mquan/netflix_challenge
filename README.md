@@ -78,6 +78,17 @@ but used for epoch selection):
 - cross-branch predictor bank and residual-tree blend: `0.87545342` development CV
 - seven more user/movie context features: **`0.87480941` development CV**
 
+The R5 input bank for that historical best is absent from this checkout. The
+lowest currently reproducible local development result is C12 at
+**`0.87477805` RMSE**, a fixed equal average of two compact ensembles using
+the C1 bank plus
+a conditioned RBM, a frozen DeepRecommender snapshot, and a local GP predictor
+with support features, one unique kNN graph-support feature and same-day
+training context. See
+[GP_COMPACT.md](GP_COMPACT.md), [RBM_CONTEXT.md](RBM_CONTEXT.md) and
+[SESSION_META.md](SESSION_META.md) for
+the matched comparison and limitations.
+
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
 jointly trains temporal biases, user/item factors, implicit feedback and user
@@ -86,6 +97,7 @@ factor drift. Optional per-user-day factors model short-lived preferences.
 `scripts/gbdt_blend.py` needs `numpy` and `lightgbm`; `scripts/autorec.py`
 needs `numpy` and `torch` (MPS is used when available). Install them in a
 virtualenv; the C++ tool has no extra dependencies.
+On this macOS setup, LightGBM also needs Homebrew `libomp` (`brew install libomp`).
 
 ## Joint training and reproducible experiments
 
@@ -178,6 +190,18 @@ setting and old static neighborhood checkpoints remain readable.
 
 See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
 strategy summaries, and next-step decisions.
+
+The current reproduction plan, including the missing R5 artifact audit and the
+published-method continuation gate, is in [STRATEGY_RESET.md](STRATEGY_RESET.md).
+
+See [ENRICHMENT.md](ENRICHMENT.md) for the dataset enrichment literature review,
+local metadata/support audit, and proposed controlled experiments. This research
+has not yet produced an enriched-model RMSE result.
+
+The completed neural-history, sparse-user and session-context pilots are
+described in [HISTORY_EXPERIMENTS.md](HISTORY_EXPERIMENTS.md). The date-local
+variant was strongest among these three under the frozen B7 control. The final
+queue state is stored in `experiments/history-queue-status.json`.
 
 For score over time, run `python3 scripts/score_timeline.py` and plot
 [`experiments/score_timeline.csv`](experiments/score_timeline.csv).
