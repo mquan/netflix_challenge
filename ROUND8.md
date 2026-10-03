@@ -137,14 +137,28 @@ Slow start, then catches up after epoch 6:
 | A2 holdout | 0.91683 | 0.89972 | 0.89198 | 0.88798 | 0.88364 | **0.88348** | 0.88362 |
 | MT2 holdout | 0.90077 | 0.88605 | 0.88125 | 0.87824 | 0.87795 | 0.87779 | 0.87793 |
 
-Gap to MT2 narrowed from 0.0135 to 0.006, so A2-refit (MPS, saving every
-epoch) is running for a blend test.
+Selection finished at epoch 11 (0.88235; epoch 12 0.88402). A2-refit's
+final-epoch probe RMSE is 0.90708 (epoch 12).
+
+On the R8-MT89-B128 bank (0.8692319), three blender seeds:
+
+| Bank | Dev CV | Δ | Fold Δ | Verdict |
+|---|---:|---:|---|---|
+| **R8-B128-A2-s3**: + A2 refit epoch 11 | **0.8686353** | **−0.0005966** | −.000546 −.000606 −.000608 −.000723 −.000500 | **Retained; new best** |
+| R8-B128-B3s80-s3: + B3 (rank 128, seed 7) sweep-80 snapshot | 0.8688725 | −0.0003593 | −.000387 −.000372 −.000452 −.000285 −.000300 | Retained (on top of the rank-64 column) |
+
+A2 trails MT2 by 0.005 standalone yet adds as much as Bet B: the attention
+encoder's errors differ from the bag-based MT family. A1 (0.925 standalone)
+added nothing, so closeness to the MT family's accuracy seems to matter.
+
+**Current best: R8-B128-A2-s3 0.8686353** (−0.0017540 vs R7-MT56-s3).
+Calibrated test estimate ≈0.8612 (9.58% better than 0.9525); ≈0.0040 left.
 
 ## In progress
 
-- **A2-refit** on MPS.
-- **B3-p2-r128 / B3-full-r128**: Bet B scale-up, rank 128, 160 sweeps,
-  seed 7, 4 threads each, nice 10. ≈235 s/sweep under load, so ≈10 h.
+- **R8-A2-B3s80-s3**: both retained arms together.
+- **B3-p2-r128 / B3-full-r128**: rank 128, 160 sweeps; sweep 105 probe
+  0.89128, holdout 0.86618 at sweep 101.
 - **A2 transformer sequence encoder** (branch `bet-a2-sequence`,
   `scripts/masked_sequence.py`): holdout selection only on MPS; refit added if
   the curve is competitive with MT2/MT3.
