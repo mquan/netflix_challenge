@@ -64,6 +64,21 @@ uint64_t joint_fingerprint(const Dataset &d) {
   return h;
 }
 
+// Fingerprint a model or graph is bound to. --fingerprint-data names the
+// dataset it was trained on when --data differs from it only in probe rows
+// (Stage C rehearsal: score a P2-trained model on the original probe).
+uint64_t bound_fingerprint(const std::vector<std::string> &args, const Dataset &d) {
+  const std::string other = optional_value_after(args, "--fingerprint-data");
+  if (other.empty()) return joint_fingerprint(d);
+  const Dataset o = load_dataset(other);
+  if (o.header.mean != d.header.mean || o.train_offsets != d.train_offsets || o.train_items != d.train_items ||
+      o.train_days != d.train_days || o.train_ratings != d.train_ratings ||
+      o.implicit_offsets != d.implicit_offsets || o.implicit_items != d.implicit_items ||
+      o.implicit_days != d.implicit_days)
+    fail("--fingerprint-data must differ from --data only in probe rows");
+  return joint_fingerprint(o);
+}
+
 JointModel new_joint(const Dataset &d, const TemporalIndex &t, uint32_t rank,
                      uint32_t seed) {
   JointModel m; m.rank = rank;
@@ -193,7 +208,7 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   if (d.probe.empty() || d.train_items.empty()) fail("empty train or probe");
   const auto t = build_temporal_index(d);
   const auto f = joint_features(d, t);
-  const uint64_t fingerprint = joint_fingerprint(d);
+  const uint64_t fingerprint = bound_fingerprint(args, d);
   std::vector<float> predictions;
   auto export_predictions = [&]() {
     const std::string path = optional_value_after(args, "--predictions");

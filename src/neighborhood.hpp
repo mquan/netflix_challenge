@@ -252,7 +252,7 @@ void command_knn(const std::vector<std::string> &args) {
     TimeBaselineHeader header{};
     base.base = load_time_baseline(value_after(args, "--time-model"), d, t, header);
   } else {
-    base = load_joint(joint_path, d, t, joint_fingerprint(d));
+    base = load_joint(joint_path, d, t, bound_fingerprint(args, d));
   }
   std::vector<float> effective;
   if (base.rank) build_effective_users(d, base.factors, base.rank, effective);
@@ -265,7 +265,7 @@ void command_knn(const std::vector<std::string> &args) {
       x += base.factors.item_factors[size_t(i)*base.rank+k]*base.day_factors[size_t(s)*base.day_rank+k];
     return x;
   };
-  const auto g = load_graph(value_after(args, "--graph"), d.header.items, joint_fingerprint(d));
+  const auto g = load_graph(value_after(args, "--graph"), d.header.items, bound_fingerprint(args, d));
   const auto output = value_after(args, "--predictions");
   const auto support_path = optional_value_after(args, "--support");
   const uint32_t k = std::min(g.k, uint_after(args, "--neighbors", g.k));

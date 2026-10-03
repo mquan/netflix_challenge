@@ -1,0 +1,68 @@
+{
+  "name": "P0-B-rbm100",
+  "strategy": "Phase 0 rehearsal (b): plain RBM-100 on all training ratings, fixed at P2-selected epoch 60",
+  "command": [
+    "build/netflix",
+    "rbm",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/rehearsal/B-rbm100.bin",
+    "--predictions",
+    "artifacts/rehearsal/B-rbm100.f32",
+    "--hidden",
+    "100",
+    "--learning-rate",
+    ".005",
+    "--visible-rate",
+    ".004",
+    "--conditional-rate",
+    ".003",
+    "--decay",
+    ".98",
+    "--iterations",
+    "60",
+    "--fixed-epoch",
+    "--threads",
+    "4"
+  ],
+  "started_utc": "2026-10-03T07:24:40.601328+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "a360b301db53f228f4ecbda67a5b9f52d0e90495",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "9dc088d3d807d039dd51a50b18e1a9fc534f47989d2f979405f111ffa4054358",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-03T07:24:41.841192+00:00",
+  "events_path": "experiments/P0-B-rbm100.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 6945.683837999997,
+  "finished_utc": "2026-10-03T09:20:27.613755+00:00",
+  "log_sha256": "1f10f5110334e83f87d00420b9c5d0bfbe7e104ec76238bc74104e67a30f8399",
+  "events_sha256": "568c90771297b3c17a4d25ebfa26756deb02d8bd8583b50011fc47eaf971697a",
+  "model_artifact": {
+    "path": "artifacts/rehearsal/B-rbm100.bin",
+    "sha256": "1d1b77c7d91d578c7e1f268730625947b101362ef8042ea87f5ada178cab68ab",
+    "bytes": 43003824
+  },
+  "predictions_artifact": {
+    "path": "artifacts/rehearsal/B-rbm100.f32",
+    "sha256": "5b0590328be64b7416cb813a8bd3a62c36cf5e52aa7d6503b01c688f79e8c98e",
+    "bytes": 5633580
+  }
+}
