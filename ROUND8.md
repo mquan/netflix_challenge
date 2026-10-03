@@ -102,11 +102,49 @@ B2 posterior-mean RMSE by sweep:
 | 32 | 0.87744 | 0.90122 |
 | 48 | 0.87265 | 0.89669 |
 | 64 | 0.87057 | 0.89480 |
+| 96 | — | 0.89355 (sweep 102: 0.89318) |
+| 128 | **0.86803** | **0.89269** |
+
+Final rank-64 column 0.892686 probe, better than K1 (0.894117), the best
+SGD factor model. Holdout still improving at sweep 128, so 128 is selected.
+
+| Bank | Dev CV | Δ | Fold Δ | Verdict |
+|---|---:|---:|---|---|
+| **R8-CM-MT8-B64-s3**: R8-CM-MT8 + B2 sweep-64 snapshot | **0.8694494** | **−0.0007320** vs R8-CM-MT8-s3 | −.000648 −.000660 −.000726 −.000736 −.000891 | **Retained; passes the 0.0005 gate** |
+
+Largest single-arm gain of round 8. Calibrated test estimate ≈0.8620
+(9.50% better than Cinematch's 0.9525 test RMSE); ≈0.0048 left to ≈0.8646.
+
+On the R8-CM-MT89 bank (0.8701238), three blender seeds:
+
+| Bank | Dev CV | Δ vs R8-CM-MT89-s3 | Fold Δ | Verdict |
+|---|---:|---:|---|---|
+| R8-CM-MT8-B64-s3 (no MT9, sweep 64) | 0.8694494 | −0.0006744 | −.000589 −.000655 −.000606 −.000700 −.000822 | Superseded |
+| **R8-MT89-B128-s3**: + B2 sweep 128 | **0.8692319** | **−0.0008919** | −.000985 −.000794 −.000734 −.000920 −.001027 | **Retained; new best** |
+| R8-MT89-B128-MT10-s3: + B2 sweep 128 + MT10 (MT3 config, seed 7, epoch 7) | 0.8692484 | −0.0008754 | −.000856 −.000756 −.000823 −.000877 −.001065 | MT10 not retained (+0.0000165 vs R8-MT89-B128) |
+
+**Current best: R8-MT89-B128-s3 0.8692319** (−0.0011574 vs R7-MT56-s3).
+Calibrated test estimate ≈0.8618 (9.52% better than 0.9525); ≈0.0046 left
+to ≈0.8646. MT10 adding nothing suggests MT seed replicates are saturated.
+
+## A2 — transformer sequence encoder
+
+Branch `bet-a2-sequence` (`scripts/masked_sequence.py`, MT2-style masking).
+Slow start, then catches up after epoch 6:
+
+| Epoch | 1 | 3 | 5 | 7 | 8 | 9 | 10 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A2 holdout | 0.91683 | 0.89972 | 0.89198 | 0.88798 | 0.88364 | **0.88348** | 0.88362 |
+| MT2 holdout | 0.90077 | 0.88605 | 0.88125 | 0.87824 | 0.87795 | 0.87779 | 0.87793 |
+
+Gap to MT2 narrowed from 0.0135 to 0.006, so A2-refit (MPS, saving every
+epoch) is running for a blend test.
 
 ## In progress
 
-- **R8-CM-MT8-B64-s3**: Bet B sweep-64 snapshot on the R8-CM-MT8 bank.
-- **MT10**: MT3 config, seed 7, on MPS.
+- **A2-refit** on MPS.
+- **B3-p2-r128 / B3-full-r128**: Bet B scale-up, rank 128, 160 sweeps,
+  seed 7, 4 threads each, nice 10. ≈235 s/sweep under load, so ≈10 h.
 - **A2 transformer sequence encoder** (branch `bet-a2-sequence`,
   `scripts/masked_sequence.py`): holdout selection only on MPS; refit added if
   the curve is competitive with MT2/MT3.
