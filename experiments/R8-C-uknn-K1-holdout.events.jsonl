@@ -1,0 +1,14 @@
+{"observed_utc": "2026-10-03T07:08:32.289442+00:00", "line": "user_knn base=artifacts/rehearsal/A-K1.bin train_rmse=0.637463 residual_seconds=46.8307"}
+{"observed_utc": "2026-10-03T07:08:32.686309+00:00", "line": "screen_seconds=0.397223"}
+{"observed_utc": "2026-10-03T07:08:34.286855+00:00", "line": "user_knn queries=1407566 items=16734 screen_pairs=8.187e+10 screen_rank=256 candidates=300 neighbors=100 max_raters=0 alpha=50 power=2 shrink=2 time_decay=0 threads=3"}
+{"observed_utc": "2026-10-03T07:16:02.885360+00:00", "line": "items_done=2000/16734 seconds=448.6"}
+{"observed_utc": "2026-10-03T07:16:55.150633+00:00", "line": "items_done=4000/16734 seconds=500.86"}
+{"observed_utc": "2026-10-03T07:17:21.863153+00:00", "line": "items_done=6000/16734 seconds=527.57"}
+{"observed_utc": "2026-10-03T07:17:36.562483+00:00", "line": "items_done=8000/16734 seconds=542.27"}
+{"observed_utc": "2026-10-03T07:17:46.191544+00:00", "line": "items_done=10000/16734 seconds=551.9"}
+{"observed_utc": "2026-10-03T07:17:51.670365+00:00", "line": "items_done=12000/16734 seconds=557.38"}
+{"observed_utc": "2026-10-03T07:17:54.715289+00:00", "line": "items_done=14000/16734 seconds=560.42"}
+{"observed_utc": "2026-10-03T07:17:56.281216+00:00", "line": "items_done=16000/16734 seconds=561.99"}
+{"observed_utc": "2026-10-03T07:17:56.418926+00:00", "line": "items_done=16734/16734 seconds=562.13"}
+{"observed_utc": "2026-10-03T07:17:56.458775+00:00", "line": "user_knn_result queries=1407566 base_rmse=0.872495607 probe_rmse=0.8720810761 factor_rmse=0.8723240892 mean_neighbors=96.85138104"}
+{"observed_utc": "2026-10-03T07:17:56.459071+00:00", "line": "user_knn_timing knn_seconds=562.13 screen_pairs_per_second=1.4565e+08 screen_cpu_seconds=625.82 (gather 49.018) rescore_cpu_seconds=1060.5 pearson_rows=1.6084e+11 total_seconds=622.25"}
