@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <array>
 #include <cmath>
 #include <chrono>
 #include <cstdint>
@@ -10,6 +11,7 @@
 #include <limits>
 #include <numeric>
 #include <random>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <string_view>
@@ -1629,6 +1631,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "rbm_visible_context.hpp"
 #include "integrated.hpp"
 #include "temporal_neighborhood.hpp"
+#include "bayes.hpp"
 
 // Two research branches introduced different RBM visible-bias formats under
 // the same version-2 magic. Inspect the first payload word to preserve both
@@ -1696,6 +1699,11 @@ void usage() {
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
          "[--threads N] [--visible-context 0..7] [--fixed-epoch] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
+      << "  netflix bayes --data FILE --model FILE [--predictions FILE] [--factors N] "
+         "[--samples N] [--burn-in N] [--threads N] [--seed N] [--init-std X] [--bag-power X] "
+         "[--user-bag 0..2] [--item-bag 0..2] [--day 0..2] [--item-bin 0..2] [--session 0..2] "
+         "[--drift 0..2] [--snapshot-every N] [--checkpoint-every N] [--init-model FILE] "
+         "[--check-residuals] [--profile]\n"
       << "  netflix check-implicit\n";
 }
 
@@ -1734,6 +1742,8 @@ int main(int argc, char **argv) {
       command_joint(args, false);
     } else if (command == "eval-joint") {
       command_joint(args, true);
+    } else if (command == "bayes") {
+      bayes::command(args);
     } else if (command == "check-implicit") {
       check_implicit_update();
     } else if (command == "ensemble") {

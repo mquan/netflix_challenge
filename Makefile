@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp src/integrated.hpp src/temporal_neighborhood.hpp | build
+$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp src/integrated.hpp src/temporal_neighborhood.hpp src/bayes.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
@@ -88,6 +88,7 @@ test: $(BIN)
 	python3 tests/test_temporal_neighborhood.py
 	python3 tests/test_rbm.py
 	python3 tests/test_timeline.py
+	python3 tests/test_bayes.py
 
 clean:
 	rm -rf build
