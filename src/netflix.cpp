@@ -1700,7 +1700,7 @@ void usage() {
          "[--threads N] [--visible-context 0..7] [--fixed-epoch] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix bayes --data FILE --model FILE [--predictions FILE] [--factors N] "
-         "[--samples N] [--burn-in N] [--threads N] [--seed N] [--init-std X] [--bag-power X] "
+         "[--samples N] [--burn-in N] [--threads N] [--seed N] [--init-std X] [--aux-init-std X] [--bag-power X] "
          "[--user-bag 0..2] [--item-bag 0..2] [--day 0..2] [--item-bin 0..2] [--session 0..2] "
          "[--drift 0..2] [--snapshot-every N] [--checkpoint-every N] [--init-model FILE] "
          "[--check-residuals] [--profile]\n"

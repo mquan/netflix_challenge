@@ -22,7 +22,7 @@ def run(*args, ok=True):
     return result
 
 
-def dataset(path, flip_probe=False, users=120, items=30, per_user=12, seed=7):
+def dataset(path, flip_probe=False, users=120, items=30, per_user=12, seed=7, probe_is_train=False):
     """Rank-2 synthetic ratings; the last two dated ratings per user are probe."""
     rng = random.Random(seed)
     pu = [[rng.gauss(0, 1) for _ in range(2)] for _ in range(users)]
@@ -40,6 +40,8 @@ def dataset(path, flip_probe=False, users=120, items=30, per_user=12, seed=7):
         probe.extend((u, i, day, (6-r) if flip_probe else r) for day, i, r in rows[-2:])
         implicit.append(sorted((day, i) for day, i, _ in rows))
     flat = [r for rows in train for r in rows]
+    if probe_is_train:  # probe duplicates every training row (feature-equivalence check)
+        probe = [(u, i, day, r) for u, rows in enumerate(train) for day, i, r in rows]
     mean = sum(r for _, _, r in flat)/len(flat)
     with path.open('wb') as f:
         f.write(struct.pack('<8sIIQQQHH4xd', b'NFPDAT2\0', users, items, len(flat),
@@ -96,6 +98,24 @@ class BayesTests(unittest.TestCase):
                 '--samples', 60, '--burn-in', 10, '--predictions', p/'mf.f32', '--user-bag', 0,
                 '--item-bag', 0, '--day', 0, '--item-bin', 0, '--session', 0, '--drift', 0)
             self.assertLess(rmse(floats(p/'mf.f32'), probe), .55)
+            # Regression: the default feature set must not degrade far below
+            # plain MF. The original defaults (random init of auxiliary groups,
+            # day/item-bin/drift factors) scored ~0.72 here vs ~0.49 for MF.
+            self.assertLess(rmse(pred, probe), rmse(floats(p/'mf.f32'), probe)+.08)
+
+    def test_probe_features_match_training_features(self):
+        # If probe rows duplicate the training rows, the probe prediction of a
+        # sample must equal the training fit, for every group with factors.
+        with tempfile.TemporaryDirectory() as temp:
+            p = pathlib.Path(temp); dataset(p/'d.bin', probe_is_train=True)
+            out = run('bayes', '--data', p/'d.bin', '--model', p/'m.bin', '--factors', 3,
+                      '--samples', 4, '--burn-in', 1, '--day', 2, '--item-bin', 2, '--session', 2,
+                      '--drift', 2, '--aux-init-std', .1).stdout
+            for line in out.splitlines()[1:5]:
+                train = float(re.search(r'train_rmse=(\S+)', line).group(1))
+                probe = float(re.search(r'sample_probe_rmse=(\S+)', line).group(1))
+                self.assertLessEqual(probe, train+1e-6, line)  # clipping only helps
+                self.assertLess(train-probe, .02, line)
 
     def test_probe_labels_are_never_read(self):
         with tempfile.TemporaryDirectory() as temp:

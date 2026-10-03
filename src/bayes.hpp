@@ -34,7 +34,16 @@
 // visits one factor at a time. Residuals are kept in double and updated
 // exactly after each group; --check-residuals recomputes them from scratch.
 // Prediction is the posterior mean: probe predictions averaged over sweeps
-// after --burn-in.
+// after --burn-in. Judge runs by mean_probe_rmse; a single Gibbs sample is
+// ~0.03-0.04 worse at rank 16+ (posterior predictive variance ~ K sigma^2/n).
+//
+// Defaults (from ablations on the train-matched holdout, see bet-b notes in
+// the commit log): only user/item start from N(0, --init-std); auxiliary
+// groups start at zero (--aux-init-std 0). Random auxiliary init leaves weakly
+// identified groups (sessions, item-bins, day vectors) with a small sampled
+// prior precision that mixes away very slowly, an overfit mode with lower
+// train but worse probe error. Day, item-bin and drift default to bias-only:
+// their factors added cost without a reliable gain.
 namespace bayes {
 
 enum Group : uint32_t {
@@ -679,15 +688,17 @@ void command(const std::vector<std::string> &args) {
     m.mode[kUser] = m.mode[kItem] = 2;
     m.mode[kUserBag] = uint_after(args, "--user-bag", 2);
     m.mode[kItemBag] = uint_after(args, "--item-bag", 2);
-    m.mode[kDay] = uint_after(args, "--day", 2);
-    m.mode[kItemBin] = uint_after(args, "--item-bin", 2);
+    m.mode[kDay] = uint_after(args, "--day", 1);
+    m.mode[kItemBin] = uint_after(args, "--item-bin", 1);
     m.mode[kSession] = uint_after(args, "--session", 1);
-    m.mode[kDrift] = uint_after(args, "--drift", 2);
+    m.mode[kDrift] = uint_after(args, "--drift", 1);
     for (uint32_t g = 0; g < kGroups; ++g) if (m.mode[g] > 2) fail(std::string("invalid mode for ")+kGroupNames[g]);
     m.bag_power = float(double_after(args, "--bag-power", .5));
     if (m.bag_power < 0 || m.bag_power > 1) fail("invalid --bag-power");
     const float init_std = float(double_after(args, "--init-std", .1));
     if (!(init_std >= 0)) fail("invalid --init-std");
+    const float aux_std = float(double_after(args, "--aux-init-std", 0.0));
+    if (!(aux_std >= 0)) fail("invalid --aux-init-std");
     m.size = {d.header.users, d.header.items, d.header.items, d.header.users,
               uint64_t(d.header.max_day-d.header.min_day)+1, uint64_t(d.header.items)*kTimeBins,
               t.session_days.size(), d.header.users};
@@ -696,13 +707,14 @@ void command(const std::vector<std::string> &args) {
     m.drift_scale = float(std::sqrt(dev2/double(d.header.train_count)));
     if (!(m.drift_scale > 0)) m.drift_scale = 1;
     std::mt19937_64 init_rng(uint_after(args, "--seed", 2026));
-    std::normal_distribution<float> normal(0, init_std);
+    std::normal_distribution<float> normal(0, 1);
     for (uint32_t g = 0; g < kGroups; ++g) {
       if (!m.mode[g]) continue;
       m.w[g].assign(m.size[g], 0); m.w_lambda[g] = 1;
       if (m.mode[g] == 2) {
         m.v[g].resize(m.size[g]*m.rank);
-        for (float &x : m.v[g]) x = normal(init_rng);
+        const float scale = (g == kUser || g == kItem) ? init_std : aux_std;
+        for (float &x : m.v[g]) x = scale*normal(init_rng);
         m.v_mu[g].assign(m.rank, 0); m.v_lambda[g].assign(m.rank, 1);
       }
     }
