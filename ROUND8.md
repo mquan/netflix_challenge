@@ -181,8 +181,29 @@ As with MT1/MT2, the random- and suffix-masked A2 variants are complementary.
 **Current best: R8-A2b-B3f-s3 0.8678750** (−0.0025143 vs R7-MT56-s3).
 Calibrated test estimate ≈0.8605 (9.66% better than 0.9525); ≈0.0033 left
 to ≈0.8646.
-- **B3-p2-r128 / B3-full-r128**: rank 128, 160 sweeps; sweep 105 probe
-  0.89128, holdout 0.86618 at sweep 101.
-- **A2 transformer sequence encoder** (branch `bet-a2-sequence`,
-  `scripts/masked_sequence.py`): holdout selection only on MPS; refit added if
-  the curve is competitive with MT2/MT3.
+
+## Stopped / paused (2026-10-04)
+
+- **A2c** (A2b at 4 layers, d_model 128, ff 512; selection + refit at once on
+  MPS) was killed at selection epoch 8 / refit epoch 5. The two processes
+  held 110+ GB of unified memory on the 96 GB machine (MPS attention keeps
+  full attention matrices); swap reached 38/39 GB and load ≈110. Its holdout
+  curve was not ahead of A2b at matched epochs (epoch 7: 0.88772 vs 0.88720;
+  epoch 6: 0.89043 vs 0.88886), so capacity is not what limits A2. **Not
+  retried.**
+- **B4** (rank 128 + item-bin and drift factors, seed 13) was paused at
+  sweep 32; a reboot then killed it. At sweep 32 it led B3 slightly
+  (holdout mean 0.87495 vs 0.87585; probe 0.89964 vs 0.90053).
+
+## Restart (2026-10-04, afternoon)
+
+The scratchpad venv used by earlier sessions was gone. It's rebuilt at
+`~/.cache/netflix-venv` (Python 3.12, torch 2.14.1, LightGBM 4.7.0,
+NumPy 2.5.3) so it survives session cleanup.
+
+- **B4r-p2-r128 / B4r-full-r128**: B4 resumed from its sweep-32 checkpoints
+  (`--init-model artifacts/bayes/B4-*-r128.sweep32.bin`; rerunning without
+  `--init-model` starts from scratch). 5 threads each, ≈180 s/sweep.
+- **A2e** (A2b with `--seq-len 768`, twice the history context for heavy
+  raters), selection + refit on MPS. Pilot: 200 batches in 75 s, peak MPS
+  driver memory ≈25 GB per process (A2b: ≈12.5 GB).
