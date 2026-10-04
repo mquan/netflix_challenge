@@ -163,9 +163,24 @@ A2 and B3 stack fully (B3 alone added −0.0003593).
 **Current best: R8-A2-B3s80-s3 0.8682695** (−0.0021198 vs R7-MT56-s3).
 Calibrated test estimate ≈0.8609 (9.62% better than 0.9525); ≈0.0037 left.
 
-## In progress
+B3 finished at sweep 160: probe **0.890438** (best single factor model),
+holdout 0.86517 at sweep 152 and still improving, so sweep 160 is selected.
+A2b (A2 with `--suffix-prob 0`) selected epoch 10, holdout **0.88052**
+(A2: 0.88235).
 
-- **A2b** (A2 with `--suffix-prob 0`): selection + refit on MPS.
+On the R8-A2-B3s80 bank (0.8682695), three blender seeds, 4 processes:
+
+| Bank | Dev CV | Δ | Fold Δ | Verdict |
+|---|---:|---:|---|---|
+| R8-A2b-s3: + A2b epoch 10 | 0.8679934 | −0.0002761 | −.000353 −.000310 −.000316 −.000226 −.000176 | Retained |
+| R8-B3f-s3: B3 sweep 80 → sweep 160 | 0.8681450 | −0.0001245 | −.000149 −.000149 −.000174 −.000054 −.000096 | Retained |
+| **R8-A2b-B3f-s3**: both | **0.8678750** | **−0.0003945** | −.000452 −.000466 −.000364 −.000400 −.000290 | **Retained; new best** |
+
+As with MT1/MT2, the random- and suffix-masked A2 variants are complementary.
+
+**Current best: R8-A2b-B3f-s3 0.8678750** (−0.0025143 vs R7-MT56-s3).
+Calibrated test estimate ≈0.8605 (9.66% better than 0.9525); ≈0.0033 left
+to ≈0.8646.
 - **B3-p2-r128 / B3-full-r128**: rank 128, 160 sweeps; sweep 105 probe
   0.89128, holdout 0.86618 at sweep 101.
 - **A2 transformer sequence encoder** (branch `bet-a2-sequence`,
