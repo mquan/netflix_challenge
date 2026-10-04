@@ -206,7 +206,11 @@ NumPy 2.5.3) so it survives session cleanup.
   `--init-model` starts from scratch). 5 threads each, ≈180 s/sweep.
 - **A2e** (A2b with `--seq-len 768`, twice the history context for heavy
   raters), selection + refit on MPS. Pilot: 200 batches in 75 s, peak MPS
-  driver memory ≈25 GB per process (A2b: ≈12.5 GB).
+  driver memory ≈25 GB per process (A2b: ≈12.5 GB). Over a full epoch the
+  driver cache grew to 34–36 GB per process; with another session's 22 GB
+  process, swap reached 25 GB, so **A2e-refit was stopped** in epoch 1.
+  A2e-select continues alone; the refit runs after it if the curve beats
+  A2b, at the selected epoch count.
 
 ### Bet D — neural residual blend averaged with LightGBM
 
