@@ -207,3 +207,19 @@ NumPy 2.5.3) so it survives session cleanup.
 - **A2e** (A2b with `--seq-len 768`, twice the history context for heavy
   raters), selection + refit on MPS. Pilot: 200 batches in 75 s, peak MPS
   driver memory ≈25 GB per process (A2b: ≈12.5 GB).
+
+### Bet D — neural residual blend averaged with LightGBM
+
+`scripts/round8_nn_blend.py` reads a round4_boost.py report (`--like`) and
+rebuilds exactly its inputs (hash-checked; its ridge control matches to every
+digit). Per outer user fold, an MLP learns the contextual-ridge residual from
+the prediction columns' mean and deviations plus every robust-standardized
+tree feature; epochs are chosen on round4_boost's inner user split, then
+refit. The result is averaged 50/50 (predeclared) with the report's
+cross-fitted LightGBM column.
+
+On the R8-A2b-B3f bank (LightGBM 0.8678750, three blender seeds):
+
+| Arm | NN alone | 50/50 with LightGBM | Δ | Fold Δ | Verdict |
+|---|---:|---:|---:|---|---|
+| R8-NN1: 2×128 GELU, lr 1e-3, dropout .1, one seed (epochs 6 7 4 7 7) | 0.8683618 | 0.8678037 | −0.0000713 | −.000094 −.000047 +.000001 −.000081 −.000136 | Four folds better, fold 2 flat; not promoted |
