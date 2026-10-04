@@ -154,9 +154,18 @@ added nothing, so closeness to the MT family's accuracy seems to matter.
 **Current best: R8-B128-A2-s3 0.8686353** (−0.0017540 vs R7-MT56-s3).
 Calibrated test estimate ≈0.8612 (9.58% better than 0.9525); ≈0.0040 left.
 
+| Bank | Dev CV | Δ vs R8-B128-A2-s3 | Fold Δ | Verdict |
+|---|---:|---:|---|---|
+| **R8-A2-B3s80-s3**: R8-B128-A2 + B3 sweep-80 snapshot | **0.8682695** | **−0.0003658** | −.000372 −.000431 −.000360 −.000329 −.000337 | **Retained; new best** |
+
+A2 and B3 stack fully (B3 alone added −0.0003593).
+
+**Current best: R8-A2-B3s80-s3 0.8682695** (−0.0021198 vs R7-MT56-s3).
+Calibrated test estimate ≈0.8609 (9.62% better than 0.9525); ≈0.0037 left.
+
 ## In progress
 
-- **R8-A2-B3s80-s3**: both retained arms together.
+- **A2b** (A2 with `--suffix-prob 0`): selection + refit on MPS.
 - **B3-p2-r128 / B3-full-r128**: rank 128, 160 sweeps; sweep 105 probe
   0.89128, holdout 0.86618 at sweep 101.
 - **A2 transformer sequence encoder** (branch `bet-a2-sequence`,
