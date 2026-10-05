@@ -251,3 +251,23 @@ than 0.9525); ≈0.0031 left to ≈0.8646.
   was 0.88052, so doubling the history window gains 0.0053 standalone, the
   largest standalone improvement in the A2 family. Refit (12 epochs, one MPS
   process) started 2026-10-05 07:20.
+
+### In flight when the machine was closed (2026-10-05 ≈07:50)
+
+Neither job resumes mid-run; both restart from scratch (each had ≈30 min of
+progress). If the machine only slept, they continue on wake; check
+`ps aux | grep -E 'masked_sequence|round4_boost'` first.
+
+1. **R8-B4-s3** (≈1.5 h): R8-A2b-B3f-s3's command plus
+   `artifacts/r8/B4-full-r128.s0160.f32` as the last `--extra`, output
+   `artifacts/r8/R8-B4-s3`. To restart, move aside `experiments/R8-B4-s3.*`
+   (the script refuses an existing output `.json`) and rerun the command
+   recorded in `experiments/R8-B4-s3.json` with
+   `~/.cache/netflix-venv/bin/python`. Then score it as
+   `scripts/round8_nn_blend.py --like artifacts/r8/R8-B4-s3.json --output
+   artifacts/r8/R8-B4-NN2 --lr 3e-4 --dropout .2 --seeds 2026 7 13 --epochs
+   60 --patience 5` and compare with R8-NN2 (0.8676503).
+2. **A2e-refit** (≈6–8 h, one MPS process): `rm -f artifacts/masked/A2e-refit*`
+   and move aside `experiments/A2e-refit.*`, then rerun the command in
+   `experiments/A2e-refit.json`. Blend `artifacts/masked/A2e-refit.refit.e12.f32`
+   onto the best bank (LightGBM-s3, then NN2).
