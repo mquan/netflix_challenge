@@ -239,3 +239,15 @@ scored as LightGBM-s3 averaged with NN2-config `round8_nn_blend.py`.
 **Current best: R8-NN2 (R8-A2b-B3f-s3 LightGBM ⊕ NN2) 0.8676503**
 (−0.0027390 vs R7-MT56-s3). Calibrated test estimate ≈0.8603 (9.69% better
 than 0.9525); ≈0.0031 left to ≈0.8646.
+
+### B4 and A2e finished (2026-10-05)
+
+- **B4** (rank 128 + item-bin and drift factors, seed 13), sweep 160:
+  probe **0.889660** (best factor model; B3 0.890438), holdout 0.86421
+  (B3 0.86517), still improving, so sweep 160 is selected.
+- **A2e** (A2b with `--seq-len 768`) selection, holdout by epoch:
+  0.91219 0.90009 0.89702 0.88982 0.88527 0.88134 0.88022 0.87690 0.87617
+  0.87576 0.87610 **0.87519** 0.87648 0.87580; epoch 12 selected. A2b's best
+  was 0.88052, so doubling the history window gains 0.0053 standalone, the
+  largest standalone improvement in the A2 family. Refit (12 epochs, one MPS
+  process) started 2026-10-05 07:20.
