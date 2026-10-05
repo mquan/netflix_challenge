@@ -252,10 +252,10 @@ than 0.9525); ≈0.0031 left to ≈0.8646.
   largest standalone improvement in the A2 family. Refit (12 epochs, one MPS
   process) started 2026-10-05 07:20.
 
-### In flight when the machine was closed (2026-10-05 ≈07:50)
+### Stopped before closing the machine (2026-10-05 ≈07:55)
 
-Neither job resumes mid-run; both restart from scratch (each had ≈30 min of
-progress). If the machine only slept, they continue on wake; check
+Both jobs were stopped and restart from scratch (each had ≈30 min of
+progress; neither resumes mid-run). Before relaunching, check
 `ps aux | grep -E 'masked_sequence|round4_boost'` first.
 
 1. **R8-B4-s3** (≈1.5 h): R8-A2b-B3f-s3's command plus
