@@ -227,3 +227,15 @@ On the R8-A2b-B3f bank (LightGBM 0.8678750, three blender seeds):
 | Arm | NN alone | 50/50 with LightGBM | Δ | Fold Δ | Verdict |
 |---|---:|---:|---:|---|---|
 | R8-NN1: 2×128 GELU, lr 1e-3, dropout .1, one seed (epochs 6 7 4 7 7) | 0.8683618 | 0.8678037 | −0.0000713 | −.000094 −.000047 +.000001 −.000081 −.000136 | Four folds better, fold 2 flat; not promoted |
+| **R8-NN2**: lr 3e-4, dropout .2, three NN seeds (epochs 15–28) | 0.8679367 | **0.8676503** | **−0.0002248** | −.000243 −.000213 −.000242 −.000158 −.000268 | **Retained; new best** |
+| R8-NN3: 3×256, lr 3e-4, dropout .3, weight decay .05, batch 8192, three seeds | 0.8679811 | 0.8676862 | −0.0001888 | −.000258 −.000144 −.000156 −.000159 −.000227 | Not retained (worse than NN2) |
+
+Averaging the NN2 and NN3 networks before the 50/50 gives 0.8676572, no
+better than NN2 alone. Regularized and seed-averaged, the network alone
+(0.86794) nearly matches LightGBM (0.86788), and their errors differ enough
+that the predeclared average pays on every fold. From now on, each bank is
+scored as LightGBM-s3 averaged with NN2-config `round8_nn_blend.py`.
+
+**Current best: R8-NN2 (R8-A2b-B3f-s3 LightGBM ⊕ NN2) 0.8676503**
+(−0.0027390 vs R7-MT56-s3). Calibrated test estimate ≈0.8603 (9.69% better
+than 0.9525); ≈0.0031 left to ≈0.8646.
