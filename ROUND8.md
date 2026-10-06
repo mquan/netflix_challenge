@@ -271,3 +271,7 @@ progress; neither resumes mid-run). Before relaunching, check
    and move aside `experiments/A2e-refit.*`, then rerun the command in
    `experiments/A2e-refit.json`. Blend `artifacts/masked/A2e-refit.refit.e12.f32`
    onto the best bank (LightGBM-s3, then NN2).
+
+Relaunched both from scratch on 2026-10-05 ≈12:45 local; the stopped records
+are kept as `experiments/R8-B4-s3-stopped.*` and `experiments/A2e-refit-stopped2.*`.
+The A2e refit's first batch reproduces the stopped run's train RMSE (0.94454).
