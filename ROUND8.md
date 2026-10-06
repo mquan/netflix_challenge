@@ -275,3 +275,19 @@ progress; neither resumes mid-run). Before relaunching, check
 Relaunched both from scratch on 2026-10-05 ≈20:35 local; the stopped records
 are kept as `experiments/R8-B4-s3-stopped.*` and `experiments/A2e-refit-stopped2.*`.
 The A2e refit's first batch reproduces the stopped run's train RMSE (0.94454).
+
+### Both relaunched jobs finished (2026-10-06)
+
+- **R8-B4-s3** (finished 2026-10-05 21:19): LightGBM dev CV **0.8677590**,
+  −0.0001160 vs R8-A2b-B3f-s3 (0.8678750); fold Δ −.000091 −.000052 −.000259
+  −.000031 −.000148, all five better. Retained as the new LightGBM bank. Not yet
+  comparable with the overall best R8-NN2 (0.8676503) until it is scored with
+  NN2 (`round8_nn_blend.py --like artifacts/r8/R8-B4-s3.json --output
+  artifacts/r8/R8-B4-NN2 …`, as above).
+- **A2e-refit**: all 12 epochs completed (epoch 12 train RMSE 0.81134);
+  `artifacts/masked/A2e-refit.refit.e12.f32` is ready but not yet blended.
+
+**Current best is unchanged: R8-NN2 0.8676503.** Next: (1) NN2 on R8-B4-s3;
+(2) R8-B4-s3's command plus A2e e12 as an `--extra` (output
+`artifacts/r8/R8-B4-A2e-s3`, ≈1.5 h), then NN2 on that. Swap was at 24.5 of
+25.6 GB with no jobs running, so check memory before launching both together.
