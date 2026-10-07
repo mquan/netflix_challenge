@@ -314,3 +314,14 @@ NN2 on R8-B4-s3: NN alone 0.8678560, LightGBM 0.8677590, 50/50 **0.8675498**,
 −.000171, all five better. **New best: R8-B4-NN2 0.8675498** (calibrated test
 estimate ≈0.8601, 9.70% better than 0.9525; ≈0.0029 left to ≈0.8646).
 R8-B4-A2e-NN2 (same scoring on the 0.8676311 A2e bank) is still running.
+
+### R8-B4-A2e-NN2 finished (2026-10-06)
+
+NN2 on R8-B4-A2e-s3: NN alone 0.8677031, LightGBM 0.8676311, 50/50
+**0.8674131**, −0.0001367 vs R8-B4-NN2 (0.8675498); fold Δ −.000171 −.000165
+−.000089 −.000113 −.000145, all five better.
+
+**Current best: R8-B4-A2e-NN2 0.8674131** (−0.0029762 vs R7-MT56-s3).
+Calibrated test estimate ≈0.8600 (9.71% better than 0.9525); ≈0.0028 left to
+≈0.8646. Both new columns (B4 drift factors, A2e 768-step history) paid
+through LightGBM and again through NN2.
