@@ -360,3 +360,9 @@ R8-B4-A2e-s3's command plus `artifacts/masked/A2f-refit.refit.e10.f32`
 10 epochs in 3.2 h. Refit probe RMSE **0.89510** (A2e 0.89859, A2b 0.90204).
 **R8-A2f-s3** launched: R8-B4-A2e-s3's command plus
 `artifacts/masked/A2f-refit.refit.e10.f32` (78 prediction columns), then NN2.
+
+### R8-A2f-s3 finished (2026-10-07)
+
+LightGBM dev CV **0.8675304**, −0.0001007 vs R8-B4-A2e-s3 (0.8676311); fold Δ
+−.000082 −.000101 −.000143 −.000110 −.000067, all five better. Retained.
+R8-A2f-NN2 launched.
