@@ -344,3 +344,13 @@ A2f-select holdout by epoch so far: 0.90729 0.89307 0.88197 0.87627
 **0.87328** (epoch 5). That already beats A2e's best (0.87519 at epoch 12) by
 0.0019, and the run is still improving. Driver memory ≈49 GB; swap 28 GB, but
 29% is free and load is ≈7 (no thrashing).
+
+### A2f-select finished (2026-10-07)
+
+Holdout by epoch: 0.90729 0.89307 0.88197 0.87627 0.87328 0.87093 0.87412
+0.87001 0.87091 **0.86860** 0.87040 0.87118 0.87223; epoch 10 selected (4.7 h).
+That is −0.0066 vs A2e (0.87519) and the largest standalone gain in the A2
+family. History length keeps paying: 384→768 gained −0.0053 and 768→1536
+gained −0.0066. **A2f-refit** (10 epochs, `--save-epochs`) launched. Then:
+R8-B4-A2e-s3's command plus `artifacts/masked/A2f-refit.refit.e10.f32`
+(LightGBM-s3), then NN2.
