@@ -366,3 +366,13 @@ R8-B4-A2e-s3's command plus `artifacts/masked/A2f-refit.refit.e10.f32`
 LightGBM dev CV **0.8675304**, −0.0001007 vs R8-B4-A2e-s3 (0.8676311); fold Δ
 −.000082 −.000101 −.000143 −.000110 −.000067, all five better. Retained.
 R8-A2f-NN2 launched.
+
+### R8-A2f-NN2 finished (2026-10-07)
+
+NN2 on R8-A2f-s3: NN alone 0.8675901, LightGBM 0.8675304, 50/50 **0.8673301**,
+−0.0000830 vs R8-B4-A2e-NN2 (0.8674131). Fold Δ +.000016 −.000034 −.000143
+−.000192 −.000062: four folds better, fold 0 flat or slightly worse. This fails
+the predeclared all-five-folds rule, so **R8-B4-A2e-NN2 (0.8674131) stays the
+promoted best**; R8-A2f-NN2 is the best by mean. The LightGBM step did
+improve on all five folds. NN2's gain over LightGBM shrank here (−0.000200 vs
+−0.000218).
