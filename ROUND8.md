@@ -306,3 +306,11 @@ LightGBM dev CV **0.8676311**, −0.0001279 vs R8-B4-s3 (0.8677590); fold Δ
 −.000125 −.000103 −.000040 −.000175 −.000196, all five better. The A2e column
 pays on top of A2/A2b, so it is retained as the new LightGBM bank. R8-B4-A2e-NN2
 (NN2 on this bank) was launched right away, alongside the still-running R8-B4-NN2.
+
+### R8-B4-NN2 finished (2026-10-06)
+
+NN2 on R8-B4-s3: NN alone 0.8678560, LightGBM 0.8677590, 50/50 **0.8675498**,
+−0.0001005 vs R8-NN2 (0.8676503); fold Δ −.000046 −.000021 −.000210 −.000056
+−.000171, all five better. **New best: R8-B4-NN2 0.8675498** (calibrated test
+estimate ≈0.8601, 9.70% better than 0.9525; ≈0.0029 left to ≈0.8646).
+R8-B4-A2e-NN2 (same scoring on the 0.8676311 A2e bank) is still running.
