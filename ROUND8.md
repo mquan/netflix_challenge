@@ -354,3 +354,9 @@ family. History length keeps paying: 384→768 gained −0.0053 and 768→1536
 gained −0.0066. **A2f-refit** (10 epochs, `--save-epochs`) launched. Then:
 R8-B4-A2e-s3's command plus `artifacts/masked/A2f-refit.refit.e10.f32`
 (LightGBM-s3), then NN2.
+
+### A2f-refit finished (2026-10-07)
+
+10 epochs in 3.2 h. Refit probe RMSE **0.89510** (A2e 0.89859, A2b 0.90204).
+**R8-A2f-s3** launched: R8-B4-A2e-s3's command plus
+`artifacts/masked/A2f-refit.refit.e10.f32` (78 prediction columns), then NN2.
