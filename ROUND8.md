@@ -339,3 +339,8 @@ A2e (best 0.87519 at epoch 12). Note that batch size also changes, so the
 comparison is not purely about window length.
 
 A Grand Prize gap audit (`GAP_AUDIT.md`) is being written in parallel.
+
+A2f-select holdout by epoch so far: 0.90729 0.89307 0.88197 0.87627
+**0.87328** (epoch 5). That already beats A2e's best (0.87519 at epoch 12) by
+0.0019, and the run is still improving. Driver memory ≈49 GB; swap 28 GB, but
+29% is free and load is ≈7 (no thrashing).
