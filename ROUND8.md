@@ -325,3 +325,17 @@ NN2 on R8-B4-A2e-s3: NN alone 0.8677031, LightGBM 0.8676311, 50/50
 Calibrated test estimate ≈0.8600 (9.71% better than 0.9525); ≈0.0028 left to
 ≈0.8646. Both new columns (B4 drift factors, A2e 768-step history) paid
 through LightGBM and again through NN2.
+
+### A2f (`--seq-len 1536`) pilot and selection launch (2026-10-06)
+
+A2e's 768-step window gained 0.0053 standalone, so A2f doubles it again. Since
+attention memory per batch grows with sequence length, A2f halves
+`--batch-tokens` to 32768. Pilot (300 batches, `experiments/A2f-pilot.*`): MPS
+driver memory 34.4 GB at batch 300 (A2e: 25 GB), swap flat, ≈575 users/s.
+By the ≈1.4× growth rule, budget ≈48 GB, so run it as the only MPS process.
+**A2f-select** launched: A2e-select's command with `--seq-len 1536
+--batch-tokens 32768 --epochs 18 --patience 3`. Compare per-epoch holdout with
+A2e (best 0.87519 at epoch 12). Note that batch size also changes, so the
+comparison is not purely about window length.
+
+A Grand Prize gap audit (`GAP_AUDIT.md`) is being written in parallel.
