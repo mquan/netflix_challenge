@@ -299,3 +299,10 @@ The A2e refit's first batch reproduces the stopped run's train RMSE (0.94454).
   (0.8676503).
 - **R8-B4-A2e-s3**: R8-B4-s3's command plus `artifacts/masked/A2e-refit.refit.e12.f32`
   as the last `--extra` (77 prediction columns), ≈1.5 h; then NN2 on it.
+
+### R8-B4-A2e-s3 finished (2026-10-06)
+
+LightGBM dev CV **0.8676311**, −0.0001279 vs R8-B4-s3 (0.8677590); fold Δ
+−.000125 −.000103 −.000040 −.000175 −.000196, all five better. The A2e column
+pays on top of A2/A2b, so it is retained as the new LightGBM bank. R8-B4-A2e-NN2
+(NN2 on this bank) was launched right away, alongside the still-running R8-B4-NN2.
