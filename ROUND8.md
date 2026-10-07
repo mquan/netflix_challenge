@@ -291,3 +291,11 @@ The A2e refit's first batch reproduces the stopped run's train RMSE (0.94454).
 (2) R8-B4-s3's command plus A2e e12 as an `--extra` (output
 `artifacts/r8/R8-B4-A2e-s3`, ≈1.5 h), then NN2 on that. Swap was at 24.5 of
 25.6 GB with no jobs running, so check memory before launching both together.
+
+### Next two jobs launched (2026-10-06)
+
+- **R8-B4-NN2**: NN2 config (`round8_nn_blend.py --like artifacts/r8/R8-B4-s3.json`,
+  lr 3e-4, dropout .2, seeds 2026 7 13, 2 threads), ≈2 h. Compare with R8-NN2
+  (0.8676503).
+- **R8-B4-A2e-s3**: R8-B4-s3's command plus `artifacts/masked/A2e-refit.refit.e12.f32`
+  as the last `--extra` (77 prediction columns), ≈1.5 h; then NN2 on it.
