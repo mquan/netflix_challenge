@@ -426,3 +426,6 @@ match R8-A2f-s3 exactly. On fold 0 (128 nets): ridge 0.8699187, **ENN alone
 0.8684651 (+0.0003 worse)**. The rating target was no better. Nets that see 4
 of the 78 columns cannot find much that the ridge has not already used. The full
 5-fold run is not launched. Not retained.
+
+Ownership: the `round9-breakthrough` session (`../netflix_round9`) owns bets 1
+and 2. This session leaves them alone and continues the A2 sequence axis.
