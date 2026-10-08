@@ -1,0 +1,18 @@
+{"phase": "artifacts/masked/A2g-pilot.select", "epoch": 1, "batch": 100, "users": 8937, "targets": 511812, "tokens": 1298525, "train_rmse": 0.9559803591074574, "seconds": 37.099587375007104, "mps_allocated_mb": 384.431640625, "mps_driver_mb": 50034.4375}
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py", line 571, in <module>
+    result = run(parser().parse_args())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py", line 523, in run
+    _, records, epochs = fit(selection, c, a.epochs, str(output) + '.select', select=True,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py", line 440, in fit
+    loss.backward()
+  File "/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+    torch.autograd.backward(
+  File "/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+    _engine_run_backward(
+  File "/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPSGraph does not support tensor dims larger than INT_MAX

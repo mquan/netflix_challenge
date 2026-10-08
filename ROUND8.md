@@ -376,3 +376,24 @@ the predeclared all-five-folds rule, so **R8-B4-A2e-NN2 (0.8674131) stays the
 promoted best**; R8-A2f-NN2 is the best by mean. The LightGBM step did
 improve on all five folds. NN2's gain over LightGBM shrank here (−0.000200 vs
 −0.000218).
+
+### A2g (`--seq-len 3072`) pilot fails; deprioritised (2026-10-07)
+
+Pilot with `--batch-tokens 16384`: driver memory 50 GB by batch 100, then a
+crash in backward with `MPSGraph does not support tensor dims larger than
+INT_MAX`. Running at 3072 would need chunked or checkpointed attention in
+`masked_sequence.py`. History length per user (train + implicit) compared
+with the window:
+
+| Window | Users with more ratings than the window | Probe rows affected |
+|---|---:|---:|
+| 384 | 32.6% | 33.3% |
+| 768 | 16.4% | 16.8% |
+| 1536 | 5.2% | 5.3% |
+| 3072 | 0.7% | 0.7% |
+
+Going 768→1536 changed the context for 16.8% of probe rows; 1536→3072 would
+change only 5.3%, so A2g's ceiling is roughly a third of A2f's gain. Not
+pursued for now. Open question: A2f also halved `--batch-tokens`, so part of
+its −0.0066 may come from smaller batches (more optimizer steps), not the
+longer window. An A2e-with-`--batch-tokens 32768` arm would separate the two.
