@@ -413,3 +413,16 @@ Meanwhile a separate checkout (`../netflix_round9`, branch
 R8 bank + 8 user/8 item PCs + 6 bias terms). To avoid duplicating that work,
 this session does **not** launch its own LightGBM run of these features. If
 R9-LAT pays, `lat-dot` and `lat-bif` are the extras this export adds.
+
+### Bet 3 (ENNBlend third blender): dead on the fold-0 smoke run (2026-10-07)
+
+`scripts/round9_enn_blend.py` trains 400 tiny nets as one batched model, each
+on 4 random prediction columns plus log user and item support, with 8 hidden
+units, on the ridge residual. They are stacked by a ridge for each user-support
+quartile, fit on inner-valid users only. Its hash checks and ridge control
+match R8-A2f-s3 exactly. On fold 0 (128 nets): ridge 0.8699187, **ENN alone
+0.8698794** (−0.00004 vs ridge; LightGBM −0.0013, NN2 −0.0012), ENN ⊕ LightGBM
+0.8690705, the predeclared 1/3-each average **0.8687859 vs NN2 ⊕ LightGBM
+0.8684651 (+0.0003 worse)**. The rating target was no better. Nets that see 4
+of the 78 columns cannot find much that the ridge has not already used. The full
+5-fold run is not launched. Not retained.
