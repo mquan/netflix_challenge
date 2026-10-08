@@ -401,3 +401,15 @@ longer window. An A2e-with-`--batch-tokens 32768` arm would separate the two.
 **A2h-select** launched: A2f with `--batch-tokens 16384`. It tests the batch
 size question above directly at seq-len 1536. Compare per-epoch holdout with
 A2f (best 0.86860 at epoch 10).
+
+### Bet 1 overlaps with another session (2026-10-07)
+
+`scripts/round9_latent_features.py` (+ `tests/test_round9_latent.py`) exports
+24 label-free K1-joint256 columns to `artifacts/r9/lat/`: 8+8 projections onto
+the top item singular vectors, the 6 exact bias terms and the full dot product.
+It rebuilds K1's probe prediction on all 1,408,395 rows (max |Δ| 2.1e-6).
+Meanwhile a separate checkout (`../netflix_round9`, branch
+`round9-breakthrough`) is already running the same arm, R9-LAT-s3 (promoted
+R8 bank + 8 user/8 item PCs + 6 bias terms). To avoid duplicating that work,
+this session does **not** launch its own LightGBM run of these features. If
+R9-LAT pays, `lat-dot` and `lat-bif` are the extras this export adds.
