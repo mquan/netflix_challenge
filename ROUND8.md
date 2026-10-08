@@ -397,3 +397,7 @@ change only 5.3%, so A2g's ceiling is roughly a third of A2f's gain. Not
 pursued for now. Open question: A2f also halved `--batch-tokens`, so part of
 its −0.0066 may come from smaller batches (more optimizer steps), not the
 longer window. An A2e-with-`--batch-tokens 32768` arm would separate the two.
+
+**A2h-select** launched: A2f with `--batch-tokens 16384`. It tests the batch
+size question above directly at seq-len 1536. Compare per-epoch holdout with
+A2f (best 0.86860 at epoch 10).
