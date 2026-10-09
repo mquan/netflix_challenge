@@ -429,3 +429,50 @@ of the 78 columns cannot find much that the ridge has not already used. The full
 
 Ownership: the `round9-breakthrough` session (`../netflix_round9`) owns bets 1
 and 2. This session leaves them alone and continues the A2 sequence axis.
+
+### A2h-select finished; refit and blend chain launched (2026-10-08)
+
+A2h (1536-step history, 16384 batch tokens) completed successfully. Holdout
+RMSE by epoch: 0.90575 0.88868 0.87732 0.87514 0.87344 0.87010 0.86966
+0.86890 0.86744 0.86815 0.86747 **0.8674023** 0.86804 0.86896 0.86767.
+Epoch **12** is selected, improving on A2f's 0.8685955 by **0.0011932**.
+This supports smaller batches at a fixed history length; it does not isolate
+how much of the earlier A2e→A2f gain came from batch size versus window length.
+
+`scripts/round8_a2h_chain.py` now runs the following dependent stages, stopping
+on any failure and refusing existing experiment/output prefixes:
+
+1. **A2h-refit:** train on the full development training set for exactly 12
+   epochs, with probe ratings excluded. Same configuration and source as the
+   selection run; save each epoch, but use only the holdout-selected epoch 12.
+2. **R8-A2h-s3:** R8-A2f-s3's frozen bank plus
+   `artifacts/masked/A2h-refit.refit.e12.f32`, using the same three LightGBM seeds.
+3. **R8-A2h-NN2:** the existing NN2 configuration with three seeds and its
+   predeclared 50/50 average with LightGBM. Compare every fold against both
+   the promoted R8-B4-A2e-NN2 and best-by-mean R8-A2f-NN2 controls.
+
+The chain's preflight verified the selection source/dependency hashes, both
+datasets, and every frozen control-bank input. Plan checks verified the fixed
+epoch and sole additional column; a simulated stage failure verified that
+later stages do not launch. No model or blender algorithms changed.
+
+Live status: `experiments/A2h-chain.status.json`; combined log:
+`artifacts/r8/A2h-chain.out`; individual stage logs: `experiments/<name>.log`.
+The chain runs detached and sequentially (one MPS trainer at a time), followed
+by the CPU blenders. Completion writes the score, fold deltas, and whether the
+all-five-fold promotion rule passed into the status file. Budget roughly
+6–8 hours of awake runtime based on the selection run; actual time may vary.
+
+**Promoted best remains R8-B4-A2e-NN2, 0.8674131 development CV.** A2h's
+ensemble evaluation is pending; its holdout score is a different metric.
+
+### A2h ensemble completed and promoted (2026-10-09)
+
+All three stages completed successfully. **R8-A2h-NN2 reached 0.8670985
+development CV**, improving on R8-B4-A2e-NN2 by 0.0003147 and R8-A2f-NN2 by
+0.0002317. Its fold deltas versus R8-B4-A2e-NN2 were −0.0003994, −0.0002457,
+−0.0003311, −0.0004373, and −0.0001592. All five folds improved, so it passes
+the predeclared promotion rule and is the new promoted best. These are
+development CV results, not an independent test score. Exact values and stage
+provenance are recorded in `experiments/A2h-chain.status.json` and the three
+stage experiment records.
