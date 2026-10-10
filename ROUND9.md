@@ -94,3 +94,69 @@ python -m unittest discover -s tests -p test_round9.py
 The three pipeline processes are detached and continue after the interactive
 session. Check their logs and `ps` before launching any duplicate. Each experiment
 uses a new output name and stops on subprocess failure.
+
+## LightGBM restart (2026-10-09 local)
+
+The original R9-LAT run stopped without saving any completed fold results; no
+matching trainer remained running. Restarted the same frozen experiment from
+scratch as `R9-LAT-restart-20261009`, preserving all original records. The runner
+now accepts `--run-id` and refuses existing experiment or artifact prefixes.
+All 101 control input hashes and 25 latent input/output hashes were verified;
+LightGBM remains at the control's version 4.7.0. Syntax, duplicate-run rejection,
+and `git diff --check` passed.
+
+Three CPU fold workers train the three-seed LightGBM experiment, followed
+sequentially by the existing three-seed NN2 and fixed 50/50 comparison. The
+detached process has a lifetime-bound idle-sleep inhibitor. Launch details:
+`artifacts/r9/R9-LAT-restart-20261009-launch.json`; progress:
+`artifacts/r9/R9-LAT-restart-20261009-pipeline.log`; final comparison:
+`artifacts/r9/R9-LAT-restart-20261009-comparison.json`.
+
+This preserves the original R8-B4-A2e control (0.8674131). The current promoted
+best in the primary checkout is now R8-A2h-NN2 (0.8670985), so a positive result
+here establishes feature value on the frozen control, not automatic promotion
+over A2h. A subsequent test on the A2h bank is needed to establish that.
+
+## Latent features on A2h (2026-10-10)
+
+The restarted older-bank experiment completed: LightGBM 0.8676311 → 0.8674522;
+the fixed LightGBM/NN2 average 0.8674131 → 0.8671986 (gain 0.0002145), with
+all five folds better. This establishes feature value on that older bank.
+
+Launched `R9-LAT-A2h-20261010` to test the same 22 features on the current
+promoted A2h bank (control 0.8670984524). Only the additional features, output
+names, and LightGBM worker count change. Seeds, folds, model settings, and the
+50/50 final average remain fixed. The runner accepts explicit base/control
+reports, checks that they correspond, and verifies all frozen input hashes.
+A simulated launch verified the exact command changes and dependent NN2 path;
+`git diff --check` passed.
+
+A2j is separately running selection on MPS in the primary checkout. This
+experiment uses one CPU LightGBM fold worker, then two-thread CPU NN2, at nice
+10 to limit competition for resources. A2j is not modified. Launch details:
+`artifacts/r9/R9-LAT-A2h-20261010-launch.json`; log:
+`artifacts/r9/R9-LAT-A2h-20261010-pipeline.log`; final paired comparison:
+`artifacts/r9/R9-LAT-A2h-20261010-comparison.json`. All five folds must improve
+against A2h for promotion. No result is available at launch.
+
+### Completed: latent features improve A2h on all five folds
+
+Both stages completed successfully on 2026-10-10 at 10:46 PDT, in about
+3 hours 10 minutes combined. Development RMSE:
+
+| Model | A2h control | With latent features | Change |
+| --- | ---: | ---: | ---: |
+| LightGBM, three seeds | 0.8672909865 | 0.8671122161 | -0.0001787705 |
+| Fixed 50/50 LightGBM + NN2 | 0.8670984524 | **0.8668706425** | **-0.0002278099** |
+
+Final-blend fold changes are -0.0001905425, -0.0003374427, -0.0001781049,
+-0.0001844358, and -0.0002488241. All five improve, so the run passes the
+promotion rule against A2h. This is the new promoted result for this line of
+experiments; it is development CV, not a measured final-test score.
+
+The successful comparison is saved at
+`artifacts/r9/R9-LAT-A2h-20261010-comparison.json`. Individual command records,
+timestamps, and logs are in `experiments/R9-LAT-A2h-20261010-{s3,NN2}.*`.
+No prediction columns were added: this experiment adds 22 blend features to
+the existing 79-column A2h prediction bank. Whether the features also combine
+with the separately running A2j experiment remains untested.
