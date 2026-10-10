@@ -518,3 +518,16 @@ are worse, so it fails the promotion rule. At 1536 steps the suffix-masked
 objective adds nothing beyond A2h. Not retained.
 
 **Promoted best remains R8-A2h-NN2, 0.8670985 development CV.**
+
+### A2j chain launched: A2h with half the batch (2026-10-10)
+
+**A2j** = A2h's command with `--batch-tokens 8192`. Nothing else changes: still
+1536-step history and `--suffix-prob 0`. It continues the trend from 32768 to
+16384 tokens (A2f 0.86860 → A2h 0.86740 holdout).
+`scripts/round8_a2j_chain.py` is the A2i chain with only that setting changed.
+It runs selection, then a fixed-epoch refit, then R8-A2h-s3 + A2j LightGBM, then
+NN2. Promotion is judged against R8-A2h-NN2 (all five folds better).
+Startup: MPS driver memory 42 GB at batch 700, swap falling, about 227 users/s.
+That matches A2h's 217 users/s, so an epoch should take roughly as long as A2h's
+(≈40 min), not twice as long. Status: `experiments/A2j-chain.status.json`;
+log: `artifacts/r8/A2j-chain.out`.
