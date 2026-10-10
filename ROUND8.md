@@ -505,3 +505,16 @@ batches (A2h was similar). Budget roughly 15–18 h of awake runtime.
 Status: `experiments/A2i-chain.status.json`; log: `artifacts/r8/A2i-chain.out`.
 
 **Promoted best remains R8-A2h-NN2, 0.8670985 development CV.**
+
+### A2i finished: no gain, not promoted (2026-10-10)
+
+The chain completed all four stages. A2i-select holdout by epoch: 0.90621 0.88733
+0.87872 0.87650 0.87390 **0.87101** 0.87238 0.87294 0.87147. Epoch 6 is
+selected, 0.0036 worse than A2h (0.86740), and the curve is noisier after the
+peak. R8-A2i-s3 LightGBM 0.8672849 vs R8-A2h-s3 0.8672909 (−0.000006; fold Δ
++.000027 −.000019 +.000038 −.000009 −.000068). **R8-A2i-NN2 0.8670796**, −0.0000189
+vs R8-A2h-NN2. Fold Δ +.000043 −.000047 +.000007 +.000036 −.000133: three folds
+are worse, so it fails the promotion rule. At 1536 steps the suffix-masked
+objective adds nothing beyond A2h. Not retained.
+
+**Promoted best remains R8-A2h-NN2, 0.8670985 development CV.**
