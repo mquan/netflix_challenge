@@ -531,3 +531,19 @@ Startup: MPS driver memory 42 GB at batch 700, swap falling, about 227 users/s.
 That matches A2h's 217 users/s, so an epoch should take roughly as long as A2h's
 (≈40 min), not twice as long. Status: `experiments/A2j-chain.status.json`;
 log: `artifacts/r8/A2j-chain.out`.
+
+### A2j stopped: halving the batch again does not pay (2026-10-10)
+
+Stopped at the user's request during epoch 13 of A2j-select (SIGTERM; status
+file marked `stopped`). Holdout by epoch: 0.90604 0.88828 0.88055 0.87669
+0.87344 0.87300 0.87068 0.87018 0.87054 0.86973 0.87024 **0.86960**. It trailed
+A2h at every epoch from 3 on and was 0.0022 behind A2h's best (0.86740) at
+epoch 12. Batch size 16384 is the best of 32768, 16384 and 8192. A2i's precedent
+(0.0036 behind standalone, −0.00002 in the blend) suggests A2j would have added
+≈0–0.0001, which is negligible against the ≈0.0023 remaining gap. No refit or blend
+was run. A2-axis settings (window length, batch size, masking) look worked out;
+the next bets come from `GAP_AUDIT.md` (Bet 4 offset re-measure, Bet 5 residual
+kNN on Bayes) instead.
+
+Overall best is now the round9 session's **R9-LAT-A2h, 0.8668706** (A2h's bank
+plus 22 latent/bias blend features; all five folds better than R8-A2h-NN2).
