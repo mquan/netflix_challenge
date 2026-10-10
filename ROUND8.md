@@ -476,3 +476,32 @@ the predeclared promotion rule and is the new promoted best. These are
 development CV results, not an independent test score. Exact values and stage
 provenance are recorded in `experiments/A2h-chain.status.json` and the three
 stage experiment records.
+
+### A2i chain launched: suffix-masked A2h (2026-10-09)
+
+Next A2 arm. Batch size and capacity are both poor bets now. A2h's halved
+batch doubled the time per epoch (A2f 1028 s → A2h 2249 s), so 8192 batch tokens
+would need roughly 16 h of selection and a 15 h refit. A2c already showed that a
+larger model does not help. A2 (suffix-masked) and A2b (random-masked) stacked
+as complementary columns, but every long-history column since A2e uses A2b's
+`--suffix-prob 0`. The bank's only suffix-masked column is still the 384-step A2.
+
+**A2i** = A2h's command with `--suffix-prob .5` and nothing else changed.
+`scripts/round8_a2i_chain.py` runs four dependent stages, stopping on any
+failure and refusing existing names or output prefixes:
+
+1. **A2i-select** (holdout epoch selection, 18 epochs max, patience 3).
+2. **A2i-refit** at the selected epoch, with probe ratings excluded.
+3. **R8-A2i-s3:** R8-A2h-s3's frozen bank plus the A2i column, same three LightGBM seeds.
+4. **R8-A2i-NN2:** the existing NN2 configuration and 50/50 average.
+   Compared per fold against the promoted R8-A2h-NN2 (promotion rule: all
+   five folds better) and against R8-B4-A2e-NN2.
+
+The preflight verified A2h's selection source, data hashes, and every
+R8-A2h-s3 control-bank input. A simulated run of stages 2–4 on A2h's selection
+confirmed that the epoch is fixed and that only one column is added. Startup:
+MPS driver memory 37.7 GB at batch 200, swap flat at 3.5 GB, about 38 s per 100
+batches (A2h was similar). Budget roughly 15–18 h of awake runtime.
+Status: `experiments/A2i-chain.status.json`; log: `artifacts/r8/A2i-chain.out`.
+
+**Promoted best remains R8-A2h-NN2, 0.8670985 development CV.**
