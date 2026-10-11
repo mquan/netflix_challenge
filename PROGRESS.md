@@ -1,12 +1,28 @@
 ---
 status: in-progress
-branch: research/dataset-enrichment
-timestamp: 2026-10-01T05:12:32Z
-best_score: 0.8747780516
+branch: main
+timestamp: 2026-10-11
+best_score: 0.8668706425
 score_metric: five-fold held-out-user probe blend RMSE
 ---
 
 # Netflix Prize progress checkpoint
+
+## Consolidated research branches (2026-10-11)
+
+All fetched remote research branches are merged into `main`; branch refs are
+retained. The best **promoted** development score is **R9-LAT-A2h 0.8668706425**:
+A2h's 79 prediction columns, 22 training-derived K1 latent and bias features,
+three-seed LightGBM, and a fixed 50/50 average with the NN2 neural residual
+blend. All five held-out-user folds improve over R8-A2h-NN2 (0.8670984524).
+The latest B5 Bayesian item-frequency column yields a lower mean (0.8668212)
+but worsens two folds, so it was not promoted. Round 10 kNN neighbour feature
+extraction has launched; no completed blend score is recorded for it.
+
+This is original-Probe development CV, not a hidden-test score. Probe-guided
+selection remains. [MERGE_RECORD.md](MERGE_RECORD.md) lists each merged branch,
+its method, measured score and result status; [ROUND8.md](ROUND8.md),
+[ROUND9.md](ROUND9.md), and [ROUND10.md](ROUND10.md) retain the run details.
 
 ## New best: fixed C10/C11 average
 

@@ -183,7 +183,14 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
     // CD length and annealing continue from --start-epoch.
     m = load_rbm(init, items, d.header.users, uint32_t(temporal.session_days.size()), fingerprint);
     if (m.hidden != F) fail("initial rbm hidden size differs from --hidden");
-    if (m.visible_context != visible_context) fail("initial rbm visible context differs");
+    if (m.visible_context & ~visible_context) fail("cannot remove initial rbm visible context");
+    if ((visible_context & 1) && !(m.visible_context & 1))
+      m.user_visible.assign(size_t(d.header.users)*5, 0);
+    if ((visible_context & 2) && !(m.visible_context & 2))
+      m.day_visible.assign(temporal.session_days.size()*5, 0);
+    if ((visible_context & 4) && !(m.visible_context & 4))
+      m.frequency_visible.assign(size_t(items)*kFrequencyBins*5, 0);
+    m.visible_context = visible_context;
   } else {
     if (visible_context & 1) m.user_visible.assign(size_t(d.header.users)*5, 0);
     if (visible_context & 2) m.day_visible.assign(temporal.session_days.size()*5, 0);

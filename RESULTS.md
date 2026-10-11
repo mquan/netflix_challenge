@@ -1,5 +1,17 @@
 # Score progression
 
+## Consolidated best and latest screens (2026-10-11)
+
+| Result | Method | Five-user-fold Probe CV RMSE | Decision |
+| --- | --- | ---: | --- |
+| R8-A2h-NN2 | Masked sequence model added to the prediction bank; LightGBM plus fixed-average neural correction | 0.8670984524 | Superseded |
+| R9-LAT-A2h | Add 22 K1 latent and bias blend features to that bank | **0.8668706425** | Promoted; all five folds improve |
+| R10-B5-NN2 | Add Bayesian item-frequency model to the R9 bank | 0.8668212 | Lower mean, but two folds worsen; not promoted |
+
+All are development scores on the original Probe split. The Round 10 kNN
+neighbour feature blend remains in progress, with no final score recorded.
+See [MERGE_RECORD.md](MERGE_RECORD.md) for branch methods and provenance.
+
 ## BAR exploration (`paper-implementations`)
 
 Two full-data runs of the binary attribute representation model from Deyo and

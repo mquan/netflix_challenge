@@ -5,6 +5,7 @@ import math
 import pathlib
 import re
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -80,7 +81,9 @@ int main() {
         with tempfile.TemporaryDirectory() as temp:
             p = pathlib.Path(temp)
             (p/'check.cpp').write_text(code)
-            subprocess.run(['c++', '-O2', '-std=c++17', str(p/'check.cpp'), '-o', str(p/'check')], check=True)
+            link_flags = ['-framework', 'Accelerate'] if sys.platform == 'darwin' else []
+            subprocess.run(['c++', '-O2', '-std=c++17', str(p/'check.cpp'), *link_flags,
+                            '-o', str(p/'check')], check=True)
             subprocess.run([str(p/'check')], check=True)
 
 

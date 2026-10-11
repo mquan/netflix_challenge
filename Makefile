@@ -130,5 +130,5 @@ build/moonshot_session_meta: src/moonshot_session_meta.cpp src/netflix.cpp src/j
 .PHONY: test-push
 test-push: $(BIN)
 	python3 tests/test_push.py
-	$(CXX) $(CXXFLAGS) tests/check_temporal_neighbor.cpp -o build/check-temporal-neighbor
+	$(CXX) $(CXXFLAGS) tests/check_temporal_neighbor.cpp $(LDLIBS_NETFLIX) -o build/check-temporal-neighbor
 	build/check-temporal-neighbor
