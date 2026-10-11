@@ -58,8 +58,9 @@ every sweep compared (64, 80, 94).
 | NN2 alone | — | 0.8670695 | −0.000059 | +.000014 +.000034 −.000110 −.000092 −.000142 |
 | 50/50 average | 0.8668706 | **0.8668212** | **−0.0000495** | +.000007 +.000082 −.000061 −.000133 −.000142 |
 
-Folds 0 and 1 are worse, so it fails the promotion rule. As with B3 at sweep 160
-and B4, a better Bayes variant adds about 0.00005 when the bank already holds
-B2/B3/B4: the frequency signal is already supplied by the SGD joint models and the RBM.
-The Bayes settings axis now looks saturated, like the A2 settings axis.
+Folds 0 and 1 are worse, so it fails the promotion rule. Each Bayes variant has
+paid less than the last: B2 −0.00089, B3 −0.00036, B3 at sweep 160 and B4
+−0.00012 each, B5 −0.00005. A likely reason, not tested, is that the SGD joint
+models and the RBM already carry the frequency signal. The Bayes settings axis
+now looks saturated, like the A2 settings axis.
 **Promoted best remains R9-LAT-A2h, 0.8668706.**
