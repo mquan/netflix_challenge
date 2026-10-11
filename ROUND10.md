@@ -64,3 +64,23 @@ paid less than the last: B2 −0.00089, B3 −0.00036, B3 at sweep 160 and B4
 models and the RBM already carry the frequency signal. The Bayes settings axis
 now looks saturated, like the A2 settings axis.
 **Promoted best remains R9-LAT-A2h, 0.8668706.**
+
+## KNNF: neighbour features in both blenders (launched 2026-10-11)
+
+These are the kNN features from GAP_AUDIT Bet 1, which R9-LAT skipped. `build/netflix knn` gains
+`--extract M --extract-prefix P`. For each probe row it takes the M most similar
+movies the user rated (neighbors256 graph order) and writes four features per
+slot: similarity, training rating, residual under the base model, and
+exp(−|Δdays|/500). It also writes log1p of the number of rated neighbours.
+Empty slots are 0, and probe ratings are never read.
+
+The run used K1 (`artifacts/K1-joint256.bin`) with the bank's kNN settings
+(256 neighbours, power 1, shrink .5, time decay .003) and M = 3, giving 13 features in
+`artifacts/r10/knnfeat/`. The prediction reproduces the existing K1 kNN column
+exactly (0.8922894675), so the change does not alter predictions. 98% of probe rows have
+at least one rated neighbour.
+
+`scripts/round10_features_run.py --run-id R10-KNNF --features artifacts/r10/knnfeat/K1.*.f32`
+adds them to the frozen R9-LAT-A2h config, then runs NN2 and the 50/50 average.
+Promotion requires all five folds better than R9-LAT-A2h-NN2. R10-B5's blend
+stages took 80 min. Status: `experiments/R10-KNNF-chain.status.json`.

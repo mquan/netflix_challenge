@@ -275,18 +275,26 @@ void command_knn(const std::vector<std::string> &args) {
   // from the probe date is down-weighted by exp(-time_decay*d). 0 disables it.
   const float time_decay = float(double_after(args, "--time-decay", 0));
   if (time_decay < 0) fail("invalid --time-decay");
+  // --extract M --extract-prefix P: per probe row, features of the M most
+  // similar rated neighbors (graph order): similarity, training rating,
+  // residual under the base, exp(-|days|/500); plus log1p(rated neighbors).
+  // Empty slots are 0. Probe ratings are never read.
+  const uint32_t extract = uint_after(args, "--extract", 0);
+  const auto extract_prefix = extract ? value_after(args, "--extract-prefix") : std::string();
+  constexpr uint32_t kSlotFeatures = 4;
+  std::vector<float> slots(size_t(extract)*kSlotFeatures*d.probe.size(), 0), rated_count(extract ? d.probe.size() : 0);
   std::vector<uint64_t> po(d.header.users+1, 0);
   for (const auto &r : d.probe) ++po[r.user+1];
   std::partial_sum(po.begin(), po.end(), po.begin());
   auto cursor = po; std::vector<uint32_t> probe_order(d.probe.size());
   for (size_t p = 0; p < d.probe.size(); ++p) probe_order[cursor[d.probe[p].user]++] = uint32_t(p);
   std::vector<uint32_t> rated(d.header.items, UINT32_MAX);
-  std::vector<float> known_residual(d.header.items), known_day(d.header.items), pred(d.probe.size()), support(d.probe.size());
+  std::vector<float> known_residual(d.header.items), known_rating(d.header.items), known_day(d.header.items), pred(d.probe.size()), support(d.probe.size());
   double sse = 0;
   for (uint32_t u = 0; u < d.header.users; ++u) {
     if (po[u] == po[u+1]) continue;
     for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
-      const uint32_t i = d.train_items[p]-1; rated[i] = u; known_day[i] = float(d.train_days[p]);
+      const uint32_t i = d.train_items[p]-1; rated[i] = u; known_day[i] = float(d.train_days[p]); known_rating[i] = d.train_ratings[p];
       known_residual[i] = d.train_ratings[p]-(external ? base_train[p] : predict(u, i, d.train_days[p], f.train_session[p]));
     }
     for (uint64_t q = po[u]; q < po[u+1]; ++q) {
@@ -294,20 +302,37 @@ void command_knn(const std::vector<std::string> &args) {
       const auto &r = d.probe[p];
       const uint32_t i = r.item-1;
       float num = 0, den = 0;
+      uint32_t found = 0;
       for (uint32_t j = i*g.k; j < i*g.k+k; ++j) {
         const uint32_t other = g.neighbor[j];
         if (rated[other] != u || g.similarity[j] <= 0) continue;
+        if (found < extract) {
+          float *x = &slots[(size_t(found)*kSlotFeatures)*d.probe.size()];
+          x[p] = g.similarity[j];
+          x[d.probe.size()+p] = known_rating[other];
+          x[2*d.probe.size()+p] = known_residual[other];
+          x[3*d.probe.size()+p] = std::exp(-std::fabs(float(r.day)-known_day[other])/500.0F);
+        }
+        ++found;
         float s = std::pow(g.similarity[j], power);
         if (time_decay > 0) s *= std::exp(-time_decay*std::fabs(float(r.day)-known_day[other]));
         num += s*known_residual[other]; den += s;
       }
       pred[p] = (external ? base_probe[p] : predict(r.user, i, r.day, f.probe_session[p])) + num/(den+shrink);
       support[p] = den;
+      if (extract) rated_count[p] = std::log1p(float(found));
       const double err = r.rating-clipped(pred[p]); sse += err*err;
     }
   }
   std::ofstream out(output, std::ios::binary); write_vector(out, pred);
   if (!support_path.empty()) { std::ofstream s(support_path, std::ios::binary); write_vector(s, support); }
+  const char *slot_names[kSlotFeatures] = {"sim", "rating", "residual", "recency"};
+  for (uint32_t m = 0; m < extract; ++m)
+    for (uint32_t c = 0; c < kSlotFeatures; ++c) {
+      std::ofstream o(extract_prefix + ".n" + std::to_string(m) + "." + slot_names[c] + ".f32", std::ios::binary);
+      o.write(reinterpret_cast<const char *>(&slots[(size_t(m)*kSlotFeatures+c)*d.probe.size()]), d.probe.size()*sizeof(float));
+    }
+  if (extract) { std::ofstream o(extract_prefix + ".rated.f32", std::ios::binary); write_vector(o, rated_count); }
   std::cout << std::setprecision(10) << "knn base=" << (external ? base_probe_path : joint_path.empty() ? "time" : joint_path) << " neighbors=" << k << " power=" << power
             << " shrink=" << shrink << " time_decay=" << time_decay << " probe_rmse=" << std::sqrt(sse/d.probe.size()) << std::endl;
 }
