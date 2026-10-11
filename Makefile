@@ -89,6 +89,7 @@ test: $(BIN)
 	python3 tests/test_rbm.py
 	python3 tests/test_timeline.py
 	python3 tests/test_bar.py
+	python3 tests/test_bayes.py
 
 clean:
 	rm -rf build
