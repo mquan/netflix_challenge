@@ -1,0 +1,63 @@
+{
+  "name": "P0-B-knn64-netflix",
+  "strategy": "Phase 0 rehearsal (B): 64-neighbor kNN on K1 residuals, power 1",
+  "command": [
+    "build/netflix",
+    "knn",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--joint-model",
+    "artifacts/rehearsal/B-K1.bin",
+    "--power",
+    "1",
+    "--shrink",
+    ".5",
+    "--predictions",
+    "artifacts/rehearsal/B-knn64.netflix.f32"
+  ],
+  "started_utc": "2026-10-03T08:07:44.001846+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "a360b301db53f228f4ecbda67a5b9f52d0e90495",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "9dc088d3d807d039dd51a50b18e1a9fc534f47989d2f979405f111ffa4054358",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors64.bin": {
+      "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "bytes": 6823704
+    }
+  },
+  "launched_utc": "2026-10-03T08:07:45.288302+00:00",
+  "events_path": "experiments/P0-B-knn64-netflix.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 95.71634612500202,
+  "finished_utc": "2026-10-03T08:09:21.007307+00:00",
+  "log_sha256": "1c943efbd79413654a1297ccf053cbdafb138ca2fcc4f2ce3afef53c7a662b8f",
+  "events_sha256": "786cd90accf7901ac5a1b681a1566a4e69cc0266903cfa8c651d376679506055",
+  "predictions_artifact": {
+    "path": "artifacts/rehearsal/B-knn64.netflix.f32",
+    "sha256": "e72e7ae1c6091bbf65a0d86281fa0d4fe4fef5f074278aa55842b52648846696",
+    "bytes": 5633580
+  },
+  "graph_artifact": {
+    "path": "artifacts/neighbors64.bin",
+    "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "bytes": 6823704
+  }
+}

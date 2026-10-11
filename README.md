@@ -262,3 +262,8 @@ six conditional RBM columns (two seeds and three hidden sizes) move the blend to
 **`0.8731159148` development CV** (three LightGBM seeds; 0.8731934913 with one seed).
 [ROUND6.md](ROUND6.md) states the 10%-over-Cinematch target, the full
 three-stage algorithm, and the evidence for where the remaining gap must come from.
+
+[PLAN_TO_TARGET.md](PLAN_TO_TARGET.md) is the plan for the 10% target
+(0.85725 test RMSE). Its Phase 0 dress rehearsal of the final train+probe
+submission ([PHASE0_REHEARSAL.md](PHASE0_REHEARSAL.md)) measured test ≈ dev CV
+− 0.0074, so the development-CV target is **≈0.8646**.

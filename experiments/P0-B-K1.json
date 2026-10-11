@@ -1,0 +1,66 @@
+{
+  "name": "P0-B-K1",
+  "strategy": "Phase 0 rehearsal (b): K1 retrained on all training ratings, fixed at P2-selected epoch 41",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/rehearsal/B-K1.bin",
+    "--predictions",
+    "artifacts/rehearsal/B-K1.f32",
+    "--factors",
+    "256",
+    "--learning-rate",
+    ".008",
+    "--regularization",
+    ".02",
+    "--decay",
+    ".97",
+    "--iterations",
+    "41",
+    "--fixed-epoch",
+    "--threads",
+    "5"
+  ],
+  "started_utc": "2026-10-03T07:01:19.482341+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "a360b301db53f228f4ecbda67a5b9f52d0e90495",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "9dc088d3d807d039dd51a50b18e1a9fc534f47989d2f979405f111ffa4054358",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-03T07:01:20.606688+00:00",
+  "events_path": "experiments/P0-B-K1.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3894.170534625009,
+  "finished_utc": "2026-10-03T08:06:14.812437+00:00",
+  "log_sha256": "a7eba58b28114bc8652e6f08b3db352b69f7384642acd54b957b2d0ef446594e",
+  "events_sha256": "9b86d2659cdf27562a6da7164ffcc278ba6307a378822426848003ed182aca3d",
+  "model_artifact": {
+    "path": "artifacts/rehearsal/B-K1.bin",
+    "sha256": "bbfa2afc337c7d4899093420056b9813520b2fc909ebe76801d7810434ed2e82",
+    "bytes": 1173446408
+  },
+  "predictions_artifact": {
+    "path": "artifacts/rehearsal/B-K1.f32",
+    "sha256": "2c24a369641a235807a5748c6675f5f1d16e6fe6b65b0b6dff8aa73f28f2fe9c",
+    "bytes": 5633580
+  }
+}

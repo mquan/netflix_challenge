@@ -1,0 +1,18 @@
+{"observed_utc": "2026-10-08T00:59:48.796566+00:00", "line": "{\"phase\": \"artifacts/masked/A2g-pilot.select\", \"epoch\": 1, \"batch\": 100, \"users\": 8937, \"targets\": 511812, \"tokens\": 1298525, \"train_rmse\": 0.9559803591074574, \"seconds\": 37.099587375007104, \"mps_allocated_mb\": 384.431640625, \"mps_driver_mb\": 50034.4375}"}
+{"observed_utc": "2026-10-08T01:00:34.003452+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-10-08T01:00:34.004305+00:00", "line": "  File \"/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py\", line 571, in <module>"}
+{"observed_utc": "2026-10-08T01:00:34.012236+00:00", "line": "    result = run(parser().parse_args())"}
+{"observed_utc": "2026-10-08T01:00:34.012352+00:00", "line": "             ^^^^^^^^^^^^^^^^^^^^^^^^^^"}
+{"observed_utc": "2026-10-08T01:00:34.012376+00:00", "line": "  File \"/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py\", line 523, in run"}
+{"observed_utc": "2026-10-08T01:00:34.012519+00:00", "line": "    _, records, epochs = fit(selection, c, a.epochs, str(output) + '.select', select=True,"}
+{"observed_utc": "2026-10-08T01:00:34.012584+00:00", "line": "                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"}
+{"observed_utc": "2026-10-08T01:00:34.012597+00:00", "line": "  File \"/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py\", line 440, in fit"}
+{"observed_utc": "2026-10-08T01:00:34.012660+00:00", "line": "    loss.backward()"}
+{"observed_utc": "2026-10-08T01:00:34.012674+00:00", "line": "  File \"/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/_tensor.py\", line 623, in backward"}
+{"observed_utc": "2026-10-08T01:00:34.023345+00:00", "line": "    torch.autograd.backward("}
+{"observed_utc": "2026-10-08T01:00:34.023379+00:00", "line": "  File \"/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 395, in backward"}
+{"observed_utc": "2026-10-08T01:00:34.025792+00:00", "line": "    _engine_run_backward("}
+{"observed_utc": "2026-10-08T01:00:34.025853+00:00", "line": "  File \"/Users/quan/.cache/netflix-venv/lib/python3.12/site-packages/torch/autograd/graph.py\", line 1072, in _engine_run_backward"}
+{"observed_utc": "2026-10-08T01:00:34.028302+00:00", "line": "    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass"}
+{"observed_utc": "2026-10-08T01:00:34.028329+00:00", "line": "           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"}
+{"observed_utc": "2026-10-08T01:00:34.028351+00:00", "line": "RuntimeError: MPSGraph does not support tensor dims larger than INT_MAX"}

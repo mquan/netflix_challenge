@@ -1,0 +1,54 @@
+{
+  "name": "R8-C-uknn-K1",
+  "strategy": "Bet C user-user kNN on K1 residuals (branch bet-c-user-knn 2419104), probe, 3 threads",
+  "command": [
+    "artifacts/r8/bin/netflix-uknn",
+    "user-knn",
+    "--data",
+    "data/processed/netflix.bin",
+    "--joint-model",
+    "artifacts/K1-joint256.bin",
+    "--predictions",
+    "artifacts/r8/C-uknn-K1.f32",
+    "--support",
+    "artifacts/r8/C-uknn-K1.support.f32",
+    "--support-count",
+    "artifacts/r8/C-uknn-K1.count.f32",
+    "--threads",
+    "3"
+  ],
+  "started_utc": "2026-10-03T07:17:57.234033+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "a360b301db53f228f4ecbda67a5b9f52d0e90495",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "00fc6f55986bad14d25b8d9827e74c32639f2badb157f9b7c7e15a32abd2c5c3",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-03T07:17:58.843449+00:00",
+  "events_path": "experiments/R8-C-uknn-K1.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 617.1950978329987,
+  "finished_utc": "2026-10-03T07:28:16.041292+00:00",
+  "log_sha256": "c179c5f8095617933f1e0db80e89651d205dfadfbc36d769d71ea5fcacbb1064",
+  "events_sha256": "ca8a2dd264f3fb31f03082afae6f781d6ab18e784f2727d2a2d186d0268dd850",
+  "predictions_artifact": {
+    "path": "artifacts/r8/C-uknn-K1.f32",
+    "sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+    "bytes": 5633580
+  }
+}

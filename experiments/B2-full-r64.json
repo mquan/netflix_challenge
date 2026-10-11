@@ -1,0 +1,67 @@
+{
+  "name": "B2-full-r64",
+  "strategy": "Bet B Bayesian timeSVD++ flipped, rank 64, 128 sweeps, full train refit (probe column, snapshots every 16 sweeps); nice 10, 4 threads",
+  "command": [
+    "artifacts/r8/bin/netflix-bayes-0c1f29d",
+    "bayes",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/bayes/B2-full-r64.bin",
+    "--predictions",
+    "artifacts/bayes/B2-full-r64.f32",
+    "--factors",
+    "64",
+    "--samples",
+    "128",
+    "--burn-in",
+    "16",
+    "--snapshot-every",
+    "16",
+    "--checkpoint-every",
+    "8",
+    "--threads",
+    "4",
+    "--seed",
+    "2026"
+  ],
+  "started_utc": "2026-10-03T11:10:12.352241+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "a360b301db53f228f4ecbda67a5b9f52d0e90495",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "9d25bcf1a0cfa2418921e27a57df2779d9dd49d5ac32a8bc37ce430296102ff5",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-03T11:10:12.971479+00:00",
+  "events_path": "experiments/B2-full-r64.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 15194.276667708007,
+  "finished_utc": "2026-10-03T15:23:27.373952+00:00",
+  "log_sha256": "d8857730d2bc7f36b53088245f55a0d3973940d85b27f40a82d40848159c971b",
+  "events_sha256": "4f5f181a0c0b6564f87902e10f1533f889c120f5f378bbdf2cf88b9804d082d7",
+  "model_artifact": {
+    "path": "artifacts/bayes/B2-full-r64.bin",
+    "sha256": "af9e5995744261bc2d5e6b6a63c63e3808a38791720afa04c9fc6021b83784e7",
+    "bytes": 346824907
+  },
+  "predictions_artifact": {
+    "path": "artifacts/bayes/B2-full-r64.f32",
+    "sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+    "bytes": 5633580
+  }
+}

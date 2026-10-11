@@ -1,0 +1,162 @@
+bayes factors=128 threads=4 samples=160 burn_in=16 bag_power=0.5 drift_scale=7.04504 fingerprint=12499777815975055846 modes=user:2,user-bag:2,item:2,item-bag:2,day:1,item-bin:1,session:1,drift:1 resume_sweep=0
+sweep=1 train_rmse=0.9606451328 noise_sd=1.090336754 w0=3.603139162 sample_probe_rmse=1.048544564 kept=0 seconds=251.0790302
+sweep=2 train_rmse=0.8501355336 noise_sd=0.9605664758 w0=3.55807209 sample_probe_rmse=0.9798844104 kept=0 seconds=311.9408826
+sweep=3 train_rmse=0.8077939924 noise_sd=0.850221019 w0=3.535399675 sample_probe_rmse=0.9554640695 kept=0 seconds=264.2890422
+sweep=4 train_rmse=0.7846943034 noise_sd=0.8078427271 w0=3.523690462 sample_probe_rmse=0.9493755076 kept=0 seconds=299.499535
+sweep=5 train_rmse=0.7691226175 noise_sd=0.78472917 w0=3.517078638 sample_probe_rmse=0.9487860128 kept=0 seconds=295.122185
+sweep=6 train_rmse=0.7575577704 noise_sd=0.7692172637 w0=3.513070822 sample_probe_rmse=0.9505411961 kept=0 seconds=301.1786672
+sweep=7 train_rmse=0.7486215882 noise_sd=0.7575264707 w0=3.51048708 sample_probe_rmse=0.9535792551 kept=0 seconds=308.392009
+sweep=8 train_rmse=0.7415462357 noise_sd=0.7486943736 w0=3.508764744 sample_probe_rmse=0.9556657496 kept=0 seconds=292.3396274
+sweep=9 train_rmse=0.7359531742 noise_sd=0.7415172443 w0=3.507300377 sample_probe_rmse=0.9587353963 kept=0 seconds=282.3367305
+sweep=10 train_rmse=0.7314258597 noise_sd=0.7359088512 w0=3.506430626 sample_probe_rmse=0.9605960814 kept=0 seconds=268.116633
+sweep=11 train_rmse=0.7277955437 noise_sd=0.7314694116 w0=3.505672932 sample_probe_rmse=0.962641381 kept=0 seconds=261.4489741
+sweep=12 train_rmse=0.7249170775 noise_sd=0.7277910654 w0=3.505069971 sample_probe_rmse=0.9639455912 kept=0 seconds=241.8511242
+sweep=13 train_rmse=0.7225109572 noise_sd=0.7249185823 w0=3.504590273 sample_probe_rmse=0.9656394573 kept=0 seconds=239.8048124
+sweep=14 train_rmse=0.7205038415 noise_sd=0.7225058264 w0=3.503945827 sample_probe_rmse=0.967165606 kept=0 seconds=261.8679757
+sweep=15 train_rmse=0.7188923197 noise_sd=0.7206154505 w0=3.50371933 sample_probe_rmse=0.9685419705 kept=0 seconds=241.9198311
+sweep=16 train_rmse=0.7175672069 noise_sd=0.7188366316 w0=3.503498793 sample_probe_rmse=0.9687710275 kept=0 seconds=243.6442616
+sweep=17 train_rmse=0.7164428995 noise_sd=0.7175156019 w0=3.503269672 sample_probe_rmse=0.9695333349 kept=1 mean_probe_rmse=0.9695333349 seconds=238.4353333
+sweep=18 train_rmse=0.7155208177 noise_sd=0.7164256368 w0=3.503239632 sample_probe_rmse=0.970572392 kept=2 mean_probe_rmse=0.9381912412 seconds=232.7282479
+sweep=19 train_rmse=0.7146668635 noise_sd=0.7154872124 w0=3.503142595 sample_probe_rmse=0.9702869357 kept=3 mean_probe_rmse=0.9257490451 seconds=235.1448782
+sweep=20 train_rmse=0.7139761874 noise_sd=0.7146068363 w0=3.502850771 sample_probe_rmse=0.969901716 kept=4 mean_probe_rmse=0.9188035692 seconds=203.9836777
+sweep=21 train_rmse=0.7133665056 noise_sd=0.7139578526 w0=3.502702951 sample_probe_rmse=0.970982185 kept=5 mean_probe_rmse=0.9144569011 seconds=220.681952
+sweep=22 train_rmse=0.7128324757 noise_sd=0.7133537688 w0=3.502666473 sample_probe_rmse=0.9708165227 kept=6 mean_probe_rmse=0.9113923356 seconds=217.4240042
+sweep=23 train_rmse=0.7123978575 noise_sd=0.7127967061 w0=3.502633333 sample_probe_rmse=0.971371824 kept=7 mean_probe_rmse=0.9091969959 seconds=213.0266236
+sweep=24 train_rmse=0.7119560579 noise_sd=0.7123429345 w0=3.502747059 sample_probe_rmse=0.9714772449 kept=8 mean_probe_rmse=0.9074534041 seconds=228.5749519
+sweep=25 train_rmse=0.7115692573 noise_sd=0.711888228 w0=3.502756596 sample_probe_rmse=0.9719099053 kept=9 mean_probe_rmse=0.9060797627 seconds=218.3656683
+sweep=26 train_rmse=0.7111914766 noise_sd=0.711554323 w0=3.502593994 sample_probe_rmse=0.9708996336 kept=10 mean_probe_rmse=0.9048489127 seconds=226.1080247
+sweep=27 train_rmse=0.7108834649 noise_sd=0.7111574644 w0=3.502530098 sample_probe_rmse=0.9717099479 kept=11 mean_probe_rmse=0.9038723238 seconds=235.9879175
+sweep=28 train_rmse=0.7105293804 noise_sd=0.7109236946 w0=3.50246644 sample_probe_rmse=0.9714496289 kept=12 mean_probe_rmse=0.9030180084 seconds=215.7921754
+sweep=29 train_rmse=0.7101997683 noise_sd=0.7105561282 w0=3.502462387 sample_probe_rmse=0.9718449959 kept=13 mean_probe_rmse=0.9022966059 seconds=238.935089
+sweep=30 train_rmse=0.7098485947 noise_sd=0.7101742454 w0=3.502444983 sample_probe_rmse=0.9718375904 kept=14 mean_probe_rmse=0.9016551912 seconds=271.0095427
+sweep=31 train_rmse=0.7095635652 noise_sd=0.7097204287 w0=3.502422094 sample_probe_rmse=0.9712618802 kept=15 mean_probe_rmse=0.9010655088 seconds=276.3801679
+sweep=32 train_rmse=0.7092481614 noise_sd=0.709632887 w0=3.502414942 sample_probe_rmse=0.9713078085 kept=16 mean_probe_rmse=0.9005319031 seconds=313.4976074
+sweep=33 train_rmse=0.708927614 noise_sd=0.7092465393 w0=3.502458572 sample_probe_rmse=0.9713374456 kept=17 mean_probe_rmse=0.9000451137 seconds=375.5172607
+sweep=34 train_rmse=0.7085777716 noise_sd=0.7088549351 w0=3.502563238 sample_probe_rmse=0.9713332688 kept=18 mean_probe_rmse=0.8995930111 seconds=245.6151167
+sweep=35 train_rmse=0.7083113492 noise_sd=0.7086051383 w0=3.502480745 sample_probe_rmse=0.971472019 kept=19 mean_probe_rmse=0.8991902976 seconds=287.51174
+sweep=36 train_rmse=0.7079557853 noise_sd=0.7083337617 w0=3.502453566 sample_probe_rmse=0.9710581917 kept=20 mean_probe_rmse=0.898774425 seconds=216.9201478
+sweep=37 train_rmse=0.7076816632 noise_sd=0.707978795 w0=3.502421379 sample_probe_rmse=0.9710957803 kept=21 mean_probe_rmse=0.8984005274 seconds=201.0165237
+sweep=38 train_rmse=0.7074087255 noise_sd=0.7076733817 w0=3.502374172 sample_probe_rmse=0.9712775255 kept=22 mean_probe_rmse=0.8980426568 seconds=202.6243741
+sweep=39 train_rmse=0.7071637462 noise_sd=0.7073744139 w0=3.502182484 sample_probe_rmse=0.9710565387 kept=23 mean_probe_rmse=0.8976968681 seconds=204.8141868
+sweep=40 train_rmse=0.7070010772 noise_sd=0.7072764035 w0=3.502128124 sample_probe_rmse=0.970948795 kept=24 mean_probe_rmse=0.8973662605 seconds=246.6337555
+sweep=41 train_rmse=0.7067954531 noise_sd=0.7069234678 w0=3.501941442 sample_probe_rmse=0.9716421956 kept=25 mean_probe_rmse=0.8970598327 seconds=204.9250429
+sweep=42 train_rmse=0.706672375 noise_sd=0.7068647617 w0=3.501845598 sample_probe_rmse=0.9714959052 kept=26 mean_probe_rmse=0.8967647578 seconds=201.1014637
+sweep=43 train_rmse=0.7065434374 noise_sd=0.7066409873 w0=3.50171423 sample_probe_rmse=0.9722136425 kept=27 mean_probe_rmse=0.8965181821 seconds=199.6340705
+sweep=44 train_rmse=0.7064715608 noise_sd=0.7065063159 w0=3.501804352 sample_probe_rmse=0.9723070076 kept=28 mean_probe_rmse=0.8962653703 seconds=197.6244609
+sweep=45 train_rmse=0.7063816494 noise_sd=0.7065253492 w0=3.501673698 sample_probe_rmse=0.9723622931 kept=29 mean_probe_rmse=0.8960368929 seconds=203.8854347
+sweep=46 train_rmse=0.7062896948 noise_sd=0.7064188003 w0=3.501787424 sample_probe_rmse=0.9726423511 kept=30 mean_probe_rmse=0.8958179677 seconds=240.0290597
+sweep=47 train_rmse=0.7062173232 noise_sd=0.7062892161 w0=3.501742363 sample_probe_rmse=0.9727195512 kept=31 mean_probe_rmse=0.8956089813 seconds=208.1734159
+sweep=48 train_rmse=0.7061724713 noise_sd=0.7061926381 w0=3.50177598 sample_probe_rmse=0.9722467958 kept=32 mean_probe_rmse=0.8953923266 seconds=202.6729372
+sweep=49 train_rmse=0.7060901088 noise_sd=0.7061476165 w0=3.501707554 sample_probe_rmse=0.9727117745 kept=33 mean_probe_rmse=0.8952050303 seconds=200.373074
+sweep=50 train_rmse=0.7060433028 noise_sd=0.7060781895 w0=3.501641273 sample_probe_rmse=0.9725130609 kept=34 mean_probe_rmse=0.8950187201 seconds=199.9715108
+sweep=51 train_rmse=0.7060380879 noise_sd=0.7061104711 w0=3.50161767 sample_probe_rmse=0.9727446553 kept=35 mean_probe_rmse=0.8948448201 seconds=228.8433162
+sweep=52 train_rmse=0.7059552537 noise_sd=0.7060020102 w0=3.501660347 sample_probe_rmse=0.972015154 kept=36 mean_probe_rmse=0.8946625641 seconds=232.1778248
+sweep=53 train_rmse=0.7060028931 noise_sd=0.7059731665 w0=3.501638889 sample_probe_rmse=0.9722035324 kept=37 mean_probe_rmse=0.8944891113 seconds=197.7844562
+sweep=54 train_rmse=0.7059570706 noise_sd=0.7060768542 w0=3.501392841 sample_probe_rmse=0.9729294569 kept=38 mean_probe_rmse=0.8943471178 seconds=193.7271269
+sweep=55 train_rmse=0.7058964905 noise_sd=0.7059736039 w0=3.501323223 sample_probe_rmse=0.9725692956 kept=39 mean_probe_rmse=0.8942013206 seconds=202.62387
+sweep=56 train_rmse=0.7058375142 noise_sd=0.7058812864 w0=3.501152992 sample_probe_rmse=0.9724843927 kept=40 mean_probe_rmse=0.8940627573 seconds=205.720136
+sweep=57 train_rmse=0.7058058429 noise_sd=0.7059122623 w0=3.501230001 sample_probe_rmse=0.9731784813 kept=41 mean_probe_rmse=0.8939474824 seconds=250.2756385
+sweep=58 train_rmse=0.705746211 noise_sd=0.7058405487 w0=3.501120329 sample_probe_rmse=0.9728433247 kept=42 mean_probe_rmse=0.8938251921 seconds=203.6357105
+sweep=59 train_rmse=0.705713468 noise_sd=0.7057783423 w0=3.501124144 sample_probe_rmse=0.972122302 kept=43 mean_probe_rmse=0.8936950091 seconds=201.3649272
+sweep=60 train_rmse=0.7056942196 noise_sd=0.7057512617 w0=3.501008034 sample_probe_rmse=0.9726003105 kept=44 mean_probe_rmse=0.89358514 seconds=204.702396
+sweep=61 train_rmse=0.705630327 noise_sd=0.7056727832 w0=3.500957012 sample_probe_rmse=0.9731078733 kept=45 mean_probe_rmse=0.8934890836 seconds=206.4927481
+sweep=62 train_rmse=0.705627204 noise_sd=0.705695765 w0=3.501159191 sample_probe_rmse=0.9739442047 kept=46 mean_probe_rmse=0.8934144968 seconds=238.6754933
+sweep=63 train_rmse=0.7056328664 noise_sd=0.7057259515 w0=3.501200676 sample_probe_rmse=0.9731751966 kept=47 mean_probe_rmse=0.8933319165 seconds=223.7823136
+sweep=64 train_rmse=0.7056232565 noise_sd=0.7057269446 w0=3.501322269 sample_probe_rmse=0.973028071 kept=48 mean_probe_rmse=0.8932453259 seconds=200.0232098
+sweep=65 train_rmse=0.7055937038 noise_sd=0.7055934744 w0=3.501372337 sample_probe_rmse=0.9729907487 kept=49 mean_probe_rmse=0.8931638489 seconds=208.0651087
+sweep=66 train_rmse=0.7055029526 noise_sd=0.7054887971 w0=3.501273632 sample_probe_rmse=0.9726671446 kept=50 mean_probe_rmse=0.8930793477 seconds=216.1865985
+sweep=67 train_rmse=0.7054919529 noise_sd=0.7055708296 w0=3.501214743 sample_probe_rmse=0.9727449497 kept=51 mean_probe_rmse=0.8929944363 seconds=204.352832
+sweep=68 train_rmse=0.7054583059 noise_sd=0.7054937464 w0=3.501097918 sample_probe_rmse=0.9719796885 kept=52 mean_probe_rmse=0.8929023114 seconds=252.0558887
+sweep=69 train_rmse=0.7054317615 noise_sd=0.7054296574 w0=3.501035929 sample_probe_rmse=0.9726483102 kept=53 mean_probe_rmse=0.8928223902 seconds=213.8612792
+sweep=70 train_rmse=0.7053926311 noise_sd=0.7054648659 w0=3.500699282 sample_probe_rmse=0.9728730617 kept=54 mean_probe_rmse=0.8927592761 seconds=210.3545787
+sweep=71 train_rmse=0.7053869475 noise_sd=0.7054571832 w0=3.500664234 sample_probe_rmse=0.9726488728 kept=55 mean_probe_rmse=0.8926868402 seconds=211.0445685
+sweep=72 train_rmse=0.7053857905 noise_sd=0.7053782973 w0=3.500525236 sample_probe_rmse=0.972398428 kept=56 mean_probe_rmse=0.8926170495 seconds=209.5307923
+sweep=73 train_rmse=0.7053584142 noise_sd=0.705355731 w0=3.500317812 sample_probe_rmse=0.9729188923 kept=57 mean_probe_rmse=0.8925537361 seconds=250.8574854
+sweep=74 train_rmse=0.7053107387 noise_sd=0.7053260527 w0=3.500196457 sample_probe_rmse=0.9739035673 kept=58 mean_probe_rmse=0.8925103422 seconds=206.3428939
+sweep=75 train_rmse=0.7053104125 noise_sd=0.7052635246 w0=3.500142336 sample_probe_rmse=0.9734462438 kept=59 mean_probe_rmse=0.8924595379 seconds=201.7124456
+sweep=76 train_rmse=0.7052558389 noise_sd=0.7052968713 w0=3.500272751 sample_probe_rmse=0.9728079396 kept=60 mean_probe_rmse=0.8923993748 seconds=207.6432098
+sweep=77 train_rmse=0.7052638084 noise_sd=0.7052471421 w0=3.500329256 sample_probe_rmse=0.973008766 kept=61 mean_probe_rmse=0.8923466068 seconds=200.15508
+sweep=78 train_rmse=0.7052830823 noise_sd=0.7052829668 w0=3.500127554 sample_probe_rmse=0.9727084136 kept=62 mean_probe_rmse=0.892290107 seconds=217.3005594
+sweep=79 train_rmse=0.7052704673 noise_sd=0.7053103496 w0=3.500035286 sample_probe_rmse=0.9725997434 kept=63 mean_probe_rmse=0.8922380726 seconds=258.380485
+sweep=80 train_rmse=0.7052205802 noise_sd=0.7051881797 w0=3.499867678 sample_probe_rmse=0.9730483558 kept=64 mean_probe_rmse=0.8921913382 seconds=216.0554963
+sweep=81 train_rmse=0.705212333 noise_sd=0.7052007348 w0=3.499788284 sample_probe_rmse=0.9726489221 kept=65 mean_probe_rmse=0.8921398948 seconds=219.6706819
+sweep=82 train_rmse=0.7052292929 noise_sd=0.7052667693 w0=3.499928951 sample_probe_rmse=0.972672996 kept=66 mean_probe_rmse=0.8920936044 seconds=204.3668867
+sweep=83 train_rmse=0.7052356597 noise_sd=0.7051927059 w0=3.499840498 sample_probe_rmse=0.972341825 kept=67 mean_probe_rmse=0.8920415644 seconds=207.7729648
+sweep=84 train_rmse=0.7052068754 noise_sd=0.7051998734 w0=3.499840498 sample_probe_rmse=0.9721700607 kept=68 mean_probe_rmse=0.8919910958 seconds=206.8537977
+sweep=85 train_rmse=0.7052216965 noise_sd=0.7053241004 w0=3.499935627 sample_probe_rmse=0.9721969639 kept=69 mean_probe_rmse=0.8919383757 seconds=223.0602229
+sweep=86 train_rmse=0.705196759 noise_sd=0.7052451886 w0=3.499845505 sample_probe_rmse=0.972575843 kept=70 mean_probe_rmse=0.8918927476 seconds=291.5198472
+sweep=87 train_rmse=0.7051254706 noise_sd=0.7051548616 w0=3.49978447 sample_probe_rmse=0.9726114081 kept=71 mean_probe_rmse=0.8918474198 seconds=208.6967965
+sweep=88 train_rmse=0.7051265091 noise_sd=0.7051863143 w0=3.499743223 sample_probe_rmse=0.9731651794 kept=72 mean_probe_rmse=0.8918150028 seconds=222.358553
+sweep=89 train_rmse=0.7050977268 noise_sd=0.7051533799 w0=3.499849796 sample_probe_rmse=0.972149724 kept=73 mean_probe_rmse=0.8917687089 seconds=232.030815
+sweep=90 train_rmse=0.7050976625 noise_sd=0.7050589781 w0=3.499961615 sample_probe_rmse=0.9727006703 kept=74 mean_probe_rmse=0.8917294501 seconds=226.1171475
+sweep=91 train_rmse=0.7050307539 noise_sd=0.7051028566 w0=3.499868631 sample_probe_rmse=0.9729960622 kept=75 mean_probe_rmse=0.891694222 seconds=224.3209038
+sweep=92 train_rmse=0.705034804 noise_sd=0.7049556119 w0=3.499803066 sample_probe_rmse=0.9722284367 kept=76 mean_probe_rmse=0.8916551711 seconds=233.2724853
+sweep=93 train_rmse=0.7050269636 noise_sd=0.7050905054 w0=3.49968338 sample_probe_rmse=0.9723492146 kept=77 mean_probe_rmse=0.8916163316 seconds=225.845421
+sweep=94 train_rmse=0.7050170497 noise_sd=0.7049869966 w0=3.499588966 sample_probe_rmse=0.9719025166 kept=78 mean_probe_rmse=0.8915755947 seconds=229.5122631
+sweep=95 train_rmse=0.7050278441 noise_sd=0.7050013651 w0=3.499790192 sample_probe_rmse=0.9726240092 kept=79 mean_probe_rmse=0.8915441345 seconds=228.2333834
+sweep=96 train_rmse=0.7050171795 noise_sd=0.7050477726 w0=3.499797583 sample_probe_rmse=0.9730445404 kept=80 mean_probe_rmse=0.8915139589 seconds=226.9891317
+sweep=97 train_rmse=0.7050126759 noise_sd=0.7049988048 w0=3.499823332 sample_probe_rmse=0.9726888452 kept=81 mean_probe_rmse=0.8914807876 seconds=227.7086546
+sweep=98 train_rmse=0.7050248221 noise_sd=0.705071716 w0=3.499712229 sample_probe_rmse=0.9734663463 kept=82 mean_probe_rmse=0.891461812 seconds=214.2504519
+sweep=99 train_rmse=0.7050270566 noise_sd=0.7050194204 w0=3.499602318 sample_probe_rmse=0.9717969111 kept=83 mean_probe_rmse=0.8914222223 seconds=200.2926059
+sweep=100 train_rmse=0.704961529 noise_sd=0.7050044258 w0=3.499682426 sample_probe_rmse=0.9730010434 kept=84 mean_probe_rmse=0.8914005855 seconds=199.48722
+sweep=101 train_rmse=0.7050050588 noise_sd=0.7050038901 w0=3.499686003 sample_probe_rmse=0.9731361391 kept=85 mean_probe_rmse=0.8913763205 seconds=194.1255527
+sweep=102 train_rmse=0.7049337787 noise_sd=0.705006232 w0=3.499679327 sample_probe_rmse=0.9727115192 kept=86 mean_probe_rmse=0.8913501973 seconds=197.158028
+sweep=103 train_rmse=0.7049444989 noise_sd=0.7049286135 w0=3.499632835 sample_probe_rmse=0.9727298539 kept=87 mean_probe_rmse=0.8913241888 seconds=204.9319645
+sweep=104 train_rmse=0.7048793915 noise_sd=0.70493866 w0=3.499629259 sample_probe_rmse=0.9726149823 kept=88 mean_probe_rmse=0.8912966396 seconds=201.0448906
+sweep=105 train_rmse=0.7049378358 noise_sd=0.7048867243 w0=3.499462843 sample_probe_rmse=0.9732427273 kept=89 mean_probe_rmse=0.8912774817 seconds=193.3489575
+sweep=106 train_rmse=0.7048954997 noise_sd=0.7049158515 w0=3.49951458 sample_probe_rmse=0.9730057628 kept=90 mean_probe_rmse=0.8912561074 seconds=265.6666124
+sweep=107 train_rmse=0.7048522929 noise_sd=0.7048445768 w0=3.499405384 sample_probe_rmse=0.9727784363 kept=91 mean_probe_rmse=0.8912349875 seconds=392.3637679
+sweep=108 train_rmse=0.7048560851 noise_sd=0.7048273858 w0=3.499462843 sample_probe_rmse=0.9731422271 kept=92 mean_probe_rmse=0.8912154744 seconds=408.2228261
+sweep=109 train_rmse=0.7048686497 noise_sd=0.704883619 w0=3.499601841 sample_probe_rmse=0.9729941428 kept=93 mean_probe_rmse=0.891196614 seconds=451.7844703
+sweep=110 train_rmse=0.7048343301 noise_sd=0.7047641816 w0=3.499452829 sample_probe_rmse=0.972877415 kept=94 mean_probe_rmse=0.8911743902 seconds=376.2133449
+sweep=111 train_rmse=0.7048609357 noise_sd=0.7047610053 w0=3.499566793 sample_probe_rmse=0.9730403843 kept=95 mean_probe_rmse=0.8911573283 seconds=387.1713751
+sweep=112 train_rmse=0.7048593084 noise_sd=0.7048777743 w0=3.499537706 sample_probe_rmse=0.9722834201 kept=96 mean_probe_rmse=0.8911324188 seconds=455.8549357
+sweep=113 train_rmse=0.7048576385 noise_sd=0.7049252961 w0=3.499445915 sample_probe_rmse=0.9730766116 kept=97 mean_probe_rmse=0.8911154999 seconds=376.5216602
+sweep=114 train_rmse=0.7048392561 noise_sd=0.7049169907 w0=3.499507189 sample_probe_rmse=0.973623967 kept=98 mean_probe_rmse=0.8911021691 seconds=371.8420527
+sweep=115 train_rmse=0.704877517 noise_sd=0.7049426066 w0=3.499675751 sample_probe_rmse=0.9725895916 kept=99 mean_probe_rmse=0.8910810631 seconds=456.0335278
+sweep=116 train_rmse=0.7048440308 noise_sd=0.7048835865 w0=3.499601603 sample_probe_rmse=0.9725117711 kept=100 mean_probe_rmse=0.8910603667 seconds=390.4549983
+sweep=117 train_rmse=0.7048294799 noise_sd=0.7048343378 w0=3.499697447 sample_probe_rmse=0.9728280826 kept=101 mean_probe_rmse=0.8910409579 seconds=380.5158436
+sweep=118 train_rmse=0.704801499 noise_sd=0.7049185815 w0=3.499624014 sample_probe_rmse=0.9725338375 kept=102 mean_probe_rmse=0.8910169951 seconds=409.4850159
+sweep=119 train_rmse=0.7048068543 noise_sd=0.7047109347 w0=3.499461889 sample_probe_rmse=0.972604624 kept=103 mean_probe_rmse=0.8909988397 seconds=424.9134796
+sweep=120 train_rmse=0.7048277185 noise_sd=0.7047428979 w0=3.499388456 sample_probe_rmse=0.9727903233 kept=104 mean_probe_rmse=0.8909813107 seconds=386.5170779
+sweep=121 train_rmse=0.7048629915 noise_sd=0.7048285174 w0=3.4994452 sample_probe_rmse=0.9725375568 kept=105 mean_probe_rmse=0.8909633727 seconds=426.6018485
+sweep=122 train_rmse=0.7048645533 noise_sd=0.7048444906 w0=3.499406576 sample_probe_rmse=0.9723628795 kept=106 mean_probe_rmse=0.8909418875 seconds=549.1348969
+sweep=123 train_rmse=0.7048408441 noise_sd=0.7048588561 w0=3.499508142 sample_probe_rmse=0.9726793635 kept=107 mean_probe_rmse=0.8909261073 seconds=377.9605685
+sweep=124 train_rmse=0.7048346192 noise_sd=0.7048736673 w0=3.499359369 sample_probe_rmse=0.9722860309 kept=108 mean_probe_rmse=0.8909036698 seconds=342.0613115
+sweep=125 train_rmse=0.7048337934 noise_sd=0.7048541459 w0=3.49922204 sample_probe_rmse=0.972387516 kept=109 mean_probe_rmse=0.8908851077 seconds=360.2125622
+sweep=126 train_rmse=0.7047996719 noise_sd=0.7048443825 w0=3.499230623 sample_probe_rmse=0.9730132708 kept=110 mean_probe_rmse=0.8908699967 seconds=497.2810452
+sweep=127 train_rmse=0.7047908901 noise_sd=0.7047298237 w0=3.499209642 sample_probe_rmse=0.9726531796 kept=111 mean_probe_rmse=0.8908544223 seconds=394.6633352
+sweep=128 train_rmse=0.7048334812 noise_sd=0.7047848101 w0=3.49922204 sample_probe_rmse=0.9732370417 kept=112 mean_probe_rmse=0.8908443242 seconds=384.4584891
+sweep=129 train_rmse=0.7048216432 noise_sd=0.7048844519 w0=3.499094486 sample_probe_rmse=0.9725508951 kept=113 mean_probe_rmse=0.8908269716 seconds=418.2943358
+sweep=130 train_rmse=0.7047393789 noise_sd=0.7048572938 w0=3.499312162 sample_probe_rmse=0.9729633916 kept=114 mean_probe_rmse=0.8908140661 seconds=457.831288
+sweep=131 train_rmse=0.7047569164 noise_sd=0.7047708155 w0=3.499198198 sample_probe_rmse=0.9725065336 kept=115 mean_probe_rmse=0.8907960965 seconds=470.1251601
+sweep=132 train_rmse=0.7047734785 noise_sd=0.7047399758 w0=3.499179602 sample_probe_rmse=0.9728602365 kept=116 mean_probe_rmse=0.8907839296 seconds=399.6585205
+sweep=133 train_rmse=0.7048088547 noise_sd=0.7047619271 w0=3.499120951 sample_probe_rmse=0.9723116484 kept=117 mean_probe_rmse=0.8907665715 seconds=388.5198115
+sweep=134 train_rmse=0.704807027 noise_sd=0.704841373 w0=3.499028921 sample_probe_rmse=0.9725077979 kept=118 mean_probe_rmse=0.8907508176 seconds=330.8136622
+sweep=135 train_rmse=0.7047393258 noise_sd=0.7047496327 w0=3.499047995 sample_probe_rmse=0.9724700292 kept=119 mean_probe_rmse=0.8907362559 seconds=389.0552236
+sweep=136 train_rmse=0.7047544204 noise_sd=0.7047273113 w0=3.498882771 sample_probe_rmse=0.9726877061 kept=120 mean_probe_rmse=0.8907223068 seconds=340.9967819
+sweep=137 train_rmse=0.7047256579 noise_sd=0.704780997 w0=3.498917818 sample_probe_rmse=0.9727368748 kept=121 mean_probe_rmse=0.8907070293 seconds=326.6730924
+sweep=138 train_rmse=0.7047021262 noise_sd=0.704698442 w0=3.498851061 sample_probe_rmse=0.9730541034 kept=122 mean_probe_rmse=0.8906985912 seconds=340.4134929
+sweep=139 train_rmse=0.704700289 noise_sd=0.7047363491 w0=3.498878956 sample_probe_rmse=0.9724701921 kept=123 mean_probe_rmse=0.8906839943 seconds=349.4505668
+sweep=140 train_rmse=0.7046931761 noise_sd=0.7047427764 w0=3.498912573 sample_probe_rmse=0.9730456547 kept=124 mean_probe_rmse=0.8906748718 seconds=387.3205125
+sweep=141 train_rmse=0.7046629352 noise_sd=0.7046950397 w0=3.498926878 sample_probe_rmse=0.9720889833 kept=125 mean_probe_rmse=0.8906570729 seconds=337.172011
+sweep=142 train_rmse=0.7046996449 noise_sd=0.704663286 w0=3.498933792 sample_probe_rmse=0.9723290433 kept=126 mean_probe_rmse=0.8906419732 seconds=313.4120946
+sweep=143 train_rmse=0.7047358804 noise_sd=0.7046499975 w0=3.49891901 sample_probe_rmse=0.9729886894 kept=127 mean_probe_rmse=0.8906334867 seconds=332.92156
+sweep=144 train_rmse=0.7047585075 noise_sd=0.7047948299 w0=3.498868465 sample_probe_rmse=0.9721793711 kept=128 mean_probe_rmse=0.8906194643 seconds=325.7841557
+sweep=145 train_rmse=0.7047040788 noise_sd=0.7047826456 w0=3.498740196 sample_probe_rmse=0.9727501237 kept=129 mean_probe_rmse=0.8906086362 seconds=382.701057
+sweep=146 train_rmse=0.7046798433 noise_sd=0.7046260071 w0=3.498767853 sample_probe_rmse=0.9723514021 kept=130 mean_probe_rmse=0.8905945549 seconds=349.2353396
+sweep=147 train_rmse=0.7047270335 noise_sd=0.704681483 w0=3.498737097 sample_probe_rmse=0.9723653576 kept=131 mean_probe_rmse=0.890580893 seconds=351.2163891
+sweep=148 train_rmse=0.7047293869 noise_sd=0.7047440407 w0=3.498754263 sample_probe_rmse=0.9725428552 kept=132 mean_probe_rmse=0.8905684185 seconds=329.6099004
+sweep=149 train_rmse=0.7046922091 noise_sd=0.7047608324 w0=3.498583317 sample_probe_rmse=0.9731078171 kept=133 mean_probe_rmse=0.8905591777 seconds=332.1334761
+sweep=150 train_rmse=0.7046530501 noise_sd=0.7046313124 w0=3.498562098 sample_probe_rmse=0.9724618001 kept=134 mean_probe_rmse=0.8905446871 seconds=385.6088942
+sweep=151 train_rmse=0.7046573529 noise_sd=0.7045978898 w0=3.4985466 sample_probe_rmse=0.9727799259 kept=135 mean_probe_rmse=0.8905354293 seconds=351.1257168
+sweep=152 train_rmse=0.7046976457 noise_sd=0.7047566751 w0=3.498641253 sample_probe_rmse=0.9726611081 kept=136 mean_probe_rmse=0.8905267707 seconds=340.0813562
+sweep=153 train_rmse=0.7047374357 noise_sd=0.7048299163 w0=3.49854517 sample_probe_rmse=0.9727576634 kept=137 mean_probe_rmse=0.8905154318 seconds=351.2814242
+sweep=154 train_rmse=0.7046722835 noise_sd=0.7047410361 w0=3.498569727 sample_probe_rmse=0.9727484129 kept=138 mean_probe_rmse=0.8905051396 seconds=342.2560235
+sweep=155 train_rmse=0.7046767266 noise_sd=0.7047100992 w0=3.498620987 sample_probe_rmse=0.9729596857 kept=139 mean_probe_rmse=0.8904960629 seconds=373.2520789
+sweep=156 train_rmse=0.7046842638 noise_sd=0.7046688461 w0=3.498450756 sample_probe_rmse=0.9728346923 kept=140 mean_probe_rmse=0.8904867478 seconds=350.3610663
+sweep=157 train_rmse=0.7046439891 noise_sd=0.7046761433 w0=3.498599768 sample_probe_rmse=0.972625739 kept=141 mean_probe_rmse=0.8904753456 seconds=331.409633
+sweep=158 train_rmse=0.704679875 noise_sd=0.7046623123 w0=3.498523712 sample_probe_rmse=0.9724739567 kept=142 mean_probe_rmse=0.8904638181 seconds=317.1620916
+sweep=159 train_rmse=0.7046653242 noise_sd=0.7047212755 w0=3.498492241 sample_probe_rmse=0.9720816917 kept=143 mean_probe_rmse=0.8904507427 seconds=330.0763652
+sweep=160 train_rmse=0.7046948851 noise_sd=0.7046822917 w0=3.498443127 sample_probe_rmse=0.972337899 kept=144 mean_probe_rmse=0.8904383086 seconds=325.6414479
+final probe_rmse=0.8904383086 kept=144 sweep=160

@@ -133,7 +133,7 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   const auto d = load_dataset(value_after(args, "--data"));
   const fs::path model_path = value_after(args, "--model");
   const std::string output = optional_value_after(args, "--predictions");
-  const uint64_t fingerprint = joint_fingerprint(d);
+  const uint64_t fingerprint = bound_fingerprint(args, d);
   const uint32_t threads = std::max(1U, uint_after(args, "--threads", 8));
   const uint32_t items = d.header.items;
   const bool want_conditional = std::find(args.begin(), args.end(), "--conditional-biases") != args.end();
@@ -186,6 +186,8 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
   const uint32_t F = uint_after(args, "--hidden", 100);
   const uint32_t epochs = uint_after(args, "--iterations", 60);
   const uint32_t patience = uint_after(args, "--patience", 6);
+  // Save every epoch (ending at --iterations) instead of the best probe epoch.
+  const bool fixed_epoch = std::find(args.begin(), args.end(), "--fixed-epoch") != args.end();
   const uint32_t batch = uint_after(args, "--batch", 1000);
   const uint32_t seed = uint_after(args, "--seed", 2026);
   // Rates are per summed user gradient, i.e. BellKor-era "per 100 users" rates / 100.
@@ -373,12 +375,18 @@ void command_rbm(const std::vector<std::string> &args, bool eval_only) {
     m.epoch = epoch;
     const double score = eval_rbm(d, m, threads, po, probe_order, pred, &f);
     if (!std::isfinite(score)) fail("non-finite rbm run");
-    if (score < best) { best = score; stale = 0; save_rbm(model_path, m, fingerprint); export_predictions(); }
-    else ++stale;
+    if (fixed_epoch || score < best) {
+      best = std::min(best, score); stale = 0; save_rbm(model_path, m, fingerprint); export_predictions();
+    } else {
+      ++stale;
+    }
     const double seconds = std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     std::cout << std::setprecision(10) << "epoch=" << epoch << " cd=" << cd
               << " train_rmse=" << std::sqrt(std::accumulate(sse.begin(), sse.end(), 0.0)/d.header.train_count)
               << " probe_rmse=" << score << " best=" << best << " seconds=" << seconds << std::endl;
-    if (patience && stale >= patience) { std::cout << "early_stop patience=" << patience << std::endl; break; }
+    if (!fixed_epoch && patience && stale >= patience) {
+      std::cout << "early_stop patience=" << patience << std::endl;
+      break;
+    }
   }
 }

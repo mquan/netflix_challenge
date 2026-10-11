@@ -1,0 +1,54 @@
+{
+  "name": "A2b-refit",
+  "strategy": "A2 sequence encoder, --suffix-prob 0, full refit saving every epoch, MPS",
+  "command": [
+    "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/486c41ba-b11a-4089-9aed-5a5d16f0c2cf/scratchpad/venv/bin/python",
+    "/Users/quan/workspace/netflix_challenge/.claude/worktrees/agent-ae222b177c95376d0/scripts/masked_sequence.py",
+    "--data",
+    "data/processed/netflix.bin",
+    "--output",
+    "artifacts/masked/A2b-refit",
+    "--save-epochs",
+    "--epochs",
+    "14",
+    "--patience",
+    "3",
+    "--threads",
+    "1",
+    "--seed",
+    "20260928",
+    "--device",
+    "mps",
+    "--suffix-prob",
+    "0"
+  ],
+  "started_utc": "2026-10-03T22:08:12.707497+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "efe38d79dd04c5caf54a74ad0ebcbf0587e1eaf3",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "c270df82e8fbde721737a8fd19f2778f914175b2c9be0e86d23c5a98af9ffeed",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-03T22:08:13.646068+00:00",
+  "events_path": "experiments/A2b-refit.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 21345.984353624983,
+  "finished_utc": "2026-10-04T04:03:59.784160+00:00",
+  "log_sha256": "38672b52cd96d82a8400bfe40b34eec2337d93ab12a4aa59a6e989a8b022a061",
+  "events_sha256": "52163ef4f6e6f304febdf4fbdb8fe31da213af63f3675cfc086ef0a238cd39bd"
+}
