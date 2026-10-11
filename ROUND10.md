@@ -45,3 +45,21 @@ log: `experiments/B5-full-r128.log`.
 
 Gate: standalone, compare `mean_probe_rmse` at sweep 160 with B4 (0.88966).
 For the blend, promote only if all five folds improve.
+
+## B5 finished: small standalone gain, not promoted (2026-10-11)
+
+The chain completed at 01:42 PDT. Standalone, B5's posterior mean at sweep 160 is
+**0.88910 probe vs B4's 0.88966** (−0.00056). It was 0.0005 ahead of B4 at
+every sweep compared (64, 80, 94).
+
+| Blend | R9-LAT-A2h | + B5 | Change | Fold changes |
+|---|---:|---:|---:|---|
+| LightGBM-s3 | 0.8671122 | 0.8670916 | −0.0000206 | −.000006 +.000084 +.000019 −.000125 −.000074 |
+| NN2 alone | — | 0.8670695 | −0.000059 | +.000014 +.000034 −.000110 −.000092 −.000142 |
+| 50/50 average | 0.8668706 | **0.8668212** | **−0.0000495** | +.000007 +.000082 −.000061 −.000133 −.000142 |
+
+Folds 0 and 1 are worse, so it fails the promotion rule. As with B3 at sweep 160
+and B4, a better Bayes variant adds about 0.00005 when the bank already holds
+B2/B3/B4: the frequency signal is already supplied by the SGD joint models and the RBM.
+The Bayes settings axis now looks saturated, like the A2 settings axis.
+**Promoted best remains R9-LAT-A2h, 0.8668706.**
