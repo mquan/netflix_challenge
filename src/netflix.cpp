@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <atomic>
 #include <cmath>
 #include <chrono>
 #include <cstdint>
@@ -8,6 +9,7 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <mutex>
 #include <numeric>
 #include <random>
 #include <stdexcept>
@@ -16,6 +18,9 @@
 #include <thread>
 #include <unordered_set>
 #include <vector>
+#ifdef __APPLE__
+#include <Accelerate/Accelerate.h>
+#endif
 
 namespace fs = std::filesystem;
 
@@ -1633,6 +1638,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "bar.hpp"
 #include "integrated.hpp"
 #include "temporal_neighborhood.hpp"
+#include "user_neighborhood.hpp"
 
 // Two research branches introduced different RBM visible-bias formats under
 // the same version-2 magic. Inspect the first payload word to preserve both
@@ -1694,6 +1700,11 @@ void usage() {
          "--predictions FILE\n"
       << "  netflix knn --data FILE --graph FILE --time-model FILE "
          "--predictions FILE [--support FILE] [--neighbors N] [--power X] [--shrink X]\n"
+      << "  netflix user-knn --data FILE --joint-model FILE --predictions FILE "
+         "[--base-train FILE --base-probe FILE] [--support FILE] [--support-count FILE] "
+         "[--factor-predictions FILE] [--factor-support FILE] [--screen-rank N] [--candidates N] [--neighbors N] "
+         "[--alpha X] [--power X] [--shrink X] [--time-decay X] [--max-raters N] "
+         "[--query-modulo N] [--threads N]\n"
       << "  netflix integrated --data FILE --graph FILE --model FILE "
          "[--factors N] [--init-model FILE] [--neighbor-rate X] [--predictions FILE]\n"
       << "  netflix eval-integrated --data FILE --graph FILE --model FILE [--predictions FILE]\n"
@@ -1760,6 +1771,8 @@ int main(int argc, char **argv) {
       command_temporal_neighborhood(args, true);
     } else if (command == "knn") {
       command_knn(args);
+    } else if (command == "user-knn") {
+      command_user_knn(args);
     } else if (command == "integrated") {
       command_integrated(args, false);
     } else if (command == "eval-integrated") {
