@@ -9,7 +9,13 @@
 struct IntegratedNeighbors {
   const NeighborGraph &g;
   const std::vector<float> &residual;
-  std::vector<float> w, c;
+  std::vector<float> w, c, beta;
+  std::vector<uint16_t> known_day;
+  std::vector<float> explicit_weight, implicit_weight;
+  bool temporal = false;
+  uint32_t active_user = 0;
+  uint16_t target_day = 0;
+  float decay_gradient = 0;
   std::vector<uint32_t> rated, known;
   std::vector<float> known_residual;
   std::vector<uint32_t> explicit_edges, implicit_edges;
@@ -18,42 +24,61 @@ struct IntegratedNeighbors {
   IntegratedNeighbors(const Dataset &d, const NeighborGraph &graph, const std::vector<float> &r)
       : g(graph), residual(r), w(graph.neighbor.size(), 0), c(graph.neighbor.size(), 0),
         rated(d.header.items, UINT32_MAX), known(d.header.items, UINT32_MAX),
-        known_residual(d.header.items, 0) {}
+        known_residual(d.header.items, 0) {
+    beta.assign(d.header.users, 0); known_day.assign(d.header.items, 0);
+  }
 
   void reset() {
     std::fill(rated.begin(), rated.end(), UINT32_MAX);
     std::fill(known.begin(), known.end(), UINT32_MAX);
   }
   void fill_user(const Dataset &d, uint32_t u) {
-    for (uint64_t p = d.implicit_offsets[u]; p < d.implicit_offsets[u+1]; ++p) known[d.implicit_items[p]-1] = u;
+    for (uint64_t p = d.implicit_offsets[u]; p < d.implicit_offsets[u+1]; ++p) { known[d.implicit_items[p]-1] = u; known_day[d.implicit_items[p]-1] = d.implicit_days[p]; }
     for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
       const uint32_t i = d.train_items[p]-1; rated[i] = u; known_residual[i] = residual[p];
     }
   }
-  float correction(uint32_t u, uint32_t i) {
+  float correction(uint32_t u, uint32_t i, uint16_t day) {
+    active_user = u; target_day = day; decay_gradient = 0;
+    explicit_weight.clear(); implicit_weight.clear();
     explicit_edges.clear(); implicit_edges.clear();
-    float a = 0, b = 0;
+    float a = 0, b = 0, da = 0, db = 0;
     for (uint32_t j = i*g.k; j < (i+1)*g.k; ++j) {
       if (g.similarity[j] == 0) continue;
       const uint32_t other = g.neighbor[j];
-      if (rated[other] == u) { explicit_edges.push_back(j); a += w[j]*known_residual[other]; }
-      if (known[other] == u) { implicit_edges.push_back(j); b += c[j]; }
+      if (known[other] != u) continue;
+      const float dt = float(std::abs(int(day)-int(known_day[other])));
+      const float weight = temporal ? std::exp(-beta[u]*dt) : 1;
+      if (rated[other] == u) {
+        explicit_edges.push_back(j); explicit_weight.push_back(weight);
+        const float value = weight*w[j]*known_residual[other]; a += value; da -= dt*value;
+      }
+      implicit_edges.push_back(j); implicit_weight.push_back(weight);
+      const float value = weight*c[j]; b += value; db -= dt*value;
     }
     explicit_norm = 1/std::sqrt(float(std::max<size_t>(1, explicit_edges.size())));
     implicit_norm = 1/std::sqrt(float(std::max<size_t>(1, implicit_edges.size())));
+    decay_gradient = da*explicit_norm+db*implicit_norm;
     return a*explicit_norm + b*implicit_norm;
   }
-  void update(float err, float lr, float reg) {
-    for (uint32_t j : explicit_edges)
-      w[j] += lr*(err*explicit_norm*known_residual[g.neighbor[j]]-reg*w[j]);
-    for (uint32_t j : implicit_edges) c[j] += lr*(err*implicit_norm-reg*c[j]);
+  void update(float err, float lr, float reg, float decay_lr, float decay_reg) {
+    for (size_t k = 0; k < explicit_edges.size(); ++k) {
+      const uint32_t j = explicit_edges[k];
+      w[j] += lr*(err*explicit_norm*explicit_weight[k]*known_residual[g.neighbor[j]]-reg*w[j]);
+    }
+    for (size_t k = 0; k < implicit_edges.size(); ++k) {
+      const uint32_t j = implicit_edges[k];
+      c[j] += lr*(err*implicit_norm*implicit_weight[k]-reg*c[j]);
+    }
+    if (temporal) beta[active_user] = std::max(0.F, beta[active_user]+decay_lr*(err*decay_gradient-decay_reg*beta[active_user]));
   }
 };
 
 void save_integrated_neighbors(const fs::path &path, const IntegratedNeighbors &n, uint64_t graph_hash) {
   std::ofstream out(path.string()+".tmp", std::ios::binary);
-  write_pod(out, uint64_t(0x4E46494E54474E31ULL)); write_pod(out, graph_hash);
+  write_pod(out, uint64_t(n.temporal ? 0x4E46494E54474E32ULL : 0x4E46494E54474E31ULL)); write_pod(out, graph_hash);
   write_vector(out, n.w); write_vector(out, n.c);
+  if (n.temporal) write_vector(out, n.beta);
   out.close(); if (!out) fail("integrated neighbor write failed");
   fs::rename(path.string()+".tmp", path);
 }
@@ -62,8 +87,9 @@ void load_integrated_neighbors(const fs::path &path, IntegratedNeighbors &n, uin
   std::ifstream in(path, std::ios::binary);
   uint64_t magic = 0, hash = 0;
   read_pod(in, magic); read_pod(in, hash);
-  if (magic != 0x4E46494E54474E31ULL || hash != graph_hash) fail("integrated neighbor file mismatch");
+  if ((magic != 0x4E46494E54474E31ULL && magic != 0x4E46494E54474E32ULL) || hash != graph_hash) fail("integrated neighbor file mismatch");
   read_vector(in, n.w, n.w.size()); read_vector(in, n.c, n.c.size());
+  if (magic == 0x4E46494E54474E32ULL) { n.temporal = true; read_vector(in, n.beta, n.beta.size()); }
   if (in.peek() != std::char_traits<char>::eof()) fail("trailing integrated neighbor data");
 }
 
@@ -78,7 +104,7 @@ double eval_integrated(const Dataset &d, const JointFeatures &f, const JointMode
     n.fill_user(d, u);
     for (uint64_t q = po[u]; q < po[u+1]; ++q) {
       const uint32_t p = probe_order[q];
-      pred[p] += n.correction(u, d.probe[p].item-1);
+      pred[p] += n.correction(u, d.probe[p].item-1, d.probe[p].day);
       const double err = d.probe[p].rating-clipped(pred[p]); sse += err*err;
     }
   }
@@ -133,6 +159,10 @@ void command_integrated(const std::vector<std::string> &args, bool eval_only) {
   if (m.rank != rank || m.day_rank || !m.frequency_factors.empty())
     fail("integrated requires matching rank and no day or frequency factors");
   if (!init.empty() && fs::exists(init+".nbr")) load_integrated_neighbors(init+".nbr", n, graph_hash);
+  n.temporal = uint_after(args, "--temporal-neighbors", n.temporal ? 1 : 0) != 0;
+  const float decay_lr = float(double_after(args, "--neighbor-decay-rate", 1e-7));
+  const float decay_reg = float(double_after(args, "--neighbor-decay-reg", .01));
+  if (decay_lr < 0 || decay_reg < 0) fail("invalid neighbor decay parameters");
   const uint32_t start_epoch = uint_after(args, "--start-epoch", 1);
   if (!start_epoch || start_epoch > epochs) fail("invalid --start-epoch");
   std::mt19937 rng(seed);
@@ -143,7 +173,7 @@ void command_integrated(const std::vector<std::string> &args, bool eval_only) {
   uint32_t stale = 0;
   std::cout << "integrated factors=" << rank << " seed=" << seed << " lr=" << lr0 << " regularization=" << reg
             << " decay=" << decay << " neighbor_rate=" << nlr0 << " neighbor_reg=" << nreg
-            << " k=" << g.k << " init_model=" << init << std::endl;
+            << " temporal_neighbors=" << n.temporal << " decay_rate=" << decay_lr << " k=" << g.k << " init_model=" << init << std::endl;
   for (uint32_t epoch = start_epoch; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     const float lr = lr0*std::pow(decay, float(epoch-1)), nlr = nlr0*std::pow(decay, float(epoch-1));
@@ -178,10 +208,10 @@ void command_integrated(const std::vector<std::string> &args, bool eval_only) {
         float pred = float(d.header.mean)+b.user_bias[u]+b.user_alpha[u]*dev+b.day_bias[s]
                      +item*scale+b.item_frequency_bias[freq];
         for (uint32_t k = 0; k < rank; ++k) pred += q[k]*(p[k]+a[k]*dev+h[k]);
-        pred += n.correction(u, i);
+        pred += n.correction(u, i, day);
         const float err = float(d.train_ratings[pos])-pred;
         sse += double(err)*err;
-        n.update(err, nlr, nreg);
+        n.update(err, nlr, nreg, decay_lr, decay_reg);
         b.user_bias[u] += base_rate*.00267F*(err-.0255F*b.user_bias[u]);
         b.user_alpha[u] += base_rate*.00000311F*(err*dev-3.95F*b.user_alpha[u]);
         b.day_bias[s] += base_rate*.00257F*(err-.00231F*b.day_bias[s]);

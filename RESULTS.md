@@ -1,5 +1,28 @@
 # Score progression
 
+## BAR exploration (`paper-implementations`)
+
+Two full-data runs of the binary attribute representation model from Deyo and
+Elser (2023), implemented in `src/bar.hpp`. Both use 8 attributes, 59 selected
+movies and all 480,189 users. All preprocessing and fits exclude Probe labels;
+checkpoint selection uses only subset training RMSE. Final scores use all
+1,408,395 Probe rows and clip predictions to `[1,5]`.
+
+| Run | Method | Training RMSE after all-movie regression | Probe RMSE |
+| --- | --- | ---: | ---: |
+| BAR baseline | Training-only movie mean plus user residual mean | — | 0.9879307111 |
+| BAR1 | Paper interval projection, 200 iterations | 0.9036484883 | 0.9834745089 |
+| BAR2 | Upstream projection, 1,000 iterations; checkpoint 350 | 0.8807776576 | **0.9741851128** |
+
+This tested configuration improves its own baseline but does not improve the
+existing ensemble. Its training error must not be interpreted as held-out
+prediction accuracy. The paper's larger 16/32-attribute configurations remain
+untested. The port uses float32 replicas, a safeguarded projection solver and
+ridge 0.001 for movie regression; it is not an exact numerical reproduction.
+See [implementation details](PAPER_IMPLEMENTATIONS.md) and the `BAR*` experiment
+manifests/logs. An independent Python scorer confirms both scores and saved
+models reproduce their predictions byte for byte on reload.
+
 ## Fixed average of two session-context ensembles (2026-10-01)
 
 C11 adds two training-only same-day joint-residual features to C10 and scores

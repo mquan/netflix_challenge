@@ -210,6 +210,32 @@ runs timestamp every output line. The CSV also supports elapsed time minus
 recorded idle/rate-limit/timeout intervals, without assuming unknown gaps are
 idle. See [timing and activity accounting](experiments/TIMING.md).
 
+## Binary attribute representation (BAR)
+
+The experimental `bar` command implements dense divide-and-concur RRR for
+binary user attributes, followed by movie regression. It learns every
+parameter from training ratings and selects its checkpoint by training error.
+The full Probe is used only for final scoring. See
+[the paper review and experiment results](PAPER_IMPLEMENTATIONS.md) for the
+paper/source differences and why training RMSE cannot be compared with the
+Netflix winning test score.
+
+```sh
+build/netflix bar --data data/processed/netflix.bin \
+  --model artifacts/bar.bin --predictions artifacts/bar.f32 \
+  --attributes 8 --movies 59 --iterations 1000 --threads 4 \
+  --eval-every 50 --projection upstream
+build/netflix eval-bar --data data/processed/netflix.bin \
+  --model artifacts/bar.bin --predictions artifacts/bar-reloaded.f32
+```
+
+`--projection paper` uses the stated interval projection; `upstream` matches
+the authors' projection-to-center behavior inside that interval. Replicas use
+float32, and movie regression uses ridge 0.001. The default replica allocation
+limit is 8 GiB (`--max-replica-gib`); the configuration above uses 3.38 GiB for
+replicas, plus the dataset and other arrays. Predictions use the usual Probe
+row order and remain unclipped until scoring.
+
 ## Independent local-kernel experiments
 
 The `moonshot-local-kernels` branch adds a separate research binary using local

@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp src/integrated.hpp src/temporal_neighborhood.hpp | build
+$(BIN): src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp src/bar.hpp src/integrated.hpp src/temporal_neighborhood.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
@@ -88,6 +88,7 @@ test: $(BIN)
 	python3 tests/test_temporal_neighborhood.py
 	python3 tests/test_rbm.py
 	python3 tests/test_timeline.py
+	python3 tests/test_bar.py
 
 clean:
 	rm -rf build
@@ -121,3 +122,9 @@ build/moonshot_adaptive: src/moonshot_adaptive.cpp src/netflix.cpp src/joint.hpp
 moonshot-session-meta: build/moonshot_session_meta
 build/moonshot_session_meta: src/moonshot_session_meta.cpp src/netflix.cpp src/joint.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
+
+.PHONY: test-push
+test-push: $(BIN)
+	python3 tests/test_push.py
+	$(CXX) $(CXXFLAGS) tests/check_temporal_neighbor.cpp -o build/check-temporal-neighbor
+	build/check-temporal-neighbor

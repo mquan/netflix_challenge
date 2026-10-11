@@ -198,7 +198,8 @@ std::string optional_value_after(const std::vector<std::string> &args,
 
 uint32_t uint_after(const std::vector<std::string> &args,
                     const std::string &flag, uint32_t fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const auto result = std::stoul(text, &used);
   if (used != text.size() || result > std::numeric_limits<uint32_t>::max()) {
@@ -209,7 +210,8 @@ uint32_t uint_after(const std::vector<std::string> &args,
 
 double double_after(const std::vector<std::string> &args,
                     const std::string &flag, double fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const double result = std::stod(text, &used);
   if (used != text.size() || !std::isfinite(result)) {
@@ -1628,6 +1630,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "neighborhood.hpp"
 #include "rbm.hpp"
 #include "rbm_visible_context.hpp"
+#include "bar.hpp"
 #include "integrated.hpp"
 #include "temporal_neighborhood.hpp"
 
@@ -1698,6 +1701,9 @@ void usage() {
          "[--threads N] [--visible-context 0..7] [--fixed-epoch] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix bayes --data FILE --model FILE [--factors N] [--samples N] [--item-freq 0..2]\n"
+      << "  netflix bar --data FILE --model FILE [--attributes N] [--movies N] "
+         "[--iterations N] [--threads N] [--predictions FILE]\n"
+      << "  netflix eval-bar --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix check-implicit\n";
 }
 
@@ -1769,6 +1775,10 @@ int main(int argc, char **argv) {
         rbm_visible_context::command_rbm(args, true);
       else
         command_rbm(args, true);
+    } else if (command == "bar") {
+      command_bar(args, false);
+    } else if (command == "eval-bar") {
+      command_bar(args, true);
     } else {
       usage();
       return 2;
