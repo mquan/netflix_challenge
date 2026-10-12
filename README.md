@@ -1,12 +1,20 @@
 # Netflix Prize reconstruction
 
-Explore the [interactive research journey](research_journey.html) for the score
-timeline, recorded training-run curves, strategy decisions, and attribution
-evidence. Rebuild it with `python3 scripts/build_research_journey.py`.
+Explore the [interactive research journey](https://mquan.github.io/netflix_challenge/)
+for the score timeline, recorded training-run curves, strategy decisions, and
+attribution evidence. The [standalone HTML](research_journey.html) can be rebuilt
+with `python3 scripts/build_research_journey.py`.
 
 This project targets the **original Netflix Prize dataset and split**, not the
 later PRML 2019 classroom contest. It implements selected BellKor-style models,
 not the complete winning ensemble.
+
+## Progress at a glance
+
+[![Netflix Prize RMSE progress from B1 to R10, marked with Claude and Codex logos, with Cinematch and 10 percent goal reference lines](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+
+Probe CV points and Netflix Test reference lines use different evaluation sets.
+Click the graph for the interactive report and the source of each score.
 
 ## Validation
 
