@@ -1,5 +1,9 @@
 # Netflix Prize reconstruction
 
+Explore the [interactive research journey](research_journey.html) for the score
+timeline, recorded training-run curves, strategy decisions, and attribution
+evidence. Rebuild it with `python3 scripts/build_research_journey.py`.
+
 This project targets the **original Netflix Prize dataset and split**, not the
 later PRML 2019 classroom contest. It implements selected BellKor-style models,
 not the complete winning ensemble.
