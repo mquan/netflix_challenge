@@ -65,7 +65,37 @@ Each test-score mapping is dev CV − (a − b) − (c − b).
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Phase 0 core 9 | 0.84309 | 0.88350 | 0.87595 | 0.87577 | 0.00755 | −0.00018 | −0.0074 |
 | core 9 + A2h | 0.84054 | 0.88094 | 0.87316 | 0.87287 | **0.00779** | −0.00029 | **−0.0075** |
+| core 9 + B4 | 0.83734 | 0.88038 | 0.87299 | 0.87275 | 0.00739 | −0.00024 | −0.0072 |
+| core 9 + B4 + A2h | 0.83658 | 0.87865 | 0.87101 | 0.87080 | **0.00764** | −0.00021 | **−0.0074** |
 
 core + A2h fold a − b: .00791 .00835 .00735 .00745 .00787 (Phase 0 core:
 .00760 .00827 .00690 .00735 .00762). Adding the transformer leaves the offset
 essentially unchanged, +0.0001. Report: `experiments/r12/P12-core-A2h.json`.
+
+- 2026-10-13 (evening): `R12-B4-union` finished 160 sweeps (144 kept). B4 alone
+  scores 0.89756 on the original probe trained without P2 (a) vs. 0.88966 for the
+  full B4 run (b): a standalone retraining gain of 0.0079, between Phase 0's
+  factor (0.009) and masked-history (0.006) columns.
+
+Fold a − b, core + B4: .00744 .00799 .00690 .00709 .00751. Core + B4 + A2h:
+.00772 .00814 .00729 .00725 .00780. Reports: `experiments/r12/P12-core-B4.json`,
+`experiments/r12/P12-core-B4-A2h.json`.
+
+## Verdict
+
+**The offset does not move.** With both of the families that now carry the bank
+included, test ≈ dev CV − 0.00764 + 0.00021 = **dev CV − 0.0074**, the same as
+Phase 0. B4 slightly *lowers* the retraining gain (−0.00016) and A2h slightly
+raises it (+0.00024); they cancel. The fold spread (0.0072–0.0081) is about as
+wide as the change between banks, so no bank tested distinguishes itself.
+
+- Target for 0.85725 test: **dev CV ≈ 0.8647** (0.85725 + 0.0074).
+- Best: R9-LAT-A2h 0.8668706. **Real gap ≈ 0.0022**, as before.
+
+The hoped-for shortcut, that the 79-column, session-aware bank gains much more
+from Stage C than the 9-column one, is ruled out for the two dominant families.
+Remaining blend columns are smaller variants of the same families, so a full
+79-column rehearsal is not expected to change this by more than ~0.0003.
+The retrain path itself is now rehearsed for both Bayes (union dataset, one
+chain) and the transformer (saved-checkpoint scoring), which the final
+submission needs.

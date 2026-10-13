@@ -53,5 +53,20 @@
     }
   },
   "launched_utc": "2026-10-13T14:40:13.748006+00:00",
-  "events_path": "experiments/R12-B4-union.events.jsonl"
+  "events_path": "experiments/R12-B4-union.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 21240.241978792008,
+  "finished_utc": "2026-10-13T21:02:42.791370+00:00",
+  "log_sha256": "1f1e091cb38757084382fa1d07bb891eaf4f2573ab10fb6373abbd0f3711d3b0",
+  "events_sha256": "f5047cefbc3c6a4cb76f19c4a0281056f2e3c1793fb2d20a0911bf56a3c3ca37",
+  "model_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.bin",
+    "sha256": "9bb8833bc276e2d9290132049845408a45881bb5cd3a153cd3f036bb7c77edbf",
+    "bytes": 1131852606
+  },
+  "predictions_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.f32",
+    "sha256": "adf6dc0b99f2c67bf8804d8b5914d1e2d5282f1183a9e2a4f5fc88a87863798d",
+    "bytes": 11263844
+  }
 }
