@@ -77,3 +77,32 @@ That is the MT1 signal. Next design, if the pilot shows any life: a
 **session-bag** group in the FM. It holds the items in N(u, day) with weight
 |N(u,day)|^−½ and factors, organised as relational blocks per user-day, like the
 existing user-bag per user.
+
+## S2 pilot: day-specific user factors are dead (2026-10-12)
+
+| Arm (P2, rank 16, 40 sweeps, seed 29) | Posterior-mean RMSE | Fold changes |
+|---|---:|---|
+| Control `--session 1 --item-freq 1` | 0.8856975 | — (round 9's identical run: 0.8857266) |
+| `--session 2` (p_u,t factors) | 0.8855767 | −.000129 +.000022 −.000090 −.000136 −.000271 |
+
+That is −0.00012, far below the 0.002 gate, with fold 1 worse. Not scaled. This
+is what the error analysis predicts.
+
+## Session-bag group (2026-10-12)
+
+New FM group `session-bag` in `src/bayes.hpp` (`--session-bag 1|2`, off by
+default). Each user-day session is a relational block with
+q_s = |N(u,d)|^−½ Σ_{j ∈ N(u,d)} y_j over that day's implicit movies (train,
+probe and qualifying). Each training and probe row joins its session's block.
+Blocks are sampled between the user and item blocks, with the same exact
+residual updates. Bag parameters use Hogwild across items, followed by an exact
+recomputation of the caches. Checkpoint magic moves to NFPBAYS3.
+
+Checks: with one thread, the off-path is bit-identical to the old sampler. With
+several threads even the old binary differs from run to run, because Hogwild
+bags are nondeterministic. Tests now include the session bag in the
+residual-exactness test (1 and 3 threads, drift ≈5e-8), the train/probe feature
+agreement test and the probe-label isolation test.
+
+Pilot `R11-SB-pilot-{sbag2,sbag1}`: the same P2 configuration as the S2 control,
+plus `--session-bag 2` or `1`. Gate as before: ≥0.002 vs. control, all folds.
