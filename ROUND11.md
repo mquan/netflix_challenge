@@ -51,3 +51,29 @@ pilot gate is therefore set high.
 
 - 2026-10-12 22:55: pilot arms `R11-S2-pilot-{control,session}` launched
   (binary `artifacts/r11/netflix-bayes-s2`, outputs `artifacts/r11/S2-pilot-*`).
+
+## Error analysis of the promoted blend (2026-10-12)
+
+Breakdown of R9-LAT-A2h-NN2.avg probe errors (scratch script, not committed):
+
+| Rows | Share of rows | Blend RMSE | Share of squared error |
+|---|---:|---:|---:|
+| No training rating on the probe day | 63% | 0.893 | 67% |
+| Some training rating on the probe day | 37% | 0.806–0.842 | 33% |
+| Gap to last training date 31–180 d / >180 d | 29% / 5.7% | 0.916 / 1.009 | — |
+| Same-day implicit set = only the row itself | 22% | 0.916 | — |
+| Same-day implicit set ≥ 10 movies | — | ≈0.815 | — |
+
+No single column beats the blend in any bin. Per-bin bias is ≤0.009, and refitting
+the blend per bin gains <0.00003, so nothing is left in recalibration. Ratings
+of 1 and 5 hold 55% of the error. Shrinkage is strongest for users with no same-day
+training ratings.
+
+**Consequence for this round.** A one-hot p_u,t factor carries no data for the 63%
+of rows without same-day training ratings: it stays at its prior. `--session 2`
+can only help the low-error third. The signal that reaches every row is *which
+movies* the user rated that day, from implicit train, probe and qualifying pairs.
+That is the MT1 signal. Next design, if the pilot shows any life: a
+**session-bag** group in the FM. It holds the items in N(u, day) with weight
+|N(u,day)|^−½ and factors, organised as relational blocks per user-day, like the
+existing user-bag per user.
