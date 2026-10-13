@@ -76,7 +76,8 @@ class BayesTests(unittest.TestCase):
             for threads in (1, 3):
                 out = run('bayes', '--data', p/'d.bin', '--model', p/'m.bin', '--factors', 3,
                           '--samples', 3, '--burn-in', 1, '--threads', threads, '--session', 2,
-                          '--item-freq', 2, '--check-residuals').stdout
+                          '--item-freq', 2, '--session-bag', 2, '--aux-init-std', .1,
+                          '--check-residuals').stdout
                 drift = [float(x) for x in re.findall(r'residual_drift=(\S+)', out)]
                 self.assertEqual(len(drift), 3)
                 self.assertLess(max(drift), 1e-6, out)
@@ -110,7 +111,7 @@ class BayesTests(unittest.TestCase):
             p = pathlib.Path(temp); dataset(p/'d.bin', probe_is_train=True)
             out = run('bayes', '--data', p/'d.bin', '--model', p/'m.bin', '--factors', 3,
                       '--samples', 4, '--burn-in', 1, '--day', 2, '--item-bin', 2, '--session', 2,
-                      '--drift', 2, '--item-freq', 2, '--aux-init-std', .1).stdout
+                      '--drift', 2, '--item-freq', 2, '--session-bag', 2, '--aux-init-std', .1).stdout
             for line in out.splitlines()[1:5]:
                 train = float(re.search(r'train_rmse=(\S+)', line).group(1))
                 probe = float(re.search(r'sample_probe_rmse=(\S+)', line).group(1))
@@ -123,7 +124,8 @@ class BayesTests(unittest.TestCase):
             dataset(p/'a.bin'); dataset(p/'b.bin', flip_probe=True)
             for name in ('a', 'b'):
                 run('bayes', '--data', p/(name+'.bin'), '--model', p/(name+'.model'), '--factors', 3,
-                    '--samples', 3, '--burn-in', 1, '--item-freq', 1, '--predictions', p/(name+'.f32'))
+                    '--samples', 3, '--burn-in', 1, '--item-freq', 1, '--session-bag', 2,
+                    '--predictions', p/(name+'.f32'))
             self.assertEqual((p/'a.model').read_bytes()[16:], (p/'b.model').read_bytes()[16:])
             self.assertEqual((p/'a.f32').read_bytes(), (p/'b.f32').read_bytes())
             run('bayes', '--data', p/'b.bin', '--model', p/'x.model', '--init-model', p/'a.model',
