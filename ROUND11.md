@@ -106,3 +106,35 @@ agreement test and the probe-label isolation test.
 
 Pilot `R11-SB-pilot-{sbag2,sbag1}`: the same P2 configuration as the S2 control,
 plus `--session-bag 2` or `1`. Gate as before: ≥0.002 vs. control, all folds.
+
+### Session-bag pilot: real but too small, not scaled (2026-10-13)
+
+| Arm | Posterior-mean RMSE | Change vs control | Fold changes |
+|---|---:|---:|---|
+| `--session-bag 1` (linear) | 0.8856645 | −0.000033 | +.000067 +.000138 +.000046 −.000400 −.000016 |
+| `--session-bag 2` (factors) | 0.8851155 | −0.000582 | −.000174 −.000817 −.000389 −.000935 −.000595 |
+
+With factors, all folds improve, but the gain is a quarter of the 0.002 gate. It
+costs 2.1× the sweep time (49 vs. 23 s at rank 16). The closest precedent is
+item-freq: −0.0010 in the same pilot, then −0.00005 in the blend. So a full
+rank-128 run (≈15 h) is not justified. Likely reason: N(u) already contains
+these movies through the user bag, and a bilinear FM term can use the
+same-day set only additively. MT1's gain came from a nonlinear network that also
+saw *visible same-day ratings*.
+
+## Round 11 verdict
+
+Both factor-model routes to the same-day signal are exhausted:
+p_u,t factors (−0.00012) and the session bag (−0.00058 standalone). The error
+analysis shows the remaining error is in rows that extrapolate past the user's
+last training day, and no blend recalibration recovers any of it.
+
+The dev metric is harshest on exactly these rows. On the real qualifying set,
+Stage C retrains on probe, so most qualifying rows *do* get same-day and
+recent training ratings. That is where Phase 0's 0.0074 offset comes from. The
+offset was measured on a 9-column bank, and the current 79-column bank leans
+on session-aware neural columns. Re-measuring it (GAP_AUDIT Bet 4) is the
+highest-value next step: it decides whether the real gap is ≈0.0023 or much
+smaller, and it rehearses the retrain path the final submission needs anyway.
+
+**Promoted best remains R9-LAT-A2h, 0.8668706.**
