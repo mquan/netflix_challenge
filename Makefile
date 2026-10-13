@@ -13,7 +13,7 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/integrated.hpp | build
+$(BIN): src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/integrated.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 download: $(ARCHIVE)
@@ -94,7 +94,7 @@ clean:
 .PHONY: moonshot-gp test-moonshot-gp
 moonshot-gp: build/moonshot_gp
 
-build/moonshot_gp: src/moonshot_gp.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+build/moonshot_gp: src/moonshot_gp.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
 
 test-moonshot-gp: $(BIN) build/moonshot_gp
@@ -102,10 +102,10 @@ test-moonshot-gp: $(BIN) build/moonshot_gp
 
 .PHONY: moonshot-local
 moonshot-local: build/moonshot_local
-build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 .PHONY: moonshot-user-kernel
 moonshot-user-kernel: build/moonshot_user_kernel
-build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
