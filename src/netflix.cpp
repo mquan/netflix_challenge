@@ -1623,6 +1623,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 }
 
 #include "joint.hpp"
+#include "bayes.hpp"
 #include "ensemble.hpp"
 #include "neighborhood.hpp"
 #include "rbm.hpp"
@@ -1666,6 +1667,7 @@ void usage() {
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
          "[--threads N] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
+      << "  netflix bayes --data FILE --model FILE [--factors N] [--samples N] [--item-freq 0..2]\n"
       << "  netflix check-implicit\n";
 }
 
@@ -1704,6 +1706,8 @@ int main(int argc, char **argv) {
       command_joint(args, false);
     } else if (command == "eval-joint") {
       command_joint(args, true);
+    } else if (command == "bayes") {
+      bayes::command(args);
     } else if (command == "check-implicit") {
       check_implicit_update();
     } else if (command == "ensemble") {
