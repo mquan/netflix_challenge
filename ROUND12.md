@@ -53,3 +53,18 @@ sweep count was fixed in advance (160), and the blender is fit on P2.
 - 2026-10-13 07:40: union dataset built (1,407,566 P2 + 1,408,395 original
   probe rows; 97,664,546 training ratings). `R12-B4-union` launched (8 threads).
   A2h predictions on P2 and the view dataset launched on MPS.
+- 2026-10-13: A2h checkpoint reproduces its P2 score exactly (0.8674023 vs.
+  recorded 0.867402). On the original probe it scores 0.90005 (a column) vs. the
+  retrained refit's 0.89014 (b column), a standalone retraining gain of 0.0099.
+
+## Results
+
+Each test-score mapping is dev CV − (a − b) − (c − b).
+
+| Bank | fit (P2, in-sample) | a | b | c | a − b | c − b | dev CV → test |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Phase 0 core 9 | 0.84309 | 0.88350 | 0.87595 | 0.87577 | 0.00755 | −0.00018 | −0.0074 |
+| core 9 + A2h | 0.84054 | 0.88094 | 0.87316 | 0.87287 | **0.00779** | −0.00029 | **−0.0075** |
+
+A2h folds, a − b: computed from the a and b fold RMSE in `P12-core-A2h.json`.
+Adding the transformer leaves the offset essentially unchanged, +0.0001.
