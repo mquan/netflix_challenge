@@ -66,5 +66,6 @@ Each test-score mapping is dev CV − (a − b) − (c − b).
 | Phase 0 core 9 | 0.84309 | 0.88350 | 0.87595 | 0.87577 | 0.00755 | −0.00018 | −0.0074 |
 | core 9 + A2h | 0.84054 | 0.88094 | 0.87316 | 0.87287 | **0.00779** | −0.00029 | **−0.0075** |
 
-A2h folds, a − b: computed from the a and b fold RMSE in `P12-core-A2h.json`.
-Adding the transformer leaves the offset essentially unchanged, +0.0001.
+core + A2h fold a − b: .00791 .00835 .00735 .00745 .00787 (Phase 0 core:
+.00760 .00827 .00690 .00735 .00762). Adding the transformer leaves the offset
+essentially unchanged, +0.0001. Report: `experiments/r12/P12-core-A2h.json`.
