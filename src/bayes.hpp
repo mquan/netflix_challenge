@@ -19,6 +19,9 @@
 //   item_bin  one-hot item x 30 time bins          (timeSVD++ b_i,Bin(t))
 //   session   one-hot user-day                     (timeSVD++ b_u,t)
 //   drift     user id with value dev_u(t)/rms      (timeSVD++ alpha_u dev)
+//   session_bag items in N(u, day), weight |N(u,day)|^-p (S-block: the movies
+//             the user rated that day, incl. probe/qualifying pairs; off by
+//             default, --session-bag 1|2)
 //
 // Learning is element-wise Gibbs sampling (Freudenthaler, Schmidt-Thieme &
 // Rendle 2011): every parameter has a Gaussian prior N(mu_g, 1/lambda_g), with
@@ -47,13 +50,14 @@
 namespace bayes {
 
 enum Group : uint32_t {
-  kUser, kUserBag, kItem, kItemBag, kDay, kItemBin, kSession, kDrift, kItemFreq, kGroups
+  kUser, kUserBag, kItem, kItemBag, kDay, kItemBin, kSession, kDrift, kItemFreq, kSessionBag, kGroups
 };
 constexpr const char *kGroupNames[kGroups] = {
-    "user", "user-bag", "item", "item-bag", "day", "item-bin", "session", "drift", "item-freq"};
+    "user", "user-bag", "item", "item-bag", "day", "item-bin", "session", "drift", "item-freq",
+    "session-bag"};
 constexpr Group kRowGroups[] = {kDay, kItemBin, kSession, kDrift, kItemFreq};
 constexpr size_t kRowGroupCount = sizeof(kRowGroups)/sizeof(kRowGroups[0]);
-constexpr uint64_t kMagic = 0x4E46504241595332ULL;  // NFPBAYS2: includes item-frequency group
+constexpr uint64_t kMagic = 0x4E46504241595333ULL;  // NFPBAYS3: includes session-bag group
 
 struct Model {
   uint32_t rank = 0, sweep = 0, kept = 0;
@@ -91,8 +95,8 @@ struct Clock {
   explicit Clock(double &a) : acc(a) {}
   ~Clock() { acc += std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count(); }
 };
-enum Profile { kPass, kRowDraw, kBlockSum, kUserBagDraw, kItemBagDraw, kProbe, kProfiles };
-constexpr const char *kProfileNames[kProfiles] = {"row_pass", "row_draw", "block_sum", "user_bag_draw", "item_bag_draw", "probe"};
+enum Profile { kPass, kRowDraw, kBlockSum, kUserBagDraw, kItemBagDraw, kSessionBagDraw, kProbe, kProfiles };
+constexpr const char *kProfileNames[kProfiles] = {"row_pass", "row_draw", "block_sum", "user_bag_draw", "item_bag_draw", "session_bag_draw", "probe"};
 
 template<class F> void parallel(uint32_t threads, F fn) {
   if (threads == 1) { fn(0U); return; }
@@ -123,8 +127,13 @@ struct Sampler {
   std::vector<uint8_t> row_bin, probe_bin;
   std::vector<uint64_t> item_offsets, user_weight;
   std::vector<uint32_t> item_users, user_cut, item_cut, bag_item_cut, bag_user_cut;
-  std::vector<Block> ub, ib;
-  std::vector<double> uq0, us0, iq0, is0, iq1, is1, uq1;
+  std::vector<Block> ub, ib, sb;
+  std::vector<double> uq0, us0, iq0, is0, iq1, is1, uq1, sq0, ss0, sq1;
+  // Session bag: implicit range of each user-day session, and the inverted
+  // index item -> sessions whose implicit set contains it.
+  bool sbag = false;
+  std::vector<uint64_t> session_implicit, item_session_offsets;
+  std::vector<uint32_t> item_sessions, bag_session_item_cut;
   bool pending = false; int pending_f = -1;  // deferred item-block residual update
   std::vector<double> E;            // train residuals y - yhat
   std::vector<float> QR;            // row-level factor sum for the current f
@@ -135,7 +144,7 @@ struct Sampler {
   std::vector<double> probe_pred;
   std::array<double, kProfiles> prof{};
 
-  enum Kind { kNone, kRow, kUserBlock, kItemBlock };
+  enum Kind { kNone, kRow, kUserBlock, kItemBlock, kSessionBlock };
 
   Sampler(const Dataset &d_, const TemporalIndex &t_, const JointFeatures &f_, Model &m_,
           uint32_t threads_) : d(d_), t(t_), f(f_), m(m_), threads(threads_) {
@@ -191,6 +200,38 @@ struct Sampler {
     }
     for (auto &l : local) l.item.resize(size_t(items)*4);
     probe_pred.resize(d.probe.size());
+    sbag = m.mode[kSessionBag] != 0;
+    if (sbag) build_session_bag();
+  }
+
+  void build_session_bag() {
+    const uint64_t sessions = t.session_days.size();
+    session_implicit.assign(sessions+1, 0);
+    for (uint32_t u = 0; u < users; ++u) {
+      uint64_t pos = d.implicit_offsets[u];
+      for (uint64_t s = t.session_offsets[u]; s < t.session_offsets[u+1]; ++s) {
+        session_implicit[s] = pos;
+        while (pos < d.implicit_offsets[u+1] && d.implicit_days[pos] == t.session_days[s]) ++pos;
+      }
+      if (pos != d.implicit_offsets[u+1]) fail("session bag: implicit days out of order");
+    }
+    session_implicit[sessions] = d.header.implicit_count;
+    item_session_offsets.assign(size_t(items)+1, 0);
+    for (uint64_t j = 0; j < d.header.implicit_count; ++j) ++item_session_offsets[d.implicit_items[j]];
+    std::partial_sum(item_session_offsets.begin(), item_session_offsets.end(), item_session_offsets.begin());
+    item_sessions.resize(d.header.implicit_count);
+    std::vector<uint64_t> fill(item_session_offsets.begin(), item_session_offsets.end()-1);
+    for (uint64_t s = 0; s < sessions; ++s)
+      for (uint64_t j = session_implicit[s]; j < session_implicit[s+1]; ++j)
+        item_sessions[fill[d.implicit_items[j]-1]++] = uint32_t(s);
+    sb.assign(sessions, Block());
+    for (uint64_t p = 0; p < d.header.train_count; ++p) sb[f.train_session[p]].s0 += 1;
+    for (uint64_t s = 0; s < sessions; ++s) {
+      const uint64_t n = session_implicit[s+1]-session_implicit[s];
+      sb[s].x = n ? float(std::pow(double(n), -double(m.bag_power))) : 0;
+    }
+    sq0.resize(sessions); ss0.resize(sessions); sq1.resize(sessions);
+    bag_session_item_cut = balanced_cuts(item_session_offsets, threads);
   }
 
   bool factors(Group g) const { return m.mode[g] == 2; }
@@ -232,6 +273,7 @@ struct Sampler {
         case kNone: go(a, std::integral_constant<int, kNone>()); break;
         case kRow: go(a, std::integral_constant<int, kRow>()); break;
         case kUserBlock: go(a, std::integral_constant<int, kUserBlock>()); break;
+        case kSessionBlock: go(a, std::integral_constant<int, kSessionBlock>()); break;
         default: go(a, std::integral_constant<int, kItemBlock>()); break;
       }
     };
@@ -239,6 +281,7 @@ struct Sampler {
       case kNone: with_target(std::integral_constant<int, kNone>()); break;
       case kRow: with_target(std::integral_constant<int, kRow>()); break;
       case kUserBlock: with_target(std::integral_constant<int, kUserBlock>()); break;
+      case kSessionBlock: with_target(std::integral_constant<int, kSessionBlock>()); break;
       default: with_target(std::integral_constant<int, kItemBlock>()); break;
     }
   }
@@ -272,9 +315,14 @@ struct Sampler {
       for (uint32_t u = user_cut[th]; u < user_cut[th+1]; ++u) {
         double s1 = 0, s2 = 0, se = 0, sqe = 0;
         const Block &bu = ub[u];
+        if (tk == kSessionBlock)
+          for (uint64_t s = t.session_offsets[u]; s < t.session_offsets[u+1]; ++s)
+            sb[s].s1 = sb[s].s2 = sb[s].se = sb[s].sqe = 0;
         for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
           const uint32_t i = d.train_items[p]-1;
           const Block &bi = ib[i];
+          const uint32_t si = sbag ? f.train_session[p] : 0;
+          const double bsq = sbag ? sb[si].q : 0;
           double e = E[p]-shift;
           float qr = use_qr ? QR[p] : 0;
           uint64_t j; float x;
@@ -285,22 +333,29 @@ struct Sampler {
               if (af < 0) e -= double(change)*x;
               else {
                 const double old = double(av[j])-change;
-                e -= double(change)*x*(qr+bu.q+bi.q-old*x);
+                e -= double(change)*x*(qr+bu.q+bi.q+bsq-old*x);
                 qr += change*x;
               }
             }
           } else if (ak == kUserBlock) {
             if (af < 0) e -= bu.q-uq0[u];
             else {
-              const double qo = uq0[u], qout = double(qr)+bi.q;
+              const double qo = uq0[u], qout = double(qr)+bi.q+bsq;
               e -= .5*(bu.q*bu.q-qo*qo)+qout*(bu.q-qo)-.5*(bu.s-us0[u]);
+            }
+          } else if (ak == kSessionBlock) {
+            const Block &bs = sb[si];
+            if (af < 0) e -= bs.q-sq0[si];
+            else {
+              const double qo = sq0[si], qout = double(qr)+bu.q+bi.q;
+              e -= .5*(bs.q*bs.q-qo*qo)+qout*(bs.q-qo)-.5*(bs.s-ss0[si]);
             }
           } else if (ak == kItemBlock) {
             // Reads the saved end-of-phase caches (iq1, is1, uq1) because this
             // apply is deferred into the next phase, after blocks are recomputed.
             if (af < 0) e -= iq1[i]-iq0[i];
             else {
-              const double qo = iq0[i], qn = iq1[i], qout = double(qr)+uq1[u];
+              const double qo = iq0[i], qn = iq1[i], qout = double(qr)+uq1[u]+(sbag ? sq1[si] : 0);
               e -= .5*(qn*qn-qo*qo)+qout*(qn-qo)-.5*(is1[i]-is0[i]);
             }
           }
@@ -312,13 +367,17 @@ struct Sampler {
           }
           if (tk == kRow) {
             train_feature(tg, u, p, j, x);
-            const double h = tf < 0 ? x : x*(qr+bu.q+bi.q-double(tv[j])*x);
+            const double h = tf < 0 ? x : x*(qr+bu.q+bi.q+bsq-double(tv[j])*x);
             la[j] += h*h; lb[j] += h*e;
           } else if (tk == kUserBlock) {
-            const double qout = tf < 0 ? 0 : double(qr)+bi.q;
+            const double qout = tf < 0 ? 0 : double(qr)+bi.q+bsq;
             s1 += qout; s2 += qout*qout; se += e; sqe += qout*e;
+          } else if (tk == kSessionBlock) {
+            const double qout = tf < 0 ? 0 : double(qr)+bu.q+bi.q;
+            Block &bs = sb[si];
+            bs.s1 += qout; bs.s2 += qout*qout; bs.se += e; bs.sqe += qout*e;
           } else if (tk == kItemBlock) {
-            const double qout = tf < 0 ? 0 : double(qr)+bu.q;
+            const double qout = tf < 0 ? 0 : double(qr)+bu.q+bsq;
             double *it = &l.item[size_t(i)*4];
             it[0] += qout; it[1] += qout*qout; it[2] += e; it[3] += qout*e;
           }
@@ -393,6 +452,27 @@ struct Sampler {
           const double x = ib[i].x; q += x*sum; s += x*x*sq;
         }
         ib[i].q = q; ib[i].s = s;
+      }
+    });
+  }
+
+  bool session_bag_active(int fac) const { return fac < 0 ? m.mode[kSessionBag] >= 1 : factors(kSessionBag); }
+  void compute_session_blocks(int fac) {
+    if (!sbag) return;
+    Clock clock(prof[kBlockSum]);
+    const float *bagv = !session_bag_active(fac) ? nullptr
+                        : fac < 0 ? m.w[kSessionBag].data() : V(kSessionBag, uint32_t(fac));
+    parallel(threads, [&](uint32_t th) {
+      for (uint64_t s = t.session_offsets[user_cut[th]]; s < t.session_offsets[user_cut[th+1]]; ++s) {
+        double q = 0, sq = 0;
+        if (bagv) {
+          double sum = 0, ss = 0;
+          for (uint64_t j = session_implicit[s]; j < session_implicit[s+1]; ++j) {
+            const double y = bagv[d.implicit_items[j]-1]; sum += y; ss += y*y;
+          }
+          const double x = sb[s].x; q = x*sum; sq = fac < 0 ? 0 : x*x*ss;
+        }
+        sb[s].q = q; sb[s].s = sq;
       }
     });
   }
@@ -474,6 +554,37 @@ struct Sampler {
     if (threads > 1) compute_item_blocks(fac);
   }
 
+  // Session-bag parameters: shared by the sessions whose implicit set holds the
+  // item. No owner parameter. Hogwild across items with several threads, then
+  // exact cache recomputation, as for the other bags.
+  void sample_session_blocks(int fac) {
+    Clock clock(prof[kSessionBagDraw]);
+    const bool linear = fac < 0;
+    float *bv = linear ? m.w[kSessionBag].data() : V(kSessionBag, uint32_t(fac));
+    const double bmu = linear ? m.w_mu[kSessionBag] : m.v_mu[kSessionBag][size_t(fac)];
+    const double blam = linear ? m.w_lambda[kSessionBag] : m.v_lambda[kSessionBag][size_t(fac)];
+    std::vector<uint64_t> seeds(threads);
+    for (auto &s : seeds) s = rng();
+    parallel(threads, [&](uint32_t th) {
+      std::mt19937_64 r(seeds[th]);
+      const uint64_t lo = threads == 1 ? 0 : bag_session_item_cut[th];
+      const uint64_t hi = threads == 1 ? items : bag_session_item_cut[th+1];
+      for (uint64_t j = lo; j < hi; ++j) {
+        double a = 0, bb = 0; const double old = bv[j];
+        for (uint64_t k = item_session_offsets[j]; k < item_session_offsets[j+1]; ++k) {
+          const Block &b = sb[item_sessions[k]]; block_stats(b, old, b.x, linear, a, bb);
+        }
+        const float next = draw(old, a, bb, m.alpha, bmu, blam, r);
+        if (double(next) != old)
+          for (uint64_t k = item_session_offsets[j]; k < item_session_offsets[j+1]; ++k) {
+            Block &b = sb[item_sessions[k]]; block_update(b, old, next, b.x, linear);
+          }
+        bv[j] = next;
+      }
+    });
+    if (threads > 1) compute_session_blocks(fac);
+  }
+
   // Normal-Gamma hyperprior draws (libFM: alpha0 = beta0 = gamma0 = 1, mu0 = 0).
   void draw_hyper(const float *values, uint64_t n, double &mu, double &lambda) {
     double ss = 0, sum = 0;
@@ -520,10 +631,11 @@ struct Sampler {
         const double y = double(rv[k][j])*x; qr += y; sr += y*y;
       }
       const Block &bu = ub[r.user], &bi = ib[r.item-1];
-      if (fac < 0) probe_pred[n] = m.w0+qr+bu.q+bi.q;
+      const double bsq = sbag ? sb[f.probe_session[n]].q : 0, bss = sbag ? sb[f.probe_session[n]].s : 0;
+      if (fac < 0) probe_pred[n] = m.w0+qr+bu.q+bi.q+bsq;
       else {
-        const double q = qr+bu.q+bi.q;
-        probe_pred[n] += .5*(q*q-(sr+bu.s+bi.s));
+        const double q = qr+bu.q+bi.q+bsq;
+        probe_pred[n] += .5*(q*q-(sr+bu.s+bi.s+bss));
       }
     }
   }
@@ -532,7 +644,7 @@ struct Sampler {
   // applies the previous group's change and gathers statistics for the next.
   void phase(int fac, double shift) {
     const bool linear = fac < 0;
-    compute_user_blocks(fac); compute_item_blocks(fac);
+    compute_user_blocks(fac); compute_item_blocks(fac); compute_session_blocks(fac);
     // The previous phase's item-block update rides along with the first pass.
     Kind ak = pending ? kItemBlock : kNone; Group ag = kItem;
     int af = pending ? pending_f : fac;
@@ -546,11 +658,19 @@ struct Sampler {
     pass(first ? shift : 0, af, ak, ag, fac, kUserBlock, kUser, first && !linear);
     for (uint32_t u = 0; u < users; ++u) { uq0[u] = ub[u].q; us0[u] = ub[u].s; }
     sample_user_blocks(fac);
-    pass(0, fac, kUserBlock, kUser, fac, kItemBlock, kItem, false);
+    if (sbag && session_bag_active(fac)) {
+      pass(0, fac, kUserBlock, kUser, fac, kSessionBlock, kSessionBag, false);
+      for (uint64_t s = 0; s < sb.size(); ++s) { sq0[s] = sb[s].q; ss0[s] = sb[s].s; }
+      sample_session_blocks(fac);
+      pass(0, fac, kSessionBlock, kSessionBag, fac, kItemBlock, kItem, false);
+    } else {
+      pass(0, fac, kUserBlock, kUser, fac, kItemBlock, kItem, false);
+    }
     for (uint32_t i = 0; i < items; ++i) { iq0[i] = ib[i].q; is0[i] = ib[i].s; }
     sample_item_blocks(fac);
     for (uint32_t i = 0; i < items; ++i) { iq1[i] = ib[i].q; is1[i] = ib[i].s; }
     for (uint32_t u = 0; u < users; ++u) uq1[u] = ub[u].q;
+    for (uint64_t s = 0; s < sb.size(); ++s) sq1[s] = sb[s].q;
     pending = true; pending_f = fac;
     probe_contribution(fac);
   }
@@ -563,7 +683,7 @@ struct Sampler {
   void recompute_residuals(std::vector<double> &out) {
     out.resize(d.header.train_count);
     for (int fac = -1; fac < int(m.rank); ++fac) {
-      compute_user_blocks(fac); compute_item_blocks(fac);
+      compute_user_blocks(fac); compute_item_blocks(fac); compute_session_blocks(fac);
       std::array<const float *, kRowGroupCount> rv{};
       for (size_t k = 0; k < kRowGroupCount; ++k) {
         const Group g = kRowGroups[k];
@@ -578,8 +698,9 @@ struct Sampler {
               const double y = double(rv[k][j])*x; qr += y; sr += y*y;
             }
             const Block &bu = ub[u], &bi = ib[d.train_items[p]-1];
-            if (fac < 0) out[p] = double(d.train_ratings[p])-(m.w0+qr+bu.q+bi.q);
-            else { const double q = qr+bu.q+bi.q; out[p] -= .5*(q*q-(sr+bu.s+bi.s)); }
+            const double bsq = sbag ? sb[f.train_session[p]].q : 0, bss = sbag ? sb[f.train_session[p]].s : 0;
+            if (fac < 0) out[p] = double(d.train_ratings[p])-(m.w0+qr+bu.q+bi.q+bsq);
+            else { const double q = qr+bu.q+bi.q+bsq; out[p] -= .5*(q*q-(sr+bu.s+bi.s+bss)); }
           }
       });
     }
@@ -696,6 +817,7 @@ void command(const std::vector<std::string> &args) {
     m.mode[kSession] = uint_after(args, "--session", 1);
     m.mode[kDrift] = uint_after(args, "--drift", 1);
     m.mode[kItemFreq] = uint_after(args, "--item-freq", 0);
+    m.mode[kSessionBag] = uint_after(args, "--session-bag", 0);
     for (uint32_t g = 0; g < kGroups; ++g) if (m.mode[g] > 2) fail(std::string("invalid mode for ")+kGroupNames[g]);
     m.bag_power = float(double_after(args, "--bag-power", .5));
     if (m.bag_power < 0 || m.bag_power > 1) fail("invalid --bag-power");
@@ -705,7 +827,7 @@ void command(const std::vector<std::string> &args) {
     if (!(aux_std >= 0)) fail("invalid --aux-init-std");
     m.size = {d.header.users, d.header.items, d.header.items, d.header.users,
               uint64_t(d.header.max_day-d.header.min_day)+1, uint64_t(d.header.items)*kTimeBins,
-              t.session_days.size(), d.header.users, uint64_t(d.header.items)*kFrequencyBins};
+              t.session_days.size(), d.header.users, uint64_t(d.header.items)*kFrequencyBins, d.header.items};
     double dev2 = 0;
     for (uint64_t p = 0; p < d.header.train_count; ++p) { const double v = feats.dev[feats.train_session[p]]; dev2 += v*v; }
     m.drift_scale = float(std::sqrt(dev2/double(d.header.train_count)));
