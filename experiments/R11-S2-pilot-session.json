@@ -1,0 +1,70 @@
+{
+  "name": "R11-S2-pilot-session",
+  "strategy": "P2 pilot rank 16, item-freq 1, session mode 2",
+  "command": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/netflix-bayes-s2",
+    "bayes",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+    "--model",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/S2-pilot-session.bin",
+    "--predictions",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/S2-pilot-session.f32",
+    "--factors",
+    "16",
+    "--samples",
+    "40",
+    "--burn-in",
+    "16",
+    "--threads",
+    "2",
+    "--seed",
+    "29",
+    "--item-freq",
+    "1",
+    "--session",
+    "2",
+    "--checkpoint-every",
+    "8"
+  ],
+  "started_utc": "2026-10-13T05:54:10.020805+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "075c9310a739aec4b303acf467b1c1cb7adc3ff5",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/bayes.hpp": "aecef3234b0df0c515815e8aaa8efff8f78ea1d29c4f8257885db41114811c6b",
+    "src/neighborhood.hpp": "64b48a24ccc9e4dbac0e25ea02d9d27395afb080de421c4b2b546f09f730d399",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "438c1936e436b0eb0eebe1d46b529bd07743d43c7433710790491a6444765d0b",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "73807c8118b6070f6b6ef92d70c6728d55a800df1523f75e198f26288003c8f7",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": {
+      "sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+      "bytes": 926087170
+    }
+  },
+  "launched_utc": "2026-10-13T05:54:10.512304+00:00",
+  "events_path": "experiments/R11-S2-pilot-session.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 1286.1597084590467,
+  "finished_utc": "2026-10-13T06:15:36.673151+00:00",
+  "log_sha256": "7823b454fe9effc080c37abf827c5129e8a73d1b7342830a0aab2bcbdbe75617",
+  "events_sha256": "02dfd7ad36b64db97e1be82484443fede4a1e3b292e26015ad81a52a083a7c87",
+  "model_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/r11/S2-pilot-session.bin",
+    "sha256": "43d7f8eed128bc5c5471debf26a666943507f4aaec3e9854a396e62f999afe3e",
+    "bytes": 1316902745
+  },
+  "predictions_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/r11/S2-pilot-session.f32",
+    "sha256": "bfb6e8dfca377be1d12e739500a84633fca6a27c066b3acedc2f45a2f33cf01e",
+    "bytes": 5630264
+  }
+}

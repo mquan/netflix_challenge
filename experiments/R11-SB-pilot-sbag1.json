@@ -1,0 +1,71 @@
+{
+  "name": "R11-SB-pilot-sbag1",
+  "strategy": "P2 pilot rank 16, item-freq 1, session-bag mode 1",
+  "command": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/netflix-bayes-sbag",
+    "bayes",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+    "--model",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/SB-pilot-sbag1.bin",
+    "--predictions",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r11/SB-pilot-sbag1.f32",
+    "--factors",
+    "16",
+    "--samples",
+    "40",
+    "--burn-in",
+    "16",
+    "--threads",
+    "2",
+    "--seed",
+    "29",
+    "--item-freq",
+    "1",
+    "--session-bag",
+    "1",
+    "--checkpoint-every",
+    "8",
+    "--profile"
+  ],
+  "started_utc": "2026-10-13T06:19:50.625762+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "2f24db0bbd44e2867df10af4e3cf71884796e2a6",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/bayes.hpp": "e598b16bc21344120792077257c116ec8bcddb883bb657aed417c6afecb67aea",
+    "src/neighborhood.hpp": "64b48a24ccc9e4dbac0e25ea02d9d27395afb080de421c4b2b546f09f730d399",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "438c1936e436b0eb0eebe1d46b529bd07743d43c7433710790491a6444765d0b",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "2384bc47a0a4ea9fbee3f7a8e711ca6b40f00eef54e6c6225459c499edae1d49",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": {
+      "sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+      "bytes": 926087170
+    }
+  },
+  "launched_utc": "2026-10-13T06:19:51.089653+00:00",
+  "events_path": "experiments/R11-SB-pilot-sbag1.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 1133.267308083945,
+  "finished_utc": "2026-10-13T06:38:44.374501+00:00",
+  "log_sha256": "537738c5431492b8f7e1fb8b42ea2ba24a47284c0fee2ad7fc077497bc9f6ee8",
+  "events_sha256": "cb1bb688327765aa5c1ce8dea15c44b6db029939c0d040cfbe89ca0f0eae6371",
+  "model_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/r11/SB-pilot-sbag1.bin",
+    "sha256": "3dace710189f210cec2f3aaeec43b3035b9c2eb5c77e626ce3ad6f786b1a5fd0",
+    "bytes": 156238775
+  },
+  "predictions_artifact": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/r11/SB-pilot-sbag1.f32",
+    "sha256": "1dc6c0f87742646b47e2db92fdd11e1b903f11c9082a051540460e218290b1dc",
+    "bytes": 5630264
+  }
+}
