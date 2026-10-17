@@ -45,11 +45,11 @@ ICONS = {name: icon_path(name) for name in ("claude", "codex")}
 COLOR = {"claude": "#D97757", "codex": "#BAAAFF"}
 svg = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">',
-    '<title id="title">Netflix Prize research score progress</title>',
+    '<title id="title">Can AI win the $1M Netflix Challenge</title>',
     '<desc id="desc">Five-user-fold Probe CV scores from B1 through R10, with Codex and Claude logos, and separate Cinematch and ten-percent Test reference bands.</desc>',
     '<rect width="1600" height="900" fill="#10131d"/>',
     '<rect x="92" y="232" width="1435" height="460" rx="16" fill="#181d29"/>',
-    '<text x="94" y="70" fill="#f2f1ed" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700">Can AI win the Netflix Challenge</text>',
+    '<text x="94" y="70" fill="#f2f1ed" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700">Can AI win the $1M Netflix Challenge</text>',
     '<text x="96" y="110" fill="#a8b0c2" font-family="Arial,Helvetica,sans-serif" font-size="23">Score progress by calendar date · lower RMSE is better</text>',
 ]
 
