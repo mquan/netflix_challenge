@@ -44,6 +44,29 @@ RUNS = [
     ("B3-full-r128", "Bayesian factors", "mean_probe_rmse", "sweep", "Posterior-mean factor learning", "claude"),
 ]
 
+# Selected public Quiz leaderboard observations, not a continuous reconstruction.
+# Dates for annual prizes are the dated announcement/report, not necessarily submission time.
+COMPETITION = [
+    dict(date="2006-10-02", score=.9514, team="Cinematch", title="The public baseline",
+         note="Netflix launched the challenge with Cinematch at 0.9514 RMSE on the public Quiz set.",
+         source="https://gregstoll.com/~gregstoll/netflixprize/leaderboard20061019.html"),
+    dict(date="2006-10-18", score=.9084, team="How low can he go?", title="First weeks: 0.9084",
+         note="A preserved October 2006 Netflix leaderboard lists this leading submission on October 18.",
+         source="https://gregstoll.com/~gregstoll/netflixprize/leaderboard20061019.html"),
+    dict(date="2007-11-13", score=.8712, team="KorBell / BellKor", title="2007 Progress Prize",
+         note="BellKor blended 107 results; the 0.8712 Quiz score earned the first $50,000 progress prize. Date is the prize announcement.",
+         source="https://pzs.dstu.dp.ua/DataMining/recom/bibl/ProgressPrize2007_KorBell.pdf"),
+    dict(date="2008-11-25", score=.8616, team="BellKor in BigChaos", title="2008 Progress Prize",
+         note="The combined BellKor and BigChaos solution reached 0.8616. Date is the team's report, not its submission.",
+         source="https://www2.seas.gwu.edu/~simhaweb/champalg/cf/papers/ProgressPrize2008_BigChaos.pdf"),
+    dict(date="2009-06-26", score=.8558, team="BellKor's Pragmatic Chaos", title="The 10% line falls",
+         note="The new combined team crossed the public Quiz threshold and started the final 30-day period.",
+         source="https://www.stat.berkeley.edu/~jon/stat-151b-spring-2012/netflix_overview.pdf"),
+    dict(date="2009-07-26", score=.8553, team="The Ensemble", title="Final public leaderboard",
+         note="The Ensemble led the public Quiz board at 0.8553. BellKor's Pragmatic Chaos had 0.8554 on Quiz; both rounded to 0.8567 on hidden Test, and the earlier submission won.",
+         source="https://people.csail.mit.edu/dsontag/courses/ml12/slides/lecture12.pdf"),
+]
+
 # Score or run-recording commits with an explicit Claude co-author trailer.
 CLAUDE_RECORDS = {
     "B6 tree": "325366559b2e4d6395e160d8c47ac8386b805730",
@@ -112,7 +135,9 @@ def main():
     frontier = [item["score"] for item in items if item["metric"] == "cv" and item["status"] == "promoted"]
     if any(before <= after for before, after in zip(frontier, frontier[1:])):
         raise ValueError("Main journey must descend; document screens separately")
-    payload = dict(milestones=items, runs=[run_curve(*run) for run in RUNS])
+    if any(before["score"] <= after["score"] for before, after in zip(COMPETITION, COMPETITION[1:])):
+        raise ValueError("Selected competition leaderboard milestones must descend")
+    payload = dict(milestones=items, runs=[run_curve(*run) for run in RUNS], competition=COMPETITION)
     template = (ROOT / "research_journey.template.html").read_text()
     marker = "__JOURNEY_DATA__"
     if template.count(marker) != 1:
