@@ -1,0 +1,119 @@
+{
+  "run": "artifacts/local-paths/LP2-p2-200k",
+  "pilot_report_sha256": "b44a6d237ea56876a6586f5db66d7b960d157a82a2f31e9a7d3f9db77f721734",
+  "source_sha256": {
+    "/Users/quan/workspace/netflix_challenge/scripts/local_paths_ablation.py": "a00d376b2cf7b0e8bdfbb0b2eb884652012f1fd9b7e4a4c878acd6e0d034a12c",
+    "/Users/quan/workspace/netflix_challenge/scripts/local_paths_pilot.py": "c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4"
+  },
+  "note": "Development attribution on the same P2 evaluation users; no independent-test claim.",
+  "comparisons": {
+    "agreement_only": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.9490130487444588,
+            "10": 0.9490116601841778,
+            "100": 0.949009853468022,
+            "1000": 0.9492072743600874
+          },
+          "evaluation_rmse": 0.9432224793528791
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 1.0,
+          "selection_rmse": {
+            "1": 0.9463524593040433,
+            "10": 0.946356828469327,
+            "100": 0.9464165139654104,
+            "1000": 0.947618490890135
+          },
+          "evaluation_rmse": 0.9403715568373365
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": -0.002850922515542531,
+      "delta_mse": -0.005369980647916218,
+      "cluster_normal_95_mse_interval": [
+        -0.006989414613683227,
+        -0.003750546682149209
+      ]
+    },
+    "histogram_only": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.9490130487444588,
+            "10": 0.9490116601841778,
+            "100": 0.949009853468022,
+            "1000": 0.9492072743600874
+          },
+          "evaluation_rmse": 0.9432224793528791
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.943210131562361,
+            "10": 0.9432089077948522,
+            "100": 0.9431977274388056,
+            "1000": 0.9435612270571622
+          },
+          "evaluation_rmse": 0.9377219756916022
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": -0.0055005036612768565,
+      "delta_mse": -0.010346141861630387,
+      "cluster_normal_95_mse_interval": [
+        -0.012699722293042327,
+        -0.007992561430218446
+      ]
+    },
+    "histogram_beyond_agreement": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 1.0,
+          "selection_rmse": {
+            "1": 0.9463524593040433,
+            "10": 0.946356828469327,
+            "100": 0.9464165139654104,
+            "1000": 0.947618490890135
+          },
+          "evaluation_rmse": 0.9403715568373365
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.9429806806320835,
+            "10": 0.9429782194673764,
+            "100": 0.9429677376508852,
+            "1000": 0.9434323585125824
+          },
+          "evaluation_rmse": 0.937535990404899
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": -0.002835566432437542,
+      "delta_mse": -0.0053249316041811805,
+      "cluster_normal_95_mse_interval": [
+        -0.007162265203937245,
+        -0.0034875980044251163
+      ]
+    }
+  }
+}
