@@ -196,7 +196,7 @@ def main():
     proxy_path.write_text(json.dumps(proxies, indent=2, sort_keys=True)+'\n')
     output = directory / 'score_timeline.csv'
     with output.open('w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDS)
+        writer = csv.DictWriter(f, fieldnames=FIELDS, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
     print(str(output) + ': ' + str(len(rows)) + ' observations')

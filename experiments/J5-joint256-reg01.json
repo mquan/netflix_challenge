@@ -30,5 +30,18 @@
     "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
   },
   "binary_sha256": "985babc15ed3912b2bb146c5a43113fa8ae17f40edd5fbba51f7f4c4c0846613",
-  "metric": "Full Netflix probe development RMSE; no independent test claim"
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "exit_code": 0,
+  "elapsed_seconds": 1916.885934792,
+  "log_sha256": "29ad3cdc93da6be03c34eb8093159c7b485a031d3e3e3fc29659d13b6267ec30",
+  "model_artifact": {
+    "path": "artifacts/joint256-reg01.bin",
+    "sha256": "22af1f5cd98b995664f5f0953d487c82ee0800eeb85f0e55d1f4a77c10aeec03",
+    "bytes": 1173446408
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint256-reg01.f32",
+    "sha256": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+    "bytes": 5633580
+  }
 }

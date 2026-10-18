@@ -1,0 +1,72 @@
+{
+  "name": "J6-frequency-factors128",
+  "strategy": "Warm-start J2 and add movie-by-daily-frequency latent factors, following BellKor equation 16, rate 2e-5 and regularization .02. Six-epoch pilot paired against identical J7 continuation without this component.",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint128-frequency.bin",
+    "--init-model",
+    "artifacts/joint128-reg02.bin",
+    "--factors",
+    "128",
+    "--frequency-factors",
+    "1",
+    "--iterations",
+    "6",
+    "--learning-rate",
+    "0.0012",
+    "--regularization",
+    "0.02",
+    "--decay",
+    "0.95",
+    "--predictions",
+    "artifacts/joint128-frequency.f32"
+  ],
+  "started_utc": "2026-09-27T23:15:46.855554+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "ea9a9c91b7400d535111445414e9fa2426c0ce13ca4e0a368ec801326096f02f",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/joint.hpp": "aa6829b5fdf29af64874d4b9825b7f139adc1978af727f8d121f2ffdc8b2a8cc"
+  },
+  "binary_sha256": "13f81f4cd8271e638f23e7d89b35ba811480d295586cc4263ae60aef107a1a17",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M RESULTS.md\n M experiments/J5-joint256-reg01.log\n M experiments/score_timeline.csv\n M scripts/experiment.py\n M scripts/score_timeline.py\n M src/ensemble.hpp\n M src/joint.hpp\n M src/neighborhood.hpp\n M src/netflix.cpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/B5-quadratic-neighborhood-blend.events.jsonl\n?? experiments/B5-quadratic-neighborhood-blend.json\n?? experiments/B5-quadratic-neighborhood-blend.log\n?? experiments/B5-quadratic-neighborhood-blend.source.zip\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n?? experiments/N2-learned-neighborhood128.events.jsonl\n?? experiments/N2-learned-neighborhood128.json\n?? experiments/N2-learned-neighborhood128.log\n?? experiments/N2-learned-neighborhood128.source.zip\n?? experiments/N3-temporal-neighborhood64.events.jsonl\n?? experiments/N3-temporal-neighborhood64.json\n?? experiments/N3-temporal-neighborhood64.log\n?? experiments/N3-temporal-neighborhood64.source.zip\n",
+  "source_archive": {
+    "path": "experiments/J6-frequency-factors128.source.zip",
+    "sha256": "fb062b7f1b3a0073f2b71f4f80bea5c8aabd1b895ca9806ec2800ab652a1cefa",
+    "bytes": 33857
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/joint128-reg02.bin": {
+      "sha256": "5b4610131eb2fd2fc1f5d612844eb9a36c3298bb284c51c54bc7fa728462abc7",
+      "bytes": 663536380
+    }
+  },
+  "launched_utc": "2026-09-27T23:15:47.717783+00:00",
+  "events_path": "experiments/J6-frequency-factors128.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 381.029228,
+  "finished_utc": "2026-09-27T23:22:08.750555+00:00",
+  "log_sha256": "c0dee612db2d29851b27ab98fa55a825d545a852dd12a5f403f6e8fb52c6a6f0",
+  "events_sha256": "b1d1a0c11fb61859ea8fd499127341225af609b5064e500690972105a28342cb",
+  "model_artifact": {
+    "path": "artifacts/joint128-frequency.bin",
+    "sha256": "2734ada0b4f3e5a5b3fb4de183650f7ea15149179df929f566646f3bda5a4c1b",
+    "bytes": 736322320
+  },
+  "predictions_artifact": {
+    "path": "artifacts/joint128-frequency.f32",
+    "sha256": "f9813b2d3dec36448813c4fa0925a4baf709c5bfc85514388a058e02472372e8",
+    "bytes": 5633580
+  }
+}

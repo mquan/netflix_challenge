@@ -8,6 +8,7 @@ struct JointModel {
   uint32_t rank = 0, epoch = 0;
   uint32_t day_rank = 0;
   std::vector<float> day_factors;
+  std::vector<float> frequency_factors;
 };
 
 struct JointFeatures {
@@ -109,7 +110,7 @@ void save_joint(const fs::path &path, const JointModel &m, uint64_t fingerprint)
   if (!path.parent_path().empty()) fs::create_directories(path.parent_path());
   std::ofstream out(path.string()+".tmp", std::ios::binary);
   if (!out) fail("cannot write joint model");
-  write_pod(out, uint64_t(0x4E46504A4F494E32ULL));
+  write_pod(out, uint64_t(0x4E46504A4F494E33ULL));
   write_pod(out, fingerprint); write_pod(out, m.rank); write_pod(out, m.epoch);
   const auto &b = m.base; const auto &v = m.factors;
   for (const auto *a : {&b.user_bias, &b.user_alpha, &b.user_scale, &b.item_bias,
@@ -119,6 +120,7 @@ void save_joint(const fs::path &path, const JointModel &m, uint64_t fingerprint)
   }
   write_pod(out, m.day_rank);
   write_pod(out, uint64_t(m.day_factors.size())); write_vector(out, m.day_factors);
+  write_pod(out, uint64_t(m.frequency_factors.size())); write_vector(out, m.frequency_factors);
   out.close(); if (!out) fail("joint model write failed");
   fs::rename(path.string()+".tmp", path);
 }
@@ -128,7 +130,7 @@ JointModel load_joint(const fs::path &path, const Dataset &d,
   std::ifstream in(path, std::ios::binary);
   uint64_t magic = 0, hash = 0; uint32_t rank = 0, epoch = 0;
   read_pod(in, magic); read_pod(in, hash); read_pod(in, rank); read_pod(in, epoch);
-  if ((magic != 0x4E46504A4F494E31ULL && magic != 0x4E46504A4F494E32ULL)
+  if ((magic != 0x4E46504A4F494E31ULL && magic != 0x4E46504A4F494E32ULL && magic != 0x4E46504A4F494E33ULL)
       || hash != fingerprint || rank == 0 || rank > 2048)
     fail("joint model format or dataset fingerprint mismatch");
   JointModel m = new_joint(d, t, rank, 0); m.epoch = epoch;
@@ -140,12 +142,17 @@ JointModel load_joint(const fs::path &path, const Dataset &d,
     if (n != a->size()) fail("joint model vector size mismatch");
     read_vector(in, *a, n);
   }
-  if (magic == 0x4E46504A4F494E32ULL) {
+  if (magic != 0x4E46504A4F494E31ULL) {
     read_pod(in, m.day_rank);
     uint64_t size = 0; read_pod(in, size);
     if (m.day_rank > m.rank || size != t.session_days.size()*m.day_rank)
       fail("invalid day-factor dimensions");
     read_vector(in, m.day_factors, size);
+  }
+  if (magic == 0x4E46504A4F494E33ULL) {
+    uint64_t size = 0; read_pod(in, size);
+    if (size && size != size_t(d.header.items)*kFrequencyBins*m.rank) fail("invalid frequency-factor dimensions");
+    read_vector(in,m.frequency_factors,size);
   }
   if (in.peek() != std::char_traits<char>::eof()) fail("trailing joint model data");
   return m;
@@ -170,10 +177,12 @@ double eval_joint(const Dataset &d, const JointFeatures &f, const JointModel &m,
     const float *p = &effective[size_t(r.user)*m.rank];
     const float *a = &m.drift[size_t(r.user)*m.rank];
     const float *q = &m.factors.item_factors[size_t(i)*m.rank];
+    const float *fq = m.frequency_factors.empty() ? nullptr :
+        &m.frequency_factors[(size_t(i)*kFrequencyBins+f.freq[s])*m.rank];
     double pred = joint_base(d, f, m, r.user, i, r.day, s);
-    for (uint32_t k = 0; k < m.rank; ++k) pred += q[k]*(p[k]+a[k]*f.dev[s]);
+    for (uint32_t k = 0; k < m.rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*(p[k]+a[k]*f.dev[s]);
     for (uint32_t k = 0; k < m.day_rank; ++k)
-      pred += q[k]*m.day_factors[size_t(s)*m.day_rank+k];
+      pred += (q[k]+(fq ? fq[k] : 0))*m.day_factors[size_t(s)*m.day_rank+k];
     if (!std::isfinite(pred)) fail("non-finite joint prediction");
     predictions[n] = float(pred); // raw for blending, clip only when scoring
     const double err = r.rating-clipped(predictions[n]); sse += err*err;
@@ -237,10 +246,15 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   const uint32_t day_rank = uint_after(args, "--day-factors", 0);
   const float day_rate = float(double_after(args, "--day-rate", .004));
   const float day_reg = float(double_after(args, "--day-regularization", .01));
+  const bool frequency_factors = uint_after(args, "--frequency-factors", 0) != 0;
+  const float frequency_rate = float(double_after(args, "--frequency-rate", .00002));
+  const float frequency_reg = float(double_after(args, "--frequency-regularization", .02));
   if (!rank || rank > 2048 || !epochs || lr0 <= 0 || reg < 0 || lr0*reg >= 1
       || decay <= 0 || decay > 1 || base_rate <= 0 || drift_rate < 0)
     fail("invalid joint hyperparameters");
   if (day_rank > rank || day_rate <= 0 || day_reg < 0) fail("invalid day-factor settings");
+  if (!std::isfinite(frequency_rate) || !std::isfinite(frequency_reg) || frequency_rate <= 0 || frequency_reg < 0)
+    fail("invalid frequency-factor settings");
   const std::string init = optional_value_after(args, "--init-model");
   JointModel m = init.empty() ? new_joint(d, t, rank, seed) : load_joint(init, d, t, fingerprint);
   if (m.rank != rank) fail("initial model rank differs from --factors");
@@ -249,6 +263,10 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
     m.day_rank = day_rank;
     m.day_factors.assign(t.session_days.size()*day_rank, 0);
   }
+  if (!m.frequency_factors.empty() && !frequency_factors)
+    fail("initial model has frequency factors; enable --frequency-factors 1");
+  if (frequency_factors && m.frequency_factors.empty())
+    m.frequency_factors.assign(size_t(d.header.items)*kFrequencyBins*rank, 0);
   const float implicit_reg = float(double_after(args, "--implicit-regularization", double(reg)));
   const uint32_t threads = std::max(1U, uint_after(args, "--threads", 1));
   if (implicit_reg < 0 || lr0*implicit_reg >= 1) fail("invalid --implicit-regularization");
@@ -258,7 +276,8 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   uint32_t stale = 0;
   std::cout << "joint factors=" << rank << " seed=" << seed << " regularization=" << reg
             << " decay=" << decay << " fingerprint=" << fingerprint << std::endl;
-  std::cout << "day_factors=" << day_rank << " init_model=" << init
+  std::cout << "day_factors=" << day_rank << " frequency_factors=" << frequency_factors
+            << " init_model=" << init
             << " implicit_regularization=" << implicit_reg << " threads=" << threads << std::endl;
   // Per-worker scratch. With --threads 1 the main generator drives every
   // shuffle in the original order, so results match the single-threaded code.
@@ -291,12 +310,13 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
       auto day = d.train_days[pos]; float dev = f.dev[s];
       float *q = &m.factors.item_factors[size_t(i)*rank];
       uint32_t bin = i*kTimeBins+time_bin(d, day), freq = i*kFrequencyBins+f.freq[s];
+      float *fq = frequency_factors ? &m.frequency_factors[size_t(freq)*rank] : nullptr;
       float item = b.item_bias[i]+b.item_bin_bias[bin], scale = b.user_scale[u]+b.day_scale[s];
       float pred = float(d.header.mean)+b.user_bias[u]+b.user_alpha[u]*dev+b.day_bias[s]
                    +item*scale+b.item_frequency_bias[freq];
-      for (uint32_t k = 0; k < rank; ++k) pred += q[k]*(p[k]+a[k]*dev+h[k]);
+      for (uint32_t k = 0; k < rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*(p[k]+a[k]*dev+h[k]);
       float *daily = day_rank ? &m.day_factors[size_t(s)*day_rank] : nullptr;
-      for (uint32_t k = 0; k < day_rank; ++k) pred += q[k]*daily[k];
+      for (uint32_t k = 0; k < day_rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*daily[k];
       float err = float(d.train_ratings[pos])-pred;
       w.sse += double(err)*err;
       b.user_bias[u] += base_rate*.00267F*(err-.0255F*b.user_bias[u]);
@@ -309,12 +329,14 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
       b.item_frequency_bias[freq] += base_rate*.00236F*(err-1.1e-8F*b.item_frequency_bias[freq]);
       for (uint32_t k = 0; k < rank; ++k) {
         float oldq = q[k], oldp = p[k];
+        float effective_q = oldq+(fq ? fq[k] : 0);
         const float dayvalue = k < day_rank ? daily[k] : 0;
         q[k] += lr*(err*(oldp+a[k]*dev+h[k]+dayvalue)-reg*oldq);
-        p[k] += lr*(err*oldq-reg*oldp);
-        a[k] += drift_rate*(err*oldq*dev-50*a[k]);
-        h[k] = cy*h[k]+lr*err*oldq;
-        if (k < day_rank) daily[k] += day_rate*(err*oldq-day_reg*dayvalue);
+        if (fq) fq[k] += frequency_rate*(err*(oldp+a[k]*dev+h[k]+dayvalue)-frequency_reg*fq[k]);
+        p[k] += lr*(err*effective_q-reg*oldp);
+        a[k] += drift_rate*(err*effective_q*dev-50*a[k]);
+        h[k] = cy*h[k]+lr*err*effective_q;
+        if (k < day_rank) daily[k] += day_rate*(err*effective_q-day_reg*dayvalue);
       }
     }
     float shrink = std::pow(cy, float(end-begin));

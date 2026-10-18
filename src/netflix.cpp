@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <atomic>
 #include <cmath>
 #include <chrono>
 #include <cstdint>
@@ -8,6 +9,7 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <mutex>
 #include <numeric>
 #include <random>
 #include <stdexcept>
@@ -16,6 +18,9 @@
 #include <thread>
 #include <unordered_set>
 #include <vector>
+#ifdef __APPLE__
+#include <Accelerate/Accelerate.h>
+#endif
 
 namespace fs = std::filesystem;
 
@@ -198,7 +203,8 @@ std::string optional_value_after(const std::vector<std::string> &args,
 
 uint32_t uint_after(const std::vector<std::string> &args,
                     const std::string &flag, uint32_t fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const auto result = std::stoul(text, &used);
   if (used != text.size() || result > std::numeric_limits<uint32_t>::max()) {
@@ -209,7 +215,8 @@ uint32_t uint_after(const std::vector<std::string> &args,
 
 double double_after(const std::vector<std::string> &args,
                     const std::string &flag, double fallback) {
-  const std::string text = value_after(args, flag, std::to_string(fallback));
+  const std::string text = optional_value_after(args, flag);
+  if (text.empty()) return fallback;
   size_t used = 0;
   const double result = std::stod(text, &used);
   if (used != text.size() || !std::isfinite(result)) {
@@ -1623,10 +1630,39 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 }
 
 #include "joint.hpp"
+#include "bayes.hpp"
 #include "ensemble.hpp"
 #include "neighborhood.hpp"
 #include "rbm.hpp"
+#include "rbm_visible_context.hpp"
+#include "bar.hpp"
 #include "integrated.hpp"
+#include "temporal_neighborhood.hpp"
+#include "user_neighborhood.hpp"
+
+// Two research branches introduced different RBM visible-bias formats under
+// the same version-2 magic. Inspect the first payload word to preserve both
+// sets of existing model checkpoints when evaluating them after the merge.
+bool is_visible_context_rbm(const std::vector<std::string> &args) {
+  const fs::path data_path = value_after(args, "--data");
+  const fs::path model_path = value_after(args, "--model");
+  std::ifstream data(data_path, std::ios::binary), model(model_path, std::ios::binary);
+  if (!data || !model) fail("cannot read rbm dataset or model");
+  DatasetHeader header{};
+  read_pod(data, header);
+  uint64_t magic = 0, fingerprint = 0;
+  uint32_t hidden = 0, epoch = 0;
+  read_pod(model, magic); read_pod(model, fingerprint);
+  read_pod(model, hidden); read_pod(model, epoch);
+  if (magic != 0x4E4650524253324DULL) return false;
+  if (!hidden || hidden > 4096) fail("invalid rbm hidden size");
+  const uint64_t floats = uint64_t(header.items)*5*hidden + uint64_t(header.items)*5
+                        + hidden + uint64_t(header.items)*hidden;
+  model.seekg(24 + std::streamoff(floats*4), std::ios::beg);
+  uint32_t context = 0;
+  read_pod(model, context);
+  return context >= 1 && context <= 7;
+}
 
 void usage() {
   std::cerr
@@ -1649,23 +1685,36 @@ void usage() {
       << "  netflix blend-svdpp --data FILE --time-model FILE --model-a "
          "FILE --model-b FILE [--time-svd-model-b FILE] [--model-c FILE]\n"
       << "  netflix joint --data FILE --model FILE [--factors N] [--iterations N] "
-         "[--day-factors N] [--init-model FILE] [--predictions FILE]\n"
+         "[--day-factors N] [--frequency-factors 1] [--init-model FILE] [--predictions FILE]\n"
       << "  netflix eval-joint --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix ensemble --data FILE --prediction FILE [--prediction FILE ...] "
-         "[--contexts 1] [--predictions FILE] [--weights FILE]\n"
+         "[--contexts 1] [--quadratic 1] [--predictions FILE] [--weights FILE]\n"
       << "  netflix graph --data FILE --graph FILE [--neighbors N] [--history-cap N]\n"
       << "  netflix neighborhood --data FILE --graph FILE --time-model FILE "
-         "--model FILE --predictions FILE [--iterations N]\n"
+         "--model FILE --predictions FILE [--iterations N] [--time-decay X]\n"
       << "  netflix eval-neighborhood --data FILE --graph FILE --time-model FILE "
          "--model FILE --predictions FILE\n"
+      << "  netflix temporal-neighborhood --data FILE --graph FILE --model FILE "
+         "--predictions FILE [--time-model FILE] [--iterations N] [--fixed-epoch]\n"
+      << "  netflix eval-temporal-neighborhood --data FILE --graph FILE --model FILE "
+         "--predictions FILE\n"
       << "  netflix knn --data FILE --graph FILE --time-model FILE "
          "--predictions FILE [--support FILE] [--neighbors N] [--power X] [--shrink X]\n"
+      << "  netflix user-knn --data FILE --joint-model FILE --predictions FILE "
+         "[--base-train FILE --base-probe FILE] [--support FILE] [--support-count FILE] "
+         "[--factor-predictions FILE] [--factor-support FILE] [--screen-rank N] [--candidates N] [--neighbors N] "
+         "[--alpha X] [--power X] [--shrink X] [--time-decay X] [--max-raters N] "
+         "[--query-modulo N] [--threads N]\n"
       << "  netflix integrated --data FILE --graph FILE --model FILE "
          "[--factors N] [--init-model FILE] [--neighbor-rate X] [--predictions FILE]\n"
       << "  netflix eval-integrated --data FILE --graph FILE --model FILE [--predictions FILE]\n"
       << "  netflix rbm --data FILE --model FILE [--hidden N] [--iterations N] "
-         "[--threads N] [--predictions FILE]\n"
+         "[--threads N] [--visible-context 0..7] [--fixed-epoch] [--predictions FILE]\n"
       << "  netflix eval-rbm --data FILE --model FILE [--predictions FILE]\n"
+      << "  netflix bayes --data FILE --model FILE [--factors N] [--samples N] [--item-freq 0..2]\n"
+      << "  netflix bar --data FILE --model FILE [--attributes N] [--movies N] "
+         "[--iterations N] [--threads N] [--predictions FILE]\n"
+      << "  netflix eval-bar --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix check-implicit\n";
 }
 
@@ -1704,6 +1753,8 @@ int main(int argc, char **argv) {
       command_joint(args, false);
     } else if (command == "eval-joint") {
       command_joint(args, true);
+    } else if (command == "bayes") {
+      bayes::command(args);
     } else if (command == "check-implicit") {
       check_implicit_update();
     } else if (command == "ensemble") {
@@ -1714,16 +1765,33 @@ int main(int argc, char **argv) {
       command_neighborhood(args, false);
     } else if (command == "eval-neighborhood") {
       command_neighborhood(args, true);
+    } else if (command == "temporal-neighborhood") {
+      command_temporal_neighborhood(args, false);
+    } else if (command == "eval-temporal-neighborhood") {
+      command_temporal_neighborhood(args, true);
     } else if (command == "knn") {
       command_knn(args);
+    } else if (command == "user-knn") {
+      command_user_knn(args);
     } else if (command == "integrated") {
       command_integrated(args, false);
     } else if (command == "eval-integrated") {
       command_integrated(args, true);
     } else if (command == "rbm") {
-      command_rbm(args, false);
+      if (std::find(args.begin(), args.end(), "--visible-context") != args.end() ||
+          std::find(args.begin(), args.end(), "--fixed-epoch") != args.end())
+        rbm_visible_context::command_rbm(args, false);
+      else
+        command_rbm(args, false);
     } else if (command == "eval-rbm") {
-      command_rbm(args, true);
+      if (is_visible_context_rbm(args))
+        rbm_visible_context::command_rbm(args, true);
+      else
+        command_rbm(args, true);
+    } else if (command == "bar") {
+      command_bar(args, false);
+    } else if (command == "eval-bar") {
+      command_bar(args, true);
     } else {
       usage();
       return 2;

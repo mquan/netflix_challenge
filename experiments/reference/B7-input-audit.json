@@ -1,0 +1,23 @@
+{
+  "manifest": "experiments/B7-add-neighborhood128.json",
+  "required": 11,
+  "exact_count": 11,
+  "relocated_count": 0,
+  "unavailable_count": 0,
+  "exact": {
+    "data/processed/netflix.bin": "data/processed/netflix.bin",
+    "artifacts/legacy.a.f32": "artifacts/legacy.a.f32",
+    "artifacts/legacy.b.f32": "artifacts/legacy.b.f32",
+    "artifacts/legacy.c.f32": "artifacts/legacy.c.f32",
+    "artifacts/joint64.f32": "artifacts/joint64.f32",
+    "artifacts/joint128-reg005.f32": "artifacts/joint128-reg005.f32",
+    "artifacts/joint128-reg02.f32": "artifacts/joint128-reg02.f32",
+    "artifacts/joint128-day128.f32": "artifacts/joint128-day128.f32",
+    "artifacts/neighborhood64.f32": "artifacts/neighborhood64.f32",
+    "artifacts/joint256-reg01.f32": "artifacts/joint256-reg01.f32",
+    "artifacts/neighborhood128-interim1.f32": "artifacts/neighborhood128-interim1.f32"
+  },
+  "relocated": {},
+  "mismatched_at_expected_path": {},
+  "unavailable": []
+}

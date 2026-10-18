@@ -1,0 +1,112 @@
+{
+  "name": "B6-add-joint256",
+  "strategy": "Add completed J5 256-factor checkpoint to B5, with all previous inputs and quadratic contextual user-fold blending unchanged. Measure incremental value of higher factor capacity.",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--prediction",
+    "artifacts/joint128-reg02.f32",
+    "--prediction",
+    "artifacts/joint128-day128.f32",
+    "--prediction",
+    "artifacts/neighborhood64.f32",
+    "--prediction",
+    "artifacts/joint256-reg01.f32",
+    "--contexts",
+    "1",
+    "--quadratic",
+    "1",
+    "--predictions",
+    "artifacts/blend-b6.f32",
+    "--weights",
+    "artifacts/blend-b6.weights"
+  ],
+  "started_utc": "2026-09-27T23:16:01.848131+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "ea9a9c91b7400d535111445414e9fa2426c0ce13ca4e0a368ec801326096f02f",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/joint.hpp": "aa6829b5fdf29af64874d4b9825b7f139adc1978af727f8d121f2ffdc8b2a8cc"
+  },
+  "binary_sha256": "13f81f4cd8271e638f23e7d89b35ba811480d295586cc4263ae60aef107a1a17",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M RESULTS.md\n M experiments/J5-joint256-reg01.json\n M experiments/J5-joint256-reg01.log\n M experiments/score_timeline.csv\n M scripts/experiment.py\n M scripts/score_timeline.py\n M src/ensemble.hpp\n M src/joint.hpp\n M src/neighborhood.hpp\n M src/netflix.cpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/B5-quadratic-neighborhood-blend.events.jsonl\n?? experiments/B5-quadratic-neighborhood-blend.json\n?? experiments/B5-quadratic-neighborhood-blend.log\n?? experiments/B5-quadratic-neighborhood-blend.source.zip\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n?? experiments/J6-frequency-factors128.events.jsonl\n?? experiments/J6-frequency-factors128.json\n?? experiments/J6-frequency-factors128.log\n?? experiments/J6-frequency-factors128.source.zip\n?? experiments/J7-continuation-control128.events.jsonl\n?? experiments/J7-continuation-control128.json\n?? experiments/J7-continuation-control128.log\n?? experiments/J7-continuation-control128.source.zip\n?? experiments/N2-learned-neighborhood128.events.jsonl\n?? experiments/N2-learned-neighborhood128.json\n?? experiments/N2-learned-neighborhood128.log\n?? experiments/N2-learned-neighborhood128.source.zip\n?? experiments/N3-temporal-neighborhood64.events.jsonl\n?? experiments/N3-temporal-neighborhood64.json\n?? experiments/N3-temporal-neighborhood64.log\n?? experiments/N3-temporal-neighborhood64.source.zip\n",
+  "source_archive": {
+    "path": "experiments/B6-add-joint256.source.zip",
+    "sha256": "fb062b7f1b3a0073f2b71f4f80bea5c8aabd1b895ca9806ec2800ab652a1cefa",
+    "bytes": 33857
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/legacy.a.f32": {
+      "sha256": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.b.f32": {
+      "sha256": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.c.f32": {
+      "sha256": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+      "bytes": 5633580
+    },
+    "artifacts/joint64.f32": {
+      "sha256": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg005.f32": {
+      "sha256": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg02.f32": {
+      "sha256": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-day128.f32": {
+      "sha256": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+      "bytes": 5633580
+    },
+    "artifacts/neighborhood64.f32": {
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "bytes": 5633580
+    },
+    "artifacts/joint256-reg01.f32": {
+      "sha256": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+      "bytes": 5633580
+    }
+  },
+  "launched_utc": "2026-09-27T23:16:02.418405+00:00",
+  "events_path": "experiments/B6-add-joint256.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3.854503167,
+  "finished_utc": "2026-09-27T23:16:06.273406+00:00",
+  "log_sha256": "e2a6ec6dcd4867d885aba5b7db3b59ac087aab15e62c5e2b3751f579e4b3afd0",
+  "events_sha256": "e5a5e4ae2dc55f75500b7799701029fbd52c2cbd37cd79d096c2df62c7571355",
+  "predictions_artifact": {
+    "path": "artifacts/blend-b6.f32",
+    "sha256": "ab0689debe3bf73888567956cc3f8e5899c0f4eb5778d8fb3c63b3f0d46c80e5",
+    "bytes": 5633580
+  },
+  "weights_artifact": {
+    "path": "artifacts/blend-b6.weights",
+    "sha256": "666511ce484d0b5773658866f4595b22730817a072b4f53287adbc3fdbd1d4a5",
+    "bytes": 6243
+  }
+}

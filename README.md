@@ -1,8 +1,20 @@
 # Netflix Prize reconstruction
 
+Explore the [interactive research journey](https://mquan.github.io/netflix_challenge/)
+for the score timeline, recorded training-run curves, strategy decisions, and
+attribution evidence. The [standalone HTML](research_journey.html) can be rebuilt
+with `python3 scripts/build_research_journey.py`.
+
 This project targets the **original Netflix Prize dataset and split**, not the
 later PRML 2019 classroom contest. It implements selected BellKor-style models,
 not the complete winning ensemble.
+
+## Progress at a glance
+
+[![Netflix Prize RMSE progress from B1 to R10, marked with Claude and Codex logos, with Cinematch and 10 percent goal reference lines](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+
+Probe CV points and Netflix Test reference lines use different evaluation sets.
+Click the graph for the interactive report and the source of each score.
 
 ## Validation
 
@@ -69,9 +81,25 @@ but used for epoch selection):
 - jointly trained temporal SVD++, 128 factors: `0.89617220`
 - seven-model contextual ridge ensemble: `0.89013424` development CV
 - add learned item-neighborhood predictions: `0.88666465` development CV
+- add quadratic blend calibration: **`0.88658149` development CV**
+- add 256-factor checkpoint: **`0.88632074` development CV**
+- add frozen 128-neighbor checkpoint: **`0.88584605` development CV**
 - residual item kNN on every joint model, conditional RBM, denoising
   autoencoder, and a LightGBM blender with meta-features:
-  **`0.88040209` development CV** (see `RESULTS.md`)
+  `0.88040209` development CV (see `RESULTS.md`)
+- cross-branch predictor bank and residual-tree blend: `0.87545342` development CV
+- seven more user/movie context features: **`0.87480941` development CV**
+
+The R5 input bank for that historical best is absent from this checkout. The
+lowest currently reproducible local development result is C12 at
+**`0.87477805` RMSE**, a fixed equal average of two compact ensembles using
+the C1 bank plus
+a conditioned RBM, a frozen DeepRecommender snapshot, and a local GP predictor
+with support features, one unique kNN graph-support feature and same-day
+training context. See
+[GP_COMPACT.md](GP_COMPACT.md), [RBM_CONTEXT.md](RBM_CONTEXT.md) and
+[SESSION_META.md](SESSION_META.md) for
+the matched comparison and limitations.
 
 The older `time-svdpp` command freezes its static model before fitting drift;
 it is not a jointly optimized timeSVD++ implementation. The new `joint` command
@@ -81,6 +109,7 @@ factor drift. Optional per-user-day factors model short-lived preferences.
 `scripts/gbdt_blend.py` needs `numpy` and `lightgbm`; `scripts/autorec.py`
 needs `numpy` and `torch` (MPS is used when available). Install them in a
 virtualenv; the C++ tool has no extra dependencies.
+On this macOS setup, LightGBM also needs Homebrew `libomp` (`brew install libomp`).
 
 ## Joint training and reproducible experiments
 
@@ -98,12 +127,23 @@ build/netflix eval-joint --data data/processed/netflix.bin \
 
 Experiment names must be new. Each run records its strategy, exact command,
 source/binary hashes, input hashes, epoch log and output hashes in `experiments/`.
+New runs also retain an actual `.source.zip` snapshot of source, runner, tests
+and build recipe, so uncommitted implementations remain recoverable. Earlier
+hash-only runs cannot be reconstructed from hashes alone. Major milestones
+have Git tags, starting with `milestone-probe-cv-0.886665`.
 Artifacts and original data remain local and untracked. Logs measure wall time,
 which can include computer sleep. Models retain the best probe epoch.
 `--init-model` is a warm start: it resets the learning-rate schedule, random
 generator and epoch counter, so it is not an exact interrupted-run resume.
 `--day-factors 128` adds about 9 GB of parameters on the original data; leave it
 at zero for lower memory use.
+`--frequency-factors 1` adds movie factors specific to the user's daily rating
+frequency bin, as in equation 16 of the
+[BellKor report](https://www.asc.ohio-state.edu/statistics/dmsl/GrandPrize2009_BPC_BellKor.pdf).
+It uses `--frequency-rate .00002` and `--frequency-regularization .02` by default
+and adds about 73 MB at rank 128. This component is experimental; a matched
+continuation control tests its benefit. Version-3 joint checkpoints retain it,
+and older version-1/2 checkpoints remain readable.
 
 Raw prediction files are float32 columns in processed probe order. Only blend
 columns from this exact dataset and row order; do not read a column while its
@@ -128,6 +168,11 @@ movie popularity, date and same-day activity. These features contain no probe
 rating values. **CV is still a development estimate:** base-model checkpoint
 selection uses the whole probe. It is not an untouched final-test evaluation.
 
+Optional `--quadratic 1` adds pairwise products of centered predictions to the
+ridge blend. This captures nonlinear calibration and agreement patterns while
+fitting all coefficients separately in each user fold. Weight exports include
+these interaction coefficients. It costs more than the linear blend.
+
 ## Structurally different model: learned neighborhoods
 
 ```sh
@@ -150,9 +195,25 @@ frozen temporal baseline. The graph, dataset and original temporal baseline
 must accompany the neighborhood checkpoint when evaluating it.
 Its success criterion is improvement when added to the existing ensemble,
 not necessarily a better standalone score.
+Optional `--time-decay 0.002` multiplies explicit and implicit neighbor inputs
+by `exp(-0.002 * absolute_day_gap)`. This is a temporal-locality experiment;
+the default zero preserves static neighborhoods. Saved checkpoints retain this
+setting and old static neighborhood checkpoints remain readable.
 
 See [RESULTS.md](RESULTS.md) for the experiment-by-experiment score log,
 strategy summaries, and next-step decisions.
+
+The current reproduction plan, including the missing R5 artifact audit and the
+published-method continuation gate, is in [STRATEGY_RESET.md](STRATEGY_RESET.md).
+
+See [ENRICHMENT.md](ENRICHMENT.md) for the dataset enrichment literature review,
+local metadata/support audit, and proposed controlled experiments. This research
+has not yet produced an enriched-model RMSE result.
+
+The completed neural-history, sparse-user and session-context pilots are
+described in [HISTORY_EXPERIMENTS.md](HISTORY_EXPERIMENTS.md). The date-local
+variant was strongest among these three under the frozen B7 control. The final
+queue state is stored in `experiments/history-queue-status.json`.
 
 For score over time, run `python3 scripts/score_timeline.py` and plot
 [`experiments/score_timeline.csv`](experiments/score_timeline.csv).
@@ -160,6 +221,32 @@ Historical timestamps have explicit provenance/uncertainty; new experiment
 runs timestamp every output line. The CSV also supports elapsed time minus
 recorded idle/rate-limit/timeout intervals, without assuming unknown gaps are
 idle. See [timing and activity accounting](experiments/TIMING.md).
+
+## Binary attribute representation (BAR)
+
+The experimental `bar` command implements dense divide-and-concur RRR for
+binary user attributes, followed by movie regression. It learns every
+parameter from training ratings and selects its checkpoint by training error.
+The full Probe is used only for final scoring. See
+[the paper review and experiment results](PAPER_IMPLEMENTATIONS.md) for the
+paper/source differences and why training RMSE cannot be compared with the
+Netflix winning test score.
+
+```sh
+build/netflix bar --data data/processed/netflix.bin \
+  --model artifacts/bar.bin --predictions artifacts/bar.f32 \
+  --attributes 8 --movies 59 --iterations 1000 --threads 4 \
+  --eval-every 50 --projection upstream
+build/netflix eval-bar --data data/processed/netflix.bin \
+  --model artifacts/bar.bin --predictions artifacts/bar-reloaded.f32
+```
+
+`--projection paper` uses the stated interval projection; `upstream` matches
+the authors' projection-to-center behavior inside that interval. Replicas use
+float32, and movie regression uses ridge 0.001. The default replica allocation
+limit is 8 GiB (`--max-replica-gib`); the configuration above uses 3.38 GiB for
+replicas, plus the dataset and other arrays. Predictions use the usual Probe
+row order and remain unclipped until scoring.
 
 ## Independent local-kernel experiments
 

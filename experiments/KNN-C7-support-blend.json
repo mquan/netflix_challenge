@@ -1,0 +1,376 @@
+{
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "output": "artifacts/compact/C7-GP-KNN-support",
+    "bank_root": "/private/tmp/netflix-moonshot",
+    "no_union": true,
+    "extra": [
+      "artifacts/legacy.a.f32",
+      "artifacts/legacy.b.f32",
+      "artifacts/legacy.c.f32",
+      "artifacts/joint64.f32",
+      "artifacts/joint128-reg005.f32",
+      "artifacts/joint128-reg02.f32",
+      "artifacts/joint128-day128.f32",
+      "artifacts/neighborhood64.f32",
+      "artifacts/joint256-reg01.f32",
+      "artifacts/neighborhood128-interim1.f32",
+      "artifacts/history/HN1-history.f32",
+      "artifacts/history/HN3-session.f32",
+      "artifacts/tn0-temporal-neighborhood.f32",
+      "artifacts/pq2-factor200-frequency.f32",
+      "artifacts/rbm-context/visible-30e.f32",
+      "artifacts/deep-recommender/DR1.f32",
+      "artifacts/gp-c4/full.0.f32"
+    ],
+    "extra_support": [
+      "artifacts/gp-c4/support.support.f32",
+      "artifacts/gp-c4/support.strongest.f32",
+      "artifacts/gp-c4/support.effective-neighbors.f32",
+      "artifacts/knn-c5/j3-p1.support.f32",
+      "artifacts/knn-c5/time-p1.support.f32"
+    ],
+    "rounds": 2500,
+    "learning_rate": 0.03,
+    "leaves": 63,
+    "min_leaf": 200,
+    "processes": 5,
+    "seeds": [
+      2026
+    ],
+    "extra_meta": true
+  },
+  "inputs": {
+    "artifacts/legacy.a.f32": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+    "artifacts/legacy.b.f32": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+    "artifacts/legacy.c.f32": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+    "artifacts/joint64.f32": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+    "artifacts/joint128-reg005.f32": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+    "artifacts/joint128-reg02.f32": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+    "artifacts/joint128-day128.f32": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+    "artifacts/neighborhood64.f32": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "artifacts/joint256-reg01.f32": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+    "artifacts/neighborhood128-interim1.f32": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985",
+    "artifacts/history/HN1-history.f32": "ff0f49146618a3c024eb6e64277257296410f250b7e7c68d4f2429a83fa7becc",
+    "artifacts/history/HN3-session.f32": "99390dbe68920948123c2618e8a1ce7a76537a90a77715de72b466e51a4bc3dc",
+    "artifacts/tn0-temporal-neighborhood.f32": "e02763cf54966cc272d6840c2580561e60982c5c777adbab46a5ef48c63dfafb",
+    "artifacts/pq2-factor200-frequency.f32": "27f1787f29efcf8888ac0221d446c78f8bda14c33d25ef09715a75ec8c4d07f7",
+    "artifacts/rbm-context/visible-30e.f32": "8e0db9d5891c6cfe047771d783202a204a41b891916eb8be115ad687c39e99a5",
+    "artifacts/deep-recommender/DR1.f32": "178aae35be956f8369d05c885bab006e185d257481dabffe8abe026a8a276085",
+    "artifacts/gp-c4/full.0.f32": "f77e698176a3dded148a032a3471ffc9fafdfe25dac77e4da3a008de18b792c3",
+    "artifacts/gp-c4/support.support.f32": "2acd1b3cc1a7070a42b7ea034e3dd4787acca38992b6ac1f4e8ea08cf8a266bb",
+    "artifacts/gp-c4/support.strongest.f32": "f6e3d9dcaa5037623f9aae9b30da494543a2251f5f6dfa74f5a6eb67ed3ba9d2",
+    "artifacts/gp-c4/support.effective-neighbors.f32": "9c50c55d044b995d19f6585f7f56a5978e0613e91c83e3627f98d835115ed1b3",
+    "artifacts/knn-c5/j3-p1.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+    "artifacts/knn-c5/time-p1.support.f32": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "chosen_rounds": 533,
+      "seconds": 94.97907337499782,
+      "inner_ridge_rmse": 0.8791621502092188,
+      "ridge_rmse": 0.8791781063648455,
+      "refit_rmse": 0.8763603306767654,
+      "top_gain": [
+        [
+          0.0474,
+          "meta4"
+        ],
+        [
+          0.0422,
+          "meta5"
+        ],
+        [
+          0.0407,
+          "movie_age"
+        ],
+        [
+          0.0385,
+          "item_std"
+        ],
+        [
+          0.0362,
+          "same_day_ratio"
+        ],
+        [
+          0.0361,
+          "meta1"
+        ],
+        [
+          0.0356,
+          "user_frac5"
+        ],
+        [
+          0.035,
+          "user_frac1"
+        ],
+        [
+          0.0347,
+          "meta3"
+        ],
+        [
+          0.0345,
+          "artifacts/gp-c4/support.strongest.f32"
+        ],
+        [
+          0.0331,
+          "artifacts/knn-c5/j3-p1.support.f32"
+        ],
+        [
+          0.0323,
+          "meta6"
+        ]
+      ]
+    },
+    {
+      "fold": 1,
+      "chosen_rounds": 582,
+      "seconds": 99.82588066591416,
+      "inner_ridge_rmse": 0.8778007977819362,
+      "ridge_rmse": 0.8778002298641885,
+      "refit_rmse": 0.8749568896131276,
+      "top_gain": [
+        [
+          0.0446,
+          "meta4"
+        ],
+        [
+          0.0406,
+          "meta5"
+        ],
+        [
+          0.0391,
+          "item_std"
+        ],
+        [
+          0.0387,
+          "movie_age"
+        ],
+        [
+          0.0383,
+          "user_frac5"
+        ],
+        [
+          0.0364,
+          "meta3"
+        ],
+        [
+          0.036,
+          "meta1"
+        ],
+        [
+          0.0344,
+          "user_frac1"
+        ],
+        [
+          0.0344,
+          "artifacts/gp-c4/support.strongest.f32"
+        ],
+        [
+          0.0337,
+          "same_day_ratio"
+        ],
+        [
+          0.0331,
+          "meta6"
+        ],
+        [
+          0.0329,
+          "artifacts/knn-c5/j3-p1.support.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 2,
+      "chosen_rounds": 961,
+      "seconds": 142.41932679200545,
+      "inner_ridge_rmse": 0.8751529868661277,
+      "ridge_rmse": 0.8751444878048819,
+      "refit_rmse": 0.8721202039572176,
+      "top_gain": [
+        [
+          0.0452,
+          "meta4"
+        ],
+        [
+          0.0387,
+          "user_frac5"
+        ],
+        [
+          0.0385,
+          "item_std"
+        ],
+        [
+          0.0384,
+          "movie_age"
+        ],
+        [
+          0.0381,
+          "meta5"
+        ],
+        [
+          0.0361,
+          "same_day_ratio"
+        ],
+        [
+          0.0349,
+          "meta6"
+        ],
+        [
+          0.0349,
+          "meta1"
+        ],
+        [
+          0.034,
+          "user_frac1"
+        ],
+        [
+          0.0339,
+          "artifacts/gp-c4/support.strongest.f32"
+        ],
+        [
+          0.0329,
+          "meta3"
+        ],
+        [
+          0.0323,
+          "artifacts/knn-c5/j3-p1.support.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 3,
+      "chosen_rounds": 786,
+      "seconds": 122.4471386250807,
+      "inner_ridge_rmse": 0.8796002676851363,
+      "ridge_rmse": 0.879578868032763,
+      "refit_rmse": 0.8767886125853523,
+      "top_gain": [
+        [
+          0.0434,
+          "meta4"
+        ],
+        [
+          0.04,
+          "user_frac5"
+        ],
+        [
+          0.0386,
+          "meta5"
+        ],
+        [
+          0.038,
+          "movie_age"
+        ],
+        [
+          0.0368,
+          "item_std"
+        ],
+        [
+          0.0361,
+          "meta1"
+        ],
+        [
+          0.0354,
+          "user_frac1"
+        ],
+        [
+          0.0354,
+          "meta3"
+        ],
+        [
+          0.0343,
+          "meta6"
+        ],
+        [
+          0.034,
+          "same_day_ratio"
+        ],
+        [
+          0.0331,
+          "artifacts/gp-c4/support.strongest.f32"
+        ],
+        [
+          0.0316,
+          "artifacts/knn-c5/j3-p1.support.f32"
+        ]
+      ]
+    },
+    {
+      "fold": 4,
+      "chosen_rounds": 686,
+      "seconds": 112.05865933396854,
+      "inner_ridge_rmse": 0.8795755087021201,
+      "ridge_rmse": 0.8795791835035036,
+      "refit_rmse": 0.8769153773764234,
+      "top_gain": [
+        [
+          0.0437,
+          "meta4"
+        ],
+        [
+          0.0404,
+          "meta5"
+        ],
+        [
+          0.0394,
+          "item_std"
+        ],
+        [
+          0.0387,
+          "movie_age"
+        ],
+        [
+          0.0383,
+          "user_frac5"
+        ],
+        [
+          0.0355,
+          "same_day_ratio"
+        ],
+        [
+          0.035,
+          "meta1"
+        ],
+        [
+          0.0345,
+          "artifacts/gp-c4/support.strongest.f32"
+        ],
+        [
+          0.0336,
+          "user_frac1"
+        ],
+        [
+          0.0332,
+          "meta6"
+        ],
+        [
+          0.0327,
+          "meta3"
+        ],
+        [
+          0.0326,
+          "artifacts/knn-c5/j3-p1.support.f32"
+        ]
+      ]
+    }
+  ],
+  "lightgbm_version": "4.7.0",
+  "refit_rmse": 0.8754260110412957,
+  "refit_fold_rmse": [
+    0.8763603306767654,
+    0.8749568896131276,
+    0.8721202039572176,
+    0.8767886125853523,
+    0.8769153773764234
+  ],
+  "ridge_rmse": 0.8782539887503867,
+  "ridge_fold_rmse": [
+    0.8791781063648455,
+    0.8778002298641885,
+    0.8751444878048819,
+    0.879578868032763,
+    0.8795791835035036
+  ]
+}

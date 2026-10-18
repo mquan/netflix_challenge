@@ -1,0 +1,65 @@
+{
+  "name": "HN0-timing",
+  "strategy": "100-batch GPU timing and full-probe coverage pilot; not a quality result",
+  "command": [
+    ".venv/bin/python",
+    "scripts/history_model.py",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/history/HN0.pt",
+    "--predictions",
+    "artifacts/history/HN0.f32",
+    "--epochs",
+    "1",
+    "--max-batches",
+    "100",
+    "--device",
+    "mps"
+  ],
+  "started_utc": "2026-09-28T05:34:21.361543+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "9d49213d88f2046db92a74f8c44a1198fa5b3f03",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "3ebe69a2d04b4b15a8f70f492b77b8acf301cfdfff8136cf7608628291688955",
+    "src/integrated.hpp": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "2ffb414cae05de7f1de8ae56b79ec893e9559cef1631bc3b3a3d9af1c4ad07e1",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "7a3d18ed22422df2a87131271332988ceffcc7441d0a19ae1fc9b61177eb0c6d"
+  },
+  "binary_sha256": "4ea1cc64516633bc29384ca43729443fe2710302dddfd63274ae68b31dcee6a0",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M .gitignore\n M README.md\n?? ENRICHMENT.md\n?? experiments/enrichment/\n?? scripts/enrichment_audit.py\n?? scripts/history_model.py\n?? tests/test_enrichment_audit.py\n?? tests/test_history_model.py\n",
+  "source_archive": {
+    "path": "experiments/HN0-timing.source.zip",
+    "sha256": "9b0ac1f2b71faad262a96c641fdab36ac2e84c10b6e9155757f1e41b79b6b301",
+    "bytes": 100292
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T05:34:21.884996+00:00",
+  "events_path": "experiments/HN0-timing.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 32.174542582943104,
+  "finished_utc": "2026-09-28T05:34:54.059759+00:00",
+  "log_sha256": "9ca1c7f5aeabe92106ebd943142f5b8e7071484feff648caa9ebe9979f4ec27f",
+  "events_sha256": "b962f714cb684fa48f277dca58890caff6622fdee5df01a3a96032c15d37fee6",
+  "model_artifact": {
+    "path": "artifacts/history/HN0.pt",
+    "sha256": "eea5bbc345b078b22cb1462e7c591e64273f9136750fd7387aa02abbe53e6bfa",
+    "bytes": 45917124
+  },
+  "predictions_artifact": {
+    "path": "artifacts/history/HN0.f32",
+    "sha256": "2e22f7e3d8f8a6a194b407b483fdc568e9ed868feacc9f21835357eeb6bd4656",
+    "bytes": 5633580
+  }
+}

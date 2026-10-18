@@ -1,0 +1,45 @@
+{
+  "name": "G2-residual-neighbors128",
+  "strategy": "Capacity ablation for the successful neighborhood family: same training-only sampled cosine graph discovery as G1, but retain 128 neighbors per movie instead of 64.",
+  "command": [
+    "build/netflix",
+    "graph",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors128.bin",
+    "--neighbors",
+    "128",
+    "--history-cap",
+    "256"
+  ],
+  "started_utc": "2026-09-27T23:08:45.289585+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "c75fcf74f6f1fd89b392f09f8f408918efa73a62489d0a7be5fe6caa15a364ce",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-27T23:08:45.779855+00:00",
+  "events_path": "experiments/G2-residual-neighbors128.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 64.653880583,
+  "finished_utc": "2026-09-27T23:09:50.434374+00:00",
+  "log_sha256": "f04ac62daa303f487413dc873ce2ad186a0615a85564efe8e89b4cd6fdd03061",
+  "events_sha256": "87d13f03a228863c0d6e7b474537d73f6dcab418e712d9e883fea479e6a9dd2f",
+  "graph_artifact": {
+    "path": "artifacts/neighbors128.bin",
+    "sha256": "279bd2d01a761e6036469e97365f4c8e74295a75ee9d20d0a51a37b5fc29969c",
+    "bytes": 13647384
+  }
+}

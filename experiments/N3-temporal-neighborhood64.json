@@ -1,0 +1,75 @@
+{
+  "name": "N3-temporal-neighborhood64",
+  "strategy": "Temporal locality ablation: keep N1 graph and optimizer but downweight neighbor contributions by exp(-0.002*absolute_day_gap). Test whether nearby-in-time movie ratings provide complementary evidence.",
+  "command": [
+    "build/netflix",
+    "neighborhood",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--time-model",
+    "artifacts/time-baseline.bin",
+    "--model",
+    "artifacts/neighborhood64-temporal.bin",
+    "--predictions",
+    "artifacts/neighborhood64-temporal.f32",
+    "--iterations",
+    "12",
+    "--time-decay",
+    "0.002"
+  ],
+  "started_utc": "2026-09-27T23:11:01.266711+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "cbc320472eddd439ccd748cebc2889b93393213f60283e2a330f8cc1ada114c2",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M experiments/J5-joint256-reg01.log\n M scripts/experiment.py\n M src/neighborhood.hpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n?? experiments/N2-learned-neighborhood128.events.jsonl\n?? experiments/N2-learned-neighborhood128.json\n?? experiments/N2-learned-neighborhood128.log\n?? experiments/N2-learned-neighborhood128.source.zip\n",
+  "source_archive": {
+    "path": "experiments/N3-temporal-neighborhood64.source.zip",
+    "sha256": "cefd1316868338ea94ac6919697bf21c3c360a6ca06c142b91e76702a7e81ed4",
+    "bytes": 33397
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors64.bin": {
+      "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "bytes": 6823704
+    },
+    "artifacts/time-baseline.bin": {
+      "sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "bytes": 153626284
+    }
+  },
+  "launched_utc": "2026-09-27T23:11:01.885661+00:00",
+  "events_path": "experiments/N3-temporal-neighborhood64.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 658.9613020419999,
+  "finished_utc": "2026-09-27T23:22:00.850450+00:00",
+  "log_sha256": "bf6c7f9d0727765d12f630c487c4ce885d2bfb0a8be3ca1212f640350d8241bf",
+  "events_sha256": "8bb92840e8d4f63a3735511eaf550617f65aac0037cd022b857e7340b19490f3",
+  "model_artifact": {
+    "path": "artifacts/neighborhood64-temporal.bin",
+    "sha256": "d990b6df55f22f289e25181565e3f6caa8adca2c0f079c616d64e92d653f030a",
+    "bytes": 9098280
+  },
+  "predictions_artifact": {
+    "path": "artifacts/neighborhood64-temporal.f32",
+    "sha256": "31bec9709bf4db55e2c45d7fa4ced3b37bb6dff7b061848024e7efcdef16f07d",
+    "bytes": 5633580
+  },
+  "graph_artifact": {
+    "path": "artifacts/neighbors64.bin",
+    "sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "bytes": 6823704
+  }
+}

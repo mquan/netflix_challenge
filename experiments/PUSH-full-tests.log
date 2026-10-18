@@ -1,0 +1,68 @@
+bash tests/smoke.sh
+loading probe keys...
+probe pairs: 2
+parsed movies 1000/17770, ratings 6
+parsed movies 2000/17770, ratings 6
+parsed movies 3000/17770, ratings 6
+parsed movies 4000/17770, ratings 6
+parsed movies 5000/17770, ratings 6
+parsed movies 6000/17770, ratings 6
+parsed movies 7000/17770, ratings 6
+parsed movies 8000/17770, ratings 6
+parsed movies 9000/17770, ratings 6
+parsed movies 10000/17770, ratings 6
+parsed movies 11000/17770, ratings 6
+parsed movies 12000/17770, ratings 6
+parsed movies 13000/17770, ratings 6
+parsed movies 14000/17770, ratings 6
+parsed movies 15000/17770, ratings 6
+parsed movies 16000/17770, ratings 6
+parsed movies 17000/17770, ratings 6
+parsed movies 17770/17770, ratings 6
+loading qualifying interactions...
+users=2 items=17770 train=4 probe=2 implicit=8 mean=2.50000000 days=2192..2197
+iteration=1 probe_rmse=2.02637932
+iteration=2 probe_rmse=2.02623917
+probe_rmse=2.02623917 count=2
+sessions=8
+iteration=1 train_rmse=1.12000640 probe_rmse=2.05912419
+iteration=2 train_rmse=1.11475950 probe_rmse=2.05670644
+probe_rmse=2.05670644 count=2 iterations=2
+iteration=1 learning_rate=0.0080000 train_rmse=1.10981759 probe_rmse=2.05433668
+iteration=2 learning_rate=0.0072000 train_rmse=1.10749510 probe_rmse=2.05179626
+best_iteration=2 best_probe_rmse=2.05179626
+probe_rmse=2.05179626 count=2 factors=4 iterations=2
+iteration=1 train_rmse=1.10301316 probe_rmse=2.05179626
+iteration=2 train_rmse=1.10301316 probe_rmse=2.05179626
+best_iteration=2 best_probe_rmse=2.05179626
+probe_rmse=2.05179626 count=2 factors=4 iterations=2
+implicit update matches explicit per-rating SGD
+joint factors=4 seed=2026 regularization=0.0015 decay=0.95 fingerprint=108958906269557060
+day_factors=0 init_model=
+epoch=1 train_rmse=1.122184788 probe_rmse=2.058366321 best=2.058366321 seconds=0.007764916
+epoch=2 train_rmse=1.116679891 probe_rmse=2.055884655 best=2.055884655 seconds=0.006581417
+probe_rmse=2.055884655 epoch=2
+python3 tests/test_joint.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.250s
+
+OK
+python3 tests/test_timeline.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.126s
+
+OK
+python3 tests/test_bar.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 9.274s
+
+OK
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.150s
+
+OK
+temporal gradient and learning verified

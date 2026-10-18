@@ -1,0 +1,75 @@
+{
+  "name": "N2i-frozen-neighborhood128",
+  "strategy": "Evaluate a frozen copy of the best available N2 checkpoint while training continues. Preserve the exact model and prediction column for incremental blending; epoch is reported by the evaluator.",
+  "command": [
+    "build/netflix",
+    "eval-neighborhood",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors128.bin",
+    "--time-model",
+    "artifacts/time-baseline.bin",
+    "--model",
+    "artifacts/neighborhood128-interim1.bin",
+    "--predictions",
+    "artifacts/neighborhood128-interim1.f32"
+  ],
+  "started_utc": "2026-09-27T23:21:37.945250+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "0126d34239c930b9c2720f75cfb5d477dc49e5a41ca61650926290bdfcb8456f",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/joint.hpp": "aa6829b5fdf29af64874d4b9825b7f139adc1978af727f8d121f2ffdc8b2a8cc"
+  },
+  "binary_sha256": "fe8c57597e80685f38eabd82c53ad932482bfc327ee568240d5a8d5f5225a8af",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M RESULTS.md\n M experiments/J5-joint256-reg01.json\n M experiments/J5-joint256-reg01.log\n M experiments/score_timeline.csv\n M experiments/timing_backfill.json\n M scripts/experiment.py\n M scripts/score_timeline.py\n M src/ensemble.hpp\n M src/joint.hpp\n M src/neighborhood.hpp\n M src/netflix.cpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/B5-quadratic-neighborhood-blend.events.jsonl\n?? experiments/B5-quadratic-neighborhood-blend.json\n?? experiments/B5-quadratic-neighborhood-blend.log\n?? experiments/B5-quadratic-neighborhood-blend.source.zip\n?? experiments/B6-add-joint256.events.jsonl\n?? experiments/B6-add-joint256.json\n?? experiments/B6-add-joint256.log\n?? experiments/B6-add-joint256.source.zip\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n?? experiments/J6-frequency-factors128.events.jsonl\n?? experiments/J6-frequency-factors128.json\n?? experiments/J6-frequency-factors128.log\n?? experiments/J6-frequency-factors128.source.zip\n?? experiments/J7-continuation-control128.events.jsonl\n?? experiments/J7-continuation-control128.json\n?? experiments/J7-continuation-control128.log\n?? experiments/J7-continuation-control128.source.zip\n?? experiments/N2-learned-neighborhood128.events.jsonl\n?? experiments/N2-learned-neighborhood128.json\n?? experiments/N2-learned-neighborhood128.log\n?? experiments/N2-learned-neighborhood128.source.zip\n?? experiments/N3-temporal-neighborhood64.events.jsonl\n?? experiments/N3-temporal-neighborhood64.json\n?? experiments/N3-temporal-neighborhood64.log\n?? experiments/N3-temporal-neighborhood64.source.zip\n",
+  "source_archive": {
+    "path": "experiments/N2i-frozen-neighborhood128.source.zip",
+    "sha256": "79a9952a9d0e1af5fde067efbec898ca84d9b6e3f09a71d03f14fe2c904b6353",
+    "bytes": 34166
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors128.bin": {
+      "sha256": "279bd2d01a761e6036469e97365f4c8e74295a75ee9d20d0a51a37b5fc29969c",
+      "bytes": 13647384
+    },
+    "artifacts/time-baseline.bin": {
+      "sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "bytes": 153626284
+    },
+    "artifacts/neighborhood128-interim1.bin": {
+      "sha256": "6382a17b7988b7f2e4071680df1c34bc172516a6378f97c6696f8d2dc5336de6",
+      "bytes": 18196520
+    }
+  },
+  "launched_utc": "2026-09-27T23:21:38.586285+00:00",
+  "events_path": "experiments/N2i-frozen-neighborhood128.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 4.569745625,
+  "finished_utc": "2026-09-27T23:21:43.156471+00:00",
+  "log_sha256": "ab92f7a41b8a9c188a4a643eea951813de221dd1ae8f17491a005fa90da25d89",
+  "events_sha256": "27c7d5925bdd381446a28096c89915fc7f1da5db68c715b786668383d5dce4d4",
+  "model_artifact": {
+    "path": "artifacts/neighborhood128-interim1.bin",
+    "sha256": "6382a17b7988b7f2e4071680df1c34bc172516a6378f97c6696f8d2dc5336de6",
+    "bytes": 18196520
+  },
+  "predictions_artifact": {
+    "path": "artifacts/neighborhood128-interim1.f32",
+    "sha256": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985",
+    "bytes": 5633580
+  },
+  "graph_artifact": {
+    "path": "artifacts/neighbors128.bin",
+    "sha256": "279bd2d01a761e6036469e97365f4c8e74295a75ee9d20d0a51a37b5fc29969c",
+    "bytes": 13647384
+  }
+}
