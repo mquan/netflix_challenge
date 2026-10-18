@@ -71,11 +71,18 @@ test decides: `scripts/hr_blend_chain.py --name HR2a-blend` (frozen R9-LAT-A2h
 config + this column; LightGBM-s3, NN2, 50/50; two processes at nice 10).
 Status: `experiments/HR2a-blend.status.json`. Launched 2026-10-18 10:28 PDT.
 
+**HR2a blend: not promoted.** Finished 12:11 PDT. R9-LAT-A2h + HR2a column:
+**0.8668444 vs 0.8668706 (−0.0000262)**; folds +.000011 +.000144 −.000046
+−.000085 −.000154. Two folds worse, and the gain is below the 0.0001 line. The extra 1.4M P2 rows do
+not give the blender anything it lacks: a residual tree on the same meta
+features learns what LightGBM/NN2 already learn on probe rows.
+HR2b (same correction on B4) launched 16:51 PDT as the second arm of the stop rule.
+
 ## Plan
 
 | Stage | What | Gate |
 |---|---|---|
-| **HR2a** (blend running) | LightGBM on A2h-select's honest P2 residuals plus meta features (`train_only_residual.py`), applied to the A2h-refit probe column | Standalone A2h 0.8901 → ≤0.887, then blend |
+| **HR2a** (done: −0.000026, not promoted) | LightGBM on A2h-select's honest P2 residuals plus meta features (`train_only_residual.py`), applied to the A2h-refit probe column | Standalone A2h 0.8901 → ≤0.887, then blend |
 | HR2b | Same with B4 (`A-B4-union.p2` → `B4-full-r128.s0160`) and with latent (K1 PCA) coordinates as inputs | same |
 | Blend | Add each corrected column to the frozen R9-LAT-A2h bank: LightGBM-s3 + NN2 50/50 | ≥0.0003 and all five folds to continue; <0.0001 for both → stop P2-only path |
 | HR3 | If HR2 pays: K-fold A2h retrains for honest residuals on all training rows, enabling residual kNN and residual factor models | — |
