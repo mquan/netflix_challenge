@@ -78,6 +78,13 @@ not give the blender anything it lacks: a residual tree on the same meta
 features learns what LightGBM/NN2 already learn on probe rows.
 HR2b (same correction on B4) launched 16:51 PDT as the second arm of the stop rule.
 
+**HR2b, honest-residual LightGBM on B4.** 1,228 rounds (P2 fold 0: 0.86387 →
+0.85944). Applied to B4-full sweep 160: **0.88966 → 0.88485** (−0.0048; folds
+.88588 .88552 .88096 .88617 .88575). This passes the standalone gate, and the
+correction is nearly twice A2h's. The B4 chain's posterior mean has more
+correctable structure on recent ratings than the transformer does. Blend test `HR2b-blend` launched
+16:54 PDT (three processes, nice 10).
+
 ## Plan
 
 | Stage | What | Gate |

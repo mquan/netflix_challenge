@@ -1,0 +1,32 @@
+{
+  "config": {
+    "holdout_data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+    "holdout_pred": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32",
+    "target_data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "target_pred": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+    "output": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/HR2b-B4-corrected.f32",
+    "rounds": 4000,
+    "min_leaf": 500,
+    "seed": 20260927
+  },
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32": "786985155c7f4dbeee697cdc33f71aaed410d50d365afca05b25ea05ffbea176",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac"
+  },
+  "lightgbm_version": "4.7.0",
+  "chosen_rounds": 1228,
+  "holdout_inner_base_rmse": 0.8638705611228943,
+  "holdout_inner_corrected_rmse": 0.8594413385728933,
+  "target_base_rmse": 0.8896598815917969,
+  "target_corrected_rmse": 0.8848524860778554,
+  "target_user_fold_rmse": [
+    0.8858795625366287,
+    0.8855186440587365,
+    0.8809551770280557,
+    0.8861673633229227,
+    0.8857531313184268
+  ],
+  "output_sha256": "bbbf62d40933b949359778e84bb9f5e7cb3335d0fcf15995434b77e3903a1107"
+}
