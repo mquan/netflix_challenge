@@ -6,6 +6,10 @@ This remains one long-lived, iterative research branch; completed experiments
 are commit checkpoints, not separate research restarts. User objective: reach
 at least a 10% RMSE improvement over Cinematch.
 
+Workflow: continue iterating on `codex/local-context`, committing and pushing
+completed checkpoints on this same branch. Do not create pull requests for
+this work. The initial draft PR was closed at the user's request.
+
 ## Target and evidence standard
 
 - Cinematch test RMSE: 0.9525. A 10% reduction is **0.85725 test RMSE**.
