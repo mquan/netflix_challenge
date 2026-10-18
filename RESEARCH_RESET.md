@@ -1,5 +1,10 @@
 # Research reset after round 10
 
+2026-10-18 continuation: [LOCAL_CONTEXT_RESEARCH.md](LOCAL_CONTEXT_RESEARCH.md)
+records the 10% target and the controlled full-bank pooled-versus-path
+experiment on `codex/local-context`. The experiment precedes investment in
+the structural encoder proposed below.
+
 2026-10-12. Original proposal below; retrieval and cheap summary pilots are now
 complete in [LOCAL_PATHS.md](LOCAL_PATHS.md). On 200,000 P2 queries, triplet
 summaries improve a matched pooled + kNN ridge control by 0.00569 RMSE, with
