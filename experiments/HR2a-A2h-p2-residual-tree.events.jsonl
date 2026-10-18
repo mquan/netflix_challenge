@@ -1,0 +1,32 @@
+{"observed_utc": "2026-10-18T17:26:51.261428+00:00", "line": "{"}
+{"observed_utc": "2026-10-18T17:26:51.261744+00:00", "line": "  \"config\": {"}
+{"observed_utc": "2026-10-18T17:26:51.261767+00:00", "line": "    \"holdout_data\": \"/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin\","}
+{"observed_utc": "2026-10-18T17:26:51.261788+00:00", "line": "    \"holdout_pred\": \"/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32\","}
+{"observed_utc": "2026-10-18T17:26:51.261806+00:00", "line": "    \"target_data\": \"/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin\","}
+{"observed_utc": "2026-10-18T17:26:51.261824+00:00", "line": "    \"target_pred\": \"/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.f32\","}
+{"observed_utc": "2026-10-18T17:26:51.261835+00:00", "line": "    \"output\": \"/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/HR2a-A2h-corrected.f32\","}
+{"observed_utc": "2026-10-18T17:26:51.261851+00:00", "line": "    \"rounds\": 4000,"}
+{"observed_utc": "2026-10-18T17:26:51.261862+00:00", "line": "    \"min_leaf\": 500,"}
+{"observed_utc": "2026-10-18T17:26:51.261872+00:00", "line": "    \"seed\": 20260927"}
+{"observed_utc": "2026-10-18T17:26:51.261882+00:00", "line": "  },"}
+{"observed_utc": "2026-10-18T17:26:51.261893+00:00", "line": "  \"inputs\": {"}
+{"observed_utc": "2026-10-18T17:26:51.261903+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin\": \"94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8\","}
+{"observed_utc": "2026-10-18T17:26:51.261920+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32\": \"7de5e7daa1552d3bc6f3a90d5834274e53f292ea911c645b42daa38d4b1e7463\","}
+{"observed_utc": "2026-10-18T17:26:51.261932+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin\": \"08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673\","}
+{"observed_utc": "2026-10-18T17:26:51.261951+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.f32\": \"70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4\""}
+{"observed_utc": "2026-10-18T17:26:51.261961+00:00", "line": "  },"}
+{"observed_utc": "2026-10-18T17:26:51.261971+00:00", "line": "  \"lightgbm_version\": \"4.7.0\","}
+{"observed_utc": "2026-10-18T17:26:51.261981+00:00", "line": "  \"chosen_rounds\": 952,"}
+{"observed_utc": "2026-10-18T17:26:51.261991+00:00", "line": "  \"holdout_inner_base_rmse\": 0.8668439984321594,"}
+{"observed_utc": "2026-10-18T17:26:51.262002+00:00", "line": "  \"holdout_inner_corrected_rmse\": 0.8634146902043605,"}
+{"observed_utc": "2026-10-18T17:26:51.262012+00:00", "line": "  \"target_base_rmse\": 0.8901406526565552,"}
+{"observed_utc": "2026-10-18T17:26:51.262022+00:00", "line": "  \"target_corrected_rmse\": 0.8875094861683408,"}
+{"observed_utc": "2026-10-18T17:26:51.262032+00:00", "line": "  \"target_user_fold_rmse\": ["}
+{"observed_utc": "2026-10-18T17:26:51.262042+00:00", "line": "    0.8888516465280004,"}
+{"observed_utc": "2026-10-18T17:26:51.262052+00:00", "line": "    0.8877834942869546,"}
+{"observed_utc": "2026-10-18T17:26:51.262062+00:00", "line": "    0.883431340920988,"}
+{"observed_utc": "2026-10-18T17:26:51.262074+00:00", "line": "    0.8884529613626616,"}
+{"observed_utc": "2026-10-18T17:26:51.262084+00:00", "line": "    0.8890408517762609"}
+{"observed_utc": "2026-10-18T17:26:51.262093+00:00", "line": "  ],"}
+{"observed_utc": "2026-10-18T17:26:51.262103+00:00", "line": "  \"output_sha256\": \"f74ef997287534a74d8352984d49ea122edba68b6a486450cd19cf5b154e2bc5\""}
+{"observed_utc": "2026-10-18T17:26:51.262114+00:00", "line": "}"}
