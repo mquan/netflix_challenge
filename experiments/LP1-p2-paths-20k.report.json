@@ -1,0 +1,98 @@
+{
+  "arguments": {
+    "data": "artifacts/validation/train-matched-20260927.bin",
+    "output": "artifacts/local-paths/LP1-p2-20k",
+    "queries": 20000,
+    "history": 32,
+    "neighbors": 32,
+    "candidates": 256,
+    "seed": 20261012
+  },
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "source_sha256": {
+    "/Users/quan/workspace/netflix_challenge/scripts/local_paths_pilot.py": "c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  },
+  "metric": "training-only P2 pilot; no original-probe or ensemble improvement claim",
+  "query_count": 20000,
+  "full_query_count": 1407566,
+  "index_seconds": 2.501285915961489,
+  "extraction_seconds": 15.000500500085764,
+  "signal_seconds": 0.08325024996884167,
+  "queries_per_second": 1333.288845921218,
+  "projected_full_extraction_seconds": 1055.709724345186,
+  "peak_rss_bytes": 3361095680,
+  "index_bytes": 781600712,
+  "path_coverage": 1.0,
+  "retained_intersection_density": 0.628703772253234,
+  "history": {
+    "mean": 28.4946,
+    "p50": 32.0,
+    "p95": 32.0,
+    "max": 32
+  },
+  "neighbors": {
+    "mean": 31.98005,
+    "p50": 32.0,
+    "p95": 32.0,
+    "max": 32
+  },
+  "paths": {
+    "mean": 573.22035,
+    "p50": 603.0,
+    "p95": 847.0,
+    "max": 994
+  },
+  "candidates": {
+    "mean": 254.6045,
+    "p50": 256.0,
+    "p95": 256.0,
+    "max": 256
+  },
+  "signal": {
+    "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+    "fit_rows": 11940,
+    "selection_rows": 4011,
+    "evaluation_rows": 4049,
+    "evaluation_users": 3976,
+    "models": {
+      "pooled_knn": {
+        "selected_regularization": 10.0,
+        "selection_rmse": {
+          "1": 0.9448989574338873,
+          "10": 0.9448830760611192,
+          "100": 0.9449195487123866,
+          "1000": 0.9473409784804341
+        },
+        "evaluation_rmse": 0.9451320151065454
+      },
+      "pooled_knn_paths": {
+        "selected_regularization": 1.0,
+        "selection_rmse": {
+          "1": 0.9387044999165918,
+          "10": 0.9390104470719906,
+          "100": 0.9403820728389888,
+          "1000": 0.9420061419410338
+        },
+        "evaluation_rmse": 0.9429094612455017
+      }
+    },
+    "matched_knn_rmse": 0.9567245510285965,
+    "delta_rmse": -0.0022225538610437523,
+    "delta_mse": -0.004196273873076888,
+    "cluster_normal_95_mse_interval": [
+      -0.013383720527526968,
+      0.004991172781373191
+    ],
+    "history_le_20": {
+      "evaluation_rows": 621,
+      "delta_rmse": 0.0042770980023513205
+    },
+    "history_gt_20": {
+      "evaluation_rows": 3428,
+      "delta_rmse": -0.003431049357549343
+    }
+  },
+  "sample_sha256": "86a27962604ff1e7f0616e0553f1c67fecbf86d27c6f1f3c98c66e810f4675a6"
+}

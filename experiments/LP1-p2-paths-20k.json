@@ -1,0 +1,43 @@
+{
+  "name": "LP1-p2-paths-20k",
+  "strategy": "Bounded training-only local paths: 20k P2 queries, history32 neighbors32 candidates256; pooled+knn ridge vs +triplet summaries, user folds 2-4 fit 1 select 0 evaluate",
+  "command": [
+    "/Users/quan/.cache/netflix-venv/bin/python",
+    "scripts/local_paths_pilot.py",
+    "--data",
+    "artifacts/validation/train-matched-20260927.bin",
+    "--output",
+    "artifacts/local-paths/LP1-p2-20k",
+    "--queries",
+    "20000"
+  ],
+  "started_utc": "2026-10-13T05:58:41.092696+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "075c9310a739aec4b303acf467b1c1cb7adc3ff5",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "64b48a24ccc9e4dbac0e25ea02d9d27395afb080de421c4b2b546f09f730d399",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "d5268b40074899ad32ccdfbf13ffcdb0e30d298f5f060fa595f53f0ee3661dbf"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "artifacts/validation/train-matched-20260927.bin": {
+      "sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+      "bytes": 926087170
+    }
+  },
+  "launched_utc": "2026-10-13T05:58:41.663940+00:00",
+  "events_path": "experiments/LP1-p2-paths-20k.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 18.724388665985316,
+  "finished_utc": "2026-10-13T05:59:00.388742+00:00",
+  "log_sha256": "cb7cd5a7621206a5e6cb38e92b821ce011e016bbb494ba2a7508c89167a94833",
+  "events_sha256": "423dc051c7c2fa06964ef8bba217cdcc003636df3e81a78a28182acb7a7ca938"
+}
