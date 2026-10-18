@@ -2,6 +2,8 @@ CXX ?= clang++
 CXXFLAGS ?= -O3 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic
 
 BIN := build/netflix
+# user-knn screens candidates with a BLAS matrix product (Accelerate on macOS).
+LDLIBS_NETFLIX := $(if $(filter Darwin,$(shell uname -s)),-framework Accelerate,)
 ARCHIVE := data/raw/nf_prize_dataset.tar.gz
 DATASET := data/processed/netflix.bin
 EXTRACTED := data/raw/extracted/.complete
@@ -13,8 +15,8 @@ all: $(BIN)
 build:
 	mkdir -p build
 
-$(BIN): src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/integrated.hpp | build
-	$(CXX) $(CXXFLAGS) $< -o $@
+$(BIN): src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp src/bar.hpp src/integrated.hpp src/temporal_neighborhood.hpp src/user_neighborhood.hpp | build
+	$(CXX) $(CXXFLAGS) $< $(LDLIBS_NETFLIX) -o $@
 
 download: $(ARCHIVE)
 
@@ -85,7 +87,12 @@ blend: $(BIN) $(DATASET)
 test: $(BIN)
 	bash tests/smoke.sh
 	python3 tests/test_joint.py
+	python3 tests/test_temporal_neighborhood.py
+	python3 tests/test_user_knn.py
+	python3 tests/test_rbm.py
 	python3 tests/test_timeline.py
+	python3 tests/test_bar.py
+	python3 tests/test_bayes.py
 
 clean:
 	rm -rf build
@@ -94,7 +101,7 @@ clean:
 .PHONY: moonshot-gp test-moonshot-gp
 moonshot-gp: build/moonshot_gp
 
-build/moonshot_gp: src/moonshot_gp.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+build/moonshot_gp: src/moonshot_gp.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
 
 test-moonshot-gp: $(BIN) build/moonshot_gp
@@ -102,10 +109,26 @@ test-moonshot-gp: $(BIN) build/moonshot_gp
 
 .PHONY: moonshot-local
 moonshot-local: build/moonshot_local
-build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
-	$(CXX) $(CXXFLAGS) $< -o $@
+build/moonshot_local: src/moonshot_local.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp | build
+	$(CXX) $(CXXFLAGS) $< $(LDLIBS_NETFLIX) -o $@
 
 .PHONY: moonshot-user-kernel
 moonshot-user-kernel: build/moonshot_user_kernel
-build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp | build
+build/moonshot_user_kernel: src/moonshot_user_kernel.cpp src/netflix.cpp src/bayes.hpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp | build
 	$(CXX) $(CXXFLAGS) -Wno-deprecated-declarations $< -framework Accelerate -o $@
+
+.PHONY: moonshot-adaptive
+moonshot-adaptive: build/moonshot_adaptive
+build/moonshot_adaptive: src/moonshot_adaptive.cpp src/netflix.cpp src/joint.hpp src/ensemble.hpp src/neighborhood.hpp src/rbm.hpp src/rbm_visible_context.hpp | build
+	$(CXX) $(CXXFLAGS) $< $(LDLIBS_NETFLIX) -o $@
+
+.PHONY: moonshot-session-meta
+moonshot-session-meta: build/moonshot_session_meta
+build/moonshot_session_meta: src/moonshot_session_meta.cpp src/netflix.cpp src/joint.hpp | build
+	$(CXX) $(CXXFLAGS) $< $(LDLIBS_NETFLIX) -o $@
+
+.PHONY: test-push
+test-push: $(BIN)
+	python3 tests/test_push.py
+	$(CXX) $(CXXFLAGS) tests/check_temporal_neighbor.cpp $(LDLIBS_NETFLIX) -o build/check-temporal-neighbor
+	build/check-temporal-neighbor

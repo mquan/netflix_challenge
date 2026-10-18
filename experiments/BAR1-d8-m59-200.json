@@ -1,0 +1,60 @@
+{
+  "name": "BAR1-d8-m59-200",
+  "strategy": "BAR dense RRR, 8 binary attributes, top 59 training-error movies, 200 iterations; all means, bits and movie weights fit without Probe ratings; checkpoint by subset training RMSE; paper interval projection, float32 replicas, ridge 0.001.",
+  "command": [
+    "build/netflix",
+    "bar",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "--model",
+    "artifacts/bar1-d8-m59.bin",
+    "--predictions",
+    "artifacts/bar1-d8-m59.f32",
+    "--attributes",
+    "8",
+    "--movies",
+    "59",
+    "--iterations",
+    "200",
+    "--eval-every",
+    "10",
+    "--threads",
+    "4"
+  ],
+  "started_utc": "2026-09-28T02:42:44.645115+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "git_commit": "551864ad91baa27b5377eb9ef4fae7174734353a",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "b16e79d04cd4bc65daadbd3eaf886a37d4132891dd8fc4ea625b834202f59a2e",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+    "src/bar.hpp": "8101653dece90dd33dbd02c732b317df23a2fd22d628205ca1ebb26e50b63179"
+  },
+  "binary_sha256": "4cf03f60936615230e0e4eceb943064d4a7f8d21731dd9156679467cdd8fa9f4",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T02:42:45.221975+00:00",
+  "events_path": "experiments/BAR1-d8-m59-200.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 106.00028137498884,
+  "finished_utc": "2026-09-28T02:44:31.223233+00:00",
+  "log_sha256": "78bf795b25c104edd34e0ffc3d82e406ed7f4723a8ff8c88d2a9259399bd81a9",
+  "events_sha256": "8760de8e2c6e0a1d6bd0d3e44c838fa9fbfaad9862e3ed8e166d1e9a5b34aa00",
+  "model_artifact": {
+    "path": "artifacts/bar1-d8-m59.bin",
+    "sha256": "457724c159dc425b954a1da5d81be77f7a52ff368fcbe3d12c0204870e5c8402",
+    "bytes": 7041732
+  },
+  "predictions_artifact": {
+    "path": "artifacts/bar1-d8-m59.f32",
+    "sha256": "280756d1a3a88a0fc397f36f1d1601124935c1d0bb2d0f9272e2568dbfaa72f3",
+    "bytes": 5633580
+  }
+}

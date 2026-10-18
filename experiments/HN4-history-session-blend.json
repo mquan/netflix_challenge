@@ -1,0 +1,135 @@
+{
+  "name": "HN4-history-session-blend",
+  "strategy": "Frozen B7 bank plus completed HN1 and HN3 predictions; original five user folds, exploratory development comparison",
+  "command": [
+    "build/netflix",
+    "ensemble",
+    "--data",
+    "data/processed/netflix.bin",
+    "--contexts",
+    "1",
+    "--quadratic",
+    "1",
+    "--predictions",
+    "artifacts/history/HN4-history-session-blend.f32",
+    "--weights",
+    "artifacts/history/HN4-history-session-blend.weights",
+    "--prediction",
+    "artifacts/legacy.a.f32",
+    "--prediction",
+    "artifacts/legacy.b.f32",
+    "--prediction",
+    "artifacts/legacy.c.f32",
+    "--prediction",
+    "artifacts/joint64.f32",
+    "--prediction",
+    "artifacts/joint128-reg005.f32",
+    "--prediction",
+    "artifacts/joint128-reg02.f32",
+    "--prediction",
+    "artifacts/joint128-day128.f32",
+    "--prediction",
+    "artifacts/neighborhood64.f32",
+    "--prediction",
+    "artifacts/joint256-reg01.f32",
+    "--prediction",
+    "artifacts/neighborhood128-interim1.f32",
+    "--prediction",
+    "artifacts/history/HN1-history.f32",
+    "--prediction",
+    "artifacts/history/HN3-session.f32"
+  ],
+  "started_utc": "2026-09-29T03:19:41.816994+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "437719d508c0ff85b7184d1a0c4a0523c96db825",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "3ebe69a2d04b4b15a8f70f492b77b8acf301cfdfff8136cf7608628291688955",
+    "src/integrated.hpp": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "2ffb414cae05de7f1de8ae56b79ec893e9559cef1631bc3b3a3d9af1c4ad07e1",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "7a3d18ed22422df2a87131271332988ceffcc7441d0a19ae1fc9b61177eb0c6d"
+  },
+  "binary_sha256": "a37b215ddd8c7a2c7fcbe5c583fdd1fcfa60c0ec1b4ab3fdb47da57dda3cff64",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": "",
+  "source_archive": {
+    "path": "experiments/HN4-history-session-blend.source.zip",
+    "sha256": "3ebf709a3d4c39275373216ba0ed9c8ee7c92696560a3977067511cc8a939467",
+    "bytes": 102804
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/legacy.a.f32": {
+      "sha256": "16c8cebabc7ea110e8fe606a3eeaa8f87f425abd7959929b7afbe1656e27b14b",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.b.f32": {
+      "sha256": "b46ddf06d51677375adf8ef4c39f0f11d2da2db7defec97ad76dc518ea296168",
+      "bytes": 5633580
+    },
+    "artifacts/legacy.c.f32": {
+      "sha256": "f951f0199ed7884232cb23897b0e21c9eeefca72600344eb22d5b598ff7ed917",
+      "bytes": 5633580
+    },
+    "artifacts/joint64.f32": {
+      "sha256": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg005.f32": {
+      "sha256": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-reg02.f32": {
+      "sha256": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+      "bytes": 5633580
+    },
+    "artifacts/joint128-day128.f32": {
+      "sha256": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+      "bytes": 5633580
+    },
+    "artifacts/neighborhood64.f32": {
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "bytes": 5633580
+    },
+    "artifacts/joint256-reg01.f32": {
+      "sha256": "752f0571a17ad37d0b3457a2911a0ec190f6eeb3a5dac3aecb00bd8403649954",
+      "bytes": 5633580
+    },
+    "artifacts/neighborhood128-interim1.f32": {
+      "sha256": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985",
+      "bytes": 5633580
+    },
+    "artifacts/history/HN1-history.f32": {
+      "sha256": "ff0f49146618a3c024eb6e64277257296410f250b7e7c68d4f2429a83fa7becc",
+      "bytes": 5633580
+    },
+    "artifacts/history/HN3-session.f32": {
+      "sha256": "99390dbe68920948123c2618e8a1ce7a76537a90a77715de72b466e51a4bc3dc",
+      "bytes": 5633580
+    }
+  },
+  "launched_utc": "2026-09-29T03:19:42.401417+00:00",
+  "events_path": "experiments/HN4-history-session-blend.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 7.2187507500639185,
+  "finished_utc": "2026-09-29T03:19:49.620547+00:00",
+  "log_sha256": "f2a4ff61759db858974df565469363dec01ddf93be0fb66def6f2a5d1fe353e1",
+  "events_sha256": "503b1f67108738c542c477d9582ac010209dccac5e33877043af8623ca5fd665",
+  "predictions_artifact": {
+    "path": "artifacts/history/HN4-history-session-blend.f32",
+    "sha256": "2d4492c6f72e8d0c3736936442ba65405a0f88234d695d806f6d12976ebcc779",
+    "bytes": 5633580
+  },
+  "weights_artifact": {
+    "path": "artifacts/history/HN4-history-session-blend.weights",
+    "sha256": "e642f8e16ce829c838a02d6aa2b73b485d4f8062d28b46abd4ee8d942fe9227f",
+    "bytes": 10296
+  }
+}

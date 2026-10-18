@@ -1,0 +1,32 @@
+{
+  "method": "fixed equal average",
+  "weight_a": 0.5,
+  "weight_b": 0.5,
+  "data": {
+    "path": "data/processed/netflix.bin",
+    "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/compact/C10-session-meta.refit.f32",
+      "sha256": "189cbe747233fd31e149f000094de30645c000f9a6a9b5b2de3d75fb33a210f6"
+    },
+    {
+      "path": "artifacts/compact/C11-session-residual.refit.f32",
+      "sha256": "c4e9b96b8e15408d596724c9ba6e4596468b8201342be5d40f6fc2300e95459a"
+    }
+  ],
+  "output": {
+    "path": "artifacts/compact/C12-C10-C11-half.f32",
+    "sha256": "93129d524dcd2749d7fc7ccdaf32ee03277f7b2a942035805a0c3dd07eed6940"
+  },
+  "rmse": 0.8747780515538628,
+  "fold_rmse": [
+    0.8756801859176696,
+    0.8743228138498843,
+    0.8713801677799743,
+    0.8761701211385947,
+    0.87634856720372
+  ],
+  "caveat": "Probe-guided development score; not independent test"
+}

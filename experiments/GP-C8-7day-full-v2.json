@@ -1,0 +1,60 @@
+{
+  "name": "GP-C8-7day-full-v2",
+  "strategy": "Seven-day local GP temporal kernel on same J3 factors; output-directory correction, distinct time-window candidate for C8",
+  "command": [
+    "build/moonshot_gp",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/joint128-reg005.bin",
+    "--output",
+    "artifacts/gp-c8/7day",
+    "--neighbors",
+    "32",
+    "--time-scale",
+    "7",
+    "--persistent",
+    ".5"
+  ],
+  "started_utc": "2026-10-01T05:23:09.256539+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "e5643bc877fffc923137a7c3ba0c25bd0fd4d549",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "3ebe69a2d04b4b15a8f70f492b77b8acf301cfdfff8136cf7608628291688955",
+    "src/integrated.hpp": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+    "src/rbm.hpp": "0177f0b2557e55a8e96233f26d84d8c3c303f52f007a1f13726a925f211e5ea7",
+    "src/netflix.cpp": "fd57e4083ab68f236d1b78202a07564e35eb810e7ddc60162f9002ba6ab81592",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/temporal_neighborhood.hpp": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "fb19292fbfb92d365f450dfd77bff30abdb905dea34723368fbe654a68ce1063",
+    "src/joint.hpp": "7a3d18ed22422df2a87131271332988ceffcc7441d0a19ae1fc9b61177eb0c6d"
+  },
+  "binary_sha256": "21bdedd063d3696fc8cfbef1d77825a9a8f87bd11fe08a677b47bba73bb63df1",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M PROGRESS.md\n M RBM_CONTEXT.md\n M README.md\n M RESULTS.md\n M STRATEGY_RESET.md\n M scripts/experiment.py\n M src/moonshot_gp.cpp\n M tests/test_moonshot_gp.py\n?? C5_FOLLOWUPS.md\n?? CHECKPOINT_2026-09-30.md\n?? GP_COMPACT.md\n?? RESEARCH_NEXT.md\n?? experiments/GP-C4-temporal-full.events.jsonl\n?? experiments/GP-C4-temporal-full.json\n?? experiments/GP-C4-temporal-full.log\n?? experiments/GP-C4-temporal-full.source.zip\n?? experiments/GP-C4-temporal-outputs.json\n?? experiments/GP-C4-temporal-screen.json\n?? experiments/GP-C5-blend.json\n?? experiments/GP-C5-support-full.events.jsonl\n?? experiments/GP-C5-support-full.json\n?? experiments/GP-C5-support-full.log\n?? experiments/GP-C5-support-full.source.zip\n?? experiments/GP-C5-support-outputs.json\n?? experiments/GP-C6-support-blend.json\n?? experiments/GP-C8-7day-full.events.jsonl\n?? experiments/GP-C8-7day-full.json\n?? experiments/GP-C8-7day-full.log\n?? experiments/GP-C8-7day-full.source.zip\n?? experiments/GP-J2-C5-screen-0.json\n?? experiments/GP-J2-C5-screen-1.json\n?? experiments/GP-J2-temporal-full.events.jsonl\n?? experiments/GP-J2-temporal-full.json\n?? experiments/GP-J2-temporal-full.log\n?? experiments/GP-J2-temporal-full.source.zip\n?? experiments/GP-J3-implicit-full.events.jsonl\n?? experiments/GP-J3-implicit-full.json\n?? experiments/GP-J3-implicit-full.log\n?? experiments/GP-J3-implicit-full.source.zip\n?? experiments/GP-implicit-C5-screen-0.json\n?? experiments/GP-implicit-C5-screen-1.json\n?? experiments/GP-implicit-outputs.json\n?? experiments/GP-j2-outputs.json\n?? experiments/KNN-C5-J3-p1.events.jsonl\n?? experiments/KNN-C5-J3-p1.json\n?? experiments/KNN-C5-J3-p1.log\n?? experiments/KNN-C5-J3-p1.source.zip\n?? experiments/KNN-C5-J3-screen.json\n?? experiments/KNN-C5-time-p1.events.jsonl\n?? experiments/KNN-C5-time-p1.json\n?? experiments/KNN-C5-time-p1.log\n?? experiments/KNN-C5-time-p1.source.zip\n?? experiments/KNN-C5-time-screen.json\n?? experiments/KNN-C7-support-blend.json\n?? experiments/KNN-C7a-support-unique-blend.json\n?? experiments/NN-C5-17column.events.jsonl\n?? experiments/NN-C5-17column.json\n?? experiments/NN-C5-17column.log\n?? experiments/NN-C5-17column.source.zip\n?? experiments/NN-C5-combination.json\n?? experiments/NN-C5-report.json\n?? experiments/RBM-C7-C3-blend.json\n?? experiments/RBM-C7-DR1-C4-blend.json\n?? experiments/RBM-C7-visible-30e-screen.json\n?? experiments/RBM-C7-visible-30e.events.jsonl\n?? experiments/RBM-C7-visible-30e.json\n?? experiments/RBM-C7-visible-30e.log\n?? experiments/RBM-C7-visible-30e.source.zip\n?? experiments/RBM-C7-visible-45e-screen.json\n?? experiments/RBM-C7-visible-45e.events.jsonl\n?? experiments/RBM-C7-visible-45e.json\n?? experiments/RBM-C7-visible-45e.log\n?? experiments/RBM-C7-visible-45e.source.zip\n?? experiments/RBM-C7-visible-60e.events.jsonl\n?? experiments/RBM-C7-visible-60e.json\n?? experiments/RBM-C7-visible-60e.log\n?? experiments/RBM-C7-visible-60e.source.zip\n?? experiments/RBM-C8-45e-blend.json\n?? scripts/deep_recommender.py\n?? tests/test_deep_recommender.py\n",
+  "source_archive": {
+    "path": "experiments/GP-C8-7day-full-v2.source.zip",
+    "sha256": "7de22665a04764d97ef1c50dee11183b2ffa772b77907157524027f74d974e19",
+    "bytes": 114947
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-01T05:23:09.873692+00:00",
+  "events_path": "experiments/GP-C8-7day-full-v2.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 83.177595791,
+  "finished_utc": "2026-10-01T05:24:33.051821+00:00",
+  "log_sha256": "6af1efa52279b308ebdc3257c5104ac98e1cdb8522bf383e1c30edbb31b676ad",
+  "events_sha256": "ac43f5a7344244b0043557848dfd12f32cc14e25b8f2fb7cd3e626c422ca2c3b",
+  "model_artifact": {
+    "path": "artifacts/joint128-reg005.bin",
+    "sha256": "a11fb1f69f32aa6962d2caffa9c4dd3060ab4567fd4333438370a0cd7996044f",
+    "bytes": 663536380
+  }
+}

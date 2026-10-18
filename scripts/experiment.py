@@ -9,6 +9,7 @@ import platform
 import subprocess
 import sys
 import time
+import zipfile
 
 
 def digest(path):
@@ -21,6 +22,19 @@ def digest(path):
 
 def utc_now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
+def snapshot_sources(root, destination):
+    """Retain actual code, not just hashes, even for a dirty working tree."""
+    paths = [root/'Makefile']
+    for folder in ('src', 'scripts', 'tests'):
+        paths += [p for p in (root/folder).rglob('*')
+                  if p.is_file() and '__pycache__' not in p.parts]
+    with zipfile.ZipFile(destination, 'x', compression=zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(paths):
+            if path.is_file():
+                archive.write(path, str(path.relative_to(root)))
+    return dict(path=str(destination), sha256=digest(destination), bytes=destination.stat().st_size)
 
 
 def capture_output(command, log_path, events_path):
@@ -57,7 +71,8 @@ def main():
     log_path = directory / (args.name + '.log')
     events_path = directory / (args.name + '.events.jsonl')
     manifest_path = directory / (args.name + '.json')
-    if log_path.exists() or manifest_path.exists() or events_path.exists():
+    source_path = directory / (args.name + '.source.zip')
+    if log_path.exists() or manifest_path.exists() or events_path.exists() or source_path.exists():
         parser.error('experiment already exists; use a new name')
     record = dict(name=args.name, strategy=args.strategy, command=command,
                   started_utc=utc_now(),
@@ -66,11 +81,16 @@ def main():
                   sources={str(p): digest(p) for p in pathlib.Path('src').glob('*') if p.is_file()},
                   binary_sha256=digest(command[0]),
                   metric='Full Netflix probe development RMSE; no independent test claim')
+    record['git_status_at_start'] = subprocess.check_output(['git', 'status', '--short'], text=True)
+    record['source_archive'] = snapshot_sources(pathlib.Path('.'), source_path)
     # Hash dependencies before launch, so blends can be tied to exact columns
     # even if a later experiment overwrites a conventional artifact filename.
     record['inputs'] = {}
     for i, arg in enumerate(command[:-1]):
-        if arg in ('--data', '--prediction', '--init-model', '--time-model', '--svd-model') or (arg == '--graph' and 'graph' != command[1]):
+        if (arg in ('--data', '--prediction', '--init-model', '--time-model', '--svd-model', '--joint-model')
+                or (arg == '--graph' and 'graph' != command[1])
+                or (arg == '--model' and (command[1].startswith('eval-')
+                    or pathlib.Path(command[0]).name.startswith('moonshot_')))):
             path = pathlib.Path(command[i+1])
             record['inputs'][str(path)] = dict(sha256=digest(path), bytes=path.stat().st_size)
     record['launched_utc'] = utc_now()

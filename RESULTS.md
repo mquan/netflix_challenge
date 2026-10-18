@@ -1,5 +1,129 @@
 # Score progression
 
+## Consolidated best and latest screens (2026-10-11)
+
+| Result | Method | Five-user-fold Probe CV RMSE | Decision |
+| --- | --- | ---: | --- |
+| R8-A2h-NN2 | Masked sequence model added to the prediction bank; LightGBM plus fixed-average neural correction | 0.8670984524 | Superseded |
+| R9-LAT-A2h | Add 22 K1 latent and bias blend features to that bank | **0.8668706425** | Promoted; all five folds improve |
+| R10-B5-NN2 | Add Bayesian item-frequency model to the R9 bank | 0.8668212 | Lower mean, but two folds worsen; not promoted |
+
+All are development scores on the original Probe split. The Round 10 kNN
+neighbour feature blend remains in progress, with no final score recorded.
+See [MERGE_RECORD.md](MERGE_RECORD.md) for branch methods and provenance.
+
+## BAR exploration (`paper-implementations`)
+
+Two full-data runs of the binary attribute representation model from Deyo and
+Elser (2023), implemented in `src/bar.hpp`. Both use 8 attributes, 59 selected
+movies and all 480,189 users. All preprocessing and fits exclude Probe labels;
+checkpoint selection uses only subset training RMSE. Final scores use all
+1,408,395 Probe rows and clip predictions to `[1,5]`.
+
+| Run | Method | Training RMSE after all-movie regression | Probe RMSE |
+| --- | --- | ---: | ---: |
+| BAR baseline | Training-only movie mean plus user residual mean | — | 0.9879307111 |
+| BAR1 | Paper interval projection, 200 iterations | 0.9036484883 | 0.9834745089 |
+| BAR2 | Upstream projection, 1,000 iterations; checkpoint 350 | 0.8807776576 | **0.9741851128** |
+
+This tested configuration improves its own baseline but does not improve the
+existing ensemble. Its training error must not be interpreted as held-out
+prediction accuracy. The paper's larger 16/32-attribute configurations remain
+untested. The port uses float32 replicas, a safeguarded projection solver and
+ridge 0.001 for movie regression; it is not an exact numerical reproduction.
+See [implementation details](PAPER_IMPLEMENTATIONS.md) and the `BAR*` experiment
+manifests/logs. An independent Python scorer confirms both scores and saved
+models reproduce their predictions byte for byte on reload.
+
+## Fixed average of two session-context ensembles (2026-10-01)
+
+C11 adds two training-only same-day joint-residual features to C10 and scores
+0.8748606495 development CV. Four folds improve and one worsens. A fixed
+50/50 average of the saved C10 and C11 out-of-fold columns scores
+**0.8747780516** (C12), independently 0.8747780515 from the saved float32
+column. This is 0.0000313573 below historical R5, but remains 0.0197780516
+above 0.855. The R5 margin is small and probe-guided selection remains.
+See [SESSION_META.md](SESSION_META.md) and
+`experiments/SESSION-C12-fixed-half.json`.
+
+## Training-day context added to C9 (2026-09-30)
+
+Six features derived only from same-user training ratings on or near the
+probe day lower matched C9 from 0.8750626363 to **0.8749217647** (C10).
+All five held-out user folds improve; independent float32 scoring agrees.
+The seventeen prediction hashes and four existing support hashes match C9.
+C10 is 0.0001123558 above historical R5 and 0.0199217647 above 0.855.
+See [SESSION_META.md](SESSION_META.md) and `experiments/SESSION-C10-blend.json`.
+
+## Fixed epoch-60 conditioned RBM in clean C7a bank (2026-09-30)
+
+C9 replaces only C8's epoch-45 conditioned RBM input with its fixed epoch-60
+continuation. It scores **0.8750626363** development CV, down 0.0002085827.
+All five held-out user folds improve. Independent float32 scoring gives
+0.8750626363; the saved out-of-fold SHA-256 is
+`4404cfb596eb87c2fdb426c84cc292d243888494953e73785e63ef65a3bad435`.
+All other input hashes match C8. C9 is 0.0002532274 above historical R5 and
+0.0200626363 above the 0.855 target. See [RBM_CONTEXT.md](RBM_CONTEXT.md)
+and `experiments/RBM-C9-60e-blend.json`.
+
+## Longer conditioned RBM in clean C7a bank (2026-09-30)
+
+Replacing only the epoch-30 conditioned RBM prediction with its fixed epoch-45
+continuation in the clean C7a bank scores **0.8752712189** five-user-fold
+development CV (C8), down 0.0001745234. The other input hashes match C7a.
+Four folds improve; one worsens by 0.00001396. Independent float32 scoring gives
+0.8752712190. This was the strongest reproducible local result at that checkpoint, 0.0004618100
+above historical R5 and 0.0202712189 above the 0.855 target. The probe still
+influenced model selection, so this is not an independent test. See
+[RBM_CONTEXT.md](RBM_CONTEXT.md) and `experiments/RBM-C8-45e-blend.json`.
+
+## Item-graph support added to C6 (2026-09-30)
+
+One unique kNN graph-support feature lowers C6 from 0.8755711017 to
+**0.8754457423** in the same five user folds. The first C7 run supplied that
+same feature twice and scored **0.8754260110**, the lowest observed reproducible
+development result at that checkpoint. Both improve all five folds. The duplicate affects feature
+sampling, so its extra 0.0000197 should not be read as distinct information.
+Independent scoring of both saved columns agrees. C7 remains 0.0006166021
+above historical R5. See [GP_COMPACT.md](GP_COMPACT.md).
+
+## Local GP support features (2026-09-30)
+
+Adding three label-free GP support features to C5's identical seventeen raw
+prediction columns and tree settings scores **0.8755711017** development CV,
+down 0.0003316907. All five held-out user folds improve. The GP prediction
+hash is unchanged, and independent scoring of C6 agrees. This was the strongest
+reproducible local result, 0.0007616932 above historical R5. See
+[GP_COMPACT.md](GP_COMPACT.md).
+
+## Local Gaussian-process addition (2026-09-30)
+
+The reproducible C4 bank scores 0.8783242000 development CV. Adding a
+regenerated persistent/30-day local GP prediction as its seventeenth input,
+with all other input hashes and tree settings matched, scores **0.8759027924**.
+All five held-out user folds improve by 0.00222–0.00260 RMSE. Independent
+float32 scoring agrees. This was the best reproducible local result at the C5 checkpoint, about
+0.00109 above the historical R5 score of 0.8748094089. See
+[GP_COMPACT.md](GP_COMPACT.md) for the run evidence and limitations.
+
+## Conditioned RBM addition (2026-09-30)
+
+The reproducible compact C1 residual-tree ensemble scored 0.8792984370 in
+five held-out user folds. Adding the fixed epoch-30 visible-context RBM as its
+fifteenth prediction column, with the same tree settings and matching original
+fourteen input hashes, scored **0.8785454268**. All five folds improved; the
+gain is 0.0007530103. An independent read of the saved float32 out-of-fold
+column scores 0.8785454267. This was the best reproducible local result at that checkpoint, but it
+does not beat the historical R5 result of 0.8748094089, whose 61-input bank
+is missing. Full configuration, source snapshots and limitations are in
+[RBM_CONTEXT.md](RBM_CONTEXT.md).
+
+Adding the frozen epoch-13 DeepRecommender snapshot as a sixteenth column to
+that same tree blend gives **0.8783242000**, another 0.0002212268 gain with
+all five user folds improving. Independent float32 scoring gives 0.8783241999.
+This C4 result was the best reproducible local score at that checkpoint, still behind R5. The
+DeepRecommender training run did not complete, so the snapshot is exploratory.
+
 All development scores use the original Netflix **probe split**: its 1,408,395
 labels are removed before training, predictions are clipped to `[1, 5]`, and
 RMSE is computed over the complete probe set. Quiz/test numbers from the 2009
@@ -23,7 +147,7 @@ was at its limit were premature: the optimization scheme also needed testing.
 Goal: close the ≈0.017 gap between our 64-factor joint model and published
 timeSVD++ results. Halted by decision: gains were small relative to compute.
 All runs were stopped manually except T2–T5, which completed. Best checkpoints
-are kept locally. No new blend was run, so B6 remains the best development CV.
+are kept locally. No new blend was run in that single-model iteration.
 
 | Run | Strategy | Best probe RMSE |
 |---|---|---:|
@@ -46,6 +170,10 @@ larger RBM improves on R2. None of these changes the conclusion that reaching
 ≈0.855 would need far more models and compute than this approach.
 
 ## Blend-diversity iteration (branch `score-iteration-2`, 2026-09-27)
+
+Run IDs in this section are local to `score-iteration-2`: its J6/J7 and B5/B6
+are separate runs from the identically labeled experiments in the joint-training
+table below. The manifests and logs identify the exact runs and checkpoints.
 
 Best development CV fell from **0.8866646513** (B4) to **0.8804020935** (B6).
 Metric and caveats are unchanged: full probe split, user-fold cross-fitted blend
@@ -95,10 +223,19 @@ saved locally under `artifacts/`. No recovered quiz/test labels are used.
 | B2 | Add J3 to B1 and allow blending weights to depend on history counts, movie popularity, date and daily activity. This combines two changes; it is not a pure context ablation. | 0.8914751148 CV (0.8914446469 fit) |
 | J4 | Warm-start J3 with 128 per-user-day factors. Best at first new epoch; subsequent epochs overfit, stopped after epoch 6. About 9 GB extra parameters; modest standalone gain. | 0.8970498562 |
 | B3 | Add J2 and retained J4 to B2; same five user-fold contextual blending. | **0.8901342372 CV** (0.8900970503 fit) |
-| J5 | Joint 256 factors, regularization 0.01: capacity ablation; interrupted, completed as J6 below. | See J6 |
+| J5 | Joint 256 factors, regularization 0.01: best epoch 17, early stop at 22. Strongest standalone factor model so far, but relatively small blend gain in B6. | 0.8951664067 |
 | G1 | Build a top-64 item-neighbor graph from training residuals, using capped histories for discovery. Graph construction has no rating-prediction RMSE. | Not applicable |
 | N1 | Learn explicit/implicit neighbor weights over G1 and frozen temporal baseline. Best epoch 4, stopped after epoch 8. Weaker alone but useful in B4. | 0.9100421231 |
 | B4 | Controlled addition of N1 to B3's seven-column contextual blend. All five user folds improve; local movie relationships add complementary signal. | **0.8866646513 CV** (0.8866238775 fit) |
+| B5 | Nonlinear calibration: same B4 inputs, plus pairwise products of centered model predictions. Small improvement in all five user folds, much smaller than adding the neighborhood family. | **0.8865814901 CV** (0.8865091808 fit) |
+| B6 | Add completed J5 to B5 with identical blending settings. Another small but consistent improvement in all five folds. | **0.8863207420 CV** (0.8862375747 fit) |
+| G2 | Same training-only sampled graph discovery as G1, retaining 128 neighbors rather than 64. | Not applicable |
+| N2 | Capacity ablation: learn 128-neighbor model with N1 optimizer unchanged. Best epoch 5; later epochs worsened. | 0.9072719035 |
+| N2i | Evaluate a frozen copy of N2's epoch-5 checkpoint while training continues; preserve its exact prediction column for blending. | 0.9072719035 |
+| B7 | Add frozen N2i to B6's quadratic contextual blend. Each of five held-out user folds improves over B6. | **0.8858460517 CV** (0.8857544990 fit) |
+| N3 | Temporal-locality ablation: 64 neighbors, with explicit/implicit contributions multiplied by `exp(-0.002 * absolute_day_gap)`. Best epoch 8; worse standalone than N1. | 0.9108568308 |
+| J6 | Six-epoch warm-start pilot from J2, adding movie-by-rating-frequency latent factors; rate 2e-5, regularization 0.02. | 0.8958286794 |
+| J7 | Matched J6 continuation control without frequency factors; same initial model, seed, rates and iteration budget. J6 improves on this by 0.0001167435 RMSE. | 0.8959454229 |
 
 J1's log has an intentional SIGTERM exit, not a numerical failure; its best
 checkpoint and predictions were saved before termination. Subsequent joint runs
@@ -111,6 +248,21 @@ relationship into the same latent space. The graph is approximate and temporal
 biases are frozen, so this is not a faithful reproduction of the full published
 integrated neighborhood/factor model. A weaker standalone predictor can still
 help the blend, but no step-change in score is promised.
+
+**Observed neighborhood outcome:** N1 is worse alone than the factor models,
+yet B4 improves over B3 by `0.0034695859` RMSE. All five folds improve. B5's
+quadratic calibration adds only `0.0000831612`; model diversity delivered the
+larger gain. B4 code is retained in commit `cffd6bf`, tagged
+`milestone-probe-cv-0.886665`. From N2 onward, each experiment also archives
+actual code/build/test files in `.source.zip`, not just source hashes.
+
+At the 2026-09-27 local progress checkpoint, B7 was the best recorded user-fold
+blend score. It uses the frozen N2i epoch-5 column, adding `0.0004746903` RMSE
+improvement over B6. N2i's model and prediction hashes are in its manifest;
+the completed N2 run may have continued changing its conventional artifact.
+The next comparison is a blend using N3's temporal neighborhood and a direct
+test of J6's frequency-factor column against the matched J7 control. Both must
+use frozen prediction columns and the same five user folds.
 
 ## Checkpoints
 

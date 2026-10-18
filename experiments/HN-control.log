@@ -1,0 +1,26 @@
+column=artifacts/legacy.a.f32 probe_rmse=0.9026721576
+column=artifacts/legacy.b.f32 probe_rmse=0.9005525684
+column=artifacts/legacy.c.f32 probe_rmse=0.9010021148
+column=artifacts/joint64.f32 probe_rmse=0.9000114063
+column=artifacts/joint128-reg005.f32 probe_rmse=0.8978688266
+column=artifacts/joint128-reg02.f32 probe_rmse=0.8961722036
+column=artifacts/joint128-day128.f32 probe_rmse=0.8970498562
+column=artifacts/neighborhood64.f32 probe_rmse=0.9100421231
+column=artifacts/joint256-reg01.f32 probe_rmse=0.8951664067
+column=artifacts/neighborhood128-interim1.f32 probe_rmse=0.9072719035
+heldout_user_fold=0 count=281675 rmse=0.8867356726
+heldout_user_fold=1 count=281390 rmse=0.8857121579
+heldout_user_fold=2 count=283006 rmse=0.8826309434
+heldout_user_fold=3 count=281688 rmse=0.8871865569
+heldout_user_fold=4 count=280636 rmse=0.8869760394
+blend_cv_rmse=0.8858460517 blend_fit_rmse=0.885754499 ridge=1e-05 centered_intercept=-0.01108977377 contexts=5 quadratic=1 features=110
+weight=-0.135982343 column=artifacts/legacy.a.f32
+weight=0.1065704966 column=artifacts/legacy.b.f32
+weight=-0.01950662198 column=artifacts/legacy.c.f32
+weight=0.1064543343 column=artifacts/joint64.f32
+weight=-0.05349081835 column=artifacts/joint128-reg005.f32
+weight=0.124755039 column=artifacts/joint128-reg02.f32
+weight=0.2359780634 column=artifacts/joint128-day128.f32
+weight=0.1262392416 column=artifacts/neighborhood64.f32
+weight=0.2580599781 column=artifacts/joint256-reg01.f32
+weight=0.2800472602 column=artifacts/neighborhood128-interim1.f32

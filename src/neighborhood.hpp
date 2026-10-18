@@ -119,7 +119,9 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
   const uint32_t epochs = eval_only ? 1 : uint_after(args, "--iterations", 12);
   const float lr0 = float(double_after(args, "--learning-rate", .005));
   const float reg = float(double_after(args, "--regularization", .002));
+  float time_decay = float(double_after(args, "--time-decay", 0));
   if (!epochs || lr0 <= 0 || reg < 0) fail("invalid neighborhood hyperparameters");
+  if (!std::isfinite(time_decay) || time_decay < 0) fail("invalid time decay");
   std::vector<float> residual; static_residuals(d, residual);
   std::vector<float> baseline(d.header.train_count), probe_base(d.probe.size());
   for (uint32_t u = 0; u < d.header.users; ++u)
@@ -141,27 +143,44 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     uint32_t items = 0, k = 0;
     read_pod(in,magic); read_pod(in,saved_hash); read_pod(in,graph_hash);
     read_pod(in,saved_epoch); read_pod(in,items); read_pod(in,k);
-    if (magic != 0x4E464E42484F4F31ULL || saved_hash != hash ||
+    if ((magic != 0x4E464E42484F4F31ULL && magic != 0x4E464E42484F4F32ULL) || saved_hash != hash ||
         graph_hash != graph_fingerprint(g) || items != g.items || k != g.k)
       fail("neighborhood checkpoint mismatch");
+    if (magic == 0x4E464E42484F4F32ULL) read_pod(in,time_decay);
+    else time_decay = 0;
+    if (!std::isfinite(time_decay) || time_decay < 0) fail("invalid saved time decay");
     read_vector(in,w,g.neighbor.size()); read_vector(in,c,g.neighbor.size());
   }
+  std::vector<float> time_weight(65536);
+  for (size_t day = 0; day < time_weight.size(); ++day) time_weight[day] = std::exp(-time_decay*float(day));
+  std::vector<uint16_t> rated_day(d.header.items), known_day(d.header.items);
   std::vector<uint32_t> rated(d.header.items, UINT32_MAX), known(d.header.items, UINT32_MAX);
   std::vector<uint32_t> explicit_edges, implicit_edges;
+  std::vector<float> explicit_values, implicit_values;
   auto fill_user = [&](uint32_t u) {
-    for (uint64_t p = d.implicit_offsets[u]; p < d.implicit_offsets[u+1]; ++p) known[d.implicit_items[p]-1] = u;
+    for (uint64_t p = d.implicit_offsets[u]; p < d.implicit_offsets[u+1]; ++p) {
+      uint32_t i = d.implicit_items[p]-1;
+      known[i] = u; known_day[i] = d.implicit_days[p];
+    }
     for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
-      uint32_t i = d.train_items[p]-1; rated[i] = u; known_residual[i] = residual[p];
+      uint32_t i = d.train_items[p]-1; rated[i] = u; known_residual[i] = residual[p]; rated_day[i] = d.train_days[p];
     }
   };
-  auto correction = [&](uint32_t u, uint32_t i) {
+  auto correction = [&](uint32_t u, uint32_t i, uint16_t day) {
     explicit_edges.clear(); implicit_edges.clear();
+    explicit_values.clear(); implicit_values.clear();
     float a = 0, b = 0;
     for (uint32_t j = i*g.k; j < (i+1)*g.k; ++j) {
       if (g.similarity[j] == 0) continue;
       uint32_t other = g.neighbor[j];
-      if (rated[other] == u) { explicit_edges.push_back(j); a += w[j]*known_residual[other]; }
-      if (known[other] == u) { implicit_edges.push_back(j); b += c[j]; }
+      if (rated[other] == u) {
+        float value = known_residual[other]*time_weight[std::abs(int(day)-int(rated_day[other]))];
+        explicit_edges.push_back(j); explicit_values.push_back(value); a += w[j]*value;
+      }
+      if (known[other] == u) {
+        float value = time_weight[std::abs(int(day)-int(known_day[other]))];
+        implicit_edges.push_back(j); implicit_values.push_back(value); b += c[j]*value;
+      }
     }
     return a/std::sqrt(float(std::max<size_t>(1, explicit_edges.size())))
          + b/std::sqrt(float(std::max<size_t>(1, implicit_edges.size())));
@@ -169,6 +188,7 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
   std::vector<uint32_t> users(d.header.users); std::iota(users.begin(), users.end(), 0);
   std::mt19937 rng(2026); double best = 1e100; uint32_t stale = 0;
   std::vector<float> pred(d.probe.size());
+  std::cout << "neighbors=" << g.k << " time_decay=" << time_decay << std::endl;
   for (uint32_t epoch = 1; epoch <= epochs; ++epoch) {
     const auto start = std::chrono::steady_clock::now();
     std::fill(rated.begin(), rated.end(), UINT32_MAX); std::fill(known.begin(), known.end(), UINT32_MAX);
@@ -177,12 +197,16 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     if (!eval_only) for (uint32_t u : users) {
       fill_user(u);
       for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) {
-        float value = baseline[p]+correction(u, d.train_items[p]-1);
+        float value = baseline[p]+correction(u, d.train_items[p]-1, d.train_days[p]);
         float err = float(d.train_ratings[p])-value; train_sse += double(err)*err;
         float a = err/std::sqrt(float(std::max<size_t>(1, explicit_edges.size())));
         float b = err/std::sqrt(float(std::max<size_t>(1, implicit_edges.size())));
-        for (uint32_t j : explicit_edges) w[j] += lr*(a*known_residual[g.neighbor[j]]-reg*w[j]);
-        for (uint32_t j : implicit_edges) c[j] += lr*(b-reg*c[j]);
+        for (size_t edge = 0; edge < explicit_edges.size(); ++edge) {
+          uint32_t j = explicit_edges[edge]; w[j] += lr*(a*explicit_values[edge]-reg*w[j]);
+        }
+        for (size_t edge = 0; edge < implicit_edges.size(); ++edge) {
+          uint32_t j = implicit_edges[edge]; c[j] += lr*(b*implicit_values[edge]-reg*c[j]);
+        }
       }
     }
     std::fill(rated.begin(), rated.end(), UINT32_MAX); std::fill(known.begin(), known.end(), UINT32_MAX);
@@ -190,7 +214,7 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     for (uint32_t u = 0; u < d.header.users; ++u) {
       fill_user(u);
       for (uint64_t q = po[u]; q < po[u+1]; ++q) {
-        uint32_t p = probe_order[q]; pred[p] = probe_base[p]+correction(u,d.probe[p].item-1);
+        uint32_t p = probe_order[q]; pred[p] = probe_base[p]+correction(u,d.probe[p].item-1,d.probe[p].day);
         if (!std::isfinite(pred[p])) fail("non-finite neighborhood prediction");
         double err = d.probe[p].rating-clipped(pred[p]); sse += err*err;
       }
@@ -204,9 +228,9 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     if (score < best) {
       best = score; stale = 0;
       std::ofstream out(model_path+".tmp", std::ios::binary);
-      write_pod(out, uint64_t(0x4E464E42484F4F31ULL)); write_pod(out, hash);
+      write_pod(out, uint64_t(0x4E464E42484F4F32ULL)); write_pod(out, hash);
       write_pod(out, graph_fingerprint(g)); write_pod(out, epoch);
-      write_pod(out, g.items); write_pod(out,g.k); write_vector(out,w); write_vector(out,c);
+      write_pod(out, g.items); write_pod(out,g.k); write_pod(out,time_decay); write_vector(out,w); write_vector(out,c);
       out.close(); if (!out) fail("neighborhood model write failed");
       fs::rename(model_path+".tmp", model_path);
       std::ofstream pout(output, std::ios::binary); write_vector(pout,pred);
@@ -259,10 +283,14 @@ void command_knn(const std::vector<std::string> &args) {
   auto predict = [&](uint32_t u, uint32_t i, uint16_t day, uint32_t s) {
     float x = joint_base(d, f, base, u, i, day, s);
     const float *p = base.rank ? &effective[size_t(u)*base.rank] : nullptr;
+    const float *fq = base.frequency_factors.empty() ? nullptr :
+        &base.frequency_factors[(size_t(i)*kFrequencyBins+f.freq[s])*base.rank];
     for (uint32_t k = 0; k < base.rank; ++k)
-      x += base.factors.item_factors[size_t(i)*base.rank+k]*(p[k]+base.drift[size_t(u)*base.rank+k]*f.dev[s]);
+      x += (base.factors.item_factors[size_t(i)*base.rank+k]+(fq ? fq[k] : 0))
+          *(p[k]+base.drift[size_t(u)*base.rank+k]*f.dev[s]);
     for (uint32_t k = 0; k < base.day_rank; ++k)
-      x += base.factors.item_factors[size_t(i)*base.rank+k]*base.day_factors[size_t(s)*base.day_rank+k];
+      x += (base.factors.item_factors[size_t(i)*base.rank+k]+(fq ? fq[k] : 0))
+          *base.day_factors[size_t(s)*base.day_rank+k];
     return x;
   };
   const auto g = load_graph(value_after(args, "--graph"), d.header.items, bound_fingerprint(args, d));

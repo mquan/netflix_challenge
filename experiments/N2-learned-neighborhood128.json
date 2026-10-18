@@ -1,0 +1,73 @@
+{
+  "name": "N2-learned-neighborhood128",
+  "strategy": "Capacity ablation after B4 gain: expand item neighborhoods from 64 to 128, keeping temporal baseline, learning rate, regularization and decay unchanged. Evaluate incremental contribution to B4.",
+  "command": [
+    "build/netflix",
+    "neighborhood",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors128.bin",
+    "--time-model",
+    "artifacts/time-baseline.bin",
+    "--model",
+    "artifacts/neighborhood128.bin",
+    "--predictions",
+    "artifacts/neighborhood128.f32",
+    "--iterations",
+    "12"
+  ],
+  "started_utc": "2026-09-27T23:11:00.106777+00:00",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "git_commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+  "sources": {
+    "src/neighborhood.hpp": "d41a52e87d9fdd3c25f384f2940401a909ce206669bdd12c6ba2b8e833b65f57",
+    "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "cbc320472eddd439ccd748cebc2889b93393213f60283e2a330f8cc1ada114c2",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": " M README.md\n M experiments/J5-joint256-reg01.log\n M scripts/experiment.py\n M src/neighborhood.hpp\n M tests/test_joint.py\n M tests/test_timeline.py\n?? experiments/G2-residual-neighbors128.events.jsonl\n?? experiments/G2-residual-neighbors128.json\n?? experiments/G2-residual-neighbors128.log\n",
+  "source_archive": {
+    "path": "experiments/N2-learned-neighborhood128.source.zip",
+    "sha256": "cefd1316868338ea94ac6919697bf21c3c360a6ca06c142b91e76702a7e81ed4",
+    "bytes": 33397
+  },
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    },
+    "artifacts/neighbors128.bin": {
+      "sha256": "279bd2d01a761e6036469e97365f4c8e74295a75ee9d20d0a51a37b5fc29969c",
+      "bytes": 13647384
+    },
+    "artifacts/time-baseline.bin": {
+      "sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "bytes": 153626284
+    }
+  },
+  "launched_utc": "2026-09-27T23:11:00.704116+00:00",
+  "events_path": "experiments/N2-learned-neighborhood128.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 864.189844208,
+  "finished_utc": "2026-09-27T23:25:24.898195+00:00",
+  "log_sha256": "1d927accb93740530aef86fa5ac396a8034afefacfaf3c80279a08a010620c60",
+  "events_sha256": "1dbe653d6850f2acce627fc121f11ba84675f80b2b7a09d7e8f024fd848f2017",
+  "model_artifact": {
+    "path": "artifacts/neighborhood128.bin",
+    "sha256": "6382a17b7988b7f2e4071680df1c34bc172516a6378f97c6696f8d2dc5336de6",
+    "bytes": 18196520
+  },
+  "predictions_artifact": {
+    "path": "artifacts/neighborhood128.f32",
+    "sha256": "e221ae417ecb94328493ef19d3bb96d0e9da1d2672fc5c381069843f1061d985",
+    "bytes": 5633580
+  },
+  "graph_artifact": {
+    "path": "artifacts/neighbors128.bin",
+    "sha256": "279bd2d01a761e6036469e97365f4c8e74295a75ee9d20d0a51a37b5fc29969c",
+    "bytes": 13647384
+  }
+}
