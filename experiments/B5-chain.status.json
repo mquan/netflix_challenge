@@ -1,0 +1,23 @@
+{
+  "state": "complete",
+  "completed": [
+    "B5-full-r128",
+    "R10-B5-s3",
+    "R10-B5-NN2"
+  ],
+  "avg_rmse": 0.8668211511380332,
+  "control": "R9-LAT-A2h-20261010-NN2",
+  "control_rmse": 0.8668706424555479,
+  "rmse_delta": -4.949131751474933e-05,
+  "fold_deltas": [
+    7.258472862869958e-06,
+    8.215512975751071e-05,
+    -6.119292236583806e-05,
+    -0.00013339709398896282,
+    -0.00014224381100003125
+  ],
+  "passes_promotion_rule": false,
+  "metric": "Development user-fold CV; not a final test score",
+  "updated_utc": "2026-10-11T08:42:48.047434+00:00",
+  "pid": 34882
+}
