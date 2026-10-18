@@ -1,0 +1,130 @@
+{
+  "run": "/Users/quan/workspace/netflix_challenge/artifacts/local-paths/LP2-p2-200k",
+  "pilot_report_sha256": "b44a6d237ea56876a6586f5db66d7b960d157a82a2f31e9a7d3f9db77f721734",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MH3-categorical-mse.p2.f32": "1ca85bffb77f0f753e006c0e2593516eace88fe0c9944c9a7f0273d8d8d230e0",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT0-select.p2.f32": "76c541fc1881fddff9338a006e7d4ca88d7336fdb6fa894b19e2be068be4d115",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT1-select.p2.f32": "9d4b88ddb2dc5cef1ce1bd612a834a7f38438c9ad9ed247db15a1b0df0bb8ca7",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT2-select.p2.f32": "0a4d0a104d7fa6c18323c2a266282f234ee8b71847990fe152ec07bba88e72bd",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT3-select.p2.f32": "bbc98d8ddf326dd903728cf7ccb4de9bceaf51842ea19e795caed34d37990603",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32": "bc3db54d954d0c5a6ceb654008f4c1df02f4037982161e515a35162203dfaaf2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn256td.train-matched-20260927.f32": "664d95eea34c96ecee7f45ba7e987df97a85fa9c9c2f7522bdb52202aee7eb63",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn64.train-matched-20260927.f32": "04ab09097eeea8223f9fe46e0e697997f55f49eed29dcb6b6c4c0dcafc3fc39b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-rbm100c.p2.f32": "41e43ff2c1d2974e23cac01bdb34beadbef61cdaf441b938cf4c092879ff8dac",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32": "786985155c7f4dbeee697cdc33f71aaed410d50d365afca05b25ea05ffbea176",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32": "7de5e7daa1552d3bc6f3a90d5834274e53f292ea911c645b42daa38d4b1e7463"
+  },
+  "source_sha256": "babc5d6b6345e72217219d2722be51a6caecd369f0d42361285cec538895ecfa",
+  "a2h_alone_evaluation_rmse": 0.8644071080740614,
+  "note": "P2 development test; all added columns come from models trained without P2. Linear ridge only; a gain here is necessary, not sufficient, for ensemble value.",
+  "comparisons": {
+    "pilot_control": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.9490130487444588,
+            "10": 0.9490116601841778,
+            "100": 0.949009853468022,
+            "1000": 0.9492072743600874
+          },
+          "evaluation_rmse": 0.9432224793528791
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.9429806806320841,
+            "10": 0.9429782194673768,
+            "100": 0.942967737650885,
+            "1000": 0.9434323585125812
+          },
+          "evaluation_rmse": 0.9375359904048982
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": -0.00568648894798085,
+      "delta_mse": -0.010694912252098872,
+      "cluster_normal_95_mse_interval": [
+        -0.013102249735490772,
+        -0.008287574768706972
+      ]
+    },
+    "control_plus_A2h": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 1.0,
+          "selection_rmse": {
+            "1": 0.8682558892116805,
+            "10": 0.8682560191952904,
+            "100": 0.8682566611143488,
+            "1000": 0.8682828071491179
+          },
+          "evaluation_rmse": 0.8620410322155827
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 100.0,
+          "selection_rmse": {
+            "1": 0.8683265504094315,
+            "10": 0.868325801977743,
+            "100": 0.868320065334161,
+            "1000": 0.8683450804691741
+          },
+          "evaluation_rmse": 0.8621771024205603
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": 0.0001360702049776341,
+      "delta_mse": 0.00023461471500597756,
+      "cluster_normal_95_mse_interval": [
+        -0.0004476404435558187,
+        0.0009168698735677738
+      ]
+    },
+    "control_plus_honest_bank11": {
+      "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+      "fit_rows": 120195,
+      "selection_rows": 39918,
+      "evaluation_rows": 39887,
+      "evaluation_users": 33109,
+      "models": {
+        "pooled_knn": {
+          "selected_regularization": 10.0,
+          "selection_rmse": {
+            "1": 0.8510134506334734,
+            "10": 0.8510045972476039,
+            "100": 0.8510202695929794,
+            "1000": 0.8514390314242531
+          },
+          "evaluation_rmse": 0.8453068203444044
+        },
+        "pooled_knn_paths": {
+          "selected_regularization": 10.0,
+          "selection_rmse": {
+            "1": 0.8513195800088953,
+            "10": 0.8513103129651103,
+            "100": 0.8513227789163488,
+            "1000": 0.8517196848832738
+          },
+          "evaluation_rmse": 0.8456328925802956
+        }
+      },
+      "matched_knn_rmse": 0.9542557004973625,
+      "delta_rmse": 0.00032607223589120604,
+      "delta_mse": 0.0005513684929506669,
+      "cluster_normal_95_mse_interval": [
+        3.487940122200498e-05,
+        0.001067857584679329
+      ]
+    }
+  }
+}
