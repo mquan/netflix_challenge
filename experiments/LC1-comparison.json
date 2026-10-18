@@ -1,0 +1,219 @@
+{
+  "metric": "Original-probe development user-fold CV, not a hidden-test score",
+  "comparisons": {
+    "pooled_vs_reference": {
+      "rows": 1408395,
+      "users": 462858,
+      "control_rmse": 0.8668706424233039,
+      "treatment_rmse": 0.8667483642272389,
+      "delta_rmse": -0.00012227819606502877,
+      "fold_deltas": [
+        -9.71254281716405e-05,
+        5.314286297575244e-06,
+        -0.00014469648120718492,
+        -0.00010479033108101721,
+        -0.00027029000794187574
+      ],
+      "delta_mse": -0.0002119838047971555,
+      "cluster_normal_95_mse_interval": [
+        -0.0002740506614992294,
+        -0.0001499169480950816
+      ],
+      "all_folds_improve": false,
+      "slices": {
+        "history_le_20": {
+          "rows": 166825,
+          "users": 59890,
+          "control_rmse": 0.9722594997435834,
+          "treatment_rmse": 0.9721388370229219,
+          "delta_rmse": -0.00012066272066146855,
+          "fold_deltas": [
+            -0.0002500168655101831,
+            6.9264602766683225e-06,
+            -0.00016044938852566304,
+            -0.00012704604072844017,
+            -7.053264467382636e-05
+          ],
+          "delta_mse": -0.00023461639336379,
+          "cluster_normal_95_mse_interval": [
+            -0.0004714559958267185,
+            2.2232090991385393e-06
+          ],
+          "all_folds_improve": false
+        },
+        "history_gt_20": {
+          "rows": 1241570,
+          "users": 402968,
+          "control_rmse": 0.8517167056468358,
+          "treatment_rmse": 0.8515940370430272,
+          "delta_rmse": -0.00012266860380860667,
+          "fold_deltas": [
+            -7.389273988922529e-05,
+            5.0778788305283484e-06,
+            -0.00014242320531332453,
+            -0.00010149754088606411,
+            -0.00030161912036297256
+          ],
+          "delta_mse": -0.00020894275065793755,
+          "cluster_normal_95_mse_interval": [
+            -0.00027174700212090537,
+            -0.00014613849919496973
+          ],
+          "all_folds_improve": false
+        }
+      }
+    },
+    "paths_vs_reference": {
+      "rows": 1408395,
+      "users": 462858,
+      "control_rmse": 0.8668706424233039,
+      "treatment_rmse": 0.8671679530262832,
+      "delta_rmse": 0.0002973106029793282,
+      "fold_deltas": [
+        0.000281998646944559,
+        0.000364405311733651,
+        0.00027519890532079483,
+        0.00031259178318365777,
+        0.00025235727928785145
+      ],
+      "delta_mse": 0.0005155480604027303,
+      "cluster_normal_95_mse_interval": [
+        0.00042958523252015137,
+        0.0006015108882853093
+      ],
+      "all_folds_improve": false,
+      "slices": {
+        "history_le_20": {
+          "rows": 166825,
+          "users": 59890,
+          "control_rmse": 0.9722594997435834,
+          "treatment_rmse": 0.9725308741318113,
+          "delta_rmse": 0.0002713743882278852,
+          "fold_deltas": [
+            0.00033674658677396163,
+            0.0001336205064887963,
+            0.00014866519788092614,
+            0.0003403756047299922,
+            0.00039524310884109237
+          ],
+          "delta_mse": 0.0005277662979419238,
+          "cluster_normal_95_mse_interval": [
+            0.00019865760076131036,
+            0.0008568749951225372
+          ],
+          "all_folds_improve": false
+        },
+        "history_gt_20": {
+          "rows": 1241570,
+          "users": 402968,
+          "control_rmse": 0.8517167056468358,
+          "treatment_rmse": 0.8520183407771075,
+          "delta_rmse": 0.00030163513027170463,
+          "fold_deltas": [
+            0.0002739358088499344,
+            0.0003994332517304189,
+            0.0002951888250939394,
+            0.00030870447472408635,
+            0.00023053284781138217
+          ],
+          "delta_mse": 0.0005139063426764033,
+          "cluster_normal_95_mse_interval": [
+            0.00042699617510473,
+            0.0006008165102480765
+          ],
+          "all_folds_improve": false
+        }
+      }
+    },
+    "paths_vs_pooled": {
+      "rows": 1408395,
+      "users": 462858,
+      "control_rmse": 0.8667483642272389,
+      "treatment_rmse": 0.8671679530262832,
+      "delta_rmse": 0.000419588799044357,
+      "fold_deltas": [
+        0.0003791240751161995,
+        0.00035909102543607574,
+        0.00041989538652797975,
+        0.000417382114264675,
+        0.0005226472872297272
+      ],
+      "delta_mse": 0.0007275318651998858,
+      "cluster_normal_95_mse_interval": [
+        0.0006572990633812936,
+        0.0007977646670184781
+      ],
+      "all_folds_improve": false,
+      "slices": {
+        "history_le_20": {
+          "rows": 166825,
+          "users": 59890,
+          "control_rmse": 0.9721388370229219,
+          "treatment_rmse": 0.9725308741318113,
+          "delta_rmse": 0.0003920371088893537,
+          "fold_deltas": [
+            0.0005867634522841447,
+            0.000126694046212128,
+            0.0003091145864065892,
+            0.00046742164545843234,
+            0.00046577575351491873
+          ],
+          "delta_mse": 0.0007623826913057138,
+          "cluster_normal_95_mse_interval": [
+            0.0004888535829730122,
+            0.0010359117996384154
+          ],
+          "all_folds_improve": false
+        },
+        "history_gt_20": {
+          "rows": 1241570,
+          "users": 402968,
+          "control_rmse": 0.8515940370430272,
+          "treatment_rmse": 0.8520183407771075,
+          "delta_rmse": 0.0004243037340803113,
+          "fold_deltas": [
+            0.0003478285487391597,
+            0.00039435537289989053,
+            0.00043761203040726393,
+            0.00041020201561015046,
+            0.0005321519681743547
+          ],
+          "delta_mse": 0.0007228490933343408,
+          "cluster_normal_95_mse_interval": [
+            0.0006521632143795023,
+            0.0007935349722891793
+          ],
+          "all_folds_improve": false
+        }
+      }
+    }
+  },
+  "outputs": {
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+    "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC1/pooled-NN2.avg.f32": "c74afb9b570053ffd5ab8fe75387c069df94a15a4c69ed8bdaa24e0eb918f61f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC1/paths-NN2.avg.f32": "cbb1abe110a88e54c780d4a5d28c08df0faa92b0ede16127325535c3c798079b"
+  },
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC1/pooled-NN2.json": "06e804e86e4d3340a09aeceb615920ef377374554b3279a670c043294b08829a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC1/paths-NN2.json": "f39e2e60785e7a2ada978878a97622ae2d775bcbbd1ee925ecb21a2aa9092a41"
+  },
+  "path_arm_passes_promotion_rule": false,
+  "path_information_passes_all_folds": false,
+  "substantial_investment_gate": false,
+  "target": {
+    "cinematch_test_rmse": 0.9525,
+    "improvement_fraction": 0.1,
+    "target_test_rmse": 0.85725,
+    "estimated_retraining_offset": 0.0074,
+    "approximate_dev_target": 0.86465,
+    "path_arm_estimated_test_rmse": 0.8597679530262833,
+    "path_arm_dev_gap": 0.002517953026283215
+  },
+  "limitations": [
+    "Probe-guided development selection remains.",
+    "Paired intervals do not adjust for model selection or shared fitted weights.",
+    "Feature additions also change random feature sampling and NN input dimension.",
+    "This tests summaries, not a structure-preserving encoder.",
+    "The calibrated target is not a measured hidden-test result."
+  ]
+}
