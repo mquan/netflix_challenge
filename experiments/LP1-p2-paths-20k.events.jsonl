@@ -1,0 +1,110 @@
+{"observed_utc": "2026-10-13T05:58:41.756284+00:00", "line": "building training index: 97664546 ratings"}
+{"observed_utc": "2026-10-13T05:58:44.237123+00:00", "line": "index_seconds=2.50; extracting 20000 queries"}
+{"observed_utc": "2026-10-13T05:58:45.791014+00:00", "line": "queries=2000 seconds=1.6"}
+{"observed_utc": "2026-10-13T05:58:47.412179+00:00", "line": "queries=4000 seconds=3.2"}
+{"observed_utc": "2026-10-13T05:58:48.971838+00:00", "line": "queries=6000 seconds=4.7"}
+{"observed_utc": "2026-10-13T05:58:50.526796+00:00", "line": "queries=8000 seconds=6.3"}
+{"observed_utc": "2026-10-13T05:58:52.135129+00:00", "line": "queries=10000 seconds=7.9"}
+{"observed_utc": "2026-10-13T05:58:53.689605+00:00", "line": "queries=12000 seconds=9.5"}
+{"observed_utc": "2026-10-13T05:58:55.314241+00:00", "line": "queries=14000 seconds=11.1"}
+{"observed_utc": "2026-10-13T05:58:56.707229+00:00", "line": "queries=16000 seconds=12.5"}
+{"observed_utc": "2026-10-13T05:58:58.111111+00:00", "line": "queries=18000 seconds=13.9"}
+{"observed_utc": "2026-10-13T05:58:59.237662+00:00", "line": "queries=20000 seconds=15.0"}
+{"observed_utc": "2026-10-13T05:59:00.365187+00:00", "line": "{"}
+{"observed_utc": "2026-10-13T05:59:00.365249+00:00", "line": "  \"arguments\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365268+00:00", "line": "    \"data\": \"artifacts/validation/train-matched-20260927.bin\","}
+{"observed_utc": "2026-10-13T05:59:00.365288+00:00", "line": "    \"output\": \"artifacts/local-paths/LP1-p2-20k\","}
+{"observed_utc": "2026-10-13T05:59:00.365301+00:00", "line": "    \"queries\": 20000,"}
+{"observed_utc": "2026-10-13T05:59:00.365313+00:00", "line": "    \"history\": 32,"}
+{"observed_utc": "2026-10-13T05:59:00.365324+00:00", "line": "    \"neighbors\": 32,"}
+{"observed_utc": "2026-10-13T05:59:00.365335+00:00", "line": "    \"candidates\": 256,"}
+{"observed_utc": "2026-10-13T05:59:00.365346+00:00", "line": "    \"seed\": 20261012"}
+{"observed_utc": "2026-10-13T05:59:00.365356+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365372+00:00", "line": "  \"data_sha256\": \"94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8\","}
+{"observed_utc": "2026-10-13T05:59:00.365383+00:00", "line": "  \"source_sha256\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365393+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/scripts/local_paths_pilot.py\": \"c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4\","}
+{"observed_utc": "2026-10-13T05:59:00.365408+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py\": \"f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c\","}
+{"observed_utc": "2026-10-13T05:59:00.365419+00:00", "line": "    \"/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py\": \"dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2\""}
+{"observed_utc": "2026-10-13T05:59:00.365429+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365439+00:00", "line": "  \"metric\": \"training-only P2 pilot; no original-probe or ensemble improvement claim\","}
+{"observed_utc": "2026-10-13T05:59:00.365453+00:00", "line": "  \"query_count\": 20000,"}
+{"observed_utc": "2026-10-13T05:59:00.365464+00:00", "line": "  \"full_query_count\": 1407566,"}
+{"observed_utc": "2026-10-13T05:59:00.365474+00:00", "line": "  \"index_seconds\": 2.501285915961489,"}
+{"observed_utc": "2026-10-13T05:59:00.365485+00:00", "line": "  \"extraction_seconds\": 15.000500500085764,"}
+{"observed_utc": "2026-10-13T05:59:00.365495+00:00", "line": "  \"signal_seconds\": 0.08325024996884167,"}
+{"observed_utc": "2026-10-13T05:59:00.365507+00:00", "line": "  \"queries_per_second\": 1333.288845921218,"}
+{"observed_utc": "2026-10-13T05:59:00.365517+00:00", "line": "  \"projected_full_extraction_seconds\": 1055.709724345186,"}
+{"observed_utc": "2026-10-13T05:59:00.365527+00:00", "line": "  \"peak_rss_bytes\": 3361095680,"}
+{"observed_utc": "2026-10-13T05:59:00.365536+00:00", "line": "  \"index_bytes\": 781600712,"}
+{"observed_utc": "2026-10-13T05:59:00.365545+00:00", "line": "  \"path_coverage\": 1.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365563+00:00", "line": "  \"retained_intersection_density\": 0.628703772253234,"}
+{"observed_utc": "2026-10-13T05:59:00.365573+00:00", "line": "  \"history\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365582+00:00", "line": "    \"mean\": 28.4946,"}
+{"observed_utc": "2026-10-13T05:59:00.365592+00:00", "line": "    \"p50\": 32.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365601+00:00", "line": "    \"p95\": 32.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365610+00:00", "line": "    \"max\": 32"}
+{"observed_utc": "2026-10-13T05:59:00.365618+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365626+00:00", "line": "  \"neighbors\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365635+00:00", "line": "    \"mean\": 31.98005,"}
+{"observed_utc": "2026-10-13T05:59:00.365650+00:00", "line": "    \"p50\": 32.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365659+00:00", "line": "    \"p95\": 32.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365668+00:00", "line": "    \"max\": 32"}
+{"observed_utc": "2026-10-13T05:59:00.365677+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365686+00:00", "line": "  \"paths\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365697+00:00", "line": "    \"mean\": 573.22035,"}
+{"observed_utc": "2026-10-13T05:59:00.365706+00:00", "line": "    \"p50\": 603.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365714+00:00", "line": "    \"p95\": 847.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365723+00:00", "line": "    \"max\": 994"}
+{"observed_utc": "2026-10-13T05:59:00.365732+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365743+00:00", "line": "  \"candidates\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365751+00:00", "line": "    \"mean\": 254.6045,"}
+{"observed_utc": "2026-10-13T05:59:00.365760+00:00", "line": "    \"p50\": 256.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365768+00:00", "line": "    \"p95\": 256.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365776+00:00", "line": "    \"max\": 256"}
+{"observed_utc": "2026-10-13T05:59:00.365785+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.365794+00:00", "line": "  \"signal\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365803+00:00", "line": "    \"protocol\": \"P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4\","}
+{"observed_utc": "2026-10-13T05:59:00.365812+00:00", "line": "    \"fit_rows\": 11940,"}
+{"observed_utc": "2026-10-13T05:59:00.365821+00:00", "line": "    \"selection_rows\": 4011,"}
+{"observed_utc": "2026-10-13T05:59:00.365829+00:00", "line": "    \"evaluation_rows\": 4049,"}
+{"observed_utc": "2026-10-13T05:59:00.365839+00:00", "line": "    \"evaluation_users\": 3976,"}
+{"observed_utc": "2026-10-13T05:59:00.365849+00:00", "line": "    \"models\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365857+00:00", "line": "      \"pooled_knn\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365865+00:00", "line": "        \"selected_regularization\": 10.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365877+00:00", "line": "        \"selection_rmse\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365890+00:00", "line": "          \"1\": 0.9448989574338873,"}
+{"observed_utc": "2026-10-13T05:59:00.365899+00:00", "line": "          \"10\": 0.9448830760611192,"}
+{"observed_utc": "2026-10-13T05:59:00.365910+00:00", "line": "          \"100\": 0.9449195487123866,"}
+{"observed_utc": "2026-10-13T05:59:00.365920+00:00", "line": "          \"1000\": 0.9473409784804341"}
+{"observed_utc": "2026-10-13T05:59:00.365931+00:00", "line": "        },"}
+{"observed_utc": "2026-10-13T05:59:00.365942+00:00", "line": "        \"evaluation_rmse\": 0.9451320151065454"}
+{"observed_utc": "2026-10-13T05:59:00.365953+00:00", "line": "      },"}
+{"observed_utc": "2026-10-13T05:59:00.365962+00:00", "line": "      \"pooled_knn_paths\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365971+00:00", "line": "        \"selected_regularization\": 1.0,"}
+{"observed_utc": "2026-10-13T05:59:00.365979+00:00", "line": "        \"selection_rmse\": {"}
+{"observed_utc": "2026-10-13T05:59:00.365989+00:00", "line": "          \"1\": 0.9387044999165918,"}
+{"observed_utc": "2026-10-13T05:59:00.366007+00:00", "line": "          \"10\": 0.9390104470719906,"}
+{"observed_utc": "2026-10-13T05:59:00.366019+00:00", "line": "          \"100\": 0.9403820728389888,"}
+{"observed_utc": "2026-10-13T05:59:00.366029+00:00", "line": "          \"1000\": 0.9420061419410338"}
+{"observed_utc": "2026-10-13T05:59:00.366040+00:00", "line": "        },"}
+{"observed_utc": "2026-10-13T05:59:00.366052+00:00", "line": "        \"evaluation_rmse\": 0.9429094612455017"}
+{"observed_utc": "2026-10-13T05:59:00.366063+00:00", "line": "      }"}
+{"observed_utc": "2026-10-13T05:59:00.366071+00:00", "line": "    },"}
+{"observed_utc": "2026-10-13T05:59:00.366080+00:00", "line": "    \"matched_knn_rmse\": 0.9567245510285965,"}
+{"observed_utc": "2026-10-13T05:59:00.366089+00:00", "line": "    \"delta_rmse\": -0.0022225538610437523,"}
+{"observed_utc": "2026-10-13T05:59:00.366098+00:00", "line": "    \"delta_mse\": -0.004196273873076888,"}
+{"observed_utc": "2026-10-13T05:59:00.366109+00:00", "line": "    \"cluster_normal_95_mse_interval\": ["}
+{"observed_utc": "2026-10-13T05:59:00.366118+00:00", "line": "      -0.013383720527526968,"}
+{"observed_utc": "2026-10-13T05:59:00.366130+00:00", "line": "      0.004991172781373191"}
+{"observed_utc": "2026-10-13T05:59:00.366141+00:00", "line": "    ],"}
+{"observed_utc": "2026-10-13T05:59:00.366153+00:00", "line": "    \"history_le_20\": {"}
+{"observed_utc": "2026-10-13T05:59:00.366162+00:00", "line": "      \"evaluation_rows\": 621,"}
+{"observed_utc": "2026-10-13T05:59:00.366172+00:00", "line": "      \"delta_rmse\": 0.0042770980023513205"}
+{"observed_utc": "2026-10-13T05:59:00.366182+00:00", "line": "    },"}
+{"observed_utc": "2026-10-13T05:59:00.366190+00:00", "line": "    \"history_gt_20\": {"}
+{"observed_utc": "2026-10-13T05:59:00.366199+00:00", "line": "      \"evaluation_rows\": 3428,"}
+{"observed_utc": "2026-10-13T05:59:00.366207+00:00", "line": "      \"delta_rmse\": -0.003431049357549343"}
+{"observed_utc": "2026-10-13T05:59:00.366215+00:00", "line": "    }"}
+{"observed_utc": "2026-10-13T05:59:00.366224+00:00", "line": "  },"}
+{"observed_utc": "2026-10-13T05:59:00.366232+00:00", "line": "  \"sample_sha256\": \"86a27962604ff1e7f0616e0553f1c67fecbf86d27c6f1f3c98c66e810f4675a6\""}
+{"observed_utc": "2026-10-13T05:59:00.366240+00:00", "line": "}"}

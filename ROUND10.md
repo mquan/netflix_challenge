@@ -84,3 +84,16 @@ at least one rated neighbour.
 adds them to the frozen R9-LAT-A2h config, then runs NN2 and the 50/50 average.
 Promotion requires all five folds better than R9-LAT-A2h-NN2. R10-B5's blend
 stages took 80 min. Status: `experiments/R10-KNNF-chain.status.json`.
+
+### KNNF finished: no gain, not promoted (2026-10-11)
+
+| Blend | Change vs R9-LAT-A2h | Fold changes |
+|---|---:|---|
+| LightGBM-s3 | +0.0000103 | +.000093 +.000064 +.000032 +.000020 −.000158 |
+| NN2 alone | −0.0000307 | −.000101 +.000073 −.000001 −.000027 −.000096 |
+| 50/50 average | −0.0000115 (0.8668592) | −.000016 +.000091 +.000053 −.000011 −.000175 |
+
+This is noise level: LightGBM is worse on four folds. Per-neighbour detail adds nothing beyond
+the K1 kNN prediction and support columns already in the bank. Together with B5,
+this suggests the bank is saturated on neighbourhood and Bayes-factor signal.
+**Promoted best remains R9-LAT-A2h, 0.8668706.**
