@@ -1,0 +1,25 @@
+{
+  "state": "completed_retraining_comparison",
+  "reference_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+  "retrained_prediction_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+  "byte_identical": true,
+  "changed_predictions": 0,
+  "max_abs_prediction_difference": 0.0,
+  "rms_prediction_difference": 0.0,
+  "reference_rmse": 0.9000114051224117,
+  "retrained_rmse": 0.9000114051224117,
+  "rmse_delta": 0.0,
+  "fold_rmse_deltas": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "checkpoint_epoch": 6,
+  "retrained_model_sha256": "756bc0b7ee6c643e10380563f3e0f3e4c542bdd247066e6fc6c226b98b0a061b",
+  "run_record_sha256": "8ea73fa29c52fdbd5d0fcab02c2e46f3bef3322a9678206c2ac08c7feefefdf3",
+  "limitation": "Original-development-data reproduction only. Does not establish production score or resolve J2-J4 training provenance.",
+  "reference_model_sha256": "756bc0b7ee6c643e10380563f3e0f3e4c542bdd247066e6fc6c226b98b0a061b",
+  "model_byte_identical": true
+}

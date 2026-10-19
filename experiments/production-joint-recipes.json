@@ -1,0 +1,1114 @@
+{
+  "created_utc": "2026-10-19T08:04:07.200864+00:00",
+  "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "stages": [
+    {
+      "name": "J1-joint64",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J1-joint64.json",
+      "record_sha256": "36ab61d293fd039135ef2b0cf690d9e35c7499ae4a81ee90fbc88a819bece7d1",
+      "log_sha256": "0965d050edadd3f82110efa4387e455cc78e0357d99d8307629924f8c9d87ce9",
+      "epoch_log_line": "epoch=6 train_rmse=0.7287601196 probe_rmse=0.9000114063 best=0.9000114063 seconds=16.89332338",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/joint64.bin",
+      "model_sha256": "756bc0b7ee6c643e10380563f3e0f3e4c542bdd247066e6fc6c226b98b0a061b",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "f0e86e22e80eb907f60574564ced3ec7d1cc0dcd459f8503c4dda239e28eb96c",
+          "current": "756bc0b7ee6c643e10380563f3e0f3e4c542bdd247066e6fc6c226b98b0a061b",
+          "matches": false
+        },
+        "predictions_artifact": {
+          "recorded": "a72836e2bd594d880d212fb83ca709a87529e7a108bfe184d3d95b10136b9b65",
+          "current": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+          "matches": false
+        }
+      },
+      "recipe_provenance": "historical_hash_mismatch_requires_retraining_check",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/joint64.f32",
+      "prediction_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint64.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 6,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/netflix.cpp": "2853256a9e9e985e6ad4e0eac29f81515d8d04bf1add6f65db4e5cac3c461e73",
+        "src/joint.hpp": "daf4ef43bca271cc05cdc9762bc846cb525b213d091add57a945c09160c7276c"
+      },
+      "historical_binary_sha256": "3bf3ad3adf0a72db295b196cc8803dde6f529b96b3d901a39b0528be78115f60",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/J1-joint64.bin",
+        "--factors",
+        "64",
+        "--iterations",
+        "6",
+        "--decay",
+        "0.95",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/J1-joint64.f32",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "J2-joint128-reg02",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J2-joint128-reg02.json",
+      "record_sha256": "5821fdf04a6ae749ee5f98fc29fc2a37e08437c3ed7a7be398a9267dcd283c00",
+      "log_sha256": "c368bfdbab89af5338ba285b933da8d94a35a87685c2927a4430f8d01b1dd7bf",
+      "epoch_log_line": "epoch=40 train_rmse=0.6890846663 probe_rmse=0.8961722036 best=0.8961722036 seconds=33.95270513",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg02.bin",
+      "model_sha256": "a9c6ed07535b0ec4df43464a4a056b9c9a3e7a48242a14039d8d001519d4d9e1",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "5b4610131eb2fd2fc1f5d612844eb9a36c3298bb284c51c54bc7fa728462abc7",
+          "current": "a9c6ed07535b0ec4df43464a4a056b9c9a3e7a48242a14039d8d001519d4d9e1",
+          "matches": false
+        },
+        "predictions_artifact": {
+          "recorded": "042c0ff25c3cb1bcfb282aa74455fde317dba688082f8c5ab84f09c8051ae18f",
+          "current": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+          "matches": false
+        }
+      },
+      "recipe_provenance": "historical_hash_mismatch_requires_retraining_check",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg02.f32",
+      "prediction_sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32"
+      ],
+      "rank": 128,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 40,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/netflix.cpp": "28896adc52cb9fd17e1fc6d6ae67af1a6df3ecc56e2ac8e82f5aa6cd38d4b1ae",
+        "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+        "src/joint.hpp": "daf4ef43bca271cc05cdc9762bc846cb525b213d091add57a945c09160c7276c"
+      },
+      "historical_binary_sha256": "97308c01b90f52462d22690cd63af953974d2469bf90ae75c5542c02bda26b99",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/J2-joint128-reg02.bin",
+        "--factors",
+        "128",
+        "--iterations",
+        "40",
+        "--regularization",
+        "0.02",
+        "--decay",
+        "0.95",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/J2-joint128-reg02.f32",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "J3-joint128-reg005",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J3-joint128-reg005.json",
+      "record_sha256": "bdf733cf4d3c164ddeeddc8967f0443ae59d8fcb19428087574061927cfaa079",
+      "log_sha256": "0390bb96b4456208b1c7adce531ae1ee5ab9a06a81f6260c2a83e5a80fc53cb8",
+      "epoch_log_line": "epoch=9 train_rmse=0.6934141504 probe_rmse=0.8978688266 best=0.8978688266 seconds=31.16266254",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+      "model_sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "a11fb1f69f32aa6962d2caffa9c4dd3060ab4567fd4333438370a0cd7996044f",
+          "current": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+          "matches": false
+        },
+        "predictions_artifact": {
+          "recorded": "205c304e27fc592e345998d3f8140c179f861d2355087656760a0aefc5c32ef0",
+          "current": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+          "matches": false
+        }
+      },
+      "recipe_provenance": "historical_hash_mismatch_requires_retraining_check",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.f32",
+      "prediction_sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32"
+      ],
+      "rank": 128,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 9,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+        "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+        "src/joint.hpp": "62fdf4aba9e343acf27b19980e211bb2b6685133232758611b5ab1c45c31e712"
+      },
+      "historical_binary_sha256": "4e0d769900a73fb4d888c6856e5318fab68e97c50afb564f3eaea050bbb1bbd5",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/J3-joint128-reg005.bin",
+        "--factors",
+        "128",
+        "--iterations",
+        "9",
+        "--regularization",
+        "0.005",
+        "--decay",
+        "0.95",
+        "--patience",
+        "0",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/J3-joint128-reg005.f32",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "J4-joint128-day128",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J4-joint128-day128.json",
+      "record_sha256": "a3067f84740e065a30de0af6ee903bfa641085e2750c82911f86bb53ced8efda",
+      "log_sha256": "6c3f8f43d8bee986a83ca84531528b00eadc69839ec2c2af4f696d29192c95d7",
+      "epoch_log_line": "epoch=1 train_rmse=0.671767202 probe_rmse=0.8970498562 best=0.8970498562 seconds=84.48244892",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-day128.bin",
+      "model_sha256": "011c433fc5c869b56994ebe2c26c38384e0a1fc4fc0bb4a6cf9316805da14a65",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "832cc21f5cd9797fe3317d94b57308aadbcfe6863a57b571f82f73f7525de545",
+          "current": "011c433fc5c869b56994ebe2c26c38384e0a1fc4fc0bb4a6cf9316805da14a65",
+          "matches": false
+        },
+        "predictions_artifact": {
+          "recorded": "4453cb2e9f5a262a00e058e9b35c068e3df73e3e9013c7bde883b94df0d12a0c",
+          "current": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+          "matches": false
+        }
+      },
+      "recipe_provenance": "historical_hash_mismatch_requires_retraining_check",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/joint128-day128.f32",
+      "prediction_sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32"
+      ],
+      "rank": 128,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 1,
+      "start_epoch": 1,
+      "dependency": "J3-joint128-reg005",
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/netflix.cpp": "4c76907794dee28febb1200c6e902b8ab231272d02366fdba7bbe5ab1fafb16c",
+        "src/ensemble.hpp": "1b23d8aed4139580a3738ed833c14796fd1b864b90334a9eaca3f1fe7788ca18",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "985babc15ed3912b2bb146c5a43113fa8ae17f40edd5fbba51f7f4c4c0846613",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/J4-joint128-day128.bin",
+        "--init-model",
+        "{OUTPUT_DIRECTORY}/J3-joint128-reg005.bin",
+        "--factors",
+        "128",
+        "--day-factors",
+        "128",
+        "--iterations",
+        "1",
+        "--learning-rate",
+        "0.003",
+        "--regularization",
+        "0.005",
+        "--decay",
+        "0.95",
+        "--patience",
+        "0",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/J4-joint128-day128.f32",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "J6-joint256-reg01",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J6-joint256-reg01.json",
+      "record_sha256": "aeb122446a94599a6151e2293238da781df6ed7faec53ca0bb35d27150fbc808",
+      "log_sha256": "3a0405f6bb8ecbb00a2fda6e8e7d6ff01b868368b7968da9eb2b533627cebf36",
+      "epoch_log_line": "epoch=17 train_rmse=0.6524675597 probe_rmse=0.8951664052 best=0.8951664052 seconds=208.550339",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.bin",
+      "model_sha256": "a34d82047f92b7a43587977591b88dfb56caa059b1c4e1641a8ef7579a9c2fed",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "a34d82047f92b7a43587977591b88dfb56caa059b1c4e1641a8ef7579a9c2fed",
+          "current": "a34d82047f92b7a43587977591b88dfb56caa059b1c4e1641a8ef7579a9c2fed",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+          "current": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32",
+      "prediction_sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32"
+      ],
+      "rank": 256,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 17,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+        "src/netflix.cpp": "a62e552d2772c78d99262c7a702cc8a7045b0b0f44f4a3517521301b1e120f61",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "c1fcc4e00610f92b235ec3876aacf7991108de3f702d41d7148b17184d3928b9",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/J6-joint256-reg01.bin",
+        "--factors",
+        "256",
+        "--iterations",
+        "17",
+        "--regularization",
+        "0.01",
+        "--decay",
+        "0.95",
+        "--patience",
+        "0",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/J6-joint256-reg01.f32",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "T2-f64-lr005-reg015-d97",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T2-f64-lr005-reg015-d97.json",
+      "record_sha256": "f4a82146531f80624a672affd6bfd4f717a157450c8c5ab41632dda711e19e91",
+      "log_sha256": "c90ab1d6d75d2099fe71447b785fec6aa9c269d7229d7159aa2999e5dc29000d",
+      "epoch_log_line": "epoch=37 train_rmse=0.6919579847 probe_rmse=0.8969742665 best=0.8969742665 seconds=51.94639058",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.bin",
+      "model_sha256": "76f165b7e46c202b8150762f1da6d581a4c72d35aefa95981eed089d242626cc",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "76f165b7e46c202b8150762f1da6d581a4c72d35aefa95981eed089d242626cc",
+          "current": "76f165b7e46c202b8150762f1da6d581a4c72d35aefa95981eed089d242626cc",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+          "current": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32",
+      "prediction_sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 37,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/T2-f64-lr005-reg015-d97.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/T2-f64-lr005-reg015-d97.f32",
+        "--factors",
+        "64",
+        "--patience",
+        "0",
+        "--learning-rate",
+        ".005",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".97",
+        "--iterations",
+        "37",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "T3-f64-lr008-reg008",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T3-f64-lr008-reg008.json",
+      "record_sha256": "f783089e4f288ec23aef3a99372cb81c5c6b1d3dd55cabad1f5e971ab66cf68f",
+      "log_sha256": "a7078f07d52abd12d6ffa14d95320d2da5aa0770f2f63bb5dbb9a7c8dcd8c508",
+      "epoch_log_line": "epoch=13 train_rmse=0.7064738783 probe_rmse=0.898287356 best=0.898287356 seconds=80.21465125",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.bin",
+      "model_sha256": "d41d07b0055a448872ec05eb032aefd8a09463728ab412c1500ed22dd2b2f125",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "d41d07b0055a448872ec05eb032aefd8a09463728ab412c1500ed22dd2b2f125",
+          "current": "d41d07b0055a448872ec05eb032aefd8a09463728ab412c1500ed22dd2b2f125",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+          "current": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32",
+      "prediction_sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 13,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/T3-f64-lr008-reg008.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/T3-f64-lr008-reg008.f32",
+        "--factors",
+        "64",
+        "--patience",
+        "0",
+        "--learning-rate",
+        ".008",
+        "--regularization",
+        ".008",
+        "--decay",
+        ".95",
+        "--iterations",
+        "13",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "T4-f64-lr012-reg015-d93",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T4-f64-lr012-reg015-d93.json",
+      "record_sha256": "b2fd1f7311ca251c95d2abefb0b3d1a85428ca13356708842791ed0725b7ed19",
+      "log_sha256": "3603f1e255cb9fea384ff43851673dff81ade7181149957eff509bb0ebabf36c",
+      "epoch_log_line": "epoch=21 train_rmse=0.6915837809 probe_rmse=0.8975343589 best=0.8975343589 seconds=40.60965454",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.bin",
+      "model_sha256": "a356df37af55ebd290bcf19275f7b0092f28ef7cc27447e2e72044afdaa2bb1b",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "a356df37af55ebd290bcf19275f7b0092f28ef7cc27447e2e72044afdaa2bb1b",
+          "current": "a356df37af55ebd290bcf19275f7b0092f28ef7cc27447e2e72044afdaa2bb1b",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+          "current": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32",
+      "prediction_sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 21,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "5ee3c7963d411fe6a96f16082773263e14c93c5ec15f11a9d4c2afe1ec5a9471",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/T4-f64-lr012-reg015-d93.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/T4-f64-lr012-reg015-d93.f32",
+        "--factors",
+        "64",
+        "--patience",
+        "0",
+        "--learning-rate",
+        ".012",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".93",
+        "--iterations",
+        "21",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "T6-f256-lr012-reg015-d93",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T6-f256-lr012-reg015-d93.json",
+      "record_sha256": "4cb59b63a5129e9e6f7c5c55665e8e694296e44b7e08fa14f269b4d226a23cab",
+      "log_sha256": "5f6d0606b5c6629fd818da3311eb1374c1f89021f81435230d308d01802a3e56",
+      "epoch_log_line": "epoch=11 train_rmse=0.7244341095 probe_rmse=0.899493973 best=0.899493973 seconds=141.3488653",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.bin",
+      "model_sha256": "98a54c6a319c97425334c7b1bf4f213339f6990953cba3c8797e20877fa8167b",
+      "historical_model_digest_present": false,
+      "historical_prediction_digest_present": false,
+      "historical_artifact_checks": {},
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32",
+      "prediction_sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32"
+      ],
+      "rank": 256,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 11,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/integrated.hpp": "474801e770a2f15027434d35dc07f9757e61de48ee11c83aaea4b3825f3ea717",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "46438fe43fd3fd244aa3928b21edbb272da2aae4d8c82ce2ab807e0593e28a34",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/T6-f256-lr012-reg015-d93.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/T6-f256-lr012-reg015-d93.f32",
+        "--factors",
+        "256",
+        "--iterations",
+        "11",
+        "--learning-rate",
+        ".012",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".93",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "T6R-f256-resume",
+      "family": "joint",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T6R-f256-resume.json",
+      "record_sha256": "977397b07348a655c9d05febc991ddeca4a889d843282ec358c8d749f696b6cc",
+      "log_sha256": "56eba382fc527472414ae135268052238e63e906436e96a732998f7e9e365a5e",
+      "epoch_log_line": "epoch=24 train_rmse=0.6380039875 probe_rmse=0.894763029 best=0.894763029 seconds=76.82194517",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.bin",
+      "model_sha256": "502557309873b605737e65eed52bb5bf5dac33e4db5d74e19befb4e01e6e7d44",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "502557309873b605737e65eed52bb5bf5dac33e4db5d74e19befb4e01e6e7d44",
+          "current": "502557309873b605737e65eed52bb5bf5dac33e4db5d74e19befb4e01e6e7d44",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+          "current": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32",
+      "prediction_sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32"
+      ],
+      "rank": 256,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 24,
+      "start_epoch": 12,
+      "dependency": "T6-f256-lr012-reg015-d93",
+      "historical_initial_model_digest_present": true,
+      "graph": null,
+      "graph_and_neighbor_sidecars": {},
+      "required_historical_sources": {
+        "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+        "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee"
+      },
+      "historical_binary_sha256": "79c00e0abc61526fd7cd3317950cf61f1124954ea088888ae2f3aeaacd0a0100",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "joint",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--init-model",
+        "{OUTPUT_DIRECTORY}/T6-f256-lr012-reg015-d93.bin",
+        "--start-epoch",
+        "12",
+        "--model",
+        "{OUTPUT_DIRECTORY}/T6R-f256-resume.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/T6R-f256-resume.f32",
+        "--factors",
+        "256",
+        "--iterations",
+        "24",
+        "--learning-rate",
+        ".012",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".93",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "I2-integrated-f64-koren",
+      "family": "integrated",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/I2-integrated-f64-koren.json",
+      "record_sha256": "b67246db8815412a2efb62b65c71925ee6127282c21cabe8f49cf56e52fa2745",
+      "log_sha256": "e49c5cfd435e6919da9cf87d802539694b6214f7928f4cc3dafc4566be61ae93",
+      "epoch_log_line": "epoch=17 train_rmse=0.7156904021 probe_rmse=0.8950571618 best=0.8950571618 seconds=92.29592983",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.bin",
+      "model_sha256": "97545c813275859c68d5edb5a95d23167de756f513b6889ab7c4f4699340bf6d",
+      "historical_model_digest_present": false,
+      "historical_prediction_digest_present": false,
+      "historical_artifact_checks": {},
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32",
+      "prediction_sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 17,
+      "start_epoch": 1,
+      "dependency": null,
+      "historical_initial_model_digest_present": false,
+      "graph": "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin",
+      "graph_and_neighbor_sidecars": {
+        "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.bin.nbr": "d25831fda628342a7cbb1c219808003c1cf150db48a3120cd228966e79a85185"
+      },
+      "required_historical_sources": {
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/integrated.hpp": "474801e770a2f15027434d35dc07f9757e61de48ee11c83aaea4b3825f3ea717",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+      },
+      "historical_binary_sha256": "46438fe43fd3fd244aa3928b21edbb272da2aae4d8c82ce2ab807e0593e28a34",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "integrated",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--graph",
+        "{PRODUCTION_GRAPH64}",
+        "--model",
+        "{OUTPUT_DIRECTORY}/I2-integrated-f64-koren.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/I2-integrated-f64-koren.f32",
+        "--factors",
+        "64",
+        "--iterations",
+        "17",
+        "--learning-rate",
+        ".012",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".93",
+        "--neighbor-rate",
+        ".001",
+        "--neighbor-regularization",
+        ".015",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    },
+    {
+      "name": "I2R-integrated-f64-resume",
+      "family": "integrated",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/I2R-integrated-f64-resume.json",
+      "record_sha256": "edf3f26536737431febb93ef5f6d6d671e1f6d84543b7401d99a09c25b3cea9d",
+      "log_sha256": "37d0f429c91ce3fa81ba9a2e82867bceb35996b8bc60d5140d38e56ffca888c6",
+      "epoch_log_line": "epoch=23 train_rmse=0.6961150291 probe_rmse=0.8945819821 best=0.8945819821 seconds=95.55327742",
+      "model": "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.bin",
+      "model_sha256": "0cd5e368eb57ffe439e86e01de3c5590a6812709cc9434ed0086cea4631cf0ba",
+      "historical_model_digest_present": true,
+      "historical_prediction_digest_present": true,
+      "historical_artifact_checks": {
+        "model_artifact": {
+          "recorded": "0cd5e368eb57ffe439e86e01de3c5590a6812709cc9434ed0086cea4631cf0ba",
+          "current": "0cd5e368eb57ffe439e86e01de3c5590a6812709cc9434ed0086cea4631cf0ba",
+          "matches": true
+        },
+        "predictions_artifact": {
+          "recorded": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+          "current": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+          "matches": true
+        }
+      },
+      "recipe_provenance": "recorded_command_and_current_checkpoint_budget",
+      "original_prediction": "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32",
+      "prediction_sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32"
+      ],
+      "rank": 64,
+      "dataset_fingerprint": 12499777815975055846,
+      "fixed_final_epoch": 23,
+      "start_epoch": 18,
+      "dependency": "I2-integrated-f64-koren",
+      "historical_initial_model_digest_present": true,
+      "graph": "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin",
+      "graph_and_neighbor_sidecars": {
+        "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.bin.nbr": "a01b8bbcbe7a565691a93a5bf99daff8735c9c62ebdf31eefc4363224e1e88f8",
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.bin.nbr": "d25831fda628342a7cbb1c219808003c1cf150db48a3120cd228966e79a85185"
+      },
+      "required_historical_sources": {
+        "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+        "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee"
+      },
+      "historical_binary_sha256": "79c00e0abc61526fd7cd3317950cf61f1124954ea088888ae2f3aeaacd0a0100",
+      "production_command_template": [
+        "{BINARY_WITH_REQUIRED_SOURCE_AND_FIXED_EPOCH}",
+        "integrated",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--graph",
+        "{PRODUCTION_GRAPH64}",
+        "--init-model",
+        "{OUTPUT_DIRECTORY}/I2-integrated-f64-koren.bin",
+        "--start-epoch",
+        "18",
+        "--model",
+        "{OUTPUT_DIRECTORY}/I2R-integrated-f64-resume.bin",
+        "--predictions",
+        "{OUTPUT_DIRECTORY}/I2R-integrated-f64-resume.f32",
+        "--factors",
+        "64",
+        "--iterations",
+        "23",
+        "--learning-rate",
+        ".012",
+        "--regularization",
+        ".015",
+        "--decay",
+        ".93",
+        "--neighbor-rate",
+        ".001",
+        "--neighbor-regularization",
+        ".015",
+        "--patience",
+        "0",
+        "--fixed-epoch"
+      ]
+    }
+  ],
+  "inference_replays": [
+    {
+      "stage": "J1-joint64",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint64.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/J1-joint64.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "expected_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint64.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "J2-joint128-reg02",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg02.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/J2-joint128-reg02.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "expected_sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "J3-joint128-reg005",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/J3-joint128-reg005.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "expected_sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "J4-joint128-day128",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-day128.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/J4-joint128-day128.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "expected_sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "J6-joint256-reg01",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/J6-joint256-reg01.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "expected_sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "T2-f64-lr005-reg015-d97",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/T2-f64-lr005-reg015-d97.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+      "expected_sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "T3-f64-lr008-reg008",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/T3-f64-lr008-reg008.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+      "expected_sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "T4-f64-lr012-reg015-d93",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/T4-f64-lr012-reg015-d93.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+      "expected_sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "T6-f256-lr012-reg015-d93",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/T6-f256-lr012-reg015-d93.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+      "expected_sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "T6R-f256-resume",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-joint",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/T6R-f256-resume.f32",
+        "--threads",
+        "1"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+      "expected_sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "I2-integrated-f64-koren",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-integrated",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/I2-integrated-f64-koren.f32",
+        "--threads",
+        "1",
+        "--graph",
+        "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+      "expected_sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32"
+      ],
+      "byte_identical": true
+    },
+    {
+      "stage": "I2R-integrated-f64-resume",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/build/netflix",
+        "eval-integrated",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.bin",
+        "--predictions",
+        "artifacts/production-replay/PR5-joint/I2R-integrated-f64-resume.f32",
+        "--threads",
+        "1",
+        "--graph",
+        "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin"
+      ],
+      "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+      "prediction_sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+      "expected_sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+      "retained_columns": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32"
+      ],
+      "byte_identical": true
+    }
+  ],
+  "limitations": [
+    "Replays verify retained checkpoints and aliases, not full production retraining or score improvement.",
+    "J4 deliberately restarts epoch numbering at 1 when adding day factors to J3; preserve this warm-start boundary.",
+    "Integrated models require both the .bin and .bin.nbr files and a newly built production graph.",
+    "Current sidecar hashes and inference identity do not create missing historical sidecar digests.",
+    "Historical source hashes are recorded; matching fixed-epoch training builds remain to be verified.",
+    "The first four legacy models differ from their original producer hashes. Their commands are candidates pending retraining checks, even if current checkpoint inference matches the bank.",
+    "Every production predecessor must be retrained on production data, never reused from development."
+  ]
+}

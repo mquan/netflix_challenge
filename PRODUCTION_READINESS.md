@@ -287,3 +287,40 @@ column requires epochs 1–60 and has been replayed byte for byte as well.
 `experiments/PR4-rbm-reference-verification.json` combines that new replay with
 the eight prior verified replays; their checkpoint hashes, budgets and resume
 chains are unchanged. The original eight-column report is preserved as history.
+
+## Joint and integrated checkpoint recovery
+
+`scripts/recover_joint_recipes.py` inventories twelve retained joint/integrated
+checkpoints covering thirteen bank columns (J6 appears twice). All twelve
+checkpoint inference replays reproduce the frozen columns byte for byte.
+Evidence: `experiments/production-joint-recipes.json` and
+`experiments/PR5-joint-verification.json`. Integrated models also record the
+graph and `.bin.nbr` sidecars required for inference and resumption.
+
+| Stage | Fixed epochs | Predecessor |
+|---|---|---|
+| J1 | 1–6 | — |
+| J2 | 1–40 | — |
+| J3 | 1–9 | — |
+| J4 | 1 only, numbering restarts | J3; add 128 day factors |
+| J6 | 1–17 | — |
+| T2 | 1–37 | — |
+| T3 | 1–13 | — |
+| T4 | 1–21 | — |
+| T6 | 1–11 | — |
+| T6R | 12–24 | T6 |
+| I2 | 1–17 | — |
+| I2R | 18–23 | I2, including its neighbor sidecar |
+
+The current J1–J4 files do not match their original producer-record hashes,
+although their predictions match the frozen bank. Their historical commands
+therefore initially remain candidate recipes. A fresh six-epoch J1 training
+run with the current frozen native binary now reproduces **both the checkpoint
+and all predictions byte for byte**; all five fold score differences are zero.
+See `experiments/PR5-J1-retraining-verification.json` and the accompanying full
+experiment record/source archive. The old hash discrepancy is preserved; this
+new run supplies direct recipe evidence for the currently retained J1.
+
+J2–J4 still need equivalent retraining checks. All production commands must use
+new production predecessors and graphs. These development-data replays and J1
+retraining do not establish a production score or reduce the target gap.
