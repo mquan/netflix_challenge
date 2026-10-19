@@ -823,3 +823,18 @@ deficit and does not justify enlarging the context window next. It does not
 measure training masks, attention dilution, optimization, or causal score loss;
 historical initialization differences remain. Keep N1's fixed protocol and the
 matched SO1 objective experiment unchanged. No score improvement is claimed.
+
+### N1 epoch-8 observation
+
+N1 epoch 8 completed at P2 RMSE **0.8690351695**, improving by 0.0009653159
+from epoch 7. A2h's historical epoch-8 score was 0.8689011269, leaving N1
+**0.0001340426 worse at the same epoch**, down from a 0.0003354966 deficit
+at epoch 7. It remains 0.0016328950 behind A2h's mature epoch-12 result.
+The exact source records are in `experiments/N1-epoch8-observation.json`.
+
+The epoch took 2,272.69 seconds (37.88 minutes), including a 1,929.86-second
+training pass and 342.83 seconds for validation/checkpointing. The trainer was
+confirmed live and advanced to epoch 9. The improving curve supports retaining
+the fixed selection protocol; historical initialization/RNG differences and
+reused P2 labels still prevent a causal or ensemble-gain claim. The promoted
+score remains unchanged, and the live SO1 queue waits for the full N1 chain.
