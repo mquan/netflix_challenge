@@ -1,0 +1,261 @@
+{"observed_utc": "2026-10-19T00:10:08.102839+00:00", "line": "{\"phase\": \"ready\", \"config\": {\"spec\": \"experiments/LC2-spec.json\", \"context\": \"artifacts/local-context/LC2/context\", \"output\": \"artifacts/local-context/LC2/pilot\", \"summary\": \"experiments/LC2-comparison.json\", \"device\": \"mps\", \"width\": 16, \"batch\": 256, \"epochs\": 20, \"patience\": 4, \"lr\": 0.0003, \"seeds\": [2026, 7], \"threads\": 2, \"benchmark_steps\": 0}, \"rows\": {\"fit\": 120195, \"selection\": 39918, \"evaluation\": 39887}, \"global_features\": 39, \"parameters\": 8081}"}
+{"observed_utc": "2026-10-19T00:10:21.008858+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452364788199759, \"elapsed_seconds\": 10.618483957950957, \"selection_rmse\": 0.8510219513663799}"}
+{"observed_utc": "2026-10-19T00:10:32.402478+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451214521061875, \"elapsed_seconds\": 22.069688457995653, \"selection_rmse\": 0.8509902831654144}"}
+{"observed_utc": "2026-10-19T00:10:43.797126+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450103511778481, \"elapsed_seconds\": 33.55466320796404, \"selection_rmse\": 0.8509383602999934}"}
+{"observed_utc": "2026-10-19T00:10:54.876045+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449520654443883, \"elapsed_seconds\": 44.611916041933, \"selection_rmse\": 0.8509133942156089}"}
+{"observed_utc": "2026-10-19T00:11:06.045358+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.844797809280585, \"elapsed_seconds\": 55.74525937496219, \"selection_rmse\": 0.8507996873733897}"}
+{"observed_utc": "2026-10-19T00:11:17.220161+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8447100867174342, \"elapsed_seconds\": 66.91948645794764, \"selection_rmse\": 0.8507214244980891}"}
+{"observed_utc": "2026-10-19T00:11:28.373515+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.8445774458171414, \"elapsed_seconds\": 78.07667404192034, \"selection_rmse\": 0.8507379425932966}"}
+{"observed_utc": "2026-10-19T00:11:39.556850+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8443965347215432, \"elapsed_seconds\": 89.2658322500065, \"selection_rmse\": 0.8507106758437611}"}
+{"observed_utc": "2026-10-19T00:11:50.750390+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8443698319700359, \"elapsed_seconds\": 100.39947216701694, \"selection_rmse\": 0.8506420734450753}"}
+{"observed_utc": "2026-10-19T00:12:02.063526+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.8442708885282751, \"elapsed_seconds\": 111.70234041695949, \"selection_rmse\": 0.8507455876785893}"}
+{"observed_utc": "2026-10-19T00:12:13.416134+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.8440538789312539, \"elapsed_seconds\": 123.09199979202822, \"selection_rmse\": 0.8506035494856812}"}
+{"observed_utc": "2026-10-19T00:12:24.782423+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.843923548742252, \"elapsed_seconds\": 134.42031883297022, \"selection_rmse\": 0.8507429863883883}"}
+{"observed_utc": "2026-10-19T00:12:36.214112+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.8439624988547365, \"elapsed_seconds\": 145.8364037499996, \"selection_rmse\": 0.8506535474913663}"}
+{"observed_utc": "2026-10-19T00:12:47.983517+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437639896868894, \"elapsed_seconds\": 157.59296420798637, \"selection_rmse\": 0.8505766809591233}"}
+{"observed_utc": "2026-10-19T00:12:59.688435+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 15, \"train_rmse\": 0.8436019990420256, \"elapsed_seconds\": 169.28371608292218, \"selection_rmse\": 0.8506643329941304}"}
+{"observed_utc": "2026-10-19T00:13:11.804097+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 16, \"train_rmse\": 0.8435177298974972, \"elapsed_seconds\": 181.31838858302217, \"selection_rmse\": 0.85060575599119}"}
+{"observed_utc": "2026-10-19T00:13:24.294121+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 17, \"train_rmse\": 0.843420070385499, \"elapsed_seconds\": 193.6854460829636, \"selection_rmse\": 0.8506570335456031}"}
+{"observed_utc": "2026-10-19T00:13:37.011212+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 18, \"train_rmse\": 0.8433845131938701, \"elapsed_seconds\": 206.35244833293837, \"selection_rmse\": 0.8505861380336182}"}
+{"observed_utc": "2026-10-19T00:13:52.730630+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.8467015166779747, \"elapsed_seconds\": 15.713555290945806}"}
+{"observed_utc": "2026-10-19T00:14:18.529662+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.8465829599351179, \"elapsed_seconds\": 41.51233204093296}"}
+{"observed_utc": "2026-10-19T00:14:47.037273+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.8464753221417533, \"elapsed_seconds\": 70.01963250001427}"}
+{"observed_utc": "2026-10-19T00:15:16.006966+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463437059986538, \"elapsed_seconds\": 98.98903704097029}"}
+{"observed_utc": "2026-10-19T00:15:44.833766+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8462234752547632, \"elapsed_seconds\": 127.81552579102572}"}
+{"observed_utc": "2026-10-19T00:16:13.049247+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.8461214390865812, \"elapsed_seconds\": 156.03073720796965}"}
+{"observed_utc": "2026-10-19T00:16:41.076916+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.8460534704883835, \"elapsed_seconds\": 184.05810562497936}"}
+{"observed_utc": "2026-10-19T00:17:08.210214+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8458780390231055, \"elapsed_seconds\": 211.19112583296373}"}
+{"observed_utc": "2026-10-19T00:17:34.846754+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.8456965494249846, \"elapsed_seconds\": 237.82740570802707}"}
+{"observed_utc": "2026-10-19T00:18:01.100291+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8456642520812309, \"elapsed_seconds\": 264.0806695410283}"}
+{"observed_utc": "2026-10-19T00:18:27.139985+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 11, \"train_rmse\": 0.8455066192323637, \"elapsed_seconds\": 290.1200980829308}"}
+{"observed_utc": "2026-10-19T00:18:53.267306+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 12, \"train_rmse\": 0.8454206915979923, \"elapsed_seconds\": 316.24714854103513}"}
+{"observed_utc": "2026-10-19T00:19:19.479035+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 13, \"train_rmse\": 0.8453090132635547, \"elapsed_seconds\": 342.45861083304044}"}
+{"observed_utc": "2026-10-19T00:19:45.644236+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 14, \"train_rmse\": 0.8452293654905909, \"elapsed_seconds\": 368.6235375000397}"}
+{"observed_utc": "2026-10-19T00:20:10.943551+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452503303736676, \"elapsed_seconds\": 19.615552790928632, \"selection_rmse\": 0.8510134956756087}"}
+{"observed_utc": "2026-10-19T00:20:33.519686+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451612588523278, \"elapsed_seconds\": 42.22153924999293, \"selection_rmse\": 0.8510014040424999}"}
+{"observed_utc": "2026-10-19T00:20:56.117275+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450308532235321, \"elapsed_seconds\": 64.7301236250205, \"selection_rmse\": 0.8510906523561709}"}
+{"observed_utc": "2026-10-19T00:21:18.724761+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449629993852914, \"elapsed_seconds\": 87.3713395409286, \"selection_rmse\": 0.8509561459555574}"}
+{"observed_utc": "2026-10-19T00:21:41.312515+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.8447883006387422, \"elapsed_seconds\": 109.95683412498329, \"selection_rmse\": 0.8507938541087074}"}
+{"observed_utc": "2026-10-19T00:22:03.926193+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8446453287702864, \"elapsed_seconds\": 132.59178429096937, \"selection_rmse\": 0.8509578468538779}"}
+{"observed_utc": "2026-10-19T00:22:26.131015+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.8445348990188836, \"elapsed_seconds\": 154.77560087502934, \"selection_rmse\": 0.8508243549943507}"}
+{"observed_utc": "2026-10-19T00:22:48.678879+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8444388368952082, \"elapsed_seconds\": 177.3239271659404, \"selection_rmse\": 0.8506609661594495}"}
+{"observed_utc": "2026-10-19T00:23:11.297466+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8442626354994401, \"elapsed_seconds\": 199.94192462495994, \"selection_rmse\": 0.8507408628486135}"}
+{"observed_utc": "2026-10-19T00:23:33.836955+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.8441646093535357, \"elapsed_seconds\": 222.49274954095017, \"selection_rmse\": 0.8506217171958009}"}
+{"observed_utc": "2026-10-19T00:23:56.490425+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.843996698032743, \"elapsed_seconds\": 245.14542112499475, \"selection_rmse\": 0.8506544909637159}"}
+{"observed_utc": "2026-10-19T00:24:19.107031+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.8440094598391317, \"elapsed_seconds\": 267.75489695800934, \"selection_rmse\": 0.8507577785704009}"}
+{"observed_utc": "2026-10-19T00:24:41.755344+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.8438059347150205, \"elapsed_seconds\": 290.39753820793703, \"selection_rmse\": 0.8507869055582279}"}
+{"observed_utc": "2026-10-19T00:25:04.516139+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437577054651586, \"elapsed_seconds\": 313.1588587909937, \"selection_rmse\": 0.8506813160066284}"}
+{"observed_utc": "2026-10-19T00:25:30.424050+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.8467106855905561, \"elapsed_seconds\": 25.903040166944265}"}
+{"observed_utc": "2026-10-19T00:25:56.553451+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.8466079285005542, \"elapsed_seconds\": 52.03217024996411}"}
+{"observed_utc": "2026-10-19T00:26:22.742416+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.8464984786401734, \"elapsed_seconds\": 78.22087583399843}"}
+{"observed_utc": "2026-10-19T00:26:48.729253+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463584253386175, \"elapsed_seconds\": 104.20745279197581}"}
+{"observed_utc": "2026-10-19T00:27:14.663934+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8461876494752821, \"elapsed_seconds\": 130.1418356669601}"}
+{"observed_utc": "2026-10-19T00:27:40.737096+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.8459850330923824, \"elapsed_seconds\": 156.21608783397824}"}
+{"observed_utc": "2026-10-19T00:28:06.728605+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.8458301618376979, \"elapsed_seconds\": 182.20955833396874}"}
+{"observed_utc": "2026-10-19T00:28:32.790013+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8457914647420747, \"elapsed_seconds\": 208.27114962495398}"}
+{"observed_utc": "2026-10-19T00:28:58.600187+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.845609948274719, \"elapsed_seconds\": 234.08116916695144}"}
+{"observed_utc": "2026-10-19T00:29:24.333376+00:00", "line": "{\"arm\": \"pooled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8455122491761194, \"elapsed_seconds\": 259.81416245899163}"}
+{"observed_utc": "2026-10-19T00:29:48.117171+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452364742390288, \"elapsed_seconds\": 18.79303295793943, \"selection_rmse\": 0.8510219424550829}"}
+{"observed_utc": "2026-10-19T00:30:09.161051+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451214443055473, \"elapsed_seconds\": 39.823055124958046, \"selection_rmse\": 0.8509902862885725}"}
+{"observed_utc": "2026-10-19T00:30:30.185060+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450103458864594, \"elapsed_seconds\": 60.85222045797855, \"selection_rmse\": 0.850938362506957}"}
+{"observed_utc": "2026-10-19T00:30:51.149576+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449520607474544, \"elapsed_seconds\": 81.813762707985, \"selection_rmse\": 0.8509133775936143}"}
+{"observed_utc": "2026-10-19T00:31:12.176634+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.8447978766598152, \"elapsed_seconds\": 102.84053041692823, \"selection_rmse\": 0.8507999923391512}"}
+{"observed_utc": "2026-10-19T00:31:33.158279+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8447101258397234, \"elapsed_seconds\": 123.82256062491797, \"selection_rmse\": 0.8507220854630945}"}
+{"observed_utc": "2026-10-19T00:31:54.152146+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.8445789000108301, \"elapsed_seconds\": 144.8075625000056, \"selection_rmse\": 0.8507385820786679}"}
+{"observed_utc": "2026-10-19T00:32:15.208111+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8443982624866, \"elapsed_seconds\": 165.8643589579733, \"selection_rmse\": 0.8507101454154663}"}
+{"observed_utc": "2026-10-19T00:32:36.239270+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8443727065849791, \"elapsed_seconds\": 186.89293154201005, \"selection_rmse\": 0.8506427837817377}"}
+{"observed_utc": "2026-10-19T00:32:57.270480+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.844272955570364, \"elapsed_seconds\": 207.9271621669177, \"selection_rmse\": 0.8507462437262483}"}
+{"observed_utc": "2026-10-19T00:33:18.327069+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.8440562084897887, \"elapsed_seconds\": 228.9908557079034, \"selection_rmse\": 0.850607157785279}"}
+{"observed_utc": "2026-10-19T00:33:39.347383+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.8439253030284903, \"elapsed_seconds\": 250.0137928329641, \"selection_rmse\": 0.8507443586811249}"}
+{"observed_utc": "2026-10-19T00:34:00.293172+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.8439649819903257, \"elapsed_seconds\": 270.9666454580147, \"selection_rmse\": 0.8506556752265573}"}
+{"observed_utc": "2026-10-19T00:34:21.303976+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437667151896033, \"elapsed_seconds\": 291.961635707994, \"selection_rmse\": 0.8505743324255989}"}
+{"observed_utc": "2026-10-19T00:34:42.346524+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 15, \"train_rmse\": 0.8436031338228941, \"elapsed_seconds\": 312.99819983297493, \"selection_rmse\": 0.8506655430236703}"}
+{"observed_utc": "2026-10-19T00:35:03.296171+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 16, \"train_rmse\": 0.8435198095515801, \"elapsed_seconds\": 333.9534838749096, \"selection_rmse\": 0.8506096645979921}"}
+{"observed_utc": "2026-10-19T00:35:24.242069+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 17, \"train_rmse\": 0.8434223467035139, \"elapsed_seconds\": 354.9141935829539, \"selection_rmse\": 0.8506565276663396}"}
+{"observed_utc": "2026-10-19T00:35:45.195754+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 18, \"train_rmse\": 0.8433837709628331, \"elapsed_seconds\": 375.86133599991444, \"selection_rmse\": 0.8505947698007053}"}
+{"observed_utc": "2026-10-19T00:36:10.181979+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.846701515770943, \"elapsed_seconds\": 24.982110209064558}"}
+{"observed_utc": "2026-10-19T00:36:35.113835+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.846582957289715, \"elapsed_seconds\": 49.91373587504495}"}
+{"observed_utc": "2026-10-19T00:36:59.899520+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.8464753261481834, \"elapsed_seconds\": 74.69922079204116}"}
+{"observed_utc": "2026-10-19T00:37:24.877239+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463437533815078, \"elapsed_seconds\": 99.6767253340222}"}
+{"observed_utc": "2026-10-19T00:37:49.859069+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8462244078198901, \"elapsed_seconds\": 124.65832933411002}"}
+{"observed_utc": "2026-10-19T00:38:14.939475+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.8461236926318784, \"elapsed_seconds\": 149.7385230420623}"}
+{"observed_utc": "2026-10-19T00:38:39.949454+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.8460550639034086, \"elapsed_seconds\": 174.74827691703103}"}
+{"observed_utc": "2026-10-19T00:39:05.032125+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8458809295197854, \"elapsed_seconds\": 199.83073162508663}"}
+{"observed_utc": "2026-10-19T00:39:30.065925+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.8457001075230165, \"elapsed_seconds\": 224.86432370904367}"}
+{"observed_utc": "2026-10-19T00:39:54.949008+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8456685773564718, \"elapsed_seconds\": 249.747196292039}"}
+{"observed_utc": "2026-10-19T00:40:19.975679+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 11, \"train_rmse\": 0.8455113569849103, \"elapsed_seconds\": 274.77364604210015}"}
+{"observed_utc": "2026-10-19T00:40:45.021644+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 12, \"train_rmse\": 0.8454253628715419, \"elapsed_seconds\": 299.8194001670927}"}
+{"observed_utc": "2026-10-19T00:41:10.035555+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 13, \"train_rmse\": 0.8453102186761983, \"elapsed_seconds\": 324.8330941670574}"}
+{"observed_utc": "2026-10-19T00:41:34.974457+00:00", "line": "{\"arm\": \"structured\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 14, \"train_rmse\": 0.8452343770518104, \"elapsed_seconds\": 349.77178429206833}"}
+{"observed_utc": "2026-10-19T00:41:58.170128+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452503289450786, \"elapsed_seconds\": 18.80550374998711, \"selection_rmse\": 0.8510134958598945}"}
+{"observed_utc": "2026-10-19T00:42:19.199540+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451612633166258, \"elapsed_seconds\": 39.822104625054635, \"selection_rmse\": 0.8510014078459838}"}
+{"observed_utc": "2026-10-19T00:42:40.293072+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450308851923325, \"elapsed_seconds\": 60.819504250073805, \"selection_rmse\": 0.8510906685578093}"}
+{"observed_utc": "2026-10-19T00:43:01.306546+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449631681619487, \"elapsed_seconds\": 81.92827591707464, \"selection_rmse\": 0.8509564483802774}"}
+{"observed_utc": "2026-10-19T00:43:22.296044+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.8447889226614648, \"elapsed_seconds\": 102.92055204208009, \"selection_rmse\": 0.8507930960589}"}
+{"observed_utc": "2026-10-19T00:43:43.338652+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8446464397327411, \"elapsed_seconds\": 123.95898316707462, \"selection_rmse\": 0.8509543326612413}"}
+{"observed_utc": "2026-10-19T00:44:04.488308+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.844536333706718, \"elapsed_seconds\": 145.0869982499862, \"selection_rmse\": 0.8508207657039135}"}
+{"observed_utc": "2026-10-19T00:44:25.597447+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8444405381940522, \"elapsed_seconds\": 166.2328104589833, \"selection_rmse\": 0.850658168161495}"}
+{"observed_utc": "2026-10-19T00:44:46.749332+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8442643490095109, \"elapsed_seconds\": 187.36744008399546, \"selection_rmse\": 0.8507373823888038}"}
+{"observed_utc": "2026-10-19T00:45:07.812649+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.8441655960367336, \"elapsed_seconds\": 208.4527670419775, \"selection_rmse\": 0.8506185442041787}"}
+{"observed_utc": "2026-10-19T00:45:28.896247+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.8439970155286093, \"elapsed_seconds\": 229.51113116706256, \"selection_rmse\": 0.8506523349948791}"}
+{"observed_utc": "2026-10-19T00:45:50.004034+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.8440084534690008, \"elapsed_seconds\": 250.5992190419929, \"selection_rmse\": 0.8507539378825469}"}
+{"observed_utc": "2026-10-19T00:46:11.264690+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.843804469840759, \"elapsed_seconds\": 271.8466330000665, \"selection_rmse\": 0.8507851500837011}"}
+{"observed_utc": "2026-10-19T00:46:32.429122+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437571380561697, \"elapsed_seconds\": 293.0548565420322, \"selection_rmse\": 0.8506788777672012}"}
+{"observed_utc": "2026-10-19T00:46:57.420319+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.8467106873599739, \"elapsed_seconds\": 24.982658082968555}"}
+{"observed_utc": "2026-10-19T00:47:22.424104+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.8466079305779873, \"elapsed_seconds\": 49.9862227080157}"}
+{"observed_utc": "2026-10-19T00:47:47.489564+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.84649846517898, \"elapsed_seconds\": 75.05146433296613}"}
+{"observed_utc": "2026-10-19T00:48:12.525681+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463583665806655, \"elapsed_seconds\": 100.08736983302515}"}
+{"observed_utc": "2026-10-19T00:48:37.553976+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8461874932850918, \"elapsed_seconds\": 125.11539037502371}"}
+{"observed_utc": "2026-10-19T00:49:02.664418+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.8459856187849508, \"elapsed_seconds\": 150.22566562506836}"}
+{"observed_utc": "2026-10-19T00:49:27.705706+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.8458313631286309, \"elapsed_seconds\": 175.26672408299055}"}
+{"observed_utc": "2026-10-19T00:49:52.712410+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8457925998418053, \"elapsed_seconds\": 200.27322462503798}"}
+{"observed_utc": "2026-10-19T00:50:17.731721+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.8456109083898465, \"elapsed_seconds\": 225.29232966597192}"}
+{"observed_utc": "2026-10-19T00:50:42.797221+00:00", "line": "{\"arm\": \"structured\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8455136393336679, \"elapsed_seconds\": 250.35761529102456}"}
+{"observed_utc": "2026-10-19T00:51:06.004924+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452364751401987, \"elapsed_seconds\": 18.807050790986978, \"selection_rmse\": 0.8510219516038676}"}
+{"observed_utc": "2026-10-19T00:51:26.985249+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451214466913907, \"elapsed_seconds\": 39.78934879100416, \"selection_rmse\": 0.850990279875043}"}
+{"observed_utc": "2026-10-19T00:51:47.887772+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450103476875209, \"elapsed_seconds\": 60.699508833000436, \"selection_rmse\": 0.8509383783860952}"}
+{"observed_utc": "2026-10-19T00:52:08.839283+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449521136908129, \"elapsed_seconds\": 81.66828462504782, \"selection_rmse\": 0.8509135130584043}"}
+{"observed_utc": "2026-10-19T00:52:29.719524+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.8447980967530336, \"elapsed_seconds\": 102.55888383300044, \"selection_rmse\": 0.8508006779014385}"}
+{"observed_utc": "2026-10-19T00:52:50.512838+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8447120682216337, \"elapsed_seconds\": 123.34320320806, \"selection_rmse\": 0.8507243637671917}"}
+{"observed_utc": "2026-10-19T00:53:11.397966+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.8445828191321494, \"elapsed_seconds\": 144.23120312497485, \"selection_rmse\": 0.8507396403953276}"}
+{"observed_utc": "2026-10-19T00:53:32.358500+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8444003508910451, \"elapsed_seconds\": 165.16903079103213, \"selection_rmse\": 0.8507102800750204}"}
+{"observed_utc": "2026-10-19T00:53:53.303376+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8443739796396242, \"elapsed_seconds\": 186.10965808306355, \"selection_rmse\": 0.8506425831857694}"}
+{"observed_utc": "2026-10-19T00:54:14.179227+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.8442731699860624, \"elapsed_seconds\": 206.9928071249742, \"selection_rmse\": 0.8507459045378887}"}
+{"observed_utc": "2026-10-19T00:54:35.152554+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.8440556762503593, \"elapsed_seconds\": 227.96124558302108, \"selection_rmse\": 0.850606306585982}"}
+{"observed_utc": "2026-10-19T00:54:55.990029+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.8439239970415495, \"elapsed_seconds\": 248.79644295806065, \"selection_rmse\": 0.8507437556545002}"}
+{"observed_utc": "2026-10-19T00:55:16.955606+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.8439635245820964, \"elapsed_seconds\": 269.7596657080576, \"selection_rmse\": 0.8506557860361734}"}
+{"observed_utc": "2026-10-19T00:55:37.932881+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437662896940832, \"elapsed_seconds\": 290.7349498750409, \"selection_rmse\": 0.850576281745415}"}
+{"observed_utc": "2026-10-19T00:55:58.814698+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 15, \"train_rmse\": 0.8436031913766515, \"elapsed_seconds\": 311.6171198330121, \"selection_rmse\": 0.8506705480797547}"}
+{"observed_utc": "2026-10-19T00:56:19.792691+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 16, \"train_rmse\": 0.843518112510106, \"elapsed_seconds\": 332.5998033330543, \"selection_rmse\": 0.8506129544627015}"}
+{"observed_utc": "2026-10-19T00:56:40.717616+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 17, \"train_rmse\": 0.8434205014949229, \"elapsed_seconds\": 353.5190316250082, \"selection_rmse\": 0.8506613433224575}"}
+{"observed_utc": "2026-10-19T00:57:01.728560+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"select\", \"epoch\": 18, \"train_rmse\": 0.8433836521639654, \"elapsed_seconds\": 374.53930254105944, \"selection_rmse\": 0.8505996695249162}"}
+{"observed_utc": "2026-10-19T00:57:26.749955+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.84670151655223, \"elapsed_seconds\": 25.016944958944805}"}
+{"observed_utc": "2026-10-19T00:57:51.807160+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.8465829623188826, \"elapsed_seconds\": 50.07393437495921}"}
+{"observed_utc": "2026-10-19T00:58:16.850101+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.8464753666720588, \"elapsed_seconds\": 75.11665470898151}"}
+{"observed_utc": "2026-10-19T00:58:41.868488+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463439356760112, \"elapsed_seconds\": 100.13482912501786}"}
+{"observed_utc": "2026-10-19T00:59:06.836232+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8462253392811258, \"elapsed_seconds\": 125.10233825002797}"}
+{"observed_utc": "2026-10-19T00:59:32.245996+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.846124632756707, \"elapsed_seconds\": 150.51190412498545}"}
+{"observed_utc": "2026-10-19T00:59:57.693914+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.846055481204943, \"elapsed_seconds\": 175.95960604201537}"}
+{"observed_utc": "2026-10-19T01:00:23.071516+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8458816049730834, \"elapsed_seconds\": 201.33698266698048}"}
+{"observed_utc": "2026-10-19T01:00:48.538508+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.8457011436413728, \"elapsed_seconds\": 226.8037506249966}"}
+{"observed_utc": "2026-10-19T01:01:13.996016+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8456701690133116, \"elapsed_seconds\": 252.2610403340077}"}
+{"observed_utc": "2026-10-19T01:01:39.472470+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 11, \"train_rmse\": 0.8455121498119995, \"elapsed_seconds\": 277.73724874993786}"}
+{"observed_utc": "2026-10-19T01:02:04.973861+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 12, \"train_rmse\": 0.8454269821169323, \"elapsed_seconds\": 303.23844650003593}"}
+{"observed_utc": "2026-10-19T01:02:30.420820+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 13, \"train_rmse\": 0.845311600504421, \"elapsed_seconds\": 328.6851958340267}"}
+{"observed_utc": "2026-10-19T01:02:55.850038+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 2026, \"phase\": \"refit\", \"epoch\": 14, \"train_rmse\": 0.8452379680399472, \"elapsed_seconds\": 354.1141927089775}"}
+{"observed_utc": "2026-10-19T01:03:19.417192+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 1, \"train_rmse\": 0.8452503319436488, \"elapsed_seconds\": 19.053700666991062, \"selection_rmse\": 0.851013498702261}"}
+{"observed_utc": "2026-10-19T01:03:40.799636+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 2, \"train_rmse\": 0.8451612745385392, \"elapsed_seconds\": 40.431475916993804, \"selection_rmse\": 0.8510014222527321}"}
+{"observed_utc": "2026-10-19T01:04:02.127421+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 3, \"train_rmse\": 0.8450309338359502, \"elapsed_seconds\": 61.76767495798413, \"selection_rmse\": 0.8510907132456285}"}
+{"observed_utc": "2026-10-19T01:04:23.529361+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 4, \"train_rmse\": 0.8449633695965869, \"elapsed_seconds\": 83.14764354203362, \"selection_rmse\": 0.8509569569374806}"}
+{"observed_utc": "2026-10-19T01:04:44.985120+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 5, \"train_rmse\": 0.8447895603260663, \"elapsed_seconds\": 104.618423042004, \"selection_rmse\": 0.8507948342838534}"}
+{"observed_utc": "2026-10-19T01:05:06.347190+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 6, \"train_rmse\": 0.8446460459967974, \"elapsed_seconds\": 125.98335095797665, \"selection_rmse\": 0.8509577753605879}"}
+{"observed_utc": "2026-10-19T01:05:27.707577+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 7, \"train_rmse\": 0.8445346594505526, \"elapsed_seconds\": 147.3495512920199, \"selection_rmse\": 0.8508255523653852}"}
+{"observed_utc": "2026-10-19T01:05:49.037452+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 8, \"train_rmse\": 0.8444393769766735, \"elapsed_seconds\": 168.68416062498, \"selection_rmse\": 0.8506612860216444}"}
+{"observed_utc": "2026-10-19T01:06:10.380504+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 9, \"train_rmse\": 0.8442633561576889, \"elapsed_seconds\": 190.02477766701486, \"selection_rmse\": 0.8507408650859845}"}
+{"observed_utc": "2026-10-19T01:06:31.770142+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 10, \"train_rmse\": 0.8441656679694728, \"elapsed_seconds\": 211.42415620805696, \"selection_rmse\": 0.8506222006772515}"}
+{"observed_utc": "2026-10-19T01:06:53.132922+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 11, \"train_rmse\": 0.8439968897100993, \"elapsed_seconds\": 232.7820234580431, \"selection_rmse\": 0.8506554300344408}"}
+{"observed_utc": "2026-10-19T01:07:14.493704+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 12, \"train_rmse\": 0.8440083769904799, \"elapsed_seconds\": 254.09478791698348, \"selection_rmse\": 0.8507603009030258}"}
+{"observed_utc": "2026-10-19T01:07:35.914792+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 13, \"train_rmse\": 0.8438060686157584, \"elapsed_seconds\": 275.52675570803694, \"selection_rmse\": 0.8507886024360868}"}
+{"observed_utc": "2026-10-19T01:07:57.296754+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"select\", \"epoch\": 14, \"train_rmse\": 0.8437553618529878, \"elapsed_seconds\": 296.91229641705286, \"selection_rmse\": 0.8506825012298381}"}
+{"observed_utc": "2026-10-19T01:08:22.686121+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 1, \"train_rmse\": 0.8467106857659811, \"elapsed_seconds\": 25.38454279198777}"}
+{"observed_utc": "2026-10-19T01:08:48.090693+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 2, \"train_rmse\": 0.8466079427336857, \"elapsed_seconds\": 50.78900558303576}"}
+{"observed_utc": "2026-10-19T01:09:13.523785+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 3, \"train_rmse\": 0.8464985429490933, \"elapsed_seconds\": 76.22199345799163}"}
+{"observed_utc": "2026-10-19T01:09:38.915222+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 4, \"train_rmse\": 0.8463584147161523, \"elapsed_seconds\": 101.61331770801917}"}
+{"observed_utc": "2026-10-19T01:10:04.346833+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 5, \"train_rmse\": 0.8461869787569012, \"elapsed_seconds\": 127.04481833300088}"}
+{"observed_utc": "2026-10-19T01:10:29.938444+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 6, \"train_rmse\": 0.8459846207472388, \"elapsed_seconds\": 152.63632254197728}"}
+{"observed_utc": "2026-10-19T01:10:55.315398+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 7, \"train_rmse\": 0.8458308256980951, \"elapsed_seconds\": 178.01316800003406}"}
+{"observed_utc": "2026-10-19T01:11:20.747647+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 8, \"train_rmse\": 0.8457922106866378, \"elapsed_seconds\": 203.44531583297066}"}
+{"observed_utc": "2026-10-19T01:11:46.155674+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 9, \"train_rmse\": 0.8456111365286393, \"elapsed_seconds\": 228.85322279203683}"}
+{"observed_utc": "2026-10-19T01:12:11.569390+00:00", "line": "{\"arm\": \"shuffled\", \"seed\": 7, \"phase\": \"refit\", \"epoch\": 10, \"train_rmse\": 0.8455136470406189, \"elapsed_seconds\": 254.2668419580441}"}
+{"observed_utc": "2026-10-19T01:12:13.844628+00:00", "line": "{"}
+{"observed_utc": "2026-10-19T01:12:13.844683+00:00", "line": "  \"seconds\": 3725.67993366695,"}
+{"observed_utc": "2026-10-19T01:12:13.844700+00:00", "line": "  \"rmse\": {"}
+{"observed_utc": "2026-10-19T01:12:13.844713+00:00", "line": "    \"baseline\": 0.8453047807813157,"}
+{"observed_utc": "2026-10-19T01:12:13.844737+00:00", "line": "    \"pooled\": 0.8446474931175261,"}
+{"observed_utc": "2026-10-19T01:12:13.844748+00:00", "line": "    \"structured\": 0.8446553190381326,"}
+{"observed_utc": "2026-10-19T01:12:13.844758+00:00", "line": "    \"shuffled\": 0.8446622611790354"}
+{"observed_utc": "2026-10-19T01:12:13.844768+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T01:12:13.844777+00:00", "line": "  \"comparisons\": {"}
+{"observed_utc": "2026-10-19T01:12:13.844787+00:00", "line": "    \"pooled_vs_baseline\": {"}
+{"observed_utc": "2026-10-19T01:12:13.844796+00:00", "line": "      \"rows\": 39887,"}
+{"observed_utc": "2026-10-19T01:12:13.844805+00:00", "line": "      \"users\": 33109,"}
+{"observed_utc": "2026-10-19T01:12:13.844815+00:00", "line": "      \"control_rmse\": 0.8453047807813157,"}
+{"observed_utc": "2026-10-19T01:12:13.844824+00:00", "line": "      \"treatment_rmse\": 0.8446474931175261,"}
+{"observed_utc": "2026-10-19T01:12:13.844833+00:00", "line": "      \"delta_rmse\": -0.0006572876637895853,"}
+{"observed_utc": "2026-10-19T01:12:13.844842+00:00", "line": "      \"fold_deltas\": ["}
+{"observed_utc": "2026-10-19T01:12:13.844852+00:00", "line": "        -0.0006572876637895853,"}
+{"observed_utc": "2026-10-19T01:12:13.844861+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.844870+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.844879+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.844889+00:00", "line": "        null"}
+{"observed_utc": "2026-10-19T01:12:13.844898+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.844907+00:00", "line": "      \"delta_mse\": -0.0011107847820267377,"}
+{"observed_utc": "2026-10-19T01:12:13.844916+00:00", "line": "      \"cluster_normal_95_mse_interval\": ["}
+{"observed_utc": "2026-10-19T01:12:13.844925+00:00", "line": "        -0.0018713601224005952,"}
+{"observed_utc": "2026-10-19T01:12:13.844934+00:00", "line": "        -0.00035020944165288026"}
+{"observed_utc": "2026-10-19T01:12:13.844943+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.844952+00:00", "line": "      \"all_folds_improve\": false"}
+{"observed_utc": "2026-10-19T01:12:13.844961+00:00", "line": "    },"}
+{"observed_utc": "2026-10-19T01:12:13.844970+00:00", "line": "    \"structured_vs_pooled\": {"}
+{"observed_utc": "2026-10-19T01:12:13.844979+00:00", "line": "      \"rows\": 39887,"}
+{"observed_utc": "2026-10-19T01:12:13.844988+00:00", "line": "      \"users\": 33109,"}
+{"observed_utc": "2026-10-19T01:12:13.844997+00:00", "line": "      \"control_rmse\": 0.8446474931175261,"}
+{"observed_utc": "2026-10-19T01:12:13.845006+00:00", "line": "      \"treatment_rmse\": 0.8446553190381326,"}
+{"observed_utc": "2026-10-19T01:12:13.845015+00:00", "line": "      \"delta_rmse\": 7.825920606552295e-06,"}
+{"observed_utc": "2026-10-19T01:12:13.845024+00:00", "line": "      \"fold_deltas\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845033+00:00", "line": "        7.825920606552295e-06,"}
+{"observed_utc": "2026-10-19T01:12:13.845042+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845056+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845065+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845074+00:00", "line": "        null"}
+{"observed_utc": "2026-10-19T01:12:13.845083+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845092+00:00", "line": "      \"delta_mse\": 1.3220349688317266e-05,"}
+{"observed_utc": "2026-10-19T01:12:13.845101+00:00", "line": "      \"cluster_normal_95_mse_interval\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845110+00:00", "line": "        -1.281971002612256e-06,"}
+{"observed_utc": "2026-10-19T01:12:13.845119+00:00", "line": "        2.7722670379246787e-05"}
+{"observed_utc": "2026-10-19T01:12:13.845128+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845137+00:00", "line": "      \"all_folds_improve\": false"}
+{"observed_utc": "2026-10-19T01:12:13.845149+00:00", "line": "    },"}
+{"observed_utc": "2026-10-19T01:12:13.845159+00:00", "line": "    \"structured_vs_shuffled\": {"}
+{"observed_utc": "2026-10-19T01:12:13.845168+00:00", "line": "      \"rows\": 39887,"}
+{"observed_utc": "2026-10-19T01:12:13.845177+00:00", "line": "      \"users\": 33109,"}
+{"observed_utc": "2026-10-19T01:12:13.845185+00:00", "line": "      \"control_rmse\": 0.8446622611790354,"}
+{"observed_utc": "2026-10-19T01:12:13.845194+00:00", "line": "      \"treatment_rmse\": 0.8446553190381326,"}
+{"observed_utc": "2026-10-19T01:12:13.845204+00:00", "line": "      \"delta_rmse\": -6.94214090279921e-06,"}
+{"observed_utc": "2026-10-19T01:12:13.845212+00:00", "line": "      \"fold_deltas\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845221+00:00", "line": "        -6.94214090279921e-06,"}
+{"observed_utc": "2026-10-19T01:12:13.845230+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845239+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845248+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845256+00:00", "line": "        null"}
+{"observed_utc": "2026-10-19T01:12:13.845265+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845274+00:00", "line": "      \"delta_mse\": -1.1727480671313224e-05,"}
+{"observed_utc": "2026-10-19T01:12:13.845283+00:00", "line": "      \"cluster_normal_95_mse_interval\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845292+00:00", "line": "        -2.0506634545188044e-05,"}
+{"observed_utc": "2026-10-19T01:12:13.845301+00:00", "line": "        -2.948326797438404e-06"}
+{"observed_utc": "2026-10-19T01:12:13.845310+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845319+00:00", "line": "      \"all_folds_improve\": false"}
+{"observed_utc": "2026-10-19T01:12:13.845343+00:00", "line": "    },"}
+{"observed_utc": "2026-10-19T01:12:13.845351+00:00", "line": "    \"structured_vs_baseline\": {"}
+{"observed_utc": "2026-10-19T01:12:13.845359+00:00", "line": "      \"rows\": 39887,"}
+{"observed_utc": "2026-10-19T01:12:13.845366+00:00", "line": "      \"users\": 33109,"}
+{"observed_utc": "2026-10-19T01:12:13.845374+00:00", "line": "      \"control_rmse\": 0.8453047807813157,"}
+{"observed_utc": "2026-10-19T01:12:13.845382+00:00", "line": "      \"treatment_rmse\": 0.8446553190381326,"}
+{"observed_utc": "2026-10-19T01:12:13.845389+00:00", "line": "      \"delta_rmse\": -0.000649461743183033,"}
+{"observed_utc": "2026-10-19T01:12:13.845397+00:00", "line": "      \"fold_deltas\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845405+00:00", "line": "        -0.000649461743183033,"}
+{"observed_utc": "2026-10-19T01:12:13.845416+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845425+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845433+00:00", "line": "        null,"}
+{"observed_utc": "2026-10-19T01:12:13.845441+00:00", "line": "        null"}
+{"observed_utc": "2026-10-19T01:12:13.845448+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845456+00:00", "line": "      \"delta_mse\": -0.0010975644323384206,"}
+{"observed_utc": "2026-10-19T01:12:13.845463+00:00", "line": "      \"cluster_normal_95_mse_interval\": ["}
+{"observed_utc": "2026-10-19T01:12:13.845471+00:00", "line": "        -0.0018547783665903705,"}
+{"observed_utc": "2026-10-19T01:12:13.845479+00:00", "line": "        -0.00034035049808647073"}
+{"observed_utc": "2026-10-19T01:12:13.845536+00:00", "line": "      ],"}
+{"observed_utc": "2026-10-19T01:12:13.845571+00:00", "line": "      \"all_folds_improve\": false"}
+{"observed_utc": "2026-10-19T01:12:13.845584+00:00", "line": "    }"}
+{"observed_utc": "2026-10-19T01:12:13.845594+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T01:12:13.845603+00:00", "line": "  \"metric\": \"P2 user-disjoint development screening; no original-probe ensemble improvement claim\""}
+{"observed_utc": "2026-10-19T01:12:13.845612+00:00", "line": "}"}
