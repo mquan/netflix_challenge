@@ -59,14 +59,16 @@ def head_predict(model, features, local, baseline, a):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True)
+    parser.add_argument('--pilot', default='artifacts/local-context/LC2/pilot')
     parser.add_argument('--device', default='mps', choices=['cpu', 'mps'])
     parser.add_argument('--batch', type=int, default=256)
     a = parser.parse_args()
     if Path(a.output).exists():
         parser.error('output already exists')
     torch.set_num_threads(2)
-    pilot = Path('artifacts/local-context/LC2/pilot')
+    pilot = Path(a.pilot)
     original = json.loads((pilot / 'report.json').read_text())
+    normalization = original['config'].get('local_normalization', 'none')
     arrays, columns, raw, y, users, context_report = read_inputs(
         original['config']['spec'], original['config']['context'])
     prep = np.load(pilot / 'preprocessing.npz')
@@ -82,7 +84,9 @@ def main():
     report = dict(kind='Post-hoc mechanism diagnosis; no promotion or tuning',
                   config=vars(a), fit_sample=len(fit), evaluation_rows=len(held),
                   original_report_sha256=digest(pilot / 'report.json'),
-                  script_sha256=digest(__file__), models={})
+                  script_sha256=digest(__file__), local_normalization=normalization,
+                  initial_model_note='Fresh initialization, including uncalibrated running statistics if batch normalization is enabled.',
+                  models={})
     mask = np.asarray(arrays['cross_rating'][rows]) > 0
     report['context'] = dict(edges=describe(mask.sum((1, 2))),
                              neighbors=describe(mask.any(2).sum(1)),
@@ -91,10 +95,12 @@ def main():
     for arm in ('structured', 'pooled'):
         for seed in (2026, 7):
             torch.manual_seed(seed)
-            initial = NeighborEncoder(features.shape[1], 16, pooled=(arm == 'pooled')).to(a.device)
+            initial = NeighborEncoder(features.shape[1], 16, pooled=(arm == 'pooled'),
+                                      local_normalization=normalization).to(a.device)
             initial_state = {k: v.detach().cpu().clone() for k, v in initial.state_dict().items()}
             initial_local, _ = capture(initial, arrays, features, baseline, fit, a)
-            model = NeighborEncoder(features.shape[1], 16, pooled=(arm == 'pooled')).to(a.device)
+            model = NeighborEncoder(features.shape[1], 16, pooled=(arm == 'pooled'),
+                                    local_normalization=normalization).to(a.device)
             path = pilot / f'{arm}-seed{seed}.pt'
             assert digest(path) == original['outputs'][path.name]
             model.load_state_dict(torch.load(path, map_location=a.device, weights_only=True))

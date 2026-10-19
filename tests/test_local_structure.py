@@ -80,12 +80,37 @@ class StructureTests(unittest.TestCase):
             rx, rb, _ = fit_preprocessing(predictions, global_features, labels, refit)
             model, _, _ = train(arrays, rx, rb, labels, refit, a=a, arm='structured', seed=3, epochs=chosen)
             return x, base, chosen, [r['selection_rmse'] for r in history], predict(model, arrays, rx, rb, held, a, False)
-        first = run(y)
         changed = y.copy()
         changed[held] = 6 - changed[held]
-        second = run(changed)
-        for left, right in zip(first, second):
-            np.testing.assert_array_equal(left, right)
+        for normalization in ('none', 'batch'):
+            a.local_normalization = normalization
+            first, second = run(y), run(changed)
+            for left, right in zip(first, second):
+                np.testing.assert_array_equal(left, right)
+
+    def test_local_normalization_uses_fit_statistics_without_extra_parameters(self):
+        torch.manual_seed(19)
+        plain = NeighborEncoder(5, width=8)
+        torch.manual_seed(19)
+        normalized = NeighborEncoder(5, width=8, local_normalization='batch')
+        self.assertEqual(sum(p.numel() for p in plain.parameters()),
+                         sum(p.numel() for p in normalized.parameters()))
+        for key, value in plain.state_dict().items():
+            torch.testing.assert_close(value, normalized.state_dict()[key], rtol=0, atol=0)
+        # Fit-only calibration of small, offset coordinates must increase
+        # across-query variation. Evaluation batch composition cannot alter
+        # either an individual result or stored calibration statistics.
+        fit = torch.randn(64, 8) * .02 + torch.arange(8).float()
+        output = normalized.local_norm(fit)
+        self.assertGreater(float(output.std(0).median()), .7)
+        normalized.eval()
+        state = {k: v.clone() for k, v in normalized.local_norm.state_dict().items()}
+        single = normalized.local_norm(fit[:1])
+        mixed = normalized.local_norm(torch.cat([fit[:1], fit[1:] + 100]))
+        torch.testing.assert_close(single, mixed[:1])
+        for key, value in state.items():
+            torch.testing.assert_close(value, normalized.local_norm.state_dict()[key], rtol=0, atol=0)
+        self.assertTrue(torch.isfinite(normalized.local_norm(torch.zeros_like(fit))).all())
 
 
 if __name__ == '__main__':

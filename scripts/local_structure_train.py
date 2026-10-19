@@ -22,13 +22,20 @@ from train_holdout import digest
 
 
 class NeighborEncoder(nn.Module):
-    def __init__(self, global_width, width=16, pooled=False):
+    def __init__(self, global_width, width=16, pooled=False, local_normalization='none'):
         super().__init__()
+        if local_normalization not in ('none', 'batch'):
+            raise ValueError('unknown local normalization')
         self.pooled = pooled
         self.edge = nn.Sequential(nn.Linear(9, width), nn.GELU(), nn.Linear(width, width), nn.GELU())
         self.relation = nn.Sequential(nn.Linear(width * 3, width), nn.GELU())
         self.neighbor = nn.Sequential(nn.Linear(width + 3, width * 2), nn.GELU(),
                                       nn.Linear(width * 2, width), nn.GELU())
+        # Across-query normalization addresses the measured coordinate-scale
+        # imbalance. No learned affine parameters; evaluation uses fit-only
+        # running statistics and cannot update them.
+        self.local_norm = (nn.BatchNorm1d(width, affine=False, eps=1e-4, momentum=.1)
+                           if local_normalization == 'batch' else nn.Identity())
         self.head = nn.Sequential(nn.Linear(global_width + width, 64), nn.GELU(), nn.Dropout(.1),
                                   nn.Linear(64, 32), nn.GELU(), nn.Linear(32, 1))
         nn.init.zeros_(self.head[-1].weight)
@@ -70,7 +77,7 @@ class NeighborEncoder(nn.Module):
         tokens = torch.stack([ur, vr, nrr, ur - vr, (ur - vr).square(),
                               ug, cg, ngg, (ug - cg).abs()], dim=-1)
         meta = torch.stack([nr, ng, torch.log1p(mask.sum(dim=2)) / math.log(33)], dim=-1)
-        local = self.local_summary(tokens, mask, meta)
+        local = self.local_norm(self.local_summary(tokens, mask, meta))
         return baseline + self.head(torch.cat([global_features, local], dim=1)).squeeze(1)
 
 
@@ -148,8 +155,11 @@ def rmse(y, prediction):
 
 
 def train(arrays, features, baseline, y, rows, *, a, arm, seed, epochs, validation=None):
+    if getattr(a, 'local_normalization', 'none') == 'batch' and (a.batch < 2 or len(rows) % a.batch == 1):
+        raise ValueError('batch normalization requires at least two training rows per batch')
     torch.manual_seed(seed)
-    model = NeighborEncoder(features.shape[1], a.width, pooled=(arm == 'pooled')).to(a.device)
+    model = NeighborEncoder(features.shape[1], a.width, pooled=(arm == 'pooled'),
+                            local_normalization=getattr(a, 'local_normalization', 'none')).to(a.device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=.01)
     rng = np.random.default_rng(seed)
     best = rmse(y[validation], baseline[validation]) if validation is not None else None
@@ -201,6 +211,7 @@ def main():
     p.add_argument('--seeds', nargs='+', type=int, default=[2026, 7])
     p.add_argument('--threads', type=int, default=2)
     p.add_argument('--benchmark-steps', type=int, default=0)
+    p.add_argument('--local-normalization', choices=['none', 'batch'], default='none')
     a = p.parse_args()
     if min(a.width, a.batch, a.epochs, a.patience, a.threads) < 1 or a.benchmark_steps < 0:
         p.error('positive training settings required')
