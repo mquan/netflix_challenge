@@ -112,6 +112,20 @@ class StructureTests(unittest.TestCase):
             torch.testing.assert_close(value, normalized.local_norm.state_dict()[key], rtol=0, atol=0)
         self.assertTrue(torch.isfinite(normalized.local_norm(torch.zeros_like(fit))).all())
 
+    def test_common_control_retains_head_initialization_and_ignores_context(self):
+        torch.manual_seed(31)
+        local = NeighborEncoder(5, width=8)
+        torch.manual_seed(31)
+        common = NeighborEncoder(5, width=8, disable_local=True)
+        for key, value in local.state_dict().items():
+            torch.testing.assert_close(value, common.state_dict()[key], rtol=0, atol=0)
+        torch.nn.init.normal_(common.head[-1].weight)
+        common.eval()
+        features, baseline = torch.randn(4, 5), torch.full((4,), 3.6)
+        expected = baseline + common.head(torch.cat([features, torch.zeros(4, 8)], 1)).squeeze(1)
+        torch.testing.assert_close(common({}, features, baseline), expected)
+        torch.testing.assert_close(common({'unused_context': torch.randn(20)}, features, baseline), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
