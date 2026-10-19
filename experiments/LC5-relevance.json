@@ -1,0 +1,189 @@
+{
+  "config": {
+    "output": "artifacts/local-context/LC5/relevance-r2",
+    "summary": "experiments/LC5-relevance.json"
+  },
+  "params": {
+    "objective": "regression",
+    "metric": "None",
+    "learning_rate": 0.03,
+    "num_leaves": 15,
+    "min_data_in_leaf": 300,
+    "lambda_l2": 10,
+    "max_bin": 127,
+    "feature_fraction": 0.9,
+    "bagging_fraction": 0.9,
+    "bagging_freq": 1,
+    "num_threads": 2,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "provenance": {
+    "model_path": "artifacts/rehearsal/A-K1.bin",
+    "model_sha256": "51c3bbd078b12f94247bed4551157f069b699de440a523d4b546864d16404a45",
+    "model_info": {
+      "rank": 256,
+      "epoch": 41,
+      "fingerprint": 3962296940874396059
+    },
+    "provenance_sha256": "fdeec45c2736a6fbde45cdaeee6298b67cd9565d48c4ebca883ac78bb76eb766",
+    "changed_similarity_fraction": 0.9650560986565425
+  },
+  "training": {
+    "uniform": [
+      {
+        "seed": 2026,
+        "rounds": 385,
+        "selection_rmse": 0.8504061904254178
+      },
+      {
+        "seed": 7,
+        "rounds": 286,
+        "selection_rmse": 0.8503998642561723
+      }
+    ],
+    "relevant": [
+      {
+        "seed": 2026,
+        "rounds": 330,
+        "selection_rmse": 0.8504144791251749
+      },
+      {
+        "seed": 7,
+        "rounds": 231,
+        "selection_rmse": 0.8504574226989292
+      }
+    ],
+    "shuffled": [
+      {
+        "seed": 2026,
+        "rounds": 186,
+        "selection_rmse": 0.8505185766521726
+      },
+      {
+        "seed": 7,
+        "rounds": 250,
+        "selection_rmse": 0.8506791516998005
+      }
+    ]
+  },
+  "spec_sha256": "c14c0227a3058440632b7a876111841f5d6f701cf017c58deeca10bca6143e8c",
+  "context_manifest_sha256": "fc3e555f19ab1ec44a0b09b631fdb11cf25c5575c44535c29278f51d432abf14",
+  "rmse": {
+    "uniform": 0.8448095953574262,
+    "relevant": 0.8447648444614749,
+    "shuffled": 0.8448595414251575
+  },
+  "comparisons": {
+    "uniform": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8448095953574262,
+      "treatment_rmse": 0.8447648444614749,
+      "delta_rmse": -4.475089595123993e-05,
+      "fold_deltas": [
+        -4.475089595123993e-05,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -7.560996995812074e-05,
+      "cluster_normal_95_mse_interval": [
+        -0.0004439322535299035,
+        0.00029271231361366204
+      ],
+      "all_folds_improve": false
+    },
+    "shuffled": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8448595414251575,
+      "treatment_rmse": 0.8447648444614749,
+      "delta_rmse": -9.46969636825834e-05,
+      "fold_deltas": [
+        -9.46969636825834e-05,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -0.0001600022991075745,
+      "cluster_normal_95_mse_interval": [
+        -0.0005190848317380033,
+        0.0001990802335228543
+      ],
+      "all_folds_improve": false
+    }
+  },
+  "per_seed": {
+    "2026": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8448123285974678,
+      "treatment_rmse": 0.8448054772527898,
+      "delta_rmse": -6.851344678038274e-06,
+      "fold_deltas": [
+        -6.851344678038274e-06,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -1.1576153961988213e-05,
+      "cluster_normal_95_mse_interval": [
+        -0.00048309421981079185,
+        0.00045994191188681547
+      ],
+      "all_folds_improve": false
+    },
+    "7": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8449107387949268,
+      "treatment_rmse": 0.8448218125426298,
+      "delta_rmse": -8.89262522970613e-05,
+      "fold_deltas": [
+        -8.89262522970613e-05,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -0.00015026158317452771,
+      "cluster_normal_95_mse_interval": [
+        -0.0005455325658214556,
+        0.00024500939947240017
+      ],
+      "all_folds_improve": false
+    }
+  },
+  "confirmation_gate_passed": false,
+  "outputs": {
+    "shuffled-seed7.txt": "15af0d51eb6547cd2e33651502144e5a2edcd77bcec6676f3211ae09623b7084",
+    "relevant-seed7.txt": "30646642ef6af69b54221483d41e742d3e8dd48ec95f5d39def6e45297b79ca9",
+    "uniform-seed7.txt": "da66bb23e004cde1fd0c03d3ebb806eccdb1e7e7b08933cbc6ee7337c5f6e560",
+    "shuffled_similarity.npy": "66d1182c63f3ddd898140e0ba9f70b3eca114b440fca2d7bd96c79bd0f9b9e2b",
+    "geometry.npy": "ff8ce6967c5d0473d594270328358932849d4984d98b3cc85711886c16d215f6",
+    "uniform-seed7.f32": "4525b3b4e41e8bf3e06f37c0ad53c21316669af72eee3934f9d1ba7fadff27e9",
+    "relevant-seed7.f32": "c43f8ff21259b1540042333008591fd9b557e7d54cd400d69b281e76e865fc1d",
+    "shuffled-seed7.f32": "c31d73b2e9eb1d55c921fb404072b107c6156d570eb8782ac7814ad259b8b37b",
+    "shuffled.npy": "2af5f128034c52b01efe761549c1bc4741a3911f3731fea7d9884cd7b0f046ff",
+    "uniform.npy": "f0785ba83d722cc0715b437c41bc566733887eb1965760f9485234db57d24481",
+    "relevant.npy": "c7b52b29f47bd9283e2e202c8c7ae893e89b7a0a672eb6892ada0f78cbd053a7",
+    "similarity.npy": "74e719ac90289309cd3a196a03bfe2458e1b812043e5fb73130d56815aeb8f60",
+    "uniform-seed2026.txt": "99c236ecf5387ce8314c50da7e89f6414b93f3161cd33bc7a6494765dafb9804",
+    "held_indices.npy": "01942a084f96f4852cd96a03a893bd9d480b535f39f136525a5a00f296eb5d0f",
+    "shuffled-seed2026.f32": "38dd80a6de1c387ee9564d936812f562905b55d3db8549824dbf1acd37768657",
+    "history_items.npy": "79c6220c3c122623815f5c3f536237d60a79936dc4ff542d6ab0d48529529f8e",
+    "relevant-seed2026.f32": "0a39c3ef265822b99d34016b9d2103948f2092930852ff5184bb63df9b4b754a",
+    "shuffled.f32": "16166a991e30ff28de4f639cc95b7663edb4b6f1043af0bf00b29ac15cf7d9be",
+    "uniform-seed2026.f32": "ddcdca61387d2852607b6af7bd86e119705851aeffcd1735d061f39970f3f44d",
+    "relevant.f32": "902b96c6322d671b4ca1b8dd4ede7cee59fb3196d0c2e92de8c917cf251a5c99",
+    "relevant-seed2026.txt": "6fb582636c0b9482cf601ba14606077031da4f406615d7f7cd541820b0fe84b7",
+    "uniform.f32": "2cac8d37d3f625321a47a112624593d7f8fe62a9d6bebcff1b016e6ed97703a2",
+    "shuffled-seed2026.txt": "56b3fe7f8147c9276c5200630567e2c33155ea22e1c9679d2e8a3cfbb0d60d88"
+  },
+  "limitation": "Reused P2 development rows. Positive results need fresh confirmation; no ensemble claim."
+}

@@ -1,0 +1,61 @@
+{"phase": "history_alignment", "rows": 50000}
+{"phase": "history_alignment", "rows": 100000}
+{"phase": "history_alignment", "rows": 150000}
+{"phase": "history_alignment", "rows": 200000}
+{"phase": "features_ready", "provenance": {"model_path": "artifacts/rehearsal/A-K1.bin", "model_sha256": "51c3bbd078b12f94247bed4551157f069b699de440a523d4b546864d16404a45", "model_info": {"rank": 256, "epoch": 41, "fingerprint": 3962296940874396059}, "provenance_sha256": "fdeec45c2736a6fbde45cdaeee6298b67cd9565d48c4ebca883ac78bb76eb766", "changed_similarity_fraction": 0.9650560986565425}, "params": {"objective": "regression", "metric": "None", "learning_rate": 0.03, "num_leaves": 15, "min_data_in_leaf": 300, "lambda_l2": 10, "max_bin": 127, "feature_fraction": 0.9, "bagging_fraction": 0.9, "bagging_freq": 1, "num_threads": 2, "verbosity": -1, "deterministic": true, "force_col_wise": true}}
+{"phase": "arm_complete", "arm": "uniform", "seed": 2026, "rounds": 385, "selection_rmse": 0.8504061904254178}
+{"phase": "arm_complete", "arm": "uniform", "seed": 7, "rounds": 286, "selection_rmse": 0.8503998642561723}
+{"phase": "arm_complete", "arm": "relevant", "seed": 2026, "rounds": 330, "selection_rmse": 0.8504144791251749}
+{"phase": "arm_complete", "arm": "relevant", "seed": 7, "rounds": 231, "selection_rmse": 0.8504574226989292}
+{"phase": "arm_complete", "arm": "shuffled", "seed": 2026, "rounds": 186, "selection_rmse": 0.8505185766521726}
+{"phase": "arm_complete", "arm": "shuffled", "seed": 7, "rounds": 250, "selection_rmse": 0.8506791516998005}
+{
+  "rmse": {
+    "uniform": 0.8448095953574262,
+    "relevant": 0.8447648444614749,
+    "shuffled": 0.8448595414251575
+  },
+  "comparisons": {
+    "uniform": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8448095953574262,
+      "treatment_rmse": 0.8447648444614749,
+      "delta_rmse": -4.475089595123993e-05,
+      "fold_deltas": [
+        -4.475089595123993e-05,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -7.560996995812074e-05,
+      "cluster_normal_95_mse_interval": [
+        -0.0004439322535299035,
+        0.00029271231361366204
+      ],
+      "all_folds_improve": false
+    },
+    "shuffled": {
+      "rows": 39887,
+      "users": 33109,
+      "control_rmse": 0.8448595414251575,
+      "treatment_rmse": 0.8447648444614749,
+      "delta_rmse": -9.46969636825834e-05,
+      "fold_deltas": [
+        -9.46969636825834e-05,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": -0.0001600022991075745,
+      "cluster_normal_95_mse_interval": [
+        -0.0005190848317380033,
+        0.0001990802335228543
+      ],
+      "all_folds_improve": false
+    }
+  },
+  "confirmation_gate_passed": false
+}
