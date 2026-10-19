@@ -1,0 +1,6 @@
+user_knn base=artifacts/K1-joint256.bin train_rmse=0.637326 residual_seconds=39.6023
+screen_seconds=0.276164
+user_knn queries=1405 items=870 screen_pairs=7.35e+07 screen_rank=256 candidates=300 neighbors=100 max_raters=0 alpha=50 power=2 shrink=2 time_decay=0 threads=1
+items_done=870/870 seconds=7.1874
+user_knn_result queries=1405 base_rmse=0.8669771919 probe_rmse=0.86666031 factor_rmse=0.8674826464 mean_neighbors=98.06619217
+user_knn_timing knn_seconds=7.1875 screen_pairs_per_second=1.0226e+07 screen_cpu_seconds=6.4173 (gather 5.4071) rescore_cpu_seconds=0.76461 pearson_rows=1.7107e+08 total_seconds=55.148

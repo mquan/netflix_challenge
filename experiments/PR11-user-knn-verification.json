@@ -1,0 +1,210 @@
+{
+  "created_utc": "2026-10-19T09:05:19.708107+00:00",
+  "experiments": {
+    "PR11-user-knn-replay": {
+      "path": "/Users/quan/workspace/netflix_challenge/experiments/PR11-user-knn-replay.json",
+      "sha256": "22c546d656c0a735e26d0cb193be1cdc2114384861447826346f83e6121696cc",
+      "binary_sha256": "00fc6f55986bad14d25b8d9827e74c32639f2badb157f9b7c7e15a32abd2c5c3",
+      "elapsed_seconds": 309.88132112508174
+    },
+    "PR11-user-knn-original-subset": {
+      "path": "/Users/quan/workspace/netflix_challenge/experiments/PR11-user-knn-original-subset.json",
+      "sha256": "730fcf5a3702c754c8e30ccd5b3a0bb281323da21f43c7f24665acd13654309e",
+      "binary_sha256": "00fc6f55986bad14d25b8d9827e74c32639f2badb157f9b7c7e15a32abd2c5c3",
+      "elapsed_seconds": 55.35151325003244
+    },
+    "PR11-user-knn-rebuilt-subset": {
+      "path": "/Users/quan/workspace/netflix_challenge/experiments/PR11-user-knn-rebuilt-subset.json",
+      "sha256": "43042d94d797863455b2bc4f9db3029560cf71dda8b6e760a1c7057811bbb9f1",
+      "binary_sha256": "f31d0b249f084177c6b842a161cc9b781db01d1da075500c4f09a25fe9e6101d",
+      "elapsed_seconds": 51.93814841599669
+    }
+  },
+  "comparisons": {
+    "full_replay": {
+      ".f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-user-knn.f32",
+        "reference_sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+        "replay_sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+        "byte_identical": true
+      },
+      ".support.f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.support.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-user-knn.support.f32",
+        "reference_sha256": "869598300d0d5fb7d1c9fc51cff2b5af5704459cb00f42238cba6d61f35756ba",
+        "replay_sha256": "869598300d0d5fb7d1c9fc51cff2b5af5704459cb00f42238cba6d61f35756ba",
+        "byte_identical": true
+      },
+      ".count.f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.count.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-user-knn.count.f32",
+        "reference_sha256": "ab5964f1347cdbcf749c555620176270c71d2a831c5f70a89b1b30af0c00d960",
+        "replay_sha256": "ab5964f1347cdbcf749c555620176270c71d2a831c5f70a89b1b30af0c00d960",
+        "byte_identical": true
+      }
+    },
+    "source_compatibility": {
+      ".f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-original-subset.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-rebuilt-subset.f32",
+        "reference_sha256": "27591d38a49d2861cfef016697536f0f062721df37c2be086e72e2ba2bc563b5",
+        "replay_sha256": "27591d38a49d2861cfef016697536f0f062721df37c2be086e72e2ba2bc563b5",
+        "byte_identical": true
+      },
+      ".support.f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-original-subset.support.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-rebuilt-subset.support.f32",
+        "reference_sha256": "a945eb887ffba862f8b0b56f4700abc22fe33407c332ffce79d50943ee31101b",
+        "replay_sha256": "a945eb887ffba862f8b0b56f4700abc22fe33407c332ffce79d50943ee31101b",
+        "byte_identical": true
+      },
+      ".count.f32": {
+        "reference": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-original-subset.count.f32",
+        "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-rebuilt-subset.count.f32",
+        "reference_sha256": "197ad4c6de99bb7f82bec2b5a149871371c1aa12db55d8dfacfcebaa15ced446",
+        "replay_sha256": "197ad4c6de99bb7f82bec2b5a149871371c1aa12db55d8dfacfcebaa15ced446",
+        "byte_identical": true
+      }
+    }
+  },
+  "full_query_count": 1408395,
+  "source_compatibility_query_count": 1405,
+  "source_compatibility_scope": "All output rows compared; only users divisible by 1000 receive neighbor corrections, with other rows left at the base prediction. Bounded source compatibility is not a full rebuilt-binary replay.",
+  "sources_manifest": "/Users/quan/workspace/netflix_challenge/experiments/production-user-knn-sources.json",
+  "sources_manifest_sha256": "6b350b5a65fa594946f75442e5cfca8fb35425e78cde8ce72688afbcf39444fe",
+  "builds": {
+    "K1": {
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-source/netflix-K1-rebuilt",
+      "binary_sha256": "1d3867f28f493853665f65b6e75b46d597c467b2611b02c1f6eac1565cd4441b",
+      "command": [
+        "clang++",
+        "-O3",
+        "-DNDEBUG",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "artifacts/production-replay/PR11-source/K1/src/netflix.cpp",
+        "-framework",
+        "Accelerate",
+        "-o",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-source/netflix-K1-rebuilt"
+      ],
+      "sources": {
+        "src/neighborhood.hpp": {
+          "sha256": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+          "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+          "archive_member": "K1/src/neighborhood.hpp"
+        },
+        "src/integrated.hpp": {
+          "sha256": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+          "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+          "archive_member": "K1/src/integrated.hpp"
+        },
+        "src/rbm.hpp": {
+          "sha256": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+          "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+          "archive_member": "K1/src/rbm.hpp"
+        },
+        "src/netflix.cpp": {
+          "sha256": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+          "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+          "archive_member": "K1/src/netflix.cpp"
+        },
+        "src/ensemble.hpp": {
+          "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+          "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+          "archive_member": "K1/src/ensemble.hpp"
+        },
+        "src/joint.hpp": {
+          "sha256": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+          "commit": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c",
+          "archive_member": "K1/src/joint.hpp"
+        }
+      }
+    },
+    "user_knn": {
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-source/netflix-uknn-rebuilt",
+      "binary_sha256": "f31d0b249f084177c6b842a161cc9b781db01d1da075500c4f09a25fe9e6101d",
+      "command": [
+        "clang++",
+        "-O3",
+        "-DNDEBUG",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "artifacts/production-replay/PR11-source/user_knn/src/netflix.cpp",
+        "-framework",
+        "Accelerate",
+        "-o",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR11-source/netflix-uknn-rebuilt"
+      ],
+      "sources": {
+        "src/netflix.cpp": {
+          "sha256": "b9dcccbfbd472a7f2468244735d7fb39f6710bf3a37bef357fbd9ff3e8473437",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/netflix.cpp"
+        },
+        "src/joint.hpp": {
+          "sha256": "b397ac6e61410cb4c808aaa1f18759e2382df935f07017d5cac2bf92f475f996",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/joint.hpp"
+        },
+        "src/ensemble.hpp": {
+          "sha256": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/ensemble.hpp"
+        },
+        "src/neighborhood.hpp": {
+          "sha256": "91bdc2f0e9cd04ff1a6083c81bf7feca5bfe8ba8b775750e39ce515cc1de4244",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/neighborhood.hpp"
+        },
+        "src/rbm.hpp": {
+          "sha256": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/rbm.hpp"
+        },
+        "src/rbm_visible_context.hpp": {
+          "sha256": "fc9e592bcca927e7334f4db2ccb356e19bae4bf2966305a955ecc8c9dd796988",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/rbm_visible_context.hpp"
+        },
+        "src/integrated.hpp": {
+          "sha256": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/integrated.hpp"
+        },
+        "src/temporal_neighborhood.hpp": {
+          "sha256": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/temporal_neighborhood.hpp"
+        },
+        "src/user_neighborhood.hpp": {
+          "sha256": "bf9200349aa742497cbeaad363fd4194ecf5580548c10d191f72918398a7b823",
+          "commit": "24191045251078eaa32ce488088f2d9571260746",
+          "archive_member": "user_knn/src/user_neighborhood.hpp"
+        }
+      }
+    }
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "tests": {
+    "existing_user_knn_contracts": {
+      "count": 3,
+      "log": "experiments/PR11-user-knn-contract-tests.log",
+      "log_sha256": "8175a87fdd728381abde6a210615c0cf4714be4b9b9cf7d9c8b7d3b76602e7e4"
+    },
+    "production_chain": {
+      "count": 1,
+      "source": "tests/test_production_user_knn.py",
+      "source_sha256": "b245c4bd918f7fbf2402392fbffa5d9dd3821172c7de4b71ca52426d0785551b",
+      "log": "experiments/PR11-production-user-knn-tests.log",
+      "log_sha256": "962286766e3cff6eb6424537ed76afc0c83918f6e5e1aa33eea99d0a28c5a880",
+      "scope": "Three fixed K1 epochs with one training thread, query labels 0 versus 5, and original/rebuilt user-kNN inference with three threads. All parameters after the fingerprint and all predictions/support/counts match."
+    }
+  },
+  "scope": "Inference and bounded source/production-interface verification only. No K1 production retraining, qualifying scoring or score gain."
+}

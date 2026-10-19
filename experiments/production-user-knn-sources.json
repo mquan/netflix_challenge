@@ -1,0 +1,83 @@
+{
+  "K1": {
+    "src/neighborhood.hpp": {
+      "sha256": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+      "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+      "archive_member": "K1/src/neighborhood.hpp"
+    },
+    "src/integrated.hpp": {
+      "sha256": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+      "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+      "archive_member": "K1/src/integrated.hpp"
+    },
+    "src/rbm.hpp": {
+      "sha256": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+      "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+      "archive_member": "K1/src/rbm.hpp"
+    },
+    "src/netflix.cpp": {
+      "sha256": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+      "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+      "archive_member": "K1/src/netflix.cpp"
+    },
+    "src/ensemble.hpp": {
+      "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+      "commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+      "archive_member": "K1/src/ensemble.hpp"
+    },
+    "src/joint.hpp": {
+      "sha256": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+      "commit": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c",
+      "archive_member": "K1/src/joint.hpp"
+    }
+  },
+  "user_knn": {
+    "src/netflix.cpp": {
+      "sha256": "b9dcccbfbd472a7f2468244735d7fb39f6710bf3a37bef357fbd9ff3e8473437",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/netflix.cpp"
+    },
+    "src/joint.hpp": {
+      "sha256": "b397ac6e61410cb4c808aaa1f18759e2382df935f07017d5cac2bf92f475f996",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/joint.hpp"
+    },
+    "src/ensemble.hpp": {
+      "sha256": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/ensemble.hpp"
+    },
+    "src/neighborhood.hpp": {
+      "sha256": "91bdc2f0e9cd04ff1a6083c81bf7feca5bfe8ba8b775750e39ce515cc1de4244",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/neighborhood.hpp"
+    },
+    "src/rbm.hpp": {
+      "sha256": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/rbm.hpp"
+    },
+    "src/rbm_visible_context.hpp": {
+      "sha256": "fc9e592bcca927e7334f4db2ccb356e19bae4bf2966305a955ecc8c9dd796988",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/rbm_visible_context.hpp"
+    },
+    "src/integrated.hpp": {
+      "sha256": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/integrated.hpp"
+    },
+    "src/temporal_neighborhood.hpp": {
+      "sha256": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/temporal_neighborhood.hpp"
+    },
+    "src/user_neighborhood.hpp": {
+      "sha256": "bf9200349aa742497cbeaad363fd4194ecf5580548c10d191f72918398a7b823",
+      "commit": "24191045251078eaa32ce488088f2d9571260746",
+      "archive_member": "user_knn/src/user_neighborhood.hpp"
+    }
+  },
+  "archive_sha256": "7d8515ed3ff7b2f787fdeac97de7b6d455ab19dbd3782a773f7a50e7b16660d8",
+  "provenance": "K1 files match the original training record SHA-256 values. User-kNN source is recovered from commit 2419104 named in the original run strategy; the original run recorded main-worktree source hashes, so these recovered user-kNN source bytes still require a separate rebuild compatibility check."
+}
