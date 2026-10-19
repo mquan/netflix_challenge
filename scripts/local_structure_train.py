@@ -67,7 +67,7 @@ class NeighborEncoder(nn.Module):
 
     def forward(self, inputs, global_features, baseline):
         if self.disable_local:
-            local = global_features.new_zeros((len(global_features), self.neighbor[-1].out_features))
+            local = global_features.new_zeros((len(global_features), self.neighbor[-2].out_features))
             return baseline + self.head(torch.cat([global_features, local], dim=1)).squeeze(1)
         mask = (inputs['cross_rating'] > 0).float()
         ur = (inputs['history_rating'].float() - 3) / 2
