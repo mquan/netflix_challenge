@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Score new prediction columns on the frozen R9-LAT-A2h bank (round10_b5_chain recipe).
 
-Stages: <name>-s3 (R9-LAT-A2h LightGBM config, three seeds, plus the columns),
+Stages: <name>-s3 (R9-LAT-A2h LightGBM config, three seeds, plus the columns
+and/or support features),
 then <name>-NN2 (NN2 settings, fixed 50/50 average), then a paired fold
 comparison with R9-LAT-A2h-20261010-NN2. Promotion needs all five folds better.
 """
@@ -41,7 +42,7 @@ def resolve(name, config):
     raise FileNotFoundError(name)
 
 
-def plan(name, columns, processes):
+def plan(name, columns, support, processes):
     base, control = read(BASE), read(CONTROL)
     if Path(control['config']['like']).name != BASE.name:
         raise ValueError('control is not the neural blend of the base')
@@ -50,7 +51,8 @@ def plan(name, columns, processes):
         if sha(resolve(path, config)) != expected:
             raise ValueError(f'Control input changed: {path}')
     config['extra'] = [str(resolve(x, config)) for x in config['extra']] + [str(Path(c).resolve()) for c in columns]
-    config['extra_support'] = [str(resolve(x, config)) for x in config['extra_support']]
+    config['extra_support'] = ([str(resolve(x, config)) for x in config['extra_support']]
+                              + [str(Path(f).resolve()) for f in support])
     config['bank_root'] = str(R9 / config['bank_root'])
     config['data'] = str(ART.parents[1] / config['data'])  # this worktree has no data/
     config['output'] = str(ART / f'{name}-s3')
@@ -66,7 +68,7 @@ def plan(name, columns, processes):
           '--like', config['output'] + '.json', '--output', str(ART / f'{name}-NN2'),
           '--lr', '3e-4', '--dropout', '.2', '--seeds', '2026', '7', '13',
           '--epochs', '60', '--patience', '5', '--threads', '2']
-    stages = [(f'{name}-s3', 'Frozen R9-LAT-A2h LightGBM config plus ' + ' '.join(columns), boost),
+    stages = [(f'{name}-s3', 'Frozen R9-LAT-A2h LightGBM config plus columns ' + ' '.join(columns) + ' support ' + ' '.join(support), boost),
               (f'{name}-NN2', 'NN2 on the s3 run; three seeds and predeclared 50/50 LightGBM average', nn)]
     for stage, _, _ in stages:
         if list((ROOT / 'experiments').glob(stage + '.*')) or list(ART.glob(stage + '.*')):
@@ -77,12 +79,13 @@ def plan(name, columns, processes):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--name', required=True)
-    parser.add_argument('--columns', nargs='+', required=True)
+    parser.add_argument('--columns', nargs='*', default=[])
+    parser.add_argument('--support', nargs='*', default=[], help='extra label-free tree features')
     parser.add_argument('--processes', type=int, default=2)
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     os.chdir(ROOT)
-    stages, control = plan(args.name, args.columns, args.processes)
+    stages, control = plan(args.name, args.columns, args.support, args.processes)
     print(json.dumps([(n, s, ' '.join(c)) for n, s, c in stages], indent=2), flush=True)
     if args.check:
         return
