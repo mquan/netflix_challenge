@@ -767,3 +767,16 @@ This is a positive intermediate signal, not a selected-model or ensemble gain:
 N1 still trails A2h's selected epoch-12 score 0.8674022745 by 0.0044666987.
 The earlier configuration/RNG caveats continue to apply. Epoch 6 is running;
 neither promotion rules nor SO1's frozen comparison have changed.
+
+### N1 epoch-6 observation
+
+N1 epoch 6 completed at **0.8709370835**, improving its own epoch-5 result by
+0.0009318897. However, A2h's epoch-6 score was **0.8701027286**: N1 is now
+**0.0008343550 worse at the same epoch**, so the epoch-5 advantage did not
+persist. It remains 0.0035348090 behind A2h's mature selected epoch-12 result.
+The exact records are preserved in `experiments/N1-epoch6-observation.json`.
+
+This remains an intermediate, historically controlled P2 curve; no ensemble
+comparison has completed and no promotion is justified. Epoch 7 is running.
+Keep the fixed selection/gate protocol and queued matched SO1 objective
+comparison unchanged; do not extrapolate the isolated epoch-5 gain.

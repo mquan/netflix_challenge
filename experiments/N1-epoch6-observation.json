@@ -1,0 +1,43 @@
+{
+  "observed_utc": "2026-10-19T09:52:29.575732+00:00",
+  "N1_source": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.select.progress.json",
+  "N1_progress_snapshot_sha256": "b1004631ed35d576d616228d05067e15d81b9796694d8c96ce56f5235866f508",
+  "N1_epoch6_record": {
+    "epoch": 6,
+    "loss": 0.6731124498847233,
+    "train_rmse": 0.8204343056248393,
+    "users": 480189,
+    "targets": 29167028,
+    "tokens": 83921814,
+    "train_seconds": 1863.7326776660047,
+    "validation_rmse": 0.8709370835345447,
+    "seconds": 2215.257030916051
+  },
+  "A2h_source": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "A2h_source_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "A2h_epoch6_record": {
+    "epoch": 6,
+    "loss": 0.6711189712506811,
+    "train_rmse": 0.819218512142916,
+    "users": 480189,
+    "targets": 29165168,
+    "tokens": 78290079,
+    "train_seconds": 1231.528482374997,
+    "validation_rmse": 0.8701027285771827,
+    "seconds": 1507.7005684160104
+  },
+  "A2h_selected_record": {
+    "epoch": 12,
+    "loss": 0.6504680767844196,
+    "train_rmse": 0.8065160108631652,
+    "users": 480189,
+    "targets": 29165185,
+    "tokens": 78291458,
+    "train_seconds": 1380.704598750046,
+    "validation_rmse": 0.8674022745268025,
+    "seconds": 1691.3132064579986
+  },
+  "same_epoch_delta_rmse": 0.0008343549573619491,
+  "delta_to_mature_control": 0.003534809007742168,
+  "limitation": "Intermediate P2 development learning curve, not an ensemble result. Historical control initialization/RNG differs; N1 selection and its later gate reuse P2. No promotion."
+}

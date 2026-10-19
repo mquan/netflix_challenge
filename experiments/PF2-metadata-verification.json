@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "export_manifest": "artifacts/production-replay/PF2-metadata/manifest.json",
+  "export_manifest_sha256": "2a667aeb2481bca1ecaa36cbdddfe07d306bf0355a288d20b9fd5136662d04f8",
+  "stages": {
+    "development_replay": {
+      "files": 19,
+      "all_hashes_shapes_and_values_finite": true
+    },
+    "qualifying": {
+      "files": 19,
+      "all_hashes_shapes_and_values_finite": true
+    }
+  },
+  "numeric_sample": {
+    "meta": {
+      "columns": 11,
+      "sampled_rows": 2048,
+      "byte_identical": true
+    },
+    "context": {
+      "columns": 5,
+      "sampled_rows": 2048,
+      "byte_identical": true
+    },
+    "extra_meta": {
+      "columns": 7,
+      "sampled_rows": 2048,
+      "byte_identical": true
+    }
+  },
+  "sampling": "np.linspace(0, qualifying_count-1, min(2048, qualifying_count), dtype=int64)",
+  "numeric_method": "independent direct per-user rating and implicit-history reductions; global integer item moments and priors; same specified float32 output rounding",
+  "movie_checks": {
+    "columns": 16,
+    "rows_per_column": 2817131,
+    "all_bytes_exact": true,
+    "qualifying_movies_absent_from_development_probe": 700,
+    "original_generator": "artifacts/r8/meta_columns.py",
+    "original_generator_sha256": "5cd6d0ecea0a0ca154e3f430a9614c64d2ad1732d499e274443198f70d4c3522",
+    "method": "historical generator pure table statements, then full qualifying item lookup"
+  },
+  "verifier_source_sha256": "887350b616aa63056cbab7df96d9f04d9a2750f1ac73ade054459e4d23a98234",
+  "scope": "All output hashes/shapes/finiteness and all movie values verified. Rating-derived numeric values independently checked on at most 2048 qualifying rows; no score claim."
+}
