@@ -1,0 +1,19 @@
+{
+  "state": "prepared_not_launched",
+  "tests_passed": 7,
+  "test_run": "experiments/SF0-full-comparison-tests-v2.json",
+  "preparation_run": "experiments/SF0-full-plan.json",
+  "plan": "experiments/SO1-full-plan.json",
+  "plan_sha256": "16f9afc1493c6939226a964e8441ef20ad5c7c9a8f21e6e7ecd0ec0c43549a15",
+  "frozen_full_inputs_rechecked": 166,
+  "frozen_queue_inputs_unchanged": 24,
+  "reference_rmse": 0.8668706424233039,
+  "stages": 6,
+  "p2_gate_exists": false,
+  "full_output_exists": false,
+  "limitations": [
+    "CPU contract tests and real input verification only; no full-data training or ensemble gain measured.",
+    "Refresh reference binding if N1 promotes a different bank before execution.",
+    "No driver launched while the existing SO1 queue is waiting."
+  ]
+}
