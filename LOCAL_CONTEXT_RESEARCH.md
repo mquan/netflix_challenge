@@ -281,3 +281,50 @@ epoch. On completion it also writes `experiments/LC2-comparison.json`.
 Estimated runtime is 2--4 hours, depending on early stopping and machine load.
 The first result is the matched P2 comparison; no full-ensemble result is
 promised on this schedule.
+
+### LC2 result and decision
+
+Completed successfully on 2026-10-18 at 18:12 Pacific (2026-10-19 01:12 UTC),
+after 62 minutes. Evidence: `experiments/LC2-comparison.json` and the
+`LC2-structure-p2` manifest, log, events and source archive. Evaluation covers
+39,887 ratings from 33,109 held-out users; these P2 scores are not comparable
+to the original-probe target above.
+
+| Two-seed averaged model | P2 evaluation RMSE |
+|---|---:|
+| Frozen-column ridge baseline | 0.845304781 |
+| Pooled encoder | **0.844647493** |
+| Structured encoder | 0.844655319 |
+| Correspondence-shuffled encoder | 0.844662261 |
+
+Structured minus pooled is **+0.000007826 RMSE**, slightly worse. Its paired
+user-clustered MSE 95% interval is [-0.000001282, +0.000027723], including zero.
+Seed 2026 is worse by 0.000012309 RMSE; seed 7 is effectively tied (-4.44e-9).
+Structured beats shuffled by only 0.000006942 RMSE. The averaged paired MSE
+interval excludes zero [-0.000020507, -0.000002948], but seed 7's interval
+includes zero and neither seed establishes a useful advantage over pooled.
+
+All arms selected 14 epochs for seed 2026 and 10 for seed 7, stopping before
+the 20-epoch cap. There is no observed justification for simply extending the
+epoch budget. Similar training trajectories do not prove why structure adds
+so little; the mechanism remains unresolved.
+
+The pooled model improves the smaller ridge baseline by 0.000657288 RMSE.
+That comparison includes the neural head and common features, so it cannot
+attribute the gain to local context or establish a gain over the full ensemble.
+Only evaluation fold 0 is populated in this screening run; the report's
+`all_folds_improve: false` is not a five-fold promotion test result.
+
+**Decision: do not scale this structural recipe or promote an ensemble change.**
+It failed the declared requirement to beat both matched controls. LC1 rejected
+raw path summaries in the full ensemble, and LC2 now substantially downgrades
+this structural representation. Further work must diagnose a concrete limitation
+before another training sweep; the current evidence does not establish a
+scalable route to 10%. Preserve the retrieval, controls and evaluation harness
+on the same branch. The promoted score remains 0.8668706425, with the same
+0.0022206425 gap to the working development target.
+
+Post-run verification matched all 18 output SHA-256 hashes plus the frozen
+spec and context-manifest hashes. Independent rescoring of the four saved
+float32 prediction files agrees with the report within 1e-8 RMSE. No code
+changed during this result checkpoint.
