@@ -1,6 +1,7 @@
 """LC5 feature contracts: relevance correspondence, padding and equivariance."""
 from pathlib import Path
 import sys
+import subprocess
 import unittest
 
 import numpy as np
@@ -18,6 +19,22 @@ def context():
 
 
 class RelevanceTests(unittest.TestCase):
+    def test_tree_process_loads_without_neural_runtime(self):
+        code = '''import sys
+sys.path.insert(0, 'scripts')
+import local_relevance_pilot
+import numpy as np
+import lightgbm as lgb
+assert 'torch' not in sys.modules
+x = np.random.default_rng(3).normal(size=(128, 4))
+model = lgb.train({'objective': 'regression', 'verbosity': -1, 'num_threads': 1},
+                  lgb.Dataset(x, label=x[:, 0]), num_boost_round=3)
+assert np.isfinite(model.predict(x, num_threads=1)).all()
+'''
+        result = subprocess.run([sys.executable, '-c', code],
+                                cwd=Path(__file__).resolve().parents[1], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_geometry_correspondence_changes_prediction_and_uniform_is_nested(self):
         c = context()
         left = local_features(c, np.array([[1., -1., 0.]]))
