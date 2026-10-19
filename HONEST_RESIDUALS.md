@@ -140,3 +140,21 @@ The captured vectors reproduce A2h-refit's saved probe column exactly (max
 error 0.0). This mirrors R9-LAT's K1 recipe (−0.00023, all folds).
 Blend test `HR4-blend` = R9-LAT-A2h + these 18 support features, launched
 2026-10-18 evening (three processes, nice 10). Same gates: ≥0.0003 and all five folds.
+
+**HR4 blend: not promoted, worse.** Finished 21:55 PDT. **0.8669397 vs 0.8668706
+(+0.0000690)**; folds +.000022 +.000135 +.000026 +.000134 +.000028, so all five
+folds are worse. A2h's own column already carries what its internal code says about the
+target rating. The 18 extra tree features only add split noise. K1's −0.00023 came from a
+model whose column was weak, so its latents carried information its prediction
+did not. A2h is the bank's strongest column, so that does not repeat. Representation
+stacking of A2h is stopped. B4 posterior factors are not worth testing on this evidence
+(B4 is also a strong column).
+
+## Branch status after HR2a, HR2b and HR4
+
+Every way of reusing the existing strong models has hit the same wall:
+P2-trained residual corrections, per-user offsets, and internal codes. The blender
+already extracts what A2h and B4 know. The remaining 0.0022 has to come from
+**new evidence or a new model family** that is not a function of the current
+columns. That is the other branch's bet (local paths/structural encoder), or a
+new base model trained on different signal.
