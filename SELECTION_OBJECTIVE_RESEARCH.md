@@ -195,3 +195,49 @@ post-hoc epoch selection. No Netflix continuation was launched. A subsequent
 experiment needs its own fixed budget, matched control/treatment continuation
 policy and gate; the existing SO1 gate continues to evaluate only the original
 two-epoch outputs.
+
+## Conditional full-training comparison (SF0)
+
+`scripts/selection_objective_full.py` and `experiments/SO1-full-plan.json` prepare
+the next score-producing stage without launching it. Preparation verified 166
+frozen inputs and reproduced the retained score as 0.8668706424233039 from its
+saved predictions. The six stages are: two fixed two-epoch fine-tuning arms from
+the full-training A2h-refit checkpoint, then tree and neural blends for each of
+the duplicate-control and treatment banks. Both banks retain the original 79
+prediction columns and append two columns. Their additions are control/control
+and control/treatment respectively; duplicate columns are intentionally preserved.
+All other blend settings remain fixed, with three CPU fold workers.
+
+Execution requires the original P2 gate to pass its 0.0005 minimum. The runner
+recomputes that gate, checks arm hashes and selected penalties, and freezes the
+resulting evidence. Before each stage it verifies inputs and waits for N1's chain
+to be terminal and two idle Python snapshots. Reports, prediction lengths,
+finiteness, library versions and saved blend scores are checked after execution.
+Failures stop the chain and preserve artifacts for explicit recovery. Existing
+outputs or status records cannot be silently overwritten or restarted.
+
+The comparison records treatment versus duplicate-control, treatment versus the
+retained reference, and control versus that reference. Substantial auxiliary
+investment requires at least 0.0003 RMSE gain in both treatment comparisons and
+improvement on every user fold. A useful control-only gain is also reported.
+No result is automatically promoted. This is original training with the probe
+held out, not final train+probe production or a hidden-test score.
+
+Seven CPU fixture tests pass, covering gate rejection and recomputation, no
+training launch on missing/failed evidence, matched stage construction, stopping
+on validation failure, paired decision rules, and blend artifact validation.
+Evidence is archived under `experiments/SF0-full-comparison-tests-v2.*` and
+`experiments/SF0-full-plan.*`. A real full-training chain has not run.
+
+The prepared plan binds the current R9 reference. **Refresh it before execution
+if N1 promotes a different reference bank.** Once the P2 gate passes and the
+reference is confirmed current, the direct launch command is:
+
+```sh
+/Users/quan/.cache/netflix-venv/bin/python scripts/selection_objective_full.py run --plan experiments/SO1-full-plan.json
+```
+
+Do not wrap that driver in `experiment.py`: its conservative idle check would
+wait for the wrapper Python process. The driver wraps its individual stages
+itself. No additional waiting process has been launched, because it would also
+block the existing SO1 queue.
