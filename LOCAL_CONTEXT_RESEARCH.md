@@ -852,3 +852,18 @@ The epoch took 2,363.37 seconds (39.39 minutes), including 2,013.32 seconds
 of training. The live trainer retained epoch 8; keep the fixed three-epoch
 patience and 18-epoch cap. Evidence: `experiments/N1-epoch9-observation.json`.
 No ensemble gate has completed, no result is promoted, and SO1 stays queued.
+
+### N1 epoch-10 observation
+
+N1 recovered to P2 RMSE **0.8684442167** at epoch 10, improving by
+0.0012234883 from epoch 9 and 0.0005909528 from its prior best at epoch 8.
+Epoch 10 is now selected, resetting the fixed patience counter. A2h's historical
+epoch-10 score was 0.8681466184, so N1 remains **0.0002975982 worse at the
+same epoch** and **0.0010419421 behind mature A2h**.
+
+The epoch took 2,318.40 seconds (38.64 minutes), including 1,977.65 seconds
+of training. The trainer was confirmed advancing into epoch 11. Evidence:
+`experiments/N1-epoch10-observation.json`. This recovery demonstrates why the
+single epoch-9 regression was insufficient to stop the fixed run; it does not
+establish ensemble value or a promoted score gain. The 18-epoch cap, three-epoch
+patience and subsequent ensemble gate remain unchanged. SO1 stays queued.
