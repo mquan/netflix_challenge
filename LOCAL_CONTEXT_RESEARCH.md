@@ -41,6 +41,12 @@ An auxiliary choice-prediction loss remains a distinct, untested hypothesis
 requiring a matched rating-only control. The N1 audit below defines what the
 active input-token experiment can and cannot establish.
 
+The matched auxiliary-loss follow-up is now implemented and prepared as SO1:
+[SELECTION_OBJECTIVE_RESEARCH.md](SELECTION_OBJECTIVE_RESEARCH.md). Eight tests
+and bounded archived-trainer compatibility checks pass. The pair has not been
+launched; N1's active follow-on chain retains GPU priority. Its fixed two-epoch
+P2 comparison and 0.0005 continuation gate are frozen before any SO1 score.
+
 ## Original hypothesis and work sequence
 
 The current ensemble may discard useful relationships between the target
