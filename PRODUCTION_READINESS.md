@@ -45,10 +45,9 @@ They represent potential shared production work, not a new score claim.
 2. Recover and verify each retained prediction's full training recipe, source,
    fixed epoch/sweep count, and dependencies, including graph/base-model inputs.
    Inventory support features and their train+probe transformations as well.
-3. Construct train+probe labeled data and qualifying queries with a reversible
-   mapping to original submission order. Raw qualifying and training files are
-   present. Their original dense-user mapping must be respected. Query ratings
-   are unknown; dummy labels cannot choose epochs or produce meaningful RMSE.
+3. Use the verified train+probe data and qualifying-order mapping described
+   below. Query ratings are unknown; their zero sentinels cannot choose epochs
+   or produce meaningful RMSE.
 4. Implement and verify fixed-budget production paths for each retained family,
    plus the full-probe-fitted blender and matching qualifying meta features.
    Rehearsals cover important families but do not prove the entire 79-column
@@ -92,3 +91,37 @@ Retained snapshot filenames take precedence over a later final training epoch.
 Archive and member hashes were independently verified, and all five recipe and
 inventory tests passed. These are recovered recipes, not verified retraining
 results or a complete production pipeline.
+
+## Production dataset prepared and verified
+
+`scripts/production_dataset.py` created
+`data/production/stage-c-v1/train-probe-qualifying.bin`: 100,480,507 labeled
+train+probe ratings and 2,817,131 unlabeled qualifying queries for 480,189 users
+and 17,770 movies. It recovers the original dense-user mapping by first
+appearance in ascending raw movie files, preserves qualifying-file query order,
+and writes both `dense-to-raw-user.npy` and `qualifying-order.npy`.
+
+The labeled rows and qualifying queries exactly partition the original
+103,297,638 implicit interactions. An independent inversion check locates all
+1,408,395 original probe rows in production training, checks their labels, removes
+them, and recovers all 99,072,112 original training items, dates and ratings.
+User offsets, unchanged implicit arrays, and all output/source hashes also pass.
+Evidence: `experiments/production-dataset-manifest.json` and
+`experiments/production-dataset-verification.json`. Three fixture tests cover
+mapping/order, label preservation, no overwrite, invalid dates, and missing or
+duplicate queries. The development dataset remains unchanged.
+
+Reproduce into a new output directory:
+
+```sh
+python scripts/production_dataset.py \
+  --source data/processed/netflix.bin \
+  --training-dir data/raw/extracted/download/training_set/training_set \
+  --qualifying data/raw/extracted/download/qualifying.txt \
+  --output-dir data/production/stage-c-v1
+```
+
+This is production-only data. Query ratings are zero sentinels, never labels;
+existing development selection/scoring commands must not be used on them.
+Fixed-budget training and qualifying inference remain unimplemented for the
+full retained bank, and no final model training has been launched.

@@ -1,0 +1,33 @@
+{
+  "state": "complete",
+  "purpose": "production_only_unlabeled_queries",
+  "source": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+  "source_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "training_dir": "/Users/quan/workspace/netflix_challenge/data/raw/extracted/download/training_set/training_set",
+  "raw_training_fingerprint": "becbb5c53fe59542f13a5ec8522d5b0ea75c8ca46ff4fb5aa3b7d371402cbc02",
+  "raw_training_fingerprint_method": "SHA256 of ascending filename, NUL, and binary SHA256 of each movie file",
+  "qualifying": "/Users/quan/workspace/netflix_challenge/data/raw/extracted/download/qualifying.txt",
+  "qualifying_sha256": "62b3bbc22ff5531a0f61dfa8db658b7cff29da51402da5463f2230b3fbb1532b",
+  "script_sha256": "ed619b331065f4d37a1bfca3b1a1c7fa32c6f81a03067b926d2242d55bf8b656",
+  "users": 480189,
+  "items": 17770,
+  "train_count": 100480507,
+  "qualifying_count": 2817131,
+  "original_train_count": 99072112,
+  "original_probe_count": 1408395,
+  "implicit_count": 103297638,
+  "mean": 3.604289964420661,
+  "outputs": {
+    "train-probe-qualifying.bin": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+    "dense-to-raw-user.npy": "62635da2e71b85fdcde38a0c30634341e1f7155d787c9b6c770b79aa007ceeaf",
+    "qualifying-order.npy": "092bbb123639f744a8c8839638e69f0fe0ba3efe53f24520254441d07c695ecb"
+  },
+  "checks": [
+    "raw first-appearance user mapping round trips",
+    "labeled train+probe and qualifying exactly partition original implicit interactions",
+    "qualifying file order preserved",
+    "original implicit arrays unchanged",
+    "original source digest unchanged"
+  ],
+  "limitation": "Query ratings are zero sentinels. Never use this dataset to select epochs, fit a blender on query labels, or report query RMSE. Fixed-budget production trainers remain required."
+}
