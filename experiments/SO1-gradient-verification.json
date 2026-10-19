@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "plan_sha256": "c0490e6e0d9099cbd3745637cf9a11af3796e6339c88fcf3fd5c9f61c6c1866e",
+  "inputs": {
+    "experiments/SO1-gradient-audit-result.json": "8257ebff4f08d187e511cbb26cc88a405d8cc06bba439dc66007cad37f8cbe4b",
+    "experiments/SO1-gradient-audit.json": "b01f305ee20a26174d88aabc87ed0ea8ed7edf1a302e347c353414bd248d0348",
+    "experiments/SO1-update-audit-result.json": "ec57d643f943a68ba42aa11bfd538a0aad2f6a3b56c995329917f0ec58934011",
+    "experiments/SO1-update-audit.json": "bbeb4672aec2148198d72d75eaab09d766b5ebf3ff413f987b08f324f81e3d45"
+  },
+  "frozen_inputs_rechecked": 21,
+  "source_archive_checks": true,
+  "original_model_unchanged_in_both_audits": true,
+  "gradients_identical_across_repeated_cpu_audits": true,
+  "comparisons": [
+    {
+      "batch": 1,
+      "users": 10,
+      "history_mean": 2014.6,
+      "common_gradient_ratio": 0.01252927470717958,
+      "common_gradient_cosine": 0.032827277355334764,
+      "first_step_relative_change": 0.26299523882687614,
+      "first_step_control_treatment_cosine": 0.9668313969488355
+    },
+    {
+      "batch": 2,
+      "users": 16,
+      "history_mean": 992.375,
+      "common_gradient_ratio": 0.011295150584251578,
+      "common_gradient_cosine": -0.07745039498760775,
+      "first_step_relative_change": 0.267371594540268,
+      "first_step_control_treatment_cosine": 0.9656835480300876
+    },
+    {
+      "batch": 3,
+      "users": 21,
+      "history_mean": 744.047619047619,
+      "common_gradient_ratio": 0.019795014001878546,
+      "common_gradient_cosine": 0.04337306373780604,
+      "first_step_relative_change": 0.2556332715858948,
+      "first_step_control_treatment_cosine": 0.9683723896921533
+    },
+    {
+      "batch": 4,
+      "users": 441,
+      "history_mean": 34.63718820861678,
+      "common_gradient_ratio": 0.011793703653157924,
+      "common_gradient_cosine": -0.002429382148380299,
+      "first_step_relative_change": 0.18040546581774428,
+      "first_step_control_treatment_cosine": 0.9839814544991257
+    }
+  ],
+  "interpretation": "Weighted auxiliary gradients reach the encoder and have a non-negligible effect on initial AdamW updates. Do not infer an ensemble gain or increase the frozen weight from gradient norms alone.",
+  "limitations": "Four fixed initial-state CPU batches with pad_rows=1. Update comparisons use temporary parameter copies and zero optimizer moments independently for every batch. No optimizer step is applied to the audited model; no validation labels or scores select a recipe."
+}
