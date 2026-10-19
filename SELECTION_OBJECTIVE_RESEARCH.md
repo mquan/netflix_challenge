@@ -155,3 +155,43 @@ archives. All 21 original frozen inputs were rechecked. Model parameter hashes
 are identical before and after both audits; all four batches' losses and raw
 gradient measurements repeat exactly across the two CPU runs. The queued SO1
 script, plan, weight, epochs and promotion gates remain unchanged.
+
+## Checkpoint continuation capability (SC0)
+
+The frozen SO1 trainer writes its learned choice head, but its `warm_model`
+loader accepts only a rating-only checkpoint. It also omits optimizer and RNG
+state. Consequently, its output cannot be fed directly back through that loader
+for a cumulative iteration, and exact optimizer resumption cannot be recovered
+from an original SO1 checkpoint.
+
+`scripts/selection_objective_continue.py` supplies a separate continuation path
+without changing the queued trainer. It strictly loads the complete learned
+state, including `choice_output` and `choice_bias`, and binds the checkpoint to
+its parent's recorded hash, configuration, dataset, libraries and training source.
+An explicit `--optimizer-mode restart` is required for legacy SO1 checkpoints.
+The existing seed, learning rate, objective weight and sampling settings are
+inherited, while fine-tuning epoch numbers continue from the recorded parent.
+New output prefixes preserve the prior stage and its evidence.
+
+New checkpoints additionally save optimizer, CPU RNG and, on MPS, device RNG
+state. `--optimizer-mode resume` restores those states and requires the same
+device and continuation source. An epoch-boundary checkpoint with a completed
+record can be loaded even if its parent stage did not finish its entire planned
+budget; the next stage's additional epoch count must be fixed explicitly.
+Unknown query labels produce predictions but no validation RMSE.
+
+Four CPU fixture tests pass. The strongest runs two continuation epochs
+uninterrupted, then compares against one epoch followed by a resume in a **fresh
+process**: model tensors, optimizer state, RNG state and prediction bytes match
+exactly, with dropout enabled. Tests also verify preservation of the learned
+choice head and rejection of missing resume state, changed inputs, device changes
+during exact resume, and output overwrites. Evidence and archived sources are in
+`experiments/SC0-continuation-verification.json` and
+`experiments/SC0-continuation-tests.log`. All 24 queue launch bindings remain
+unchanged. MPS resume equivalence has not been tested while N1 owns the GPU.
+
+This capability does **not** extend SO1's frozen two-epoch comparison or authorize
+post-hoc epoch selection. No Netflix continuation was launched. A subsequent
+experiment needs its own fixed budget, matched control/treatment continuation
+policy and gate; the existing SO1 gate continues to evaluate only the original
+two-epoch outputs.
