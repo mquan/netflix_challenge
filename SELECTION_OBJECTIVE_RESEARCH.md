@@ -242,6 +242,28 @@ wait for the wrapper Python process. The driver wraps its individual stages
 itself. No additional waiting process has been launched, because it would also
 block the existing SO1 queue.
 
+### Full-stage integration verification (SF1)
+
+An isolated CPU fixture now exercises the real trainer and blender entrypoints,
+in addition to SF0's gate and control-flow contracts. It builds a synthetic
+100-user/200-query dataset with seven movies, including two unobserved movies
+so the auxiliary negative sampler and learned choice head are active. Temporary
+reference tree/NN blends supply actual reference reports. All six prepared
+stages then run: two two-epoch training arms and both tree/NN blend pairs.
+
+Every actual report passes the full runner's configuration, source, data,
+library and artifact validators. All 22 generated artifacts remain hash-bound,
+the saved averages match their tree/NN components within 1e-6, every user fold
+has a finite paired result, and the two learned choice biases differ. The test
+passes in 12.67 seconds, using one-thread CPU subprocesses and a temporary
+working directory. No shared metadata cache or Netflix output is written.
+
+Evidence is in `experiments/SF1-full-pipeline-integration.*` and
+`experiments/SF1-verification.json`. All 166 full-plan bindings and 24 live queue
+bindings were rechecked unchanged. This verifies cross-script compatibility;
+it does not execute or bypass the Netflix P2 gate, establish MPS behavior, or
+provide a score improvement. The real full-training comparison remains gated.
+
 ## Iteration-speed diagnosis: row padding
 
 The synchronous encoder path builds a dense `[rows, width, d_model]` tensor,

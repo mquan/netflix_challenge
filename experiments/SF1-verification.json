@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "tests_passed": 1,
+  "experiment": "experiments/SF1-full-pipeline-integration.json",
+  "experiment_sha256": "9b3f9fb6060ac96ce651c964536eb6f4fd702578aec755ddfb451111aa2f56dd",
+  "test_source_sha256": "500e8dbb559f3a56fbecbab840f18229f01a20c9c2dad419b9c299f626746397",
+  "source_archive": {
+    "path": "experiments/SF1-full-pipeline-integration.source.zip",
+    "sha256": "88a3cab910dbb1991224a96d97e54162486843730c4cd73787f2950b5de81183",
+    "bytes": 409500
+  },
+  "frozen_full_inputs_unchanged": 166,
+  "frozen_queue_inputs_unchanged": 24,
+  "scope": "Synthetic CPU dataset only: 100 users, 200 probe rows, 7 movies, two unobserved movies for the auxiliary negative sampler.",
+  "checks": [
+    "Real reference tree and neural blender subprocesses complete in a temporary directory",
+    "Six prepared stages execute using actual trainer and blender command lines",
+    "All real stage reports pass configuration, source, input, version and output validators",
+    "22 generated report/checkpoint/prediction hashes remain unchanged across stages",
+    "Saved 50/50 averages agree with saved neural/tree components within 1e-6",
+    "Paired comparison contains finite results for every user fold",
+    "Treatment and zero-weight control produce different learned choice biases"
+  ],
+  "limitations": [
+    "Does not execute the Netflix full-run gate or reserve a GPU; gate and scheduling contracts were tested separately.",
+    "No Netflix training or score claim; no frozen source or plan changed."
+  ]
+}
