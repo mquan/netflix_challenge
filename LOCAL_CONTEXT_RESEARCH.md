@@ -595,3 +595,14 @@ summary `experiments/LC5-relevance.json`; artifacts under
 `artifacts/local-context/LC5/relevance/`. Sixteen local-context tests pass,
 including new geometry-correspondence, query-label isolation, consistent
 movie/neighbor permutation, shuffle-multiset and empty-context checks.
+
+The first `LC5-relevance-p2` launch terminated with exit code -6 after feature
+export, before any model fitting or scores, because importing shared helpers
+from the neural trainer loaded a conflicting OpenMP runtime alongside LightGBM.
+Moved the input-verification and preprocessing functions unchanged into
+`local_structure_inputs.py`; the neural trainer re-exports them for compatibility.
+The tree process now has no PyTorch import. A fresh-process tree-fit regression
+test covers the failure. No duplicate-runtime override is used. Retry uses a
+new experiment name `LC5-relevance-p2-r2` and output directory
+`artifacts/local-context/LC5/relevance-r2/`, preserving the failed run and the
+same predeclared statistical recipe.

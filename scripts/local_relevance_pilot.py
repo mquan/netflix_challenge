@@ -9,9 +9,13 @@ import numpy as np
 
 from gbdt_blend import blend_fold, load
 from local_context_chain import paired
-from local_structure_train import fit_preprocessing, read_inputs, rmse
+from local_structure_inputs import fit_preprocessing, read_inputs
 from round9_latent import read_model
 from train_holdout import digest
+
+
+def rmse(y, prediction):
+    return float(np.sqrt(np.mean((y - np.clip(prediction, 1, 5)) ** 2)))
 
 
 def shuffle_relevance(similarity, valid, seed=20261019):
