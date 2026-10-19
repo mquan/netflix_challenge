@@ -867,3 +867,19 @@ of training. The trainer was confirmed advancing into epoch 11. Evidence:
 single epoch-9 regression was insufficient to stop the fixed run; it does not
 establish ensemble value or a promoted score gain. The 18-epoch cap, three-epoch
 patience and subsequent ensemble gate remain unchanged. SO1 stays queued.
+
+### N1 epoch-11 observation
+
+N1 improved to P2 RMSE **0.8683459137**, a gain of 0.0000983029 from
+epoch 10. Epoch 11 is selected, resetting the fixed patience counter. The
+historical A2h epoch-11 score was 0.8674691842, leaving N1 **0.0008767296
+worse at the same epoch** and **0.0009436392 behind mature A2h**. The smaller
+increment improves the selected checkpoint but does not yet establish a
+competitive standalone result or ensemble value. Historical initialization
+and RNG differ, so this comparison is descriptive, not a matched causal test.
+
+The epoch took 2,223.09 seconds (37.05 minutes), including 1,856.86 seconds
+of training. Evidence: `experiments/N1-epoch11-observation.json`. The trainer
+remains live under the unchanged three-epoch patience and 18-epoch cap.
+No ensemble gate has completed, the promoted score remains unchanged, and
+SO1 stays queued behind the full N1 chain.

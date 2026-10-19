@@ -1,0 +1,58 @@
+{
+  "observed_utc": "2026-10-19T12:59:14.755918+00:00",
+  "N1_progress_source": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.select.progress.json",
+  "N1_progress_snapshot_sha256": "e29cd14486fd0808109d29aee1d281f572f9e209334abe7efa21671bc1d35e4a",
+  "N1_epoch11": {
+    "epoch": 11,
+    "loss": 0.6541816909813442,
+    "train_rmse": 0.8088149919933647,
+    "users": 480189,
+    "targets": 29164951,
+    "tokens": 83924851,
+    "train_seconds": 1856.8551643750397,
+    "validation_rmse": 0.8683459137246764,
+    "seconds": 2223.092768542003
+  },
+  "N1_selected_epoch": 11,
+  "N1_best": {
+    "epoch": 11,
+    "loss": 0.6541816909813442,
+    "train_rmse": 0.8088149919933647,
+    "users": 480189,
+    "targets": 29164951,
+    "tokens": 83924851,
+    "train_seconds": 1856.8551643750397,
+    "validation_rmse": 0.8683459137246764,
+    "seconds": 2223.092768542003
+  },
+  "A2h_source": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "A2h_source_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "A2h_epoch11": {
+    "epoch": 11,
+    "loss": 0.653068392699721,
+    "train_rmse": 0.8081264708724236,
+    "users": 480189,
+    "targets": 29163725,
+    "tokens": 78291420,
+    "train_seconds": 1802.7115907919942,
+    "validation_rmse": 0.8674691841517475,
+    "seconds": 2104.06416179199
+  },
+  "A2h_selected": {
+    "epoch": 12,
+    "loss": 0.6504680767844196,
+    "train_rmse": 0.8065160108631652,
+    "users": 480189,
+    "targets": 29165185,
+    "tokens": 78291458,
+    "train_seconds": 1380.704598750046,
+    "validation_rmse": 0.8674022745268025,
+    "seconds": 1691.3132064579986
+  },
+  "N1_delta_from_epoch10": -9.83029287465742e-05,
+  "same_epoch_delta_rmse": 0.000876729572928947,
+  "best_delta_to_mature_control": 0.0009436391978738801,
+  "epochs_since_best": 0,
+  "status": "Epoch 11 complete and selected; trainer remains live under fixed patience 3 and cap 18",
+  "limitations": "Intermediate reused-P2 learning curve. Historical A2h initialization/RNG differs; same-epoch scores do not establish mature-model or ensemble gains."
+}
