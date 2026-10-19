@@ -589,3 +589,9 @@ stop this specific feature recipe. No temperature, retrieval or learner sweep
 is part of LC5. Reused P2 users and the previously selected K1 checkpoint remain
 development limitations. Earlier A3 changed A2's own-history retrieval; LC5
 instead changes cross-user agreement weighting on an unchanged retrieved graph.
+
+Implementation: `scripts/local_relevance_pilot.py`; experiment `LC5-relevance-p2`;
+summary `experiments/LC5-relevance.json`; artifacts under
+`artifacts/local-context/LC5/relevance/`. Sixteen local-context tests pass,
+including new geometry-correspondence, query-label isolation, consistent
+movie/neighbor permutation, shuffle-multiset and empty-context checks.
