@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-10-19T09:12:03.057876+00:00",
+  "plan_sha256": "509f9ff981a6aa80e17d30c9cce1e60c40e41044c468429c75cfa21e20e0934e",
+  "frozen_inputs_reverified": 13,
+  "stages": [
+    {
+      "stage": "J3-joint128-reg005",
+      "epoch": 9,
+      "checkpoint_sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+      "prediction_sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "checkpoint_and_prediction_byte_identical": true,
+      "record_sha256": "4a6b4a3512ca9e779f46ef4d3678b5939b56fd3e83a9a4c164c0f5b3981cf689",
+      "verification_sha256": "893b1cd945eaf5e5fe5cf06a8fcaa18616548999bd84b0064b65f6f10f4a630d"
+    },
+    {
+      "stage": "J4-joint128-day128",
+      "epoch": 1,
+      "checkpoint_sha256": "011c433fc5c869b56994ebe2c26c38384e0a1fc4fc0bb4a6cf9316805da14a65",
+      "prediction_sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "checkpoint_and_prediction_byte_identical": true,
+      "record_sha256": "2033088298f731afb340a5de74493b4634f3fa12b6c440946298edd4e9d8032d",
+      "verification_sha256": "79a1bffd611804364e866d925885409d274c2f81697a4df12a54e347c901a31e"
+    },
+    {
+      "stage": "J2-joint128-reg02",
+      "epoch": 40,
+      "checkpoint_sha256": "a9c6ed07535b0ec4df43464a4a056b9c9a3e7a48242a14039d8d001519d4d9e1",
+      "prediction_sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "checkpoint_and_prediction_byte_identical": true,
+      "record_sha256": "1a2721268b5bec2d00abbbd758a664e4dfdf8624c0b185cef94c000296b62f3b",
+      "verification_sha256": "951cb6c91a3e30a2fc02c8366bb7b31b172ebcb8ba47c02f78379613069fd505"
+    }
+  ],
+  "scope": "Independent final rehash of complete PR6 J3/J4/J2 retraining. Retained checkpoints and all 1,408,395 predictions match exactly. J1 was independently reproduced in PR5. This resolves current-artifact training recipes without rewriting the differing older producer digests. No score gain or production-data retraining."
+}
