@@ -70,3 +70,16 @@ Over-trained epochs beyond the selected one score highest, which agrees with
 BellKor/BigChaos's advice to over-train for the blend. 19 columns have
 delta < −3e-6 with ≥4 folds better. A batch blend test (HR5-blend) is queued
 after N1 frees memory. Expected ≈−0.0001 at most.
+
+### N1 P2 curve so far (vs A2h-select, same settings and seed)
+
+| Epoch | N1 | A2h | Δ |
+|---:|---:|---:|---:|
+| 1 | 0.90567 | 0.90575 | −0.00008 |
+| 2 | 0.88790 | 0.88868 | −0.00078 |
+| 3 | 0.87960 | 0.87732 | +0.00228 |
+| 4 | 0.87455 | 0.87514 | −0.00059 |
+| 5 | 0.87187 | 0.87344 | −0.00157 |
+
+`scripts/n1_chain.py` (running) waits for selection, then the honest gate
+(≤ −0.0010 beyond A2h), then the full-T refit and the blend test.
