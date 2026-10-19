@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-10-19T11:04:10.058403+00:00",
+  "N1_progress_source": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.select.progress.json",
+  "N1_progress_snapshot_sha256": "dd4d43e35b56a79a7907d4bbfc3947f8630d24b6e381ec9162c5649371a74e23",
+  "N1_epoch8": {
+    "epoch": 8,
+    "loss": 0.663998131148111,
+    "train_rmse": 0.814860805225351,
+    "users": 480189,
+    "targets": 29159652,
+    "tokens": 83921019,
+    "train_seconds": 1929.864269459038,
+    "validation_rmse": 0.8690351694929352,
+    "seconds": 2272.693849042058
+  },
+  "A2h_source": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "A2h_source_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "A2h_epoch8": {
+    "epoch": 8,
+    "loss": 0.662256220053228,
+    "train_rmse": 0.8137912628611426,
+    "users": 480189,
+    "targets": 29167006,
+    "tokens": 78294393,
+    "train_seconds": 1427.1170927910134,
+    "validation_rmse": 0.8689011269174395,
+    "seconds": 1787.036853416008
+  },
+  "A2h_selected": {
+    "epoch": 12,
+    "loss": 0.6504680767844196,
+    "train_rmse": 0.8065160108631652,
+    "users": 480189,
+    "targets": 29165185,
+    "tokens": 78291458,
+    "train_seconds": 1380.704598750046,
+    "validation_rmse": 0.8674022745268025,
+    "seconds": 1691.3132064579986
+  },
+  "N1_improvement_from_epoch7": 0.0009653158588694977,
+  "same_epoch_delta_rmse": 0.00013404257549576304,
+  "delta_to_mature_control": 0.0016328949661327252,
+  "status": "N1 selected epoch 8 and advanced to epoch 9; no completed ensemble gate or promotion",
+  "limitations": "Intermediate reused-P2 learning curve. Historical A2h initialization/RNG differs; same-epoch scores do not establish mature-model or ensemble gains."
+}
