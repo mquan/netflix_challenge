@@ -372,3 +372,17 @@ and reload evidence are in `experiments/PR8-neighborhood-retraining-verification
 hyperparameters, binary and dependency requirements. The current fixed-budget
 recipe is now verified on original data; production-data training remains to
 be done, and the retained development bank is unchanged.
+
+## Remaining item-kNN replay batch
+
+PR9 replays the seventeen item-kNN columns not covered by PR0–PR2: the
+temporal baseline and J1–J4 G1 variants, T2/T3/T4/T6 G1 variants, the two
+original power-2 variants, and six time-decayed G2 variants. It checks retained
+prediction digests and the relevant retained support column, using new output
+paths. The two original power-2 hypotheses use the native defaults (power 2,
+shrink 0.05); other settings come from RESULTS.md/ROUND4.md and filenames.
+A mismatch remains unresolved; the script does not tune against scores.
+
+The frozen commands are in `experiments/PR9-knn-remaining-plan.json`, with live
+status in `PR9-knn-remaining.status.json`. The runner and original binary are
+hashed before each stage. This is recipe recovery, not a new score candidate.
