@@ -538,3 +538,54 @@ The control is `LC4-common-attribution`, implemented by
 identical head initialization and independence from context in the zero-local
 control. The run uses the committed recipe at `5cfaf6a` and is sequential over
 seeds. Its manifest records the authoritative exit status when it completes.
+
+### LC4 result: close the current recipe
+
+Completed successfully. The common-feature neural head scores **0.844597107**,
+versus LC2 pooled **0.844647493**: the pooled encoder is 0.000050386 worse.
+It is worse in both seeds (+0.000045358 and +0.000086895 RMSE). The paired MSE
+interval includes zero, so this is not evidence of a reliable harm, but it
+clearly fails the predeclared integration gate. The common-feature head alone
+improves ridge by 0.000707674. The former pooled-versus-ridge gain cannot be
+attributed to the learned local branch. Do not export or integrate this encoder.
+
+## LC5: test target-conditioned agreement as new information
+
+The closed LC2/LC3 recipe sees generic ratings, dates and grouping, but no
+feature says which shared movies are related to the target movie. That leaves
+the original hypothesis about agreement within a relevant movie group untested.
+The next experiment changes information rather than encoder size or training
+duration. It reuses the exact 200,000 LC2 queries and retrieved ratings.
+
+Use centered, unit-normalized movie factors from the frozen `A-K1.bin` trained
+without P2 ratings. Its hash and training-data hash must match `P0-A-K1.json`.
+Compute the cosine between each target and each of its 32 retrieved history
+movies. History order is reconstructed using the identical stable nearest-date
+rule and checked against the saved rating/date context. Query labels are not
+used. Four similarity distribution summaries are shared by all arms.
+
+Compare three sets of otherwise identical neighborhood statistics:
+
+- **Uniform:** equal weight for every observed shared movie.
+- **Relevant:** movie weight exp(4 * cosine); estimate each neighbor's weighted
+  rating offset, squared disagreement and effective support, then aggregate
+  target ratings using support/(support+5) * exp(-disagreement/2).
+- **Shuffled relevance:** permute cosines within each query's nonpadding history,
+  preserving their multiset but breaking their movie correspondence.
+
+Use a fixed residual LightGBM learner on the same 39 common LC2 inputs, four
+shared geometry summaries, and the same number of local statistics in each
+arm. Seeds 2026/7; 15 leaves, minimum 300 rows per leaf, learning rate 0.03,
+L2 10, max bin 127, feature/bagging fractions 0.9, bagging every iteration,
+maximum 2,000 rounds and 100-round early stopping. Fit users remain folds 2--4,
+selection fold 1, then refit folds 1--4 at the selected round count. Score fold
+0 only after every arm is fixed. This is a small information-value test, not
+an encoder scaling run or an ensemble score.
+
+To earn fresh-data confirmation, relevance must beat uniform by at least
+0.0001 RMSE on averaged predictions, improve in both seeds, have a paired
+user-clustered MSE interval below zero, and beat shuffled relevance. Otherwise
+stop this specific feature recipe. No temperature, retrieval or learner sweep
+is part of LC5. Reused P2 users and the previously selected K1 checkpoint remain
+development limitations. Earlier A3 changed A2's own-history retrieval; LC5
+instead changes cross-user agreement weighting on an unchanged retrieved graph.
