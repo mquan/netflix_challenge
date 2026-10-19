@@ -1,0 +1,61 @@
+{"observed_utc": "2026-10-19T10:54:48.920847+00:00", "line": "{"}
+{"observed_utc": "2026-10-19T10:54:48.921313+00:00", "line": "  \"summary\": {"}
+{"observed_utc": "2026-10-19T10:54:48.921346+00:00", "line": "    \"users\": 4096,"}
+{"observed_utc": "2026-10-19T10:54:48.921367+00:00", "line": "    \"query_rows\": 12515,"}
+{"observed_utc": "2026-10-19T10:54:48.921386+00:00", "line": "    \"users_losing_rated_context\": 28,"}
+{"observed_utc": "2026-10-19T10:54:48.921401+00:00", "line": "    \"rated_tokens_without_choices\": 837678,"}
+{"observed_utc": "2026-10-19T10:54:48.921411+00:00", "line": "    \"rated_tokens_with_choices\": 837431,"}
+{"observed_utc": "2026-10-19T10:54:48.921420+00:00", "line": "    \"rated_token_loss\": 247,"}
+{"observed_utc": "2026-10-19T10:54:48.921431+00:00", "line": "    \"rated_token_loss_fraction\": 0.0002948627038074296,"}
+{"observed_utc": "2026-10-19T10:54:48.921446+00:00", "line": "    \"choice_tokens_retained\": 36387,"}
+{"observed_utc": "2026-10-19T10:54:48.921460+00:00", "line": "    \"choice_tokens_available\": 48902,"}
+{"observed_utc": "2026-10-19T10:54:48.921470+00:00", "line": "    \"rated_id_removals\": 247,"}
+{"observed_utc": "2026-10-19T10:54:48.921480+00:00", "line": "    \"rated_id_additions\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921490+00:00", "line": "    \"max_rated_token_loss\": 9"}
+{"observed_utc": "2026-10-19T10:54:48.921505+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T10:54:48.921514+00:00", "line": "  \"by_training_history\": {"}
+{"observed_utc": "2026-10-19T10:54:48.921524+00:00", "line": "    \"under_384\": {"}
+{"observed_utc": "2026-10-19T10:54:48.921536+00:00", "line": "      \"users\": 3439,"}
+{"observed_utc": "2026-10-19T10:54:48.921545+00:00", "line": "      \"query_rows\": 10493,"}
+{"observed_utc": "2026-10-19T10:54:48.921565+00:00", "line": "      \"users_losing_rated_context\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921576+00:00", "line": "      \"rated_tokens_without_choices\": 362586,"}
+{"observed_utc": "2026-10-19T10:54:48.921588+00:00", "line": "      \"rated_tokens_with_choices\": 362586,"}
+{"observed_utc": "2026-10-19T10:54:48.921607+00:00", "line": "      \"rated_token_loss\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921622+00:00", "line": "      \"rated_token_loss_fraction\": 0.0,"}
+{"observed_utc": "2026-10-19T10:54:48.921632+00:00", "line": "      \"choice_tokens_retained\": 30474,"}
+{"observed_utc": "2026-10-19T10:54:48.921642+00:00", "line": "      \"choice_tokens_available\": 40967,"}
+{"observed_utc": "2026-10-19T10:54:48.921650+00:00", "line": "      \"rated_id_removals\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921658+00:00", "line": "      \"rated_id_additions\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921673+00:00", "line": "      \"max_rated_token_loss\": 0"}
+{"observed_utc": "2026-10-19T10:54:48.921686+00:00", "line": "    },"}
+{"observed_utc": "2026-10-19T10:54:48.921695+00:00", "line": "    \"384_to_1535\": {"}
+{"observed_utc": "2026-10-19T10:54:48.921711+00:00", "line": "      \"users\": 630,"}
+{"observed_utc": "2026-10-19T10:54:48.921725+00:00", "line": "      \"query_rows\": 1930,"}
+{"observed_utc": "2026-10-19T10:54:48.921735+00:00", "line": "      \"users_losing_rated_context\": 1,"}
+{"observed_utc": "2026-10-19T10:54:48.921743+00:00", "line": "      \"rated_tokens_without_choices\": 433739,"}
+{"observed_utc": "2026-10-19T10:54:48.921752+00:00", "line": "      \"rated_tokens_with_choices\": 433735,"}
+{"observed_utc": "2026-10-19T10:54:48.921761+00:00", "line": "      \"rated_token_loss\": 4,"}
+{"observed_utc": "2026-10-19T10:54:48.921774+00:00", "line": "      \"rated_token_loss_fraction\": 9.222135892783448e-06,"}
+{"observed_utc": "2026-10-19T10:54:48.921786+00:00", "line": "      \"choice_tokens_retained\": 5670,"}
+{"observed_utc": "2026-10-19T10:54:48.921795+00:00", "line": "      \"choice_tokens_available\": 7600,"}
+{"observed_utc": "2026-10-19T10:54:48.921804+00:00", "line": "      \"rated_id_removals\": 4,"}
+{"observed_utc": "2026-10-19T10:54:48.921812+00:00", "line": "      \"rated_id_additions\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921821+00:00", "line": "      \"max_rated_token_loss\": 4"}
+{"observed_utc": "2026-10-19T10:54:48.921845+00:00", "line": "    },"}
+{"observed_utc": "2026-10-19T10:54:48.921856+00:00", "line": "    \"1536_or_more\": {"}
+{"observed_utc": "2026-10-19T10:54:48.921865+00:00", "line": "      \"users\": 27,"}
+{"observed_utc": "2026-10-19T10:54:48.921874+00:00", "line": "      \"query_rows\": 92,"}
+{"observed_utc": "2026-10-19T10:54:48.921884+00:00", "line": "      \"users_losing_rated_context\": 27,"}
+{"observed_utc": "2026-10-19T10:54:48.921896+00:00", "line": "      \"rated_tokens_without_choices\": 41353,"}
+{"observed_utc": "2026-10-19T10:54:48.921910+00:00", "line": "      \"rated_tokens_with_choices\": 41110,"}
+{"observed_utc": "2026-10-19T10:54:48.921920+00:00", "line": "      \"rated_token_loss\": 243,"}
+{"observed_utc": "2026-10-19T10:54:48.921932+00:00", "line": "      \"rated_token_loss_fraction\": 0.005876236306918482,"}
+{"observed_utc": "2026-10-19T10:54:48.921942+00:00", "line": "      \"choice_tokens_retained\": 243,"}
+{"observed_utc": "2026-10-19T10:54:48.921951+00:00", "line": "      \"choice_tokens_available\": 335,"}
+{"observed_utc": "2026-10-19T10:54:48.921961+00:00", "line": "      \"rated_id_removals\": 243,"}
+{"observed_utc": "2026-10-19T10:54:48.921972+00:00", "line": "      \"rated_id_additions\": 0,"}
+{"observed_utc": "2026-10-19T10:54:48.921985+00:00", "line": "      \"max_rated_token_loss\": 9"}
+{"observed_utc": "2026-10-19T10:54:48.921994+00:00", "line": "    }"}
+{"observed_utc": "2026-10-19T10:54:48.922002+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T10:54:48.922016+00:00", "line": "  \"scope\": \"Uniform sample of P2 query users; deterministic prediction input construction only. Same archived N1 builder with choice_tokens 0/1. This is not historical A2h model inference, training-mask coverage, score attribution, or a promotion gate. No P2 ratings were used; no model was loaded or updated.\""}
+{"observed_utc": "2026-10-19T10:54:48.922044+00:00", "line": "}"}
