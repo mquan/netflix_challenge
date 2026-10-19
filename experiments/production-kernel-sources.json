@@ -1,0 +1,76 @@
+{
+  "groups": {
+    "gp_local": {
+      "src/neighborhood.hpp": {
+        "sha256": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_local/src/neighborhood.hpp"
+      },
+      "src/rbm.hpp": {
+        "sha256": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_local/src/rbm.hpp"
+      },
+      "src/netflix.cpp": {
+        "sha256": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_local/src/netflix.cpp"
+      },
+      "src/ensemble.hpp": {
+        "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_local/src/ensemble.hpp"
+      },
+      "src/moonshot_local.cpp": {
+        "sha256": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "commit": "75e6ec9c95971fe6d69326a875e2815c55af632b",
+        "archive_member": "gp_local/src/moonshot_local.cpp"
+      },
+      "src/moonshot_gp.cpp": {
+        "sha256": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "commit": "75e6ec9c95971fe6d69326a875e2815c55af632b",
+        "archive_member": "gp_local/src/moonshot_gp.cpp"
+      },
+      "src/joint.hpp": {
+        "sha256": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_local/src/joint.hpp"
+      }
+    },
+    "gp_initial": {
+      "src/neighborhood.hpp": {
+        "sha256": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/neighborhood.hpp"
+      },
+      "src/rbm.hpp": {
+        "sha256": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/rbm.hpp"
+      },
+      "src/netflix.cpp": {
+        "sha256": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/netflix.cpp"
+      },
+      "src/ensemble.hpp": {
+        "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/ensemble.hpp"
+      },
+      "src/moonshot_gp.cpp": {
+        "sha256": "27fa2097464361586ee8b7fdcd060e463b875e660d2f1c924d35f9fe77a4892f",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/moonshot_gp.cpp"
+      },
+      "src/joint.hpp": {
+        "sha256": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+        "commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+        "archive_member": "gp_initial/src/joint.hpp"
+      }
+    }
+  },
+  "original_GP_main_recovered": true,
+  "archive_sha256": "80cd14774939184a3d3910d92c9108f70f14e73513d65650395a616f50d0087e",
+  "provenance": "gp_local files match the GP2-persistent-full and L1-local source digests. Initial GP main, if present, matches moonshot-manifest; shared readers use the recorded GP2 sources and require full output compatibility verification."
+}

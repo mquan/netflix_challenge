@@ -1,0 +1,85 @@
+{
+  "source_manifest": "/Users/quan/workspace/netflix_challenge/experiments/production-kernel-sources.json",
+  "source_manifest_sha256": "0be0d7b04a4b0a4ebfb013bdea316db08a6b623ba2df268aece84146ffb4d212",
+  "archive_sha256": "80cd14774939184a3d3910d92c9108f70f14e73513d65650395a616f50d0087e",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "builds": [
+    {
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_initial",
+      "sha256": "7457a09d82f821e4bffb13bd9347186ffc2166a27d80819ffe4d54f082ffbfe3",
+      "source_group": "gp_initial",
+      "command": [
+        "clang++",
+        "-O3",
+        "-DNDEBUG",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "artifacts/production-replay/PR12-source/gp_initial/src/moonshot_gp.cpp",
+        "-framework",
+        "Accelerate",
+        "-o",
+        "artifacts/production-replay/PR12-source/moonshot_gp_initial"
+      ]
+    },
+    {
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_persistent",
+      "sha256": "38c3924c8fae75c518893fd5bb159fd21cab51eced08e05d28124fc5d89a40fa",
+      "source_group": "gp_local",
+      "command": [
+        "clang++",
+        "-O3",
+        "-DNDEBUG",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "artifacts/production-replay/PR12-source/gp_local/src/moonshot_gp.cpp",
+        "-framework",
+        "Accelerate",
+        "-o",
+        "artifacts/production-replay/PR12-source/moonshot_gp_persistent"
+      ]
+    },
+    {
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local",
+      "sha256": "23e6d87bdb52f8eb12adfc6d98a2698f279042590ad1aff48711307a082b18c6",
+      "source_group": "gp_local",
+      "command": [
+        "clang++",
+        "-O3",
+        "-DNDEBUG",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "artifacts/production-replay/PR12-source/gp_local/src/moonshot_local.cpp",
+        "-framework",
+        "Accelerate",
+        "-o",
+        "artifacts/production-replay/PR12-source/moonshot_local"
+      ]
+    }
+  ],
+  "tests": {
+    "command": [
+      "/Users/quan/.cache/netflix-venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_production_kernels.py",
+      "-v"
+    ],
+    "passed": 2,
+    "source": "tests/test_production_kernels.py",
+    "source_sha256": "d69a6a9ca4e9f3f8b0b708ed5cd3e1d7a7814060ba21fd55046a524fb72e5d79",
+    "log": "experiments/PR12-production-kernel-tests.log",
+    "log_sha256": "10895ece96c68f4c1a5d3876476f36819fdb44a0b6f40f349044430299d797f5",
+    "scope": "Analytic GP solves and zero-vs-five query-label isolation for both GP variants and six-epoch global/local residual training on fixtures."
+  },
+  "warnings": "The two GP builds emit the existing Accelerate cblas_sgemm deprecation warning; no source or numerical compile flags were changed to address it."
+}

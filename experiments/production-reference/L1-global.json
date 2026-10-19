@@ -1,0 +1,51 @@
+{
+  "name": "L1-global",
+  "strategy": "Fixed six epochs of residual factorization: groups=1 rank=16. Compare local routing with global residual capacity at equal active dimensions.",
+  "command": [
+    "build/moonshot_local",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "--model",
+    "artifacts/snapshot/joint128-reg005.bin",
+    "--output",
+    "artifacts/local-global",
+    "--groups",
+    "1",
+    "--rank",
+    "16",
+    "--epochs",
+    "6"
+  ],
+  "started_utc": "2026-09-28T01:00:11.376174+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "git_commit": "1e4f3865bd0fc0913b56a299b0dd840f7c6a8dcd",
+  "sources": {
+    "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+    "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+    "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb"
+  },
+  "binary_sha256": "da847851ca641b5997723b721cabb919734f840ffbb7d024c97336b398fd8afb",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T01:00:12.440157+00:00",
+  "events_path": "experiments/L1-global.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 80.33776416699402,
+  "finished_utc": "2026-09-28T01:01:32.779058+00:00",
+  "log_sha256": "3586bff19c123b425b9a4fbcb034ca0c5a404ccffac907a1ed755023f791cbe6",
+  "events_sha256": "f3fff05b104313bf2042446f8dd9971b6e37087ebaa9de9f8563c62ca8b0603f",
+  "model_artifact": {
+    "path": "artifacts/snapshot/joint128-reg005.bin",
+    "sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+    "bytes": 663536392
+  }
+}

@@ -3,11 +3,17 @@
 2026-10-19; current promoted reference remains R9-LAT-A2h at 0.8668706425
 development CV. This audit supports the final retraining step in
 `PLAN_TO_TARGET.md`; it neither changes that score nor establishes the 10% goal.
-The LC6 score experiment continues independently on the same branch.
+LC6 is closed without promotion. N1 is running in the other research worktree;
+the frozen SO1 comparison is queued on this branch behind its full chain.
 
-## Verified current artifacts
+Recipe associations now cover **all 79 retained columns (77 unique hashes)**.
+The digest-based audit is `experiments/production-recipe-coverage.json`.
+Validation strength varies by family: this is complete recipe coverage, not
+completed production retraining or a fully verified qualifying pipeline.
 
-`scripts/production_inventory.py` scanned 2,646 JSON records from the primary
+## Initial artifact inventory
+
+`scripts/production_inventory.py` initially scanned 2,646 JSON records from the primary
 and relevant research worktrees and verified the promoted bank against its
 frozen input hashes. Results: `experiments/production-bank-inventory.json`.
 
@@ -23,7 +29,8 @@ frozen input hashes. Results: `experiments/production-bank-inventory.json`.
 The last row does **not** mean those columns are irrecoverable or that training
 commands do not exist. Some historical records have only paths, some selected
 epoch files lack historical digests, and some recipes live in shell scripts or
-git history. They need further provenance recovery. Input-hash mentions in
+git history. Subsequent recovery is recorded below and in the coverage audit.
+Input-hash mentions in
 blender reports are deliberately not counted as evidence of how a column was
 produced. A command record alone does not establish that every dependency is
 available or that fixed-epoch qualifying inference is implemented.
@@ -441,3 +448,38 @@ Sources, build commands, tests and recipe are recorded in
 `experiments/production-user-knn-sources.zip`, `PR11-user-knn-verification.json`
 and `production-user-knn-recipe.json`. Production K1 training and the K1-based
 latent blender features remain outstanding. No score gain is claimed.
+
+## GP/local recovery and complete column coverage
+
+PR12 recovered the original GP entry point by its manifest hash, plus the
+recorded GP2/local source set. The original GP's shared readers use that GP2
+source set; full output matching verifies their compatibility. Three isolated
+binaries were built without changing the working native binary. Two contracts
+cover analytic GP solves and query-label 0-versus-5 isolation for both GP
+variants and six-epoch global/local residual training.
+
+All six retained outputs reproduce **byte for byte**: three static GP noise
+variants, the persistent GP's noise-0.1 variant, and the global/local residual
+models at epoch 6. The local checks include complete retraining from the J3
+base. The independent final audit rechecks all fifteen frozen inputs and four
+successful execution records. No score tuning or bank replacement occurred.
+
+`experiments/production-kernel-recipes.json` records commands, parameters,
+sources, binary hashes and the requirement for a newly trained production J3
+base. GP outputs are direct inference. The legacy local trainer emits each
+epoch's predictions but does not persist its residual factors; the production
+recipe therefore reruns its fixed six-epoch schedule.
+
+`scripts/production_recipe_coverage.py` associates the frozen bank by digest
+with all family registries, rejects missing recipes and rechecks every retained
+column hash. It covers 13 joint/integrated, 29 item-kNN, nine RBM, three AutoRec,
+four GP, two local residual, fourteen neural, three Bayesian, one learned
+neighborhood and one user-kNN column. The two duplicate pairs are preserved.
+Its per-family validation notes explicitly retain the weaker historical
+AutoRec/neural provenance, unrepeated full training, and numerical drift in
+the learned-neighborhood retraining. Coverage does not upgrade those claims.
+
+Outstanding work still includes the target development score, production
+latent/context features, complete train+probe retraining, full-probe blender
+fitting, qualifying-order export and end-to-end verification. None is proved
+by the 79-column recipe count.
