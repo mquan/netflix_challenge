@@ -386,3 +386,23 @@ A mismatch remains unresolved; the script does not tune against scores.
 The frozen commands are in `experiments/PR9-knn-remaining-plan.json`, with live
 status in `PR9-knn-remaining.status.json`. The runner and original binary are
 hashed before each stage. This is recipe recovery, not a new score candidate.
+
+PR9 completed all seventeen stages, with sixteen exact prediction matches.
+The original `knn64-j64-p2` column did not use the assumed shrink 0.05. PR10
+recovered its shrink directly from the retained predictions, the J1 baseline,
+and the PR9 replay's neighbor-weight sums, using
+`s = (replay-base)*(support+0.05)/(retained-base)-support` (with float32 0.05).
+Across 8,743 informative rows, the inferred median was 1.000000101 and the
+full range was 0.9999443–1.0000662. A single follow-up at shrink **1** reproduced
+the retained column byte for byte. No rating labels or score search were used;
+the original mismatch remains in the PR9 record. The inference and exact check
+are preserved in `PR10-knn-shrink-recovery-plan.json` and its verification file.
+
+`scripts/production_knn_registry.py` consolidates PR0/PR1/PR2/PR9/PR10 and checks
+the current data, binary, model, graph and prediction digests against their
+successful execution records. `experiments/production-knn-recipes.json` now
+covers **all 29 retained item-kNN columns (28 unique prediction columns)** and
+**six item-kNN support inputs (three unique arrays)**. Duplicate bank aliases
+remain explicit. The registry rejects missing columns or changed artifacts.
+This closes item-kNN inference recipe recovery. User-kNN is separate, and all
+production runs still need freshly trained production base models and graphs.
