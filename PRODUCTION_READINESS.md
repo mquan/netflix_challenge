@@ -123,5 +123,39 @@ python scripts/production_dataset.py \
 
 This is production-only data. Query ratings are zero sentinels, never labels;
 existing development selection/scoring commands must not be used on them.
-Fixed-budget training and qualifying inference remain unimplemented for the
-full retained bank, and no final model training has been launched.
+The full retained bank still lacks a complete production pipeline, and no final
+model training has been launched.
+
+## Fixed-budget neural adapter
+
+`scripts/production_neural.py` supports the fourteen recovered primary-worktree
+neural recipes. It verifies the production manifest and retained column hashes,
+extracts the recipe's exact archived sources into an isolated directory, and
+calls the archived fixed-epoch refit path directly. It bypasses the development
+scorer, rejects selection data, early-selection settings and partial epochs,
+and preserves raw column predictions for the final blender. There is no
+qualifying RMSE in its report. The default only prepares a run; `--train`
+executes the retained epoch budget.
+
+All fourteen recipes passed preparation against the full production dataset:
+`experiments/PN0-neural-preflight.json`. This confirms compatible imports,
+arguments, configuration and verified data, not completed full-model training.
+Two test methods cover all four distinct archived trainer versions plus archive
+tampering. Each trainer ran two complete fixture epochs twice, with zero versus
+poisoned query labels: trained parameters and predictions were identical.
+Final-epoch checkpoint contents, query ordering and selection rejection pass.
+The adapter writes predictions itself because the oldest archived trainer does
+not expose the newer prediction-writing helper.
+
+Example preparation, with a fresh output directory:
+
+```sh
+python scripts/production_neural.py \
+  --column A2h-refit.refit.e12.f32 \
+  --dataset-manifest data/production/stage-c-v1/manifest.json \
+  --output-dir artifacts/production/A2h
+```
+
+Remaining work includes other retained model families and their dependencies,
+production support features, the final blender, and full-budget training after
+the development milestone and retained bank are frozen.
