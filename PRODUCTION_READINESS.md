@@ -11,6 +11,49 @@ The digest-based audit is `experiments/production-recipe-coverage.json`.
 Validation strength varies by family: this is complete recipe coverage, not
 completed production retraining or a fully verified qualifying pipeline.
 
+### Frozen latent-feature transfer (PF1)
+
+The retained bank uses `scripts/round9_latent.py` and its **22** columns under
+`artifacts/r9/latent`, including a saved eight-dimensional `basis.npy`. The
+separate `round9_latent_features.py` exporter has a different schema and is not
+the producer of these retained columns.
+
+The blender must retain the meaning of these coordinates between development
+and qualifying inference. A newly trained K1 and newly fitted PCA are not
+guaranteed to preserve that meaning; canonicalizing component signs alone
+does not establish alignment. The production policy is therefore to keep the
+**original K1 checkpoint and original saved basis as the feature encoder**.
+K1 retraining in the user-kNN recipe remains necessary for its prediction
+column; that retrained model must not silently replace the feature encoder.
+
+`scripts/production_latent.py` binds the original checkpoint and dataset to
+the retained feature manifest. It checks that production keeps the same dense
+IDs, date range and all implicit interactions, then requires each qualifying
+user/movie/date triple to exist in that original context. The original
+implicit arrays already include qualifying identities and dates, so their
+session indices are available without qualifying ratings. The production
+dataset supplies the query rows, while the encoder and projection stay frozen.
+
+PF1 reproduced all 22 retained development arrays **byte for byte** across
+1,408,395 rows, then exported all 22 arrays for **2,817,131 qualifying rows**
+in the production dataset's query order. Evidence and independent verification
+are `experiments/PF1-frozen-latent.json` and
+`experiments/PF1-frozen-latent-verification.json`. The verification rehashes all
+inputs and outputs, checks every output's length and finiteness, and compares
+2,048 qualifying rows against the unmodified original exporter, including its
+original-model PCA calculation. All sampled float32 values match exactly.
+The projection and original feature manifest are preserved under `experiments`.
+
+Three targeted tests cover complete fixture export and row permutation,
+query-label independence, refusal to overwrite, changed checkpoint/basis
+rejection, and incompatible contexts or unknown query triples. The historical
+exporter and SO1's frozen dependencies remain unchanged.
+
+This completes the latent-feature export only. Remaining blender inputs include
+the production meta/context arrays, movie metadata and regenerated support
+arrays; the fitted production blender and retrained prediction bank remain
+pending. PF1 provides no new development or qualifying score.
+
 ## Initial artifact inventory
 
 `scripts/production_inventory.py` initially scanned 2,646 JSON records from the primary

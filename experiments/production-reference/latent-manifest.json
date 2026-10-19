@@ -1,0 +1,69 @@
+{
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "model": "artifacts/K1-joint256.bin",
+    "reference": "artifacts/K1-joint256.f32",
+    "output": "artifacts/r9/latent",
+    "dimensions": 8
+  },
+  "model": {
+    "rank": 256,
+    "epoch": 41,
+    "fingerprint": 12499777815975055846
+  },
+  "max_reconstruction_error": 6.339632818708196e-07,
+  "features": [
+    "artifacts/r9/latent/user_pc0.f32",
+    "artifacts/r9/latent/item_pc0.f32",
+    "artifacts/r9/latent/user_pc1.f32",
+    "artifacts/r9/latent/item_pc1.f32",
+    "artifacts/r9/latent/user_pc2.f32",
+    "artifacts/r9/latent/item_pc2.f32",
+    "artifacts/r9/latent/user_pc3.f32",
+    "artifacts/r9/latent/item_pc3.f32",
+    "artifacts/r9/latent/user_pc4.f32",
+    "artifacts/r9/latent/item_pc4.f32",
+    "artifacts/r9/latent/user_pc5.f32",
+    "artifacts/r9/latent/item_pc5.f32",
+    "artifacts/r9/latent/user_pc6.f32",
+    "artifacts/r9/latent/item_pc6.f32",
+    "artifacts/r9/latent/user_pc7.f32",
+    "artifacts/r9/latent/item_pc7.f32",
+    "artifacts/r9/latent/user_bias.f32",
+    "artifacts/r9/latent/user_drift.f32",
+    "artifacts/r9/latent/day_bias.f32",
+    "artifacts/r9/latent/scale.f32",
+    "artifacts/r9/latent/item_bias.f32",
+    "artifacts/r9/latent/frequency_bias.f32"
+  ],
+  "inputs": {
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "artifacts/K1-joint256.bin": "e4dc4609f7d01b2bc6b8b3bf74e6b0bdc136c26c41092ab7c50e57d6406fb6d7",
+    "artifacts/K1-joint256.f32": "3dcc954bf930056631e0e95201b7d234ac0ad9e98dddde9e62fdaec8b5b84ac3"
+  },
+  "outputs": {
+    "artifacts/r9/latent/user_pc0.f32": "98c47d4e4d8a6d22031dfb2847eb1de7cdd1ce7e4f984cb5af4bf4b3bec81c4e",
+    "artifacts/r9/latent/item_pc0.f32": "61c89bd3aa2b2c9972b8b99595de1a2d86a87b6324e187ffcd12800034308364",
+    "artifacts/r9/latent/user_pc1.f32": "08d5375753e474c33296a2c39f95654912a2e5fb04f70a6762773457f2da15bd",
+    "artifacts/r9/latent/item_pc1.f32": "be477ecdb6babc060f758e7875a86357114ac2d6a3319b43148f6c83f028b0e4",
+    "artifacts/r9/latent/user_pc2.f32": "e142efd5f1c7d15213d67773e268367de674583a0d50209ee5475418d96604f6",
+    "artifacts/r9/latent/item_pc2.f32": "ffa4da5c6ea20f7632adaf7086d202ab9bc6428b1175e49830045076064ee7e9",
+    "artifacts/r9/latent/user_pc3.f32": "2631e0e7ab426d47a043a962cb15f9f9831afc844f99d5af8b14e691c1800b79",
+    "artifacts/r9/latent/item_pc3.f32": "94c5ad2e2188cc8c44749dd841574041473ebfbdf0ae89356c2fce4089e9d76a",
+    "artifacts/r9/latent/user_pc4.f32": "d2fbfda56771f076fd5dfa199b4359592b84cf56b0e27ac1956b4d401767e85b",
+    "artifacts/r9/latent/item_pc4.f32": "873a5054cbfa90a323f355366e204d730fb7bc43daa096e276a4e3f31d46835c",
+    "artifacts/r9/latent/user_pc5.f32": "08df2278bb4c91d6e6eca286d5ce7f8d2324d62064a3c1c5927158cbd582a423",
+    "artifacts/r9/latent/item_pc5.f32": "1facd8e0feb34ae9f5090db35a506e2ea0d48efdb2d46ac651ebbad63d15d242",
+    "artifacts/r9/latent/user_pc6.f32": "013ca820c2c1de32057b0f3b2a05357c4ef18b1a8125770a17d8ab1fa8343f19",
+    "artifacts/r9/latent/item_pc6.f32": "59501f9adc8ae1b4d4610cbdf90768662e38a8d961b05c51fbfcffb74020f63f",
+    "artifacts/r9/latent/user_pc7.f32": "14868de20ba5222011b02110ef001671e6ae70e9039e80e444f40a4aed9c0843",
+    "artifacts/r9/latent/item_pc7.f32": "e7fe2b79326ad470a0626da4c7a8c215b84927298488bb2e65d9084b03521843",
+    "artifacts/r9/latent/user_bias.f32": "c5b3f0a5882c2fac1719d109c1aa6623f6b5181b471942d53fcce970cc326403",
+    "artifacts/r9/latent/user_drift.f32": "9b97383c565c92d5a87b04ffb6558466d952b09212ee38cd77c7d9aea970d08a",
+    "artifacts/r9/latent/day_bias.f32": "b1a9d525b0bae82e49d26dbf7fec257dfd53ade21efe9c8585adfda1a1087f6c",
+    "artifacts/r9/latent/scale.f32": "d6537350da03cb70724418edcc810a200c0d190e855d8793acc2f6f1f87fa74f",
+    "artifacts/r9/latent/item_bias.f32": "f479dad039d87e1560b353ba506d944f1eec12f887a169c494402afe25355252",
+    "artifacts/r9/latent/frequency_bias.f32": "f41cda4808f4eccaa09723dc54ba79e09fe0a47f6adc987f5177b6da24216e90"
+  },
+  "source_sha256": "18eccee1ebbdd583876bd5615c3dd53095af43086915946eb65e0c63820eebe0"
+}
