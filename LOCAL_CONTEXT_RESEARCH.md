@@ -328,3 +328,93 @@ Post-run verification matched all 18 output SHA-256 hashes plus the frozen
 spec and context-manifest hashes. Independent rescoring of the four saved
 float32 prediction files agrees with the report within 1e-8 RMSE. No code
 changed during this result checkpoint.
+
+### LC2 mechanism diagnosis
+
+Following the user's request to diagnose the limit, audited the saved pooled
+and structured checkpoints for both seeds. No new predictor was trained or
+selected. `scripts/local_structure_diagnose.py` reproduces the audit;
+`experiments/LC2-diagnosis.json` records the initial interventions and
+`experiments/LC2-diagnosis-redundancy.json` adds a label-free reconstruction
+probe and representation variance analysis. The source archive preserves both
+script versions. All four checkpoint replays match their saved predictions
+exactly, and cached-head predictions also match full-model inference.
+
+The audit uses a fixed, label-independent sample of 8,192 refit users' rows
+to estimate replacement means and reconstruction coefficients, plus all
+39,887 evaluation rows. Replacement means and reconstruction fits never use
+evaluation labels. These are post-hoc inference interventions, not new
+independent performance estimates or substitutes for retraining an ablated
+model. No result here changes the promoted score.
+
+| Structured model intervention | Seed 2026 RMSE | Seed 7 RMSE |
+|---|---:|---:|
+| Frozen-column ridge | 0.845304781 | 0.845304781 |
+| Original trained model | 0.844858831 | 0.844704748 |
+| Replace local vector by its refit-sample mean | 0.844905691 | 0.844630156 |
+| Exchange local vectors between evaluation queries | 0.844993764 | 0.844679381 |
+| Switch to pooled aggregation with trained weights fixed | 0.844838072 | 0.844704461 |
+| Shuffle correspondence with trained weights fixed | 0.844874958 | 0.844706869 |
+
+Findings, in order of evidential strength:
+
+1. **The encoder is connected and learning.** Relative weight changes from
+   initialization are 48--55% for the edge encoder, 69--76% for the relation
+   layer and 32--42% for the neighbor encoder. Setting the local vector to a
+   constant changes predictions by 0.0114--0.0147 ratings RMS. This rules out
+   a disconnected or entirely frozen branch; it does not prove good learning.
+2. **The learned structural effect is tiny.** Switching trained weights to
+   pooled aggregation changes predictions by only 0.000396--0.001362 ratings
+   RMS and does not degrade evaluation RMSE in either seed. This also agrees
+   with the separately trained pooled controls in LC2. The current model is
+   largely insensitive to the grouping it was built to exploit.
+3. **Most of the pilot gain survives without query-specific local vectors.**
+   Mean replacement retains 89.5% of seed 2026's ridge improvement and improves
+   seed 7's score slightly. On the refit sample, mean replacement hurts by
+   0.000257 and 0.000313 RMSE; on evaluation it hurts by only 0.000047 and helps
+   by 0.000075. The learned local contribution does not generalize consistently.
+4. **The representation has little variation in most directions.** One
+   principal component explains 96.7--96.8% of the structured local vector's
+   refit-sample variance; two explain 99.3--99.6%. Pooled models behave similarly.
+   This is descriptive, not proof that small-variance directions contain no
+   signal. A fixed linear reconstruction from the common pooled columns explains
+   only 23--30% of structured representation variance on evaluation; all global
+   columns explain 26--33%. The stronger claim that local features simply copy
+   existing features is **not established**.
+5. **Missing context is not the immediate bottleneck.** Across audited rows,
+   median context has 32 neighbors and 604 cross-ratings; only 2 of 48,079
+   queries have no cross-ratings. This does not establish retrieval quality:
+   candidate raters are sampled, then ranked by overlap and date, not learned
+   relevance. More raw context has no demonstrated benefit yet.
+
+There is a concrete optimization concern, but it remains a hypothesis. At
+initialization the median per-coordinate local standard deviation is about
+0.010--0.012 versus about 1.0 for standardized global inputs. Multiple learned
+transformations and averaging steps separate structure from supervision, while
+global features enter the head directly. After training, the local contribution
+to the first head layer has only 12--17% of the global contribution's RMS.
+This makes weak initial structural sensitivity plausible; substantial encoder
+weight movement means it is not an explanation based on absent gradients.
+The network also has no movie/user identity or latent features, so it can learn
+generic rating/date patterns but not identity-specific transfer relationships.
+Neither observation proves that fixing it will improve validation.
+
+**Diagnosis:** LC2 learns a useful general correction to the smaller ridge
+baseline, but its local branch learns little generalizable structural correction.
+The failure is already visible within this pilot, before full-ensemble blending.
+We have not separated an optimization/representation limitation from insufficient
+incremental information in the retrieved context. The evidence does not justify
+calling the whole local-context hypothesis impossible, or calling scale the cure.
+
+The next bounded discriminator would change only local-vector normalization
+before the shared head, in both pooled and structured arms, with the original
+split, seeds, features and training budget. Measure structural sensitivity and
+the matched evaluation difference together: improved sensitivity without an
+accuracy advantage would reject input scale as the practical bottleneck. Any
+positive result would still need new confirmation data because these evaluation
+rows are now part of diagnosis. No normalization experiment or larger training
+run was launched as part of this audit.
+
+Verification: all 11 local-context tests pass, `git diff --check` passes, both
+diagnostic script hashes match their archived sources, and all four checkpoint
+replays plus cached-head evaluations pass their numerical consistency checks.
