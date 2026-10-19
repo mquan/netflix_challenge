@@ -1,0 +1,79 @@
+{
+  "created_utc": "2026-10-19T08:37:53.936140+00:00",
+  "experiment": "/Users/quan/workspace/netflix_challenge/experiments/PR8-neighborhood-fixed-retrain.json",
+  "experiment_sha256": "c6efde0f1071207b4e051b357d308f570a343af704700ce1ee5df8f29faeab76",
+  "binary_sha256": "b2b4dd9347173f205f10442e5add4ac573a340164c005757bcee2811369671c3",
+  "fixed_epoch": 4,
+  "checkpoint": {
+    "reference": "/Users/quan/workspace/netflix_challenge/artifacts/neighborhood64.bin",
+    "retrained": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR8-neighborhood.bin",
+    "reference_sha256": "7e1feecc61a63c2af8a619756e14696296fe320c564b8f9ae7c8699170180c69",
+    "retrained_sha256": "9d14e0a5e596bf4cf5b47aeacb28fc64615962a95c3d0d0a58f20f483bde9174",
+    "reference_format": 1,
+    "retrained_format": 2,
+    "dataset_and_graph_fingerprints_identical": true,
+    "zero_time_decay": true,
+    "parameter_count": 2274560,
+    "parameters_byte_identical": false,
+    "changed_parameter_count": 433299,
+    "max_absolute_parameter_difference": 7.152557373046875e-07,
+    "mean_absolute_parameter_difference": 4.268133496828935e-09
+  },
+  "predictions": {
+    "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+    "retrained": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR8-neighborhood.f32",
+    "reference_sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+    "retrained_sha256": "ef4104f2d3842d67d06baedef4fe3728b9dd091d23fb6a2496fab2a740602dad",
+    "byte_identical": false,
+    "count": 1408395,
+    "changed_prediction_count": 146584,
+    "max_absolute_difference": 9.5367431640625e-07,
+    "mean_absolute_difference": 2.9940050699597094e-08
+  },
+  "metrics": [
+    {
+      "fold": "all",
+      "reference_rmse": 0.9100421231120464,
+      "retrained_rmse": 0.9100421232094525,
+      "delta_rmse": 9.740619422160535e-11
+    },
+    {
+      "fold": 0,
+      "reference_rmse": 0.9120414917784321,
+      "retrained_rmse": 0.9120414919410614,
+      "delta_rmse": 1.6262935442767912e-10
+    },
+    {
+      "fold": 1,
+      "reference_rmse": 0.9096593632579423,
+      "retrained_rmse": 0.9096593632670772,
+      "delta_rmse": 9.134915046615788e-12
+    },
+    {
+      "fold": 2,
+      "reference_rmse": 0.9068418727420972,
+      "retrained_rmse": 0.9068418728917869,
+      "delta_rmse": 1.4968970507567292e-10
+    },
+    {
+      "fold": 3,
+      "reference_rmse": 0.9108846337915157,
+      "retrained_rmse": 0.9108846340832893,
+      "delta_rmse": 2.917736052765463e-10
+    },
+    {
+      "fold": 4,
+      "reference_rmse": 0.9107920881367899,
+      "retrained_rmse": 0.9107920880094286,
+      "delta_rmse": -1.2736134369362162e-10
+    }
+  ],
+  "scope": "Original-data fixed-budget recipe validation using newly rebuilt dependencies. Current tested native implementation has a version-2 checkpoint and temporal-capable arithmetic. This is not byte-exact historical training recovery, a score improvement, or a production-data fit. Raw numerical differences are reported without a post-hoc promotion tolerance.",
+  "reload": {
+    "experiment": "/Users/quan/workspace/netflix_challenge/experiments/PR8-neighborhood-fixed-reload.json",
+    "experiment_sha256": "99d4d17d258ce9aa2e9f322d83835cfa8328a88941003cebc226853736a69a9a",
+    "predictions": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR8-neighborhood-reload.f32",
+    "sha256": "ef4104f2d3842d67d06baedef4fe3728b9dd091d23fb6a2496fab2a740602dad",
+    "byte_identical_to_retrained_predictions": true
+  }
+}
