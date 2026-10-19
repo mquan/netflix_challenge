@@ -406,3 +406,38 @@ covers **all 29 retained item-kNN columns (28 unique prediction columns)** and
 remain explicit. The registry rejects missing columns or changed artifacts.
 This closes item-kNN inference recipe recovery. User-kNN is separate, and all
 production runs still need freshly trained production base models and graphs.
+
+## User-kNN and its K1 dependency
+
+PR11 replayed the original user-kNN command with its retained binary and K1
+checkpoint. All 1,408,395 predictions, support weights and neighbor counts
+match the retained files byte for byte. This covers the separate `C-uknn-K1`
+bank column and its support input.
+
+K1's checkpoint header selects **epoch 41** at rank 256. Its checkpoint and
+prediction hashes agree with the historical training record. All six compiled
+training sources were recovered by their recorded SHA-256 hashes. Its source
+already supports `--fixed-epoch`; the production recipe preserves learning
+rate .008, regularization .02, decay .97 and six training threads, but fixes
+41 epochs and disables patience. Six-thread Hogwild training is nondeterministic,
+so historical weight identity is not promised. K1 has not been retrained here.
+
+User-kNN source was recovered from commit `2419104`, named in the original
+run strategy. Its run record had captured the main worktree's sources rather
+than that binary's sources, so a separate rebuild check was needed. The
+recovered binary passes three existing user-kNN contracts. An additional
+integration test trains the recovered K1 source for three fixed epochs with
+query labels 0 versus 5, then runs both original and rebuilt user-kNN binaries.
+Parameters after the fingerprint, base predictions, kNN predictions, support
+and counts all match. Training uses one thread in this isolation test.
+
+On real data, the rebuilt and original user-kNN binaries also agree byte for
+byte on a fixed subset of 1,405 queries (users divisible by 1000), including
+support/counts. All output rows are compared, but unselected rows retain their
+base prediction; this is bounded source compatibility, not a full replay of
+the rebuilt binary. The original binary's full replay is separate evidence.
+
+Sources, build commands, tests and recipe are recorded in
+`experiments/production-user-knn-sources.zip`, `PR11-user-knn-verification.json`
+and `production-user-knn-recipe.json`. Production K1 training and the K1-based
+latent blender features remain outstanding. No score gain is claimed.
