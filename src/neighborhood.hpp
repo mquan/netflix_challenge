@@ -117,6 +117,7 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
   const auto model_path = value_after(args, "--model");
   const auto output = value_after(args, "--predictions");
   const uint32_t epochs = eval_only ? 1 : uint_after(args, "--iterations", 12);
+  const bool fixed_epoch = std::find(args.begin(), args.end(), "--fixed-epoch") != args.end();
   const float lr0 = float(double_after(args, "--learning-rate", .005));
   const float reg = float(double_after(args, "--regularization", .002));
   float time_decay = float(double_after(args, "--time-decay", 0));
@@ -225,7 +226,7 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
       std::cout << std::setprecision(10) << "epoch=" << saved_epoch << " probe_rmse=" << score << std::endl;
       return;
     }
-    if (score < best) {
+    if (fixed_epoch || score < best) {
       best = score; stale = 0;
       std::ofstream out(model_path+".tmp", std::ios::binary);
       write_pod(out, uint64_t(0x4E464E42484F4F32ULL)); write_pod(out, hash);
@@ -238,7 +239,7 @@ void command_neighborhood(const std::vector<std::string> &args, bool eval_only) 
     double seconds = std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     std::cout << std::setprecision(10) << "epoch=" << epoch << " train_rmse=" << std::sqrt(train_sse/d.header.train_count)
               << " probe_rmse=" << score << " best=" << best << " seconds=" << seconds << std::endl;
-    if (stale >= 4) break;
+    if (!fixed_epoch && stale >= 4) break;
   }
 }
 

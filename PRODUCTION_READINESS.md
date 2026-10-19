@@ -159,3 +159,27 @@ python scripts/production_neural.py \
 Remaining work includes other retained model families and their dependencies,
 production support features, the final blender, and full-budget training after
 the development milestone and retained bank are frozen.
+
+## Native fixed-budget gaps
+
+Code inspection found that `neighborhood` and `integrated` still saved the best
+query-RMSE checkpoint, unlike the existing `joint` and `rbm --fixed-epoch`
+paths. They now accept `--fixed-epoch`: save each epoch's state and predictions
+and disable early stopping, preserving the last requested epoch. Default
+development behavior is unchanged.
+
+An isolated binary at `artifacts/production-replay/bin/netflix-native-fixed`
+passed four tests: both models run six epochs with zero versus poisoned query
+labels and produce identical parameters and predictions; saved epochs and
+reload predictions match; existing neighborhood and integrated temporal-isolation
+tests still pass. `build/netflix` remains byte-identical to the PR2 replay binary.
+Build/source hashes and checks are in `experiments/PN1-native-fixed-epochs.json`.
+
+This closes checkpoint-selection support for these two native families, not
+their entire production recipes. Native commands still print query-RMSE
+diagnostics; those are meaningless on the production dataset's zero sentinels
+and cannot establish a score. AutoRec still needs a fixed-budget path. Bayes
+uses a fixed sweep budget already, but its original initialization/resume chain
+and retained averaging window must be recovered before a production retrain.
+The time baseline, residual graph, warm-start checkpoints and support features
+must be rebuilt from production inputs rather than reused from development.

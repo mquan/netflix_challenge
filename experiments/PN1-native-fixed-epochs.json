@@ -1,0 +1,41 @@
+{
+  "build_command": [
+    "clang++",
+    "-O3",
+    "-DNDEBUG",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "src/netflix.cpp",
+    "-framework",
+    "Accelerate",
+    "-o",
+    "artifacts/production-replay/bin/netflix-native-fixed"
+  ],
+  "sources": {
+    "src/netflix.cpp": "f37892ee68db9bcf06343de4a6248175b3fe2ee87320711ca11f71efa804bb10",
+    "src/joint.hpp": "e0fc10630d740f0cbf98e4d001541e512b8042faec728d1a27fd9ed735ff0fd7",
+    "src/bayes.hpp": "aecef3234b0df0c515815e8aaa8efff8f78ea1d29c4f8257885db41114811c6b",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/neighborhood.hpp": "ac1bdfc3a9d1dcfee3789adc8babd2a7b24751ce9b4cab69d43d162a443a72d1",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/rbm_visible_context.hpp": "dc6643cf1ed7ff76aa8baf1a6c92d488a7c81906ba2c9da110db2ad0adf50173",
+    "src/bar.hpp": "2cb3217dc1310712f718b7af6cb4d092a146971c369d78816b30c94fc80945b2",
+    "src/integrated.hpp": "2e6359067ea3459b3ec205a55501e48726782af0b914964c28b59d9ec55f6b0d",
+    "src/temporal_neighborhood.hpp": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+    "src/user_neighborhood.hpp": "bf9200349aa742497cbeaad363fd4194ecf5580548c10d191f72918398a7b823"
+  },
+  "binary_sha256": "b2b4dd9347173f205f10442e5add4ac573a340164c005757bcee2811369671c3",
+  "original_binary_unchanged": true,
+  "original_binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c",
+  "tests": [
+    "test_native_fixed_epochs.NativeFixedEpochTests.test_integrated_keeps_fixed_epoch_with_unknown_queries",
+    "test_native_fixed_epochs.NativeFixedEpochTests.test_neighborhood_keeps_fixed_epoch_with_unknown_queries",
+    "test_joint.JointTests.test_neighborhood_reload_and_probe_label_isolation",
+    "test_push.PushTests.test_temporal_reload_isolation_and_zero_effect"
+  ],
+  "tests_passed": 4,
+  "fixture_epochs": 6,
+  "limitation": "Fixed checkpoint selection is verified on fixtures. Native CLI still prints query RMSE diagnostics; these are meaningless for zero-label qualifying queries and must not be reported as scores. Full production recipes, dependencies and retraining remain incomplete."
+}
