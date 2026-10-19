@@ -125,3 +125,18 @@ at a time; CPU jobs niced while the other branch runs blends.
 | HR3 K-fold residuals exist | Offer them as residual targets on ~100M rows instead of 1.4M P2 rows. Coordinate MPS time first. |
 | Either branch has a column | Score both on the same frozen R9-LAT-A2h bank, together and separately, to check whether gains add or overlap. |
 | Any time | Their retrieval index (2.5 s build, ≈1,240 queries/s) is reusable for neighbourhood features in stage-2 learners. HR-pre says to skip per-user offsets. P2 is now selected on by both branches; promotion rests on the five probe folds. |
+
+## HR4: representation stacking (A2h)
+
+`scripts/hr_a2h_codes.py` reads A2h-refit and exports 18 label-free features per
+probe row (`artifacts/residual-chains/a2h-codes/`):
+- The session-adjusted user vector (64-d), projected on the top 8 principal
+  directions of the movies' liking vectors Σ(s−3)·output[i,s]. The basis is
+  fitted on movie parameters only.
+- The target movie's liking vector in the same basis.
+- The session shift's norm, and its cosine with the transformer code.
+
+The captured vectors reproduce A2h-refit's saved probe column exactly (max
+error 0.0). This mirrors R9-LAT's K1 recipe (−0.00023, all folds).
+Blend test `HR4-blend` = R9-LAT-A2h + these 18 support features, launched
+2026-10-18 evening (three processes, nice 10). Same gates: ≥0.0003 and all five folds.
