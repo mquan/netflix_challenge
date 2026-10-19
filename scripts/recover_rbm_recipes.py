@@ -31,13 +31,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', required=True)
     parser.add_argument('--replay-dir', type=Path)
+    parser.add_argument('--replay-stage', action='append', help='replay only named retained stages; default all')
     parser.add_argument('--binary', type=Path, default=ROOT / 'build/netflix')
     args = parser.parse_args()
     destination = Path(args.output)
     if destination.exists() or (args.replay_dir and args.replay_dir.exists()):
         parser.error('choose new output paths')
+    if args.replay_stage and not args.replay_dir:
+        parser.error('--replay-stage requires --replay-dir')
     inventory = json.loads((ROOT / 'experiments/production-bank-inventory.json').read_text())
-    bank = {str(Path(c['path']).resolve()): c for c in inventory['columns']}
+    bank = {}
+    for column in inventory['columns']:
+        bank.setdefault(column['sha256'], []).append(column)
     models, stages, retained = {}, [], []
     for name in STAGES:
         record_path = ROOT / 'experiments' / (name + '.json')
@@ -84,20 +89,25 @@ def main():
                      production_command_template=template)
         models[str(model.resolve())] = stage
         stages.append(stage)
-        column = bank.get(str(prediction.resolve()))
-        if column:
-            assert digest(prediction) == column['sha256'], name
+        # Reference-bank files may have been copied to a different path.
+        columns = bank.get(digest(prediction), [])
+        for column in columns:
+            assert digest(column['path']) == column['sha256'], name
             historical = record.get('predictions_artifact')
             if historical:
                 assert historical['sha256'] == column['sha256'], name
-            retained.append(dict(stage=name, column=str(prediction), sha256=column['sha256'],
+            retained.append(dict(stage=name, column=column['path'], original_prediction=str(prediction), sha256=column['sha256'],
                                  historical_prediction_digest_present=bool(historical)))
-    assert len(retained) == 8
+    assert len(retained) == 9
+    if args.replay_stage and not set(args.replay_stage) <= {c['stage'] for c in retained}:
+        parser.error('unknown retained replay stage')
     replay = []
     if args.replay_dir:
         args.replay_dir.mkdir(parents=True)
         binary_sha = digest(args.binary)
         for column in retained:
+            if args.replay_stage and column['stage'] not in args.replay_stage:
+                continue
             stage = next(s for s in stages if s['name'] == column['stage'])
             prefix = args.replay_dir / stage['name']
             prediction = prefix.with_suffix('.f32')

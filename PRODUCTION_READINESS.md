@@ -252,7 +252,7 @@ No full Bayes production training was launched.
 ## RBM checkpoint budgets and resume chains recovered
 
 `scripts/recover_rbm_recipes.py` reconstructs twelve training stages needed for
-the eight retained RBM columns. Each final epoch comes from the checkpoint
+the eight retained primary-worktree RBM columns. Each final epoch comes from the checkpoint
 header and has a matching training-log entry. Ten stages also match historical
 checkpoint digests. All eight retained checkpoints were replayed through the
 unchanged native evaluator with one thread; all eight prediction files match
@@ -278,3 +278,12 @@ disable patience, and reference newly trained production predecessors. They
 contain no development artifact paths. Historical source hashes are recorded,
 but matching fixed-epoch builds and full production retraining remain open.
 Inference replay establishes checkpoint-to-column identity, not a score gain.
+
+The initial exact-path registry missed a ninth RBM column copied into the
+reference bank: `other-branch/rbm100-fast.f32`. Recovery now matches prediction
+digests across paths. `experiments/production-rbm-recipes-v2.json` includes all
+nine retained RBM columns and the same twelve training stages. The extra R2
+column requires epochs 1–60 and has been replayed byte for byte as well.
+`experiments/PR4-rbm-reference-verification.json` combines that new replay with
+the eight prior verified replays; their checkpoint hashes, budgets and resume
+chains are unchanged. The original eight-column report is preserved as history.
