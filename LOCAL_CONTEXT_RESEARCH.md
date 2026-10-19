@@ -664,3 +664,8 @@ matches, and all algorithm settings match the promoted recipes. Only the two
 columns and independent fold-worker count change. All frozen hashes are checked
 again after training. Historical per-epoch hashes were not recorded by A2h's
 trainer; LC6 freezes the currently saved epoch files and their refit provenance.
+
+While LC6 trains, the final-production audit is recorded in
+[PRODUCTION_READINESS.md](PRODUCTION_READINESS.md). All 79 current prediction
+columns are hash-verified; producer/dependency recovery remains incomplete.
+That work does not alter LC6's frozen inputs or constitute a score improvement.
