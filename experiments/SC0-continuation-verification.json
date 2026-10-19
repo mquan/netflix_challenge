@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "command": "OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 OMP_NUM_THREADS=1 /Users/quan/.cache/netflix-venv/bin/python -m unittest discover -s tests -p test_selection_objective_continue.py -v",
+  "tests_passed": 4,
+  "test_seconds": 3.927,
+  "log": "experiments/SC0-continuation-tests.log",
+  "log_sha256": "0f5d51091e0602ff6e4ad78d5fc806b70bbda93f77d153314ceafe114f45909b",
+  "source_archive": {
+    "path": "experiments/SC0-continuation-sources.zip",
+    "sha256": "79f5c558812f4aca88919758fee51e2898bed7374baa4915b2d64c6117b3ce77",
+    "bytes": 391076
+  },
+  "sources": {
+    "scripts/selection_objective_continue.py": "c0131882d4e40ccac73362e1aae3b5b99c8a403c03e2a71865dfd5a27eef48d0",
+    "tests/test_selection_objective_continue.py": "14ac64f11df0cfeb912e225371c1f64a8fa8b1d95f6fb688cc1a36c23cb5bdb6"
+  },
+  "checks": [
+    "Legacy checkpoint restart preserves every saved parameter including nonzero learned choice bias",
+    "Legacy checkpoint cannot claim optimizer/RNG resume because those states were never saved",
+    "Separate-process CPU continuation equals uninterrupted model tensors, optimizer state, RNG state and prediction bytes with dropout enabled",
+    "Changed data/checkpoint, device change during exact resume and existing output prefixes are rejected",
+    "Unknown query labels emit predictions but no validation RMSE"
+  ],
+  "frozen_queue_inputs_unchanged": 24,
+  "scope": "Synthetic CPU contracts only. No Netflix continuation was launched, no score gate was extended, and MPS resume equivalence remains untested while N1 owns the GPU."
+}
