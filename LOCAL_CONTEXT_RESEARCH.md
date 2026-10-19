@@ -669,3 +669,21 @@ While LC6 trains, the final-production audit is recorded in
 [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md). All 79 current prediction
 columns are hash-verified; producer/dependency recovery remains incomplete.
 That work does not alter LC6's frozen inputs or constitute a score improvement.
+
+### Concurrent research inventory (read-only, 2026-10-19 UTC)
+
+The existing `honest-residual-chains` worktree has moved beyond the closed HR2/HR4
+recipes. Its `NEW_BASE_MODELS.md` records an active `N1-select` process using
+`choice_sequence.py`: dated implicit-only movie interactions become unrated
+CHOICE tokens in the A2h sequence encoder. As launched, this adds input context;
+the proposed auxiliary selection-prediction loss is a possible follow-up, not
+part of the active model. It is still in its early P2 training epochs and has
+no completed full-bank result. This is separate ongoing work, not a new run
+launched on this branch.
+
+That worktree also records an HR5 snapshot screen and a queued full-bank test.
+Its screen uses saved ensemble out-of-fold residuals and reused probe users;
+those diagnostic deltas are not an independent gain or a promotion result.
+LC6's epochs 4/8 were fixed before this inventory and its original gates remain
+unchanged. Account for N1 and HR5 before choosing a follow-up, to avoid repeating
+their experiments. No files or processes in the other worktree were modified.
