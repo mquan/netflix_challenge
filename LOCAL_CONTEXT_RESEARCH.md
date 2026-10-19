@@ -883,3 +883,19 @@ of training. Evidence: `experiments/N1-epoch11-observation.json`. The trainer
 remains live under the unchanged three-epoch patience and 18-epoch cap.
 No ensemble gate has completed, the promoted score remains unchanged, and
 SO1 stays queued behind the full N1 chain.
+
+### N1 epoch-12 observation
+
+N1 epoch 12 scored **0.8683539219** on P2, worse by just 0.0000080082
+than epoch 11. Epoch 11 therefore remains selected at 0.8683459137, with
+one non-improving epoch under the fixed three-epoch patience. Historical A2h
+selected this epoch at 0.8674022745: N1's same-epoch deficit is 0.0009516474,
+and its best checkpoint still trails mature A2h by 0.0009436392. The latest
+two results are nearly flat, but one non-improving epoch does not establish
+the terminal result or justify changing the fixed stopping rule.
+
+The epoch took 2,371.47 seconds (39.52 minutes), including 2,055.97 seconds
+of training. Evidence: `experiments/N1-epoch12-observation.json`. The trainer
+remains live. This reused-P2 historical comparison is not matched for
+initialization/RNG and does not establish ensemble value. No result is
+promoted; SO1 remains queued behind the full N1 chain.
