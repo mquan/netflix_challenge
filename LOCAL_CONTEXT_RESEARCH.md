@@ -899,3 +899,19 @@ of training. Evidence: `experiments/N1-epoch12-observation.json`. The trainer
 remains live. This reused-P2 historical comparison is not matched for
 initialization/RNG and does not establish ensemble value. No result is
 promoted; SO1 remains queued behind the full N1 chain.
+
+### N1 epoch-13 observation
+
+N1 epoch 13 scored **0.8683384740** on P2, improving by 0.0000154479
+from epoch 12 and only **0.0000074397** from its prior best at epoch 11.
+Epoch 13 is selected, resetting the unchanged patience counter. Historical
+A2h epoch 13 scored 0.8680369280; N1 remains 0.0003015460 worse at the
+same epoch and **0.0009361995 behind mature A2h**. Epochs 11–13 are nearly
+flat. This tiny selected improvement does not establish meaningful progress
+on the ensemble gap; historical initialization and RNG also differ.
+
+The epoch took 2,282.52 seconds (38.04 minutes), including 1,943.72 seconds
+of training. Evidence: `experiments/N1-epoch13-observation.json`. The trainer
+was confirmed advancing into epoch 14. Keep the fixed three-epoch patience,
+18-epoch cap and subsequent ensemble gate. No result is promoted, and SO1
+remains queued behind the full N1 chain.
