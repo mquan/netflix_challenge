@@ -61,3 +61,26 @@ They represent potential shared production work, not a new score claim.
 
 The inventory is a starting point for the column registry. Production readiness
 is incomplete; no final retraining or qualifying-score claim is made.
+
+## Recipe recovery checkpoint
+
+`PR0-J6-knn64` replayed the documented J6 kNN command against the retained base
+model and graph. Both predictions and support are byte-identical to the frozen
+bank artifacts (maximum absolute difference zero). Evidence is in
+`experiments/PR0-J6-knn64-verification.json`, with the command, input hashes and
+source archive in the accompanying experiment records. This verifies inference
+reconstruction; rebuilding the base model and graph on train+probe remains open.
+`scripts/recover_knn_recipes.py` is running ten related fixed recipes, accepting
+only exact output hashes and recording mismatches without parameter searches.
+
+`scripts/recover_neural_recipes.py` recovered fixed-epoch command templates for
+all 14 retained primary-worktree neural columns and all five recorded source
+versions from git, with exact source SHA-256 matches. The registry is
+`experiments/production-neural-recipes.json`; the source bytes are preserved in
+`experiments/production-neural-sources.zip`. Eight columns also have historical
+matching selected-output digests. The other six have current bank hash matches
+and recorded epoch histories, without equivalent historical output digests.
+Retained snapshot filenames take precedence over a later final training epoch.
+Archive and member hashes were independently verified, and all five recipe and
+inventory tests passed. These are recovered recipes, not verified retraining
+results or a complete production pipeline.
