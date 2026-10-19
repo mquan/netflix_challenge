@@ -472,3 +472,61 @@ and evaluation-batch independence of running statistics. The training-only MPS
 smoke run completed 30 steps in 3.14 seconds (about 2,447 examples/second);
 no selection or evaluation scores were read. Evidence is archived under
 `experiments/LC3-normalized-throughput.*`. `git diff --check` passes.
+
+### LC3 result: normalization fixes scale, not accuracy
+
+Training and automatic audit both completed with exit code 0 on 2026-10-18
+at 21:47 Pacific, in approximately 67 minutes. All 18 saved output hashes and
+four saved prediction scores were independently verified (RMSE within 1e-8).
+
+| Two-seed averaged model | LC3 P2 RMSE |
+|---|---:|
+| Ridge baseline | 0.845304781 |
+| Normalized pooled | 0.844679533 |
+| Normalized structured | 0.844675089 |
+| Normalized shuffled | 0.844685773 |
+
+Structured minus pooled is -0.000004445 RMSE, far below the predeclared
+0.0001 gate. Seed 2026 improves by 0.000014694; seed 7 regresses by
+0.000005766. The paired MSE 95% interval [-0.000030996, +0.000015978]
+includes zero. Structured minus shuffled is -0.000010684 RMSE, also with a
+MSE interval including zero. LC3 structure is 0.000019770 worse than LC2
+structure. **No promotion or structural scaling.**
+
+The intervention did affect the diagnosed mechanism. Median local-coordinate
+standard deviations rose from 0.051/0.037 to 0.823/0.869. The local-to-global
+first-head-layer contribution ratios rose from 0.168/0.118 to 0.447/0.487.
+For seed 2026, the first principal component's share fell from 96.8% to 46.6%.
+This improved scale and representation spread without establishing a useful
+structural accuracy advantage. Input scale is not a sufficient practical
+explanation of LC2's failure. The matched tests now argue against investing in
+this structural recipe, rather than merely against its unnormalized version.
+
+The active 10% goal remains unmet: promoted development CV is 0.8668706425,
+and the working calibrated target remains 0.86465. The previous goal work
+made progress by launching a controlled test; this completed result changes
+the next action by rejecting normalization as the proposed rescue.
+
+### Attribution check before any pooled-column integration
+
+LC2/LC3 pooled gains compare against an eleven-column ridge, not a matched
+neural head with all common features. The checkpoint audit shows most of the
+gain survives constant local vectors, but that is an inference intervention,
+not a retrained control. The adjacent honest-residual worktree independently
+suggests trying a pooled output in the full bank; its HR2/HR4 results also warn
+that generic corrections often disappear in the full ensemble.
+
+Run one cheap matched control with the local vector fixed to zero throughout
+training and inference. Retain the identical 39 common features, residual
+baseline, head initialization, dropout, optimizer, partitions, seeds and epoch
+selection/refit budget from LC2. Encoder parameters remain allocated but unused;
+effective trained capacity is smaller, so this is a test of whether the local
+branch earns its cost, not a matched-capacity structural comparison. No local
+normalization, matching LC2. Use the original two seeds, not a new sweep.
+
+Compare the saved LC2 pooled predictions against this control using user-clustered
+paired MSE intervals. Require a pooled advantage of at least 0.0001 RMSE,
+both seeds improving, and averaged interval below zero before investing in
+probe-order export and full-bank integration. If it fails, close the current
+pooled/structural recipe rather than treating the ridge comparison as new signal.
+This is exploratory attribution on reused development users, not promotion.
