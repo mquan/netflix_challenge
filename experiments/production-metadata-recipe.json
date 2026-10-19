@@ -1,0 +1,494 @@
+{
+  "state": "complete",
+  "inputs": {
+    "experiments/LC6-plan.json": "8f04fd0143460abd1993e7477d935c0a4cf193d6cdc8d4c1e82dad41ae601428",
+    "data/production/stage-c-v1/manifest.json": "537c6a50cb6c0aa0b96d7935cbe87c4f839dcc2e4440a9651b8d0dd55e8a19c8",
+    "artifacts/r8/movie_tags.tsv": "22a1b796530127eb9c166e22485448be76ac913cdb402b28ee37022cfb51bba1",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-s3.json": "339022214b693a0b9b09639df6ae490e4e09527c94c6e9773d17cd3141105bc3",
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/meta-context.npz": "cfbb5b1ef70b5de3b8e2a1cdd9664543c6cb371d2e8bcd803e532b011bd73b0c",
+    "data/production/stage-c-v1/train-probe-qualifying.bin": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-audience.f32": "7e5ee04ffa07a405c97ac673112c2346a8eebbd79da3c1ed3c7600bd17241e0c",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-confidence.f32": "545fbe7b05c214fc4381d4f1e28f7c5a21122b8f129db2b602e32c1cb9c2e58d",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-franchise_size.f32": "640fe5c5d76de2f4e22a4e2bc46b3dd293f4e3672ee1378a9f00c6e2273a414c",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_action.f32": "c0672cb074f9cbb774bd876316db1325e506a9ea30036e037d5cf48525b469d9",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_comedy.f32": "35190c0ab23d3e0f6b06a8e7159c88f4b486240c3f9ed36e416b9bc49bb5e5b9",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_documentary.f32": "d45837270f82eb9fda6661b66d3e514c929ecdb61ba03e60ec4526c2ab872419",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_drama.f32": "b94b8cd1e0a0b741f0caa85466e190c18510974512bb3795bfd9514d895c7585",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_family.f32": "71ce3a86a99d3a45e2cf20e7a29967cf5452733e112d5db335a42cab76720768",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_foreign.f32": "e5ae4d5fc929fa094dcd79a4399e14008a372843824a8cb19eb3e26ea1f9bf60",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_horror.f32": "7171130e1926e214831fbf315830ed0c7d2ea0b1b55e6f9683f82801fa8e49dd",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_romance.f32": "bb048adc4b62366b2d5790ddacf64a8a052fe22fe7b69677fd26f77192203422",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_scifi.f32": "c90d55277c926c794bd0be91f6d19644cc1540dfec3a9e0f4de99bf97f2add88",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-g_thriller.f32": "dd70e7907cefaaec029291893120b10c173ed84c741adda69fdf1c180e5e1c18",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-kind.f32": "36007859f92a6fa75e3e09311c2be846c41104c211bfb9ca8406389e449f49ce",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-popularity.f32": "e4f8747aa5d9b60f05392dfbb1bb76ab6d772d59f156ba3eb13cef67f858894b",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/meta-tone.f32": "7bacfd91b4191a5abc1fc48dfdae9cede2a3ea2540cf2add6ad9376e71498d66"
+  },
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/moonshot_nn_blend.py": "31f44a1f2e4cb18c393c302891b936d2e7dee6b0f17b38ee346e9ef8f2ec770c",
+    "/Users/quan/workspace/netflix_challenge/scripts/round4_boost.py": "cf98abd25bc046512459727f17df1a39466afdb8370328cb3d90f0e481a25960",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_metadata.py": "6c96178d600537e5ad6042659a3a2b10384ec030834fa88aba59dbd204a5dbf0",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_latent.py": "8187d2cf04f7414f76a4ded0c1b3d75830ec91b816192571d2639f6fa7829812",
+    "/Users/quan/workspace/netflix_challenge/scripts/round9_latent.py": "18eccee1ebbdd583876bd5615c3dd53095af43086915946eb65e0c63820eebe0"
+  },
+  "stages": {
+    "development_replay": {
+      "meta": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "shape": [
+          1408395,
+          11
+        ],
+        "columns": [
+          "log_user_n",
+          "log_item_n",
+          "log_implicit_n",
+          "user_mean",
+          "user_std",
+          "item_mean",
+          "day",
+          "day_minus_user_mean",
+          "day_minus_first",
+          "user_span",
+          "log_same_day"
+        ],
+        "validation": "cached_array_byte_exact"
+      },
+      "context": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "shape": [
+          1408395,
+          5
+        ],
+        "columns": [
+          "intercept",
+          "log_training_user_count_scaled",
+          "log_training_item_count_scaled",
+          "day_minus_implicit_user_mean_scaled",
+          "log_implicit_session_count_scaled"
+        ],
+        "validation": "cached_array_byte_exact"
+      },
+      "extra_meta": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "shape": [
+          1408395,
+          7
+        ],
+        "columns": [
+          "movie_age",
+          "user_frac1",
+          "user_frac5",
+          "log_unrated_n",
+          "log_user_days",
+          "same_day_ratio",
+          "item_std"
+        ],
+        "validation": "unchanged_source_formula"
+      },
+      "movie_audience": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-audience.f32",
+        "sha256": "7e5ee04ffa07a405c97ac673112c2346a8eebbd79da3c1ed3c7600bd17241e0c",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-audience.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_confidence": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-confidence.f32",
+        "sha256": "545fbe7b05c214fc4381d4f1e28f7c5a21122b8f129db2b602e32c1cb9c2e58d",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-confidence.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_franchise_size": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-franchise_size.f32",
+        "sha256": "640fe5c5d76de2f4e22a4e2bc46b3dd293f4e3672ee1378a9f00c6e2273a414c",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-franchise_size.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_action": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_action.f32",
+        "sha256": "c0672cb074f9cbb774bd876316db1325e506a9ea30036e037d5cf48525b469d9",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_action.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_comedy": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_comedy.f32",
+        "sha256": "35190c0ab23d3e0f6b06a8e7159c88f4b486240c3f9ed36e416b9bc49bb5e5b9",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_comedy.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_documentary": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_documentary.f32",
+        "sha256": "d45837270f82eb9fda6661b66d3e514c929ecdb61ba03e60ec4526c2ab872419",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_documentary.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_drama": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_drama.f32",
+        "sha256": "b94b8cd1e0a0b741f0caa85466e190c18510974512bb3795bfd9514d895c7585",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_drama.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_family": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_family.f32",
+        "sha256": "71ce3a86a99d3a45e2cf20e7a29967cf5452733e112d5db335a42cab76720768",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_family.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_foreign": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_foreign.f32",
+        "sha256": "e5ae4d5fc929fa094dcd79a4399e14008a372843824a8cb19eb3e26ea1f9bf60",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_foreign.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_horror": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_horror.f32",
+        "sha256": "7171130e1926e214831fbf315830ed0c7d2ea0b1b55e6f9683f82801fa8e49dd",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_horror.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_romance": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_romance.f32",
+        "sha256": "bb048adc4b62366b2d5790ddacf64a8a052fe22fe7b69677fd26f77192203422",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_romance.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_scifi": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_scifi.f32",
+        "sha256": "c90d55277c926c794bd0be91f6d19644cc1540dfec3a9e0f4de99bf97f2add88",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_scifi.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_g_thriller": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-g_thriller.f32",
+        "sha256": "dd70e7907cefaaec029291893120b10c173ed84c741adda69fdf1c180e5e1c18",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-g_thriller.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_kind": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-kind.f32",
+        "sha256": "36007859f92a6fa75e3e09311c2be846c41104c211bfb9ca8406389e449f49ce",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-kind.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_popularity": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-popularity.f32",
+        "sha256": "e4f8747aa5d9b60f05392dfbb1bb76ab6d772d59f156ba3eb13cef67f858894b",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-popularity.f32",
+        "validation": "retained_column_byte_exact"
+      },
+      "movie_tone": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta-tone.f32",
+        "sha256": "7bacfd91b4191a5abc1fc48dfdae9cede2a3ea2540cf2add6ad9376e71498d66",
+        "shape": [
+          1408395
+        ],
+        "retained_input": "artifacts/r8/meta-tone.f32",
+        "validation": "retained_column_byte_exact"
+      }
+    },
+    "qualifying": {
+      "meta": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "shape": [
+          2817131,
+          11
+        ],
+        "columns": [
+          "log_user_n",
+          "log_item_n",
+          "log_implicit_n",
+          "user_mean",
+          "user_std",
+          "item_mean",
+          "day",
+          "day_minus_user_mean",
+          "day_minus_first",
+          "user_span",
+          "log_same_day"
+        ],
+        "validation": "unchanged_source_formula"
+      },
+      "context": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "shape": [
+          2817131,
+          5
+        ],
+        "columns": [
+          "intercept",
+          "log_training_user_count_scaled",
+          "log_training_item_count_scaled",
+          "day_minus_implicit_user_mean_scaled",
+          "log_implicit_session_count_scaled"
+        ],
+        "validation": "unchanged_source_formula"
+      },
+      "extra_meta": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "shape": [
+          2817131,
+          7
+        ],
+        "columns": [
+          "movie_age",
+          "user_frac1",
+          "user_frac5",
+          "log_unrated_n",
+          "log_user_days",
+          "same_day_ratio",
+          "item_std"
+        ],
+        "validation": "unchanged_source_formula"
+      },
+      "movie_audience": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-audience.f32",
+        "sha256": "9147b485827440b53d97d1c00cec84e69a5dff063e2cec1bd4a863e8a1ad9b2c",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-audience.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_confidence": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-confidence.f32",
+        "sha256": "4c63c84c59f5f61a7172d20d30ff2d23945d090a10eba293128859175292e4f1",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-confidence.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_franchise_size": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-franchise_size.f32",
+        "sha256": "056b4a3f23a54612facb47c48e14451fce865c11878dc82ddcb84fc4f020660f",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-franchise_size.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_action": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_action.f32",
+        "sha256": "fc137072dc9252597bb1871a0ced6c880b5dd5c6c918051d0a6dbcda7703f37c",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_action.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_comedy": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_comedy.f32",
+        "sha256": "eb775f79923ef46cf613c3e5bc1ecc308d81c877d9d1bd1b752221b289185f67",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_comedy.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_documentary": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_documentary.f32",
+        "sha256": "1e6483b2ba301ddcc190fa151efe16fb086fd5b27927cb3486d7343d1cf01848",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_documentary.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_drama": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_drama.f32",
+        "sha256": "767c3929d98a333b6141b209fb71f5d9f206e9d781888970799220bc5488a811",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_drama.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_family": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_family.f32",
+        "sha256": "7d8e3a5faeea6439505e11f807a620943ebca705d3f322485651a5ef39169d04",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_family.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_foreign": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_foreign.f32",
+        "sha256": "1f928512f155b05c01bb360a05a18a720167f05c5a0a7bf76c3715fbb9838d95",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_foreign.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_horror": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_horror.f32",
+        "sha256": "a978ccdc8dec0ffcd24a6a8de801d7a3e3e5be943180b3215e5f84d25c63692f",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_horror.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_romance": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_romance.f32",
+        "sha256": "e9c6a51fd3f08ca57acfaa297c667a772dfea47c441b05a897adec6eabbd334c",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_romance.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_scifi": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_scifi.f32",
+        "sha256": "e9c15b3f019718ef65ffe9bf44895ce857ac89a4a4ce20aeea69a2e21fb2e4a5",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_scifi.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_g_thriller": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_thriller.f32",
+        "sha256": "b08405dd0ebc40d06796557ed4128ccc6f4d45720f798292d9def8d40a001a38",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-g_thriller.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_kind": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-kind.f32",
+        "sha256": "597750d318f69e453681d743ba5b60c251ce68739ae1697bf1d39d9973c7ff0f",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-kind.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_popularity": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-popularity.f32",
+        "sha256": "5867002ff2856972331c179f4538b16544a8650d9dee1f7b0baa5c8ebbc41d40",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-popularity.f32",
+        "validation": "frozen_movie_table_lookup"
+      },
+      "movie_tone": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-tone.f32",
+        "sha256": "dc83c17e7a13c4b61880bc6bec7482df3620b1795e0ec60085c921588637086b",
+        "shape": [
+          2817131
+        ],
+        "retained_input": "artifacts/r8/meta-tone.f32",
+        "validation": "frozen_movie_table_lookup"
+      }
+    }
+  },
+  "movie_feature_order": [
+    "audience",
+    "confidence",
+    "franchise_size",
+    "g_action",
+    "g_comedy",
+    "g_documentary",
+    "g_drama",
+    "g_family",
+    "g_foreign",
+    "g_horror",
+    "g_romance",
+    "g_scifi",
+    "g_thriller",
+    "kind",
+    "popularity",
+    "tone"
+  ],
+  "statistics_policy": "development uses original training; qualifying uses train+probe; all implicit interactions unchanged",
+  "context_policy": "same five formulas and fixed scales; no fitted qualifying normalization",
+  "movie_policy": "unchanged title tags and categorical mappings; qualifying item lookup",
+  "checks": [
+    "original meta and context cache arrays reproduced byte for byte",
+    "all 16 retained movie feature columns reproduced byte for byte",
+    "extra metadata uses hash-verified original source; no historical cached array exists",
+    "all output rows finite and in input query order",
+    "all frozen inputs and sources rehashed"
+  ],
+  "limitation": "Metadata export only. Retrained predictions, regenerated neighborhood supports, and final fitted blender remain required. No score improvement claimed.",
+  "movie_source_archive": {
+    "path": "experiments/production-movie-metadata.zip",
+    "sha256": "1dfa032bc35a4c69a3f92b47f4076b3cb1e45783689f9ec0aea566330b1b4f51",
+    "members": {
+      "artifacts/r8/movie_tags.tsv": "22a1b796530127eb9c166e22485448be76ac913cdb402b28ee37022cfb51bba1",
+      "artifacts/r8/meta_columns.py": "5cd6d0ecea0a0ca154e3f430a9614c64d2ad1732d499e274443198f70d4c3522"
+    },
+    "provenance": "Existing title-tag table and historical generator; full development output hashes and all qualifying movie values verified."
+  },
+  "verification": {
+    "path": "experiments/PF2-metadata-verification.json",
+    "sha256": "c5b522fd2b77b58db4e38bd0c6e0b65b36dc09649a888541328e9933f07dff04",
+    "verifier": "scripts/verify_production_metadata.py",
+    "verifier_sha256": "887350b616aa63056cbab7df96d9f04d9a2750f1ac73ade054459e4d23a98234"
+  },
+  "experiment": {
+    "path": "experiments/PF2-metadata.json",
+    "sha256": "ee09c25f8c0dd32c743c5e1ebe5f6fe4611f6c735b28b226952da56aa4cf54b3"
+  },
+  "validation": {
+    "command": "OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 /Users/quan/.cache/netflix-venv/bin/python -m unittest discover -s tests -p test_production_metadata.py -v",
+    "tests_passed": 3
+  }
+}

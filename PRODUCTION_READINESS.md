@@ -49,10 +49,47 @@ query-label independence, refusal to overwrite, changed checkpoint/basis
 rejection, and incompatible contexts or unknown query triples. The historical
 exporter and SO1's frozen dependencies remain unchanged.
 
-This completes the latent-feature export only. Remaining blender inputs include
-the production meta/context arrays, movie metadata and regenerated support
-arrays; the fitted production blender and retrained prediction bank remain
-pending. PF1 provides no new development or qualifying score.
+This completes the latent-feature export only. PF2 below covers meta/context
+arrays and movie metadata. Regenerated neighborhood support arrays, the fitted
+production blender and retrained prediction bank remain pending. PF1 provides
+no new development or qualifying score.
+
+### Metadata and context transfer (PF2)
+
+`scripts/production_metadata.py` reproduces the retained **11 metadata and five
+context columns** from `artifacts/r4/meta-context.npz` byte for byte. The cache
+and original feature-function sources are checked against LC6's frozen hashes.
+It also reproduces all **16 movie-tag columns** against their retained blend
+input hashes. The seven extra metadata columns use the unchanged, hash-verified
+original `extra_meta` function; no separately saved historical extra-metadata
+array exists, so byte-exact historical replay is not claimed for that block.
+
+The qualifying export contains all **39 scalar features** (11 metadata, five
+contexts, seven extra metadata, 16 movie tags) for all **2,817,131 queries**.
+User/item rating statistics use train+probe labels, while implicit histories
+and the five context formulas' fixed scales remain unchanged. Query ratings
+are never used. Movie categories and tags are frozen. This differs from PF1's
+learned latent coordinates: these statistical features retain their formulas
+and update their values to reflect the larger production training set.
+Any learned blender clipping/standardization must still be fitted on development
+rows and applied unchanged to qualifying rows.
+
+Evidence: `experiments/PF2-metadata.json`,
+`experiments/PF2-metadata-verification.json`, and
+`experiments/production-metadata-recipe.json`. The independent verifier checks
+all output hashes, shapes and finiteness. Direct per-user reductions and item
+moments reproduce all 23 numerical features exactly on 2,048 qualifying rows.
+The original movie generator's pure table construction reproduces all 16 movie
+features across **every qualifying row**. This includes 700 qualifying movies
+with no development probe rows, which cannot be covered by copying values from
+probe columns. The original table and generator are preserved in
+`experiments/production-movie-metadata.zip`.
+
+Three targeted tests cover merged training statistics and row order, query-label
+independence and training-label sensitivity, categorical mappings, refusal to
+overwrite, changed-cache rejection, and movie-ID coverage. The original feature
+functions and SO1's frozen dependencies remain unchanged. This completes these
+feature exports, not the final fitted blender or the score goal.
 
 ## Initial artifact inventory
 
