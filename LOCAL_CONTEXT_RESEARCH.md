@@ -698,3 +698,22 @@ those diagnostic deltas are not an independent gain or a promotion result.
 LC6's epochs 4/8 were fixed before this inventory and its original gates remain
 unchanged. Account for N1 and HR5 before choosing a follow-up, to avoid repeating
 their experiments. No files or processes in the other worktree were modified.
+
+### N1 comparison audit: scope of the next learning step
+
+`experiments/N1-input-comparison-audit.json` verifies that the active N1 arm
+uses A2h-select's configuration apart from choice tokens, the same P2 dataset
+hash, base trainer, loader and library versions. Its archived source matches
+the running recipe. At epochs 1/2 its P2 RMSE is better by 0.000084/0.000787;
+these early curve differences are not selected-model or ensemble gains.
+
+This recipe adds input tokens while retaining masked-rating MSE. It does not
+test the auxiliary choice-prediction objective. The new tokens compete with
+visible ratings for the fixed context budget and change batch packing and RNG
+consumption. The embedding tables also grow from six to seven states, so the
+historical same-seed control does not have identical initialization. A loss
+would close this input recipe, not the entire selection-aware training idea.
+Any later auxiliary-loss comparison needs a rating-only arm with matching code,
+embedding shapes, sampling and compute budget. P2 epoch selection also means
+the subsequent P2 gate is development evidence, not untouched confirmation.
+No competing training job or change to the other worktree was made.

@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-10-19T07:14:53.563203+00:00",
+  "state": "intermediate_read_only_audit",
+  "control_record": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "control_record_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "candidate_record": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.json",
+  "candidate_record_sha256": "5956e12caf598a4aa2b5389661572de26bdd17e7c90870076f46c437e0499fa1",
+  "candidate_source_archive": "/Users/quan/workspace/netflix_challenge/.claude/worktrees/honest-residual-chains/experiments/N1-select.source.zip",
+  "candidate_source_archive_sha256": "9adc7388339a0d282c7b665a1def1692954fd98bed5342d880a815f3cb910772",
+  "candidate_source_sha256": "9dc0d0ce36e53dab8bbfb7d0bca2ebf229b56756fbb7a801d1b95d18765a623e",
+  "control_source_sha256": "09945e90b6cd0e5c021b26fecbd6c3da7023399ba9e93b97bb538711b5f8352b",
+  "selection_dataset": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "selection_dataset_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "matched_config_except_choice_tokens": true,
+  "matching_base_source_loader_libraries_and_original_data": true,
+  "finished_epoch_comparison": [
+    {
+      "epoch": 1,
+      "control": {
+        "epoch": 1,
+        "validation_rmse": 0.9057524452322224,
+        "train_seconds": 2249.0493715420016,
+        "seconds": 2526.8998378330143,
+        "targets": 29168107,
+        "tokens": 78291686
+      },
+      "candidate": {
+        "epoch": 1,
+        "validation_rmse": 0.9056688108615946,
+        "train_seconds": 2607.810251875082,
+        "seconds": 3012.4967774160905,
+        "targets": 29166071,
+        "tokens": 83916676
+      },
+      "rmse_delta": -8.363437062786083e-05
+    },
+    {
+      "epoch": 2,
+      "control": {
+        "epoch": 2,
+        "validation_rmse": 0.8886826155531337,
+        "train_seconds": 1498.4688980840147,
+        "seconds": 1804.0947279590182,
+        "targets": 29165935,
+        "tokens": 78291750
+      },
+      "candidate": {
+        "epoch": 2,
+        "validation_rmse": 0.8878955669294196,
+        "train_seconds": 2485.145393084036,
+        "seconds": 2909.4279737920733,
+        "targets": 29165629,
+        "tokens": 83923742
+      },
+      "rmse_delta": -0.0007870486237140373
+    }
+  ],
+  "control_selected_epoch": 12,
+  "control_best_rmse": 0.8674022745268025,
+  "findings": [
+    "The active arm adds dated implicit-only CHOICE tokens as input. Its training objective remains the original masked-rating MSE; it does not test auxiliary movie-choice prediction.",
+    "Choice tokens share the fixed sequence budget with visible rating context. They also change user batch packing and random-number consumption. A loss would test the net effect of this recipe, not demonstrate that all choice information is useless.",
+    "The item-star and star embedding tables grow from six to seven states, including when choice_tokens=0. Same seed and historical config do not imply identical initial parameters to the historical control.",
+    "Prediction reads identifiers/dates and removes queried pairs from choice context; this is source inspection, not a completed end-to-end leakage test.",
+    "Early per-epoch differences do not establish a selected-model or ensemble gain. Epochs are selected on P2, so a subsequent P2 gate is development evidence, not an untouched confirmation set.",
+    "A failed input-token recipe does not rule out an auxiliary choice-prediction objective. Such an experiment needs a matched rating-only arm with the same code, initialization shape, sampling and compute budget. No follow-up run is launched by this audit."
+  ],
+  "promoted_score_changed": false
+}
