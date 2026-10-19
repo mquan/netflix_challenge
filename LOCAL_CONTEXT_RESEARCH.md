@@ -780,3 +780,17 @@ This remains an intermediate, historically controlled P2 curve; no ensemble
 comparison has completed and no promotion is justified. Epoch 7 is running.
 Keep the fixed selection/gate protocol and queued matched SO1 objective
 comparison unchanged; do not extrapolate the isolated epoch-5 gain.
+
+### N1 epoch-7 observation
+
+N1 epoch 7 completed at **0.8700004854**, improving by 0.0009365982 from
+epoch 6. A2h's epoch-7 score was **0.8696649888**, so N1 remains
+**0.0003354966 worse at the same epoch**. That deficit narrowed from
+0.0008343550 at epoch 6, but N1 is still 0.0025982108 behind A2h's mature
+selected result. Evidence: `experiments/N1-epoch7-observation.json`.
+
+The epoch took 2,072.88 seconds including validation and checkpointing; its
+training pass took 1,727.07 seconds. The live process advanced to epoch 8.
+Keep the fixed selection and ensemble-gate protocol: this observation supports
+neither promotion nor an early declaration that the recipe has failed. SO1's
+queue remains live and waiting for the complete N1 chain.
