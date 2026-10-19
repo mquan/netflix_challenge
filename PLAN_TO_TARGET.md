@@ -4,7 +4,17 @@
 **0.85725 test RMSE**. The Grand Prize scores (0.8554 quiz, 0.8567 test) are
 not the target.
 
-**Bottom line.** Our best score is **0.87039 development CV** (R7-MT56-s3).
+**Current checkpoint (2026-10-19).** The promoted best is **0.8668706425
+development CV** (R9-LAT-A2h), with a working calibrated target of **0.86465**
+and a remaining development gap of **0.0022206425**. LC1–LC6 are closed without
+promotion; N1 is running and the matched SO1 objective comparison is queued.
+See [LOCAL_CONTEXT_RESEARCH.md](LOCAL_CONTEXT_RESEARCH.md),
+[SELECTION_OBJECTIVE_RESEARCH.md](SELECTION_OBJECTIVE_RESEARCH.md), and
+[PRODUCTION_READINESS.md](PRODUCTION_READINESS.md) for current execution and
+production status. The phases and resource observations below retain the
+original plan's historical context.
+
+When this plan was written, the best score was **0.87039 development CV** (R7-MT56-s3).
 The Phase 0 rehearsal ([PHASE0_REHEARSAL.md](PHASE0_REHEARSAL.md)) measured
 test ≈ dev CV − 0.0074 on our pipeline, so the target is **dev CV ≈ 0.8646**
 and the remaining gap is about **0.0058**. It's that small because our probe
@@ -21,7 +31,8 @@ numbers don't include the retrain on train+probe that every prize team did. The 
 |---|---:|
 | R5-meta, when the goal was set (2026-09-27) | 0.87481 |
 | R6-RBM5-s3: six conditional RBM columns | 0.87312 |
-| **R7-MT56-s3: date-aware masked-history network (current best)** | **0.87039** |
+| R7-MT56-s3: date-aware masked-history network | 0.87039 |
+| **R9-LAT-A2h: current promoted bank** | **0.8668706425** |
 | **Target: 0.85725 test (measured offset 0.0074)** | **≈0.8646** |
 
 Rounds 6 and 7 together took about 0.0044 off the score in roughly four days.
@@ -39,8 +50,9 @@ Round 7 alone took 0.0027.
   9-column core bank, and a transferred blender loses only 0.00018 against dev
   CV, so test ≈ dev CV − 0.0074 and 0.85725 ↔ **0.8646**. This is probably
   conservative, since P2 is less "future" than the real probe.
-- The qualifying labels were never released, so no local run can produce a
-  real test score. The final claim will be a calibrated estimate.
+- Qualifying labels are unavailable here, so this local pipeline cannot verify
+  a hidden-test score. A calibrated estimate must be reported as an estimate,
+  not as a verified hidden-test victory.
 
 ## Phase 0 — Measure the real gap (about 3 days)
 

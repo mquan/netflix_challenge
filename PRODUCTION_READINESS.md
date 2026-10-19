@@ -91,6 +91,50 @@ overwrite, changed-cache rejection, and movie-ID coverage. The original feature
 functions and SO1's frozen dependencies remain unchanged. This completes these
 feature exports, not the final fitted blender or the score goal.
 
+### Persisted final blender and ordered bank (PB0)
+
+`scripts/production_blend_plan.py` builds an ordered bank manifest from the
+retained tree/NN reports, PF1, and PF2. The current
+`experiments/production-blender-plan.json` contains **79 prediction columns,
+64 auxiliary features, and five contextual-ridge columns**, preserving the
+duplicate prediction aliases. All development values were compared with the
+unmodified `round8_nn_blend.bank` over all 1,408,395 rows and match exactly.
+Evidence: `experiments/PB0-bank-verification.json`.
+
+The fixed final-refit rule is the median selected budget **per seed across the
+five completed development folds**. For seeds 2026/7/13, this gives tree rounds
+**904/969/1106** and neural epochs **15/14/14**. This rule is chosen before any
+qualifying result and introduces no new budget search. Other retained tree/NN
+hyperparameters and the 50/50 mixture are unchanged. A newly promoted bank must
+generate a new manifest from its own completed fold reports.
+
+`scripts/production_blend.py` provides `check`, `fit`, and `infer` commands.
+The `fit` command uses all original development probe labels, fits contextual
+ridge and the NN's clipping/scaling on those rows, then saves ridge weights,
+normalizer arrays, LightGBM text models, neural state dictionaries, ordered
+schemas, versions and input/artifact hashes. Inference requires a verified fit
+binding and the same column order; it applies the saved transforms and clips
+the final predictions to [1,5]. It preserves the retained implementation's
+float32 tree prediction before combining with the float64 neural estimate.
+Qualifying labels never enter fitting or inference calculations.
+
+The initial combined-library smoke run aborted with OpenMP Error 15: the
+installed LightGBM and Torch runtimes conflict when both initialize training
+in one process. `scripts/production_blend_tree.py` now runs tree fitting and
+prediction in an isolated subprocess, with no duplicate-runtime override.
+Three targeted tests pass: budget/normalizer compatibility, component and
+saved-model inference compatibility, and complete CLI fit/reload with query
+labels changed from zero to five. They also cover duplicate aliases, schema
+and artifact rejection, unknown-label training rejection, and missing inputs.
+
+**No full-probe final blender has been trained.** The qualifying manifest has
+87 pending entries: 79 prediction columns and eight support/count aliases.
+The 61 remaining qualifying feature entries are available from PF1/PF2. An
+attempt to load the incomplete qualifying bank is verified to fail before
+inference. Final model fitting and production-bank regeneration remain gated
+on freezing the bank after the development target/promotion checks; this work
+does not establish a score gain or complete the production pipeline.
+
 ## Initial artifact inventory
 
 `scripts/production_inventory.py` initially scanned 2,646 JSON records from the primary
