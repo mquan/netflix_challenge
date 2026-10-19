@@ -45,3 +45,28 @@ Stop rule: if the selection head does not beat its matched control on P2,
 drop N1 and try N2 only if the other branch's encoder finds non-pooled signal.
 
 One MPS job at a time; check swap and other sessions before launching.
+
+## N1 as launched (2026-10-18 23:10 PDT)
+
+The first version adds the selection signal as **input**, not as an auxiliary head:
+`scripts/choice_sequence.py` (copy of the A2h trainer at bet-a2-sequence bf3c719)
+with `--choice-tokens 1`. Implicit-only pairs (probe, qualifying and, in the
+holdout dataset, P2) become sequence tokens at their dates with a sixth star
+value CHOICE. At prediction time the queried pairs are dropped from the choice
+tokens. On the holdout dataset there are 5,633,092 choice events, and all
+1,407,566 P2 queries are among them. The run uses A2h-select's exact settings
+and seed, so its per-epoch P2 curve (best 0.86740 at epoch 12) is the matched
+control. Run: `experiments/N1-select.*`. GPU memory is similar to A2h
+(≈45–60 GB), so no blend job runs alongside it.
+An auxiliary selection head (λ·BCE) is the follow-up if tokens alone help.
+
+## HR5: snapshot columns (screen)
+
+`scripts/hr_column_screen.py` fits a linear correction of R9-LAT-A2h's
+out-of-fold residual on each of 204 unused snapshot columns (epoch snapshots
+of A/MT models, Bayes sweeps), using the blend's own user folds. Best single
+columns: MT8 e12 −0.0000248, A2b e14 −0.0000165 (5/5 folds), A2i e6 −0.0000138.
+Over-trained epochs beyond the selected one score highest, which agrees with
+BellKor/BigChaos's advice to over-train for the blend. 19 columns have
+delta < −3e-6 with ≥4 folds better. A batch blend test (HR5-blend) is queued
+after N1 frees memory. Expected ≈−0.0001 at most.
