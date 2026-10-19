@@ -1,0 +1,17 @@
+{
+  "original_commit": "63ca096",
+  "original_source_sha256": "24d65508e43da7cb3c23942c30c961337f394bb5a8e1ad75414f9ee92dee7756",
+  "new_source_sha256": "94dab7a8eaaeeeb0de2c86e583b1bf5aaaca5124a03277e2af489fb7e0d1cc42",
+  "default_development_prediction_byte_identical": true,
+  "default_development_epochs": 2,
+  "prediction_sha256": "d671ea98eb4609f0f228efd77cbd1ab117b4acd09cd9dea028ee6e3847a3a434",
+  "scope": "Small CPU fixture; default selection behavior compared with unmodified source. Full production retraining not run.",
+  "production_tests": {
+    "command": "python -m unittest discover -s tests -p test_autorec_production.py",
+    "passed": 3,
+    "fixture_epochs": 6,
+    "unknown_label_isolation": true,
+    "unknown_metric_omitted": true,
+    "snapshot_matches_fixed_stop": true
+  }
+}

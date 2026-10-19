@@ -87,6 +87,7 @@ blend: $(BIN) $(DATASET)
 test: $(BIN)
 	bash tests/smoke.sh
 	python3 tests/test_joint.py
+	python3 tests/test_native_fixed_epochs.py
 	python3 tests/test_temporal_neighborhood.py
 	python3 tests/test_user_knn.py
 	python3 tests/test_rbm.py

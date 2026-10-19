@@ -1,0 +1,85 @@
+{
+  "recipes": [
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/autorec512-a3-snap.f32",
+      "column_sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+      "training_group": "A3-autorec512-reg",
+      "fixed_epoch": 14,
+      "measured_rmse": 0.917494243624877,
+      "logged_rmse": 0.9174942436,
+      "training_record": "/Users/quan/workspace/netflix_challenge/experiments/A3-autorec512-reg.json",
+      "training_record_sha256": "bdf7ef4fed4b08b2fe3f055d481a2d9d677c2e40216a6b93d1649ca1a9af762d",
+      "training_log_sha256": "3e1ef649501941a68f4d754ef97561fa69c5f4d632859bab49704d1695805e07",
+      "historical_output_digest_present": false,
+      "original_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/autorec.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--predictions",
+        "artifacts/autorec512-a3.f32",
+        "--input-drop",
+        ".5",
+        "--weight-decay",
+        "1e-5",
+        "--lr",
+        "2e-4"
+      ]
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/autorec512-a2.f32",
+      "column_sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+      "training_group": "A2-autorec512-norm",
+      "fixed_epoch": 1,
+      "measured_rmse": 0.931793213169424,
+      "logged_rmse": 0.9317932132,
+      "training_record": "/Users/quan/workspace/netflix_challenge/experiments/A2-autorec512-norm.json",
+      "training_record_sha256": "252016b5f532194c7cda3d5f4d9c6633c58c29d4d597eff8683b6759ddea054d",
+      "training_log_sha256": "900a61ceca265eb48d68c1996b79dfdb0545f4b557d4f4a68105960032318694",
+      "historical_output_digest_present": false,
+      "original_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/autorec.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--predictions",
+        "artifacts/autorec512.f32"
+      ]
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/autorec512-a3.f32",
+      "column_sha256": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+      "training_group": "A3-autorec512-reg",
+      "fixed_epoch": 44,
+      "measured_rmse": 0.9147661432741613,
+      "logged_rmse": 0.9147661433,
+      "training_record": "/Users/quan/workspace/netflix_challenge/experiments/A3-autorec512-reg.json",
+      "training_record_sha256": "bdf7ef4fed4b08b2fe3f055d481a2d9d677c2e40216a6b93d1649ca1a9af762d",
+      "training_log_sha256": "3e1ef649501941a68f4d754ef97561fa69c5f4d632859bab49704d1695805e07",
+      "historical_output_digest_present": true,
+      "original_command": [
+        "/private/tmp/claude-501/-Users-quan-workspace-netflix-challenge/99419fca-71d2-4830-8da9-786465d5c728/scratchpad/venv/bin/python",
+        "scripts/autorec.py",
+        "--data",
+        "data/processed/netflix.bin",
+        "--predictions",
+        "artifacts/autorec512-a3.f32",
+        "--input-drop",
+        ".5",
+        "--weight-decay",
+        "1e-5",
+        "--lr",
+        "2e-4"
+      ]
+    }
+  ],
+  "source_sha256": "94dab7a8eaaeeeb0de2c86e583b1bf5aaaca5124a03277e2af489fb7e0d1cc42",
+  "shared_trajectory": {
+    "group": "A3-autorec512-reg",
+    "epochs": 44,
+    "save_epochs": [
+      14
+    ]
+  },
+  "limitation": "Epoch association uses a unique match to the historical RMSE at its logged precision, not byte-for-byte retraining. Only the final A3 column has a historical output digest here. Original records did not hash Python sources, so source provenance is weaker than the archived neural recipe registry. No full retraining or qualifying score is claimed."
+}

@@ -5,7 +5,8 @@ Input per user: centered training ratings plus an indicator of every known
 (train, probe, qualifying) movie, i.e. the same implicit feedback as N(u).
 Loss is computed only on training ratings; a random fraction of those ratings is
 hidden from the input, so the network learns to predict unseen movies. Probe
-labels are used only to choose the epoch, as with the other models.
+labels are used only to choose the epoch, unless --fixed-epoch is requested.
+All-zero qualifying-label sentinels require --fixed-epoch and are never scored.
 Requires numpy and torch.
 """
 import argparse
@@ -29,6 +30,10 @@ def main():
     ap.add_argument('--hidden', type=int, default=512)
     ap.add_argument('--layers', type=int, default=2)
     ap.add_argument('--epochs', type=int, default=60)
+    ap.add_argument('--fixed-epoch', action='store_true',
+                    help='keep the final requested epoch without query-label selection')
+    ap.add_argument('--save-epoch', type=int, action='append', default=[],
+                    help='also write this fixed trajectory checkpoint as PREFIX.eN.f32')
     ap.add_argument('--batch', type=int, default=512)
     ap.add_argument('--lr', type=float, default=3e-4)
     ap.add_argument('--weight-decay', type=float, default=0.0)
@@ -38,6 +43,10 @@ def main():
     ap.add_argument('--seed', type=int, default=2026)
     ap.add_argument('--device', default='mps' if torch.backends.mps.is_available() else 'cpu')
     args = ap.parse_args()
+    if args.epochs < 1:
+        raise ValueError('epochs must be positive')
+    if args.save_epoch and (not args.fixed_epoch or any(e < 1 or e > args.epochs for e in args.save_epoch)):
+        raise ValueError('saved epochs require --fixed-epoch and must lie within its budget')
     torch.manual_seed(args.seed)
     rng = np.random.default_rng(args.seed)
     dev = torch.device(args.device)
@@ -53,6 +62,10 @@ def main():
     p_user = probe['user'].astype(np.int64)
     p_item = torch.from_numpy(probe['item'].astype(np.int64) - 1)
     p_rating = probe['rating'].astype(np.float64)
+    labeled_queries = bool(np.all((p_rating >= 1) & (p_rating <= 5)))
+    if not len(p_rating) or (not labeled_queries and
+                            (not args.fixed_epoch or not np.all(p_rating == 0))):
+        raise ValueError('unknown query labels must all be zero and require --fixed-epoch')
     order = np.argsort(p_user, kind='stable')
     po = np.searchsorted(p_user[order], np.arange(users + 1))
     probe_users = np.unique(p_user)
@@ -100,7 +113,10 @@ def main():
                     rows = order[po[u]:po[u + 1]]
                     pred[rows] = out[row, p_item[rows]].numpy() + CENTER
         net.train()
-        return pred, float(np.sqrt(np.mean((p_rating - np.clip(pred, 1, 5)) ** 2)))
+        if not np.isfinite(pred).all():
+            raise FloatingPointError('nonfinite predictions')
+        score = float(np.sqrt(np.mean((p_rating - np.clip(pred, 1, 5)) ** 2))) if labeled_queries else None
+        return pred, score
 
     print(f'autorec hidden={args.hidden} layers={args.layers} batch={args.batch} lr={args.lr} '
           f'input_drop={args.input_drop} dropout={args.dropout} wd={args.weight_decay} device={dev}', flush=True)
@@ -123,14 +139,18 @@ def main():
             opt.step()
             sse += float(loss.detach()) * len(vals); n += len(vals)
         pred, score = evaluate()
-        if score < best:
+        if epoch in args.save_epoch:
+            snapshot = pathlib.Path(args.predictions).with_suffix(f'.e{epoch}.f32')
+            pred.astype('<f4').tofile(snapshot)
+        if args.fixed_epoch or score < best:
             best, stale = score, 0
             pred.astype('<f4').tofile(args.predictions)
         else:
             stale += 1
-        print(f'epoch={epoch} train_rmse={np.sqrt(sse / n):.10f} probe_rmse={score:.10f} '
-              f'best={best:.10f} seconds={time.time() - start:.1f}', flush=True)
-        if stale >= args.patience:
+        metric = f'probe_rmse={score:.10f} best={best:.10f} ' if labeled_queries else 'query_labels=unknown '
+        print(f'epoch={epoch} train_rmse={np.sqrt(sse / n):.10f} {metric}'
+              f'seconds={time.time() - start:.1f}', flush=True)
+        if not args.fixed_epoch and stale >= args.patience:
             print(f'early_stop patience={args.patience}', flush=True)
             break
 
