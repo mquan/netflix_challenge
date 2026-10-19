@@ -1,0 +1,324 @@
+{
+  "state": "complete",
+  "encoder_policy": "original_checkpoint_and_saved_basis",
+  "feature_order": [
+    "user_pc0",
+    "item_pc0",
+    "user_pc1",
+    "item_pc1",
+    "user_pc2",
+    "item_pc2",
+    "user_pc3",
+    "item_pc3",
+    "user_pc4",
+    "item_pc4",
+    "user_pc5",
+    "item_pc5",
+    "user_pc6",
+    "item_pc6",
+    "user_pc7",
+    "item_pc7",
+    "user_bias",
+    "user_drift",
+    "day_bias",
+    "scale",
+    "item_bias",
+    "frequency_bias"
+  ],
+  "model": {
+    "rank": 256,
+    "epoch": 41,
+    "fingerprint": 12499777815975055846
+  },
+  "inputs": {
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/manifest.json": "ed6722fb482e2aef991b0947be280049d753f26b80616533891b98e62393e08a",
+    "data/production/stage-c-v1/manifest.json": "537c6a50cb6c0aa0b96d7935cbe87c4f839dcc2e4440a9651b8d0dd55e8a19c8",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/basis.npy": "191ecf24acab2e026aa9b1d5b1e03b339da52adf1d79b7ec2a0c30e03ab63190",
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "artifacts/K1-joint256.bin": "e4dc4609f7d01b2bc6b8b3bf74e6b0bdc136c26c41092ab7c50e57d6406fb6d7",
+    "data/production/stage-c-v1/train-probe-qualifying.bin": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc0.f32": "98c47d4e4d8a6d22031dfb2847eb1de7cdd1ce7e4f984cb5af4bf4b3bec81c4e",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc0.f32": "61c89bd3aa2b2c9972b8b99595de1a2d86a87b6324e187ffcd12800034308364",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc1.f32": "08d5375753e474c33296a2c39f95654912a2e5fb04f70a6762773457f2da15bd",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc1.f32": "be477ecdb6babc060f758e7875a86357114ac2d6a3319b43148f6c83f028b0e4",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc2.f32": "e142efd5f1c7d15213d67773e268367de674583a0d50209ee5475418d96604f6",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc2.f32": "ffa4da5c6ea20f7632adaf7086d202ab9bc6428b1175e49830045076064ee7e9",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc3.f32": "2631e0e7ab426d47a043a962cb15f9f9831afc844f99d5af8b14e691c1800b79",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc3.f32": "94c5ad2e2188cc8c44749dd841574041473ebfbdf0ae89356c2fce4089e9d76a",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc4.f32": "d2fbfda56771f076fd5dfa199b4359592b84cf56b0e27ac1956b4d401767e85b",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc4.f32": "873a5054cbfa90a323f355366e204d730fb7bc43daa096e276a4e3f31d46835c",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc5.f32": "08df2278bb4c91d6e6eca286d5ce7f8d2324d62064a3c1c5927158cbd582a423",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc5.f32": "1facd8e0feb34ae9f5090db35a506e2ea0d48efdb2d46ac651ebbad63d15d242",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc6.f32": "013ca820c2c1de32057b0f3b2a05357c4ef18b1a8125770a17d8ab1fa8343f19",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc6.f32": "59501f9adc8ae1b4d4610cbdf90768662e38a8d961b05c51fbfcffb74020f63f",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc7.f32": "14868de20ba5222011b02110ef001671e6ae70e9039e80e444f40a4aed9c0843",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc7.f32": "e7fe2b79326ad470a0626da4c7a8c215b84927298488bb2e65d9084b03521843",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_bias.f32": "c5b3f0a5882c2fac1719d109c1aa6623f6b5181b471942d53fcce970cc326403",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_drift.f32": "9b97383c565c92d5a87b04ffb6558466d952b09212ee38cd77c7d9aea970d08a",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/day_bias.f32": "b1a9d525b0bae82e49d26dbf7fec257dfd53ade21efe9c8585adfda1a1087f6c",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/scale.f32": "d6537350da03cb70724418edcc810a200c0d190e855d8793acc2f6f1f87fa74f",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_bias.f32": "f479dad039d87e1560b353ba506d944f1eec12f887a169c494402afe25355252",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/frequency_bias.f32": "f41cda4808f4eccaa09723dc54ba79e09fe0a47f6adc987f5177b6da24216e90"
+  },
+  "stages": {
+    "development_replay": {
+      "user_pc0": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc0.f32",
+        "sha256": "98c47d4e4d8a6d22031dfb2847eb1de7cdd1ce7e4f984cb5af4bf4b3bec81c4e",
+        "rows": 1408395
+      },
+      "item_pc0": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc0.f32",
+        "sha256": "61c89bd3aa2b2c9972b8b99595de1a2d86a87b6324e187ffcd12800034308364",
+        "rows": 1408395
+      },
+      "user_pc1": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc1.f32",
+        "sha256": "08d5375753e474c33296a2c39f95654912a2e5fb04f70a6762773457f2da15bd",
+        "rows": 1408395
+      },
+      "item_pc1": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc1.f32",
+        "sha256": "be477ecdb6babc060f758e7875a86357114ac2d6a3319b43148f6c83f028b0e4",
+        "rows": 1408395
+      },
+      "user_pc2": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc2.f32",
+        "sha256": "e142efd5f1c7d15213d67773e268367de674583a0d50209ee5475418d96604f6",
+        "rows": 1408395
+      },
+      "item_pc2": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc2.f32",
+        "sha256": "ffa4da5c6ea20f7632adaf7086d202ab9bc6428b1175e49830045076064ee7e9",
+        "rows": 1408395
+      },
+      "user_pc3": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc3.f32",
+        "sha256": "2631e0e7ab426d47a043a962cb15f9f9831afc844f99d5af8b14e691c1800b79",
+        "rows": 1408395
+      },
+      "item_pc3": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc3.f32",
+        "sha256": "94c5ad2e2188cc8c44749dd841574041473ebfbdf0ae89356c2fce4089e9d76a",
+        "rows": 1408395
+      },
+      "user_pc4": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc4.f32",
+        "sha256": "d2fbfda56771f076fd5dfa199b4359592b84cf56b0e27ac1956b4d401767e85b",
+        "rows": 1408395
+      },
+      "item_pc4": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc4.f32",
+        "sha256": "873a5054cbfa90a323f355366e204d730fb7bc43daa096e276a4e3f31d46835c",
+        "rows": 1408395
+      },
+      "user_pc5": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc5.f32",
+        "sha256": "08df2278bb4c91d6e6eca286d5ce7f8d2324d62064a3c1c5927158cbd582a423",
+        "rows": 1408395
+      },
+      "item_pc5": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc5.f32",
+        "sha256": "1facd8e0feb34ae9f5090db35a506e2ea0d48efdb2d46ac651ebbad63d15d242",
+        "rows": 1408395
+      },
+      "user_pc6": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc6.f32",
+        "sha256": "013ca820c2c1de32057b0f3b2a05357c4ef18b1a8125770a17d8ab1fa8343f19",
+        "rows": 1408395
+      },
+      "item_pc6": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc6.f32",
+        "sha256": "59501f9adc8ae1b4d4610cbdf90768662e38a8d961b05c51fbfcffb74020f63f",
+        "rows": 1408395
+      },
+      "user_pc7": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_pc7.f32",
+        "sha256": "14868de20ba5222011b02110ef001671e6ae70e9039e80e444f40a4aed9c0843",
+        "rows": 1408395
+      },
+      "item_pc7": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_pc7.f32",
+        "sha256": "e7fe2b79326ad470a0626da4c7a8c215b84927298488bb2e65d9084b03521843",
+        "rows": 1408395
+      },
+      "user_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_bias.f32",
+        "sha256": "c5b3f0a5882c2fac1719d109c1aa6623f6b5181b471942d53fcce970cc326403",
+        "rows": 1408395
+      },
+      "user_drift": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/user_drift.f32",
+        "sha256": "9b97383c565c92d5a87b04ffb6558466d952b09212ee38cd77c7d9aea970d08a",
+        "rows": 1408395
+      },
+      "day_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/day_bias.f32",
+        "sha256": "b1a9d525b0bae82e49d26dbf7fec257dfd53ade21efe9c8585adfda1a1087f6c",
+        "rows": 1408395
+      },
+      "scale": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/scale.f32",
+        "sha256": "d6537350da03cb70724418edcc810a200c0d190e855d8793acc2f6f1f87fa74f",
+        "rows": 1408395
+      },
+      "item_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/item_bias.f32",
+        "sha256": "f479dad039d87e1560b353ba506d944f1eec12f887a169c494402afe25355252",
+        "rows": 1408395
+      },
+      "frequency_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/development_replay/frequency_bias.f32",
+        "sha256": "f41cda4808f4eccaa09723dc54ba79e09fe0a47f6adc987f5177b6da24216e90",
+        "rows": 1408395
+      }
+    },
+    "qualifying": {
+      "user_pc0": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc0.f32",
+        "sha256": "62da57af9b37d09ad2e9d535c809826bfd44460e7604787d100b2156e19ea82e",
+        "rows": 2817131
+      },
+      "item_pc0": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc0.f32",
+        "sha256": "370f4361a373c23ed8e211f73fef1032c12ba94a5edcf46f3c1d950e15ec12c5",
+        "rows": 2817131
+      },
+      "user_pc1": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc1.f32",
+        "sha256": "d0c51cf2884017ee876769cd679da337535763d035338592e0749623cd3ad396",
+        "rows": 2817131
+      },
+      "item_pc1": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc1.f32",
+        "sha256": "0aebebd12aca4153cdc6b78bf3bb34c5d3cf167a5918a3cbccc5c8995c56fed6",
+        "rows": 2817131
+      },
+      "user_pc2": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc2.f32",
+        "sha256": "280d5f89bf445c652c4a95b1933b2de7bdaa0eb044e9f7c2ce74f37405447a95",
+        "rows": 2817131
+      },
+      "item_pc2": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc2.f32",
+        "sha256": "e64ccc2de2eb34b2d988c9e8bdebdfc436d7a851335723b121385aacea92c82a",
+        "rows": 2817131
+      },
+      "user_pc3": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc3.f32",
+        "sha256": "0601cdef7a0536bb34af3ecd8ed0ad68ccb68e2611809284e925fdc1e94a823f",
+        "rows": 2817131
+      },
+      "item_pc3": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc3.f32",
+        "sha256": "931680a6f540198a6bcb0ac992e58d3f2a820774ef20305eff279fd5682e29aa",
+        "rows": 2817131
+      },
+      "user_pc4": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc4.f32",
+        "sha256": "c247c1984c75d5eb97cea25016d7f2adbd6a5319d94b1400b095f4501d679ebf",
+        "rows": 2817131
+      },
+      "item_pc4": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc4.f32",
+        "sha256": "af625ca7af90b4f7e1e7d0ef0a0ffd8f5ddb13883544101473745630c1b52ea0",
+        "rows": 2817131
+      },
+      "user_pc5": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc5.f32",
+        "sha256": "07b111489a34ab2ed1ea3acb6474823793ae28ea5a5aedf75d7263d5c7a774b9",
+        "rows": 2817131
+      },
+      "item_pc5": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc5.f32",
+        "sha256": "e622dcd94badd35b951b75211883f5878e88571bcf1da10fa7c00218ec4a3848",
+        "rows": 2817131
+      },
+      "user_pc6": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc6.f32",
+        "sha256": "8b7532cd0c7dac45b7aac35ac138f5be9b92bdde88e8f0f835eccca51f5d688f",
+        "rows": 2817131
+      },
+      "item_pc6": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc6.f32",
+        "sha256": "b6aca64654cdc6a08f5fbdf699db75040b016f2631edb8217cb6b257d7641e4b",
+        "rows": 2817131
+      },
+      "user_pc7": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc7.f32",
+        "sha256": "d294eaebd74dd031b2ff974aeab3144e1f4a480ea4aec8a8fca4c45946ff677a",
+        "rows": 2817131
+      },
+      "item_pc7": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc7.f32",
+        "sha256": "e8feb929ec03a29b7f6146c049d9648d01f25df4ad0968f333d8911ae2ed3b16",
+        "rows": 2817131
+      },
+      "user_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_bias.f32",
+        "sha256": "71b0e5966354488ab992876a3ed2e3b1b128dc6fcdf5200b05b935b18542d6d8",
+        "rows": 2817131
+      },
+      "user_drift": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_drift.f32",
+        "sha256": "65f644f41735f29363cf8ba75864460f9cd28169501107f158ad16b2c20a6d8d",
+        "rows": 2817131
+      },
+      "day_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/day_bias.f32",
+        "sha256": "4d18084f7e1621ef093691f6ec893e2102c1d8ef561eff6381382ababf3debe4",
+        "rows": 2817131
+      },
+      "scale": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/scale.f32",
+        "sha256": "e49338fcbdc0329046d2d375ed0dda2d45167b750d7ff06ad4b0e6d54dc0ea57",
+        "rows": 2817131
+      },
+      "item_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_bias.f32",
+        "sha256": "b5b96f50c46f3b28648807dc772c417c4caac0cd8d1ad5f158e11a7a11e3a547",
+        "rows": 2817131
+      },
+      "frequency_bias": {
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/frequency_bias.f32",
+        "sha256": "78905092a1269e9e6fab67fc308362924eda24da72003873849733f2c002a2c5",
+        "rows": 2817131
+      }
+    }
+  },
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/scripts/production_latent.py": "8187d2cf04f7414f76a4ded0c1b3d75830ec91b816192571d2639f6fa7829812",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/round9_latent.py": "18eccee1ebbdd583876bd5615c3dd53095af43086915946eb65e0c63820eebe0"
+  },
+  "checks": [
+    "all retained development feature bytes reproduced",
+    "production dataset hash and original source binding verified",
+    "implicit arrays and session indexing unchanged",
+    "every query triple present in original implicit context",
+    "all qualifying feature rows finite and in input order",
+    "frozen inputs rehashed after export"
+  ],
+  "limitation": "Latent features only. No retrained base bank, fitted production blender, or score improvement is claimed.",
+  "retained_blender": {
+    "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-s3.json",
+    "sha256": "339022214b693a0b9b09639df6ae490e4e09527c94c6e9773d17cd3141105bc3",
+    "latent_columns_bound_by_hash": 22
+  },
+  "verification": {
+    "path": "experiments/PF1-frozen-latent-verification.json",
+    "sha256": "c2f57b2362d40fd1a54065f09843e47f9edd78384a9e84b9c7a09dac744d0dfe"
+  },
+  "saved_basis": {
+    "path": "experiments/production-latent-basis.npy",
+    "sha256": "191ecf24acab2e026aa9b1d5b1e03b339da52adf1d79b7ec2a0c30e03ab63190"
+  },
+  "validation": {
+    "command": "OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 /Users/quan/.cache/netflix-venv/bin/python -m unittest discover -s tests -p test_production_latent.py -v",
+    "tests_passed": 3
+  },
+  "experiment": {
+    "path": "experiments/PF1-frozen-latent.json",
+    "sha256": "576d7123e589814940d05d99587028d3e0c3d12aab5e77533b912bc2556d87bb"
+  }
+}
