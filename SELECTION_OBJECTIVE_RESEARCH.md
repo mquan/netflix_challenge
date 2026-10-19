@@ -24,6 +24,17 @@ stopped and current process inspection confirms GPU availability. N1's chain
 can proceed from selection into a full refit, so completion of its selection
 process alone does not free the GPU. No SO1 full-data job has been launched.
 
+`scripts/selection_objective_queue.py` provides the waiting runner. It requires
+N1's chain status to be terminal and two process snapshots 30 seconds apart
+with no other Python executable active. This conservative check also waits
+for unknown Python training jobs. It verifies the frozen plan, inputs and
+runner before each arm, runs control then treatment and the fixed gate, and
+stops on failure. It never promotes a result or starts the full-data refit.
+The original SO1 plan remains immutable; a separate queue launch record binds
+its digest and commands. Three targeted queue tests pass. A process check
+cannot reserve the GPU against an unrelated future launch, so other research
+must continue to avoid starting competing jobs once this queue takes over.
+
 - Same A2h-select checkpoint, training-only P2 dataset, initialization seed,
   rating masks, auxiliary examples, optimizer restart, dropout stream, batch
   order and two complete fine-tuning epochs in both arms.

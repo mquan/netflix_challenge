@@ -321,7 +321,7 @@ See `experiments/PR5-J1-retraining-verification.json` and the accompanying full
 experiment record/source archive. The old hash discrepancy is preserved; this
 new run supplies direct recipe evidence for the currently retained J1.
 
-J2–J4 still need equivalent retraining checks. All production commands must use
+J2–J4 initially needed equivalent retraining checks. All production commands must use
 new production predecessors and graphs. These development-data replays and J1
 retraining do not establish a production score or reduce the target gap.
 
@@ -331,3 +331,26 @@ and reference hashes are in `experiments/PR6-legacy-joint.plan.json`; live statu
 is `experiments/PR6-legacy-joint.status.json`. It uses one CPU thread at niceness
 15 and stops on any checkpoint or prediction mismatch. SO1 remains unlaunched
 while N1 and its follow-on chain retain GPU priority.
+
+PR6 has now completed J3 and J4: both newly trained checkpoints and both
+prediction columns match the retained artifacts byte for byte. J4 used the
+newly reproduced J3 predecessor. Their individual `PR6-legacy-joint-J3` and
+`PR6-legacy-joint-J4.verification.json` reports are final; J2 remains running.
+
+## Rebuilt graph and time-baseline dependencies
+
+PR7 retrained the original fixed 40-iteration time baseline and rebuilt G2's
+256-neighbor graph with history cap 256. Both match their retained artifacts
+byte for byte. The native graph ranks each row by descending similarity and
+movie ID. `scripts/production_graph.py` validates this ordering, payload,
+neighbor IDs and fingerprint, then retains each row's first 64 entries. Applied
+to the new graph, this exactly reproduces the retained 64-neighbor graph.
+
+Inference using the retained epoch-4 learned-neighborhood weights and the
+**newly rebuilt** baseline/graph reproduces all 1,408,395 frozen predictions
+byte for byte (RMSE 0.9100421231). Evidence is in
+`experiments/PR7-dependency-verification.json` and its three experiment records.
+The graph transformation's two tests pass. This verifies dependency recipes
+on the original dataset; neighborhood weights have not been retrained here,
+and production-data graphs/baselines must still be built on the production
+dataset. No score gain is claimed.

@@ -1,0 +1,66 @@
+{
+  "created_utc": "2026-10-19T08:27:11.678114+00:00",
+  "comparisons": {
+    "time_baseline": {
+      "reference": "/Users/quan/workspace/netflix_challenge/artifacts/time-baseline.bin",
+      "reproduced": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/time-baseline.bin",
+      "reference_sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "reproduced_sha256": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+      "byte_identical": true,
+      "bytes": 153626284
+    },
+    "graph256": {
+      "reference": "/Users/quan/workspace/netflix_challenge/artifacts/r4/neighbors256.bin",
+      "reproduced": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/neighbors256.bin",
+      "reference_sha256": "4d00cfab0b2edf67a6e09aba27b8578035a2cb2704875241b570341dd85879d6",
+      "reproduced_sha256": "4d00cfab0b2edf67a6e09aba27b8578035a2cb2704875241b570341dd85879d6",
+      "byte_identical": true,
+      "bytes": 27294744
+    },
+    "graph64": {
+      "reference": "/Users/quan/workspace/netflix_challenge/artifacts/neighbors64.bin",
+      "reproduced": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/graph64-rebuilt/neighbors64.bin",
+      "reference_sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "reproduced_sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+      "byte_identical": true,
+      "bytes": 6823704
+    },
+    "neighborhood_predictions": {
+      "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+      "reproduced": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/neighborhood64.f32",
+      "reference_sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "reproduced_sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "byte_identical": true,
+      "bytes": 5633580
+    }
+  },
+  "experiments": {
+    "/Users/quan/workspace/netflix_challenge/experiments/PR7-time-baseline-retrain.json": {
+      "sha256": "3fedb8fae87e1da9efc2809f9b7ab5e504b809a9e0ab61940837070f2bb0df59",
+      "exit_code": 0,
+      "elapsed_seconds": 123.88723562506493
+    },
+    "/Users/quan/workspace/netflix_challenge/experiments/PR7-graph256-rebuild.json": {
+      "sha256": "36b66a42e16b5296cd7e058ab20037ceeaa2c85dd08ac3bb1db39c32a8d970ed",
+      "exit_code": 0,
+      "elapsed_seconds": 80.43595954205375
+    },
+    "/Users/quan/workspace/netflix_challenge/experiments/PR7-neighborhood-dependency-replay.json": {
+      "sha256": "e5bc18802e715e58dc227eb9bab13f149ca81da0281a3aaa4d1fbbbc190acd24",
+      "exit_code": 0,
+      "elapsed_seconds": 5.543688292033039
+    }
+  },
+  "graph_prefix_manifest": {
+    "items": 17770,
+    "source_neighbors": 256,
+    "neighbors": 64,
+    "dataset_fingerprint_hex": "ad7821b26c8051e6",
+    "source": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/neighbors256.bin",
+    "source_sha256": "4d00cfab0b2edf67a6e09aba27b8578035a2cb2704875241b570341dd85879d6",
+    "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/graph64-rebuilt/neighbors64.bin",
+    "output_sha256": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "transformation": "Per-movie prefix of the native descending (similarity, movie-ID) ordering; fingerprint preserved."
+  },
+  "scope": "Complete original-data time baseline and graph retraining, then inference of retained neighborhood weights against new dependencies. Neighborhood weights were not retrained. No score improvement or production-data fit claimed."
+}
