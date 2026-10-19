@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-19T08:49:32.282583+00:00",
+  "inputs": {
+    "retained": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-j64-p2.f32",
+      "sha256": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641"
+    },
+    "replay": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR9-knn-remaining/knn64-j64-p2.f32",
+      "sha256": "399b4be954648fb7ddf90e52b35d651cc3e05b51890a517ce7a99f77d92fe80a"
+    },
+    "support": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR9-knn-remaining/knn64-j64-p2.support.f32",
+      "sha256": "544b79acd0a90a320e2bba0b6884ce7c93f56e0c7b4ab140a2c27a48ad7f04d8"
+    },
+    "base": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/joint64.f32",
+      "sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8"
+    }
+  },
+  "formula": "For prediction b + numerator/(support + shrink), use the known shrink=.05 replay to reconstruct numerator; inferred_shrink = (replay-base)*(support+float32(.05))/(retained-base)-support. No rating labels are used.",
+  "informative_row_filter": "abs(retained-base)>.05 and abs(replay-base)>.05 and support>.01",
+  "rows": 8743,
+  "quantiles": {
+    "min": 0.9999443436458197,
+    "p01": 0.9999700162122063,
+    "p10": 0.9999864905017434,
+    "median": 1.0000001011516866,
+    "p90": 1.0000136545946652,
+    "p99": 1.0000307413338712,
+    "max": 1.0000661743487347
+  },
+  "inferred_shrink": 1.0,
+  "decision": "One follow-up replay at shrink=1, supported by algebraic reconstruction from frozen predictions. Original PR9 mismatch stays recorded. Byte equality is required; no rating-score tuning.",
+  "command": [
+    "build/netflix",
+    "knn",
+    "--data",
+    "data/processed/netflix.bin",
+    "--graph",
+    "artifacts/neighbors64.bin",
+    "--joint-model",
+    "artifacts/joint64.bin",
+    "--neighbors",
+    "64",
+    "--power",
+    "2",
+    "--shrink",
+    "1",
+    "--time-decay",
+    "0",
+    "--predictions",
+    "artifacts/production-replay/PR10-knn-J1-p2-shrink1.f32",
+    "--support",
+    "artifacts/production-replay/PR10-knn-J1-p2-shrink1.support.f32"
+  ],
+  "binary_sha256": "686631036b7f1c2f4e0c0d17d5bf7e8bc15e03834d3abc346d5fb7361db5234c"
+}
