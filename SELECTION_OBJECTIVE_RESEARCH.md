@@ -241,3 +241,52 @@ Do not wrap that driver in `experiment.py`: its conservative idle check would
 wait for the wrapper Python process. The driver wraps its individual stages
 itself. No additional waiting process has been launched, because it would also
 block the existing SO1 queue.
+
+## Iteration-speed diagnosis: row padding
+
+The synchronous encoder path builds a dense `[rows, width, d_model]` tensor,
+rounding user rows up to multiples of 64 before every transformer block. The
+padding mask protects semantic attention, but the dense tensor and attention
+shapes still include those rows. SO1 pays this cost for both rating and
+auxiliary passes; the prefetch thread overlaps only CPU input construction.
+
+`scripts/selection_padding_audit.py` replays exact CPU preparation RNG streams
+for the first 128 of 6,168 frozen SO1 epoch-1 shuffled batches (8,927 users).
+There is no model, gradient, optimizer or GPU work. Actual batch sizes range
+from 10 to 512 users and padded widths from 32 to 1,536. Relative to keeping
+only actual user rows at each observed width, the current policy multiplies
+dense token slots by 2.43 for rating / 2.68 for auxiliary, and the dense
+attention-size estimate by 3.64 / 4.32 respectively.
+
+| Row-padding multiple | Rating attention-size multiplier | Auxiliary multiplier | Rating / auxiliary distinct shapes |
+|---|---:|---:|---:|
+| 64, current | 3.644 | 4.316 | 34 / 32 |
+| 32 | 2.011 | 2.274 | 37 / 36 |
+| 16 | 1.337 | 1.397 | 41 / 41 |
+| 8 | 1.249 | 1.321 | 47 / 48 |
+| 1 | 1.000 | 1.000 | 78 / 82 |
+
+**First benchmark candidate: padding to 16 rows.** Across these two passes it
+uses 2.87 times fewer dense attention cells and 2.07 times fewer dense token
+slots than 64. These are analytical workload proxies, not measured speedups,
+kernel operations or allocated attention matrices. Confidence is high in the
+shape counts and unestablished in MPS wall-time benefit. More distinct shapes
+can increase compilation/cache costs. A broader dynamic batching redesign is
+not justified before this small comparison is timed.
+
+Compatibility is behavior-visible for training: a CPU fixture confirms that
+the actual encoder receives the predicted shapes, evaluation outputs agree
+within 1e-6, but the training RNG state differs after the forward pass. Thus
+this must not be inserted silently into an existing learning comparison.
+**No optimization is applied; the queued SO1 script and plan remain frozen.**
+Future adoption requires an explicitly fixed matched recipe plus an idle-MPS
+benchmark of representative real batches, including warm-up/compilation,
+sustained time, peak memory and shape-cache behavior. CPU input agreement is
+not MPS equivalence, and this sample is not the full epoch.
+
+The experiment/source archive, shape report and independent arithmetic check
+are `experiments/SO1-padding-audit.*` and
+`experiments/SO1-padding-audit-verification.json`. One CPU contract test passes;
+all 24 live queue bindings are unchanged. This finding addresses iteration
+cost, not the remaining score gap. The `optimize-performance` skill was used
+for this audit; no skill updates are suggested.

@@ -1,0 +1,98 @@
+{"prepared_batches": 32, "total_batches": 6168, "seconds": 0.6101420000195503}
+{"prepared_batches": 64, "total_batches": 6168, "seconds": 1.310501915984787}
+{"prepared_batches": 96, "total_batches": 6168, "seconds": 1.891909125028178}
+{"prepared_batches": 128, "total_batches": 6168, "seconds": 2.5401923750760034}
+{
+  "rating": {
+    "batches": 128,
+    "real_users": 8927,
+    "real_tokens": 1593084,
+    "min_users": 10,
+    "max_users": 512,
+    "min_width": 32,
+    "max_width": 1536,
+    "padding_options": {
+      "1": {
+        "dense_token_slots": 1853792,
+        "dense_attention_cells": 817691648,
+        "row_padding_linear_multiplier": 1.0,
+        "row_padding_attention_multiplier": 1.0,
+        "distinct_batch_shapes": 78
+      },
+      "8": {
+        "dense_token_slots": 2095872,
+        "dense_attention_cells": 1021616128,
+        "row_padding_linear_multiplier": 1.130586387253802,
+        "row_padding_attention_multiplier": 1.2493904401479223,
+        "distinct_batch_shapes": 47
+      },
+      "16": {
+        "dense_token_slots": 2250240,
+        "dense_attention_cells": 1093517312,
+        "row_padding_linear_multiplier": 1.2138578653915866,
+        "row_padding_attention_multiplier": 1.3373223447673028,
+        "distinct_batch_shapes": 41
+      },
+      "32": {
+        "dense_token_slots": 2868224,
+        "dense_attention_cells": 1644068864,
+        "row_padding_linear_multiplier": 1.5472199685833146,
+        "row_padding_attention_multiplier": 2.010622057864042,
+        "distinct_batch_shapes": 37
+      },
+      "64": {
+        "dense_token_slots": 4497408,
+        "dense_attention_cells": 2979266560,
+        "row_padding_linear_multiplier": 2.426058586939635,
+        "row_padding_attention_multiplier": 3.6435086102285834,
+        "distinct_batch_shapes": 34
+      }
+    }
+  },
+  "auxiliary": {
+    "batches": 128,
+    "real_users": 8927,
+    "real_tokens": 995133,
+    "min_users": 10,
+    "max_users": 512,
+    "min_width": 32,
+    "max_width": 1536,
+    "padding_options": {
+      "1": {
+        "dense_token_slots": 1275744,
+        "dense_attention_cells": 498945024,
+        "row_padding_linear_multiplier": 1.0,
+        "row_padding_attention_multiplier": 1.0,
+        "distinct_batch_shapes": 82
+      },
+      "8": {
+        "dense_token_slots": 1472000,
+        "dense_attention_cells": 658948096,
+        "row_padding_linear_multiplier": 1.153836506383726,
+        "row_padding_attention_multiplier": 1.3206827692503453,
+        "distinct_batch_shapes": 48
+      },
+      "16": {
+        "dense_token_slots": 1580544,
+        "dense_attention_cells": 697057280,
+        "row_padding_linear_multiplier": 1.2389194070283693,
+        "row_padding_attention_multiplier": 1.3970622943821562,
+        "distinct_batch_shapes": 41
+      },
+      "32": {
+        "dense_token_slots": 2087936,
+        "dense_attention_cells": 1134460928,
+        "row_padding_linear_multiplier": 1.636641834098377,
+        "row_padding_attention_multiplier": 2.273719294573023,
+        "distinct_batch_shapes": 36
+      },
+      "64": {
+        "dense_token_slots": 3418112,
+        "dense_attention_cells": 2153447424,
+        "row_padding_linear_multiplier": 2.6793087014322623,
+        "row_padding_attention_multiplier": 4.316001403793938,
+        "distinct_batch_shapes": 32
+      }
+    }
+  }
+}

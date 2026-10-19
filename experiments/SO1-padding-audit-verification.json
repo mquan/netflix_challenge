@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "report_sha256": "0d2f82b80f2d92068e35dd5c4fee96f8e42f2e5607630fca4c7d22eaed162c46",
+  "sampled_batches": 128,
+  "full_epoch_batches": 6168,
+  "combined_passes": {
+    "1": {
+      "dense_token_slots": 3129536,
+      "dense_attention_cells": 1316636672
+    },
+    "8": {
+      "dense_token_slots": 3567872,
+      "dense_attention_cells": 1680564224
+    },
+    "16": {
+      "dense_token_slots": 3830784,
+      "dense_attention_cells": 1790574592
+    },
+    "32": {
+      "dense_token_slots": 4956160,
+      "dense_attention_cells": 2778529792
+    },
+    "64": {
+      "dense_token_slots": 7915520,
+      "dense_attention_cells": 5132713984
+    }
+  },
+  "ratio_64_to_16_attention_cells": 2.866517824463802,
+  "ratio_64_to_16_token_slots": 2.06629243517776,
+  "tests_passed": 1,
+  "tests": "experiments/SO1-padding-audit-tests.json",
+  "frozen_queue_inputs_unchanged": 24,
+  "verification": "Independent ceiling arithmetic reproduces every recorded shape aggregate. CPU encoder hooks verify padded batch dimensions; eval predictions agree within 1e-6; training RNG state changes with row padding.",
+  "limitation": "First 128 shuffled batches only, not a full epoch or measured MPS runtime. No optimization applied and no score gain claimed."
+}

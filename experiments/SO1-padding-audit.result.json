@@ -1,0 +1,1806 @@
+{
+  "plan_sha256": "c0490e6e0d9099cbd3745637cf9a11af3796e6339c88fcf3fd5c9f61c6c1866e",
+  "source_sha256": "908c7e0855c9b7b25afbaf2633d25d304c1bd78a868d046377d2ade953872fd5",
+  "state": "read_only_shape_audit",
+  "sampled_batches": 128,
+  "full_epoch_batches": 6168,
+  "sampler": "First consecutive batches of the frozen SO1 epoch-1 shuffled order; includes both passes with exact CPU preparation RNG streams.",
+  "config": {
+    "representation": "categorical",
+    "head": "distribution",
+    "loss": "mse",
+    "objective": "masked",
+    "rank": 64,
+    "hidden": 256,
+    "dropout": 0.1,
+    "input_drop": 0.5,
+    "lr": 0.0003,
+    "weight_decay": 0.001,
+    "batch_users": 512,
+    "nnz_budget": 131072,
+    "seed": 20260928,
+    "device": "cpu",
+    "context": "session",
+    "suffix_prob": 0.0,
+    "time_bins": 32,
+    "week_days": 0,
+    "seq_len": 1536,
+    "recent_frac": 0.5,
+    "retrieval_table": "",
+    "retrieval_frac": 0.5,
+    "max_targets": 128,
+    "d_model": 64,
+    "layers": 2,
+    "heads": 4,
+    "ff": 256,
+    "batch_tokens": 16384,
+    "bucket": 32,
+    "windows": 1,
+    "pad_width": 32,
+    "pad_rows": 64
+  },
+  "summary": {
+    "rating": {
+      "batches": 128,
+      "real_users": 8927,
+      "real_tokens": 1593084,
+      "min_users": 10,
+      "max_users": 512,
+      "min_width": 32,
+      "max_width": 1536,
+      "padding_options": {
+        "1": {
+          "dense_token_slots": 1853792,
+          "dense_attention_cells": 817691648,
+          "row_padding_linear_multiplier": 1.0,
+          "row_padding_attention_multiplier": 1.0,
+          "distinct_batch_shapes": 78
+        },
+        "8": {
+          "dense_token_slots": 2095872,
+          "dense_attention_cells": 1021616128,
+          "row_padding_linear_multiplier": 1.130586387253802,
+          "row_padding_attention_multiplier": 1.2493904401479223,
+          "distinct_batch_shapes": 47
+        },
+        "16": {
+          "dense_token_slots": 2250240,
+          "dense_attention_cells": 1093517312,
+          "row_padding_linear_multiplier": 1.2138578653915866,
+          "row_padding_attention_multiplier": 1.3373223447673028,
+          "distinct_batch_shapes": 41
+        },
+        "32": {
+          "dense_token_slots": 2868224,
+          "dense_attention_cells": 1644068864,
+          "row_padding_linear_multiplier": 1.5472199685833146,
+          "row_padding_attention_multiplier": 2.010622057864042,
+          "distinct_batch_shapes": 37
+        },
+        "64": {
+          "dense_token_slots": 4497408,
+          "dense_attention_cells": 2979266560,
+          "row_padding_linear_multiplier": 2.426058586939635,
+          "row_padding_attention_multiplier": 3.6435086102285834,
+          "distinct_batch_shapes": 34
+        }
+      }
+    },
+    "auxiliary": {
+      "batches": 128,
+      "real_users": 8927,
+      "real_tokens": 995133,
+      "min_users": 10,
+      "max_users": 512,
+      "min_width": 32,
+      "max_width": 1536,
+      "padding_options": {
+        "1": {
+          "dense_token_slots": 1275744,
+          "dense_attention_cells": 498945024,
+          "row_padding_linear_multiplier": 1.0,
+          "row_padding_attention_multiplier": 1.0,
+          "distinct_batch_shapes": 82
+        },
+        "8": {
+          "dense_token_slots": 1472000,
+          "dense_attention_cells": 658948096,
+          "row_padding_linear_multiplier": 1.153836506383726,
+          "row_padding_attention_multiplier": 1.3206827692503453,
+          "distinct_batch_shapes": 48
+        },
+        "16": {
+          "dense_token_slots": 1580544,
+          "dense_attention_cells": 697057280,
+          "row_padding_linear_multiplier": 1.2389194070283693,
+          "row_padding_attention_multiplier": 1.3970622943821562,
+          "distinct_batch_shapes": 41
+        },
+        "32": {
+          "dense_token_slots": 2087936,
+          "dense_attention_cells": 1134460928,
+          "row_padding_linear_multiplier": 1.636641834098377,
+          "row_padding_attention_multiplier": 2.273719294573023,
+          "distinct_batch_shapes": 36
+        },
+        "64": {
+          "dense_token_slots": 3418112,
+          "dense_attention_cells": 2153447424,
+          "row_padding_linear_multiplier": 2.6793087014322623,
+          "row_padding_attention_multiplier": 4.316001403793938,
+          "distinct_batch_shapes": 32
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "batch": 1,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 10826
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 9721
+      }
+    },
+    {
+      "batch": 2,
+      "rating": {
+        "users": 16,
+        "width": 672,
+        "real_tokens": 9895
+      },
+      "auxiliary": {
+        "users": 16,
+        "width": 544,
+        "real_tokens": 7899
+      }
+    },
+    {
+      "batch": 3,
+      "rating": {
+        "users": 21,
+        "width": 544,
+        "real_tokens": 10541
+      },
+      "auxiliary": {
+        "users": 21,
+        "width": 416,
+        "real_tokens": 7759
+      }
+    },
+    {
+      "batch": 4,
+      "rating": {
+        "users": 441,
+        "width": 64,
+        "real_tokens": 15716
+      },
+      "auxiliary": {
+        "users": 441,
+        "width": 32,
+        "real_tokens": 6742
+      }
+    },
+    {
+      "batch": 5,
+      "rating": {
+        "users": 12,
+        "width": 800,
+        "real_tokens": 9148
+      },
+      "auxiliary": {
+        "users": 12,
+        "width": 704,
+        "real_tokens": 7512
+      }
+    },
+    {
+      "batch": 6,
+      "rating": {
+        "users": 23,
+        "width": 512,
+        "real_tokens": 10884
+      },
+      "auxiliary": {
+        "users": 23,
+        "width": 384,
+        "real_tokens": 7821
+      }
+    },
+    {
+      "batch": 7,
+      "rating": {
+        "users": 22,
+        "width": 512,
+        "real_tokens": 10794
+      },
+      "auxiliary": {
+        "users": 22,
+        "width": 384,
+        "real_tokens": 7880
+      }
+    },
+    {
+      "batch": 8,
+      "rating": {
+        "users": 17,
+        "width": 640,
+        "real_tokens": 10272
+      },
+      "auxiliary": {
+        "users": 17,
+        "width": 512,
+        "real_tokens": 8177
+      }
+    },
+    {
+      "batch": 9,
+      "rating": {
+        "users": 159,
+        "width": 128,
+        "real_tokens": 16113
+      },
+      "auxiliary": {
+        "users": 159,
+        "width": 64,
+        "real_tokens": 7580
+      }
+    },
+    {
+      "batch": 10,
+      "rating": {
+        "users": 439,
+        "width": 64,
+        "real_tokens": 15621
+      },
+      "auxiliary": {
+        "users": 439,
+        "width": 32,
+        "real_tokens": 6811
+      }
+    },
+    {
+      "batch": 11,
+      "rating": {
+        "users": 58,
+        "width": 288,
+        "real_tokens": 15488
+      },
+      "auxiliary": {
+        "users": 58,
+        "width": 160,
+        "real_tokens": 7870
+      }
+    },
+    {
+      "batch": 12,
+      "rating": {
+        "users": 256,
+        "width": 64,
+        "real_tokens": 15781
+      },
+      "auxiliary": {
+        "users": 256,
+        "width": 64,
+        "real_tokens": 7075
+      }
+    },
+    {
+      "batch": 13,
+      "rating": {
+        "users": 13,
+        "width": 768,
+        "real_tokens": 9354
+      },
+      "auxiliary": {
+        "users": 13,
+        "width": 608,
+        "real_tokens": 7605
+      }
+    },
+    {
+      "batch": 14,
+      "rating": {
+        "users": 31,
+        "width": 416,
+        "real_tokens": 12101
+      },
+      "auxiliary": {
+        "users": 31,
+        "width": 288,
+        "real_tokens": 8034
+      }
+    },
+    {
+      "batch": 15,
+      "rating": {
+        "users": 16,
+        "width": 672,
+        "real_tokens": 9883
+      },
+      "auxiliary": {
+        "users": 16,
+        "width": 512,
+        "real_tokens": 7706
+      }
+    },
+    {
+      "batch": 16,
+      "rating": {
+        "users": 21,
+        "width": 576,
+        "real_tokens": 10953
+      },
+      "auxiliary": {
+        "users": 21,
+        "width": 416,
+        "real_tokens": 8117
+      }
+    },
+    {
+      "batch": 17,
+      "rating": {
+        "users": 15,
+        "width": 672,
+        "real_tokens": 9530
+      },
+      "auxiliary": {
+        "users": 15,
+        "width": 544,
+        "real_tokens": 7590
+      }
+    },
+    {
+      "batch": 18,
+      "rating": {
+        "users": 12,
+        "width": 832,
+        "real_tokens": 9377
+      },
+      "auxiliary": {
+        "users": 12,
+        "width": 672,
+        "real_tokens": 7858
+      }
+    },
+    {
+      "batch": 19,
+      "rating": {
+        "users": 32,
+        "width": 416,
+        "real_tokens": 12230
+      },
+      "auxiliary": {
+        "users": 32,
+        "width": 288,
+        "real_tokens": 8063
+      }
+    },
+    {
+      "batch": 20,
+      "rating": {
+        "users": 38,
+        "width": 384,
+        "real_tokens": 13000
+      },
+      "auxiliary": {
+        "users": 38,
+        "width": 256,
+        "real_tokens": 7920
+      }
+    },
+    {
+      "batch": 21,
+      "rating": {
+        "users": 25,
+        "width": 480,
+        "real_tokens": 11176
+      },
+      "auxiliary": {
+        "users": 25,
+        "width": 352,
+        "real_tokens": 7981
+      }
+    },
+    {
+      "batch": 22,
+      "rating": {
+        "users": 10,
+        "width": 928,
+        "real_tokens": 8871
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 800,
+        "real_tokens": 7481
+      }
+    },
+    {
+      "batch": 23,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 11226
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 9959
+      }
+    },
+    {
+      "batch": 24,
+      "rating": {
+        "users": 40,
+        "width": 384,
+        "real_tokens": 13133
+      },
+      "auxiliary": {
+        "users": 40,
+        "width": 224,
+        "real_tokens": 8011
+      }
+    },
+    {
+      "batch": 25,
+      "rating": {
+        "users": 10,
+        "width": 1472,
+        "real_tokens": 11226
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1312,
+        "real_tokens": 9909
+      }
+    },
+    {
+      "batch": 26,
+      "rating": {
+        "users": 14,
+        "width": 736,
+        "real_tokens": 9798
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 608,
+        "real_tokens": 7794
+      }
+    },
+    {
+      "batch": 27,
+      "rating": {
+        "users": 20,
+        "width": 576,
+        "real_tokens": 10480
+      },
+      "auxiliary": {
+        "users": 20,
+        "width": 448,
+        "real_tokens": 7911
+      }
+    },
+    {
+      "batch": 28,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 11457
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 10518
+      }
+    },
+    {
+      "batch": 29,
+      "rating": {
+        "users": 43,
+        "width": 352,
+        "real_tokens": 13636
+      },
+      "auxiliary": {
+        "users": 43,
+        "width": 224,
+        "real_tokens": 7838
+      }
+    },
+    {
+      "batch": 30,
+      "rating": {
+        "users": 11,
+        "width": 896,
+        "real_tokens": 9592
+      },
+      "auxiliary": {
+        "users": 11,
+        "width": 800,
+        "real_tokens": 8097
+      }
+    },
+    {
+      "batch": 31,
+      "rating": {
+        "users": 70,
+        "width": 256,
+        "real_tokens": 15977
+      },
+      "auxiliary": {
+        "users": 70,
+        "width": 160,
+        "real_tokens": 7750
+      }
+    },
+    {
+      "batch": 32,
+      "rating": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 11914
+      },
+      "auxiliary": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 4906
+      }
+    },
+    {
+      "batch": 33,
+      "rating": {
+        "users": 16,
+        "width": 640,
+        "real_tokens": 9731
+      },
+      "auxiliary": {
+        "users": 16,
+        "width": 512,
+        "real_tokens": 7722
+      }
+    },
+    {
+      "batch": 34,
+      "rating": {
+        "users": 53,
+        "width": 320,
+        "real_tokens": 14827
+      },
+      "auxiliary": {
+        "users": 53,
+        "width": 192,
+        "real_tokens": 7914
+      }
+    },
+    {
+      "batch": 35,
+      "rating": {
+        "users": 14,
+        "width": 736,
+        "real_tokens": 9648
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 576,
+        "real_tokens": 7732
+      }
+    },
+    {
+      "batch": 36,
+      "rating": {
+        "users": 35,
+        "width": 416,
+        "real_tokens": 12598
+      },
+      "auxiliary": {
+        "users": 35,
+        "width": 256,
+        "real_tokens": 8041
+      }
+    },
+    {
+      "batch": 37,
+      "rating": {
+        "users": 78,
+        "width": 224,
+        "real_tokens": 16126
+      },
+      "auxiliary": {
+        "users": 78,
+        "width": 128,
+        "real_tokens": 7757
+      }
+    },
+    {
+      "batch": 38,
+      "rating": {
+        "users": 165,
+        "width": 128,
+        "real_tokens": 15981
+      },
+      "auxiliary": {
+        "users": 165,
+        "width": 64,
+        "real_tokens": 7431
+      }
+    },
+    {
+      "batch": 39,
+      "rating": {
+        "users": 17,
+        "width": 640,
+        "real_tokens": 10258
+      },
+      "auxiliary": {
+        "users": 17,
+        "width": 512,
+        "real_tokens": 7897
+      }
+    },
+    {
+      "batch": 40,
+      "rating": {
+        "users": 150,
+        "width": 128,
+        "real_tokens": 15492
+      },
+      "auxiliary": {
+        "users": 150,
+        "width": 64,
+        "real_tokens": 7260
+      }
+    },
+    {
+      "batch": 41,
+      "rating": {
+        "users": 20,
+        "width": 544,
+        "real_tokens": 10393
+      },
+      "auxiliary": {
+        "users": 20,
+        "width": 448,
+        "real_tokens": 7754
+      }
+    },
+    {
+      "batch": 42,
+      "rating": {
+        "users": 46,
+        "width": 352,
+        "real_tokens": 13921
+      },
+      "auxiliary": {
+        "users": 46,
+        "width": 224,
+        "real_tokens": 7945
+      }
+    },
+    {
+      "batch": 43,
+      "rating": {
+        "users": 22,
+        "width": 512,
+        "real_tokens": 10735
+      },
+      "auxiliary": {
+        "users": 22,
+        "width": 416,
+        "real_tokens": 7818
+      }
+    },
+    {
+      "batch": 44,
+      "rating": {
+        "users": 125,
+        "width": 160,
+        "real_tokens": 16105
+      },
+      "auxiliary": {
+        "users": 125,
+        "width": 96,
+        "real_tokens": 7707
+      }
+    },
+    {
+      "batch": 45,
+      "rating": {
+        "users": 26,
+        "width": 480,
+        "real_tokens": 11455
+      },
+      "auxiliary": {
+        "users": 26,
+        "width": 352,
+        "real_tokens": 8083
+      }
+    },
+    {
+      "batch": 46,
+      "rating": {
+        "users": 46,
+        "width": 352,
+        "real_tokens": 14074
+      },
+      "auxiliary": {
+        "users": 46,
+        "width": 224,
+        "real_tokens": 8044
+      }
+    },
+    {
+      "batch": 47,
+      "rating": {
+        "users": 39,
+        "width": 384,
+        "real_tokens": 13211
+      },
+      "auxiliary": {
+        "users": 39,
+        "width": 256,
+        "real_tokens": 7970
+      }
+    },
+    {
+      "batch": 48,
+      "rating": {
+        "users": 14,
+        "width": 736,
+        "real_tokens": 9709
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 608,
+        "real_tokens": 7796
+      }
+    },
+    {
+      "batch": 49,
+      "rating": {
+        "users": 17,
+        "width": 640,
+        "real_tokens": 10019
+      },
+      "auxiliary": {
+        "users": 17,
+        "width": 512,
+        "real_tokens": 7877
+      }
+    },
+    {
+      "batch": 50,
+      "rating": {
+        "users": 14,
+        "width": 704,
+        "real_tokens": 9424
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 576,
+        "real_tokens": 7635
+      }
+    },
+    {
+      "batch": 51,
+      "rating": {
+        "users": 143,
+        "width": 128,
+        "real_tokens": 16041
+      },
+      "auxiliary": {
+        "users": 143,
+        "width": 64,
+        "real_tokens": 7432
+      }
+    },
+    {
+      "batch": 52,
+      "rating": {
+        "users": 45,
+        "width": 352,
+        "real_tokens": 13798
+      },
+      "auxiliary": {
+        "users": 45,
+        "width": 224,
+        "real_tokens": 7887
+      }
+    },
+    {
+      "batch": 53,
+      "rating": {
+        "users": 25,
+        "width": 480,
+        "real_tokens": 11290
+      },
+      "auxiliary": {
+        "users": 25,
+        "width": 352,
+        "real_tokens": 7879
+      }
+    },
+    {
+      "batch": 54,
+      "rating": {
+        "users": 60,
+        "width": 288,
+        "real_tokens": 15701
+      },
+      "auxiliary": {
+        "users": 60,
+        "width": 160,
+        "real_tokens": 7838
+      }
+    },
+    {
+      "batch": 55,
+      "rating": {
+        "users": 215,
+        "width": 96,
+        "real_tokens": 15977
+      },
+      "auxiliary": {
+        "users": 215,
+        "width": 64,
+        "real_tokens": 7412
+      }
+    },
+    {
+      "batch": 56,
+      "rating": {
+        "users": 25,
+        "width": 480,
+        "real_tokens": 11105
+      },
+      "auxiliary": {
+        "users": 25,
+        "width": 352,
+        "real_tokens": 7747
+      }
+    },
+    {
+      "batch": 57,
+      "rating": {
+        "users": 40,
+        "width": 352,
+        "real_tokens": 12981
+      },
+      "auxiliary": {
+        "users": 40,
+        "width": 224,
+        "real_tokens": 7842
+      }
+    },
+    {
+      "batch": 58,
+      "rating": {
+        "users": 27,
+        "width": 480,
+        "real_tokens": 11489
+      },
+      "auxiliary": {
+        "users": 27,
+        "width": 320,
+        "real_tokens": 7935
+      }
+    },
+    {
+      "batch": 59,
+      "rating": {
+        "users": 334,
+        "width": 64,
+        "real_tokens": 15700
+      },
+      "auxiliary": {
+        "users": 334,
+        "width": 32,
+        "real_tokens": 6916
+      }
+    },
+    {
+      "batch": 60,
+      "rating": {
+        "users": 20,
+        "width": 576,
+        "real_tokens": 10543
+      },
+      "auxiliary": {
+        "users": 20,
+        "width": 416,
+        "real_tokens": 7675
+      }
+    },
+    {
+      "batch": 61,
+      "rating": {
+        "users": 38,
+        "width": 384,
+        "real_tokens": 12884
+      },
+      "auxiliary": {
+        "users": 38,
+        "width": 256,
+        "real_tokens": 7837
+      }
+    },
+    {
+      "batch": 62,
+      "rating": {
+        "users": 17,
+        "width": 608,
+        "real_tokens": 9917
+      },
+      "auxiliary": {
+        "users": 17,
+        "width": 480,
+        "real_tokens": 7616
+      }
+    },
+    {
+      "batch": 63,
+      "rating": {
+        "users": 24,
+        "width": 512,
+        "real_tokens": 11005
+      },
+      "auxiliary": {
+        "users": 24,
+        "width": 384,
+        "real_tokens": 7859
+      }
+    },
+    {
+      "batch": 64,
+      "rating": {
+        "users": 46,
+        "width": 352,
+        "real_tokens": 13952
+      },
+      "auxiliary": {
+        "users": 46,
+        "width": 192,
+        "real_tokens": 7833
+      }
+    },
+    {
+      "batch": 65,
+      "rating": {
+        "users": 44,
+        "width": 352,
+        "real_tokens": 13849
+      },
+      "auxiliary": {
+        "users": 44,
+        "width": 224,
+        "real_tokens": 7953
+      }
+    },
+    {
+      "batch": 66,
+      "rating": {
+        "users": 14,
+        "width": 736,
+        "real_tokens": 9740
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 608,
+        "real_tokens": 7945
+      }
+    },
+    {
+      "batch": 67,
+      "rating": {
+        "users": 57,
+        "width": 288,
+        "real_tokens": 15316
+      },
+      "auxiliary": {
+        "users": 57,
+        "width": 160,
+        "real_tokens": 7764
+      }
+    },
+    {
+      "batch": 68,
+      "rating": {
+        "users": 14,
+        "width": 736,
+        "real_tokens": 9719
+      },
+      "auxiliary": {
+        "users": 14,
+        "width": 608,
+        "real_tokens": 7717
+      }
+    },
+    {
+      "batch": 69,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 11968
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 10895
+      }
+    },
+    {
+      "batch": 70,
+      "rating": {
+        "users": 10,
+        "width": 928,
+        "real_tokens": 8690
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 800,
+        "real_tokens": 7343
+      }
+    },
+    {
+      "batch": 71,
+      "rating": {
+        "users": 30,
+        "width": 448,
+        "real_tokens": 11947
+      },
+      "auxiliary": {
+        "users": 30,
+        "width": 320,
+        "real_tokens": 7955
+      }
+    },
+    {
+      "batch": 72,
+      "rating": {
+        "users": 30,
+        "width": 448,
+        "real_tokens": 11805
+      },
+      "auxiliary": {
+        "users": 30,
+        "width": 320,
+        "real_tokens": 7941
+      }
+    },
+    {
+      "batch": 73,
+      "rating": {
+        "users": 22,
+        "width": 544,
+        "real_tokens": 10768
+      },
+      "auxiliary": {
+        "users": 22,
+        "width": 384,
+        "real_tokens": 7683
+      }
+    },
+    {
+      "batch": 74,
+      "rating": {
+        "users": 117,
+        "width": 160,
+        "real_tokens": 16007
+      },
+      "auxiliary": {
+        "users": 117,
+        "width": 96,
+        "real_tokens": 7734
+      }
+    },
+    {
+      "batch": 75,
+      "rating": {
+        "users": 126,
+        "width": 160,
+        "real_tokens": 16207
+      },
+      "auxiliary": {
+        "users": 126,
+        "width": 96,
+        "real_tokens": 7653
+      }
+    },
+    {
+      "batch": 76,
+      "rating": {
+        "users": 54,
+        "width": 320,
+        "real_tokens": 14898
+      },
+      "auxiliary": {
+        "users": 54,
+        "width": 192,
+        "real_tokens": 7957
+      }
+    },
+    {
+      "batch": 77,
+      "rating": {
+        "users": 36,
+        "width": 384,
+        "real_tokens": 12713
+      },
+      "auxiliary": {
+        "users": 36,
+        "width": 256,
+        "real_tokens": 7962
+      }
+    },
+    {
+      "batch": 78,
+      "rating": {
+        "users": 11,
+        "width": 896,
+        "real_tokens": 9538
+      },
+      "auxiliary": {
+        "users": 11,
+        "width": 768,
+        "real_tokens": 8016
+      }
+    },
+    {
+      "batch": 79,
+      "rating": {
+        "users": 17,
+        "width": 640,
+        "real_tokens": 9951
+      },
+      "auxiliary": {
+        "users": 17,
+        "width": 480,
+        "real_tokens": 7720
+      }
+    },
+    {
+      "batch": 80,
+      "rating": {
+        "users": 53,
+        "width": 320,
+        "real_tokens": 14854
+      },
+      "auxiliary": {
+        "users": 53,
+        "width": 192,
+        "real_tokens": 7881
+      }
+    },
+    {
+      "batch": 81,
+      "rating": {
+        "users": 20,
+        "width": 576,
+        "real_tokens": 10452
+      },
+      "auxiliary": {
+        "users": 20,
+        "width": 448,
+        "real_tokens": 7848
+      }
+    },
+    {
+      "batch": 82,
+      "rating": {
+        "users": 26,
+        "width": 480,
+        "real_tokens": 11353
+      },
+      "auxiliary": {
+        "users": 26,
+        "width": 352,
+        "real_tokens": 7917
+      }
+    },
+    {
+      "batch": 83,
+      "rating": {
+        "users": 30,
+        "width": 448,
+        "real_tokens": 11788
+      },
+      "auxiliary": {
+        "users": 30,
+        "width": 288,
+        "real_tokens": 7799
+      }
+    },
+    {
+      "batch": 84,
+      "rating": {
+        "users": 34,
+        "width": 416,
+        "real_tokens": 12237
+      },
+      "auxiliary": {
+        "users": 34,
+        "width": 256,
+        "real_tokens": 7911
+      }
+    },
+    {
+      "batch": 85,
+      "rating": {
+        "users": 71,
+        "width": 256,
+        "real_tokens": 16075
+      },
+      "auxiliary": {
+        "users": 71,
+        "width": 128,
+        "real_tokens": 7777
+      }
+    },
+    {
+      "batch": 86,
+      "rating": {
+        "users": 29,
+        "width": 448,
+        "real_tokens": 11822
+      },
+      "auxiliary": {
+        "users": 29,
+        "width": 320,
+        "real_tokens": 8118
+      }
+    },
+    {
+      "batch": 87,
+      "rating": {
+        "users": 32,
+        "width": 416,
+        "real_tokens": 12208
+      },
+      "auxiliary": {
+        "users": 32,
+        "width": 288,
+        "real_tokens": 7982
+      }
+    },
+    {
+      "batch": 88,
+      "rating": {
+        "users": 70,
+        "width": 256,
+        "real_tokens": 16246
+      },
+      "auxiliary": {
+        "users": 70,
+        "width": 160,
+        "real_tokens": 7946
+      }
+    },
+    {
+      "batch": 89,
+      "rating": {
+        "users": 21,
+        "width": 576,
+        "real_tokens": 10771
+      },
+      "auxiliary": {
+        "users": 21,
+        "width": 416,
+        "real_tokens": 7918
+      }
+    },
+    {
+      "batch": 90,
+      "rating": {
+        "users": 85,
+        "width": 192,
+        "real_tokens": 16040
+      },
+      "auxiliary": {
+        "users": 85,
+        "width": 128,
+        "real_tokens": 7765
+      }
+    },
+    {
+      "batch": 91,
+      "rating": {
+        "users": 21,
+        "width": 544,
+        "real_tokens": 10544
+      },
+      "auxiliary": {
+        "users": 21,
+        "width": 416,
+        "real_tokens": 7827
+      }
+    },
+    {
+      "batch": 92,
+      "rating": {
+        "users": 45,
+        "width": 352,
+        "real_tokens": 13801
+      },
+      "auxiliary": {
+        "users": 45,
+        "width": 192,
+        "real_tokens": 7765
+      }
+    },
+    {
+      "batch": 93,
+      "rating": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 3667
+      },
+      "auxiliary": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 1287
+      }
+    },
+    {
+      "batch": 94,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 10707
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 9450
+      }
+    },
+    {
+      "batch": 95,
+      "rating": {
+        "users": 87,
+        "width": 192,
+        "real_tokens": 16086
+      },
+      "auxiliary": {
+        "users": 87,
+        "width": 128,
+        "real_tokens": 7867
+      }
+    },
+    {
+      "batch": 96,
+      "rating": {
+        "users": 33,
+        "width": 416,
+        "real_tokens": 12350
+      },
+      "auxiliary": {
+        "users": 33,
+        "width": 256,
+        "real_tokens": 7798
+      }
+    },
+    {
+      "batch": 97,
+      "rating": {
+        "users": 399,
+        "width": 64,
+        "real_tokens": 15622
+      },
+      "auxiliary": {
+        "users": 399,
+        "width": 32,
+        "real_tokens": 6814
+      }
+    },
+    {
+      "batch": 98,
+      "rating": {
+        "users": 122,
+        "width": 160,
+        "real_tokens": 16215
+      },
+      "auxiliary": {
+        "users": 122,
+        "width": 96,
+        "real_tokens": 7769
+      }
+    },
+    {
+      "batch": 99,
+      "rating": {
+        "users": 12,
+        "width": 832,
+        "real_tokens": 9283
+      },
+      "auxiliary": {
+        "users": 12,
+        "width": 672,
+        "real_tokens": 7615
+      }
+    },
+    {
+      "batch": 100,
+      "rating": {
+        "users": 117,
+        "width": 160,
+        "real_tokens": 16181
+      },
+      "auxiliary": {
+        "users": 117,
+        "width": 96,
+        "real_tokens": 7638
+      }
+    },
+    {
+      "batch": 101,
+      "rating": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 7688
+      },
+      "auxiliary": {
+        "users": 512,
+        "width": 32,
+        "real_tokens": 3082
+      }
+    },
+    {
+      "batch": 102,
+      "rating": {
+        "users": 26,
+        "width": 480,
+        "real_tokens": 11249
+      },
+      "auxiliary": {
+        "users": 26,
+        "width": 352,
+        "real_tokens": 7823
+      }
+    },
+    {
+      "batch": 103,
+      "rating": {
+        "users": 81,
+        "width": 224,
+        "real_tokens": 16082
+      },
+      "auxiliary": {
+        "users": 81,
+        "width": 128,
+        "real_tokens": 7810
+      }
+    },
+    {
+      "batch": 104,
+      "rating": {
+        "users": 399,
+        "width": 64,
+        "real_tokens": 15621
+      },
+      "auxiliary": {
+        "users": 399,
+        "width": 32,
+        "real_tokens": 6859
+      }
+    },
+    {
+      "batch": 105,
+      "rating": {
+        "users": 11,
+        "width": 864,
+        "real_tokens": 8988
+      },
+      "auxiliary": {
+        "users": 11,
+        "width": 736,
+        "real_tokens": 7539
+      }
+    },
+    {
+      "batch": 106,
+      "rating": {
+        "users": 11,
+        "width": 896,
+        "real_tokens": 9157
+      },
+      "auxiliary": {
+        "users": 11,
+        "width": 736,
+        "real_tokens": 7567
+      }
+    },
+    {
+      "batch": 107,
+      "rating": {
+        "users": 120,
+        "width": 160,
+        "real_tokens": 16097
+      },
+      "auxiliary": {
+        "users": 120,
+        "width": 96,
+        "real_tokens": 7597
+      }
+    },
+    {
+      "batch": 108,
+      "rating": {
+        "users": 64,
+        "width": 256,
+        "real_tokens": 16037
+      },
+      "auxiliary": {
+        "users": 64,
+        "width": 160,
+        "real_tokens": 7937
+      }
+    },
+    {
+      "batch": 109,
+      "rating": {
+        "users": 16,
+        "width": 672,
+        "real_tokens": 9872
+      },
+      "auxiliary": {
+        "users": 16,
+        "width": 512,
+        "real_tokens": 7641
+      }
+    },
+    {
+      "batch": 110,
+      "rating": {
+        "users": 24,
+        "width": 512,
+        "real_tokens": 11047
+      },
+      "auxiliary": {
+        "users": 24,
+        "width": 352,
+        "real_tokens": 7764
+      }
+    },
+    {
+      "batch": 111,
+      "rating": {
+        "users": 79,
+        "width": 224,
+        "real_tokens": 16060
+      },
+      "auxiliary": {
+        "users": 79,
+        "width": 128,
+        "real_tokens": 7773
+      }
+    },
+    {
+      "batch": 112,
+      "rating": {
+        "users": 58,
+        "width": 288,
+        "real_tokens": 15543
+      },
+      "auxiliary": {
+        "users": 58,
+        "width": 160,
+        "real_tokens": 7972
+      }
+    },
+    {
+      "batch": 113,
+      "rating": {
+        "users": 10,
+        "width": 896,
+        "real_tokens": 8601
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 800,
+        "real_tokens": 7375
+      }
+    },
+    {
+      "batch": 114,
+      "rating": {
+        "users": 45,
+        "width": 352,
+        "real_tokens": 13873
+      },
+      "auxiliary": {
+        "users": 45,
+        "width": 224,
+        "real_tokens": 7909
+      }
+    },
+    {
+      "batch": 115,
+      "rating": {
+        "users": 60,
+        "width": 288,
+        "real_tokens": 15681
+      },
+      "auxiliary": {
+        "users": 60,
+        "width": 160,
+        "real_tokens": 7954
+      }
+    },
+    {
+      "batch": 116,
+      "rating": {
+        "users": 20,
+        "width": 544,
+        "real_tokens": 10330
+      },
+      "auxiliary": {
+        "users": 20,
+        "width": 416,
+        "real_tokens": 7596
+      }
+    },
+    {
+      "batch": 117,
+      "rating": {
+        "users": 12,
+        "width": 864,
+        "real_tokens": 9740
+      },
+      "auxiliary": {
+        "users": 12,
+        "width": 736,
+        "real_tokens": 8059
+      }
+    },
+    {
+      "batch": 118,
+      "rating": {
+        "users": 26,
+        "width": 480,
+        "real_tokens": 11177
+      },
+      "auxiliary": {
+        "users": 26,
+        "width": 352,
+        "real_tokens": 7768
+      }
+    },
+    {
+      "batch": 119,
+      "rating": {
+        "users": 36,
+        "width": 384,
+        "real_tokens": 12516
+      },
+      "auxiliary": {
+        "users": 36,
+        "width": 256,
+        "real_tokens": 7920
+      }
+    },
+    {
+      "batch": 120,
+      "rating": {
+        "users": 63,
+        "width": 288,
+        "real_tokens": 16060
+      },
+      "auxiliary": {
+        "users": 63,
+        "width": 160,
+        "real_tokens": 7924
+      }
+    },
+    {
+      "batch": 121,
+      "rating": {
+        "users": 40,
+        "width": 352,
+        "real_tokens": 13225
+      },
+      "auxiliary": {
+        "users": 40,
+        "width": 224,
+        "real_tokens": 7943
+      }
+    },
+    {
+      "batch": 122,
+      "rating": {
+        "users": 13,
+        "width": 768,
+        "real_tokens": 9391
+      },
+      "auxiliary": {
+        "users": 13,
+        "width": 640,
+        "real_tokens": 7921
+      }
+    },
+    {
+      "batch": 123,
+      "rating": {
+        "users": 95,
+        "width": 192,
+        "real_tokens": 16032
+      },
+      "auxiliary": {
+        "users": 95,
+        "width": 96,
+        "real_tokens": 7748
+      }
+    },
+    {
+      "batch": 124,
+      "rating": {
+        "users": 102,
+        "width": 160,
+        "real_tokens": 16089
+      },
+      "auxiliary": {
+        "users": 102,
+        "width": 96,
+        "real_tokens": 7646
+      }
+    },
+    {
+      "batch": 125,
+      "rating": {
+        "users": 53,
+        "width": 320,
+        "real_tokens": 14883
+      },
+      "auxiliary": {
+        "users": 53,
+        "width": 192,
+        "real_tokens": 7832
+      }
+    },
+    {
+      "batch": 126,
+      "rating": {
+        "users": 109,
+        "width": 160,
+        "real_tokens": 16050
+      },
+      "auxiliary": {
+        "users": 109,
+        "width": 96,
+        "real_tokens": 7712
+      }
+    },
+    {
+      "batch": 127,
+      "rating": {
+        "users": 28,
+        "width": 448,
+        "real_tokens": 11511
+      },
+      "auxiliary": {
+        "users": 28,
+        "width": 352,
+        "real_tokens": 7836
+      }
+    },
+    {
+      "batch": 128,
+      "rating": {
+        "users": 10,
+        "width": 1536,
+        "real_tokens": 10983
+      },
+      "auxiliary": {
+        "users": 10,
+        "width": 1472,
+        "real_tokens": 9710
+      }
+    }
+  ],
+  "seconds": 3.265056165982969,
+  "scope": "Actual CPU input preparation only; no model, gradients, optimizer, validation scoring, or GPU tensor. Dense cell/slot counts are analytical workload proxies, not measured kernel operations, speedups or memory use.",
+  "compatibility": "Reducing row padding changes training tensor shapes and dropout RNG consumption. Any future training comparison needs a separate fixed matched experiment; do not edit the queued SO1 recipe.",
+  "verification_needed": "Benchmark representative actual batches on idle MPS, including compile/warm-up cost, sustained wall time, memory and shape cache behavior; verify inference and matched-control learning before adopting a new shape policy."
+}
