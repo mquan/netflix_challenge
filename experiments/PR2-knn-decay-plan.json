@@ -1,0 +1,100 @@
+{
+  "base_report": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-s3.json",
+  "base_report_sha256": "339022214b693a0b9b09639df6ae490e4e09527c94c6e9773d17cd3141105bc3",
+  "plans": [
+    {
+      "name": "knn256-J6-k256-p1-s.5",
+      "target": "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "expected_sha256": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e",
+      "support_target": "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+      "support_expected_sha256": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+      "command": [
+        "build/netflix",
+        "knn",
+        "--data",
+        "data/processed/netflix.bin",
+        "--graph",
+        "artifacts/r4/neighbors256.bin",
+        "--joint-model",
+        "artifacts/joint256-reg01.bin",
+        "--neighbors",
+        "256",
+        "--power",
+        "1",
+        "--shrink",
+        "0.5",
+        "--time-decay",
+        "0.003",
+        "--predictions",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k256-p1-s.5.f32",
+        "--support",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k256-p1-s.5.support.f32"
+      ]
+    },
+    {
+      "name": "knn256-J6-k128-p1-s.5",
+      "target": "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "expected_sha256": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4",
+      "support_target": null,
+      "support_expected_sha256": null,
+      "command": [
+        "build/netflix",
+        "knn",
+        "--data",
+        "data/processed/netflix.bin",
+        "--graph",
+        "artifacts/r4/neighbors256.bin",
+        "--joint-model",
+        "artifacts/joint256-reg01.bin",
+        "--neighbors",
+        "128",
+        "--power",
+        "1",
+        "--shrink",
+        "0.5",
+        "--time-decay",
+        "0.003",
+        "--predictions",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k128-p1-s.5.f32",
+        "--support",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k128-p1-s.5.support.f32"
+      ]
+    },
+    {
+      "name": "knn256-J6-k256-p2-s.5",
+      "target": "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "expected_sha256": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7",
+      "support_target": null,
+      "support_expected_sha256": null,
+      "command": [
+        "build/netflix",
+        "knn",
+        "--data",
+        "data/processed/netflix.bin",
+        "--graph",
+        "artifacts/r4/neighbors256.bin",
+        "--joint-model",
+        "artifacts/joint256-reg01.bin",
+        "--neighbors",
+        "256",
+        "--power",
+        "2",
+        "--shrink",
+        "0.5",
+        "--time-decay",
+        "0.003",
+        "--predictions",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k256-p2-s.5.f32",
+        "--support",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR2-knn-decay/knn256-J6-k256-p2-s.5.support.f32"
+      ]
+    }
+  ],
+  "results": [],
+  "limitation": "Replays existing base models and graphs; their train+probe rebuilds remain separate requirements.",
+  "recipe_evidence": {
+    "path": "ROUND4.md",
+    "sha256": "523f580be123d32877cb38e4ae10cf868e993c977a59c6a6e7acb8322d280bed",
+    "detail": "Base-model work table: G2 top-256 graph, k=256, lambda=.003 on J6; apply that documented decay to the three unresolved variants."
+  }
+}
