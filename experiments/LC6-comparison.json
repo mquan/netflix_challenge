@@ -1,0 +1,27 @@
+{
+  "comparison": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8668706424233039,
+    "treatment_rmse": 0.8668264382456018,
+    "delta_rmse": -4.4204177702122927e-05,
+    "fold_deltas": [
+      -5.208594571581848e-05,
+      8.35773039532528e-05,
+      -9.430913215291437e-05,
+      -7.355113176577e-05,
+      -8.450713017404965e-05
+    ],
+    "delta_mse": -7.663665383533702e-05,
+    "cluster_normal_95_mse_interval": [
+      -0.0001279541467928004,
+      -2.5319160877873617e-05
+    ],
+    "all_folds_improve": false
+  },
+  "promoted": false,
+  "substantial_investment_gate": false,
+  "plan_sha256": "8f04fd0143460abd1993e7477d935c0a4cf193d6cdc8d4c1e82dad41ae601428",
+  "prediction_sha256": "225524dab80b62aa6fd6495775f92fc7d99b6f82a34190ef8314b01a22439d7b",
+  "metric": "Original-probe development user-fold CV; no independent hidden-test score."
+}

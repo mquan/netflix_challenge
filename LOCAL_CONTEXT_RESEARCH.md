@@ -30,7 +30,18 @@ Round 12 evidence lives in
 is in [PLAN_TO_TARGET.md](PLAN_TO_TARGET.md). That older plan's score and
 experiment-status sections are historical.
 
-## Hypothesis and work sequence
+## Current decision (2026-10-19)
+
+LC1–LC6 are complete. None passed the declared promotion rule; the promoted
+reference and 0.0022206425 gap remain unchanged. LC6's final snapshot gain is
+0.0000442042, with one fold worse. Close this fixed snapshot recipe without an
+epoch sweep. The next score-bearing evidence is the active N1 choice-history
+run, which must finish before considering its full refit; do not duplicate it.
+An auxiliary choice-prediction loss remains a distinct, untested hypothesis
+requiring a matched rating-only control. The N1 audit below defines what the
+active input-token experiment can and cannot establish.
+
+## Original hypothesis and work sequence
 
 The current ensemble may discard useful relationships between the target
 user's history and other users' ratings of the target movie. Learn when
@@ -670,7 +681,7 @@ While LC6 trains, the final-production audit is recorded in
 columns are hash-verified; producer/dependency recovery remains incomplete.
 That work does not alter LC6's frozen inputs or constitute a score improvement.
 
-### LC6 tree component complete; final comparison pending
+### LC6 tree component checkpoint (before final comparison)
 
 The three-seed LightGBM stage completed in 4,726 seconds. Independently rescored
 saved float32 predictions give 0.867076977 versus control 0.867112216, a gain
@@ -680,6 +691,28 @@ small intermediate component result, not a promotion or the predeclared final
 comparison. NN2 is running; the fixed 50/50 average, all-five-fold gate and
 0.0003 continuation gate remain pending. Evidence:
 `experiments/LC6-tree-verification.json`. Promoted best remains 0.8668706425.
+
+### LC6 final result: fixed snapshot recipe closed
+
+Both stages exited successfully. The saved 50/50 tree/NN2 predictions score
+**0.8668264382** against control **0.8668706424**, delta **−0.0000442042**.
+Fold deltas are −0.000052086, **+0.000083577**, −0.000094309, −0.000073551,
+−0.000084507. Four of five folds improve: **no promotion**. The gain is also
+well below the predeclared 0.0003 substantial-investment threshold.
+
+The paired user-cluster normal 95% interval for the MSE delta is
+[−0.0001279541, −0.0000253192]. Thus the average gain is detectable under this
+development-data calculation, but is small and fails the fixed fold rule;
+calling it simply noise would overstate the evidence. It would close only
+about 2% of the remaining RMSE gap even if accepted. It does not support a
+large saved-epoch sweep or explain how to reach the remaining target.
+
+`experiments/LC6-final-verification.json` independently checks all 141 frozen
+hashes, both successful exits, all 1,408,395 saved predictions, the fixed mean
+within float32 rounding, fold scores and the paired interval. Original outputs,
+source archive, comparison and terminal status are committed. Keep the original
+promoted model. This closes epochs 4/8 added to epoch 12 under this recipe;
+it does not establish that every form of ensemble-aware training is exhausted.
 
 ### Concurrent research inventory (read-only, 2026-10-19 UTC)
 
