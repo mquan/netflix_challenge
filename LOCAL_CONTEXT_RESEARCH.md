@@ -606,3 +606,50 @@ test covers the failure. No duplicate-runtime override is used. Retry uses a
 new experiment name `LC5-relevance-p2-r2` and output directory
 `artifacts/local-context/LC5/relevance-r2/`, preserving the failed run and the
 same predeclared statistical recipe.
+
+### LC5 result: below the information-value gate
+
+The retry completed successfully. Uniform weighting scores 0.844809595,
+relevant weighting 0.844764844, and shuffled relevance 0.844859541. Relevance
+improves uniform by 0.000044751 RMSE, below the fixed 0.0001 gate, and the
+paired MSE interval [-0.000443932, +0.000292712] includes zero. Both seeds
+improve, by 0.000006851 and 0.000088926; neither paired interval excludes zero.
+The shuffled comparison also has an interval including zero. Stop this
+feature recipe without full-bank integration, a temperature sweep or scaling.
+All output hashes and independently rescored float32 predictions were verified.
+
+LC1--LC5 have now tested raw summaries, learned structure, input normalization,
+the claimed pooled contribution, and a specific relevance-weighted extension.
+None establishes a promoted contribution. The completed experiments narrow
+what to stop, but they have not reduced the remaining score gap.
+
+## LC6: training-trajectory diversity on the full frozen ensemble
+
+The next research axis is ensemble contribution during training, rather than
+more local-context summaries. The bank audit finds only A2h epoch 12 in the
+79-column promoted bank, although refit epochs 1--12 are saved. Their selection
+used standalone P2 RMSE. The earlier checkpoints have never been tested as
+additional columns in this frozen bank. This is distinct from adding latent
+codes or correcting existing predictions from common meta features.
+
+The BigChaos report, section 3.2 and Algorithm 1, selects predictor training
+duration by improvement to the blend, rather than standalone RMSE:
+[primary report](https://www2.seas.gwu.edu/~simhaweb/champalg/cf/papers/TocherGrandPrize2009_BPC_BigChaos.pdf).
+This supports testing the mismatch in selection objectives, not a forecast of
+gain or a claim that our earlier checkpoints must help.
+
+First, test a fixed training trajectory: add A2h refit epochs **4 and 8**
+alongside existing epoch 12. These are predeclared one-third/two-thirds points,
+not epochs selected by looking at probe improvements. Retain every current
+column and feature. No model retraining, architecture or meta-feature changes.
+Run the unchanged nested LightGBM-s3 and NN2 recipes on the actual 79-column
+bank plus these two columns, with the original three seeds and 50/50 average.
+No fitting to saved out-of-fold ensemble predictions. All five user folds
+must improve for promotion; >=0.0003 averaged RMSE gain is the continuation
+gate for substantial investment in ensemble-aware training.
+
+This directly measures full-bank gain and avoids another pilot against a
+smaller ridge baseline. A failure stops this fixed snapshot recipe rather
+than triggering a sweep over all saved epochs. A positive result can be kept
+as a cumulative checkpoint, while future epoch selection must use P2 ensemble
+performance and fresh confirmation. Probe development reuse remains a limitation.
