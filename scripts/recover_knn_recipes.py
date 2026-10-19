@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Verify documented retained kNN variants by replay; never replace frozen outputs."""
+import argparse
 import datetime
 import json
 import os
@@ -32,15 +33,24 @@ RECIPES = [
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--round4-decay', action='store_true',
+                        help='Replay the three unresolved J6 graph-256 variants with ROUND4.md documented decay .003')
+    args = parser.parse_args()
+    run = 'PR2-knn-decay' if args.round4_decay else 'PR1-knn'
+    destination = ROOT / 'artifacts/production-replay' / run
+    recipes = RECIPES
+    if args.round4_decay:
+        recipes = [(*row[:-1], .003) for row in RECIPES if row[0].startswith('knn256-J6-')]
     os.chdir(ROOT)
     base = json.loads(BASE.read_text())
     plans = []
-    for name, graph, model, neighbors, power, shrink, decay in RECIPES:
+    for name, graph, model, neighbors, power, shrink, decay in recipes:
         target = f'artifacts/r4/{name}.f32'
         support = f'artifacts/r4/{name}.support.f32'
         expected = base['inputs'][target]
         assert digest(target) == expected
-        prediction, support_out = DEST / (name + '.f32'), DEST / (name + '.support.f32')
+        prediction, support_out = destination / (name + '.f32'), destination / (name + '.support.f32')
         cmd = ['build/netflix', 'knn', '--data', 'data/processed/netflix.bin',
                '--graph', f'artifacts/{graph}.bin', '--joint-model', f'artifacts/{model}.bin',
                '--neighbors', str(neighbors), '--power', str(power), '--shrink', str(shrink),
@@ -48,15 +58,18 @@ def main():
         plans.append(dict(name=name, target=target, expected_sha256=expected,
                           support_target=support if support in base['inputs'] else None,
                           support_expected_sha256=base['inputs'].get(support), command=cmd))
-    DEST.mkdir(parents=True, exist_ok=False)
+    destination.mkdir(parents=True, exist_ok=False)
     report = dict(base_report=str(BASE), base_report_sha256=digest(BASE), plans=plans, results=[],
                   limitation='Replays existing base models and graphs; their train+probe rebuilds remain separate requirements.')
-    write(ROOT / 'experiments/PR1-knn-plan.json', report)
-    status_path = ROOT / 'experiments/PR1-knn.status.json'
+    if args.round4_decay:
+        report['recipe_evidence'] = dict(path='ROUND4.md', sha256=digest(ROOT / 'ROUND4.md'),
+            detail='Base-model work table: G2 top-256 graph, k=256, lambda=.003 on J6; apply that documented decay to the three unresolved variants.')
+    write(ROOT / f'experiments/{run}-plan.json', report)
+    status_path = ROOT / f'experiments/{run}.status.json'
     try:
         for number, plan in enumerate(plans):
             write(status_path, dict(state='running', pid=os.getpid(), stage=plan['name'], completed=len(report['results'])))
-            subprocess.run([sys.executable, 'scripts/experiment.py', '--name', f'PR1-knn-{number:02d}',
+            subprocess.run([sys.executable, 'scripts/experiment.py', '--name', f'{run}-{number:02d}',
                             '--strategy', 'Frozen-column recipe recovery; byte equality required, no tuning or replacement',
                             '--', *plan['command']], check=True)
             pred_path = Path(plan['command'][plan['command'].index('--predictions') + 1])
@@ -76,7 +89,7 @@ def main():
             report['results'].append(result)
             print(json.dumps(result), flush=True)
         report['finished_utc'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-        write(ROOT / 'experiments/PR1-knn-verification.json', report)
+        write(ROOT / f'experiments/{run}-verification.json', report)
         write(status_path, dict(state='complete', pid=os.getpid(), completed=len(report['results']),
               exact_predictions=sum(row['prediction_byte_identical'] for row in report['results'])))
     except BaseException as error:

@@ -70,8 +70,16 @@ bank artifacts (maximum absolute difference zero). Evidence is in
 `experiments/PR0-J6-knn64-verification.json`, with the command, input hashes and
 source archive in the accompanying experiment records. This verifies inference
 reconstruction; rebuilding the base model and graph on train+probe remains open.
-`scripts/recover_knn_recipes.py` is running ten related fixed recipes, accepting
-only exact output hashes and recording mismatches without parameter searches.
+`scripts/recover_knn_recipes.py` completed ten related fixed recipes in PR1:
+seven matched exactly and three graph-256 J6 variants did not. The original
+`ROUND4.md` base-model table records time decay 0.003 for that graph; filenames
+omit it. PR2 replayed only those three variants with that documented decay.
+All three predictions and the retained support column then matched exactly.
+Both the failed initial reconstructions and corrected commands are preserved in
+`experiments/PR1-knn-verification.json` and
+`experiments/PR2-knn-decay-verification.json`. Output hashes were independently
+rechecked. Together with PR0, eleven recipes now reproduce retained predictions
+exactly, along with all four corresponding support columns used in the bank.
 
 `scripts/recover_neural_recipes.py` recovered fixed-epoch command templates for
 all 14 retained primary-worktree neural columns and all five recorded source
