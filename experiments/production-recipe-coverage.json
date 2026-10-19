@@ -1,0 +1,664 @@
+{
+  "inventory": "/Users/quan/workspace/netflix_challenge/experiments/production-bank-inventory.json",
+  "inventory_sha256": "240f0b9d73c5cdcba6e16cbd4d05b08a4cdfaf010fdec432a368fcde21d6a873",
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json": "472ae2696d5ccc600d21100826e5d1fdeb9c7f7410043d06e6f8b59b264d618d",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-autorec-recipes.json": "bd44114658bfc4c4088b931bc9993b37b52e3d20b1c2c324e9d85735f0d1673b",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-bayes-recipes.json": "5f2b540c63f441d6f368665edcbbc9a784708ded89af1224b207ae00eb9beaf4",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-joint-recipes.json": "38f32ce62418cab523069aa31ef05f3dfc415dd78c8052bdddcd6cbed29e660e",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-knn-recipes.json": "8e0ba2cac64fd95b46f4dce17e34ed17f5f5612319d0c99fe1c90cd0abecfca5",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-neighborhood-recipe.json": "7effea300562d2275c69de5c88bc90a77c1371532cb56c7bbb5176f11d0a035d",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-user-knn-recipe.json": "9487690360db5558381c8393ba9f2bd00956ea6d52399e50c6e589c445149925",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-kernel-recipes.json": "8108ae1549083ac819cf32330f4ed89bfd79fad36c3edca7b249850510d3edfc"
+  },
+  "columns": [
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint64.f32",
+      "sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 0,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32",
+      "sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 2,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32",
+      "sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 1,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32",
+      "sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 3,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+      "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 4,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "family": "learned_neighborhood",
+      "recipe": "experiments/production-neighborhood-recipe.json",
+      "entry": null,
+      "validation": "Rebuilt baseline/graphs reproduce retained-checkpoint inference exactly. Fixed-budget retraining has sub-1e-6 prediction drift; production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-p1.f32",
+      "sha256": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 0,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-j64-p1.f32",
+      "sha256": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 1,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-j128r005.f32",
+      "sha256": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 2,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-j128r02.f32",
+      "sha256": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 3,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-j128day.f32",
+      "sha256": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 4,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/knn64-j256snap.f32",
+      "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 7,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/rbm100-fast.f32",
+      "sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 1,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/autorec512-a3-snap.f32",
+      "sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+      "family": "autorec",
+      "recipe": "experiments/production-autorec-recipes.json",
+      "entry": 0,
+      "validation": "Epoch budgets recovered; fixed-budget fixture compatibility checked. Historical producer digests are incomplete; full retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/other-branch/autorec512-a2.f32",
+      "sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+      "family": "autorec",
+      "recipe": "experiments/production-autorec-recipes.json",
+      "entry": 1,
+      "validation": "Epoch budgets recovered; fixed-budget fixture compatibility checked. Historical producer digests are incomplete; full retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.0.f32",
+      "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+      "family": "gp",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 0,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.1.f32",
+      "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+      "family": "gp",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 0,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.2.f32",
+      "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+      "family": "gp",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 0,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+      "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+      "family": "gp",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 1,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+      "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+      "family": "local_residual",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 2,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+      "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+      "family": "local_residual",
+      "recipe": "experiments/production-kernel-recipes.json",
+      "entry": 3,
+      "validation": "Full original-data GP inference or six-epoch local retraining matches retained columns exactly. Production-data runs are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32",
+      "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 4,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32",
+      "sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 5,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32",
+      "sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 6,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32",
+      "sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 7,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32",
+      "sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 8,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32",
+      "sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 10,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-T4.f32",
+      "sha256": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 6,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p1.f32",
+      "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 7,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p2.f32",
+      "sha256": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 8,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-k16.f32",
+      "sha256": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 9,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-s5.f32",
+      "sha256": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 10,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T2-p1.f32",
+      "sha256": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 11,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T3-p1.f32",
+      "sha256": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 12,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6-p1.f32",
+      "sha256": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 13,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/rbm200.f32",
+      "sha256": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 2,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/autorec512-a3.f32",
+      "sha256": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+      "family": "autorec",
+      "recipe": "experiments/production-autorec-recipes.json",
+      "entry": 2,
+      "validation": "Epoch budgets recovered; fixed-budget fixture compatibility checked. Historical producer digests are incomplete; full retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-p2.f32",
+      "sha256": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 14,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-j64-p2.f32",
+      "sha256": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 15,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/rbm100.f32",
+      "sha256": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 0,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.003.f32",
+      "sha256": "8ef145b9a4d189969bfc86a525d0a562046e20b99634c43c070019630f15d255",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 16,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.1.f32",
+      "sha256": "22b5470f47325e7f2179a9de63c7c0a74c2e5e2e94625ec4ab5ac45a676d26bd",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 17,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "sha256": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 18,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "sha256": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 19,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "sha256": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 20,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T2.f32",
+      "sha256": "8ef0b6d0850c844a970dcf9fcdb47fde7f93e46ce70d14a76fa567ef3b1b240b",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 21,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T4.f32",
+      "sha256": "02c76260c42ee4ae4942f03664d8912c1e541404c63ad43e6d8a66fbdaa165cf",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 22,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J2.f32",
+      "sha256": "4218c749bb1d014c89cef863926bd8c02f44d9fd5b449ad5a5d67573bc072f58",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 23,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J4.f32",
+      "sha256": "64934d6a4e8e53d95ecf7b13b910668b949bd143014e28aabafaec5f7da55ff0",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 24,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J3.f32",
+      "sha256": "905d4edc05fbedeab3b38ebe5e7bdb57597454ed5dabb88e202175a18531f244",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 25,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J1.f32",
+      "sha256": "a47186e6abf03d82b51c48057179dccb0c5cb12b91d2a2611d80e181bf828c89",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 26,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32",
+      "sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 11,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32",
+      "sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+      "family": "joint_integrated",
+      "recipe": "experiments/production-joint-recipes.json",
+      "entry": 9,
+      "validation": "All retained checkpoint inference replays match exactly. J1-J4 full original-data retraining is exact (PR5/PR6); production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6R-p1.f32",
+      "sha256": "bb2dccd6d99fcf5cc9bae13df3a9eea8da7be8a476f90228dc1571414606ffd2",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 27,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T6R.f32",
+      "sha256": "0ab9e2d5b6f48d9c908d8c8480f6c36b06cc1ac224c7956deb3d76d48846a1d6",
+      "family": "item_knn",
+      "recipe": "experiments/production-knn-recipes.json",
+      "entry": 28,
+      "validation": "Every retained item-kNN inference column matches exactly. Production base models and graphs must be regenerated."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/R4D-rbm200-cond.f32",
+      "sha256": "34b40abbd3cbec04dd69877692008f10b9a2c053e8171306f65aae9bd6a06a74",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 3,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/R4C-rbm200-cond.f32",
+      "sha256": "5dc6dcf3ea6f7d66a19c277d603ecd88e29563033a1303c58556a719e54961fb",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 4,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/P2-rbm200-cond.f32",
+      "sha256": "c54a35daf5d9533fe039bf6a11e5050122ea4346c61192ca3800107f947723d9",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 5,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/R2C-rbm100-cond.f32",
+      "sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 6,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/P3C-rbm200-s7-cond.f32",
+      "sha256": "bffa26b3ff99b258740da3910151f2f65d2a5d1c2caab94fa1e71e24639f7fb9",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 7,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/P4C-rbm300-cond.f32",
+      "sha256": "a2bdfaefdcceff07400eb302557440adde866b09d1a2236895b6b560e5fde2bb",
+      "family": "rbm",
+      "recipe": "experiments/production-rbm-recipes-v2.json",
+      "entry": 8,
+      "validation": "Nine retained inference columns match across PR3/PR4 recovery evidence. Fixed training/resumption budgets recovered; full production retraining is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+      "sha256": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 0,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+      "sha256": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 1,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32",
+      "sha256": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 2,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32",
+      "sha256": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 3,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32",
+      "sha256": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 4,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT5-refit.f32",
+      "sha256": "b8cf234a99df0bcd8e0327596924fe75c5f50aa48d88bbee3bd8a616dc3b6230",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 5,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT6-refit.f32",
+      "sha256": "2af9bd601f171af02d81e327418b1f76d74f0d1c62b0c4d4af7380e551a90b3a",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 6,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.f32",
+      "sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+      "family": "user_knn",
+      "recipe": "experiments/production-user-knn-recipe.json",
+      "entry": null,
+      "validation": "Full retained inference is exact; rebuilt source has bounded compatibility coverage. Production K1 training and inference are outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT8-refit.refit.e7.f32",
+      "sha256": "e207d2ec7e41c5d1764e7b4a4070a948fa7eb773f350fd7dc4c047474422e550",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 7,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT9-refit.refit.e8.f32",
+      "sha256": "ed94f90bbcdf0441d869148b5bc5168c2bb5637e9d82966d7ffc2449f90251ae",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 8,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B2-full-r64.s0128.f32",
+      "sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+      "family": "bayes",
+      "recipe": "experiments/production-bayes-recipes.json",
+      "entry": 0,
+      "validation": "Stored posterior means match retained columns. Fixed-sweep production interface checked on fixtures; multithreaded retraining is nondeterministic and outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2-refit.refit.e11.f32",
+      "sha256": "4b3ee1439890585c062967aff23b53f22496b07fde647407e961a5a1759dca99",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 9,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B3-full-r128.s0160.f32",
+      "sha256": "059041f3d147a84c6d120a9420a7278c9840164ab8f9dfc450ff73d2d37bb1f1",
+      "family": "bayes",
+      "recipe": "experiments/production-bayes-recipes.json",
+      "entry": 1,
+      "validation": "Stored posterior means match retained columns. Fixed-sweep production interface checked on fixtures; multithreaded retraining is nondeterministic and outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2b-refit.refit.e10.f32",
+      "sha256": "ef796d4a2bc98196b09e9b4a86f57a87c473901c1fe64076ad79cef93212c782",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 10,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+      "sha256": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac",
+      "family": "bayes",
+      "recipe": "experiments/production-bayes-recipes.json",
+      "entry": 2,
+      "validation": "Stored posterior means match retained columns. Fixed-sweep production interface checked on fixtures; multithreaded retraining is nondeterministic and outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2e-refit.refit.e12.f32",
+      "sha256": "41c20dde1fe3697734025b3d374549ab302aa5f39e8467a05fe2703b68106906",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 11,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2f-refit.refit.e10.f32",
+      "sha256": "68275a257426e316a919e50ce273c2c6546af18433c3be076a76093957f6136f",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 12,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+      "sha256": "70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4",
+      "family": "neural",
+      "recipe": "experiments/production-neural-recipes.json",
+      "entry": 13,
+      "validation": "Archived source and fixed epochs recovered; fourteen prepare-only checks. Full production training is outstanding."
+    }
+  ],
+  "family_counts": {
+    "joint_integrated": 13,
+    "learned_neighborhood": 1,
+    "item_knn": 29,
+    "rbm": 9,
+    "autorec": 3,
+    "gp": 4,
+    "local_residual": 2,
+    "neural": 14,
+    "user_knn": 1,
+    "bayes": 3
+  },
+  "retained_columns": 79,
+  "unique_columns": 77,
+  "scope": "Recipe coverage, not completed production training or a score gain. Validation strength varies and is stated per family. Production latent/context features, blender fitting, qualifying export and the target score remain outstanding."
+}

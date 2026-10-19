@@ -1,0 +1,74 @@
+{
+  "plan_sha256": "2255820b43ec4418b06a1b8d5633059614b011b0d7a1a74b07a42ca8f5c904bd",
+  "results": [
+    {
+      "stage": "gp-full",
+      "comparisons": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.0.f32",
+          "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.0.f32",
+          "actual_sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.1.f32",
+          "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.1.f32",
+          "actual_sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.2.f32",
+          "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.2.f32",
+          "actual_sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "stage": "gp2-persistent-full",
+      "comparisons": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+          "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp2-persistent-full.0.f32",
+          "actual_sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "stage": "local-global",
+      "comparisons": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+          "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-global.epoch6.f32",
+          "actual_sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        }
+      ]
+    },
+    {
+      "stage": "local-local",
+      "comparisons": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+          "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-local.epoch6.f32",
+          "actual_sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+          "byte_identical": true,
+          "max_absolute_difference": 0.0
+        }
+      ]
+    }
+  ],
+  "scope": "Fixed original-data recipe replay. No tuning, production-data training or promotion."
+}

@@ -1,0 +1,133 @@
+{
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/scripts/replay_kernel_bank.py": "9c42793022a0f9ea89d03f78ef12a4e1f45a0c84c109aa8e60e90699dab2c803",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-bank-inventory.json": "240f0b9d73c5cdcba6e16cbd4d05b08a4cdfaf010fdec432a368fcde21d6a873",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-kernel-sources.json": "0be0d7b04a4b0a4ebfb013bdea316db08a6b623ba2df268aece84146ffb4d212",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-kernel-sources.zip": "80cd14774939184a3d3910d92c9108f70f14e73513d65650395a616f50d0087e",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_initial": "7457a09d82f821e4bffb13bd9347186ffc2166a27d80819ffe4d54f082ffbfe3",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.0.f32": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.1.f32": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.2.f32": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_persistent": "38c3924c8fae75c518893fd5bb159fd21cab51eced08e05d28124fc5d89a40fa",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local": "23e6d87bdb52f8eb12adfc6d98a2698f279042590ad1aff48711307a082b18c6",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-global.epoch6.f32": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-local.epoch6.f32": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7"
+  },
+  "stages": [
+    {
+      "name": "gp-full",
+      "experiment": "PR12-kernel-bank-gp-full",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_initial",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full",
+        "--neighbors",
+        "32"
+      ],
+      "expected": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.0.f32",
+          "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.0.f32"
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.1.f32",
+          "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.1.f32"
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.2.f32",
+          "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.2.f32"
+        }
+      ]
+    },
+    {
+      "name": "gp2-persistent-full",
+      "experiment": "PR12-kernel-bank-gp2-persistent-full",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_persistent",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp2-persistent-full",
+        "--neighbors",
+        "32",
+        "--time-scale",
+        "30",
+        "--persistent",
+        ".5"
+      ],
+      "expected": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+          "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp2-persistent-full.0.f32"
+        }
+      ]
+    },
+    {
+      "name": "local-global",
+      "experiment": "PR12-kernel-bank-local-global",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-global",
+        "--groups",
+        "1",
+        "--rank",
+        "16",
+        "--epochs",
+        "6"
+      ],
+      "expected": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+          "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-global.epoch6.f32"
+        }
+      ]
+    },
+    {
+      "name": "local-local",
+      "experiment": "PR12-kernel-bank-local-local",
+      "command": [
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--model",
+        "/Users/quan/workspace/netflix_challenge/artifacts/joint128-reg005.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-local",
+        "--groups",
+        "8",
+        "--rank",
+        "8",
+        "--epochs",
+        "6"
+      ],
+      "expected": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+          "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+          "output": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-local.epoch6.f32"
+        }
+      ]
+    }
+  ],
+  "scope": "Fixed original-data recipe replay. No tuning, production-data training or promotion.",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n"
+}

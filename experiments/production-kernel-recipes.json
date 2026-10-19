@@ -1,0 +1,201 @@
+{
+  "recipes": [
+    {
+      "name": "gp-full",
+      "family": "gp",
+      "columns": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.0.f32",
+          "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.0.f32"
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.1.f32",
+          "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.1.f32"
+        },
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp-full.2.f32",
+          "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp-full.2.f32"
+        }
+      ],
+      "parameters": {
+        "neighbors": 32,
+        "gamma": 4,
+        "time_scale": 0,
+        "persistent": 0,
+        "noise_variants": [
+          0.1,
+          1,
+          10
+        ],
+        "retained_noise": [
+          0.1,
+          1,
+          10
+        ]
+      },
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_initial",
+      "binary_sha256": "7457a09d82f821e4bffb13bd9347186ffc2166a27d80819ffe4d54f082ffbfe3",
+      "execution_record": "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-gp-full.json",
+      "execution_record_sha256": "bfb6c0b51f25afd9c80f5d8efe147dd2c8d4527ddb0abcb116fdab83d57cebdd",
+      "historical_record": "/Users/quan/workspace/netflix_challenge/experiments/moonshot-manifest.json",
+      "historical_record_sha256": "7b48d2eecfce1a874e3ae3926a61fd8e7f03ac7ef5a761faa43d42d9c50b118a",
+      "production_command_template": [
+        "{VERIFIED_MOONSHOT_GP_INITIAL_BINARY}",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{PRODUCTION_J3_MODEL}",
+        "--output",
+        "{OUTPUT_PREFIX}",
+        "--neighbors",
+        "32"
+      ]
+    },
+    {
+      "name": "gp2-persistent-full",
+      "family": "gp",
+      "columns": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+          "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/gp2-persistent-full.0.f32"
+        }
+      ],
+      "parameters": {
+        "neighbors": 32,
+        "gamma": 4,
+        "time_scale": 30,
+        "persistent": 0.5,
+        "noise_variants": [
+          0.1,
+          1,
+          10
+        ],
+        "retained_noise": [
+          0.1
+        ]
+      },
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_gp_persistent",
+      "binary_sha256": "38c3924c8fae75c518893fd5bb159fd21cab51eced08e05d28124fc5d89a40fa",
+      "execution_record": "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-gp2-persistent-full.json",
+      "execution_record_sha256": "6a24d4c8d280d2eee257daf45cd36ebbae613d984dd13f7d07c83e5a29e6c52e",
+      "historical_record": "/Users/quan/workspace/netflix_challenge/experiments/GP2-persistent-full.json",
+      "historical_record_sha256": "fb52f4ea8702b31346302f3ac12ac6f4e998cc254a351879c1f367b7d6c2c053",
+      "production_command_template": [
+        "{VERIFIED_MOONSHOT_GP_PERSISTENT_BINARY}",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{PRODUCTION_J3_MODEL}",
+        "--output",
+        "{OUTPUT_PREFIX}",
+        "--neighbors",
+        "32",
+        "--time-scale",
+        "30",
+        "--persistent",
+        ".5"
+      ]
+    },
+    {
+      "name": "local-global",
+      "family": "local_residual",
+      "columns": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+          "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-global.epoch6.f32"
+        }
+      ],
+      "parameters": {
+        "epochs": 6,
+        "groups": 1,
+        "rank": 16,
+        "seed": 20260928,
+        "learning_rate": 0.03,
+        "learning_rate_decay": 0.9,
+        "regularization": 0.05,
+        "bias_regularization": 0.2
+      },
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local",
+      "binary_sha256": "23e6d87bdb52f8eb12adfc6d98a2698f279042590ad1aff48711307a082b18c6",
+      "execution_record": "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-local-global.json",
+      "execution_record_sha256": "80b50c25602771ac1e13552313fe84dca06fbc20bb2a480479d19d37fe61ad55",
+      "historical_record": "/Users/quan/workspace/netflix_challenge/experiments/production-reference/L1-global.json",
+      "historical_record_sha256": "7d245570993e4a60e642ea07ba39855a95dda71d64bbeb98e0aa8f6c878c4bea",
+      "production_command_template": [
+        "{VERIFIED_MOONSHOT_LOCAL_BINARY}",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{PRODUCTION_J3_MODEL}",
+        "--output",
+        "{OUTPUT_PREFIX}",
+        "--groups",
+        "1",
+        "--rank",
+        "16",
+        "--epochs",
+        "6"
+      ]
+    },
+    {
+      "name": "local-local",
+      "family": "local_residual",
+      "columns": [
+        {
+          "reference": "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+          "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+          "replay": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-kernel-bank/local-local.epoch6.f32"
+        }
+      ],
+      "parameters": {
+        "epochs": 6,
+        "groups": 8,
+        "rank": 8,
+        "seed": 20260928,
+        "learning_rate": 0.03,
+        "learning_rate_decay": 0.9,
+        "regularization": 0.05,
+        "bias_regularization": 0.2
+      },
+      "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR12-source/moonshot_local",
+      "binary_sha256": "23e6d87bdb52f8eb12adfc6d98a2698f279042590ad1aff48711307a082b18c6",
+      "execution_record": "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-local-local.json",
+      "execution_record_sha256": "70aaedb84c508736d2d055e7237f5873a191787e1cd281136a8a3885b3a253ef",
+      "historical_record": "/Users/quan/workspace/netflix_challenge/experiments/L1-local.json",
+      "historical_record_sha256": "419a4881dcd93e32a3bfe0306ae3c87a3530ee45bd5fb9c43e6ce623abc6293b",
+      "production_command_template": [
+        "{VERIFIED_MOONSHOT_LOCAL_BINARY}",
+        "--data",
+        "{PRODUCTION_DATASET}",
+        "--model",
+        "{PRODUCTION_J3_MODEL}",
+        "--output",
+        "{OUTPUT_PREFIX}",
+        "--groups",
+        "8",
+        "--rank",
+        "8",
+        "--epochs",
+        "6"
+      ]
+    }
+  ],
+  "source_manifest": "experiments/production-kernel-sources.json",
+  "source_manifest_sha256": "0be0d7b04a4b0a4ebfb013bdea316db08a6b623ba2df268aece84146ffb4d212",
+  "source_archive_sha256": "80cd14774939184a3d3910d92c9108f70f14e73513d65650395a616f50d0087e",
+  "build_record": "experiments/PR12-kernel-builds.json",
+  "build_record_sha256": "c398d1405839ed8c08a94a8a2781444a6d820ecf7af23097ce2f5af7b9de30dd",
+  "replay_audit": "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-final-verification.json",
+  "replay_audit_sha256": "83524d9e0427219a031eb77bb3879714371d4fab88cd222f6f7443a29ad08fad",
+  "base_dependency": "New J3 trained on production data at fixed epoch 9, using the recovered J3 recipe. The retained J3 checkpoint must not be reused for production.",
+  "limitations": [
+    "GP outputs are direct inference; local models train six fixed epochs and export predictions but do not persist residual-factor checkpoints.",
+    "All six retained original-data outputs match exactly; production-data runs are still outstanding.",
+    "Query-label metrics on zero-label qualifying data are meaningless and must not be reported as scores."
+  ]
+}

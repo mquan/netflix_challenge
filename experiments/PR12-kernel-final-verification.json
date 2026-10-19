@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-19T09:27:40.672957+00:00",
+  "plan_sha256": "2255820b43ec4418b06a1b8d5633059614b011b0d7a1a74b07a42ca8f5c904bd",
+  "verification_sha256": "776563f8f8fe85673223474ef5141bcf1ebb54c7e77f84e35cd88ef91d61c5bd",
+  "frozen_inputs_rechecked": 15,
+  "execution_records": {
+    "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-gp-full.json": {
+      "sha256": "bfb6c0b51f25afd9c80f5d8efe147dd2c8d4527ddb0abcb116fdab83d57cebdd",
+      "elapsed_seconds": 63.019439166993834
+    },
+    "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-gp2-persistent-full.json": {
+      "sha256": "6a24d4c8d280d2eee257daf45cd36ebbae613d984dd13f7d07c83e5a29e6c52e",
+      "elapsed_seconds": 86.60114245803561
+    },
+    "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-local-global.json": {
+      "sha256": "80b50c25602771ac1e13552313fe84dca06fbc20bb2a480479d19d37fe61ad55",
+      "elapsed_seconds": 63.21268445800524
+    },
+    "/Users/quan/workspace/netflix_challenge/experiments/PR12-kernel-bank-local-local.json": {
+      "sha256": "70aaedb84c508736d2d055e7237f5873a191787e1cd281136a8a3885b3a253ef",
+      "elapsed_seconds": 55.83240258297883
+    }
+  },
+  "exact_columns": 6,
+  "scope": "Independent rehash of complete original-data inference/training replays and all frozen inputs. Not production-data training or score improvement."
+}
