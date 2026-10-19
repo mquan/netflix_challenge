@@ -178,8 +178,40 @@ Build/source hashes and checks are in `experiments/PN1-native-fixed-epochs.json`
 This closes checkpoint-selection support for these two native families, not
 their entire production recipes. Native commands still print query-RMSE
 diagnostics; those are meaningless on the production dataset's zero sentinels
-and cannot establish a score. AutoRec still needs a fixed-budget path. Bayes
+and cannot establish a score. Bayes
 uses a fixed sweep budget already, but its original initialization/resume chain
 and retained averaging window must be recovered before a production retrain.
 The time baseline, residual graph, warm-start checkpoints and support features
 must be rebuilt from production inputs rather than reused from development.
+
+## AutoRec fixed budgets and retained trajectories
+
+`scripts/autorec.py --fixed-epoch` now retains the last requested epoch and
+disables early stopping. All-zero query labels require that mode and produce
+`query_labels=unknown` instead of a query RMSE. Invalid or mixed unknown labels
+are rejected. `--save-epoch N` additionally exports a predeclared trajectory
+snapshot; it requires fixed-budget mode and an epoch within that budget.
+
+The retained artifacts have unique RMSE matches, at the historical logs'
+printed precision, to these epochs:
+
+| Column | Training group | Epoch |
+|---|---|---:|
+| `autorec512-a2.f32` | A2-autorec512-norm | 1 |
+| `autorec512-a3-snap.f32` | A3-autorec512-reg | 14 |
+| `autorec512-a3.f32` | A3-autorec512-reg | 44 |
+
+The A3 columns can share a single 44-epoch production run with
+`--fixed-epoch --epochs 44 --save-epoch 14`. Commands, hashes and epoch evidence
+are in `experiments/production-autorec-recipes.json`. Only final A3 has a matching
+historical output digest in its producer record. Those records did not hash
+the Python source, so this is weaker provenance than the fourteen archived
+masked-neural recipes; it is not a claim of byte-identical full retraining.
+
+Three fixture tests pass: zero versus poisoned query labels produce identical
+predictions at a fixed six epochs; unknown labels cannot enter development
+selection; an exported epoch-two snapshot equals a separate two-epoch run.
+The unmodified development path also matches the previous source's predictions
+and stopping epoch exactly on a fixture, recorded in
+`experiments/PN2-autorec-compatibility.json`. The new native fixed-epoch tests
+are included in `make test`. No full AutoRec production training was launched.
