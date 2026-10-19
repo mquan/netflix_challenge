@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "users_checked": 4096,
+  "report_sha256": "0645c650c8832a30daec9305b6bf0510546f818f4b68f0a8860ac1691642efb0",
+  "independent_checks": [
+    "Sample exactly reproduces fixed uniform user selection",
+    "Original full-data histories contain unique movie IDs",
+    "Original full-data set differences reproduce every sampled choice count",
+    "Original query counts and no-choice context budget reproduce every row",
+    "Every non-query choice fits in the audited context; none was dropped",
+    "Rated count differences match identity removals minus additions"
+  ],
+  "total_choice_ids": 48902,
+  "eligible_nonquery_choice_ids": 36387,
+  "tests_passed": 2,
+  "tests": "experiments/N1-context-audit-tests.json",
+  "frozen_queue_inputs_unchanged": 24,
+  "finding": "Prediction-time rated-token displacement is rare and small in this sample; context enlargement is not supported as the next intervention by this evidence alone.",
+  "limitation": "No training-mask audit, model prediction, causal score attribution, or validated score gain."
+}

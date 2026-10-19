@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "users": 4096,
+    "query_rows": 12515,
+    "users_losing_rated_context": 28,
+    "rated_tokens_without_choices": 837678,
+    "rated_tokens_with_choices": 837431,
+    "rated_token_loss": 247,
+    "rated_token_loss_fraction": 0.0002948627038074296,
+    "choice_tokens_retained": 36387,
+    "choice_tokens_available": 48902,
+    "rated_id_removals": 247,
+    "rated_id_additions": 0,
+    "max_rated_token_loss": 9
+  },
+  "by_training_history": {
+    "under_384": {
+      "users": 3439,
+      "query_rows": 10493,
+      "users_losing_rated_context": 0,
+      "rated_tokens_without_choices": 362586,
+      "rated_tokens_with_choices": 362586,
+      "rated_token_loss": 0,
+      "rated_token_loss_fraction": 0.0,
+      "choice_tokens_retained": 30474,
+      "choice_tokens_available": 40967,
+      "rated_id_removals": 0,
+      "rated_id_additions": 0,
+      "max_rated_token_loss": 0
+    },
+    "384_to_1535": {
+      "users": 630,
+      "query_rows": 1930,
+      "users_losing_rated_context": 1,
+      "rated_tokens_without_choices": 433739,
+      "rated_tokens_with_choices": 433735,
+      "rated_token_loss": 4,
+      "rated_token_loss_fraction": 9.222135892783448e-06,
+      "choice_tokens_retained": 5670,
+      "choice_tokens_available": 7600,
+      "rated_id_removals": 4,
+      "rated_id_additions": 0,
+      "max_rated_token_loss": 4
+    },
+    "1536_or_more": {
+      "users": 27,
+      "query_rows": 92,
+      "users_losing_rated_context": 27,
+      "rated_tokens_without_choices": 41353,
+      "rated_tokens_with_choices": 41110,
+      "rated_token_loss": 243,
+      "rated_token_loss_fraction": 0.005876236306918482,
+      "choice_tokens_retained": 243,
+      "choice_tokens_available": 335,
+      "rated_id_removals": 243,
+      "rated_id_additions": 0,
+      "max_rated_token_loss": 9
+    }
+  },
+  "scope": "Uniform sample of P2 query users; deterministic prediction input construction only. Same archived N1 builder with choice_tokens 0/1. This is not historical A2h model inference, training-mask coverage, score attribution, or a promotion gate. No P2 ratings were used; no model was loaded or updated."
+}

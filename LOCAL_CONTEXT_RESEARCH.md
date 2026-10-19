@@ -794,3 +794,32 @@ training pass took 1,727.07 seconds. The live process advanced to epoch 8.
 Keep the fixed selection and ensemble-gate protocol: this observation supports
 neither promotion nor an early declaration that the recipe has failed. SO1's
 queue remains live and waiting for the complete N1 chain.
+
+### N1 context displacement measured
+
+The earlier source audit identified possible competition between rated history
+and choice tokens within the 1,536-token window. A read-only measurement now
+limits that explanation: on 4,096 uniformly sampled P2 query users (seed
+20261019; 12,515 query rows), choice tokens displace **247 of 837,678 rated
+context tokens, or 0.0295%**. Only 28 users lose any rated context. Of those,
+27 have at least 1,536 training ratings; within this long-history stratum the
+loss is 243 of 41,353 tokens (0.588%). The largest per-user loss is nine tokens.
+The builder retains 36,387 non-query choice tokens; all eligible choices fit
+for these sampled users.
+
+`scripts/choice_context_audit.py` loads the exact archived N1 input builder,
+checks its dependency hashes, and compares choice_tokens 0/1 on identical
+query batches. It copies only sampled histories while preserving original user
+IDs for the deterministic window hashes. It never loads a model, uses P2 rating
+labels, constructs a GPU tensor, or updates another worktree. Two CPU fixture
+tests verify compaction preserves every token tensor and reproduce known
+displacement/query-exclusion cases. Independent set differences on the original
+full dataset verify every sampled choice count and available context budget.
+Evidence: `experiments/N1-context-audit.result.json`,
+`experiments/N1-context-audit-verification.json`, and archived experiment sources.
+
+This weakens prediction-time crowding as a broad explanation for N1's current
+deficit and does not justify enlarging the context window next. It does not
+measure training masks, attention dilution, optimization, or causal score loss;
+historical initialization differences remain. Keep N1's fixed protocol and the
+matched SO1 objective experiment unchanged. No score improvement is claimed.
