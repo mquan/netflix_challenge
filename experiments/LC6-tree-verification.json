@@ -1,0 +1,36 @@
+{
+  "component": "LightGBM-s3 only",
+  "reference": {
+    "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-s3.refit.f32",
+    "sha256": "a4d12d8754cc7e6a31e1835a7e8adad757b6e87cefa048868b9b528175f7af48",
+    "rmse": 0.8671122159675012,
+    "fold_rmse": [
+      0.8681100034404194,
+      0.8669143383587214,
+      0.8634172603310133,
+      0.868448089599884,
+      0.8686834279924401
+    ]
+  },
+  "candidate": {
+    "path": "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC6/LC6-trajectory-s3.refit.f32",
+    "sha256": "142f57d87369c3e17a08067f1016272820c7260b630a99fe91564e40e7080ab6",
+    "rmse": 0.8670769771641967,
+    "fold_rmse": [
+      0.8680220252212172,
+      0.8670619115278249,
+      0.8633055906700556,
+      0.8683928142780117,
+      0.8686148487155119
+    ]
+  },
+  "rmse_delta": -3.523880330447149e-05,
+  "fold_deltas": [
+    -8.797821920225601e-05,
+    0.0001475731691034099,
+    -0.0001116696609576584,
+    -5.527532187221684e-05,
+    -6.857927692827115e-05
+  ],
+  "limitation": "Intermediate component check only. Final 50/50 ensemble and promotion decision await NN2; promoted score remains unchanged."
+}

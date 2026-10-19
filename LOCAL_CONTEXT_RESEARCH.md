@@ -670,6 +670,17 @@ While LC6 trains, the final-production audit is recorded in
 columns are hash-verified; producer/dependency recovery remains incomplete.
 That work does not alter LC6's frozen inputs or constitute a score improvement.
 
+### LC6 tree component complete; final comparison pending
+
+The three-seed LightGBM stage completed in 4,726 seconds. Independently rescored
+saved float32 predictions give 0.867076977 versus control 0.867112216, a gain
+of 0.000035239. Fold deltas are -0.000087978, +0.000147573, -0.000111670,
+-0.000055275, -0.000068579. Thus four folds improve and one worsens. This is a
+small intermediate component result, not a promotion or the predeclared final
+comparison. NN2 is running; the fixed 50/50 average, all-five-fold gate and
+0.0003 continuation gate remain pending. Evidence:
+`experiments/LC6-tree-verification.json`. Promoted best remains 0.8668706425.
+
 ### Concurrent research inventory (read-only, 2026-10-19 UTC)
 
 The existing `honest-residual-chains` worktree has moved beyond the closed HR2/HR4
