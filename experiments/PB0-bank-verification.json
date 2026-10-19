@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "plan_sha256": "6583d39e3e2774365576ea6138735022ad9d305560f4e4ea4897b7fe7d2f75b6",
+  "comparison": "Every development value against unmodified round8_nn_blend.bank with original report paths; no model training",
+  "groups": {
+    "predictions": {
+      "shape": [
+        1408395,
+        79
+      ],
+      "dtype": "float32",
+      "all_values_exact": true,
+      "array_sha256": "ddc7a4956ccf6f9f2483c4080177aec41af9c17047136495b3ef9822b3c8b5c2"
+    },
+    "auxiliary": {
+      "shape": [
+        1408395,
+        64
+      ],
+      "dtype": "float64",
+      "all_values_exact": true,
+      "array_sha256": "e102d288be92d04fdc8b9131827dd2d0480934d16423b7cb24d96fbeb11b5b16"
+    },
+    "context": {
+      "shape": [
+        1408395,
+        5
+      ],
+      "dtype": "float32",
+      "all_values_exact": true,
+      "array_sha256": "c66787e5b37fd4b3a7fe9b42d9744bb6835a134b38fb24d621a0f7d7eaefc551"
+    }
+  },
+  "retained_duplicate_aliases_preserved": true,
+  "pending_production_rejection": "87 production columns pending: ['artifacts/other-branch/joint64.f32', 'artifacts/other-branch/joint128-reg005.f32', 'artifacts/other-branch/joint128-reg02.f32']",
+  "budgets": {
+    "tree": [
+      {
+        "seed": 2026,
+        "steps": 904
+      },
+      {
+        "seed": 7,
+        "steps": 969
+      },
+      {
+        "seed": 13,
+        "steps": 1106
+      }
+    ],
+    "neural": [
+      {
+        "seed": 2026,
+        "steps": 15
+      },
+      {
+        "seed": 7,
+        "steps": 14
+      },
+      {
+        "seed": 13,
+        "steps": 14
+      }
+    ]
+  },
+  "tests": {
+    "command": "OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 OMP_NUM_THREADS=1 /Users/quan/.cache/netflix-venv/bin/python -m unittest discover -s tests -p test_production_blend.py -v",
+    "passed": 3,
+    "seconds": 8.793
+  },
+  "runtime_resolution": "First combined LightGBM/PyTorch fitting attempt aborted with OpenMP Error 15. Isolated LightGBM subprocess worker; no duplicate-runtime override used. Full CLI fixture fit and reload then passed.",
+  "source_hashes": {
+    "scripts/production_blend.py": "eee8be96faf75c3eaef1af39eebeff26649dd374eae0db4843b9bcc0fe2c7af0",
+    "scripts/production_blend_plan.py": "e775686778ce0e7aa318e6bc17de9aeac05be0f05d2a7f32f80be21b858be986",
+    "scripts/production_blend_tree.py": "1c811ef847949ff7973fe9a94e924f8f3136e97ac0f129e907f4f01e2c39a1ee"
+  },
+  "elapsed_seconds": 14.515737500041723,
+  "scope": "Bank assembly verified on all 1408395 development rows; fitting and persisted inference tested on synthetic fixtures only. No full-probe production fit or score gain."
+}

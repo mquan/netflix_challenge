@@ -1,0 +1,1873 @@
+{
+  "state": "development_ready_qualifying_pending",
+  "development": {
+    "dataset": {
+      "path": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+    },
+    "rows": 1408395,
+    "predictions": [
+      {
+        "name": "artifacts/other-branch/joint64.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint64.f32",
+        "sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-reg005.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32",
+        "sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-reg02.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32",
+        "sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-day128.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32",
+        "sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748"
+      },
+      {
+        "name": "artifacts/other-branch/joint256-snap.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+        "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0"
+      },
+      {
+        "name": "artifacts/other-branch/neighborhood64.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+        "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-p1.f32",
+        "sha256": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j64-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j64-p1.f32",
+        "sha256": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128r005.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r005.f32",
+        "sha256": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128r02.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r02.f32",
+        "sha256": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128day.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128day.f32",
+        "sha256": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j256snap.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j256snap.f32",
+        "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a"
+      },
+      {
+        "name": "artifacts/other-branch/rbm100-fast.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/rbm100-fast.f32",
+        "sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e"
+      },
+      {
+        "name": "artifacts/other-branch/autorec512-a3-snap.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a3-snap.f32",
+        "sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362"
+      },
+      {
+        "name": "artifacts/other-branch/autorec512-a2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a2.f32",
+        "sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae"
+      },
+      {
+        "name": "artifacts/gp-full.0.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.0.f32",
+        "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb"
+      },
+      {
+        "name": "artifacts/gp-full.1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.1.f32",
+        "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321"
+      },
+      {
+        "name": "artifacts/gp-full.2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.2.f32",
+        "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92"
+      },
+      {
+        "name": "artifacts/gp2-persistent-full.0.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+        "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b"
+      },
+      {
+        "name": "artifacts/local-global.epoch6.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+        "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade"
+      },
+      {
+        "name": "artifacts/local-local.epoch6.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+        "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7"
+      },
+      {
+        "name": "artifacts/joint256-reg01.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32",
+        "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0"
+      },
+      {
+        "name": "artifacts/T2-f64-lr005-reg015-d97.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32",
+        "sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5"
+      },
+      {
+        "name": "artifacts/T3-f64-lr008-reg008.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32",
+        "sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6"
+      },
+      {
+        "name": "artifacts/T4-f64-lr012-reg015-d93.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32",
+        "sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7"
+      },
+      {
+        "name": "artifacts/T6-f256.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32",
+        "sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a"
+      },
+      {
+        "name": "artifacts/I2-integrated-f64-koren.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32",
+        "sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55"
+      },
+      {
+        "name": "artifacts/knn64-T4.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-T4.f32",
+        "sha256": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p1.f32",
+        "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p2.f32",
+        "sha256": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-k16.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-k16.f32",
+        "sha256": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-s5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-s5.f32",
+        "sha256": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a"
+      },
+      {
+        "name": "artifacts/r4/knn-T2-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T2-p1.f32",
+        "sha256": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7"
+      },
+      {
+        "name": "artifacts/r4/knn-T3-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T3-p1.f32",
+        "sha256": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8"
+      },
+      {
+        "name": "artifacts/r4/knn-T6-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6-p1.f32",
+        "sha256": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad"
+      },
+      {
+        "name": "artifacts/rbm200.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/rbm200.f32",
+        "sha256": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e"
+      },
+      {
+        "name": "artifacts/autorec512-a3.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/autorec512-a3.f32",
+        "sha256": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b"
+      },
+      {
+        "name": "artifacts/knn64-p2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-p2.f32",
+        "sha256": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd"
+      },
+      {
+        "name": "artifacts/knn64-j64-p2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-j64-p2.f32",
+        "sha256": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641"
+      },
+      {
+        "name": "artifacts/rbm100.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/rbm100.f32",
+        "sha256": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.003.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.003.f32",
+        "sha256": "8ef145b9a4d189969bfc86a525d0a562046e20b99634c43c070019630f15d255"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.1.f32",
+        "sha256": "22b5470f47325e7f2179a9de63c7c0a74c2e5e2e94625ec4ab5ac45a676d26bd"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+        "sha256": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+        "sha256": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+        "sha256": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T2.f32",
+        "sha256": "8ef0b6d0850c844a970dcf9fcdb47fde7f93e46ce70d14a76fa567ef3b1b240b"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T4.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T4.f32",
+        "sha256": "02c76260c42ee4ae4942f03664d8912c1e541404c63ad43e6d8a66fbdaa165cf"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J2.f32",
+        "sha256": "4218c749bb1d014c89cef863926bd8c02f44d9fd5b449ad5a5d67573bc072f58"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J4.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J4.f32",
+        "sha256": "64934d6a4e8e53d95ecf7b13b910668b949bd143014e28aabafaec5f7da55ff0"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J3.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J3.f32",
+        "sha256": "905d4edc05fbedeab3b38ebe5e7bdb57597454ed5dabb88e202175a18531f244"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J1.f32",
+        "sha256": "a47186e6abf03d82b51c48057179dccb0c5cb12b91d2a2611d80e181bf828c89"
+      },
+      {
+        "name": "artifacts/I2R-integrated.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32",
+        "sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17"
+      },
+      {
+        "name": "artifacts/T6R-f256.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32",
+        "sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f"
+      },
+      {
+        "name": "artifacts/r4/knn-T6R-p1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6R-p1.f32",
+        "sha256": "bb2dccd6d99fcf5cc9bae13df3a9eea8da7be8a476f90228dc1571414606ffd2"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T6R.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T6R.f32",
+        "sha256": "0ab9e2d5b6f48d9c908d8c8480f6c36b06cc1ac224c7956deb3d76d48846a1d6"
+      },
+      {
+        "name": "artifacts/R4D-rbm200-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/R4D-rbm200-cond.f32",
+        "sha256": "34b40abbd3cbec04dd69877692008f10b9a2c053e8171306f65aae9bd6a06a74"
+      },
+      {
+        "name": "artifacts/R4C-rbm200-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/R4C-rbm200-cond.f32",
+        "sha256": "5dc6dcf3ea6f7d66a19c277d603ecd88e29563033a1303c58556a719e54961fb"
+      },
+      {
+        "name": "artifacts/P2-rbm200-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/P2-rbm200-cond.f32",
+        "sha256": "c54a35daf5d9533fe039bf6a11e5050122ea4346c61192ca3800107f947723d9"
+      },
+      {
+        "name": "artifacts/R2C-rbm100-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/R2C-rbm100-cond.f32",
+        "sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c"
+      },
+      {
+        "name": "artifacts/P3C-rbm200-s7-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/P3C-rbm200-s7-cond.f32",
+        "sha256": "bffa26b3ff99b258740da3910151f2f65d2a5d1c2caab94fa1e71e24639f7fb9"
+      },
+      {
+        "name": "artifacts/P4C-rbm300-cond.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/P4C-rbm300-cond.f32",
+        "sha256": "a2bdfaefdcceff07400eb302557440adde866b09d1a2236895b6b560e5fde2bb"
+      },
+      {
+        "name": "artifacts/masked/MH3-categorical-mse-refit.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+        "sha256": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f"
+      },
+      {
+        "name": "artifacts/masked/MT0-refit.refit.e12.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+        "sha256": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c"
+      },
+      {
+        "name": "artifacts/masked/MT1-refit.refit.e10.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32",
+        "sha256": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306"
+      },
+      {
+        "name": "artifacts/masked/MT2-refit.refit.e12.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32",
+        "sha256": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652"
+      },
+      {
+        "name": "artifacts/masked/MT3-refit.refit.e7.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32",
+        "sha256": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25"
+      },
+      {
+        "name": "artifacts/masked/MT5-refit.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT5-refit.f32",
+        "sha256": "b8cf234a99df0bcd8e0327596924fe75c5f50aa48d88bbee3bd8a616dc3b6230"
+      },
+      {
+        "name": "artifacts/masked/MT6-refit.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT6-refit.f32",
+        "sha256": "2af9bd601f171af02d81e327418b1f76d74f0d1c62b0c4d4af7380e551a90b3a"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.f32",
+        "sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d"
+      },
+      {
+        "name": "artifacts/masked/MT8-refit.refit.e7.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT8-refit.refit.e7.f32",
+        "sha256": "e207d2ec7e41c5d1764e7b4a4070a948fa7eb773f350fd7dc4c047474422e550"
+      },
+      {
+        "name": "artifacts/masked/MT9-refit.refit.e8.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT9-refit.refit.e8.f32",
+        "sha256": "ed94f90bbcdf0441d869148b5bc5168c2bb5637e9d82966d7ffc2449f90251ae"
+      },
+      {
+        "name": "artifacts/r8/B2-full-r64.s0128.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B2-full-r64.s0128.f32",
+        "sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f"
+      },
+      {
+        "name": "artifacts/masked/A2-refit.refit.e11.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2-refit.refit.e11.f32",
+        "sha256": "4b3ee1439890585c062967aff23b53f22496b07fde647407e961a5a1759dca99"
+      },
+      {
+        "name": "artifacts/r8/B3-full-r128.s0160.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B3-full-r128.s0160.f32",
+        "sha256": "059041f3d147a84c6d120a9420a7278c9840164ab8f9dfc450ff73d2d37bb1f1"
+      },
+      {
+        "name": "artifacts/masked/A2b-refit.refit.e10.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2b-refit.refit.e10.f32",
+        "sha256": "ef796d4a2bc98196b09e9b4a86f57a87c473901c1fe64076ad79cef93212c782"
+      },
+      {
+        "name": "artifacts/r8/B4-full-r128.s0160.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+        "sha256": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac"
+      },
+      {
+        "name": "artifacts/masked/A2e-refit.refit.e12.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2e-refit.refit.e12.f32",
+        "sha256": "41c20dde1fe3697734025b3d374549ab302aa5f39e8467a05fe2703b68106906"
+      },
+      {
+        "name": "artifacts/masked/A2f-refit.refit.e10.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2f-refit.refit.e10.f32",
+        "sha256": "68275a257426e316a919e50ce273c2c6546af18433c3be076a76093957f6136f"
+      },
+      {
+        "name": "artifacts/masked/A2h-refit.refit.e12.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+        "sha256": "70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4"
+      }
+    ],
+    "auxiliary": [
+      {
+        "name": "artifacts/other-branch/knn64-j128day.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128day.support.f32",
+        "sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j256snap.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j256snap.support.f32",
+        "sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.support.f32",
+        "sha256": "869598300d0d5fb7d1c9fc51cff2b5af5704459cb00f42238cba6d61f35756ba"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.count.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.count.f32",
+        "sha256": "ab5964f1347cdbcf749c555620176270c71d2a831c5f70a89b1b30af0c00d960"
+      },
+      {
+        "name": "artifacts/r8/meta-audience.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-audience.f32",
+        "sha256": "7e5ee04ffa07a405c97ac673112c2346a8eebbd79da3c1ed3c7600bd17241e0c"
+      },
+      {
+        "name": "artifacts/r8/meta-confidence.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-confidence.f32",
+        "sha256": "545fbe7b05c214fc4381d4f1e28f7c5a21122b8f129db2b602e32c1cb9c2e58d"
+      },
+      {
+        "name": "artifacts/r8/meta-franchise_size.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-franchise_size.f32",
+        "sha256": "640fe5c5d76de2f4e22a4e2bc46b3dd293f4e3672ee1378a9f00c6e2273a414c"
+      },
+      {
+        "name": "artifacts/r8/meta-g_action.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_action.f32",
+        "sha256": "c0672cb074f9cbb774bd876316db1325e506a9ea30036e037d5cf48525b469d9"
+      },
+      {
+        "name": "artifacts/r8/meta-g_comedy.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_comedy.f32",
+        "sha256": "35190c0ab23d3e0f6b06a8e7159c88f4b486240c3f9ed36e416b9bc49bb5e5b9"
+      },
+      {
+        "name": "artifacts/r8/meta-g_documentary.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_documentary.f32",
+        "sha256": "d45837270f82eb9fda6661b66d3e514c929ecdb61ba03e60ec4526c2ab872419"
+      },
+      {
+        "name": "artifacts/r8/meta-g_drama.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_drama.f32",
+        "sha256": "b94b8cd1e0a0b741f0caa85466e190c18510974512bb3795bfd9514d895c7585"
+      },
+      {
+        "name": "artifacts/r8/meta-g_family.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_family.f32",
+        "sha256": "71ce3a86a99d3a45e2cf20e7a29967cf5452733e112d5db335a42cab76720768"
+      },
+      {
+        "name": "artifacts/r8/meta-g_foreign.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_foreign.f32",
+        "sha256": "e5ae4d5fc929fa094dcd79a4399e14008a372843824a8cb19eb3e26ea1f9bf60"
+      },
+      {
+        "name": "artifacts/r8/meta-g_horror.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_horror.f32",
+        "sha256": "7171130e1926e214831fbf315830ed0c7d2ea0b1b55e6f9683f82801fa8e49dd"
+      },
+      {
+        "name": "artifacts/r8/meta-g_romance.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_romance.f32",
+        "sha256": "bb048adc4b62366b2d5790ddacf64a8a052fe22fe7b69677fd26f77192203422"
+      },
+      {
+        "name": "artifacts/r8/meta-g_scifi.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_scifi.f32",
+        "sha256": "c90d55277c926c794bd0be91f6d19644cc1540dfec3a9e0f4de99bf97f2add88"
+      },
+      {
+        "name": "artifacts/r8/meta-g_thriller.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-g_thriller.f32",
+        "sha256": "dd70e7907cefaaec029291893120b10c173ed84c741adda69fdf1c180e5e1c18"
+      },
+      {
+        "name": "artifacts/r8/meta-kind.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-kind.f32",
+        "sha256": "36007859f92a6fa75e3e09311c2be846c41104c211bfb9ca8406389e449f49ce"
+      },
+      {
+        "name": "artifacts/r8/meta-popularity.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-popularity.f32",
+        "sha256": "e4f8747aa5d9b60f05392dfbb1bb76ab6d772d59f156ba3eb13cef67f858894b"
+      },
+      {
+        "name": "artifacts/r8/meta-tone.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/meta-tone.f32",
+        "sha256": "7bacfd91b4191a5abc1fc48dfdae9cede2a3ea2540cf2add6ad9376e71498d66"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p1.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p1.support.f32",
+        "sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.1.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.1.support.f32",
+        "sha256": "805f736a076ca5cec114f69ddc59da063d084d66220a4bb10e407b058df0aec2"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+        "sha256": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T6R.support.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T6R.support.f32",
+        "sha256": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc0.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc0.f32",
+        "sha256": "98c47d4e4d8a6d22031dfb2847eb1de7cdd1ce7e4f984cb5af4bf4b3bec81c4e"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc0.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc0.f32",
+        "sha256": "61c89bd3aa2b2c9972b8b99595de1a2d86a87b6324e187ffcd12800034308364"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc1.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc1.f32",
+        "sha256": "08d5375753e474c33296a2c39f95654912a2e5fb04f70a6762773457f2da15bd"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc1.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc1.f32",
+        "sha256": "be477ecdb6babc060f758e7875a86357114ac2d6a3319b43148f6c83f028b0e4"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc2.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc2.f32",
+        "sha256": "e142efd5f1c7d15213d67773e268367de674583a0d50209ee5475418d96604f6"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc2.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc2.f32",
+        "sha256": "ffa4da5c6ea20f7632adaf7086d202ab9bc6428b1175e49830045076064ee7e9"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc3.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc3.f32",
+        "sha256": "2631e0e7ab426d47a043a962cb15f9f9831afc844f99d5af8b14e691c1800b79"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc3.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc3.f32",
+        "sha256": "94c5ad2e2188cc8c44749dd841574041473ebfbdf0ae89356c2fce4089e9d76a"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc4.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc4.f32",
+        "sha256": "d2fbfda56771f076fd5dfa199b4359592b84cf56b0e27ac1956b4d401767e85b"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc4.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc4.f32",
+        "sha256": "873a5054cbfa90a323f355366e204d730fb7bc43daa096e276a4e3f31d46835c"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc5.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc5.f32",
+        "sha256": "08df2278bb4c91d6e6eca286d5ce7f8d2324d62064a3c1c5927158cbd582a423"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc5.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc5.f32",
+        "sha256": "1facd8e0feb34ae9f5090db35a506e2ea0d48efdb2d46ac651ebbad63d15d242"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc6.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc6.f32",
+        "sha256": "013ca820c2c1de32057b0f3b2a05357c4ef18b1a8125770a17d8ab1fa8343f19"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc6.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc6.f32",
+        "sha256": "59501f9adc8ae1b4d4610cbdf90768662e38a8d961b05c51fbfcffb74020f63f"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc7.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_pc7.f32",
+        "sha256": "14868de20ba5222011b02110ef001671e6ae70e9039e80e444f40a4aed9c0843"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc7.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_pc7.f32",
+        "sha256": "e7fe2b79326ad470a0626da4c7a8c215b84927298488bb2e65d9084b03521843"
+      },
+      {
+        "name": "artifacts/r9/latent/user_bias.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_bias.f32",
+        "sha256": "c5b3f0a5882c2fac1719d109c1aa6623f6b5181b471942d53fcce970cc326403"
+      },
+      {
+        "name": "artifacts/r9/latent/user_drift.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/user_drift.f32",
+        "sha256": "9b97383c565c92d5a87b04ffb6558466d952b09212ee38cd77c7d9aea970d08a"
+      },
+      {
+        "name": "artifacts/r9/latent/day_bias.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/day_bias.f32",
+        "sha256": "b1a9d525b0bae82e49d26dbf7fec257dfd53ade21efe9c8585adfda1a1087f6c"
+      },
+      {
+        "name": "artifacts/r9/latent/scale.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/scale.f32",
+        "sha256": "d6537350da03cb70724418edcc810a200c0d190e855d8793acc2f6f1f87fa74f"
+      },
+      {
+        "name": "artifacts/r9/latent/item_bias.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/item_bias.f32",
+        "sha256": "f479dad039d87e1560b353ba506d944f1eec12f887a169c494402afe25355252"
+      },
+      {
+        "name": "artifacts/r9/latent/frequency_bias.f32",
+        "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/latent/frequency_bias.f32",
+        "sha256": "f41cda4808f4eccaa09723dc54ba79e09fe0a47f6adc987f5177b6da24216e90"
+      },
+      {
+        "name": "meta0",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 0
+      },
+      {
+        "name": "meta1",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 1
+      },
+      {
+        "name": "meta2",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 2
+      },
+      {
+        "name": "meta3",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 3
+      },
+      {
+        "name": "meta4",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 4
+      },
+      {
+        "name": "meta5",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 5
+      },
+      {
+        "name": "meta6",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 6
+      },
+      {
+        "name": "meta7",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 7
+      },
+      {
+        "name": "meta8",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 8
+      },
+      {
+        "name": "meta9",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 9
+      },
+      {
+        "name": "meta10",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/meta.npy",
+        "sha256": "04d05bd258eb5177322c6840803043166f79a5f3e69c3903aa80436ca24b80fb",
+        "column": 10
+      },
+      {
+        "name": "movie_age",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 0
+      },
+      {
+        "name": "user_frac1",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 1
+      },
+      {
+        "name": "user_frac5",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 2
+      },
+      {
+        "name": "log_unrated_n",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 3
+      },
+      {
+        "name": "log_user_days",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 4
+      },
+      {
+        "name": "same_day_ratio",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 5
+      },
+      {
+        "name": "item_std",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/extra_meta.npy",
+        "sha256": "86cc12d268837ca6abe2b7ff4ef3e18d04ea2eea6128f90a9cb69d618cabbac5",
+        "column": 6
+      }
+    ],
+    "context": [
+      {
+        "name": "intercept",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "column": 0
+      },
+      {
+        "name": "log_training_user_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "column": 1
+      },
+      {
+        "name": "log_training_item_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "column": 2
+      },
+      {
+        "name": "day_minus_implicit_user_mean_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "column": 3
+      },
+      {
+        "name": "log_implicit_session_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/development_replay/context.npy",
+        "sha256": "01da54296c35202d68cef1453b6b99b5818dd767ac2d74d444e405baa0470689",
+        "column": 4
+      }
+    ]
+  },
+  "qualifying": {
+    "dataset": {
+      "path": "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin",
+      "sha256": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd"
+    },
+    "rows": 2817131,
+    "predictions": [
+      {
+        "name": "artifacts/other-branch/joint64.f32",
+        "pending": true,
+        "development_sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-reg005.f32",
+        "pending": true,
+        "development_sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-reg02.f32",
+        "pending": true,
+        "development_sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/joint128-day128.f32",
+        "pending": true,
+        "development_sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/joint256-snap.f32",
+        "pending": true,
+        "development_sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/neighborhood64.f32",
+        "pending": true,
+        "development_sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-p1.f32",
+        "pending": true,
+        "development_sha256": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j64-p1.f32",
+        "pending": true,
+        "development_sha256": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128r005.f32",
+        "pending": true,
+        "development_sha256": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128r02.f32",
+        "pending": true,
+        "development_sha256": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j128day.f32",
+        "pending": true,
+        "development_sha256": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j256snap.f32",
+        "pending": true,
+        "development_sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/rbm100-fast.f32",
+        "pending": true,
+        "development_sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/autorec512-a3-snap.f32",
+        "pending": true,
+        "development_sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/autorec512-a2.f32",
+        "pending": true,
+        "development_sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/gp-full.0.f32",
+        "pending": true,
+        "development_sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/gp-full.1.f32",
+        "pending": true,
+        "development_sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/gp-full.2.f32",
+        "pending": true,
+        "development_sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/gp2-persistent-full.0.f32",
+        "pending": true,
+        "development_sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/local-global.epoch6.f32",
+        "pending": true,
+        "development_sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/local-local.epoch6.f32",
+        "pending": true,
+        "development_sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/joint256-reg01.f32",
+        "pending": true,
+        "development_sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/T2-f64-lr005-reg015-d97.f32",
+        "pending": true,
+        "development_sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/T3-f64-lr008-reg008.f32",
+        "pending": true,
+        "development_sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/T4-f64-lr012-reg015-d93.f32",
+        "pending": true,
+        "development_sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/T6-f256.f32",
+        "pending": true,
+        "development_sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/I2-integrated-f64-koren.f32",
+        "pending": true,
+        "development_sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/knn64-T4.f32",
+        "pending": true,
+        "development_sha256": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p1.f32",
+        "pending": true,
+        "development_sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p2.f32",
+        "pending": true,
+        "development_sha256": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-k16.f32",
+        "pending": true,
+        "development_sha256": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-s5.f32",
+        "pending": true,
+        "development_sha256": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-T2-p1.f32",
+        "pending": true,
+        "development_sha256": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-T3-p1.f32",
+        "pending": true,
+        "development_sha256": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-T6-p1.f32",
+        "pending": true,
+        "development_sha256": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/rbm200.f32",
+        "pending": true,
+        "development_sha256": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/autorec512-a3.f32",
+        "pending": true,
+        "development_sha256": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/knn64-p2.f32",
+        "pending": true,
+        "development_sha256": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/knn64-j64-p2.f32",
+        "pending": true,
+        "development_sha256": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/rbm100.f32",
+        "pending": true,
+        "development_sha256": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.003.f32",
+        "pending": true,
+        "development_sha256": "8ef145b9a4d189969bfc86a525d0a562046e20b99634c43c070019630f15d255",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.1.f32",
+        "pending": true,
+        "development_sha256": "22b5470f47325e7f2179a9de63c7c0a74c2e5e2e94625ec4ab5ac45a676d26bd",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+        "pending": true,
+        "development_sha256": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+        "pending": true,
+        "development_sha256": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+        "pending": true,
+        "development_sha256": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T2.f32",
+        "pending": true,
+        "development_sha256": "8ef0b6d0850c844a970dcf9fcdb47fde7f93e46ce70d14a76fa567ef3b1b240b",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T4.f32",
+        "pending": true,
+        "development_sha256": "02c76260c42ee4ae4942f03664d8912c1e541404c63ad43e6d8a66fbdaa165cf",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J2.f32",
+        "pending": true,
+        "development_sha256": "4218c749bb1d014c89cef863926bd8c02f44d9fd5b449ad5a5d67573bc072f58",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J4.f32",
+        "pending": true,
+        "development_sha256": "64934d6a4e8e53d95ecf7b13b910668b949bd143014e28aabafaec5f7da55ff0",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J3.f32",
+        "pending": true,
+        "development_sha256": "905d4edc05fbedeab3b38ebe5e7bdb57597454ed5dabb88e202175a18531f244",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-J1.f32",
+        "pending": true,
+        "development_sha256": "a47186e6abf03d82b51c48057179dccb0c5cb12b91d2a2611d80e181bf828c89",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/I2R-integrated.f32",
+        "pending": true,
+        "development_sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/T6R-f256.f32",
+        "pending": true,
+        "development_sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-T6R-p1.f32",
+        "pending": true,
+        "development_sha256": "bb2dccd6d99fcf5cc9bae13df3a9eea8da7be8a476f90228dc1571414606ffd2",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T6R.f32",
+        "pending": true,
+        "development_sha256": "0ab9e2d5b6f48d9c908d8c8480f6c36b06cc1ac224c7956deb3d76d48846a1d6",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/R4D-rbm200-cond.f32",
+        "pending": true,
+        "development_sha256": "34b40abbd3cbec04dd69877692008f10b9a2c053e8171306f65aae9bd6a06a74",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/R4C-rbm200-cond.f32",
+        "pending": true,
+        "development_sha256": "5dc6dcf3ea6f7d66a19c277d603ecd88e29563033a1303c58556a719e54961fb",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/P2-rbm200-cond.f32",
+        "pending": true,
+        "development_sha256": "c54a35daf5d9533fe039bf6a11e5050122ea4346c61192ca3800107f947723d9",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/R2C-rbm100-cond.f32",
+        "pending": true,
+        "development_sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/P3C-rbm200-s7-cond.f32",
+        "pending": true,
+        "development_sha256": "bffa26b3ff99b258740da3910151f2f65d2a5d1c2caab94fa1e71e24639f7fb9",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/P4C-rbm300-cond.f32",
+        "pending": true,
+        "development_sha256": "a2bdfaefdcceff07400eb302557440adde866b09d1a2236895b6b560e5fde2bb",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MH3-categorical-mse-refit.f32",
+        "pending": true,
+        "development_sha256": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT0-refit.refit.e12.f32",
+        "pending": true,
+        "development_sha256": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT1-refit.refit.e10.f32",
+        "pending": true,
+        "development_sha256": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT2-refit.refit.e12.f32",
+        "pending": true,
+        "development_sha256": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT3-refit.refit.e7.f32",
+        "pending": true,
+        "development_sha256": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT5-refit.f32",
+        "pending": true,
+        "development_sha256": "b8cf234a99df0bcd8e0327596924fe75c5f50aa48d88bbee3bd8a616dc3b6230",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT6-refit.f32",
+        "pending": true,
+        "development_sha256": "2af9bd601f171af02d81e327418b1f76d74f0d1c62b0c4d4af7380e551a90b3a",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.f32",
+        "pending": true,
+        "development_sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT8-refit.refit.e7.f32",
+        "pending": true,
+        "development_sha256": "e207d2ec7e41c5d1764e7b4a4070a948fa7eb773f350fd7dc4c047474422e550",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/MT9-refit.refit.e8.f32",
+        "pending": true,
+        "development_sha256": "ed94f90bbcdf0441d869148b5bc5168c2bb5637e9d82966d7ffc2449f90251ae",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/B2-full-r64.s0128.f32",
+        "pending": true,
+        "development_sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/A2-refit.refit.e11.f32",
+        "pending": true,
+        "development_sha256": "4b3ee1439890585c062967aff23b53f22496b07fde647407e961a5a1759dca99",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/B3-full-r128.s0160.f32",
+        "pending": true,
+        "development_sha256": "059041f3d147a84c6d120a9420a7278c9840164ab8f9dfc450ff73d2d37bb1f1",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/A2b-refit.refit.e10.f32",
+        "pending": true,
+        "development_sha256": "ef796d4a2bc98196b09e9b4a86f57a87c473901c1fe64076ad79cef93212c782",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/B4-full-r128.s0160.f32",
+        "pending": true,
+        "development_sha256": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/A2e-refit.refit.e12.f32",
+        "pending": true,
+        "development_sha256": "41c20dde1fe3697734025b3d374549ab302aa5f39e8467a05fe2703b68106906",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/A2f-refit.refit.e10.f32",
+        "pending": true,
+        "development_sha256": "68275a257426e316a919e50ce273c2c6546af18433c3be076a76093957f6136f",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/masked/A2h-refit.refit.e12.f32",
+        "pending": true,
+        "development_sha256": "70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      }
+    ],
+    "auxiliary": [
+      {
+        "name": "artifacts/other-branch/knn64-j128day.support.f32",
+        "pending": true,
+        "development_sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/other-branch/knn64-j256snap.support.f32",
+        "pending": true,
+        "development_sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.support.f32",
+        "pending": true,
+        "development_sha256": "869598300d0d5fb7d1c9fc51cff2b5af5704459cb00f42238cba6d61f35756ba",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/C-uknn-K1.count.f32",
+        "pending": true,
+        "development_sha256": "ab5964f1347cdbcf749c555620176270c71d2a831c5f70a89b1b30af0c00d960",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r8/meta-audience.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-audience.f32",
+        "sha256": "9147b485827440b53d97d1c00cec84e69a5dff063e2cec1bd4a863e8a1ad9b2c"
+      },
+      {
+        "name": "artifacts/r8/meta-confidence.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-confidence.f32",
+        "sha256": "4c63c84c59f5f61a7172d20d30ff2d23945d090a10eba293128859175292e4f1"
+      },
+      {
+        "name": "artifacts/r8/meta-franchise_size.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-franchise_size.f32",
+        "sha256": "056b4a3f23a54612facb47c48e14451fce865c11878dc82ddcb84fc4f020660f"
+      },
+      {
+        "name": "artifacts/r8/meta-g_action.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_action.f32",
+        "sha256": "fc137072dc9252597bb1871a0ced6c880b5dd5c6c918051d0a6dbcda7703f37c"
+      },
+      {
+        "name": "artifacts/r8/meta-g_comedy.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_comedy.f32",
+        "sha256": "eb775f79923ef46cf613c3e5bc1ecc308d81c877d9d1bd1b752221b289185f67"
+      },
+      {
+        "name": "artifacts/r8/meta-g_documentary.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_documentary.f32",
+        "sha256": "1e6483b2ba301ddcc190fa151efe16fb086fd5b27927cb3486d7343d1cf01848"
+      },
+      {
+        "name": "artifacts/r8/meta-g_drama.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_drama.f32",
+        "sha256": "767c3929d98a333b6141b209fb71f5d9f206e9d781888970799220bc5488a811"
+      },
+      {
+        "name": "artifacts/r8/meta-g_family.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_family.f32",
+        "sha256": "7d8e3a5faeea6439505e11f807a620943ebca705d3f322485651a5ef39169d04"
+      },
+      {
+        "name": "artifacts/r8/meta-g_foreign.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_foreign.f32",
+        "sha256": "1f928512f155b05c01bb360a05a18a720167f05c5a0a7bf76c3715fbb9838d95"
+      },
+      {
+        "name": "artifacts/r8/meta-g_horror.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_horror.f32",
+        "sha256": "a978ccdc8dec0ffcd24a6a8de801d7a3e3e5be943180b3215e5f84d25c63692f"
+      },
+      {
+        "name": "artifacts/r8/meta-g_romance.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_romance.f32",
+        "sha256": "e9c6a51fd3f08ca57acfaa297c667a772dfea47c441b05a897adec6eabbd334c"
+      },
+      {
+        "name": "artifacts/r8/meta-g_scifi.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_scifi.f32",
+        "sha256": "e9c15b3f019718ef65ffe9bf44895ce857ac89a4a4ce20aeea69a2e21fb2e4a5"
+      },
+      {
+        "name": "artifacts/r8/meta-g_thriller.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-g_thriller.f32",
+        "sha256": "b08405dd0ebc40d06796557ed4128ccc6f4d45720f798292d9def8d40a001a38"
+      },
+      {
+        "name": "artifacts/r8/meta-kind.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-kind.f32",
+        "sha256": "597750d318f69e453681d743ba5b60c251ce68739ae1697bf1d39d9973c7ff0f"
+      },
+      {
+        "name": "artifacts/r8/meta-popularity.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-popularity.f32",
+        "sha256": "5867002ff2856972331c179f4538b16544a8650d9dee1f7b0baa5c8ebbc41d40"
+      },
+      {
+        "name": "artifacts/r8/meta-tone.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta-tone.f32",
+        "sha256": "dc83c17e7a13c4b61880bc6bec7482df3620b1795e0ec60085c921588637086b"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-p1.support.f32",
+        "pending": true,
+        "development_sha256": "6ff8f1e1444a086f884cc20efdd8dc451a56e447b8a3b62be410014787987b74",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn-J6-td.1.support.f32",
+        "pending": true,
+        "development_sha256": "805f736a076ca5cec114f69ddc59da063d084d66220a4bb10e407b058df0aec2",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+        "pending": true,
+        "development_sha256": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r4/knn256td-T6R.support.f32",
+        "pending": true,
+        "development_sha256": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+        "requirement": "Fixed-recipe train+probe regeneration with qualifying row order and provenance"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc0.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc0.f32",
+        "sha256": "62da57af9b37d09ad2e9d535c809826bfd44460e7604787d100b2156e19ea82e"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc0.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc0.f32",
+        "sha256": "370f4361a373c23ed8e211f73fef1032c12ba94a5edcf46f3c1d950e15ec12c5"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc1.f32",
+        "sha256": "d0c51cf2884017ee876769cd679da337535763d035338592e0749623cd3ad396"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc1.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc1.f32",
+        "sha256": "0aebebd12aca4153cdc6b78bf3bb34c5d3cf167a5918a3cbccc5c8995c56fed6"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc2.f32",
+        "sha256": "280d5f89bf445c652c4a95b1933b2de7bdaa0eb044e9f7c2ce74f37405447a95"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc2.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc2.f32",
+        "sha256": "e64ccc2de2eb34b2d988c9e8bdebdfc436d7a851335723b121385aacea92c82a"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc3.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc3.f32",
+        "sha256": "0601cdef7a0536bb34af3ecd8ed0ad68ccb68e2611809284e925fdc1e94a823f"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc3.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc3.f32",
+        "sha256": "931680a6f540198a6bcb0ac992e58d3f2a820774ef20305eff279fd5682e29aa"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc4.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc4.f32",
+        "sha256": "c247c1984c75d5eb97cea25016d7f2adbd6a5319d94b1400b095f4501d679ebf"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc4.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc4.f32",
+        "sha256": "af625ca7af90b4f7e1e7d0ef0a0ffd8f5ddb13883544101473745630c1b52ea0"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc5.f32",
+        "sha256": "07b111489a34ab2ed1ea3acb6474823793ae28ea5a5aedf75d7263d5c7a774b9"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc5.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc5.f32",
+        "sha256": "e622dcd94badd35b951b75211883f5878e88571bcf1da10fa7c00218ec4a3848"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc6.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc6.f32",
+        "sha256": "8b7532cd0c7dac45b7aac35ac138f5be9b92bdde88e8f0f835eccca51f5d688f"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc6.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc6.f32",
+        "sha256": "b6aca64654cdc6a08f5fbdf699db75040b016f2631edb8217cb6b257d7641e4b"
+      },
+      {
+        "name": "artifacts/r9/latent/user_pc7.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_pc7.f32",
+        "sha256": "d294eaebd74dd031b2ff974aeab3144e1f4a480ea4aec8a8fca4c45946ff677a"
+      },
+      {
+        "name": "artifacts/r9/latent/item_pc7.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_pc7.f32",
+        "sha256": "e8feb929ec03a29b7f6146c049d9648d01f25df4ad0968f333d8911ae2ed3b16"
+      },
+      {
+        "name": "artifacts/r9/latent/user_bias.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_bias.f32",
+        "sha256": "71b0e5966354488ab992876a3ed2e3b1b128dc6fcdf5200b05b935b18542d6d8"
+      },
+      {
+        "name": "artifacts/r9/latent/user_drift.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/user_drift.f32",
+        "sha256": "65f644f41735f29363cf8ba75864460f9cd28169501107f158ad16b2c20a6d8d"
+      },
+      {
+        "name": "artifacts/r9/latent/day_bias.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/day_bias.f32",
+        "sha256": "4d18084f7e1621ef093691f6ec893e2102c1d8ef561eff6381382ababf3debe4"
+      },
+      {
+        "name": "artifacts/r9/latent/scale.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/scale.f32",
+        "sha256": "e49338fcbdc0329046d2d375ed0dda2d45167b750d7ff06ad4b0e6d54dc0ea57"
+      },
+      {
+        "name": "artifacts/r9/latent/item_bias.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/item_bias.f32",
+        "sha256": "b5b96f50c46f3b28648807dc772c417c4caac0cd8d1ad5f158e11a7a11e3a547"
+      },
+      {
+        "name": "artifacts/r9/latent/frequency_bias.f32",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF1-frozen-latent/qualifying/frequency_bias.f32",
+        "sha256": "78905092a1269e9e6fab67fc308362924eda24da72003873849733f2c002a2c5"
+      },
+      {
+        "name": "meta0",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 0
+      },
+      {
+        "name": "meta1",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 1
+      },
+      {
+        "name": "meta2",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 2
+      },
+      {
+        "name": "meta3",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 3
+      },
+      {
+        "name": "meta4",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 4
+      },
+      {
+        "name": "meta5",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 5
+      },
+      {
+        "name": "meta6",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 6
+      },
+      {
+        "name": "meta7",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 7
+      },
+      {
+        "name": "meta8",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 8
+      },
+      {
+        "name": "meta9",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 9
+      },
+      {
+        "name": "meta10",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/meta.npy",
+        "sha256": "65985a7ba993197b975b4bbb135f01fb9a50abfdd97c277619a0d9d3b481c125",
+        "column": 10
+      },
+      {
+        "name": "movie_age",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 0
+      },
+      {
+        "name": "user_frac1",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 1
+      },
+      {
+        "name": "user_frac5",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 2
+      },
+      {
+        "name": "log_unrated_n",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 3
+      },
+      {
+        "name": "log_user_days",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 4
+      },
+      {
+        "name": "same_day_ratio",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 5
+      },
+      {
+        "name": "item_std",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/extra_meta.npy",
+        "sha256": "da80ec471f23b42333695d25e278ac285cff1951453c822359d728cc4b871db2",
+        "column": 6
+      }
+    ],
+    "context": [
+      {
+        "name": "intercept",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "column": 0
+      },
+      {
+        "name": "log_training_user_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "column": 1
+      },
+      {
+        "name": "log_training_item_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "column": 2
+      },
+      {
+        "name": "day_minus_implicit_user_mean_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "column": 3
+      },
+      {
+        "name": "log_implicit_session_count_scaled",
+        "path": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PF2-metadata/qualifying/context.npy",
+        "sha256": "ae3b0f488e5733cb5bfb53fe9719aeb23bea0813a2e5eea85b07dec85f0ccccc",
+        "column": 4
+      }
+    ]
+  },
+  "schema": {
+    "predictions": [
+      "artifacts/other-branch/joint64.f32",
+      "artifacts/other-branch/joint128-reg005.f32",
+      "artifacts/other-branch/joint128-reg02.f32",
+      "artifacts/other-branch/joint128-day128.f32",
+      "artifacts/other-branch/joint256-snap.f32",
+      "artifacts/other-branch/neighborhood64.f32",
+      "artifacts/other-branch/knn64-p1.f32",
+      "artifacts/other-branch/knn64-j64-p1.f32",
+      "artifacts/other-branch/knn64-j128r005.f32",
+      "artifacts/other-branch/knn64-j128r02.f32",
+      "artifacts/other-branch/knn64-j128day.f32",
+      "artifacts/other-branch/knn64-j256snap.f32",
+      "artifacts/other-branch/rbm100-fast.f32",
+      "artifacts/other-branch/autorec512-a3-snap.f32",
+      "artifacts/other-branch/autorec512-a2.f32",
+      "artifacts/gp-full.0.f32",
+      "artifacts/gp-full.1.f32",
+      "artifacts/gp-full.2.f32",
+      "artifacts/gp2-persistent-full.0.f32",
+      "artifacts/local-global.epoch6.f32",
+      "artifacts/local-local.epoch6.f32",
+      "artifacts/joint256-reg01.f32",
+      "artifacts/T2-f64-lr005-reg015-d97.f32",
+      "artifacts/T3-f64-lr008-reg008.f32",
+      "artifacts/T4-f64-lr012-reg015-d93.f32",
+      "artifacts/T6-f256.f32",
+      "artifacts/I2-integrated-f64-koren.f32",
+      "artifacts/knn64-T4.f32",
+      "artifacts/r4/knn-J6-p1.f32",
+      "artifacts/r4/knn-J6-p2.f32",
+      "artifacts/r4/knn-J6-k16.f32",
+      "artifacts/r4/knn-J6-s5.f32",
+      "artifacts/r4/knn-T2-p1.f32",
+      "artifacts/r4/knn-T3-p1.f32",
+      "artifacts/r4/knn-T6-p1.f32",
+      "artifacts/rbm200.f32",
+      "artifacts/autorec512-a3.f32",
+      "artifacts/knn64-p2.f32",
+      "artifacts/knn64-j64-p2.f32",
+      "artifacts/rbm100.f32",
+      "artifacts/r4/knn-J6-td.003.f32",
+      "artifacts/r4/knn-J6-td.1.f32",
+      "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "artifacts/r4/knn256td-T2.f32",
+      "artifacts/r4/knn256td-T4.f32",
+      "artifacts/r4/knn256td-J2.f32",
+      "artifacts/r4/knn256td-J4.f32",
+      "artifacts/r4/knn256td-J3.f32",
+      "artifacts/r4/knn256td-J1.f32",
+      "artifacts/I2R-integrated.f32",
+      "artifacts/T6R-f256.f32",
+      "artifacts/r4/knn-T6R-p1.f32",
+      "artifacts/r4/knn256td-T6R.f32",
+      "artifacts/R4D-rbm200-cond.f32",
+      "artifacts/R4C-rbm200-cond.f32",
+      "artifacts/P2-rbm200-cond.f32",
+      "artifacts/R2C-rbm100-cond.f32",
+      "artifacts/P3C-rbm200-s7-cond.f32",
+      "artifacts/P4C-rbm300-cond.f32",
+      "artifacts/masked/MH3-categorical-mse-refit.f32",
+      "artifacts/masked/MT0-refit.refit.e12.f32",
+      "artifacts/masked/MT1-refit.refit.e10.f32",
+      "artifacts/masked/MT2-refit.refit.e12.f32",
+      "artifacts/masked/MT3-refit.refit.e7.f32",
+      "artifacts/masked/MT5-refit.f32",
+      "artifacts/masked/MT6-refit.f32",
+      "artifacts/r8/C-uknn-K1.f32",
+      "artifacts/masked/MT8-refit.refit.e7.f32",
+      "artifacts/masked/MT9-refit.refit.e8.f32",
+      "artifacts/r8/B2-full-r64.s0128.f32",
+      "artifacts/masked/A2-refit.refit.e11.f32",
+      "artifacts/r8/B3-full-r128.s0160.f32",
+      "artifacts/masked/A2b-refit.refit.e10.f32",
+      "artifacts/r8/B4-full-r128.s0160.f32",
+      "artifacts/masked/A2e-refit.refit.e12.f32",
+      "artifacts/masked/A2f-refit.refit.e10.f32",
+      "artifacts/masked/A2h-refit.refit.e12.f32"
+    ],
+    "auxiliary": [
+      "artifacts/other-branch/knn64-j128day.support.f32",
+      "artifacts/other-branch/knn64-j256snap.support.f32",
+      "artifacts/r8/C-uknn-K1.support.f32",
+      "artifacts/r8/C-uknn-K1.count.f32",
+      "artifacts/r8/meta-audience.f32",
+      "artifacts/r8/meta-confidence.f32",
+      "artifacts/r8/meta-franchise_size.f32",
+      "artifacts/r8/meta-g_action.f32",
+      "artifacts/r8/meta-g_comedy.f32",
+      "artifacts/r8/meta-g_documentary.f32",
+      "artifacts/r8/meta-g_drama.f32",
+      "artifacts/r8/meta-g_family.f32",
+      "artifacts/r8/meta-g_foreign.f32",
+      "artifacts/r8/meta-g_horror.f32",
+      "artifacts/r8/meta-g_romance.f32",
+      "artifacts/r8/meta-g_scifi.f32",
+      "artifacts/r8/meta-g_thriller.f32",
+      "artifacts/r8/meta-kind.f32",
+      "artifacts/r8/meta-popularity.f32",
+      "artifacts/r8/meta-tone.f32",
+      "artifacts/r4/knn-J6-p1.support.f32",
+      "artifacts/r4/knn-J6-td.1.support.f32",
+      "artifacts/r4/knn256-J6-k256-p1-s.5.support.f32",
+      "artifacts/r4/knn256td-T6R.support.f32",
+      "artifacts/r9/latent/user_pc0.f32",
+      "artifacts/r9/latent/item_pc0.f32",
+      "artifacts/r9/latent/user_pc1.f32",
+      "artifacts/r9/latent/item_pc1.f32",
+      "artifacts/r9/latent/user_pc2.f32",
+      "artifacts/r9/latent/item_pc2.f32",
+      "artifacts/r9/latent/user_pc3.f32",
+      "artifacts/r9/latent/item_pc3.f32",
+      "artifacts/r9/latent/user_pc4.f32",
+      "artifacts/r9/latent/item_pc4.f32",
+      "artifacts/r9/latent/user_pc5.f32",
+      "artifacts/r9/latent/item_pc5.f32",
+      "artifacts/r9/latent/user_pc6.f32",
+      "artifacts/r9/latent/item_pc6.f32",
+      "artifacts/r9/latent/user_pc7.f32",
+      "artifacts/r9/latent/item_pc7.f32",
+      "artifacts/r9/latent/user_bias.f32",
+      "artifacts/r9/latent/user_drift.f32",
+      "artifacts/r9/latent/day_bias.f32",
+      "artifacts/r9/latent/scale.f32",
+      "artifacts/r9/latent/item_bias.f32",
+      "artifacts/r9/latent/frequency_bias.f32",
+      "meta0",
+      "meta1",
+      "meta2",
+      "meta3",
+      "meta4",
+      "meta5",
+      "meta6",
+      "meta7",
+      "meta8",
+      "meta9",
+      "meta10",
+      "movie_age",
+      "user_frac1",
+      "user_frac5",
+      "log_unrated_n",
+      "log_user_days",
+      "same_day_ratio",
+      "item_std"
+    ],
+    "context": [
+      "intercept",
+      "log_training_user_count_scaled",
+      "log_training_item_count_scaled",
+      "day_minus_implicit_user_mean_scaled",
+      "log_implicit_session_count_scaled"
+    ]
+  },
+  "settings": {
+    "tree_config": {
+      "learning_rate": 0.02,
+      "leaves": 63,
+      "min_leaf": 200
+    },
+    "neural_config": {
+      "hidden": 128,
+      "layers": 2,
+      "dropout": 0.2,
+      "lr": 0.0003,
+      "weight_decay": 0.01,
+      "batch": 4096,
+      "epochs": 60,
+      "patience": 5,
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "threads": 2
+    },
+    "budgets": {
+      "tree": [
+        {
+          "seed": 2026,
+          "steps": 904
+        },
+        {
+          "seed": 7,
+          "steps": 969
+        },
+        {
+          "seed": 13,
+          "steps": 1106
+        }
+      ],
+      "neural": [
+        {
+          "seed": 2026,
+          "steps": 15
+        },
+        {
+          "seed": 7,
+          "steps": 14
+        },
+        {
+          "seed": 13,
+          "steps": 14
+        }
+      ]
+    },
+    "budget_policy": "per-seed median selected budget across the five completed development folds; no qualifying selection",
+    "lightgbm_version": "4.7.0",
+    "torch_version": "2.14.1"
+  },
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/experiments/LC6-plan.json": "8f04fd0143460abd1993e7477d935c0a4cf193d6cdc8d4c1e82dad41ae601428",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-latent-recipe.json": "6fdb1581928db232c0ca3f3292e8ec4218cbbe9ade86b46c803ea568c0a69c63",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-metadata-recipe.json": "bc3afc50db4b4dd0b5234d8c3d0802dd46d223768fd099ac21ff5062f04f549b",
+    "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json": "537c6a50cb6c0aa0b96d7935cbe87c4f839dcc2e4440a9651b8d0dd55e8a19c8",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-s3.json": "339022214b693a0b9b09639df6ae490e4e09527c94c6e9773d17cd3141105bc3",
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.json": "40ac40d911a5e7138221c3ee52374c8eaee3489b967e9e652039958a2a2e5722",
+    "/Users/quan/workspace/netflix_challenge/scripts/round4_boost.py": "cf98abd25bc046512459727f17df1a39466afdb8370328cb3d90f0e481a25960",
+    "/Users/quan/workspace/netflix_challenge/scripts/round8_nn_blend.py": "696e9326d84b97d13d87195187c784c66bdb42f290204d20656d17238bd9bdd0",
+    "/Users/quan/workspace/netflix_challenge/scripts/moonshot_nn_blend.py": "31f44a1f2e4cb18c393c302891b936d2e7dee6b0f17b38ee346e9ef8f2ec770c",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_blend.py": "eee8be96faf75c3eaef1af39eebeff26649dd374eae0db4843b9bcc0fe2c7af0",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_blend_plan.py": "e775686778ce0e7aa318e6bc17de9aeac05be0f05d2a7f32f80be21b858be986",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_blend_tree.py": "1c811ef847949ff7973fe9a94e924f8f3136e97ac0f129e907f4f01e2c39a1ee",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/experiments/UNION-round-manifest.json": "9058f71d229ce82c1b0710e68c789d66229ee350570823e1247c8cbce9079d02",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/reference/experiments/BOOST-support-inputs.json": "360370c58b4fa61c5bbd40a2202050f6ce83d8efa6d8ca7e702ea3a8891d8b87"
+  },
+  "reference_score": 0.8668706424555479,
+  "limitation": "Preparation only. Do not start final fitting/retraining until the development bank is frozen after its promotion gate. Pending qualifying entries are not executable inputs."
+}
