@@ -1,0 +1,56 @@
+{
+  "observed_utc": "2026-10-19T11:43:14.230284+00:00",
+  "N1_progress_source": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.select.progress.json",
+  "N1_progress_snapshot_sha256": "3439bd2b0334b8a7a222fc574e797b0176409469da6604db8c131f1489155b05",
+  "N1_epoch9": {
+    "epoch": 9,
+    "loss": 0.6604715960733154,
+    "train_rmse": 0.8126940363360076,
+    "users": 480189,
+    "targets": 29167775,
+    "tokens": 83928171,
+    "train_seconds": 2013.316599917016,
+    "validation_rmse": 0.8696677049343466,
+    "seconds": 2363.371621124912
+  },
+  "N1_best": {
+    "epoch": 8,
+    "loss": 0.663998131148111,
+    "train_rmse": 0.814860805225351,
+    "users": 480189,
+    "targets": 29159652,
+    "tokens": 83921019,
+    "train_seconds": 1929.864269459038,
+    "validation_rmse": 0.8690351694929352,
+    "seconds": 2272.693849042058
+  },
+  "A2h_source": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "A2h_source_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "A2h_epoch9": {
+    "epoch": 9,
+    "loss": 0.6586633869371794,
+    "train_rmse": 0.8115807950687158,
+    "users": 480189,
+    "targets": 29158877,
+    "tokens": 78297873,
+    "train_seconds": 1848.3973462079884,
+    "validation_rmse": 0.8674391230288597,
+    "seconds": 2163.658183249994
+  },
+  "A2h_selected": {
+    "epoch": 12,
+    "loss": 0.6504680767844196,
+    "train_rmse": 0.8065160108631652,
+    "users": 480189,
+    "targets": 29165185,
+    "tokens": 78291458,
+    "train_seconds": 1380.704598750046,
+    "validation_rmse": 0.8674022745268025,
+    "seconds": 1691.3132064579986
+  },
+  "N1_delta_from_epoch8": 0.0006325354414113971,
+  "same_epoch_delta_rmse": 0.002228581905486915,
+  "best_delta_to_mature_control": 0.0016328949661327252,
+  "status": "N1 retained epoch 8 after its first non-improving epoch; fixed patience 3 has not been reached",
+  "limitations": "Intermediate reused-P2 learning curve. Historical A2h initialization/RNG differs; same-epoch scores do not establish mature-model or ensemble gains."
+}
