@@ -838,3 +838,17 @@ confirmed live and advanced to epoch 9. The improving curve supports retaining
 the fixed selection protocol; historical initialization/RNG differences and
 reused P2 labels still prevent a causal or ensemble-gain claim. The promoted
 score remains unchanged, and the live SO1 queue waits for the full N1 chain.
+
+### N1 epoch-9 observation
+
+N1 epoch 9 regressed to P2 RMSE **0.8696677049**, worse by 0.0006325354
+than epoch 8. The selected checkpoint therefore remains epoch 8 at
+0.8690351695. A2h's historical epoch-9 score was 0.8674391230: N1 is now
+**0.0022285819 worse at the same epoch**. This weakens the preceding narrowing
+deficit; it does not establish a terminal plateau after only one regression.
+The best N1 result still trails mature A2h by 0.0016328950.
+
+The epoch took 2,363.37 seconds (39.39 minutes), including 2,013.32 seconds
+of training. The live trainer retained epoch 8; keep the fixed three-epoch
+patience and 18-epoch cap. Evidence: `experiments/N1-epoch9-observation.json`.
+No ensemble gate has completed, no result is promoted, and SO1 stays queued.
