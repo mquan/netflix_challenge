@@ -35,6 +35,12 @@ its digest and commands. Three targeted queue tests pass. A process check
 cannot reserve the GPU against an unrelated future launch, so other research
 must continue to avoid starting competing jobs once this queue takes over.
 
+The queue was launched at 2026-10-19 08:29 UTC (PID 67792), and live process
+inspection confirmed it is waiting for N1. The immutable launch evidence is
+`experiments/SO1-queue.launch.json`; live status is `SO1-queue.status.json`.
+Neither training arm has started. Do not edit the frozen runner or plan while
+this process remains active, or launch another copy.
+
 - Same A2h-select checkpoint, training-only P2 dataset, initialization seed,
   rating masks, auxiliary examples, optimizer restart, dropout stream, batch
   order and two complete fine-tuning epochs in both arms.
