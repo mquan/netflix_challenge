@@ -188,4 +188,96 @@ considered after LC1, but is not an additional research phase: compact output
 belongs in both encoder arms. The central test remains whether preserving the
 relationships adds value. Failure against the matched control substantially
 downgrades this direction; it does not automatically trigger another settings
-sweep. No follow-up training has launched yet.
+sweep.
+
+## LC2: matched structural encoder pilot
+
+Implementation started after LC1 was committed. This is step 2 of the original
+research sequence, on the same `codex/local-context` branch. It is a P2
+development pilot, not a new original-probe score or an ensemble promotion.
+
+### Fixed recipe, before evaluating LC2
+
+- Same deterministic 200,000-query P2 sample as LP2, with seed 20261013 and
+  32 history movies / 32 neighbors / 256 candidate raters. P2 labels are absent
+  from the training context. Store rating and query-relative date payloads in
+  a padded 32-by-32 cross-rating matrix, plus the history and target-neighbor
+  ratings and the 27 common pooled features.
+- Eleven frozen P2 base predictions (core, Bayes B4, A2h) and one support column
+  are hash-checked against the Round 12 rehearsal report and frozen in
+  `experiments/LC2-spec.json`. These models were trained without P2 ratings;
+  some base epochs were selected using P2, so this remains development evidence.
+  This is a stronger pilot control than LP2's ridge baseline, but a smaller
+  bank than the final 79-column ensemble.
+- Fit users are folds 2--4; fold 1 selects epochs; fold 0 is scored after all
+  arms are fixed. Refit each selected model on folds 1--4. Fit the ridge starting
+  prediction and feature normalization only on the appropriate fit users.
+  Do not use existing P2-fitted blender outputs as supposedly held-out inputs.
+- Each model predicts a residual correction to the same 11-column ridge
+  starting prediction. The head also sees the same base columns, support and
+  pooled features. Two seeds (2026, 7), width 16, batch 256, AdamW at 0.0003,
+  weight decay 0.01, maximum 20 selection epochs, patience 4, and fixed-epoch
+  refits. Epoch zero is allowed if no trained checkpoint improves selection.
+
+| Arm | Aggregation |
+|---|---|
+| Pooled | Encode each rating/date triplet; use global pooled messages in place of neighbor/movie grouping |
+| Structured | Same encoder parameters; one message-passing step retains shared-neighbor and shared-movie grouping, then pools learned neighbor representations |
+| Shuffled | Structured architecture, with cross-rating/date payloads permuted among observed neighbors separately for each shared movie |
+
+The pooled arm retains the same triplet information, rather than comparing
+against a weaker model that cannot see triplets. Architecture, parameter count
+and epoch caps match; selecting different epochs is allowed under the same
+selection rule. Both neighbor and movie index permutations leave predictions
+unchanged when the corresponding context is permuted consistently.
+
+The shuffle keeps the entire missingness mask, both degree sequences and
+each shared movie's rating/date multiset exactly. It changes per-neighbor
+rating distributions and which neighbor supplied each rating. Export reports
+measure these changes and check the preservation invariants across all rows.
+It is a **rating-correspondence ablation**, not a claim that mask topology alone
+causes a difference. Common pooled features, including the original kNN scalar,
+are kept in every arm, so residual benefit must exceed that shared signal.
+
+Primary comparisons are structured minus pooled and structured minus shuffled,
+with paired user-clustered MSE intervals and per-seed results. Consistent gains
+against both controls justify further measurement/scaling; a P2 gain alone
+does not meet the 10% target or establish a final ensemble contribution. Failure
+against pooled downgrades this representation; any additional investment must
+be tied to a diagnosed limitation, not another open-ended settings sweep.
+
+### Validation and execution
+
+Eleven local-context tests pass, including target-label isolation, selection
+and preprocessing isolation from evaluation labels, correct numeric context,
+shuffle invariants, parameter matching, grouping sensitivity, and permutation
+invariance. `scripts/local_structure_data.py` exports the context;
+`scripts/local_structure_train.py` implements the three matched arms.
+
+Context extraction is recorded as `LC2-context`. A training-only throughput
+benchmark will determine the runtime estimate before the full pilot launches.
+The benchmark does not score selection/evaluation users. Experiment manifests,
+timestamped logs and source archives preserve the exact code for each run.
+
+### Throughput and full-pilot launch
+
+Context extraction completed in 48 seconds. All 200,000 query indices and
+pooled feature vectors match LP2 exactly after float32 encoding. Across
+114,717,630 observed edges, the shuffle has zero mask, per-movie rating or
+per-movie date multiset mismatches. It changes 65.69% of edge ratings and
+94.74% of edge dates; 99.24% of neighbor rating histograms change. This is a
+strong correspondence perturbation, with the limitations above.
+
+Both encoders have 8,081 parameters. The training-only MPS benchmark processed
+7,680 examples in 2.95 seconds including setup, projecting about 46 seconds
+per fit epoch. A 32-query CPU/MPS forward check with nonzero output weights
+has maximum absolute prediction difference 2.38e-7 (tolerance 1e-5). Evidence:
+`experiments/LC2-throughput-report.json` and `LC2-device-check.json`.
+
+The full pilot is `LC2-structure-p2`, with outputs under
+`artifacts/local-context/LC2/pilot/`. Its experiment manifest reports completion
+or failure; timestamped logs show each arm, seed, selection/refit phase and
+epoch. On completion it also writes `experiments/LC2-comparison.json`.
+Estimated runtime is 2--4 hours, depending on early stopping and machine load.
+The first result is the matched P2 comparison; no full-ensemble result is
+promised on this schedule.

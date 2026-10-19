@@ -1,0 +1,25 @@
+{
+  "config": {
+    "spec": "experiments/LC2-spec.json",
+    "context": "artifacts/local-context/LC2/context",
+    "output": "artifacts/local-context/LC2/benchmark-mps",
+    "summary": null,
+    "device": "mps",
+    "width": 16,
+    "batch": 256,
+    "epochs": 20,
+    "patience": 4,
+    "lr": 0.0003,
+    "seeds": [
+      2026,
+      7
+    ],
+    "threads": 2,
+    "benchmark_steps": 30
+  },
+  "seconds": 2.951012709061615,
+  "steps": 30,
+  "examples_per_second": 2602.4964163716336,
+  "projected_fit_epoch_seconds": 46.184501636153755,
+  "note": "Training throughput only; no selection or evaluation scores read."
+}

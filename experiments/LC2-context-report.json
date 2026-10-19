@@ -1,0 +1,38 @@
+{
+  "config": {
+    "spec": "experiments/LC2-spec.json",
+    "output": "artifacts/local-context/LC2/context",
+    "queries": 200000,
+    "seed": 20261013,
+    "processes": 4
+  },
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "spec_sha256": "c14c0227a3058440632b7a876111841f5d6f701cf017c58deeca10bca6143e8c",
+  "rows": 200000,
+  "full_p2_rows": 1407566,
+  "seconds": 47.97173345799092,
+  "outputs": {
+    "cross_gap.npy": "9af6c6f7ca52e9c50fc29cc3873ff0b1a9e40c2f12de09c983c5ae4f3b667da7",
+    "cross_rating.npy": "21fde14898ff604e4b607e004888680bb6394b1c018b7a57225f30e9101fe864",
+    "history_gap.npy": "d4ffecd0d8580d5a6daed4096e18f203d7a43650cc8f0353ef213581de98b169",
+    "history_rating.npy": "fe7115cf2abcb49dcfe0c77003f8006297f65a479264c41abfc82eb31a2a946b",
+    "neighbor_gap.npy": "749d94416f4666f2fc33ac503426c1b8e005006bce970e417b403dbf72209736",
+    "neighbor_rating.npy": "25d5776e88ae8a5d1331592cafec1f7d6e02b87eba3bf53f9060ff9cdff3126f",
+    "pooled.npy": "eaeabdef4f63030947615584f50534d7aa241dda5c7e7f256dd36985d50a3853",
+    "queries.npy": "6a6c49bf96736658c9369809b84466b8246761021fb43f6e8977db53b8654818",
+    "shuffled_gap.npy": "459246b61ecacd339729dd90e8631ae3625bd0d19da015b7133e1f850ac28ed8",
+    "shuffled_rating.npy": "cefd6e842b4ae014f06b3571610d6cf30d834f6f212730a7897e82eae3642709"
+  },
+  "shuffle": {
+    "observed_edges": 114717630,
+    "mask_mismatches": 0,
+    "column_rating_multiset_mismatches": 0,
+    "column_date_multiset_mismatches": 0,
+    "changed_rating_fraction": 0.6569086721892703,
+    "changed_date_fraction": 0.9473638707494219,
+    "neighbor_rating_histogram_l1": 67499780,
+    "changed_neighbor_rating_histogram_fraction": 0.9923876983378576
+  },
+  "note": "Only training ratings enter context. Query labels are not exported. Shuffle preserves mask topology and movie marginals, not neighbor rating distributions."
+}

@@ -1,0 +1,41 @@
+{"observed_utc": "2026-10-19T00:07:25.626435+00:00", "line": "{\"rows\": 86500, \"total\": 200000, \"seconds\": 22.28761899995152}"}
+{"observed_utc": "2026-10-19T00:07:45.662018+00:00", "line": "{\"rows\": 174500, \"total\": 200000, \"seconds\": 42.32309920794796}"}
+{"observed_utc": "2026-10-19T00:07:50.237707+00:00", "line": "{\"rows\": 200000, \"total\": 200000, \"seconds\": 46.898747249972075}"}
+{"observed_utc": "2026-10-19T00:07:51.959207+00:00", "line": "{"}
+{"observed_utc": "2026-10-19T00:07:51.959288+00:00", "line": "  \"config\": {"}
+{"observed_utc": "2026-10-19T00:07:51.959308+00:00", "line": "    \"spec\": \"experiments/LC2-spec.json\","}
+{"observed_utc": "2026-10-19T00:07:51.959320+00:00", "line": "    \"output\": \"artifacts/local-context/LC2/context\","}
+{"observed_utc": "2026-10-19T00:07:51.959337+00:00", "line": "    \"queries\": 200000,"}
+{"observed_utc": "2026-10-19T00:07:51.959347+00:00", "line": "    \"seed\": 20261013,"}
+{"observed_utc": "2026-10-19T00:07:51.959356+00:00", "line": "    \"processes\": 4"}
+{"observed_utc": "2026-10-19T00:07:51.959364+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T00:07:51.959374+00:00", "line": "  \"data\": \"/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin\","}
+{"observed_utc": "2026-10-19T00:07:51.959388+00:00", "line": "  \"data_sha256\": \"94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8\","}
+{"observed_utc": "2026-10-19T00:07:51.959397+00:00", "line": "  \"spec_sha256\": \"c14c0227a3058440632b7a876111841f5d6f701cf017c58deeca10bca6143e8c\","}
+{"observed_utc": "2026-10-19T00:07:51.959405+00:00", "line": "  \"rows\": 200000,"}
+{"observed_utc": "2026-10-19T00:07:51.959415+00:00", "line": "  \"full_p2_rows\": 1407566,"}
+{"observed_utc": "2026-10-19T00:07:51.959427+00:00", "line": "  \"seconds\": 47.97173345799092,"}
+{"observed_utc": "2026-10-19T00:07:51.959435+00:00", "line": "  \"outputs\": {"}
+{"observed_utc": "2026-10-19T00:07:51.959444+00:00", "line": "    \"cross_gap.npy\": \"9af6c6f7ca52e9c50fc29cc3873ff0b1a9e40c2f12de09c983c5ae4f3b667da7\","}
+{"observed_utc": "2026-10-19T00:07:51.959452+00:00", "line": "    \"cross_rating.npy\": \"21fde14898ff604e4b607e004888680bb6394b1c018b7a57225f30e9101fe864\","}
+{"observed_utc": "2026-10-19T00:07:51.959460+00:00", "line": "    \"history_gap.npy\": \"d4ffecd0d8580d5a6daed4096e18f203d7a43650cc8f0353ef213581de98b169\","}
+{"observed_utc": "2026-10-19T00:07:51.959468+00:00", "line": "    \"history_rating.npy\": \"fe7115cf2abcb49dcfe0c77003f8006297f65a479264c41abfc82eb31a2a946b\","}
+{"observed_utc": "2026-10-19T00:07:51.959477+00:00", "line": "    \"neighbor_gap.npy\": \"749d94416f4666f2fc33ac503426c1b8e005006bce970e417b403dbf72209736\","}
+{"observed_utc": "2026-10-19T00:07:51.959485+00:00", "line": "    \"neighbor_rating.npy\": \"25d5776e88ae8a5d1331592cafec1f7d6e02b87eba3bf53f9060ff9cdff3126f\","}
+{"observed_utc": "2026-10-19T00:07:51.959493+00:00", "line": "    \"pooled.npy\": \"eaeabdef4f63030947615584f50534d7aa241dda5c7e7f256dd36985d50a3853\","}
+{"observed_utc": "2026-10-19T00:07:51.959503+00:00", "line": "    \"queries.npy\": \"6a6c49bf96736658c9369809b84466b8246761021fb43f6e8977db53b8654818\","}
+{"observed_utc": "2026-10-19T00:07:51.959512+00:00", "line": "    \"shuffled_gap.npy\": \"459246b61ecacd339729dd90e8631ae3625bd0d19da015b7133e1f850ac28ed8\","}
+{"observed_utc": "2026-10-19T00:07:51.959520+00:00", "line": "    \"shuffled_rating.npy\": \"cefd6e842b4ae014f06b3571610d6cf30d834f6f212730a7897e82eae3642709\""}
+{"observed_utc": "2026-10-19T00:07:51.959528+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T00:07:51.959536+00:00", "line": "  \"shuffle\": {"}
+{"observed_utc": "2026-10-19T00:07:51.959544+00:00", "line": "    \"observed_edges\": 114717630,"}
+{"observed_utc": "2026-10-19T00:07:51.959554+00:00", "line": "    \"mask_mismatches\": 0,"}
+{"observed_utc": "2026-10-19T00:07:51.959562+00:00", "line": "    \"column_rating_multiset_mismatches\": 0,"}
+{"observed_utc": "2026-10-19T00:07:51.959570+00:00", "line": "    \"column_date_multiset_mismatches\": 0,"}
+{"observed_utc": "2026-10-19T00:07:51.959578+00:00", "line": "    \"changed_rating_fraction\": 0.6569086721892703,"}
+{"observed_utc": "2026-10-19T00:07:51.959601+00:00", "line": "    \"changed_date_fraction\": 0.9473638707494219,"}
+{"observed_utc": "2026-10-19T00:07:51.959611+00:00", "line": "    \"neighbor_rating_histogram_l1\": 67499780,"}
+{"observed_utc": "2026-10-19T00:07:51.959622+00:00", "line": "    \"changed_neighbor_rating_histogram_fraction\": 0.9923876983378576"}
+{"observed_utc": "2026-10-19T00:07:51.959630+00:00", "line": "  },"}
+{"observed_utc": "2026-10-19T00:07:51.959637+00:00", "line": "  \"note\": \"Only training ratings enter context. Query labels are not exported. Shuffle preserves mask topology and movie marginals, not neighbor rating distributions.\""}
+{"observed_utc": "2026-10-19T00:07:51.959653+00:00", "line": "}"}
