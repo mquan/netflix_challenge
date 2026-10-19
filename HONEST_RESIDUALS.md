@@ -85,11 +85,28 @@ correction is nearly twice A2h's. The B4 chain's posterior mean has more
 correctable structure on recent ratings than the transformer does. Blend test `HR2b-blend` launched
 16:54 PDT (three processes, nice 10).
 
+**HR2b blend: not promoted.** Finished 18:13 PDT. **0.8668187 vs 0.8668706
+(−0.0000519)**; folds +.000080 +.000105 −.000134 −.000091 −.000220.
+
+## Verdict on the P2-only residual route: stop
+
+Both arms are below 0.0001 and both fail folds 0 and 1, the same two folds B5 failed.
+A residual tree fitted on 1.4M P2 rows improves each base model on its own
+(A2h −0.0026, B4 −0.0048), but the blender already has the same meta
+features and learns the same corrections from probe rows. Extra rows from a
+nearby distribution do not add information. K-fold A2h retrains (HR3) are **not**
+justified by this evidence: the open question is new information, not more
+honest rows for the same features.
+
+Next on this branch: representation stacking. Feed the blender A2h's
+internal 64-d query code at each probe row (plus B4 posterior factors), following
+up R9-LAT's −0.00023 from 22 K1 latent features.
+
 ## Plan
 
 | Stage | What | Gate |
 |---|---|---|
-| **HR2a** (done: −0.000026, not promoted) | LightGBM on A2h-select's honest P2 residuals plus meta features (`train_only_residual.py`), applied to the A2h-refit probe column | Standalone A2h 0.8901 → ≤0.887, then blend |
+| **HR2a** (done: −0.000026, not promoted; route stopped) | LightGBM on A2h-select's honest P2 residuals plus meta features (`train_only_residual.py`), applied to the A2h-refit probe column | Standalone A2h 0.8901 → ≤0.887, then blend |
 | HR2b | Same with B4 (`A-B4-union.p2` → `B4-full-r128.s0160`) and with latent (K1 PCA) coordinates as inputs | same |
 | Blend | Add each corrected column to the frozen R9-LAT-A2h bank: LightGBM-s3 + NN2 50/50 | ≥0.0003 and all five folds to continue; <0.0001 for both → stop P2-only path |
 | HR3 | If HR2 pays: K-fold A2h retrains for honest residuals on all training rows, enabling residual kNN and residual factor models | — |
