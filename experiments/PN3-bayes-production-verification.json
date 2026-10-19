@@ -1,0 +1,16 @@
+{
+  "binary": "/Users/quan/workspace/netflix_challenge/artifacts/r8/bin/netflix-bayes-0c1f29d",
+  "binary_sha256": "9d25bcf1a0cfa2418921e27a57df2779d9dd49d5ac32a8bc37ce430296102ff5",
+  "tests_passed": 3,
+  "tests_command": "python -m unittest discover -s tests -p test_bayes_production.py",
+  "single_thread_query_label_isolation": true,
+  "thread_switch_resume_and_posterior_serialization": true,
+  "historical_source_reference": {
+    "commit": "0c1f29d",
+    "path": "src/bayes.hpp",
+    "sha256": "55854cc22aa885b09958fbf46c698986d8a863def262daecae308f05bcaf1a7f",
+    "note": "sample_block_family explicitly documents racing Hogwild bag updates when threads > 1"
+  },
+  "identical_input_parallel_repeat_max_abs_prediction_difference": 0.41937828063964844,
+  "scope": "Small fixture with identical labels, seed and 4-to-5-thread schedule. The difference demonstrates why cross-run byte equality is not a valid parallel-training contract; it is not a full-data score estimate."
+}
