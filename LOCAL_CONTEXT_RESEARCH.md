@@ -418,3 +418,57 @@ run was launched as part of this audit.
 Verification: all 11 local-context tests pass, `git diff --check` passes, both
 diagnostic script hashes match their archived sources, and all four checkpoint
 replays plus cached-head evaluations pass their numerical consistency checks.
+
+## LC3: normalize the local vector, with matched controls
+
+Next experiment, declared before training: test the measured across-query
+coordinate-scale imbalance by inserting `BatchNorm1d(16, affine=False,
+eps=1e-4, momentum=0.1)` immediately before the shared prediction head. The
+choice normalizes each coordinate across training examples; per-example
+LayerNorm would address a different axis. Normalization changes optimization
+and introduces batch dependence during training, so this tests the specific
+normalization intervention, not a pure scalar-rescaling causal claim.
+
+All three LC2 arms receive the same normalization: pooled, structured and
+correspondence-shuffled. No additional learned parameters (still 8,081).
+Running means/variances update only on fitting batches. Selection and final
+evaluation use frozen statistics; refits start from scratch on refit users.
+The default `none` option preserves the LC2 architecture and checkpoint layout.
+
+Keep the LC2 context/spec, 200,000 queries, user split, seeds 2026/7, width 16,
+batch 256, learning rate 0.0003, weight decay 0.01, epoch cap 20, patience 4,
+and equal seed averaging. No retrieval, input, head, loss, or epoch-budget
+changes. The code will reject singleton training batches for this option;
+neither LC2 fitting partition produces a singleton batch at batch size 256.
+
+Decision rule fixed before results: normalized structure must beat normalized
+pooling in both seeds, improve the seed-averaged RMSE by at least 0.0001,
+have a user-clustered paired MSE 95% interval below zero, and beat the normalized
+shuffled control. Smaller gains can inform diagnosis but do not justify scaling.
+Also compare normalized structured performance to LC2's structured result so
+that weakening the control is not mistaken for progress. This is exploratory
+P2 evidence: the evaluation users have already informed diagnosis. Any positive
+result requires fresh confirmation before a full-ensemble promotion claim.
+
+The completed run will automatically execute the checkpoint audit with frozen
+batch statistics. Measure local-vector scale, local-to-global head contribution,
+constant-local replacement, and fixed-weight pooling/shuffle sensitivity.
+If sensitivity improves without accuracy, input scale is not the practical
+explanation supported by this intervention. If sensitivity stays weak, the
+normalization intervention has failed to establish that it fixes the suspected
+mechanism. Neither outcome automatically triggers a larger model or data sweep.
+
+Training experiment: `LC3-normalized-p2`; summary:
+`experiments/LC3-comparison.json`; artifacts:
+`artifacts/local-context/LC3/pilot/`. Follow-up audit experiment:
+`LC3-normalized-diagnosis`; summary: `experiments/LC3-diagnosis.json`.
+Expected runtime is 1--2 hours based on LC2's 62 minutes, subject to early
+stopping and machine load. Completion manifests, not this estimate, establish
+when results are available.
+
+Pre-launch validation: all 12 local-context tests pass, including normalized
+training's evaluation-label isolation, unchanged learned parameter initialization,
+and evaluation-batch independence of running statistics. The training-only MPS
+smoke run completed 30 steps in 3.14 seconds (about 2,447 examples/second);
+no selection or evaluation scores were read. Evidence is archived under
+`experiments/LC3-normalized-throughput.*`. `git diff --check` passes.
