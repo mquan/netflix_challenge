@@ -1,0 +1,42 @@
+{
+  "family": "learned_neighborhood64",
+  "fixed_epochs": 4,
+  "epoch_source": "retained version-1 checkpoint header, selected in original N1-learned-neighborhood64 run",
+  "learning_rate": 0.005,
+  "regularization": 0.002,
+  "time_decay": 0,
+  "required_dependencies": {
+    "time_baseline": "Train 40 iterations on the production dataset, using the retained defaults.",
+    "graph64": "Build graph256 with history cap 256 on the production dataset, then take each sorted row prefix using production_graph.py."
+  },
+  "verified_binary": "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+  "binary_sha256": "b2b4dd9347173f205f10442e5add4ac573a340164c005757bcee2811369671c3",
+  "build_record": "experiments/PN1-native-fixed-epochs.json",
+  "build_record_sha256": "fd191d083a06d615c96041db3ccec09b2574bb9ae35f010d0f74dfd92d1217fe",
+  "retraining_evidence": "/Users/quan/workspace/netflix_challenge/experiments/PR8-neighborhood-retraining-verification.json",
+  "retraining_evidence_sha256": "ffb346da14aee87a5cc9da6b64fd317152e68b00fdb088785fe83e1dba13b8a4",
+  "production_command_template": [
+    "artifacts/production-replay/bin/netflix-native-fixed",
+    "neighborhood",
+    "--data",
+    "{production_data}",
+    "--graph",
+    "{production_graph64}",
+    "--time-model",
+    "{production_time_baseline}",
+    "--model",
+    "{new_model}",
+    "--predictions",
+    "{qualifying_predictions}",
+    "--iterations",
+    "4",
+    "--fixed-epoch",
+    "--learning-rate",
+    "0.005",
+    "--regularization",
+    "0.002",
+    "--time-decay",
+    "0"
+  ],
+  "status": "Original-data fixed-budget retraining and exact saved-checkpoint reload verified. Historical bit identity is not achieved; measured prediction differences are below 1e-6. Production training has not started. Query-label RMSE logs on production inputs are not scores."
+}

@@ -354,3 +354,21 @@ The graph transformation's two tests pass. This verifies dependency recipes
 on the original dataset; neighborhood weights have not been retrained here,
 and production-data graphs/baselines must still be built on the production
 dataset. No score gain is claimed.
+
+PR8 subsequently retrained the learned-neighborhood weights for exactly four
+epochs using those rebuilt dependencies and the tested isolated PN1 binary.
+The saved epoch, dataset/graph fingerprints and zero time decay agree with
+the retained checkpoint. Historical bit identity is **not** achieved: the
+current model has a version-2 header, and 433,299 of 2,274,560 parameters differ
+(maximum absolute difference 7.153e-7). Of 1,408,395 predictions, 146,584 differ;
+maximum absolute difference is 9.537e-7, mean absolute difference 2.994e-8.
+Overall RMSE changes by +9.741e-11, with absolute fold deltas below 3e-10.
+No tolerance was selected to claim a score promotion or historical bit identity.
+
+Reloading the newly trained checkpoint reproduces its complete prediction
+column byte for byte. The full numerical comparison, all five fold scores,
+and reload evidence are in `experiments/PR8-neighborhood-retraining-verification.json`.
+`experiments/production-neighborhood-recipe.json` binds the fixed budget,
+hyperparameters, binary and dependency requirements. The current fixed-budget
+recipe is now verified on original data; production-data training remains to
+be done, and the retained development bank is unchanged.
