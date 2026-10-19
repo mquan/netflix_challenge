@@ -115,3 +115,43 @@ gate end to end for 100 users / 200 queries. Its evidence is
 `experiments/SO0-pipeline-smoke.json`; its scores are fixture values, not Netflix
 results. Test logs are preserved in `experiments/SO0-training-tests.log` and
 `experiments/SO0-gate-tests.log`.
+
+## Real-P2 initial gradient and optimizer audit
+
+While N1 owns the GPU, `scripts/selection_gradient_audit.py` inspected the first
+four consecutive batches from SO1's frozen epoch-1 sampler. Their mean training
+history lengths were about 2,015, 992, 744 and 35 ratings per user. The original
+A2h warm checkpoint, random choice-head initialization, weight 0.1, sampling,
+masking and training-mode dropout were retained. This diagnostic ran on CPU
+with `pad_rows=1` to remove unused padded users and bound memory. It applied no
+optimizer step to the audited model and never scored P2 validation labels.
+
+The first pass found that the weighted auxiliary gradient norm on the two
+tensors logged by SO1 was only 1.0–2.2% of the rating gradient norm. That alone
+does not show a negligible optimizer effect. A second pass repeated the same
+gradients and compared actual first AdamW steps on temporary parameter copies.
+The following comparisons all use the **same 37 parameters active in both
+objectives**, rather than mixing parameter subsets:
+
+| Batch | Users | Auxiliary/rating gradient norm | Change in first update / control update norm | Control/treatment update cosine |
+|---|---:|---:|---:|---:|
+| 1 | 10 | 1.25% | 26.30% | 0.9668 |
+| 2 | 16 | 1.13% | 26.74% | 0.9657 |
+| 3 | 21 | 1.98% | 25.56% | 0.9684 |
+| 4 | 441 | 1.18% | 18.04% | 0.9840 |
+
+Neither arm would trigger the global gradient clip in these batches. The
+auxiliary gradient reaches the shared encoder and changes its initial optimizer
+step measurably. Therefore **do not increase the frozen weight merely because
+the raw gradient norm looks small**. These checks do not establish useful new
+rating information or ensemble improvement. Every optimizer comparison starts
+with zero moments independently; it is not a multi-step trajectory. CPU
+dropout/padding also prevent a claim of exact MPS update or throughput identity.
+
+Evidence is retained in `experiments/SO1-gradient-audit-result.json`,
+`experiments/SO1-update-audit-result.json`, and
+`experiments/SO1-gradient-verification.json`, with both experiment logs and source
+archives. All 21 original frozen inputs were rechecked. Model parameter hashes
+are identical before and after both audits; all four batches' losses and raw
+gradient measurements repeat exactly across the two CPU runs. The queued SO1
+script, plan, weight, epochs and promotion gates remain unchanged.
