@@ -158,3 +158,14 @@ already extracts what A2h and B4 know. The remaining 0.0022 has to come from
 **new evidence or a new model family** that is not a function of the current
 columns. That is the other branch's bet (local paths/structural encoder), or a
 new base model trained on different signal.
+
+## Checkpoint 2026-10-18 21:56: the other branch's LC3 (read-only)
+
+`experiments/LC3-comparison.json` in the primary checkout. Its baseline is 0.845305 on the
+same 39,887 P2 evaluation rows, which matches HR1's 11-honest-column control (0.845307).
+- Pooled local context vs baseline: **−0.000625** (95% MSE interval excludes 0).
+  This is the only gain beyond the honest bank seen on either branch.
+- Structured vs pooled: −0.000004. Path structure adds nothing, which agrees with HR1.
+
+Next shared check: score the pooled local-context output as a probe column on the
+frozen R9-LAT-A2h bank (`hr_blend_chain.py --columns`), once a probe-order column exists.
