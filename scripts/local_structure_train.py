@@ -22,11 +22,12 @@ from train_holdout import digest
 
 
 class NeighborEncoder(nn.Module):
-    def __init__(self, global_width, width=16, pooled=False, local_normalization='none'):
+    def __init__(self, global_width, width=16, pooled=False, local_normalization='none', disable_local=False):
         super().__init__()
         if local_normalization not in ('none', 'batch'):
             raise ValueError('unknown local normalization')
         self.pooled = pooled
+        self.disable_local = disable_local
         self.edge = nn.Sequential(nn.Linear(9, width), nn.GELU(), nn.Linear(width, width), nn.GELU())
         self.relation = nn.Sequential(nn.Linear(width * 3, width), nn.GELU())
         self.neighbor = nn.Sequential(nn.Linear(width + 3, width * 2), nn.GELU(),
@@ -65,6 +66,9 @@ class NeighborEncoder(nn.Module):
         return (local * present).sum(dim=1) / present.sum(dim=1).clamp_min(1)
 
     def forward(self, inputs, global_features, baseline):
+        if self.disable_local:
+            local = global_features.new_zeros((len(global_features), self.neighbor[-1].out_features))
+            return baseline + self.head(torch.cat([global_features, local], dim=1)).squeeze(1)
         mask = (inputs['cross_rating'] > 0).float()
         ur = (inputs['history_rating'].float() - 3) / 2
         vr = (inputs['cross_rating'].float() - 3) / 2
@@ -143,7 +147,7 @@ def predict(model, arrays, features, baseline, rows, a, shuffled):
     with torch.no_grad():
         for start in range(0, len(rows), a.batch):
             indices = rows[start:start + a.batch]
-            value = model(batch(arrays, indices, a.device, shuffled),
+            value = model({} if model.disable_local else batch(arrays, indices, a.device, shuffled),
                           torch.from_numpy(features[indices]).to(a.device),
                           torch.from_numpy(baseline[indices]).to(a.device))
             out[start:start + len(indices)] = value.cpu().numpy()
@@ -159,7 +163,8 @@ def train(arrays, features, baseline, y, rows, *, a, arm, seed, epochs, validati
         raise ValueError('batch normalization requires at least two training rows per batch')
     torch.manual_seed(seed)
     model = NeighborEncoder(features.shape[1], a.width, pooled=(arm == 'pooled'),
-                            local_normalization=getattr(a, 'local_normalization', 'none')).to(a.device)
+                            local_normalization=getattr(a, 'local_normalization', 'none'),
+                            disable_local=getattr(a, 'disable_local', False)).to(a.device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=.01)
     rng = np.random.default_rng(seed)
     best = rmse(y[validation], baseline[validation]) if validation is not None else None
@@ -172,7 +177,7 @@ def train(arrays, features, baseline, y, rows, *, a, arm, seed, epochs, validati
         for offset in range(0, len(rows), a.batch):
             indices = shuffled_rows[offset:offset + a.batch]
             optimizer.zero_grad(set_to_none=True)
-            prediction = model(batch(arrays, indices, a.device, arm == 'shuffled'),
+            prediction = model({} if model.disable_local else batch(arrays, indices, a.device, arm == 'shuffled'),
                                torch.from_numpy(features[indices]).to(a.device),
                                torch.from_numpy(baseline[indices]).to(a.device))
             loss = (prediction - torch.from_numpy(y[indices].astype(np.float32)).to(a.device)).square().mean()
