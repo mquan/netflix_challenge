@@ -83,3 +83,18 @@ after N1 frees memory. Expected ≈−0.0001 at most.
 
 `scripts/n1_chain.py` (running) waits for selection, then the honest gate
 (≤ −0.0010 beyond A2h), then the full-T refit and the blend test.
+
+**Paused 2026-10-19 07:20 PDT (user closing the laptop).** Epochs 6–13: N1 0.87094
+0.87000 0.86904 0.86967 0.86844 0.86835 0.86835 **0.86834** (best, epoch 13) vs
+A2h 0.86740 at epoch 12. On its own N1 is ≈0.0009 worse. The selection run and
+`n1_chain.py` were stopped. The saved checkpoint `N1-select.select.pt` is epoch 13.
+
+Resume:
+```sh
+python scripts/hr_honest_gate.py --selection-data artifacts/validation/train-matched-20260927.bin \
+  --checkpoint .../residual-chains/N1-select.select.pt \
+  --column .../residual-chains/N1-select.p2.f32 --output experiments/N1-gate.result.json
+```
+If it passes (≤ −0.0010 beyond A2h): refit full T at 13 epochs with `--save-epochs`, then
+`hr_blend_chain.py --columns N1-refit.f32`. Otherwise try the auxiliary selection head.
+After the GPU frees up, run the HR5 snapshot batch blend.
