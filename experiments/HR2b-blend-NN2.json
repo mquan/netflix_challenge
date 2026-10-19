@@ -1,0 +1,70 @@
+{
+  "name": "HR2b-blend-NN2",
+  "strategy": "NN2 on the s3 run; three seeds and predeclared 50/50 LightGBM average",
+  "command": [
+    "/Users/quan/.cache/netflix-venv/bin/python",
+    "scripts/round8_nn_blend.py",
+    "--data",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+    "--like",
+    "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/HR2b-blend-s3.json",
+    "--output",
+    "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/HR2b-blend-NN2",
+    "--lr",
+    "3e-4",
+    "--dropout",
+    ".2",
+    "--seeds",
+    "2026",
+    "7",
+    "13",
+    "--epochs",
+    "60",
+    "--patience",
+    "5",
+    "--threads",
+    "2"
+  ],
+  "started_utc": "2026-10-19T00:59:12.338775+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "c2d5115638867bce8e6925ea4b6353409f068999",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/bayes.hpp": "aecef3234b0df0c515815e8aaa8efff8f78ea1d29c4f8257885db41114811c6b",
+    "src/neighborhood.hpp": "d977866b6dff23539491836e5f273cdfe1a837ccab12be60ed9aa68772006edd",
+    "src/integrated.hpp": "7c13c44b1477e16d5c743000973fd2c88888f96132263734851182fa00a5e5e5",
+    "src/rbm.hpp": "388646ffda0a0fcf86e2723d41983beb7c6d45db6477d3a749845bddb22a10d0",
+    "src/netflix.cpp": "926859eca58c3b15412d93fa7acbccefd4c8a72aa9c34b6baa78dd96f5263384",
+    "src/moonshot_adaptive.cpp": "6660d83dc1ed1fd8038c4d5fabf02468ccc46fdc2d0093c67f6cf262f039a844",
+    "src/rbm_visible_context.hpp": "dc6643cf1ed7ff76aa8baf1a6c92d488a7c81906ba2c9da110db2ad0adf50173",
+    "src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "src/temporal_neighborhood.hpp": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+    "src/moonshot_session_meta.cpp": "360658b9f9a3f621624bdeb02027574c0b55b2b7bef4c6e89f94306c954ef1c0",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/user_neighborhood.hpp": "bf9200349aa742497cbeaad363fd4194ecf5580548c10d191f72918398a7b823",
+    "src/moonshot_gp.cpp": "fb19292fbfb92d365f450dfd77bff30abdb905dea34723368fbe654a68ce1063",
+    "src/joint.hpp": "e0fc10630d740f0cbf98e4d001541e512b8042faec728d1a27fd9ed735ff0fd7",
+    "src/bar.hpp": "2cb3217dc1310712f718b7af6cb4d092a146971c369d78816b30c94fc80945b2"
+  },
+  "binary_sha256": "57cf3be3dbf9a808f1be48b8eebb91bd69c04512d4a4c0e5b618cff33ac44850",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "git_status_at_start": "?? experiments/HR2b-blend-s3.events.jsonl\n?? experiments/HR2b-blend-s3.json\n?? experiments/HR2b-blend-s3.log\n?? experiments/HR2b-blend-s3.source.zip\n?? experiments/HR2b-blend.status.json\n",
+  "source_archive": {
+    "path": "experiments/HR2b-blend-NN2.source.zip",
+    "sha256": "0e19babf1559a25cf45e7ff0b354c80671c357898ee963c33a9c37ab7c24eeec",
+    "bytes": 268656
+  },
+  "inputs": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-10-19T00:59:12.831430+00:00",
+  "events_path": "experiments/HR2b-blend-NN2.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 836.5718664160231,
+  "finished_utc": "2026-10-19T01:13:09.398315+00:00",
+  "log_sha256": "e885c0f05a8ab163a37c92cabb4d44483a9b10c7e2762a449d12cf9e9513a04d",
+  "events_sha256": "fd9f768d7fe9ebd586e10c39285d6ad1666ecb2174b215cc46b6f12aa920f6df"
+}
