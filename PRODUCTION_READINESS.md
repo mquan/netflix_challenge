@@ -324,3 +324,10 @@ new run supplies direct recipe evidence for the currently retained J1.
 J2–J4 still need equivalent retraining checks. All production commands must use
 new production predecessors and graphs. These development-data replays and J1
 retraining do not establish a production score or reduce the target gap.
+
+PR6 has started those remaining checks sequentially: J3 (9 epochs), J4 (one
+epoch from the newly reproduced J3), then J2 (40 epochs). The immutable commands
+and reference hashes are in `experiments/PR6-legacy-joint.plan.json`; live status
+is `experiments/PR6-legacy-joint.status.json`. It uses one CPU thread at niceness
+15 and stops on any checkpoint or prediction mismatch. SO1 remains unlaunched
+while N1 and its follow-on chain retain GPU priority.
