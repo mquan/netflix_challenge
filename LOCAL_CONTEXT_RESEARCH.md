@@ -530,3 +530,11 @@ both seeds improving, and averaged interval below zero before investing in
 probe-order export and full-bank integration. If it fails, close the current
 pooled/structural recipe rather than treating the ridge comparison as new signal.
 This is exploratory attribution on reused development users, not promotion.
+
+The control is `LC4-common-attribution`, implemented by
+`scripts/local_context_attribution.py`, with summary
+`experiments/LC4-attribution.json` and saved predictions/checkpoints under
+`artifacts/local-context/LC4/common/`. All 13 local-context tests pass, including
+identical head initialization and independence from context in the zero-local
+control. The run uses the committed recipe at `5cfaf6a` and is sequential over
+seeds. Its manifest records the authoritative exit status when it completes.
