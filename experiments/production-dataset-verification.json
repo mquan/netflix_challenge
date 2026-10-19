@@ -1,0 +1,14 @@
+{
+  "dataset_manifest_sha256": "537c6a50cb6c0aa0b96d7935cbe87c4f839dcc2e4440a9651b8d0dd55e8a19c8",
+  "source_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "outputs": {
+    "train-probe-qualifying.bin": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+    "dense-to-raw-user.npy": "62635da2e71b85fdcde38a0c30634341e1f7155d787c9b6c770b79aa007ceeaf",
+    "qualifying-order.npy": "092bbb123639f744a8c8839638e69f0fe0ba3efe53f24520254441d07c695ecb"
+  },
+  "original_training_rows_restored": 99072112,
+  "probe_rows_inserted": 1408395,
+  "qualifying_rows": 2817131,
+  "method": "Independently locate every original probe in production training, verify its label, then remove those positions and compare every remaining item/day/rating and user offset to the original training arrays. Rehash all outputs and source; verify unchanged implicit arrays and unknown query labels.",
+  "passed": true
+}
