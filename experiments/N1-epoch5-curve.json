@@ -1,0 +1,158 @@
+{
+  "observed_utc": "2026-10-19T09:15:16.297931+00:00",
+  "N1_progress_snapshot_source": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-select.select.progress.json",
+  "N1_progress_snapshot_sha256": "34f0dbfe9fd99f0234fd0ec53e2572bcef1a6dd258c2aaee5d564359351dee5a",
+  "A2h_report": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "A2h_report_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "epochs": [
+    {
+      "epoch": 1,
+      "N1_rmse": 0.9056688108615946,
+      "A2h_rmse": 0.9057524452322224,
+      "delta_rmse": -8.363437062786083e-05,
+      "N1_seconds": 3012.4967774160905,
+      "N1_record": {
+        "epoch": 1,
+        "loss": 0.7788140438319433,
+        "train_rmse": 0.8825044155512468,
+        "users": 480189,
+        "targets": 29166071,
+        "tokens": 83916676,
+        "train_seconds": 2607.810251875082,
+        "validation_rmse": 0.9056688108615946,
+        "seconds": 3012.4967774160905
+      },
+      "A2h_record": {
+        "epoch": 1,
+        "loss": 0.7799562581351287,
+        "train_rmse": 0.8831513223558173,
+        "users": 480189,
+        "targets": 29168107,
+        "tokens": 78291686,
+        "train_seconds": 2249.0493715420016,
+        "validation_rmse": 0.9057524452322224,
+        "seconds": 2526.8998378330143
+      }
+    },
+    {
+      "epoch": 2,
+      "N1_rmse": 0.8878955669294196,
+      "A2h_rmse": 0.8886826155531337,
+      "delta_rmse": -0.0007870486237140373,
+      "N1_seconds": 2909.4279737920733,
+      "N1_record": {
+        "epoch": 2,
+        "loss": 0.7314143203814275,
+        "train_rmse": 0.8552276422482771,
+        "users": 480189,
+        "targets": 29165629,
+        "tokens": 83923742,
+        "train_seconds": 2485.145393084036,
+        "validation_rmse": 0.8878955669294196,
+        "seconds": 2909.4279737920733
+      },
+      "A2h_record": {
+        "epoch": 2,
+        "loss": 0.7323416129967304,
+        "train_rmse": 0.8557696034448422,
+        "users": 480189,
+        "targets": 29165935,
+        "tokens": 78291750,
+        "train_seconds": 1498.4688980840147,
+        "validation_rmse": 0.8886826155531337,
+        "seconds": 1804.0947279590182
+      }
+    },
+    {
+      "epoch": 3,
+      "N1_rmse": 0.8795961083713678,
+      "A2h_rmse": 0.8773248790579088,
+      "delta_rmse": 0.0022712293134590222,
+      "N1_seconds": 2496.1095873329323,
+      "N1_record": {
+        "epoch": 3,
+        "loss": 0.7036738791377521,
+        "train_rmse": 0.8388527160684978,
+        "users": 480189,
+        "targets": 29162562,
+        "tokens": 83924844,
+        "train_seconds": 2170.2343105420005,
+        "validation_rmse": 0.8795961083713678,
+        "seconds": 2496.1095873329323
+      },
+      "A2h_record": {
+        "epoch": 3,
+        "loss": 0.7024987274819094,
+        "train_rmse": 0.8381519714716638,
+        "users": 480189,
+        "targets": 29162873,
+        "tokens": 78297318,
+        "train_seconds": 1261.653742000024,
+        "validation_rmse": 0.8773248790579088,
+        "seconds": 1559.6633759580145
+      }
+    },
+    {
+      "epoch": 4,
+      "N1_rmse": 0.8745465810061698,
+      "A2h_rmse": 0.8751378013467294,
+      "delta_rmse": -0.0005912203405595839,
+      "N1_seconds": 2425.0950891249813,
+      "N1_record": {
+        "epoch": 4,
+        "loss": 0.6890518001022213,
+        "train_rmse": 0.8300914408407096,
+        "users": 480189,
+        "targets": 29169070,
+        "tokens": 83923799,
+        "train_seconds": 2062.724015166983,
+        "validation_rmse": 0.8745465810061698,
+        "seconds": 2425.0950891249813
+      },
+      "A2h_record": {
+        "epoch": 4,
+        "loss": 0.686490426330512,
+        "train_rmse": 0.828547177891709,
+        "users": 480189,
+        "targets": 29161610,
+        "tokens": 78292914,
+        "train_seconds": 1313.4227778750064,
+        "validation_rmse": 0.8751378013467294,
+        "seconds": 1601.095269915997
+      }
+    },
+    {
+      "epoch": 5,
+      "N1_rmse": 0.8718689732763103,
+      "A2h_rmse": 0.8734406759343276,
+      "delta_rmse": -0.0015717026580173155,
+      "N1_seconds": 2601.3789855829673,
+      "N1_record": {
+        "epoch": 5,
+        "loss": 0.6797956857969566,
+        "train_rmse": 0.8244972321145838,
+        "users": 480189,
+        "targets": 29162126,
+        "tokens": 83928214,
+        "train_seconds": 2225.419417832978,
+        "validation_rmse": 0.8718689732763103,
+        "seconds": 2601.3789855829673
+      },
+      "A2h_record": {
+        "epoch": 5,
+        "loss": 0.6776607762147737,
+        "train_rmse": 0.8232015407002975,
+        "users": 480189,
+        "targets": 29163705,
+        "tokens": 78297551,
+        "train_seconds": 1241.7615675829875,
+        "validation_rmse": 0.8734406759343276,
+        "seconds": 1529.6132840419887
+      }
+    }
+  ],
+  "A2h_selected_epoch": 12,
+  "A2h_selected_rmse": 0.8674022745268025,
+  "latest_N1_gap_to_selected_A2h": 0.00446669874950778,
+  "scope": "Intermediate reused-P2 development learning curves only. N1 remains live; this is not a selected-model comparison, matched initialization/compute experiment, ensemble gain, or promotion. Configuration differences and RNG confounding are documented in N1-input-comparison-audit.json."
+}

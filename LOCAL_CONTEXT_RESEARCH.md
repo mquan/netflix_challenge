@@ -756,3 +756,14 @@ Any later auxiliary-loss comparison needs a rating-only arm with matching code,
 embedding shapes, sampling and compute budget. P2 epoch selection also means
 the subsequent P2 gate is development evidence, not untouched confirmation.
 No competing training job or change to the other worktree was made.
+
+### N1 epoch-5 observation
+
+The live N1 selection run reached epoch 5 at P2 RMSE **0.8718689733**, versus
+A2h's same-epoch **0.8734406759** (delta **−0.0015717027**). Epoch 4's delta
+was −0.0005912203; epoch 3 had been worse. The five completed curve points and
+their source-record snapshots are preserved in `experiments/N1-epoch5-curve.json`.
+This is a positive intermediate signal, not a selected-model or ensemble gain:
+N1 still trails A2h's selected epoch-12 score 0.8674022745 by 0.0044666987.
+The earlier configuration/RNG caveats continue to apply. Epoch 6 is running;
+neither promotion rules nor SO1's frozen comparison have changed.
