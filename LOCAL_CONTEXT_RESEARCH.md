@@ -653,3 +653,14 @@ smaller ridge baseline. A failure stops this fixed snapshot recipe rather
 than triggering a sweep over all saved epochs. A positive result can be kept
 as a cumulative checkpoint, while future epoch selection must use P2 ensemble
 performance and fresh confirmation. Probe development reuse remains a limitation.
+
+Execution: `scripts/ensemble_trajectory.py` writes `experiments/LC6-plan.json`,
+then runs `LC6-trajectory-s3` and `LC6-trajectory-NN2` sequentially, finally
+writing `experiments/LC6-comparison.json`. Status is
+`experiments/LC6-trajectory.status.json`. The preflight passed: 141 frozen
+input/artifact/source hashes recorded, current reference predictions reproduce
+0.8668706424, candidate lengths/finiteness are valid, A2h's training-data hash
+matches, and all algorithm settings match the promoted recipes. Only the two
+columns and independent fold-worker count change. All frozen hashes are checked
+again after training. Historical per-epoch hashes were not recorded by A2h's
+trainer; LC6 freezes the currently saved epoch files and their refit provenance.
