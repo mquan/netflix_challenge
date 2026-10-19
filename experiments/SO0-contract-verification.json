@@ -1,0 +1,50 @@
+{
+  "status": "preflight_passed",
+  "contract_test_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 /Users/quan/.cache/netflix-venv/bin/python tests/test_selection_objective.py",
+  "contract_tests_passed": 6,
+  "archive_sha256": "5e676d85d0ea9e062cfbd76395c9a5042d0c393397dd758fc8d8cc0f66c6c737",
+  "historical_sequence_source_sha256": "09945e90b6cd0e5c021b26fecbd6c3da7023399ba9e93b97bb538711b5f8352b",
+  "current_sequence_source_sha256": "e95d5921b92ba3d6b08581c602deb7d015ce036bf8d8b14bb8fbc4bcee9eb506",
+  "tests_sha256": "d56a260e1f16078d380fd759b3da095978331db2f0cb3efcb47b7ef75789b47b",
+  "warm_checkpoint_sha256": "7173de643fff219395d754f9ac7d415c70501ffec6d3f8523ae41696c2d7c4a2",
+  "warm_report_sha256": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "warm_prediction_comparisons": [
+    {
+      "fixture": "small",
+      "queries": 12,
+      "byte_identical": true
+    },
+    {
+      "fixture": "windowed",
+      "queries": 12,
+      "byte_identical": true
+    },
+    {
+      "fixture": "actual_A2h_P2_checkpoint_eight_short_history_users",
+      "users": [
+        23,
+        201,
+        353,
+        411,
+        456,
+        507,
+        530,
+        555
+      ],
+      "queries": 27,
+      "byte_identical": true,
+      "prediction_sha256": "6b60cb4cc015bce05b0f9b7a2a33a29ae893c718bb07e0e303ba209e55046704"
+    }
+  ],
+  "limitation": "Correctness and bounded warm-prediction checks only. No full-data auxiliary training, timing or score gain established.",
+  "warm_prediction_checked_auxiliary_source_sha256": "bab9248ea76bee034f546031bea661c9da303183d2bee0528e6a784242ae4288",
+  "auxiliary_source_sha256": "2af99f406602987814d81a01125c508d43f3b9b9b94f35fadeb04a6c7c189e2c",
+  "gate_source_sha256": "7e01487da118a3b27f6d60bd6a5195d2bf4a2ccad69998932f336fdfe208453e",
+  "gate_tests_sha256": "e3aba574cdf199936c0dcc96bda7b9f26efa2642b8d6feb8d20b0c0c9419b650",
+  "gate_tests_passed": 2,
+  "total_targeted_tests_passed": 8,
+  "training_test_log_sha256": "e6113e90fc8355f0f2a997224bb52b6e29bca384bf3482cc76d953728c7f3ccf",
+  "gate_test_log_sha256": "80711bb6e3ed48042c96684104b1597e0d2c689ac76188d687ae215a18197e77",
+  "post_compatibility_changes": "Added sampled gradient diagnostics, refit-stage dataset binding and separate gate; model forward and prediction code unchanged."
+}
