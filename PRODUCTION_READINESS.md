@@ -178,9 +178,8 @@ Build/source hashes and checks are in `experiments/PN1-native-fixed-epochs.json`
 This closes checkpoint-selection support for these two native families, not
 their entire production recipes. Native commands still print query-RMSE
 diagnostics; those are meaningless on the production dataset's zero sentinels
-and cannot establish a score. Bayes
-uses a fixed sweep budget already, but its original initialization/resume chain
-and retained averaging window must be recovered before a production retrain.
+and cannot establish a score. Bayes uses a fixed sweep budget already; its
+recovered initialization/resume chain and averaging window are recorded below.
 The time baseline, residual graph, warm-start checkpoints and support features
 must be rebuilt from production inputs rather than reused from development.
 
@@ -215,3 +214,37 @@ The unmodified development path also matches the previous source's predictions
 and stopping epoch exactly on a fixture, recorded in
 `experiments/PN2-autorec-compatibility.json`. The new native fixed-epoch tests
 are included in `make test`. No full AutoRec production training was launched.
+
+## Bayes recipes and posterior verification
+
+`scripts/recover_bayes_recipes.py` reads the retained version-one checkpoints
+and reproduces all three retained prediction columns byte for byte from their
+stored posterior sums and kept-sample counts. It verifies the historical binary
+and command records, including B4's sweep-32 checkpoint. Results and production
+command templates are in `experiments/production-bayes-recipes.json`.
+
+| Column | Rank / seed | Sweeps | Burn-in / kept | Thread schedule |
+|---|---|---:|---|---|
+| B2 | 64 / 2026 | 128 | 16 / 112 | 4 |
+| B3 | 128 / 7 | 160 | 16 / 144 | 4 |
+| B4 | 128 / 13 | 160 | 16 / 144 | 4 through 32; resume with 5 |
+
+B4 enables item-bin and drift factors. Its production resume must consume a
+**new production sweep-32 checkpoint**, not the retained development checkpoint.
+The exact historical binary is present and hash-verified at
+`artifacts/r8/bin/netflix-bayes-0c1f29d`.
+
+Three tests pass against that binary: single-thread zero/poisoned query labels
+leave parameters and predictions identical; a 4-to-5-thread resume preserves
+averaging counts and serialized posterior predictions; malformed checkpoint
+formats are rejected. `experiments/PN3-bayes-production-verification.json`
+records those checks and an identical-input parallel repeat. The historical
+source explicitly documents Hogwild races in bag updates, so parallel retrains
+are not bitwise reproducible. This was also documented in the adjacent Bayes
+research worktree's Round 11 notes. The initial parallel equality test failed
+for that reason; exact cross-run equality is tested only with one thread.
+
+The small repeated fixture's prediction differences are not a full-data score
+estimate or evidence that changing the sampler improves the ensemble. Stored
+posterior reproduction verifies the existing artifacts, not a complete retrain.
+No full Bayes production training was launched.

@@ -1,0 +1,290 @@
+{
+  "binary": "/Users/quan/workspace/netflix_challenge/artifacts/r8/bin/netflix-bayes-0c1f29d",
+  "binary_sha256": "9d25bcf1a0cfa2418921e27a57df2779d9dd49d5ac32a8bc37ce430296102ff5",
+  "recipes": [
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B2-full-r64.s0128.f32",
+      "column_sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+      "checkpoint": "/Users/quan/workspace/netflix_challenge/artifacts/bayes/B2-full-r64.bin",
+      "checkpoint_sha256": "af9e5995744261bc2d5e6b6a63c63e3808a38791720afa04c9fc6021b83784e7",
+      "checkpoint_metadata": {
+        "rank": 64,
+        "sweep": 128,
+        "kept": 112,
+        "fingerprint": 12499777815975055846,
+        "groups": {
+          "user": {
+            "mode": 2,
+            "size": 480189
+          },
+          "item": {
+            "mode": 2,
+            "size": 17770
+          },
+          "user-bag": {
+            "mode": 2,
+            "size": 17770
+          },
+          "item-bag": {
+            "mode": 2,
+            "size": 480189
+          },
+          "day": {
+            "mode": 1,
+            "size": 2243
+          },
+          "item-bin": {
+            "mode": 1,
+            "size": 533100
+          },
+          "session": {
+            "mode": 1,
+            "size": 18136482
+          },
+          "drift": {
+            "mode": 1,
+            "size": 480189
+          }
+        },
+        "bag_power": 0.5,
+        "drift_scale": 7.045039176940918,
+        "intercept": 3.4887216091156006,
+        "precision": 1.8417980055850727,
+        "prediction_count": 1408395
+      },
+      "posterior_mean_byte_identical": true,
+      "burn_in": 16,
+      "stages": [
+        {
+          "command_template": [
+            "{BINARY}",
+            "bayes",
+            "--data",
+            "{DATASET}",
+            "--model",
+            "{MODEL}",
+            "--predictions",
+            "{PREDICTIONS}",
+            "--factors",
+            "64",
+            "--samples",
+            "128",
+            "--burn-in",
+            "16",
+            "--snapshot-every",
+            "16",
+            "--checkpoint-every",
+            "8",
+            "--threads",
+            "4",
+            "--seed",
+            "2026"
+          ]
+        }
+      ],
+      "records": {
+        "/Users/quan/workspace/netflix_challenge/experiments/B2-full-r64.json": "8f45a3240d978fa392402ea31098f823b25867a8b4143424d6f456da4c16efcd"
+      }
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B3-full-r128.s0160.f32",
+      "column_sha256": "059041f3d147a84c6d120a9420a7278c9840164ab8f9dfc450ff73d2d37bb1f1",
+      "checkpoint": "/Users/quan/workspace/netflix_challenge/artifacts/bayes/B3-full-r128.bin",
+      "checkpoint_sha256": "6fdb76c0d37304e0ebbcaa03878d6d389805bca25c75ec8378d5829de28ecb4b",
+      "checkpoint_metadata": {
+        "rank": 128,
+        "sweep": 160,
+        "kept": 144,
+        "fingerprint": 12499777815975055846,
+        "groups": {
+          "user": {
+            "mode": 2,
+            "size": 480189
+          },
+          "item": {
+            "mode": 2,
+            "size": 17770
+          },
+          "user-bag": {
+            "mode": 2,
+            "size": 17770
+          },
+          "item-bag": {
+            "mode": 2,
+            "size": 480189
+          },
+          "day": {
+            "mode": 1,
+            "size": 2243
+          },
+          "item-bin": {
+            "mode": 1,
+            "size": 533100
+          },
+          "session": {
+            "mode": 1,
+            "size": 18136482
+          },
+          "drift": {
+            "mode": 1,
+            "size": 480189
+          }
+        },
+        "bag_power": 0.5,
+        "drift_scale": 7.045039176940918,
+        "intercept": 3.498443126678467,
+        "precision": 2.0137858454128326,
+        "prediction_count": 1408395
+      },
+      "posterior_mean_byte_identical": true,
+      "burn_in": 16,
+      "stages": [
+        {
+          "command_template": [
+            "{BINARY}",
+            "bayes",
+            "--data",
+            "{DATASET}",
+            "--model",
+            "{MODEL}",
+            "--predictions",
+            "{PREDICTIONS}",
+            "--factors",
+            "128",
+            "--samples",
+            "160",
+            "--burn-in",
+            "16",
+            "--snapshot-every",
+            "16",
+            "--checkpoint-every",
+            "8",
+            "--threads",
+            "4",
+            "--seed",
+            "7"
+          ]
+        }
+      ],
+      "records": {
+        "/Users/quan/workspace/netflix_challenge/experiments/B3-full-r128.json": "ba219d4419b80139cd3e7fcaa490641f3578192b806eb94ef2124a60bdabb170"
+      }
+    },
+    {
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+      "column_sha256": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac",
+      "checkpoint": "/Users/quan/workspace/netflix_challenge/artifacts/bayes/B4-full-r128.bin",
+      "checkpoint_sha256": "a556861e288c46de557de3276a09dedbfdd35a821d81018c03f5e75a8f00b4c2",
+      "checkpoint_metadata": {
+        "rank": 128,
+        "sweep": 160,
+        "kept": 144,
+        "fingerprint": 12499777815975055846,
+        "groups": {
+          "user": {
+            "mode": 2,
+            "size": 480189
+          },
+          "item": {
+            "mode": 2,
+            "size": 17770
+          },
+          "user-bag": {
+            "mode": 2,
+            "size": 17770
+          },
+          "item-bag": {
+            "mode": 2,
+            "size": 480189
+          },
+          "day": {
+            "mode": 1,
+            "size": 2243
+          },
+          "item-bin": {
+            "mode": 2,
+            "size": 533100
+          },
+          "session": {
+            "mode": 1,
+            "size": 18136482
+          },
+          "drift": {
+            "mode": 2,
+            "size": 480189
+          }
+        },
+        "bag_power": 0.5,
+        "drift_scale": 7.045039176940918,
+        "intercept": 3.503430128097534,
+        "precision": 2.0505272854115857,
+        "prediction_count": 1408395
+      },
+      "posterior_mean_byte_identical": true,
+      "burn_in": 16,
+      "stages": [
+        {
+          "command_template": [
+            "{BINARY}",
+            "bayes",
+            "--data",
+            "{DATASET}",
+            "--model",
+            "{MODEL_SWEEP32}",
+            "--predictions",
+            "{PREDICTIONS}",
+            "--factors",
+            "128",
+            "--samples",
+            "32",
+            "--burn-in",
+            "16",
+            "--snapshot-every",
+            "16",
+            "--checkpoint-every",
+            "8",
+            "--threads",
+            "4",
+            "--seed",
+            "13",
+            "--item-bin",
+            "2",
+            "--drift",
+            "2"
+          ]
+        },
+        {
+          "command_template": [
+            "{BINARY}",
+            "bayes",
+            "--data",
+            "{DATASET}",
+            "--init-model",
+            "{MODEL_SWEEP32}",
+            "--model",
+            "{MODEL}",
+            "--predictions",
+            "{PREDICTIONS}",
+            "--samples",
+            "160",
+            "--burn-in",
+            "16",
+            "--snapshot-every",
+            "16",
+            "--checkpoint-every",
+            "8",
+            "--threads",
+            "5"
+          ],
+          "historical_checkpoint_sha256": "d04b2f44617853bbcb4eb35ae4599a797de98391433d7c7f52a8046c1fa7fff4"
+        }
+      ],
+      "records": {
+        "/Users/quan/workspace/netflix_challenge/experiments/B4-full-r128.json": "f8814d9300eb163997d8ca777b9420c3f65754ec5f54cf0c5fafe14978d7aa66",
+        "/Users/quan/workspace/netflix_challenge/experiments/B4r-full-r128.json": "366fcb74cd80dedd7ec28f97a048166cffe7880635a0f0282e239b7505723c30"
+      }
+    }
+  ],
+  "source_sha256": "16ac1c9ad8e1340a4c92918b0be4c7f90e9d94ca7ba6d036fca8407125b7de1c",
+  "limitation": "Stored checkpoint posterior means reproduce retained columns exactly. This is not a full retraining replay. Production must initialize on its own dataset; B4 stage two must use the newly produced sweep-32 checkpoint, never the historical development checkpoint. Native query RMSE diagnostics on zero sentinels are not scores."
+}
