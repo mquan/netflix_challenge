@@ -248,3 +248,33 @@ The small repeated fixture's prediction differences are not a full-data score
 estimate or evidence that changing the sampler improves the ensemble. Stored
 posterior reproduction verifies the existing artifacts, not a complete retrain.
 No full Bayes production training was launched.
+
+## RBM checkpoint budgets and resume chains recovered
+
+`scripts/recover_rbm_recipes.py` reconstructs twelve training stages needed for
+the eight retained RBM columns. Each final epoch comes from the checkpoint
+header and has a matching training-log entry. Ten stages also match historical
+checkpoint digests. All eight retained checkpoints were replayed through the
+unchanged native evaluator with one thread; all eight prediction files match
+the bank byte for byte, including the two oldest columns without historical
+output digests. Evidence: `experiments/production-rbm-recipes.json` and
+`experiments/PR3-rbm-verification.json`.
+
+| Retained column | Required fixed training stages (absolute epochs) |
+|---|---|
+| rbm100 | R1: 1–14 |
+| rbm200 | R3: 1–30 |
+| R4D conditional | R3: 1–30 → R3R: 31–75 → R4D: 76–129 |
+| R4C conditional | R3: 1–30 → R3R: 31–75 → R4C: 76–129 |
+| P2 conditional | P2: 1–72 |
+| R2C conditional | R2: 1–60 → R2C: 61–130 |
+| P3C conditional | P3: 1–58 → P3C: 59–118 |
+| P4C conditional | P4: 1–54 → P4C: 55–108 |
+
+The stage boundaries matter: warm starts reset momentum and user-order RNG.
+Preserve each recorded stage, thread count and learning schedule rather than
+flattening the chain into one uninterrupted run. Templates use fixed epochs,
+disable patience, and reference newly trained production predecessors. They
+contain no development artifact paths. Historical source hashes are recorded,
+but matching fixed-epoch builds and full production retraining remain open.
+Inference replay establishes checkpoint-to-column identity, not a score gain.
