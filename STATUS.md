@@ -31,7 +31,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Job | Owner | Check |
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 2 live; first epoch took 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 4/25 complete and audited (first-seed n1/n4/n16/n32); n16 average 0.8710975, n32 average 0.8680112. Lane 0 now first-seed n64 tree (coordinator 96739/session 96236); lane 1 second-seed n1 tree (63963/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n16-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 4/25 complete and audited (first-seed n1/n4/n16/n32); n16 average 0.8710975, n32 average 0.8680112. Both current tree stages complete: lane 0 first-seed n64 neural (58287/session 96236); lane 1 second-seed n1 neural (56799/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n16-full-verification-20261031.json` |
 
 ## Next actions
 
@@ -67,13 +67,15 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      all three full historical checkpoint scans pass. B4 resumes the newly
      produced sweep-32 parent, retaining 144 samples at sweep 160. Not launched;
      historical-thread runtime test remains pending. `P0-BAYES-preflight-20261031.json`.
-   Frozen phases cover 72/79 retained column occurrences. Remaining preparation:
-   GP/local (6), user-kNN (1), then final blender/export.
-   GP/local audit engineering passes four tests and eight actual kernel handoffs
-   (20 native pipeline commands) on tiny label-0/label-5 fixtures, each based on
-   its own audited rank128/epoch9 J3. All GP outputs/masks and six local epochs
-   repeat exactly; retained parameters produce distinct corrections. Production
-   queue/resource guard still pending. `P0-kernel-fixture-verification-20261031.json`.
+   - GP/local: four invocations / six columns, waits for all 32 Bayes/item-kNN
+     audits, their process exit and normal memory; consumes newly audited J3.
+     `P0-KERNEL-20261031-plan.json`: 252 inputs / 253 checksum checks pass;
+     five audit/resource tests and eight actual kernel fixture handoffs pass.
+     Complete GP exports and all six local epochs repeat exactly; query-label
+     isolation passes. Missing J3 audit rejects prepare before creating output.
+     Prepared, not launched. `P0-KERNEL-preflight-20261031.json`.
+   Frozen phases cover 78/79 retained column occurrences. Remaining preparation:
+   user-kNN (1), then final blender/export.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
