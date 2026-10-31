@@ -57,7 +57,8 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    CLI defaults. All 28 recipes pass two query-label fixtures: 56 kNN stage audits and 128
    pipeline commands; predictions/support are label-independent, support is nonzero, and
    all three support rules differ (`P0-knn-fixture-verification-20261031.json`).
-   Next freeze guarded kNN execution.
+   kNN resource gate and ordered handoff resolver now pass four more tests (ten total);
+   incomplete or changed outputs cannot produce a resolved alias manifest. Next freeze its runner.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
