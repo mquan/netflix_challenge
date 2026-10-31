@@ -1,0 +1,65 @@
+{
+  "state": "R2_only_build_source_selection",
+  "registry": "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json",
+  "registry_sha256": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+  "archive": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-complete-sources-20261031.zip",
+  "archive_sha256": "210e0b4d84318a6edba2f182429b617d260b273bec3e60f32fd0a73fca802f71",
+  "generator_sha256": "c4a7acdd8a1b6615d4a901b00f6f0ed639cb266011c0d76b0fe9bb44c0459015",
+  "frozen_inputs": {
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-source-recovery-20261031.json": "bd5d86afe5e22841883f30bf6790b64a51cc356bae7efe9271aeb48c94bb9338",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R1-build-verification-20261031.json": "667a5c8c80636292acf6e7b4a15718b263c48fb159c43d9142c3c9e502b0cc3c",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-historical-sources-20261031.zip": "42d0d7499aedfbf38c9bd344cc12eeefc664267da5947268f77793be2dc24482",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R1-exact-sources-20261031.zip": "d63300d0e2ecf8de23722ccc0adc3c5464971945d6eb9ca89ef7dcd205397c41",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff"
+  },
+  "sources": [
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+      "reconstruction_base_sha256": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+      "method": "Remove later joint-model kNN support; require original recorded SHA-256",
+      "archive_member": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97/src/neighborhood.hpp"
+    },
+    {
+      "path": "src/rbm.hpp",
+      "sha256": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+      "commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+      "git_object": "8de6482fcdf8db056e75393b22218d2010ae95aa:src/rbm.hpp",
+      "archive_member": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631/src/rbm.hpp"
+    },
+    {
+      "path": "src/netflix.cpp",
+      "sha256": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+      "commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+      "git_object": "8de6482fcdf8db056e75393b22218d2010ae95aa:src/netflix.cpp",
+      "archive_member": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71/src/netflix.cpp"
+    },
+    {
+      "path": "src/ensemble.hpp",
+      "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+      "commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+      "git_object": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874:src/ensemble.hpp",
+      "archive_member": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872/src/ensemble.hpp"
+    },
+    {
+      "path": "src/joint.hpp",
+      "sha256": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+      "commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+      "git_object": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874:src/joint.hpp",
+      "archive_member": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb/src/joint.hpp"
+    }
+  ],
+  "missing_sources": [],
+  "stages": [
+    {
+      "name": "R2-rbm100-fast",
+      "complete_source_set": true
+    }
+  ],
+  "limitations": [
+    "Source identity proves neither full-data retraining nor hidden-test accuracy.",
+    "R2 isolated build and fixture verification remain separate steps."
+  ],
+  "complete_recovery_report": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-complete-source-recovery-20261031.json",
+  "complete_recovery_report_sha256": "369d82e59af1633f4561f3cac529d78b2b59146c887b3ce5bf70d0a4c493dc98"
+}

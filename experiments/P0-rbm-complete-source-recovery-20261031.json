@@ -1,0 +1,212 @@
+{
+  "state": "all_historical_RBM_sources_recovered_exactly",
+  "registry": "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json",
+  "registry_sha256": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+  "archive": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-complete-sources-20261031.zip",
+  "archive_sha256": "210e0b4d84318a6edba2f182429b617d260b273bec3e60f32fd0a73fca802f71",
+  "generator_sha256": "c4a7acdd8a1b6615d4a901b00f6f0ed639cb266011c0d76b0fe9bb44c0459015",
+  "frozen_inputs": {
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-source-recovery-20261031.json": "bd5d86afe5e22841883f30bf6790b64a51cc356bae7efe9271aeb48c94bb9338",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R1-build-verification-20261031.json": "667a5c8c80636292acf6e7b4a15718b263c48fb159c43d9142c3c9e502b0cc3c",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-historical-sources-20261031.zip": "42d0d7499aedfbf38c9bd344cc12eeefc664267da5947268f77793be2dc24482",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R1-exact-sources-20261031.zip": "d63300d0e2ecf8de23722ccc0adc3c5464971945d6eb9ca89ef7dcd205397c41",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff"
+  },
+  "sources": [
+    {
+      "path": "src/ensemble.hpp",
+      "sha256": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+      "commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+      "git_object": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874:src/ensemble.hpp",
+      "archive_member": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872/src/ensemble.hpp"
+    },
+    {
+      "path": "src/integrated.hpp",
+      "sha256": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+      "commit": "03f7890657de3093cd81f4ff5ba1601e4cf19774",
+      "git_object": "03f7890657de3093cd81f4ff5ba1601e4cf19774:src/integrated.hpp",
+      "archive_member": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860/src/integrated.hpp"
+    },
+    {
+      "path": "src/joint.hpp",
+      "sha256": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+      "commit": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c",
+      "git_object": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c:src/joint.hpp",
+      "archive_member": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc/src/joint.hpp"
+    },
+    {
+      "path": "src/joint.hpp",
+      "sha256": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee",
+      "commit": "03f7890657de3093cd81f4ff5ba1601e4cf19774",
+      "git_object": "03f7890657de3093cd81f4ff5ba1601e4cf19774:src/joint.hpp",
+      "archive_member": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee/src/joint.hpp"
+    },
+    {
+      "path": "src/joint.hpp",
+      "sha256": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+      "commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+      "git_object": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874:src/joint.hpp",
+      "archive_member": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb/src/joint.hpp"
+    },
+    {
+      "path": "src/moonshot_gp.cpp",
+      "sha256": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+      "commit": "75e6ec9c95971fe6d69326a875e2815c55af632b",
+      "git_object": "75e6ec9c95971fe6d69326a875e2815c55af632b:src/moonshot_gp.cpp",
+      "archive_member": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0/src/moonshot_gp.cpp"
+    },
+    {
+      "path": "src/moonshot_local.cpp",
+      "sha256": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+      "commit": "75e6ec9c95971fe6d69326a875e2815c55af632b",
+      "git_object": "75e6ec9c95971fe6d69326a875e2815c55af632b:src/moonshot_local.cpp",
+      "archive_member": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b/src/moonshot_local.cpp"
+    },
+    {
+      "path": "src/moonshot_user_kernel.cpp",
+      "sha256": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+      "commit": "28b431fd36a83b74312e713f0cb877f6ef7f27d8",
+      "git_object": "28b431fd36a83b74312e713f0cb877f6ef7f27d8:src/moonshot_user_kernel.cpp",
+      "archive_member": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4/src/moonshot_user_kernel.cpp"
+    },
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+      "commit": "76ab3fdc7a24e416fd449da32c23d7e45f42ce9e",
+      "git_object": "76ab3fdc7a24e416fd449da32c23d7e45f42ce9e:src/neighborhood.hpp",
+      "archive_member": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6/src/neighborhood.hpp"
+    },
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+      "commit": "03f7890657de3093cd81f4ff5ba1601e4cf19774",
+      "git_object": "03f7890657de3093cd81f4ff5ba1601e4cf19774:src/neighborhood.hpp",
+      "archive_member": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6/src/neighborhood.hpp"
+    },
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+      "commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+      "git_object": "8de6482fcdf8db056e75393b22218d2010ae95aa:src/neighborhood.hpp",
+      "archive_member": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc/src/neighborhood.hpp"
+    },
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f",
+      "commit": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874",
+      "git_object": "cffd6bfe8406ba3332511e7ba26da0c0ca23b874:src/neighborhood.hpp",
+      "archive_member": "7c6a01ed3b6b0d7241111b879d0dee91369fbe4e66febf3fb0d0bd57911fe30f/src/neighborhood.hpp"
+    },
+    {
+      "path": "src/netflix.cpp",
+      "sha256": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+      "commit": "52fa7d9399a4fab52d37262d5015115c02ce831e",
+      "git_object": "52fa7d9399a4fab52d37262d5015115c02ce831e:src/netflix.cpp",
+      "archive_member": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c/src/netflix.cpp"
+    },
+    {
+      "path": "src/netflix.cpp",
+      "sha256": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+      "commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+      "git_object": "8de6482fcdf8db056e75393b22218d2010ae95aa:src/netflix.cpp",
+      "archive_member": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71/src/netflix.cpp"
+    },
+    {
+      "path": "src/rbm.hpp",
+      "sha256": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+      "commit": "76ab3fdc7a24e416fd449da32c23d7e45f42ce9e",
+      "git_object": "76ab3fdc7a24e416fd449da32c23d7e45f42ce9e:src/rbm.hpp",
+      "archive_member": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05/src/rbm.hpp"
+    },
+    {
+      "path": "src/rbm.hpp",
+      "sha256": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348",
+      "commit": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c",
+      "git_object": "8733a38926ebb2fb85c15eea8eb36fa0d6ad107c:src/rbm.hpp",
+      "archive_member": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348/src/rbm.hpp"
+    },
+    {
+      "path": "src/rbm.hpp",
+      "sha256": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+      "commit": "03f7890657de3093cd81f4ff5ba1601e4cf19774",
+      "git_object": "03f7890657de3093cd81f4ff5ba1601e4cf19774:src/rbm.hpp",
+      "archive_member": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7/src/rbm.hpp"
+    },
+    {
+      "path": "src/rbm.hpp",
+      "sha256": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631",
+      "commit": "8de6482fcdf8db056e75393b22218d2010ae95aa",
+      "git_object": "8de6482fcdf8db056e75393b22218d2010ae95aa:src/rbm.hpp",
+      "archive_member": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631/src/rbm.hpp"
+    },
+    {
+      "path": "src/netflix.cpp",
+      "sha256": "5970c826b68edfd0f02133de805e5dad24fab4faa69959e645e8075e937ace20",
+      "reconstruction_report": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R1-build-verification-20261031.json",
+      "reconstruction_report_sha256": "667a5c8c80636292acf6e7b4a15718b263c48fb159c43d9142c3c9e502b0cc3c",
+      "archive_member": "5970c826b68edfd0f02133de805e5dad24fab4faa69959e645e8075e937ace20/src/netflix.cpp"
+    },
+    {
+      "path": "src/neighborhood.hpp",
+      "sha256": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+      "reconstruction_base_sha256": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+      "method": "Remove later joint-model kNN support; require original recorded SHA-256",
+      "archive_member": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97/src/neighborhood.hpp"
+    }
+  ],
+  "missing_sources": [],
+  "stages": [
+    {
+      "name": "R1-rbm100",
+      "complete_source_set": true
+    },
+    {
+      "name": "R2-rbm100-fast",
+      "complete_source_set": true
+    },
+    {
+      "name": "R3-rbm200-long",
+      "complete_source_set": true
+    },
+    {
+      "name": "R3R-rbm200-resume",
+      "complete_source_set": true
+    },
+    {
+      "name": "P3-rbm200-seed7",
+      "complete_source_set": true
+    },
+    {
+      "name": "P4-rbm300-wc001",
+      "complete_source_set": true
+    },
+    {
+      "name": "R4D-rbm200-condbias-x3",
+      "complete_source_set": true
+    },
+    {
+      "name": "R4C-rbm200-condbias",
+      "complete_source_set": true
+    },
+    {
+      "name": "P2-rbm200-condbias-scratch",
+      "complete_source_set": true
+    },
+    {
+      "name": "R2C-rbm100-condbias",
+      "complete_source_set": true
+    },
+    {
+      "name": "P3C-rbm200-seed7-condbias",
+      "complete_source_set": true
+    },
+    {
+      "name": "P4C-rbm300-wc001-condbias",
+      "complete_source_set": true
+    }
+  ],
+  "limitations": [
+    "Source identity proves neither full-data retraining nor hidden-test accuracy.",
+    "R2 isolated build and fixture verification remain separate steps."
+  ]
+}
