@@ -14,7 +14,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 |---|---|---|
 | E1 Stage C weighting | >=0.0005, run-noise check, all five folds | closed: w2/w3 worse on every fold |
 | N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | full result 0.86670063: 0.000170 overall gain, fold 1 worse; promotion and substantial-continuation gates fail |
-| SO1 auxiliary objective | frozen SO1 plan/gates | closed: P2 gain 0.0000275 < 0.0003; gate independently reproduced; queue terminal |
+| SO1 auxiliary objective | frozen SO1 plan/gates | closed: P2 gain 0.0000275 < 0.0005; gate independently reproduced; queue terminal |
 | E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
 | E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
@@ -874,7 +874,7 @@ no hidden-test verification and does not authorize a new N1 parameter sweep.
 
 SO1's unchanged two-epoch pair completed. Its primary P2 matched-bank score
 is control 0.8470131554 versus treatment 0.8469856351, a gain of 0.0000275202,
-below the fixed 0.0003 gate. The user-cluster MSE interval includes zero.
+below its frozen 0.0005 P2 gate. The user-cluster MSE interval includes zero.
 `experiments/SO1-independent-gate-20261031.json` independently reruns the
 original frozen gate and reproduces the owner's complete JSON exactly.
 The controller records `complete`, its trainer and controller PIDs are absent,
@@ -892,3 +892,20 @@ separate stage logs and stops on any failure. The runner does not promote a
 result; saved payload verification and the registered all-five-fold gate
 remain required after completion. The GPU queue is released; these H8 blend
 scripts use CPU, although the registered queue-release condition was observed.
+
+## E3 fixed launch plan prepared (2026-10-31; no real E3 score)
+
+`experiments/E3-plan-20261031.json` binds the exact SO1 control command,
+completed control report and epoch-2 payload, and 30 frozen files. The
+control's arguments, two-epoch budget, warm/data/source hashes, library
+versions and saved prediction hash reproduce its frozen SO1 specification.
+The E3 treatment changes only the separate trainer, output prefix and fixed
+CE coefficient 0.1; its expected report arguments include the trainer hash.
+Both the shared fold-0 gain and separate five-fold requirement are fixed at
+0.0003. This E3 threshold is distinct from SO1's 0.0005 P2 threshold (the
+initial SO1 closing note misstated that threshold; corrected above).
+
+No E3 trainer or scorer was launched. E3's registered launch condition also
+requires no other Python training to be live, so it awaits H8's four CPU
+stages. The treatment's completion provenance must be audited before either
+E3 scorer runs. The full-T follow-up remains conditional on both P2 gates.
