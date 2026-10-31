@@ -61,6 +61,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
+| E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; no E3 training or scoring |
 
 ## Closed bets
 
