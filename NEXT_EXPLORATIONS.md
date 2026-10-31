@@ -100,6 +100,25 @@ hidden-test effect, not a verified test score.
   is tried after reading these. Pass → extend to the RBM chain, then Bayes.
   Fail → close E1. The fine-tune arm (b-ft) is deferred until stage 1 passes.
 
+### Fixed E1 scoring implementation, 2026-10-30
+
+The root-owned scoring step is `scripts/e1_fixed_score.py`, with the immutable
+`experiments/E1-fixed-scoring-plan-20261030.json`. It fits the unchanged
+rehearsal blender once on P2, then scores original/w1/w2/w3 b banks with that
+same fitted predictor. Only the three K1-family predictions and kNN support
+change. The original b score must reproduce within 1e-6; all nine training
+records must be successful and match the declared commands and binary hash.
+It reports the predeclared 0.0005/noise/five-fold gate and user-cluster paired
+uncertainty. No dev-CV c run or new hyperparameter selection is introduced.
+
+`scripts/e1_fixed_score_wait.sh` is a shell-only waiter for those nine records.
+It launches the one-thread scorer only while the verified N1 training PID is
+still running the expected command. Status is
+`experiments/E1-fixed-scoring-20261030.state`; results go to
+`artifacts/rehearsal/e1/fixed-scoring-20261030/comparison.json`. Do not launch a
+duplicate scorer. Four focused tests cover unchanged P2/a banks, undeclared
+arm rejection, all-fold gating, run-noise rejection and the minimum gain.
+
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
 The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
