@@ -47,7 +47,10 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      `P0-DEPS-20261031-plan.json`: 263 inputs / 264 checksum checks pass;
      five tests and eight actual native fixture handoffs pass, including query-label isolation.
    The 65 remaining native column occurrences are mapped in
-   `P0-native-dependency-inventory-20261031.json`. Next prepare joint and item-kNN phases.
+   `P0-native-dependency-inventory-20261031.json`. Joint builds now prepared: 15 historical source versions recovered exactly,
+   four historical groups compiled with checkpoint-only patches, plus the isolated proven
+   retained J1–J4 binary. `P0-joint-isolated-builds-20261031.json`.
+   Next verify joint/integrated fixture parity and resume sidecars, then freeze joint/item-kNN phases.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
