@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-31T05:11:53.334800+00:00",
+  "state": "control_predictions_verified_treatments_pending",
+  "rows": 1408395,
+  "plan_sha256": "dddf5fef99ea56c7360ece2fe5a826f32303ccea79925c4b363ea3f1f3c0841b",
+  "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "artifacts": {
+    "artifacts/rehearsal/e1/fixed-scoring-20261030/original.b.f32": "3eae82d88808e348383377c3b84f17229d2fd2a19f3222e83cec0735447c734b",
+    "artifacts/rehearsal/e1/fixed-scoring-20261030/w1.b.f32": "36e2eb63fdc2a6728c49f8827d95a4ffa5d740aff992d38a58519e7724585722"
+  },
+  "scores": {
+    "original": {
+      "rmse": 0.8759524497073342,
+      "fold_rmse": [
+        0.8772824686893165,
+        0.8754080267279293,
+        0.8723250919153178,
+        0.8773080084781624,
+        0.8774496538413318
+      ]
+    },
+    "w1": {
+      "rmse": 0.8759527313194613,
+      "fold_rmse": [
+        0.8772837814545251,
+        0.8754126210259787,
+        0.8723376514090619,
+        0.8772855261079363,
+        0.8774551224323472
+      ]
+    }
+  },
+  "historical_original_b_rmse": 0.8759524498035316,
+  "original_reproduction_delta": -9.619738339239348e-11,
+  "same_binary_control_delta": 2.8161212706212524e-07,
+  "limitation": "Independent float32 control re-score only. No treatment gate or new promoted score is claimed."
+}

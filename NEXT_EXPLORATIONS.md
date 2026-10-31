@@ -135,6 +135,14 @@ is the fixed four-bank comparison, not a new parameter search; no gain or
 gate outcome is claimed before `comparison.json` is complete. Memory pressure
 was checked before the transition (26% system-wide free memory).
 
+**Independent control verification.** On all 1,408,395 original-probe rows,
+the saved float32 original-bank predictions score 0.875952449707 versus the
+historical 0.875952449804 (difference -9.62e-11). The new same-binary w1 bank
+scores 0.875952731319, a noise delta of +0.000000281612. Prediction hashes,
+data/plan bindings, finiteness and all five fold scores are recorded in
+`experiments/E1-fixed-control-verification-20261030.json`. No weighted-arm
+gate result or promoted gain is claimed by this control-only check.
+
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
 The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
