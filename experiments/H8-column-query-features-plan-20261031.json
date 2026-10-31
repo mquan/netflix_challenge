@@ -1,0 +1,35 @@
+{
+  "libraries": {
+    "numpy": "2.5.3",
+    "lightgbm": "4.7.0"
+  },
+  "feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "mode": "features",
+  "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+  "joint_model": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-K1.bin",
+  "scope": "Compile original-probe identity/date features only with K1 trained on original training ratings. No query ratings are passed to the producer and no scores are computed.",
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-K1.bin": "bbfa2afc337c7d4899093420056b9813520b2fc909ebe76801d7810434ed2e82",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-B-K1.json": "5dada0de91251f35c2c035dcad3805d4ab981f6b0e9e789f52485720eb018e97",
+    "/Users/quan/workspace/netflix_challenge/scripts/choice_affinity_column.py": "458b229b62b67218e4e33a4c233568fea34f1e525065bdd2b08ff5210d23ae10",
+    "/Users/quan/workspace/netflix_challenge/scripts/headroom_choices.py": "90076d9cefb53485460e55197f6704fd128743a624b7e64fd4179062645ba2fc",
+    "/Users/quan/workspace/netflix_challenge/scripts/headroom_map.py": "5cbd9f731ca6e84d754e4ea3283a36cc3b6f9eed4c1ae96a58d3eb72cb037065",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/local_context_chain.py": "0a75125f8c9b823f00f515b2253d47ff8c48a9389624c563f4f3ea37847aecc1",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  }
+}

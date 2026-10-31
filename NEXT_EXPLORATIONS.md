@@ -700,3 +700,27 @@ Reports: `experiments/H8-nested-{result,verification}-20261031.json`.
 A fresh rescore from the saved fold-0 predictions reproduces both comparison
 records exactly; all 20 frozen inputs and the prediction payload were
 rehashed unchanged. No recipe or threshold changed after the result.
+
+## H8 fixed CPU column preparation (after nested P2 pass)
+
+Claimed by Codex. `scripts/choice_affinity_column.py` fits a P2-only model
+bundle and compiles a separate full-view feature cache. Its plans are
+`experiments/H8-column-{fit,query-features}-plan-20261031.json`, frozen before
+execution. P2 fit uses the original bank11+N1 columns, five-user-fold ridge
+bases at penalty 10 and the unchanged H8 feature/tree recipe. Final tree
+rounds are fixed from the nested result: base-only control 39, choice treatment
+114. Both trees fit all P2 training labels without another score or search;
+a full-P2 ridge supplies the weights for query inference.
+
+Full-view features use `B-K1.bin`, the Phase 0 K1 trained on original training
+ratings. The producer receives a newly allocated query array containing only
+user, movie and date, with no rating field. No original-probe score is part of
+this preparation. Applying the bundle still requires the corresponding full
+N1 column, which is not yet available. A future full-bank/all-fold comparison
+must measure the transfer; independently refitted factor embeddings can
+change feature distributions, so the P2 gain is not assumed to transfer.
+
+Two fixture tests cover exact saved-model prediction parity, schema/payload
+rejection, fixed full training and label-independent query feature generation.
+No GPU job or existing trainer is changed. This prepares the CPU complement
+while preserving N1/SO1 queue priority.
