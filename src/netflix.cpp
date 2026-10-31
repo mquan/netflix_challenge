@@ -1716,7 +1716,8 @@ void usage() {
       << "  netflix bar --data FILE --model FILE [--attributes N] [--movies N] "
          "[--iterations N] [--threads N] [--predictions FILE]\n"
       << "  netflix eval-bar --data FILE --model FILE [--predictions FILE]\n"
-      << "  netflix check-implicit\n";
+      << "  netflix check-implicit\n"
+      << "  netflix check-truncated-normal\n";
 }
 
 }  // namespace
@@ -1756,6 +1757,8 @@ int main(int argc, char **argv) {
       command_joint(args, true);
     } else if (command == "bayes") {
       bayes::command(args);
+    } else if (command == "check-truncated-normal") {
+      bayes::check_truncated_normal();
     } else if (command == "check-implicit") {
       check_implicit_update();
     } else if (command == "ensemble") {

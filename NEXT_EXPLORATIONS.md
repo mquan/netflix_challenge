@@ -251,6 +251,32 @@ movie context at training and inference. Matched control: same warm start,
 schedule and seed, with the cross-attention block present but its context
 masked.
 
+### E2 CPU data preparation (2026-10-30; no model launched)
+
+`scripts/e2_corater_data.py` adds a persisted training-only movie-to-rater
+index and uniform sampling of up to 64 distinct other raters. The query user
+is excluded before sampling, including when the query is a masked training
+row. Selection depends only on seed and user/movie/date identifiers; ratings,
+date proximity, overlap and popularity scores never determine sampling.
+Only training-row ratings/dates are exported. An explicit mask distinguishes
+padding from valid dense user ID zero. Duplicate user/movie training ratings
+are rejected because exclusion assumes one rating per pair.
+
+Five focused tests cover query-label independence with nonempty context,
+exact target-user exclusion, distinct/uniform sampling, empty contexts, valid
+user zero, duplicate rejection, payload/dataset changes and no overwrite.
+The fixed data-only plan is `experiments/E2-data-plan-20261030.json`: build
+indexes for A2h's hash-matched P2 and full-training datasets, then sample
+10,000 label-independent queries per view to measure coverage and throughput.
+All work is one-thread CPU while N1's training process is live; no GPU job,
+model training, P2 rating score or original-probe score is part of this step.
+
+This prepares a component of E2, not the full experiment. The exact frozen
+co-rater code must still be defined: A2h's normal codes are query-dependent,
+so a generic user-code cache cannot be assumed equivalent. Freeze the code
+producer, matched architecture, training budget and pilot gate before any
+learning run, and preserve the existing GPU queue's priority.
+
 **Gate.** At least **0.0005** in the R9-LAT-A2h blend (round4_boost three
 seeds + NN2 50/50), all folds better. Main risks: target leakage through
 co-rater codes trained on the target row, and sampling bias toward popular
@@ -308,6 +334,49 @@ finished; do not edit the frozen SO1 trainer or its dependencies.
 - **Launch condition.** Only after the other session's GPU queue (SO1,
   including any full-data stage) is finished, the GPU is idle, and no other
   Python training process is live. Never in parallel with their jobs.
+
+## E5. Ordinal (interval-censored) Bayes timeSVD++ — CPU (fixed 2026-10-31, before any score)
+
+**Hypothesis.** The one CPU family that kept paying was the conditional RBM,
+which models the rating *distribution*. The Bayes model, the strongest CPU
+learner, uses a Gaussian likelihood on star values. Treat a rating r as a
+rounded latent: z = f + N(0, 1/α) lies in (r−½, r+½], open-ended at 1 and 5.
+Gibbs data augmentation (Albert–Chib) resamples z from its truncated normal
+every sweep, and the unchanged factorization-machine Gibbs updates then run
+on z. Prediction is the posterior mean of E[r] = 1 + Σ_t P(z > t),
+t ∈ {1.5, 2.5, 3.5, 4.5}. Ratings at 1 and 5 no longer pull f toward the
+boundary, and the predicted mean is calibrated near the ends. That gives a
+different error structure from every Gaussian column in the bank.
+
+**Code.** `netflix bayes --likelihood ordinal` (default `gaussian`), in the
+separate `build/netflix-ordinal`.
+- A single-thread Gaussian run is byte-identical to the previous binary,
+  and ordinal mode draws RNG only in its own latent step.
+- `netflix check-truncated-normal` checks the sampler against analytic means:
+  central, one-sided and far-tail intervals, plus quantile round trips and the
+  expectation identities.
+- `tests/test_bayes_ordinal.py` covers: the self-check; explicit `gaussian`
+  equal to the default; exact residuals under ordinal (1 and 3 threads);
+  ordinal learning on rank-2 data, within 0.05 of Gaussian, predictions in
+  [1, 5]; and rejection of an unknown likelihood and of ordinal resume.
+- The joint and Bayes suites (plain and row-weight) pass on the same binary.
+
+**Pilot.** `scripts/e5_chain.sh build/netflix-ordinal {gaussian,ordinal}`,
+two parallel processes with 4 threads each. Both use the B2 recipe (rank 64,
+128 sweeps, burn-in 16, seed 2026) on the P2 holdout
+`artifacts/validation/train-matched-20260927.bin`, and predict P2. Output goes
+to `artifacts/e5/`, logs to `experiments/E5-p2-r64-*`. About 4 hours.
+
+**Gate (P2 only; the original probe is not read).** Use SO1's
+`selection_objective_gate.compare` on SO1's bank11 P2 columns, which already
+include B4 and A2h. Fit ridge on user folds 2–4, select the penalty on fold 1
+from {1, 10, 100, 1000}, refit on 1–4 and evaluate on fold 0. The primary
+comparison is bank11 + Gaussian control + duplicate control versus bank11 +
+Gaussian control + ordinal. **Pass: ≥0.0003 P2 RMSE gain.** Standalone P2
+RMSE of both arms is reported, not gated. Pass → one full-probe ordinal run at
+the B4 recipe (rank 128, 160 sweeps, item-bin 2, drift 2, seed 13), added to
+the promoted R9-LAT-A2h bank under the standard dev-CV recipe: ≥0.0005 and
+all five folds to promote. Fail → close E5 without a rank or recipe sweep.
 
 ## E4. Second A2h seed (filler)
 
