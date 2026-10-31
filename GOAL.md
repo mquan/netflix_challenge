@@ -1,22 +1,35 @@
-# Standing goal: reach the 10% improvement
+# Standing goal: match the Grand Prize winning score
 
-Set by the user on 2026-10-30. This session keeps running and trying new bets
-until the goal is reached or the bets run out. It does not stop at a single
-experiment.
+Set by the user on 2026-10-30 as "reach 10%"; **raised by the user on
+2026-10-31 to the actual winning score**: "the actual winning score is .855, I
+want to hit that number." This session keeps running and trying new bets
+until the goal is reached or the bets run out.
 
 ## Target
 
-- **10% better than Cinematch's 0.9525 test RMSE = 0.85725 test RMSE.**
+- **Primary: quiz RMSE 0.8554**, BellKor's Pragmatic Chaos's winning
+  quiz score. Its test score was 0.8567.
 - Mapped to our metric with the measured Stage C offset (test ≈ dev CV − 0.0074,
-  measured twice; [PLAN_TO_TARGET.md](PLAN_TO_TARGET.md)): **≈0.86465 dev CV**.
-- Current promoted best: R9-LAT-A2h at **0.8668706425** dev CV, a gap of
-  **≈0.0022**.
+  measured twice; [PLAN_TO_TARGET.md](PLAN_TO_TARGET.md)):
+
+  | Target | Dev-CV equivalent | Gap from 0.8668706 |
+  |---|---:|---:|
+  | 10% prize threshold (test 0.85725) | ≈0.86465 | 0.0022 |
+  | winner, test 0.8567 | ≈0.8641 | 0.0028 |
+  | **winner, quiz 0.8554 (goal)** | **≈0.8628** | **0.0041** |
+
+  The same 0.0074 offset is applied to quiz and test. Our offset is
+  calibrated on the probe → qualifying relationship, and quiz and test are
+  halves of qualifying. The winner's own quiz–test difference (0.0013) shows
+  this split is itself about ±0.001 uncertain.
+- How the current best maps: 0.86687 − 0.0074 ≈ 0.8595 estimated test, i.e.
+  1 − 0.8595/0.9525 ≈ 9.8% better than Cinematch.
 - The gap can close from either side: a better dev-CV bank, or a larger
-  Stage C retraining offset (measured with the Phase 0 rehearsal). Both count,
-  but every claimed gain must be measured under its own fixed protocol.
-- Qualifying labels are not available locally. Reaching the target is an
-  **estimate** from dev CV plus the measured offset, never a verified
-  hidden-test score.
+  Stage C retraining offset (measured with the Phase 0 rehearsal). Every
+  claimed gain must be measured under its own fixed protocol.
+- Qualifying labels are not available locally. Any score is an **estimate**
+  from dev CV plus the measured offset, never a verified hidden-test score.
+  The full production retrain has not been run end to end yet.
 
 ## Operating rules
 
