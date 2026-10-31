@@ -1,0 +1,20 @@
+{
+  "state": "validators_match_real_full_size_native_artifacts",
+  "auditor_sha256": "a0a79de0012c6bda101ad48701c3fb94aa3bc1e554a4f57c48fc2f4b5efb60af",
+  "dataset_metadata": {
+    "fingerprint": 12499777815975055846,
+    "users": 480189,
+    "items": 17770,
+    "train_count": 100480507,
+    "query_count": 2817131,
+    "sessions": 18136482,
+    "mean": 3.603304257811724
+  },
+  "validated": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/time-baseline.bin": "cea8c2e1a62e8b8e7481f7caea141373d6c3413e61a0d38c9578ec5bcbf93e1c",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/neighbors256.bin": "4d00cfab0b2edf67a6e09aba27b8578035a2cb2704875241b570341dd85879d6",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR7-dependencies/graph64-rebuilt/neighbors64.bin": "9e3d0a67b491dd40169dcc850295951be50345832e157f252a0d9981188a1e85",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/PR8-neighborhood.bin": "9d14e0a5e596bf4cf5b47aeacb28fc64615962a95c3d0d0a58f20f483bde9174"
+  },
+  "scope": "Read-only validation of original-data full-size native formats. Production dependency training remains unperformed."
+}
