@@ -56,3 +56,29 @@ the next learning run. Keep E2 prepared and lower priority rather than
 closing it on the movie-group oracle alone. Do not select a new recipe or
 claim the 10% goal impossible solely from these diagnostic measurements.
 The actual target and promotion gates remain those in GOAL.md.
+
+## H4 result and next validation
+
+The first `artifacts/headroom/H4-p2-proxies.json` reports fold-0 P2 RMSE
+0.8477476174 → 0.8469337276 (gain 0.0008138899). This is a useful candidate
+signal under its recorded protocol, not an original-probe or full-bank
+promotion. Its `all_folds_improve` is false because the report evaluates only
+fold 0; the other fold entries are null. Do not subtract this P2 gain from the
+promoted 0.8668706425 dev-CV score.
+
+The initial `scripts/headroom_proxies.py` constructs `base_cf` with
+`headroom_map.crossfit(bank, y, folds)` over all five folds, before fitting the
+residual learner on folds 2–4. Each training row's base prediction excludes its
+own user fold, but the ridge fit producing that prediction includes fold-0
+labels. Those base values also affect training residual targets and pooled
+prediction features. Thus the complete residual-learning pipeline is not
+isolated from outer fold 0, even though its feature builder does not directly
+read query rating fields. The practical effect has not been measured.
+
+Before treating this as an independently held-out gate, isolate the outer
+fold throughout the pipeline: construct all training/selection residuals and
+base-dependent features without outer-fold labels, and obtain outer-fold base
+predictions from fits on the permitted training partitions. Freeze that
+protocol before comparing scores. The other session owns H4; this note neither
+modifies nor reruns it. A subsequent five-fold/full-bank evaluation and the
+existing promotion requirements remain necessary.
