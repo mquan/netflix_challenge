@@ -32,6 +32,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 3 live; epoch 2 complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
+| Final bank/blender/export handoff | Codex | Managed bash waiter PID 75657/session 29645 live at guard; requires all 82 audits and family process exit. No final fit or export started. `experiments/P0-FINAL-launch-20261031.json`. Do not duplicate. |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | 5/25 complete and audited (first-seed n1/n4/n16/n32/n64); n64 average 0.8673321. Lane 0 second-seed n4 tree (71100/session 96236); lane 1 second-seed n1 neural (56799/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n64-full-verification-20261031.json` |
 
 ## Next actions
@@ -108,12 +109,14 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    raw-order text export. Four tests pass with real tiny CLI fitting/inference/
    export and synthetic production receipts. Real final fit rejects the absent
    resolved bank before creating started metadata. Full fixed-budget final
-   runner is now frozen, not yet launched. `P0-FINAL-20261031-plan.json`: 500
+   runner is frozen and launched as a waiting bash process. `P0-FINAL-20261031-plan.json`: 500
    inputs / 501 checksum checks pass; one resource test plus the prior 14
    resolver/handoff/serialization tests pass. Preserves 79/64/5 inputs and
    tree 904/969/1106, NN 15/14/14 budgets with seeds 2026/7/13. Guard requires
    all 82 audits, queue/stage process exit and stable normal memory, then runs
    resolve → fit → infer → replay → export. `P0-FINAL-preflight-20261031.json`.
+   PID 75657/session 29645 verified live at its guard; all five final outputs
+   absent and still 0/82 production-stage audits. `P0-FINAL-launch-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
