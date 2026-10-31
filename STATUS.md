@@ -61,6 +61,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      actual MPS prepare rejects the absent MPS-specific receipt. Prepared, not launched.
    Frozen phases cover 69/79 retained column occurrences. Remaining preparation:
    Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
+   Bayes audit now passes four tests and all four retained stage budgets/ranks
+   on two tiny single-thread fixtures: eight audited handoffs, 16 native commands;
+   posterior reloads and query-label isolation pass. B4 resumes the new sweep-32
+   parent and retains 144 samples at sweep 160. Production queue and historical
+   four/five-thread checks remain pending. `P0-bayes-budget-fixture-verification-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
