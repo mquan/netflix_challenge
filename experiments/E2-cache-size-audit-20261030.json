@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-31T05:42:31.913648+00:00",
+  "definition": "One float32 session-adjusted A2h vector per observed co-rater/movie/day source row",
+  "rank": 64,
+  "bytes_per_vector": 256,
+  "views": {
+    "P2": {
+      "sample_queries": 10000,
+      "sample_edges": 639810,
+      "sample_unique_source_rows": 635196,
+      "bytes_for_sample_unique_vectors": 162610176,
+      "all_training_rows": 97664546,
+      "all_training_rows_float32_vector_bytes": 25002123776,
+      "all_training_rows_float32_vector_gib": 23.28504228591919,
+      "sample_sha256": "113fe89a629bc27910c5f425f84a1a526d163ede04f1ae988bdea4110b2f6a3a",
+      "source_data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8"
+    },
+    "full": {
+      "sample_queries": 10000,
+      "sample_edges": 639861,
+      "sample_unique_source_rows": 632893,
+      "bytes_for_sample_unique_vectors": 162020608,
+      "all_training_rows": 99072112,
+      "all_training_rows_float32_vector_bytes": 25362460672,
+      "all_training_rows_float32_vector_gib": 23.62063217163086,
+      "sample_sha256": "026a97871f0e52a8ca20152834b4288d4da73b1a743934da410ccd768b76db8b",
+      "source_data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673"
+    }
+  },
+  "limitation": "Storage arithmetic only. Full requested cache cardinality, generation throughput, MPS memory and E2 training are unmeasured. The all-row figure is an upper bound, not a measured required cache."
+}

@@ -299,6 +299,49 @@ This establishes the sampler's feasibility and exclusion contracts on those
 samples. It does not establish an E2 rating gain, neural throughput, a complete
 co-rater code cache, or readiness to launch the deferred GPU experiment.
 
+### E2 exact-code feasibility audit (prepared before code generation)
+
+`scripts/e2_query_codes.py` measures actual query-conditioned A2h codes, rather
+than treating an unvalidated generic USER-slot readout as equivalent. Each code
+is for one observed co-rater/movie/day pair. Its own rating value is masked
+from all explicit sequence, histogram and session channels; permitted implicit
+identities/dates remain. The captured session-adjusted vector reconstructs the
+frozen five-logit decoder within 1e-6. The original checkpoint is read-only.
+
+The data-only plan is `experiments/E2-query-code-plan-20261030.json`: select up
+to three sampled source pairs in each of five history-count strata, with seed
+20261031, then encode those pairs on one CPU thread. Inference uses padding to
+one row to bound CPU workload; fixture outputs match padding 64 within 1e-6.
+This is not an MPS equivalence or throughput claim and does not alter any
+queued trainer. Three tests cover held-rating/query-label exclusion, decoder
+reconstruction, frozen parameters, visible-rating sensitivity and padding.
+The audit does not train a model or choose any rating hyperparameter. Its
+purpose is to measure the exact code producer before proposing a full cache
+or an explicitly different representation; no generic-cache approximation
+may be reported as an exact-query-code test.
+
+**Audit outcome.** All 15 actual P2 co-rater pairs were encoded successfully,
+covering training histories of 9--2,446 ratings and widths up to 1,536. Captured
+vectors reconstruct the decoder exactly (maximum logit error zero). Changing
+each held rating and all P2 query labels leaves every input tensor and saved
+code byte-identical; a real short-history padding-64 comparison also agrees
+exactly. Parameters remain unchanged. Four fixture tests pass, including a
+sole-rating user whose visible explicit context becomes empty.
+
+The three longest-history CPU forward/check timings are 26.7--43.6 ms each,
+plus 2.2--2.8 ms input preparation. These are bounded one-thread CPU timings,
+not MPS estimates. The plan, exact audit and independent verification are
+`experiments/E2-query-code-{plan,audit,verification}-20261030.json`.
+
+The 10,000-query P2 sample requests 635,196 distinct source-row codes. One
+64-float32 vector per code is about 155 MiB for that sample; the all-training-row
+upper bound is 23.29 GiB for P2 and 23.62 GiB for the full view. This is not a
+measured required full cache. Cardinality/storage arithmetic is recorded in
+`experiments/E2-cache-size-audit-20261030.json`. Exact code production is now
+defined and exercised, but whole-cache generation, MPS throughput, matched
+neural architecture and the final learning plan remain pending. No E2 rating
+score or model improvement has been measured.
+
 ## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
 **Hypothesis, corrected by source audit 2026-10-30.** A2h already has a five-way
