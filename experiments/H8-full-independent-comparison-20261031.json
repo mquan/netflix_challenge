@@ -1,0 +1,93 @@
+{
+  "state": "complete",
+  "plan_sha256": "f18a5931caa3a0334fac35078f181f6f9f5f0fbf6022b56ff9d62511a9112356",
+  "frozen_inputs_verified_before_and_after": 187,
+  "stage_outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.json": "aab0ab31f0200574824538f97f6aec57c67676740a9aa277b776e84034ceca94",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.refit.f32": "cbe8ce07cec4e26bcebfd29f2f12c6f83a624fff037c8f61718756de5189279e",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.ridge.f32": "18251c10bffdf9ea8d5e775c387e2e0f7f16c9eca5fe37721303a0ef934faca4",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.json": "5a8b8bfc2d83eb45f880dcd866cb8a5297ec87c72fdb32ce9f53253bf7930d2a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.nn.f32": "10fb8d6df4a143953fff0975b0fd9315e73b718816e4d8653ea90a4eea506f9f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.avg.f32": "6d509ec282a772aca8f36f5f52d4a1ecc2125c4be5b18a57f379da5a841c8a8b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.json": "e7c15ffa35edcd44d51b78be219d647cf7b39e913f480b71bfe5e8436890c9b2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.refit.f32": "6b8707c5a8cf7225654f60fad28f2fb25fc147b6d9d6e58eb2428c0349b2e509",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.ridge.f32": "0cd1f37dbea02dd15cf8534ea997c0eda9a73479054c7afcf972a5e76159b634",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-NN2.json": "fca0aa7a1a2bcd3c5d2ccb56f0d6f6f269c3dbfd0d0206b99eda7215f1f45da3",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-NN2.nn.f32": "912c8a32d42d671b1d67bff5bbcd1a1c6a635d0b20fadd5380cc722c73d2b9dc",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-NN2.avg.f32": "0928f1f0a33c0cd79ad9ce1d50396ac88819563530c54c48c21892bf2395bb0f"
+  },
+  "exact_recipe_bank_and_library_verified": true,
+  "matched_arm_columns_verified": true,
+  "average_max_abs_errors": {
+    "control": 2.384185791015625e-07,
+    "treatment": 2.384185791015625e-07
+  },
+  "primary": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8667051173719601,
+    "treatment_rmse": 0.8664848394547376,
+    "delta_rmse": -0.0002202779172224556,
+    "fold_deltas": [
+      -0.00028146306141818567,
+      -0.00017904892752962365,
+      -0.00024189614227787537,
+      -0.00019756707229867665,
+      -0.00020130620477587513
+    ],
+    "delta_mse": -0.00038178347384079154,
+    "cluster_normal_95_mse_interval": [
+      -0.00044346552089875223,
+      -0.00032010142678283085
+    ],
+    "all_folds_improve": true
+  },
+  "treatment_vs_retained_reference": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8668706424233039,
+    "treatment_rmse": 0.8664848394547376,
+    "delta_rmse": -0.0003858029685662734,
+    "fold_deltas": [
+      -0.0005400907863728488,
+      -0.00020126071963988412,
+      -0.00046842540274494304,
+      -0.00036385177426734305,
+      -0.00035496624324615755
+    ],
+    "delta_mse": -0.0006687336904889433,
+    "cluster_normal_95_mse_interval": [
+      -0.0007669722159617766,
+      -0.00057049516501611
+    ],
+    "all_folds_improve": true
+  },
+  "control_vs_retained_reference": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8668706424233039,
+    "treatment_rmse": 0.8667051173719601,
+    "delta_rmse": -0.00016552505134381779,
+    "fold_deltas": [
+      -0.00025862772495466313,
+      -2.2211792110260475e-05,
+      -0.00022652926046706767,
+      -0.0001662847019686664,
+      -0.00015366003847028242
+    ],
+    "delta_mse": -0.00028695021664815163,
+    "cluster_normal_95_mse_interval": [
+      -0.00036668088541953503,
+      -0.00020721954787676823
+    ],
+    "all_folds_improve": true
+  },
+  "minimum_matched_control_gain": 0.0003,
+  "passes_minimum_matched_gain": false,
+  "passes_promotion_rule": false,
+  "decision": "not promoted: fixed minimum matched-control gain fails",
+  "retained_reference": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32",
+  "approximate_dev_target": 0.8628,
+  "estimated_target_reached": false,
+  "metric": "Reused original-probe development CV, no hidden-test verification; no threshold changes after scoring"
+}

@@ -19,7 +19,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
 | E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
 | A7 sibling pooling | >=0.0005 after Stage C, all five folds | failed: +0.001779 worse on all folds |
-| H8 choice affinity | >=0.0003 P2 gain over bank11+N1 ridge | nested check passes at 0.000373; matched-tree increment 0.000289; full-bank value pending |
+| H8 choice affinity | P2 gate then >=0.0003 full-bank matched-control gain, all folds | full result 0.86648484; gain 0.00022028 vs matched control, 0.00038580 vs R9, all folds better; fixed full-bank minimum fails; not promoted |
 | H9 choice co-occurrence SVD | >=0.0003 nested P2 gain beyond H8 | closed: 0.000048 gain, interval includes zero |
 
 `scripts/p2_candidate_gate.py --plan PLAN --output RESULT` is the shared
@@ -1050,3 +1050,31 @@ outputs, and contains the **exact** original NN command/configuration.
 The companion shell/hash manifest will run only that neural stage. Full
 reference parity is still unproven until its saved 50/50 average is checked;
 no other S0 blend arm has been launched.
+
+## H8 full comparison complete — useful signal, fixed gate fails (2026-10-31)
+
+The unchanged shell runner completed all four stages and exited zero.
+Independent saved-payload verification in
+`experiments/H8-full-independent-comparison-20261031.json` confirms exact
+planned configurations, banks and library versions for every stage, finite
+outputs and reproduced scores, the fixed 50/50 averages within 1e-6, and the
+matched arm design. All 187 frozen inputs were unchanged before and after
+verification. No model, recipe, seed or threshold was adjusted after scoring.
+
+| Comparison | Control RMSE | Treatment RMSE | Gain | All five folds better? |
+|---|---:|---:|---:|---|
+| matched control → treatment | 0.8667051174 | 0.8664848395 | 0.0002202779 | yes |
+| retained R9 → treatment | 0.8668706424 | 0.8664848395 | 0.0003858030 | yes |
+| retained R9 → matched control | 0.8668706424 | 0.8667051174 | 0.0001655251 | yes |
+
+The matched-comparison user-cluster 95% MSE interval is
+[-0.00044347, -0.00032010]. The signal is measurable, but its improvement
+beyond the matched control is **below the registered 0.0003 minimum**.
+That condition was explicitly part of H8's full-bank promotion rule, so
+`passes_promotion_rule=false`. H8 is not promoted, no threshold is relaxed,
+and the retained R9 score and winner-target gap remain unchanged. Preserve
+the candidate as development evidence; no feature/round/seed continuation
+is authorized by this failed gate. Hidden labels remain unavailable.
+
+H8's trainers are terminal. S0's unchanged neural reference reproduction
+continues, so E3's no-other-training launch condition is not yet satisfied.
