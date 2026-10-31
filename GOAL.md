@@ -78,3 +78,8 @@ generation and the matched neural learning plan remain pending. A batched
 producer/joint-attention prototype has passed CPU fixture learning and one
 real-query forward checks (`experiments/E2-joint-audit-20261030.json`). No real
 E2 training or GPU job has run.
+
+A resumable exact-code exporter and strict read-only cache loader also pass
+fixture and 15-real-row CPU checks (`experiments/E2-cache-audit-20261030.json`).
+Whole-cache generation/MPS feasibility and the matched training runner remain
+pending; the exporter has not been launched on the GPU.

@@ -383,6 +383,31 @@ The head adds 21,616 parameters at A2h's rank 64. Evidence is
 boundary; it does not provide a complete training runner, whole-cache coverage,
 MPS memory/throughput evidence, a selected training budget or an E2 RMSE gain.
 
+### E2 resumable code cache (CPU verification only)
+
+`scripts/e2_code_cache.py` now exports the exact producer into a memory-mapped
+float32 table, either for all training source rows or an explicitly bound,
+sorted sparse row list. Every completed chunk is flushed, hashed and recorded
+atomically. Resume verifies all committed chunks and rewrites any uncommitted
+tail. Plans bind the dataset, selected checkpoint/report, producer sources,
+row list, inference settings and Torch version. The read-only loader requires
+a complete, matching cache, verifies payload integrity and rejects uncached
+rows; missing rows never become zero context.
+
+Four CPU tests cover interrupted output, resumed/direct code parity, changed
+plans and row maps, committed payload corruption, dense/sparse lookup and the
+complete plan-to-export path on a fixture. The fixed real audit plan is
+`experiments/E2-cache-audit-plan-20261030.json`. Its first call committed eight
+of the existing 15 audited source rows; the loader rejected that partial cache.
+The resumed call completed all 15, matching their prior single-query vectors
+within 4.77e-7. Evidence: `experiments/E2-cache-audit-20261030.json`.
+
+No training or rating score was computed. A whole-cache run and its MPS
+throughput/memory feasibility remain unmeasured. The matched E2 learning
+runner, fixed training budget and pilot gate still need implementation and
+freezing before a real learning launch. This exporter does not own scheduling;
+GPU execution remains deferred behind the existing queue.
+
 ## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
 **Hypothesis, corrected by source audit 2026-10-30.** A2h already has a five-way

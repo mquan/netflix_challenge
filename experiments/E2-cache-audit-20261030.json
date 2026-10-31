@@ -1,0 +1,19 @@
+{
+  "state": "verified_bounded_cpu_export_resume",
+  "plan_sha256": "16033dbb14750c75e871b534915346e864fabe435ae8be7477ca90b4b5c175a1",
+  "rows": 15,
+  "incomplete_rejected": true,
+  "completed_after_first_call": 8,
+  "completed_after_resume": 15,
+  "single_code_max_abs_error": 4.76837158203125e-07,
+  "vectors_sha256": "12c7addf4950f01a56a3aa794c491b7f848819c9ae9177dd485de3b9f5cbed8c",
+  "manifest_sha256": "846fc4d30f7384aff6357e27253a211547adf9305889f337a396d5d04ce727a5",
+  "binding": {
+    "plan_sha256": "16033dbb14750c75e871b534915346e864fabe435ae8be7477ca90b4b5c175a1",
+    "model_sha256": "fcd9a33173ff37dbf716587ef2e1d3d060791e49e52acf28e8c0757aba2eae76",
+    "torch_version": "2.14.1"
+  },
+  "gpu_used": false,
+  "netflix_optimizer_steps": 0,
+  "limitation": "15-row export and resume only; no whole-cache coverage, MPS cost, matched learning run or RMSE evidence."
+}
