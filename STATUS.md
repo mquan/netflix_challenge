@@ -59,13 +59,16 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      `P0-AUTOREC-20261031-plan.json`: 255 inputs / 256 checksum checks pass.
      Both budgets and 512-unit/two-layer architecture pass tiny CPU training/reload audits;
      actual MPS prepare rejects the absent MPS-specific receipt. Prepared, not launched.
-   Frozen phases cover 69/79 retained column occurrences. Remaining preparation:
-   Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
-   Bayes audit now passes four tests and all four retained stage budgets/ranks
-   on two tiny single-thread fixtures: eight audited handoffs, 16 native commands;
-   posterior reloads and query-label isolation pass. B4 resumes the new sweep-32
-   parent and retains 144 samples at sweep 160. Production queue and historical
-   four/five-thread checks remain pending. `P0-bayes-budget-fixture-verification-20261031.json`.
+   - Bayes: four stages / three columns, waits for all 12 RBM audits and S0,
+     CPU neural and RBM process exit, plus normal memory. Exact four/five-thread
+     settings preserved; a tiny historical-thread test must pass before training.
+     `P0-BAYES-20261031-plan.json`: 249 inputs / 250 checksum checks pass;
+     five audit/resource tests, eight single-thread native fixture handoffs and
+     all three full historical checkpoint scans pass. B4 resumes the newly
+     produced sweep-32 parent, retaining 144 samples at sweep 160. Not launched;
+     historical-thread runtime test remains pending. `P0-BAYES-preflight-20261031.json`.
+   Frozen phases cover 72/79 retained column occurrences. Remaining preparation:
+   GP/local (6), user-kNN (1), then final blender/export.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
