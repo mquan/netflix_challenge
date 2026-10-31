@@ -52,7 +52,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Work | Owner | State |
 |---|---|---|
 | A. Headroom map (`scripts/headroom_map.py`) | this session (Claude) | started 2026-10-31 |
-| E2 prototype (movie-side context in A2) | other agent | CPU prototype in progress (see E2 notes) |
+| E2 prototype (movie-side context in A2) | other agent (Codex) | CPU model/cache/P2 runner verified; learning decision waits for headroom map and GPU queue (see E2 notes) |
 
 ## Closed bets
 
@@ -83,3 +83,8 @@ A resumable exact-code exporter and strict read-only cache loader also pass
 fixture and 15-real-row CPU checks (`experiments/E2-cache-audit-20261030.json`).
 Whole-cache generation/MPS feasibility and the matched training runner remain
 pending; the exporter has not been launched on the GPU.
+
+The matched P2 training runner (`scripts/e2_train.py`) now passes three CPU
+fixture tests for batch/RNG parity, repeatability and label-independent
+prediction. No real E2 optimization has run. Its learning recipe and shared
+gate binding wait for the headroom map; no GPU job was launched.

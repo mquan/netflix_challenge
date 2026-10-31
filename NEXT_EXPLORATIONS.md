@@ -408,6 +408,30 @@ runner, fixed training budget and pilot gate still need implementation and
 freezing before a real learning launch. This exporter does not own scheduling;
 GPU execution remains deferred behind the existing queue.
 
+### E2 matched P2 training runner (fixture verified, no real launch)
+
+`scripts/e2_train.py` accepts a frozen plan and an explicit control/treatment
+arm. It requires a complete cache from the exact warm backbone and training
+context, verifies the sampler index, and binds its sources and input manifests.
+It reuses A2h's existing mask/sequence preparation unchanged; target dates are
+recovered by local user/movie identity, without consuming RNG or target stars.
+The two arms use the same optimizer, masks, batch ordering, sampled peers and
+dropout calls, differing only in the prototype's peer-value switch.
+
+The runner trains the plan's fixed epoch count, then emits one final prediction
+file and checkpoint. It neither scores P2 nor selects an epoch. A batch-capped
+run is marked smoke-only. Three CPU fixture tests verify original batch/RNG
+parity, matched control/treatment RNG consumption, distinct arm predictions,
+exact repeated-treatment model/prediction reproducibility, label-independent
+inference, query-order parity and early rejection of changed/missing inputs.
+All three pass; no real Netflix optimization was run.
+
+This implements the selection-context runner, not a frozen learning experiment.
+The actual budget, shared gate binding, whole-cache feasibility, GPU scheduling
+and any full-data follow-up remain pending. In accordance with STRATEGY.md,
+E2's next learning decision waits for the headroom map and the existing GPU
+queue; this preparation does not launch a new one-off bet.
+
 ## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
 **Hypothesis, corrected by source audit 2026-10-30.** A2h already has a five-way
