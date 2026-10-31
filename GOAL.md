@@ -56,7 +56,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H8. Choice affinity beyond N1 (P2) | this session (Claude) | done 2026-10-31: borderline −0.00036 (−0.00029 vs recalibrated); a small complement only |
 | H8 nested validation | Codex | complete: −0.000373 vs ridge, −0.000289 vs matched tree on P2 fold 0; full-bank value pending |
 | H9 choice co-occurrence embeddings | Codex | closed: +0.000048 gain beyond H8, below 0.0003; H8 control reproduced exactly |
-| H8 deployable CPU column | Codex | full-query columns verified; SO1 queue terminal; retained R9 reference bound before scoring in H8-full-20261031-plan.json; fixed four-stage comparison prepared |
+| H8 deployable CPU column | Codex | full-query columns verified; SO1 queue terminal; retained R9 reference bound before scoring in H8-full-20261031-plan.json; four-stage comparison running, control tree first |
 | A7. Sibling-split Stage C rehearsal (K1 family) | this session (Claude) | **closed 2026-10-31: Stage C absorbs the sibling signal; pooling +0.00178 worse after retraining** |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
@@ -77,7 +77,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | H8 full-bank comparison | retained R9 + raw N1 in both arms; fixed matched control and treatment; four CPU blend stages prepared after SO1 queue release |
+| 1 | H8 full-bank comparison | running: retained R9 + raw N1 in both arms; fixed matched control and treatment; four sequential CPU blend stages after SO1 queue release |
 | 2 | open | — |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 
