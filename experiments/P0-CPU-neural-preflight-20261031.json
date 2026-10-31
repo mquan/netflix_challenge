@@ -1,0 +1,54 @@
+{
+  "state": "prepared_not_launched",
+  "plan_sha256": "18f2f0a54da0efcfb278108dcf1a917024c2de462293b246ffde6d83372f8e84",
+  "master_sha256": "1b8aa3f12eeb8ec377e545f2b559e3a321c82cfb5b1c66d743d6b36063ce8775",
+  "frozen_inputs_verified": 233,
+  "existing_auditor_unchanged": true,
+  "all_configs_match_original_preparations": true,
+  "stages": [
+    {
+      "column": "MH3-categorical-mse-refit.f32",
+      "epochs": 4,
+      "threads": 2
+    },
+    {
+      "column": "MT0-refit.refit.e12.f32",
+      "epochs": 12,
+      "threads": 2
+    },
+    {
+      "column": "MT1-refit.refit.e10.f32",
+      "epochs": 10,
+      "threads": 2
+    },
+    {
+      "column": "MT2-refit.refit.e12.f32",
+      "epochs": 12,
+      "threads": 2
+    },
+    {
+      "column": "MT3-refit.refit.e7.f32",
+      "epochs": 7,
+      "threads": 2
+    },
+    {
+      "column": "MT5-refit.f32",
+      "epochs": 10,
+      "threads": 3
+    },
+    {
+      "column": "MT6-refit.f32",
+      "epochs": 12,
+      "threads": 3
+    }
+  ],
+  "launch_block": "Current GPU and both S0 lanes occupy all three training slots; elevated memory pressure also forbids an additional launch. Native/model/support/final-blender phases remain required.",
+  "bash_syntax_passed": true,
+  "resource_guard_fixture_cases_passed": [
+    "both_lanes_live",
+    "one_lane_done_pressure_high",
+    "one_lane_done_normal",
+    "both_lanes_done_normal",
+    "unknown_pressure"
+  ]
+}

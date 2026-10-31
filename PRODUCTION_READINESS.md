@@ -23,6 +23,15 @@ first MPS training checkpoint. Exact startup configuration and libraries match
 the bound preparation report. `experiments/P0-GPU-launch-20261031.json` and
 the immutable startup snapshot record this handoff.
 
+The separate seven-model CPU neural phase is now prepared, not launched:
+`experiments/P0-CPU-neural-20261031-plan.json`. It preserves the original
+MH3/MT0/MT1/MT2/MT3/MT5/MT6 budgets (4/12/10/12/7/10/12 epochs) and two or
+three CPU threads. It reuses the unchanged production adapter and auditor.
+Its runner waits until at least one S0 lane has exited and memory pressure is
+normal, checks again after hashing, and requires completion audits between
+stages. Bash syntax and five mocked resource-state checks pass. The current
+three training slots remain occupied, so this phase has not started.
+
 Qualifying sentinels cannot select epochs or establish a score. Final-bank
 offset calibration is still unverified; the existing ~0.0074 offset supports
 only an estimate. GPU order is completed E3, then Codex production, then
