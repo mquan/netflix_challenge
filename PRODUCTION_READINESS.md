@@ -1,5 +1,29 @@
 # Final-production readiness audit
 
+## Current execution checkpoint — 2026-10-31
+
+The user has explicitly assigned the production retrain to Codex. This
+authorizes producing the current retained R9 bank despite the older audit's
+development-target prerequisite below. R9 remains 0.8668706424 dev CV; the
+estimated winner target is not reached, and this execution is not a promotion.
+
+`experiments/P0-production-20261031-plan.json` freezes all 79 retained columns
+(77 unique development hashes), recovered recipe registries, the existing
+ordered final-blender plan and available features, production data and query
+mapping. Source and data checks pass. The first phase is the seven exact
+archived-source MPS neural recipes in `P0-GPU-20261031-plan.json`, serialized
+with original fixed epoch budgets and a completed-column audit before each
+handoff. The three auditor fixture tests pass; preflight confirms existing
+prepare-only configurations, current libraries, MPS availability and 130 GiB
+free disk. CPU/native phases and the final bank/blender export remain pending.
+
+Qualifying sentinels cannot select epochs or establish a score. Final-bank
+offset calibration is still unverified; the existing ~0.0074 offset supports
+only an estimate. GPU order is completed E3, then Codex production, then
+Claude's moonshot M1. The S0 CPU lanes continue unchanged within the resource cap.
+
+## Historical readiness and recipe-recovery evidence
+
 2026-10-19; current promoted reference remains R9-LAT-A2h at 0.8668706425
 development CV. This audit supports the final retraining step in
 `PLAN_TO_TARGET.md`; it neither changes that score nor establishes the 10% goal.
