@@ -1,0 +1,151 @@
+{
+  "state": "verified_live_training_and_guarded_wait",
+  "verified_utc": "2026-10-31T23:27:13.066480+00:00",
+  "primary_trainer": "32347 32318    04:19:42  76.2 RN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/production_neural.py --column A2h-refit.refit.e12.f32 --dataset-manifest /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json --output-dir /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12 --registry /Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json --archive /Users/quan/workspace/netflix_challenge/experiments/production-neural-sources.zip --train",
+  "latest_primary_progress": {
+    "phase": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12/model",
+    "epoch": 3,
+    "batch": 1200,
+    "users": 91627,
+    "targets": 5645468,
+    "tokens": 15261243,
+    "train_rmse": 0.8454154966767914,
+    "seconds": 1250.5727086249972,
+    "mps_allocated_mb": 385.429931640625,
+    "mps_driver_mb": 67112.875
+  },
+  "primary_log_age_seconds": 65.53577089309692,
+  "S0_lane_runners": [
+    "39539 75274    06:51:56   0.0 Ss   /bin/bash experiments/S0-lane0-20261031-run.sh",
+    "39615 75274    06:51:14   0.0 Ss   /bin/bash experiments/S0-lane1-20261031-run.sh"
+  ],
+  "live_S0_training_processes": [
+    "56799 39615       56:48 134.6 RN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round8_nn_blend.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --like /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n1-s3.json --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n1-NN2 --hidden 128 --layers 2 --dropout 0.2 --lr 0.0003 --weight-decay 0.01 --batch 4096 --epochs 60 --patience 5 --seeds 2026 7 13 --threads 2",
+    "71100 39539       18:23   0.0 SN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n4-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/diversity-s20261101-n4 --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "71121 71100       18:17  98.4 RN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n4-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/diversity-s20261101-n4 --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "71123 71100       18:17  96.4 RN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n4-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/diversity-s20261101-n4 --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "71124 71100       18:17  98.0 RN   /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261101-n4-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/diversity-s20261101-n4 --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta"
+  ],
+  "guarded_queues": [
+    {
+      "phase": "CPU-neural",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-cpu-neural-runner.log",
+      "pid": 66919,
+      "session_id": 50042,
+      "verified_process": "66919 75274       00:56   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "observed_log": "WAIT_CPU_NEURAL_FREE_SLOT_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "66919 75274       39:39   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "latest_log_line": "WAIT_CPU_NEURAL_FREE_SLOT_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "RBM",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-rbm-runner.log",
+      "pid": 66932,
+      "session_id": 98248,
+      "verified_process": "66932 75274       00:53   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "observed_log": "WAIT_P0_RBM_CPU_NEURAL_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "66932 75274       39:36   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_RBM_CPU_NEURAL_S0_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "DEPS",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-deps-runner.log",
+      "pid": 66954,
+      "session_id": 2271,
+      "verified_process": "66954 75274       00:49   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "observed_log": "WAIT_P0_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "66954 75274       39:32   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_DEPENDENCIES_S0_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "JOINT",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-joint-runner.log",
+      "pid": 66974,
+      "session_id": 57900,
+      "verified_process": "66974 75274       00:46   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "observed_log": "WAIT_P0_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "66974 75274       39:29   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "KNN",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-knn-runner.log",
+      "pid": 66999,
+      "session_id": 19384,
+      "verified_process": "66999 75274       00:43   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "observed_log": "WAIT_P0_KNN_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "66999 75274       39:26   0.1 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_KNN_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "AUTOREC",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-autorec-runner.log",
+      "pid": 67017,
+      "session_id": 3812,
+      "verified_process": "67017 75274       00:39   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "observed_log": "WAIT_P0_AUTOREC_PRIMARY_GPU_AUDITS_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "67017 75274       39:22   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_AUTOREC_PRIMARY_GPU_AUDITS_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "BAYES",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-bayes-runner.log",
+      "pid": 67037,
+      "session_id": 24506,
+      "verified_process": "67037 75274       00:36   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "observed_log": "WAIT_P0_BAYES_RBM_CPU_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "67037 75274       39:19   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_BAYES_RBM_CPU_S0_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "KERNEL",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-kernel-runner.log",
+      "pid": 67055,
+      "session_id": 16829,
+      "verified_process": "67055 75274       00:33   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "observed_log": "WAIT_P0_KERNEL_BAYES_KNN_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "67055 75274       39:16   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_KERNEL_BAYES_KNN_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "USERKNN",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-userknn-runner.log",
+      "pid": 67069,
+      "session_id": 35145,
+      "verified_process": "67069 75274       00:29   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "observed_log": "WAIT_P0_USER_KNN_KERNEL_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard",
+      "current_process": "67069 75274       39:12   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_USER_KNN_KERNEL_AND_NORMAL_MEMORY"
+    },
+    {
+      "phase": "FINAL",
+      "pid": 75657,
+      "session_id": 29645,
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-final-runner.log",
+      "current_process": "75657 75274       03:03   0.0 Ss   /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+      "latest_log_line": "WAIT_P0_FINAL_ALL_82_AUDITS_QUEUE_EXIT_AND_NORMAL_MEMORY"
+    }
+  ],
+  "production_audit_files_present": 0,
+  "required_production_audits": 82,
+  "memory_pressure": "1",
+  "scope": "Current process table and advancing GPU log verify training continues; ten queues remain live and waiting, without failures or additional full trainers. No restart, frozen input edit, score selection or promotion."
+}
