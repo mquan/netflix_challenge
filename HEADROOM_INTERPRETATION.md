@@ -82,3 +82,19 @@ predictions from fits on the permitted training partitions. Freeze that
 protocol before comparing scores. The other session owns H4; this note neither
 modifies nor reruns it. A subsequent five-fold/full-bank evaluation and the
 existing promotion requirements remain necessary.
+
+### Dependency confirmed on actual P2 rows
+
+The fixed audit plan `experiments/H4-outer-dependency-plan-20261030.json`
+changes only fold-0 labels by cycling each star to the next value, leaving
+all other labels, the prediction bank and source files unchanged. Running the
+existing `crossfit` twice changes the base predictions and residual targets
+on all 844,821 training rows (folds 2–4), while changing none of fold-0's own
+base predictions. The mean absolute training prediction change is 0.24337
+under this deliberately large perturbation. Evidence:
+`experiments/H4-outer-dependency-audit-20261030.json`.
+
+This confirms the dependency, not its ordinary score effect. No H4 learner
+was fitted, no candidate score was computed, and no source or existing result
+was modified. The 0.000814 signal may survive a properly isolated evaluation;
+that evaluation is still required before accepting it as a held-out gain.

@@ -1,0 +1,16 @@
+{
+  "plan_sha256": "50b1633117639f9fd8f2f4f32aef012f6fe5ca5271c25290f84c4ed39c86c750",
+  "state": "confirmed_outer_label_dependency",
+  "rows": 1407566,
+  "held_label_rows_changed": 281504,
+  "training_rows": 844821,
+  "train_base_predictions_changed": 844821,
+  "train_base_max_abs_change": 1.2042761774044384,
+  "train_base_mean_abs_change": 0.2433734880051039,
+  "held_base_predictions_changed": 0,
+  "train_residual_target_max_abs_change": 1.2042761774044384,
+  "nonheld_labels_unchanged": true,
+  "gpu_used": false,
+  "candidate_scores_computed": false,
+  "conclusion": "H4 training base features and residual targets depend on outer fold-0 labels through the all-fold crossfit. The size of its score effect is not measured."
+}

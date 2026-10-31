@@ -53,6 +53,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 |---|---|---|
 | A. Headroom map (`scripts/headroom_map.py`) | this session (Claude) | started 2026-10-31 |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU model/cache/P2 runner verified; learning decision waits for headroom map and GPU queue (see E2 notes) |
+| H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 
 ## Closed bets
 
