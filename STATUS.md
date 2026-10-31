@@ -45,7 +45,9 @@ The week-3 stop check remains ≥0.0015 bank gain.
    (seven fixed recipes; five resource-guard cases pass), not launched. Pressure
    fluctuates between levels 1/2; require stable normal memory and a free S0 slot.
    Remaining 65 column occurrences are mapped in `P0-native-dependency-inventory-20261031.json`;
-   next verify historical fixed-budget builds and freeze executable native phases.
+   18/20 historical RBM source versions recovered exactly (10/12 complete stage source sets);
+   `P0-rbm-source-recovery-20261031.json` records the two gaps.
+   Next verify isolated fixed-budget builds and freeze executable native phases.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
