@@ -1,0 +1,26 @@
+{
+  "candidate": "artifacts/selection-objective/N1-saved-epoch13.p2.f32",
+  "alone": 0.8683384740210056,
+  "a2h_alone": 0.8674022745268025,
+  "bank10": {
+    "rmse": 0.850120886249826,
+    "penalty": 10
+  },
+  "bank10+A2h": {
+    "rmse": 0.8477472631844652,
+    "penalty": 1
+  },
+  "bank10+candidate": {
+    "rmse": 0.8471968563278746,
+    "penalty": 1
+  },
+  "bank10+A2h+candidate": {
+    "rmse": 0.8465344855695104,
+    "penalty": 1
+  },
+  "candidate_beyond_A2h": {
+    "delta_rmse": -0.001212777614954863,
+    "delta_mse": -0.002054786978315293,
+    "user_cluster_se_mse": 0.000179884261131365
+  }
+}

@@ -1,4 +1,36 @@
-# Paused at user request, 2026-10-19
+# Resumed at user request, 2026-10-30
+
+The root-owned serial research chain is `SO1-resume-20261030`. Inspect
+`experiments/SO1-resume-20261030.status.json` and
+`artifacts/selection-objective/SO1-resume-20261030.out` before launching any GPU
+work. It is detached under caffeinate and must not be duplicated. The original
+Oct 19 launch/status records and other research worktree remain unchanged.
+
+N1's saved epoch-13 checkpoint passed its original honest P2 gate:
+bank10+A2h 0.8477472632 versus bank10+A2h+N1 0.8465344856, improvement
+0.0012127776 against the 0.001 minimum. Standalone N1 remains worse than A2h.
+This is reused P2 development evidence, not an ensemble promotion.
+
+The chain executes a fixed 13-epoch N1 full-training refit, then the original
+three-seed LightGBM/NN2 comparison on R9-LAT-A2h, then the frozen SO1 P2 pair.
+If N1 improves all five full-bank folds, it prepares a separate SO1 full-plan
+against that bank, preserving the old plan. Full SO1 training requires the
+unchanged 0.0005 P2 gate. Any failed subprocess or validation stops the chain.
+No score is promoted automatically. The last promoted score remains
+0.8668706425 until the completed comparison is reviewed.
+
+The process guard excludes only the exact Runlayer transcript-worker command;
+all other Python executables still block. Six focused adapter tests and the
+13 existing queue/gate/full-stage tests pass. Scientific trainers, original
+plans and gate thresholds are unchanged. Frozen N1 sources, plan and evidence
+are under `experiments/N1-resume-20261030-*`.
+
+Do not restart this chain in place: inspect its recorded failure and outputs,
+then prepare an explicit recovery with fresh names. The original worktree's
+selection report is incomplete because it was paused; use the saved epoch-13
+progress/checkpoint evidence, not an inferred selection-run completion.
+
+## Historical pause, 2026-10-19
 
 Work is on `codex/local-context`; no PR is requested. The 10% goal remains
 unachieved. Promoted development RMSE is 0.8668706425; the estimated development
