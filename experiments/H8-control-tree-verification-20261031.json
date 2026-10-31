@@ -1,0 +1,21 @@
+{
+  "state": "complete_control_tree_only",
+  "plan_sha256": "f18a5931caa3a0334fac35078f181f6f9f5f0fbf6022b56ff9d62511a9112356",
+  "stage": "control-tree",
+  "config_and_bank_match_plan": true,
+  "frozen_verified_before_and_after": 187,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.json": "aab0ab31f0200574824538f97f6aec57c67676740a9aa277b776e84034ceca94",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.refit.f32": "cbe8ce07cec4e26bcebfd29f2f12c6f83a624fff037c8f61718756de5189279e",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-s3.ridge.f32": "18251c10bffdf9ea8d5e775c387e2e0f7f16c9eca5fe37721303a0ef934faca4"
+  },
+  "rmse": 0.8669775991840329,
+  "fold_rmse": [
+    0.8678987129196919,
+    0.8669562245650619,
+    0.8632565379403481,
+    0.8682729385255685,
+    0.8685159178864557
+  ],
+  "limitation": "Matched treatment and both neural stages remain pending; no promotion decision."
+}

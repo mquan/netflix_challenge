@@ -909,3 +909,14 @@ No E3 trainer or scorer was launched. E3's registered launch condition also
 requires no other Python training to be live, so it awaits H8's four CPU
 stages. The treatment's completion provenance must be audited before either
 E3 scorer runs. The full-T follow-up remains conditional on both P2 gates.
+
+### H8 control tree complete and verified (2026-10-31)
+
+The first registered stage completed all five folds at RMSE 0.8669775992.
+`experiments/H8-control-tree-verification-20261031.json` verifies the exact
+planned configuration, input bank, library version, finite saved predictions
+and reproduced saved scores using the existing full-comparison verifier.
+All 187 frozen inputs were unchanged before and after this check. The shell
+runner checked its input hashes again and advanced to the neural control
+stage. Both treatment stages remain pending. This control-only result does
+not establish an H8 gain and does not change the retained reference.
