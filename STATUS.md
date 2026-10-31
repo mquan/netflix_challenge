@@ -51,8 +51,9 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      297 inputs / 298 checksum checks pass; six audit/resource tests pass.
      J4 restarts epoch numbering; integrated resumes require audited parent sidecars.
    Native coverage and build provenance are in `P0-native-dependency-inventory-20261031.json`
-   and `P0-joint-stage-build-map-v2-20261031.json`. Next prepare item-kNN execution
-   and its six support aliases. All 29 kNN occurrences use the preserved proven binary.
+   and `P0-joint-stage-build-map-v2-20261031.json`. Item-kNN now maps all 29 occurrences
+   to 28 exact recipes, new production base/graph inputs and six support aliases (three rules):
+   `P0-knn-column-map-20261031.json`. Next add its output auditor and guarded execution.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
