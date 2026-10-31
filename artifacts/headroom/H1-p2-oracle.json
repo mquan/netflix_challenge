@@ -1,0 +1,367 @@
+{
+  "plan": "../experiments/SO1-plan.json",
+  "plan_sha256": "c0490e6e0d9099cbd3745637cf9a11af3796e6339c88fcf3fd5c9f61c6c1866e",
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "rows": 1407566,
+  "held_rows": 281504,
+  "base_rmse": 0.8477472631844652,
+  "base_penalty": 1,
+  "shrink": [
+    1,
+    5,
+    25
+  ],
+  "results": {
+    "user": {
+      "delta_rmse": -0.003707380900699442,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8440398822837658,
+        "delta_rmse": -0.003707380900699442,
+        "fold_deltas": [
+          -0.003707380900699442,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00627209935115788,
+        "cluster_normal_95_mse_interval": [
+          -0.007118849573596275,
+          -0.005425349128719486
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9574321914567416
+    },
+    "user_month": {
+      "delta_rmse": -0.0033171001132933364,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8444301630711719,
+        "delta_rmse": -0.0033171001132933364,
+        "fold_deltas": [
+          -0.0033171001132933364,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.005613121932344964,
+        "cluster_normal_95_mse_interval": [
+          -0.0064142412849577096,
+          -0.004812002579732218
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.8859875842411652
+    },
+    "user_week": {
+      "delta_rmse": -0.003010079084769135,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8447371840996961,
+        "delta_rmse": -0.003010079084769135,
+        "fold_deltas": [
+          -0.003010079084769135,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.005094512036067193,
+        "cluster_normal_95_mse_interval": [
+          -0.005864179840606575,
+          -0.004324844231527811
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.7957062048955431
+    },
+    "user_day": {
+      "delta_rmse": -0.0029190489470402037,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.844828214237425,
+        "delta_rmse": -0.0029190489470402037,
+        "fold_deltas": [
+          -0.0029190489470402037,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.004940710665154312,
+        "cluster_normal_95_mse_interval": [
+          -0.00570251989142085,
+          -0.004178901438887774
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.7316949968953499
+    },
+    "item": {
+      "delta_rmse": -0.0001280595544912444,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.847619203629974,
+        "delta_rmse": -0.0001280595544912444,
+        "fold_deltas": [
+          -0.0001280595544912444,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00021710787443955572,
+        "cluster_normal_95_mse_interval": [
+          -0.0003119318320109695,
+          -0.00012228391686814195
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9990494229045033
+    },
+    "item_month": {
+      "delta_rmse": -8.22124274950653e-05,
+      "penalty": 10,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8476650507569702,
+        "delta_rmse": -8.22124274950653e-05,
+        "fold_deltas": [
+          -8.22124274950653e-05,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00013938396193413142,
+        "cluster_normal_95_mse_interval": [
+          -0.0002033704932391092,
+          -7.539743062915366e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9512093926679104
+    },
+    "item_week": {
+      "delta_rmse": -5.1613844093800765e-05,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8476956493403714,
+        "delta_rmse": -5.1613844093800765e-05,
+        "fold_deltas": [
+          -5.1613844093800765e-05,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -8.750832615700049e-05,
+        "cluster_normal_95_mse_interval": [
+          -0.0001431858711060289,
+          -3.183078120797207e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.880350193170338
+    },
+    "item_day": {
+      "delta_rmse": -8.663344233106329e-07,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8477463968500419,
+        "delta_rmse": -8.663344233106329e-07,
+        "fold_deltas": [
+          -8.663344233106329e-07,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -1.468864522202502e-06,
+        "cluster_normal_95_mse_interval": [
+          -3.1966471258820994e-05,
+          2.9028742214415993e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.697085607353403
+    },
+    "calendar_day": {
+      "delta_rmse": -4.6847457898735456e-05,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8477004157265665,
+        "delta_rmse": -4.6847457898735456e-05,
+        "fold_deltas": [
+          -4.6847457898735456e-05,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -7.942741375737099e-05,
+        "cluster_normal_95_mse_interval": [
+          -0.00013398814907847573,
+          -2.4866678436266254e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9999595045631964
+    },
+    "placebo_user_day": {
+      "delta_rmse": 3.0529484891239633e-06,
+      "penalty": 10,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8477503161329544,
+        "delta_rmse": 3.0529484891239633e-06,
+        "fold_deltas": [
+          3.0529484891239633e-06,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": 5.176266773131534e-06,
+        "cluster_normal_95_mse_interval": [
+          -3.736628569947185e-06,
+          1.4089162116210252e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "placebo_item_week": {
+      "delta_rmse": -3.1156871836968136e-06,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8477441474972816,
+        "delta_rmse": -3.1156871836968136e-06,
+        "fold_deltas": [
+          -3.1156871836968136e-06,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -5.2826208581322245e-06,
+        "cluster_normal_95_mse_interval": [
+          -1.4183916984859725e-05,
+          3.6186752685952764e-06
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_user_sources": {
+      "delta_rmse": -0.003910681574851527,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8438365816096137,
+        "delta_rmse": -0.003910681574851527,
+        "fold_deltas": [
+          -0.003910681574851527,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.006615245774152644,
+        "cluster_normal_95_mse_interval": [
+          -0.00749429940628957,
+          -0.005736192142015719
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_item_sources": {
+      "delta_rmse": -0.00016085582365588103,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8475864073608094,
+        "delta_rmse": -0.00016085582365588103,
+        "fold_deltas": [
+          -0.00016085582365588103,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0002727042939469954,
+        "cluster_normal_95_mse_interval": [
+          -0.00038108758806664795,
+          -0.00016432099982734285
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "everything": {
+      "delta_rmse": -0.004067950344841864,
+      "penalty": 1,
+      "stats": {
+        "rows": 281504,
+        "users": 92500,
+        "control_rmse": 0.8477472631844652,
+        "treatment_rmse": 0.8436793128396234,
+        "delta_rmse": -0.004067950344841864,
+        "fold_deltas": [
+          -0.004067950344841864,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.006880639323211802,
+        "cluster_normal_95_mse_interval": [
+          -0.007765350532394551,
+          -0.005995928114029053
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    }
+  },
+  "metric": "P2 fold-0 RMSE change from adding leave-one-out pooled residual features. Oracle upper bounds that read other held-out P2 labels; not deployable, no probe read."
+}
