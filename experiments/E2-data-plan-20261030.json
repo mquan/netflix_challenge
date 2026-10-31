@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-31T05:23:45.640690+00:00",
+  "state": "data_preparation_only",
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+    "/Users/quan/workspace/netflix_challenge/scripts/e2_corater_data.py": "1aeb3f28af9ecc21d8af273e28a5ca4d2560dc503b5822f13bbdf456cb1ead20",
+    "/Users/quan/workspace/netflix_challenge/scripts/local_paths_pilot.py": "c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  },
+  "commands": {
+    "P2": [
+      [
+        "/Users/quan/.cache/netflix-venv/bin/python",
+        "scripts/e2_corater_data.py",
+        "build",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/coraters-P2-20261030"
+      ],
+      [
+        "/Users/quan/.cache/netflix-venv/bin/python",
+        "scripts/e2_corater_data.py",
+        "pilot",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+        "--index",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/coraters-P2-20261030",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/sample-P2-20261030",
+        "--queries",
+        "10000",
+        "--seed",
+        "20261031"
+      ]
+    ],
+    "full": [
+      [
+        "/Users/quan/.cache/netflix-venv/bin/python",
+        "scripts/e2_corater_data.py",
+        "build",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/coraters-full-20261030"
+      ],
+      [
+        "/Users/quan/.cache/netflix-venv/bin/python",
+        "scripts/e2_corater_data.py",
+        "pilot",
+        "--data",
+        "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+        "--index",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/coraters-full-20261030",
+        "--output",
+        "/Users/quan/workspace/netflix_challenge/artifacts/e2/sample-full-20261030",
+        "--queries",
+        "10000",
+        "--seed",
+        "20261031"
+      ]
+    ]
+  },
+  "cap": 64,
+  "seed": 20261031,
+  "pilot_queries": 10000,
+  "cpu_threads": 1,
+  "gpu_launch": false,
+  "hypothesis": "Uniform other-rater context for the deferred E2 joint-context experiment; no overlap-based retrieval.",
+  "remaining": "Frozen co-rater code definition, matched neural architecture and full learning/gating plan are not yet implemented. This data component is not an E2 model result.",
+  "checks": [
+    "training-only item index",
+    "exclude query owner",
+    "unique uniformly sampled co-raters",
+    "probe-rating-value independence",
+    "masked-target exclusion",
+    "empty-context mask",
+    "dataset and payload hashes"
+  ]
+}

@@ -251,6 +251,11 @@ movie context at training and inference. Matched control: same warm start,
 schedule and seed, with the cross-attention block present but its context
 masked.
 
+**Gate.** At least **0.0005** in the R9-LAT-A2h blend (round4_boost three
+seeds + NN2 50/50), all folds better. Main risks: target leakage through
+co-rater codes trained on the target row, and sampling bias toward popular
+raters. Both need tests before the run.
+
 ### E2 CPU data preparation (2026-10-30; no model launched)
 
 `scripts/e2_corater_data.py` adds a persisted training-only movie-to-rater
@@ -277,10 +282,22 @@ so a generic user-code cache cannot be assumed equivalent. Freeze the code
 producer, matched architecture, training budget and pilot gate before any
 learning run, and preserve the existing GPU queue's priority.
 
-**Gate.** At least **0.0005** in the R9-LAT-A2h blend (round4_boost three
-seeds + NN2 50/50), all folds better. Main risks: target leakage through
-co-rater codes trained on the target row, and sampling bias toward popular
-raters. Both need tests before the run.
+**Measured data feasibility.** Both indexes are complete: P2 has 97,664,546
+training rows and the full view has 99,072,112. Every query in each fixed
+10,000-row sample has other-rater context. Mean sample sizes are 63.981 and
+63.9861 respectively; sampled retrieval/packing rates are about 17,401 and
+10,970 queries/second, excluding index loading/hashing and any neural work.
+Independent verification maps every sampled source row back through the user
+CSR and confirms zero owner leaks, duplicate sampled raters, source-value
+mismatches or held-out query targets present in training across 20,000 queries
+and 1,279,671 context edges. All seven frozen inputs and all index/sample
+payload hashes were rechecked. The four view manifests are archived under
+`experiments/E2-{P2,full}-{index,sample}-20261030.json`; the independent record
+is `experiments/E2-data-verification-20261030.json`.
+
+This establishes the sampler's feasibility and exclusion contracts on those
+samples. It does not establish an E2 rating gain, neural throughput, a complete
+co-rater code cache, or readiness to launch the deferred GPU experiment.
 
 ## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
