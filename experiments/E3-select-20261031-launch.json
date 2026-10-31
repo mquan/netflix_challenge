@@ -1,0 +1,17 @@
+{
+  "state": "running",
+  "runner_pid": 38977,
+  "trainer_pid": 38985,
+  "exec_session_id": 51948,
+  "plan": "experiments/E3-plan-20261031.json",
+  "log": "experiments/E3-select-20261031.log",
+  "preflight": {
+    "N1_SO1_queue_terminal": true,
+    "H8_runner_terminal_zero": true,
+    "S0_NN_runner_terminal_zero": true,
+    "no_other_python_trainer_live_in_full_process_snapshot": true,
+    "memory_free_percent": 92,
+    "all_30_frozen_inputs_and_plan_check_passed": true
+  },
+  "recipe": "Exact frozen two-epoch P2 treatment, CE=0.1, auxiliary weight=0, MPS, seed 20261019; completed matched SO1 control reused; no scoring yet."
+}

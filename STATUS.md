@@ -30,18 +30,17 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| S0 full-blender scoping, independent of the ridge proxy | Codex | All79 tree predictions exactly equal retained R9. Unchanged NN continuation live (PID 36360, managed session 10452), with byte-identical archived narrative document; full parity pending. `experiments/S0-all79-tree-verification-20261031.json` |
-| E3 (λ=0.1 CE on A2h head), queued on GPU after H8 | Codex | `experiments/E3-plan-20261031.json`; starts when no other training is live |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | All79 reference parity verified: tree, neural and 50/50 payloads exactly equal R9. Remaining 25 fixed arms ready; `experiments/S0-full-parity-verification-20261031.json` |
+| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Live PID 38985, managed session 51948; started with no other trainer live; `experiments/E3-select-20261031.log` |
 
 ## Next actions
 
 1. **Claude:** audit model families the winners and the literature used that
    are absent here. Rank them by expected error-structure novelty and pick the
    first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
-2. **Codex:** when S0 reference NN finishes, verify its result and use the
-   training-free interval to launch E3's frozen treatment (`experiments/E3-select-20261031-run.sh`). H8 is complete; its fixed gate failed.
-3. **Codex:** finish S0 reference parity before interpreting its 25 other
-   fixed arms. E3 also waits for S0 under its no-other-training condition.
+2. **Codex:** monitor E3; audit its fixed training recipe before both P2 gates.
+3. **Codex:** execute the remaining 25 fixed S0 arms from the verified reference,
+   preserving E3's resource priority and the total CPU cap.
 
 ## Decisions waiting on the user
 
@@ -51,6 +50,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Date | Result | Doc |
 |---|---|---|
+| 10-31 | S0 all79 reproduces retained R9 exactly: tree/NN/average max difference 0.0; saved CV 0.8668706424 | experiments/S0-full-parity-verification-20261031.json |
 | 10-31 | H8 full bank 0.86648484; all five folds improve R9, but matched-control gain 0.00022028 < fixed 0.0003 → not promoted | experiments/H8-full-independent-comparison-20261031.json |
 | 10-31 | Scoping: new families ≈0.0007–0.001 each; blend-per-standalone slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0 | STRUCTURAL_PLAN.md |
 | 10-31 | N1 full bank −0.00017, fold 1 worse → not promoted | NEXT_EXPLORATIONS.md |
