@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-31T05:26:50.907416+00:00",
+  "state": "data_component_verified",
+  "plan_sha256": "f0525d005a14879714762c4e346451e34e1a014f4fd107e4cbdbbd493f26cd98",
+  "frozen_inputs_rechecked": 7,
+  "views": {
+    "P2": {
+      "rows": 10000,
+      "context_edges": 639810,
+      "query_targets_present_in_training": 0,
+      "target_owner_leaks": 0,
+      "duplicate_sampled_users": 0,
+      "source_value_mismatches": 0,
+      "coverage": 1.0,
+      "mean_context": 63.981,
+      "queries_per_second": 17401.113279197394,
+      "sample_sha256": "113fe89a629bc27910c5f425f84a1a526d163ede04f1ae988bdea4110b2f6a3a"
+    },
+    "full": {
+      "rows": 10000,
+      "context_edges": 639861,
+      "query_targets_present_in_training": 0,
+      "target_owner_leaks": 0,
+      "duplicate_sampled_users": 0,
+      "source_value_mismatches": 0,
+      "coverage": 1.0,
+      "mean_context": 63.9861,
+      "queries_per_second": 10970.276625477953,
+      "sample_sha256": "026a97871f0e52a8ca20152834b4288d4da73b1a743934da410ccd768b76db8b"
+    }
+  },
+  "limitation": "Data feasibility and exclusion only; no co-rater codes, model training, or RMSE improvement is verified."
+}

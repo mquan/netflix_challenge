@@ -1,0 +1,16 @@
+{
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "users": 480189,
+  "items": 17770,
+  "train_rows": 97664546,
+  "seconds": 4.760456749994773,
+  "source_sha256": "1aeb3f28af9ecc21d8af273e28a5ca4d2560dc503b5822f13bbdf456cb1ead20",
+  "index_source_sha256": "c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4",
+  "outputs": {
+    "users.npy": "2c44211de0d4d7cdc018caa7a36b229ca79f1e2045837ccc9c95aebbe0e986c5",
+    "rows.npy": "25dfd5d1ea6db96beb39a3332b0adce5a7ed2f51c1db05964ae050aaaaf3b117",
+    "offsets.npy": "c244850a5408e6b5624bd7e7b5e2239877f9a5d9b7a7c89b97e426222a9a8aa5"
+  },
+  "contract": "Index contains training ratings only; query labels and implicit-only pairs are absent."
+}
