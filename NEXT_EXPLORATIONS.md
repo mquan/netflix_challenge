@@ -1112,3 +1112,23 @@ hash check. Live trainer PID 38985 and managed session 51948 are recorded in
 `experiments/E3-select-20261031-launch.json`; output is
 `experiments/E3-select-20261031.log`. No E3 score or recipe adjustment has
 occurred. Its completed SO1 control and both predeclared P2 gates stand.
+
+### S0 remaining 25 fixed arms bound into two CPU lanes (2026-10-31)
+
+`experiments/S0-lane{0,1}-20261031-plan.json` partitions all 25 original
+non-reference arms into 13 and 12 entries, preserving their relative order
+within each lane. Their commands/configurations are exactly equal to the
+original execution plan. Both lanes require the exact full-reference parity
+receipt and bind its completed payloads, the archival-document execution
+plan, every frozen source/input, their own lane plan and shell script.
+Hash checks run before every stage; a failed command stops that lane.
+The two shell scripts pass bash syntax checks and perform no adaptive search
+or promotion. All predeclared arms remain in the analysis regardless of
+intermediate scores.
+
+Each lane runs at most one three-worker tree stage or two-thread NN stage.
+With E3's one CPU thread and GPU treatment, the configured maximum is seven
+CPU threads (below the shared ten-thread cap) and three simultaneous
+training jobs. E3's no-other-training launch condition was satisfied before
+it started; these subsequent scoping jobs use CPU only and preserve its GPU
+priority. Memory/process checks remain required before each lane launch.

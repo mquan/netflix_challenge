@@ -30,7 +30,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| S0 full-blender scoping, independent of the ridge proxy | Codex | All79 reference parity verified: tree, neural and 50/50 payloads exactly equal R9. Remaining 25 fixed arms ready; `experiments/S0-full-parity-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; two CPU lanes prepared for all 25 fixed arms (13+12), GPU reserved for E3; `experiments/S0-lane{0,1}-20261031-plan.json` |
 | E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Live PID 38985, managed session 51948; started with no other trainer live; `experiments/E3-select-20261031.log` |
 
 ## Next actions
