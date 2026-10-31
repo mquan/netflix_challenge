@@ -33,7 +33,7 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 | Job | Owner | Check |
 |---|---|---|
-| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified. n4 tree complete and independently verified (0.8747113); neural PID 81078/session 83214 live. n1 tree workers remain live under runner 39539/session 96236. Neither arm's 50/50 result complete; all 25 fixed arms remain scheduled. `experiments/S0-diversity-s20261031-n4-tree-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified. First n1/n4 trees independently verified (0.8893638/0.8747113); neural PIDs 99895/81078 live, managed sessions 96236/83214. Neither arm's 50/50 result complete; all 25 fixed arms remain scheduled. `experiments/S0-diversity-s20261031-n{1,4}-tree-verification-20261031.json` |
 
 ## Next actions
 
