@@ -1224,3 +1224,18 @@ incomplete 26-arm experiment is rejected before a summary file is created;
 separate bash handoff waits for both existing lane runners to exit, then runs
 this audit once. A failed or incomplete lane causes rejection, not a retry or
 partial synthesis. The training scripts and frozen plans remain unchanged.
+
+### S0 first complete nonreference arm audited (2026-10-31)
+
+The fixed four-column arm (`diversity-s20261031-n4`) completed tree and neural
+stages. The bound reporter's `audit_arm` reproduces both saved scores and
+verifies exact stage configurations, bank inputs, library versions and all
+five folds. Saved tree/NN/50–50 RMSEs are 0.8747112544 / 0.8746226105 /
+**0.8743334426**; average/component maximum difference is 2.3842e-7, within
+float32 rounding tolerance. All six output hashes are archived in
+`experiments/S0-diversity-s20261031-n4-full-verification-20261031.json`.
+
+This is 1/25 fixed nonreference arms, not a diversity-curve conclusion. Lane 1
+advanced unchanged to the registered n32 tree stage; lane 0's n1 neural stage
+continues. The final report still requires every arm, and no partial result
+changes the schedule, recipes, subset selection or promotion rules.
