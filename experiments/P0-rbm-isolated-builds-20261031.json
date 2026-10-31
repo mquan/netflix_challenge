@@ -1,0 +1,369 @@
+{
+  "state": "isolated_builds_complete_not_training_verified",
+  "generator_sha256": "10cdea047fc701825ca9f54b5b1fe8eec74ad9bf710aec49876880fb5c3c7c24",
+  "recovery": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-source-recovery-20261031.json",
+  "recovery_sha256": "bd5d86afe5e22841883f30bf6790b64a51cc356bae7efe9271aeb48c94bb9338",
+  "archive_sha256": "42d0d7499aedfbf38c9bd344cc12eeefc664267da5947268f77793be2dc24482",
+  "registry_sha256": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+  "builds": [
+    {
+      "index": 0,
+      "stages": [
+        "R3-rbm200-long"
+      ],
+      "required_sources": {
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631"
+      },
+      "variants": {
+        "original": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/original/netflix",
+          "binary_sha256": "328c99f2584383b781cf93055738c6f2a29db895f0d03a9f9e1f79c04401e814",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+            "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+            "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+            "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/original/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/original/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/original/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fixed": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/fixed/netflix",
+          "binary_sha256": "c334f51cdf5a815a03541580408003b5321b1fa39ddb893329317dfb41c837d4",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+            "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+            "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+            "src/rbm.hpp": "53677a967baa0b8b4c45a3faf6113b09a6c024b044efeed4b3b1d59bb26836ef"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/fixed/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/fixed/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/fixed/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "patch": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-0/fixed-epoch.patch",
+      "patch_sha256": "e0ae9e441aa81a4ca43d116c9adc2254b28c38529ad52fb3dfe5593c6ba4b747"
+    },
+    {
+      "index": 1,
+      "stages": [
+        "R3R-rbm200-resume"
+      ],
+      "required_sources": {
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+        "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee",
+        "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+        "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7"
+      },
+      "variants": {
+        "original": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/original/netflix",
+          "binary_sha256": "48089fdbadb5dd430ae4770587040d5213d213e404daab25d4f313aead24c907",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/original/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/original/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/original/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fixed": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/netflix",
+          "binary_sha256": "a054af0ebe659d32e894b2c284c1bad92acce015cafc9d05e4e4eb6cc7c98ddc",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "cffb2e09a5a13d03a83c0f589a01a2466ce343026b6129c72a0612dd4cfd8eee",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "3763a6567a2e54a824423614944177c0ff3bd2d71287dc3c6bedd90a779f15cc",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "ac521726a1d9e31c4487553001e1bf7307c26ec5ec4c78ebf9bd562713479a88"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "patch": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed-epoch.patch",
+      "patch_sha256": "410dd508d4edbfe5c28c339dc7b8ec7e9972d16cdd4a338f00015e0b6102ecb4"
+    },
+    {
+      "index": 2,
+      "stages": [
+        "P3-rbm200-seed7",
+        "P4-rbm300-wc001",
+        "R2C-rbm100-condbias",
+        "P3C-rbm200-seed7-condbias",
+        "P4C-rbm300-wc001-condbias"
+      ],
+      "required_sources": {
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+        "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+        "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+        "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05"
+      },
+      "variants": {
+        "original": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/original/netflix",
+          "binary_sha256": "f5c3b2b4f5f9fd67f5e8030f8d2ca03154c0a8264728c7222d70fe10499ea26b",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/original/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/original/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/original/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fixed": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed/netflix",
+          "binary_sha256": "50459a7db83687a59a3196b832e8a1ec69573184f5feccb16a4cdd8b100c4895",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "3d6fb5f029ad263277fc1a9a732947726e3cc8d6b49fa35c03a9843408564158"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "patch": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed-epoch.patch",
+      "patch_sha256": "dbb6afa15f4255f7ba54b05007580e7de9a8538415452e31a2f3c2ba92b7b9d2"
+    },
+    {
+      "index": 3,
+      "stages": [
+        "R4D-rbm200-condbias-x3",
+        "R4C-rbm200-condbias",
+        "P2-rbm200-condbias-scratch"
+      ],
+      "required_sources": {
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+        "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+        "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+        "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+        "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+        "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+        "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+        "src/rbm.hpp": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348"
+      },
+      "variants": {
+        "original": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/original/netflix",
+          "binary_sha256": "246f2ed2da7162272461339211cf589e1e276214bc81ed1896b5fbe94a93f8f7",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "460ba1a4848c11f781f4934fe705b598f0e6cd62196accfcea7505d75110d348"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/original/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/original/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/original/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fixed": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed/netflix",
+          "binary_sha256": "6f78d7b470e2661ec03a9e954cc29891787a228dabd27df06aba052cf166b18f",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+            "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+            "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+            "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+            "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+            "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+            "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+            "src/rbm.hpp": "471ae6656f5fe15d7f5946307de41bdac627a2fd29099d80dcb8ee9019cdbca6"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "patch": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed-epoch.patch",
+      "patch_sha256": "cda6569e6ac0d2b3c066bbdd6d26332952c53daa03a7fa173b524003458b40c6"
+    }
+  ],
+  "excluded_stages": [
+    "R1-rbm100",
+    "R2-rbm100-fast"
+  ],
+  "limitations": [
+    "Checkpoint selection and stopping are the only patched logic.",
+    "Fixture training contracts and cross-version resumes remain to be verified.",
+    "No full production training performed; incomplete source sets are excluded."
+  ]
+}
