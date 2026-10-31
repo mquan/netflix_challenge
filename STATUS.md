@@ -50,15 +50,13 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      and all four dependency-stage audits. `P0-JOINT-20261031-plan.json`:
      297 inputs / 298 checksum checks pass; six audit/resource tests pass.
      J4 restarts epoch numbering; integrated resumes require audited parent sidecars.
-   Native coverage and build provenance are in `P0-native-dependency-inventory-20261031.json`
-   and `P0-joint-stage-build-map-v2-20261031.json`. Item-kNN now maps all 29 occurrences
-   to 28 exact recipes, new production base/graph inputs and six support aliases (three rules):
-   `P0-knn-column-map-20261031.json`. Output auditor passes six tests, including archived
-   CLI defaults. All 28 recipes pass two query-label fixtures: 56 kNN stage audits and 128
-   pipeline commands; predictions/support are label-independent, support is nonzero, and
-   all three support rules differ (`P0-knn-fixture-verification-20261031.json`).
-   kNN resource gate and ordered handoff resolver now pass four more tests (ten total);
-   incomplete or changed outputs cannot produce a resolved alias manifest. Next freeze its runner.
+   - Item-kNN: 28 recipes / 29 columns and six support aliases; waits for all
+     16 joint/dependency audits. `P0-KNN-20261031-plan.json`: 278 inputs /
+     279 checksum checks pass; ten audit/resource/handoff tests and all 28 native
+     label-isolation fixtures pass. Ordered alias manifest waits for all outputs.
+   Frozen phases cover 66/79 retained column occurrences. Remaining preparation:
+   AutoRec (3), Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
+   Full production outputs remain required; the development gap is unchanged.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
