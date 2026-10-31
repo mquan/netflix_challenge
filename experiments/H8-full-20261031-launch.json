@@ -1,0 +1,12 @@
+{
+  "state": "running",
+  "runner_pid": 63173,
+  "first_trainer_pid": 63182,
+  "exec_session_id": 71329,
+  "plan": "experiments/H8-full-20261031-plan.json",
+  "runner": "experiments/H8-full-20261031-run.sh",
+  "log": "artifacts/headroom/H8-full-20261031/runner.log",
+  "first_stage": "control-tree",
+  "input_checks": "All 187 frozen inputs plus plan verified before the first stage",
+  "prior_launch": "Background PID 63103 disappeared before training; no trainer or score output existed. Reattached the same unchanged shell runner as a managed exec session."
+}
