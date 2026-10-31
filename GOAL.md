@@ -65,7 +65,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 ## Closed bets
 
-- SO1 (selection auxiliary objective): closed 2026-10-31. Fixed P2 gain 0.0000275, below 0.0003; original gate independently reproduced exactly. Queue completed without a conditional full stage.
+- SO1 (selection auxiliary objective): closed 2026-10-31. Fixed P2 gain 0.0000275, below its frozen 0.0005 threshold; original gate independently reproduced exactly. Queue completed without a conditional full stage.
 
 - H9 (unlabelled-choice co-occurrence SVD): closed 2026-10-31. P2 gain 0.000048 beyond H8, below the fixed 0.0003 gate; interval includes zero.
 
@@ -79,7 +79,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 |---|---|---|
 | 1 | H8 full-bank comparison | running: retained R9 + raw N1 in both arms; fixed matched control and treatment; four sequential CPU blend stages after SO1 queue release |
 | 2 | open | — |
-| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
+| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed launch plan E3-plan-20261031.json binds 30 inputs and verified SO1 control; waits for H8 to finish under E3's no-other-training launch condition |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
 behind the other session. The log of results is kept in
