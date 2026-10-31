@@ -37,7 +37,7 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 ## Next actions
 
-1. **Claude:** L1 closed (no gain). Before building the next family (feature GBDT base model, co-clustering), re-examine the plan, since the per-family estimate is survivorship-biased (FAMILY_AUDIT.md). **Decision needed from the user** (see below).
+1. New-family pilots **closed for good** (user, 2026-10-31). Open question: production retrain (owner to be decided), or a large rebuild?
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
    terminal; neither P2 gate passed, so no full-training follow-up.
@@ -48,7 +48,7 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 ## Decisions waiting on the user
 
-- After L1's null result: continue with the next new-family pilots, or step back and reassess the target? (asked 2026-10-31)
+- Production retrain: who owns it (Codex, Claude, or split)? And is a large rebuild worth attempting? (asked 2026-10-31)
 
 ## Recent results (newest first)
 
