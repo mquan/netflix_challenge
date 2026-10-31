@@ -52,7 +52,10 @@ The week-3 stop check remains ≥0.0015 bank gain.
    RBM queue is frozen in `P0-RBM-20261031-plan.json` (12 stages / nine retained columns,
    300 inputs). Six audit/resource tests and actual native handoffs pass; original recipes match
    exactly after path/binary substitution. Prepared, not launched: waits for both S0 lanes,
-   all seven audited CPU neural stages and normal memory. Next prepare other native families.
+   all seven audited CPU neural stages and normal memory.
+   Baseline/graph/neighborhood dependency auditor now passes four tests and validates the
+   actual full-size replay artifacts; 11 archived native source files recovered exactly.
+   `P0-dependency-format-verification-20261031.json`. Next freeze that dependency phase.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
