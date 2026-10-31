@@ -1,0 +1,23 @@
+{
+  "state": "complete_control_only",
+  "plan_sha256": "f18a5931caa3a0334fac35078f181f6f9f5f0fbf6022b56ff9d62511a9112356",
+  "stage": "control-neural",
+  "config_bank_and_library_match_plan": true,
+  "tree_and_neural_banks_equal": true,
+  "frozen_verified_before_and_after": 187,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.json": "5a8b8bfc2d83eb45f880dcd866cb8a5297ec87c72fdb32ce9f53253bf7930d2a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.nn.f32": "10fb8d6df4a143953fff0975b0fd9315e73b718816e4d8653ea90a4eea506f9f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/control-NN2.avg.f32": "6d509ec282a772aca8f36f5f52d4a1ecc2125c4be5b18a57f379da5a841c8a8b"
+  },
+  "average_max_abs_error": 2.384185791015625e-07,
+  "rmse": 0.8667051173767361,
+  "fold_rmse": [
+    0.8676004766916727,
+    0.8666666300930536,
+    0.8629615799384319,
+    0.8680421200640044,
+    0.8682671105934542
+  ],
+  "limitation": "Treatment stages pending; no H8 promotion decision."
+}
