@@ -48,9 +48,10 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **23:27 UTC**: A2h epoch 3/batch 1200, both S0 lanes active,
-   ten guarded waiters live, normal memory pressure, no failed runner/new audit.
-   `experiments/P0-live-health-20261031T232713Z.json`.
+   Last runtime check **23:30 UTC**: A2h epoch 3/batch 1400, both S0 lanes
+   active; lane 1 neural has three completed fold records, remaining folds in
+   progress. Ten guarded waiters remain live; no new completed stage or failure.
+   Latest recorded full process snapshot: `experiments/P0-live-health-20261031T232713Z.json`.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
