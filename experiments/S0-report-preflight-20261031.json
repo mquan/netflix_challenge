@@ -1,0 +1,16 @@
+{
+  "state": "reporter_ready_real_experiment_incomplete",
+  "fixture_tests_passed": 5,
+  "real_reference_arm_audit_and_exact_three_payload_parity": true,
+  "real_partial_experiment_rejected_before_report_output": true,
+  "binding_sha256": "fba15a21cd92afabcbf50483a8b72a9d4823e9baa9e43a5162169eeda1cb0cd5",
+  "reference_outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-s3.json": "063a6f44b58daf105ba9aa430fcd6677a2767734cb0666e23123d3d86ba10d84",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-s3.refit.f32": "a4d12d8754cc7e6a31e1835a7e8adad757b6e87cefa048868b9b528175f7af48",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-s3.ridge.f32": "b115afd62344db409e7c59209b61733dc8ad5f0a7183ca44fc95b8ca45fca1f6",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-NN2.json": "1a22fda40edc5c05f5517db6bc9959a0ddbc2ad3e1153815c6d1fde898a1f999",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-NN2.nn.f32": "7d466f69ac049063e44ce9b6d283a461837b1697bfe930bd90ddc970f526a3c1",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/all79-NN2.avg.f32": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487"
+  },
+  "scope": "Reporter preflight only; no nonreference complete blend comparison or synthesis has been produced."
+}
