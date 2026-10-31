@@ -17,7 +17,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | SO1 auxiliary objective | frozen SO1 plan/gates | waits behind N1 in owner's GPU queue |
 | E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
-| E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | fixed ordinal/Gaussian pilots running; no final gate score |
+| E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
 | A7 sibling pooling | >=0.0005 after Stage C, all five folds | failed: +0.001779 worse on all folds |
 
 `scripts/p2_candidate_gate.py --plan PLAN --output RESULT` is the shared
@@ -635,3 +635,21 @@ That is a family-specific, half-labelled-pool measurement, not an automatic
 replacement for the twice-measured full-bank offset of approximately 0.0074.
 No full-bank dev-CV or qualifying prediction was promoted, and this negative
 does not rule out every possible interaction or calibration recipe.
+
+### E5 shared-gate reproduction
+
+The generic shared adapter reproduces the owner's `E5-gate.json` primary
+statistics exactly: 0.8477520529 -> 0.8476166706 on P2 fold 0, a gain of
+0.0001353823, below the registered 0.0003 threshold. Both commands, binary and
+Bayes source hashes, dataset, 128 terminal sweeps/112 kept samples, final
+prediction shapes/finiteness and standalone logged RMSE were validated before
+writing completion receipts. Raw blend input files were preserved; standalone
+score validation uses the trainer's existing [1,5] clipping convention.
+
+Evidence: `experiments/E5-shared-gate-{result,evidence}-20261031.json` and
+`E5-shared-{control,treatment}-receipt-20261031.json`. The first scoring attempt
+correctly rejected a changed live NEXT_EXPLORATIONS.md. Plan v2 replaces that
+reference with its **byte-identical original content** recovered from git
+6c97938; all gate parameters, data, bank, model outputs and source hashes are
+unchanged. Both plans remain archived. Future scoring plans should bind an
+immutable protocol snapshot rather than a shared working document.

@@ -55,7 +55,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | A7. Sibling-split Stage C rehearsal (K1 family) | this session (Claude) | **closed 2026-10-31: Stage C absorbs the sibling signal; pooling +0.00178 worse after retraining** |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
-| B. Shared P2 candidate scoring command | Codex | complete: existing comparator adapter and compact ledger; three fixture tests pass; no running experiment rewired |
+| B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 
 ## Closed bets
 

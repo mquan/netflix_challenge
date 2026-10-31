@@ -1,0 +1,68 @@
+{
+  "primary": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8477520529069127,
+    "treatment_rmse": 0.847616670635367,
+    "delta_rmse": -0.00013538227154563653,
+    "fold_deltas": [
+      -0.00013538227154563653,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0002295228689006855,
+    "cluster_normal_95_mse_interval": [
+      -0.00035125938801355047,
+      -0.00010778634978782052
+    ],
+    "all_folds_improve": false
+  },
+  "replacement_diagnostic": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.847752052485907,
+    "treatment_rmse": 0.8476647972584886,
+    "delta_rmse": -8.725522741837022e-05,
+    "fold_deltas": [
+      -8.725522741837022e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.00014793398279323622,
+    "cluster_normal_95_mse_interval": [
+      -0.00024667425102445405,
+      -4.919371456201839e-05
+    ],
+    "all_folds_improve": false
+  },
+  "selected_penalties": {
+    "duplicate_control": 1,
+    "control_plus_treatment": 1,
+    "control_only": 1,
+    "treatment_only": 1
+  },
+  "experiment": "E5-p2-r64",
+  "plan_sha256": "89c3619d15630d73e4202c64ba2b30b9944b626fc873e4823f418d77b72de53a",
+  "arms": {
+    "control": {
+      "receipt_sha256": "6b0489c442af90db5f4ab7e3bcabe9d12ecc991f1ba988946e12d09ded6915b6",
+      "prediction_sha256": "0772e9a01d5a49f89a0cc4ca93daadb44823f9c2fe2d55b54e1abf707b133a2d",
+      "receipt": "/Users/quan/workspace/netflix_challenge/experiments/E5-shared-control-receipt-20261031.json",
+      "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/e5/E5-p2-r64-gaussian.f32"
+    },
+    "treatment": {
+      "receipt_sha256": "a327e92bddf2bfa077127558a9c538eac740550fd9d87dd970da04c4a72f1078",
+      "prediction_sha256": "cc77d82848ac2855d5f5f44530986054f7f0da6fe2fd7747b12266b778c5aa35",
+      "receipt": "/Users/quan/workspace/netflix_challenge/experiments/E5-shared-treatment-receipt-20261031.json",
+      "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/e5/E5-p2-r64-ordinal.f32"
+    }
+  },
+  "minimum_gain": 0.0003,
+  "passes_p2_gate": false,
+  "scope": "P2 user fold 0 only; identical duplicate-control comparison, penalty selection on fold 1, fits on folds 2-4 then 1-4. Full-bank promotion remains separate.",
+  "training_provenance": "Owner-validated completion receipts; this scorer does not audit trainer-specific settings."
+}
