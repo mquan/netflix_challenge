@@ -106,3 +106,26 @@ plus support.
   bank11), so the primary comparison measures L1 beyond the bank.
 - **Pass: ≥0.0010.** One pre-declared retry is allowed at coverage 0.4 if
   the result is within 0.0003 of the gate. No other sweep.
+
+### L1 result: closed (2026-10-31)
+
+`experiments/L1-p2-gate-result.json` (shared `scripts/p2_candidate_gate.py`,
+plan `experiments/L1-p2-gate-plan.json`; receipts bind the prediction hashes).
+
+| | P2 |
+|---|---:|
+| L1 standalone | 0.89239 (its baseline-only base: 0.98590; 20,057 rows uncovered) |
+| **Primary: bank11 + N1 + K1-dup vs + L1** | **+0.0000023**, 95% ΔMSE interval [−0.0000063, +0.0000141] |
+| Gate | ≥0.0010 gain → **fail**; outside the 0.0003 retry window, so no coverage-0.4 run |
+
+The local low-rank ensemble is a reasonable standalone model, but its
+information is already in the bank. The trainer completed all 100 anchors
+(log). The original shell receipt step failed only because zsh treats
+`status` as read-only; `experiments/L1-p2.json` records this.
+
+**Lesson for the plan.** The scoping figure of ≈0.0007–0.001 per family was
+measured on families already in the bank, which are there because they
+paid. That is survivorship bias. A typical *new* family should be expected to
+add much less, as L1 did. The remaining candidates (feature GBDT base model,
+co-clustering mixture) need a sharper reason to err differently before
+compute is spent on them.

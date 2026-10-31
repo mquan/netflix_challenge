@@ -1,0 +1,11 @@
+{
+  "name": "L1-p2",
+  "state": "complete",
+  "completion_evidence": "100 anchor lines and final line in experiments/L1-p2.log; the shell receipt step failed afterwards (zsh read-only $status), not the trainer",
+  "binary_sha256": "dc0fbf629f452d1844e19707e1d6ad0ee234cc4106a759ec8f2b1b355cc76aaa",
+  "llorma_hpp_sha256": "53eea1aa3754a1bcb5b5dbf0d1467731f35578bf20601d4fa7ddd22943f06962",
+  "log_sha256": "2a8bfe18f6fd46b21343cd7a9e9e06c9e6d34147bbfbdf16ac632d4afed0aca8",
+  "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/l1/L1-p2.f32",
+  "prediction_sha256": "37d7dd69d419a5a9f36e22ef5428451abcb2e3a6078a7de02c6dda5a3b2d0467",
+  "command": "build/netflix-llorma llorma --data artifacts/validation/train-matched-20260927.bin --joint-model artifacts/rehearsal/A-K1.bin --predictions artifacts/l1/L1-p2.f32 --support artifacts/l1/L1-p2.support.f32 --anchors 100 --rank 20 --iterations 15 --geometry-pca 16 --coverage 0.2 --learning-rate .01 --regularization .02 --decay .95 --seed 2026 --threads 4"
+}

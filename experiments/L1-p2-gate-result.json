@@ -1,0 +1,68 @@
+{
+  "primary": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8465344931188387,
+    "treatment_rmse": 0.8465367814486447,
+    "delta_rmse": 2.288329806088285e-06,
+    "fold_deltas": [
+      2.288329806088285e-06,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": 3.874305461300681e-06,
+    "cluster_normal_95_mse_interval": [
+      -6.330725595872077e-06,
+      1.4079336518473439e-05
+    ],
+    "all_folds_improve": false
+  },
+  "replacement_diagnostic": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8465344912161412,
+    "treatment_rmse": 0.8465367722514845,
+    "delta_rmse": 2.281035343276727e-06,
+    "fold_deltas": [
+      2.281035343276727e-06,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": 3.86195539062855e-06,
+    "cluster_normal_95_mse_interval": [
+      -6.333174304505187e-06,
+      1.4057085085762286e-05
+    ],
+    "all_folds_improve": false
+  },
+  "selected_penalties": {
+    "duplicate_control": 1,
+    "control_plus_treatment": 1,
+    "control_only": 1,
+    "treatment_only": 1
+  },
+  "experiment": "L1-p2",
+  "plan_sha256": "781273fe820e20fd6bdb1141bbd91578de57e172f31ab835bf92757b6539d0f8",
+  "arms": {
+    "control": {
+      "receipt_sha256": "f0807970d561727318efa6dcaac845a10b7664f423698ddeb3cb75c68f53459b",
+      "prediction_sha256": "bc3db54d954d0c5a6ceb654008f4c1df02f4037982161e515a35162203dfaaf2",
+      "receipt": "/Users/quan/workspace/netflix_challenge/experiments/L1-p2-control-receipt.json",
+      "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32"
+    },
+    "treatment": {
+      "receipt_sha256": "40549fce4ade5f50226a013a10904895cf6571e1b8d2c796c82f091d91fe9bc8",
+      "prediction_sha256": "37d7dd69d419a5a9f36e22ef5428451abcb2e3a6078a7de02c6dda5a3b2d0467",
+      "receipt": "/Users/quan/workspace/netflix_challenge/experiments/L1-p2-treatment-receipt.json",
+      "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/l1/L1-p2.f32"
+    }
+  },
+  "minimum_gain": 0.001,
+  "passes_p2_gate": false,
+  "scope": "P2 user fold 0 only; identical duplicate-control comparison, penalty selection on fold 1, fits on folds 2-4 then 1-4. Full-bank promotion remains separate.",
+  "training_provenance": "Owner-validated completion receipts; this scorer does not audit trainer-specific settings."
+}
