@@ -1,0 +1,92 @@
+{
+  "state": "all_full_size_retained_joint_checkpoints_parse_and_match",
+  "auditor_sha256": "adf25b257b8117e3945402f532fa89e3a86ebe8ac5a38e48ac384c04224c83cc",
+  "registry_sha256": "38f32ce62418cab523069aa31ef05f3dfc415dd78c8052bdddcd6cbed29e660e",
+  "models": [
+    {
+      "name": "J1-joint64",
+      "model_format": 2,
+      "epoch": 6,
+      "model_sha256": "756bc0b7ee6c643e10380563f3e0f3e4c542bdd247066e6fc6c226b98b0a061b",
+      "sidecar_verified": false
+    },
+    {
+      "name": "J2-joint128-reg02",
+      "model_format": 2,
+      "epoch": 40,
+      "model_sha256": "a9c6ed07535b0ec4df43464a4a056b9c9a3e7a48242a14039d8d001519d4d9e1",
+      "sidecar_verified": false
+    },
+    {
+      "name": "J3-joint128-reg005",
+      "model_format": 2,
+      "epoch": 9,
+      "model_sha256": "35e68327797f37c06903a4bbe81e9f89ffd929d49d49b90d14d29a4b5eb10cab",
+      "sidecar_verified": false
+    },
+    {
+      "name": "J4-joint128-day128",
+      "model_format": 2,
+      "epoch": 1,
+      "model_sha256": "011c433fc5c869b56994ebe2c26c38384e0a1fc4fc0bb4a6cf9316805da14a65",
+      "sidecar_verified": false
+    },
+    {
+      "name": "J6-joint256-reg01",
+      "model_format": 2,
+      "epoch": 17,
+      "model_sha256": "a34d82047f92b7a43587977591b88dfb56caa059b1c4e1641a8ef7579a9c2fed",
+      "sidecar_verified": false
+    },
+    {
+      "name": "T2-f64-lr005-reg015-d97",
+      "model_format": 2,
+      "epoch": 37,
+      "model_sha256": "76f165b7e46c202b8150762f1da6d581a4c72d35aefa95981eed089d242626cc",
+      "sidecar_verified": false
+    },
+    {
+      "name": "T3-f64-lr008-reg008",
+      "model_format": 2,
+      "epoch": 13,
+      "model_sha256": "d41d07b0055a448872ec05eb032aefd8a09463728ab412c1500ed22dd2b2f125",
+      "sidecar_verified": false
+    },
+    {
+      "name": "T4-f64-lr012-reg015-d93",
+      "model_format": 2,
+      "epoch": 21,
+      "model_sha256": "a356df37af55ebd290bcf19275f7b0092f28ef7cc27447e2e72044afdaa2bb1b",
+      "sidecar_verified": false
+    },
+    {
+      "name": "T6-f256-lr012-reg015-d93",
+      "model_format": 2,
+      "epoch": 11,
+      "model_sha256": "98a54c6a319c97425334c7b1bf4f213339f6990953cba3c8797e20877fa8167b",
+      "sidecar_verified": false
+    },
+    {
+      "name": "T6R-f256-resume",
+      "model_format": 2,
+      "epoch": 24,
+      "model_sha256": "502557309873b605737e65eed52bb5bf5dac33e4db5d74e19befb4e01e6e7d44",
+      "sidecar_verified": false
+    },
+    {
+      "name": "I2-integrated-f64-koren",
+      "model_format": 2,
+      "epoch": 17,
+      "model_sha256": "97545c813275859c68d5edb5a95d23167de756f513b6889ab7c4f4699340bf6d",
+      "sidecar_verified": true
+    },
+    {
+      "name": "I2R-integrated-f64-resume",
+      "model_format": 2,
+      "epoch": 23,
+      "model_sha256": "0cd5e368eb57ffe439e86e01de3c5590a6812709cc9434ed0086cea4631cf0ba",
+      "sidecar_verified": true
+    }
+  ],
+  "scope": "Read-only checks against all 12 existing original-data retained checkpoints and integrated sidecars; no production retraining or score claim."
+}
