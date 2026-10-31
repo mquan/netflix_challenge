@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-10-31T05:36:49.618207+00:00",
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "sample": "/Users/quan/workspace/netflix_challenge/artifacts/e2/sample-P2-20261030/sample.npz",
+  "warm_report": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "checkpoint": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.select.pt",
+  "per_stratum": 3,
+  "seed": 20261031,
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "/Users/quan/workspace/netflix_challenge/artifacts/e2/sample-P2-20261030/sample.npz": "113fe89a629bc27910c5f425f84a1a526d163ede04f1ae988bdea4110b2f6a3a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.select.pt": "7173de643fff219395d754f9ac7d415c70501ffec6d3f8523ae41696c2d7c4a2",
+    "/Users/quan/workspace/netflix_challenge/scripts/e2_query_codes.py": "0fc3ee40a6c196abb8a9bc3d30337b5a1027b112a10c8e7ae15a3879701f0327",
+    "/Users/quan/workspace/netflix_challenge/scripts/masked_sequence.py": "e95d5921b92ba3d6b08581c602deb7d015ce036bf8d8b14bb8fbc4bcee9eb506",
+    "/Users/quan/workspace/netflix_challenge/scripts/masked_history.py": "e0d23a886e4344868ddd6681e5e758c1022a7da4ab857434d7160d0e95976795",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  },
+  "device": "cpu",
+  "cpu_threads": 1,
+  "pad_rows": 1,
+  "source_test": "tests/test_e2_query_codes.py: three passing CPU fixture tests",
+  "strata": "training counts <=16,17-64,65-256,257-1024,>1024; up to three source pairs per stratum",
+  "code_definition": "One-target frozen A2h code at the co-rater/movie/observed-day. Remove that rating from all explicit history/summary/session inputs, preserve allowed implicit identities/dates.",
+  "scope": "Timing/exclusion/decoder audit only. No training, RMSE selection, full cache or GPU launch."
+}

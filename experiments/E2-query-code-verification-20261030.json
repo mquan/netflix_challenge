@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-10-31T05:40:32.711114+00:00",
+  "state": "verified_cpu_code_audit",
+  "plan_sha256": "4f00c4950daa63a449d3cdd9342af1f7a8ff3dd2f07e3ea08ded335522b47911",
+  "audit_manifest_sha256": "5c55278fcb3facd55f47c01ee028b29a303f00aac89ab78989914d7506580517",
+  "rows": 15,
+  "strata": [
+    {
+      "stratum": 0,
+      "rows": 3,
+      "mean_prepare_seconds": 0.0015706943231634796,
+      "mean_forward_and_check_seconds": 0.003349263977725059,
+      "max_sequence_width": 32
+    },
+    {
+      "stratum": 1,
+      "rows": 3,
+      "mean_prepare_seconds": 0.0008101250083806614,
+      "mean_forward_and_check_seconds": 0.001597333000972867,
+      "max_sequence_width": 64
+    },
+    {
+      "stratum": 2,
+      "rows": 3,
+      "mean_prepare_seconds": 0.0005603753573571643,
+      "mean_forward_and_check_seconds": 0.0020656803195985654,
+      "max_sequence_width": 256
+    },
+    {
+      "stratum": 3,
+      "rows": 3,
+      "mean_prepare_seconds": 0.0007394583468946317,
+      "mean_forward_and_check_seconds": 0.008628111313252399,
+      "max_sequence_width": 736
+    },
+    {
+      "stratum": 4,
+      "rows": 3,
+      "mean_prepare_seconds": 0.0025744023538815477,
+      "mean_forward_and_check_seconds": 0.03256245832502221,
+      "max_sequence_width": 1536
+    }
+  ],
+  "real_held_rating_and_probe_label_perturbations": "all input tensors and saved code vectors byte-identical",
+  "decoder_max_abs_error": 0.0,
+  "actual_short_history_padding_max_error": 0.0,
+  "model_parameters_unchanged": true,
+  "limitation": "Fifteen CPU pairs with pad_rows=1; no MPS throughput, whole-corpus cache, rating score or E2 training result."
+}
