@@ -1,0 +1,16 @@
+{
+  "state": "verified_tree_only_neural_pending",
+  "arm": "diversity-s20261031-n4",
+  "execution_sha256": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df",
+  "reference_parity_receipt_sha256": "90ce5d77455392f6a8d6b951194a02adcef5c7ca957376f8ff5b6a664a62a649",
+  "config_bank_library_and_saved_scores_verified": true,
+  "all_five_tree_folds_complete": true,
+  "tree_rmse": 0.8747112544278118,
+  "ridge_rmse": 0.8772350764361964,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n4-s3.json": "16c265622d19ed332dcb0245316e8f394b9e228813c7432c79348a10f7359632",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n4-s3.refit.f32": "be4c94d1d00795ade2f5bbe6060ed1df2110e56531f2f0cb6089c55444174764",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n4-s3.ridge.f32": "5a8674ff9af94035fa392459b5502678b926a503258d802ca88e94cbafdbc961"
+  },
+  "scope": "Intermediate stage audit only; the fixed arm still requires neural and saved 50/50 average verification. No selection, retuning, promotion or early stopping."
+}
