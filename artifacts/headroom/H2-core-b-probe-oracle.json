@@ -1,0 +1,380 @@
+{
+  "plan": "artifacts/rehearsal/spec-core.json",
+  "plan_sha256": "30285db17d2016c55321ff079c675fdb725a4a12ebf7a1ae1c8a268d4a79f7d0",
+  "spec_bank": "b",
+  "data": "data/processed/netflix.bin",
+  "bank": [
+    "artifacts/masked/MH3-categorical-mse-refit.f32",
+    "artifacts/masked/MT0-refit.refit.e12.f32",
+    "artifacts/masked/MT1-refit.refit.e10.f32",
+    "artifacts/masked/MT2-refit.refit.e12.f32",
+    "artifacts/masked/MT3-refit.refit.e7.f32",
+    "artifacts/rehearsal/B-K1.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.f32",
+    "artifacts/rehearsal/B-knn64.netflix.f32",
+    "artifacts/rehearsal/B-rbm100c.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.support.f32"
+  ],
+  "rows": 1408395,
+  "held_rows": 281675,
+  "base_rmse": 0.8804379788938886,
+  "base_penalty": 1,
+  "shrink": [
+    1,
+    5,
+    25
+  ],
+  "results": {
+    "user": {
+      "delta_rmse": -0.003800941890501175,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8766370370033875,
+        "delta_rmse": -0.003800941890501175,
+        "fold_deltas": [
+          -0.003800941890501175,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.006678540032676857,
+        "cluster_normal_95_mse_interval": [
+          -0.007532666021466272,
+          -0.005824414043887442
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9570930030282697
+    },
+    "user_month": {
+      "delta_rmse": -0.003464510155137379,
+      "penalty": 10,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8769734687387513,
+        "delta_rmse": -0.003464510155137379,
+        "fold_deltas": [
+          -0.003464510155137379,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.006088569807077823,
+        "cluster_normal_95_mse_interval": [
+          -0.006863483515101295,
+          -0.0053136560990543515
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.7317577810202394
+    },
+    "user_week": {
+      "delta_rmse": -0.0030278973460652336,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8774100815478234,
+        "delta_rmse": -0.0030278973460652336,
+        "fold_deltas": [
+          -0.0030278973460652336,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.005322583476997362,
+        "cluster_normal_95_mse_interval": [
+          -0.006059736982462498,
+          -0.0045854299715322264
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.5831460634268085
+    },
+    "user_day": {
+      "delta_rmse": -0.0028594410114620716,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8775785378824266,
+        "delta_rmse": -0.0028594410114620716,
+        "fold_deltas": [
+          -0.0028594410114620716,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.005026944526897827,
+        "cluster_normal_95_mse_interval": [
+          -0.005750945395898033,
+          -0.004302943657897621
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.5205577980609133
+    },
+    "item": {
+      "delta_rmse": -0.0003214308267801558,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8801165480671085,
+        "delta_rmse": -0.0003214308267801558,
+        "fold_deltas": [
+          -0.0003214308267801558,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0005658964971926118,
+        "cluster_normal_95_mse_interval": [
+          -0.0007116124489788592,
+          -0.00042018054540636447
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.999150096386312
+    },
+    "item_month": {
+      "delta_rmse": -0.0002365692626578042,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8802014096312308,
+        "delta_rmse": -0.0002365692626578042,
+        "fold_deltas": [
+          -0.0002365692626578042,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00041651316194963624,
+        "cluster_normal_95_mse_interval": [
+          -0.0005617952130699834,
+          -0.00027123111082928903
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9560215706531193
+    },
+    "item_week": {
+      "delta_rmse": -0.00018195246560803735,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8802560264282806,
+        "delta_rmse": -0.00018195246560803735,
+        "fold_deltas": [
+          -0.00018195246560803735,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0003203626154495629,
+        "cluster_normal_95_mse_interval": [
+          -0.0004421843757961834,
+          -0.00019854085510294237
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.8928631527376908
+    },
+    "item_day": {
+      "delta_rmse": -0.00011640088150854933,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8803215780123801,
+        "delta_rmse": -0.00011640088150854933,
+        "fold_deltas": [
+          -0.00011640088150854933,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00020495396454843636,
+        "cluster_normal_95_mse_interval": [
+          -0.00029753508299225194,
+          -0.00011237284610462079
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.7272349021403797
+    },
+    "calendar_day": {
+      "delta_rmse": -0.00013679611771111322,
+      "penalty": 10,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8803011827761775,
+        "delta_rmse": -0.00013679611771111322,
+        "fold_deltas": [
+          -0.00013679611771111322,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0002408622816183233,
+        "cluster_normal_95_mse_interval": [
+          -0.00034014159801369767,
+          -0.00014158296522294892
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.999910536461717
+    },
+    "placebo_user_day": {
+      "delta_rmse": 6.981903039160464e-06,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8804449607969278,
+        "delta_rmse": 6.981903039160464e-06,
+        "fold_deltas": [
+          6.981903039160464e-06,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": 1.2294313948312186e-05,
+        "cluster_normal_95_mse_interval": [
+          -6.353947432883905e-06,
+          3.094257532950828e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "placebo_item_week": {
+      "delta_rmse": -1.2088278367183847e-07,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.880437858011105,
+        "delta_rmse": -1.2088278367183847e-07,
+        "fold_deltas": [
+          -1.2088278367183847e-07,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -2.1285957284516436e-07,
+        "cluster_normal_95_mse_interval": [
+          -1.0187261827707877e-05,
+          9.761542682017549e-06
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_user_sources": {
+      "delta_rmse": -0.004313497425714186,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8761244814681745,
+        "delta_rmse": -0.004313497425714186,
+        "fold_deltas": [
+          -0.004313497425714186,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.007576927650877879,
+        "cluster_normal_95_mse_interval": [
+          -0.00848275363799538,
+          -0.00667110166376038
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_item_sources": {
+      "delta_rmse": -0.00045605330620324125,
+      "penalty": 1,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8799819255876854,
+        "delta_rmse": -0.00045605330620324125,
+        "fold_deltas": [
+          -0.00045605330620324125,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0008028453177448008,
+        "cluster_normal_95_mse_interval": [
+          -0.0009909456627577575,
+          -0.000614744972731844
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "everything": {
+      "delta_rmse": -0.004756438056334966,
+      "penalty": 10,
+      "stats": {
+        "rows": 281675,
+        "users": 92631,
+        "control_rmse": 0.8804379788938886,
+        "treatment_rmse": 0.8756815408375537,
+        "delta_rmse": -0.004756438056334966,
+        "fold_deltas": [
+          -0.004756438056334966,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0083528737151234,
+        "cluster_normal_95_mse_interval": [
+          -0.00927375880215771,
+          -0.00743198862808909
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    }
+  },
+  "metric": "P2 fold-0 RMSE change from adding leave-one-out pooled residual features. Oracle upper bounds that read other held-out labels of the scored set; not deployable."
+}
