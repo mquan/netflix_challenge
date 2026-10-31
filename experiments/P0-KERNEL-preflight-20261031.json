@@ -1,0 +1,16 @@
+{
+  "state": "verified_prelaunch_kernel_phase",
+  "plan_sha256": "3638136b51df16c50a185d2d16fbf8a436d3ee06992d049100b3194225a6d94a",
+  "frozen_inputs": 252,
+  "checksum_checks": 253,
+  "bash_syntax": true,
+  "exact_archived_commands": true,
+  "ordered_six_columns": true,
+  "required_upstream_audits": 32,
+  "tests_passed": 5,
+  "live_guard": "WAIT_P0_KERNEL_BAYES_KNN_AND_NORMAL_MEMORY",
+  "unaudited_J3_prepare_rejected": "[Errno 2] No such file or directory: '/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/J3-joint128-reg005/audit.json'",
+  "production_outputs_absent": true,
+  "launched": false,
+  "limitation": "Production phase preparation only. Tiny native fixtures cover all recipes; full production runs, user-kNN and final fitted bank/export remain outstanding. No qualifying score."
+}
