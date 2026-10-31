@@ -1,0 +1,105 @@
+{
+  "state": "isolated_builds_complete_not_training_verified",
+  "generator_sha256": "10cdea047fc701825ca9f54b5b1fe8eec74ad9bf710aec49876880fb5c3c7c24",
+  "recovery": "/Users/quan/workspace/netflix_challenge/experiments/P0-rbm-R2-build-input-20261031.json",
+  "recovery_sha256": "601fd5a7f4a32c784b468d12b2851080b457bc5f291873db5eb51f8a0f138bd6",
+  "archive_sha256": "210e0b4d84318a6edba2f182429b617d260b273bec3e60f32fd0a73fca802f71",
+  "registry_sha256": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+  "builds": [
+    {
+      "index": 0,
+      "stages": [
+        "R2-rbm100-fast"
+      ],
+      "required_sources": {
+        "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+        "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+        "src/neighborhood.hpp": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+        "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+        "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631"
+      },
+      "variants": {
+        "original": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/original/netflix",
+          "binary_sha256": "38697b8f87ca8d323e71d93e084a0c44810f86d2a90b28767c8b142b0989014f",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+            "src/neighborhood.hpp": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+            "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+            "src/rbm.hpp": "70db6634da5d2e8ef1ba0e5553f1b9e60633da0ccbbecf1ec7e82f24b78ab631"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/original/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/original/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/original/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "fixed": {
+          "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/fixed/netflix",
+          "binary_sha256": "ec669e04ba4f55eced9e47c171056502799afd44ecb0eacb3128ce40c335c0d5",
+          "sources": {
+            "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+            "src/joint.hpp": "78d85abfe6b8f0cb3d0e95af2be10f5840f9a80b57874035e9e6060382cdb3fb",
+            "src/neighborhood.hpp": "d44164fa57bdff51782e8006313f85e4e4339ff67a2ae7af666c7ec41d745c97",
+            "src/netflix.cpp": "049486d16032e65011c07d96981504731d593435c73c7f33676dca248e432d71",
+            "src/rbm.hpp": "53677a967baa0b8b4c45a3faf6113b09a6c024b044efeed4b3b1d59bb26836ef"
+          },
+          "command": [
+            "nice",
+            "-n",
+            "10",
+            "clang++",
+            "-O3",
+            "-DNDEBUG",
+            "-std=c++17",
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/fixed/src/netflix.cpp",
+            "-framework",
+            "Accelerate",
+            "-o",
+            "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/fixed/netflix"
+          ],
+          "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/fixed/build.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "patch": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-R2-build/variant-0/fixed-epoch.patch",
+      "patch_sha256": "e0ae9e441aa81a4ca43d116c9adc2254b28c38529ad52fb3dfe5593c6ba4b747"
+    }
+  ],
+  "excluded_stages": [
+    "R1-rbm100",
+    "R3-rbm200-long",
+    "R3R-rbm200-resume",
+    "P3-rbm200-seed7",
+    "P4-rbm300-wc001",
+    "R4D-rbm200-condbias-x3",
+    "R4C-rbm200-condbias",
+    "P2-rbm200-condbias-scratch",
+    "R2C-rbm100-condbias",
+    "P3C-rbm200-seed7-condbias",
+    "P4C-rbm300-wc001-condbias"
+  ],
+  "limitations": [
+    "Checkpoint selection and stopping are the only patched logic.",
+    "Fixture training contracts and cross-version resumes remain to be verified.",
+    "No full production training performed; incomplete source sets are excluded."
+  ]
+}
