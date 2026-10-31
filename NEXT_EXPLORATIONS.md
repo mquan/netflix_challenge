@@ -8,6 +8,48 @@ a calibrated target of **0.86465** (gap 0.0022206425; see
 (choice-history input tokens) belong to other sessions. Nothing here edits
 their plans, runners or artifacts, or competes with them for the GPU.
 
+## Shared experiment ledger and P2 command
+
+| Bet | Fixed decision | Current evidence/state |
+|---|---|---|
+| E1 Stage C weighting | >=0.0005, run-noise check, all five folds | closed: w2/w3 worse on every fold |
+| N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | P2 passed (+0.001213); full refit/evaluation running in owner's queue |
+| SO1 auxiliary objective | frozen SO1 plan/gates | waits behind N1 in owner's GPU queue |
+| E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
+| E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
+| E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | fixed ordinal/Gaussian pilots running; no final gate score |
+| A7 sibling pooling | >=0.0005 after Stage C, all five folds | failed: +0.001779 worse on all folds |
+
+`scripts/p2_candidate_gate.py --plan PLAN --output RESULT` is the shared
+scoring adapter for completed matched P2 columns. It directly reuses
+`selection_objective_gate.compare`: bank+control+duplicate-control versus
+bank+control+treatment, penalties {1,10,100,1000} selected on user fold 1,
+fit on folds 2–4 then 1–4, evaluate fold 0. It adds no model or penalty sweep.
+The result distinguishes this P2 fold-0 decision from full-bank promotion.
+Any experiment's additional all-fold requirements still apply separately.
+Existing frozen runners are unchanged and are not rewired automatically.
+
+A plan declares `experiment`, `protocol` = `SO1-P2-fold0-matched-pair-v1`,
+`minimum_gain`, `protocol_reference`, `data`, `bank`, `frozen` hashes and
+`arms.control`/`arms.treatment`, each with `prediction` and `receipt` paths.
+Bind the data, bank, protocol reference and five scorer source files named
+by the module's `SOURCES` constant. The protocol reference is the experiment's
+already registered recipe/gate; creating a scoring manifest after training
+does not authorize changing that protocol.
+
+Each owner validates its trainer-specific recipe and writes a completion
+receipt containing `state: complete`, `smoke_only: false`, `experiment`,
+`arm`, `data_sha256`, `prediction` and `prediction_sha256`. The adapter checks
+these fields and hashes, plus finite arrays and row shapes, before calling
+the comparator, then rehashes inputs before writing a new output. A receipt
+is an owner assertion, not a substitute for trainer-specific provenance audit.
+No running or smoke output may be scored as a completed candidate.
+
+Three fixture tests verify exact comparator parity, held-label independence
+of fitted predictions/penalties, and rejection of incomplete receipts,
+changed payloads/frozen inputs and output overwrite. No real experiment was
+scored by this new adapter during its implementation.
+
 ## Where the remaining error is
 
 - Round 11's error analysis of the R9-LAT-A2h blend found that 63% of probe
