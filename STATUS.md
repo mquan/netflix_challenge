@@ -76,6 +76,12 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      Prepared, not launched. `P0-KERNEL-preflight-20261031.json`.
    Frozen phases cover 78/79 retained column occurrences. Remaining preparation:
    user-kNN (1), then final blender/export.
+   User-kNN audit passes four tests and ten actual native fixture commands:
+   two new rank256/41-epoch K1 models, original/rebuilt three-thread inference
+   parity, exact repeats, nonzero supports/corrections and query-label isolation.
+   Fixtures use one K1 training thread; production must preserve six. Original
+   inference binary chosen for its full retained replay evidence. Queue/resource
+   guard pending. `P0-user-knn-fixture-verification-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
