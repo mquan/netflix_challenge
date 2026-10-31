@@ -13,7 +13,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | Bet | Fixed decision | Current evidence/state |
 |---|---|---|
 | E1 Stage C weighting | >=0.0005, run-noise check, all five folds | closed: w2/w3 worse on every fold |
-| N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | P2 passed (+0.001213); full refit/evaluation running in owner's queue |
+| N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | P2 passed (+0.001213); 13-epoch refit complete; full-bank evaluation running in owner's queue |
 | SO1 auxiliary objective | frozen SO1 plan/gates | waits behind N1 in owner's GPU queue |
 | E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
@@ -807,3 +807,25 @@ a fresh rescore reproduces the comparison, and all 23 frozen inputs and both
 payload hashes were verified. This closes the tested SVD recipe, with no
 full-bank or hidden-test claim. N1's existing GPU queue and the prepared H8
 column remain the active path.
+
+## H8 full-query columns emitted after N1 completion (2026-10-31)
+
+N1's fixed full-data refit exited zero after all 13 epochs, selecting epoch 13.
+Its final 1,408,395-row prediction SHA-256 is
+`a4dc251df10084b417862e7ed87dd92f4a4fd438a2c8fdb66ec50039dc00022f`.
+The completed report is archived in
+`experiments/N1-completed-refit-report-20261031.json`. Exact parent arguments,
+source hash, data hash and recorded prediction hash were independently checked.
+This is artifact completion, not evidence of full-bank improvement.
+
+While the owner's three tree-blend workers were verified active, the existing
+H8 inference API emitted both full-query columns using the fixed twelve-column
+bank, fitted bundle and feature cache. No query labels were loaded or scored.
+Both outputs contain 1,408,395 finite float32 predictions, and all 25 protocol
+inputs were hash-verified before and after inference. Evidence and output hashes
+are in `experiments/H8-query-column-verification-20261031.json`; payloads are in
+`artifacts/headroom/H8-query-columns-20261031/`.
+
+H8 remains unscored. The pre-registered full-bank comparison still waits for
+N1/SO1 queue completion and GPU release, then binds the retained reference before
+any H8 score. Its recipe, matched control and all-five-fold promotion gate stand.
