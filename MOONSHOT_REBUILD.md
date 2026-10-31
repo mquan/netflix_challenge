@@ -55,3 +55,23 @@ Codex's and SO1's frozen files are not edited. Then change four things:
 - **Estimates on the M3 Max:** M0 3–5 days of code; M1 ≈2–3 days GPU
   including pilots; M2 ≈1 week; M3 ≈1 week. **Total ≈3–5 weeks.** A d256 run
   may need the GPU alone (memory).
+
+## Progress
+
+**M0 step 1 — fork and long-context attention (2026-10-31).**
+`scripts/moonshot_sequence.py` is forked byte for byte from N1's
+`choice_sequence.py` (sha256 prefix 9dc0d0ce36e53dab); the helper modules it
+imports are identical to the main repo's. It adds `attn_chunk` (default 0 =
+N1 behaviour), which runs query-chunked attention: each chunk attends over all
+keys, so the score tensor is n·heads·chunk·L instead of n·heads·L², the MPS
+INT_MAX failure mode at 3072 tokens. `tests/test_moonshot_sequence.py` (4
+tests, CPU) covers:
+- chunked = full attention outputs within 1e-6, for chunk sizes 1–64,
+  including padded rows and a length-1 row;
+- gradients agree to ~1e-7 relative (float32 summation order);
+- the default fork reproduces N1's predictions **byte for byte** on a fixture;
+- the new field is off by default and absent from N1.
+
+**Next M0 steps:** MLP interaction head, warmup + cosine schedule, MSE+λ·CE
+loss, each opt-in with a byte-for-byte default-parity test. Then the memory
+and throughput pilot on MPS, which waits for the GPU.
