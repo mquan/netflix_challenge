@@ -1,0 +1,26 @@
+{
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "checkpoint": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.select.pt",
+  "warm_report": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json",
+  "source_rows": "/Users/quan/workspace/netflix_challenge/artifacts/e2/cache-audit-rows-20261030.npy",
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "/Users/quan/workspace/netflix_challenge/artifacts/e2/sample-P2-20261030/sample.npz": "113fe89a629bc27910c5f425f84a1a526d163ede04f1ae988bdea4110b2f6a3a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.json": "83ce5beb97992c6d6df69948f48caa6f08e6b4920ab88033bef5759b23d8fc90",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-select.select.pt": "7173de643fff219395d754f9ac7d415c70501ffec6d3f8523ae41696c2d7c4a2",
+    "/Users/quan/workspace/netflix_challenge/scripts/e2_query_codes.py": "0fc3ee40a6c196abb8a9bc3d30337b5a1027b112a10c8e7ae15a3879701f0327",
+    "/Users/quan/workspace/netflix_challenge/scripts/masked_sequence.py": "e95d5921b92ba3d6b08581c602deb7d015ce036bf8d8b14bb8fbc4bcee9eb506",
+    "/Users/quan/workspace/netflix_challenge/scripts/masked_history.py": "e0d23a886e4344868ddd6681e5e758c1022a7da4ab857434d7160d0e95976795",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/e2/cache-audit-rows-20261030.npy": "6919be8169bceb333c8064d2b171563de3f69107eaeb15b9039b3dfc645a530e",
+    "/Users/quan/workspace/netflix_challenge/scripts/e2_code_cache.py": "244281410f4318ab61442b97b0fe9204c1cfed1c499b6a95a43c40e2b47cd508",
+    "/Users/quan/workspace/netflix_challenge/scripts/e2_joint_context.py": "fd58c654617ad733ce04c6de0488312dc0647992e081baeab68544bf216ca7ba"
+  },
+  "device": "cpu",
+  "cpu_threads": 1,
+  "pad_rows": 1,
+  "chunk_rows": 8,
+  "batch_pairs": 4,
+  "scope": "Export/resume/parity on 15 previously audited rows only; no training or score."
+}
