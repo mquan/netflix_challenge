@@ -85,6 +85,60 @@ inline float draw(double theta, double a, double b, double alpha, double mu,
   return float(mean + std::normal_distribution<double>(0, 1)(rng)/std::sqrt(precision));
 }
 
+// Ordinal (interval-censored) likelihood helpers. A star rating r means the
+// latent z = f + N(0, 1/alpha) lies in (r-.5, r+.5], open-ended at 1 and 5.
+inline double normal_upper(double x) { return .5*std::erfc(x/std::sqrt(2.0)); }  // P(N(0,1) > x)
+// Inverse standard normal CDF (Acklam's rational approximation + one Newton step).
+inline double normal_quantile(double p) {
+  static const double a[] = {-3.969683028665376e+01, 2.209460984245205e+02, -2.759285104469687e+02,
+                             1.383577518672690e+02, -3.066479806614716e+01, 2.506628277459239e+00};
+  static const double b[] = {-5.447609879822406e+01, 1.615858368580409e+02, -1.556989798598866e+02,
+                             6.680131188771972e+01, -1.328068155288572e+01};
+  static const double c[] = {-7.784894002430293e-03, -3.223964580411365e-01, -2.400758277161838e+00,
+                             -2.549732539343734e+00, 4.374664141464968e+00, 2.938163982698783e+00};
+  static const double e[] = {7.784695709041462e-03, 3.224671290700398e-01, 2.445134137142996e+00,
+                             3.754408661907416e+00};
+  p = std::min(std::max(p, 1e-300), 1-1e-16);
+  double x;
+  if (p < .02425) {
+    const double q = std::sqrt(-2*std::log(p));
+    x = (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((e[0]*q+e[1])*q+e[2])*q+e[3])*q+1);
+  } else if (p > 1-.02425) {
+    const double q = std::sqrt(-2*std::log1p(-p));
+    x = -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5])/((((e[0]*q+e[1])*q+e[2])*q+e[3])*q+1);
+  } else {
+    const double q = p-.5, r = q*q;
+    x = (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q/(((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
+  }
+  const double err = .5*std::erfc(-x/std::sqrt(2.0))-p;  // Newton refinement on the CDF
+  return x-err*std::sqrt(2*M_PI)*std::exp(x*x/2);
+}
+// Draw from N(0,1) truncated to (lo, hi]; either bound may be infinite. Works on
+// the side of the interval nearer zero so extreme tails keep precision.
+inline double truncated_standard_normal(double lo, double hi, std::mt19937_64 &rng) {
+  std::uniform_real_distribution<double> unit(0, 1);
+  if (lo > 0) {  // upper tail: Q(lo) > Q(hi); sample u in (Q(hi), Q(lo)), x = Q^-1(u)
+    const double qlo = normal_upper(lo), qhi = std::isinf(hi) ? 0 : normal_upper(hi);
+    const double u = qhi+(qlo-qhi)*unit(rng);
+    return std::min(std::max(-normal_quantile(u), lo), hi);
+  }
+  if (hi < 0) return -truncated_standard_normal(-hi, -lo, rng);
+  const double plo = std::isinf(lo) ? 0 : 1-normal_upper(lo), phi = std::isinf(hi) ? 1 : 1-normal_upper(hi);
+  const double u = plo+(phi-plo)*unit(rng);
+  return std::min(std::max(normal_quantile(u), lo), hi);
+}
+inline void ordinal_bounds(uint8_t rating, double &lo, double &hi) {
+  lo = rating <= 1 ? -std::numeric_limits<double>::infinity() : rating-.5;
+  hi = rating >= 5 ? std::numeric_limits<double>::infinity() : rating+.5;
+}
+// Expected star rating when the latent is N(f, 1/alpha): 1 + sum_t P(z > t).
+inline double ordinal_expected(double f, double alpha) {
+  const double sd = 1/std::sqrt(alpha);
+  double e = 1;
+  for (double t : {1.5, 2.5, 3.5, 4.5}) e += normal_upper((t-f)/sd);
+  return e;
+}
+
 // Accumulates wall time of a scope into a profile slot (--profile).
 struct Clock {
   double &acc; std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
@@ -141,6 +195,25 @@ struct Sampler {
   std::vector<float> rw;
   double weight_total = 0;
   double row_weight(uint64_t p) const { return rw.empty() ? 1.0 : double(rw[p]); }
+  // Ordinal likelihood: latent targets Z replace the star ratings. Empty means
+  // the Gaussian likelihood, whose code path and RNG use are unchanged.
+  std::vector<float> Z;
+  double target(uint64_t p) const { return Z.empty() ? double(d.train_ratings[p]) : double(Z[p]); }
+  // Resample every latent target given the current fit (Albert-Chib augmentation).
+  void sample_latents() {
+    std::vector<uint64_t> seeds(threads);
+    for (auto &s : seeds) s = rng();
+    const double sd = 1/std::sqrt(m.alpha);
+    parallel(threads, [&](uint32_t th) {
+      std::mt19937_64 r(seeds[th]);
+      for (uint64_t p = d.train_offsets[user_cut[th]]; p < d.train_offsets[user_cut[th+1]]; ++p) {
+        const double f = double(Z[p])-E[p];
+        double lo, hi; ordinal_bounds(d.train_ratings[p], lo, hi);
+        const float z = float(f+sd*truncated_standard_normal((lo-f)/sd, (hi-f)/sd, r));
+        E[p] += double(z)-double(Z[p]); Z[p] = z;
+      }
+    });
+  }
 
   enum Kind { kNone, kRow, kUserBlock, kItemBlock };
 
@@ -596,7 +669,7 @@ struct Sampler {
               const double y = double(rv[k][j])*x; qr += y; sr += y*y;
             }
             const Block &bu = ub[u], &bi = ib[d.train_items[p]-1];
-            if (fac < 0) out[p] = double(d.train_ratings[p])-(m.w0+qr+bu.q+bi.q);
+            if (fac < 0) out[p] = target(p)-(m.w0+qr+bu.q+bi.q);
             else { const double q = qr+bu.q+bi.q; out[p] -= .5*(q*q-(sr+bu.s+bi.s)); }
           }
       });
@@ -606,6 +679,7 @@ struct Sampler {
   // One full Gibbs sweep. Returns the train RMSE after the sweep.
   double sweep() {
     const double n = double(d.header.train_count);
+    if (!Z.empty()) sample_latents();
     const double sse = sum_squared_residuals(!rw.empty());
     m.alpha = std::gamma_distribution<double>((1+n)/2, 2/(1+sse))(rng);
     for (uint32_t g = 0; g < kGroups; ++g) {
@@ -767,7 +841,16 @@ void command(const std::vector<std::string> &args) {
     std::cout << "row_weights=" << weights_path << " non_unit=" << changed
               << " mean=" << std::setprecision(10) << total/weights.size() << std::endl;
   }
+  const std::string likelihood = optional_value_after(args, "--likelihood");
+  const bool ordinal = likelihood == "ordinal";
+  if (!likelihood.empty() && likelihood != "gaussian" && !ordinal) fail("--likelihood must be gaussian or ordinal");
+  if (ordinal && !init.empty()) fail("--likelihood ordinal does not support --init-model resume yet");
   Sampler s(d, t, feats, m, threads, std::move(weights));
+  if (ordinal) {
+    s.Z.resize(d.header.train_count);
+    for (uint64_t p = 0; p < d.header.train_count; ++p) s.Z[p] = float(d.train_ratings[p]);
+    std::cout << "likelihood=ordinal thresholds=1.5,2.5,3.5,4.5" << std::endl;
+  }
   { std::istringstream state(m.rng_state); state >> s.rng; if (!state) fail("bad bayes rng state"); }
   s.recompute_residuals(s.E);
   auto snapshot_path = [&](uint32_t sweep) {
@@ -785,14 +868,20 @@ void command(const std::vector<std::string> &args) {
     const double train = s.sweep();
     m.sweep = sweep;
     for (double x : s.probe_pred) if (!std::isfinite(x)) fail("non-finite bayes prediction");
+    std::vector<double> expected_rating;
+    if (ordinal) {
+      expected_rating.resize(s.probe_pred.size());
+      for (size_t n = 0; n < expected_rating.size(); ++n) expected_rating[n] = ordinal_expected(s.probe_pred[n], m.alpha);
+    }
+    const std::vector<double> &sample_pred = ordinal ? expected_rating : s.probe_pred;
     if (sweep > burn_in) {
-      for (size_t n = 0; n < s.probe_pred.size(); ++n) m.pred_sum[n] += s.probe_pred[n];
+      for (size_t n = 0; n < sample_pred.size(); ++n) m.pred_sum[n] += sample_pred[n];
       ++m.kept;
     }
     const double seconds = std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
     std::cout << std::setprecision(10) << "sweep=" << sweep << " train_rmse=" << train
               << " noise_sd=" << 1/std::sqrt(m.alpha) << " w0=" << m.w0
-              << " sample_probe_rmse=" << probe_rmse(d, s.probe_pred, 1)
+              << " sample_probe_rmse=" << probe_rmse(d, sample_pred, 1)
               << " kept=" << m.kept;
     if (m.kept) std::cout << " mean_probe_rmse=" << probe_rmse(d, m.pred_sum, 1.0/m.kept);
     std::cout << " seconds=" << seconds;
@@ -816,6 +905,40 @@ void command(const std::vector<std::string> &args) {
   write_predictions(pred_path, m);
   if (m.kept) std::cout << std::setprecision(10) << "final probe_rmse=" << probe_rmse(d, m.pred_sum, 1.0/m.kept)
                         << " kept=" << m.kept << " sweep=" << m.sweep << '\n';
+}
+
+// Self-check of the truncated-normal sampler against analytic moments.
+void check_truncated_normal() {
+  std::mt19937_64 rng(5);
+  const double inf = std::numeric_limits<double>::infinity();
+  const double phi = 1/std::sqrt(2*M_PI);
+  auto density = [&](double x) { return std::isinf(x) ? 0.0 : phi*std::exp(-x*x/2); };
+  const std::pair<double, double> cases[] = {{-inf, -1.2}, {-.3, .8}, {1, 2}, {2.5, inf}, {6, 6.5}, {-9, -8}, {-inf, inf}};
+  for (const auto &c : cases) {
+    const double lo = c.first, hi = c.second;
+    // E[X | lo < X <= hi] = (pdf(lo)-pdf(hi)) / P(lo < X <= hi), tail-stable via upper probabilities.
+    const double mass = (std::isinf(lo) ? 1 : normal_upper(lo))-(std::isinf(hi) ? 0 : normal_upper(hi));
+    double mean = (density(lo)-density(hi))/mass;
+    if (lo > 5) mean = lo+1/lo;           // asymptotic upper-tail mean for far tails
+    if (hi < -5) mean = hi-1/(-hi);
+    double sum = 0; const int n = 200000;
+    for (int k = 0; k < n; ++k) {
+      const double x = truncated_standard_normal(lo, hi, rng);
+      if (!(x >= lo && x <= hi) || !std::isfinite(x)) fail("truncated normal draw outside its interval");
+      sum += x;
+    }
+    const double tol = (lo > 5 || hi < -5) ? .05 : .01;
+    if (std::abs(sum/n-mean) > tol) fail("truncated normal mean mismatch");
+  }
+  for (double p : {1e-12, 1e-4, .02, .3, .5, .9, .99, 1-1e-9}) {
+    // Lower-tail probability of the quantile, computed as Q(-x) to keep precision.
+    const double back = normal_upper(-normal_quantile(p));
+    if (std::abs(back-p) > 1e-7*std::min(p, 1-p)) fail("normal quantile mismatch");
+  }
+  if (std::abs(ordinal_expected(3, 1e12)-3) > 1e-9 || std::abs(ordinal_expected(-50, 1)-1) > 1e-9 ||
+      std::abs(ordinal_expected(50, 1)-5) > 1e-9 || std::abs(ordinal_expected(3, 1)-3) > 1e-12)
+    fail("ordinal expectation mismatch");
+  std::cout << "truncated normal sampler matches analytic moments\n";
 }
 
 }  // namespace bayes

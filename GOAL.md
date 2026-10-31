@@ -43,12 +43,16 @@ experiment.
 6. Commit and push this session's own files after each step, authored as
    `Quan Nguyen <mquannie@gmail.com>`, on `codex/local-context`, without a PR.
 
+## Closed bets
+
+- E1 (P2 up-weighting in the Stage C retrain): closed 2026-10-31. w2 +0.00014 and w3 +0.00049 worse than the control on all folds; the Bayes arm was stopped by the pre-registered rule. See NEXT_EXPLORATIONS.md.
+
 ## Slots
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | E1 stage 1 (K1 family) | **closed 2026-10-31: w2 +0.00014, w3 +0.00049 worse, all folds** |
-| 2 | E1-Bayes (B4) | **stopped by pre-registered early stop** at sweep 15; no score |
+| 1 | E5 ordinal Bayes pilot, ordinal arm (P2, rank 64) | running from 2026-10-31 (`experiments/E5-p2-r64-ordinal.log`) |
+| 2 | E5 ordinal Bayes pilot, matched Gaussian control | running from 2026-10-31 (`experiments/E5-p2-r64-gaussian.log`) |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued

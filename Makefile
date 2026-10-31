@@ -89,6 +89,7 @@ test: $(BIN)
 	python3 tests/test_joint.py
 	python3 tests/test_joint_row_weights.py
 	python3 tests/test_bayes_row_weights.py
+	python3 tests/test_bayes_ordinal.py
 	python3 tests/test_native_fixed_epochs.py
 	python3 tests/test_temporal_neighborhood.py
 	python3 tests/test_user_knn.py
