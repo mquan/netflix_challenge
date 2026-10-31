@@ -56,7 +56,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H8. Choice affinity beyond N1 (P2) | this session (Claude) | done 2026-10-31: borderline −0.00036 (−0.00029 vs recalibrated); a small complement only |
 | H8 nested validation | Codex | complete: −0.000373 vs ridge, −0.000289 vs matched tree on P2 fold 0; full-bank value pending |
 | H9 choice co-occurrence embeddings | Codex | closed: +0.000048 gain beyond H8, below 0.0003; H8 control reproduced exactly |
-| H8 deployable CPU column | Codex | full-query columns emitted after verifying N1's completed 13-epoch refit; unscored; full comparison awaits GPU queue release |
+| H8 deployable CPU column | Codex | full-query columns verified; SO1 queue terminal; retained R9 reference bound before scoring in H8-full-20261031-plan.json; fixed four-stage comparison prepared |
 | A7. Sibling-split Stage C rehearsal (K1 family) | this session (Claude) | **closed 2026-10-31: Stage C absorbs the sibling signal; pooling +0.00178 worse after retraining** |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
@@ -64,6 +64,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; no E3 training or scoring |
 
 ## Closed bets
+
+- SO1 (selection auxiliary objective): closed 2026-10-31. Fixed P2 gain 0.0000275, below 0.0003; original gate independently reproduced exactly. Queue completed without a conditional full stage.
 
 - H9 (unlabelled-choice co-occurrence SVD): closed 2026-10-31. P2 gain 0.000048 beyond H8, below the fixed 0.0003 gate; interval includes zero.
 
@@ -75,7 +77,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | open | — |
+| 1 | H8 full-bank comparison | retained R9 + raw N1 in both arms; fixed matched control and treatment; four CPU blend stages prepared after SO1 queue release |
 | 2 | open | — |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 

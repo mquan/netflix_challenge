@@ -1,0 +1,61 @@
+{
+  "primary": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8470131553621849,
+    "treatment_rmse": 0.846985635143625,
+    "delta_rmse": -2.7520218559895504e-05,
+    "fold_deltas": [
+      -2.7520218559895504e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -4.661921695483281e-05,
+    "cluster_normal_95_mse_interval": [
+      -0.00011335803621277263,
+      2.0119602303107008e-05
+    ],
+    "all_folds_improve": false
+  },
+  "replacement_diagnostic": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8470131569116545,
+    "treatment_rmse": 0.8469850657101594,
+    "delta_rmse": -2.8091201495050733e-05,
+    "fold_deltas": [
+      -2.8091201495050733e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -4.7586445403695766e-05,
+    "cluster_normal_95_mse_interval": [
+      -0.00010175440129547798,
+      6.581510488086451e-06
+    ],
+    "all_folds_improve": false
+  },
+  "selected_penalties": {
+    "duplicate_control": 1,
+    "control_plus_treatment": 1,
+    "control_only": 1,
+    "treatment_only": 1
+  },
+  "plan_sha256": "c0490e6e0d9099cbd3745637cf9a11af3796e6339c88fcf3fd5c9f61c6c1866e",
+  "arms": {
+    "control": {
+      "report_sha256": "ea27e651d83bcb87e82209dfb73c752462db034caf077c95f69120604b8db606",
+      "prediction_sha256": "c1f31c35fca7224782d9d8a3cdab1df66b2fd932c0716fba502f4a3432158295"
+    },
+    "treatment": {
+      "report_sha256": "84e90b4cf3bbde115bffe7eff1c2ecebd9f7e8b334982c083e1f93a58b1fa707",
+      "prediction_sha256": "1e669518906d5a5aab84dc3d59836b3cdcd0958dc73dbca458c32c4f27032722"
+    }
+  },
+  "passes_full_refit_gate": false,
+  "metric": "Reused P2 development gate. Epoch 2 fixed in advance; no untouched-test or full-bank score claim."
+}

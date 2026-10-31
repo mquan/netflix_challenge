@@ -14,7 +14,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 |---|---|---|
 | E1 Stage C weighting | >=0.0005, run-noise check, all five folds | closed: w2/w3 worse on every fold |
 | N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | full result 0.86670063: 0.000170 overall gain, fold 1 worse; promotion and substantial-continuation gates fail |
-| SO1 auxiliary objective | frozen SO1 plan/gates | waits behind N1 in owner's GPU queue |
+| SO1 auxiliary objective | frozen SO1 plan/gates | closed: P2 gain 0.0000275 < 0.0003; gate independently reproduced; queue terminal |
 | E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
 | E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
@@ -869,3 +869,26 @@ remains 0.0022206425. SO1's original control/treatment queue continues unchanged
 The already registered H8 comparison remains pending queue release, with its
 N1-containing matched bank and unscored columns preserved. This result provides
 no hidden-test verification and does not authorize a new N1 parameter sweep.
+
+## SO1 closes; H8 full comparison bound (2026-10-31)
+
+SO1's unchanged two-epoch pair completed. Its primary P2 matched-bank score
+is control 0.8470131554 versus treatment 0.8469856351, a gain of 0.0000275202,
+below the fixed 0.0003 gate. The user-cluster MSE interval includes zero.
+`experiments/SO1-independent-gate-20261031.json` independently reruns the
+original frozen gate and reproduces the owner's complete JSON exactly.
+The controller records `complete`, its trainer and controller PIDs are absent,
+and the process snapshot shows no other Python trainer. No conditional full
+SO1 stage is authorized by its failed gate. No SO1 file was edited.
+
+`experiments/H8-full-20261031-plan.json` now binds the still-retained R9
+reference (0.8668706424), its complete input bank plus raw N1 in both arms,
+and all H8 inputs **before any H8 original-probe score**. Its 187 frozen
+files and the bound plan are checked before each stage. Control adds the
+base-only H8 column twice; treatment adds base-only plus choice. The four
+sequential stages use the registered three-seed tree and NN2 recipes, with
+three tree workers and two NN CPU threads. `H8-full-20261031-run.sh` records
+separate stage logs and stops on any failure. The runner does not promote a
+result; saved payload verification and the registered all-five-fold gate
+remain required after completion. The GPU queue is released; these H8 blend
+scripts use CPU, although the registered queue-release condition was observed.
