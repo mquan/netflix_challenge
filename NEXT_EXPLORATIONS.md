@@ -1346,3 +1346,27 @@ and pressure normal; unknown pressure. The tests mock only shell observations
 and sleeps, never start a trainer, and are recorded in
 `experiments/P0-CPU-neural-preflight-20261031.json`. Actual pressure returned
 to level 1 during preparation; the occupied-slot condition still prevents launch.
+
+### P0 remaining native-family dependency inventory (2026-10-31)
+
+`experiments/P0-native-dependency-inventory-20261031.json` is bound to the
+production master and rechecked registry hashes. All remaining 65 retained
+column occurrences are accounted for, including duplicate aliases: 13
+joint/integrated, 29 item-kNN, nine RBM, three AutoRec, four GP, two local
+residual, three Bayesian, one learned-neighborhood and one user-kNN.
+
+The inventory checks the 12 joint and 12 RBM stage graphs for missing parents
+or cycles, and every RBM resume boundary against its predecessor's final epoch.
+It preserves J4's restart at epoch 1 from a new production J3. Twelve distinct
+historical source groups are recorded. K1 and user-kNN's existing isolated
+rebuilt binaries still match their verification hashes; the new production K1
+must not replace the original frozen latent-feature encoder. Item-kNN's time,
+graph and joint-model dependencies, all support aliases, AutoRec shared
+trajectories and Bayesian initialization/averaging stages remain explicit.
+
+It does not authorize a generic current binary as a substitute for every
+historical training implementation. The RBM recovery registry explicitly lacks
+matching fixed-budget rebuild/full-training evidence; those compatibility
+checks and executable native phase plans remain required. Eight-thread RBM
+stages cannot overlap the three-thread CPU neural phase plus the GPU host
+thread under the ten-thread cap. No native production trainer was launched.
