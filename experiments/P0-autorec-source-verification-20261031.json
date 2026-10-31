@@ -1,0 +1,57 @@
+{
+  "state": "isolated_autorec_source_CPU_contracts_verified",
+  "source_root": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/autorec-source",
+  "archive": "/Users/quan/workspace/netflix_challenge/experiments/P0-autorec-checkpoint-sources-20261031.zip",
+  "archive_sha256": "58a548ed9904ef63750e7a8d7c76118083d2beff7f4ca46141a69a8ece9a901f",
+  "sources": {
+    "autorec.py": "0fbbb4892eee5dc69dae77a63f31a97e0d60167745936150e62cbf5a0119e94f",
+    "checkpoint-and-reload.patch": "b7942a602f821efec21d98339f1d05015a148e45ed3cc5b1d63c4499dc3418bc",
+    "gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "original-autorec.py": "94dab7a8eaaeeeb0de2c86e583b1bf5aaaca5124a03277e2af489fb7e0d1cc42",
+    "source-manifest.json": "fb258cae52a657cf5b736bd628023c03442851aedec676bf26ff3cba36836a77"
+  },
+  "generator_sha256": "ff3123de04c9874d43b617ff9f9a26660ed73dcecd041547c30f9bd83c839d66",
+  "test_source_sha256": "fa9bf6659942bfeaa36e37462059fdaad75423f4e75be720fb24cb733183295d",
+  "test_command": [
+    "/Users/quan/.cache/netflix-venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_production_autorec_source.py",
+    "-v"
+  ],
+  "test_methods_passed": 3,
+  "checks": {
+    "original_final_prediction_parity": true,
+    "shared_snapshot_prediction_parity": true,
+    "checkpoint_epoch_and_source_metadata": true,
+    "final_and_snapshot_reload_parity": true,
+    "query_label_independent_predictions_and_weights": true,
+    "wrong_reload_config_rejected": true
+  },
+  "production_device": "mps",
+  "planned_host_threads": 1,
+  "required_groups": [
+    {
+      "group": "A2-autorec512-norm",
+      "fixed_epochs": 1,
+      "save_epochs": []
+    },
+    {
+      "group": "A3-autorec512-reg",
+      "fixed_epochs": 44,
+      "save_epochs": [
+        14
+      ]
+    }
+  ],
+  "limitations": [
+    "CPU fixtures only: no MPS training/parity run while primary production GPU queue is active.",
+    "The AutoRec registry has weaker historical source provenance and score-based epoch association; exact historical full-data reproduction is not claimed.",
+    "Production source and loader remain unchanged; the new isolated source adds checkpoint capture/reload and the launcher bounds CPU host threads.",
+    "The two production AutoRec MPS trajectories must follow the seven primary GPU retrains; executable phase and output audits remain to be frozen."
+  ]
+}

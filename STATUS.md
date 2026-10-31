@@ -56,6 +56,10 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      label-isolation fixtures pass. Ordered alias manifest waits for all outputs.
    Frozen phases cover 66/79 retained column occurrences. Remaining preparation:
    AutoRec (3), Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
+   AutoRec checkpoint/reload source is isolated and passes three CPU parity tests
+   (`P0-autorec-source-verification-20261031.json`). Its original default is MPS:
+   two trajectories (epochs 1 and 44, with snapshot 14) must follow the seven primary GPU runs.
+   MPS verification, executable phase and output audits remain pending.
    Full production outputs remain required; the development gap is unchanged.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
