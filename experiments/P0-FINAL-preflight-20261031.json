@@ -1,0 +1,60 @@
+{
+  "state": "verified_prelaunch_final_phase",
+  "plan_sha256": "d8dccb8a3964aa51559c6f5e15c47a8a9fcfde9a107d1ecdc1292d4081b2c9b2",
+  "frozen_inputs": 500,
+  "checksum_checks": 501,
+  "bash_syntax": true,
+  "final_command_sequence": [
+    "resolve-bank",
+    "fit",
+    "infer",
+    "infer-replay",
+    "export"
+  ],
+  "required_stage_audits": 82,
+  "fixed_budgets": {
+    "tree": [
+      {
+        "seed": 2026,
+        "steps": 904
+      },
+      {
+        "seed": 7,
+        "steps": 969
+      },
+      {
+        "seed": 13,
+        "steps": 1106
+      }
+    ],
+    "neural": [
+      {
+        "seed": 2026,
+        "steps": 15
+      },
+      {
+        "seed": 7,
+        "steps": 14
+      },
+      {
+        "seed": 13,
+        "steps": 14
+      }
+    ]
+  },
+  "widths": {
+    "predictions": 79,
+    "auxiliary": 64,
+    "context": 5
+  },
+  "library_versions_match": true,
+  "no_self_blocking_guard": true,
+  "live_guard": "WAIT_P0_FINAL_ALL_82_AUDITS_QUEUE_EXIT_AND_NORMAL_MEMORY",
+  "guard_test_passed": true,
+  "previous_handoff_tests": 4,
+  "previous_resolver_tests": 5,
+  "previous_submission_tests": 5,
+  "final_outputs_absent": true,
+  "launched": false,
+  "scope": "Full fixed-budget final phase prepared only. Actual bank resolution, full fitting/inference and export await all 82 real audits and queue exit. No hidden score or target-achievement claim."
+}
