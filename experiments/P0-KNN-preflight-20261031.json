@@ -1,0 +1,18 @@
+{
+  "state": "prepared_not_launched_resource_guard_waits",
+  "plan_sha256": "cdadcdda746c5a5d6c6449ad5af2eae8d6047aa6213d7e46ec046fa3437d1581",
+  "frozen_inputs": 278,
+  "checksum_checks_passed": 279,
+  "check_log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/knn-preflight-input-check.log",
+  "check_log_sha256": "93925b4f21624157f6e1ae2bf5a9440d190c681acce32e819e0840b4be4001ed",
+  "all_commands_match_original_recipes_after_production_path_and_binary_substitution": true,
+  "original_29_column_occurrence_order_preserved": true,
+  "original_six_support_alias_order_preserved": true,
+  "actual_incomplete_production_handoff_rejected_without_manifest": true,
+  "unique_stages": 28,
+  "required_parent_audits": 16,
+  "bash_syntax_passed": true,
+  "actual_resource_gate": "WAIT_P0_KNN_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+  "test_methods_passed": 10,
+  "scope": "Preparation only. All 28 production kNN stages remain unlaunched; remaining families and final blender/export are still required."
+}
