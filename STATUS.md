@@ -32,7 +32,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 3 live; epoch 2 complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 4/25 complete and audited (first-seed n1/n4/n16/n32); n16 average 0.8710975, n32 average 0.8680112. Both current tree stages complete: lane 0 first-seed n64 neural (58287/session 96236); lane 1 second-seed n1 neural (56799/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n16-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 5/25 complete and audited (first-seed n1/n4/n16/n32/n64); n64 average 0.8673321. Lane 0 second-seed n4 tree (71100/session 96236); lane 1 second-seed n1 neural (56799/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n64-full-verification-20261031.json` |
 
 ## Next actions
 
