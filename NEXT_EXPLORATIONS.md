@@ -163,6 +163,20 @@ probe. Choosing epoch ~25 from this log would be probe selection.
 - **Early stop.** If K1 stage 1 shows no gain at all (both b(w2) and
   b(w3) ≥ b(w1)), stop the Bayes arms to free CPU and record that they were stopped.
 
+**Control queue, 2026-10-30.** The previously planned w1 control now has an
+actual shell-only waiter: `scripts/e1_bayes_control_wait.sh`, bound by
+`experiments/E1-bayes-control-queue-20261030.plan.json`. It waits for the fixed
+K1 comparison and released K1 CPU threads, then launches the unchanged
+four-thread w1 command only if at least one K1 treatment improves w1 at all,
+matching the existing early-stop condition. This is not a relaxed promotion
+gate; Bayes still needs its own 0.0005/noise/five-fold comparison. The queue
+skips an existing control, rejects changed inputs or mismatched score-plan
+evidence, and never stops another session's jobs. If K1 shows no gain it
+records that no control was launched; the existing w2 job is left to its owner.
+Four shell fixture tests cover launch-on-some-gain, no-gain skip, mismatched
+plan rejection, existing-output preservation and duplicate-queue rejection.
+Live status is `experiments/E1-bayes-control-queue-20261030.state.json`.
+
 ## E2. Movie-side context inside A2 (CF-UIcA-style) — GPU, after SO1
 
 **Hypothesis.** A2h encodes only the user's own history. Let the query token
