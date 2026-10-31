@@ -79,11 +79,12 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
-| E3 gate preparation | Codex | seven fixture tests pass; frozen bash handoff live PID 60202/session 35306 waits for trainer 38985 and runner 38977 exit, then runs the existing completion audit and both gates once, without retry or further training |
-| Structural plan week-0 scoping | Codex | full all79 parity exact; all 25 further fixed arms running through two CPU lanes (13+12); E3 retains GPU priority; narrative snapshot preserves original provenance |
+| E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
+| Structural plan week-0 scoping | Codex | full all79 parity exact; 25 further fixed arms running through two CPU lanes (13+12); n4 tree audited, neural live; narrative snapshot preserves original provenance |
 
 ## Closed bets
 
+- E3 (CE=0.1 on A2h distribution head): closed 2026-10-31. Shared P2 fold 0 worsens by 0.00000131; five-fold gain 0.00001277 < fixed 0.0003, with folds 0/1 worse. Both gates fail; no full-training follow-up. See `experiments/E3-independent-verification-20261031.json`.
 - L1 (LLORMA-style local low-rank ensemble): closed 2026-10-31. Standalone 0.8924 on P2 but +0.0000023 beyond bank11 + N1 (gate −0.0010).
 - H8 (choice-affinity full-bank comparison): complete 2026-10-31. Treatment 0.86648484, gain 0.00038580 versus R9 and 0.00022028 versus matched control, all five folds better. The fixed 0.0003 matched-control minimum fails; not promoted, no threshold relaxation.
 
@@ -101,9 +102,9 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 |---|---|---|
 | 1 | S0 scoping lane 1 | running 12 exact fixed arms, first n4; no GPU; all79 parity verified |
 | 2 | S0 scoping lane 0 | running 13 exact fixed arms, first n1; no GPU; all79 parity verified |
-| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed P2 treatment running; plan E3-plan-20261031.json, launch receipt E3-select-20261031-launch.json; verified SO1 control reused |
+| 3 | Free | E3 closed after both fixed P2 gates failed; no further training launched |
 
-E3's fixed GPU treatment is running after the other session's queue finished;
+E3's fixed GPU treatment and both gate evaluations are complete and failed;
 E2 (movie-side context in A2) remains deferred. The log of results is kept in
 [NEXT_EXPLORATIONS.md](NEXT_EXPLORATIONS.md).
 

@@ -34,16 +34,13 @@ The week-3 stop check remains ≥0.0015 bank gain.
 | Job | Owner | Check |
 |---|---|---|
 | S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified. n4 tree complete and independently verified (0.8747113); neural PID 81078/session 83214 live. n1 tree workers remain live under runner 39539/session 96236. Neither arm's 50/50 result complete; all 25 fixed arms remain scheduled. `experiments/S0-diversity-s20261031-n4-tree-verification-20261031.json` |
-| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 trainer PID 38985/session 51948 live at elapsed 94m, last logged batch 6100/6168; final validation record pending. Frozen gate handoff PID 60202/session 35306 verified waiting; audits completion and runs both gates once after trainer+runner exit; `experiments/E3-gate-handoff-20261031-launch.json` |
 
 ## Next actions
 
 1. **Claude:** L1 closed (no gain). Before building the next family (feature GBDT base model, co-clustering), re-examine the plan, since the per-family estimate is survivorship-biased (FAMILY_AUDIT.md). **Decision needed from the user** (see below).
-2. **Codex:** monitor E3 and its frozen gate handoff; inspect the automatic
-   `scripts/e3_candidate_gate.py` result once complete (seven fixture tests pass).
-   Do not manually launch a duplicate gate or retry partial output.
-3. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
-   then report all fixed diversity/substitution results; retain E3 priority.
+2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
+   then report all fixed diversity/substitution results. E3 and its audit are
+   terminal; neither P2 gate passed, so no full-training follow-up.
 
 ## Decisions waiting on the user
 
@@ -53,6 +50,7 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 | Date | Result | Doc |
 |---|---|---|
+| 10-31 | E3: shared fold 0 worsens 0.00000131; five-fold gain 0.00001277 < 0.0003, two folds worse → closed; both comparisons independently reproduced | experiments/E3-independent-verification-20261031.json |
 | 10-31 | L1 local low-rank: standalone 0.8924 P2, but bank RMSE worsens by 0.0000023 → closed; retained-family proxy gains do not forecast new-family gains | FAMILY_AUDIT.md |
 | 10-31 | New-family audit: build order LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture | FAMILY_AUDIT.md |
 | 10-31 | S0 all79 reproduces retained R9 exactly: tree/NN/average max difference 0.0; saved CV 0.8668706424 | experiments/S0-full-parity-verification-20261031.json |

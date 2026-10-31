@@ -1,0 +1,119 @@
+{
+  "state": "complete",
+  "experiment": "E3",
+  "training_plan_sha256": "7a77a64a38bacb61ec97441a7cc3e6c4ea0925c384737535c91f66cc75f2ff95",
+  "shared_plan_sha256": "8ed6cc1cd8c3d0ea041260f2acbc9c8fc0262afc2f0be3df7cc1414c91f78f52",
+  "primary": {
+    "primary": {
+      "rows": 281504,
+      "users": 92500,
+      "control_rmse": 0.8470131553621849,
+      "treatment_rmse": 0.8470144642481541,
+      "delta_rmse": 1.3088859691645638e-06,
+      "fold_deltas": [
+        1.3088859691645638e-06,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": 2.217288982859825e-06,
+      "cluster_normal_95_mse_interval": [
+        -4.2782838113819656e-05,
+        4.721741607953931e-05
+      ],
+      "all_folds_improve": false
+    },
+    "replacement_diagnostic": {
+      "rows": 281504,
+      "users": 92500,
+      "control_rmse": 0.8470131569116545,
+      "treatment_rmse": 0.8470217948207927,
+      "delta_rmse": 8.637909138187183e-06,
+      "fold_deltas": [
+        8.637909138187183e-06,
+        null,
+        null,
+        null,
+        null
+      ],
+      "delta_mse": 1.4632919990089325e-05,
+      "cluster_normal_95_mse_interval": [
+        -4.206242357726e-05,
+        7.132826355743866e-05
+      ],
+      "all_folds_improve": false
+    },
+    "selected_penalties": {
+      "duplicate_control": 1,
+      "control_plus_treatment": 10,
+      "control_only": 1,
+      "treatment_only": 1
+    },
+    "experiment": "E3",
+    "plan_sha256": "8ed6cc1cd8c3d0ea041260f2acbc9c8fc0262afc2f0be3df7cc1414c91f78f52",
+    "arms": {
+      "control": {
+        "receipt_sha256": "c08974d0abe7b629db093037b6de2615e09aadd31c74824c25b93c4242b0224c",
+        "prediction_sha256": "c1f31c35fca7224782d9d8a3cdab1df66b2fd932c0716fba502f4a3432158295",
+        "receipt": "/Users/quan/workspace/netflix_challenge/artifacts/ordinal/E3-gate-20261031/control-receipt.json",
+        "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/selection-objective/SO1-control.e2.f32"
+      },
+      "treatment": {
+        "receipt_sha256": "21e8cff589c3c1b7c9027ca3942c9ea7b32e8a6884f5d9280975b54d7e23f672",
+        "prediction_sha256": "95d5dafeb3cb852c318ea47b268ba0bff79a2bf889c2ec1698a67c6f1d677987",
+        "receipt": "/Users/quan/workspace/netflix_challenge/artifacts/ordinal/E3-gate-20261031/treatment-receipt.json",
+        "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/ordinal/E3-select-20261031.e2.f32"
+      }
+    },
+    "minimum_gain": 0.0003,
+    "passes_p2_gate": false,
+    "scope": "P2 user fold 0 only; identical duplicate-control comparison, penalty selection on fold 1, fits on folds 2-4 then 1-4. Full-bank promotion remains separate.",
+    "training_provenance": "Owner-validated completion receipts; this scorer does not audit trainer-specific settings."
+  },
+  "all_folds": {
+    "rows": 1407566,
+    "users": 462215,
+    "control_rmse": 0.8477011477709856,
+    "treatment_rmse": 0.8476883811135434,
+    "delta_rmse": -1.2766657442209173e-05,
+    "fold_deltas": [
+      1.3088859691645638e-06,
+      1.5420134036325805e-07,
+      -1.712968329992126e-05,
+      -6.3721467307154e-06,
+      -4.1845757163927466e-05
+    ],
+    "delta_mse": -2.164445734642513e-05,
+    "cluster_normal_95_mse_interval": [
+      -4.00040221627916e-05,
+      -3.2848925300586573e-06
+    ],
+    "all_folds_improve": false,
+    "selected_penalties": {
+      "duplicate_control": [
+        1,
+        100,
+        1,
+        1,
+        1
+      ],
+      "control_plus_treatment": [
+        10,
+        100,
+        1,
+        1,
+        1
+      ]
+    },
+    "passes_all_fold_gate": false,
+    "minimum_gain": 0.0003,
+    "scope": "Additional E3 nested five-fold P2 check; require the shared fold-0 gate separately. No full-bank promotion claim."
+  },
+  "saved_all_fold_predictions": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/ordinal/E3-gate-20261031/duplicate_control.npy": "afb8aeffa01f34688e1ab4721891db761f56c27c796bd7ae63726e586e4e96cf",
+    "/Users/quan/workspace/netflix_challenge/artifacts/ordinal/E3-gate-20261031/control_plus_treatment.npy": "180bc005d038e990cb27034589693bef3f3b69742ed879694791c031775faf04"
+  },
+  "passes_both_P2_gates": false,
+  "scope": "Both fixed P2 gates required; a pass permits the registered full-training follow-up, never automatic promotion."
+}
