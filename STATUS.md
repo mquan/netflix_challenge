@@ -33,8 +33,8 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 | Job | Owner | Check |
 |---|---|---|
-| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; runners 39539/39615 and worker groups verified live. First n4 arm has tree folds 0/1/2/4 complete, fold 3 running; n1 has fold 2 complete and workers continue; neither arm complete. 25 fixed arms total; `experiments/S0-lanes-20261031-launch.json` |
-| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 live, PID 38985/session 51948; batch progress in `experiments/E3-select-20261031.log` (5000/6168 at elapsed 83m). Frozen gate handoff PID 60202/session 35306 verified waiting; both S0 worker groups also live. Handoff audits completion and runs both gates once after trainer+runner exit; `experiments/E3-gate-handoff-20261031-launch.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified. n4 tree complete and independently verified (0.8747113); neural PID 81078/session 83214 live. n1 tree workers remain live under runner 39539/session 96236. Neither arm's 50/50 result complete; all 25 fixed arms remain scheduled. `experiments/S0-diversity-s20261031-n4-tree-verification-20261031.json` |
+| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 live, PID 38985/session 51948; batch progress in `experiments/E3-select-20261031.log` (5600/6168 at elapsed 89m). Frozen gate handoff PID 60202/session 35306 verified waiting; audits completion and runs both gates once after trainer+runner exit; `experiments/E3-gate-handoff-20261031-launch.json` |
 
 ## Next actions
 
