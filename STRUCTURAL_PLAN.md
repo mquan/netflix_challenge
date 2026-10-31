@@ -123,3 +123,30 @@ of reach on this compute and evaluate before continuing.
 - **One shared program.** Both sessions on this branch (Claude, Codex)
   claim lanes in GOAL.md before starting, and every gate is written down
   before its score.
+
+## Timeline on the current machine (no cloud GPUs — user decision, 2026-10-31)
+
+Hardware: one Apple M3 Max (10 performance + 4 efficiency CPU cores, 30-core
+GPU, 96 GB unified memory). Measured costs from `experiments/*.json`:
+
+| Job | Time |
+|---|---:|
+| A2h select + Stage C refit | 7.7 h + 4.9 h |
+| N1 refit | 8.2 h |
+| Bayes r128 (B3/B4), one run at 4 threads | ≈12.5 h |
+| K1 SGD / RBM, one run | ≈1 h / ≈2 h |
+| Full-bank comparison (tree s3 + NN2) | ≈1 h per bank |
+
+| Lane | Estimate | Wall-clock |
+|---|---|---|
+| 0. Scoping | blends on existing columns | 1–2 days |
+| 1. Base models (CPU) | BK4 3–5 days of code + 10–20 runs of 2–6 h; timeSVD++ at f 1000–2000 ≈8 h/run; chains hours each | 2–3 weeks |
+| 2. Transformer (GPU) | long-context attention 2–4 days of code; d128 L4 ≈20–25 h select + ≈12 h refit + pilots; d256 ≈3–4 days per run; merged choice/E3 model one more large run | **4–6 weeks (critical path)** |
+| 3. Blend-aware selection | ridge on P2 + ≈1 h full-bank checks | ~1 week, overlapped |
+| 4. Production | ≈40–60 GPU-hours + 100–150 CPU core-hours of Stage C retrains, then qualifying predictions and offset re-measurement | 1–1.5 weeks |
+
+**Total ≈7–10 weeks**, or **≈5–7 weeks** if lane 2 stops at d128 (lower
+ceiling). The single GPU serialises lane 2, the other session's GPU work and
+lane 4's GPU refits. d256 runs may need the GPU alone: two A2c runs once hit
+110 GB. CPU work runs 2–3 jobs in parallel within the ~10-thread rule. The
+week-3 stop rule (≥0.0015 dev-CV bank gain) still applies.
