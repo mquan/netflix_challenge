@@ -48,7 +48,7 @@ experiment.
 | Slot | Bet | State |
 |---|---|---|
 | 1 | E1 stage 1: P2 up-weighting in the K1-family Stage C retrain | running since 2026-10-30 20:40 (`experiments/E1-chain.out`) |
-| 2 | E1-Bayes: the same weighting as per-row noise precision in Bayes timeSVD++ (rank 64) | being implemented |
+| 2 | E1-Bayes: the same weighting as per-row noise precision in the B4 Stage C retrain (rank 128) | w2 running from 2026-10-30; w1 control queued after slot 1 (`experiments/E1-B-B4-*.log`) |
 | 3 | open | — |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
