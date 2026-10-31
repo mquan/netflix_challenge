@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-31T05:16:50.946961+00:00",
+  "state": "verified_failed_gate",
+  "rows": 1408395,
+  "users": 462858,
+  "hashes_rechecked": 73,
+  "source_result_sha256": "227ce5ad29935c6219a9bde39232ab8a79057274d82815b91ce3b63dfca68861",
+  "plan_sha256": "dddf5fef99ea56c7360ece2fe5a826f32303ccea79925c4b363ea3f1f3c0841b",
+  "baseline_rmse": 0.8759524497073342,
+  "w1_rmse": 0.8759527313194613,
+  "same_binary_noise": 2.8161212706212524e-07,
+  "arms": {
+    "w2": {
+      "rmse": 0.8760935145502629,
+      "delta_rmse": 0.00014078323080157773,
+      "fold_deltas": [
+        0.0001717537805364655,
+        7.34389544790881e-05,
+        0.00017192148376921068,
+        0.0001912502385732484,
+        9.520306311527893e-05
+      ],
+      "cluster_mse_interval": [
+        0.00016754760312045076,
+        0.0003257698588942151
+      ],
+      "passes_gate": false
+    },
+    "w3": {
+      "rmse": 0.8764472883613935,
+      "delta_rmse": 0.000494557041932242,
+      "fold_deltas": [
+        0.0005636772680098767,
+        0.00041073691472393037,
+        0.000542481920942417,
+        0.0005243354400922273,
+        0.0004311074425001893
+      ],
+      "cluster_mse_interval": [
+        0.0007395129713074666,
+        0.0009938105687235027
+      ],
+      "passes_gate": false
+    }
+  },
+  "decision": "Close fixed E1 K1 weighting recipe. Neither treatment improves any fold; no RBM or fine-tune scale-up under this gate.",
+  "limitation": "Reused original-probe development rehearsal; no hidden-test or promoted-best score claim."
+}

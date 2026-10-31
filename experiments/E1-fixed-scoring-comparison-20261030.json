@@ -1,0 +1,112 @@
+{
+  "same_binary_noise": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8759524498035316,
+    "treatment_rmse": 0.8759527312014549,
+    "delta_rmse": 2.813979232962893e-07,
+    "fold_deltas": [
+      1.3126024145382331e-06,
+      4.593920920115124e-06,
+      1.2559415913271366e-05,
+      -2.248255709358382e-05,
+      5.468324044244355e-06
+    ],
+    "delta_mse": 4.929824797610387e-07,
+    "cluster_normal_95_mse_interval": [
+      -1.9508732792806002e-05,
+      2.0494697752328078e-05
+    ],
+    "all_folds_improve": false
+  },
+  "arms": {
+    "w2": {
+      "comparison": {
+        "rows": 1408395,
+        "users": 462858,
+        "control_rmse": 0.8759527312014549,
+        "treatment_rmse": 0.8760935146502606,
+        "delta_rmse": 0.000140783448805748,
+        "fold_deltas": [
+          0.00017175374294364776,
+          7.34390956226294e-05,
+          0.0001719215954190112,
+          0.00019125055030499993,
+          9.520362706183505e-05
+        ],
+        "delta_mse": 0.0002466591129582093,
+        "cluster_normal_95_mse_interval": [
+          0.00016754798480917706,
+          0.0003257702411072415
+        ],
+        "all_folds_improve": false
+      },
+      "passes_gate": false
+    },
+    "w3": {
+      "comparison": {
+        "rows": 1408395,
+        "users": 462858,
+        "control_rmse": 0.8759527312014549,
+        "treatment_rmse": 0.8764472882977681,
+        "delta_rmse": 0.0004945570963131862,
+        "fold_deltas": [
+          0.0005636769434993472,
+          0.00041073715397876853,
+          0.0005424820299988475,
+          0.0005243355676423089,
+          0.0004311075639168438
+        ],
+        "delta_mse": 0.0008666618652226625,
+        "cluster_normal_95_mse_interval": [
+          0.0007395130661331818,
+          0.0009938106643121432
+        ],
+        "all_folds_improve": false
+      },
+      "passes_gate": false
+    }
+  },
+  "passes_gate": false,
+  "lowest_rmse_arm": "w2",
+  "limitation": "Reused original-probe development evidence; Stage C effect estimate, not a hidden-test score.",
+  "fit_rounds": 969,
+  "baseline_rmse": 0.8759524498035316,
+  "historical_baseline_rmse": 0.8759524498035316,
+  "plan_sha256": "dddf5fef99ea56c7360ece2fe5a826f32303ccea79925c4b363ea3f1f3c0841b",
+  "generated": {
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-K1-w1.json": "bf87e4a13fd12a19f18166dcb7db21fcf123ed62e2d6570627b3cbb688825216",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn256td-w1.json": "777368bdaa8df7d6b1897dd8d27d8e4264859bc771f17bc7966b3d4e12749d40",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn64-w1.json": "b178527d96323d523ffd30b2f98df6b150f7b898270df313be6197b38027dc02",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-K1-w1.f32": "4aa43cb7419e9912836d7e58ab3ebff63d0b9347e0fd4aef97536e5df37e8ff4",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w1.f32": "d759b8aca92ed49400133b483007b2ba82fa0e29132d38a7c6989bf9f59f235a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn64-w1.f32": "1421f4e52ead61c702e4abd7a0f78980b69f3bd44d785d3f147ff641e6476092",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-rbm100c.f32": "b7e7ab532626ee63688161cf868b7ec69cfec1503f903b11d8a383db81870cc7",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w1.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-K1-w2.json": "b382bbc33ae48a09144ea01286369983481a86767ebbb01e40941d32b5e8ad2f",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn256td-w2.json": "3d8a740cc952eb1ce6d1ec97a5fb32764026d483d7f0288dbad57ceffa85a9d6",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn64-w2.json": "ed312a97bfc26a89629ab30d0d2f1702acc0cad31f7cc5aee532a4c2a3a25e9e",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-K1-w2.f32": "6eecf1395310511f82de8e98b18f3b5bd2717b3ef54ad943163a87b362f8f19b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w2.f32": "173e4f719ef9160279f63217be78c51a1c1699b39a8b84d89f3c3f21f0466127",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn64-w2.f32": "491a4ba51f1c128893e19bbc9ddbbcb43a7b3e6bffb9be1ebe2829e4fba16b5a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w2.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-K1-w3.json": "7eb7a029b54813f8f1cdfaf9d43a8df6e4059e0eba4be5f88d5626717c422f8e",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn256td-w3.json": "b25351da445f7f04b07e0a34e1f0e192566b1473a88ec9fc69d552ddf0aff690",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-B-knn64-w3.json": "9a78d1db23d6e30d5a4ce9235fbb0ba603735f136f77796857a65ce67c01056d",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-K1-w3.f32": "dda46d883b651fe3b90b9e57e4391acdbee77fdbe52c79ef016ba6b2e5a2cdd9",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w3.f32": "6812949d542c25457b15de11a25250b205accbf77be07e74e52883d1bd3c5993",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn64-w3.f32": "197fa8864776a9b36beee229527ee01de99b7287dbc503f5a1c56cbbff2de93b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/B-knn256td-w3.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9"
+  },
+  "predictions": {
+    "original": "3eae82d88808e348383377c3b84f17229d2fd2a19f3222e83cec0735447c734b",
+    "w1": "36e2eb63fdc2a6728c49f8827d95a4ffa5d740aff992d38a58519e7724585722",
+    "w2": "277b9498bdc6ccb34d2e4642b91e6c5a0ada4a2549daa9546cd3f8fe0c4d0b3d",
+    "w3": "9a0aefe7e667f85bc653016e0f3d84a066bec4336eba82b1c6fd323b9a1aab0c"
+  }
+}

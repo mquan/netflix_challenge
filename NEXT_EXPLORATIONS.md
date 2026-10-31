@@ -159,8 +159,16 @@ is fit once on P2 and scores every b bank. The original bank reproduces
 Run-to-run noise is 3e-7. Up-weighting P2 rows makes the Stage C bank
 *worse*, monotonically in the weight, on every fold. The paired user-cluster
 95% intervals on ΔMSE exclude zero for both arms. Standalone, no epoch of the
-w2 K1 run beats the unweighted final (best 0.89504 vs 0.89422), so a
-different epoch could not rescue it, and that bound needs no probe selection.
+w2 K1 run beats the unweighted final (best 0.89504 vs 0.89422). This offers no
+standalone evidence for an epoch rescue; it does not measure the blend value
+of untested epochs. The fixed recipe is closed without selecting another epoch.
+
+Independent verification rehashed all 73 bound inputs/artifacts and rescored
+all four saved float32 prediction files across every row and user fold. Both
+treatments still worsen every fold; the independent deltas agree with the
+original report within 1e-7. The archived comparison and verification are
+`experiments/E1-fixed-scoring-comparison-20261030.json` and
+`experiments/E1-fixed-scoring-verification-20261030.json`.
 
 The pre-registered early stop applied. The Bayes w1 control was never launched
 (`E1-bayes-control-queue-20261030.state.json`: `skipped_no_k1_gain`). The
@@ -168,10 +176,12 @@ Bayes w2 arm (this session's job) was stopped at sweep 15 of 160, before any
 kept sample, and its receipt records return code 143. No Bayes score exists or
 is claimed. The `--row-weights` code stays, tested, for any future use.
 
-**Reading.** Plain union training already absorbs the probe-like rows about as
-well as this model family can. Extra weight overfits those 1.4M rows instead
-of transferring recency. The Stage C offset is not a lever. The gap has to come from
-new modelling signal, which agrees with round 12's conclusion.
+**Reading.** The tested weights 2/3 under the fixed 41-epoch K1 recipe fail to
+increase the measured Stage C benefit. This closes the declared weighting
+experiment and its conditional scale-up; it does not establish an upper bound
+on every retraining objective or on a completed weighted Bayes model. The
+measured offset and estimated target gap remain unchanged. New modelling
+signal remains the next planned direction.
 
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
