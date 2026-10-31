@@ -238,3 +238,22 @@ early-stop on fold 1, evaluate on fold 0.
   build it properly as a column or an N1 variant.
 - Otherwise choice-identity signal saturates with N1 at this level of
   modelling.
+
+### H8 result (2026-10-31): borderline
+
+`artifacts/headroom/H8-p2-choices-beyond-N1.json` (`scripts/headroom_choices.py`), P2 fold 0:
+
+| Comparison | Δ RMSE |
+|---|---:|
+| choice-affinity residual model vs the bank11 + N1 ridge base (pre-registered metric) | **−0.00036** |
+| vs a matched tree on the base alone (removes recalibration credit) | −0.00029, 95% ΔMSE interval [−0.00066, −0.00033] |
+
+The top features are the whole-history and 30-day affinities between the
+target movie and the user's unlabelled choices (q·mean q, q·mean y). The gate
+formally passes (−0.00036 ≤ −0.0003), but by less than the recalibration
+margin, and the P2-ridge setting overstated H4 by more than 20× relative to
+the promoted blend. Reading: some choice-identity information remains beyond
+N1, of order 0.0003 at most on P2. It cannot close the 0.0022 gap on its own.
+The decisive number remains N1's full-bank dev CV. If N1 lands near the gap,
+a choice-affinity column becomes a cheap CPU complement worth building at
+production quality.
