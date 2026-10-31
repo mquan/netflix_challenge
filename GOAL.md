@@ -81,7 +81,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
 | Structural plan week-0 scoping | Codex | full all79 parity exact; 25 further fixed arms running through two CPU lanes (13+12); n4 tree audited, neural live; narrative snapshot preserves original provenance |
-| S0 complete-result reporter | Codex | ready: five tests pass, real reference parity exact, actual partial experiment rejected without summary; source bound before any nonreference complete average; bash handoff prepared, no frozen training edits |
+| S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
 
 ## Closed bets
 
