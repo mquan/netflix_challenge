@@ -31,7 +31,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 | Job | Owner | Check |
 |---|---|---|
 | S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; two CPU lanes live (runners 39539/39615, managed sessions 96236/83214), first arms n1/n4; 25 fixed arms total. `experiments/S0-lanes-20261031-launch.json` |
-| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Live PID 38985, managed session 51948; started with no other trainer live; `experiments/E3-select-20261031.log` |
+| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 live, PID 38985/session 51948. Decision waits for epoch 2 and both registered gates; `experiments/E3-select-20261031.log` |
 
 ## Next actions
 
