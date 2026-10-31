@@ -98,3 +98,18 @@ This confirms the dependency, not its ordinary score effect. No H4 learner
 was fitted, no candidate score was computed, and no source or existing result
 was modified. The 0.000814 signal may survive a properly isolated evaluation;
 that evaluation is still required before accepting it as a held-out gain.
+
+
+## H8 nested follow-up
+
+The independent H8 check in `experiments/H8-nested-plan-20261031.json` keeps
+the original choice features/tree settings and isolates fold 0 throughout
+ridge stacking, tree round selection and final refitting. Three fixture tests
+verify label independence at the outer boundary and the inner selection
+boundary. Its real P2 result is −0.0003734 versus the raw ridge and −0.0002892
+versus a matched base-only tree (`experiments/H8-nested-result-20261031.json`).
+Thus the modest H8 signal survives this validation; the earlier dependency
+audit did not establish that the signal would disappear. This follow-up also
+changes the final-refit protocol, so score differences cannot be attributed
+solely to the isolation fix. The original H4 result has not been rerun here.
+No full-bank or hidden-test claim follows from this single P2 fold.

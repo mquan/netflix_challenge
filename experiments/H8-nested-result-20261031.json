@@ -1,0 +1,87 @@
+{
+  "plan_sha256": "7d351f297d212d6c158d1cf7b1af6c98527c9773242e3a703c7789e26640f7a6",
+  "rows": 1407566,
+  "held_rows": 281504,
+  "selected_iterations": {
+    "base_tree": 39,
+    "choice_tree": 114
+  },
+  "choices_vs_base": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8465348719739756,
+    "treatment_rmse": 0.8461614542620147,
+    "delta_rmse": -0.00037341771196086615,
+    "fold_deltas": [
+      -0.00037341771196086615,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0006320827891874909,
+    "cluster_normal_95_mse_interval": [
+      -0.0007894888333435294,
+      -0.0004746767450314525
+    ],
+    "all_folds_improve": false
+  },
+  "choices_vs_matched_tree": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.846450690510609,
+    "treatment_rmse": 0.8461614542620147,
+    "delta_rmse": -0.0002892362485942268,
+    "fold_deltas": [
+      -0.0002892362485942268,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0004895647870788852,
+    "cluster_normal_95_mse_interval": [
+      -0.0006427703332361601,
+      -0.0003363592409216103
+    ],
+    "all_folds_improve": false
+  },
+  "passes_original_p2_threshold": true,
+  "choice_feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "importance": {
+    "base_tree": [
+      4112.834860861301
+    ],
+    "choice_tree": [
+      5121.0729558467865,
+      1103.4891674518585,
+      1598.6660702228546,
+      1839.3172125816345,
+      1702.9613602161407,
+      1222.3048288822174,
+      1889.0298433303833,
+      1949.1006684303284,
+      1519.8270688056946,
+      864.1709914207458,
+      2322.6669085025787,
+      2581.5092825889587,
+      1683.0838150978088
+    ]
+  },
+  "prediction_sha256": "de560fb78ca31cf1d417d90a022eada4de89139752a240f1db6f7d4ad4b02ec3",
+  "metric": "Independent nested H8 check, P2 fold 0. Fold 0 labels excluded from all ridge and tree fits and selection. No full-bank promotion.",
+  "difference_from_H8": "Proper inner/outer stacking plus final tree refit on folds 1-4; features and tree settings fixed to H8. Not a one-variable numerical reproduction of its original nonnested fit."
+}

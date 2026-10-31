@@ -19,6 +19,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
 | E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
 | A7 sibling pooling | >=0.0005 after Stage C, all five folds | failed: +0.001779 worse on all folds |
+| H8 choice affinity | >=0.0003 P2 gain over bank11+N1 ridge | nested check passes at 0.000373; matched-tree increment 0.000289; full-bank value pending |
 
 `scripts/p2_candidate_gate.py --plan PLAN --output RESULT` is the shared
 scoring adapter for completed matched P2 columns. It directly reuses
@@ -679,3 +680,23 @@ fold-0 label invariance (predictions and selected rounds), exclusion of fold-1
 labels from inner training bases, own-fold exclusion and label-free choice
 features. All three pass. The real CPU check is running while N1's training
 process is live, under the existing CPU/GPU priority rules.
+
+### H8 nested result
+
+The fixed check completed successfully. P2 fold-0 RMSE is 0.8465348720 for
+the bank11+N1 ridge, 0.8464506905 for its matched base-only residual tree,
+and 0.8461614543 with the choice features. Gain versus ridge is
+**0.0003734177**, passing the original H8 threshold; gain versus the matched
+tree is **0.0002892362**, with user-cluster delta-MSE interval
+[−0.00064277, −0.00033636]. Round counts were selected on fold 1 only
+(control 39, treatment 114), then fixed for the final 1–4 refits.
+
+The signal persists under outer-fold isolation. This is a small CPU complement
+to N1, not evidence of a 0.0022 gain or a full-bank promotion. Only fold 0 was
+evaluated; the full-bank/all-fold gate remains necessary once N1's full-data
+column is available. No original-probe score was read by this check.
+
+Reports: `experiments/H8-nested-{result,verification}-20261031.json`.
+A fresh rescore from the saved fold-0 predictions reproduces both comparison
+records exactly; all 20 frozen inputs and the prediction payload were
+rehashed unchanged. No recipe or threshold changed after the result.
