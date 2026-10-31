@@ -13,7 +13,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | Bet | Fixed decision | Current evidence/state |
 |---|---|---|
 | E1 Stage C weighting | >=0.0005, run-noise check, all five folds | closed: w2/w3 worse on every fold |
-| N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | P2 passed (+0.001213); 13-epoch refit complete; full-bank evaluation running in owner's queue |
+| N1 choice-history input | original N1 P2 gate, then full-bank all-fold comparison | full result 0.86670063: 0.000170 overall gain, fold 1 worse; promotion and substantial-continuation gates fail |
 | SO1 auxiliary objective | frozen SO1 plan/gates | waits behind N1 in owner's GPU queue |
 | E2 two-sided context | original E2 blend gate; recipe not yet frozen | CPU components verified; deferred after headroom review |
 | E3 CE loss | >=0.0003 under registered matched protocol | code ready, GPU deferred |
@@ -829,3 +829,24 @@ are in `experiments/H8-query-column-verification-20261031.json`; payloads are in
 H8 remains unscored. The pre-registered full-bank comparison still waits for
 N1/SO1 queue completion and GPU release, then binds the retained reference before
 any H8 score. Its recipe, matched control and all-five-fold promotion gate stand.
+
+## N1 full-bank comparison independently verified (2026-10-31)
+
+The fixed 13-epoch N1 refit and registered three-seed tree/NN2 comparison
+completed. The 50/50 average scores **0.8667006277**, versus retained R9-LAT-A2h
+**0.8668706424**: gain **0.0001700148**. Fold deltas (candidate minus retained)
+are −0.000226401, **+0.0000377574**, −0.000210640, −0.000274501,
+−0.000175834. The all-five-fold promotion gate fails because fold 1 worsens;
+the substantial-continuation rule also fails. No promotion or reference refresh.
+
+Independent scoring from the saved predictions exactly reproduces the owner's
+comparison, including the user-cluster MSE interval. The saved average agrees
+with the registered 50/50 tree/NN average to 2.39e-7. All four prediction hashes
+were verified before and after scoring. Evidence:
+`experiments/N1-full-independent-verification-20261031.json`.
+
+The promoted best remains 0.8668706425 and the estimated development target gap
+remains 0.0022206425. SO1's original control/treatment queue continues unchanged.
+The already registered H8 comparison remains pending queue release, with its
+N1-containing matched bank and unscored columns preserved. This result provides
+no hidden-test verification and does not authorize a new N1 parameter sweep.

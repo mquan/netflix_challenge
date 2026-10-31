@@ -1,0 +1,46 @@
+{
+  "state": "complete_not_promoted",
+  "comparison": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8668706424233039,
+    "treatment_rmse": 0.8667006276575644,
+    "delta_rmse": -0.00017001476573952345,
+    "fold_deltas": [
+      -0.0002264009884355156,
+      3.775739425349034e-05,
+      -0.0002106395576628728,
+      -0.0002745006913374981,
+      -0.0001758344852929028
+    ],
+    "delta_mse": -0.0002947327133754517,
+    "cluster_normal_95_mse_interval": [
+      -0.00037001832253280353,
+      -0.00021944710421809992
+    ],
+    "all_folds_improve": false
+  },
+  "owner_comparison_exactly_reproduced": true,
+  "fixed_average_max_abs_error": 2.384185791015625e-07,
+  "prediction_hashes": {
+    "tree": "e5acd73606d65bf5d2b751de8709a29ada3135bf1ca5344d0b59235e567eccce",
+    "nn": "101f98537eadd8ff6e271d28bbf399e51213b04c451134118bbfe01861926f17",
+    "avg": "0920d7e8844ea6a89fa87fe3039417cfdd04af731c1379a16f039a040554e164",
+    "reference": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487"
+  },
+  "prediction_paths": {
+    "tree": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-blend-s3.refit.f32",
+    "nn": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-blend-NN2.nn.f32",
+    "avg": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-blend-NN2.avg.f32",
+    "reference": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32"
+  },
+  "report_hashes": {
+    "tree": "d45cba25610a4b402411ea898de34f1fada17dc26edf0eede990472da556cb1d",
+    "neural": "dc47e3e9ebdda921f58c02d58b1e4b437336bfffb28813eea92228dee1e77da2",
+    "owner_comparison": "a9b3e377e7967bb42b20d1e4f64fdc5a71e1304a5d8ae7f7bc025f6ed7c3ec58"
+  },
+  "goal_dev_target": 0.86465,
+  "retained_best": 0.8668706425,
+  "retained_gap_to_target": 0.0022206424999999808,
+  "decision": "No promotion: fold 1 worsens; no substantial-continuation gate; SO1 continues unchanged. H8 fixed comparison remains pending queue release."
+}
