@@ -1,3 +1,5 @@
+> **Superseded 2026-10-31:** the current resume point is [STATUS.md](STATUS.md). This file is kept as history.
+
 # Resumed at user request, 2026-10-30
 
 The root-owned serial research chain is `SO1-resume-20261030`. Inspect
