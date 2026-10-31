@@ -22,8 +22,8 @@ from train_holdout import digest
 
 DEV = ['artifacts/rehearsal/B-K1.f32', 'artifacts/rehearsal/B-knn256td.netflix.f32',
        'artifacts/rehearsal/B-knn64.netflix.f32', 'artifacts/rehearsal/B-knn256td.netflix.support.f32']
-STAGE_C = ['artifacts/sibling/K1.f32', 'artifacts/sibling/knn256td.f32', 'artifacts/sibling/knn64.f32',
-           'artifacts/sibling/knn256td.support.f32']
+STAGE_C = ['artifacts/sibling/v2/K1.f32', 'artifacts/sibling/v2/knn256td.f32', 'artifacts/sibling/v2/knn64.f32',
+           'artifacts/sibling/v2/knn256td.support.f32']
 PENALTY = 10.
 
 
@@ -40,7 +40,7 @@ def cols(paths):
     return np.column_stack([np.fromfile(p, dtype='<f4').astype(float) for p in paths])
 
 
-def run(output, data_path='data/processed/netflix.bin', amask='artifacts/sibling/T-plus-A.bin.amask'):
+def run(output, data_path='data/processed/netflix.bin', amask='artifacts/sibling/T-plus-A-v2.bin.amask'):
     output = Path(output)
     if output.exists():
         raise FileExistsError(output)
