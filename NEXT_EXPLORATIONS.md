@@ -119,6 +119,14 @@ still running the expected command. Status is
 duplicate scorer. Four focused tests cover unchanged P2/a banks, undeclared
 arm rejection, all-fold gating, run-noise rejection and the minimum gain.
 
+An additional integration fixture exercises the actual data loader, metadata,
+contextual ridge and LightGBM on 100 users / 200 queries. Changing evaluation
+labels changes the score but leaves all four arms' prediction bytes identical;
+only one P2 fit is performed per evaluation. A failed producer receipt rejects
+before output creation or fitting. Evidence is
+`experiments/E1-fixed-scoring-integration-20261030.json`; the frozen real-data
+scorer and plan remain unchanged. These are fixture values, not Netflix gains.
+
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
 The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
