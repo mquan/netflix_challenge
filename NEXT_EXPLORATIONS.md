@@ -1168,3 +1168,31 @@ mismatches, exact shared fold-0 parity and held-fold label exclusion. Only
 fixtures ran; E3 remains in epoch 1 and no real E3 P2 score was read. The
 command's source will be frozen into its scoring manifest before the real
 gates, while the original E3 training plan and trainer remain unchanged.
+
+### E3 fixed treatment complete; both gates fail (2026-10-31)
+
+The unchanged two-epoch CE=0.1 treatment and frozen automatic audit handoff
+both exited zero. The completion audit verified exact arguments, source and
+warm/data hashes, libraries, full two-epoch budget, and every saved prediction
+and checkpoint hash before scoring. Epoch-2 standalone P2 RMSE is
+0.8649681712; this is not the incremental-value gate.
+
+The shared fold-0 comparison is control 0.8470131554 versus treatment
+0.8470144642: **0.0000013089 worse**. The separate nested five-fold comparison
+is control 0.8477011478 versus treatment 0.8476883811: gain
+**0.0000127667**, below the fixed 0.0003 minimum. Fold deltas (treatment minus
+control) are [+0.0000013089, +0.0000001542, −0.0000171297, −0.0000063721,
+−0.0000418458]; folds 0 and 1 worsen. **Both registered gates fail.**
+
+`experiments/E3-comparison-20261031.json` archives the unchanged result;
+`experiments/E3-independent-verification-20261031.json` verifies frozen inputs
+and output hashes, and exactly reproduces both comparisons from the saved
+float64 predictions, including shared fold-0 parity. Training and handoff
+managed sessions are terminal at exit zero. Close this fixed bet with no
+full-T pair, coefficient/epoch/seed sweep, or promotion. Retained R9 remains
+0.8668706424 dev CV; the estimated winner-target gap remains about 0.0041.
+
+S0 continues independently: the first four-column tree passed the unchanged
+config/bank/library/saved-score audit at RMSE 0.8747112544, and its neural stage
+is live. Its final 50/50 result and the other fixed arms remain pending. No
+partial scoping result changes their frozen recipes or schedule.

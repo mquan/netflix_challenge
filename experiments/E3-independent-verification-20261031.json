@@ -1,0 +1,22 @@
+{
+  "state": "verified_complete_both_gates_failed",
+  "training_runner_exit": 0,
+  "gate_handoff_exit": 0,
+  "frozen_inputs_and_all_saved_payload_hashes_verified": true,
+  "saved_float64_predictions_reproduce_both_comparisons_exactly": true,
+  "comparison_sha256": "6f967ca68185dc9f7bbf0f8ba7edb1c38df4d931147f58c3a0a2b3a5f35eb6c4",
+  "archived_comparison_sha256": "6f967ca68185dc9f7bbf0f8ba7edb1c38df4d931147f58c3a0a2b3a5f35eb6c4",
+  "shared_fold0_delta_rmse": 1.3088859691645638e-06,
+  "all_fold_delta_rmse": -1.2766657442209173e-05,
+  "all_fold_deltas": [
+    1.3088859691645638e-06,
+    1.5420134036325805e-07,
+    -1.712968329992126e-05,
+    -6.3721467307154e-06,
+    -4.1845757163927466e-05
+  ],
+  "minimum_gain": 0.0003,
+  "decision": "Close E3 fixed CE=0.1 two-epoch P2 bet. Neither gate passes; no full-training follow-up, sweep or promotion.",
+  "retained_reference": "R9-LAT-A2h",
+  "retained_dev_rmse": 0.8668706424233039
+}
