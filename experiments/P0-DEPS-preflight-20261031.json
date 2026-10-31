@@ -1,0 +1,15 @@
+{
+  "state": "prepared_not_launched",
+  "plan_sha256": "9a517c90d1c84545e02e2e57110eaf6c7653234dcfb0666c60f4f390af3ce5b9",
+  "frozen_inputs_checked": 263,
+  "checksum_checks_passed": 264,
+  "check_log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-preflight-input-check.log",
+  "check_log_sha256": "e977e1f4c0a7866c2e63cc6a28804bf21f3cb23f8d6dab75ee6317d3f05b81a1",
+  "baseline_graph_and_neighborhood_commands_match_original_recipes_after_path_and_binary_substitution": true,
+  "bash_syntax_passed": true,
+  "actual_resource_gate": "WAIT_P0_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+  "unit_test_methods_passed": 5,
+  "actual_fixture_stage_handoffs_passed": 8,
+  "query_label_isolation_verified": true,
+  "scope": "Four-stage production dependency phase only, prepared without launching training. Both S0 lanes must finish and memory be stably normal; at most one native dependency thread."
+}

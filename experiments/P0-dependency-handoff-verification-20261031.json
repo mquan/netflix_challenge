@@ -1,0 +1,260 @@
+{
+  "state": "both_query_label_native_pipelines_audited",
+  "generator_sha256": "0b214349a38412efc1ce1e3fd57ab7704b422a3ed8a3005b0924c1dbd3b6244b",
+  "auditor_sha256": "a0a79de0012c6bda101ad48701c3fb94aa3bc1e554a4f57c48fc2f4b5efb60af",
+  "plans": [
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/plan.json",
+      "sha256": "3e839a7f648b832a2ba3f50cafb5b377c41af1949e284c44094255cc18e7124a"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/plan.json",
+      "sha256": "b1771a53d498b996c23580cc936b1d2a979f5042060862fba559de1080ab132f"
+    }
+  ],
+  "receipts": [
+    {
+      "label": 0,
+      "stage": 0,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/baseline/audit.json",
+      "sha256": "b77052e550248b7618ca665bcf919a8cf827c7c8f498fdf790d4ff6c48d8e52e"
+    },
+    {
+      "label": 0,
+      "stage": 1,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph256/audit.json",
+      "sha256": "c3b82595e325bd2a1e30ce3ff5d21551e4266194c8ca7a4de00bcb837f013501"
+    },
+    {
+      "label": 0,
+      "stage": 2,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph64/audit.json",
+      "sha256": "147030ff5c4ef696faca6248462f069cd86122bc733017ccf721e1d98539059a"
+    },
+    {
+      "label": 0,
+      "stage": 3,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/neighborhood/audit.json",
+      "sha256": "43ec68de2fc07c7b06efe997eb276f3948b3b828d4569978a29b229b8e80a941"
+    },
+    {
+      "label": 5,
+      "stage": 0,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/baseline/audit.json",
+      "sha256": "0d4f4306637ee5f56b46e3e152e738dd4ca6fac05d75ff0569e741c0c192cbf8"
+    },
+    {
+      "label": 5,
+      "stage": 1,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph256/audit.json",
+      "sha256": "143214704dc72ff6a061f6a4e41b04b8ac2dfe222bbeb8036748b6adab25619b"
+    },
+    {
+      "label": 5,
+      "stage": 2,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph64/audit.json",
+      "sha256": "d98bd6cc9e2309a9f65b0ebc72c5c07d4b82b63b6beb951b156ef7ef1fc93a2e"
+    },
+    {
+      "label": 5,
+      "stage": 3,
+      "state": "verified_complete",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/neighborhood/audit.json",
+      "sha256": "d86c10b1272879944a0aae8be11f3390491f19600c1dbd795ad40b5ba80c1c88"
+    }
+  ],
+  "commands": [
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "time-baseline",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/data.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/baseline/model.bin",
+      "--iterations",
+      "40",
+      "--rate-scale",
+      "1"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "eval-time-baseline",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/data.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/baseline/model.bin"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "graph",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph256/neighbors256.bin",
+      "--neighbors",
+      "256",
+      "--history-cap",
+      "256"
+    ],
+    [
+      "/Users/quan/.cache/netflix-venv/bin/python",
+      "/Users/quan/workspace/netflix_challenge/scripts/production_graph.py",
+      "--source",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph256/neighbors256.bin",
+      "--neighbors",
+      "64",
+      "--output-dir",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph64/derived"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "neighborhood",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph64/derived/neighbors64.bin",
+      "--time-model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/baseline/model.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/neighborhood/model.bin",
+      "--predictions",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/neighborhood/model.f32",
+      "--iterations",
+      "4",
+      "--fixed-epoch",
+      "--learning-rate",
+      "0.005",
+      "--regularization",
+      "0.002",
+      "--time-decay",
+      "0"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "eval-neighborhood",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/graph64/derived/neighbors64.bin",
+      "--time-model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/baseline/model.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/neighborhood/model.bin",
+      "--predictions",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/0/stages/neighborhood/reload.f32"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "time-baseline",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/data.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/baseline/model.bin",
+      "--iterations",
+      "40",
+      "--rate-scale",
+      "1"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "eval-time-baseline",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/data.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/baseline/model.bin"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "graph",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph256/neighbors256.bin",
+      "--neighbors",
+      "256",
+      "--history-cap",
+      "256"
+    ],
+    [
+      "/Users/quan/.cache/netflix-venv/bin/python",
+      "/Users/quan/workspace/netflix_challenge/scripts/production_graph.py",
+      "--source",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph256/neighbors256.bin",
+      "--neighbors",
+      "64",
+      "--output-dir",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph64/derived"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "neighborhood",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph64/derived/neighbors64.bin",
+      "--time-model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/baseline/model.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/neighborhood/model.bin",
+      "--predictions",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/neighborhood/model.f32",
+      "--iterations",
+      "4",
+      "--fixed-epoch",
+      "--learning-rate",
+      "0.005",
+      "--regularization",
+      "0.002",
+      "--time-decay",
+      "0"
+    ],
+    [
+      "/Users/quan/workspace/netflix_challenge/artifacts/production-replay/bin/netflix-native-fixed",
+      "eval-neighborhood",
+      "--data",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/data.bin",
+      "--graph",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/graph64/derived/neighbors64.bin",
+      "--time-model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/baseline/model.bin",
+      "--model",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/neighborhood/model.bin",
+      "--predictions",
+      "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependency-handoff-fixture/5/stages/neighborhood/reload.f32"
+    ]
+  ],
+  "label_isolation_checks": {
+    "baseline/model.bin": {
+      "byte_identical_except_dataset_fingerprint": false,
+      "byte_identical": true
+    },
+    "graph256/neighbors256.bin": {
+      "byte_identical_except_dataset_fingerprint": true,
+      "byte_identical": false
+    },
+    "graph64/derived/neighbors64.bin": {
+      "byte_identical_except_dataset_fingerprint": true,
+      "byte_identical": false
+    },
+    "neighborhood/model.bin": {
+      "byte_identical_except_dataset_fingerprint": true,
+      "byte_identical": false
+    },
+    "neighborhood/model.f32": {
+      "byte_identical_except_dataset_fingerprint": false,
+      "byte_identical": true
+    },
+    "neighborhood/reload.f32": {
+      "byte_identical_except_dataset_fingerprint": false,
+      "byte_identical": true
+    }
+  },
+  "scope": "Tiny actual native pipelines, query labels zero versus five. All eight stage handoffs and reloads pass. No full production training performed."
+}

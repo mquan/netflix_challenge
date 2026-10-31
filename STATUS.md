@@ -15,47 +15,39 @@ move detail into the linked docs.
 
 ## Current plan
 
-[STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md), with ridge-proxy week-0 scoping done
-(independent full-blender validation in flight) and
-lanes re-ranked:
-1. **New model families** (unproven prospective gain; first pilot L1 failed).
-2. Quality upgrades only in high-slope families (Bayes, GP/local).
-3. Blend-aware selection.
-4. The production pipeline.
+Current authorized work:
+1. **Codex:** retrain the retained bank on production data and build the final export.
+2. **Claude:** [moonshot sequence model](MOONSHOT_REBUILD.md), M0 engineering;
+   its GPU pilot follows Codex's production GPU queue.
+3. **Codex:** finish the fixed S0 full-blender scoping experiment.
 
-The ≈0.0007–0.001 proxy gains describe retained families, not expected gains
-from untried families; [FAMILY_AUDIT.md](FAMILY_AUDIT.md) identifies this
-survivorship bias. No cloud GPUs (user decision). The proposed program costs
-≈7–10 weeks on the M3 Max; this is not a validated ETA for reaching the target.
-The week-3 stop check remains ≥0.0015 bank gain.
+The user permanently closed new-family pilots after L1 failed; see
+[FAMILY_AUDIT.md](FAMILY_AUDIT.md) and [STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md).
+Retained-family proxy gains do not forecast gains from untried families.
+No cloud GPUs (user decision). There is no validated ETA for reaching the target.
 
 ## In flight
 
 | Job | Owner | Check |
 |---|---|---|
-| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: first epoch complete in 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
+| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 2 live; first epoch took 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | 3/25 complete and audited (first-seed n1/n4/n32); n32 average 0.8680112. n16 tree audited at 0.8713929, neural PID 64780/session 96236 live. Lane 1 now second-seed n1 tree (coordinator 63963/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n32-full-verification-20261031.json` |
 
 ## Next actions
 
-1. **Codex:** monitor the live production MPS queue and prepare remaining
-   CPU/native phases within the thread cap. All 79
-   columns/supports and final fitted blender remain required; no qualifying labels exist.
-   CPU neural phase is prepared in `experiments/P0-CPU-neural-20261031-plan.json`
-   (seven fixed recipes; five resource-guard cases pass), not launched. Pressure
-   fluctuates between levels 1/2; require stable normal memory and a free S0 slot.
-   Remaining 65 column occurrences are mapped in `P0-native-dependency-inventory-20261031.json`;
-   All 20 historical RBM source versions are recovered to their exact recorded hashes,
-   including reconstructed R1/R2 support sources. Six isolated fixed-budget variants cover
-   all 12 stages; 64 fixture commands pass parity, label-isolation, reload and resume checks.
-   `P0-rbm-stage-build-map-20261031.json` binds the stage/binary mapping and thread constraints.
-   RBM queue is frozen in `P0-RBM-20261031-plan.json` (12 stages / nine retained columns,
-   300 inputs). Six audit/resource tests and actual native handoffs pass; original recipes match
-   exactly after path/binary substitution. Prepared, not launched: waits for both S0 lanes,
-   all seven audited CPU neural stages and normal memory.
-   Baseline/graph/neighborhood dependency auditor now passes four tests and validates the
-   actual full-size replay artifacts; 11 archived native source files recovered exactly.
-   `P0-dependency-format-verification-20261031.json`. Next freeze that dependency phase.
+1. **Codex:** monitor production MPS and prepare remaining native families.
+   All 79 columns/supports and the final fitted blender remain required.
+   Prepared, not launched:
+   - CPU neural: seven fixed recipes, waits for a free S0 slot and normal memory.
+     `P0-CPU-neural-20261031-plan.json`.
+   - RBM: 12 stages / nine retained columns, waits for both S0 lanes and all
+     seven audited CPU neural stages. `P0-RBM-20261031-plan.json`.
+   - Dependencies: baseline, graph256, exact graph64 prefix, learned neighborhood;
+     waits for both S0 lanes. One thread; combined planned maximum is ten.
+     `P0-DEPS-20261031-plan.json`: 263 inputs / 264 checksum checks pass;
+     five tests and eight actual native fixture handoffs pass, including query-label isolation.
+   The 65 remaining native column occurrences are mapped in
+   `P0-native-dependency-inventory-20261031.json`. Next prepare joint and item-kNN phases.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
