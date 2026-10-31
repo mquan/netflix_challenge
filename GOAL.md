@@ -88,3 +88,8 @@ The matched P2 training runner (`scripts/e2_train.py`) now passes three CPU
 fixture tests for batch/RNG parity, repeatability and label-independent
 prediction. No real E2 optimization has run. Its learning recipe and shared
 gate binding wait for the headroom map; no GPU job was launched.
+
+An independent [headroom interpretation audit](HEADROOM_INTERPRETATION.md)
+distinguishes additive group-shift gains from general interaction headroom.
+The diagnostics guide priorities but do not prove an E2 gain ceiling or that
+the goal is impossible. Existing queue priority and H4's decision point stand.
