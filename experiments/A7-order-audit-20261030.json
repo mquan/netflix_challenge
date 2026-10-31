@@ -1,0 +1,18 @@
+{
+  "state": "confirmed_unsorted_training_dates",
+  "data": "artifacts/sibling/T-plus-A.bin",
+  "data_sha256": "abd7f665976e0284ce0ff5a23ea3a2670c91970778da8dad19d6cbb4a3bea4d6",
+  "source_sha256": "87054a9e6fdc64216a5b54b21c838f2ece84035ede7a455ae5de4bae922d0b3f",
+  "failed_receipt_sha256": "ba425f052eaee50222230067c93669412e32e251019d3f8558de8b27f5130a8d",
+  "decreasing_day_edges": 82523,
+  "affected_users": 74295,
+  "first": {
+    "user": 9,
+    "left_row": 6904,
+    "left_day": 2493,
+    "right_day": 2482
+  },
+  "mechanism": "sibling_split_dataset appends A rows after existing training rows; joint.hpp maps dates with a forward-only session cursor and requires nondecreasing training dates within each user.",
+  "suggested_repair": "Owner should stably sort each user segment by day, applying the same permutation to item/day/rating arrays, preserve A/B membership, rebuild affected artifacts under new provenance, and resume only after sortedness and membership verification.",
+  "scope": "Read-only input diagnosis. No model scores, source edits, artifact overwrite, process stop or restart."
+}
