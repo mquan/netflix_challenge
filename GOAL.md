@@ -66,7 +66,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 2, PID 32347/session 91805). CPU neural, RBM, dependencies, joint and item-kNN phases are frozen but unlaunched behind resource/dependency guards; frozen plans cover 66/79 occurrences. Remaining phase preparation: AutoRec, Bayes, GP/local, user-kNN, final blender/export |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 2, PID 32347/session 91805). CPU neural, RBM, dependencies, joint, item-kNN and AutoRec phases are frozen but unlaunched behind resource/dependency guards; frozen plans cover 69/79 occurrences. AutoRec follows all seven primary GPU audits and MPS parity. Remaining phase preparation: Bayes, GP/local, user-kNN, final blender/export |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |

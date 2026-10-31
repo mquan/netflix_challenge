@@ -1,0 +1,15 @@
+{
+  "state": "prepared_not_launched_primary_gpu_and_MPS_gates_pending",
+  "plan_sha256": "250bdae3f835c74d0f0f7e16ee43f067fd5f5fecbe21a151009de116d9f3190f",
+  "frozen_inputs": 255,
+  "checksum_checks_passed": 256,
+  "check_log_sha256": "2d0b43fc1ba7cfe5b623260772995512cf280f24419b44d272acc99cef87f4e1",
+  "actual_resource_gate": "WAIT_P0_AUTOREC_PRIMARY_GPU_AUDITS_AND_NORMAL_MEMORY",
+  "budgets_and_shared_snapshot_verified": true,
+  "retained_column_order_preserved": true,
+  "explicit_MPS_and_one_host_thread": true,
+  "all_seven_primary_gpu_audits_required": true,
+  "actual_MPS_prepare_rejected_without_device_receipt": true,
+  "bash_syntax_passed": true,
+  "scope": "Phase prepared only; no MPS engineering check or production AutoRec trajectory launched."
+}
