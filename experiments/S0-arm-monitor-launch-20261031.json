@@ -1,0 +1,12 @@
+{
+  "state": "managed_fixed_arm_audit_monitor_live",
+  "verified_utc": "2026-10-31T23:34:17.629613+00:00",
+  "pid": 77645,
+  "session_id": 64149,
+  "plan": "/Users/quan/workspace/netflix_challenge/experiments/S0-arm-monitor-20261031-plan.json",
+  "plan_sha256": "0e7ced6aac68c3beffc3f8b15bad563cef80b265dddac7769246e9a002de9c61",
+  "process": "77645 75274 00:20   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/S0-arm-monitor-20261031-run.sh",
+  "log": "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/arm-monitor.log",
+  "observed_output": "{\"state\": \"waiting_for_fixed_arms\", \"complete\": 5, \"total\": 25, \"new_receipts\": []}",
+  "scope": "Bash polling every 60 seconds; short one-thread audit helper runs only after fixed producer completion. No new training, selection, retuning or synthesis; separately managed complete-result reporter unchanged."
+}
