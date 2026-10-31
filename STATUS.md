@@ -54,16 +54,15 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      16 joint/dependency audits. `P0-KNN-20261031-plan.json`: 278 inputs /
      279 checksum checks pass; ten audit/resource/handoff tests and all 28 native
      label-isolation fixtures pass. Ordered alias manifest waits for all outputs.
-   Frozen phases cover 66/79 retained column occurrences. Remaining preparation:
-   AutoRec (3), Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
-   AutoRec checkpoint/reload source is isolated and passes three CPU parity tests
-   (`P0-autorec-source-verification-20261031.json`). Its original default is MPS:
-   two trajectories (epochs 1 and 44, with snapshot 14) must follow the seven primary GPU runs.
-   Output audit/GPU handoff guard pass six tests. A two-layer CPU snapshot/reload
-   handoff and the device-parity checker pass (`P0-autorec-handoff-verification-v2-20261031.json`,
-   `P0-autorec-device-CPU-verification-20261031.json`). MPS stages require a matching
-   MPS-specific parity receipt; CPU receipts cannot satisfy that gate. Next freeze the phase.
-   MPS verification remains deferred; no additional GPU work has been launched.
+   - AutoRec: two MPS trajectories, epochs 1 and 44 with snapshot14; requires all
+     seven primary GPU audits, primary process exit and a successful MPS parity check.
+     `P0-AUTOREC-20261031-plan.json`: 255 inputs / 256 checksum checks pass.
+     Both budgets and 512-unit/two-layer architecture pass tiny CPU training/reload audits;
+     actual MPS prepare rejects the absent MPS-specific receipt. Prepared, not launched.
+   Frozen phases cover 69/79 retained column occurrences. Remaining preparation:
+   Bayes (3), GP/local (6), user-kNN (1), then final blender/export.
+   AutoRec's historical provenance limitations remain explicit; MPS engineering verification
+   is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
