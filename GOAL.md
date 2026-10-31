@@ -82,7 +82,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | full all79 parity exact; 3/25 further fixed arms audited (first-seed n1/n4/n32); n32 average 0.8680112; n16 tree audited (0.8713929), neural live; lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
+| Structural plan week-0 scoping | Codex | full all79 parity exact; 4/25 further fixed arms audited (first-seed n1/n4/n16/n32); n16 average 0.8710975; lane 0 n64 tree live, lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
 
 ## Closed bets
@@ -105,7 +105,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Slot | Bet | State |
 |---|---|---|
 | 1 | S0 scoping lane 1 | first-seed n4/n32 complete and audited; second-seed n1 tree live (PID 63963), continuing 12 exact fixed arms; no GPU |
-| 2 | S0 scoping lane 0 | first-seed n1 complete and audited; n16 tree audited, neural live (PID 64780), continuing 13 exact fixed arms; no GPU |
+| 2 | S0 scoping lane 0 | first-seed n1/n16 complete and audited; n64 tree live (PID 96739), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;

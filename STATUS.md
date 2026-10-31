@@ -31,7 +31,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Job | Owner | Check |
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 2 live; first epoch took 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 3/25 complete and audited (first-seed n1/n4/n32); n32 average 0.8680112. n16 tree audited at 0.8713929, neural PID 64780/session 96236 live. Lane 1 now second-seed n1 tree (coordinator 63963/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n32-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 4/25 complete and audited (first-seed n1/n4/n16/n32); n16 average 0.8710975, n32 average 0.8680112. Lane 0 now first-seed n64 tree (coordinator 96739/session 96236); lane 1 second-seed n1 tree (63963/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n16-full-verification-20261031.json` |
 
 ## Next actions
 
