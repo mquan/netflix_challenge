@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-31T05:58:23.922539+00:00",
+  "state": "verified_joint_cpu_prototype",
+  "plan_sha256": "bcb375fed4187e17b10d08a7228f3f51107b144ab3b933fd893243fdb199f092",
+  "parity_rows": 15,
+  "single_vs_batch_max_abs_error": 4.76837158203125e-07,
+  "decoder_max_abs_error": 0.0,
+  "batch_forward_check_seconds": [
+    0.003368042001966387,
+    0.007887874962761998,
+    0.046613833983428776,
+    0.1702693750266917
+  ],
+  "actual_query": {
+    "row": 25,
+    "user": 8,
+    "item": 12966,
+    "day": 2425,
+    "peer_count": 64
+  },
+  "warm_logit_max_abs_error": 0.0,
+  "query_label_tensor_mismatches": 0,
+  "base_parameters_unchanged": true,
+  "joint_parameters_unchanged": true,
+  "added_peer_parameters": 21616,
+  "code_payload_sha256": "df12bb45b2c0a9c0672335767bf74eb49c1cea71efa87c1af689fc21327bc613",
+  "gpu_used": false,
+  "netflix_optimizer_steps": 0,
+  "limitation": "Batched-code and one-query forward integration only; fixture training tests are separate. No E2 RMSE gain, full cache, full-training runner or MPS performance is established."
+}

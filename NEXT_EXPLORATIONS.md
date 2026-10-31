@@ -342,6 +342,47 @@ defined and exercised, but whole-cache generation, MPS throughput, matched
 neural architecture and the final learning plan remain pending. No E2 rating
 score or model improvement has been measured.
 
+### E2 batched producer and joint-context model prototype
+
+`scripts/e2_joint_context.py` adds batched exact peer-code production, including
+independently masked rows for repeated global users. It also defines an A2h
+subclass whose rating-query code attends to frozen peer vectors, observed
+peer stars (an eight-dimensional embedding), and three fixed date-gap features.
+The head uses A2h's rank/head count and dropout settings. A zero-initialized
+output projection preserves the warm rating prediction before optimization.
+Empty peer sets produce exactly zero correction, with a safe attention mask.
+
+The matched control executes the same shapes and dropout calls but zeros peer
+code/rating/date values while retaining peer masks. Frozen cache inputs are
+detached. Context attachment rejects a target user in its own peer set and
+missing/nonfinite cache values; it never reads target rating labels. Four CPU
+tests cover separate/batched code parity, repeated-user exclusion semantics,
+warm prediction parity, empty contexts, matched training RNG, nonzero learning
+gradients, cache immutability, sampler-to-model integration and rejection paths.
+
+`experiments/E2-joint-plan-20261030.json` freezes a bounded real-data forward
+audit before execution: batches of four peer codes, parity with the existing
+15 single-code records, then the first query of the frozen P2 sample and all
+its up-to-64 sampled peers. This has no real-data optimization, rating score,
+or GPU launch. This prototype is not the complete E2 training/cache runner;
+the full learning recipe and whole-cache generation remain pending.
+
+**Prototype verification.** Four CPU fixture tests pass. Three optimizer steps
+on fixture targets produce nonzero peer-head gradients and distinct control/
+treatment predictions while consuming identical CPU dropout RNG; frozen cache
+inputs receive no gradients. These are fixture learning checks, not Netflix
+scores. On the real P2 data, batched vectors match all 15 previously audited
+single-query vectors within 4.77e-7, and decoder reconstruction remains exact.
+The first frozen sample query (row 25) was forwarded with all 64 sampled peers;
+the zero-initialized head preserves the original A2h logits exactly. Changing
+every P2 query label changes no attached input tensor. Both the frozen producer
+and new model parameters remain unchanged in this inference audit.
+
+The head adds 21,616 parameters at A2h's rank 64. Evidence is
+`experiments/E2-joint-audit-20261030.json`. This verifies the CPU model/data
+boundary; it does not provide a complete training runner, whole-cache coverage,
+MPS memory/throughput evidence, a selected training budget or an E2 RMSE gain.
+
 ## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
 **Hypothesis, corrected by source audit 2026-10-30.** A2h already has a five-way

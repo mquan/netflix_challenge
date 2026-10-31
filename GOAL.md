@@ -63,5 +63,7 @@ E2's CPU data component is ready: training-only indexes for P2/full and two
 10,000-query sampling pilots are verified (`experiments/E2-data-verification-20261030.json`).
 Exact query-conditioned co-rater codes are also defined and verified on 15
 CPU pairs (`experiments/E2-query-code-verification-20261030.json`). Whole-cache
-generation and the matched neural learning plan remain pending; no E2 model
-or GPU job has run.
+generation and the matched neural learning plan remain pending. A batched
+producer/joint-attention prototype has passed CPU fixture learning and one
+real-query forward checks (`experiments/E2-joint-audit-20261030.json`). No real
+E2 training or GPU job has run.
