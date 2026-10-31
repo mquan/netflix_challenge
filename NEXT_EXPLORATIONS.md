@@ -993,3 +993,32 @@ two NN threads. The remaining 25 blend arms cannot be interpreted until
 this control passes the predeclared saved-prediction/RMSE parity check.
 H8 remains live and unchanged; the combined initial tree budget is six
 CPU workers, below GOAL.md's limit. No GPU or cloud job is launched by S0.
+
+### S0 coordination and narrative-document provenance (2026-10-31)
+
+The other session completed a separate ridge-proxy analysis
+(`scripts/scoping_bank.py`, `artifacts/scoping/S0-bank-scoping.json`). It
+excludes support/metadata and measures family quality after removing all
+siblings. S0's registered full tree+NN comparison retains support and tests
+best-to-weaker substitution in the retained bank. These answer different
+questions; the ridge slopes are not a replacement for full-blender parity
+or the registered S0 results. No existing S0 recipe or arm is changed.
+
+The other session also legitimately extended STRUCTURAL_PLAN.md. It is the
+**only** frozen S0 execution input whose bytes now differ. The exact document
+registered before S0 scores is recovered from commit e4ff55d into
+`experiments/S0-structural-plan-snapshot-20261031.md`; its SHA-256 equals the
+original expected hash. `S0-execution-document-rebind-20261031.json` changes
+only that narrative input's path to this byte-identical archival snapshot.
+Its scientific inputs, all 26 arm definitions and every training command
+are exactly equal to the original execution plan.
+
+The running S0 script and hash manifest are left untouched. After completing
+the tree stage, its original check is expected to stop it before NN because
+the live narrative document changed. Confirm that terminal state, preserve
+the completed tree, and use the documented administrative continuation for
+the unchanged neural command. Evidence is
+`experiments/S0-document-rebind-verification-20261031.json`. This rebind does
+not authorize changing a feature, model, hyperparameter or decision gate.
+Shared STATUS.md now distinguishes the completed ridge proxy from the live
+full-blender check and records both live jobs.

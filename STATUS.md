@@ -1,6 +1,6 @@
 # STATUS — start here
 
-**Last updated:** 2026-10-31 by Claude. Every session updates this page
+**Last updated:** 2026-10-31 by Claude and Codex. Every session updates this page
 whenever state changes, and always before it ends. Keep it to one screen and
 move detail into the linked docs.
 
@@ -15,7 +15,8 @@ move detail into the linked docs.
 
 ## Current plan
 
-[STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md), with the week-0 scoping done and
+[STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md), with ridge-proxy week-0 scoping done
+(independent full-blender validation in flight) and
 lanes re-ranked:
 1. **New model families** (≈0.0007–0.001 each; about 4–6 needed).
 2. Quality upgrades only in high-slope families (Bayes, GP/local).
@@ -29,7 +30,8 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| H8 full-bank comparison (choice-affinity column) | Codex | `artifacts/headroom/H8-full-20261031/runner.log` (four stages; was on treatment-tree) |
+| H8 full-bank comparison (choice-affinity column) | Codex | Control verified at 0.86670512; treatment-tree live, four folds complete; `artifacts/headroom/H8-full-20261031/runner.log` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | All79 reference reproduction live; three tree folds complete. Original runner will stop before NN on changed narrative-doc hash; exact original document archived, administrative continuation prepared. `experiments/S0-document-rebind-verification-20261031.json` |
 | E3 (λ=0.1 CE on A2h head), queued on GPU after H8 | Codex | `experiments/E3-plan-20261031.json`; starts when no other training is live |
 
 ## Next actions
@@ -39,6 +41,8 @@ with a stop check at week 3 (≥0.0015 bank gain).
    first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
 2. When H8 and E3 finish, record their full-bank and P2 results in GOAL.md's
    closed bets and here.
+3. **Codex:** finish S0 reference parity before interpreting its 25 other
+   fixed arms. E3 also waits for S0 under its no-other-training condition.
 
 ## Decisions waiting on the user
 
