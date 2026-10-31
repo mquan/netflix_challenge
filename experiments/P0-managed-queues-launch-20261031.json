@@ -1,0 +1,106 @@
+{
+  "state": "nine_managed_guarded_queues_live_waiting",
+  "verified_utc": "2026-10-31T22:48:30.881593+00:00",
+  "preflight": "/Users/quan/workspace/netflix_challenge/experiments/P0-managed-queues-prelaunch-20261031.json",
+  "preflight_sha256": "d541fc07c4daf6230c030d46f119f1776dc6c9cb41e8bb0cede3b7c0f7d27e21",
+  "queues": [
+    {
+      "phase": "CPU-neural",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-cpu-neural-runner.log",
+      "pid": 66919,
+      "session_id": 50042,
+      "verified_process": "66919 75274       00:56   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "observed_log": "WAIT_CPU_NEURAL_FREE_SLOT_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "RBM",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-rbm-runner.log",
+      "pid": 66932,
+      "session_id": 98248,
+      "verified_process": "66932 75274       00:53   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "observed_log": "WAIT_P0_RBM_CPU_NEURAL_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "DEPS",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-deps-runner.log",
+      "pid": 66954,
+      "session_id": 2271,
+      "verified_process": "66954 75274       00:49   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "observed_log": "WAIT_P0_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "JOINT",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-joint-runner.log",
+      "pid": 66974,
+      "session_id": 57900,
+      "verified_process": "66974 75274       00:46   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "observed_log": "WAIT_P0_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "KNN",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-knn-runner.log",
+      "pid": 66999,
+      "session_id": 19384,
+      "verified_process": "66999 75274       00:43   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "observed_log": "WAIT_P0_KNN_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "AUTOREC",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-autorec-runner.log",
+      "pid": 67017,
+      "session_id": 3812,
+      "verified_process": "67017 75274       00:39   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "observed_log": "WAIT_P0_AUTOREC_PRIMARY_GPU_AUDITS_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "BAYES",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-bayes-runner.log",
+      "pid": 67037,
+      "session_id": 24506,
+      "verified_process": "67037 75274       00:36   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "observed_log": "WAIT_P0_BAYES_RBM_CPU_S0_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "KERNEL",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-kernel-runner.log",
+      "pid": 67055,
+      "session_id": 16829,
+      "verified_process": "67055 75274       00:33   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "observed_log": "WAIT_P0_KERNEL_BAYES_KNN_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    },
+    {
+      "phase": "USERKNN",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-userknn-runner.log",
+      "pid": 67069,
+      "session_id": 35145,
+      "verified_process": "67069 75274       00:29   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "observed_log": "WAIT_P0_USER_KNN_KERNEL_AND_NORMAL_MEMORY",
+      "observed_state": "live_waiting_at_resource_guard"
+    }
+  ],
+  "existing_full_job_pids": [
+    32347,
+    39539,
+    39615
+  ],
+  "new_full_trainers_started": 0,
+  "memory_pressure": "1",
+  "scope": "Nine managed bash queues, verified live and waiting. No production stage output directories created. Guards permit future starts only after dependency audits, process exit and stable normal memory. Primary GPU and two S0 full jobs continue."
+}
