@@ -35,9 +35,10 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 ## Next actions
 
-1. **Claude:** audit model families the winners and the literature used that
-   are absent here. Rank them by expected error-structure novelty and pick the
-   first 2–3 to build (STRUCTURAL_PLAN lane 1). **In progress** (go-ahead 2026-10-31).
+1. **Claude:** build the first new family from [FAMILY_AUDIT.md](FAMILY_AUDIT.md), an
+   LLORMA-style local low-rank ensemble (CPU, C++). The P2 pilot gate is ≥0.0010 via
+   `scripts/p2_candidate_gate.py`. Then a feature-based GBDT base model, then a
+   co-clustering mixture.
 2. **Codex:** monitor E3; once complete, run `scripts/e3_candidate_gate.py`
    to audit the fixed recipe and evaluate both existing P2 gates (seven fixture tests pass).
 3. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
@@ -51,6 +52,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Date | Result | Doc |
 |---|---|---|
+| 10-31 | New-family audit: build order LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture | FAMILY_AUDIT.md |
 | 10-31 | S0 all79 reproduces retained R9 exactly: tree/NN/average max difference 0.0; saved CV 0.8668706424 | experiments/S0-full-parity-verification-20261031.json |
 | 10-31 | H8 full bank 0.86648484; all five folds improve R9, but matched-control gain 0.00022028 < fixed 0.0003 → not promoted | experiments/H8-full-independent-comparison-20261031.json |
 | 10-31 | Scoping: new families ≈0.0007–0.001 each; blend-per-standalone slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0 | STRUCTURAL_PLAN.md |
