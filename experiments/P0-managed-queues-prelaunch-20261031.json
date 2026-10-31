@@ -1,0 +1,134 @@
+{
+  "state": "verified_guarded_queue_prelaunch",
+  "phases": {
+    "CPU-neural": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-plan.json",
+      "plan_sha256": "18f2f0a54da0efcfb278108dcf1a917024c2de462293b246ffde6d83372f8e84",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-run.sh",
+      "runner_sha256": "895522d2fa21ffc6519e9a249311b7f1296d5c0bada13327d464363666667798",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031.sha256",
+      "checksums_sha256": "eddb883c6a2509c318f888483a3c844be899aed0e36d016fdac2519bf44a78cc"
+    },
+    "RBM": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-plan.json",
+      "plan_sha256": "03d6d19e014d7998f5900811db47abfb8a51bc5be2c17e19993d6a37a8c27770",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "runner_sha256": "400ba5150c8d378b0f9418c3d3cd58264fc47938265c6b6f37fd8b298a12b8e1",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031.sha256",
+      "checksums_sha256": "914434868b632a81e59215fa49ae0240353eb8f761878cf3725173540d4aed6a"
+    },
+    "DEPS": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-plan.json",
+      "plan_sha256": "9a517c90d1c84545e02e2e57110eaf6c7653234dcfb0666c60f4f390af3ce5b9",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "runner_sha256": "c73f27e1253e640a560cdf141321876e58c6dda7a44fdee99ef49304ff553eb3",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031.sha256",
+      "checksums_sha256": "88c18f37743b60fc73225dbfac442bd396a530ec5bae66004723d7f77dcde3be"
+    },
+    "JOINT": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-plan.json",
+      "plan_sha256": "3b2007120823579515f3eddbda2e43c8da53ff7ca4496ecd6a00c9fe7d07efdb",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "runner_sha256": "eefbb70ed6067e6b2de91a5f6a6a36676b3d7f159119ceb0b0df5a22262b317d",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031.sha256",
+      "checksums_sha256": "7b541bdf3fc758f1114cfcc8c8318be2b883b26519758b9caa38269a53ced3b6"
+    },
+    "KNN": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-plan.json",
+      "plan_sha256": "cdadcdda746c5a5d6c6449ad5af2eae8d6047aa6213d7e46ec046fa3437d1581",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "runner_sha256": "fc5a40655d55a6b6d4abaa5395ffae7eb3ecc9abf6512469aa6e73c2d94b8cca",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031.sha256",
+      "checksums_sha256": "6a39ec90cd9d66f81c883b6a14fa9309ea786d8b4eec437aa09f2e0fb5b75409"
+    },
+    "AUTOREC": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-plan.json",
+      "plan_sha256": "250bdae3f835c74d0f0f7e16ee43f067fd5f5fecbe21a151009de116d9f3190f",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "runner_sha256": "a1eb75a9c068dcb79554c09454a1392a67a02501105857f73b6dc1d115021230",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031.sha256",
+      "checksums_sha256": "b7448bf6d1023dcfcdeac7b2827e85cff4e008e4a1ebbb403fc3a0b14b61272b"
+    },
+    "BAYES": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-plan.json",
+      "plan_sha256": "416f3b633a594b1ebf6a5f0f34130f7148dad8d1e1270a3cc71f4301acae402c",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "runner_sha256": "bc3b2e0eaf956f2ed4b7b9a6c065958bb6ab06399f073e30d4ac23acea081b3e",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031.sha256",
+      "checksums_sha256": "78cd6e1964a8cb057c9f4263318a4efe623a84360e2b54d465029fdcce758f97"
+    },
+    "KERNEL": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-plan.json",
+      "plan_sha256": "3638136b51df16c50a185d2d16fbf8a436d3ee06992d049100b3194225a6d94a",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "runner_sha256": "67dd3ec1b8f9a8b45e41536401a77299e36575729446f7ee5b64010528a91893",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031.sha256",
+      "checksums_sha256": "c9bf26c69df8078786ef7bd8d8ca79fa7ec5141f9d91badb7c702994fddf096c"
+    },
+    "USERKNN": {
+      "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-plan.json",
+      "plan_sha256": "d0c9fe6a7f2956b207d77c17dbb3c7bdf5de4d977842563f45d8d76c636ddcc2",
+      "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "runner_sha256": "120d2ca7de027eb3b5b0a4d3aa3cc4654f0c18aa6fd122114848d963aed86f06",
+      "checksums": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031.sha256",
+      "checksums_sha256": "35736e3871839137fc9a7a41180acf3e72d045078c4438b953d6f2fc2681123f"
+    }
+  },
+  "checksum_checks_by_phase": {
+    "CPU-neural": 235,
+    "RBM": 301,
+    "DEPS": 264,
+    "JOINT": 298,
+    "KNN": 279,
+    "AUTOREC": 256,
+    "BAYES": 250,
+    "KERNEL": 253,
+    "USERKNN": 251
+  },
+  "unique_verified_inputs": 486,
+  "blocked_runner_graph": {
+    "CPU-neural": [],
+    "RBM": [
+      "CPU-neural"
+    ],
+    "DEPS": [],
+    "JOINT": [
+      "DEPS"
+    ],
+    "KNN": [
+      "DEPS",
+      "JOINT"
+    ],
+    "AUTOREC": [],
+    "BAYES": [
+      "CPU-neural",
+      "RBM"
+    ],
+    "KERNEL": [
+      "CPU-neural",
+      "RBM",
+      "DEPS",
+      "JOINT",
+      "KNN",
+      "BAYES"
+    ],
+    "USERKNN": [
+      "CPU-neural",
+      "RBM",
+      "DEPS",
+      "JOINT",
+      "KNN",
+      "BAYES",
+      "KERNEL"
+    ]
+  },
+  "graph_acyclic": true,
+  "existing_primary_and_S0_pids_verified": [
+    32347,
+    39539,
+    39615
+  ],
+  "memory_pressure": "2",
+  "launched": false,
+  "scope": "Nine waiting bash runners may be launched. Frozen guards alone authorize training transitions; no manual bypass, retry or reset. At most three full trainers and ten nominal own CPU threads. AutoRec replaces primary GPU only after primary audits and successful MPS parity."
+}

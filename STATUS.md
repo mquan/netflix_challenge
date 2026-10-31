@@ -31,13 +31,14 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Job | Owner | Check |
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 2 live; first epoch took 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
+| Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | 4/25 complete and audited (first-seed n1/n4/n16/n32); n16 average 0.8710975, n32 average 0.8680112. Both current tree stages complete: lane 0 first-seed n64 neural (58287/session 96236); lane 1 second-seed n1 neural (56799/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n16-full-verification-20261031.json` |
 
 ## Next actions
 
 1. **Codex:** monitor production MPS and prepare final bank resolution/export.
    All 79 columns/supports and the final fitted blender remain required.
-   Prepared, not launched:
+   Managed queues launched and waiting behind these guards:
    - CPU neural: seven fixed recipes, waits for a free S0 slot and normal memory.
      `P0-CPU-neural-20261031-plan.json`.
    - RBM: 12 stages / nine retained columns, waits for both S0 lanes and all
@@ -58,14 +59,14 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      seven primary GPU audits, primary process exit and a successful MPS parity check.
      `P0-AUTOREC-20261031-plan.json`: 255 inputs / 256 checksum checks pass.
      Both budgets and 512-unit/two-layer architecture pass tiny CPU training/reload audits;
-     actual MPS prepare rejects the absent MPS-specific receipt. Prepared, not launched.
+     actual MPS prepare rejects the absent MPS-specific receipt. Waiting for primary GPU completion.
    - Bayes: four stages / three columns, waits for all 12 RBM audits and S0,
      CPU neural and RBM process exit, plus normal memory. Exact four/five-thread
      settings preserved; a tiny historical-thread test must pass before training.
      `P0-BAYES-20261031-plan.json`: 249 inputs / 250 checksum checks pass;
      five audit/resource tests, eight single-thread native fixture handoffs and
      all three full historical checkpoint scans pass. B4 resumes the newly
-     produced sweep-32 parent, retaining 144 samples at sweep 160. Not launched;
+     produced sweep-32 parent, retaining 144 samples at sweep 160. Queue waiting;
      historical-thread runtime test remains pending. `P0-BAYES-preflight-20261031.json`.
    - GP/local: four invocations / six columns, waits for all 32 Bayes/item-kNN
      audits, their process exit and normal memory; consumes newly audited J3.
@@ -73,20 +74,23 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      five audit/resource tests and eight actual kernel fixture handoffs pass.
      Complete GP exports and all six local epochs repeat exactly; query-label
      isolation passes. Missing J3 audit rejects prepare before creating output.
-     Prepared, not launched. `P0-KERNEL-preflight-20261031.json`.
+     Queue waiting. `P0-KERNEL-preflight-20261031.json`.
    - User-kNN: new K1 rank256/41 epochs at six threads, then original retained
      inference binary at three threads; waits for all four kernel audits and CPU
      process exit. One prediction plus two support aliases. `P0-USERKNN-20261031-plan.json`:
      250 inputs / 251 checksum checks and five audit/resource tests pass. Ten
      native fixture commands cover full one-thread K1 budgets, exact original/
-     rebuilt inference, label isolation and nonzero support/corrections. Prepared,
-     not launched. `P0-USERKNN-preflight-20261031.json`.
+     rebuilt inference, label isolation and nonzero support/corrections. Queue
+     waiting. `P0-USERKNN-preflight-20261031.json`.
    Frozen plans cover all **79/79 columns plus eight support aliases**, verified
    in original blender order by `P0-all-family-planned-coverage-20261031.json`.
    This is planning coverage: **0/82 required production-stage audit files exist**.
-   Full outputs and final fitted blender/export remain outstanding. Prepared
-   runners still need managed launch behind their guards; only primary GPU and
-   both S0 lanes are currently running. The separate latent basis remains frozen.
+   Full outputs and final fitted blender/export remain outstanding. All nine
+   family runners are live at guards; only primary GPU and both S0 lanes are
+   currently training. Prelaunch verified 486 distinct frozen inputs and an
+   acyclic runner-dependency graph. PIDs/sessions and initial waiting state are
+   recorded in `P0-managed-queues-launch-20261031.json`; never launch duplicates.
+   The separate latent basis remains frozen.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
