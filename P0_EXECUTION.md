@@ -20,11 +20,16 @@ production training or achievement of the quiz target.
 | GP/local | 67055 | 16829 |
 | User-kNN | 67069 | 35145 |
 | Final bank/blender/export | 75657 | 29645 |
+| Idle-sleep assertion, bound to final runner | 82488 | 69265 |
 
 These are launch handles, not perpetual proof of liveness. Inspect current `ps`,
 logs and audits before acting. Do not duplicate or restart a queue because an
 observation times out. Full trainers are capped at three and nominal own CPU
 threads at ten. Guarded bash waiters do not represent active training jobs.
+
+The temporary `caffeinate -i -w 75657` assertion prevents idle system sleep
+while the final runner is alive and releases automatically when it exits.
+It was launched on AC power. See `experiments/P0-idle-sleep-assertion-20261031.json`.
 
 Launch records: `experiments/P0-GPU-launch-20261031.json`,
 `experiments/P0-managed-queues-launch-20261031.json`, and
