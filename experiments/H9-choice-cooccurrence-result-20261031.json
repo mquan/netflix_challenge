@@ -1,0 +1,59 @@
+{
+  "plan_sha256": "b588fc77d63b7584a5e12ec421ee6a6ab17a4d3a584a72f09e5ecb304b38c0e0",
+  "comparison": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8461614542620147,
+    "treatment_rmse": 0.8461137958455467,
+    "delta_rmse": -4.7658416468032705e-05,
+    "fold_deltas": [
+      -4.7658416468032705e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -8.065115864810705e-05,
+    "cluster_normal_95_mse_interval": [
+      -0.0001650640432002739,
+      3.7617259040598097e-06
+    ],
+    "all_folds_improve": false
+  },
+  "selected_iterations": {
+    "h8": 114,
+    "h8_svd": 89
+  },
+  "h8_replay_max_abs_error": 0.0,
+  "passes_p2_gate": false,
+  "feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "extra_feature_names": [
+    "choice_svd_q_dot_meany_w3",
+    "choice_svd_q_dot_meanq_w3",
+    "choice_svd_y_dot_meany_w3",
+    "choice_svd_q_dot_meany_w30",
+    "choice_svd_q_dot_meanq_w30",
+    "choice_svd_y_dot_meany_w30",
+    "choice_svd_q_dot_meany_w100000",
+    "choice_svd_q_dot_meanq_w100000",
+    "choice_svd_y_dot_meany_w100000"
+  ],
+  "files": {
+    "embedding.npz": "079c739968d08d04b1eb441f694e065d3c17ee4788ea185cf6c0ce6954b6866c",
+    "predictions.npz": "d5aa9223d9da581ee1459b4bd9e57b132cda1228c0f1618da9759b17c5348030"
+  },
+  "scope": "One fixed nested P2 fold-0 comparison beyond H8. No original-probe score, GPU use or full-bank promotion."
+}
