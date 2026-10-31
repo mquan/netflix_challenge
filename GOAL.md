@@ -87,7 +87,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
 | Structural plan week-0 scoping | Codex | full all79 parity exact; 4/25 further fixed arms audited (first-seed n1/n4/n16/n32); n16 average 0.8710975; lane 0 n64 tree live, lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
-| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. Actual partial experiment leaves five prior receipts unchanged; invalid receipt rejected. No training, retuning or early synthesis. Do not duplicate or race its future receipt writes. `S0-arm-monitor-launch-20261031.json` |
+| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; six of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
 
 ## Closed bets
 
@@ -108,7 +108,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | first-seed n4/n32 complete and audited; second-seed n1 neural live (PID 56799), continuing 12 exact fixed arms; no GPU |
+| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1 complete and audited; second-seed n1 average 0.88954681984; second-seed n16 tree live (PID 79691), continuing 12 exact fixed arms; no GPU |
 | 2 | S0 scoping lane 0 | first-seed n1/n16/n64 complete and audited; n64 average 0.86733208299; second-seed n4 tree live (PID 71100), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
