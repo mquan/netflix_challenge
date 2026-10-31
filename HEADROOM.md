@@ -117,3 +117,35 @@ That would also mean the true Stage C offset differs from the 0.0074 measured
 with P2, which is not from the held-out pool. Next: a **sibling-split Stage C
 rehearsal**. Retrain on T + half A, score half B, and compare dev,
 dev + pooling, retrained, and retrained + pooling.
+
+## A7: sibling-split Stage C rehearsal — fixed protocol (2026-10-31, before any score)
+
+**Data.** `artifacts/sibling/T-plus-A.bin` (`scripts/sibling_split_dataset.py`):
+training is T plus probe half A (703,524 rows, same split as H6), and the
+probe is half B (704,871 rows). Implicit arrays are unchanged.
+
+**Columns.** The K1 family first, because it is CPU-only:
+- **dev:** the existing Phase 0 b columns (B-K1, B-knn256td + support,
+  B-knn64), trained on T only, restricted to B (and to A for fitting);
+- **stageC:** `scripts/a7_sibling_chain.sh build/netflix-ordinal`, which
+  retrains on T + A with the Phase 0 recipes and scores B.
+
+**Arms on half B** (blender fit on A only, then applied to B, as the real
+pipeline fits on probe and applies to qualifying):
+1. dev columns;
+2. dev + sibling pooling (coefficients fit on A by leave-one-out, as H6);
+3. stageC columns, with the same A-fitted blender;
+4. stageC + sibling pooling with the *same A-fitted* coefficients (the
+   deployable variant);
+5. diagnostic only: stageC + pooling with coefficients refit on B by user
+   folds. This gives the ideal shrink factor and selects nothing.
+
+**Reported.**
+- Sibling Stage C offset (1 − 3), compared with the P2-measured 0.0074 for this family.
+- Pooling gain on top of Stage C (3 − 4), with folds and a user-cluster interval.
+
+**Decision.** If arm 4 beats arm 3 by ≥0.0005 on all five folds, extend the
+rehearsal to the Bayes and RBM columns, then the full bank, and adopt sibling
+pooling as a production step. If not, the shift is already harvested by
+Stage C; record the sibling offset as the better estimate of the Stage C
+offset either way.
