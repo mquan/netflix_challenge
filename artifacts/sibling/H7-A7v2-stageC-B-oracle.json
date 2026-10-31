@@ -1,0 +1,374 @@
+{
+  "plan": "artifacts/sibling/plan-A7v2-stageC-B.json",
+  "plan_sha256": "7f2b584a86a2f249cce6bab590df36172560a6d10dd6aeb14a942fe344438c95",
+  "spec_bank": null,
+  "data": "artifacts/sibling/T-plus-A-v2.bin",
+  "bank": [
+    "artifacts/sibling/v2/K1.f32",
+    "artifacts/sibling/v2/knn256td.f32",
+    "artifacts/sibling/v2/knn64.f32",
+    "artifacts/sibling/v2/knn256td.support.f32"
+  ],
+  "rows": 704871,
+  "held_rows": 140704,
+  "base_rmse": 0.8869973057190427,
+  "base_penalty": 1,
+  "shrink": [
+    1,
+    5,
+    25
+  ],
+  "results": {
+    "user": {
+      "delta_rmse": -0.001535995330051998,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8854613103889907,
+        "delta_rmse": -0.001535995330051998,
+        "fold_deltas": [
+          -0.001535995330051998,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.002722488157052451,
+        "cluster_normal_95_mse_interval": [
+          -0.0035333787248195106,
+          -0.001911597589285391
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.7636673944594117
+    },
+    "user_month": {
+      "delta_rmse": -0.0014921680571293727,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8855051376619133,
+        "delta_rmse": -0.0014921680571293727,
+        "fold_deltas": [
+          -0.0014921680571293727,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0026448715271967555,
+        "cluster_normal_95_mse_interval": [
+          -0.0033761595590018237,
+          -0.0019135834953916873
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.5190694467498308
+    },
+    "user_week": {
+      "delta_rmse": -0.001340102443529001,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8856572032755137,
+        "delta_rmse": -0.001340102443529001,
+        "fold_deltas": [
+          -0.001340102443529001,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.002375538639036265,
+        "cluster_normal_95_mse_interval": [
+          -0.0030680282151455077,
+          -0.0016830490629270217
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.39797494860761756
+    },
+    "user_day": {
+      "delta_rmse": -0.0012787764668166224,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.885718529252226,
+        "delta_rmse": -0.0012787764668166224,
+        "fold_deltas": [
+          -0.0012787764668166224,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0022669072921145746,
+        "cluster_normal_95_mse_interval": [
+          -0.0029432296113653536,
+          -0.0015905849728637955
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.3548493270399832
+    },
+    "item": {
+      "delta_rmse": -0.0005146673384325284,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8864826383806101,
+        "delta_rmse": -0.0005146673384325284,
+        "fold_deltas": [
+          -0.0005146673384325284,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0009127522025932214,
+        "cluster_normal_95_mse_interval": [
+          -0.00116691434324426,
+          -0.0006585900619421826
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9969441216903518
+    },
+    "item_month": {
+      "delta_rmse": -0.0003482687148985697,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8866490370041441,
+        "delta_rmse": -0.0003482687148985697,
+        "fold_deltas": [
+          -0.0003482687148985697,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0006177055324649107,
+        "cluster_normal_95_mse_interval": [
+          -0.0008542727233797895,
+          -0.00038113834155003174
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9295856972410554
+    },
+    "item_week": {
+      "delta_rmse": -0.00019822601175323307,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8867990797072894,
+        "delta_rmse": -0.00019822601175323307,
+        "fold_deltas": [
+          -0.00019822601175323307,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00035161258314534934,
+        "cluster_normal_95_mse_interval": [
+          -0.0005559215670362914,
+          -0.00014730359925440732
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.8438409297587786
+    },
+    "item_day": {
+      "delta_rmse": -0.00019591722003509116,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8868013884990076,
+        "delta_rmse": -0.00019591722003509116,
+        "fold_deltas": [
+          -0.00019591722003509116,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00034751770907319343,
+        "cluster_normal_95_mse_interval": [
+          -0.0005050533264226986,
+          -0.00018998209172368827
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.6377805300544355
+    },
+    "calendar_day": {
+      "delta_rmse": -0.00011589388839161607,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8868814118306511,
+        "delta_rmse": -0.00011589388839161607,
+        "fold_deltas": [
+          -0.00011589388839161607,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.00020558170211184366,
+        "cluster_normal_95_mse_interval": [
+          -0.0003381332015029641,
+          -7.303020272072321e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": 0.9997432154252338
+    },
+    "placebo_user_day": {
+      "delta_rmse": 2.5089187293270143e-06,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.886999814637772,
+        "delta_rmse": 2.5089187293270143e-06,
+        "fold_deltas": [
+          2.5089187293270143e-06,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": 4.45081460104693e-06,
+        "cluster_normal_95_mse_interval": [
+          -2.0998600077925658e-05,
+          2.9900229280019516e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "placebo_item_week": {
+      "delta_rmse": -6.886797235927666e-06,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8869904189218067,
+        "delta_rmse": -6.886797235927666e-06,
+        "fold_deltas": [
+          -6.886797235927666e-06,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -1.2217093758553979e-05,
+        "cluster_normal_95_mse_interval": [
+          -3.847654427411765e-05,
+          1.4042356757009692e-05
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_user_sources": {
+      "delta_rmse": -0.001803244236940893,
+      "penalty": 10,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8851940614821018,
+        "delta_rmse": -0.001803244236940893,
+        "fold_deltas": [
+          -0.001803244236940893,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.003195693869661911,
+        "cluster_normal_95_mse_interval": [
+          -0.004044569131751645,
+          -0.002346818607572177
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "all_item_sources": {
+      "delta_rmse": -0.0006346218963887429,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8863626838226539,
+        "delta_rmse": -0.0006346218963887429,
+        "fold_deltas": [
+          -0.0006346218963887429,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.0011254130795428415,
+        "cluster_normal_95_mse_interval": [
+          -0.0014256190351310998,
+          -0.0008252071239545833
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    },
+    "everything": {
+      "delta_rmse": -0.00243501680975422,
+      "penalty": 1,
+      "stats": {
+        "rows": 140704,
+        "users": 76160,
+        "control_rmse": 0.8869973057190427,
+        "treatment_rmse": 0.8845622889092885,
+        "delta_rmse": -0.00243501680975422,
+        "fold_deltas": [
+          -0.00243501680975422,
+          null,
+          null,
+          null,
+          null
+        ],
+        "delta_mse": -0.004313777392401459,
+        "cluster_normal_95_mse_interval": [
+          -0.005211392433670785,
+          -0.0034161623511321333
+        ],
+        "all_folds_improve": false
+      },
+      "rows_with_other_members": null
+    }
+  },
+  "metric": "P2 fold-0 RMSE change from adding leave-one-out pooled residual features. Oracle upper bounds that read other held-out labels of the scored set; not deployable."
+}

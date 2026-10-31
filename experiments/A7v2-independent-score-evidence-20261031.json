@@ -1,0 +1,28 @@
+{
+  "plan_sha256": "e604ce1951649b81efdcff7920d320da64a98402f94eb9fa60ada5fbf1e43a04",
+  "score_sha256": "d2d265ba3751a5edf5ec44b62ff877095df50aebc51dd087124c69b8f9afb187",
+  "primary": {
+    "rows": 704871,
+    "users": 380821,
+    "control_rmse": 0.8860581428274305,
+    "treatment_rmse": 0.8878368912625022,
+    "delta_rmse": 0.001778748435071753,
+    "fold_deltas": [
+      0.0016520534692615607,
+      0.001887532569983974,
+      0.0018617983110389424,
+      0.0019920775803736746,
+      0.0014984027548859968
+    ],
+    "delta_mse": 0.0031553130158688968,
+    "cluster_normal_95_mse_interval": [
+      0.0028491202113119386,
+      0.003461505820425855
+    ],
+    "all_folds_improve": false
+  },
+  "passes_extension_gate": false,
+  "inputs_unchanged": true,
+  "source": "Existing fixed a7_score.run, unchanged",
+  "limitation": "K1-family sibling rehearsal only; no full-bank promotion or verified hidden-test score."
+}

@@ -1,0 +1,137 @@
+{
+  "dev": [
+    "artifacts/rehearsal/B-K1.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.f32",
+    "artifacts/rehearsal/B-knn64.netflix.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.support.f32"
+  ],
+  "stage_c": [
+    "artifacts/sibling/v2/K1.f32",
+    "artifacts/sibling/v2/knn256td.f32",
+    "artifacts/sibling/v2/knn64.f32",
+    "artifacts/sibling/v2/knn256td.support.f32"
+  ],
+  "amask_sha256": "749194747db8270a7b511d21c892040831c8059275a2eab27ce3fc1fb1a0a794",
+  "stage_c_sha256": {
+    "artifacts/sibling/v2/K1.f32": "018f8e50393ce9d5de3637192ab30f8ee88ef05a38dc726bf5dc9f3eae2805b2",
+    "artifacts/sibling/v2/knn256td.f32": "6e3d8cca37600c3b2632507a8f74716cc06cd8d9ddcd79047c9b5e1c92fcb1ad",
+    "artifacts/sibling/v2/knn64.f32": "dfaa7ebba18abeca38c528d2e4eec6c64d137cb1159db65d510bbb43cd51d9d3",
+    "artifacts/sibling/v2/knn256td.support.f32": "272b547c9206784f2953065b085a877079de15a2a6e01adda3ee7fe4596a61a0"
+  },
+  "rmse": {
+    "1_dev": 0.891227876237584,
+    "2_dev_pool": 0.8889590136822382,
+    "3_stageC": 0.8860581428274305,
+    "4_stageC_pool": 0.8878368912625022,
+    "5_diag_stageC_pool_refit_on_B": 0.885994337679603
+  },
+  "comparisons": {
+    "pool_on_dev(1->2)": {
+      "rows": 704871,
+      "users": 380821,
+      "control_rmse": 0.891227876237584,
+      "treatment_rmse": 0.8889590136822382,
+      "delta_rmse": -0.002268862555345863,
+      "fold_deltas": [
+        -0.0024200828057110435,
+        -0.002128878331769224,
+        -0.00222023504247415,
+        -0.002064390784884629,
+        -0.002512164081373114
+      ],
+      "delta_mse": -0.004038999376056939,
+      "cluster_normal_95_mse_interval": [
+        -0.004350526476260177,
+        -0.0037274722758537013
+      ],
+      "all_folds_improve": true
+    },
+    "sibling_stageC_offset(1->3)": {
+      "rows": 704871,
+      "users": 380821,
+      "control_rmse": 0.891227876237584,
+      "treatment_rmse": 0.8860581428274305,
+      "delta_rmse": -0.0051697334101535874,
+      "fold_deltas": [
+        -0.005254648971880438,
+        -0.004867028377274485,
+        -0.005040120988429986,
+        -0.005247812057985857,
+        -0.005439633029628688
+      ],
+      "delta_mse": -0.009188094912159463,
+      "cluster_normal_95_mse_interval": [
+        -0.009697666928393057,
+        -0.00867852289592587
+      ],
+      "all_folds_improve": true
+    },
+    "pool_on_stageC(3->4)": {
+      "rows": 704871,
+      "users": 380821,
+      "control_rmse": 0.8860581428274305,
+      "treatment_rmse": 0.8878368912625022,
+      "delta_rmse": 0.001778748435071753,
+      "fold_deltas": [
+        0.0016520534692615607,
+        0.001887532569983974,
+        0.0018617983110389424,
+        0.0019920775803736746,
+        0.0014984027548859968
+      ],
+      "delta_mse": 0.0031553130158688968,
+      "cluster_normal_95_mse_interval": [
+        0.0028491202113119386,
+        0.003461505820425855
+      ],
+      "all_folds_improve": false
+    },
+    "diag_ideal_pool_on_stageC(3->5)": {
+      "rows": 704871,
+      "users": 380821,
+      "control_rmse": 0.8860581428274305,
+      "treatment_rmse": 0.885994337679603,
+      "delta_rmse": -6.380514782744484e-05,
+      "fold_deltas": [
+        -7.135640406696897e-05,
+        1.6078218281756484e-05,
+        -0.00013002439151343914,
+        -3.119997490785842e-05,
+        -0.00010234152332611046
+      ],
+      "delta_mse": -0.00011306607047656385,
+      "cluster_normal_95_mse_interval": [
+        -0.00017834595989252975,
+        -4.778618106059796e-05
+      ],
+      "all_folds_improve": false
+    }
+  },
+  "blend_weights": [
+    0.06524527059665622,
+    -0.40940126774978025,
+    1.1450753655551476,
+    0.24541077061747096,
+    -0.008916846800045479
+  ],
+  "pool_weights": [
+    0.0030617452175231053,
+    0.9990416341561189,
+    -0.055465768958046724,
+    0.3754510450221481,
+    0.2915095308549916,
+    -0.0060487533737934125,
+    0.004822477036262407,
+    0.10708678247080632,
+    -0.19915255243682628,
+    -0.00849995243772339,
+    0.009818406585524256,
+    -0.020607492085427354,
+    0.13638269344687504,
+    -0.19842741861226978,
+    -0.04639512010290604,
+    0.004343095806679046,
+    0.010107044987252227
+  ],
+  "metric": "Probe half B; blender and pooling coefficients fit on half A except arm 5 (diagnostic)."
+}

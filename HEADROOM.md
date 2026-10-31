@@ -157,3 +157,57 @@ model trained or scored. v2 (`T-plus-A-v2.bin`, same split, mask
 byte-identical) merges A rows into the original order and checks for
 duplicate (user, day, item). The chain now writes `experiments/A7v2-*` and
 `artifacts/sibling/v2/`. Protocol unchanged.
+
+## A7 result: Stage C already harvests the sibling signal (2026-10-31)
+
+`artifacts/sibling/A7v2-score.json`, K1 family, probe half B (704,871 rows).
+The blender and pooling coefficients were fit on half A.
+
+| Arm | RMSE | Δ |
+|---|---:|---:|
+| 1 dev (trained on T) | 0.891228 | — |
+| 2 dev + sibling pooling | 0.888959 | −0.00227 vs 1 (all folds) |
+| 3 **Stage C** (retrained on T + half A) | 0.886058 | **−0.00517 vs 1** (all folds) |
+| 4 Stage C + pooling, A-fitted coefficients (deployable) | 0.887837 | **+0.00178 vs 3** (all folds worse) |
+| 5 Stage C + pooling, coefficients refit on B (diagnostic) | 0.885994 | −0.00006 vs 3 |
+
+**Decision (pre-registered gate: arm 4 ≥0.0005 better than arm 3): fail.**
+Retraining on the probe siblings absorbs the shared user shift almost
+completely. The ideal coefficient leaves 0.00006, and the deployable one
+over-corrects. Sibling pooling is **not** a production step.
+
+**Stage C offset, sibling-based.** Standalone gains on B from adding the
+0.70M sibling rows are K1 0.00488, kNN-256td 0.00509 and kNN-64 0.00512. The
+P2 rehearsal gave 0.0087–0.0090 from 1.41M near-date rows. Per added row the
+two are similar (≈0.007 vs ≈0.0062 per million), and gains diminish with more
+rows. So this does **not** show the real offset to be materially larger than
+the measured 0.0074; the target estimate stands.
+
+**What is left after Stage C (H7).** The within-B oracle on the sibling
+Stage C columns is user −0.00154, all user sources −0.00180, everything
+−0.00244, placebo +0.000003. That is a lower ceiling than before (B has fewer
+within-set siblings, so it is slightly understated). It is reachable only
+with the qualifying labels themselves, and H4 showed that label-free features
+do not reach it.
+
+## Conclusion of the headroom map (decision point, STRATEGY.md part A)
+
+- The large user-level shift is real, but the Stage C retrain already
+  captures it. The P2-calibrated offset (0.0074) accounts for it; no
+  additional deployable lever exists in it.
+- The movie side (E2's mechanism) has ≤0.0001 oracle headroom on the promoted blend.
+- Simple test-time proxies are exhausted (−0.00003).
+- The **only measured source of new, deployable information is N1-style
+  choice history**: −0.0012 on the P2 bank11 gate beyond A2h, orthogonal to
+  the user shift. Its full-bank dev-CV value is not yet measured; it is in
+  the other session's queue.
+
+**Honest assessment.** Closing the 0.0022 gap now depends almost entirely on
+how much of N1's P2 gain survives into the full bank. Historically, P2 or
+pilot gains shrink when added to the full 79-column blend, and no other
+identified source carries comparable deployable signal. If N1 delivers ≲0.001
+on dev CV, this pipeline will very likely not reach 10%. Recommendation: put
+the next GPU and CPU effort behind N1's line. That means its full-bank
+evaluation, then the strongest variants of choice-history modelling such as
+longer histories, qualifying-period choices, and seeds/ensembles of the N1
+model. Deprioritise E2. Keep E3 and E5 as cheap queued tests.
