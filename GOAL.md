@@ -58,6 +58,8 @@ until the goal is reached or the bets run out.
 
 ## Strategy
 
+**Current plan (2026-10-31): [STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md).** It has four gated lanes: winner-grade base models, a properly scaled transformer, blend-aware selection, and the end-to-end production pipeline, with week-0 scoping first. The earlier program below (headroom map, gate, ledger) is complete.
+
 Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map of which information sources could close the gap, (B) one shared gate plus a ledger, (C) one long-lived sequence-model line with a shared GPU queue. New one-off bets pause until A is done.
 
 ## Claims (in progress, per session)
