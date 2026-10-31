@@ -51,7 +51,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
-| A. Headroom map (`scripts/headroom_map.py`) | this session (Claude) | started 2026-10-31 |
+| A. Headroom map (`scripts/headroom_map.py`, HEADROOM.md) | this session (Claude) | H1–H6 done 2026-10-31: user-level shift is the headroom; probe-sibling pooling −0.00186 pre-Stage C |
+| A7. Sibling-split Stage C rehearsal (K1 family first) | this session (Claude) | starting 2026-10-31 |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU model/cache/P2 runner verified; learning decision waits for headroom map and GPU queue (see E2 notes) |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 

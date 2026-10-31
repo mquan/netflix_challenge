@@ -61,3 +61,59 @@ selected from them.
    0.0024 ceiling will not be enough unless it is a large fraction.
 4. Next measurement (H4): how much of that user-level shift is predictable
    from information available at test time.
+
+## H4: label-free proxies (deployable features) — nothing left
+
+`scripts/headroom_proxies.py`: LightGBM on the cross-fitted residual with
+test-time features only. These are held-out set sizes, the mean prediction of
+the user's other held-out movies, the gap since the last training rating,
+recent-minus-overall training mean, user mean/std/count, unlabelled implicit
+choices (total and same-day) and popularity. Fit on folds 2–4, early-stopped on
+fold 1, evaluated on fold 0.
+
+| Base | Δ RMSE |
+|---|---:|
+| P2, bank11 ridge | −0.00081 |
+| original probe, promoted blend | **−0.00003** (95% ΔMSE interval includes 0) |
+
+The production blender already extracts everything these features know. The
+user-level shift is not predictable from counts, gaps, drift or popularity.
+
+## H5: N1 is orthogonal to the user-level shift
+
+On P2, adding the N1 saved epoch-13 column to bank11 improves the base by
+0.00121, matching N1's recorded gate (−0.00121 beyond A2h, >10 cluster SE). But
+the user-level oracle is unchanged: −0.00369 with N1 vs −0.00371 without. N1's
+choice-history gain is row-specific information and is real and deployable.
+The shared user shift is a separate, untouched source.
+
+## H6: probe siblings carry the shift — a deployable lever
+
+In the real data the probe and qualifying sets are a random split of the same
+held-out pool. A qualifying row's user therefore has **labelled sibling**
+probe rows from the same period, and dev-CV models never trained on them.
+`scripts/sibling_pooling.py` rehearses this on the original probe:
+- split each user's probe rows at random into half A (labelled) and half B
+  (stand-in for qualifying);
+- pool the promoted blend's honest residuals over A (user, user-week and
+  user-day);
+- fit coefficients on A by leave-one-out within A, reading no B label;
+- apply them to B.
+
+| Half B (704k rows) | RMSE |
+|---|---:|
+| promoted blend (dev CV) | 0.86598 |
+| + pooled half-A sibling residuals | 0.86412 |
+| **Δ** | **−0.00186**, all five folds (−0.0017 … −0.0022), 95% ΔMSE interval [−0.0035, −0.0030] |
+
+Round 13's P2 → probe residual transfer was dead (−0.00005). P2 is ordinary
+training ratings near probe dates, not siblings from the held-out pool. The
+shift belongs to the held-out period itself.
+
+**Open question, now the most important one in the project.** Stage C retrains on
+the probe, the siblings themselves, which share days with the qualifying
+rows. The models' daily user terms may already absorb much of this signal.
+That would also mean the true Stage C offset differs from the 0.0074 measured
+with P2, which is not from the held-out pool. Next: a **sibling-split Stage C
+rehearsal**. Retrain on T + half A, score half B, and compare dev,
+dev + pooling, retrained, and retrained + pooling.
