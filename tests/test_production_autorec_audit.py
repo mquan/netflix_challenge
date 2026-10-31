@@ -16,14 +16,14 @@ torch.set_num_threads(1)
 
 
 class AutoRecAuditTests(unittest.TestCase):
-    def fixture(self, root):
+    def fixture(self, root, device='cpu'):
         data, source = root / 'data', root / 'source'
         data.write_bytes(b'data')
         source.write_bytes(b'source')
         output = root / 'trajectory'
         config = dict(data=str(data), predictions=str(output / 'model.f32'), hidden=2, layers=1,
                       epochs=3, fixed_epoch=True, save_epoch=[1], batch=4, lr=.0002, weight_decay=1e-5,
-                      input_drop=.5, dropout=.5, patience=5, seed=2026, device='cpu', reload_checkpoint=None)
+                      input_drop=.5, dropout=.5, patience=5, seed=2026, device=device, reload_checkpoint=None)
         outputs = [dict(epoch=1, prediction='model.e1.f32', checkpoint='model.e1.pt', replay='replay.e1.f32',
                         replay_log='replay.e1.log', column='snapshot', development_sha256='old-snapshot'),
                    dict(epoch=3, prediction='model.f32', checkpoint='model.pt', replay='replay.f32',
@@ -31,9 +31,12 @@ class AutoRecAuditTests(unittest.TestCase):
         stage = dict(group='fixture', output_dir=str(output), command=['autorec', '--fixed-epoch'], config=config, outputs=outputs)
         plan = dict(data=str(data), dataset=dict(items=3, query_count=2), stages=[stage],
                     source_sha256=digest(source), torch_version=str(torch.__version__), numpy_version=np.__version__,
+                    device_verification=str(root / 'device-proof.json'),
                     frozen={str(data): digest(data), str(source): digest(source)})
         path = root / 'plan.json'
         path.write_text(json.dumps(plan))
+        if device == 'mps':
+            return path, plan, output
         prepare(path, 0)
         (output / 'train.log').write_text('autorec hidden=2 layers=1 batch=4 lr=0.0002 input_drop=0.5 dropout=0.5 wd=1e-05 device=cpu\n' +
             ''.join(f'epoch={i} train_rmse=1.0 query_labels=unknown seconds=1.0\n' for i in range(1, 4)))
@@ -48,6 +51,36 @@ class AutoRecAuditTests(unittest.TestCase):
                 np.array([2.0, 4.0], '<f4').tofile(output / name)
             (output / item['replay_log']).write_text(f"reload_epoch={item['epoch']} prediction_count=2\n")
         return path, plan, output
+
+    def test_MPS_requires_matching_device_proof_and_binds_its_payloads(self):
+        for damage in ('missing', 'cpu', 'source', 'checks', 'changed_payload'):
+            with self.subTest(damage=damage), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                path, plan, output = self.fixture(root, 'mps')
+                payload = root / 'device-payload'
+                payload.write_bytes(b'fixture device artifact')
+                proof = dict(state='verified_autorec_device_parity', device='mps', host_threads=1,
+                    source_sha256=plan['source_sha256'], torch_version=plan['torch_version'], numpy_version=plan['numpy_version'],
+                    inputs={}, outputs={str(payload): digest(payload)},
+                    checks=dict(original_final_and_snapshot_parity=True, final_and_snapshot_reload_parity=True,
+                                query_label_independent_predictions_and_weights=True, distinct_snapshot_and_final=True))
+                if damage == 'cpu':
+                    proof['device'] = 'cpu'
+                elif damage == 'source':
+                    proof['source_sha256'] = 'other'
+                elif damage == 'checks':
+                    proof['checks']['distinct_snapshot_and_final'] = False
+                if damage != 'missing':
+                    Path(plan['device_verification']).write_text(json.dumps(proof))
+                if damage == 'changed_payload':
+                    prepare(path, 0)
+                    payload.write_bytes(b'changed')
+                    with self.assertRaises(ValueError):
+                        audit(path, 0)
+                else:
+                    with self.assertRaises((ValueError, FileNotFoundError)):
+                        prepare(path, 0)
+                    self.assertFalse(output.exists())
 
     def test_complete_shared_snapshot_and_final_checkpoint(self):
         with tempfile.TemporaryDirectory() as temp:

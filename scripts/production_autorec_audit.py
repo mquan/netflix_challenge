@@ -35,10 +35,25 @@ def checkpoint(path, epoch, plan, stage):
 
 
 def started_record(plan, plan_sha, index, stage):
+    device_verification = {}
+    if stage['config']['device'] == 'mps':
+        proof_path = Path(plan['device_verification'])
+        proof = json.loads(proof_path.read_text())
+        expected = dict(state='verified_autorec_device_parity', device='mps', host_threads=1,
+                        source_sha256=plan['source_sha256'], torch_version=plan['torch_version'],
+                        numpy_version=plan['numpy_version'])
+        required_checks = ('original_final_and_snapshot_parity', 'final_and_snapshot_reload_parity',
+                           'query_label_independent_predictions_and_weights', 'distinct_snapshot_and_final')
+        if (any(proof.get(k) != v for k, v in expected.items()) or
+                any(proof.get('checks', {}).get(k) is not True for k in required_checks)):
+            raise ValueError('Matching MPS-specific AutoRec verification required')
+        verify(proof['inputs'])
+        verify(proof['outputs'])
+        device_verification = {str(proof_path): digest(proof_path), **proof['outputs']}
     return dict(state='prepared', stage=index, plan_sha256=plan_sha, command=stage['command'],
                 data_sha256=plan['frozen'][plan['data']], config=stage['config'],
                 source_sha256=plan['source_sha256'], torch_version=plan['torch_version'],
-                numpy_version=plan['numpy_version'])
+                numpy_version=plan['numpy_version'], device_verification=device_verification)
 
 
 def prepare(plan_path, index):
@@ -100,6 +115,7 @@ def audit(plan_path, index):
         columns.append(dict(column=selected['column'], development_sha256=selected['development_sha256'],
                             epoch=selected['epoch'], qualifying_path=str(prediction), qualifying_sha256=bound[str(prediction)]))
     verify(plan['frozen'])
+    verify(started['device_verification'])
     verify(bound)
     if digest(path) != plan_sha:
         raise ValueError('AutoRec phase changed')
