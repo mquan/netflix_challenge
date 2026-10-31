@@ -968,3 +968,28 @@ inventory and frozen executable arm manifests.
 **Resources.** At most two S0 arms live, three tree workers or two NN threads
 per arm, total own CPU threads at most ten including H8. No cloud spend.
 E3's existing no-other-training launch condition continues to apply.
+
+### S0 manifests and standalone inventory prepared (2026-10-31)
+
+`scripts/structural_scoping.py` passes three fixture tests for fixed nested
+subsets/ties, rejection of malformed inputs, and round-trip preservation of
+duplicate prediction occurrences and support order. Each occurrence receives
+a distinct symlink in a separate per-arm bank; ordinary frozen union/support
+loaders read those aliases without changing either blender. This prevents a
+best-to-existing-sibling substitution from silently losing a column through
+dictionary deduplication.
+
+The fixed run produced 26 executable arm manifests and all 79 standalone
+scores, archived in `experiments/S0-execution-20261031.json` and
+`experiments/S0-standalone-20261031.json`. Best standalone columns in their
+fixed families include B4 0.889660, A2h 0.890141, GP2 0.892294, and I2R
+0.894582. These are reused original-probe standalone development scores;
+no scoping blend score has been computed. The family substitutions follow
+the registered deterministic best/worst rule, without inspecting a blend.
+
+Only the all79 reference reproduction is prepared for initial training
+(`experiments/S0-all79-20261031-run.sh`). It uses three tree workers then
+two NN threads. The remaining 25 blend arms cannot be interpreted until
+this control passes the predeclared saved-prediction/RMSE parity check.
+H8 remains live and unchanged; the combined initial tree budget is six
+CPU workers, below GOAL.md's limit. No GPU or cloud job is launched by S0.
