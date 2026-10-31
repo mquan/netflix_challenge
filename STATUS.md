@@ -33,8 +33,8 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 | Job | Owner | Check |
 |---|---|---|
-| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 2/25 complete and audited (n1/n4). n32 tree audited at 0.8683399; its neural PID 35222/session 83214 is live. n16 tree remains live (PID 33013/session 96236). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n32-tree-verification-20261031.json` |
+| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: first epoch complete in 52.3 min; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 3/25 complete and audited (first-seed n1/n4/n32); n32 average 0.8680112. n16 tree audited at 0.8713929, neural PID 64780/session 96236 live. Lane 1 now second-seed n1 tree (coordinator 63963/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n32-full-verification-20261031.json` |
 
 ## Next actions
 
@@ -49,9 +49,10 @@ The week-3 stop check remains ≥0.0015 bank gain.
    including reconstructed R1/R2 support sources. Six isolated fixed-budget variants cover
    all 12 stages; 64 fixture commands pass parity, label-isolation, reload and resume checks.
    `P0-rbm-stage-build-map-20261031.json` binds the stage/binary mapping and thread constraints.
-   RBM output auditor and resource gate pass six tests; actual native fixture handoffs
-   (standard → resumed → conditional) pass reload/audit checks. Production fingerprint and
-   18,136,482 temporal sessions are independently measured. Next freeze the guarded RBM queue.
+   RBM queue is frozen in `P0-RBM-20261031-plan.json` (12 stages / nine retained columns,
+   300 inputs). Six audit/resource tests and actual native handoffs pass; original recipes match
+   exactly after path/binary substitution. Prepared, not launched: waits for both S0 lanes,
+   all seven audited CPU neural stages and normal memory. Next prepare other native families.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are

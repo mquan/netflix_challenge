@@ -66,7 +66,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live: A2h 12 epochs, trainer 32347/session 91805; six further MPS recipes queued. Seven CPU neural recipes now frozen but unlaunched until a S0 slot frees and memory is normal; all 12 historical RBM stages mapped to six exact-source isolated builds; 64 fixture commands pass; native execution/support/blender/export phases still pending |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live: A2h 12 epochs, trainer 32347/session 91805; six further MPS recipes queued. Seven CPU neural recipes now frozen but unlaunched until a S0 slot frees and memory is normal; all 12 RBM stages now frozen in a guarded execution plan (300 inputs; nine retained columns), prepared but unlaunched until S0/CPU neural completion; other native/support/blender/export phases still pending |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
@@ -82,7 +82,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | full all79 parity exact; 2/25 further fixed arms complete and audited (n1/n4); n32 tree audited (0.8683399), neural live; lane 0 n16 tree live; narrative snapshot preserves original provenance |
+| Structural plan week-0 scoping | Codex | full all79 parity exact; 3/25 further fixed arms audited (first-seed n1/n4/n32); n32 average 0.8680112; n16 tree audited (0.8713929), neural live; lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
 
 ## Closed bets
@@ -104,8 +104,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | n4 complete and audited; n32 tree audited, neural live next in its 12 exact fixed arms; no GPU |
-| 2 | S0 scoping lane 0 | n1 complete and audited; n16 tree live next in its 13 exact fixed arms; no GPU |
+| 1 | S0 scoping lane 1 | first-seed n4/n32 complete and audited; second-seed n1 tree live (PID 63963), continuing 12 exact fixed arms; no GPU |
+| 2 | S0 scoping lane 0 | first-seed n1 complete and audited; n16 tree audited, neural live (PID 64780), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;

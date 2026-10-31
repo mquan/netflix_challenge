@@ -1,0 +1,17 @@
+{
+  "state": "prepared_not_launched_resource_guard_waits",
+  "plan_sha256": "03d6d19e014d7998f5900811db47abfb8a51bc5be2c17e19993d6a37a8c27770",
+  "frozen_inputs_checked": 300,
+  "all_12_commands_match_original_recipes_after_production_path_and_binary_substitution": true,
+  "retained_columns": 9,
+  "fixed_budgets_and_recorded_thread_counts_preserved": true,
+  "fresh_output_directories": true,
+  "bash_syntax_passed": true,
+  "actual_resource_gate": "WAIT_P0_RBM_CPU_NEURAL_S0_AND_NORMAL_MEMORY",
+  "tests": {
+    "test_methods": 6,
+    "checkpoint_corruption_cases": 7,
+    "log_recipe_prediction_cases": 9
+  },
+  "scope": "Preparation only. No real RBM training launched; all other production families and final export remain required."
+}

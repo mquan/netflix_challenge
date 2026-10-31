@@ -1,0 +1,16 @@
+{
+  "state": "verified_tree_only_neural_pending",
+  "arm": "diversity-s20261031-n16",
+  "execution_sha256": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df",
+  "reference_parity_receipt_sha256": "90ce5d77455392f6a8d6b951194a02adcef5c7ca957376f8ff5b6a664a62a649",
+  "config_bank_library_and_saved_scores_verified": true,
+  "all_five_tree_folds_complete": true,
+  "tree_rmse": 0.8713929347292373,
+  "ridge_rmse": 0.8733481867489635,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n16-s3.json": "843773211cd7ef49472c13038fb8655da146c28a259a5eb59d1841f2fda373eb",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n16-s3.refit.f32": "2f1d285fd07cac4676b3a04de539bdbfcedceed7b421d4a80fba328ce61f0c69",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261031-n16-s3.ridge.f32": "27e096f6795ac3f398f0e1a683ac649a84db6efe481f936d2a32cde8fd00d718"
+  },
+  "scope": "Intermediate tree audit only. Neural and fixed saved average still required; no synthesis or promotion."
+}
