@@ -72,7 +72,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H8. Choice affinity beyond N1 (P2) | this session (Claude) | done 2026-10-31: borderline −0.00036 (−0.00029 vs recalibrated); a small complement only |
 | H8 nested validation | Codex | complete: −0.000373 vs ridge, −0.000289 vs matched tree on P2 fold 0; full-bank value pending |
 | H9 choice co-occurrence embeddings | Codex | closed: +0.000048 gain beyond H8, below 0.0003; H8 control reproduced exactly |
-| H8 deployable CPU column | Codex | control 50/50 verified at 0.86670512; treatment tree verified at 0.86675819; final treatment neural live; retained R9 reference unchanged |
+| H8 deployable CPU column | Codex | complete: treatment 0.86648484, all five folds improve both references; matched-control gain 0.00022028 < fixed 0.0003; not promoted; retained R9 unchanged |
 | A7. Sibling-split Stage C rehearsal (K1 family) | this session (Claude) | **closed 2026-10-31: Stage C absorbs the sibling signal; pooling +0.00178 worse after retraining** |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
@@ -81,6 +81,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Structural plan week-0 scoping | Codex | all79 tree predictions exactly match retained R9; unchanged NN continuation live with byte-identical narrative snapshot after original runner's document-hash stop; 25 further arms await full parity |
 
 ## Closed bets
+
+- H8 (choice-affinity full-bank comparison): complete 2026-10-31. Treatment 0.86648484, gain 0.00038580 versus R9 and 0.00022028 versus matched control, all five folds better. The fixed 0.0003 matched-control minimum fails; not promoted, no threshold relaxation.
 
 - SO1 (selection auxiliary objective): closed 2026-10-31. Fixed P2 gain 0.0000275, below its frozen 0.0005 threshold; original gate independently reproduced exactly. Queue completed without a conditional full stage.
 
@@ -94,7 +96,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | H8 full-bank comparison | running: retained R9 + raw N1 in both arms; fixed matched control and treatment; four sequential CPU blend stages after SO1 queue release |
+| 1 | open | H8 complete; its fixed matched-control gate failed |
 | 2 | Structural plan week-0 scoping | all79 parity control running; fixed protocol and 26 arm manifests prepared; other 25 blend arms unlaunched |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed launch plan E3-plan-20261031.json binds 30 inputs and verified SO1 control; waits for H8 to finish under E3's no-other-training launch condition |
 

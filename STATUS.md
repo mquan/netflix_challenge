@@ -30,7 +30,6 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| H8 full-bank comparison (choice-affinity column) | Codex | Control 50/50 verified at 0.86670512; treatment tree verified at 0.86675819; final treatment NN live (PID 32367); `artifacts/headroom/H8-full-20261031/runner.log` |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | All79 tree predictions exactly equal retained R9. Unchanged NN continuation live (PID 36360, managed session 10452), with byte-identical archived narrative document; full parity pending. `experiments/S0-all79-tree-verification-20261031.json` |
 | E3 (λ=0.1 CE on A2h head), queued on GPU after H8 | Codex | `experiments/E3-plan-20261031.json`; starts when no other training is live |
 
@@ -39,8 +38,8 @@ with a stop check at week 3 (≥0.0015 bank gain).
 1. **Claude:** audit model families the winners and the literature used that
    are absent here. Rank them by expected error-structure novelty and pick the
    first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
-2. When H8 and E3 finish, record their full-bank and P2 results in GOAL.md's
-   closed bets and here.
+2. **Codex:** E3 remains queued until no other training is live. H8 is
+   complete and recorded below; its fixed gate failed.
 3. **Codex:** finish S0 reference parity before interpreting its 25 other
    fixed arms. E3 also waits for S0 under its no-other-training condition.
 
@@ -52,6 +51,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Date | Result | Doc |
 |---|---|---|
+| 10-31 | H8 full bank 0.86648484; all five folds improve R9, but matched-control gain 0.00022028 < fixed 0.0003 → not promoted | experiments/H8-full-independent-comparison-20261031.json |
 | 10-31 | Scoping: new families ≈0.0007–0.001 each; blend-per-standalone slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0 | STRUCTURAL_PLAN.md |
 | 10-31 | N1 full bank −0.00017, fold 1 worse → not promoted | NEXT_EXPLORATIONS.md |
 | 10-31 | Headroom map done: user shift absorbed by Stage C (A7), movie side empty, proxies 0 | HEADROOM.md |
