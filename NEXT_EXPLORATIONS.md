@@ -1,0 +1,129 @@
+# Next explorations beyond SO1 and N1
+
+Written 2026-10-30 on `codex/local-context`. This is a plan, not a score claim.
+The promoted reference is still R9-LAT-A2h at **0.8668706425** dev CV, against
+a calibrated target of **0.86465** (gap 0.0022206425; see
+[PLAN_TO_TARGET.md](PLAN_TO_TARGET.md)). SO1 (auxiliary choice prediction,
+[SELECTION_OBJECTIVE_RESEARCH.md](SELECTION_OBJECTIVE_RESEARCH.md)) and N1
+(choice-history input tokens) belong to other sessions. Nothing here edits
+their plans, runners or artifacts, or competes with them for the GPU.
+
+## Where the remaining error is
+
+- Round 11's error analysis of the R9-LAT-A2h blend found that 63% of probe
+  rows fall on a day with no training rating from that user. Those rows carry
+  67% of the squared error (RMSE 0.893), and error grows with the time since
+  the user's last training day. No per-bin recalibration is left (<0.00003).
+- HR0–HR4 (`HONEST_RESIDUALS.md` in the `honest-residual-chains` worktree) showed that the
+  blender already extracts what A2h and B4 know. Residual trees, code
+  features and path summaries add ≤0.0001.
+- The test offset (−0.0074, measured twice) comes entirely from retraining on
+  train+probe. That retrain is the one step that sees the user's most recent,
+  qualifying-like behaviour.
+
+So the gap needs either new evidence about the future, or a better way to
+absorb probe-like data in the final retrain. The bets below are ranked by how
+directly they target that.
+
+## E1. Make the final retrain (Stage C) use probe data better (CPU, start now)
+
+**Hypothesis.** Probe rows are each user's most recent ratings, from the same
+regime as qualifying. Plain union training gives them the same weight as
+ratings from years earlier. If the Stage C retrain weights them more, it may
+widen the retraining gain beyond the measured 0.0074.
+
+**Harness.** This uses [PHASE0_REHEARSAL.md](PHASE0_REHEARSAL.md) unchanged.
+P2 (training ratings dated nearest each user's probe dates) stands in for the
+probe, and the original probe stands in for qualifying. Number **b** (the
+blender fit on P2, applied to columns retrained with P2) is the Stage C
+analogue. The treatment changes only how P2 rows enter that retrain:
+
+| Arm | Retrain on T + P2 |
+|---|---|
+| b0 (control) | unchanged recipe; must reproduce the recorded b columns |
+| b-w2 | P2 rows get loss weight 2 |
+| b-w3 | P2 rows get loss weight 3 |
+| b-ft | b0, then a short fine-tune on P2 plus same-user recent rows at reduced learning rate (fixed epoch count chosen before scoring) |
+
+Every arm keeps the P2-selected epochs and the blender fitted in **a**. The
+original probe scores **b** only; it selects nothing. Weights {2, 3} and the
+fine-tune length are fixed before running, and there is no sweep after reading
+the probe.
+
+**Implementation note.** `src/joint.hpp` (K1) has no per-row weights today.
+Duplicating P2 rows in the training view would also double-count them in
+implicit feedback and support counts, so it is not a valid shortcut. Add an
+explicit loss weight that leaves implicit sets and counts unchanged. Add a test
+that weight 1 reproduces b0 byte for byte. Start with K1 and its two kNN
+columns (CPU), then the conditional RBM chain.
+
+**Gate.** At least **0.0005 extra retraining gain** (b0 − b-w) on the
+9-column core-bank blend, with the direction holding on all five user folds of
+the original probe. Pass → repeat on the Bayes columns, then A2h (GPU, after
+SO1). Fail → close E1; the plain union retrain stands.
+
+**Caveat.** P2 is less "future" than the real probe (PHASE0 already notes this),
+so the gain may be conservative or biased. Any result is an estimate of the
+hidden-test effect, not a verified test score.
+
+## E2. Movie-side context inside A2 (CF-UIcA-style) — GPU, after SO1
+
+**Hypothesis.** A2h encodes only the user's own history. Let the query token
+cross-attend to a sampled set of the target movie's other raters (their frozen
+A2h user codes, ratings and rating dates). That adds a learned, query-time,
+two-sided context, which is MOONSHOTS bet 2. It is still unmeasured.
+
+**Why the earlier negatives don't settle it.** The A1 item twin was a separate
+item-only model. Round 10's kNN neighbour features were fixed blender inputs,
+not a learned context. Neither tests joint conditioning.
+
+**Recipe.** Warm-start from the A2h-select checkpoint. Sample 64 co-raters
+uniformly from the movie's training raters, using the current A2h codes kept
+frozen for the pilot. Always exclude the target (user, movie) rating from the
+movie context at training and inference. Matched control: same warm start,
+schedule and seed, with the cross-attention block present but its context
+masked.
+
+**Gate.** At least **0.0005** in the R9-LAT-A2h blend (round4_boost three
+seeds + NN2 50/50), all folds better. Main risks: target leakage through
+co-rater codes trained on the target row, and sampling bias toward popular
+raters. Both need tests before the run.
+
+## E3. Ordinal distribution head on A2h — GPU, natural follow-on if SO1 passes
+
+**Hypothesis.** The conditional RBM, the one family that kept paying in round 6,
+models a rating distribution. A2h predicts a point. A five-way rating head
+(cross-entropy plus a ranked-probability term, as in HN0) gives the expected
+value for RMSE, plus spread and skew as blender support features. HN0 used
+this head only on a small user-only model, never on the strong encoder.
+
+**Recipe.** Two-epoch warm-start fine-tune from the A2h-select checkpoint,
+reusing SO1's matched-arm harness: same seed, masks, batch order and epochs.
+Control is MSE-only.
+
+**Gate.** At least **0.0003** in the blend, all folds better.
+
+## E4. Second A2h seed (filler)
+
+The A2b twin added 0.0003 and later A2 variants added 0.0001–0.0004. A second
+A2h seed probably adds 0.0001–0.0002. Run it only if the GPU would otherwise
+sit idle. It does not close the gap on its own.
+
+## Not worth reopening
+
+The record already closes each of these: Bayes session/day variants
+(round 11), B5 item-frequency and kNN neighbour features (round 10),
+ENNBlend / third blender (round 8), LC6 snapshot/epoch diversity, linear path
+summaries (HR1), A2 code features in the blender (HR4), more MT/RBM seeds
+(rounds 6–7), and a bigger transformer (A2c).
+
+## Order
+
+1. E1 now, on CPU. Its retrains are C++ (`netflix`), so they leave the GPU
+   free. But SO1's queue waits for two process snapshots with **no other
+   Python executable**, so the Python blend step (`scripts/rehearsal_blend.py`)
+   would delay SO1's start. Run blends only while SO1 is not about to launch.
+   Use `nice` and few threads, and check `ps` before each launch.
+2. After SO1's gate: if it fails, E2 takes the GPU. If it passes, run E3 first,
+   since it reuses the same harness and objective-change setup.
+3. E4 only as idle-GPU filler.
