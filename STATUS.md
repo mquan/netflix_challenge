@@ -108,7 +108,12 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    raw-order text export. Four tests pass with real tiny CLI fitting/inference/
    export and synthetic production receipts. Real final fit rejects the absent
    resolved bank before creating started metadata. Full fixed-budget final
-   runner still needs freezing/launch. `P0-final-handoff-verification-20261031.json`.
+   runner is now frozen, not yet launched. `P0-FINAL-20261031-plan.json`: 500
+   inputs / 501 checksum checks pass; one resource test plus the prior 14
+   resolver/handoff/serialization tests pass. Preserves 79/64/5 inputs and
+   tree 904/969/1106, NN 15/14/14 budgets with seeds 2026/7/13. Guard requires
+   all 82 audits, queue/stage process exit and stable normal memory, then runs
+   resolve → fit → infer → replay → export. `P0-FINAL-preflight-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
