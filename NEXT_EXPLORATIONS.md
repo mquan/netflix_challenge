@@ -552,3 +552,26 @@ summaries (HR1), A2 code features in the blender (HR4), more MT/RBM seeds
 2. After SO1's gate: if it fails, E2 takes the GPU. If it passes, run E3 first,
    since it reuses the same harness and objective-change setup.
 3. E4 only as idle-GPU filler.
+
+## A7 sibling Stage C rehearsal — independent fixed-gate result
+
+The unchanged owner scorer (`scripts/a7_score.py`, protocol in HEADROOM.md)
+was run after all five A7v2 steps returned zero, on the independently verified
+chronological dataset. The pre-score input binding and result are archived as
+`experiments/A7v2-independent-score-{plan,result,evidence}-20261031.json`.
+All bound scoring inputs were rehashed unchanged after scoring.
+
+K1-family half-B RMSE: dev 0.8912278762; dev+pool 0.8889590137;
+Stage C 0.8860581428; Stage C+pool 0.8878368913. The fixed deployable
+pooling rule **worsens Stage C by 0.0017787484**, with every user fold worse
+(+0.00150 to +0.00199). Its user-cluster 95% delta-MSE interval is entirely
+positive [0.0028491, 0.0034615]. The predeclared >=0.0005/all-fold extension
+gate fails; this recipe does not advance to Bayes/RBM on these results.
+
+The B-label-refitted diagnostic gains only 0.0000638 and has a mixed fold
+direction; it is not a deployable selection or an alternative passing arm.
+Retraining alone gains 0.0051697334 in this half-sibling/K1-family rehearsal.
+That is a family-specific, half-labelled-pool measurement, not an automatic
+replacement for the twice-measured full-bank offset of approximately 0.0074.
+No full-bank dev-CV or qualifying prediction was promoted, and this negative
+does not rule out every possible interaction or calibration recipe.
