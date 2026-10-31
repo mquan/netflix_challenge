@@ -1,0 +1,41 @@
+{
+  "state": "frozen_read_only_fixed_arm_audit_monitor",
+  "execution": "/Users/quan/workspace/netflix_challenge/experiments/S0-execution-document-rebind-20261031.json",
+  "reporter_binding": "/Users/quan/workspace/netflix_challenge/experiments/S0-report-binding-20261031.json",
+  "control_bindings": {
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-execution-document-rebind-20261031.json": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-report-binding-20261031.json": "fba15a21cd92afabcbf50483a8b72a9d4823e9baa9e43a5162169eeda1cb0cd5",
+    "/Users/quan/workspace/netflix_challenge/scripts/monitor_structural_arms.py": "3327dc63e6a0dde21badbf6616964667dee7cb4ebdd5cf22da385cd8a7b0e098",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-arm-monitor-20261031-run.sh": "e7fbd51f71e8885a41eb2d76c6e6d6072fb9e473c0d2738f7371007628e3253d"
+  },
+  "receipts": {
+    "diversity-s20261031-n1": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n1-full-verification-20261031.json",
+    "diversity-s20261031-n4": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n4-full-verification-20261031.json",
+    "diversity-s20261031-n16": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n16-full-verification-20261031.json",
+    "diversity-s20261031-n32": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n32-full-verification-20261031.json",
+    "diversity-s20261031-n64": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n64-full-verification-20261031.json",
+    "diversity-s20261101-n1": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261101-n1-full-verification-20261031.json",
+    "diversity-s20261101-n4": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261101-n4-full-verification-20261031.json",
+    "diversity-s20261101-n16": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261101-n16-full-verification-20261031.json",
+    "diversity-s20261101-n32": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261101-n32-full-verification-20261031.json",
+    "diversity-s20261101-n64": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261101-n64-full-verification-20261031.json",
+    "diversity-s20261102-n1": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261102-n1-full-verification-20261031.json",
+    "diversity-s20261102-n4": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261102-n4-full-verification-20261031.json",
+    "diversity-s20261102-n16": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261102-n16-full-verification-20261031.json",
+    "diversity-s20261102-n32": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261102-n32-full-verification-20261031.json",
+    "diversity-s20261102-n64": "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261102-n64-full-verification-20261031.json",
+    "quality-joint_time": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-joint_time-full-verification-20261031.json",
+    "quality-integrated_neighborhood": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-integrated_neighborhood-full-verification-20261031.json",
+    "quality-knn": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-knn-full-verification-20261031.json",
+    "quality-rbm": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-rbm-full-verification-20261031.json",
+    "quality-autorec": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-autorec-full-verification-20261031.json",
+    "quality-gp": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-gp-full-verification-20261031.json",
+    "quality-local_lowrank": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-local_lowrank-full-verification-20261031.json",
+    "quality-masked_history": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-masked_history-full-verification-20261031.json",
+    "quality-bayes": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-bayes-full-verification-20261031.json",
+    "quality-transformer": "/Users/quan/workspace/netflix_challenge/experiments/S0-quality-transformer-full-verification-20261031.json"
+  },
+  "poll_seconds": 60,
+  "own_threads": 1,
+  "scope": "Audits only newly completed fixed arms after producer process exit. Existing receipts never overwritten. No training, cancellation, selection, retuning, promotion or full synthesis. Exits after 25 arm receipts; separately managed final reporter audits all results."
+}

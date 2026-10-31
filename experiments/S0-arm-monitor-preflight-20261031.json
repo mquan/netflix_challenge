@@ -1,0 +1,19 @@
+{
+  "state": "verified_fixed_arm_monitor_prelaunch",
+  "plan_sha256": "0e7ced6aac68c3beffc3f8b15bad563cef80b265dddac7769246e9a002de9c61",
+  "registered_arms": 25,
+  "current_complete_arms": 5,
+  "existing_receipts_unchanged": {
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n1-full-verification-20261031.json": "7deb1c13e25ecf3c0b4447ac0d659872a24e72be06fbf2316b781b003853a5d6",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n4-full-verification-20261031.json": "be57d46414a33de5cb434a142c4711d09223e8a1b912207393613cd6821726c1",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n16-full-verification-20261031.json": "11b20bf564b10cc3988c4553109edac958052971521a59388d31e7575f93a0de",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n32-full-verification-20261031.json": "21c800c22d5131e3321617e69b09e236b8e1bf8d89910880e3ee450569e601d2",
+    "/Users/quan/workspace/netflix_challenge/experiments/S0-diversity-s20261031-n64-full-verification-20261031.json": "67eaffd2c945fd21b365228aa0ed94d68f43a1413696916cf476a0b59314b0e3"
+  },
+  "actual_partial_experiment_creates_no_receipts": true,
+  "invalid_existing_receipt_rejected": "Existing arm receipt differs: diversity-s20261031-n1",
+  "control_bindings_verified": true,
+  "producer_exit_required": true,
+  "training_or_retuning": false,
+  "scope": "Read-only audit automation for fixed completed S0 arms; no new trainer and no early synthesis. Existing final reporter remains unchanged."
+}

@@ -48,8 +48,8 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **23:30 UTC**: A2h epoch 3/batch 1400, both S0 lanes
-   active; lane 1 neural has three completed fold records, remaining folds in
+   Last runtime check **23:34 UTC**: A2h epoch 3/batch 1700, both S0 lanes
+   active; lane 1 neural has four completed fold records, remaining fold in
    progress. Ten guarded waiters remain live; no new completed stage or failure.
    Latest recorded full process snapshot: `experiments/P0-live-health-20261031T232713Z.json`.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
@@ -60,6 +60,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    five tests and real-reference/partial-experiment checks pass. Its bash
    handoff PID 94435/session 80182 is verified waiting for both lane runners;
    do not launch a duplicate report. `experiments/S0-report-handoff-20261031-launch.json`.
+   Completed-arm audit watcher is also live: PID 77645/session 64149, checks
+   every 60 seconds and audits only after producer exit. Its actual partial-
+   experiment check leaves all five prior receipts unchanged; invalid receipt
+   rejected. It never trains, retunes or synthesizes early. Do not duplicate or
+   manually race its future receipt writes. `experiments/S0-arm-monitor-launch-20261031.json`.
 
 ## Decisions waiting on the user
 

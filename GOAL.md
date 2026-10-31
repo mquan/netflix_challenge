@@ -87,6 +87,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
 | Structural plan week-0 scoping | Codex | full all79 parity exact; 4/25 further fixed arms audited (first-seed n1/n4/n16/n32); n16 average 0.8710975; lane 0 n64 tree live, lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
+| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. Actual partial experiment leaves five prior receipts unchanged; invalid receipt rejected. No training, retuning or early synthesis. Do not duplicate or race its future receipt writes. `S0-arm-monitor-launch-20261031.json` |
 
 ## Closed bets
 
