@@ -1,0 +1,19 @@
+{
+  "state": "waiting_for_training",
+  "runner_pid": 60202,
+  "exec_session_id": 35306,
+  "wait_for_pids": [38985, 38977],
+  "runner": "experiments/E3-gate-handoff-20261031-run.sh",
+  "frozen_checks": "experiments/E3-gate-handoff-20261031.sha256",
+  "log": "artifacts/ordinal/E3-gate-handoff-20261031.log",
+  "output_dir": "artifacts/ordinal/E3-gate-20261031",
+  "preflight": {
+    "bash_syntax_passed": true,
+    "all_ten_handoff_hash_checks_passed": true,
+    "original_trainer_and_runner_confirmed_live": true,
+    "output_directory_absent": true,
+    "handoff_frozen_and_pushed_before_launch": true,
+    "handoff_process_confirmed_live_and_waiting": true
+  },
+  "scope": "One existing completion audit and both registered P2 gates after E3 exits; no automatic retry, further training, or promotion. Original training runner and frozen plan unchanged."
+}
