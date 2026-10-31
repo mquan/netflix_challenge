@@ -1317,3 +1317,32 @@ difference 2.3842e-7. All six output hashes are archived in
 Two of 25 nonreference arms are complete; synthesis remains gated on all 25.
 Lane 0 advanced unchanged to n16 tree; lane 1's n32 tree and P0's A2h MPS
 training remain live. Their maximum configured CPU total is seven, below ten.
+
+### P0 CPU neural phase prepared; launch awaits capacity (2026-10-31)
+
+`experiments/P0-CPU-neural-20261031-plan.json` binds the same 233 production
+inputs and master snapshot, with the remaining seven primary neural recipes:
+MH3 4 epochs, MT0 12, MT1 10, MT2 12, MT3 7, MT5 10 and MT6 12. Original
+archived sources, configs, seeds and two/three-thread settings are unchanged.
+They use the existing adapter and completed-column auditor; no new scoring
+or training implementation is introduced. This accounts for all fourteen
+primary neural recipes together with the seven-stage MPS phase, but the
+other 65 retained column occurrences and their dependencies remain pending.
+
+The CPU runner is frozen but **not launched** while P0 GPU and both S0 lanes
+occupy all three slots. Before each stage it waits for at least one existing
+S0 lane to exit and two normal-pressure checks 30 seconds apart, checks every
+bound hash, then waits/rechecks capacity again. With one S0 tree, the GPU host
+thread and a three-thread CPU neural stage, the configured own maximum is
+seven CPU threads. A failed training/audit stops the queue without retry.
+
+The memory gate uses the sysctl's dispatch value 1 for normal pressure; 2
+warns and 4 is critical. Apple's [sysctl conversion](https://raw.githubusercontent.com/apple-oss-distributions/xnu/main/bsd/kern/kern_memorystatus_notify.c)
+and [dispatch constants](https://raw.githubusercontent.com/apple-oss-distributions/xnu/main/bsd/sys/event_private.h)
+establish this mapping. Unknown or failed pressure observations also wait.
+Bash syntax and five isolated resource-guard scenarios pass: both lanes live;
+one lane gone but pressure high; one lane gone and pressure normal; both gone
+and pressure normal; unknown pressure. The tests mock only shell observations
+and sleeps, never start a trainer, and are recorded in
+`experiments/P0-CPU-neural-preflight-20261031.json`. Actual pressure returned
+to level 1 during preparation; the occupied-slot condition still prevents launch.
