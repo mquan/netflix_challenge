@@ -96,12 +96,12 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | open | H8 complete; its fixed matched-control gate failed |
-| 2 | Structural plan week-0 scoping | all79 parity control complete and exact; other 25 fixed blend arms ready, currently unlaunched |
+| 1 | S0 scoping lane 1 | 12 exact fixed arms prepared, no GPU; all79 parity verified |
+| 2 | S0 scoping lane 0 | 13 exact fixed arms prepared, no GPU; all79 parity verified |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed P2 treatment running; plan E3-plan-20261031.json, launch receipt E3-select-20261031-launch.json; verified SO1 control reused |
 
-GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
-behind the other session. The log of results is kept in
+E3's fixed GPU treatment is running after the other session's queue finished;
+E2 (movie-side context in A2) remains deferred. The log of results is kept in
 [NEXT_EXPLORATIONS.md](NEXT_EXPLORATIONS.md).
 
 E2's CPU data component is ready: training-only indexes for P2/full and two
