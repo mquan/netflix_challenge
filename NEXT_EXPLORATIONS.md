@@ -1255,7 +1255,7 @@ the seven archived-source MPS neural recipes, using the unchanged
 `scripts/production_neural.py` fixed-budget refit path. Order and epochs are
 A2h 12, A2f 10, A2e 12, A2b 10, A2 11, MT8 7, MT9 8. Each uses one CPU thread
 and the GPU, serially, alongside the two existing S0 CPU lanes (maximum own
-configured CPU threads six). There is no new epoch, seed or coefficient search.
+configured CPU threads seven when both S0 lanes run trees). There is no new epoch, seed or coefficient search.
 
 **Handoff checks.** `scripts/production_neural_audit.py` requires complete
 unlabeled fixed-budget reports matching each original preparation config,
@@ -1298,9 +1298,22 @@ bound provenance/config/library fields and records no query metric.
 `experiments/P0-GPU-launch-20261031.json` and
 `experiments/P0-GPU-startup-20261031.json` preserve the launch evidence.
 
-Both S0 lanes remain unchanged and live. Maximum configured own CPU threads
-are six with this GPU job. Monitor the existing queue; do not manually launch
+Both S0 lanes remain unchanged and live. Configured own CPU threads were six
+at launch (tree + neural + GPU host thread), and can reach seven with both
+S0 tree stages. Monitor the existing queue; do not manually launch
 duplicate production columns or restart a partial stage. It stops on any
 training, provenance or completion-audit failure. Remaining production phases
 are still required after these seven columns; the standing score goal remains
 unachieved.
+
+### S0 second complete arm audited (2026-10-31)
+
+The fixed one-column arm (`diversity-s20261031-n1`) passed the same complete
+reporter audit: exact configs, inputs, libraries, five tree and neural folds,
+and saved 50/50 component agreement. Saved tree/NN/average RMSEs are
+0.8893638077 / 0.8888314777 / **0.8883958874**, with average/component maximum
+difference 2.3842e-7. All six output hashes are archived in
+`experiments/S0-diversity-s20261031-n1-full-verification-20261031.json`.
+Two of 25 nonreference arms are complete; synthesis remains gated on all 25.
+Lane 0 advanced unchanged to n16 tree; lane 1's n32 tree and P0's A2h MPS
+training remain live. Their maximum configured CPU total is seven, below ten.
