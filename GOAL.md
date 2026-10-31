@@ -47,7 +47,7 @@ experiment.
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | E1 stage 1: P2 up-weighting in the K1-family Stage C retrain | running since 2026-10-30 20:40 (`experiments/E1-chain.out`) |
+| 1 | E1 stage 1: P2 up-weighting in the K1-family Stage C retrain | all nine training steps succeeded; fixed scorer running from 2026-10-31 05:04 UTC (`experiments/E1-fixed-scoring-20261030.state`) |
 | 2 | E1-Bayes: the same weighting as per-row noise precision in the B4 Stage C retrain (rank 128) | w2 running; w1 shell queue waits for slot 1's fixed comparison (`experiments/E1-bayes-control-queue-20261030.state.json`) |
 | 3 | open | — |
 
