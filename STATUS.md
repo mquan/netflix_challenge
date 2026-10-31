@@ -31,13 +31,14 @@ with a stop check at week 3 (≥0.0015 bank gain).
 | Job | Owner | Check |
 |---|---|---|
 | S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; two CPU lanes live (runners 39539/39615, managed sessions 96236/83214), first arms n1/n4; 25 fixed arms total. `experiments/S0-lanes-20261031-launch.json` |
-| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 reached batch 1000/6168, PID 38985/session 51948 verified live at elapsed 52m. Both S0 worker groups also live; no completed scoping arm yet. Decision waits for epoch 2 and both registered gates; `experiments/E3-select-20261031.log` |
+| E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Epoch 1 complete (validation 0.8650174); epoch 2 reached batch 1600/6168, PID 38985/session 51948. Frozen gate handoff PID 60202/session 35306 waits for trainer+runner exit, then audits completion and runs both gates once; `experiments/E3-gate-handoff-20261031-launch.json` |
 
 ## Next actions
 
 1. **Claude:** L1 closed (no gain). Before building the next family (feature GBDT base model, co-clustering), re-examine the plan, since the per-family estimate is survivorship-biased (FAMILY_AUDIT.md). **Decision needed from the user** (see below).
-2. **Codex:** monitor E3; once complete, run `scripts/e3_candidate_gate.py`
-   to audit the fixed recipe and evaluate both existing P2 gates (seven fixture tests pass).
+2. **Codex:** monitor E3 and its frozen gate handoff; inspect the automatic
+   `scripts/e3_candidate_gate.py` result once complete (seven fixture tests pass).
+   Do not manually launch a duplicate gate or retry partial output.
 3. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results; retain E3 priority.
 

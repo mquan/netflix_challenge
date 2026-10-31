@@ -79,7 +79,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
-| E3 gate preparation | Codex | completion audit and existing fold-0/five-fold gates wired by e3_candidate_gate.py; seven fixture tests pass; claiming a frozen bash handoff to run the existing audit once trainer 38985 and runner 38977 exit, without retry or further training |
+| E3 gate preparation | Codex | seven fixture tests pass; frozen bash handoff live PID 60202/session 35306 waits for trainer 38985 and runner 38977 exit, then runs the existing completion audit and both gates once, without retry or further training |
 | Structural plan week-0 scoping | Codex | full all79 parity exact; all 25 further fixed arms running through two CPU lanes (13+12); E3 retains GPU priority; narrative snapshot preserves original provenance |
 
 ## Closed bets
