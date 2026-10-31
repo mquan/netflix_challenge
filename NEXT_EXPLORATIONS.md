@@ -143,6 +143,36 @@ data/plan bindings, finiteness and all five fold scores are recorded in
 `experiments/E1-fixed-control-verification-20261030.json`. No weighted-arm
 gate result or promoted gain is claimed by this control-only check.
 
+### E1 result: closed (2026-10-31)
+
+`artifacts/rehearsal/e1/fixed-scoring-20261030/comparison.json`: the blender
+is fit once on P2 and scores every b bank. The original bank reproduces
+0.8759524498 exactly.
+
+| Bank | b RMSE | Δ vs w1 | Folds better |
+|---|---:|---:|---:|
+| original (recorded B-K1) | 0.8759524498 | −0.0000003 | — |
+| w1 (same binary, unweighted) | 0.8759527312 | — | — |
+| w2 | 0.8760935147 | **+0.0001408** | 0 / 5 |
+| w3 | 0.8764472883 | **+0.0004946** | 0 / 5 |
+
+Run-to-run noise is 3e-7. Up-weighting P2 rows makes the Stage C bank
+*worse*, monotonically in the weight, on every fold. The paired user-cluster
+95% intervals on ΔMSE exclude zero for both arms. Standalone, no epoch of the
+w2 K1 run beats the unweighted final (best 0.89504 vs 0.89422), so a
+different epoch could not rescue it, and that bound needs no probe selection.
+
+The pre-registered early stop applied. The Bayes w1 control was never launched
+(`E1-bayes-control-queue-20261030.state.json`: `skipped_no_k1_gain`). The
+Bayes w2 arm (this session's job) was stopped at sweep 15 of 160, before any
+kept sample, and its receipt records return code 143. No Bayes score exists or
+is claimed. The `--row-weights` code stays, tested, for any future use.
+
+**Reading.** Plain union training already absorbs the probe-like rows about as
+well as this model family can. Extra weight overfits those 1.4M rows instead
+of transferring recency. The Stage C offset is not a lever. The gap has to come from
+new modelling signal, which agrees with round 12's conclusion.
+
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
 The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
