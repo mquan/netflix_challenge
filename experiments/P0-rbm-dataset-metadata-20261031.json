@@ -1,0 +1,45 @@
+{
+  "state": "production_native_metadata_verified",
+  "metadata": {
+    "fingerprint": 14740627341988109723,
+    "users": 480189,
+    "items": 17770,
+    "train_count": 100480507,
+    "query_count": 2817131,
+    "sessions": 18136482
+  },
+  "build_command": [
+    "nice",
+    "-n",
+    "10",
+    "clang++",
+    "-O3",
+    "-DNDEBUG",
+    "-std=c++17",
+    "-DNETFLIX_NATIVE_SOURCE=\"/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed/src/netflix.cpp\"",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_native_metadata.cpp",
+    "-framework",
+    "Accelerate",
+    "-o",
+    "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-metadata"
+  ],
+  "binary": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-metadata",
+  "binary_sha256": "4fc63faf1ca9bd6349cd5ce67dded58b443fbf648dee499c95ed3323a5678432",
+  "source": "/Users/quan/workspace/netflix_challenge/scripts/production_native_metadata.cpp",
+  "source_sha256": "85e0ee55580df59a4349c9adf5ec4bb41d2f540d522d418f5e40c769ed9bf0bf",
+  "native_sources": {
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "0e31c5404a9f7aa87b15ccca23caf3bd89a927fea5230f6667c552ce419c95f6",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/rbm.hpp": "3d6fb5f029ad263277fc1a9a732947726e3cc8d6b49fa35c03a9843408564158"
+  },
+  "native_source_root": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-2/fixed",
+  "data": "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin",
+  "data_sha256": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+  "limitation": "Read-only native dataset fingerprint and temporal-session count; no training or query score."
+}

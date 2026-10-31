@@ -49,7 +49,9 @@ The week-3 stop check remains ≥0.0015 bank gain.
    including reconstructed R1/R2 support sources. Six isolated fixed-budget variants cover
    all 12 stages; 64 fixture commands pass parity, label-isolation, reload and resume checks.
    `P0-rbm-stage-build-map-20261031.json` binds the stage/binary mapping and thread constraints.
-   Next freeze executable native phases with resource guards and output audits.
+   RBM output auditor and resource gate pass six tests; actual native fixture handoffs
+   (standard → resumed → conditional) pass reload/audit checks. Production fingerprint and
+   18,136,482 temporal sessions are independently measured. Next freeze the guarded RBM queue.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
