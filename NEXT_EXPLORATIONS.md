@@ -127,6 +127,14 @@ before output creation or fitting. Evidence is
 `experiments/E1-fixed-scoring-integration-20261030.json`; the frozen real-data
 scorer and plan remain unchanged. These are fixture values, not Netflix gains.
 
+**Execution checkpoint, 2026-10-31 05:04 UTC.** All nine K1/kNN training
+receipts for w1/w2/w3 report return code zero. The shell waiter launched the
+unchanged one-thread scorer after verifying N1's expected training process
+was live. PID 42412 was confirmed running the declared `score` command. This
+is the fixed four-bank comparison, not a new parameter search; no gain or
+gate outcome is claimed before `comparison.json` is complete. Memory pressure
+was checked before the transition (26% system-wide free memory).
+
 ### E1 stage 1 observation during the w2 run (not a gate result)
 
 The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
