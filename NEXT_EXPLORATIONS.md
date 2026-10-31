@@ -1033,3 +1033,20 @@ The unmodified runner checked its inputs again and launched the fourth and
 final stage, treatment NN2. Its completed 50/50 average, paired comparisons
 against the matched control and retained R9, and the registered full-bank
 gate remain pending. The tree-only result does not authorize promotion.
+
+### S0 all79 tree exact parity; unchanged NN continuation (2026-10-31)
+
+The original all79 tree stage finished all five folds at 0.8671122161 RMSE.
+Its saved predictions are **exactly equal** to retained R9's tree payload
+(maximum absolute difference 0.0). The existing full-comparison verifier also
+checks its exact configuration, bank, library, finite predictions and saved
+scores. `experiments/S0-all79-tree-verification-20261031.json` records this.
+
+The original managed session exited 1 after the planned narrative-document
+hash failure, before neural training. Its completed tree is preserved. The
+new `S0-all79-NN-continuation-20261031.json` binds the byte-identical archived
+document, all otherwise unchanged frozen inputs and the completed tree's
+outputs, and contains the **exact** original NN command/configuration.
+The companion shell/hash manifest will run only that neural stage. Full
+reference parity is still unproven until its saved 50/50 average is checked;
+no other S0 blend arm has been launched.
