@@ -1,0 +1,21 @@
+{
+  "state": "verified_prelaunch_user_knn_phase",
+  "plan_sha256": "d0c9fe6a7f2956b207d77c17dbb3c7bdf5de4d977842563f45d8d76c636ddcc2",
+  "frozen_inputs": 250,
+  "checksum_checks": 251,
+  "bash_syntax": true,
+  "rank256_fixed_epochs41": true,
+  "historical_threads": [
+    6,
+    3
+  ],
+  "prediction_columns": 1,
+  "support_aliases": 2,
+  "original_inference_binary": true,
+  "tests_passed": 5,
+  "live_guard": "WAIT_P0_USER_KNN_KERNEL_AND_NORMAL_MEMORY",
+  "unaudited_K1_prepare_rejected": "[Errno 2] No such file or directory: '/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/user-knn/K1/audit.json'",
+  "production_outputs_absent": true,
+  "launched": false,
+  "limitation": "Production plan preparation only. Six-thread full K1 training remains outstanding. Separate frozen blender latent basis remains unchanged. No qualifying score or final bank."
+}
