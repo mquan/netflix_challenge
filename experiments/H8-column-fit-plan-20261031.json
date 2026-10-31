@@ -1,0 +1,93 @@
+{
+  "libraries": {
+    "numpy": "2.5.3",
+    "lightgbm": "4.7.0"
+  },
+  "feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "mode": "train",
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "joint_model": "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.bin",
+  "bank": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MH3-categorical-mse.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT0-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT1-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT2-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT3-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn256td.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn64.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-rbm100c.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/selection-objective/N1-saved-epoch13.p2.f32"
+  ],
+  "bank_names": [
+    "MH3",
+    "MT0",
+    "MT1",
+    "MT2",
+    "MT3",
+    "K1",
+    "knn256td",
+    "knn64",
+    "rbm100c",
+    "B4",
+    "A2h",
+    "N1"
+  ],
+  "selection_result": "/Users/quan/workspace/netflix_challenge/experiments/H8-nested-result-20261031.json",
+  "iterations": {
+    "base_tree": 39,
+    "choice_tree": 114
+  },
+  "tree_params": {
+    "objective": "regression",
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 500,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 10,
+    "seed": 20261031,
+    "num_threads": 2,
+    "verbose": -1
+  },
+  "scope": "Fit P2 labels only; fixed control39/treatment114 rounds from nested H8. No P2 score selection or original-probe score.",
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.bin": "51c3bbd078b12f94247bed4551157f069b699de440a523d4b546864d16404a45",
+    "/Users/quan/workspace/netflix_challenge/experiments/H8-nested-result-20261031.json": "262aa075b9000b4ce61ae9c0e68d1a92b622e8f8823b54d7e1db42ec6020d055",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MH3-categorical-mse.p2.f32": "1ca85bffb77f0f753e006c0e2593516eace88fe0c9944c9a7f0273d8d8d230e0",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT0-select.p2.f32": "76c541fc1881fddff9338a006e7d4ca88d7336fdb6fa894b19e2be068be4d115",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT1-select.p2.f32": "9d4b88ddb2dc5cef1ce1bd612a834a7f38438c9ad9ed247db15a1b0df0bb8ca7",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT2-select.p2.f32": "0a4d0a104d7fa6c18323c2a266282f234ee8b71847990fe152ec07bba88e72bd",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT3-select.p2.f32": "bbc98d8ddf326dd903728cf7ccb4de9bceaf51842ea19e795caed34d37990603",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32": "bc3db54d954d0c5a6ceb654008f4c1df02f4037982161e515a35162203dfaaf2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn256td.train-matched-20260927.f32": "664d95eea34c96ecee7f45ba7e987df97a85fa9c9c2f7522bdb52202aee7eb63",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn64.train-matched-20260927.f32": "04ab09097eeea8223f9fe46e0e697997f55f49eed29dcb6b6c4c0dcafc3fc39b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-rbm100c.p2.f32": "41e43ff2c1d2974e23cac01bdb34beadbef61cdaf441b938cf4c092879ff8dac",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32": "786985155c7f4dbeee697cdc33f71aaed410d50d365afca05b25ea05ffbea176",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32": "7de5e7daa1552d3bc6f3a90d5834274e53f292ea911c645b42daa38d4b1e7463",
+    "/Users/quan/workspace/netflix_challenge/artifacts/selection-objective/N1-saved-epoch13.p2.f32": "c35391b0615250aaa68618ec99d567fc1647976604986621be8f6e18ab1d7cc5",
+    "/Users/quan/workspace/netflix_challenge/scripts/choice_affinity_column.py": "458b229b62b67218e4e33a4c233568fea34f1e525065bdd2b08ff5210d23ae10",
+    "/Users/quan/workspace/netflix_challenge/scripts/headroom_choices.py": "90076d9cefb53485460e55197f6704fd128743a624b7e64fd4179062645ba2fc",
+    "/Users/quan/workspace/netflix_challenge/scripts/headroom_map.py": "5cbd9f731ca6e84d754e4ea3283a36cc3b6f9eed4c1ae96a58d3eb72cb037065",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/local_context_chain.py": "0a75125f8c9b823f00f515b2253d47ff8c48a9389624c563f4f3ea37847aecc1",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  }
+}
