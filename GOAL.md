@@ -108,3 +108,9 @@ in `experiments/A7-order-repair-verification-20261030.json` checks all
 99,775,636 training tuples: no within-user date inversions, identical per-user
 item/day/rating content, and unchanged offsets/probe/implicit arrays versus
 v1. The owner's A7v2 graph chain is live; this session did not relaunch it.
+
+Independent A7v2 scoring now confirms that the fixed pooling extension gate
+fails: Stage C+pool is 0.0017787484 worse than Stage C on all five folds.
+Evidence is `experiments/A7v2-independent-score-evidence-20261031.json`;
+full results and interpretation are in NEXT_EXPLORATIONS.md. This is a
+K1-family rehearsal result; the promoted best and full-bank offset stand.
