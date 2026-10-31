@@ -77,8 +77,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
-| E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; no E3 training or scoring |
-| Structural plan week-0 scoping | Codex | all79 tree predictions exactly match retained R9; unchanged NN continuation live with byte-identical narrative snapshot after original runner's document-hash stop; 25 further arms await full parity |
+| E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; E3 fixed treatment now live, no real score yet |
+| Structural plan week-0 scoping | Codex | full all79 parity verified: saved tree, neural and average exactly match retained R9; 25 fixed further arms ready; narrative snapshot preserves original document provenance |
 
 ## Closed bets
 
@@ -97,8 +97,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Slot | Bet | State |
 |---|---|---|
 | 1 | open | H8 complete; its fixed matched-control gate failed |
-| 2 | Structural plan week-0 scoping | all79 parity control running; fixed protocol and 26 arm manifests prepared; other 25 blend arms unlaunched |
-| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed launch plan E3-plan-20261031.json binds 30 inputs and verified SO1 control; waits for H8 to finish under E3's no-other-training launch condition |
+| 2 | Structural plan week-0 scoping | all79 parity control complete and exact; other 25 fixed blend arms ready, currently unlaunched |
+| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed P2 treatment running; plan E3-plan-20261031.json, launch receipt E3-select-20261031-launch.json; verified SO1 control reused |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
 behind the other session. The log of results is kept in

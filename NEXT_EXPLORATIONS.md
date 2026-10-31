@@ -1090,3 +1090,25 @@ confirm the existing GPU queue is terminal and capacity is idle, and start
 E3 before additional CPU scoping training. Its two-epoch budget, CE=0.1,
 matched SO1 control and both predeclared P2 gates remain unchanged. The shell
 runner performs no scoring or automatic promotion.
+
+## S0 full reference parity verified; E3 launched (2026-10-31)
+
+S0's unchanged NN continuation completed and exited zero. Independent
+verification in `experiments/S0-full-parity-verification-20261031.json`
+checks both full-blender configurations/banks/libraries and all saved scores.
+Its tree, neural and 50/50 average prediction payloads each match retained
+R9 **exactly** (maximum absolute differences all 0.0); saved average CV is
+0.8668706424233039. The within-arm fixed-average error is below 1e-6, all
+frozen inputs remain unchanged under the documented narrative-path rebind,
+and all 26 planned commands are identical to the original execution plan.
+The predeclared reference gate passes; the other 25 fixed S0 arms remain
+unlaunched and are now interpretable once completed. No subset is promoted.
+
+A fresh whole-process snapshot then showed no Python trainer live, the
+N1/SO1 and H8 queues were terminal, and system memory was 92% free. E3's
+frozen two-epoch P2 treatment launched only after that check, using its exact
+registered command. All 30 frozen inputs and the plan passed the shell's
+hash check. Live trainer PID 38985 and managed session 51948 are recorded in
+`experiments/E3-select-20261031-launch.json`; output is
+`experiments/E3-select-20261031.log`. No E3 score or recipe adjustment has
+occurred. Its completed SO1 control and both predeclared P2 gates stand.
