@@ -66,7 +66,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | not started; Claude stays off it |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | retained R9 and production inputs frozen in P0-production-20261031-plan.json; seven-stage MPS queue prepared and preflight passed (233 inputs); A2h first, exact archived sources and budgets; preserve S0 and Claude's later GPU turn |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
@@ -106,7 +106,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 |---|---|---|
 | 1 | S0 scoping lane 1 | n4 complete and audited; n32 tree live next in its 12 exact fixed arms; no GPU |
 | 2 | S0 scoping lane 0 | n1 neural live, its tree audited; 13 exact fixed arms; no GPU |
-| 3 | Free | E3 closed after both fixed P2 gates failed; no further training launched |
+| 3 | Production retrain P0 | seven fixed MPS neural stages prepared, A2h first; E3 closed; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;
 E2 (movie-side context in A2) remains deferred. The log of results is kept in

@@ -1,0 +1,45 @@
+{
+  "state": "prepared_not_launched",
+  "mps_available": true,
+  "torch_version": "2.14.1",
+  "numpy_version": "2.5.3",
+  "disk_free_GiB": 130.29346466064453,
+  "production_data_and_query_mapping_hashes_verified": true,
+  "retained_79_columns_and_all_recipe_registry_hashes_verified": true,
+  "blender_source_and_available_feature_hashes_verified": true,
+  "seven_gpu_recipes_match_original_prepare_only_reports": true,
+  "master_sha256": "1b8aa3f12eeb8ec377e545f2b559e3a321c82cfb5b1c66d743d6b36063ce8775",
+  "GPU_plan_sha256": "5413ed515fef0054c867193dc988a3b449963979762af9f897f78ac4ae0c4a31",
+  "frozen_input_count": 233,
+  "stages": [
+    {
+      "column": "A2h-refit.refit.e12.f32",
+      "epochs": 12
+    },
+    {
+      "column": "A2f-refit.refit.e10.f32",
+      "epochs": 10
+    },
+    {
+      "column": "A2e-refit.refit.e12.f32",
+      "epochs": 12
+    },
+    {
+      "column": "A2b-refit.refit.e10.f32",
+      "epochs": 10
+    },
+    {
+      "column": "A2-refit.refit.e11.f32",
+      "epochs": 11
+    },
+    {
+      "column": "MT8-refit.refit.e7.f32",
+      "epochs": 7
+    },
+    {
+      "column": "MT9-refit.refit.e8.f32",
+      "epochs": 8
+    }
+  ],
+  "auditor_fixture_tests_passed": 3
+}

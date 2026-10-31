@@ -1239,3 +1239,50 @@ This is 1/25 fixed nonreference arms, not a diversity-curve conclusion. Lane 1
 advanced unchanged to the registered n32 tree stage; lane 0's n1 neural stage
 continues. The final report still requires every arm, and no partial result
 changes the schedule, recipes, subset selection or promotion rules.
+
+## P0 retained-bank production retrain — authorized 2026-10-31
+
+The user assigned this execution to Codex after E3, with Claude's moonshot GPU
+pilot following production. This authorizes the current retained R9 bank's
+production run despite its unmet development target; no failed candidate is
+promoted. `experiments/P0-production-20261031-plan.json` freezes the 79 ordered
+columns (77 unique hashes), all recipe registries, existing final-blender
+schema/budgets, production dataset and query mappings. Preserve duplicate
+aliases. N1, H8 and E3 are excluded because they were not promoted.
+
+**First phase.** `experiments/P0-GPU-20261031-plan.json` binds 233 inputs and
+the seven archived-source MPS neural recipes, using the unchanged
+`scripts/production_neural.py` fixed-budget refit path. Order and epochs are
+A2h 12, A2f 10, A2e 12, A2b 10, A2 11, MT8 7, MT9 8. Each uses one CPU thread
+and the GPU, serially, alongside the two existing S0 CPU lanes (maximum own
+configured CPU threads six). There is no new epoch, seed or coefficient search.
+
+**Handoff checks.** `scripts/production_neural_audit.py` requires complete
+unlabeled fixed-budget reports matching each original preparation config,
+libraries, adapter/archive/source and data hashes; all positive-target epochs;
+no query metric; every extracted source; finite 2,817,131-row raw predictions
+with matching digests/range; and the final checkpoint's epoch, architecture,
+item count and finite tensors. Inputs and outputs are rehashed before the
+receipt is written. Three tests cover the completed handoff and rejection of
+partial budgets, query scoring, config/source/payload drift and wrong final
+checkpoints. No retry or next stage occurs after a failed check.
+
+**Preflight.** All retained columns, registry dependencies, available blender
+features, production data and query-order hashes verify; all seven configs
+match the existing prepare-only reports; Torch 2.14.1 / NumPy 2.5.3 and MPS
+are available; disk free is 130 GiB. Evidence is
+`experiments/P0-GPU-preflight-20261031.json`. Freeze and push the queue before
+launch. Its shell runner checks its own hash and every bound input before
+each stage. GPU production uses the third slot; S0 is unchanged.
+
+**Remaining scope.** Seven GPU columns do not complete production. The
+remaining CPU/native/model/graph/support recipes require separate frozen phase
+plans bound to this master, followed by the fixed-budget blender fitted on
+development labels and ordered qualifying export. The existing median budgets
+(tree 904/969/1106 rounds, NN 15/14/14 epochs for seeds 2026/7/13) and final
+50/50 mixture remain fixed. All 79 predictions and eight support aliases must
+resolve, with frozen learned latent coordinates and unchanged feature formulas.
+Complete coverage, provenance, finite payloads, raw-query order and final [1,5]
+bounds are execution requirements. Qualifying labels remain unavailable;
+neither raw-model diagnostics nor the approximate existing transfer offset
+can establish the winning hidden score. Final-bank calibration remains open.
