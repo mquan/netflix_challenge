@@ -1,0 +1,62 @@
+{
+  "data": "/Users/quan/workspace/netflix_challenge/artifacts/validation/train-matched-20260927.bin",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "bank": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MH3-categorical-mse.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT0-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT1-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT2-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT3-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn256td.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn64.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-rbm100c.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32"
+  ],
+  "rows": 1407566,
+  "held_rows": 281504,
+  "best_iteration": 157,
+  "base_crossfit_fold0_rmse": 0.8477476174268337,
+  "base_gate_fold0_rmse": 0.8477472631844652,
+  "deployable": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8477476174268337,
+    "treatment_rmse": 0.846933727574135,
+    "delta_rmse": -0.0008138898526987015,
+    "fold_deltas": [
+      -0.0008138898526987015,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0013792839502539574,
+    "cluster_normal_95_mse_interval": [
+      -0.0016621128122100348,
+      -0.00109645508829788
+    ],
+    "all_folds_improve": false
+  },
+  "importance": {
+    "base": 5425.659628391266,
+    "recent10": 4246.269411325455,
+    "user_std": 3879.440118074417,
+    "user_mean": 3818.8013348579407,
+    "item_pop": 3146.1139369010925,
+    "day_minus_mean_day": 3056.701551437378,
+    "train_count": 2973.687597990036,
+    "implicit_same_day": 2927.587167739868,
+    "other_minus_target": 2744.455731153488,
+    "other_pop_minus_train_pop": 2241.2539892196655,
+    "other_mean_pred": 2147.1119434833527,
+    "gap_days": 2089.870816707611,
+    "other_minus_user_mean": 1948.066522359848,
+    "recent50": 1794.5322494506836,
+    "n_same_day": 549.2181091308594,
+    "n_other": 422.6456069946289,
+    "unlabelled_choices": 173.98951959609985
+  },
+  "metric": "Fold-0 RMSE change from a LightGBM residual model on label-free test-time features."
+}

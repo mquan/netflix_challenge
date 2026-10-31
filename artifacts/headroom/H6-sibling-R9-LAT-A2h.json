@@ -1,0 +1,69 @@
+{
+  "data": "data/processed/netflix.bin",
+  "base": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32",
+  "base_sha256": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+  "seed": 20261031,
+  "a_rows": 703524,
+  "b_rows": 704871,
+  "penalty": 10.0,
+  "b_vs_recalibrated_base": {
+    "rows": 704871,
+    "users": 380821,
+    "control_rmse": 0.8659867403165196,
+    "treatment_rmse": 0.8641240762611995,
+    "delta_rmse": -0.0018626640553200957,
+    "fold_deltas": [
+      -0.00194821862900596,
+      -0.0017957184605228438,
+      -0.0017491320849643,
+      -0.0016660981565991273,
+      -0.002155817979320074
+    ],
+    "delta_mse": -0.0032226152297598607,
+    "cluster_normal_95_mse_interval": [
+      -0.0034948092633031937,
+      -0.0029504211962165278
+    ],
+    "all_folds_improve": true
+  },
+  "b_vs_raw_base": {
+    "rows": 704871,
+    "users": 380821,
+    "control_rmse": 0.8659843018733158,
+    "treatment_rmse": 0.8641240762611995,
+    "delta_rmse": -0.0018602256121162952,
+    "fold_deltas": [
+      -0.001946349809567871,
+      -0.0018062091823036752,
+      -0.0017496000857961658,
+      -0.0016554080002207927,
+      -0.002145237839156988
+    ],
+    "delta_mse": -0.0032183919167428775,
+    "cluster_normal_95_mse_interval": [
+      -0.003490488655567175,
+      -0.00294629517791858
+    ],
+    "all_folds_improve": true
+  },
+  "coefficients": [
+    -0.009922196732973473,
+    1.0018888921017906,
+    -0.04740912710131023,
+    0.3454585541309903,
+    0.2634058394327381,
+    -0.0002313764024925902,
+    0.0034407495555037735,
+    0.09579551864987002,
+    -0.16885211689596358,
+    0.0024973968342282666,
+    0.015707391763297034,
+    -0.020357138378714456,
+    0.11402954743172514,
+    -0.17354312016218837,
+    -0.03630370712831021,
+    -0.008649570083246388,
+    0.012911368105628396
+  ],
+  "metric": "Half-B RMSE change from pooled honest residuals of the user's half-A probe siblings; coefficients fit on half A only. Pre-Stage C; diagnostic use of original-probe labels."
+}

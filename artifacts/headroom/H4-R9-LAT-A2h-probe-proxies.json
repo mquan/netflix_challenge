@@ -1,0 +1,52 @@
+{
+  "data": "data/processed/netflix.bin",
+  "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "bank": [
+    "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32"
+  ],
+  "rows": 1408395,
+  "held_rows": 281675,
+  "best_iteration": 119,
+  "base_crossfit_fold0_rmse": 0.8678580224643174,
+  "base_gate_fold0_rmse": 0.8678579807402604,
+  "deployable": {
+    "rows": 281675,
+    "users": 92631,
+    "control_rmse": 0.8678580224643174,
+    "treatment_rmse": 0.8678276416687614,
+    "delta_rmse": -3.038079555606199e-05,
+    "fold_deltas": [
+      -3.038079555606199e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -5.273151131159e-05,
+    "cluster_normal_95_mse_interval": [
+      -0.00019356411012955518,
+      8.810108750637518e-05
+    ],
+    "all_folds_improve": false
+  },
+  "importance": {
+    "user_mean": 2860.071115255356,
+    "user_std": 2653.0926792621613,
+    "base": 2580.1269476413727,
+    "item_pop": 2374.887109518051,
+    "gap_days": 2308.8048951625824,
+    "recent10": 2243.9234387874603,
+    "train_count": 2058.9330060482025,
+    "other_minus_target": 1989.911705493927,
+    "day_minus_mean_day": 1864.5733888149261,
+    "other_mean_pred": 1802.463595867157,
+    "other_pop_minus_train_pop": 1739.6646902561188,
+    "other_minus_user_mean": 1616.563252210617,
+    "recent50": 1271.4464299678802,
+    "implicit_same_day": 1010.9215013980865,
+    "n_other": 448.65211820602417,
+    "n_same_day": 208.476891040802,
+    "unlabelled_choices": 84.65250968933105
+  },
+  "metric": "Fold-0 RMSE change from a LightGBM residual model on label-free test-time features."
+}
