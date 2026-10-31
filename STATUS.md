@@ -49,8 +49,9 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    The 65 remaining native column occurrences are mapped in
    `P0-native-dependency-inventory-20261031.json`. Joint builds now prepared: 15 historical source versions recovered exactly,
    four historical groups compiled with checkpoint-only patches, plus the isolated proven
-   retained J1–J4 binary. `P0-joint-isolated-builds-20261031.json`.
-   Next verify joint/integrated fixture parity and resume sidecars, then freeze joint/item-kNN phases.
+   retained J1–J4 binary. All 12 stages / 13 columns now map to five binaries; 63 fixture commands
+   pass parity, query-label isolation, reload, cross-version resume, and nonzero sidecar consumption.
+   `P0-joint-stage-build-map-20261031.json`. Next freeze joint output audits and execution, then item-kNN.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
