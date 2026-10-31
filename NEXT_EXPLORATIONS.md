@@ -1196,3 +1196,31 @@ S0 continues independently: the first four-column tree passed the unchanged
 config/bank/library/saved-score audit at RMSE 0.8747112544, and its neural stage
 is live. Its final 50/50 result and the other fixed arms remain pending. No
 partial scoping result changes their frozen recipes or schedule.
+
+### S0 complete-result reporter frozen (2026-10-31)
+
+`scripts/structural_scoping_report.py` requires every registered arm's tree
+and neural reports and payloads before loading labels or creating a summary.
+It reconstructs the fixed arm definitions from the frozen standalone inventory,
+reuses `selection_objective_full.verify_blend` for exact config/bank/library
+and saved-score checks, requires all five stage folds and identical component
+banks, and verifies each saved 50/50 average. All79 tree/NN/average parity is
+checked again directly against retained R9.
+
+The JSON report retains all arm comparisons and user-fold deltas, all three
+permutations' diversity results (shared all79 counted explicitly as one run),
+and every family's signed blend-degradation/standalone-degradation ratio,
+with an undefined ratio for a zero denominator. There is no curve extrapolation,
+winner selection, training, promotion, or future-gain claim. Frozen support and
+context remain part of every arm, and substitution ratios are observed finite
+interventions, not causal derivatives or upper bounds.
+
+`experiments/S0-report-binding-20261031.json` binds the reporter and dependencies,
+the unchanged execution, and the reference-parity proof before any nonreference
+complete average. Five fixture tests pass. The real completed all79 arm also
+passes the reporter audit with exact three-payload parity, and the actual
+incomplete 26-arm experiment is rejected before a summary file is created;
+`experiments/S0-report-preflight-20261031.json` records these checks. The
+separate bash handoff waits for both existing lane runners to exit, then runs
+this audit once. A failed or incomplete lane causes rejection, not a retry or
+partial synthesis. The training scripts and frozen plans remain unchanged.
