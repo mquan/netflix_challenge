@@ -38,8 +38,8 @@ with a stop check at week 3 (≥0.0015 bank gain).
 1. **Claude:** audit model families the winners and the literature used that
    are absent here. Rank them by expected error-structure novelty and pick the
    first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
-2. **Codex:** E3 remains queued until no other training is live. H8 is
-   complete and recorded below; its fixed gate failed.
+2. **Codex:** when S0 reference NN finishes, verify its result and use the
+   training-free interval to launch E3's frozen treatment (`experiments/E3-select-20261031-run.sh`). H8 is complete; its fixed gate failed.
 3. **Codex:** finish S0 reference parity before interpreting its 25 other
    fixed arms. E3 also waits for S0 under its no-other-training condition.
 
