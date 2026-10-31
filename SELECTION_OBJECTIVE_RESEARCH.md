@@ -1,5 +1,35 @@
 # Choice-prediction objective: cumulative A2 fine-tuning
 
+## Resume update, 2026-10-30
+
+The user authorized pursuit after review. The saved N1 epoch-13 checkpoint
+passed its existing honest P2 gate: adding it beyond A2h and ten other columns
+improves evaluation RMSE from 0.8477472632 to 0.8465344856 (0.0012127776).
+The gate artifact is `experiments/N1-saved-gate-20261030.result.json`.
+
+`scripts/selection_objective_resume.py` now drives a detached serial chain,
+`SO1-resume-20261030`: N1's fixed 13-epoch refit and full-bank comparison,
+then the unchanged SO1 control/treatment pair and gate, with conditional
+full-data comparison. A five-fold-successful N1 bank causes preparation of a
+new full-stage reference plan; the original SO1 plans remain immutable.
+`scripts/selection_objective_n1_followup.py` implements that bounded prelude.
+
+The original queue cannot advance in this environment because persistent
+Runlayer transcript workers are Python processes and N1's original chain
+status file is absent. The adapter binds explicit saved-checkpoint evidence,
+archives N1's original worktree sources, and excludes only the exact transcript
+worker executable/module command. Unknown Python jobs remain blockers; two
+idle snapshots and all original scientific validations remain required.
+The full runner receives the same narrowly scoped process-discovery adapter.
+
+Six focused tests cover strict process classification, macOS executable-column
+truncation, gate rejection, reference refresh after five-fold success and
+retaining the old bank after regression. The existing 13 queue/gate/full-stage
+tests also pass. See `RESUME_CHECKPOINT.md` for live artifact paths. Neither
+N1's P2 result nor the orchestration change is a promoted score improvement.
+
+## Original prepared experiment, 2026-10-19
+
 Prepared on `codex/local-context`, 2026-10-19. The promoted score remains
 0.8668706425; no score gain is claimed by this preparation. LC1–LC6 are closed.
 
