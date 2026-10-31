@@ -178,17 +178,27 @@ seeds + NN2 50/50), all folds better. Main risks: target leakage through
 co-rater codes trained on the target row, and sampling bias toward popular
 raters. Both need tests before the run.
 
-## E3. Ordinal distribution head on A2h — GPU, natural follow-on if SO1 passes
+## E3. Ordinal loss on A2h's existing distribution head — GPU, after SO1
 
-**Hypothesis.** The conditional RBM, the one family that kept paying in round 6,
-models a rating distribution. A2h predicts a point. A five-way rating head
-(cross-entropy plus a ranked-probability term, as in HN0) gives the expected
-value for RMSE, plus spread and skew as blender support features. HN0 used
-this head only on a small user-only model, never on the strong encoder.
+**Hypothesis, corrected by source audit 2026-10-30.** A2h already has a five-way
+distribution head: its saved selection report says `head=distribution` and
+`loss=mse`. `SequenceModel.decode` emits five logits; the inherited `expected`
+method takes the softmax-weighted star expectation, and `loss_value` minimizes
+MSE on that expectation. The proposed experiment is therefore a loss change,
+not a new head. Cross-entropy and an ordinal term could constrain aspects of
+the distribution that expected-rating MSE does not; whether that improves
+RMSE or ensemble diversity remains unmeasured on A2h.
+
+The existing `ordinal` loss is cumulative binary log loss, not the squared
+ranked-probability score. Fix the exact loss formula, coefficients and matched
+P2 gate before running this bet. Keep the expected rating as the prediction.
+Distribution support features are a separate ablation: earlier R8-A3-dist
+features regressed, so they must not be bundled into an alleged head gain.
 
 **Recipe.** Two-epoch warm-start fine-tune from the A2h-select checkpoint,
 reusing SO1's matched-arm harness: same seed, masks, batch order and epochs.
-Control is MSE-only.
+Control is MSE-only. Implement in a separate trainer after the GPU queue is
+finished; do not edit the frozen SO1 trainer or its dependencies.
 
 **Gate.** At least **0.0003** in the blend, all folds better.
 
