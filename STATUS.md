@@ -37,7 +37,8 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 ## Next actions
 
-1. New-family pilots **closed for good** (user, 2026-10-31). Open question: production retrain (owner to be decided), or a large rebuild?
+1. **Codex:** production retrain, assigned by the user 2026-10-31. It runs on the GPU after E3.
+1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
    terminal; neither P2 gate passed, so no full-training follow-up.
@@ -48,12 +49,13 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 ## Decisions waiting on the user
 
-- Production retrain: who owns it (Codex, Claude, or split)? And is a large rebuild worth attempting? (asked 2026-10-31)
+- None. User decisions 2026-10-31: production → Codex; moonshot → go.
 
 ## Recent results (newest first)
 
 | Date | Result | Doc |
 |---|---|---|
+| 10-31 | User: production retrain assigned to Codex; moonshot (one large sequence model) approved | MOONSHOT_REBUILD.md |
 | 10-31 | E3: shared fold 0 worsens 0.00000131; five-fold gain 0.00001277 < 0.0003, two folds worse → closed; both comparisons independently reproduced | experiments/E3-independent-verification-20261031.json |
 | 10-31 | L1 local low-rank: standalone 0.8924 P2, but bank RMSE worsens by 0.0000023 → closed; retained-family proxy gains do not forecast new-family gains | FAMILY_AUDIT.md |
 | 10-31 | New-family audit: build order LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture | FAMILY_AUDIT.md |

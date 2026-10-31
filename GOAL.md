@@ -66,6 +66,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | not started; Claude stays off it |
+| Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
 | Structural plan week 0: scoping (diversity curve, quality→blend conversion) | this session (Claude) | **done 2026-10-31**: new families ≈0.0007–0.001 each; quality slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0; lanes re-ranked in STRUCTURAL_PLAN.md |
