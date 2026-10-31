@@ -32,6 +32,22 @@ normal, checks again after hashing, and requires completion audits between
 stages. Bash syntax and five mocked resource-state checks pass. The current
 three training slots remain occupied, so this phase has not started.
 
+`experiments/P0-native-dependency-inventory-20261031.json` now maps the other
+65 retained column occurrences to the frozen registries and production master:
+13 joint/integrated, 29 item-kNN, nine RBM, three AutoRec, four GP, two local,
+three Bayesian, one learned-neighborhood and one user-kNN. It validates the
+12 joint and 12 RBM stage dependency orders, preserves the J4 epoch reset and
+resume boundaries, records 12 historical source groups, and rechecks the
+existing rebuilt K1/user-kNN binary hashes. Graphs, support aliases, AutoRec
+trajectory snapshots and Bayesian stage windows remain explicit.
+
+This is a dependency inventory, not an executable native queue or upgraded
+training-compatibility evidence. Historical fixed-budget builds, production
+dependency substitution and checkpoint/output audits still need executable
+phase plans. Preserve original thread counts: eight-thread RBM stages cannot
+overlap a three-thread CPU neural job plus the GPU host thread under the
+ten-thread cap. New production K1 remains distinct from the frozen latent encoder.
+
 Qualifying sentinels cannot select epochs or establish a score. Final-bank
 offset calibration is still unverified; the existing ~0.0074 offset supports
 only an estimate. GPU order is completed E3, then Codex production, then
