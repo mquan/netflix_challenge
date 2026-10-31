@@ -1,0 +1,18 @@
+{
+  "state": "task_bound_idle_sleep_assertion_live",
+  "verified_utc": "2026-10-31T23:56:39.123638+00:00",
+  "pid": 82488,
+  "session_id": 69265,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "-w",
+    "75657"
+  ],
+  "bound_runner_pid": 75657,
+  "process": "82488 00:27   0.0 /usr/bin/caffeinate -i -w 75657",
+  "owned_assertion": "pid 82488(caffeinate): [0x0005633100019350] 00:00:26 PreventUserIdleSystemSleep named: \"caffeinate command-line tool\"",
+  "power_source_at_launch": "AC Power",
+  "release_condition": "Final managed runner PID 75657 exits; caffeinate -w releases the assertion automatically, as documented by local man page.",
+  "scope": "Temporary process-scoped idle-sleep prevention for authorized unattended training/export. No persistent power preference, display assertion, new trainer, frozen input change, or score claim."
+}
