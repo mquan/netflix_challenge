@@ -59,14 +59,16 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 ## Closed bets
 
+- E5 (ordinal Bayes likelihood): closed 2026-10-31. Standalone −0.00097 on P2 but only −0.000135 beyond bank11 (gate −0.0003).
+- A7 (probe-sibling pooling after Stage C): closed 2026-10-31. Stage C absorbs it (+0.00178 worse).
 - E1 (P2 up-weighting in the Stage C retrain): closed 2026-10-31. w2 +0.00014 and w3 +0.00049 worse than the control on all folds; the Bayes arm was stopped by the pre-registered rule. See NEXT_EXPLORATIONS.md.
 
 ## Slots
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | E5 ordinal Bayes pilot, ordinal arm (P2, rank 64) | running from 2026-10-31 (`experiments/E5-p2-r64-ordinal.log`) |
-| 2 | E5 ordinal Bayes pilot, matched Gaussian control | running from 2026-10-31 (`experiments/E5-p2-r64-gaussian.log`) |
+| 1 | open | — |
+| 2 | open | — |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
