@@ -66,6 +66,40 @@ SO1). Fail → close E1; the plain union retrain stands.
 so the gain may be conservative or biased. Any result is an estimate of the
 hidden-test effect, not a verified test score.
 
+### E1 stage 1: K1 family (fixed before any score, 2026-10-30)
+
+- **Code.** `netflix joint --row-weights FILE` (float32, one weight per
+  training row) scales each row's error in every SGD update. Implicit sets,
+  support counts, the reported train RMSE and the model fingerprint are
+  unchanged. `tests/test_joint_row_weights.py` covers these: all-ones weights
+  reproduce the unweighted model and predictions byte for byte (one thread),
+  non-unit weights change the fit, `eval-joint` accepts the weighted model,
+  and short, long, negative, NaN, >16 and missing files fail. The existing
+  10 `test_joint.py` tests pass on the same binary. The binary is built
+  separately as `build/netflix-rowweights`; the shared `build/netflix` is
+  left alone while other sessions' frozen runs may call it.
+- **Weights.** `scripts/stage_c_row_weights.py` marks the 1,407,566 P2 rows
+  in `data/processed/netflix.bin`. Each must match exactly one training row on
+  (user, item, day, rating), and the other 97,664,546 rows must equal the
+  holdout's training rows in order. Files are `artifacts/rehearsal/e1/p2-w{1,2,3}.f32`
+  with hash reports.
+- **Runs.** `scripts/e1_chain.sh build/netflix-rowweights w2 w3 w1` repeats
+  P0-B-K1 (256 factors, lr .008, reg .02, decay .97, 41 epochs fixed,
+  5 threads) and both P0-B-kNN commands, adding only `--row-weights`. w1 is
+  run last as a same-binary control; with 5 Hogwild threads it is not
+  bit-identical to the recorded B-K1 run, so the w1 − B-K1 difference
+  measures run-to-run noise. Each arm takes about 67 minutes.
+- **Score.** Per arm, copy `artifacts/rehearsal/spec-core.json` and swap only
+  the three b columns (K1, kNN-256td + its support, kNN-64) for that arm's.
+  Run `scripts/rehearsal_blend.py` with its default recipe (seed 2026, `--skip-cv`),
+  and only when SO1 is not about to start an arm. The fit and a columns are
+  untouched, so the blender is still fit on P2 alone.
+- **Decision.** Compare b(w2) and b(w3) with b(w1). Pass: one of them beats w1 by
+  ≥0.0005, the gain exceeds |b(w1) − b(B-K1)|, and all five user folds of the
+  original probe improve. The better of w2/w3 is reported; no other weight
+  is tried after reading these. Pass → extend to the RBM chain, then Bayes.
+  Fail → close E1. The fine-tune arm (b-ft) is deferred until stage 1 passes.
+
 ## E2. Movie-side context inside A2 (CF-UIcA-style) — GPU, after SO1
 
 **Hypothesis.** A2h encodes only the user's own history. Let the query token

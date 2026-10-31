@@ -270,6 +270,27 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
   const float implicit_reg = float(double_after(args, "--implicit-regularization", double(reg)));
   const uint32_t threads = std::max(1U, uint_after(args, "--threads", 1));
   if (implicit_reg < 0 || lr0*implicit_reg >= 1) fail("invalid --implicit-regularization");
+  // Optional per-training-row loss weights (float32, one per training row in
+  // dataset order). A weight scales that row's error in every gradient update;
+  // it never changes implicit sets, support counts or the reported train RMSE.
+  // All-ones weights reproduce the unweighted run exactly (err*1.0F == err).
+  std::vector<float> row_weights;
+  const std::string weights_path = optional_value_after(args, "--row-weights");
+  if (!weights_path.empty()) {
+    std::ifstream in(weights_path, std::ios::binary | std::ios::ate);
+    if (!in) fail("cannot read --row-weights");
+    const auto bytes = uint64_t(in.tellg());
+    if (bytes != d.header.train_count*sizeof(float)) fail("--row-weights length must equal train_count");
+    in.seekg(0);
+    read_vector(in, row_weights, d.header.train_count);
+    double total = 0; uint64_t changed = 0;
+    for (float w : row_weights) {
+      if (!std::isfinite(w) || w < 0 || w > 16) fail("--row-weights values must be in [0, 16]");
+      total += w; changed += w != 1.0F;
+    }
+    std::cout << "row_weights=" << weights_path << " non_unit=" << changed
+              << " mean=" << std::setprecision(10) << total/row_weights.size() << std::endl;
+  }
   std::mt19937 rng(seed);
   std::vector<uint32_t> users(d.header.users); std::iota(users.begin(), users.end(), 0);
   double best = std::numeric_limits<double>::infinity();
@@ -317,8 +338,9 @@ void command_joint(const std::vector<std::string> &args, bool eval_only) {
       for (uint32_t k = 0; k < rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*(p[k]+a[k]*dev+h[k]);
       float *daily = day_rank ? &m.day_factors[size_t(s)*day_rank] : nullptr;
       for (uint32_t k = 0; k < day_rank; ++k) pred += (q[k]+(fq ? fq[k] : 0))*daily[k];
-      float err = float(d.train_ratings[pos])-pred;
-      w.sse += double(err)*err;
+      const float raw_err = float(d.train_ratings[pos])-pred;
+      w.sse += double(raw_err)*raw_err;
+      const float err = row_weights.empty() ? raw_err : raw_err*row_weights[pos];
       b.user_bias[u] += base_rate*.00267F*(err-.0255F*b.user_bias[u]);
       b.user_alpha[u] += base_rate*.00000311F*(err*dev-3.95F*b.user_alpha[u]);
       b.day_bias[s] += base_rate*.00257F*(err-.00231F*b.day_bias[s]);
