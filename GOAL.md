@@ -43,6 +43,17 @@ experiment.
 6. Commit and push this session's own files after each step, authored as
    `Quan Nguyen <mquannie@gmail.com>`, on `codex/local-context`, without a PR.
 
+## Strategy
+
+Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map of which information sources could close the gap, (B) one shared gate plus a ledger, (C) one long-lived sequence-model line with a shared GPU queue. New one-off bets pause until A is done.
+
+## Claims (in progress, per session)
+
+| Work | Owner | State |
+|---|---|---|
+| A. Headroom map (`scripts/headroom_map.py`) | this session (Claude) | started 2026-10-31 |
+| E2 prototype (movie-side context in A2) | other agent | CPU prototype in progress (see E2 notes) |
+
 ## Closed bets
 
 - E1 (P2 up-weighting in the Stage C retrain): closed 2026-10-31. w2 +0.00014 and w3 +0.00049 worse than the control on all folds; the Bayes arm was stopped by the pre-registered rule. See NEXT_EXPLORATIONS.md.
