@@ -1,0 +1,11 @@
+{
+  "name": "E1-B-B4-w2",
+  "returncode": 143,
+  "elapsed_seconds": 4745,
+  "binary_sha256": "35ed576eed8e31c11e805fbd7bcc8e1c563ef06daa41cbb4a418cda1eaff94cb",
+  "bayes_hpp_sha256": "909ee48ac03ccd7ad9da527bbb7718827034a57d78cb6d4695764354c9b1e6d0",
+  "weights_sha256": "1e174f6dba9805dbbea8bb5090f2f295de687021babc0f2c9bd9697b26f10839",
+  "git_head": "b72848460c3b104d184393db2a25221a05ffb2e2",
+  "finished_utc": "2026-10-31T05:15:44Z",
+  "command": "build/netflix-bayesweights bayes --data data/processed/netflix.bin --model artifacts/rehearsal/e1/B-B4-w2.bin --predictions artifacts/rehearsal/e1/B-B4-w2.f32 --factors 128 --samples 160 --burn-in 16 --snapshot-every 16 --checkpoint-every 8 --threads 4 --seed 13 --item-bin 2 --drift 2 --row-weights artifacts/rehearsal/e1/p2-w2.f32"
+}

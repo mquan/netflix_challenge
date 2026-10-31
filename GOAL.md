@@ -47,8 +47,8 @@ experiment.
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | E1 stage 1: P2 up-weighting in the K1-family Stage C retrain | all nine training steps succeeded; fixed scorer running from 2026-10-31 05:04 UTC (`experiments/E1-fixed-scoring-20261030.state`) |
-| 2 | E1-Bayes: the same weighting as per-row noise precision in the B4 Stage C retrain (rank 128) | w2 running; w1 shell queue waits for slot 1's fixed comparison (`experiments/E1-bayes-control-queue-20261030.state.json`) |
+| 1 | E1 stage 1 (K1 family) | **closed 2026-10-31: w2 +0.00014, w3 +0.00049 worse, all folds** |
+| 2 | E1-Bayes (B4) | **stopped by pre-registered early stop** at sweep 15; no score |
 | 3 | open | — |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
