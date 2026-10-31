@@ -1,0 +1,18 @@
+{
+  "state": "running",
+  "reference_parity": "experiments/S0-full-parity-verification-20261031.json",
+  "lanes": [
+    {"lane": 0, "runner_pid": 39539, "initial_trainer_pid": 39557, "exec_session_id": 96236, "first_arm": "diversity-s20261031-n1", "arms": 13},
+    {"lane": 1, "runner_pid": 39615, "initial_trainer_pid": 39662, "exec_session_id": 83214, "first_arm": "diversity-s20261031-n4", "arms": 12}
+  ],
+  "preflight": {
+    "E3_already_training_after_satisfying_its_launch_condition": true,
+    "memory_free_percent_before_lane0": 54,
+    "memory_free_percent_before_lane1": 45,
+    "maximum_configured_own_CPU_threads": 7,
+    "simultaneous_training_jobs": 3,
+    "S0_GPU_jobs": 0,
+    "all_frozen_checks_passed_before_each_first_tree": true
+  },
+  "policy": "All 25 predeclared arms, unchanged commands, no adaptive search or promotion; monitor resources and retain E3 GPU priority."
+}
