@@ -46,14 +46,13 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      waits for both S0 lanes. One thread; combined planned maximum is ten.
      `P0-DEPS-20261031-plan.json`: 263 inputs / 264 checksum checks pass;
      five tests and eight actual native fixture handoffs pass, including query-label isolation.
-   The 65 remaining native column occurrences are mapped in
-   `P0-native-dependency-inventory-20261031.json`. Joint builds now prepared: 15 historical source versions recovered exactly,
-   four historical groups compiled with checkpoint-only patches, plus the isolated proven
-   retained J1–J4 binary. All 12 stages / 13 columns now map to five binaries; 63 fixture commands
-   pass parity, query-label isolation, reload, cross-version resume, and nonzero sidecar consumption.
-   `P0-joint-stage-build-map-v2-20261031.json`. Output auditor passes five tests, all 12
-   full-size retained checkpoints and six fresh native handoffs. Actual retained binary/models
-   are V2; its recorded later source snapshot is not a proven rebuild recipe. Next freeze joint execution, then item-kNN.
+   - Joint/integrated: 12 stages / 13 columns, one thread; waits for both S0 lanes
+     and all four dependency-stage audits. `P0-JOINT-20261031-plan.json`:
+     297 inputs / 298 checksum checks pass; six audit/resource tests pass.
+     J4 restarts epoch numbering; integrated resumes require audited parent sidecars.
+   Native coverage and build provenance are in `P0-native-dependency-inventory-20261031.json`
+   and `P0-joint-stage-build-map-v2-20261031.json`. Next prepare item-kNN execution
+   and its six support aliases. All 29 kNN occurrences use the preserved proven binary.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are

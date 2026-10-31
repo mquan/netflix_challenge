@@ -1,0 +1,18 @@
+{
+  "state": "prepared_not_launched_resource_guard_waits",
+  "plan_sha256": "3b2007120823579515f3eddbda2e43c8da53ff7ca4496ecd6a00c9fe7d07efdb",
+  "frozen_inputs": 297,
+  "checksum_checks_passed": 298,
+  "check_log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint-preflight-input-check.log",
+  "check_log_sha256": "5b4a6c9e9e6484e1eb2deedc2f0db65a2e0b890ff85d1de6429f74db166b05ac",
+  "commands_match_archived_recipes_after_production_paths_binary_and_explicit_one_thread": true,
+  "all_fresh_output_directories": true,
+  "retained_columns": 13,
+  "J4_epoch_reset_and_continuation_boundaries_verified": true,
+  "actual_checkpoint_format": 2,
+  "integrated_parent_sidecar_required_by_frozen_auditor": true,
+  "bash_syntax_passed": true,
+  "actual_resource_gate": "WAIT_P0_JOINT_DEPENDENCIES_S0_AND_NORMAL_MEMORY",
+  "test_methods_passed": 6,
+  "scope": "Prepared queue only; no full production joint/integrated training started. Other families, support arrays, final blender and export remain required."
+}
