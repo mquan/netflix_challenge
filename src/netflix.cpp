@@ -1639,6 +1639,7 @@ void command_blend_svdpp(const std::vector<std::string> &args) {
 #include "integrated.hpp"
 #include "temporal_neighborhood.hpp"
 #include "user_neighborhood.hpp"
+#include "llorma.hpp"
 
 // Two research branches introduced different RBM visible-bias formats under
 // the same version-2 magic. Inspect the first payload word to preserve both
@@ -1717,7 +1718,9 @@ void usage() {
          "[--iterations N] [--threads N] [--predictions FILE]\n"
       << "  netflix eval-bar --data FILE --model FILE [--predictions FILE]\n"
       << "  netflix check-implicit\n"
-      << "  netflix check-truncated-normal\n";
+      << "  netflix check-truncated-normal\n"
+      << "  netflix llorma --data FILE --joint-model FILE --predictions FILE [--anchors N] [--rank N] "
+         "[--bandwidth H] [--iterations N] [--threads N] [--support FILE]\n";
 }
 
 }  // namespace
@@ -1757,6 +1760,8 @@ int main(int argc, char **argv) {
       command_joint(args, true);
     } else if (command == "bayes") {
       bayes::command(args);
+    } else if (command == "llorma") {
+      llorma::command(args);
     } else if (command == "check-truncated-normal") {
       bayes::check_truncated_normal();
     } else if (command == "check-implicit") {
