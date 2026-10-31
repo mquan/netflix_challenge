@@ -129,3 +129,12 @@ paid. That is survivorship bias. A typical *new* family should be expected to
 add much less, as L1 did. The remaining candidates (feature GBDT base model,
 co-clustering mixture) need a sharper reason to err differently before
 compute is spent on them.
+
+## Closed for good (user decision, 2026-10-31)
+
+After L1's null result the user closed the new-family line: "then close it
+out for good." The remaining candidates are not to be built. The feature GBDT
+base model is estimated ≲0.0002 (close cousins HR and H4 were ≈0), and the
+co-clustering mixture ≈0.0001–0.0003. Even both together would not approach
+the 0.0041 gap, and the per-family estimate that motivated the line is
+survivorship-biased.

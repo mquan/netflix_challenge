@@ -209,3 +209,7 @@ family's representative is swapped (bank without the family plus one member):
 **Caveat.** Slopes rest on few members and the ridge proxy; the production
 blender extracts more nonlinear value from each column. These estimates rank
 the lanes. They do not forecast gains.
+
+## Lane 1 closed (2026-10-31)
+
+User decision after L1 (+0.0000023 beyond the bank): the new-family lane is closed for good. See FAMILY_AUDIT.md.

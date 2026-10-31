@@ -85,6 +85,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 ## Closed bets
 
+- **New-family pilots (STRUCTURAL_PLAN lane 1): closed for good by the user, 2026-10-31**, after L1. The feature GBDT base model and co-clustering are not to be built (FAMILY_AUDIT.md).
 - E3 (CE=0.1 on A2h distribution head): closed 2026-10-31. Shared P2 fold 0 worsens by 0.00000131; five-fold gain 0.00001277 < fixed 0.0003, with folds 0/1 worse. Both gates fail; no full-training follow-up. See `experiments/E3-independent-verification-20261031.json`.
 - L1 (LLORMA-style local low-rank ensemble): closed 2026-10-31. Standalone 0.8924 on P2 but +0.0000023 beyond bank11 + N1 (gate −0.0010).
 - H8 (choice-affinity full-bank comparison): complete 2026-10-31. Treatment 0.86648484, gain 0.00038580 versus R9 and 0.00022028 versus matched control, all five folds better. The fixed 0.0003 matched-control minimum fails; not promoted, no threshold relaxation.
