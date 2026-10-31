@@ -67,7 +67,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Work | Owner | State |
 |---|---|---|
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
-| L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | next |
+| L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
 | Structural plan week 0: scoping (diversity curve, quality→blend conversion) | this session (Claude) | **done 2026-10-31**: new families ≈0.0007–0.001 each; quality slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0; lanes re-ranked in STRUCTURAL_PLAN.md |
 | N1 full-bank verification | Codex | complete: 0.86670063 overall, but fold 1 worsens; no promotion; retained best and target gap unchanged |
 | A. Headroom map (`scripts/headroom_map.py`, HEADROOM.md) | this session (Claude) | **done 2026-10-31**: the only deployable new signal found is N1-style choice history; see HEADROOM.md conclusion |
@@ -84,6 +84,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 ## Closed bets
 
+- L1 (LLORMA-style local low-rank ensemble): closed 2026-10-31. Standalone 0.8924 on P2 but +0.0000023 beyond bank11 + N1 (gate −0.0010).
 - H8 (choice-affinity full-bank comparison): complete 2026-10-31. Treatment 0.86648484, gain 0.00038580 versus R9 and 0.00022028 versus matched control, all five folds better. The fixed 0.0003 matched-control minimum fails; not promoted, no threshold relaxation.
 
 - SO1 (selection auxiliary objective): closed 2026-10-31. Fixed P2 gain 0.0000275, below its frozen 0.0005 threshold; original gate independently reproduced exactly. Queue completed without a conditional full stage.
