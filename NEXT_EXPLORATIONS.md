@@ -1286,3 +1286,21 @@ Complete coverage, provenance, finite payloads, raw-query order and final [1,5]
 bounds are execution requirements. Qualifying labels remain unavailable;
 neither raw-model diagnostics nor the approximate existing transfer offset
 can establish the winning hidden score. Final-bank calibration remains open.
+
+### P0 production GPU queue launched (2026-10-31)
+
+The master and seven-stage GPU plan, runner and auditor were committed and
+pushed before launch. A fresh process check confirmed E3 terminal and no other
+GPU trainer, with memory 85% free; all 235 shell hash checks passed. A2h is
+live at its exact 12-epoch budget on MPS (trainer 32347, runner 32318, managed
+session 91805), and reached epoch 1 batch 100. Its startup report matches all
+14 bound provenance/config/library fields and records no query metric.
+`experiments/P0-GPU-launch-20261031.json` and
+`experiments/P0-GPU-startup-20261031.json` preserve the launch evidence.
+
+Both S0 lanes remain unchanged and live. Maximum configured own CPU threads
+are six with this GPU job. Monitor the existing queue; do not manually launch
+duplicate production columns or restart a partial stage. It stops on any
+training, provenance or completion-audit failure. Remaining production phases
+are still required after these seven columns; the standing score goal remains
+unachieved.

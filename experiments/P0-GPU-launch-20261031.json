@@ -1,0 +1,26 @@
+{
+  "state": "running",
+  "runner_pid": 32318,
+  "trainer_pid": 32347,
+  "exec_session_id": 91805,
+  "stage": 0,
+  "column": "A2h-refit.refit.e12.f32",
+  "fixed_epochs": 12,
+  "plan": "experiments/P0-GPU-20261031-plan.json",
+  "plan_sha256": "5413ed515fef0054c867193dc988a3b449963979762af9f897f78ac4ae0c4a31",
+  "startup_snapshot": "experiments/P0-GPU-startup-20261031.json",
+  "startup_snapshot_sha256": "ac66f99c70bb4b59b9f1d14ed75ceb53691ea68fce4588348e018e9d1c04b04a",
+  "runner_log": "artifacts/production/P0-20261031/gpu-runner.log",
+  "stage_log": "artifacts/production/P0-20261031/gpu-stage-0.log",
+  "preflight": {
+    "frozen_plan_and_runner_pushed_before_launch": true,
+    "all_235_shell_hash_checks_passed": true,
+    "E3_trainer_and_runner_terminal": true,
+    "no_other_GPU_trainer_in_process_snapshot": true,
+    "memory_free_percent_before_launch": 85,
+    "exact_startup_recipe_and_libraries_verified": true,
+    "first_MPS_epoch_batch_100_confirmed": true,
+    "max_configured_own_CPU_threads_including_S0": 6
+  },
+  "scope": "Production GPU phase live; seven exact fixed-budget retained columns serialized with completion audits. Remaining production CPU/native/support/blender/export phases still required; no qualifying score or promotion claim."
+}
