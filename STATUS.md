@@ -59,9 +59,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    AutoRec checkpoint/reload source is isolated and passes three CPU parity tests
    (`P0-autorec-source-verification-20261031.json`). Its original default is MPS:
    two trajectories (epochs 1 and 44, with snapshot 14) must follow the seven primary GPU runs.
-   Output audit now passes four tests and an actual CPU snapshot/final reload handoff
-   (`P0-autorec-handoff-verification-20261031.json`). MPS verification and the guarded
-   executable phase remain pending; no additional GPU work has been launched.
+   Output audit/GPU handoff guard pass six tests. A two-layer CPU snapshot/reload
+   handoff and the device-parity checker pass (`P0-autorec-handoff-verification-v2-20261031.json`,
+   `P0-autorec-device-CPU-verification-20261031.json`). MPS stages require a matching
+   MPS-specific parity receipt; CPU receipts cannot satisfy that gate. Next freeze the phase.
+   MPS verification remains deferred; no additional GPU work has been launched.
    Full production outputs remain required; the development gap is unchanged.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
