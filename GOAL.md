@@ -95,3 +95,10 @@ An independent [headroom interpretation audit](HEADROOM_INTERPRETATION.md)
 distinguishes additive group-shift gains from general interaction headroom.
 The diagnostics guide priorities but do not prove an E2 gain ceiling or that
 the goal is impossible. Existing queue priority and H4's decision point stand.
+
+A7's first K1 attempt exited before training (`training session missing`).
+Read-only diagnosis in `experiments/A7-order-audit-20261030.json` confirms
+82,523 decreasing date edges within user training segments after appending
+A siblings. K1 requires chronological segments; the owning session must repair
+and reverify the dataset/artifact provenance before continuing that attempt.
+This diagnosis did not modify or restart A7.
