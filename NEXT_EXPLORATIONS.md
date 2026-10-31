@@ -653,3 +653,29 @@ reference with its **byte-identical original content** recovered from git
 6c97938; all gate parameters, data, bank, model outputs and source hashes are
 unchanged. Both plans remain archived. Future scoring plans should bind an
 immutable protocol snapshot rather than a shared working document.
+
+## H8 independent nested validation (fixed before its real score)
+
+Claimed by Codex after the original H8 diagnostic completed. The original
+H8 sources/output remain unchanged. `scripts/choice_outer_validation.py`
+reuses the original twelve choice features, windows, 32-dimensional
+projection, seed, tree parameters, 2,000-round cap and 100-round stopping
+patience, with two CPU threads. Plan: `experiments/H8-nested-plan-20261031.json`.
+
+The change is proper inner/outer stacking. Round selection uses training
+folds 2–4 with internally out-of-fold ridge bases, and fold 1 with a base fit
+only on 2–4. After selecting rounds for treatment and matched base-only tree,
+final trees fit on 1–4 using ridge bases cross-fitted within 1–4. Fold 0 gets
+its ridge prediction from 1–4 and is evaluated once; its labels never enter
+any base fit, residual training target or iteration selection. Ridge penalty
+remains 10. This is an independent nested check with final refit, not a
+one-variable numerical reproduction of the original H8 pipeline.
+
+Primary decision remains the H8 >=0.0003 gain versus the raw ridge. The
+matched base-only-tree comparison is also reported. There is no feature,
+window, seed or parameter sweep after this score, no original-probe score,
+and no automatic full-bank promotion. Three fixture tests verify complete
+fold-0 label invariance (predictions and selected rounds), exclusion of fold-1
+labels from inner training bases, own-fold exclusion and label-free choice
+features. All three pass. The real CPU check is running while N1's training
+process is live, under the existing CPU/GPU priority rules.
