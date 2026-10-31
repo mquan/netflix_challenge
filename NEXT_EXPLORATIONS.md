@@ -1078,3 +1078,15 @@ is authorized by this failed gate. Hidden labels remain unavailable.
 
 H8's trainers are terminal. S0's unchanged neural reference reproduction
 continues, so E3's no-other-training launch condition is not yet satisfied.
+
+### E3 exact launch script ready after H8 (2026-10-31)
+
+`experiments/E3-select-20261031-run.sh` contains the exact command already
+bound in E3-plan-20261031.json, preceded by checks of its 30 frozen inputs
+and the plan itself. Bash syntax passes; all frozen inputs currently match.
+No E3 process has started because S0's reference NN is still training.
+After that process is terminal, inspect the whole process list and memory,
+confirm the existing GPU queue is terminal and capacity is idle, and start
+E3 before additional CPU scoping training. Its two-epoch budget, CE=0.1,
+matched SO1 control and both predeclared P2 gates remain unchanged. The shell
+runner performs no scoring or automatic promotion.
