@@ -570,6 +570,24 @@ the B4 recipe (rank 128, 160 sweeps, item-bin 2, drift 2, seed 13), added to
 the promoted R9-LAT-A2h bank under the standard dev-CV recipe: ≥0.0005 and
 all five folds to promote. Fail → close E5 without a rank or recipe sweep.
 
+### E5 result: closed (2026-10-31)
+
+`artifacts/e5/E5-gate.json` (`scripts/e5_gate.py`, SO1's `compare` unchanged, P2 only).
+
+| | P2 RMSE / Δ |
+|---|---:|
+| Gaussian control, standalone (rank 64, B2 recipe) | 0.868034 |
+| Ordinal, standalone | 0.867065 (**−0.00097**) |
+| **Primary:** bank11 + control + ordinal vs + duplicate control | **−0.000135**, 95% ΔMSE interval [−0.00035, −0.00011] |
+| Replacement diagnostic: bank11 + ordinal vs bank11 + control | −0.000087 |
+
+Gate (≤ −0.0003) **failed**. The interval-censored likelihood is a better
+standalone Bayes model, but its information is almost entirely already in
+bank11 (B4 and A2h). Closed without a rank or recipe sweep, as pre-registered.
+`--likelihood ordinal` stays in the code, tested. This is consistent with the
+headroom map: model-quality changes inside existing families no longer carry
+new information.
+
 ## E4. Second A2h seed (filler)
 
 The A2b twin added 0.0003 and later A2 variants added 0.0001–0.0004. A second

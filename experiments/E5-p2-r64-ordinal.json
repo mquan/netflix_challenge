@@ -1,0 +1,11 @@
+{
+  "name": "E5-p2-r64-ordinal",
+  "returncode": 0,
+  "elapsed_seconds": 12468,
+  "binary_sha256": "d739051ea1325f48ce65a0f295914f9256295274d9977ade98933c6b532332d2",
+  "bayes_hpp_sha256": "96b867a6e7b2da2f09ecef7e8a858e134ab1bcdaffb1cf5b55eb0cc58eb9e81c",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "git_head": "6c97938ebb92fd23e54fbf899a2773e50f6ea29d",
+  "finished_utc": "2026-10-31T08:52:53Z",
+  "command": "build/netflix-ordinal bayes --data artifacts/validation/train-matched-20260927.bin --model artifacts/e5/E5-p2-r64-ordinal.bin --predictions artifacts/e5/E5-p2-r64-ordinal.f32 --factors 64 --samples 128 --burn-in 16 --snapshot-every 16 --checkpoint-every 8 --threads 4 --seed 2026 --likelihood ordinal"
+}

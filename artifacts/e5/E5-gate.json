@@ -1,0 +1,65 @@
+{
+  "primary": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8477520529069127,
+    "treatment_rmse": 0.847616670635367,
+    "delta_rmse": -0.00013538227154563653,
+    "fold_deltas": [
+      -0.00013538227154563653,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0002295228689006855,
+    "cluster_normal_95_mse_interval": [
+      -0.00035125938801355047,
+      -0.00010778634978782052
+    ],
+    "all_folds_improve": false
+  },
+  "replacement_diagnostic": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.847752052485907,
+    "treatment_rmse": 0.8476647972584886,
+    "delta_rmse": -8.725522741837022e-05,
+    "fold_deltas": [
+      -8.725522741837022e-05,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.00014793398279323622,
+    "cluster_normal_95_mse_interval": [
+      -0.00024667425102445405,
+      -4.919371456201839e-05
+    ],
+    "all_folds_improve": false
+  },
+  "selected_penalties": {
+    "duplicate_control": 1,
+    "control_plus_treatment": 1,
+    "control_only": 1,
+    "treatment_only": 1
+  },
+  "standalone_p2_rmse": {
+    "control": 0.868034441496034,
+    "treatment": 0.8670647807170904
+  },
+  "arms": {
+    "control": {
+      "path": "artifacts/e5/E5-p2-r64-gaussian.f32",
+      "sha256": "0772e9a01d5a49f89a0cc4ca93daadb44823f9c2fe2d55b54e1abf707b133a2d"
+    },
+    "treatment": {
+      "path": "artifacts/e5/E5-p2-r64-ordinal.f32",
+      "sha256": "cc77d82848ac2855d5f5f44530986054f7f0da6fe2fd7747b12266b778c5aa35"
+    }
+  },
+  "plan_sha256": "c0490e6e0d9099cbd3745637cf9a11af3796e6339c88fcf3fd5c9f61c6c1866e",
+  "passes_gate": false,
+  "metric": "E5 fixed P2 gate (SO1 bank11 ridge). P2 development evidence only."
+}
