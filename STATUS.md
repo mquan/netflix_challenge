@@ -34,7 +34,7 @@ The week-3 stop check remains ≥0.0015 bank gain.
 | Job | Owner | Check |
 |---|---|---|
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 1/25 nonreference arms complete and audited: n4 saved 50/50 RMSE 0.8743334. Lane 1 advanced to n32 tree (PID 9314/session 83214); lane 0 n1 neural remains live (PID 99895/session 96236). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n4-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 2/25 nonreference arms complete and audited: n1/n4 saved 50/50 RMSE 0.8883959/0.8743334. Trees live next: n16 PID 33013/session 96236, n32 PID 9314/session 83214. Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n{1,4}-full-verification-20261031.json` |
 
 ## Next actions
 
