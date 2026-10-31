@@ -1,0 +1,113 @@
+{
+  "state": "preregistered_waiting_for_N1_and_GPU_queue",
+  "data": "/Users/quan/workspace/netflix_challenge/data/processed/netflix.bin",
+  "rows": 1408395,
+  "column_bundle": "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-fit-20261031",
+  "query_feature_cache": "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-query-features-20261031",
+  "bank_names": [
+    "MH3",
+    "MT0",
+    "MT1",
+    "MT2",
+    "MT3",
+    "K1",
+    "knn256td",
+    "knn64",
+    "rbm100c",
+    "B4",
+    "A2h",
+    "N1"
+  ],
+  "query_bank": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-K1.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-knn256td.netflix.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-knn64.netflix.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-rbm100c.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-refit.f32"
+  ],
+  "parent_n1_plan": "/Users/quan/workspace/netflix_challenge/experiments/N1-resume-20261030-plan.json",
+  "required_n1_completion": {
+    "selected_epoch": 13,
+    "refit_records": 13,
+    "report": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-refit.json",
+    "prediction": "/Users/quan/workspace/netflix_challenge/artifacts/residual-chains/N1-resume-20261030-refit.f32",
+    "require_arguments_equal_parent": true,
+    "require_recorded_prediction_hash": true,
+    "require_source_hash_equal_parent": true
+  },
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/experiments/N1-resume-20261030-plan.json": "bcbd4eca989141e967dd4fdab698eac3697b25dffa682e01365ab17b27d4607b",
+    "/Users/quan/workspace/netflix_challenge/experiments/SO1-full-plan.json": "16f9afc1493c6939226a964e8441ef20ad5c7c9a8f21e6e7ecd0ec0c43549a15",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/spec-core-B4-A2h.json": "abda1eb012de3c98ba1bb19a533f087aa74524c554247d6336fe9ee36dbef58c",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-fit-20261031/manifest.json": "7d34cf583420d30173d26ce0d401673730b9b9bc7f7dfa31f766548fc397414b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-query-features-20261031/manifest.json": "232185f08c423f64588822c2723ceb0db5e58c05cbf08c4cfe3156371c803cf2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-fit-20261031/ridge.npy": "6d83c2c30305d4413f9de54fea8a2b9d3840fc0a59a3799346bb699603f1df39",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-fit-20261031/base_tree.txt": "e2e92ccd6570642db5376dc7b6836678137d2f69dea619a7b97978e7c34f38c2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-fit-20261031/choice_tree.txt": "d70cf36adbb6094c88d18f3bc8f0c21d4e906799790b38e514c6b3f783f32095",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-column-query-features-20261031/features.npy": "eb665fb2b7e2ff3636075dd9b8e797f22ec3b84d7d9ba0ac53ab94eba5b6d3d3",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-K1.f32": "2c24a369641a235807a5748c6675f5f1d16e6fe6b65b0b6dff8aa73f28f2fe9c",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-knn256td.netflix.f32": "5c7041d7b93ea118cce13a140eca22f1e4fc6fcbf3b6fe1d87264dcdaf66a9c5",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-knn64.netflix.f32": "e72e7ae1c6091bbf65a0d86281fa0d4fe4fef5f074278aa55842b52648846696",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/B-rbm100c.f32": "b7e7ab532626ee63688161cf868b7ec69cfec1503f903b11d8a383db81870cc7",
+    "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32": "70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4",
+    "/Users/quan/workspace/netflix_challenge/scripts/choice_affinity_column.py": "458b229b62b67218e4e33a4c233568fea34f1e525065bdd2b08ff5210d23ae10",
+    "/Users/quan/workspace/netflix_challenge/scripts/round4_boost.py": "cf98abd25bc046512459727f17df1a39466afdb8370328cb3d90f0e481a25960",
+    "/Users/quan/workspace/netflix_challenge/scripts/round8_nn_blend.py": "696e9326d84b97d13d87195187c784c66bdb42f290204d20656d17238bd9bdd0",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/local_context_chain.py": "0a75125f8c9b823f00f515b2253d47ff8c48a9389624c563f4f3ea37847aecc1"
+  },
+  "inference": "Load frozen 39-round base-only and 114-round choice bundles; apply the declared twelve-column query bank and cached twelve features. No query labels are inference inputs.",
+  "baseline_bank": "At launch bind the published retained full-bank inputs; include N1 raw column if not already present. Same bank in both arms.",
+  "arms": {
+    "control": "baseline bank + H8 base-only-tree column twice",
+    "treatment": "baseline bank + H8 base-only-tree + H8 choice-tree"
+  },
+  "blend": {
+    "trees": {
+      "script": "scripts/round4_boost.py",
+      "rounds": 8000,
+      "learning_rate": 0.02,
+      "leaves": 63,
+      "min_leaf": 200,
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "extra_meta": true
+    },
+    "neural": {
+      "script": "scripts/round8_nn_blend.py",
+      "lr": 0.0003,
+      "dropout": 0.2,
+      "epochs": 60,
+      "patience": 5,
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "threads": 2
+    },
+    "average": "0.5 tree + 0.5 NN2 for each arm"
+  },
+  "minimum_full_bank_gain": 0.0003,
+  "promotion": "Require treatment >=minimum gain over matched control, lower RMSE on all five user folds, and improvement over the retained reference on all five folds. Retained reference is bound before H8 scoring, never changed after it.",
+  "retained_reference": "Strongest published promoted prediction at launch under existing promotion rules. Bind its report, input bank and prediction hashes before any H8 comparison.",
+  "execution": "No GPU launch before N1/SO1 queue is terminal and GPU capacity is released. CPU-only inference must follow GOAL.md active-stage/process-priority rules. No auto-scheduler installed by this plan.",
+  "no_search": "One fixed comparison; no post-probe changes to features, PCA dimensions, rounds, recipe, threshold or seed.",
+  "limitations": "Original-probe development comparison only. P2 gain need not transfer. Full promotion is not hidden-test verification; GOAL target/offset remain unchanged."
+}
