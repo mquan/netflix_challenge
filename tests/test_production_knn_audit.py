@@ -1,17 +1,27 @@
 import json
 from pathlib import Path
 import sys
+import struct
 import tempfile
 import unittest
 
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from production_knn_audit import audit, prepare
+from production_knn_audit import audit, check_log, prepare
 from production_rbm_audit import digest
 
 
 class KnnAuditTests(unittest.TestCase):
+    def test_effective_cli_defaults_use_graph_width(self):
+        with tempfile.TemporaryDirectory() as temp:
+            graph = Path(temp) / 'graph'
+            graph.write_bytes(struct.pack('<QQII', 0x4E46475241504831, 123, 300, 64))
+            command = ['native', 'knn', '--graph', str(graph)]
+            check_log('knn base=time neighbors=64 power=2 shrink=0.05 time_decay=0 probe_rmse=3\n', command)
+            with self.assertRaises(ValueError):
+                check_log('knn base=time neighbors=256 power=2 shrink=0.05 time_decay=0 probe_rmse=3\n', command)
+
     def fixture(self, root, joint=False):
         data, binary = root / 'data', root / 'binary'
         data.write_bytes(b'data')

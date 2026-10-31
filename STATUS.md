@@ -53,9 +53,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    Native coverage and build provenance are in `P0-native-dependency-inventory-20261031.json`
    and `P0-joint-stage-build-map-v2-20261031.json`. Item-kNN now maps all 29 occurrences
    to 28 exact recipes, new production base/graph inputs and six support aliases (three rules):
-   `P0-knn-column-map-20261031.json`. Output auditor now passes five tests for consumed
-   dependency hashes, complete finite arrays, nonnegative support, exact replay and recipe logs.
-   Next verify every native recipe on label-isolation fixtures, then freeze guarded execution.
+   `P0-knn-column-map-20261031.json`. Output auditor passes six tests, including archived
+   CLI defaults. All 28 recipes pass two query-label fixtures: 56 kNN stage audits and 128
+   pipeline commands; predictions/support are label-independent, support is nonzero, and
+   all three support rules differ (`P0-knn-fixture-verification-20261031.json`).
+   Next freeze guarded kNN execution.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are

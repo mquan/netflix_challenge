@@ -3,14 +3,15 @@ import argparse
 import json
 from pathlib import Path
 import re
+import struct
 
 import numpy as np
 
 from production_rbm_audit import digest, load_plan, verify, write_new
 
 
-def argument(command, flag):
-    return command[command.index(flag) + 1]
+def argument(command, flag, default=None):
+    return command[command.index(flag) + 1] if flag in command else default
 
 
 def dependencies(plan, stage):
@@ -78,10 +79,18 @@ def check_log(log, command):
         raise ValueError('Missing or repeated complete kNN inference record')
     base, neighbors, power, shrink, decay = rows[0]
     expected_base = argument(command, '--joint-model') if '--joint-model' in command else 'time'
-    if base != expected_base or int(neighbors) != int(argument(command, '--neighbors')):
+    expected_neighbors = argument(command, '--neighbors')
+    if expected_neighbors is None:
+        with Path(argument(command, '--graph')).open('rb') as stream:
+            header = stream.read(24)
+        if len(header) != 24 or struct.unpack_from('<Q', header)[0] != 0x4E46475241504831:
+            raise ValueError('Invalid graph header for default neighbor count')
+        expected_neighbors = struct.unpack_from('<I', header, 20)[0]
+    if base != expected_base or int(neighbors) != int(expected_neighbors):
         raise ValueError('kNN log base or neighbor count differs')
     for actual, flag in [(power, '--power'), (shrink, '--shrink'), (decay, '--time-decay')]:
-        expected = float(np.float32(argument(command, flag)))
+        defaults = {'--power': '2', '--shrink': '.05', '--time-decay': '0'}
+        expected = float(np.float32(argument(command, flag, defaults[flag])))
         if not np.isfinite(float(actual)) or abs(float(actual) - expected) > 1e-8 * max(1, abs(expected)):
             raise ValueError('kNN log hyperparameters differ')
 
