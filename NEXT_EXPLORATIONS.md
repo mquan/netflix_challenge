@@ -1145,3 +1145,26 @@ E3 was already actively training, having satisfied its launch condition
 before these CPU jobs began. Maximum configured own CPU threads are seven;
 S0 uses no GPU. Monitor memory as the two scripts advance through their
 unchanged 13+12 arms. No partial diversity result is used to change the plan.
+
+### E3 audited completion-to-gate command ready (2026-10-31)
+
+`scripts/e3_candidate_gate.py --plan experiments/E3-plan-20261031.json
+--output-dir artifacts/ordinal/E3-gate-20261031` audits both arms before
+creating any scoring output. It checks exact frozen arguments (including
+E3's CE coefficient and trainer hash), matched architecture and sources,
+training libraries, data/warm hashes, the fixed full two-epoch budget, and
+all recorded prediction/checkpoint hashes. It then writes owner-validated
+receipts and a frozen shared-gate manifest, calls the unchanged shared P2
+fold-0 scorer, and calls the already registered E3 five-fold check. Both
+must pass; no metric, threshold, fold split or training budget is changed.
+All-fold predictions are saved without float32 rounding, and hashes and
+plans are checked again after scoring. No automatic full training or
+promotion is performed.
+
+Seven fixture tests pass across this command and the existing all-fold
+helper. They cover the full audit-to-two-gate handoff, rejection of partial
+training before any scoring output, architecture/source/warm/payload
+mismatches, exact shared fold-0 parity and held-fold label exclusion. Only
+fixtures ran; E3 remains in epoch 1 and no real E3 P2 score was read. The
+command's source will be frozen into its scoring manifest before the real
+gates, while the original E3 training plan and trainer remain unchanged.
