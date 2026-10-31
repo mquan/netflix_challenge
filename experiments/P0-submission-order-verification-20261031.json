@@ -1,0 +1,21 @@
+{
+  "state": "verified_raw_qualifying_order",
+  "manifest": "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json",
+  "rows": 2817131,
+  "movie_headers": 17470,
+  "bindings": {
+    "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json": "537c6a50cb6c0aa0b96d7935cbe87c4f839dcc2e4440a9651b8d0dd55e8a19c8",
+    "/Users/quan/workspace/netflix_challenge/data/raw/extracted/download/qualifying.txt": "62b3bbc22ff5531a0f61dfa8db658b7cff29da51402da5463f2230b3fbb1532b",
+    "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin": "3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd",
+    "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/dense-to-raw-user.npy": "62635da2e71b85fdcde38a0c30634341e1f7155d787c9b6c770b79aa007ceeaf",
+    "/Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/qualifying-order.npy": "092bbb123639f744a8c8839638e69f0fe0ba3efe53f24520254441d07c695ecb"
+  },
+  "metric": null,
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/scripts/production_submission.py": "69078bfe35983970148ec7385c3a1c04507a0a2e6970cac9dec3e99dfff3ac25",
+    "/Users/quan/workspace/netflix_challenge/tests/test_production_submission.py": "3da3c8e0808476842678108ae2ef44e12a8ea3341cdca6daa80a175b37c42077"
+  },
+  "tests_passed": 5,
+  "submission_written": false,
+  "scope": "All real qualifying raw identities/dates/order and dense user mapping match the hash-bound production dataset. Serialization tests use tiny float32 fixtures. No actual blender predictions exported; fitted-model/inference bindings and final pipeline handoff remain required. No qualifying score."
+}

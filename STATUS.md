@@ -97,6 +97,12 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    bank contract tests pass; real incomplete production bank rejects without
    creating `resolved-bank.json`. Engineering only, not production completion.
    `P0-bank-resolver-verification-20261031.json`. Final fit/export handoff pending.
+   Submission serialization passes five tests, including text/float32 roundtrip
+   and rejection of changed identities, labels, counts or bounds. Full real-data
+   order check verifies 2,817,131 queries and 17,470 movie headers against raw
+   qualifying IDs/dates, dense-user mapping and production rows. No submission
+   written; model/inference provenance handoff remains required.
+   `P0-submission-order-verification-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
