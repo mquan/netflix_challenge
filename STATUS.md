@@ -69,6 +69,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      historical-thread runtime test remains pending. `P0-BAYES-preflight-20261031.json`.
    Frozen phases cover 72/79 retained column occurrences. Remaining preparation:
    GP/local (6), user-kNN (1), then final blender/export.
+   GP/local audit engineering passes four tests and eight actual kernel handoffs
+   (20 native pipeline commands) on tiny label-0/label-5 fixtures, each based on
+   its own audited rank128/epoch9 J3. All GP outputs/masks and six local epochs
+   repeat exactly; retained parameters produce distinct corrections. Production
+   queue/resource guard still pending. `P0-kernel-fixture-verification-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
