@@ -102,3 +102,9 @@ Read-only diagnosis in `experiments/A7-order-audit-20261030.json` confirms
 A siblings. K1 requires chronological segments; the owning session must repair
 and reverify the dataset/artifact provenance before continuing that attempt.
 This diagnosis did not modify or restart A7.
+
+The A7 owner repaired the ordering in v2 (`ac6871e`). Independent verification
+in `experiments/A7-order-repair-verification-20261030.json` checks all
+99,775,636 training tuples: no within-user date inversions, identical per-user
+item/day/rating content, and unchanged offsets/probe/implicit arrays versus
+v1. The owner's A7v2 graph chain is live; this session did not relaunch it.
