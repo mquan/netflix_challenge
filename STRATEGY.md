@@ -71,3 +71,13 @@ idles nor gets contested.
 - Never stop, edit or slow the other session's jobs or frozen files (GOAL.md rules).
 - New one-off bets pause until A is done, except E5 (already running, cheap,
   and a first test case for B).
+
+## Part A outcome (2026-10-31)
+
+See the conclusion in [HEADROOM.md](HEADROOM.md). The user-level shift is
+already captured by Stage C (A7). The movie side and simple proxies are
+exhausted. N1-style choice history is the only measured deployable new signal
+(−0.0012 on P2 beyond A2h). The program's line C should therefore centre on
+choice-history sequence models, with N1's full-bank evaluation as the next
+decisive number. That evaluation belongs to the other session's queue; this
+session doesn't run or duplicate it.

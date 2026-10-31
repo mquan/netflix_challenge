@@ -1,0 +1,53 @@
+{
+  "protocol": "HEADROOM.md A7 fixed protocol",
+  "data": "data/processed/netflix.bin",
+  "amask": "artifacts/sibling/T-plus-A-v2.bin.amask",
+  "dev": [
+    "artifacts/rehearsal/B-K1.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.f32",
+    "artifacts/rehearsal/B-knn64.netflix.f32",
+    "artifacts/rehearsal/B-knn256td.netflix.support.f32"
+  ],
+  "stage_c": [
+    "artifacts/sibling/v2/K1.f32",
+    "artifacts/sibling/v2/knn256td.f32",
+    "artifacts/sibling/v2/knn64.f32",
+    "artifacts/sibling/v2/knn256td.support.f32"
+  ],
+  "frozen": {
+    "data/processed/netflix.bin": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+    "artifacts/sibling/T-plus-A-v2.bin": "159eca52c80d4d79e08844c47aed4b294c7e8b9c60701f9faba09ead17bc2e00",
+    "artifacts/sibling/T-plus-A-v2.bin.amask": "749194747db8270a7b511d21c892040831c8059275a2eab27ce3fc1fb1a0a794",
+    "HEADROOM.md": "50aeeb826051fa6ec34e4289d070d7e5e70f048c9cb724d1de18d1b26b8a93f4",
+    "artifacts/rehearsal/B-K1.f32": "2c24a369641a235807a5748c6675f5f1d16e6fe6b65b0b6dff8aa73f28f2fe9c",
+    "artifacts/rehearsal/B-knn256td.netflix.f32": "5c7041d7b93ea118cce13a140eca22f1e4fc6fcbf3b6fe1d87264dcdaf66a9c5",
+    "artifacts/rehearsal/B-knn64.netflix.f32": "e72e7ae1c6091bbf65a0d86281fa0d4fe4fef5f074278aa55842b52648846696",
+    "artifacts/rehearsal/B-knn256td.netflix.support.f32": "f664441e0d87f7440e723656de451eab710188cbf3dcade1bef3c02aebe1e8b9",
+    "artifacts/sibling/v2/K1.f32": "018f8e50393ce9d5de3637192ab30f8ee88ef05a38dc726bf5dc9f3eae2805b2",
+    "artifacts/sibling/v2/knn256td.f32": "6e3d8cca37600c3b2632507a8f74716cc06cd8d9ddcd79047c9b5e1c92fcb1ad",
+    "artifacts/sibling/v2/knn64.f32": "dfaa7ebba18abeca38c528d2e4eec6c64d137cb1159db65d510bbb43cd51d9d3",
+    "artifacts/sibling/v2/knn256td.support.f32": "272b547c9206784f2953065b085a877079de15a2a6e01adda3ee7fe4596a61a0",
+    "scripts/a7_score.py": "3da898bcd2ae0ee0fb8738477fd185f29c9005b850876d5165acfa4fc02f0ab1",
+    "scripts/sibling_pooling.py": "61a55efada7732c2a61b228b863b0d9336cf308756466f3d07a6821226ef1fd1",
+    "scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "scripts/local_context_chain.py": "0a75125f8c9b823f00f515b2253d47ff8c48a9389624c563f4f3ea37847aecc1",
+    "scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2",
+    "experiments/A7v2-graph256.json": "ff69381727646bd61689510381700c1d9d8cdcbdfe50b4c11768ac238f410216",
+    "experiments/A7v2-graph64.json": "d20a2baddadf0628f57fe5858ffccc3d7ef14a1978020a4137a506e7564228af",
+    "experiments/A7v2-K1.json": "3eca224058ec436f6aebfa56e1d25c062294d54a76c05c98288e675e51f07dce",
+    "experiments/A7v2-knn256td.json": "6d31710c34c4064a3c53d156fc83a035634166929b84b1c08e33148d4402f09c",
+    "experiments/A7v2-knn64.json": "51719355ad4d45f9978fed18b01c88592ccc805b9d76ea108534783106c8d3a2"
+  },
+  "receipts": [
+    "experiments/A7v2-graph256.json",
+    "experiments/A7v2-graph64.json",
+    "experiments/A7v2-K1.json",
+    "experiments/A7v2-knn256td.json",
+    "experiments/A7v2-knn64.json"
+  ],
+  "minimum_gain": 0.0005,
+  "require_all_folds": true,
+  "output": "artifacts/sibling/A7v2-independent-score-20261031.json",
+  "threads": 1,
+  "scope": "Reuse the existing fixed scorer. No new model, epoch, pooling coefficient rule or hidden-test claim."
+}
