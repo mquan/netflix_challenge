@@ -1,0 +1,19 @@
+{
+  "state": "verified_final_handoff_engineering",
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/scripts/production_final_handoff.py": "7cc5c0fac59a8035b455af4f145f5f523522c328df5e0c94ecee142c83bc07cf",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_submission.py": "69078bfe35983970148ec7385c3a1c04507a0a2e6970cac9dec3e99dfff3ac25",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_blend.py": "eee8be96faf75c3eaef1af39eebeff26649dd374eae0db4843b9bcc0fe2c7af0",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_blend_tree.py": "1c811ef847949ff7973fe9a94e924f8f3136e97ac0f129e907f4f01e2c39a1ee",
+    "/Users/quan/workspace/netflix_challenge/tests/test_production_final_handoff.py": "24f1c3990c7f93525ff717a2df5050e1ffe7b0e6dcb2da2431de20c714e6c099"
+  },
+  "tests_passed": 4,
+  "actual_tiny_blender_fit": true,
+  "actual_tiny_full_inference_runs": 2,
+  "actual_tiny_raw_order_text_export": true,
+  "wrong_model_missing_audit_changed_budget_and_predictions_rejected": true,
+  "production_without_resolved_bank_rejected": "[Errno 2] No such file or directory: '/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/resolved-bank.json'",
+  "production_fit_started": false,
+  "metric": null,
+  "scope": "Real tiny blender CLI fitting/inference/export with synthetic production-stage receipts and reduced test budgets. Does not prove all 82 real stages complete or production readiness. Real final fit rejects absent resolved bank before writing started metadata. Fixed full production final runner remains to be frozen/launched."
+}

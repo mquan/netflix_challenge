@@ -103,6 +103,12 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    qualifying IDs/dates, dense-user mapping and production rows. No submission
    written; model/inference provenance handoff remains required.
    `P0-submission-order-verification-20261031.json`.
+   Final handoff now binds bank/model hashes before each command, audits fixed
+   budgets and outputs afterward, requires two exact inference runs, then binds
+   raw-order text export. Four tests pass with real tiny CLI fitting/inference/
+   export and synthetic production receipts. Real final fit rejects the absent
+   resolved bank before creating started metadata. Full fixed-budget final
+   runner still needs freezing/launch. `P0-final-handoff-verification-20261031.json`.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
