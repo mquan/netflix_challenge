@@ -30,7 +30,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| H8 full-bank comparison (choice-affinity column) | Codex | Control verified at 0.86670512; treatment-tree live, four folds complete; `artifacts/headroom/H8-full-20261031/runner.log` |
+| H8 full-bank comparison (choice-affinity column) | Codex | Control 50/50 verified at 0.86670512; treatment tree verified at 0.86675819; final treatment NN live (PID 32367); `artifacts/headroom/H8-full-20261031/runner.log` |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | All79 reference reproduction live; three tree folds complete. Original runner will stop before NN on changed narrative-doc hash; exact original document archived, administrative continuation prepared. `experiments/S0-document-rebind-verification-20261031.json` |
 | E3 (λ=0.1 CE on A2h head), queued on GPU after H8 | Codex | `experiments/E3-plan-20261031.json`; starts when no other training is live |
 
