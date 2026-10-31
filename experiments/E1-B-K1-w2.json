@@ -1,0 +1,11 @@
+{
+  "name": "E1-B-K1-w2",
+  "returncode": 0,
+  "elapsed_seconds": 1537,
+  "binary_sha256": "35ed576eed8e31c11e805fbd7bcc8e1c563ef06daa41cbb4a418cda1eaff94cb",
+  "joint_hpp_sha256": "4d8c49dfdbed0211241043ef468ee6a5ed5f05d7abb68b0109c480d59af3ae91",
+  "netflix_cpp_sha256": "444bb7e5399b9e35a7e4c6cc96f8e531e4030b720691435498ac58e0066610f6",
+  "git_head": "511847b47d2c5dc3f45b35db011c470812763723",
+  "finished_utc": "2026-10-31T04:00:36Z",
+  "command": "build/netflix-rowweights joint --data data/processed/netflix.bin --model artifacts/rehearsal/e1/B-K1-w2.bin --predictions artifacts/rehearsal/e1/B-K1-w2.f32 --factors 256 --learning-rate .008 --regularization .02 --decay .97 --iterations 41 --fixed-epoch --threads 5 --row-weights artifacts/rehearsal/e1/p2-w2.f32"
+}

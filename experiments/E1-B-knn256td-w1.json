@@ -1,0 +1,11 @@
+{
+  "name": "E1-B-knn256td-w1",
+  "returncode": 0,
+  "elapsed_seconds": 39,
+  "binary_sha256": "35ed576eed8e31c11e805fbd7bcc8e1c563ef06daa41cbb4a418cda1eaff94cb",
+  "joint_hpp_sha256": "4d8c49dfdbed0211241043ef468ee6a5ed5f05d7abb68b0109c480d59af3ae91",
+  "netflix_cpp_sha256": "444bb7e5399b9e35a7e4c6cc96f8e531e4030b720691435498ac58e0066610f6",
+  "git_head": "e8cfaa9369edfec0d91aa335519f3d0558054ee3",
+  "finished_utc": "2026-10-31T05:03:30Z",
+  "command": "build/netflix-rowweights knn --data data/processed/netflix.bin --graph artifacts/r4/neighbors256.bin --joint-model artifacts/rehearsal/e1/B-K1-w1.bin --neighbors 256 --power 1 --shrink .5 --time-decay .003 --predictions artifacts/rehearsal/e1/B-knn256td-w1.f32 --support artifacts/rehearsal/e1/B-knn256td-w1.support.f32"
+}
