@@ -54,6 +54,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | A. Headroom map (`scripts/headroom_map.py`, HEADROOM.md) | this session (Claude) | **done 2026-10-31**: the only deployable new signal found is N1-style choice history; see HEADROOM.md conclusion |
 | H8. Choice affinity beyond N1 (P2) | this session (Claude) | done 2026-10-31: borderline −0.00036 (−0.00029 vs recalibrated); a small complement only |
 | H8 nested validation | Codex | complete: −0.000373 vs ridge, −0.000289 vs matched tree on P2 fold 0; full-bank value pending |
+| H9 choice co-occurrence embeddings | Codex | fixed CPU test of unlabelled-only representation beyond H8; P2 nested gate, no GPU |
 | H8 deployable CPU column | Codex | bundle/cache ready; full comparison pre-registered in H8-full-comparison-protocol-20261031.json; awaits N1 and GPU queue |
 | A7. Sibling-split Stage C rehearsal (K1 family) | this session (Claude) | **closed 2026-10-31: Stage C absorbs the sibling signal; pooling +0.00178 worse after retraining** |
 | E2 prototype (movie-side context in A2) | other agent (Codex) | CPU components verified; deferred after headroom review; GPU queue priority preserved |
@@ -70,7 +71,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | open | — |
+| 1 | H9 choice co-occurrence embeddings | CPU protocol/test preparation |
 | 2 | open | — |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 
