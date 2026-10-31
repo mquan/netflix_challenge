@@ -932,3 +932,39 @@ reproduced scores, and the saved average against its two components within
 The unchanged runner passed its next hash check and launched the three-worker
 treatment-tree stage. Treatment neural remains pending; no H8 gain or
 promotion decision is available from the completed control alone.
+
+## S0 — Structural-plan week-0 scoping (fixed before scoping scores)
+
+`experiments/S0-scoping-plan-20261031.json` inventories the retained bank's
+79 prediction columns, ten fixed families and 46 fixed support columns.
+It addresses STRUCTURAL_PLAN.md's diversity and quality-substitution checks.
+The original-probe labels have not been loaded for S0 yet.
+
+**Diversity.** Use nested random subsets of 1, 4, 16, 32, 64 and 79 columns
+from three fixed permutations (numpy default_rng seeds 20261031, 20261101,
+20261102), preserving retained-bank column order. The full 79-column arm is
+shared, giving 16 prescribed arms. Fit the existing three-seed tree + NN2
+50/50 blend on all five user folds, with its unchanged recipe and fixed
+support/context. This measures the actual retained blender's count curve;
+it is not an information-source ceiling because support stays present.
+
+**Quality substitution.** Compute clipped standalone scores for every
+column. Within each declared family choose the best and worst by that score
+(ties by original bank index), and replace its best occurrence by a duplicate
+of the weaker sibling, keeping all other occurrences and support fixed.
+Run all ten substitutions, regardless of early results. Report standalone
+and blend degradation, all-five-fold deltas, and their finite ratio. A ratio
+is undefined for zero standalone difference. Substitution changes diversity
+as well as quality; it cannot identify a causal slope for future models.
+
+**Interpretation gate.** The all-79 scoping arm must first reproduce retained
+R9 within 1e-7 in saved predictions and 1e-8 in RMSE before interpreting any
+curve. Report all permutations and substitutions; no winning-subset search,
+no model promotion, no stopping H8 based on S0. Use the observed ranges to
+rank the structural lanes, without promising the 0.0041 target gap or
+asserting a model-family upper bound. The next step is the standalone
+inventory and frozen executable arm manifests.
+
+**Resources.** At most two S0 arms live, three tree workers or two NN threads
+per arm, total own CPU threads at most ten including H8. No cloud spend.
+E3's existing no-other-training launch condition continues to apply.
