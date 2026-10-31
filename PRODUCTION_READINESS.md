@@ -17,6 +17,12 @@ handoff. The three auditor fixture tests pass; preflight confirms existing
 prepare-only configurations, current libraries, MPS availability and 130 GiB
 free disk. CPU/native phases and the final bank/blender export remain pending.
 
+The frozen GPU queue is now live: A2h trainer PID 32347, bash runner 32318,
+managed session 91805. It passed all 235 shell hash checks and reached its
+first MPS training checkpoint. Exact startup configuration and libraries match
+the bound preparation report. `experiments/P0-GPU-launch-20261031.json` and
+the immutable startup snapshot record this handoff.
+
 Qualifying sentinels cannot select epochs or establish a score. Final-bank
 offset calibration is still unverified; the existing ~0.0074 offset supports
 only an estimate. GPU order is completed E3, then Codex production, then

@@ -33,13 +33,13 @@ The week-3 stop check remains ≥0.0015 bank gain.
 
 | Job | Owner | Check |
 |---|---|---|
-| Production retrain P0 | Codex | Retained R9 frozen; preflight passed for seven serial MPS neural stages, A2h first (12 epochs). Queue prepared, not launched yet. `experiments/P0-GPU-preflight-20261031.json` |
+| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | S0 full-blender scoping, independent of the ridge proxy | Codex | 1/25 nonreference arms complete and audited: n4 saved 50/50 RMSE 0.8743334. Lane 1 advanced to n32 tree (PID 9314/session 83214); lane 0 n1 neural remains live (PID 99895/session 96236). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261031-n4-full-verification-20261031.json` |
 
 ## Next actions
 
-1. **Codex:** launch the frozen production MPS queue after committing its plan;
-   then prepare remaining CPU/native phases within the thread cap. All 79
+1. **Codex:** monitor the live production MPS queue and prepare remaining
+   CPU/native phases within the thread cap. All 79
    columns/supports and final fitted blender remain required; no qualifying labels exist.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
