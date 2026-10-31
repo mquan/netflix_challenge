@@ -211,3 +211,30 @@ the next GPU and CPU effort behind N1's line. That means its full-bank
 evaluation, then the strongest variants of choice-history modelling such as
 longer histories, qualifying-period choices, and seeds/ensembles of the N1
 model. Deprioritise E2. Keep E3 and E5 as cheap queued tests.
+
+## H8: choice-identity signal beyond N1 — fixed protocol (2026-10-31, before any score)
+
+**Question.** Is there deployable choice-identity information left once N1
+is in the bank? N1 is the only measured deployable new signal.
+
+**Features** (no held-out labels). For each P2 row (user u, movie i, day t),
+take u's *unlabelled* choices: implicit pairs not in u's training ratings,
+excluding the target movie. In the P2 dataset those are P2, probe and
+qualifying pairs. Over windows |Δday| ≤ 3, ≤ 30 and all, compute the count and
+the affinity between movie i and the window's mean choice embedding:
+- y-affinity: q_i · mean y_c (K1's SVD++ implicit factors y), projected to the
+  top 32 principal directions of y;
+- q-affinity: the same with item factors q.
+
+The embeddings come from `artifacts/rehearsal/A-K1.bin` (K1 trained on T − P2,
+so no P2 label is involved).
+
+**Test.** As H4: LightGBM on the cross-fitted residual of a ridge over
+**bank11 + N1** (P2), with these features plus the base. Train on folds 2–4,
+early-stop on fold 1, evaluate on fold 0.
+
+**Decision.**
+- Δ ≤ −0.0003 means the choice line has more signal than N1 captures:
+  build it properly as a column or an N1 variant.
+- Otherwise choice-identity signal saturates with N1 at this level of
+  modelling.
