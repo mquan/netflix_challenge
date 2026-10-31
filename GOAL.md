@@ -49,7 +49,7 @@ experiment.
 |---|---|---|
 | 1 | E1 stage 1 (K1 family) | **closed 2026-10-31: w2 +0.00014, w3 +0.00049 worse, all folds** |
 | 2 | E1-Bayes (B4) | **stopped by pre-registered early stop** at sweep 15; no score |
-| 3 | open | — |
+| 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | code + CPU tests done 2026-10-31; **waits for the GPU** after the other session's queue |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
 behind the other session. The log of results is kept in
