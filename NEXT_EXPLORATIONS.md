@@ -280,6 +280,35 @@ finished; do not edit the frozen SO1 trainer or its dependencies.
 
 **Gate.** At least **0.0003** in the blend, all folds better.
 
+### E3 fixed protocol and implementation (2026-10-31, before any score)
+
+- **Loss.** L = MSE(expected rating) + **λ·CE**(five logits, observed star),
+  with **λ = 0.1** fixed. One arm only, no λ search. The prediction stays the
+  softmax-weighted expectation. No distribution support features.
+- **Trainer.** `scripts/e3_distribution_loss.py` calls SO1's
+  `selection_objective.run` unchanged, with auxiliary weight 0, and swaps only
+  the rating loss inside its own process. It records `ce_weight` and its own
+  SHA-256 in the report's `arguments`. No frozen SO1 file is edited.
+- **Matched control = SO1's control arm.** `tests/test_e3_distribution_loss.py`
+  shows λ=0 reproduces SO1's weight-0 run exactly on a CPU fixture: identical
+  epoch-2 prediction bytes and every model tensor. So `SO1-control` (A2h-select
+  warm start, P2 dataset, seed 20261019, lr 0.0003, 2 epochs) is the control,
+  and E3 runs that command with `--ce-weight 0.1` and a new output prefix. If
+  SO1's control is ever rerun or changed, rerun both arms. The tests also
+  cover λ>0 changing the fit, the exact combined-loss value, restoring the
+  original loss function, and rejecting a nonzero auxiliary weight and a
+  negative or NaN λ.
+- **Score.** Epoch 2 fixed. Same scoring as SO1's primary comparison: bank11 +
+  control + duplicate control versus bank11 + control + E3, ridge folds as in
+  `SO1-plan.json`. The E3 gate plan will bind `e3_distribution_loss.py`'s hash
+  in addition to SO1's frozen sources.
+- **Gate.** ≥0.0003 P2 RMSE gain, all five folds. Pass → full-T pair from the
+  A2h-refit checkpoint, as SO1's full stage, then the full-bank comparison
+  (promotion requires all five dev folds).
+- **Launch condition.** Only after the other session's GPU queue (SO1,
+  including any full-data stage) is finished, the GPU is idle, and no other
+  Python training process is live. Never in parallel with their jobs.
+
 ## E4. Second A2h seed (filler)
 
 The A2b twin added 0.0003 and later A2 variants added 0.0001–0.0004. A second
