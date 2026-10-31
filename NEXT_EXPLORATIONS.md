@@ -100,6 +100,17 @@ hidden-test effect, not a verified test score.
   is tried after reading these. Pass → extend to the RBM chain, then Bayes.
   Fail → close E1. The fine-tune arm (b-ft) is deferred until stage 1 passes.
 
+### E1 stage 1 observation during the w2 run (not a gate result)
+
+The K1 trainer logs standalone original-probe RMSE every epoch. Compared with
+the recorded unweighted P0-B-K1 run, w2 is better early (−0.0055 at epoch 1,
+−0.0008 at 21) but crosses over at about epoch 27 and is +0.0010 at epoch 36.
+P2 rows, at double weight, appear to be overfit under the fixed 41-epoch
+schedule that was selected unweighted. This does not change the gate. If
+stage 1 fails, the follow-up would have to select the weighted arm's epoch on
+a training-only inner split (a P2 carved from T − P2), never on the original
+probe. Choosing epoch ~25 from this log would be probe selection.
+
 ### E1-Bayes: the same weighting in Bayes timeSVD++ (fixed before any score, 2026-10-30)
 
 - **Code.** `netflix bayes --row-weights FILE` gives row p noise precision
