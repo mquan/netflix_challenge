@@ -149,3 +149,11 @@ rehearsal to the Bayes and RBM columns, then the full bank, and adopt sibling
 pooling as a production step. If not, the shift is already harvested by
 Stage C; record the sibling offset as the better estimate of the Stage C
 offset either way.
+
+**A7 execution note.** The first dataset appended half-A rows at the end of
+each user's segment. The trainers require (day, item) order within a user,
+so K1 failed at startup ("training session missing"). Graphs were built; no
+model trained or scored. v2 (`T-plus-A-v2.bin`, same split, mask
+byte-identical) merges A rows into the original order and checks for
+duplicate (user, day, item). The chain now writes `experiments/A7v2-*` and
+`artifacts/sibling/v2/`. Protocol unchanged.

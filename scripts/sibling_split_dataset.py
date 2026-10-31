@@ -3,8 +3,8 @@
 
 Splits the original probe into half A and half B with the same rule as
 scripts/sibling_pooling.py (seed 20261031: row in A if uniform < .5, in probe
-order). Writes a dataset whose training ratings are T plus the A rows (each
-user's A rows appended to the end of that user's training segment) and whose
+order). Writes a dataset whose training ratings are T plus the A rows (merged into each
+user's segment in the original (day, item) order) and whose
 probe is the B rows in original probe order. Implicit arrays are copied
 unchanged; they already contain every probe/qualifying pair. The header mean
 is recomputed over the new training ratings, as in the original full dataset.
@@ -34,23 +34,20 @@ def build(original, output, seed=20261031):
     a = split_mask(len(p), seed)
     users = int(o['users'])
     counts = np.diff(o['train_offsets']).astype(np.int64)
-    add = np.bincount(p['user'][a].astype(np.int64), minlength=users)
-    new_offsets = np.concatenate([[0], np.cumsum(counts + add)]).astype(np.int64)
-    n = int(new_offsets[-1])
-    items, days, ratings = (np.empty(n, '<u2'), np.empty(n, '<u2'), np.empty(n, 'u1'))
-    # existing rows go to the front of each user's new segment
-    uid = np.repeat(np.arange(users), counts)
-    dest = new_offsets[:-1][uid] + (np.arange(len(uid)) - o['train_offsets'][:-1].astype(np.int64)[uid])
-    items[dest], days[dest], ratings[dest] = o['train_items'], o['train_days'], o['train_ratings']
-    # A rows follow, in probe order within each user
     pa = p[a]
-    au = pa['user'].astype(np.int64)
-    order = np.argsort(au, kind='stable')
-    au_s = au[order]
-    first = np.searchsorted(au_s, au_s, 'left')
-    rank = np.arange(len(au_s)) - first
-    dest_a = new_offsets[:-1][au_s] + counts[au_s] + rank
-    items[dest_a], days[dest_a], ratings[dest_a] = pa['item'][order], pa['day'][order], pa['rating'][order]
+    # Merge T and A rows, then order each user's rows by (day, item) exactly as
+    # the original dataset is ordered (trainers walk rows in date order).
+    uids = np.concatenate([np.repeat(np.arange(users), counts), pa['user'].astype(np.int64)])
+    items = np.concatenate([o['train_items'], pa['item']]).astype('<u2')
+    days = np.concatenate([o['train_days'], pa['day']]).astype('<u2')
+    ratings = np.concatenate([o['train_ratings'], pa['rating']]).astype('u1')
+    order = np.lexsort((items, days, uids))
+    uids, items, days, ratings = uids[order], items[order], days[order], ratings[order]
+    same = uids[1:] == uids[:-1]
+    if np.any(same & (days[1:] == days[:-1]) & (items[1:] == items[:-1])):
+        raise ValueError('duplicate (user, day, item) after merge')
+    new_offsets = np.concatenate([[0], np.cumsum(np.bincount(uids, minlength=users))]).astype(np.int64)
+    n = int(new_offsets[-1])
     raw = np.memmap(original, mode='r', dtype=np.uint8)
     header = raw[:HEADER.itemsize].view(HEADER).copy()
     header[0]['train_count'] = n
