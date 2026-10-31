@@ -760,3 +760,32 @@ The plan declares recipe and inference mapping; it does not install another
 scheduler or launch jobs. Full comparison waits for N1/SO1 to finish and
 release GPU capacity. CPU inference follows GOAL.md's active-stage guard.
 All original-probe development and hidden-test limitations still apply.
+
+## H9 choice co-occurrence embeddings (fixed CPU protocol, before any score)
+
+Claimed by Codex on the strategy's choice-history line. Hypothesis: the small
+H8 signal is constrained by supervised K1 embeddings; unlabelled-only choice
+co-occurrence may expose complementary current tastes without another GPU
+model. This tests a representation of existing choices, not an oracle label.
+
+Build a binary user/movie presence matrix from implicit pairs absent from
+training. Weight columns by log(1+users/(1+document frequency)), then normalize
+each user row to unit L2 length. Compute a fixed randomized rank-32 SVD
+(oversample 8, five reorthogonalized power passes, seed 20261031). Use
+V*sqrt(singular value) and unit-normalized item vectors with H8's target-excluded
+3-day/30-day/all-history pooling. Add nine affinity features to H8's twelve
+features; reuse existing counts rather than duplicate them.
+
+Use the same nested stacking, tree settings, 2,000-round cap and 100-round
+stopping patience as validated H8. Control is H8 itself, not a weaker ridge.
+Its saved fold-0 predictions must reproduce within 1e-8. Fold 0 labels enter
+no ridge fit, residual training target or selection. Gate: >=0.0003 P2 RMSE
+gain over matched H8; fail closes H9 without a rank/weight/window/seed sweep.
+A pass still needs a separately frozen full-bank/all-fold test.
+
+Plan: `experiments/H9-choice-cooccurrence-plan-20261031.json`; implementation:
+`scripts/choice_cooccurrence.py`. Three fixture tests cover rating independence,
+binary presence/IDF normalization, exact low-rank geometry, control replay
+and outer-label independence. CPU only (two tree threads, BLAS one thread),
+while the verified N1 training process remains live. No original-probe score
+or existing trainer modification is part of this run.
