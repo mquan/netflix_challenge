@@ -150,3 +150,62 @@ ceiling). The single GPU serialises lane 2, the other session's GPU work and
 lane 4's GPU refits. d256 runs may need the GPU alone: two A2c runs once hit
 110 GB. CPU work runs 2–3 jobs in parallel within the ~10-thread rule. The
 week-3 stop rule (≥0.0015 dev-CV bank gain) still applies.
+
+## Week-0 scoping result (2026-10-31)
+
+`scripts/scoping_bank.py` → `artifacts/scoping/S0-bank-scoping.json`. It uses
+a ridge proxy over the 79 prediction columns of R9-LAT-A2h (hash-verified),
+with 5 user folds, cross-fitted, on the original probe, as a diagnostic.
+Proxy full-bank RMSE is 0.86968 vs production 0.86687, so read shapes, not
+absolute gains.
+
+**Breadth comes from families, not columns.** Mean RMSE by number of whole
+families included (random orders):
+
+| Families | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| RMSE | 0.8947 | 0.8828 | 0.8774 | 0.8768 | 0.8736 | 0.8723 | 0.8712 | 0.8704 | 0.8697 |
+
+The 8th and 9th families still add ≈0.0007–0.0008 each. Leave-one-family-out:
+
+| a2 | bayes | masked history | gp/local | rbm | integrated | knn | autorec | factor sgd |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0.00173 | 0.00127 | 0.00079 | 0.00067 | 0.00047 | 0.00024 | 0.00021 | 0.00009 | 0.00004 |
+
+About 30 kNN and SGD-factor columns together are worth ≤0.0002. A power law
+fitted to random column subsets (a + b·k^−c, c = 0.32) extrapolates to
+−0.0018 at 160 columns and −0.0046 at 800. That assumes new columns are as
+novel as random existing ones, which the family results contradict unless
+they come from new families.
+
+**Quality converts poorly into blend gain.** Blend gain per 1.0 of standalone gain when a
+family's representative is swapped (bank without the family plus one member):
+
+| Family | Slope | Members' standalone spread |
+|---|---:|---:|
+| bayes | 0.14 (3 members, noisy) | 0.003 |
+| gp/local | 0.10 | 0.006 |
+| a2 transformer | 0.028 | 0.013 |
+| masked history | 0.025 | 0.019 |
+| integrated / knn / factor sgd / rbm / autorec | ≈0 | — |
+
+### Revised lane ranking
+
+1. **New model families first** (≈0.0007–0.001 each in the proxy). This
+   is the only lever with a demonstrated per-unit size that could sum to
+   0.0041: about 4–6 new families, fewer if some are strong. The next step
+   is a short audit of which families the winners or the literature used that
+   are absent here, ranked by expected error-structure novelty.
+2. **Quality upgrades only in high-slope families**: Bayes (MCMC) and GP/local
+   nonlinear residual models. A ≈0.007–0.010 standalone gain there would be
+   worth ≈0.001 in the blend.
+3. **Lane 1a (PT integrated model) and plain transformer scaling (lane 2b)
+   are demoted.** Their families convert standalone gain at ≈0 and 0.028, so a
+   0.010 standalone improvement would add ≲0.0003. They pay only if they
+   change error structure. A scaled transformer that adds a new *input*
+   (choice tokens, long context) is the version worth testing, not width alone.
+4. Lane 3 (blend-aware selection) and lane 4 (production) are unchanged.
+
+**Caveat.** Slopes rest on few members and the ridge proxy; the production
+blender extracts more nonlinear value from each column. These estimates rank
+the lanes. They do not forecast gains.

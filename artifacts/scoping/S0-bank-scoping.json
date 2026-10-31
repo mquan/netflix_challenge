@@ -1,0 +1,879 @@
+{
+  "columns": [
+    "artifacts/other-branch/joint64.f32",
+    "artifacts/other-branch/joint128-reg005.f32",
+    "artifacts/other-branch/joint128-reg02.f32",
+    "artifacts/other-branch/joint128-day128.f32",
+    "artifacts/other-branch/joint256-snap.f32",
+    "artifacts/other-branch/neighborhood64.f32",
+    "artifacts/other-branch/knn64-p1.f32",
+    "artifacts/other-branch/knn64-j64-p1.f32",
+    "artifacts/other-branch/knn64-j128r005.f32",
+    "artifacts/other-branch/knn64-j128r02.f32",
+    "artifacts/other-branch/knn64-j128day.f32",
+    "artifacts/other-branch/knn64-j256snap.f32",
+    "artifacts/other-branch/rbm100-fast.f32",
+    "artifacts/other-branch/autorec512-a3-snap.f32",
+    "artifacts/other-branch/autorec512-a2.f32",
+    "artifacts/gp-full.0.f32",
+    "artifacts/gp-full.1.f32",
+    "artifacts/gp-full.2.f32",
+    "artifacts/gp2-persistent-full.0.f32",
+    "artifacts/local-global.epoch6.f32",
+    "artifacts/local-local.epoch6.f32",
+    "artifacts/joint256-reg01.f32",
+    "artifacts/T2-f64-lr005-reg015-d97.f32",
+    "artifacts/T3-f64-lr008-reg008.f32",
+    "artifacts/T4-f64-lr012-reg015-d93.f32",
+    "artifacts/T6-f256.f32",
+    "artifacts/I2-integrated-f64-koren.f32",
+    "artifacts/knn64-T4.f32",
+    "artifacts/r4/knn-J6-p1.f32",
+    "artifacts/r4/knn-J6-p2.f32",
+    "artifacts/r4/knn-J6-k16.f32",
+    "artifacts/r4/knn-J6-s5.f32",
+    "artifacts/r4/knn-T2-p1.f32",
+    "artifacts/r4/knn-T3-p1.f32",
+    "artifacts/r4/knn-T6-p1.f32",
+    "artifacts/rbm200.f32",
+    "artifacts/autorec512-a3.f32",
+    "artifacts/knn64-p2.f32",
+    "artifacts/knn64-j64-p2.f32",
+    "artifacts/rbm100.f32",
+    "artifacts/r4/knn-J6-td.003.f32",
+    "artifacts/r4/knn-J6-td.1.f32",
+    "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+    "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+    "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+    "artifacts/r4/knn256td-T2.f32",
+    "artifacts/r4/knn256td-T4.f32",
+    "artifacts/r4/knn256td-J2.f32",
+    "artifacts/r4/knn256td-J4.f32",
+    "artifacts/r4/knn256td-J3.f32",
+    "artifacts/r4/knn256td-J1.f32",
+    "artifacts/I2R-integrated.f32",
+    "artifacts/T6R-f256.f32",
+    "artifacts/r4/knn-T6R-p1.f32",
+    "artifacts/r4/knn256td-T6R.f32",
+    "artifacts/R4D-rbm200-cond.f32",
+    "artifacts/R4C-rbm200-cond.f32",
+    "artifacts/P2-rbm200-cond.f32",
+    "artifacts/R2C-rbm100-cond.f32",
+    "artifacts/P3C-rbm200-s7-cond.f32",
+    "artifacts/P4C-rbm300-cond.f32",
+    "artifacts/masked/MH3-categorical-mse-refit.f32",
+    "artifacts/masked/MT0-refit.refit.e12.f32",
+    "artifacts/masked/MT1-refit.refit.e10.f32",
+    "artifacts/masked/MT2-refit.refit.e12.f32",
+    "artifacts/masked/MT3-refit.refit.e7.f32",
+    "artifacts/masked/MT5-refit.f32",
+    "artifacts/masked/MT6-refit.f32",
+    "artifacts/r8/C-uknn-K1.f32",
+    "artifacts/masked/MT8-refit.refit.e7.f32",
+    "artifacts/masked/MT9-refit.refit.e8.f32",
+    "artifacts/r8/B2-full-r64.s0128.f32",
+    "artifacts/masked/A2-refit.refit.e11.f32",
+    "artifacts/r8/B3-full-r128.s0160.f32",
+    "artifacts/masked/A2b-refit.refit.e10.f32",
+    "artifacts/r8/B4-full-r128.s0160.f32",
+    "artifacts/masked/A2e-refit.refit.e12.f32",
+    "artifacts/masked/A2f-refit.refit.e10.f32",
+    "artifacts/masked/A2h-refit.refit.e12.f32"
+  ],
+  "resolved_paths": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint64.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-p1.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j64-p1.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r005.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r02.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128day.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j256snap.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/rbm100-fast.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a3-snap.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.0.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.1.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/joint256-reg01.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/T2-f64-lr005-reg015-d97.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/T3-f64-lr008-reg008.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/T4-f64-lr012-reg015-d93.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/T6-f256.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/I2-integrated-f64-koren.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/knn64-T4.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-p1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-p2.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-k16.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-s5.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-T2-p1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-T3-p1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-T6-p1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/rbm200.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/autorec512-a3.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/knn64-p2.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/knn64-j64-p2.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/rbm100.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-td.003.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-J6-td.1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-T2.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-T4.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-J2.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-J4.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-J3.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-J1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/I2R-integrated.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/T6R-f256.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn-T6R-p1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r4/knn256td-T6R.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/R4D-rbm200-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/R4C-rbm200-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/P2-rbm200-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/R2C-rbm100-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/P3C-rbm200-s7-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/P4C-rbm300-cond.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MH3-categorical-mse-refit.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT0-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT1-refit.refit.e10.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT2-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT3-refit.refit.e7.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT5-refit.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT6-refit.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/C-uknn-K1.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT8-refit.refit.e7.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/MT9-refit.refit.e8.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/B2-full-r64.s0128.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/A2-refit.refit.e11.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/B3-full-r128.s0160.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/A2b-refit.refit.e10.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/r8/B4-full-r128.s0160.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/A2e-refit.refit.e12.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/A2f-refit.refit.e10.f32",
+    "/Users/quan/workspace/netflix_round9/artifacts/masked/A2h-refit.refit.e12.f32"
+  ],
+  "families": {
+    "artifacts/other-branch/joint64.f32": "factor_sgd",
+    "artifacts/other-branch/joint128-reg005.f32": "factor_sgd",
+    "artifacts/other-branch/joint128-reg02.f32": "factor_sgd",
+    "artifacts/other-branch/joint128-day128.f32": "factor_sgd",
+    "artifacts/other-branch/joint256-snap.f32": "factor_sgd",
+    "artifacts/other-branch/neighborhood64.f32": "integrated",
+    "artifacts/other-branch/knn64-p1.f32": "knn",
+    "artifacts/other-branch/knn64-j64-p1.f32": "knn",
+    "artifacts/other-branch/knn64-j128r005.f32": "knn",
+    "artifacts/other-branch/knn64-j128r02.f32": "knn",
+    "artifacts/other-branch/knn64-j128day.f32": "knn",
+    "artifacts/other-branch/knn64-j256snap.f32": "knn",
+    "artifacts/other-branch/rbm100-fast.f32": "rbm",
+    "artifacts/other-branch/autorec512-a3-snap.f32": "autorec",
+    "artifacts/other-branch/autorec512-a2.f32": "autorec",
+    "artifacts/gp-full.0.f32": "gp_local",
+    "artifacts/gp-full.1.f32": "gp_local",
+    "artifacts/gp-full.2.f32": "gp_local",
+    "artifacts/gp2-persistent-full.0.f32": "gp_local",
+    "artifacts/local-global.epoch6.f32": "gp_local",
+    "artifacts/local-local.epoch6.f32": "gp_local",
+    "artifacts/joint256-reg01.f32": "factor_sgd",
+    "artifacts/T2-f64-lr005-reg015-d97.f32": "factor_sgd",
+    "artifacts/T3-f64-lr008-reg008.f32": "factor_sgd",
+    "artifacts/T4-f64-lr012-reg015-d93.f32": "factor_sgd",
+    "artifacts/T6-f256.f32": "factor_sgd",
+    "artifacts/I2-integrated-f64-koren.f32": "integrated",
+    "artifacts/knn64-T4.f32": "knn",
+    "artifacts/r4/knn-J6-p1.f32": "knn",
+    "artifacts/r4/knn-J6-p2.f32": "knn",
+    "artifacts/r4/knn-J6-k16.f32": "knn",
+    "artifacts/r4/knn-J6-s5.f32": "knn",
+    "artifacts/r4/knn-T2-p1.f32": "knn",
+    "artifacts/r4/knn-T3-p1.f32": "knn",
+    "artifacts/r4/knn-T6-p1.f32": "knn",
+    "artifacts/rbm200.f32": "rbm",
+    "artifacts/autorec512-a3.f32": "autorec",
+    "artifacts/knn64-p2.f32": "knn",
+    "artifacts/knn64-j64-p2.f32": "knn",
+    "artifacts/rbm100.f32": "rbm",
+    "artifacts/r4/knn-J6-td.003.f32": "knn",
+    "artifacts/r4/knn-J6-td.1.f32": "knn",
+    "artifacts/r4/knn256-J6-k256-p1-s.5.f32": "knn",
+    "artifacts/r4/knn256-J6-k128-p1-s.5.f32": "knn",
+    "artifacts/r4/knn256-J6-k256-p2-s.5.f32": "knn",
+    "artifacts/r4/knn256td-T2.f32": "knn",
+    "artifacts/r4/knn256td-T4.f32": "knn",
+    "artifacts/r4/knn256td-J2.f32": "knn",
+    "artifacts/r4/knn256td-J4.f32": "knn",
+    "artifacts/r4/knn256td-J3.f32": "knn",
+    "artifacts/r4/knn256td-J1.f32": "knn",
+    "artifacts/I2R-integrated.f32": "integrated",
+    "artifacts/T6R-f256.f32": "factor_sgd",
+    "artifacts/r4/knn-T6R-p1.f32": "knn",
+    "artifacts/r4/knn256td-T6R.f32": "knn",
+    "artifacts/R4D-rbm200-cond.f32": "rbm",
+    "artifacts/R4C-rbm200-cond.f32": "rbm",
+    "artifacts/P2-rbm200-cond.f32": "rbm",
+    "artifacts/R2C-rbm100-cond.f32": "rbm",
+    "artifacts/P3C-rbm200-s7-cond.f32": "rbm",
+    "artifacts/P4C-rbm300-cond.f32": "rbm",
+    "artifacts/masked/MH3-categorical-mse-refit.f32": "masked_history",
+    "artifacts/masked/MT0-refit.refit.e12.f32": "masked_history",
+    "artifacts/masked/MT1-refit.refit.e10.f32": "masked_history",
+    "artifacts/masked/MT2-refit.refit.e12.f32": "masked_history",
+    "artifacts/masked/MT3-refit.refit.e7.f32": "masked_history",
+    "artifacts/masked/MT5-refit.f32": "masked_history",
+    "artifacts/masked/MT6-refit.f32": "masked_history",
+    "artifacts/r8/C-uknn-K1.f32": "knn",
+    "artifacts/masked/MT8-refit.refit.e7.f32": "masked_history",
+    "artifacts/masked/MT9-refit.refit.e8.f32": "masked_history",
+    "artifacts/r8/B2-full-r64.s0128.f32": "bayes",
+    "artifacts/masked/A2-refit.refit.e11.f32": "a2_transformer",
+    "artifacts/r8/B3-full-r128.s0160.f32": "bayes",
+    "artifacts/masked/A2b-refit.refit.e10.f32": "a2_transformer",
+    "artifacts/r8/B4-full-r128.s0160.f32": "bayes",
+    "artifacts/masked/A2e-refit.refit.e12.f32": "a2_transformer",
+    "artifacts/masked/A2f-refit.refit.e10.f32": "a2_transformer",
+    "artifacts/masked/A2h-refit.refit.e12.f32": "a2_transformer"
+  },
+  "standalone": {
+    "artifacts/other-branch/joint64.f32": 0.9000114051224117,
+    "artifacts/other-branch/joint128-reg005.f32": 0.8978688247902602,
+    "artifacts/other-branch/joint128-reg02.f32": 0.8961722040360477,
+    "artifacts/other-branch/joint128-day128.f32": 0.8970498561936436,
+    "artifacts/other-branch/joint256-snap.f32": 0.8951664051532842,
+    "artifacts/other-branch/neighborhood64.f32": 0.9100421231120464,
+    "artifacts/other-branch/knn64-p1.f32": 0.9173704658797889,
+    "artifacts/other-branch/knn64-j64-p1.f32": 0.8965213138992615,
+    "artifacts/other-branch/knn64-j128r005.f32": 0.89505976100466,
+    "artifacts/other-branch/knn64-j128r02.f32": 0.8927611155439126,
+    "artifacts/other-branch/knn64-j128day.f32": 0.8949021750470171,
+    "artifacts/other-branch/knn64-j256snap.f32": 0.8930184131313581,
+    "artifacts/other-branch/rbm100-fast.f32": 0.9126515614435704,
+    "artifacts/other-branch/autorec512-a3-snap.f32": 0.917494243624877,
+    "artifacts/other-branch/autorec512-a2.f32": 0.931793213169424,
+    "artifacts/gp-full.0.f32": 0.8957827986232902,
+    "artifacts/gp-full.1.f32": 0.8937029032499723,
+    "artifacts/gp-full.2.f32": 0.8961579073650854,
+    "artifacts/gp2-persistent-full.0.f32": 0.8922935423764035,
+    "artifacts/local-global.epoch6.f32": 0.8984542466094523,
+    "artifacts/local-local.epoch6.f32": 0.8973776647214479,
+    "artifacts/joint256-reg01.f32": 0.8951664051532842,
+    "artifacts/T2-f64-lr005-reg015-d97.f32": 0.8969742664630008,
+    "artifacts/T3-f64-lr008-reg008.f32": 0.8982873560131489,
+    "artifacts/T4-f64-lr012-reg015-d93.f32": 0.8975343588563574,
+    "artifacts/T6-f256.f32": 0.8994939729946286,
+    "artifacts/I2-integrated-f64-koren.f32": 0.8950571617545613,
+    "artifacts/knn64-T4.f32": 0.8949025772089091,
+    "artifacts/r4/knn-J6-p1.f32": 0.8930184131313581,
+    "artifacts/r4/knn-J6-p2.f32": 0.8942953147818387,
+    "artifacts/r4/knn-J6-k16.f32": 0.8933124950023568,
+    "artifacts/r4/knn-J6-s5.f32": 0.8945078496177937,
+    "artifacts/r4/knn-T2-p1.f32": 0.8935226528168732,
+    "artifacts/r4/knn-T3-p1.f32": 0.8950470329610606,
+    "artifacts/r4/knn-T6-p1.f32": 0.8948784696655236,
+    "artifacts/rbm200.f32": 0.9117705910226943,
+    "artifacts/autorec512-a3.f32": 0.9147661432741613,
+    "artifacts/knn64-p2.f32": 0.9192311711326139,
+    "artifacts/knn64-j64-p2.f32": 0.8993813169835486,
+    "artifacts/rbm100.f32": 0.9431357474387024,
+    "artifacts/r4/knn-J6-td.003.f32": 0.8928612677096539,
+    "artifacts/r4/knn-J6-td.1.f32": 0.893294832701832,
+    "artifacts/r4/knn256-J6-k256-p1-s.5.f32": 0.8927408787969976,
+    "artifacts/r4/knn256-J6-k128-p1-s.5.f32": 0.8927990255779965,
+    "artifacts/r4/knn256-J6-k256-p2-s.5.f32": 0.8943774300115995,
+    "artifacts/r4/knn256td-T2.f32": 0.8936338155476468,
+    "artifacts/r4/knn256td-T4.f32": 0.8947814875588836,
+    "artifacts/r4/knn256td-J2.f32": 0.8928632500744974,
+    "artifacts/r4/knn256td-J4.f32": 0.89470275196633,
+    "artifacts/r4/knn256td-J3.f32": 0.8948039123766361,
+    "artifacts/r4/knn256td-J1.f32": 0.8963971486070004,
+    "artifacts/I2R-integrated.f32": 0.8945819820724753,
+    "artifacts/T6R-f256.f32": 0.894763028960709,
+    "artifacts/r4/knn-T6R-p1.f32": 0.8932845082140866,
+    "artifacts/r4/knn256td-T6R.f32": 0.8929569609730714,
+    "artifacts/R4D-rbm200-cond.f32": 0.8998687595723348,
+    "artifacts/R4C-rbm200-cond.f32": 0.9020408672399693,
+    "artifacts/P2-rbm200-cond.f32": 0.9034196403579379,
+    "artifacts/R2C-rbm100-cond.f32": 0.9019844771219844,
+    "artifacts/P3C-rbm200-s7-cond.f32": 0.899576449675606,
+    "artifacts/P4C-rbm300-cond.f32": 0.9006442975116201,
+    "artifacts/masked/MH3-categorical-mse-refit.f32": 0.9174102382702785,
+    "artifacts/masked/MT0-refit.refit.e12.f32": 0.9110218861670117,
+    "artifacts/masked/MT1-refit.refit.e10.f32": 0.8989310347006101,
+    "artifacts/masked/MT2-refit.refit.e12.f32": 0.9014876115260942,
+    "artifacts/masked/MT3-refit.refit.e7.f32": 0.8988636279593649,
+    "artifacts/masked/MT5-refit.f32": 0.8987907100984079,
+    "artifacts/masked/MT6-refit.f32": 0.9016581425987171,
+    "artifacts/r8/C-uknn-K1.f32": 0.8937946396852529,
+    "artifacts/masked/MT8-refit.refit.e7.f32": 0.8990543262352471,
+    "artifacts/masked/MT9-refit.refit.e8.f32": 0.9010040083169634,
+    "artifacts/r8/B2-full-r64.s0128.f32": 0.8926860453651146,
+    "artifacts/masked/A2-refit.refit.e11.f32": 0.9031498511232512,
+    "artifacts/r8/B3-full-r128.s0160.f32": 0.8904383087494483,
+    "artifacts/masked/A2b-refit.refit.e10.f32": 0.9009561199820711,
+    "artifacts/r8/B4-full-r128.s0160.f32": 0.8896599191353801,
+    "artifacts/masked/A2e-refit.refit.e12.f32": 0.8985879805630903,
+    "artifacts/masked/A2f-refit.refit.e10.f32": 0.8950952747155836,
+    "artifacts/masked/A2h-refit.refit.e12.f32": 0.8901406410518464
+  },
+  "ridge_full_cv_rmse": 0.8696830695254046,
+  "production_reference": 0.8668706425,
+  "column_curve": {
+    "1": {
+      "mean": 0.8970187238150992,
+      "min": 0.8894870032824624,
+      "max": 0.9107764991833085
+    },
+    "2": {
+      "mean": 0.8891610740693666,
+      "min": 0.8794766931972263,
+      "max": 0.9100561519648502
+    },
+    "4": {
+      "mean": 0.8829166329162392,
+      "min": 0.8768782919506736,
+      "max": 0.8911617620264126
+    },
+    "8": {
+      "mean": 0.879704374677237,
+      "min": 0.8749623125238126,
+      "max": 0.8872288882186319
+    },
+    "12": {
+      "mean": 0.8765961209410958,
+      "min": 0.8731671271173621,
+      "max": 0.8824798935935576
+    },
+    "16": {
+      "mean": 0.8751844654149207,
+      "min": 0.8727352088975588,
+      "max": 0.8809088023673787
+    },
+    "24": {
+      "mean": 0.8728627711683549,
+      "min": 0.8711267214510112,
+      "max": 0.8750676853456896
+    },
+    "32": {
+      "mean": 0.8717235638272766,
+      "min": 0.8706906326962419,
+      "max": 0.8733809522477937
+    },
+    "48": {
+      "mean": 0.8705906106738523,
+      "min": 0.8699780304659425,
+      "max": 0.8726605205517183
+    },
+    "64": {
+      "mean": 0.8700665577119119,
+      "min": 0.8697733993117327,
+      "max": 0.87106568725353
+    },
+    "79": {
+      "mean": 0.8696830695254044,
+      "min": 0.8696830695254044,
+      "max": 0.8696830695254044
+    }
+  },
+  "power_law": {
+    "a": 0.8604281259790916,
+    "b": 0.035611015717620854,
+    "c": 0.318796992481203
+  },
+  "extrapolated_mean_rmse": {
+    "79": 0.869271674266519,
+    "160": 0.8674899605476234,
+    "320": 0.8660898680720874,
+    "800": 0.8646556686930748
+  },
+  "family_curve": {
+    "1": 0.8947086713728508,
+    "2": 0.8828036928971598,
+    "3": 0.8773586080826075,
+    "4": 0.8768380049590614,
+    "5": 0.8736123084904763,
+    "6": 0.8723065683316857,
+    "7": 0.8712320739409494,
+    "8": 0.8704112445262645,
+    "9": 0.8696830695254044
+  },
+  "leave_one_family_out": {
+    "a2_transformer": 0.0017247724854480007,
+    "autorec": 8.715849394957953e-05,
+    "bayes": 0.0012666874653812776,
+    "factor_sgd": 4.039832643742969e-05,
+    "gp_local": 0.0006645917214042063,
+    "integrated": 0.00023719649738818127,
+    "knn": 0.00020935063904714557,
+    "masked_history": 0.0007888861345031195,
+    "rbm": 0.00046719884062806916
+  },
+  "quality_to_blend": {
+    "a2_transformer": {
+      "slope_blend_per_standalone": 0.027683322331513764,
+      "standalone_range": 0.013009210071404764,
+      "blend_range": 0.00038284422316181566,
+      "members": [
+        {
+          "name": "artifacts/masked/A2-refit.refit.e11.f32",
+          "standalone": 0.9031498511232512,
+          "blend": 0.8706193965679974
+        },
+        {
+          "name": "artifacts/masked/A2b-refit.refit.e10.f32",
+          "standalone": 0.9009561199820711,
+          "blend": 0.8706205358939224
+        },
+        {
+          "name": "artifacts/masked/A2e-refit.refit.e12.f32",
+          "standalone": 0.8985879805630903,
+          "blend": 0.8705196862897197
+        },
+        {
+          "name": "artifacts/masked/A2f-refit.refit.e10.f32",
+          "standalone": 0.8950952747155836,
+          "blend": 0.8705552943318711
+        },
+        {
+          "name": "artifacts/masked/A2h-refit.refit.e12.f32",
+          "standalone": 0.8901406410518464,
+          "blend": 0.8702376916707606
+        }
+      ]
+    },
+    "autorec": {
+      "slope_blend_per_standalone": -0.0019437869680290452,
+      "standalone_range": 0.017027069895262703,
+      "blend_range": 4.304893166728885e-05,
+      "members": [
+        {
+          "name": "artifacts/other-branch/autorec512-a3-snap.f32",
+          "standalone": 0.917494243624877,
+          "blend": 0.8697125585976148
+        },
+        {
+          "name": "artifacts/other-branch/autorec512-a2.f32",
+          "standalone": 0.931793213169424,
+          "blend": 0.8697017555795085
+        },
+        {
+          "name": "artifacts/autorec512-a3.f32",
+          "standalone": 0.9147661432741613,
+          "blend": 0.8697448045111758
+        }
+      ]
+    },
+    "bayes": {
+      "slope_blend_per_standalone": 0.1442176285323192,
+      "standalone_range": 0.003026126229734527,
+      "blend_range": 0.00041473052832652346,
+      "members": [
+        {
+          "name": "artifacts/r8/B2-full-r64.s0128.f32",
+          "standalone": 0.8926860453651146,
+          "blend": 0.8701899041694586
+        },
+        {
+          "name": "artifacts/r8/B3-full-r128.s0160.f32",
+          "standalone": 0.8904383087494483,
+          "blend": 0.8698095793879927
+        },
+        {
+          "name": "artifacts/r8/B4-full-r128.s0160.f32",
+          "standalone": 0.8896599191353801,
+          "blend": 0.8697751736411321
+        }
+      ]
+    },
+    "factor_sgd": {
+      "slope_blend_per_standalone": 0.0015637089482922735,
+      "standalone_range": 0.005248376161702706,
+      "blend_range": 1.9716700084160266e-05,
+      "members": [
+        {
+          "name": "artifacts/other-branch/joint64.f32",
+          "standalone": 0.9000114051224117,
+          "blend": 0.8697238820077684
+        },
+        {
+          "name": "artifacts/other-branch/joint128-reg005.f32",
+          "standalone": 0.8978688247902602,
+          "blend": 0.8697239622850254
+        },
+        {
+          "name": "artifacts/other-branch/joint128-reg02.f32",
+          "standalone": 0.8961722040360477,
+          "blend": 0.8697127803128052
+        },
+        {
+          "name": "artifacts/other-branch/joint128-day128.f32",
+          "standalone": 0.8970498561936436,
+          "blend": 0.8697185741129522
+        },
+        {
+          "name": "artifacts/other-branch/joint256-snap.f32",
+          "standalone": 0.8951664051532842,
+          "blend": 0.8697224512517298
+        },
+        {
+          "name": "artifacts/joint256-reg01.f32",
+          "standalone": 0.8951664051532842,
+          "blend": 0.8697224512517298
+        },
+        {
+          "name": "artifacts/T2-f64-lr005-reg015-d97.f32",
+          "standalone": 0.8969742664630008,
+          "blend": 0.8697135485883406
+        },
+        {
+          "name": "artifacts/T3-f64-lr008-reg008.f32",
+          "standalone": 0.8982873560131489,
+          "blend": 0.869722297427236
+        },
+        {
+          "name": "artifacts/T4-f64-lr012-reg015-d93.f32",
+          "standalone": 0.8975343588563574,
+          "blend": 0.869715920390066
+        },
+        {
+          "name": "artifacts/T6-f256.f32",
+          "standalone": 0.8994939729946286,
+          "blend": 0.8697184318175305
+        },
+        {
+          "name": "artifacts/T6R-f256.f32",
+          "standalone": 0.894763028960709,
+          "blend": 0.8697042455849412
+        }
+      ]
+    },
+    "gp_local": {
+      "slope_blend_per_standalone": 0.09546841299957415,
+      "standalone_range": 0.006160704233048819,
+      "blend_range": 0.0006132936405365275,
+      "members": [
+        {
+          "name": "artifacts/gp-full.0.f32",
+          "standalone": 0.8957827986232902,
+          "blend": 0.8699639423376239
+        },
+        {
+          "name": "artifacts/gp-full.1.f32",
+          "standalone": 0.8937029032499723,
+          "blend": 0.8700277628654262
+        },
+        {
+          "name": "artifacts/gp-full.2.f32",
+          "standalone": 0.8961579073650854,
+          "blend": 0.8701730667183817
+        },
+        {
+          "name": "artifacts/gp2-persistent-full.0.f32",
+          "standalone": 0.8922935423764035,
+          "blend": 0.8697364139956847
+        },
+        {
+          "name": "artifacts/local-global.epoch6.f32",
+          "standalone": 0.8984542466094523,
+          "blend": 0.8703452790483727
+        },
+        {
+          "name": "artifacts/local-local.epoch6.f32",
+          "standalone": 0.8973776647214479,
+          "blend": 0.8703497076362212
+        }
+      ]
+    },
+    "integrated": {
+      "slope_blend_per_standalone": 0.0027898857658134593,
+      "standalone_range": 0.015460141039571051,
+      "blend_range": 4.3363217913650054e-05,
+      "members": [
+        {
+          "name": "artifacts/other-branch/neighborhood64.f32",
+          "standalone": 0.9100421231120464,
+          "blend": 0.8697674454673835
+        },
+        {
+          "name": "artifacts/I2-integrated-f64-koren.f32",
+          "standalone": 0.8950571617545613,
+          "blend": 0.8697258930411977
+        },
+        {
+          "name": "artifacts/I2R-integrated.f32",
+          "standalone": 0.8945819820724753,
+          "blend": 0.8697240822494698
+        }
+      ]
+    },
+    "knn": {
+      "slope_blend_per_standalone": 0.00028394360759460146,
+      "standalone_range": 0.026490292335616283,
+      "blend_range": 6.310434625278472e-05,
+      "members": [
+        {
+          "name": "artifacts/other-branch/knn64-p1.f32",
+          "standalone": 0.9173704658797889,
+          "blend": 0.8698682012991616
+        },
+        {
+          "name": "artifacts/other-branch/knn64-j64-p1.f32",
+          "standalone": 0.8965213138992615,
+          "blend": 0.8698679973966633
+        },
+        {
+          "name": "artifacts/other-branch/knn64-j128r005.f32",
+          "standalone": 0.89505976100466,
+          "blend": 0.8698772652755704
+        },
+        {
+          "name": "artifacts/other-branch/knn64-j128r02.f32",
+          "standalone": 0.8927611155439126,
+          "blend": 0.8698665616424546
+        },
+        {
+          "name": "artifacts/other-branch/knn64-j128day.f32",
+          "standalone": 0.8949021750470171,
+          "blend": 0.8698695462203193
+        },
+        {
+          "name": "artifacts/other-branch/knn64-j256snap.f32",
+          "standalone": 0.8930184131313581,
+          "blend": 0.8698697184524268
+        },
+        {
+          "name": "artifacts/knn64-T4.f32",
+          "standalone": 0.8949025772089091,
+          "blend": 0.8698701640809483
+        },
+        {
+          "name": "artifacts/r4/knn-J6-p1.f32",
+          "standalone": 0.8930184131313581,
+          "blend": 0.8698697184524268
+        },
+        {
+          "name": "artifacts/r4/knn-J6-p2.f32",
+          "standalone": 0.8942953147818387,
+          "blend": 0.8698918511634702
+        },
+        {
+          "name": "artifacts/r4/knn-J6-k16.f32",
+          "standalone": 0.8933124950023568,
+          "blend": 0.8698713450758548
+        },
+        {
+          "name": "artifacts/r4/knn-J6-s5.f32",
+          "standalone": 0.8945078496177937,
+          "blend": 0.8698743012948559
+        },
+        {
+          "name": "artifacts/r4/knn-T2-p1.f32",
+          "standalone": 0.8935226528168732,
+          "blend": 0.8698671498164793
+        },
+        {
+          "name": "artifacts/r4/knn-T3-p1.f32",
+          "standalone": 0.8950470329610606,
+          "blend": 0.869872461060387
+        },
+        {
+          "name": "artifacts/r4/knn-T6-p1.f32",
+          "standalone": 0.8948784696655236,
+          "blend": 0.8698809463759547
+        },
+        {
+          "name": "artifacts/knn64-p2.f32",
+          "standalone": 0.9192311711326139,
+          "blend": 0.8698629849420713
+        },
+        {
+          "name": "artifacts/knn64-j64-p2.f32",
+          "standalone": 0.8993813169835486,
+          "blend": 0.8698916545321772
+        },
+        {
+          "name": "artifacts/r4/knn-J6-td.003.f32",
+          "standalone": 0.8928612677096539,
+          "blend": 0.8698658490904024
+        },
+        {
+          "name": "artifacts/r4/knn-J6-td.1.f32",
+          "standalone": 0.893294832701832,
+          "blend": 0.8698601724360625
+        },
+        {
+          "name": "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+          "standalone": 0.8927408787969976,
+          "blend": 0.8698458490806793
+        },
+        {
+          "name": "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+          "standalone": 0.8927990255779965,
+          "blend": 0.8698566134601314
+        },
+        {
+          "name": "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+          "standalone": 0.8943774300115995,
+          "blend": 0.8698926599466896
+        },
+        {
+          "name": "artifacts/r4/knn256td-T2.f32",
+          "standalone": 0.8936338155476468,
+          "blend": 0.8698422032134618
+        },
+        {
+          "name": "artifacts/r4/knn256td-T4.f32",
+          "standalone": 0.8947814875588836,
+          "blend": 0.8698461978487673
+        },
+        {
+          "name": "artifacts/r4/knn256td-J2.f32",
+          "standalone": 0.8928632500744974,
+          "blend": 0.8698411632403557
+        },
+        {
+          "name": "artifacts/r4/knn256td-J4.f32",
+          "standalone": 0.89470275196633,
+          "blend": 0.8698487807725213
+        },
+        {
+          "name": "artifacts/r4/knn256td-J3.f32",
+          "standalone": 0.8948039123766361,
+          "blend": 0.8698640583837277
+        },
+        {
+          "name": "artifacts/r4/knn256td-J1.f32",
+          "standalone": 0.8963971486070004,
+          "blend": 0.8698546199604115
+        },
+        {
+          "name": "artifacts/r4/knn-T6R-p1.f32",
+          "standalone": 0.8932845082140866,
+          "blend": 0.8698669063627846
+        },
+        {
+          "name": "artifacts/r4/knn256td-T6R.f32",
+          "standalone": 0.8929569609730714,
+          "blend": 0.8698387031670367
+        },
+        {
+          "name": "artifacts/r8/C-uknn-K1.f32",
+          "standalone": 0.8937946396852529,
+          "blend": 0.8698295556004368
+        }
+      ]
+    },
+    "masked_history": {
+      "slope_blend_per_standalone": 0.02452865312559848,
+      "standalone_range": 0.018619528171870514,
+      "blend_range": 0.0004305227285901214,
+      "members": [
+        {
+          "name": "artifacts/masked/MH3-categorical-mse-refit.f32",
+          "standalone": 0.9174102382702785,
+          "blend": 0.8704716116704895
+        },
+        {
+          "name": "artifacts/masked/MT0-refit.refit.e12.f32",
+          "standalone": 0.9110218861670117,
+          "blend": 0.8704386540690463
+        },
+        {
+          "name": "artifacts/masked/MT1-refit.refit.e10.f32",
+          "standalone": 0.8989310347006101,
+          "blend": 0.8700822909748864
+        },
+        {
+          "name": "artifacts/masked/MT2-refit.refit.e12.f32",
+          "standalone": 0.9014876115260942,
+          "blend": 0.8700833193811621
+        },
+        {
+          "name": "artifacts/masked/MT3-refit.refit.e7.f32",
+          "standalone": 0.8988636279593649,
+          "blend": 0.8700410889418994
+        },
+        {
+          "name": "artifacts/masked/MT5-refit.f32",
+          "standalone": 0.8987907100984079,
+          "blend": 0.870110210245661
+        },
+        {
+          "name": "artifacts/masked/MT6-refit.f32",
+          "standalone": 0.9016581425987171,
+          "blend": 0.8701024983845598
+        },
+        {
+          "name": "artifacts/masked/MT8-refit.refit.e7.f32",
+          "standalone": 0.8990543262352471,
+          "blend": 0.8700606030283138
+        },
+        {
+          "name": "artifacts/masked/MT9-refit.refit.e8.f32",
+          "standalone": 0.9010040083169634,
+          "blend": 0.8700688074353288
+        }
+      ]
+    },
+    "rbm": {
+      "slope_blend_per_standalone": 0.006514364985857405,
+      "standalone_range": 0.043559297763096416,
+      "blend_range": 0.0002909532190884523,
+      "members": [
+        {
+          "name": "artifacts/other-branch/rbm100-fast.f32",
+          "standalone": 0.9126515614435704,
+          "blend": 0.8701338954025922
+        },
+        {
+          "name": "artifacts/rbm200.f32",
+          "standalone": 0.9117705910226943,
+          "blend": 0.8701190793849027
+        },
+        {
+          "name": "artifacts/rbm100.f32",
+          "standalone": 0.9431357474387024,
+          "blend": 0.870149472592073
+        },
+        {
+          "name": "artifacts/R4D-rbm200-cond.f32",
+          "standalone": 0.8998687595723348,
+          "blend": 0.8698876530134245
+        },
+        {
+          "name": "artifacts/R4C-rbm200-cond.f32",
+          "standalone": 0.9020408672399693,
+          "blend": 0.8699462100920741
+        },
+        {
+          "name": "artifacts/P2-rbm200-cond.f32",
+          "standalone": 0.9034196403579379,
+          "blend": 0.8699388448609788
+        },
+        {
+          "name": "artifacts/R2C-rbm100-cond.f32",
+          "standalone": 0.9019844771219844,
+          "blend": 0.8699976524783177
+        },
+        {
+          "name": "artifacts/P3C-rbm200-s7-cond.f32",
+          "standalone": 0.899576449675606,
+          "blend": 0.8698585193729845
+        },
+        {
+          "name": "artifacts/P4C-rbm300-cond.f32",
+          "standalone": 0.9006442975116201,
+          "blend": 0.8698590833479657
+        }
+      ]
+    }
+  },
+  "metric": "Ridge proxy (5 user folds, cross-fitted) on the original probe; diagnostic only."
+}
