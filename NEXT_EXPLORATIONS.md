@@ -529,6 +529,25 @@ finished; do not edit the frozen SO1 trainer or its dependencies.
   including any full-data stage) is finished, the GPU is idle, and no other
   Python training process is live. Never in parallel with their jobs.
 
+### E3 five-fold gate binding (2026-10-31, before E3 training or scores)
+
+The shared P2 command measures only outer fold 0; its result cannot prove
+E3's registered all-five-fold requirement. `scripts/e3_all_fold_gate.py`
+adds that check without changing the shared scorer or SO1's frozen files.
+For each outer fold f, select the ridge penalty from {1,10,100,1000} on
+(f+1) modulo 5 using the other three folds, then refit on all four non-held
+folds and predict f. The matched designs remain bank11+control+control
+versus bank11+control+E3. Fold 0 exactly matches the shared gate.
+
+E3 proceeds only if its original shared fold-0 gate passes **and** this
+additional cross-fitted P2 comparison gains at least 0.0003 overall with all
+five folds improving. This is fixed before any E3 score; no choice between
+the two results is allowed. Bind this module's hash in E3's future scoring
+plan, and audit trainer completion before calling it. Three fixture tests
+verify exact shared-fold parity, outer-label exclusion for each fold, and
+rejection of a duplicate candidate or an incomplete fold set. No real E3
+training or scoring has run.
+
 ## E5. Ordinal (interval-censored) Bayes timeSVD++ — CPU (fixed 2026-10-31, before any score)
 
 **Hypothesis.** The one CPU family that kept paying was the conditional RBM,
