@@ -1,0 +1,63 @@
+{
+  "state": "complete",
+  "mode": "train",
+  "plan_sha256": "68dd8b7e122e38c1983c2bd38a1c0faa996785effa9c05f6076cd4cf95fb0f15",
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "joint_sha256": "51c3bbd078b12f94247bed4551157f069b699de440a523d4b546864d16404a45",
+  "feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "rows": 1407566,
+  "libraries": {
+    "numpy": "2.5.3",
+    "lightgbm": "4.7.0"
+  },
+  "bank_names": [
+    "MH3",
+    "MT0",
+    "MT1",
+    "MT2",
+    "MT3",
+    "K1",
+    "knn256td",
+    "knn64",
+    "rbm100c",
+    "B4",
+    "A2h",
+    "N1"
+  ],
+  "iterations": {
+    "base_tree": 39,
+    "choice_tree": 114
+  },
+  "tree_params": {
+    "objective": "regression",
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 500,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 10,
+    "seed": 20261031,
+    "num_threads": 2,
+    "verbose": -1
+  },
+  "scope": "P2-trained fixed model bundle. No original-probe or hidden-test score.",
+  "files": {
+    "ridge.npy": "6d83c2c30305d4413f9de54fea8a2b9d3840fc0a59a3799346bb699603f1df39",
+    "base_tree.txt": "e2e92ccd6570642db5376dc7b6836678137d2f69dea619a7b97978e7c34f38c2",
+    "choice_tree.txt": "d70cf36adbb6094c88d18f3bc8f0c21d4e906799790b38e514c6b3f783f32095"
+  }
+}
