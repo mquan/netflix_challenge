@@ -18,13 +18,16 @@ move detail into the linked docs.
 [STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md), with ridge-proxy week-0 scoping done
 (independent full-blender validation in flight) and
 lanes re-ranked:
-1. **New model families** (≈0.0007–0.001 each; about 4–6 needed).
+1. **New model families** (unproven prospective gain; first pilot L1 failed).
 2. Quality upgrades only in high-slope families (Bayes, GP/local).
 3. Blend-aware selection.
 4. The production pipeline.
 
-No cloud GPUs (user decision). The estimate is ≈7–10 weeks on the M3 Max,
-with a stop check at week 3 (≥0.0015 bank gain).
+The ≈0.0007–0.001 proxy gains describe retained families, not expected gains
+from untried families; [FAMILY_AUDIT.md](FAMILY_AUDIT.md) identifies this
+survivorship bias. No cloud GPUs (user decision). The proposed program costs
+≈7–10 weeks on the M3 Max; this is not a validated ETA for reaching the target.
+The week-3 stop check remains ≥0.0015 bank gain.
 
 ## In flight
 
@@ -50,7 +53,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Date | Result | Doc |
 |---|---|---|
-| 10-31 | L1 local low-rank: standalone 0.8924 P2 but +0.0000023 beyond the bank → closed | FAMILY_AUDIT.md |
+| 10-31 | L1 local low-rank: standalone 0.8924 P2, but bank RMSE worsens by 0.0000023 → closed; retained-family proxy gains do not forecast new-family gains | FAMILY_AUDIT.md |
 | 10-31 | New-family audit: build order LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture | FAMILY_AUDIT.md |
 | 10-31 | S0 all79 reproduces retained R9 exactly: tree/NN/average max difference 0.0; saved CV 0.8668706424 | experiments/S0-full-parity-verification-20261031.json |
 | 10-31 | H8 full bank 0.86648484; all five folds improve R9, but matched-control gain 0.00022028 < fixed 0.0003 → not promoted | experiments/H8-full-independent-comparison-20261031.json |
