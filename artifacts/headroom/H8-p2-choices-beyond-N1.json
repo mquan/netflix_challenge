@@ -1,0 +1,78 @@
+{
+  "plan": "artifacts/headroom/plan-p2-bank11-N1.json",
+  "bank": [
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MH3-categorical-mse.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT0-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT1-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT2-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-MT3-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-K1.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn256td.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-knn64.train-matched-20260927.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/A-rbm100c.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-B4-union.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/r12/A-A2h-select.p2.f32",
+    "/Users/quan/workspace/netflix_challenge/artifacts/selection-objective/N1-saved-epoch13.p2.f32"
+  ],
+  "model": "artifacts/rehearsal/A-K1.bin",
+  "model_sha256": "51c3bbd078b12f94247bed4551157f069b699de440a523d4b546864d16404a45",
+  "rows": 1407566,
+  "held_rows": 281504,
+  "best_iteration": 117,
+  "choices_vs_base": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8465348719739756,
+    "treatment_rmse": 0.8461760835508573,
+    "delta_rmse": -0.00035878842311831693,
+    "fold_deltas": [
+      -0.00035878842311831693,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0006073250945279003,
+    "cluster_normal_95_mse_interval": [
+      -0.0007728729217586669,
+      -0.0004417772672971337
+    ],
+    "all_folds_improve": false
+  },
+  "choices_vs_base_recalibrated": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8464689204735678,
+    "treatment_rmse": 0.8461760835508573,
+    "delta_rmse": -0.00029283692271053763,
+    "fold_deltas": [
+      -0.00029283692271053763,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0004956689542200987,
+    "cluster_normal_95_mse_interval": [
+      -0.0006587625165474745,
+      -0.00033257539189272275
+    ],
+    "all_folds_improve": false
+  },
+  "importance": {
+    "base": 4456.34962272644,
+    "q_dot_meanq_w100000": 2370.3387014865875,
+    "q_dot_meany_w100000": 1999.5745296478271,
+    "q_dot_meanq_w30": 1997.0672566890717,
+    "y_dot_meany_w3": 1822.524118423462,
+    "q_dot_meany_w30": 1739.3716478347778,
+    "y_dot_meany_w100000": 1732.7945985794067,
+    "q_dot_meanq_w3": 1664.6173799037933,
+    "q_dot_meany_w3": 1547.3645305633545,
+    "y_dot_meany_w30": 1527.269237279892,
+    "n_w30": 1167.7734999656677,
+    "n_w3": 1071.839513540268,
+    "n_w100000": 796.0046305656433
+  },
+  "metric": "P2 fold-0 RMSE change from label-free choice-affinity features over bank + N1."
+}
