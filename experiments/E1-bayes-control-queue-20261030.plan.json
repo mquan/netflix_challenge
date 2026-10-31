@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-31T04:12:48.880762+00:00",
+  "comparison": "artifacts/rehearsal/e1/fixed-scoring-20261030/comparison.json",
+  "scoring_plan_sha256": "dddf5fef99ea56c7360ece2fe5a826f32303ccea79925c4b363ea3f1f3c0841b",
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/scripts/e1_bayes_control_wait.sh": "758aa1a4f03d5882d91feaf04f466cc36eb96cc483d7d263d298cfb46baa5d4d",
+    "/Users/quan/workspace/netflix_challenge/scripts/e1_bayes_chain.sh": "fe9045dc9ed63691ab7a93cbdeb38a1b20949f626d7c42c18365159f6d2d66b1",
+    "/Users/quan/workspace/netflix_challenge/build/netflix-bayesweights": "35ed576eed8e31c11e805fbd7bcc8e1c563ef06daa41cbb4a418cda1eaff94cb",
+    "/Users/quan/workspace/netflix_challenge/artifacts/rehearsal/e1/p2-w1.f32": "3df3db94f670bd5e569e535728bb8923693bea60f02677c5d2384f3fb1c8e2ab",
+    "/Users/quan/workspace/netflix_challenge/experiments/E1-fixed-scoring-plan-20261030.json": "dddf5fef99ea56c7360ece2fe5a826f32303ccea79925c4b363ea3f1f3c0841b"
+  },
+  "command": [
+    "bash",
+    "scripts/e1_bayes_chain.sh",
+    "build/netflix-bayesweights",
+    "w1"
+  ],
+  "condition": "Fixed K1 comparison complete, at least one treatment delta<0 versus w1, no remaining netflix-rowweights process. No change to the predeclared arm or schedule.",
+  "no_k1_gain": "Do not launch w1. Never terminate another session job from this queue.",
+  "cpu_budget": "4 threads for w1 + existing 4-thread w2 after 5-thread K1 chain ends."
+}
