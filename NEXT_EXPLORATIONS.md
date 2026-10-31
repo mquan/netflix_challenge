@@ -739,3 +739,24 @@ verification is `experiments/H8-column-preparation-verification-20261031.json`.
 The next boundary is the matching twelve-column query bank, including N1's
 full-data epoch-13 prediction. No query predictions, original-probe scores or
 full-bank promotion were produced by this preparation.
+
+## H8 full-bank comparison protocol (before any original-probe H8 score)
+
+`experiments/H8-full-comparison-protocol-20261031.json` binds the prepared
+bundle/cache, eleven existing query columns in their P2 semantic order,
+parent N1/SO1 plans and blender sources. The twelfth query column must be
+N1's completed epoch-13 full-data prediction, validated against its original
+plan/report; no partial or earlier-epoch substitute is allowed.
+
+At launch, bind the published retained full-bank inputs/reference before any
+H8 comparison, and include N1's raw column if absent. Compare that same bank
+plus the base-only H8 column twice against the bank plus base-only and choice
+H8 columns. Reuse the fixed three-seed `round4_boost` + NN2 50/50 recipe.
+Require at least 0.0003 full-bank gain over matched control (the existing
+SO1 full-bank minimum), every user fold better, and every fold better than
+the retained reference. No post-probe setting, seed or threshold change.
+
+The plan declares recipe and inference mapping; it does not install another
+scheduler or launch jobs. Full comparison waits for N1/SO1 to finish and
+release GPU capacity. CPU inference follows GOAL.md's active-stage guard.
+All original-probe development and hidden-test limitations still apply.
