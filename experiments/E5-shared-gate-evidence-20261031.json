@@ -1,0 +1,29 @@
+{
+  "parent_plan_sha256": "d7e4b680c017491597f41560bb2e800746b709d007f9fe9268227b36954004af",
+  "plan_sha256": "89c3619d15630d73e4202c64ba2b30b9944b626fc873e4823f418d77b72de53a",
+  "gate_result_sha256": "1fea4982e7b4438f719b90a3bbe66ca79bd53d65f94ea59e805cd4c35ea4fb86",
+  "owner_result_sha256": "6b1e7cb121bc7738fd6ea26025499e3248688344668e8d54d9b093ee1caac437",
+  "primary_matches_owner_exactly": true,
+  "passes_p2_gate": false,
+  "primary": {
+    "rows": 281504,
+    "users": 92500,
+    "control_rmse": 0.8477520529069127,
+    "treatment_rmse": 0.847616670635367,
+    "delta_rmse": -0.00013538227154563653,
+    "fold_deltas": [
+      -0.00013538227154563653,
+      null,
+      null,
+      null,
+      null
+    ],
+    "delta_mse": -0.0002295228689006855,
+    "cluster_normal_95_mse_interval": [
+      -0.00035125938801355047,
+      -0.00010778634978782052
+    ],
+    "all_folds_improve": false
+  },
+  "limitation": "Fixed P2 fold-0 gate only; no full-bank or hidden-test claim. Reference migration preserved original protocol bytes."
+}
