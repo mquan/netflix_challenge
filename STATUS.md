@@ -37,14 +37,14 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 1. **Claude:** audit model families the winners and the literature used that
    are absent here. Rank them by expected error-structure novelty and pick the
-   first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
+   first 2–3 to build (STRUCTURAL_PLAN lane 1). **In progress** (go-ahead 2026-10-31).
 2. **Codex:** monitor E3; audit its fixed training recipe before both P2 gates.
 3. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results; retain E3 priority.
 
 ## Decisions waiting on the user
 
-- Go-ahead for the new-family audit (asked 2026-10-31).
+- None right now (new-family audit approved 2026-10-31).
 
 ## Recent results (newest first)
 
