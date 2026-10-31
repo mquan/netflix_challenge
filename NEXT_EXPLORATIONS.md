@@ -920,3 +920,15 @@ All 187 frozen inputs were unchanged before and after this check. The shell
 runner checked its input hashes again and advanced to the neural control
 stage. Both treatment stages remain pending. This control-only result does
 not establish an H8 gain and does not change the retained reference.
+
+### H8 matched control complete and verified (2026-10-31)
+
+The neural control stage completed all five folds: NN RMSE 0.8669253416,
+fixed 50/50 tree+NN control RMSE **0.8667051174**. Verification in
+`experiments/H8-control-neural-verification-20261031.json` checks exact
+configuration/library, equal tree and neural input banks, finite payloads,
+reproduced scores, and the saved average against its two components within
+1e-6. All 187 frozen files remain unchanged before and after verification.
+The unchanged runner passed its next hash check and launched the three-worker
+treatment-tree stage. Treatment neural remains pending; no H8 gain or
+promotion decision is available from the completed control alone.
