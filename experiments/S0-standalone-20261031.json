@@ -1,0 +1,1112 @@
+{
+  "plan_sha256": "ff4b659b8fca6027844606454b1c1fe6d8ceab4f44f44a8a5e713990fa0a7f75",
+  "columns": [
+    {
+      "index": 0,
+      "name": "artifacts/other-branch/joint64.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint64.f32",
+      "sha256": "14fc5e62eb50caf1a97edd47100ea12e8f78f98586319fe87846bed87e0db2a8",
+      "rmse": 0.9000114051224117,
+      "fold_rmse": [
+        0.9010808250966638,
+        0.9004865785164196,
+        0.8963834370514094,
+        0.9011268695786115,
+        0.9009911718950874
+      ]
+    },
+    {
+      "index": 1,
+      "name": "artifacts/other-branch/joint128-reg005.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg005.f32",
+      "sha256": "cf4b6e8fef826728c1fb9f2c677c0d4f8da6db4eed6776a03db05eda6b8d8066",
+      "rmse": 0.8978688247902602,
+      "fold_rmse": [
+        0.8985065756905573,
+        0.8981036548286827,
+        0.8946726143308608,
+        0.8990413845624653,
+        0.8990319823047328
+      ]
+    },
+    {
+      "index": 2,
+      "name": "artifacts/other-branch/joint128-reg02.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-reg02.f32",
+      "sha256": "2ba75fdd1e3f6dfe1f099730f848910865089f4c436b875b42b402c9829c665e",
+      "rmse": 0.8961722040360477,
+      "fold_rmse": [
+        0.8970041743973256,
+        0.8958785931136363,
+        0.8931270687104979,
+        0.8974202976721334,
+        0.8974422074121163
+      ]
+    },
+    {
+      "index": 3,
+      "name": "artifacts/other-branch/joint128-day128.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint128-day128.f32",
+      "sha256": "6469b5992599c91500d691dae632a512f47b4451105b3e89873e477ea5ac4748",
+      "rmse": 0.8970498561936436,
+      "fold_rmse": [
+        0.8975619340318185,
+        0.8972509333952284,
+        0.8937782539270981,
+        0.8983170822000291,
+        0.89835348871978
+      ]
+    },
+    {
+      "index": 4,
+      "name": "artifacts/other-branch/joint256-snap.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/joint256-snap.f32",
+      "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "rmse": 0.8951664051532842,
+      "fold_rmse": [
+        0.8959812642152434,
+        0.8949827300096524,
+        0.8922216432409599,
+        0.896391108961784,
+        0.8962662416314876
+      ]
+    },
+    {
+      "index": 5,
+      "name": "artifacts/other-branch/neighborhood64.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/neighborhood64.f32",
+      "sha256": "e8aa5a3db6a6b044318e83b3ad5a651c321c7301c4beb5cff039d0e87a2e4804",
+      "rmse": 0.9100421231120464,
+      "fold_rmse": [
+        0.9120414917784321,
+        0.9096593632579423,
+        0.9068418727420972,
+        0.9108846337915157,
+        0.9107920881367899
+      ]
+    },
+    {
+      "index": 6,
+      "name": "artifacts/other-branch/knn64-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-p1.f32",
+      "sha256": "ea0bbb5a30328baa86f22eaded6f7f5d16b14a4367c767cb8a3b07b7662b1c69",
+      "rmse": 0.9173704658797889,
+      "fold_rmse": [
+        0.9190502525679491,
+        0.9170439614917312,
+        0.914073153316569,
+        0.9182875936322009,
+        0.9184078103580129
+      ]
+    },
+    {
+      "index": 7,
+      "name": "artifacts/other-branch/knn64-j64-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j64-p1.f32",
+      "sha256": "75ce6ec3150d06ca1c149fce6251af41c93657bd963502c5293e0bd7453e1a29",
+      "rmse": 0.8965213138992615,
+      "fold_rmse": [
+        0.8976728209706836,
+        0.8970033910511623,
+        0.89287212242056,
+        0.8977323457685634,
+        0.8973370550573577
+      ]
+    },
+    {
+      "index": 8,
+      "name": "artifacts/other-branch/knn64-j128r005.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r005.f32",
+      "sha256": "ffa444baaf2b04ddbcda9730d7d640a8f47407477ff65b5ce42ae0fffe2eb8ce",
+      "rmse": 0.89505976100466,
+      "fold_rmse": [
+        0.8957970949034172,
+        0.8952906207440109,
+        0.8918244258176875,
+        0.8962603217228651,
+        0.8961381248568489
+      ]
+    },
+    {
+      "index": 9,
+      "name": "artifacts/other-branch/knn64-j128r02.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128r02.f32",
+      "sha256": "d947981f391e66350f606394ce7f973efb4e9e16a72f93aa7ebf3c301f6f84ac",
+      "rmse": 0.8927611155439126,
+      "fold_rmse": [
+        0.8936482949983279,
+        0.892490392793661,
+        0.889672241381823,
+        0.8941069498181833,
+        0.8938985671383279
+      ]
+    },
+    {
+      "index": 10,
+      "name": "artifacts/other-branch/knn64-j128day.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j128day.f32",
+      "sha256": "2e488ed90c7a2a3237ddeaa91ed6f99a891e0c0db50a910e42eae702a55354be",
+      "rmse": 0.8949021750470171,
+      "fold_rmse": [
+        0.8954872874971236,
+        0.895111100319467,
+        0.8916206937253368,
+        0.8962406402323663,
+        0.8960630796062286
+      ]
+    },
+    {
+      "index": 11,
+      "name": "artifacts/other-branch/knn64-j256snap.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/knn64-j256snap.f32",
+      "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+      "rmse": 0.8930184131313581,
+      "fold_rmse": [
+        0.8939051352529843,
+        0.892868447537527,
+        0.8900206689405229,
+        0.894313553770855,
+        0.8939948364238571
+      ]
+    },
+    {
+      "index": 12,
+      "name": "artifacts/other-branch/rbm100-fast.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/rbm100-fast.f32",
+      "sha256": "66f20481bbe6d7c4351b4f179da57d5a84edbecc922af755c21890804619cc4e",
+      "rmse": 0.9126515614435704,
+      "fold_rmse": [
+        0.9153062652369992,
+        0.9127024765359876,
+        0.9082332789024511,
+        0.91308711654457,
+        0.9139387110191087
+      ]
+    },
+    {
+      "index": 13,
+      "name": "artifacts/other-branch/autorec512-a3-snap.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a3-snap.f32",
+      "sha256": "33041be576d7a911fd888ea461a8b313c1185e99133d9c7ac5f46881c7966362",
+      "rmse": 0.917494243624877,
+      "fold_rmse": [
+        0.9192603547852771,
+        0.9179018624652331,
+        0.9136652524519479,
+        0.918034914234864,
+        0.9186208040823344
+      ]
+    },
+    {
+      "index": 14,
+      "name": "artifacts/other-branch/autorec512-a2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/other-branch/autorec512-a2.f32",
+      "sha256": "e34b4776e51dfde876118bc48be069b6ffa3c92c62350da92c263be528cad4ae",
+      "rmse": 0.931793213169424,
+      "fold_rmse": [
+        0.9338260929128841,
+        0.9325398377085797,
+        0.9275763678789577,
+        0.9326647921019956,
+        0.9323690523148529
+      ]
+    },
+    {
+      "index": 15,
+      "name": "artifacts/gp-full.0.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.0.f32",
+      "sha256": "d683890f337cf78cd4466723cc2cb51493900ecc2f2da3a44b2aff84b5cd3beb",
+      "rmse": 0.8957827986232902,
+      "fold_rmse": [
+        0.8962452119796646,
+        0.8957898599248982,
+        0.8924165029162001,
+        0.8973053042015456,
+        0.8971692345099277
+      ]
+    },
+    {
+      "index": 16,
+      "name": "artifacts/gp-full.1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.1.f32",
+      "sha256": "ca23eeffdf057f20424afc86b2b08d385dbb01436066aececbbd44c69ecd7321",
+      "rmse": 0.8937029032499723,
+      "fold_rmse": [
+        0.8942624759120845,
+        0.8937968974982418,
+        0.8903947901845624,
+        0.8950280744709769,
+        0.8950445753527511
+      ]
+    },
+    {
+      "index": 17,
+      "name": "artifacts/gp-full.2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp-full.2.f32",
+      "sha256": "5bbd96a95c4cbc416965051c8684aa9737d62b0648de3290b22c086399a6df92",
+      "rmse": 0.8961579073650854,
+      "fold_rmse": [
+        0.8967817065071859,
+        0.8963643669177865,
+        0.8929356078507528,
+        0.8973504745133045,
+        0.8973695595413962
+      ]
+    },
+    {
+      "index": 18,
+      "name": "artifacts/gp2-persistent-full.0.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/gp2-persistent-full.0.f32",
+      "sha256": "52751271e81b0ad473770346f1453b05a83ed680a9cbb3cfac81f97cbf467c2b",
+      "rmse": 0.8922935423764035,
+      "fold_rmse": [
+        0.8926797313657437,
+        0.892413157336276,
+        0.8889982176153506,
+        0.8937015480076828,
+        0.8936874256062579
+      ]
+    },
+    {
+      "index": 19,
+      "name": "artifacts/local-global.epoch6.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-global.epoch6.f32",
+      "sha256": "19972acd15e89b374115514539d3696027fce4cc1d898285e7c58afe99d5fade",
+      "rmse": 0.8984542466094523,
+      "fold_rmse": [
+        0.8990476139754986,
+        0.8982608958597598,
+        0.8952815195139748,
+        0.8998558186011187,
+        0.899837219301792
+      ]
+    },
+    {
+      "index": 20,
+      "name": "artifacts/local-local.epoch6.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/reference/artifacts/local-local.epoch6.f32",
+      "sha256": "33264755676dfa8b118948b3c5f9d90d4ab77eff0554b1ff02d4919784c1e2a7",
+      "rmse": 0.8973776647214479,
+      "fold_rmse": [
+        0.8977673031279805,
+        0.8974962965675429,
+        0.894152714707393,
+        0.8989381974913782,
+        0.8985453773566457
+      ]
+    },
+    {
+      "index": 21,
+      "name": "artifacts/joint256-reg01.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/joint256-reg01.f32",
+      "sha256": "53b2dfdf3e3a8832302b0d8535269418813e4c27172707927f9d2b38e5aa0ef0",
+      "rmse": 0.8951664051532842,
+      "fold_rmse": [
+        0.8959812642152434,
+        0.8949827300096524,
+        0.8922216432409599,
+        0.896391108961784,
+        0.8962662416314876
+      ]
+    },
+    {
+      "index": 22,
+      "name": "artifacts/T2-f64-lr005-reg015-d97.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/T2-f64-lr005-reg015-d97.f32",
+      "sha256": "eb829f218d757baa36fada33635848e773b985cb885600069ead82cc774b4cb5",
+      "rmse": 0.8969742664630008,
+      "fold_rmse": [
+        0.8981962145835829,
+        0.8966506237337596,
+        0.8937165722771041,
+        0.898188706537752,
+        0.898130090208627
+      ]
+    },
+    {
+      "index": 23,
+      "name": "artifacts/T3-f64-lr008-reg008.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/T3-f64-lr008-reg008.f32",
+      "sha256": "59508479bc94509216628c89613c476065cb07c841f294ac4aa8fa643daacab6",
+      "rmse": 0.8982873560131489,
+      "fold_rmse": [
+        0.8992652188101175,
+        0.8980840629922368,
+        0.8949997486096439,
+        0.8994307252877665,
+        0.8996690112076988
+      ]
+    },
+    {
+      "index": 24,
+      "name": "artifacts/T4-f64-lr012-reg015-d93.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/T4-f64-lr012-reg015-d93.f32",
+      "sha256": "1a523adceb44fb68e27f9290ed82d16bb9351f58a51b048c855f55025acab1b7",
+      "rmse": 0.8975343588563574,
+      "fold_rmse": [
+        0.8984094737797153,
+        0.8970144799669405,
+        0.8944661260227939,
+        0.8989774850720764,
+        0.8988149421320942
+      ]
+    },
+    {
+      "index": 25,
+      "name": "artifacts/T6-f256.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/T6-f256.f32",
+      "sha256": "b743b035b2d4164a347f709d82ca46702b70cd3dd26caa56f059d04391d6a93a",
+      "rmse": 0.8994939729946286,
+      "fold_rmse": [
+        0.9004153387018375,
+        0.899211338003485,
+        0.8964862173168419,
+        0.9006952322700218,
+        0.9006728176582206
+      ]
+    },
+    {
+      "index": 26,
+      "name": "artifacts/I2-integrated-f64-koren.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/I2-integrated-f64-koren.f32",
+      "sha256": "a13b5923972496200832fdaad537284609c1cb318e63d1217dd9bf5d62cc1f55",
+      "rmse": 0.8950571617545613,
+      "fold_rmse": [
+        0.8965075659020723,
+        0.8950292568836864,
+        0.8919266554690238,
+        0.8962024245275091,
+        0.895629136471225
+      ]
+    },
+    {
+      "index": 27,
+      "name": "artifacts/knn64-T4.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-T4.f32",
+      "sha256": "e2a839094499dd9b6aef632f0270ea1b70ffb91c24e316162188e33f6baa906f",
+      "rmse": 0.8949025772089091,
+      "fold_rmse": [
+        0.895889154898989,
+        0.8944062206419773,
+        0.8917817885560003,
+        0.8964371619716355,
+        0.8960086681328112
+      ]
+    },
+    {
+      "index": 28,
+      "name": "artifacts/r4/knn-J6-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p1.f32",
+      "sha256": "9d80c2ecc225c70d3cac88fd94b7b54ed08768eb21ba76923ad1a49092ee2a6a",
+      "rmse": 0.8930184131313581,
+      "fold_rmse": [
+        0.8939051352529843,
+        0.892868447537527,
+        0.8900206689405229,
+        0.894313553770855,
+        0.8939948364238571
+      ]
+    },
+    {
+      "index": 29,
+      "name": "artifacts/r4/knn-J6-p2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-p2.f32",
+      "sha256": "eafd5d0ddb1445111af7264a5ada21d42880ced382429d106460f36d76c960e5",
+      "rmse": 0.8942953147818387,
+      "fold_rmse": [
+        0.8950807106072138,
+        0.8941346153002616,
+        0.8913435611840117,
+        0.8955766808511647,
+        0.8953518358169602
+      ]
+    },
+    {
+      "index": 30,
+      "name": "artifacts/r4/knn-J6-k16.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-k16.f32",
+      "sha256": "87bb55be0937c7bbe168a9863d4c395dda5d4d96152b55865048c657d9d40834",
+      "rmse": 0.8933124950023568,
+      "fold_rmse": [
+        0.8941624376449173,
+        0.8933163528805411,
+        0.8903390562195941,
+        0.8945736822816732,
+        0.894181459631118
+      ]
+    },
+    {
+      "index": 31,
+      "name": "artifacts/r4/knn-J6-s5.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-s5.f32",
+      "sha256": "f5ca5e2092c9cb4a7608608abdaad8ee0797a3dc7d64eead2719ee56d189a69a",
+      "rmse": 0.8945078496177937,
+      "fold_rmse": [
+        0.8953325735434254,
+        0.8943350902394035,
+        0.8915510342393984,
+        0.8957528655460805,
+        0.8955785618106411
+      ]
+    },
+    {
+      "index": 32,
+      "name": "artifacts/r4/knn-T2-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T2-p1.f32",
+      "sha256": "d7b83604f8b6110a4ebeedcd87a5e93f7d3f78885e057577a83b9f3c823a0db7",
+      "rmse": 0.8935226528168732,
+      "fold_rmse": [
+        0.8947992572523231,
+        0.8932703420366115,
+        0.8902076891764825,
+        0.8948346577413817,
+        0.8945116799282339
+      ]
+    },
+    {
+      "index": 33,
+      "name": "artifacts/r4/knn-T3-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T3-p1.f32",
+      "sha256": "f7c65db0069ff179de9504964bbb16b504e35b465b5c7bf163c75999b8bb36d8",
+      "rmse": 0.8950470329610606,
+      "fold_rmse": [
+        0.8960956084818582,
+        0.8948903866829897,
+        0.8917195154461474,
+        0.8962806699030038,
+        0.8962604560984104
+      ]
+    },
+    {
+      "index": 34,
+      "name": "artifacts/r4/knn-T6-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6-p1.f32",
+      "sha256": "16ffdd80ccdb6f12e9de41efec0911d39ce5332056d31e026bce2b861d081fad",
+      "rmse": 0.8948784696655236,
+      "fold_rmse": [
+        0.8958920370819337,
+        0.8946322705795949,
+        0.8917980767756376,
+        0.8961593070521495,
+        0.8959212943584017
+      ]
+    },
+    {
+      "index": 35,
+      "name": "artifacts/rbm200.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/rbm200.f32",
+      "sha256": "91bdf49481527639c9eedaa0a252cf47ff60b631edc229d1e6e9e05693cfbc4e",
+      "rmse": 0.9117705910226943,
+      "fold_rmse": [
+        0.9142214760002982,
+        0.9114679193156553,
+        0.9076194651445898,
+        0.9125525435584444,
+        0.9130013624736718
+      ]
+    },
+    {
+      "index": 36,
+      "name": "artifacts/autorec512-a3.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/autorec512-a3.f32",
+      "sha256": "1b970f57bb8263281050b6c82aca952431b33ad36a15f0a45fe84e8b35e5e60b",
+      "rmse": 0.9147661432741613,
+      "fold_rmse": [
+        0.916765147513239,
+        0.9152036264251809,
+        0.9106896037529079,
+        0.9156485919507266,
+        0.9155340824948637
+      ]
+    },
+    {
+      "index": 37,
+      "name": "artifacts/knn64-p2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-p2.f32",
+      "sha256": "2d498afbc5303fc4acc944261a698900d956f11c350872116eedf015f13af1bd",
+      "rmse": 0.9192311711326139,
+      "fold_rmse": [
+        0.9206681792614396,
+        0.9190578348208314,
+        0.9159249444026673,
+        0.9203099687902334,
+        0.9202056595565034
+      ]
+    },
+    {
+      "index": 38,
+      "name": "artifacts/knn64-j64-p2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/knn64-j64-p2.f32",
+      "sha256": "e297b67618c63e08d08a92fe705d33cff5516050833c71b676de1d9a8ed1a641",
+      "rmse": 0.8993813169835486,
+      "fold_rmse": [
+        0.9004302054496119,
+        0.8998630717830047,
+        0.8957672368831576,
+        0.9005245216892583,
+        0.9003333081467684
+      ]
+    },
+    {
+      "index": 39,
+      "name": "artifacts/rbm100.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/rbm100.f32",
+      "sha256": "28c1e8f4fb93f2757638a495b60124f996b663e402aa8550b2633ff6a5e5d5e3",
+      "rmse": 0.9431357474387024,
+      "fold_rmse": [
+        0.9454373060877047,
+        0.9432887405370224,
+        0.9388413690132721,
+        0.9441680880039767,
+        0.9439530862885
+      ]
+    },
+    {
+      "index": 40,
+      "name": "artifacts/r4/knn-J6-td.003.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.003.f32",
+      "sha256": "8ef145b9a4d189969bfc86a525d0a562046e20b99634c43c070019630f15d255",
+      "rmse": 0.8928612677096539,
+      "fold_rmse": [
+        0.8936731895482984,
+        0.8927159174203662,
+        0.889861676896679,
+        0.8941682847677647,
+        0.8938980610541821
+      ]
+    },
+    {
+      "index": 41,
+      "name": "artifacts/r4/knn-J6-td.1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-J6-td.1.f32",
+      "sha256": "22b5470f47325e7f2179a9de63c7c0a74c2e5e2e94625ec4ab5ac45a676d26bd",
+      "rmse": 0.893294832701832,
+      "fold_rmse": [
+        0.8940356599229818,
+        0.8932076641724134,
+        0.890262781745071,
+        0.8945675253835628,
+        0.8944117487850101
+      ]
+    },
+    {
+      "index": 42,
+      "name": "artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p1-s.5.f32",
+      "sha256": "9ca42ae664248784f9836edb623c50389d245c858e5b3255358d49d0c898d60e",
+      "rmse": 0.8927408787969976,
+      "fold_rmse": [
+        0.893598647255134,
+        0.8925320749566892,
+        0.8897499799184272,
+        0.8940586109220121,
+        0.8937757185117565
+      ]
+    },
+    {
+      "index": 43,
+      "name": "artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k128-p1-s.5.f32",
+      "sha256": "e7bf414e5a0d2dbf3caba6674f36029301fdd355c95707de116c05395fac32d4",
+      "rmse": 0.8927990255779965,
+      "fold_rmse": [
+        0.8936312942585264,
+        0.8926020316435738,
+        0.8898269359179638,
+        0.8941102303815757,
+        0.8938353002689923
+      ]
+    },
+    {
+      "index": 44,
+      "name": "artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256-J6-k256-p2-s.5.f32",
+      "sha256": "ea241d620379daf2bb3e540276b510c38ee099c59f723e0f61f8db73a6e45fe7",
+      "rmse": 0.8943774300115995,
+      "fold_rmse": [
+        0.8951626288418585,
+        0.894212818844163,
+        0.8914208710954813,
+        0.8956521739741667,
+        0.8954495388260589
+      ]
+    },
+    {
+      "index": 45,
+      "name": "artifacts/r4/knn256td-T2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T2.f32",
+      "sha256": "8ef0b6d0850c844a970dcf9fcdb47fde7f93e46ce70d14a76fa567ef3b1b240b",
+      "rmse": 0.8936338155476468,
+      "fold_rmse": [
+        0.8948926228492021,
+        0.8932831954727238,
+        0.8903171016892186,
+        0.8949721975361628,
+        0.8947144094893186
+      ]
+    },
+    {
+      "index": 46,
+      "name": "artifacts/r4/knn256td-T4.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T4.f32",
+      "sha256": "02c76260c42ee4ae4942f03664d8912c1e541404c63ad43e6d8a66fbdaa165cf",
+      "rmse": 0.8947814875588836,
+      "fold_rmse": [
+        0.8957267060045442,
+        0.8942107661380614,
+        0.8916639063184799,
+        0.8963389978522825,
+        0.895977264934048
+      ]
+    },
+    {
+      "index": 47,
+      "name": "artifacts/r4/knn256td-J2.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J2.f32",
+      "sha256": "4218c749bb1d014c89cef863926bd8c02f44d9fd5b449ad5a5d67573bc072f58",
+      "rmse": 0.8928632500744974,
+      "fold_rmse": [
+        0.8937255112604717,
+        0.8925145038542169,
+        0.8897736989876625,
+        0.8942319153921383,
+        0.8940815656645197
+      ]
+    },
+    {
+      "index": 48,
+      "name": "artifacts/r4/knn256td-J4.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J4.f32",
+      "sha256": "64934d6a4e8e53d95ecf7b13b910668b949bd143014e28aabafaec5f7da55ff0",
+      "rmse": 0.89470275196633,
+      "fold_rmse": [
+        0.895258434583902,
+        0.8948728704818979,
+        0.8914292926901075,
+        0.8960448247348748,
+        0.8959203695457758
+      ]
+    },
+    {
+      "index": 49,
+      "name": "artifacts/r4/knn256td-J3.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J3.f32",
+      "sha256": "905d4edc05fbedeab3b38ebe5e7bdb57597454ed5dabb88e202175a18531f244",
+      "rmse": 0.8948039123766361,
+      "fold_rmse": [
+        0.8955030757039523,
+        0.8949747739234395,
+        0.891584549985575,
+        0.8960373591521434,
+        0.8959316249163075
+      ]
+    },
+    {
+      "index": 50,
+      "name": "artifacts/r4/knn256td-J1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-J1.f32",
+      "sha256": "a47186e6abf03d82b51c48057179dccb0c5cb12b91d2a2611d80e181bf828c89",
+      "rmse": 0.8963971486070004,
+      "fold_rmse": [
+        0.8975236639084337,
+        0.8968177935451328,
+        0.8927764024803918,
+        0.8976061745693131,
+        0.8972730230465172
+      ]
+    },
+    {
+      "index": 51,
+      "name": "artifacts/I2R-integrated.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/I2R-integrated.f32",
+      "sha256": "5be4f366ea8c88d56a2603c09f5015620360edb6b156941aeec3c357af480d17",
+      "rmse": 0.8945819820724753,
+      "fold_rmse": [
+        0.8960233399599311,
+        0.8944287340457296,
+        0.8914658408452552,
+        0.8958557100803478,
+        0.8951451630081845
+      ]
+    },
+    {
+      "index": 52,
+      "name": "artifacts/T6R-f256.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/T6R-f256.f32",
+      "sha256": "ef588a6e6daf8db121a20d4480c15ade9b62c1feea520af8ecf280f2a916bf7f",
+      "rmse": 0.894763028960709,
+      "fold_rmse": [
+        0.8954366212219119,
+        0.8942606845134647,
+        0.8917709829717699,
+        0.8962052309165636,
+        0.89615265637478
+      ]
+    },
+    {
+      "index": 53,
+      "name": "artifacts/r4/knn-T6R-p1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn-T6R-p1.f32",
+      "sha256": "bb2dccd6d99fcf5cc9bae13df3a9eea8da7be8a476f90228dc1571414606ffd2",
+      "rmse": 0.8932845082140866,
+      "fold_rmse": [
+        0.8940358461771649,
+        0.8928132398331108,
+        0.8902615848440146,
+        0.894769842436282,
+        0.8945527335692032
+      ]
+    },
+    {
+      "index": 54,
+      "name": "artifacts/r4/knn256td-T6R.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r4/knn256td-T6R.f32",
+      "sha256": "0ab9e2d5b6f48d9c908d8c8480f6c36b06cc1ac224c7956deb3d76d48846a1d6",
+      "rmse": 0.8929569609730714,
+      "fold_rmse": [
+        0.8936759634602313,
+        0.8924358075266579,
+        0.8899288344067355,
+        0.8944667637778094,
+        0.8942881928555626
+      ]
+    },
+    {
+      "index": 55,
+      "name": "artifacts/R4D-rbm200-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/R4D-rbm200-cond.f32",
+      "sha256": "34b40abbd3cbec04dd69877692008f10b9a2c053e8171306f65aae9bd6a06a74",
+      "rmse": 0.8998687595723348,
+      "fold_rmse": [
+        0.901342284931592,
+        0.899563335354416,
+        0.8960379549976923,
+        0.9008751023700143,
+        0.9015374667274276
+      ]
+    },
+    {
+      "index": 56,
+      "name": "artifacts/R4C-rbm200-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/R4C-rbm200-cond.f32",
+      "sha256": "5dc6dcf3ea6f7d66a19c277d603ecd88e29563033a1303c58556a719e54961fb",
+      "rmse": 0.9020408672399693,
+      "fold_rmse": [
+        0.9037224336772222,
+        0.9017661616044566,
+        0.898238213356752,
+        0.9028959759778064,
+        0.9035935311254575
+      ]
+    },
+    {
+      "index": 57,
+      "name": "artifacts/P2-rbm200-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/P2-rbm200-cond.f32",
+      "sha256": "c54a35daf5d9533fe039bf6a11e5050122ea4346c61192ca3800107f947723d9",
+      "rmse": 0.9034196403579379,
+      "fold_rmse": [
+        0.9051464363441268,
+        0.9031508599550989,
+        0.8993110280634175,
+        0.904376869405967,
+        0.9051252093406819
+      ]
+    },
+    {
+      "index": 58,
+      "name": "artifacts/R2C-rbm100-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/R2C-rbm100-cond.f32",
+      "sha256": "4d6c060ebefe68ecce7c104476a4137b44c82ba7d93b560553169c8d3c171d2c",
+      "rmse": 0.9019844771219844,
+      "fold_rmse": [
+        0.9039448194256116,
+        0.9017779612785879,
+        0.8978824602157404,
+        0.9029422872230121,
+        0.903386038505557
+      ]
+    },
+    {
+      "index": 59,
+      "name": "artifacts/P3C-rbm200-s7-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/P3C-rbm200-s7-cond.f32",
+      "sha256": "bffa26b3ff99b258740da3910151f2f65d2a5d1c2caab94fa1e71e24639f7fb9",
+      "rmse": 0.899576449675606,
+      "fold_rmse": [
+        0.9014065133436339,
+        0.8994038565339367,
+        0.8954755137881162,
+        0.900439577538271,
+        0.901168736389753
+      ]
+    },
+    {
+      "index": 60,
+      "name": "artifacts/P4C-rbm300-cond.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/P4C-rbm300-cond.f32",
+      "sha256": "a2bdfaefdcceff07400eb302557440adde866b09d1a2236895b6b560e5fde2bb",
+      "rmse": 0.9006442975116201,
+      "fold_rmse": [
+        0.9022068257105494,
+        0.9003930740215801,
+        0.8968252880935745,
+        0.9012880219627529,
+        0.9025212590790173
+      ]
+    },
+    {
+      "index": 61,
+      "name": "artifacts/masked/MH3-categorical-mse-refit.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+      "sha256": "d4d944b63a3f16e264702fe64833e761cbd03c7e10746a1d9f566ce1418dc84f",
+      "rmse": 0.9174102382702785,
+      "fold_rmse": [
+        0.9203899536533133,
+        0.9172921829155982,
+        0.9126632325211805,
+        0.917965537827902,
+        0.9187491817781471
+      ]
+    },
+    {
+      "index": 62,
+      "name": "artifacts/masked/MT0-refit.refit.e12.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+      "sha256": "b2736a171c0eafa13d73f8f24cf8ef24e12f7e478270b8f14caf710efeec3e0c",
+      "rmse": 0.9110218861670117,
+      "fold_rmse": [
+        0.9131735324948455,
+        0.9110525403335793,
+        0.9062010438060942,
+        0.911829141841282,
+        0.9128651728767639
+      ]
+    },
+    {
+      "index": 63,
+      "name": "artifacts/masked/MT1-refit.refit.e10.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32",
+      "sha256": "10ab942ccf41e2ea3d87a198b4f844ce3dbd92063eaaad4a1e50dbeac0883306",
+      "rmse": 0.8989310347006101,
+      "fold_rmse": [
+        0.9011090916519514,
+        0.8986544351936365,
+        0.8945089512366141,
+        0.9002090399290096,
+        0.9001834450330781
+      ]
+    },
+    {
+      "index": 64,
+      "name": "artifacts/masked/MT2-refit.refit.e12.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32",
+      "sha256": "e6884ed29372a503274c20c72474e7dc20b035a9d8ae67028ff4bb5f341b7652",
+      "rmse": 0.9014876115260942,
+      "fold_rmse": [
+        0.9035249988404113,
+        0.9010980824618707,
+        0.8972242911501896,
+        0.9025958886850146,
+        0.9030056264197502
+      ]
+    },
+    {
+      "index": 65,
+      "name": "artifacts/masked/MT3-refit.refit.e7.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32",
+      "sha256": "73931a8bab2180b993963926b75203d930aa58f5857a586293f189da2a5a8e25",
+      "rmse": 0.8988636279593649,
+      "fold_rmse": [
+        0.9005770293824025,
+        0.8983633646821163,
+        0.8947378075602326,
+        0.9002401649953502,
+        0.9004107396997665
+      ]
+    },
+    {
+      "index": 66,
+      "name": "artifacts/masked/MT5-refit.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT5-refit.f32",
+      "sha256": "b8cf234a99df0bcd8e0327596924fe75c5f50aa48d88bbee3bd8a616dc3b6230",
+      "rmse": 0.8987907100984079,
+      "fold_rmse": [
+        0.9008418293599408,
+        0.8985746248559984,
+        0.8941064580763327,
+        0.9000007724604675,
+        0.9004408581948592
+      ]
+    },
+    {
+      "index": 67,
+      "name": "artifacts/masked/MT6-refit.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT6-refit.f32",
+      "sha256": "2af9bd601f171af02d81e327418b1f76d74f0d1c62b0c4d4af7380e551a90b3a",
+      "rmse": 0.9016581425987171,
+      "fold_rmse": [
+        0.9035512980372711,
+        0.9017375149050633,
+        0.8973452119533716,
+        0.9023611900007726,
+        0.9033078785967431
+      ]
+    },
+    {
+      "index": 68,
+      "name": "artifacts/r8/C-uknn-K1.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/C-uknn-K1.f32",
+      "sha256": "b901f8a9bdb2cd0c23910c37b33e79c5867b2246bbe5b9d98c7a261c8c7da38d",
+      "rmse": 0.8937946396852529,
+      "fold_rmse": [
+        0.8946333189155992,
+        0.8931752851093571,
+        0.8907551359161006,
+        0.8952510343299517,
+        0.8951691228185364
+      ]
+    },
+    {
+      "index": 69,
+      "name": "artifacts/masked/MT8-refit.refit.e7.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT8-refit.refit.e7.f32",
+      "sha256": "e207d2ec7e41c5d1764e7b4a4070a948fa7eb773f350fd7dc4c047474422e550",
+      "rmse": 0.8990543262352471,
+      "fold_rmse": [
+        0.9007539926136193,
+        0.8988116672617317,
+        0.8949023083853043,
+        0.8996186487805525,
+        0.90119827432414
+      ]
+    },
+    {
+      "index": 70,
+      "name": "artifacts/masked/MT9-refit.refit.e8.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT9-refit.refit.e8.f32",
+      "sha256": "ed94f90bbcdf0441d869148b5bc5168c2bb5637e9d82966d7ffc2449f90251ae",
+      "rmse": 0.9010040083169634,
+      "fold_rmse": [
+        0.9023559801425156,
+        0.901467946787459,
+        0.8968458254754959,
+        0.9018834777513162,
+        0.9024799253369729
+      ]
+    },
+    {
+      "index": 71,
+      "name": "artifacts/r8/B2-full-r64.s0128.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B2-full-r64.s0128.f32",
+      "sha256": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+      "rmse": 0.8926860453651146,
+      "fold_rmse": [
+        0.8938713859754821,
+        0.8932375323134246,
+        0.8892919651113954,
+        0.893498316493965,
+        0.8935425258837072
+      ]
+    },
+    {
+      "index": 72,
+      "name": "artifacts/masked/A2-refit.refit.e11.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2-refit.refit.e11.f32",
+      "sha256": "4b3ee1439890585c062967aff23b53f22496b07fde647407e961a5a1759dca99",
+      "rmse": 0.9031498511232512,
+      "fold_rmse": [
+        0.905005179212081,
+        0.9025195095416216,
+        0.8994060331298851,
+        0.9041284739053117,
+        0.9047010101618128
+      ]
+    },
+    {
+      "index": 73,
+      "name": "artifacts/r8/B3-full-r128.s0160.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B3-full-r128.s0160.f32",
+      "sha256": "059041f3d147a84c6d120a9420a7278c9840164ab8f9dfc450ff73d2d37bb1f1",
+      "rmse": 0.8904383087494483,
+      "fold_rmse": [
+        0.8914838376193448,
+        0.890982380502054,
+        0.8866663001231558,
+        0.8915974710044839,
+        0.8914735329066193
+      ]
+    },
+    {
+      "index": 74,
+      "name": "artifacts/masked/A2b-refit.refit.e10.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2b-refit.refit.e10.f32",
+      "sha256": "ef796d4a2bc98196b09e9b4a86f57a87c473901c1fe64076ad79cef93212c782",
+      "rmse": 0.9009561199820711,
+      "fold_rmse": [
+        0.902749195840093,
+        0.900397809172519,
+        0.8970210587426348,
+        0.901991334859635,
+        0.9026326269888763
+      ]
+    },
+    {
+      "index": 75,
+      "name": "artifacts/r8/B4-full-r128.s0160.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/r8/B4-full-r128.s0160.f32",
+      "sha256": "c23f0ce97b9902449f69b34d62f2b345e156009784f8ae8e393ae7c192d137ac",
+      "rmse": 0.8896599191353801,
+      "fold_rmse": [
+        0.8908124203914117,
+        0.8901547600146802,
+        0.8858475419086479,
+        0.8909095752825298,
+        0.890586724726523
+      ]
+    },
+    {
+      "index": 76,
+      "name": "artifacts/masked/A2e-refit.refit.e12.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2e-refit.refit.e12.f32",
+      "sha256": "41c20dde1fe3697734025b3d374549ab302aa5f39e8467a05fe2703b68106906",
+      "rmse": 0.8985879805630903,
+      "fold_rmse": [
+        0.9002347158241826,
+        0.8986517801951089,
+        0.8951042297301021,
+        0.8990260615440787,
+        0.8999351818651563
+      ]
+    },
+    {
+      "index": 77,
+      "name": "artifacts/masked/A2f-refit.refit.e10.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2f-refit.refit.e10.f32",
+      "sha256": "68275a257426e316a919e50ce273c2c6546af18433c3be076a76093957f6136f",
+      "rmse": 0.8950952747155836,
+      "fold_rmse": [
+        0.8969166295926237,
+        0.8950845550222729,
+        0.8912207316034138,
+        0.8955683889335336,
+        0.8966984236982397
+      ]
+    },
+    {
+      "index": 78,
+      "name": "artifacts/masked/A2h-refit.refit.e12.f32",
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+      "sha256": "70f0f28b7c286a81e20b41a679e70254d4dc6ffbcca816d080636deb8b95ccd4",
+      "rmse": 0.8901406410518464,
+      "fold_rmse": [
+        0.8914474966887955,
+        0.8901396730972114,
+        0.8860464220704667,
+        0.8911249035250495,
+        0.8919579012379889
+      ]
+    }
+  ],
+  "scope": "Original-probe development scores under predeclared S0 family selection; no new blend score."
+}

@@ -77,7 +77,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; no E3 training or scoring |
-| Structural plan week-0 scoping | Codex | claimed: retained-bank inventory and fixed diversity/quality-substitution protocol preparation; no scoping scores yet |
+| Structural plan week-0 scoping | Codex | 79 standalone columns scored under fixed protocol; 26 arm manifests prepared; all79 reference reproduction prepared before interpreting any diversity/substitution result |
 
 ## Closed bets
 
@@ -94,7 +94,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Slot | Bet | State |
 |---|---|---|
 | 1 | H8 full-bank comparison | running: retained R9 + raw N1 in both arms; fixed matched control and treatment; four sequential CPU blend stages after SO1 queue release |
-| 2 | Structural plan week-0 scoping | claimed: input inventory and protocol preparation; new scoring waits for a fixed plan |
+| 2 | Structural plan week-0 scoping | fixed protocol and 26 arm manifests prepared; all79 parity control next, other 25 blend arms unlaunched |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed launch plan E3-plan-20261031.json binds 30 inputs and verified SO1 control; waits for H8 to finish under E3's no-other-training launch condition |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
