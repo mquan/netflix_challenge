@@ -1,0 +1,34 @@
+{
+  "state": "managed_final_queue_live_waiting",
+  "verified_utc": "2026-10-31T23:24:34.970770+00:00",
+  "plan": "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-plan.json",
+  "plan_sha256": "d8dccb8a3964aa51559c6f5e15c47a8a9fcfde9a107d1ecdc1292d4081b2c9b2",
+  "runner": "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+  "runner_sha256": "8b66fa07e0212ba693aba6593870ad0806f1d4583e48097de5ca21097b902f93",
+  "pid": 75657,
+  "session_id": 29645,
+  "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/managed-final-runner.log",
+  "observed_process": "75657 75274 00:24   0.0 /bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+  "observed_log": "WAIT_P0_FINAL_ALL_82_AUDITS_QUEUE_EXIT_AND_NORMAL_MEMORY",
+  "prior_nine_family_queue_pids_verified": [
+    66919,
+    66932,
+    66954,
+    66974,
+    66999,
+    67017,
+    67037,
+    67055,
+    67069
+  ],
+  "full_job_pids_verified": [
+    32347,
+    39539,
+    39615
+  ],
+  "production_stage_audit_files_present": 0,
+  "new_full_trainers_started": 0,
+  "final_outputs_absent": true,
+  "metric": null,
+  "scope": "Final bash waiter launched. Resolution/fitting/inference/export remain gated on all 82 audits, queue process exit and stable normal memory. No actual final fitting or production submission yet."
+}
