@@ -35,7 +35,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 
 ## Next actions
 
-1. **Codex:** monitor production MPS and prepare remaining native families.
+1. **Codex:** monitor production MPS and prepare final bank resolution/export.
    All 79 columns/supports and the final fitted blender remain required.
    Prepared, not launched:
    - CPU neural: seven fixed recipes, waits for a free S0 slot and normal memory.
@@ -74,14 +74,19 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      Complete GP exports and all six local epochs repeat exactly; query-label
      isolation passes. Missing J3 audit rejects prepare before creating output.
      Prepared, not launched. `P0-KERNEL-preflight-20261031.json`.
-   Frozen phases cover 78/79 retained column occurrences. Remaining preparation:
-   user-kNN (1), then final blender/export.
-   User-kNN audit passes four tests and ten actual native fixture commands:
-   two new rank256/41-epoch K1 models, original/rebuilt three-thread inference
-   parity, exact repeats, nonzero supports/corrections and query-label isolation.
-   Fixtures use one K1 training thread; production must preserve six. Original
-   inference binary chosen for its full retained replay evidence. Queue/resource
-   guard pending. `P0-user-knn-fixture-verification-20261031.json`.
+   - User-kNN: new K1 rank256/41 epochs at six threads, then original retained
+     inference binary at three threads; waits for all four kernel audits and CPU
+     process exit. One prediction plus two support aliases. `P0-USERKNN-20261031-plan.json`:
+     250 inputs / 251 checksum checks and five audit/resource tests pass. Ten
+     native fixture commands cover full one-thread K1 budgets, exact original/
+     rebuilt inference, label isolation and nonzero support/corrections. Prepared,
+     not launched. `P0-USERKNN-preflight-20261031.json`.
+   Frozen plans cover all **79/79 columns plus eight support aliases**, verified
+   in original blender order by `P0-all-family-planned-coverage-20261031.json`.
+   This is planning coverage: **0/82 required production-stage audit files exist**.
+   Full outputs and final fitted blender/export remain outstanding. Prepared
+   runners still need managed launch behind their guards; only primary GPU and
+   both S0 lanes are currently running. The separate latent basis remains frozen.
    AutoRec's historical provenance limitations remain explicit; MPS engineering verification
    is still pending. Recent logs and active workers confirm all three live jobs continue.
    Full production outputs remain required; the development gap is unchanged.
