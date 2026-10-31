@@ -94,7 +94,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | Slot | Bet | State |
 |---|---|---|
 | 1 | H8 full-bank comparison | running: retained R9 + raw N1 in both arms; fixed matched control and treatment; four sequential CPU blend stages after SO1 queue release |
-| 2 | Structural plan week-0 scoping | fixed protocol and 26 arm manifests prepared; all79 parity control next, other 25 blend arms unlaunched |
+| 2 | Structural plan week-0 scoping | all79 parity control running; fixed protocol and 26 arm manifests prepared; other 25 blend arms unlaunched |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed launch plan E3-plan-20261031.json binds 30 inputs and verified SO1 control; waits for H8 to finish under E3's no-other-training launch condition |
 
 GPU bets E2 (movie-side context in A2) and E3 (ordinal A2h head) are queued
