@@ -20,6 +20,7 @@ their plans, runners or artifacts, or competes with them for the GPU.
 | E5 ordinal Bayes | >=0.0003 P2 matched-pair gain | closed: +0.000135 gain, below threshold; shared gate independently reproduced |
 | A7 sibling pooling | >=0.0005 after Stage C, all five folds | failed: +0.001779 worse on all folds |
 | H8 choice affinity | >=0.0003 P2 gain over bank11+N1 ridge | nested check passes at 0.000373; matched-tree increment 0.000289; full-bank value pending |
+| H9 choice co-occurrence SVD | >=0.0003 nested P2 gain beyond H8 | closed: 0.000048 gain, interval includes zero |
 
 `scripts/p2_candidate_gate.py --plan PLAN --output RESULT` is the shared
 scoring adapter for completed matched P2 columns. It directly reuses
@@ -789,3 +790,20 @@ binary presence/IDF normalization, exact low-rank geometry, control replay
 and outer-label independence. CPU only (two tree threads, BLAS one thread),
 while the verified N1 training process remains live. No original-probe score
 or existing trainer modification is part of this run.
+
+### H9 result: closed
+
+The fixed run completed on CPU. Its matrix contains 5,633,092 distinct
+unlabelled user/movie pairs. H8 control RMSE reproduces exactly at
+0.8461614543; H8 plus SVD affinities scores 0.8461137958. The gain is only
+**0.0000476584**, below the fixed 0.0003 gate, with user-cluster 95%
+delta-MSE interval [−0.000165064, +0.000003762], which includes zero.
+Iteration selection used fold 1 (H8 114, treatment 89); fold 0 was evaluated
+once. No rank, weighting, window or seed sweep follows.
+
+Evidence: `experiments/H9-choice-cooccurrence-{result,verification}-20261031.json`.
+The saved H8 control predictions match the earlier nested H8 payload exactly;
+a fresh rescore reproduces the comparison, and all 23 frozen inputs and both
+payload hashes were verified. This closes the tested SVD recipe, with no
+full-bank or hidden-test claim. N1's existing GPU queue and the prepared H8
+column remain the active path.
