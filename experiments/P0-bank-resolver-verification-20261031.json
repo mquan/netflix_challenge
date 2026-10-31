@@ -1,0 +1,17 @@
+{
+  "state": "verified_bank_resolver_engineering",
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/scripts/resolve_production_bank.py": "588120f5d0f014c74b221ba589c24dfc1157f3df9c7655d1d7a30d48ae864788",
+    "/Users/quan/workspace/netflix_challenge/tests/test_resolve_production_bank.py": "d56eed00b2563a09a82fe305f10f467b4de21f1537e6b09ed239e8d076cc5796",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-all-family-planned-coverage-20261031.json": "1ce159e7f140d5565e8bd460f11b5258476c4d7819cd20b7aaf3643cd6ae150c",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-blender-plan.json": "6583d39e3e2774365576ea6138735022ad9d305560f4e4ea4897b7fe7d2f75b6"
+  },
+  "synthetic_complete_bank_tests_passed": 5,
+  "synthetic_stage_receipts": 82,
+  "synthetic_pending_inputs_resolved": 87,
+  "ready_feature_mutation_rejected": true,
+  "real_incomplete_bank_rejected": "[Errno 2] No such file or directory: '/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12/audit.json'",
+  "real_resolved_bank_absent": true,
+  "metric": null,
+  "scope": "Resolver engineering only. Complete-path tests use synthetic receipts and tiny outputs, not actual 82 completed production stages. Real incomplete production run rejects without a partial bank. Full production outputs, final blender and qualifying export remain outstanding."
+}
