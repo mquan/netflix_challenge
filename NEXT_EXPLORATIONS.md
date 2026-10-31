@@ -1132,3 +1132,16 @@ CPU threads (below the shared ten-thread cap) and three simultaneous
 training jobs. E3's no-other-training launch condition was satisfied before
 it started; these subsequent scoping jobs use CPU only and preserve its GPU
 priority. Memory/process checks remain required before each lane launch.
+
+### S0 CPU lanes live alongside E3 (2026-10-31)
+
+Both frozen S0 lane scripts are now live after the full reference-parity
+gate. Lane 0 (runner 39539, managed session 96236) starts with the fixed
+one-column arm; lane 1 (runner 39615, session 83214) starts with the fixed
+four-column arm. Each passed every frozen hash check before training.
+`experiments/S0-lanes-20261031-launch.json` records both handles and the
+preflight resource checks: memory 54% free before lane 0, 45% before lane 1.
+E3 was already actively training, having satisfied its launch condition
+before these CPU jobs began. Maximum configured own CPU threads are seven;
+S0 uses no GPU. Monitor memory as the two scripts advance through their
+unchanged 13+12 arms. No partial diversity result is used to change the plan.

@@ -78,7 +78,7 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 all-five-fold gate preparation | Codex | complete: separate nested five-fold check, exact shared fold-0 parity and outer-label exclusion verified by three fixture tests; E3 fixed treatment now live, no real score yet |
-| Structural plan week-0 scoping | Codex | full all79 parity verified: saved tree, neural and average exactly match retained R9; 25 fixed further arms ready; narrative snapshot preserves original document provenance |
+| Structural plan week-0 scoping | Codex | full all79 parity exact; all 25 further fixed arms running through two CPU lanes (13+12); E3 retains GPU priority; narrative snapshot preserves original provenance |
 
 ## Closed bets
 
@@ -96,8 +96,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | 12 exact fixed arms prepared, no GPU; all79 parity verified |
-| 2 | S0 scoping lane 0 | 13 exact fixed arms prepared, no GPU; all79 parity verified |
+| 1 | S0 scoping lane 1 | running 12 exact fixed arms, first n4; no GPU; all79 parity verified |
+| 2 | S0 scoping lane 0 | running 13 exact fixed arms, first n1; no GPU; all79 parity verified |
 | 3 | E3 (λ=0.1 cross-entropy on A2h's distribution head) | fixed P2 treatment running; plan E3-plan-20261031.json, launch receipt E3-select-20261031-launch.json; verified SO1 control reused |
 
 E3's fixed GPU treatment is running after the other session's queue finished;

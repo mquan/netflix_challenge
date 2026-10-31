@@ -30,7 +30,7 @@ with a stop check at week 3 (≥0.0015 bank gain).
 
 | Job | Owner | Check |
 |---|---|---|
-| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; two CPU lanes prepared for all 25 fixed arms (13+12), GPU reserved for E3; `experiments/S0-lane{0,1}-20261031-plan.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | Exact all79 parity verified; two CPU lanes live (runners 39539/39615, managed sessions 96236/83214), first arms n1/n4; 25 fixed arms total. `experiments/S0-lanes-20261031-launch.json` |
 | E3 (λ=0.1 CE on A2h head), fixed two-epoch P2 treatment | Codex | Live PID 38985, managed session 51948; started with no other trainer live; `experiments/E3-select-20261031.log` |
 
 ## Next actions
@@ -39,8 +39,8 @@ with a stop check at week 3 (≥0.0015 bank gain).
    are absent here. Rank them by expected error-structure novelty and pick the
    first 2–3 to build (STRUCTURAL_PLAN lane 1). Waiting for the user's go-ahead.
 2. **Codex:** monitor E3; audit its fixed training recipe before both P2 gates.
-3. **Codex:** execute the remaining 25 fixed S0 arms from the verified reference,
-   preserving E3's resource priority and the total CPU cap.
+3. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
+   then report all fixed diversity/substitution results; retain E3 priority.
 
 ## Decisions waiting on the user
 
