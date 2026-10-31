@@ -66,7 +66,8 @@ Work is chosen by the program in [STRATEGY.md](STRATEGY.md): (A) a headroom map 
 
 | Work | Owner | State |
 |---|---|---|
-| Lane 1 new-family audit (reading; no compute) | this session (Claude) | started 2026-10-31 (user go-ahead) |
+| Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
+| L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | next |
 | Structural plan week 0: scoping (diversity curve, quality→blend conversion) | this session (Claude) | **done 2026-10-31**: new families ≈0.0007–0.001 each; quality slopes Bayes 0.14, GP 0.10, A2 0.028, others ≈0; lanes re-ranked in STRUCTURAL_PLAN.md |
 | N1 full-bank verification | Codex | complete: 0.86670063 overall, but fold 1 worsens; no promotion; retained best and target gap unchanged |
 | A. Headroom map (`scripts/headroom_map.py`, HEADROOM.md) | this session (Claude) | **done 2026-10-31**: the only deployable new signal found is N1-style choice history; see HEADROOM.md conclusion |
