@@ -1022,3 +1022,14 @@ the unchanged neural command. Evidence is
 not authorize changing a feature, model, hyperparameter or decision gate.
 Shared STATUS.md now distinguishes the completed ridge proxy from the live
 full-blender check and records both live jobs.
+
+### H8 treatment tree complete and verified (2026-10-31)
+
+The third registered stage completed all five folds at RMSE 0.8667581915.
+`experiments/H8-treatment-tree-verification-20261031.json` verifies the exact
+configuration, bank and library, finite saved predictions and reproduced
+scores, with all 187 frozen inputs unchanged before and after checking.
+The unmodified runner checked its inputs again and launched the fourth and
+final stage, treatment NN2. Its completed 50/50 average, paired comparisons
+against the matched control and retained R9, and the registered full-bank
+gate remain pending. The tree-only result does not authorize promotion.

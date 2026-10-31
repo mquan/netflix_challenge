@@ -1,0 +1,21 @@
+{
+  "state": "complete_treatment_tree_only",
+  "plan_sha256": "f18a5931caa3a0334fac35078f181f6f9f5f0fbf6022b56ff9d62511a9112356",
+  "stage": "treatment-tree",
+  "config_bank_library_and_saved_scores_match_plan": true,
+  "frozen_verified_before_and_after": 187,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.json": "e7c15ffa35edcd44d51b78be219d647cf7b39e913f480b71bfe5e8436890c9b2",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.refit.f32": "6b8707c5a8cf7225654f60fad28f2fb25fc147b6d9d6e58eb2428c0349b2e509",
+    "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-full-20261031/treatment-s3.ridge.f32": "0cd1f37dbea02dd15cf8534ea997c0eda9a73479054c7afcf972a5e76159b634"
+  },
+  "rmse": 0.866758191518705,
+  "fold_rmse": [
+    0.867608498453198,
+    0.8667808108007787,
+    0.8630305325150218,
+    0.8680699913228443,
+    0.8683135843087632
+  ],
+  "limitation": "Final treatment neural stage and matched 50/50 full-bank gate remain pending; no promotion decision."
+}
