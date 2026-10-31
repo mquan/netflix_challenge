@@ -43,7 +43,8 @@ The week-3 stop check remains ≥0.0015 bank gain.
    terminal; neither P2 gate passed, so no full-training follow-up.
    Complete-result reporter is frozen in `experiments/S0-report-binding-20261031.json`;
    five tests and real-reference/partial-experiment checks pass. Its bash
-   handoff is prepared to wait for both existing lane runners before reporting.
+   handoff PID 94435/session 80182 is verified waiting for both lane runners;
+   do not launch a duplicate report. `experiments/S0-report-handoff-20261031-launch.json`.
 
 ## Decisions waiting on the user
 

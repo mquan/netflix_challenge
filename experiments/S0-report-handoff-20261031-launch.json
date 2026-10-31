@@ -1,0 +1,21 @@
+{
+  "state": "waiting_for_both_scoping_lanes",
+  "runner_pid": 94435,
+  "exec_session_id": 80182,
+  "wait_for_pids": [39539, 39615],
+  "runner": "experiments/S0-report-handoff-20261031-run.sh",
+  "frozen_checks": "experiments/S0-report-handoff-20261031.sha256",
+  "binding": "experiments/S0-report-binding-20261031.json",
+  "log": "artifacts/structural/S0-scoping-20261031/report-handoff.log",
+  "output": "artifacts/structural/S0-scoping-20261031/final-summary.json",
+  "preflight": {
+    "five_reporter_tests_passed": true,
+    "real_all79_audit_and_three_payload_parity_passed": true,
+    "actual_incomplete_experiment_rejected_without_summary": true,
+    "bash_syntax_and_both_handoff_hash_checks_passed": true,
+    "source_binding_and_handoff_pushed_before_launch": true,
+    "both_lane_runners_verified_live_before_launch": true,
+    "handoff_confirmed_live_and_waiting": true
+  },
+  "scope": "Idle bash wait, then one complete-experiment audit and report. Incomplete or changed inputs cause rejection, without retries, partial synthesis, training or promotion. Existing lane scripts unchanged."
+}
