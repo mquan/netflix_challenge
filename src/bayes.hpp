@@ -134,12 +134,23 @@ struct Sampler {
   std::vector<Local> local;
   std::vector<double> probe_pred;
   std::array<double, kProfiles> prof{};
+  // Optional per-row likelihood weights: row p has noise precision alpha*rw[p].
+  // Every sufficient statistic (A, B, block s0..sqe, w0) is weighted; the
+  // noise-precision rate uses the weighted SSE and its shape the row count.
+  // Empty means unweighted; all-ones reproduces the unweighted chain exactly.
+  std::vector<float> rw;
+  double weight_total = 0;
+  double row_weight(uint64_t p) const { return rw.empty() ? 1.0 : double(rw[p]); }
 
   enum Kind { kNone, kRow, kUserBlock, kItemBlock };
 
   Sampler(const Dataset &d_, const TemporalIndex &t_, const JointFeatures &f_, Model &m_,
-          uint32_t threads_) : d(d_), t(t_), f(f_), m(m_), threads(threads_) {
+          uint32_t threads_, std::vector<float> weights = {})
+      : d(d_), t(t_), f(f_), m(m_), threads(threads_), rw(std::move(weights)) {
     users = d.header.users; items = d.header.items;
+    if (!rw.empty() && rw.size() != d.header.train_count) fail("row weights length differs from train_count");
+    weight_total = 0;
+    for (uint64_t p = 0; p < d.header.train_count; ++p) weight_total += row_weight(p);
     row_bin.resize(d.header.train_count);
     for (uint64_t p = 0; p < d.header.train_count; ++p) row_bin[p] = uint8_t(time_bin(d, d.train_days[p]));
     for (const auto &r : d.probe) probe_bin.push_back(uint8_t(time_bin(d, r.day)));
@@ -159,10 +170,15 @@ struct Sampler {
     ub.resize(users); ib.resize(items);
     for (uint32_t u = 0; u < users; ++u) {
       const uint64_t n = d.implicit_offsets[u+1]-d.implicit_offsets[u];
-      ub[u].s0 = float(d.train_offsets[u+1]-d.train_offsets[u]);
+      if (rw.empty()) ub[u].s0 = float(d.train_offsets[u+1]-d.train_offsets[u]);
+      else {
+        double s0 = 0;
+        for (uint64_t p = d.train_offsets[u]; p < d.train_offsets[u+1]; ++p) s0 += rw[p];
+        ub[u].s0 = float(s0);
+      }
       ub[u].x = n ? float(std::pow(double(n), -double(m.bag_power))) : 0;
     }
-    for (uint64_t p = 0; p < d.header.train_count; ++p) ib[d.train_items[p]-1].s0 += 1;
+    for (uint64_t p = 0; p < d.header.train_count; ++p) ib[d.train_items[p]-1].s0 += rw.empty() ? 1.0F : rw[p];
     for (uint32_t i = 0; i < items; ++i) {
       const uint64_t n = item_offsets[i+1]-item_offsets[i];
       ib[i].x = n ? float(std::pow(double(n), -double(m.bag_power))) : 0;
@@ -310,17 +326,18 @@ struct Sampler {
               train_feature(kRowGroups[k], u, p, j, x); qr += qv[k][j]*x;
             }
           }
+          const double wp = row_weight(p);  // exactly 1.0 when unweighted
           if (tk == kRow) {
             train_feature(tg, u, p, j, x);
             const double h = tf < 0 ? x : x*(qr+bu.q+bi.q-double(tv[j])*x);
-            la[j] += h*h; lb[j] += h*e;
+            la[j] += h*h*wp; lb[j] += h*e*wp;
           } else if (tk == kUserBlock) {
             const double qout = tf < 0 ? 0 : double(qr)+bi.q;
-            s1 += qout; s2 += qout*qout; se += e; sqe += qout*e;
+            s1 += qout*wp; s2 += qout*qout*wp; se += e*wp; sqe += qout*e*wp;
           } else if (tk == kItemBlock) {
             const double qout = tf < 0 ? 0 : double(qr)+bu.q;
             double *it = &l.item[size_t(i)*4];
-            it[0] += qout; it[1] += qout*qout; it[2] += e; it[3] += qout*e;
+            it[0] += qout*wp; it[1] += qout*qout*wp; it[2] += e*wp; it[3] += qout*e*wp;
           }
           E[p] = e;
           if (write_qr) QR[p] = qr;
@@ -484,10 +501,11 @@ struct Sampler {
     mu = mean+std::normal_distribution<double>(0, 1)(rng)/std::sqrt((double(n)+1)*lambda);
   }
 
-  double sum_squared_residuals() {
+  double sum_squared_residuals(bool weighted = false) {
     parallel(threads, [&](uint32_t th) {
       double s = 0;
-      for (uint64_t p = d.train_offsets[user_cut[th]]; p < d.train_offsets[user_cut[th+1]]; ++p) s += E[p]*E[p];
+      for (uint64_t p = d.train_offsets[user_cut[th]]; p < d.train_offsets[user_cut[th+1]]; ++p)
+        s += weighted ? E[p]*E[p]*row_weight(p) : E[p]*E[p];
       local[th].sse = s;
     });
     double s = 0; for (const auto &l : local) s += l.sse;
@@ -496,7 +514,7 @@ struct Sampler {
   double sum_residuals() {
     parallel(threads, [&](uint32_t th) {
       double s = 0;
-      for (uint64_t p = d.train_offsets[user_cut[th]]; p < d.train_offsets[user_cut[th+1]]; ++p) s += E[p];
+      for (uint64_t p = d.train_offsets[user_cut[th]]; p < d.train_offsets[user_cut[th+1]]; ++p) s += E[p]*row_weight(p);
       local[th].sse = s;
     });
     double s = 0; for (const auto &l : local) s += l.sse;
@@ -588,7 +606,7 @@ struct Sampler {
   // One full Gibbs sweep. Returns the train RMSE after the sweep.
   double sweep() {
     const double n = double(d.header.train_count);
-    const double sse = sum_squared_residuals();
+    const double sse = sum_squared_residuals(!rw.empty());
     m.alpha = std::gamma_distribution<double>((1+n)/2, 2/(1+sse))(rng);
     for (uint32_t g = 0; g < kGroups; ++g) {
       if (!m.mode[g]) continue;
@@ -598,7 +616,7 @@ struct Sampler {
           draw_hyper(V(Group(g), k), m.size[g], m.v_mu[g][k], m.v_lambda[g][k]);
     }
     const double old = m.w0;
-    m.w0 = draw(old, n, sum_residuals(), m.alpha, 0, 0, rng);
+    m.w0 = draw(old, rw.empty() ? n : weight_total, sum_residuals(), m.alpha, 0, 0, rng);
     phase(-1, m.w0-old);
     for (uint32_t k = 0; k < m.rank; ++k) phase(int(k), 0);
     flush();
@@ -734,7 +752,22 @@ void command(const std::vector<std::string> &args) {
             << " drift_scale=" << m.drift_scale << " fingerprint=" << fingerprint << " modes=";
   for (uint32_t g = 0; g < kGroups; ++g) std::cout << (g ? "," : "") << kGroupNames[g] << ':' << m.mode[g];
   std::cout << " resume_sweep=" << m.sweep << std::endl;
-  Sampler s(d, t, feats, m, threads);
+  std::vector<float> weights;
+  const std::string weights_path = optional_value_after(args, "--row-weights");
+  if (!weights_path.empty()) {
+    std::ifstream in(weights_path, std::ios::binary | std::ios::ate);
+    if (!in) fail("cannot read --row-weights");
+    if (uint64_t(in.tellg()) != d.header.train_count*sizeof(float)) fail("--row-weights length must equal train_count");
+    in.seekg(0); read_vector(in, weights, d.header.train_count);
+    double total = 0; uint64_t changed = 0;
+    for (float w : weights) {
+      if (!std::isfinite(w) || w <= 0 || w > 16) fail("--row-weights values must be in (0, 16]");
+      total += w; changed += w != 1.0F;
+    }
+    std::cout << "row_weights=" << weights_path << " non_unit=" << changed
+              << " mean=" << std::setprecision(10) << total/weights.size() << std::endl;
+  }
+  Sampler s(d, t, feats, m, threads, std::move(weights));
   { std::istringstream state(m.rng_state); state >> s.rng; if (!state) fail("bad bayes rng state"); }
   s.recompute_residuals(s.E);
   auto snapshot_path = [&](uint32_t sweep) {

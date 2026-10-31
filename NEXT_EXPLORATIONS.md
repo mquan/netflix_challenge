@@ -100,6 +100,31 @@ hidden-test effect, not a verified test score.
   is tried after reading these. Pass → extend to the RBM chain, then Bayes.
   Fail → close E1. The fine-tune arm (b-ft) is deferred until stage 1 passes.
 
+### E1-Bayes: the same weighting in Bayes timeSVD++ (fixed before any score, 2026-10-30)
+
+- **Code.** `netflix bayes --row-weights FILE` gives row p noise precision
+  alpha·w_p. Every Gibbs sufficient statistic is weighted (row-group A/B,
+  block row mass s0 and s1, s2, se, sqe, and the w0 draw). The noise-precision
+  Gamma uses the weighted SSE in its rate and the row count in its shape.
+  Residuals and the reported train RMSE are unweighted.
+  `tests/test_bayes_row_weights.py` covers these: all-ones weights reproduce
+  the unweighted chain byte for byte (one thread), residuals stay exact under
+  weights (1 and 3 threads), rows weighted 8 are fitted at least 20% closer,
+  and malformed files (including zero weights) fail. The 5 existing
+  `test_bayes.py` tests pass on the same binary, `build/netflix-bayesweights`.
+- **Runs.** `scripts/e1_bayes_chain.sh build/netflix-bayesweights w2`, then
+  `… w1` as the same-binary noise control once the K1 chain frees CPU. Each
+  repeats the B4-full-r128 command exactly (rank 128, 160 sweeps, burn-in 16,
+  seed 13, item-bin 2, drift 2, 4 threads), plus `--row-weights`. About 10 hours each.
+  Only weight 2 is tested on Bayes; it was fixed before any K1 result.
+- **Score.** `artifacts/rehearsal/r12/spec-core-B4.json` with only the b B4
+  column swapped for the arm's final posterior mean (160 sweeps, as the
+  recorded s0160 column). Same blend recipe as stage 1.
+- **Decision.** Same gate as stage 1: w2 beats w1 by ≥0.0005 b-RMSE, the gain
+  exceeds |b(w1) − b(recorded B4)|, and all five folds improve.
+- **Early stop.** If K1 stage 1 shows no gain at all (both b(w2) and
+  b(w3) ≥ b(w1)), stop the Bayes arms to free CPU and record that they were stopped.
+
 ## E2. Movie-side context inside A2 (CF-UIcA-style) — GPU, after SO1
 
 **Hypothesis.** A2h encodes only the user's own history. Let the query token
