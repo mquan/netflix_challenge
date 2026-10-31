@@ -724,3 +724,18 @@ Two fixture tests cover exact saved-model prediction parity, schema/payload
 rejection, fixed full training and label-independent query feature generation.
 No GPU job or existing trainer is changed. This prepares the CPU complement
 while preserving N1/SO1 queue priority.
+
+### H8 column preparation complete
+
+Both fixed CPU jobs completed. The bundle fits 1,407,566 P2 rows with control
+39 and treatment 114 rounds. The separate full-view cache contains twelve
+finite features for all 1,408,395 original-probe query identities/dates.
+All frozen inputs and payload hashes were reverified; both serialized trees
+load with the expected feature counts (1 and 13), exact fixed round counts,
+and thirteen finite ridge coefficients.
+
+Archived manifests are `experiments/H8-column-{fit,query-features}-manifest-20261031.json`;
+verification is `experiments/H8-column-preparation-verification-20261031.json`.
+The next boundary is the matching twelve-column query bank, including N1's
+full-data epoch-13 prediction. No query predictions, original-probe scores or
+full-bank promotion were produced by this preparation.

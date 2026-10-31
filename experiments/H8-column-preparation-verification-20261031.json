@@ -1,0 +1,19 @@
+{
+  "state": "prepared_fixed_cpu_column_inputs",
+  "training_rows": 1407566,
+  "query_rows": 1408395,
+  "model_rounds": {
+    "base_tree": 39,
+    "choice_tree": 114
+  },
+  "query_feature_shape": [
+    1408395,
+    12
+  ],
+  "all_frozen_inputs_and_payloads_reverified": true,
+  "serialized_models_loaded": true,
+  "full_query_predictions_generated": false,
+  "original_probe_scores_computed": false,
+  "pending": "Matching twelve-column query bank, including N1 full-data epoch-13 predictions; then frozen full-bank/all-fold validation.",
+  "limitation": "P2 models fitted and label-free query features ready; no full-bank gain or promotion established."
+}

@@ -1,0 +1,30 @@
+{
+  "state": "complete",
+  "mode": "features",
+  "plan_sha256": "be3777bf288269b028c81d752cd30722583df23d08fea45043c0cfcda7d695d1",
+  "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+  "joint_sha256": "bbfa2afc337c7d4899093420056b9813520b2fc909ebe76801d7810434ed2e82",
+  "feature_names": [
+    "n_w3",
+    "q_dot_meany_w3",
+    "q_dot_meanq_w3",
+    "y_dot_meany_w3",
+    "n_w30",
+    "q_dot_meany_w30",
+    "q_dot_meanq_w30",
+    "y_dot_meany_w30",
+    "n_w100000",
+    "q_dot_meany_w100000",
+    "q_dot_meanq_w100000",
+    "y_dot_meany_w100000"
+  ],
+  "rows": 1408395,
+  "libraries": {
+    "numpy": "2.5.3",
+    "lightgbm": "4.7.0"
+  },
+  "scope": "Feature generation only; query rating fields were not passed to the producer.",
+  "files": {
+    "features.npy": "eb665fb2b7e2ff3636075dd9b8e797f22ec3b84d7d9ba0ac53ab94eba5b6d3d3"
+  }
+}
