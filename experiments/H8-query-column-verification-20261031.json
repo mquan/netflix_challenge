@@ -1,0 +1,33 @@
+{
+  "state": "complete_unscored",
+  "protocol_sha256": "64d377e5c0309c57d999e8e2593dd1fb2d9444d28a2a5b0845ed9d449dd233d7",
+  "n1_report_sha256": "9cf161d0a50e5d2069214830e02ff0792dc7397613ca9df489c3ae8d05b57304",
+  "n1_completion_receipt_sha256": "622c4846c11decd2877f1ae2b5d511475b633699d4d361a955762a85fa97b5dc",
+  "n1_prediction_sha256": "a4dc251df10084b417862e7ed87dd92f4a4fd438a2c8fdb66ec50039dc00022f",
+  "n1_selected_epoch": 13,
+  "n1_refit_records": 13,
+  "n1_arguments_equal_parent": true,
+  "n1_source_and_data_hashes_verified": true,
+  "frozen_inputs_verified_before_and_after": 25,
+  "active_blend_workers_at_inference": [
+    24788,
+    24789,
+    24790
+  ],
+  "query_labels_loaded": false,
+  "files": {
+    "base_tree": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-query-columns-20261031/base_tree.f32",
+      "sha256": "270ee17e323db37248c199753cd5d109249e82a145e6a95e91f381002180e1f3",
+      "rows": 1408395,
+      "finite": true
+    },
+    "choice_tree": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/headroom/H8-query-columns-20261031/choice_tree.f32",
+      "sha256": "648f369c5e539341746b08bbc20f459ffbfb5c23787a9afda3d38999aaf4ceae",
+      "rows": 1408395,
+      "finite": true
+    }
+  },
+  "metric": "No H8 score computed; full comparison waits for N1/SO1 queue release."
+}
