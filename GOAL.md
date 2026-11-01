@@ -108,7 +108,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1 complete and audited; second-seed n1 average 0.88954681984; second-seed n16 tree live (PID 79691), continuing 12 exact fixed arms; no GPU |
+| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1 complete and audited; second-seed n1 average 0.88954681984; second-seed n16 tree complete, neural live (PID 91361), continuing 12 exact fixed arms; no GPU |
 | 2 | S0 scoping lane 0 | first-seed n1/n16/n64 complete and audited; n64 average 0.86733208299; second-seed n4 tree complete, neural live (PID 81688), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
