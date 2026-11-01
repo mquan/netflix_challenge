@@ -33,7 +33,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 4 live; first three epochs complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
 | Final bank/blender/export handoff | Codex | Managed bash waiter PID 75657/session 29645 live at guard; requires all 82 audits and family process exit. No final fit or export started. `experiments/P0-FINAL-launch-20261031.json`. Do not duplicate. |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 7/25 complete and audited (first-seed n1/n4/n16/n32/n64; second-seed n1/n4). Latest average 0.8776416, output hashes/five folds/score checked. Lane 0 second-seed n32 tree (93986/session 96236); lane 1 second-seed n16 neural (91361/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261101-n4-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 8/25 complete and audited (first-seed n1/n4/n16/n32/n64; second-seed n1/n4/n16). Latest average 0.8714406, output hashes/five folds/score checked. Lane 0 second-seed n32 tree (93986/session 96236); lane 1 second-seed n64 tree (97800/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261101-n16-full-verification-20261031.json` |
 
 ## Next actions
 
@@ -48,10 +48,10 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 00:56 UTC**: A2h epoch 4/batch 900;
-   epoch 3 complete. S0 second-seed n4 complete and automatically audited,
-   all output hashes/five folds/score checked; lane 0 moved to n32 tree.
-   Seven fixed arms audited. All ten guarded waiters and watcher remain live;
+   Last runtime check **2026-11-01 01:03 UTC**: A2h epoch 4/batch 1300;
+   epoch 3 complete. S0 second-seed n16 complete and automatically audited,
+   all output hashes/five folds/score checked; lane 0 continues n32 tree and lane 1 moved to n64 tree.
+   Eight fixed arms audited. All ten guarded waiters and watcher remain live;
    no completed production stage or failed runner.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
