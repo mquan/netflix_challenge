@@ -48,7 +48,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 01:03 UTC**: A2h epoch 4/batch 1300;
+   Last runtime check **2026-11-01 01:07 UTC**: A2h epoch 4/batch 1500;
    epoch 3 complete. S0 second-seed n16 complete and automatically audited,
    all output hashes/five folds/score checked; lane 0 continues n32 tree and lane 1 moved to n64 tree.
    Eight fixed arms audited. All ten guarded waiters and watcher remain live;
@@ -57,7 +57,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
    runner 75657 and releases on its exit. Verified on AC power;
    `experiments/P0-idle-sleep-assertion-20261031.json`.
-   Latest full process/guard-log check: `experiments/P0-live-health-20261101T001250Z.json`.
+   Latest full process/guard-log check: `experiments/P0-live-health-20261101T010725Z.json`.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
