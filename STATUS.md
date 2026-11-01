@@ -48,7 +48,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 03:14 UTC**: A2h epoch 5/batch 600;
+   Last runtime check **2026-11-01 03:17 UTC**: A2h epoch 5/batch 700;
    epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
    all output hashes/five folds/score checked. Lane 0 continues third-seed n1
    tree PID 16110; lane 1 advanced to third-seed n4 tree PID 24702.
