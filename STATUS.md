@@ -48,7 +48,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 04:08 UTC**: A2h epoch 5/batch 3000;
+   Last runtime check **2026-11-01 06:10 UTC**: A2h epoch 5/batch 3100;
    epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
    all output hashes/five folds/score checked. Both third-seed n1/n4 trees completed all
    five folds; neural successors PID 43550/40399 are live in lanes 0/1.
@@ -61,6 +61,8 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    Process inventory: three active training Python processes belong to Codex
    (32347 production GPU; 43550/40399 S0 neural). Five other Python-based
    Grafana MCP service processes are infrastructure, not experiment trainers.
+   System sleep interrupted progress while on battery; now on AC and all three
+   trainers active again. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
    runner 75657 and releases on its exit. Verified on AC power;
