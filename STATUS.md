@@ -48,7 +48,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 06:27 UTC**: A2h epoch 5/batch 3300;
+   Last runtime check **2026-11-01 06:45 UTC**: A2h epoch 5/batch 3400;
    epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
    all output hashes/five folds/score checked. Both third-seed n1/n4 trees completed all
    five folds; neural successors PID 43550/40399 are live in lanes 0/1 (one/two folds complete).
@@ -56,13 +56,16 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    no completed production stage or failed runner. This check is a verified
    wait: trainer 32347 and both neural stages are live;
    all 82 required production audit paths remain absent. Memory pressure fluctuates
-   between normal (1) and warning (2); latest level 2. Trainer progress continues,
+   between normal (1) and warning (2); latest level 1. Trainer progress continues,
    no new trainers.
    Process inventory: three active training Python processes belong to Codex
    (32347 production GPU; 43550/40399 S0 neural). Five other Python-based
    Grafana MCP service processes are infrastructure, not experiment trainers.
-   System sleep interrupted progress while on battery; now on AC and all three
-   trainers active again. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
+   System sleep interrupted progress on battery and continues on AC:
+   macOS reports repeated **Dark Wake Thermal Emergency** sleeps. Trainers
+   remain live and advance during brief wakes. User asked to keep Mac awake,
+   plugged in, ventilated, and open lid if closed. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
+   Continuing thermal-sleep evidence: `experiments/P0-thermal-sleep-20261101T064515Z.json`.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
    runner 75657 and releases on its exit. Verified on AC power;

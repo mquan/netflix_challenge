@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-01T06:45:15.615677+00:00",
+  "state": "live_training_interrupted_by_repeated_macos_thermal_sleep",
+  "power_events": [
+    "2026-10-31 22:09:59 -0700 DarkWake            \tDarkWake from Deep Idle [CDNP] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/SleepService Using BATT (Charge:6%) 2 secs    ",
+    "2026-10-31 22:10:01 -0700 Sleep               \tEntering Sleep state due to 'Sleep Service Back to Sleep':TCPKeepAlive=active Using Batt (Charge:5%) 962 secs  ",
+    "2026-10-31 22:26:03 -0700 DarkWake            \tDarkWake from Deep Idle [CDNP] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/SleepService Using BATT (Charge:5%) 2 secs    ",
+    "2026-10-31 22:26:05 -0700 Sleep               \tEntering Sleep state due to 'Sleep Service Back to Sleep':TCPKeepAlive=active Using Batt (Charge:5%) 415 secs  ",
+    "2026-10-31 22:33:00 -0700 DarkWake            \tDarkWake from Deep Idle [CDNP] : due to smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/ Using BATT (Charge:5%) 18 secs   ",
+    "2026-10-31 22:33:18 -0700 Sleep               \tEntering Sleep state due to 'Maintenance Sleep':TCPKeepAlive=active Using Batt (Charge:4%) 3 secs    ",
+    "2026-10-31 22:33:21 -0700 DarkWake            \tDarkWake from Deep Idle [CDNP] : due to smc.sysState.Wake(0x70070000) wifibt SMC.OutboxNotEmpty/ Using BATT (Charge:4%) 15 secs   ",
+    "2026-10-31 22:33:36 -0700 Sleep               \tEntering Sleep state due to 'Maintenance Sleep':TCPKeepAlive=active Using Batt (Charge:4%) 146 secs  ",
+    "2026-10-31 22:36:02 -0700 DarkWake            \tDarkWake from Deep Idle [CDNP] : due to smc.sysState.Wake(0x70070000) USB-C_plug SMC.OutboxNotEmpty nub-spmi-a0.0x59/ Using BATT (Charge:4%) 0 secs    ",
+    "2026-10-31 22:36:02 -0700 Wake                \tDarkWake to FullWake from Deep Idle [CDNVAP] : due to Notification Using AC (Charge:4%) 6 secs    ",
+    "2026-10-31 22:36:08 -0700 Sleep               \tEntering DarkWake state due to 'Notification Wake Back to Sleep':TCPKeepAlive=active Using AC (Charge:5%)           ",
+    "2026-10-31 22:36:37 -0700 Sleep               \tEntering Sleep state due to 'Notification Wake Back to Sleep':TCPKeepAlive=active Using AC (Charge:5%) 985 secs  ",
+    "2026-10-31 22:53:02 -0700 DarkWake            \tDarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/Maintenance Using AC (Charge:6%) 71 secs   ",
+    "2026-10-31 22:54:13 -0700 Sleep               \tEntering Sleep state due to 'Dark Wake Thermal Emergency':TCPKeepAlive=active Using AC (Charge:38%) 967 secs  ",
+    "2026-10-31 23:10:20 -0700 DarkWake            \tDarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/SleepService Using AC (Charge:38%) 57 secs   ",
+    "2026-10-31 23:11:17 -0700 Sleep               \tEntering Sleep state due to 'Dark Wake Thermal Emergency':TCPKeepAlive=active Using AC (Charge:64%) 947 secs  ",
+    "2026-10-31 23:27:04 -0700 DarkWake            \tDarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/SleepService Using AC (Charge:64%) 56 secs   ",
+    "2026-10-31 23:28:00 -0700 Sleep               \tEntering Sleep state due to 'Dark Wake Thermal Emergency':TCPKeepAlive=active Using AC (Charge:80%) 955 secs  ",
+    "2026-10-31 23:43:55 -0700 DarkWake            \tDarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0Sw3IRQ nub-spmi0.0x02 rtc/SleepService Using AC (Charge:80%)           "
+  ],
+  "gpu_last_record": {
+    "phase": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12/model",
+    "epoch": 5,
+    "batch": 3400,
+    "users": 255482,
+    "targets": 16327957,
+    "tokens": 43553661,
+    "train_rmse": 0.8277453732689686,
+    "seconds": 4891.837232917023,
+    "mps_allocated_mb": 385.59619140625,
+    "mps_driver_mb": 67131.0
+  },
+  "action": "Requested user keep Mac awake, plugged in, ventilated, and open lid if closed; no power policy changes or job restarts"
+}
