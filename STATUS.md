@@ -33,7 +33,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 3 live; epoch 2 complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
 | Final bank/blender/export handoff | Codex | Managed bash waiter PID 75657/session 29645 live at guard; requires all 82 audits and family process exit. No final fit or export started. `experiments/P0-FINAL-launch-20261031.json`. Do not duplicate. |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 6/25 complete and audited (first-seed n1/n4/n16/n32/n64; second-seed n1). Latest average 0.8895468, first automatic receipt independently rechecked. Lane 0 second-seed n4 neural (81688/session 96236); lane 1 second-seed n16 tree (79691/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-arm-monitor-first-audit-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 6/25 complete and audited (first-seed n1/n4/n16/n32/n64; second-seed n1). Latest average 0.8895468, first automatic receipt independently rechecked. Lane 0 second-seed n4 neural (81688/session 96236); lane 1 second-seed n16 neural (91361/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-arm-monitor-first-audit-verification-20261031.json` |
 
 ## Next actions
 
@@ -48,9 +48,9 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 00:25 UTC**: A2h epoch 3/batch 5300; S0 lane 0
-   advanced from n4 tree to neural, lane 1 n16 tree remains active. Six fixed
-   arms audited; ten guarded waiters and the audit watcher remain live.
+   Last runtime check **2026-11-01 00:28 UTC**: A2h epoch 3/batch 5400; both S0
+   tree stages finished and their neural stages are active. Six fixed arms
+   audited; ten guarded waiters and the audit watcher remain live.
    No completed production stage or failed runner.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
