@@ -69,7 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 3, PID 32347/session 91805). Nine family bash waiters plus final bash waiter PID 75657/session 29645 are managed and live; do not duplicate (`P0-managed-queues-launch-20261031.json`, `P0-FINAL-launch-20261031.json`). All 79 columns/eight supports mapped; 0/82 production-stage audits. Final frozen plan: 500 inputs/501 checks, waits for all audits/process exit/normal memory, then resolves bank, fits retained medians, runs two exact inferences and raw-order export. Raw-order verification matches 2,817,131 rows/17,470 headers. No final fit/export started. Next: monitor and audit guarded transitions/results. Full outputs and target remain outstanding |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 4, PID 32347/session 91805). Nine family bash waiters plus final bash waiter PID 75657/session 29645 are managed and live; do not duplicate (`P0-managed-queues-launch-20261031.json`, `P0-FINAL-launch-20261031.json`). All 79 columns/eight supports mapped; 0/82 production-stage audits. Final frozen plan: 500 inputs/501 checks, waits for all audits/process exit/normal memory, then resolves bank, fits retained medians, runs two exact inferences and raw-order export. Raw-order verification matches 2,817,131 rows/17,470 headers. No final fit/export started. Next: monitor and audit guarded transitions/results. Full outputs and target remain outstanding |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
@@ -87,7 +87,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
 | Structural plan week-0 scoping | Codex | full all79 parity exact; 4/25 further fixed arms audited (first-seed n1/n4/n16/n32); n16 average 0.8710975; lane 0 n64 tree live, lane 1 second-seed n1 tree live; narrative snapshot preserves original provenance |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
-| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; six of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
+| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; seven of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
 
 ## Closed bets
 
@@ -109,7 +109,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | Slot | Bet | State |
 |---|---|---|
 | 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1 complete and audited; second-seed n1 average 0.88954681984; second-seed n16 tree complete, neural live (PID 91361), continuing 12 exact fixed arms; no GPU |
-| 2 | S0 scoping lane 0 | first-seed n1/n16/n64 complete and audited; n64 average 0.86733208299; second-seed n4 tree complete, neural live (PID 81688), continuing 13 exact fixed arms; no GPU |
+| 2 | S0 scoping lane 0 | first-seed n1/n16/n64 and second-seed n4 complete and audited; second-seed n4 average 0.87764162198; second-seed n32 tree live (PID 93986), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;
