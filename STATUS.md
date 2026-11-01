@@ -48,14 +48,14 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 03:45 UTC**: A2h epoch 5/batch 2000;
+   Last runtime check **2026-11-01 03:48 UTC**: A2h epoch 5/batch 2200;
    epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
    all output hashes/five folds/score checked. Lane 0 continues third-seed n1
    tree PID 16110; lane 1 advanced to third-seed n4 tree PID 24702.
    Ten fixed arms audited. All ten guarded waiters and watcher remain live;
    no completed production stage or failed runner. This check is a verified
-   wait: trainer 32347 and both tree coordinators are live; each tree has
-   three of five folds complete and its remaining workers are using CPU;
+   wait: trainer 32347 and both tree coordinators are live; lane 0 has 3/5 tree folds
+   complete and lane 1 has 4/5 tree folds complete and its remaining workers are using CPU;
    all 82 required production audit paths remain absent. Memory pressure fluctuates
    between normal (1) and warning (2); latest level 1. Trainer progress continues,
    no new trainers.
