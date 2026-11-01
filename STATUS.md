@@ -48,7 +48,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 06:45 UTC**: A2h epoch 5/batch 3400;
+   Last runtime check **2026-11-01 06:47 UTC**: A2h epoch 5/batch 3500;
    epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
    all output hashes/five folds/score checked. Both third-seed n1/n4 trees completed all
    five folds; neural successors PID 43550/40399 are live in lanes 0/1 (one/two folds complete).
@@ -64,7 +64,9 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    System sleep interrupted progress on battery and continues on AC:
    macOS reports repeated **Dark Wake Thermal Emergency** sleeps. Trainers
    remain live and advance during brief wakes. User asked to keep Mac awake,
-   plugged in, ventilated, and open lid if closed. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
+   plugged in, ventilated, and open lid if closed. Latest sensor check reports
+   `AppleClamshellState = Yes`; all three CPU times advanced over a fresh
+   one-minute observation. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
    Continuing thermal-sleep evidence: `experiments/P0-thermal-sleep-20261101T064515Z.json`.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
