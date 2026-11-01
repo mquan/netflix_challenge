@@ -85,9 +85,9 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | full all79 parity exact; 8/25 further fixed arms audited (first-seed n1/n4/n16/n32/n64; second-seed n1/n4/n16); latest n16 average 0.8714405520; lane 0 second-seed n32 neural live (PID 6432), lane 1 second-seed n64 tree live; full synthesis waits for all fixed arms |
+| Structural plan week-0 scoping | Codex | full all79 parity exact; 9/25 further fixed arms audited (first-seed n1/n4/n16/n32/n64; second-seed n1/n4/n16/n32); latest n32 average 0.8684331837; lane 0 third-seed n1 tree live (PID 16110), lane 1 second-seed n64 neural live (PID 16158); full synthesis waits for all fixed arms |
 | S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
-| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; eight of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
+| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; nine of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
 
 ## Closed bets
 
@@ -108,8 +108,8 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1/n16 complete and audited; second-seed n16 average 0.87144055202; second-seed n64 tree live (PID 97800), continuing 12 exact fixed arms; no GPU |
-| 2 | S0 scoping lane 0 | first-seed n1/n16/n64 and second-seed n4 complete and audited; second-seed n4 average 0.87764162198; second-seed n32 tree complete (five folds), neural live (PID 6432), continuing 13 exact fixed arms; no GPU |
+| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1/n16 complete and audited; second-seed n16 average 0.87144055202; second-seed n64 tree complete (five folds), neural live (PID 16158), continuing 12 exact fixed arms; no GPU |
+| 2 | S0 scoping lane 0 | first-seed n1/n16/n64 and second-seed n4/n32 complete and audited; second-seed n32 average 0.86843318372; third-seed n1 tree live (PID 16110), continuing 13 exact fixed arms; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;
