@@ -33,7 +33,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 | Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 5 live; first four epochs complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
 | Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
 | Final bank/blender/export handoff | Codex | Managed bash waiter PID 75657/session 29645 live at guard; requires all 82 audits and family process exit. No final fit or export started. `experiments/P0-FINAL-launch-20261031.json`. Do not duplicate. |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 10/25 complete and audited (first- and second-seed n1/n4/n16/n32/n64). Latest average 0.8673388, output hashes/five folds/score checked. Lane 0 third-seed n1 neural (43550/session 96236); lane 1 third-seed n4 neural (40399/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261101-n64-full-verification-20261031.json` |
+| S0 full-blender scoping, independent of the ridge proxy | Codex | 11/25 complete and audited (first- and second-seed n1/n4/n16/n32/n64; third-seed n4). Latest average 0.8795596, output hashes/five folds/score checked. Lane 0 third-seed n1 neural (43550/session 96236); lane 1 third-seed n32 tree (62573/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261102-n4-full-verification-20261031.json` |
 
 ## Next actions
 
@@ -48,18 +48,19 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-01 10:33 UTC**: A2h epoch 5/batch 5200;
-   epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 second-seed n64 complete and automatically audited,
-   all output hashes/five folds/score checked. Both third-seed n1/n4 trees completed all
-   five folds; neural successors PID 43550/40399 are live in lanes 0/1 (four folds complete each).
-   Ten fixed arms audited. All ten guarded waiters and watcher remain live;
+   Last runtime check **2026-11-01 11:07 UTC**: A2h epoch 5/batch 5300;
+   epoch 4 complete (480,189 users; 8,052.9 training seconds). S0 third-seed n4 complete and automatically audited,
+   output hashes/five folds/score independently checked. Lane 0 n1 neural PID
+   43550 remains live (four folds complete); lane 1 advanced to third-seed n32
+   tree PID 62573 after n4 neural exited normally. Eleven fixed arms audited. All ten guarded waiters and watcher remain live;
    no completed production stage or failed runner. This check is a verified
-   wait: trainer 32347 and both neural stages are live;
+   wait: trainer 32347, lane 0 neural and lane 1 tree are live;
    all 82 required production audit paths remain absent. Memory pressure fluctuates
    between normal (1) and warning (2); latest level 1. Trainer progress continues,
    no new trainers.
-   Process inventory: three active training Python processes belong to Codex
-   (32347 production GPU; 43550/40399 S0 neural). Five other Python-based
+   Process inventory: three active training jobs belong to Codex
+   (32347 production GPU; 43550 S0 neural; 62573 S0 tree coordinator
+   with three worker processes). Five other Python-based
    Grafana MCP service processes are infrastructure, not experiment trainers.
    System sleep interrupted progress on battery and continues on AC:
    macOS reports repeated **Dark Wake Thermal Emergency** sleeps. Trainers
@@ -72,7 +73,7 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
    runner 75657 and releases on its exit. Verified on AC power;
    `experiments/P0-idle-sleep-assertion-20261031.json`.
-   Latest full process/guard-log check: `experiments/P0-live-health-20261101T035640Z.json`.
+   Latest full process/guard-log check: `experiments/P0-S0-n4-completion-health-20261101T110713Z.json`.
 1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
