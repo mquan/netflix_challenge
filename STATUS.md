@@ -48,11 +48,11 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
      runs and exports all 2,817,131 queries in original raw order.
    - AutoRec still requires primary GPU completion and a successful MPS parity
      check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-02 15:03 UTC**: A2h epoch 6/batch 1400;
+   Last runtime check **2026-11-02 15:05 UTC**: A2h epoch 6/batch 1600;
    epoch 5 complete (480,189 users; 6,889.2 training seconds). S0 third-seed n1 complete and automatically audited,
    output hashes/five folds/score independently checked. Lane 0 advanced to
-   third-seed n16 tree PID 65788; lane 1 n32 tree PID 62573 remains live
-   with one of five tree folds complete.
+   third-seed n16 tree PID 65788 (3/5 folds); lane 1 n32 tree
+   PID 62573 remains live (3/5 folds).
    Twelve fixed arms audited. All ten guarded waiters and watcher remain live;
    no completed production stage or failed runner. This check is a verified
    wait: trainer 32347 and both tree stages are live;
@@ -63,12 +63,13 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
    (32347 production GPU; 65788/62573 S0 tree coordinators
    with three worker processes each). Five other Python-based
    Grafana MCP service processes are infrastructure, not experiment trainers.
-   System sleep interrupted progress on battery and continues on AC:
-   macOS reports repeated **Dark Wake Thermal Emergency** sleeps. Trainers
-   remain live and advance during brief wakes. User asked to keep Mac awake,
+   System sleep previously interrupted progress on battery and AC:
+   macOS recorded repeated **Dark Wake Thermal Emergency** sleeps. Trainers
+   survived and continued advancing. User asked to keep Mac awake,
    plugged in, ventilated, and open lid if closed. Latest sensor check reports
-   `AppleClamshellState = Yes`; all three CPU times advanced over a fresh
-   one-minute observation. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
+   `AppleClamshellState = No` (lid open); all three jobs accumulated CPU time.
+   Latest power check: battery, 86%, about 37 minutes estimated remaining;
+   user informed AC is needed for the long runs. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
    Continuing thermal-sleep evidence: `experiments/P0-thermal-sleep-20261101T064515Z.json`.
    Filesystem check: about 106 GiB currently free.
    Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
