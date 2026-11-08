@@ -1,0 +1,446 @@
+{
+  "utc": "2026-11-08T16:57:04.599180+00:00",
+  "state": "read_only_performance_review_no_queue_changes",
+  "sources": {
+    "/Users/quan/workspace/netflix_challenge/experiments/production-rbm-recipes-v2.json": "ca046507d452bcd10f8dab6d6ef984c276bfa688db9145bb07a63622e20ca7ff",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-joint-recipes.json": "38f32ce62418cab523069aa31ef05f3dfc415dd78c8052bdddcd6cbed29e660e",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json": "472ae2696d5ccc600d21100826e5d1fdeb9c7f7410043d06e6f8b59b264d618d",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-bayes-recipes.json": "5f2b540c63f441d6f368665edcbbc9a784708ded89af1224b207ae00eb9beaf4",
+    "/Users/quan/workspace/netflix_challenge/experiments/production-knn-recipes.json": "8e0ba2cac64fd95b46f4dce17e34ed17f5f5612319d0c99fe1c90cd0abecfca5",
+    "/Users/quan/workspace/netflix_challenge/experiments/R1-rbm100.json": "688d15caa19f526134160df24774790e7ef231571def651d5df57bdb6e1a7f2e",
+    "/Users/quan/workspace/netflix_challenge/experiments/R2-rbm100-fast.json": "40971fa4435986f2bb4b3004ef53ca223bda51586ad0516fed4ab4d70c05b593",
+    "/Users/quan/workspace/netflix_challenge/experiments/R3-rbm200-long.json": "5d578f00139ccc9b3f2355f6b3216b4c4af1d37a6d14a5cde6cb3ee8261d9cdc",
+    "/Users/quan/workspace/netflix_challenge/experiments/R3R-rbm200-resume.json": "db47840cbc39f16703c0ea2147330f98d1725c2226107b7ef6c126c2bd3104e0",
+    "/Users/quan/workspace/netflix_challenge/experiments/P3-rbm200-seed7.json": "d5f557d19a47a230d354421b8f6e21dae58353657e1826a8972444ae18129a05",
+    "/Users/quan/workspace/netflix_challenge/experiments/P4-rbm300-wc001.json": "a36985518356f0536dc16b93d08e848451842921781dc892ab16f1fdbadd9211",
+    "/Users/quan/workspace/netflix_challenge/experiments/R4D-rbm200-condbias-x3.json": "87a0e8c56cea83708dcb48b58c48320ad7953a69173d460ad8d252b4e52a685e",
+    "/Users/quan/workspace/netflix_challenge/experiments/R4C-rbm200-condbias.json": "3475d2d207caa664741a28bf7906375206263740e17ba0cb7f046c7fd1ad0e7e",
+    "/Users/quan/workspace/netflix_challenge/experiments/P2-rbm200-condbias-scratch.json": "bcce68b65182b9f2b2ccdadfca1d8c8911b6871830981dd19357ca0aee01d4fd",
+    "/Users/quan/workspace/netflix_challenge/experiments/R2C-rbm100-condbias.json": "5ead330510d7705ad61643202aae56ee7080588bdc64df6440e11c1ce656fe48",
+    "/Users/quan/workspace/netflix_challenge/experiments/P3C-rbm200-seed7-condbias.json": "872e69e7eadf7affac9bd6cd4704223605fd1fb12e3ab6300f316576036cc421",
+    "/Users/quan/workspace/netflix_challenge/experiments/P4C-rbm300-wc001-condbias.json": "4ef3af04cfc0e96fe1089af51ab655a93c7e523f2e3e15d679f280ad2f09821e",
+    "/Users/quan/workspace/netflix_challenge/experiments/J1-joint64.json": "36ab61d293fd039135ef2b0cf690d9e35c7499ae4a81ee90fbc88a819bece7d1",
+    "/Users/quan/workspace/netflix_challenge/experiments/J2-joint128-reg02.json": "5821fdf04a6ae749ee5f98fc29fc2a37e08437c3ed7a7be398a9267dcd283c00",
+    "/Users/quan/workspace/netflix_challenge/experiments/J3-joint128-reg005.json": "bdf733cf4d3c164ddeeddc8967f0443ae59d8fcb19428087574061927cfaa079",
+    "/Users/quan/workspace/netflix_challenge/experiments/J4-joint128-day128.json": "a3067f84740e065a30de0af6ee903bfa641085e2750c82911f86bb53ced8efda",
+    "/Users/quan/workspace/netflix_challenge/experiments/J6-joint256-reg01.json": "aeb122446a94599a6151e2293238da781df6ed7faec53ca0bb35d27150fbc808",
+    "/Users/quan/workspace/netflix_challenge/experiments/T2-f64-lr005-reg015-d97.json": "f4a82146531f80624a672affd6bfd4f717a157450c8c5ab41632dda711e19e91",
+    "/Users/quan/workspace/netflix_challenge/experiments/T3-f64-lr008-reg008.json": "f783089e4f288ec23aef3a99372cb81c5c6b1d3dd55cabad1f5e971ab66cf68f",
+    "/Users/quan/workspace/netflix_challenge/experiments/T4-f64-lr012-reg015-d93.json": "b2fd1f7311ca251c95d2abefb0b3d1a85428ca13356708842791ed0725b7ed19",
+    "/Users/quan/workspace/netflix_challenge/experiments/T6-f256-lr012-reg015-d93.json": "4cb59b63a5129e9e6f7c5c55665e8e694296e44b7e08fa14f269b4d226a23cab",
+    "/Users/quan/workspace/netflix_challenge/experiments/T6R-f256-resume.json": "977397b07348a655c9d05febc991ddeca4a889d843282ec358c8d749f696b6cc",
+    "/Users/quan/workspace/netflix_challenge/experiments/I2-integrated-f64-koren.json": "b67246db8815412a2efb62b65c71925ee6127282c21cabe8f49cf56e52fa2745",
+    "/Users/quan/workspace/netflix_challenge/experiments/I2R-integrated-f64-resume.json": "edf3f26536737431febb93ef5f6d6d671e1f6d84543b7401d99a09c25b3cea9d",
+    "/Users/quan/workspace/netflix_challenge/experiments/B2-full-r64.json": "8f45a3240d978fa392402ea31098f823b25867a8b4143424d6f456da4c16efcd",
+    "/Users/quan/workspace/netflix_challenge/experiments/B3-full-r128.json": "ba219d4419b80139cd3e7fcaa490641f3578192b806eb94ef2124a60bdabb170",
+    "/Users/quan/workspace/netflix_challenge/experiments/B4-full-r128.json": "f8814d9300eb163997d8ca777b9420c3f65754ec5f54cf0c5fafe14978d7aa66",
+    "/Users/quan/workspace/netflix_challenge/experiments/B4-full-r128.log": "66fadb4d38cec6e8da5f89c4c97af9cde2e7c7a3daafe10cba2fe42e4812947f",
+    "/Users/quan/workspace/netflix_challenge/experiments/B4r-full-r128.json": "366fcb74cd80dedd7ec28f97a048166cffe7880635a0f0282e239b7505723c30",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-00.json": "1fa3e77bbbdeb2ffc694810393626319b4287b729378f5c6eb14f9a0710baba7",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-01.json": "c858bcdd9eb3e3a02be8d5869b7146a81c010c34959a1d6612b5d31f6d11bc72",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-02.json": "9f084ab89421a17694a8ad0d43d795083b29a05e8254a6c7091669b5647a376c",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-03.json": "790e7f339e4c4c038b664dc723c74789a4dae978e0e3cbd369de0251c4246ba0",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-04.json": "eaa74d26a07f08758aa5061daf162f5ee0b8bbc05e7cb0822197f3176730787e",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR0-J6-knn64.json": "a436fbb2f536350f844116cb2da2791eef71897f8c0829bfeced1d2e1a066dfd",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-05.json": "7877e9d32e7f0f048020b2a3afa4e3d9a3676ae509f8cd1959ec9501d024d7a3",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-00.json": "e3c65e28083bdff67ab4bb0556e6a1f907b6c97cfa76ed260eb3997f04c7cd58",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-01.json": "7c55b2e8cce8fccb7b222405f6c225f1dd5b4acbfdfbf801e2b31178e080e79a",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-02.json": "fd57a99f41b78aa8838b42e07ef05ef26b463551eb867f5987182811ae489ea5",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-06.json": "cd430c92ad0233fba75331449ba90ed703a65896bdee98e5e65d81b197561ef0",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-07.json": "79e8e525b9162444a64f1e8413d3339e774051bd209d5660a82ae8bd7438a9e6",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-08.json": "a7d0750384790b77f1efe30f7d8fd4e8a75778300a27372c7e95af74e703aceb",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-09.json": "313703c7bdc93da46e6e2934bd5ff4fa210abac894ae182baa8e2d2e138349de",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR10-knn-J1-p2-shrink1.json": "c309e0f23899c8eac1ad67cceb0a469a6a7373eed00bc76efb03ba01228ba989",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-03.json": "248e9df5bcd6af58e5e371d574cfdc0cf0c06bbc9c150c942d965879e24ca1c5",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-04.json": "15eeabe7532894f0c4bf70871403e1f82ca5506d10b7c07bb8cb08d005ff7773",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR2-knn-decay-00.json": "d44b5bb89eef0168041f57d387f16b366d086c76d0b3b3de201ecb5a2a474bdb",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR2-knn-decay-01.json": "213475e8df55f1046242f49cfeeb5cad8f77e7867b62d3f3ac8c2136ae0cd259",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR2-knn-decay-02.json": "0fe58c907086b856ce291e08222041f6ac6257dc19dcd23b289cb0710f3ba99b",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-11.json": "a376b525b94ddd179668387e9073b74b7d7971d608d8ad4170e02f3007688977",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-12.json": "9bedbc63c4b0fce79441f4a6e2c58efc0af9b6aec31ee276146657612cc7a7cf",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-13.json": "5fc3951fb67a9f7dcce6afa1e76ed0abeb9de41c3de20f585480d5335f11d818",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-14.json": "698a2ff35d2e1512354e32ca30fe38ecf30efa819446b29dd9a956acc4b7eb92",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-15.json": "9c049106c6ebe1fc1e074241bca4f97776a0090f75b1e3294ee26c7c95a371be",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR9-knn-remaining-16.json": "2f4c530e71ce8f6bbd409f6a81fd1943511360d3232cac67fb845b104019deb5",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-08.json": "bf385e4b3264fdc3efcc7e5187ae2335212e2d19eeaf5dc34bcd64988883bace",
+    "/Users/quan/workspace/netflix_challenge/experiments/PR1-knn-09.json": "5952fa5bd8be4a8d2da5a352095d838da6f11e635f40c84332e00b2de7dccd22",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-plan.json": "5413ed515fef0054c867193dc988a3b449963979762af9f897f78ac4ae0c4a31",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.json": "54a12dc1156bba2970955076734ddbfb965e350285307df1775a504763ea774e",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.json": "6df158d39db0adc84d7133f8f4aa055fbdb445b10317456942d128c7c05e512a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.json": "abd97b6dfe49c81613bd378aca8150269bc0945e93fc99029c62f9b51da56edb",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.json": "d4f7c6f19c146df39f2f1a2e2d55024beda9b23d65fd4c5e03f7a3740c880434",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.json": "6f6ee08c77fa41c544464eee8e3e409b48ade7b4f75f4cc712247fe249c65c18",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT5-refit.json": "618f77c2d7ca813a69b605a38091b491a3ef1a7607e47a3c49ddb116b7cefa0a",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT6-refit.json": "db8445a3e103dc4c69cb4cb6652dd960e26ba35da4e4452a0d9416b26f564197",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT8-refit.json": "842a0853bd40a070956888b20789291a1c4d3ca6683fc600522734ac9704a516",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT9-refit.json": "6f2f375a4949ded5258540c85e07a1ab0074f57a2a97e8fd1547f3ffcc162a78",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2-refit.json": "edded107ff82496894c1352ce5c4fde3cb9c957e358ecf327cbb0f925b68f155",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2b-refit.json": "55d1fdd0fd7505b401f7b4e8b314f0140d0812f4de6d7e1d88b1ec2f9b7b9502",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2e-refit.json": "1ba8984514dc37a37c8751e79addefe721efa73f3ef472a580ac400cb868bfef",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2f-refit.json": "572f463e52c592250e34e5b222eec102159d29324d6583b087e9a9f42a85aba4",
+    "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.json": "58c08584fdb5fd7adf07530d1051394953ce97cac36f92592f8e718aec08ad8a",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-CPU-neural-20261031-plan.json": "18f2f0a54da0efcfb278108dcf1a917024c2de462293b246ffde6d83372f8e84",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-plan.json": "03d6d19e014d7998f5900811db47abfb8a51bc5be2c17e19993d6a37a8c27770",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-plan.json": "9a517c90d1c84545e02e2e57110eaf6c7653234dcfb0666c60f4f390af3ce5b9",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-plan.json": "3b2007120823579515f3eddbda2e43c8da53ff7ca4496ecd6a00c9fe7d07efdb",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-plan.json": "cdadcdda746c5a5d6c6449ad5af2eae8d6047aa6213d7e46ec046fa3437d1581",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-plan.json": "250bdae3f835c74d0f0f7e16ee43f067fd5f5fecbe21a151009de116d9f3190f",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-plan.json": "416f3b633a594b1ebf6a5f0f34130f7148dad8d1e1270a3cc71f4301acae402c",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-plan.json": "3638136b51df16c50a185d2d16fbf8a436d3ee06992d049100b3194225a6d94a",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-plan.json": "d0c9fe6a7f2956b207d77c17dbb3c7bdf5de4d977842563f45d8d76c636ddcc2",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-plan.json": "d8dccb8a3964aa51559c6f5e15c47a8a9fcfde9a107d1ecdc1292d4081b2c9b2",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_bayes_audit.py": "f6b5ef9dee3e36dd54552dced6cc0a3075f816dfb51a0194757639b50ef32378",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_kernel_audit.py": "50c99cadcba4b5c54b444566d5a9f78156963de6e12336c7c17f0362e71784da",
+    "/Users/quan/workspace/netflix_challenge/scripts/production_user_knn_audit.py": "ffbb22302d8347c88d0298fe7d9317d67ca5a772a90c3454fc132a426ad46f42"
+  },
+  "rbm_and_joint_stage_estimates": [
+    {
+      "family": "RBM",
+      "name": "R1-rbm100",
+      "epochs": 14,
+      "historical_selected_epoch_seconds": 32.87043829,
+      "estimated_hours": 0.1278294822388889,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R1-rbm100.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R2-rbm100-fast",
+      "epochs": 60,
+      "historical_selected_epoch_seconds": 59.14475762,
+      "estimated_hours": 0.9857459603333334,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R2-rbm100-fast.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R3-rbm200-long",
+      "epochs": 30,
+      "historical_selected_epoch_seconds": 133.5537296,
+      "estimated_hours": 1.1129477466666666,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R3-rbm200-long.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R3R-rbm200-resume",
+      "epochs": 45,
+      "historical_selected_epoch_seconds": 474.5605858,
+      "estimated_hours": 5.9320073225000005,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R3R-rbm200-resume.json"
+    },
+    {
+      "family": "RBM",
+      "name": "P3-rbm200-seed7",
+      "epochs": 58,
+      "historical_selected_epoch_seconds": 154.5690305,
+      "estimated_hours": 2.490278824722222,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/P3-rbm200-seed7.json"
+    },
+    {
+      "family": "RBM",
+      "name": "P4-rbm300-wc001",
+      "epochs": 54,
+      "historical_selected_epoch_seconds": 188.5935404,
+      "estimated_hours": 2.828903106,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/P4-rbm300-wc001.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R4D-rbm200-condbias-x3",
+      "epochs": 54,
+      "historical_selected_epoch_seconds": 72.58680796,
+      "estimated_hours": 1.0888021194000002,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R4D-rbm200-condbias-x3.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R4C-rbm200-condbias",
+      "epochs": 54,
+      "historical_selected_epoch_seconds": 95.22449717,
+      "estimated_hours": 1.42836745755,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R4C-rbm200-condbias.json"
+    },
+    {
+      "family": "RBM",
+      "name": "P2-rbm200-condbias-scratch",
+      "epochs": 72,
+      "historical_selected_epoch_seconds": 74.10536054,
+      "estimated_hours": 1.4821072108000002,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/P2-rbm200-condbias-scratch.json"
+    },
+    {
+      "family": "RBM",
+      "name": "R2C-rbm100-condbias",
+      "epochs": 70,
+      "historical_selected_epoch_seconds": 48.28467912,
+      "estimated_hours": 0.9388687606666666,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/R2C-rbm100-condbias.json"
+    },
+    {
+      "family": "RBM",
+      "name": "P3C-rbm200-seed7-condbias",
+      "epochs": 60,
+      "historical_selected_epoch_seconds": 80.97122283,
+      "estimated_hours": 1.3495203805,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/P3C-rbm200-seed7-condbias.json"
+    },
+    {
+      "family": "RBM",
+      "name": "P4C-rbm300-wc001-condbias",
+      "epochs": 54,
+      "historical_selected_epoch_seconds": 119.5929965,
+      "estimated_hours": 1.7938949475,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/P4C-rbm300-wc001-condbias.json"
+    },
+    {
+      "family": "joint",
+      "name": "J1-joint64",
+      "epochs": 6,
+      "historical_selected_epoch_seconds": 16.89332338,
+      "estimated_hours": 0.028155538966666664,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J1-joint64.json"
+    },
+    {
+      "family": "joint",
+      "name": "J2-joint128-reg02",
+      "epochs": 40,
+      "historical_selected_epoch_seconds": 33.95270513,
+      "estimated_hours": 0.3772522792222222,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J2-joint128-reg02.json"
+    },
+    {
+      "family": "joint",
+      "name": "J3-joint128-reg005",
+      "epochs": 9,
+      "historical_selected_epoch_seconds": 31.16266254,
+      "estimated_hours": 0.07790665634999999,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J3-joint128-reg005.json"
+    },
+    {
+      "family": "joint",
+      "name": "J4-joint128-day128",
+      "epochs": 1,
+      "historical_selected_epoch_seconds": 84.48244892,
+      "estimated_hours": 0.023467346922222222,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J4-joint128-day128.json"
+    },
+    {
+      "family": "joint",
+      "name": "J6-joint256-reg01",
+      "epochs": 17,
+      "historical_selected_epoch_seconds": 208.550339,
+      "estimated_hours": 0.9848210452777778,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/J6-joint256-reg01.json"
+    },
+    {
+      "family": "joint",
+      "name": "T2-f64-lr005-reg015-d97",
+      "epochs": 37,
+      "historical_selected_epoch_seconds": 51.94639058,
+      "estimated_hours": 0.5338934587388888,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T2-f64-lr005-reg015-d97.json"
+    },
+    {
+      "family": "joint",
+      "name": "T3-f64-lr008-reg008",
+      "epochs": 13,
+      "historical_selected_epoch_seconds": 80.21465125,
+      "estimated_hours": 0.2896640184027778,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T3-f64-lr008-reg008.json"
+    },
+    {
+      "family": "joint",
+      "name": "T4-f64-lr012-reg015-d93",
+      "epochs": 21,
+      "historical_selected_epoch_seconds": 40.60965454,
+      "estimated_hours": 0.23688965148333332,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T4-f64-lr012-reg015-d93.json"
+    },
+    {
+      "family": "joint",
+      "name": "T6-f256-lr012-reg015-d93",
+      "epochs": 11,
+      "historical_selected_epoch_seconds": 141.3488653,
+      "estimated_hours": 0.4318993106388889,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T6-f256-lr012-reg015-d93.json"
+    },
+    {
+      "family": "joint",
+      "name": "T6R-f256-resume",
+      "epochs": 13,
+      "historical_selected_epoch_seconds": 76.82194517,
+      "estimated_hours": 0.27741257978055556,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/T6R-f256-resume.json"
+    },
+    {
+      "family": "joint",
+      "name": "I2-integrated-f64-koren",
+      "epochs": 17,
+      "historical_selected_epoch_seconds": 92.29592983,
+      "estimated_hours": 0.4358418908638889,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/I2-integrated-f64-koren.json"
+    },
+    {
+      "family": "joint",
+      "name": "I2R-integrated-f64-resume",
+      "epochs": 6,
+      "historical_selected_epoch_seconds": 95.55327742,
+      "estimated_hours": 0.15925546236666668,
+      "method": "fixed epoch count times retained-epoch timing; not a measured production duration",
+      "record": "/Users/quan/workspace/netflix_challenge/experiments/I2R-integrated-f64-resume.json"
+    }
+  ],
+  "bayes_historical_measurements": [
+    {
+      "name": "B2-full-r64",
+      "hours": 4.220632407696669,
+      "method": "completed historical wall runtime"
+    },
+    {
+      "name": "B3-full-r128",
+      "hours": 12.470058915671382,
+      "method": "completed historical wall runtime"
+    },
+    {
+      "name": "B4-full-r128",
+      "hours": 6.8895678276388885,
+      "method": "sum of completed historical sweep timings; omits launch overhead"
+    },
+    {
+      "name": "B4r-full-r128",
+      "hours": 12.258601583425833,
+      "method": "completed historical wall runtime"
+    }
+  ],
+  "neural_historical_measurements": [
+    {
+      "name": "MH3-categorical-mse-refit.f32",
+      "epochs": 4,
+      "hours": 0.29761583442138445,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT0-refit.refit.e12.f32",
+      "epochs": 12,
+      "hours": 0.49646098812499984,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT1-refit.refit.e10.f32",
+      "epochs": 10,
+      "hours": 1.3202388361919455,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT2-refit.refit.e12.f32",
+      "epochs": 12,
+      "hours": 1.2485098312730567,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT3-refit.refit.e7.f32",
+      "epochs": 7,
+      "hours": 0.0,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT5-refit.f32",
+      "epochs": 10,
+      "hours": 0.6432428263541684,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT6-refit.f32",
+      "epochs": 12,
+      "hours": 0.7324289405555545,
+      "queue": "CPU"
+    },
+    {
+      "name": "MT8-refit.refit.e7.f32",
+      "epochs": 7,
+      "hours": 2.998625831990559,
+      "queue": "GPU"
+    },
+    {
+      "name": "MT9-refit.refit.e8.f32",
+      "epochs": 8,
+      "hours": 1.6933612147916737,
+      "queue": "GPU"
+    },
+    {
+      "name": "A2-refit.refit.e11.f32",
+      "epochs": 11,
+      "hours": 4.124318640763894,
+      "queue": "GPU"
+    },
+    {
+      "name": "A2b-refit.refit.e10.f32",
+      "epochs": 10,
+      "hours": 5.923778898483894,
+      "queue": "GPU"
+    },
+    {
+      "name": "A2e-refit.refit.e12.f32",
+      "epochs": 12,
+      "hours": 3.449736434941943,
+      "queue": "GPU"
+    },
+    {
+      "name": "A2f-refit.refit.e10.f32",
+      "epochs": 10,
+      "hours": 3.228501988564725,
+      "queue": "GPU"
+    },
+    {
+      "name": "A2h-refit.refit.e12.f32",
+      "epochs": 12,
+      "hours": 4.888281806307771,
+      "queue": "GPU"
+    }
+  ],
+  "knn_unique_replays": 28,
+  "knn_historical_hours": 0.25429357293996474,
+  "knn_double_queries_two_pass_extrapolation_hours": 1.017174291759859,
+  "scenario": {
+    "cpu_tail_assumed_hours": 3,
+    "userknn_tail_assumed_hours": 1.5,
+    "final_fit_infer_replay_export_assumed_hours": 2,
+    "serialized_bayes_hours": 35.83886073443277,
+    "two_lane_bayes_ideal_hours": 19.14816941106472,
+    "rbm_epoch_extrapolation_hours": 21.55927331887778,
+    "baseline_ideal_remaining_hours": 63.89813405331055,
+    "parallel_bayes_ideal_remaining_hours": 47.2074427299425,
+    "ideal_saved_hours": 16.69069132336805,
+    "notes": [
+      "GPU branch runs independently and must be maxed against CPU branch; historical remaining GPU recipes approximately 20 h before slowdown allowance and AutoRec.",
+      "No concurrency speedup benchmark yet. Neither 48 h nor 72 h is guaranteed.",
+      "RBM/Bayes overlap not credited in simple scenario. Higher contention may erase some Bayes speedup.",
+      "Current ten-thread and three-job caps retained. Two Bayes processes use 4+4 threads plus one GPU host thread. Native one-thread lane must wait in that interval.",
+      "Changing thread counts, GPU padding, epochs, ranks or model coverage is excluded.",
+      "Full resource scheduler must include measured peak memory as well as job/thread limits.",
+      "Existing audits and parent hashes remain required; resource-only edges may be released, data edges remain intact."
+    ]
+  },
+  "conclusion": "Prior 1\u20131.5 week ETA was uncalibrated. Historical accounting suggests roughly 3\u20135 days under current coarse schedule; 48\u201372 h is a plausible optimization target, conditional on contention/memory measurements, and is not a validated deadline."
+}
