@@ -29,10 +29,10 @@ Original frozen files remain unchanged. New processes are detached from the tool
 
 | Job | Current handles/state |
 |---|---|
-| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 3/10, batch 1100. Seven original GPU recipes remain serialized. |
+| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 3/10, batch 2600. Seven original GPU recipes remain serialized. |
 | S0 lane 0 | Runner **71723**, tree coordinator **65139**: final S0 arm, quality-transformer tree, 3/5 folds logged; neural stage follows. |
 | S0 lane 1 | Runner **71724** exited successfully: all lane 1 commands complete. |
-| Family queues | Nine live family runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 trainer **65565** active (7/10 epochs complete). Remaining families wait at guards. |
+| Family queues | Nine live family runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 trainer **65565** active (8/10 epochs complete). Remaining families wait at guards. |
 | Final bank/blender/export | Runner **71746** live at all-82-audit guard. No final fit/export. |
 | S0 audits/report | Monitor **71751** confirms **24/25** receipts; reporter **71754** waits for both lane processes. |
 | Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
@@ -55,9 +55,13 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   remain responsible for later receipts and complete-experiment synthesis.
 - Latest power/resource check: AC, battery 80% charging, normal memory pressure
   (1). Three active training jobs: GPU A2f, CPU MT1, S0 final tree arm.
-- ETA communicated Nov 8: final S0 synthesis roughly 1–3 hours; full production
-  export roughly another 1–1.5 weeks (Nov 15–19), unvalidated planning range,
-  conditional on continuous power and no failures. No ETA for target score.
+- Runtime review supersedes the earlier uncalibrated 1–1.5 week allowance:
+  historical critical-path accounting is ≈64 h before uncertainty; rough current
+  schedule **3–5 days**, optimized **48–72 h target, unvalidated**. Concurrent
+  independent Bayes chains offer ≈16.7 h ideal saving; overlap contention and
+  peak memory must be checked. **No scheduling change applied.** Details and
+  verification plan: P0_EXECUTION.md "Runtime review" and
+  `experiments/runtime-audit-20261108/evidence.json`. No ETA for target score.
 - No new promoted quality result. Production predicts unlabeled qualifying rows;
   its training loss cannot establish a hidden-score gain. S0 synthesis waits
   for its final arm. Retained best remains **0.8668706 dev CV**.

@@ -145,3 +145,88 @@ Monitor the live production queues and audit every completed fixed-budget stage.
   finite bounded ratings, submission text and complete provenance.
 - A verified production export alone does not prove quiz 0.8554 or development
   CV 0.8628. No qualifying labels or measured hidden score are available.
+
+## Runtime review — 2026-11-08
+
+The earlier 1–1.5 week estimate was an uncalibrated planning allowance, not a
+measured critical path. Read-only review bound 90 source files, verified retained
+recipe record hashes, and recovered historical timings. Full evidence and
+explicit assumptions: `experiments/runtime-audit-20261108/evidence.json`.
+No running job, frozen plan, thread count, budget, output or audit was changed.
+
+| Work | Evidence-based scale | Limitation |
+|---|---:|---|
+| Bayes B2/B3/B4 | 4.22 / 12.47 / 19.15 h; 35.84 h serial | Original-data runs, mixed prior contention; production unmeasured |
+| RBM 12 stages | 21.56 h | Sum of fixed epoch counts × retained-epoch timings, not measured stage totals |
+| Joint/integrated | 3.86 h | Same epoch extrapolation; resource overlap matters |
+| Item-kNN 28 unique runs | 0.254 h historical; ≈1.02 h for double queries and two passes | Assumes linear query scaling |
+| Remaining GPU neural | About 20 h at historical runtimes, before slowdown allowance and AutoRec | Actual A2h was 9.18 h vs historical 4.89 h; A2f ≈17 min/epoch currently |
+| Final fit/replay/export | 2 h scenario allowance | Not benchmarked end to end |
+
+The simple remaining CPU-path scenario is about **63.9 h**: assumed CPU tail
+3 h → RBM 21.56 h → Bayes 35.84 h → user-kNN tail allowance 1.5 h → final
+allowance 2 h. Dependency/joint/item-kNN work overlaps this path in the existing
+schedule. GPU is a parallel path and must be accounted for using the maximum,
+not added to CPU time. Thermal slowdown, memory pressure, MPS parity failure and
+final fitting remain uncertainties. **Rough current-schedule range: 3–5 days;
+optimized target: 48–72 h, unvalidated.** This is full production completion,
+not reaching the quiz target.
+
+Recommended changes, in priority order:
+
+1. **Concurrent independent Bayes chains.** Bayes consumes production data and
+   its own audited B4 parent, not RBM outputs. Its wait for all RBM audits is a
+   resource policy. Put B4's 32+128 sweep chain on one lane, B3 then B2 on the
+   other, retaining their exact four/five-thread recipes. Ideal Bayes wall time
+   falls from 35.84 to max(19.15, 12.47+4.22)=19.15 h: **16.69 h saving**.
+   Two four-thread jobs plus GPU host need nine nominal CPU threads; the
+   five-thread B4 resume plus four-thread B3 and GPU host need ten. This uses
+   all three full-job slots; native/CPU neural jobs must then wait. No assumed
+   linear speedup: if simultaneous runs slow by 50%, Bayes becomes ≈28.7 h
+   and the saving is only ≈7.1 h. Measure before retaining overlap.
+2. **Stage-level resource scheduling.** Overlap four-thread RBM stages with
+   one four/five-thread Bayes job plus the GPU host (nine/ten threads, three
+   jobs). Other RBM stages use six/eight threads and cannot be indiscriminately
+   added. Reordering preserves every original parent edge and each stage's
+   command. Possible additional savings of several hours are not credited in
+   the 47.2 h candidate scenario.
+3. **Release actual data dependencies.** GP/local audits require J3, not Bayes
+   or item-kNN products. K1 can train from production data, and user-kNN only
+   requires the new audited K1; neither consumes GP/local output. Prefer early
+   J3 and fill suitable resource slots with these tasks. Resource reservations
+   must replace the released family barriers; simply deleting waits is unsafe.
+4. **Keep one GPU trainer and moonshot on hold.** Avoid known GPU contention.
+   Do not apply new padding/checkpointing to the frozen retained recipes in
+   flight: reduced memory is promising but padded dropout/RNG layout and
+   training trajectory need separate compatibility evidence. No runtime saving
+   from that code is counted here.
+
+The conservative candidate arithmetic, with only ideal Bayes overlap credited,
+is **47.2 h remaining**, including explicit 3/1.5/2 h allowances. This is a
+scenario, not a delivery commitment. Peak memory, effective throughput and the
+GPU branch must support it. Maintain 79 columns/eight aliases, all 82 audits,
+all fixed budgets, both exact inference passes and full raw-order export.
+Repeated 3.32 GiB hash checks are not the multi-day bottleneck; keep them.
+
+Compatibility and verification:
+
+- Scheduling-only proposals preserve bank coverage, fixed commands, thread
+  counts, parent audits, ordering at final resolution, and final export.
+  Training is already nondeterministic for historical Hogwild recipes; a timing
+  change does not imply bit-identical retraining. No change has been deployed.
+- Before rollout, freeze a separate scheduler/launch manifest, bind every
+  original command and audit, verify the graph is acyclic, and test the resource
+  scheduler against simultaneous readiness, absent/invalid receipts, existing
+  output directories, producer liveness and warning memory pressure. Ensure
+  no more than three full jobs or ten nominal CPU threads.
+- Handoff only at stage boundaries; replace only verified idle own waiters.
+  Active trainers and other-session files/jobs remain untouched. Original
+  frozen plans stay immutable so their receipt hashes remain valid.
+- Measure per-sweep/per-epoch rates and process peak memory. Admit a second
+  Bayes process only with measured headroom, normal memory and a complete
+  resource reservation. Retain overlap only when aggregate progress improves.
+- Keep existing tiny historical-thread checks and parent/reload/label-isolation
+  audits. Validate stage command equality and no duplicate output destinations.
+  All original final completion requirements still apply.
+
+Skill retro: no updates to the optimize-performance skill are suggested.
