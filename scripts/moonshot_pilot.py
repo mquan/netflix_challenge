@@ -21,9 +21,10 @@ from gbdt_blend import load
 from masked_history import loss_value
 
 CONFIGS = {
-    'N1': dict(),
+    'N1': dict(),  # exact N1 padding (64-row batches); needs ~57 GB driver memory in production
+    'N1p': dict(pad_row_tokens=16384),
     'M1': dict(d_model=128, layers=4, ff=512, seq_len=3072, attn_chunk=512, head_mlp=256,
-               warmup_steps=500, cosine_epochs=12),
+               warmup_steps=500, cosine_epochs=12, pad_row_tokens=16384, checkpoint=1),
 }
 N1 = dict(head='distribution', loss='mse', rank=64, hidden=256, dropout=.1, input_drop=.5, lr=.001,
           weight_decay=.001, batch_users=512, nnz_budget=131072, seed=20260928, device='mps',
@@ -48,7 +49,7 @@ def pilot(d, name, worst, steps):
     counts = np.diff(d['train_offsets']).astype(np.int64)
     lengths = ms.capped_lengths(d, c)
     groups = ms.length_batches(lengths, rng.permutation(np.flatnonzero(counts > 0)), c, rng)
-    size = np.array([len(g) * int(lengths[g].max()) for g in groups])
+    size = np.array([int(lengths[g].max()) * 10**6 + len(g) for g in groups])  # widest first (attention ~ L^2)
     order = list(np.argsort(-size, kind='stable')[:worst]) + list(rng.choice(len(groups), steps - worst, replace=False))
     host = dataclasses.replace(c, device='cpu')
     peak, rows = 0., []
@@ -86,7 +87,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--data', required=True)
     p.add_argument('--output', required=True)
-    p.add_argument('--configs', default='N1,M1')
+    p.add_argument('--configs', default='N1p,M1')
     p.add_argument('--worst', type=int, default=5)
     p.add_argument('--steps', type=int, default=40)
     a = p.parse_args()
@@ -95,7 +96,11 @@ def main():
     report = dict(data=a.data, torch_version=torch.__version__, source_sha256=ms.digest(ms.__file__),
                   note='memory/throughput pilot only; no score', results=[], steps={})
     for name in a.configs.split(','):
-        out, rows = pilot(d, name, a.worst, a.steps)
+        try:
+            out, rows = pilot(d, name, a.worst, a.steps)
+        except RuntimeError as error:  # MPS out of memory under the watermark cap
+            out, rows = dict(config=name, overrides=CONFIGS[name], error=str(error)[:300]), []
+            torch.mps.empty_cache()
         report['results'].append(out)
         report['steps'][name] = rows
         ms.atomic_json(a.output, report)

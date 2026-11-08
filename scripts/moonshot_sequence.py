@@ -56,6 +56,7 @@ import time
 
 import numpy as np
 import torch
+import torch.utils.checkpoint
 from torch import nn
 from torch.nn import functional as F
 
@@ -93,6 +94,8 @@ class Config(mh.Config):
     warmup_steps: int = 0  # >0: linear learning-rate warmup over this many optimizer steps
     cosine_epochs: int = 0  # >0: cosine decay to lr_floor*lr over this many epochs (fixed horizon)
     lr_floor: float = .05
+    checkpoint: int = 0  # 1: recompute each transformer block in backward (activation memory ~ one layer)
+    pad_row_tokens: int = 0  # >0: pad rows to a power of two <= this/width (<= pad_rows); wide batches stop padding to 64 rows
 
 
 MASK = 5
@@ -362,7 +365,7 @@ class SequenceModel(mh.HistoryModel):
         z = z * b['implicit_counts'].clamp(min=1).rsqrt()[:, None]
         user = self.user_in(torch.cat([z, b['features']], 1))
         n, width = user.shape[0], b['seq_width']
-        rows = -(-n // self.config.pad_rows) * self.config.pad_rows
+        rows = -(-n // row_multiple(self.config, width)) * row_multiple(self.config, width)
         tokens = (self.item_emb[b['seq_items']] + self.item_star[b['seq_item_star']]
                   + self.star_emb[b['seq_stars']] + self.week_emb[b['seq_weeks'].clamp(max=len(self.week_emb) - 1)]
                   + self.time_in(b['seq_features']))
@@ -373,7 +376,10 @@ class SequenceModel(mh.HistoryModel):
         lengths = torch.cat([b['seq_lengths'], b['seq_lengths'].new_ones(rows - n)])  # pad rows: [USER] slot only
         mask = (torch.arange(width, device=x.device)[None, :] < lengths[:, None])[:, None, None, :]
         for block in self.blocks:
-            x = block(x, mask)
+            if getattr(self.config, 'checkpoint', 0) and self.training and torch.is_grad_enabled():
+                x = torch.utils.checkpoint.checkpoint(block, x, mask, use_reentrant=False)
+            else:
+                x = block(x, mask)
         h = self.norm(x).reshape(rows * width, -1)[b['seq_target_flat']]
         return torch.tanh(self.code_out(h))
 
@@ -398,6 +404,14 @@ class SequenceModel(mh.HistoryModel):
 
     def forward_batch(self, b):
         return self.decode(self.encode(b), b['features'], b['target_rows'], b['target_items'], b)
+
+
+def row_multiple(c, width):
+    """Rows per batch are padded to a multiple of this. N1 default: pad_rows."""
+    if not getattr(c, 'pad_row_tokens', 0):
+        return c.pad_rows
+    fit = max(1, c.pad_row_tokens // max(width, 1))
+    return min(c.pad_rows, 1 << (fit.bit_length() - 1))
 
 
 def weeks(d):
@@ -592,7 +606,7 @@ def run(a):
         raise ValueError('scalar head requires MSE')
     if c.representation != 'categorical' or c.objective != 'masked':
         raise ValueError('the sequence encoder supports categorical masked training only')
-    if c.head_mlp < 0 or c.warmup_steps < 0 or c.cosine_epochs < 0 or not 0 <= c.lr_floor <= 1:
+    if c.pad_row_tokens < 0 or c.head_mlp < 0 or c.warmup_steps < 0 or c.cosine_epochs < 0 or not 0 <= c.lr_floor <= 1:
         raise ValueError('head_mlp, warmup_steps and cosine_epochs must be >= 0 and lr_floor in [0, 1]')
     if c.head_mlp and c.context != 'session':
         raise ValueError('--head-mlp needs --context session (it reads the date features)')
