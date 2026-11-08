@@ -69,6 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
+| Interrupted queue recovery (2026-11-07) | Codex | Claimed: all prior experiment PIDs absent and logs stopped Nov 2. Preserve interrupted artifacts; restart identical fixed recipes and remaining S0 arms; restore guarded handoffs without changing frozen sources, budgets or gates. |
 | **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 6, first five epochs complete, PID 32347/session 91805). Nine family bash waiters plus final bash waiter PID 75657/session 29645 are managed and live; do not duplicate (`P0-managed-queues-launch-20261031.json`, `P0-FINAL-launch-20261031.json`). All 79 columns/eight supports mapped; 0/82 production-stage audits. Final frozen plan: 500 inputs/501 checks, waits for all audits/process exit/normal memory, then resolves bank, fits retained medians, runs two exact inferences and raw-order export. Raw-order verification matches 2,817,131 rows/17,470 headers. No final fit/export started. Next: monitor and audit guarded transitions/results. Full outputs and target remain outstanding |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 engineering started 2026-10-31 (CPU only until the GPU queue frees) |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |

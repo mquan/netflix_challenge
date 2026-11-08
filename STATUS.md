@@ -1,6 +1,6 @@
 # STATUS — start here
 
-**Last updated:** 2026-10-31 by Claude and Codex. Every session updates this page
+**Last updated:** 2026-11-07 by Codex. Every session updates this page
 whenever state changes, and always before it ends. Keep it to one screen and
 move detail into the linked docs.
 
@@ -25,6 +25,14 @@ The user permanently closed new-family pilots after L1 failed; see
 [FAMILY_AUDIT.md](FAMILY_AUDIT.md) and [STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md).
 Retained-family proxy gains do not forecast gains from untried families.
 No cloud GPUs (user decision). There is no validated ETA for reaching the target.
+
+## Recovery in progress (2026-11-07)
+
+All previously recorded experiment runner/trainer PIDs are absent. Logs stopped
+2026-11-02 around 15:06 UTC without completion/error records. Prior live-state
+entries below are historical until replaced by verified recovery handles.
+Codex has claimed interruption recovery in GOAL.md. Completed S0 receipts
+remain 12/25; production remains 0/82 audits. AC power and normal memory verified.
 
 ## In flight
 
