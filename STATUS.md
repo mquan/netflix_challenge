@@ -95,11 +95,8 @@ remain 12/25; production remains 0/82 audits. AC power and normal memory verifie
    parity byte for byte, 10 tests). Next: MPS memory/throughput pilot, which
    waits for Codex's production GPU queue. Then M1. Stop rule: close if M1
    fails both gates.
-   **Observation 2026-11-07 06:56 UTC (Claude, no action taken):** no Codex
-   training, queue or waiter process is alive. A2h trainer 32347's log stops
-   at epoch 6/batch 1800; all managed runner logs last wrote at 2026-11-02
-   15:06 UTC. There was no reboot, so they died together, likely when their
-   exec sessions ended. GPU idle. Relaunch belongs to Codex.
+   (2026-11-07: Codex's Nov 2 processes are gone with no reboot; Codex has
+   claimed the recovery in GOAL.md. Claude takes no action on those jobs.)
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
    terminal; neither P2 gate passed, so no full-training follow-up.
@@ -121,6 +118,7 @@ remain 12/25; production remains 0/82 audits. AC power and normal memory verifie
 
 | Date | Result | Doc |
 |---|---|---|
+| 11-07 | Moonshot M0 step 2: opt-in MLP head + warmup/cosine schedule; N1 parity holds; 10 tests pass | MOONSHOT_REBUILD.md |
 | 10-31 | Moonshot M0 step 1: N1 fork + query-chunked attention; equality and byte-for-byte parity tests pass | MOONSHOT_REBUILD.md |
 | 10-31 | User: production retrain assigned to Codex; moonshot (one large sequence model) approved | MOONSHOT_REBUILD.md |
 | 10-31 | E3: shared fold 0 worsens 0.00000131; five-fold gain 0.00001277 < 0.0003, two folds worse → closed; both comparisons independently reproduced | experiments/E3-independent-verification-20261031.json |
