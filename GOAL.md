@@ -69,10 +69,10 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
-| Short-runs-first queue barrier (2026-11-08) | Codex | User requested short runs before heavy work. Applied: SIGSTOP ten own bash controllers (GPU + downstream families/final), leaving active trainers and short CPU/S0 queues untouched. Release checker 92690 verified live/tested: waits 7 CPU audits + 25 S0 receipts + complete S0 report + short runner exit + stable normal memory; verifies held PID/command/start time before SIGCONT. No budget/source changes. experiments/short-first-20261108/. |
+| Short-runs-first queue barrier (2026-11-08) | Codex | Complete: 7/7 CPU audits, 25/25 S0 receipts, complete S0 summary and short runner exit verified. Checker 92690 released all ten original controllers at 20:34 UTC after normal-memory checks; no active trainer stopped. `experiments/short-first-20261108/release.json`. |
 | Production critical-path/runtime audit (2026-11-08) | Codex | Review complete: 90 source files bound; Bayes 35.84 h serial vs 19.15 h ideal two-lane, RBM ≈21.56 h. Current rough 3–5 days, 48–72 h optimization target unvalidated. No queue changes. Concrete scheduling/compatibility/verification plan in P0_EXECUTION.md Runtime review and experiments/runtime-audit-20261108/evidence.json. |
 | Interrupted queue recovery (2026-11-07) | Codex | Launched after verifying all old handles absent and 621 frozen inputs. Interrupted files preserved. Three trainers restarted; nine family queues, final handoff, S0 monitor/report and sleep assertion live. `experiments/recovery-20261107/launch.json`; STATUS.md holds current handles. |
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | Recovered Nov 7: GPU runner 71725: A2h completed/audited 12 epochs; A2f trainer 66571 active. CPU MH3/MT0 audited; MT1 trainer 65565 active. Nine family queues and final runner 71746 live at original guards. 3/82 audits; all 79 columns/eight supports and final export remain required. Recovery plan/handles in `experiments/recovery-20261107/`; STATUS.md is authoritative. |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | Nov 8 22:11 UTC: 19/82 production audits independently verified; A2h/A2f, all seven CPU neural, two RBM, four dependencies and four joint stages complete. Active A2e 55561, R3 61247, J6 67490. Original guarded queues resumed after short-first completion. Full bank/export remain required; STATUS.md authoritative. |
 | BDS blender training-data scaling diagnostic (OTHER_APPROACHES_20261108.md) | this session (Claude) | **Queued 2026-11-08** (user: "just queue it"): detached bash PID 12307 waits until the P0 final runner and all P0/S0 trainers exit plus 60 s normal memory, then runs 3 tree-blender arms (keep 100%/75%/50% of fold training users; ≈3 h CPU, 3 processes). Predeclared rule in `experiments/BDS-20261108-plan.json`. Never blocks or touches production. |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 CPU engineering done 2026-11-07 (chunked attention, MLP head, warmup+cosine; 10 parity/contract tests). **M0 done 2026-11-07**: MPS pilot passed (M1 config peaks at 7.3 GB with new opt-in pad_row_tokens + checkpoint; ≈1.3 h/epoch on P2 with the GPU shared). No moonshot process running. **On hold (user, 11-08): nothing started or queued.** `experiments/M0-pilot-20261107-{a,b}.json` |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
@@ -89,9 +89,9 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | 24/25 fixed arms audited and output hashes independently checked Nov 8. Lane 1 exited zero; lane 0 runs final quality-transformer tree (65139). Original budgets preserved; full synthesis waits for all fixed arms. |
-| S0 complete-result reporter | Codex | Recovery runner 71754 waits for both lane script processes (replaces stale PID checks), then executes unchanged frozen complete-experiment audit/report. No partial synthesis. |
-| S0 completed-arm audit monitor | Codex | Original frozen monitor recovered as PID 71751; confirms 24/25 receipts on Nov 8. Audits only after producer exit. Do not duplicate or race receipts. |
+| Structural plan week-0 scoping | Codex | Complete: all 25 nonreference arms + shared reference audited; 156 final payload hashes independently verified. Lowest observed gain 0.00002008 but two folds worse; no promotion. 64-column random subset mean 0.86729399 vs all79 0.86687064. `experiments/short-first-20261108/results.json`. |
+| S0 complete-result reporter | Codex | Runner 71754 exited zero; complete_all_fixed_arms_audited summary verified. No promotion. |
+| S0 completed-arm audit monitor | Codex | Runner 71751 exited zero after all 25 receipts. Complete summary independently verified. |
 
 ## Closed bets
 
@@ -112,8 +112,8 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | Runner 71724 exited zero; all fixed lane commands complete; no GPU |
-| 2 | S0 scoping lane 0 | Runner 71723/coordinator 65139; final quality-transformer tree active, neural follows; no GPU |
+| 1 | S0 scoping lane 1 | Complete, runner exited zero; slot reused by guarded production queues |
+| 2 | S0 scoping lane 0 | Complete, runner exited zero; slot reused by guarded production queues |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;

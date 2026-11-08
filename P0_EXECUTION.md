@@ -256,3 +256,26 @@ short runners and warning memory; bash syntax and actual waiting gate pass.
 All ten controllers verified stopped, active GPU/S0/CPU-control processes
 verified unsuspended, release watcher verified waiting. Frozen recipes and
 budgets remain unchanged. The acceleration proposal is still a review only.
+
+## Short-first completion and S0 results — 2026-11-08 22:11 UTC
+
+Seven CPU neural recipes and all 25 S0 nonreference arms completed/audited.
+S0's 26-arm summary (including shared reference) is complete; all 156 bound
+payload hashes independently verified. The barrier released all ten original
+controllers at 20:34:27 UTC after completed short outputs/report, runner exit,
+normal-memory checks and identity verification; checker 92690 exited zero.
+This supersedes the held states in the prior short-first entry.
+
+No new promotion. Reference 0.8668706424; lowest observed substitution
+quality-masked_history 0.8668505622 (gain 0.00002008), but folds 1/2 worsen.
+Random subset means: 32 columns 0.8683023543; 64 columns 0.8672939887.
+All79 improves on the 64-column subset mean by 0.00042335. These are reused
+probe diagnostics, not hidden scores, future-gain forecasts or family-deletion
+experiments. Weakening GP, Bayes and transformer members worsens all five
+folds by 0.00024903, 0.00010614 and 0.00017532 overall respectively.
+
+Production now has 19/82 audits, independently checked against required
+metadata and output hashes: GPU2 + CPU7 + RBM2 + dependencies4 + joint4.
+A2e/R3/J6 are active; later families wait at original guards. No final export
+or validated hidden-score improvement. Evidence:
+`experiments/short-first-20261108/results.json`.
