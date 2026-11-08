@@ -72,6 +72,26 @@ tests, CPU) covers:
 - the default fork reproduces N1's predictions **byte for byte** on a fixture;
 - the new field is off by default and absent from N1.
 
-**Next M0 steps:** MLP interaction head, warmup + cosine schedule, MSE+λ·CE
-loss, each opt-in with a byte-for-byte default-parity test. Then the memory
-and throughput pilot on MPS, which waits for the GPU.
+**M0 step 2 — MLP head and LR schedule (2026-11-07).** Both opt-in; the
+defaults still reproduce N1 byte for byte.
+- `head_mlp` (hidden width): a two-layer GELU MLP over (user vector, a
+  dedicated item embedding, date features) is *added* to the bilinear
+  output. Its last layer is zero-initialized and its parameters are created
+  last, so at initialization predictions equal the bilinear model exactly.
+  Requires `--context session`.
+- `warmup_steps`, `cosine_epochs`, `lr_floor`: linear warmup, then cosine
+  decay to `lr_floor`·lr over a **fixed** horizon of `cosine_epochs`. The
+  horizon does not depend on the run length, so a refit for the selected
+  epoch count follows the selection run's schedule exactly.
+- Distribution loss dropped: E3 failed both P2 gates, so per the design M
+  trains with MSE only (the existing `--loss` flag remains).
+- Tests: 10 pass (`tests/test_moonshot_sequence.py`, run with
+  `~/.cache/netflix-venv/bin/python -m unittest`). New ones cover: zero-init
+  head equals the base model byte for byte; the head trains; head without
+  session context is rejected; schedule endpoints and monotonicity; a 1-epoch
+  scheduled refit equals epoch 1 of a 2-epoch run byte for byte, and differs
+  from the unscheduled run.
+
+**Next M0 step:** the MPS memory and throughput pilot (`--max-batches`) for
+full history (`--seq-len` ≈3072, `--attn-chunk`) with the MLP head. It needs
+the GPU, which stays with Codex's production queue first.

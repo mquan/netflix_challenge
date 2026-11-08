@@ -3,7 +3,10 @@
 
 Forked unchanged from .claude/worktrees/honest-residual-chains/scripts/choice_sequence.py
 (sha256 prefix 9dc0d0ce36e53dab). Additions are opt-in config fields whose defaults
-reproduce N1 exactly: attn_chunk (query-chunked attention for long histories).
+reproduce N1 exactly: attn_chunk (query-chunked attention for long histories),
+head_mlp (MLP interaction head added to the bilinear output; zero-initialized last
+layer) and warmup_steps / cosine_epochs (learning-rate schedule with a fixed horizon,
+so selection and refit follow the same schedule).
 
 Original docstring follows.
 
@@ -86,6 +89,10 @@ class Config(mh.Config):
     choice_tokens: int = 0
     # Moonshot additions (defaults reproduce N1).
     attn_chunk: int = 0  # >0: attend in query chunks of this many tokens (bounds attention memory)
+    head_mlp: int = 0  # >0: hidden width of an MLP over (user vector, item embedding, date features)
+    warmup_steps: int = 0  # >0: linear learning-rate warmup over this many optimizer steps
+    cosine_epochs: int = 0  # >0: cosine decay to lr_floor*lr over this many epochs (fixed horizon)
+    lr_floor: float = .05
 
 
 MASK = 5
@@ -337,6 +344,16 @@ class SequenceModel(mh.HistoryModel):
         self.blocks = nn.ModuleList(Block(dm, c.heads, c.ff, c.dropout, getattr(c, 'attn_chunk', 0)) for _ in range(c.layers))
         self.norm = nn.LayerNorm(dm)
         self.code_out = nn.Linear(dm, c.rank)
+        if getattr(c, 'head_mlp', 0):
+            # Created last so the defaults' parameter initialization (and RNG use) is unchanged.
+            classes, width = self.output.shape[1], c.head_mlp
+            self.head_item = nn.Parameter(torch.empty(items, dm))
+            nn.init.normal_(self.head_item, std=.04)
+            n_features = 7 if c.week_days > 1 else 5
+            self.head_net = nn.Sequential(nn.Linear(c.rank + dm + n_features, width), nn.GELU(), nn.Dropout(c.dropout),
+                                          nn.Linear(width, width), nn.GELU(), nn.Linear(width, classes))
+            nn.init.zeros_(self.head_net[-1].weight)
+            nn.init.zeros_(self.head_net[-1].bias)
 
     def encode(self, b):
         """Per-target user code from the transformer output at its [MASK] token."""
@@ -369,6 +386,8 @@ class SequenceModel(mh.HistoryModel):
                 parts += self.channel(b, 'week', self.week_implicit, self.week_explicit, items, zero)
             vector = code + self.session_net(torch.cat(parts + [b['target_features']], 1))
         raw = (self.output[items] * vector[:, None, :]).sum(2) + self.bias[items]
+        if getattr(self.config, 'head_mlp', 0):
+            raw = raw + self.head_net(torch.cat([vector, self.head_item[items], b['target_features']], 1))
         if self.config.time_bins > 0:
             raw = raw + self.time_bias[items * self.config.time_bins + b['target_bins']]
         stars = torch.arange(1, 6, dtype=features.dtype, device=features.device)
@@ -471,11 +490,25 @@ def memory():
     return {}
 
 
+def lr_factor(c, step, progress):
+    """Multiplier on c.lr at optimizer step `step` (0-based) and fractional epoch
+    `progress`. The horizon is c.cosine_epochs, not the run length, so a refit
+    for the selected epoch count follows the selection run's schedule exactly."""
+    factor = 1.
+    if c.warmup_steps:
+        factor = min(1., (step + 1) / c.warmup_steps)
+    if c.cosine_epochs:
+        t = min(progress / c.cosine_epochs, 1.)
+        factor *= c.lr_floor + (1 - c.lr_floor) * .5 * (1 + np.cos(np.pi * t))
+    return float(factor)
+
+
 def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0, save_epochs=False):
     torch.manual_seed(c.seed)
     model = SequenceModel(d['items'], c, weeks(d)).to(c.device)
     model.initialize_bias(d)
     optimizer = torch.optim.AdamW(model.parameters(), lr=c.lr, weight_decay=c.weight_decay)
+    step = 0
     counts = np.diff(d['train_offsets']).astype(np.int64)
     active = np.flatnonzero(counts > 0)
     lengths = capped_lengths(d, c)
@@ -501,7 +534,11 @@ def fit(d, c, epochs, prefix, select=False, patience=3, max_batches=0, save_epoc
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             nn.utils.clip_grad_norm_(model.parameters(), 5.)
+            if c.warmup_steps or c.cosine_epochs:
+                for param_group in optimizer.param_groups:
+                    param_group['lr'] = c.lr * lr_factor(c, step, epoch - 1 + (batch_no - 1) / len(groups))
             optimizer.step()
+            step += 1
             count = b['target_ratings'].numel()
             with torch.no_grad():
                 sse += float(((model.expected(raw) - b['target_ratings'] - 1) ** 2).sum())
@@ -555,6 +592,10 @@ def run(a):
         raise ValueError('scalar head requires MSE')
     if c.representation != 'categorical' or c.objective != 'masked':
         raise ValueError('the sequence encoder supports categorical masked training only')
+    if c.head_mlp < 0 or c.warmup_steps < 0 or c.cosine_epochs < 0 or not 0 <= c.lr_floor <= 1:
+        raise ValueError('head_mlp, warmup_steps and cosine_epochs must be >= 0 and lr_floor in [0, 1]')
+    if c.head_mlp and c.context != 'session':
+        raise ValueError('--head-mlp needs --context session (it reads the date features)')
     if c.context != 'session' and (c.time_bins > 0 or c.week_days > 1):
         raise ValueError('--time-bins and --week-days need --context session')
     if not 0 < c.input_drop < 1 or min(c.rank, c.hidden, c.batch_users, c.nnz_budget, c.d_model,
