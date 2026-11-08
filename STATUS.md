@@ -32,10 +32,10 @@ Original frozen files remain unchanged. New processes are detached from the tool
 
 | Job | Current handles/state |
 |---|---|
-| Production GPU | Runner **71725**, trainer **55561**: A2h and A2f audited; A2e epoch 8/12, batch 1600. Controller resumed after short-run barrier. |
+| Production GPU | Runner **71725**, trainer **55561**: A2h and A2f audited; A2e epoch 12/12, batch 1200. Controller resumed after short-run barrier. |
 | S0 | Both lanes exited zero; **25/25** nonreference arms audited and complete 26-arm report verified, including all 156 bound output hashes. |
 | CPU neural | Runner **71728** exited zero; all **7/7** fixed recipes complete/audited. |
-| Native families | RBM runner **71730**, R3 trainer **61247** (epoch 26/30); dependencies runner 71732 exited zero, all four stages audited; joint runner **71734**, J6 trainer **67490** (first four joint stages audited). Remaining family controllers resumed at original guards. |
+| Native families | RBM runner **71730**, R3R trainer **68864** (epoch 43/75; R3 audited); dependencies runner 71732 exited zero, all four stages audited; joint runner **71734**, J6 completed/audited (first five joint stages complete); runner waits for normal memory. Remaining family controllers resumed at original guards. |
 | Final bank/blender/export | Runner **71746** resumed, waits for all 82 audits. No final fit/export. |
 | Short-first barrier | Checker **92690** exited successfully; all ten controller identities checked and SIGCONT completed after short-run prerequisites. `experiments/short-first-20261108/release.json`. |
 | Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
@@ -47,11 +47,11 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 
 ## Next actions
 
-- Latest independent result check **2026-11-08 22:11 UTC**: **19/82** production
+- Latest independent result check **2026-11-08 23:03 UTC**: **21/82** production
   audits match required metadata and all bound output hashes. Includes 2 GPU,
-  7 CPU neural, 2 RBM, 4 dependency and 4 joint stages.
-  `experiments/short-first-20261108/results.json`.
-- Monitor three active jobs: GPU A2e, RBM R3, joint J6. Other family queues
+  7 CPU neural, 3 RBM, 4 dependency and 5 joint stages.
+  `experiments/recovery-20261107/progress-20261108T2303Z.json`.
+- Two active trainers: GPU A2e and RBM R3R. Joint queue waits at memory guard. Other family queues
   remain at original resource/data guards. No acceleration rewrite applied.
 - S0 completed. Retained best remains **0.8668706424 dev CV**. Lowest observed
   substitution is 0.8668505622 (gain 0.00002008), but two folds worsen;
@@ -61,11 +61,13 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 - Production still requires 79 columns/eight support aliases, all 82 audits,
   final fit, two exact qualifying inferences and raw-order export of 2,817,131
   queries. AutoRec still needs MPS parity after the primary GPU queue.
-- Latest resource check: memory pressure normal (1). Heavy queues resumed
+- Latest resource check: memory pressure fluctuates normal/warning; latest 2. Heavy queues resumed
   only after short-run completion and two normal-memory checks 30 seconds apart.
-- Runtime review: current rough schedule **3–5 days**, optimized **48–72 h
-  target unvalidated**, from Nov 8 review. These are not fresh measured ETAs
-  and do not predict the quiz target. See P0_EXECUTION.md Runtime review.
+- Latest ETA: **roughly 3–4 days remaining (Nov 11–12)** on the original
+  schedule. Nominal critical-path accounting ≈57.5 h (RBM ≈17.6 h, Bayes
+  ≈35.8 h, later stages/final allowance 4 h), with slowdown/failure uncertainty.
+  Accelerated schedule remains unimplemented. BDS adds ≈3 h after production.
+  No ETA for the quiz target. See P0_EXECUTION.md Runtime review.
 
 ## Decisions waiting on the user
 
