@@ -92,6 +92,35 @@ defaults still reproduce N1 byte for byte.
   scheduled refit equals epoch 1 of a 2-epoch run byte for byte, and differs
   from the unscheduled run.
 
-**Next M0 step:** the MPS memory and throughput pilot (`--max-batches`) for
-full history (`--seq-len` ≈3072, `--attn-chunk`) with the MLP head. It needs
-the GPU, which stays with Codex's production queue first.
+**M0 step 3 — MPS memory/throughput pilot (2026-11-07, user go-ahead). M0 gate met.**
+`scripts/moonshot_pilot.py` trains 40 steps per config on P2 data
+(`artifacts/validation/train-matched-20260927.bin`): the 5 widest batches
+first, then random ones. There is no prediction pass and no score. MPS was
+capped at 19.4 GB (`PYTORCH_MPS_HIGH/LOW_WATERMARK_RATIO=0.25/0.2`), with a
+watchdog on memory pressure. It ran beside Codex's A2h production trainer.
+
+Two engineering findings, each fixed with an opt-in flag and a test (13 tests pass):
+- **`pad_row_tokens`.** N1's `pad_rows=64` pads every batch to 64 rows, so a
+  13-user batch at width 1536 runs attention over 64×1536². That is why N1
+  used ~57 GB driver memory, and it OOMed even the N1 config under the cap.
+  The new flag pads rows to the largest power of two ≤ pad_row_tokens/width
+  (≤ pad_rows). Predictions are unchanged (≤1e-6).
+- **`checkpoint`.** Query chunking bounds the forward pass, but backward kept
+  every layer's scores and dropout masks: M1's widest batch reached 16.6 GB,
+  then OOMed. Per-block activation checkpointing (dropout RNG preserved;
+  training is identical on CPU, ≤1e-6) fixes it.
+
+| Config | Params | Peak driver memory | Widest batch | Throughput | Est. epoch (P2, GPU shared) |
+|---|---|---|---|---|---|
+| N1 recipe + pad_row_tokens 16384 | 25.9 M | **7.1 GB** (vs ~57 GB) | 1536: 0.93 s | 46.3 k tok/s | 0.6 h |
+| M1: d128 L4 ff512, seq 3072, chunk 512, MLP head 256, pad_row_tokens, checkpoint | 38.1 M | **7.3 GB** | 3072: 2.6 s | 22.3 k tok/s | 1.3 h |
+
+Evidence: `experiments/M0-pilot-20261107-a.{json,log}` (N1p; its M1 row is the OOM),
+`experiments/M0-pilot-20261107-b.{json,log}` (M1 with checkpointing).
+
+**Contention:** during the pilots Codex's A2h trainer slowed from ~23 s to
+30–65 s per 100 batches. A multi-day M1 beside it would delay production
+correspondingly.
+
+**M1 plan:** selection run on P2 with patience, then the shared P2 gates.
+About 12 epochs × 1.3 h ≈ 16 h per run if the GPU is shared; less alone.

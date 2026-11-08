@@ -146,6 +146,31 @@ class ScheduleTests(unittest.TestCase):
         # The schedule is actually applied: it changes the trained model.
         self.assertNotEqual(ms.predict(one, d).tobytes(), ms.predict(plain, d).tobytes())
 
+    def test_row_padding_by_tokens(self):
+        c = ms.Config(pad_rows=64, pad_row_tokens=16384)
+        self.assertEqual([ms.row_multiple(c, w) for w in (32, 256, 512, 1536, 3072, 20000)], [64, 64, 32, 8, 4, 1])
+        self.assertEqual(ms.row_multiple(ms.Config(pad_rows=64), 3072), 64)
+
+    def test_token_row_padding_keeps_predictions(self):
+        d = fixture()
+        out = []
+        for extra in ({}, dict(pad_row_tokens=8)):
+            torch.manual_seed(5)
+            model = ms.SequenceModel(d['items'], ms.Config(**{**SMALL, 'pad_rows': 4, **extra}), ms.weeks(d)).eval()
+            out.append(ms.predict(model, d))
+        self.assertTrue(ms.np.allclose(out[0], out[1], atol=1e-6, rtol=0))
+
+    def test_checkpointed_training_matches(self):
+        """Activation checkpointing (dropout RNG preserved) gives identical training."""
+        d = fixture()
+        import tempfile
+        out = []
+        with tempfile.TemporaryDirectory() as tmp:
+            for flag in (0, 1):
+                model, _, _ = ms.fit(d, ms.Config(**{**SMALL, 'layers': 2, 'checkpoint': flag}), 2, Path(tmp) / f'c{flag}')
+                out.append(ms.predict(model, d))
+        self.assertTrue(ms.np.allclose(out[0], out[1], atol=1e-6, rtol=0))
+
     def test_new_schedule_and_head_defaults_are_off(self):
         c = ms.Config()
         self.assertEqual((c.head_mlp, c.warmup_steps, c.cosine_epochs), (0, 0, 0))
