@@ -1,118 +1,67 @@
 # STATUS — start here
 
-**Last updated:** 2026-11-07 by Codex. Every session updates this page
-whenever state changes, and always before it ends. Keep it to one screen and
-move detail into the linked docs.
+**Last updated:** 2026-11-07 by Codex. Update on every state change and before ending a session.
 
 ## Goal and score
 
 | | Value |
 |---|---|
-| Goal (user, 2026-10-31) | **quiz 0.8554** (winner; test 0.8567) ≈ **0.8628 dev CV** |
-| Promoted best | **R9-LAT-A2h 0.8668706 dev CV** (≈0.8595 est. test, ≈9.8% over Cinematch) |
+| Goal | **quiz 0.8554** ≈ **0.8628 dev CV** |
+| Promoted best | **R9-LAT-A2h 0.8668706 dev CV** (≈0.8595 estimated test) |
 | Gap | **0.0041 dev CV** |
-| Mapping | test ≈ dev CV − 0.0074 (Stage C offset, measured twice). Estimates only; no qualifying labels |
+| Mapping | test ≈ dev CV − 0.0074; estimates only, no qualifying labels |
 
 ## Current plan
 
-Current authorized work:
-1. **Codex:** retrain the retained bank on production data and build the final export.
-2. **Claude:** [moonshot sequence model](MOONSHOT_REBUILD.md), M0 engineering;
-   its GPU pilot follows Codex's production GPU queue.
-3. **Codex:** finish the fixed S0 full-blender scoping experiment.
+1. **Codex:** retained-bank production retrain, final blender and export.
+2. **Claude:** [moonshot](MOONSHOT_REBUILD.md), CPU engineering; GPU follows production queue.
+3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
-The user permanently closed new-family pilots after L1 failed; see
-[FAMILY_AUDIT.md](FAMILY_AUDIT.md) and [STRUCTURAL_PLAN.md](STRUCTURAL_PLAN.md).
-Retained-family proxy gains do not forecast gains from untried families.
-No cloud GPUs (user decision). There is no validated ETA for reaching the target.
+New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
 
-## Recovery in progress (2026-11-07)
+## In flight — recovered 2026-11-07
 
-All previously recorded experiment runner/trainer PIDs are absent. Logs stopped
-2026-11-02 around 15:06 UTC without completion/error records. Prior live-state
-entries below are historical until replaced by verified recovery handles.
-Codex has claimed interruption recovery in GOAL.md. Recovery scripts prepared in
-`experiments/recovery-20261107/`: 621 distinct frozen inputs verified, bash syntax
-checks pass. Interrupted output/log copies preserved under production
-`interrupted-20261107/`. A2h restarts its unchanged 12-epoch recipe because the
-checkpoint has no optimizer/RNG state; S0 resumes at n16/n32 third-seed arms.
-CPU/report guards now identify lane script processes instead of stale PIDs.
-Completed S0 receipts
-remain 12/25; production remains 0/82 audits. AC power and normal memory verified.
+All old experiment processes had disappeared; logs stopped Nov 2 around 15:06 UTC
+without terminal records. Interrupted outputs/logs are preserved under
+`artifacts/production/P0-20261031/interrupted-20261107/`.
+Recovery verified **621 distinct frozen inputs**, unchanged recipes and bash syntax.
+Original frozen files remain unchanged. New processes are detached from the tool session.
 
-## In flight
+| Job | Current handles/state |
+|---|---|
+| Production GPU | Runner **71725**, trainer **71828**: A2h fixed 12 epochs restarted. Old checkpoint contains model weights only, with no optimizer/RNG state; exact continuation unavailable. Seven original GPU recipes remain serialized. |
+| S0 lane 0 | Runner **71723**, tree coordinator **71823**: third-seed n16 restarted; remaining fixed lane commands follow. |
+| S0 lane 1 | Runner **71724**, tree coordinator **71822**: third-seed n32 restarted; remaining fixed lane commands follow. |
+| Family queues | Nine live guarded runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. No downstream trainers started. |
+| Final bank/blender/export | Runner **71746** live at all-82-audit guard. No final fit/export. |
+| S0 audits/report | Monitor **71751** confirms **12/25** receipts; reporter **71754** waits for both lane processes. |
+| Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
 
-| Job | Owner | Check |
-|---|---|---|
-| Production retrain P0 | Codex | A2h fixed 12-epoch MPS run live: epoch 6 live; first five epochs complete; trainer 32347, runner 32318, session 91805. Seven exact archived-source GPU recipes queued serially with audits; 233 inputs frozen. `experiments/P0-GPU-launch-20261031.json` |
-| Production family handoffs | Codex | Nine managed bash queue runners launched and verified live at resource guards; zero new full trainers or stage directories. CPU/RBM/dependency/joint/kNN/AutoRec/Bayes/kernel/user-kNN PIDs and sessions: `experiments/P0-managed-queues-launch-20261031.json`. Do not duplicate them. |
-| Final bank/blender/export handoff | Codex | Managed bash waiter PID 75657/session 29645 live at guard; requires all 82 audits and family process exit. No final fit or export started. `experiments/P0-FINAL-launch-20261031.json`. Do not duplicate. |
-| S0 full-blender scoping, independent of the ridge proxy | Codex | 12/25 complete and audited (first- and second-seed n1/n4/n16/n32/n64; third-seed n1/n4). Latest average 0.8883959, output hashes/five folds/score checked. Lane 0 third-seed n16 tree (65788/session 96236); lane 1 third-seed n32 tree (62573/session 83214). Full synthesis waits for all 25 arms. `experiments/S0-diversity-s20261102-n1-full-verification-20261031.json` |
+Full recovery plan/scripts and handles: `experiments/recovery-20261107/plan.json`
+and `launch.json`. Resource guards retain original script-name signatures;
+CPU/report recovery copies replace obsolete numeric lane PID checks.
+Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds protocols.
 
 ## Next actions
 
-1. **Codex:** monitor and audit the running production/S0 stages. All family
-   queues and the final runner are launched behind their frozen guards; do not
-   duplicate them. Full protocol, evidence and managed handles:
-   [P0_EXECUTION.md](P0_EXECUTION.md).
-   - Planned coverage: **79 columns + eight support aliases**.
-   - Actual production completion: **0/82 stage audits**; final fit/export unstarted.
-   - Final runner waits for all audits, queue exit and stable normal memory,
-     then resolves the bank, fits retained medians, verifies two exact inference
-     runs and exports all 2,817,131 queries in original raw order.
-   - AutoRec still requires primary GPU completion and a successful MPS parity
-     check. All current score/provenance limitations remain in the runbook.
-   Last runtime check **2026-11-02 15:05 UTC**: A2h epoch 6/batch 1600;
-   epoch 5 complete (480,189 users; 6,889.2 training seconds). S0 third-seed n1 complete and automatically audited,
-   output hashes/five folds/score independently checked. Lane 0 advanced to
-   third-seed n16 tree PID 65788 (3/5 folds); lane 1 n32 tree
-   PID 62573 remains live (3/5 folds).
-   Twelve fixed arms audited. All ten guarded waiters and watcher remain live;
-   no completed production stage or failed runner. This check is a verified
-   wait: trainer 32347 and both tree stages are live;
-   all 82 required production audit paths remain absent. Memory pressure fluctuates
-   between normal (1) and warning (2); latest level 1. Trainer progress continues,
-   no new trainers.
-   Process inventory: three active training jobs belong to Codex
-   (32347 production GPU; 65788/62573 S0 tree coordinators
-   with three worker processes each). Five other Python-based
-   Grafana MCP service processes are infrastructure, not experiment trainers.
-   System sleep previously interrupted progress on battery and AC:
-   macOS recorded repeated **Dark Wake Thermal Emergency** sleeps. Trainers
-   survived and continued advancing. User asked to keep Mac awake,
-   plugged in, ventilated, and open lid if closed. Latest sensor check reports
-   `AppleClamshellState = No` (lid open); all three jobs accumulated CPU time.
-   Latest power check: battery, 86%, about 37 minutes estimated remaining;
-   user informed AC is needed for the long runs. Power/process evidence: `experiments/P0-sleep-interruption-20261101T061022Z.json`.
-   Continuing thermal-sleep evidence: `experiments/P0-thermal-sleep-20261101T064515Z.json`.
-   Filesystem check: about 106 GiB currently free.
-   Temporary idle-sleep assertion PID 82488/session 69265 is tied to final
-   runner 75657 and releases on its exit. Verified on AC power;
-   `experiments/P0-idle-sleep-assertion-20261031.json`.
-   Latest full process/guard-log check: `experiments/P0-A2h-epoch5-completion-20261101T145847Z.json`.
-1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 CPU engineering done
-   2026-11-07: chunked attention, MLP head, warmup+cosine (all opt-in, N1
-   parity byte for byte, 10 tests). Next: MPS memory/throughput pilot, which
-   waits for Codex's production GPU queue. Then M1. Stop rule: close if M1
-   fails both gates.
-   (2026-11-07: Codex's Nov 2 processes are gone with no reboot; Codex has
-   claimed the recovery in GOAL.md. Claude takes no action on those jobs.)
-2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
-   then report all fixed diversity/substitution results. E3 and its audit are
-   terminal; neither P2 gate passed, so no full-training follow-up.
-   Complete-result reporter is frozen in `experiments/S0-report-binding-20261031.json`;
-   five tests and real-reference/partial-experiment checks pass. Its bash
-   handoff PID 94435/session 80182 is verified waiting for both lane runners;
-   do not launch a duplicate report. `experiments/S0-report-handoff-20261031-launch.json`.
-   Completed-arm audit watcher is also live: PID 77645/session 64149, checks
-   every 60 seconds and audits only after producer exit. Its actual partial-
-   experiment check leaves all five prior receipts unchanged; invalid receipt
-   rejected. It never trains, retunes or synthesizes early. Do not duplicate or
-   manually race its future receipt writes. `experiments/S0-arm-monitor-launch-20261031.json`.
+- Monitor/audit recovered production and S0 transitions. Latest startup check:
+  both tree coordinators emitted exact expected configs (16/32 columns,
+  80/96 features), six tree workers accumulating CPU, GPU epoch 1/batch 300
+  verified, all downstream runners waiting. `experiments/recovery-20261107/verification.json`.
+- Production completion remains **0/82 audits**, with **79 columns + eight
+  support aliases** planned. Final export must verify all **2,817,131** raw-order queries.
+- AutoRec requires primary GPU completion and successful MPS parity verification.
+- S0 retains **12/25** audited arms; no partial synthesis. Frozen monitor/report
+  remain responsible for later receipts and complete-experiment synthesis.
+- At recovery: AC power, battery charging at 76%, normal memory pressure (1),
+  about 85 GiB free. Latest loaded-training pressure is 2 (warning); guards
+  prevent further starts until normal. Three active training jobs; S0 uses three workers per lane,
+  GPU recipe one CPU thread. Keep Mac powered and ventilated; earlier thermal
+  sleeps interrupted progress. Verify actual progress rather than relying on old PIDs.
 
 ## Decisions waiting on the user
 
-- None. User decisions 2026-10-31: production → Codex; moonshot → go.
+None. Production and moonshot authorization remain in effect.
 
 ## Recent results (newest first)
 

@@ -5,35 +5,43 @@ This document holds protocol and verification details; read [STATUS.md](STATUS.m
 for live state. Prepared plans and engineering checks do not prove completed
 production training or achievement of the quiz target.
 
-## Managed process handles
+## Managed process handles — recovered 2026-11-07
 
-| Queue | PID | Session |
-|---|---:|---:|
-| Primary GPU | 32318 (trainer 32347) | 91805 |
-| CPU neural | 66919 | 50042 |
-| RBM | 66932 | 98248 |
-| Dependencies | 66954 | 2271 |
-| Joint/integrated | 66974 | 57900 |
-| Item-kNN | 66999 | 19384 |
-| AutoRec GPU handoff | 67017 | 3812 |
-| Bayes | 67037 | 24506 |
-| GP/local | 67055 | 16829 |
-| User-kNN | 67069 | 35145 |
-| Final bank/blender/export | 75657 | 29645 |
-| Idle-sleep assertion, bound to final runner | 82488 | 69265 |
+Prior handles are historical launch evidence: all were absent at recovery.
+Current detached runners and trainer handles are recorded in
+`experiments/recovery-20261107/launch.json` and STATUS.md.
 
-These are launch handles, not perpetual proof of liveness. Inspect current `ps`,
-logs and audits before acting. Do not duplicate or restart a queue because an
-observation times out. Full trainers are capped at three and nominal own CPU
-threads at ten. Guarded bash waiters do not represent active training jobs.
+| Queue | PID |
+|---|---:|
+| Primary GPU | 71725 (trainer 71828) |
+| CPU neural | 71728 |
+| RBM | 71730 |
+| Dependencies | 71732 |
+| Joint/integrated | 71734 |
+| Item-kNN | 71736 |
+| AutoRec GPU handoff | 71738 |
+| Bayes | 71740 |
+| GP/local | 71742 |
+| User-kNN | 71744 |
+| Final bank/blender/export | 71746 |
+| Idle-sleep assertion bound to final runner | 71758 |
 
-The temporary `caffeinate -i -w 75657` assertion prevents idle system sleep
-while the final runner is alive and releases automatically when it exits.
-It was launched on AC power. See `experiments/P0-idle-sleep-assertion-20261031.json`.
+Recovery verified 621 distinct frozen inputs. Interrupted files/logs are
+preserved in `artifacts/production/P0-20261031/interrupted-20261107/`.
+A2h restarts the exact original 12-epoch recipe; the old epoch-5 checkpoint
+has weights but no optimizer/RNG state, so exact trajectory continuation is
+unavailable. S0 resumes with unchanged interrupted n16/n32 recipes and remaining
+lane commands. CPU/report copies replace stale numeric PID guards with original
+lane process-name signatures. No frozen sources, budgets, audits or gates changed.
 
-Launch records: `experiments/P0-GPU-launch-20261031.json`,
-`experiments/P0-managed-queues-launch-20261031.json`, and
-`experiments/P0-FINAL-launch-20261031.json`.
+These handles are not perpetual proof of liveness. Inspect current `ps`, logs
+and audits before acting. Do not duplicate queues on an observation timeout.
+Full trainers remain capped at three with about ten CPU threads maximum.
+`caffeinate -i -w 71746` prevents idle sleep while final runner lives.
+
+Original launch records remain preserved as historical evidence. The frozen
+phase details below describe original protocols; references to original handles
+are superseded by the recovery record and STATUS.md.
 
 ## Frozen phases and evidence
 
