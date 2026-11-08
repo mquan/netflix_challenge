@@ -13,7 +13,10 @@
 
 ## Current plan
 
-1. **Codex:** retained-bank production retrain, final blender and export.
+1. **Codex:** **short runs first (user, 11-08)**: finish S0 and the existing
+   short CPU neural queue; hold new GPU/downstream-family launches until all
+   short outputs, audits and S0 report complete. Current A2f continues.
+   Then resume the original guarded production queues.
 2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
@@ -29,11 +32,11 @@ Original frozen files remain unchanged. New processes are detached from the tool
 
 | Job | Current handles/state |
 |---|---|
-| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 3/10, batch 2600. Seven original GPU recipes remain serialized. |
+| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 3/10, batch 2600. Controller **71725 held (SIGSTOP)** to prevent next GPU recipe; current A2f trainer continues. |
 | S0 lane 0 | Runner **71723**, tree coordinator **65139**: final S0 arm, quality-transformer tree, 3/5 folds logged; neural stage follows. |
 | S0 lane 1 | Runner **71724** exited successfully: all lane 1 commands complete. |
-| Family queues | Nine live family runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 trainer **65565** active (8/10 epochs complete). Remaining families wait at guards. |
-| Final bank/blender/export | Runner **71746** live at all-82-audit guard. No final fit/export. |
+| Family queues | Family controllers held except the short CPU queue: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 complete/audited; 3/7 short CPU stages audited. CPU controller 71728 enabled, waiting for normal memory before MT2. Other controllers SIGSTOP-held, not terminated. |
+| Final bank/blender/export | Controller **71746** SIGSTOP-held as part of short-first barrier. No final fit/export. |
 | S0 audits/report | Monitor **71751** confirms **24/25** receipts; reporter **71754** waits for both lane processes. |
 | Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
 
@@ -44,22 +47,28 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 
 ## Next actions
 
+- Short-first holds applied to ten own controllers; no active trainers stopped.
+  Release checker prepared and tested under `experiments/short-first-20261108/`.
+  It will resume original controllers only after all seven CPU audits, all
+  25 S0 receipts, complete S0 summary, short runner exit and stable normal
+  memory; controller command/start-time identity must still match.
+
 - Latest verified progress **2026-11-08 16:42 UTC**: A2h, MH3 and MT0 complete;
   all three production receipts match required metadata and output hashes.
   A2f/MT1 and the last S0 tree arm are the three active training jobs.
   `experiments/recovery-20261107/progress-20261108.json`.
-- Production completion: **3/82 audits**. Final bank still requires **79 columns
+- Production completion: **4/82 audits** (A2h + MH3/MT0/MT1). Final bank still requires **79 columns
   + eight support aliases** and export of **2,817,131** raw-order queries.
 - AutoRec requires primary GPU completion and successful MPS parity verification.
 - S0 has **24/25** audited arms; all bound output hashes independently checked; no partial synthesis. Frozen monitor/report
   remain responsible for later receipts and complete-experiment synthesis.
 - Latest power/resource check: AC, battery 80% charging, normal memory pressure
-  (1). Three active training jobs: GPU A2f, CPU MT1, S0 final tree arm.
+  (1). GPU A2f and final S0 tree active; short CPU queue enabled and memory-guarded.
 - Runtime review supersedes the earlier uncalibrated 1–1.5 week allowance:
   historical critical-path accounting is ≈64 h before uncertainty; rough current
   schedule **3–5 days**, optimized **48–72 h target, unvalidated**. Concurrent
   independent Bayes chains offer ≈16.7 h ideal saving; overlap contention and
-  peak memory must be checked. **No scheduling change applied.** Details and
+  peak memory must be checked. **Acceleration changes remain unimplemented; user now prioritizes short runs.** Details and
   verification plan: P0_EXECUTION.md "Runtime review" and
   `experiments/runtime-audit-20261108/evidence.json`. No ETA for target score.
 - No new promoted quality result. Production predicts unlabeled qualifying rows;
@@ -68,7 +77,7 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 
 ## Decisions waiting on the user
 
-None. Production and moonshot authorization remain in effect.
+None. Short-first sequencing is active; moonshot stays on hold.
 
 ## Recent results (newest first)
 

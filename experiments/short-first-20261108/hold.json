@@ -1,0 +1,149 @@
+{
+  "state": "controllers_held_active_trainers_untouched",
+  "utc": "2026-11-08T17:15:06.156425+00:00",
+  "policy": "Hold new heavy/family launches until all seven CPU neural stages and all 25 S0 arms plus final S0 report are audited and short runners exit. Preserve active trainers. Existing guarded queues may continue only after barrier release.",
+  "queues": [
+    {
+      "name": "GPU",
+      "pid": 71725,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/gpu-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          66571,
+          "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/production_neural.py --column A2f-refit.refit.e10.f32 --dataset-manifest /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json --output-dir /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2f-refit.refit.e10 --registry /Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json --archive /Users/quan/workspace/netflix_challenge/experiments/production-neural-sources.zip --train"
+        ]
+      ]
+    },
+    {
+      "name": "RBM",
+      "pid": 71730,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84660,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "DEPS",
+      "pid": 71732,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/deps-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84230,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "JOINT",
+      "pid": 71734,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84652,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "KNN",
+      "pid": 71736,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/knn-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84669,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "AUTOREC",
+      "pid": 71738,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/autorec-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84663,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "BAYES",
+      "pid": 71740,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/bayes-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84860,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "KERNEL",
+      "pid": 71742,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/kernel-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84861,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "USERKNN",
+      "pid": 71744,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/userknn-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84857,
+          "sleep 30"
+        ]
+      ]
+    },
+    {
+      "name": "FINAL",
+      "pid": 71746,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/final-recovery-20261107.log",
+      "identity": "Sat Nov  7 22:59:14 2026",
+      "children_before": [
+        [
+          84863,
+          "sleep 30"
+        ]
+      ]
+    }
+  ],
+  "stopped": [
+    71725,
+    71730,
+    71732,
+    71734,
+    71736,
+    71738,
+    71740,
+    71742,
+    71744,
+    71746
+  ]
+}
