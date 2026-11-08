@@ -1,0 +1,15 @@
+{
+  "state": "prepared_hold_applied_release_not_launched",
+  "tests": "2 focused tests; 15 negative gate/receipt cases; no signals issued by tests",
+  "actual_gate": "waiting: 3/7 CPU receipts, 24/25 S0 receipts, summary absent, short runners alive, memory warning",
+  "scope": "Only own bash queue controllers received SIGSTOP. Active GPU and S0 trainers unchanged. Release waits complete short-run outputs/receipts/report, runner exit, stable normal memory and original PID+command+start-time identity.",
+  "frozen": {
+    "experiments/short-first-20261108/barrier.py": "9e3bf060af41c98c5669993fdb20a69c34e45a383fb96449a3fc1f12827141a1",
+    "experiments/short-first-20261108/run.sh": "f6eae697db71e1828316fbdc51120e325a0ab4c39044edea5a977f30b4a0c354",
+    "experiments/short-first-20261108/hold.json": "1021422ec9c89de0df4aeacc49e955bacf48a19319c2bfc4b4f2ec50b88fef61",
+    "experiments/P0-CPU-neural-20261031-plan.json": "18f2f0a54da0efcfb278108dcf1a917024c2de462293b246ffde6d83372f8e84",
+    "experiments/S0-arm-monitor-20261031-plan.json": "0e7ced6aac68c3beffc3f8b15bad563cef80b265dddac7769246e9a002de9c61",
+    "experiments/S0-report-binding-20261031.json": "fba15a21cd92afabcbf50483a8b72a9d4823e9baa9e43a5162169eeda1cb0cd5",
+    "experiments/S0-execution-document-rebind-20261031.json": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df"
+  }
+}
