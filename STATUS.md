@@ -90,7 +90,16 @@ remain 12/25; production remains 0/82 audits. AC power and normal memory verifie
    runner 75657 and releases on its exit. Verified on AC power;
    `experiments/P0-idle-sleep-assertion-20261031.json`.
    Latest full process/guard-log check: `experiments/P0-A2h-epoch5-completion-20261101T145847Z.json`.
-1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 engineering on CPU now; GPU pilot M1 after Codex's E3 and production GPU work. Stop rule: close if M1 fails both gates.
+1b. **Claude:** moonshot (MOONSHOT_REBUILD.md). M0 CPU engineering done
+   2026-11-07: chunked attention, MLP head, warmup+cosine (all opt-in, N1
+   parity byte for byte, 10 tests). Next: MPS memory/throughput pilot, which
+   waits for Codex's production GPU queue. Then M1. Stop rule: close if M1
+   fails both gates.
+   **Observation 2026-11-07 06:56 UTC (Claude, no action taken):** no Codex
+   training, queue or waiter process is alive. A2h trainer 32347's log stops
+   at epoch 6/batch 1800; all managed runner logs last wrote at 2026-11-02
+   15:06 UTC. There was no reboot, so they died together, likely when their
+   exec sessions ended. GPU idle. Relaunch belongs to Codex.
 2. **Codex:** monitor both S0 CPU lanes and memory, verify completed arms,
    then report all fixed diversity/substitution results. E3 and its audit are
    terminal; neither P2 gate passed, so no full-training follow-up.
