@@ -1,0 +1,21 @@
+{
+  "state": "verified_complete_arm",
+  "arm": "diversity-s20261102-n32",
+  "execution_sha256": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df",
+  "reporter_binding_sha256": "fba15a21cd92afabcbf50483a8b72a9d4823e9baa9e43a5162169eeda1cb0cd5",
+  "config_bank_library_and_saved_scores_verified": true,
+  "all_five_tree_and_neural_folds_complete": true,
+  "saved_average_max_component_error": 2.384185791015625e-07,
+  "tree_rmse": 0.8687931078087506,
+  "neural_rmse": 0.8687463430024199,
+  "average_rmse": 0.8684626720017437,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-s3.json": "44d4f51921beab20bf5b4efd1c3eecdbd5a487a5a7d5281a8f73f59a6a7be5bf",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-s3.refit.f32": "f72819e7a813d95138f4372c89f900caa7d68015419b06b5e3ae74330225a958",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-s3.ridge.f32": "c4aa6d24957b11a07ee49792a6ccc5b2e779cdcca327515aa697ec9e26c8fcbc",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-NN2.json": "b17101929849e0c17ab57fdc4f14f4073152fea9ec4f3780ef86e2c6d45e3351",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-NN2.nn.f32": "8e7a047eba6dc21145612caeb2cfc417b4b1ad549a59faa47106a9822998f05f",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/diversity-s20261102-n32-NN2.avg.f32": "62ed9698c18352e7e0dd2cac441d840033a1a8b814e4e859fc72bc20c2fc0ab5"
+  },
+  "scope": "Completed fixed nonreference arm. All 25 arms required for synthesis; no selection, retuning, promotion, training intervention or forecast. Final reporter remains separately managed."
+}

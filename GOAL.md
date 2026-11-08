@@ -70,7 +70,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | Work | Owner | State |
 |---|---|---|
 | Interrupted queue recovery (2026-11-07) | Codex | Launched after verifying all old handles absent and 621 frozen inputs. Interrupted files preserved. Three trainers restarted; nine family queues, final handoff, S0 monitor/report and sleep assertion live. `experiments/recovery-20261107/launch.json`; STATUS.md holds current handles. |
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | Recovered Nov 7: GPU runner 71725/trainer 71828 restarts identical A2h 12-epoch budget; checkpoint cannot exactly resume optimizer/RNG. Nine family queues and final runner 71746 live at original guards. 0/82 audits; all 79 columns/eight supports and final export remain required. Recovery plan/handles in `experiments/recovery-20261107/`; STATUS.md is authoritative. |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | Recovered Nov 7: GPU runner 71725: A2h completed/audited 12 epochs; A2f trainer 66571 active. CPU MH3/MT0 audited; MT1 trainer 65565 active. Nine family queues and final runner 71746 live at original guards. 3/82 audits; all 79 columns/eight supports and final export remain required. Recovery plan/handles in `experiments/recovery-20261107/`; STATUS.md is authoritative. |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 CPU engineering done 2026-11-07 (chunked attention, MLP head, warmup+cosine; 10 parity/contract tests). **M0 done 2026-11-07**: MPS pilot passed (M1 config peaks at 7.3 GB with new opt-in pad_row_tokens + checkpoint; ≈1.3 h/epoch on P2 with the GPU shared). No moonshot process running. M1 launch awaits user decision on GPU sharing with Codex. `experiments/M0-pilot-20261107-{a,b}.json` |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
@@ -86,9 +86,9 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | 12/25 fixed arms audited. Interrupted third-seed n16/n32 tree stages restarted Nov 7 (coordinators 71823/71822; runners 71723/71724). Original budgets and remaining lane commands preserved; full synthesis waits for all fixed arms. |
+| Structural plan week-0 scoping | Codex | 24/25 fixed arms audited and output hashes independently checked Nov 8. Lane 1 exited zero; lane 0 runs final quality-transformer tree (65139). Original budgets preserved; full synthesis waits for all fixed arms. |
 | S0 complete-result reporter | Codex | Recovery runner 71754 waits for both lane script processes (replaces stale PID checks), then executes unchanged frozen complete-experiment audit/report. No partial synthesis. |
-| S0 completed-arm audit monitor | Codex | Original frozen monitor recovered as PID 71751; confirms 12/25 receipts, no new writes at startup. Audits only after producer exit. Do not duplicate or race receipts. |
+| S0 completed-arm audit monitor | Codex | Original frozen monitor recovered as PID 71751; confirms 24/25 receipts on Nov 8. Audits only after producer exit. Do not duplicate or race receipts. |
 
 ## Closed bets
 
@@ -109,8 +109,8 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | Recovery runner 71724/coordinator 71822; third-seed n32 tree restarted, original remaining commands queued; no GPU |
-| 2 | S0 scoping lane 0 | Recovery runner 71723/coordinator 71823; third-seed n16 tree restarted, original remaining commands queued; no GPU |
+| 1 | S0 scoping lane 1 | Runner 71724 exited zero; all fixed lane commands complete; no GPU |
+| 2 | S0 scoping lane 0 | Runner 71723/coordinator 65139; final quality-transformer tree active, neural follows; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;
