@@ -1,0 +1,13 @@
+{
+  "experiment": "BDS blender training-data scaling diagnostic",
+  "owner": "Claude",
+  "created": "2026-11-08",
+  "doc": "OTHER_APPROACHES_20261108.md item 1",
+  "reference": "artifacts/structural/S0-scoping-20261031/results/all79-s3.json (tree refit 0.8671122160927217; R9 parity)",
+  "arms": [1.0, 0.75, 0.5],
+  "recipe": "scripts/round4_boost.py via scripts/blend_data_scaling.py --keep-fraction F; bank-root S0 all79; rounds 8000; lr 0.02; leaves 63; min-leaf 200; seeds 2026 7 13; extra-meta; processes 3",
+  "start_guard": "Production final runner P0-FINAL-20261031-run.sh exited, no P0/S0 runner or production/round4/round8 trainer alive, normal memory pressure for 60 s",
+  "integrity": "Arm 1.0 must reproduce the reference tree refit RMSE exactly; otherwise the other arms are not interpreted",
+  "decision_rule": "Tree-only. delta50 = refit(0.5) - refit(1.0). If delta50 >= 0.0006, propose the P2-rows blender follow-up (gate there: >= 0.0003 full-bank CV, all five folds). Otherwise close item 1.",
+  "scope": "Diagnostic only. No promotion, no production change, NN2 half not run."
+}
