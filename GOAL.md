@@ -69,8 +69,8 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
-| Interrupted queue recovery (2026-11-07) | Codex | Claimed: all prior experiment PIDs absent and logs stopped Nov 2. Preserve interrupted artifacts; restart identical fixed recipes and remaining S0 arms; restore guarded handoffs without changing frozen sources, budgets or gates. |
-| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | P0 GPU queue live (A2h epoch 6, first five epochs complete, PID 32347/session 91805). Nine family bash waiters plus final bash waiter PID 75657/session 29645 are managed and live; do not duplicate (`P0-managed-queues-launch-20261031.json`, `P0-FINAL-launch-20261031.json`). All 79 columns/eight supports mapped; 0/82 production-stage audits. Final frozen plan: 500 inputs/501 checks, waits for all audits/process exit/normal memory, then resolves bank, fits retained medians, runs two exact inferences and raw-order export. Raw-order verification matches 2,817,131 rows/17,470 headers. No final fit/export started. Next: monitor and audit guarded transitions/results. Full outputs and target remain outstanding |
+| Interrupted queue recovery (2026-11-07) | Codex | Launched after verifying all old handles absent and 621 frozen inputs. Interrupted files preserved. Three trainers restarted; nine family queues, final handoff, S0 monitor/report and sleep assertion live. `experiments/recovery-20261107/launch.json`; STATUS.md holds current handles. |
+| **Production retrain (STRUCTURAL_PLAN lane 4)** | **Codex — assigned by the user 2026-10-31** | Recovered Nov 7: GPU runner 71725/trainer 71828 restarts identical A2h 12-epoch budget; checkpoint cannot exactly resume optimizer/RNG. Nine family queues and final runner 71746 live at original guards. 0/82 audits; all 79 columns/eight supports and final export remain required. Recovery plan/handles in `experiments/recovery-20261107/`; STATUS.md is authoritative. |
 | Moonshot: one large sequence model (MOONSHOT_REBUILD.md) | this session (Claude) | M0 CPU engineering done 2026-11-07 (chunked attention, MLP head, warmup+cosine; 10 parity/contract tests). Next: MPS memory/throughput pilot, after Codex's production GPU queue |
 | Lane 1 new-family audit (reading; no compute) | this session (Claude) | **done 2026-10-31**: FAMILY_AUDIT.md. Build order: LLORMA-style local low-rank → feature GBDT base model → co-clustering mixture |
 | L1 LLORMA-style local low-rank pilot (CPU, C++) | this session (Claude) | **closed 2026-10-31: +0.0000023 beyond bank11+N1 (gate 0.0010)** |
@@ -86,9 +86,9 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 | H4 outer-fold dependency audit | Codex | complete: dependence confirmed on actual P2; evidence in HEADROOM_INTERPRETATION.md; no H4 implementation changes |
 | B. Shared P2 candidate scoring command | Codex | complete: three fixture tests pass and E5 primary result independently reproduced exactly; no running trainer rewired |
 | E3 gate preparation | Codex | complete: training and automatic audit exited zero; both fixed P2 gates failed; saved predictions independently reproduce comparisons exactly; E3 closed |
-| Structural plan week-0 scoping | Codex | full all79 parity exact; 12/25 further fixed arms audited (first- and second-seed n1/n4/n16/n32/n64; third-seed n1/n4); latest n1 average 0.8883958874; lane 0 third-seed n16 tree live (PID 65788), lane 1 third-seed n32 tree live (PID 62573); full synthesis waits for all fixed arms |
-| S0 complete-result reporter | Codex | live bash handoff PID 94435/session 80182 waits for both lanes, then audits all 26 arms once; five tests pass, real reference parity exact, actual partial experiment rejected without summary; no frozen training edits |
-| S0 completed-arm audit monitor | Codex | Live bash PID 77645/session 64149; audits all 25 nonreference arms only after producer exit and complete files, using unchanged frozen audits. First automatic receipt (second-seed n1) independently rechecked: all hashes, five folds and scores exact; twelve of 25 arms audited. No training, retuning or early synthesis. Do not duplicate or race its receipt writes. `S0-arm-monitor-first-audit-verification-20261031.json` |
+| Structural plan week-0 scoping | Codex | 12/25 fixed arms audited. Interrupted third-seed n16/n32 tree stages restarted Nov 7 (coordinators 71823/71822; runners 71723/71724). Original budgets and remaining lane commands preserved; full synthesis waits for all fixed arms. |
+| S0 complete-result reporter | Codex | Recovery runner 71754 waits for both lane script processes (replaces stale PID checks), then executes unchanged frozen complete-experiment audit/report. No partial synthesis. |
+| S0 completed-arm audit monitor | Codex | Original frozen monitor recovered as PID 71751; confirms 12/25 receipts, no new writes at startup. Audits only after producer exit. Do not duplicate or race receipts. |
 
 ## Closed bets
 
@@ -109,8 +109,8 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Slot | Bet | State |
 |---|---|---|
-| 1 | S0 scoping lane 1 | first-seed n4/n32 and second-seed n1/n16/n64 complete and audited; second-seed n64 average 0.86733877877; third-seed n4 complete and audited (average 0.8795596028), third-seed n32 tree live (PID 62573), continuing 12 exact fixed arms; no GPU |
-| 2 | S0 scoping lane 0 | first-seed n1/n16/n64 and second-seed n4/n32 complete and audited; second-seed n32 average 0.86843318372; third-seed n1 complete and audited (average 0.8883958874), third-seed n16 tree live (PID 65788), continuing 13 exact fixed arms; no GPU |
+| 1 | S0 scoping lane 1 | Recovery runner 71724/coordinator 71822; third-seed n32 tree restarted, original remaining commands queued; no GPU |
+| 2 | S0 scoping lane 0 | Recovery runner 71723/coordinator 71823; third-seed n16 tree restarted, original remaining commands queued; no GPU |
 | 3 | Production retrain P0 | A2h fixed MPS retrain live, first of seven serialized GPU recipes; all 79 retained columns and final blender remain required |
 
 E3's fixed GPU treatment and both gate evaluations are complete and failed;

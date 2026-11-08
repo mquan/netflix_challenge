@@ -1,0 +1,109 @@
+{
+  "state": "verified_live_three_trainers_and_guarded_handoffs",
+  "utc": "2026-11-08T06:59:14.416088+00:00",
+  "queues": [
+    {
+      "name": "S0-lane0",
+      "pid": 71723,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/recovery-20261107/S0-lane0-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/lane0-recovery-20261107.log"
+    },
+    {
+      "name": "S0-lane1",
+      "pid": 71724,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/recovery-20261107/S0-lane1-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/lane1-recovery-20261107.log"
+    },
+    {
+      "name": "GPU",
+      "pid": 71725,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/gpu-recovery-20261107.log"
+    },
+    {
+      "name": "CPU-neural",
+      "pid": 71728,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/recovery-20261107/P0-CPU-neural-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/cpu-neural-recovery-20261107.log"
+    },
+    {
+      "name": "RBM",
+      "pid": 71730,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-recovery-20261107.log"
+    },
+    {
+      "name": "DEPS",
+      "pid": 71732,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-DEPS-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/deps-recovery-20261107.log"
+    },
+    {
+      "name": "JOINT",
+      "pid": 71734,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint-recovery-20261107.log"
+    },
+    {
+      "name": "KNN",
+      "pid": 71736,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/knn-recovery-20261107.log"
+    },
+    {
+      "name": "AUTOREC",
+      "pid": 71738,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/autorec-recovery-20261107.log"
+    },
+    {
+      "name": "BAYES",
+      "pid": 71740,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/bayes-recovery-20261107.log"
+    },
+    {
+      "name": "KERNEL",
+      "pid": 71742,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/kernel-recovery-20261107.log"
+    },
+    {
+      "name": "USERKNN",
+      "pid": 71744,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/userknn-recovery-20261107.log"
+    },
+    {
+      "name": "FINAL",
+      "pid": 71746,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/final-recovery-20261107.log"
+    },
+    {
+      "name": "S0-monitor",
+      "pid": 71751,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/S0-arm-monitor-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/arm-monitor-recovery-20261107.log"
+    },
+    {
+      "name": "S0-report",
+      "pid": 71754,
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/recovery-20261107/S0-report-handoff-20261031-run.sh",
+      "log": "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/report-recovery-20261107.log"
+    },
+    {
+      "name": "idle-sleep-assertion",
+      "pid": 71758,
+      "bound_to": 71746
+    }
+  ],
+  "original_checkpoint_preserved": true,
+  "all_frozen_inputs_reverified": true,
+  "verified_utc": "2026-11-08T07:01:08.947453+00:00",
+  "trainers": {
+    "GPU": 71828,
+    "S0-lane0": 71823,
+    "S0-lane1": 71822
+  }
+}
