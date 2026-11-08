@@ -1,0 +1,452 @@
+{
+  "utc": "2026-11-08T22:11:33.632371+00:00",
+  "state": "short_runs_complete_and_independently_verified",
+  "s0_summary": "artifacts/structural/S0-scoping-20261031/final-summary.json",
+  "summary_sha256": "e1a8c8deacf79d93492ca105cd78e620bbcdf6d4cc141a0e521a03129893d91e",
+  "summary_payload_hashes_verified": 156,
+  "s0_arms": 26,
+  "s0_nonreference_arms": 25,
+  "cpu_short_audits": 7,
+  "production_audits": 19,
+  "production_stages": [
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2f-refit.refit.e10/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2f-refit.refit.e10.f32",
+      "stage": 1
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MH3-categorical-mse-refit/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT0-refit.refit.e12/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+      "stage": 1
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT1-refit.refit.e10/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT1-refit.refit.e10.f32",
+      "stage": 2
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT2-refit.refit.e12/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT2-refit.refit.e12.f32",
+      "stage": 3
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT3-refit.refit.e7/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT3-refit.refit.e7.f32",
+      "stage": 4
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT5-refit/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT5-refit.f32",
+      "stage": 5
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT6-refit/audit.json",
+      "name": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT6-refit.f32",
+      "stage": 6
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R1-rbm100/audit.json",
+      "name": "R1-rbm100",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R2-rbm100-fast/audit.json",
+      "name": "R2-rbm100-fast",
+      "stage": 1
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependencies/baseline/audit.json",
+      "name": "baseline",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependencies/graph256/audit.json",
+      "name": "graph256",
+      "stage": 1
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependencies/graph64/audit.json",
+      "name": "graph64",
+      "stage": 2
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/dependencies/neighborhood/audit.json",
+      "name": "neighborhood",
+      "stage": 3
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/J1-joint64/audit.json",
+      "name": "J1-joint64",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/J2-joint128-reg02/audit.json",
+      "name": "J2-joint128-reg02",
+      "stage": 1
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/J3-joint128-reg005/audit.json",
+      "name": "J3-joint128-reg005",
+      "stage": 2
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/J4-joint128-day128/audit.json",
+      "name": "J4-joint128-day128",
+      "stage": 3
+    }
+  ],
+  "reference_rmse": 0.8668706424233039,
+  "lowest_observed_arm": "quality-masked_history",
+  "lowest_observed_comparison": {
+    "rows": 1408395,
+    "users": 462858,
+    "control_rmse": 0.8668706424233039,
+    "treatment_rmse": 0.8668505622190693,
+    "delta_rmse": -2.0080204234607102e-05,
+    "fold_deltas": [
+      -2.5888579370358933e-05,
+      5.2430762279787047e-05,
+      1.0697213181365406e-05,
+      -2.9845150205654036e-05,
+      -0.00010787438955228712
+    ],
+    "delta_mse": -3.481347587496033e-05,
+    "cluster_normal_95_mse_interval": [
+      -6.0848303943195174e-05,
+      -8.778647806725481e-06
+    ],
+    "all_folds_improve": false
+  },
+  "diversity": [
+    {
+      "count": 1,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "diversity-s20261031-n1",
+          "rmse": 0.8883958873766131
+        },
+        {
+          "seed": 20261101,
+          "arm": "diversity-s20261101-n1",
+          "rmse": 0.8895468198442653
+        },
+        {
+          "seed": 20261102,
+          "arm": "diversity-s20261102-n1",
+          "rmse": 0.8883958873766131
+        }
+      ],
+      "mean_rmse": 0.8887795315324972,
+      "min_rmse": 0.8883958873766131,
+      "max_rmse": 0.8895468198442653,
+      "permutation_sd": 0.0005425547683764193,
+      "shared_reference": false
+    },
+    {
+      "count": 4,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "diversity-s20261031-n4",
+          "rmse": 0.8743334425761877
+        },
+        {
+          "seed": 20261101,
+          "arm": "diversity-s20261101-n4",
+          "rmse": 0.877641621975908
+        },
+        {
+          "seed": 20261102,
+          "arm": "diversity-s20261102-n4",
+          "rmse": 0.8795596028000852
+        }
+      ],
+      "mean_rmse": 0.877178222450727,
+      "min_rmse": 0.8743334425761877,
+      "max_rmse": 0.8795596028000852,
+      "permutation_sd": 0.0021585862675086573,
+      "shared_reference": false
+    },
+    {
+      "count": 16,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "diversity-s20261031-n16",
+          "rmse": 0.8710974765542165
+        },
+        {
+          "seed": 20261101,
+          "arm": "diversity-s20261101-n16",
+          "rmse": 0.8714405520230087
+        },
+        {
+          "seed": 20261102,
+          "arm": "diversity-s20261102-n16",
+          "rmse": 0.8698001049862069
+        }
+      ],
+      "mean_rmse": 0.8707793778544773,
+      "min_rmse": 0.8698001049862069,
+      "max_rmse": 0.8714405520230087,
+      "permutation_sd": 0.000706473263103344,
+      "shared_reference": false
+    },
+    {
+      "count": 32,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "diversity-s20261031-n32",
+          "rmse": 0.8680112072480809
+        },
+        {
+          "seed": 20261101,
+          "arm": "diversity-s20261101-n32",
+          "rmse": 0.8684331837179241
+        },
+        {
+          "seed": 20261102,
+          "arm": "diversity-s20261102-n32",
+          "rmse": 0.8684626720017437
+        }
+      ],
+      "mean_rmse": 0.8683023543225828,
+      "min_rmse": 0.8680112072480809,
+      "max_rmse": 0.8684626720017437,
+      "permutation_sd": 0.000206223752210967,
+      "shared_reference": false
+    },
+    {
+      "count": 64,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "diversity-s20261031-n64",
+          "rmse": 0.8673320829896817
+        },
+        {
+          "seed": 20261101,
+          "arm": "diversity-s20261101-n64",
+          "rmse": 0.8673387787659164
+        },
+        {
+          "seed": 20261102,
+          "arm": "diversity-s20261102-n64",
+          "rmse": 0.8672111044695848
+        }
+      ],
+      "mean_rmse": 0.8672939887417276,
+      "min_rmse": 0.8672111044695848,
+      "max_rmse": 0.8673387787659164,
+      "permutation_sd": 5.867174380299795e-05,
+      "shared_reference": false
+    },
+    {
+      "count": 79,
+      "permutations": [
+        {
+          "seed": 20261031,
+          "arm": "all79",
+          "rmse": 0.8668706424233039
+        },
+        {
+          "seed": 20261101,
+          "arm": "all79",
+          "rmse": 0.8668706424233039
+        },
+        {
+          "seed": 20261102,
+          "arm": "all79",
+          "rmse": 0.8668706424233039
+        }
+      ],
+      "mean_rmse": 0.8668706424233039,
+      "min_rmse": 0.8668706424233039,
+      "max_rmse": 0.8668706424233039,
+      "permutation_sd": 0.0,
+      "shared_reference": true
+    }
+  ],
+  "quality_substitutions": [
+    {
+      "family": "joint_time",
+      "best": 52,
+      "weaker": 0,
+      "standalone_degradation": 0.005248376161702706,
+      "blend_degradation": 9.49426175067547e-06,
+      "ratio": 0.0018089903349449122,
+      "fold_deltas": [
+        2.085997730216782e-06,
+        7.039900654981501e-05,
+        4.128233837941142e-05,
+        1.6524655118255183e-05,
+        -8.294743401626725e-05
+      ]
+    },
+    {
+      "family": "integrated_neighborhood",
+      "best": 51,
+      "weaker": 5,
+      "standalone_degradation": 0.015460141039571051,
+      "blend_degradation": 1.3180712869265143e-05,
+      "ratio": 0.000852560971826092,
+      "fold_deltas": [
+        2.178258571094993e-05,
+        9.014209247981686e-05,
+        3.537110466855786e-05,
+        -1.5303963972979062e-05,
+        -6.612784746540257e-05
+      ]
+    },
+    {
+      "family": "knn",
+      "best": 42,
+      "weaker": 37,
+      "standalone_degradation": 0.026490292335616283,
+      "blend_degradation": 1.913206064352302e-06,
+      "ratio": 7.222291245838726e-05,
+      "fold_deltas": [
+        -2.8101748869024945e-06,
+        6.411430386332739e-05,
+        3.1892183322557166e-05,
+        -1.8143447056084838e-05,
+        -6.552149501426463e-05
+      ]
+    },
+    {
+      "family": "rbm",
+      "best": 59,
+      "weaker": 39,
+      "standalone_degradation": 0.043559297763096416,
+      "blend_degradation": 3.0412488694064876e-07,
+      "ratio": 6.981859271347216e-06,
+      "fold_deltas": [
+        -9.22741001097016e-06,
+        4.5588582691546975e-05,
+        7.50938878590901e-06,
+        -4.693943369993292e-06,
+        -3.765967056101882e-05
+      ]
+    },
+    {
+      "family": "autorec",
+      "best": 36,
+      "weaker": 14,
+      "standalone_degradation": 0.017027069895262703,
+      "blend_degradation": 6.177047195965457e-06,
+      "ratio": 0.00036277804895157236,
+      "fold_deltas": [
+        -1.547629990217292e-05,
+        6.85664730892821e-05,
+        1.5363793381628632e-05,
+        3.122133792421433e-05,
+        -6.888241489833025e-05
+      ]
+    },
+    {
+      "family": "gp",
+      "best": 18,
+      "weaker": 17,
+      "standalone_degradation": 0.003864364988681923,
+      "blend_degradation": 0.0002490297646773332,
+      "ratio": 0.064442609693106,
+      "fold_deltas": [
+        0.00030223152519903707,
+        0.0002574581922524244,
+        0.000257995589225235,
+        0.00025101556559103955,
+        0.0001762498523709688
+      ]
+    },
+    {
+      "family": "local_lowrank",
+      "best": 20,
+      "weaker": 19,
+      "standalone_degradation": 0.0010765818880044131,
+      "blend_degradation": -3.47756377905295e-06,
+      "ratio": -0.003230189749429163,
+      "fold_deltas": [
+        1.5561662567442625e-06,
+        7.427771654799908e-05,
+        -8.45632944690422e-06,
+        -1.3798368745265854e-05,
+        -7.099409399291545e-05
+      ]
+    },
+    {
+      "family": "masked_history",
+      "best": 66,
+      "weaker": 61,
+      "standalone_degradation": 0.018619528171870514,
+      "blend_degradation": -2.0080204234607102e-05,
+      "ratio": -0.0010784486077871354,
+      "fold_deltas": [
+        -2.5888579370358933e-05,
+        5.2430762279787047e-05,
+        1.0697213181365406e-05,
+        -2.9845150205654036e-05,
+        -0.00010787438955228712
+      ]
+    },
+    {
+      "family": "bayes",
+      "best": 75,
+      "weaker": 71,
+      "standalone_degradation": 0.003026126229734527,
+      "blend_degradation": 0.00010614415740728411,
+      "ratio": 0.03507591863297646,
+      "fold_deltas": [
+        6.492935613877648e-05,
+        0.00017801948268536538,
+        0.00014980098074013348,
+        5.132647296013371e-05,
+        8.6803836186089e-05
+      ]
+    },
+    {
+      "family": "transformer",
+      "best": 78,
+      "weaker": 72,
+      "standalone_degradation": 0.013009210071404764,
+      "blend_degradation": 0.0001753206292282039,
+      "ratio": 0.013476654482932213,
+      "fold_deltas": [
+        0.00020116934076708226,
+        0.0002281380054431903,
+        0.00025931420208546996,
+        0.00013896418934200572,
+        4.8816610923818615e-05
+      ]
+    }
+  ],
+  "release": {
+    "state": "all_short_runs_complete_original_guards_resumed",
+    "utc": "2026-11-08T20:34:27.438994+00:00",
+    "released": [
+      71725,
+      71730,
+      71732,
+      71734,
+      71736,
+      71738,
+      71740,
+      71742,
+      71744,
+      71746
+    ],
+    "scope": "Original guards and commands resume; no new trainer launched by barrier."
+  },
+  "scope": "S0 complete fixed diagnostics. No selection, new promotion, future-gain forecast or hidden-score claim. All existing production audits checked against required metadata and bound outputs."
+}

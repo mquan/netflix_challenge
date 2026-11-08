@@ -13,10 +13,9 @@
 
 ## Current plan
 
-1. **Codex:** **short runs first (user, 11-08)**: finish S0 and the existing
-   short CPU neural queue; hold new GPU/downstream-family launches until all
-   short outputs, audits and S0 report complete. Current A2f continues.
-   Then resume the original guarded production queues.
+1. **Codex:** short-first phase **complete**: seven CPU models audited,
+   S0 25/25 arms and final summary complete. Barrier released original guarded
+   production queues on Nov 8 at **20:34 UTC**. Continue production retrain/export.
 2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
 2b. **Claude:** BDS blender data-scaling diagnostic **queued** (PID 12307, starts only after production's final runner exits; ≈3 h CPU). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
@@ -33,12 +32,12 @@ Original frozen files remain unchanged. New processes are detached from the tool
 
 | Job | Current handles/state |
 |---|---|
-| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 3/10, batch 2600. Controller **71725 held (SIGSTOP)** to prevent next GPU recipe; current A2f trainer continues. |
-| S0 lane 0 | Runner **71723**, tree coordinator **65139**: final S0 arm, quality-transformer tree, 3/5 folds logged; neural stage follows. |
-| S0 lane 1 | Runner **71724** exited successfully: all lane 1 commands complete. |
-| Family queues | Family controllers held except the short CPU queue: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 complete/audited; 3/7 short CPU stages audited. CPU controller 71728 enabled, waiting for normal memory before MT2. Other controllers SIGSTOP-held, not terminated. |
-| Final bank/blender/export | Controller **71746** SIGSTOP-held as part of short-first barrier. No final fit/export. |
-| S0 audits/report | Monitor **71751** confirms **24/25** receipts; reporter **71754** waits for both lane processes. |
+| Production GPU | Runner **71725**, trainer **55561**: A2h and A2f audited; A2e epoch 8/12, batch 1600. Controller resumed after short-run barrier. |
+| S0 | Both lanes exited zero; **25/25** nonreference arms audited and complete 26-arm report verified, including all 156 bound output hashes. |
+| CPU neural | Runner **71728** exited zero; all **7/7** fixed recipes complete/audited. |
+| Native families | RBM runner **71730**, R3 trainer **61247** (epoch 26/30); dependencies runner 71732 exited zero, all four stages audited; joint runner **71734**, J6 trainer **67490** (first four joint stages audited). Remaining family controllers resumed at original guards. |
+| Final bank/blender/export | Runner **71746** resumed, waits for all 82 audits. No final fit/export. |
+| Short-first barrier | Checker **92690** exited successfully; all ten controller identities checked and SIGCONT completed after short-run prerequisites. `experiments/short-first-20261108/release.json`. |
 | Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
 
 Full recovery plan/scripts and handles: `experiments/recovery-20261107/plan.json`
@@ -48,42 +47,35 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 
 ## Next actions
 
-- Short-first holds applied to ten own controllers; no active trainers stopped.
-  Release checker **92690** verified live/waiting under `experiments/short-first-20261108/`.
-  It resumes original controllers only after all seven CPU audits, all
-  25 S0 receipts, complete S0 summary, short runner exit and stable normal
-  memory; controller command/start-time identity must still match.
-
-- Latest verified progress **2026-11-08 16:42 UTC**: A2h, MH3 and MT0 complete;
-  all three production receipts match required metadata and output hashes.
-  A2f/MT1 and the last S0 tree arm are the three active training jobs.
-  `experiments/recovery-20261107/progress-20261108.json`.
-- Production completion: **4/82 audits** (A2h + MH3/MT0/MT1). Final bank still requires **79 columns
-  + eight support aliases** and export of **2,817,131** raw-order queries.
-- AutoRec requires primary GPU completion and successful MPS parity verification.
-- S0 has **24/25** audited arms; all bound output hashes independently checked; no partial synthesis. Frozen monitor/report
-  remain responsible for later receipts and complete-experiment synthesis.
-- Latest power/resource check: AC, battery 80% charging, normal memory pressure
-  (1). GPU A2f and final S0 tree active; short CPU queue enabled and memory-guarded.
-- Runtime review supersedes the earlier uncalibrated 1–1.5 week allowance:
-  historical critical-path accounting is ≈64 h before uncertainty; rough current
-  schedule **3–5 days**, optimized **48–72 h target, unvalidated**. Concurrent
-  independent Bayes chains offer ≈16.7 h ideal saving; overlap contention and
-  peak memory must be checked. **Acceleration changes remain unimplemented; user now prioritizes short runs.** Details and
-  verification plan: P0_EXECUTION.md "Runtime review" and
-  `experiments/runtime-audit-20261108/evidence.json`. No ETA for target score.
-- No new promoted quality result. Production predicts unlabeled qualifying rows;
-  its training loss cannot establish a hidden-score gain. S0 synthesis waits
-  for its final arm. Retained best remains **0.8668706 dev CV**.
+- Latest independent result check **2026-11-08 22:11 UTC**: **19/82** production
+  audits match required metadata and all bound output hashes. Includes 2 GPU,
+  7 CPU neural, 2 RBM, 4 dependency and 4 joint stages.
+  `experiments/short-first-20261108/results.json`.
+- Monitor three active jobs: GPU A2e, RBM R3, joint J6. Other family queues
+  remain at original resource/data guards. No acceleration rewrite applied.
+- S0 completed. Retained best remains **0.8668706424 dev CV**. Lowest observed
+  substitution is 0.8668505622 (gain 0.00002008), but two folds worsen;
+  no promotion. Random 64-column subsets average 0.86729399; 32-column
+  subsets average 0.86830235. Substitution ratios are diagnostics, not future
+  gain forecasts or evidence that deleting a whole family is safe.
+- Production still requires 79 columns/eight support aliases, all 82 audits,
+  final fit, two exact qualifying inferences and raw-order export of 2,817,131
+  queries. AutoRec still needs MPS parity after the primary GPU queue.
+- Latest resource check: memory pressure normal (1). Heavy queues resumed
+  only after short-run completion and two normal-memory checks 30 seconds apart.
+- Runtime review: current rough schedule **3–5 days**, optimized **48–72 h
+  target unvalidated**, from Nov 8 review. These are not fresh measured ETAs
+  and do not predict the quiz target. See P0_EXECUTION.md Runtime review.
 
 ## Decisions waiting on the user
 
-None. Short-first sequencing is active; moonshot stays on hold.
+None. Short-first sequencing is complete; moonshot stays on hold.
 
 ## Recent results (newest first)
 
 | Date | Result | Doc |
 |---|---|---|
+| 11-08 | S0 all 25 arms complete; largest observed gain only 0.00002008 with two folds worse → no promotion. Seven CPU production models complete; barrier released, 19/82 production audits independently verified | experiments/short-first-20261108/results.json |
 | 11-07 | Moonshot M0 gate met: M1 config 7.3 GB peak with opt-in pad_row_tokens + checkpoint (N1 recipe 57→7.1 GB) | MOONSHOT_REBUILD.md |
 | 11-07 | Moonshot M0 step 2: opt-in MLP head + warmup/cosine schedule; N1 parity holds; 10 tests pass | MOONSHOT_REBUILD.md |
 | 10-31 | Moonshot M0 step 1: N1 fork + query-chunked attention; equality and byte-for-byte parity tests pass | MOONSHOT_REBUILD.md |
