@@ -14,7 +14,7 @@
 ## Current plan
 
 1. **Codex:** retained-bank production retrain, final blender and export.
-2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. M1 launch awaits the user's call on sharing the GPU with production (the pilots slowed A2h 1.3–2.8×).
+2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
