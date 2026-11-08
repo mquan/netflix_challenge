@@ -48,8 +48,8 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 ## Next actions
 
 - Short-first holds applied to ten own controllers; no active trainers stopped.
-  Release checker prepared and tested under `experiments/short-first-20261108/`.
-  It will resume original controllers only after all seven CPU audits, all
+  Release checker **92690** verified live/waiting under `experiments/short-first-20261108/`.
+  It resumes original controllers only after all seven CPU audits, all
   25 S0 receipts, complete S0 summary, short runner exit and stable normal
   memory; controller command/start-time identity must still match.
 
