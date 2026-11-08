@@ -31,7 +31,13 @@ No cloud GPUs (user decision). There is no validated ETA for reaching the target
 All previously recorded experiment runner/trainer PIDs are absent. Logs stopped
 2026-11-02 around 15:06 UTC without completion/error records. Prior live-state
 entries below are historical until replaced by verified recovery handles.
-Codex has claimed interruption recovery in GOAL.md. Completed S0 receipts
+Codex has claimed interruption recovery in GOAL.md. Recovery scripts prepared in
+`experiments/recovery-20261107/`: 621 distinct frozen inputs verified, bash syntax
+checks pass. Interrupted output/log copies preserved under production
+`interrupted-20261107/`. A2h restarts its unchanged 12-epoch recipe because the
+checkpoint has no optimizer/RNG state; S0 resumes at n16/n32 third-seed arms.
+CPU/report guards now identify lane script processes instead of stale PIDs.
+Completed S0 receipts
 remain 12/25; production remains 0/82 audits. AC power and normal memory verified.
 
 ## In flight
