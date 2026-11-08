@@ -14,7 +14,7 @@
 ## Current plan
 
 1. **Codex:** retained-bank production retrain, final blender and export.
-2. **Claude:** [moonshot](MOONSHOT_REBUILD.md), CPU engineering; GPU follows production queue.
+2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. M1 launch awaits the user's call on sharing the GPU with production (the pilots slowed A2h 1.3–2.8×).
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
@@ -67,6 +67,7 @@ None. Production and moonshot authorization remain in effect.
 
 | Date | Result | Doc |
 |---|---|---|
+| 11-07 | Moonshot M0 gate met: M1 config 7.3 GB peak with opt-in pad_row_tokens + checkpoint (N1 recipe 57→7.1 GB) | MOONSHOT_REBUILD.md |
 | 11-07 | Moonshot M0 step 2: opt-in MLP head + warmup/cosine schedule; N1 parity holds; 10 tests pass | MOONSHOT_REBUILD.md |
 | 10-31 | Moonshot M0 step 1: N1 fork + query-chunked attention; equality and byte-for-byte parity tests pass | MOONSHOT_REBUILD.md |
 | 10-31 | User: production retrain assigned to Codex; moonshot (one large sequence model) approved | MOONSHOT_REBUILD.md |
