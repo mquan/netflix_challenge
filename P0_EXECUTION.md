@@ -230,3 +230,29 @@ Compatibility and verification:
   All original final completion requirements still apply.
 
 Skill retro: no updates to the optimize-performance skill are suggested.
+
+## Short runs first — user sequencing change, 2026-11-08
+
+The user requested finishing short runs before starting anything heavy.
+Ten own bash queue controllers were verified by exact command and stopped with
+SIGSTOP: GPU 71725, RBM 71730, DEPS 71732, JOINT 71734, KNN 71736,
+AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744, final 71746.
+Only controllers were signaled. Active A2f trainer 66571 and S0 trainer 65139
+continue; short CPU queue 71728 and S0 audit/report processes remain enabled.
+MT1 completed and audited; production now has 4/82 audits, with 3/7 short CPU
+recipes complete. Memory guards still apply to later short CPU starts.
+
+Detached release checker PID 92690 is live. It requires seven matching CPU
+receipts, all 25 S0 receipts, complete 26-arm S0 summary, short runner exit,
+bound output hashes, and two normal-memory observations 30 seconds apart.
+It verifies every held controller's command/start time/state before SIGCONT.
+This restores existing guards after the short runs; it never trains or bypasses
+original data dependencies/audits. The GPU parent completes its pending A2f
+audit after release before advancing to its next model.
+
+Evidence/source/launch handles: `experiments/short-first-20261108/`.
+Two focused tests cover incomplete/mismatched receipts, missing summary, active
+short runners and warning memory; bash syntax and actual waiting gate pass.
+All ten controllers verified stopped, active GPU/S0/CPU-control processes
+verified unsuspended, release watcher verified waiting. Frozen recipes and
+budgets remain unchanged. The acceleration proposal is still a review only.

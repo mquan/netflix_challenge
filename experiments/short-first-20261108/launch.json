@@ -1,0 +1,12 @@
+{
+  "state": "verified_live_waiting_for_short_runs",
+  "utc": "2026-11-08T17:17:40.867656+00:00",
+  "pid": 92690,
+  "script": "/Users/quan/workspace/netflix_challenge/experiments/short-first-20261108/run.sh",
+  "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/short-first-barrier-20261108.log",
+  "scope": "Checks only; resumes original controllers after audited short-run completion. Never starts training directly.",
+  "verified_utc": "2026-11-08T17:18:09.105299+00:00",
+  "all_ten_controllers_stopped": true,
+  "active_trainers_untouched": true,
+  "observed": "{\"state\": \"waiting_short_first\", \"cpu_audits\": 3, \"s0_audits\": 24, \"summary_complete\": false, \"short_runners_live\": true, \"pressure\": \"2\"}"
+}

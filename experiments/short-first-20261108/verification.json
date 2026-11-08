@@ -1,6 +1,6 @@
 {
   "state": "prepared_hold_applied_release_not_launched",
-  "tests": "2 focused tests; 15 negative gate/receipt cases; no signals issued by tests",
+  "tests": "2 focused tests; 14 negative gate/receipt cases; no signals issued by tests",
   "actual_gate": "waiting: 3/7 CPU receipts, 24/25 S0 receipts, summary absent, short runners alive, memory warning",
   "scope": "Only own bash queue controllers received SIGSTOP. Active GPU and S0 trainers unchanged. Release waits complete short-run outputs/receipts/report, runner exit, stable normal memory and original PID+command+start-time identity.",
   "frozen": {
