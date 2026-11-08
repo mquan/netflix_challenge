@@ -13,7 +13,7 @@ Current detached runners and trainer handles are recorded in
 
 | Queue | PID |
 |---|---:|
-| Primary GPU | 71725 (trainer 71828) |
+| Primary GPU | 71725 (A2f trainer 66571; A2h audited) |
 | CPU neural | 71728 |
 | RBM | 71730 |
 | Dependencies | 71732 |
@@ -95,7 +95,7 @@ Monitor the live production queues and audit every completed fixed-budget stage.
      waiting. `P0-USERKNN-preflight-20261031.json`.
    Frozen plans cover all **79/79 columns plus eight support aliases**, verified
    in original blender order by `P0-all-family-planned-coverage-20261031.json`.
-   This is planning coverage: **0/82 required production-stage audit files exist**.
+   Latest runtime (2026-11-08): **3/82 required production-stage audits exist** (A2h, MH3, MT0), independently checked against required metadata and output hashes.
    Full outputs and final fitted blender/export remain outstanding. All nine
    family runners are live at guards; only primary GPU and both S0 lanes are
    currently training. Prelaunch verified 486 distinct frozen inputs and an

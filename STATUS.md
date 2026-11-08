@@ -1,6 +1,6 @@
 # STATUS — start here
 
-**Last updated:** 2026-11-07 by Codex. Update on every state change and before ending a session.
+**Last updated:** 2026-11-08 by Codex. Update on every state change and before ending a session.
 
 ## Goal and score
 
@@ -29,12 +29,12 @@ Original frozen files remain unchanged. New processes are detached from the tool
 
 | Job | Current handles/state |
 |---|---|
-| Production GPU | Runner **71725**, trainer **71828**: A2h fixed 12 epochs restarted. Old checkpoint contains model weights only, with no optimizer/RNG state; exact continuation unavailable. Seven original GPU recipes remain serialized. |
-| S0 lane 0 | Runner **71723**, tree coordinator **71823**: third-seed n16 restarted; remaining fixed lane commands follow. |
-| S0 lane 1 | Runner **71724**, tree coordinator **71822**: third-seed n32 restarted; remaining fixed lane commands follow. |
-| Family queues | Nine live guarded runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. No downstream trainers started. |
+| Production GPU | Runner **71725**, trainer **66571**: A2h completed all 12 epochs and audited (9.18 h elapsed); A2f now epoch 2/10, batch 2900. Seven original GPU recipes remain serialized. |
+| S0 lane 0 | Runner **71723**, tree coordinator **65139**: final S0 arm, quality-transformer tree, 1/5 folds logged; neural stage follows. |
+| S0 lane 1 | Runner **71724** exited successfully: all lane 1 commands complete. |
+| Family queues | Nine live family runners: CPU 71728, RBM 71730, dependencies 71732, joint 71734, item-kNN 71736, AutoRec 71738, Bayes 71740, kernel 71742, user-kNN 71744. CPU queue completed/audited MH3 and MT0; MT1 trainer **65565** active. Remaining families wait at guards. |
 | Final bank/blender/export | Runner **71746** live at all-82-audit guard. No final fit/export. |
-| S0 audits/report | Monitor **71751** confirms **12/25** receipts; reporter **71754** waits for both lane processes. |
+| S0 audits/report | Monitor **71751** confirms **24/25** receipts; reporter **71754** waits for both lane processes. |
 | Idle-sleep assertion | `caffeinate -i -w 71746`, PID **71758**, releases on final runner exit. |
 
 Full recovery plan/scripts and handles: `experiments/recovery-20261107/plan.json`
@@ -44,20 +44,20 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 
 ## Next actions
 
-- Monitor/audit recovered production and S0 transitions. Latest startup check:
-  both tree coordinators emitted exact expected configs (16/32 columns,
-  80/96 features), six tree workers accumulating CPU, GPU epoch 1/batch 300
-  verified, all downstream runners waiting. `experiments/recovery-20261107/verification.json`.
-- Production completion remains **0/82 audits**, with **79 columns + eight
-  support aliases** planned. Final export must verify all **2,817,131** raw-order queries.
+- Latest verified progress **2026-11-08 16:42 UTC**: A2h, MH3 and MT0 complete;
+  all three production receipts match required metadata and output hashes.
+  A2f/MT1 and the last S0 tree arm are the three active training jobs.
+  `experiments/recovery-20261107/progress-20261108.json`.
+- Production completion: **3/82 audits**. Final bank still requires **79 columns
+  + eight support aliases** and export of **2,817,131** raw-order queries.
 - AutoRec requires primary GPU completion and successful MPS parity verification.
-- S0 retains **12/25** audited arms; no partial synthesis. Frozen monitor/report
+- S0 has **24/25** audited arms; all bound output hashes independently checked; no partial synthesis. Frozen monitor/report
   remain responsible for later receipts and complete-experiment synthesis.
-- At recovery: AC power, battery charging at 76%, normal memory pressure (1),
-  about 85 GiB free. Latest loaded-training pressure is 2 (warning); guards
-  prevent further starts until normal. Three active training jobs; S0 uses three workers per lane,
-  GPU recipe one CPU thread. Keep Mac powered and ventilated; earlier thermal
-  sleeps interrupted progress. Verify actual progress rather than relying on old PIDs.
+- Latest power/resource check: AC, battery 80% charging, normal memory pressure
+  (1). Three active training jobs: GPU A2f, CPU MT1, S0 final tree arm.
+- No new promoted quality result. Production predicts unlabeled qualifying rows;
+  its training loss cannot establish a hidden-score gain. S0 synthesis waits
+  for its final arm. Retained best remains **0.8668706 dev CV**.
 
 ## Decisions waiting on the user
 

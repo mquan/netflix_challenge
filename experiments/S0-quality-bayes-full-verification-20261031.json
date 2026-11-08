@@ -1,0 +1,21 @@
+{
+  "state": "verified_complete_arm",
+  "arm": "quality-bayes",
+  "execution_sha256": "430a66a2f3d4df96a7600b3ea81d300c41d14d8b52d1a0dfa3352749cc3d16df",
+  "reporter_binding_sha256": "fba15a21cd92afabcbf50483a8b72a9d4823e9baa9e43a5162169eeda1cb0cd5",
+  "config_bank_library_and_saved_scores_verified": true,
+  "all_five_tree_and_neural_folds_complete": true,
+  "saved_average_max_component_error": 2.384185791015625e-07,
+  "tree_rmse": 0.8672150325092867,
+  "neural_rmse": 0.8672331441497847,
+  "average_rmse": 0.8669767865807112,
+  "outputs": {
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-s3.json": "cd2bca9425985e9549a391a1155a3b26d26054eeb328e639cc8c7071ab13e914",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-s3.refit.f32": "a6393b857bc955a214f3ae69729539ee44e1f423fefe797fe2bbf49e3aa6ec89",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-s3.ridge.f32": "6d9ba845fcd1e77a1610a6c4a1c45b7215ebd8eafea0453eafce92e89ce99bc6",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-NN2.json": "8b2ceaa314491539f629f08e94c14bfab138f94d470e0af2482ae438b44175fb",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-NN2.nn.f32": "aab7b76413eb4248607c05ecfa75a00c876d2d87fdf44e686c04c196b9501f3b",
+    "/Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-bayes-NN2.avg.f32": "cf8a492d708230931c32a9a48ae9557ede1afb2ff175468beffda5f5fe9638c5"
+  },
+  "scope": "Completed fixed nonreference arm. All 25 arms required for synthesis; no selection, retuning, promotion, training intervention or forecast. Final reporter remains separately managed."
+}

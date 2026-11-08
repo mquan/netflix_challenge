@@ -1,0 +1,57 @@
+{
+  "utc": "2026-11-08T16:42:00.114573+00:00",
+  "production_completed": [
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2h-refit.refit.e12/audit.json",
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/A2h-refit.refit.e12.f32",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MH3-categorical-mse-refit/audit.json",
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MH3-categorical-mse-refit.f32",
+      "stage": 0
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT0-refit.refit.e12/audit.json",
+      "column": "/Users/quan/workspace/netflix_challenge/artifacts/masked/MT0-refit.refit.e12.f32",
+      "stage": 1
+    }
+  ],
+  "s0_count": 24,
+  "s0_completed": [
+    "diversity-s20261031-n1",
+    "diversity-s20261031-n4",
+    "diversity-s20261031-n16",
+    "diversity-s20261031-n32",
+    "diversity-s20261031-n64",
+    "diversity-s20261101-n1",
+    "diversity-s20261101-n4",
+    "diversity-s20261101-n16",
+    "diversity-s20261101-n32",
+    "diversity-s20261101-n64",
+    "diversity-s20261102-n1",
+    "diversity-s20261102-n4",
+    "diversity-s20261102-n16",
+    "diversity-s20261102-n32",
+    "diversity-s20261102-n64",
+    "quality-joint_time",
+    "quality-integrated_neighborhood",
+    "quality-knn",
+    "quality-rbm",
+    "quality-autorec",
+    "quality-gp",
+    "quality-local_lowrank",
+    "quality-masked_history",
+    "quality-bayes"
+  ],
+  "a2h_elapsed_hours": 9.176262635451373,
+  "active_trainers": [
+    "65139 71723       42:55   0:10.98   0.0  0.7 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-transformer-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/quality-transformer --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "65166 65139       42:43  37:21.27  84.0  0.3 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-transformer-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/quality-transformer --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "65167 65139       42:43  37:12.68  88.2  2.5 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-transformer-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/quality-transformer --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "65168 65139       42:43  37:13.01  87.9  1.4 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/round4_boost.py --data /Users/quan/workspace/netflix_challenge/data/processed/netflix.bin --output /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/results/quality-transformer-s3 --bank-root /Users/quan/workspace/netflix_challenge/artifacts/structural/S0-scoping-20261031/banks/quality-transformer --extra --extra-support --rounds 8000 --learning-rate 0.02 --leaves 63 --min-leaf 200 --processes 3 --seeds 2026 7 13 --extra-meta",
+    "65565 71728       39:34  51:58.14 121.8  2.2 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/production_neural.py --column MT1-refit.refit.e10.f32 --dataset-manifest /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json --output-dir /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/MT1-refit.refit.e10 --registry /Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json --archive /Users/quan/workspace/netflix_challenge/experiments/production-neural-sources.zip --train",
+    "66571 71725       31:36  17:57.52  72.1  5.2 /opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/production_neural.py --column A2f-refit.refit.e10.f32 --dataset-manifest /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json --output-dir /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2f-refit.refit.e10 --registry /Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json --archive /Users/quan/workspace/netflix_challenge/experiments/production-neural-sources.zip --train"
+  ],
+  "no_new_promoted_score": true
+}
