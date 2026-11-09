@@ -1,0 +1,36 @@
+{
+  "state": "verified_live_draining",
+  "utc": "2026-11-09T00:47:09.167732+00:00",
+  "pid": 66698,
+  "script": "/Users/quan/workspace/netflix_challenge/experiments/pause-20261109/drain.sh",
+  "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/pause-drain-20261109.log",
+  "resume_policy": "explicit_user_instruction_only",
+  "verified_utc": "2026-11-09T00:47:55.608937+00:00",
+  "held_controllers": [
+    "GPU",
+    "RBM",
+    "JOINT",
+    "KNN",
+    "AUTOREC",
+    "BAYES",
+    "KERNEL",
+    "USERKNN",
+    "FINAL",
+    "BDS"
+  ],
+  "active_child_states": [
+    {
+      "phase": "GPU",
+      "state": "RN"
+    },
+    {
+      "phase": "RBM",
+      "state": "RN"
+    },
+    {
+      "phase": "JOINT",
+      "state": "RN"
+    }
+  ],
+  "observed_log_tail": "{\"state\": \"draining_active_stages\", \"pending\": [\"GPU\", \"RBM\", \"JOINT\"]}"
+}
