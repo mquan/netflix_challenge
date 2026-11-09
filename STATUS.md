@@ -71,23 +71,9 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   Accelerated schedule remains unimplemented. BDS adds ≈3 h after production.
   No ETA for the quiz target. See P0_EXECUTION.md Runtime review.
 
-## Planned pause — CONTINUE until 07:00, then explicit resume only
+## Planned pause — PAUSED at 07:00 — explicit resume only
 
-- Corrected user instruction: keep working overnight, pause at **2026-11-09
-  07:00 Pacific (15:00 UTC)**. Immediate drain supervisor 66698 cancelled.
-- Original controllers restored. T6 had finished/audited during the brief drain;
-  joint runner **70419** continues from stage 9 without repeating its audit.
-- Scheduled timer **74677** verified live/waiting under `experiments/overnight-20261109/`.
-  No early drain or automatic resume is permitted. At cutoff it freezes queue
-  controllers and their children, verifies completed receipts and saves exact
-  remaining-stage runners plus partial-stage inventory to `ready.json`.
-- Completed audited work is preserved. After sleep/restart, unfinished stages
-  may need a full rerun; partial directories are archived on explicit resume.
-  The previous immediate-drain helper is cancelled and must not be launched.
-- On explicit instruction AFTER the cutoff: verify the handoff and use
-  `experiments/overnight-20261109/control.py --resume`. This skips completed
-  stages, restores only pending stages/BDS intent and records new handles.
-  A progress/status question is not authorization to resume.
+Production and queued BDS were stopped at the requested cutoff. Completed audits are preserved. Any unfinished stage is listed in experiments/overnight-20261109/ready.json and may need retraining after restart; completed stages are never rerun. No automatic resume is configured. On explicit instruction use experiments/overnight-20261109/control.py --resume, not the cancelled immediate-drain helper.
 
 ## Recent results (newest first)
 
