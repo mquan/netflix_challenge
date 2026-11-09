@@ -279,3 +279,40 @@ metadata and output hashes: GPU2 + CPU7 + RBM2 + dependencies4 + joint4.
 A2e/R3/J6 are active; later families wait at original guards. No final export
 or validated hidden-score improvement. Evidence:
 `experiments/short-first-20261108/results.json`.
+
+## Sleep/restart pause — requested Nov 8, cutoff Nov 9 07:00 Pacific
+
+User requires sleep/possible restart and explicit instruction before resume.
+A restart-safe drain began immediately rather than depending on weights-only
+checkpoints for interrupted neural/RBM/joint optimizers. Ten queue controllers
+(including the idle BDS waiter) are held; active A2b, R3R and T6 are untouched.
+No further stages may launch. `experiments/pause-20261109/hold.json` binds their
+commands/start times and active child identities. Other-session scripts are unchanged.
+
+The drain supervisor waits for these children to exit (including unreaped zombie
+state under stopped parents), then executes only their original post-training
+reload/audit commands. It never repeats a training command or substitutes a budget.
+On successful audits it verifies all existing production receipts/outputs and
+frozen sources, saves exact remaining script suffixes with original basenames,
+checks bash syntax, and terminates only verified held idle controllers. The final
+controller's exit releases its bound idle-sleep assertion. Ready state is persisted
+as `experiments/pause-20261109/ready.json`, with source/output hashes, completed
+audits, remaining stages and queued BDS intent. It updates STATUS and commits/pushes.
+No launchd, login item or wake/reboot resume hook is installed.
+
+Four focused tests cover terminal-vs-live processes, receipt prefix holes, all real
+phase script suffixes, exact omission of completed stages and complete-stage skips.
+Failure stops the supervisor and leaves controllers held. If a stage has not
+completed at the 07:00 deadline, it is suspended and `deadline-not-ready.json`
+records that an exact disk resume is unavailable; this is never reported as safe.
+
+**On later explicit user instruction only:** read STATUS and `ready.json`; verify
+all bound local artifacts and no active duplicate workers. Run
+`/Users/quan/.cache/netflix-venv/bin/python experiments/pause-20261109/control.py --resume`.
+The helper verifies hashes and normal memory, launches only pending stage suffixes
+under original resource/audit guards, restores the previously queued BDS waiter,
+and binds a new idle-sleep assertion to the new final runner. It records all new
+PIDs in `resumed.json`. A resume marker is exclusively created before launches to
+reject duplicate invocations. Update STATUS/GOAL and commit/push the new handles.
+Do not run --resume just to inspect status or on startup. A generic request for
+progress is not authorization to resume.
