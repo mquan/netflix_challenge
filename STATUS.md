@@ -13,13 +13,13 @@
 
 ## Current plan
 
-1. **Codex:** **restart-safe drain / explicit resume only** (user, Nov 8).
-   All queue controllers held; active A2b/R3R/T6 stages finish and undergo their
-   original reload/audits, then controllers exit and a disk resume handoff is saved.
-   Must be ready before **Nov 9 07:00 Pacific (15:00 UTC)** for sleep/possible restart.
-   **Do not resume automatically or launch any new work.** Await explicit user instruction.
+1. **Codex:** **continue overnight until Nov 9 07:00 Pacific (15:00 UTC)**.
+   User corrected the early drain: it is cancelled, queues restored and active.
+   At the requested cutoff, stop all owned queue trees and save a disk handoff.
+   After cutoff: **resume only on explicit user instruction**, never automatically.
+   Restart may require rerunning an unfinished stage; completed audited stages persist.
 2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
-2b. **Claude:** BDS blender data-scaling diagnostic **held for user pause** (idle controller PID 12307 stopped; no training). Restore queued intent only on explicit resume (≈3 h CPU after production). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
+2b. **Claude:** BDS blender data-scaling diagnostic **queued** (idle controller PID 12307 restored; no training). Included in scheduled 07:00 pause; after cutoff resume only explicitly (≈3 h CPU after production). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
@@ -71,25 +71,23 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   Accelerated schedule remains unimplemented. BDS adds ≈3 h after production.
   No ETA for the quiz target. See P0_EXECUTION.md Runtime review.
 
-## Planned pause — DRAINING, not yet restart-safe
+## Planned pause — CONTINUE until 07:00, then explicit resume only
 
-- User confirmed sleep and possible restart at **Nov 9 07:00 Pacific**;
-  resume must require explicit instruction. No automatic resume timer exists.
-- Ten controllers are SIGSTOP-held, including idle BDS; active A2b/R3R/T6
-  trainers continue. Expected remaining time is around 30–60 min at current rates.
-  No further training stages may start. Other-session source files remain unchanged.
-- Supervisor **66698** verified live/draining under `experiments/pause-20261109/`: exact original
-  post-training reload/audit commands, four focused tests, unchanged remaining
-  script suffixes, source/receipt hash binding and independent PID identities.
-- Once all three active stages audit, it writes `ready.json`, records remaining
-  untouched-stage scripts, terminates held idle controllers, releases the existing
-  idle-sleep assertion by final-controller exit, updates this section and commits/pushes.
-- Safe state is **PAUSED — restart-safe**. Until then, do not restart if preserving
-  the active stages is required. If the deadline is reached unfinished, processes
-  are suspended and `deadline-not-ready.json` explicitly records the limitation.
-- Resume only when the user explicitly says to resume. Verify saved hashes and
-  use the saved remaining-stage runners; never rerun completed stages or continue
-  stale controllers. Moonshot remains on hold.
+- Corrected user instruction: keep working overnight, pause at **2026-11-09
+  07:00 Pacific (15:00 UTC)**. Immediate drain supervisor 66698 cancelled.
+- Original controllers restored. T6 had finished/audited during the brief drain;
+  joint runner **70419** continues from stage 9 without repeating its audit.
+- Scheduled control is prepared under `experiments/overnight-20261109/`.
+  No early drain or automatic resume is permitted. At cutoff it freezes queue
+  controllers and their children, verifies completed receipts and saves exact
+  remaining-stage runners plus partial-stage inventory to `ready.json`.
+- Completed audited work is preserved. After sleep/restart, unfinished stages
+  may need a full rerun; partial directories are archived on explicit resume.
+  The previous immediate-drain helper is cancelled and must not be launched.
+- On explicit instruction AFTER the cutoff: verify the handoff and use
+  `experiments/overnight-20261109/control.py --resume`. This skips completed
+  stages, restores only pending stages/BDS intent and records new handles.
+  A progress/status question is not authorization to resume.
 
 ## Recent results (newest first)
 
