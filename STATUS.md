@@ -13,11 +13,13 @@
 
 ## Current plan
 
-1. **Codex:** short-first phase **complete**: seven CPU models audited,
-   S0 25/25 arms and final summary complete. Barrier released original guarded
-   production queues on Nov 8 at **20:34 UTC**. Continue production retrain/export.
+1. **Codex:** **restart-safe drain / explicit resume only** (user, Nov 8).
+   All queue controllers held; active A2b/R3R/T6 stages finish and undergo their
+   original reload/audits, then controllers exit and a disk resume handoff is saved.
+   Must be ready before **Nov 9 07:00 Pacific (15:00 UTC)** for sleep/possible restart.
+   **Do not resume automatically or launch any new work.** Await explicit user instruction.
 2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
-2b. **Claude:** BDS blender data-scaling diagnostic **queued** (PID 12307, starts only after production's final runner exits; ≈3 h CPU). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
+2b. **Claude:** BDS blender data-scaling diagnostic **held for user pause** (idle controller PID 12307 stopped; no training). Restore queued intent only on explicit resume (≈3 h CPU after production). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
@@ -69,18 +71,25 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   Accelerated schedule remains unimplemented. BDS adds ≈3 h after production.
   No ETA for the quiz target. See P0_EXECUTION.md Runtime review.
 
-## Planned pause / decision waiting on the user
+## Planned pause — DRAINING, not yet restart-safe
 
-- User requests a pause at **2026-11-09 07:00 Pacific (15:00 UTC)**.
-- Power behavior is still needed: stay on, sleep/close lid, or shutdown/restart.
-  No pause timer or signals applied yet; current jobs continue.
-- Completed audited stages are on local disk; Git excludes large artifacts.
-  In-flight neural checkpoints lack optimizer/RNG state; exact disk resume is
-  unsupported. RBM/joint weight checkpoints are not full optimizer/RNG state
-  either. In-memory suspension requires surviving processes; shutdown loses it.
-- Prefer finishing/auditing stages before a shutdown. A reversible process pause
-  is appropriate while the machine stays on; sleep/MPS continuity is not verified.
-- Short-first sequencing is complete; moonshot stays on hold.
+- User confirmed sleep and possible restart at **Nov 9 07:00 Pacific**;
+  resume must require explicit instruction. No automatic resume timer exists.
+- Ten controllers are SIGSTOP-held, including idle BDS; active A2b/R3R/T6
+  trainers continue. Expected remaining time is around 30–60 min at current rates.
+  No further training stages may start. Other-session source files remain unchanged.
+- Supervisor prepared under `experiments/pause-20261109/`: exact original
+  post-training reload/audit commands, four focused tests, unchanged remaining
+  script suffixes, source/receipt hash binding and independent PID identities.
+- Once all three active stages audit, it writes `ready.json`, records remaining
+  untouched-stage scripts, terminates held idle controllers, releases the existing
+  idle-sleep assertion by final-controller exit, updates this section and commits/pushes.
+- Safe state is **PAUSED — restart-safe**. Until then, do not restart if preserving
+  the active stages is required. If the deadline is reached unfinished, processes
+  are suspended and `deadline-not-ready.json` explicitly records the limitation.
+- Resume only when the user explicitly says to resume. Verify saved hashes and
+  use the saved remaining-stage runners; never rerun completed stages or continue
+  stale controllers. Moonshot remains on hold.
 
 ## Recent results (newest first)
 

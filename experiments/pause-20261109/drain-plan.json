@@ -1,0 +1,63 @@
+{
+  "state": "prepared_restart_safe_drain",
+  "deadline_utc": "2026-11-09T15:00:00+00:00",
+  "resume_policy": "explicit_user_instruction_only",
+  "active_stages": [
+    {
+      "phase": "GPU",
+      "index": 3,
+      "pid": 10451,
+      "process_command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/quan/workspace/netflix_challenge/scripts/production_neural.py --column A2b-refit.refit.e10.f32 --dataset-manifest /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/manifest.json --output-dir /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2b-refit.refit.e10 --registry /Users/quan/workspace/netflix_challenge/experiments/production-neural-recipes.json --archive /Users/quan/workspace/netflix_challenge/experiments/production-neural-sources.zip --train",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/neural/A2b-refit.refit.e10/audit.json",
+      "completion_commands": [
+        "nice -n 10 /Users/quan/.cache/netflix-venv/bin/python /Users/quan/workspace/netflix_challenge/scripts/production_neural_audit.py --plan /Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-plan.json --stage 3 > /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/gpu-stage-3-audit.log 2>&1"
+      ]
+    },
+    {
+      "phase": "RBM",
+      "index": 3,
+      "pid": 68864,
+      "process_command": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/netflix rbm --data /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin --init-model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3-rbm200-long/model.bin --start-epoch 31 --model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/model.bin --predictions /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/model.f32 --hidden 200 --iterations 75 --threads 4 --patience 0 --learning-rate .005 --visible-rate .004 --conditional-rate .003 --decay .985 --fixed-epoch",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/audit.json",
+      "completion_commands": [
+        "nice -n 10 /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-1/fixed/netflix eval-rbm --data /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin --model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/model.bin --predictions /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/reload.f32 --threads 1 > /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/reload.log 2>&1",
+        "nice -n 10 /Users/quan/.cache/netflix-venv/bin/python /Users/quan/workspace/netflix_challenge/scripts/production_rbm_audit.py --plan /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-plan.json --stage 3 > /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/R3R-rbm200-resume/audit.log 2>&1"
+      ]
+    },
+    {
+      "phase": "JOINT",
+      "index": 8,
+      "pid": 54074,
+      "process_command": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint-builds/historical-2/fixed/netflix joint --data /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin --model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/model.bin --predictions /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/model.f32 --factors 256 --iterations 11 --learning-rate .012 --regularization .015 --decay .93 --patience 0 --fixed-epoch --threads 1",
+      "audit": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/audit.json",
+      "completion_commands": [
+        "nice -n 10 /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint-builds/historical-2/fixed/netflix eval-joint --data /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin --model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/model.bin --predictions /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/reload.f32 --threads 1 > /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/reload.log 2>&1",
+        "nice -n 10 /Users/quan/.cache/netflix-venv/bin/python /Users/quan/workspace/netflix_challenge/scripts/production_joint_audit.py --plan /Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-plan.json --stage 8 > /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/joint/T6-f256-lr012-reg015-d93/audit.log 2>&1"
+      ]
+    }
+  ],
+  "phases": [
+    "GPU",
+    "CPU-neural",
+    "RBM",
+    "DEPS",
+    "JOINT",
+    "KNN",
+    "AUTOREC",
+    "BAYES",
+    "KERNEL",
+    "USERKNN",
+    "FINAL"
+  ],
+  "control_inputs": {
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh": "3a510601018d821ae921d745a3e16c550c28acaaefdd511e24723f67be7e7a1b",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-plan.json": "5413ed515fef0054c867193dc988a3b449963979762af9f897f78ac4ae0c4a31",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh": "400ba5150c8d378b0f9418c3d3cd58264fc47938265c6b6f37fd8b298a12b8e1",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-plan.json": "03d6d19e014d7998f5900811db47abfb8a51bc5be2c17e19993d6a37a8c27770",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-run.sh": "eefbb70ed6067e6b2de91a5f6a6a36676b3d7f159119ceb0b0df5a22262b317d",
+    "/Users/quan/workspace/netflix_challenge/experiments/P0-JOINT-20261031-plan.json": "3b2007120823579515f3eddbda2e43c8da53ff7ca4496ecd6a00c9fe7d07efdb",
+    "/Users/quan/workspace/netflix_challenge/experiments/pause-20261109/hold.json": "7efbe417d599d93d30534faf9eca32f3266ce6cc0144a8206781c35efbeddcac",
+    "/Users/quan/workspace/netflix_challenge/experiments/pause-20261109/control.py": "329aab4a35b4e1906e9654191c590d25fcd1aaf73a284772798c65fffae02472",
+    "/Users/quan/workspace/netflix_challenge/experiments/pause-20261109/drain.sh": "25344326c8cac545ddd1eeebfbad998751267ece511a98af3c61a108d57bd1ee"
+  }
+}
