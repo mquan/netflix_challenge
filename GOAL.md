@@ -69,6 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
+| Planned pause 2026-11-09 07:00 Pacific | Codex | User supplied cutoff. Reviewing recoverability; awaiting whether machine stays on, sleeps, or shuts down. No pause scheduled/signaled yet. Completed audits survive on disk; incomplete neural/RBM/joint checkpoints are not complete exact-resume states. |
 | Short-runs-first queue barrier (2026-11-08) | Codex | Complete: 7/7 CPU audits, 25/25 S0 receipts, complete S0 summary and short runner exit verified. Checker 92690 released all ten original controllers at 20:34 UTC after normal-memory checks; no active trainer stopped. `experiments/short-first-20261108/release.json`. |
 | Production critical-path/runtime audit (2026-11-08) | Codex | Review complete: 90 source files bound; Bayes 35.84 h serial vs 19.15 h ideal two-lane, RBM ≈21.56 h. Current rough 3–5 days, 48–72 h optimization target unvalidated. No queue changes. Concrete scheduling/compatibility/verification plan in P0_EXECUTION.md Runtime review and experiments/runtime-audit-20261108/evidence.json. |
 | Interrupted queue recovery (2026-11-07) | Codex | Launched after verifying all old handles absent and 621 frozen inputs. Interrupted files preserved. Three trainers restarted; nine family queues, final handoff, S0 monitor/report and sleep assertion live. `experiments/recovery-20261107/launch.json`; STATUS.md holds current handles. |

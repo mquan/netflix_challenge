@@ -69,9 +69,18 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   Accelerated schedule remains unimplemented. BDS adds ≈3 h after production.
   No ETA for the quiz target. See P0_EXECUTION.md Runtime review.
 
-## Decisions waiting on the user
+## Planned pause / decision waiting on the user
 
-None. Short-first sequencing is complete; moonshot stays on hold.
+- User requests a pause at **2026-11-09 07:00 Pacific (15:00 UTC)**.
+- Power behavior is still needed: stay on, sleep/close lid, or shutdown/restart.
+  No pause timer or signals applied yet; current jobs continue.
+- Completed audited stages are on local disk; Git excludes large artifacts.
+  In-flight neural checkpoints lack optimizer/RNG state; exact disk resume is
+  unsupported. RBM/joint weight checkpoints are not full optimizer/RNG state
+  either. In-memory suspension requires surviving processes; shutdown loses it.
+- Prefer finishing/auditing stages before a shutdown. A reversible process pause
+  is appropriate while the machine stays on; sleep/MPS continuity is not verified.
+- Short-first sequencing is complete; moonshot stays on hold.
 
 ## Recent results (newest first)
 
