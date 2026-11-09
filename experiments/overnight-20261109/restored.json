@@ -1,0 +1,68 @@
+{
+  "state": "continuing_until_scheduled_0700_pause",
+  "utc": "2026-11-09T00:53:23.496866+00:00",
+  "controllers": [
+    {
+      "name": "GPU",
+      "pid": 71725,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "RBM",
+      "pid": 71730,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "KNN",
+      "pid": 71736,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "AUTOREC",
+      "pid": 71738,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "BAYES",
+      "pid": 71740,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "KERNEL",
+      "pid": 71742,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "USERKNN",
+      "pid": 71744,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "FINAL",
+      "pid": 71746,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026"
+    },
+    {
+      "name": "BDS",
+      "pid": 12307,
+      "command": "/bin/bash experiments/BDS-20261108-run.sh",
+      "started": "Sun Nov  8 09:54:16 2026"
+    },
+    {
+      "name": "JOINT",
+      "pid": 70419,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/P0-JOINT-20261031-run.sh"
+    }
+  ],
+  "joint_completed_stages": 9,
+  "joint_log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/overnight-joint-20261109.log",
+  "immediate_drain_cancelled": true
+}

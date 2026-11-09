@@ -1,0 +1,98 @@
+{
+  "state": "continue_until_scheduled_pause",
+  "cutoff_local": "2026-11-09T07:00:00-08:00",
+  "cutoff_utc": "2026-11-09T15:00:00+00:00",
+  "controllers": [
+    {
+      "name": "GPU",
+      "pid": 71725,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-GPU-20261031-run.sh"
+    },
+    {
+      "name": "RBM",
+      "pid": 71730,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh"
+    },
+    {
+      "name": "KNN",
+      "pid": 71736,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KNN-20261031-run.sh"
+    },
+    {
+      "name": "AUTOREC",
+      "pid": 71738,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-AUTOREC-20261031-run.sh"
+    },
+    {
+      "name": "BAYES",
+      "pid": 71740,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh"
+    },
+    {
+      "name": "KERNEL",
+      "pid": 71742,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh"
+    },
+    {
+      "name": "USERKNN",
+      "pid": 71744,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh"
+    },
+    {
+      "name": "FINAL",
+      "pid": 71746,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+      "started": "Sat Nov  7 22:59:14 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh"
+    },
+    {
+      "name": "BDS",
+      "pid": 12307,
+      "command": "/bin/bash experiments/BDS-20261108-run.sh",
+      "started": "Sun Nov  8 09:54:16 2026",
+      "script": "experiments/BDS-20261108-run.sh"
+    },
+    {
+      "name": "JOINT",
+      "pid": 70419,
+      "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/P0-JOINT-20261031-run.sh",
+      "started": "Sun Nov  8 16:53:23 2026",
+      "script": "/Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/P0-JOINT-20261031-run.sh"
+    }
+  ],
+  "phases": [
+    "GPU",
+    "CPU-neural",
+    "RBM",
+    "DEPS",
+    "JOINT",
+    "KNN",
+    "AUTOREC",
+    "BAYES",
+    "KERNEL",
+    "USERKNN",
+    "FINAL"
+  ],
+  "frozen": {
+    "/Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/control.py": "cb89e0f8b2b5b574080064dfe832c6ee005a99695e6679e6af32aed0e090eb93",
+    "/Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/timer.sh": "ee5951b74c844c0e0d9e4660bf641ccabcb67c64d57d34012d4a0c01d9ea421c",
+    "/Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/restored.json": "6f127af1cdd7de6411a929c6060fb33dd44440c94570be592c22ed637cf63007",
+    "/Users/quan/workspace/netflix_challenge/experiments/pause-20261109/control.py": "329aab4a35b4e1906e9654191c590d25fcd1aaf73a284772798c65fffae02472"
+  },
+  "resume_policy": "explicit_user_instruction_only_after_0700",
+  "incomplete_stage_policy": "Preserve partial outputs; on explicit disk resume archive and rerun only unfinished stages at original full budgets. Completed audited stages are skipped."
+}

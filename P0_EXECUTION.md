@@ -316,3 +316,44 @@ PIDs in `resumed.json`. A resume marker is exclusively created before launches t
 reject duplicate invocations. Update STATUS/GOAL and commit/push the new handles.
 Do not run --resume just to inspect status or on startup. A generic request for
 progress is not authorization to resume.
+
+## Correction: continue overnight until 07:00 — latest user instruction
+
+The immediate drain above was too early and is **cancelled**. Supervisor 66698
+was stopped while idle and terminated before further post-training actions.
+GPU/RBM and all other original controllers (including BDS) were restored. T6
+completed and was audited during that interval; original held joint controller
+71734 was retired, and runner 70419 continues its exact suffix from stage 9.
+No completed training or audit was repeated. Cancellation/restoration evidence:
+`experiments/pause-20261109/cancelled.json` and
+`experiments/overnight-20261109/restored.json`.
+
+**Latest schedule:** continue until **2026-11-09 07:00 Pacific = 15:00 UTC**.
+The timer polls every five seconds, never stops early, and invokes
+`experiments/overnight-20261109/control.py --pause` at the cutoff. It freezes
+verified queue controllers first, then their process trees; verifies completed
+receipts/output hashes; and persists completed-stage suffixes and partial-stage
+inventory. It releases this queue's idle-sleep assertion and commits/pushes the
+handoff. Processes remain stopped on wake. No automatic resume is installed.
+
+**Restart limitation:** continuing until the exact cutoff can leave a stage
+unfinished. A model-weight checkpoint is not a complete optimizer/RNG snapshot.
+The scheduled handoff preserves completed stages, archives unfinished-stage
+outputs, and reruns only those unfinished stages at their original full budgets
+after explicit instruction. It does not promise exact continuation of interrupted
+in-memory state. A partial/invalid audit is never counted as completed. If final
+blender work unexpectedly started, the helper preserves files and requests review
+instead of overwriting a completed final fit. Error state is recorded separately.
+
+**Explicit resume after the cutoff only:** use
+`/Users/quan/.cache/netflix-venv/bin/python experiments/overnight-20261109/control.py --resume`.
+This is the current helper. **Do not use the cancelled immediate-drain helper.**
+It checks disk hashes, excludes reused PIDs, retires old stopped owned processes,
+archives unfinished directories, and invokes remaining scripts under original
+resource/audit guards. It cannot retrain completed audited stages. All new handles
+are saved in `experiments/overnight-20261109/resumed.json`.
+
+Four focused tests verify no early pause/signals, owned descendant traversal,
+PID reuse exclusion, and rejection of noncontiguous receipts; existing four
+stage-suffix/drain helper tests also cover the reused exact-tail logic. Shell
+syntax passes. No training budgets, frozen model sources or score claims changed.
