@@ -1,0 +1,86 @@
+[
+  {
+    "pid": 71744,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-USERKNN-20261031-run.sh",
+    "started": "Sat Nov  7 22:59:14 2026"
+  },
+  {
+    "pid": 71746,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-FINAL-20261031-run.sh",
+    "started": "Sat Nov  7 22:59:14 2026"
+  },
+  {
+    "pid": 45931,
+    "ppid": 71742,
+    "state": "T",
+    "command": "sleep 30",
+    "started": "Mon Nov  9 06:24:42 2026"
+  },
+  {
+    "pid": 45932,
+    "ppid": 71746,
+    "state": "T",
+    "command": "sleep 30",
+    "started": "Mon Nov  9 06:24:42 2026"
+  },
+  {
+    "pid": 45996,
+    "ppid": 71740,
+    "state": "T",
+    "command": "sleep 30",
+    "started": "Mon Nov  9 07:06:36 2026"
+  },
+  {
+    "pid": 45631,
+    "ppid": 12307,
+    "state": "T",
+    "command": "sleep 300",
+    "started": "Mon Nov  9 05:54:51 2026"
+  },
+  {
+    "pid": 45935,
+    "ppid": 71744,
+    "state": "T",
+    "command": "sleep 30",
+    "started": "Mon Nov  9 06:24:43 2026"
+  },
+  {
+    "pid": 71730,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-RBM-20261031-run.sh",
+    "started": "Sat Nov  7 22:59:14 2026"
+  },
+  {
+    "pid": 12307,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash experiments/BDS-20261108-run.sh",
+    "started": "Sun Nov  8 09:54:16 2026"
+  },
+  {
+    "pid": 71740,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-BAYES-20261031-run.sh",
+    "started": "Sat Nov  7 22:59:14 2026"
+  },
+  {
+    "pid": 71742,
+    "ppid": 1,
+    "state": "Ts",
+    "command": "/bin/bash /Users/quan/workspace/netflix_challenge/experiments/P0-KERNEL-20261031-run.sh",
+    "started": "Sat Nov  7 22:59:14 2026"
+  },
+  {
+    "pid": 19167,
+    "ppid": 71730,
+    "state": "TN",
+    "command": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm-builds/variant-3/fixed/netflix rbm --data /Users/quan/workspace/netflix_challenge/data/production/stage-c-v1/train-probe-qualifying.bin --model /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/P2-rbm200-condbias-scratch/model.bin --predictions /Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/rbm/P2-rbm200-condbias-scratch/model.f32 --hidden 200 --iterations 72 --threads 6 --patience 0 --learning-rate .005 --visible-rate .004 --conditional-rate .003 --decay .985 --conditional-biases --user-bias-rate .01 --day-bias-rate .03 --frequency-bias-rate .012 --fixed-epoch",
+    "started": "Mon Nov  9 00:15:06 2026"
+  }
+]
