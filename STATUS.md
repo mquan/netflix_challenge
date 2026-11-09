@@ -77,7 +77,7 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
   07:00 Pacific (15:00 UTC)**. Immediate drain supervisor 66698 cancelled.
 - Original controllers restored. T6 had finished/audited during the brief drain;
   joint runner **70419** continues from stage 9 without repeating its audit.
-- Scheduled control is prepared under `experiments/overnight-20261109/`.
+- Scheduled timer **74677** verified live/waiting under `experiments/overnight-20261109/`.
   No early drain or automatic resume is permitted. At cutoff it freezes queue
   controllers and their children, verifies completed receipts and saves exact
   remaining-stage runners plus partial-stage inventory to `ready.json`.

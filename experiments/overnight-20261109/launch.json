@@ -1,0 +1,63 @@
+{
+  "state": "verified_waiting_until_0700_queues_running",
+  "utc": "2026-11-09T00:58:03.941570+00:00",
+  "pid": 74677,
+  "script": "/Users/quan/workspace/netflix_challenge/experiments/overnight-20261109/timer.sh",
+  "log": "/Users/quan/workspace/netflix_challenge/artifacts/production/P0-20261031/scheduled-0700-pause-20261109.log",
+  "cutoff_local": "2026-11-09T07:00:00-08:00",
+  "resume_policy": "explicit_user_instruction_only_after_cutoff",
+  "verified_utc": "2026-11-09T00:58:23.853563+00:00",
+  "controller_states": [
+    {
+      "name": "GPU",
+      "pid": 71725,
+      "state": "Ss"
+    },
+    {
+      "name": "RBM",
+      "pid": 71730,
+      "state": "Ss"
+    },
+    {
+      "name": "KNN",
+      "pid": 71736,
+      "state": "Ss"
+    },
+    {
+      "name": "AUTOREC",
+      "pid": 71738,
+      "state": "Ss"
+    },
+    {
+      "name": "BAYES",
+      "pid": 71740,
+      "state": "Ss"
+    },
+    {
+      "name": "KERNEL",
+      "pid": 71742,
+      "state": "Ss"
+    },
+    {
+      "name": "USERKNN",
+      "pid": 71744,
+      "state": "Ss"
+    },
+    {
+      "name": "FINAL",
+      "pid": 71746,
+      "state": "Ss"
+    },
+    {
+      "name": "BDS",
+      "pid": 12307,
+      "state": "Ss"
+    },
+    {
+      "name": "JOINT",
+      "pid": 70419,
+      "state": "Ss"
+    }
+  ],
+  "immediate_drain_cancelled": true
+}
