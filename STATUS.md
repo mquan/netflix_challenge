@@ -78,7 +78,7 @@ Do not duplicate these processes. [P0_EXECUTION.md](P0_EXECUTION.md) holds proto
 - Ten controllers are SIGSTOP-held, including idle BDS; active A2b/R3R/T6
   trainers continue. Expected remaining time is around 30–60 min at current rates.
   No further training stages may start. Other-session source files remain unchanged.
-- Supervisor prepared under `experiments/pause-20261109/`: exact original
+- Supervisor **66698** verified live/draining under `experiments/pause-20261109/`: exact original
   post-training reload/audit commands, four focused tests, unchanged remaining
   script suffixes, source/receipt hash binding and independent PID identities.
 - Once all three active stages audit, it writes `ready.json`, records remaining
