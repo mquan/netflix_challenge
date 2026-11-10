@@ -13,6 +13,8 @@
 
 ## Current plan
 
+Side task: Codex reviewing Notion PR #434555 in isolated temporary state; research remains paused and unchanged.
+
 1. **Codex:** **continue overnight until Nov 9 07:00 Pacific (15:00 UTC)**.
    User corrected the early drain: it is cancelled, queues restored and active.
    At the requested cutoff, stop all owned queue trees and save a disk handoff.
