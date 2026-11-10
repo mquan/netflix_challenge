@@ -69,6 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
+| Notion PR #434555 review | Codex | In progress; read-only review in isolated temporary state, no research jobs or frozen files touched. |
 | Planned pause 2026-11-09 07:00 Pacific | Codex | CORRECTED: user wants work to continue UNTIL 07:00, not drain now. Immediate drain cancelled; original queues restored, joint resumes after audited T6 via runner 70419. Scheduled cutoff timer 74677 verified live/waiting in experiments/overnight-20261109/. At 07:00 pause all queue/worker trees and save disk resume plan. Completed stages retained; unfinished stages may rerun after restart. After cutoff resume only on explicit user instruction. |
 | Short-runs-first queue barrier (2026-11-08) | Codex | Complete: 7/7 CPU audits, 25/25 S0 receipts, complete S0 summary and short runner exit verified. Checker 92690 released all ten original controllers at 20:34 UTC after normal-memory checks; no active trainer stopped. `experiments/short-first-20261108/release.json`. |
 | Production critical-path/runtime audit (2026-11-08) | Codex | Review complete: 90 source files bound; Bayes 35.84 h serial vs 19.15 h ideal two-lane, RBM ≈21.56 h. Current rough 3–5 days, 48–72 h optimization target unvalidated. No queue changes. Concrete scheduling/compatibility/verification plan in P0_EXECUTION.md Runtime review and experiments/runtime-audit-20261108/evidence.json. |
