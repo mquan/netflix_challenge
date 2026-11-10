@@ -1,0 +1,15 @@
+{
+ "reference": 0.8671122160927217,
+ "refit": {
+  "1.0": 0.8671122160927217,
+  "0.75": 0.8673902745822059,
+  "0.5": 0.8677025537440628
+ },
+ "parity_exact": true,
+ "delta50": 0.0005903376513410885,
+ "followup_warranted": false,
+ "delta75": 0.00027805848948414535,
+ "plan": "experiments/BDS-20261108-plan.json",
+ "rule": "delta50 >= 0.0006 -> follow-up",
+ "decision": "closed; no P2-rows blender follow-up"
+}

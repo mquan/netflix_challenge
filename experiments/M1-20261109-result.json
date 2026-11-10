@@ -1,0 +1,125 @@
+{
+ "experiment": "Moonshot M1 P2 selection run",
+ "plan": "experiments/M1-20261109-plan.json",
+ "reference_n1_p2": 0.868338,
+ "gate_standalone": 0.865338,
+ "best_p2": 0.8933865068058562,
+ "selected_epoch": 13,
+ "delta_vs_n1": 0.02504850680585613,
+ "standalone_gate_pass": false,
+ "bank_gate": "not scored (standalone 0.025 behind N1)",
+ "decision": "moonshot closed; no M2",
+ "curve": [
+  {
+   "epoch": 1,
+   "p2_rmse": 0.9134780784599456,
+   "seconds": 2562.699082624982
+  },
+  {
+   "epoch": 2,
+   "p2_rmse": 0.9076596695754452,
+   "seconds": 2209.4102497909917
+  },
+  {
+   "epoch": 3,
+   "p2_rmse": 0.9045962684807991,
+   "seconds": 2142.8864702909486
+  },
+  {
+   "epoch": 4,
+   "p2_rmse": 0.9019012873876071,
+   "seconds": 2170.7345019170316
+  },
+  {
+   "epoch": 5,
+   "p2_rmse": 0.9007785623507666,
+   "seconds": 2026.9810781249544
+  },
+  {
+   "epoch": 6,
+   "p2_rmse": 0.8978165949379453,
+   "seconds": 2056.667420999962
+  },
+  {
+   "epoch": 7,
+   "p2_rmse": 0.8968648463255307,
+   "seconds": 2090.0044127919246
+  },
+  {
+   "epoch": 8,
+   "p2_rmse": 0.8956731716925763,
+   "seconds": 2055.0263134589186
+  },
+  {
+   "epoch": 9,
+   "p2_rmse": 0.8946711375122933,
+   "seconds": 2020.4554974170169
+  },
+  {
+   "epoch": 10,
+   "p2_rmse": 0.8941149770270252,
+   "seconds": 2071.33085291693
+  },
+  {
+   "epoch": 11,
+   "p2_rmse": 0.8938052016322109,
+   "seconds": 2059.646862374968
+  },
+  {
+   "epoch": 12,
+   "p2_rmse": 0.8937142988197523,
+   "seconds": 2029.0751906249207
+  },
+  {
+   "epoch": 13,
+   "p2_rmse": 0.8933865068058562,
+   "seconds": 2033.5831616669893
+  },
+  {
+   "epoch": 14,
+   "p2_rmse": 0.8935302891307875,
+   "seconds": 2020.1075251250295
+  }
+ ],
+ "config": {
+  "representation": "categorical",
+  "head": "distribution",
+  "loss": "mse",
+  "objective": "masked",
+  "rank": 64,
+  "hidden": 256,
+  "dropout": 0.1,
+  "input_drop": 0.5,
+  "lr": 0.001,
+  "weight_decay": 0.001,
+  "batch_users": 512,
+  "nnz_budget": 131072,
+  "seed": 20260928,
+  "device": "mps",
+  "context": "session",
+  "suffix_prob": 0.0,
+  "time_bins": 32,
+  "week_days": 0,
+  "seq_len": 3072,
+  "recent_frac": 0.5,
+  "max_targets": 128,
+  "d_model": 128,
+  "layers": 4,
+  "heads": 4,
+  "ff": 512,
+  "batch_tokens": 16384,
+  "bucket": 32,
+  "windows": 1,
+  "pad_width": 32,
+  "pad_rows": 64,
+  "choice_tokens": 1,
+  "attn_chunk": 512,
+  "head_mlp": 256,
+  "warmup_steps": 500,
+  "cosine_epochs": 12,
+  "lr_floor": 0.05,
+  "checkpoint": 1,
+  "pad_row_tokens": 16384
+ },
+ "checkpoint_on_disk": "artifacts/moonshot/M1-select.select.pt (not committed, 152 MB)"
+}
