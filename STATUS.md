@@ -1,6 +1,6 @@
 # STATUS — start here
 
-**Last updated:** 2026-11-09 22:30 PST by Claude. Update on every state change and before ending a session.
+**Last updated:** 2026-11-10 07:40 PST by Claude. Update on every state change and before ending a session.
 
 ## Goal and score
 
@@ -18,9 +18,8 @@
    At the requested cutoff, stop all owned queue trees and save a disk handoff.
    After cutoff: **resume only on explicit user instruction**, never automatically.
    Restart may require rerunning an unfinished stage; completed audited stages persist.
-2. **Claude:** [moonshot](MOONSHOT_REBUILD.md) **M1 RUNNING** (user 11-09: "let's not touch codex experiment, let's try to run yours"; "don't worry about 7am cutoff anymore"). P2 selection run, PID **64184** (caffeinate-held), log `artifacts/moonshot/M1-select.log`, ≈1–1.3 h/epoch, ≤14 epochs. Gates pre-registered in `experiments/M1-20261109-plan.json`: P2 ≤0.865338 (N1 0.868338 − 0.003) and ≥0.0010 beyond bank11+N1.
-2b. **Claude:** BDS blender data-scaling diagnostic **RUNNING** via guard-free copy `experiments/BDS-20261109-run.sh` (PID **64183**, 3 CPU processes, ≈3 h); log `artifacts/blend-scaling/queue.log`, result `artifacts/blend-scaling/BDS-summary.json`. Old guarded controller 12307 left stopped for Codex's control.py. Rule: `experiments/BDS-20261108-plan.json`.
-   Note: if production is resumed, M1 shares the GPU with Codex's GPU queue and slows it (M0 pilot contention).
+2. **Claude:** [moonshot](MOONSHOT_REBUILD.md) **CLOSED 11-10: M1 failed.** P2 best 0.893387 (epoch 13) vs N1 0.868338, i.e. 0.025 worse; standalone gate (≤0.865338) fails, so no M2. `artifacts/moonshot/M1-select.select.progress.json`.
+2b. **Claude:** BDS **closed 11-10.** Parity exact (1.0 = 0.8671122161). 75% +0.00028, 50% +0.00059 < 0.0006 rule → no P2-rows blender follow-up. `artifacts/blend-scaling/BDS-summary.json`.
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
@@ -80,6 +79,7 @@ Production and queued BDS were stopped at the requested cutoff. Completed audits
 
 | Date | Result | Doc |
 |---|---|---|
+| 11-10 | Moonshot M1 P2 0.893387 vs N1 0.868338 (0.025 worse) → moonshot closed. BDS: halving blender users costs 0.00059 (<0.0006) → closed | MOONSHOT_REBUILD.md, artifacts/blend-scaling/BDS-summary.json |
 | 11-08 | S0 all 25 arms complete; largest observed gain only 0.00002008 with two folds worse → no promotion. Seven CPU production models complete; barrier released, 19/82 production audits independently verified | experiments/short-first-20261108/results.json |
 | 11-07 | Moonshot M0 gate met: M1 config 7.3 GB peak with opt-in pad_row_tokens + checkpoint (N1 recipe 57→7.1 GB) | MOONSHOT_REBUILD.md |
 | 11-07 | Moonshot M0 step 2: opt-in MLP head + warmup/cosine schedule; N1 parity holds; 10 tests pass | MOONSHOT_REBUILD.md |

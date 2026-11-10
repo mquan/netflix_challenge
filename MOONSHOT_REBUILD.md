@@ -124,3 +124,15 @@ correspondingly.
 
 **M1 plan:** selection run on P2 with patience, then the shared P2 gates.
 About 12 epochs × 1.3 h ≈ 16 h per run if the GPU is shared; less alone.
+
+**M1 result (2026-11-10). Moonshot closed.** P2 selection run (plan
+`experiments/M1-20261109-plan.json`, 14 epochs, ≈34 min each with the GPU
+alone): best validation RMSE **0.893387** at epoch 13 against N1's 0.868338.
+That is 0.025 *worse*, so the standalone gate (≤0.865338) fails and M2 is not
+reached. The curve was flat from epoch 10 (0.8941 → 0.8934). Per the stop rule
+there is no re-tuning after reading P2. The bank gate was not scored: a model
+0.025 behind N1 standalone has no realistic path to +0.0010 beyond bank11+N1.
+A gap this large probably comes from one of the new pieces (3072-token
+context, MLP head, or the warmup/cosine schedule with lr_floor 0.05)
+rather than from tuning; no ablation was run to find out which.
+Evidence: `artifacts/moonshot/M1-select.{json,log}`, `M1-select.select.progress.json`.
