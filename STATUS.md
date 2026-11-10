@@ -1,6 +1,6 @@
 # STATUS — start here
 
-**Last updated:** 2026-11-08 by Codex. Update on every state change and before ending a session.
+**Last updated:** 2026-11-09 22:30 PST by Claude. Update on every state change and before ending a session.
 
 ## Goal and score
 
@@ -18,8 +18,9 @@
    At the requested cutoff, stop all owned queue trees and save a disk handoff.
    After cutoff: **resume only on explicit user instruction**, never automatically.
    Restart may require rerunning an unfinished stage; completed audited stages persist.
-2. **Claude:** [moonshot](MOONSHOT_REBUILD.md). **M0 done 11-07**: M1 config (d128 L4, 3072 tokens, MLP head) peaks at 7.3 GB on MPS, ≈1.3 h/epoch on P2 with the GPU shared. No moonshot process running. **On hold (user, 11-08): start nothing; nothing queued.** Honest odds of M1 passing both gates ≈10–15%. Resume only on user request.
-2b. **Claude:** BDS blender data-scaling diagnostic **queued** (idle controller PID 12307 restored; no training). Included in scheduled 07:00 pause; after cutoff resume only explicitly (≈3 h CPU after production). Plan/rule: `experiments/BDS-20261108-plan.json`; result lands in `artifacts/blend-scaling/BDS-summary.json`. Production schedule review: [PRODUCTION_SPEEDUP_REVIEW.md](PRODUCTION_SPEEDUP_REVIEW.md).
+2. **Claude:** [moonshot](MOONSHOT_REBUILD.md) **M1 RUNNING** (user 11-09: "let's not touch codex experiment, let's try to run yours"; "don't worry about 7am cutoff anymore"). P2 selection run, PID **64184** (caffeinate-held), log `artifacts/moonshot/M1-select.log`, ≈1–1.3 h/epoch, ≤14 epochs. Gates pre-registered in `experiments/M1-20261109-plan.json`: P2 ≤0.865338 (N1 0.868338 − 0.003) and ≥0.0010 beyond bank11+N1.
+2b. **Claude:** BDS blender data-scaling diagnostic **RUNNING** via guard-free copy `experiments/BDS-20261109-run.sh` (PID **64183**, 3 CPU processes, ≈3 h); log `artifacts/blend-scaling/queue.log`, result `artifacts/blend-scaling/BDS-summary.json`. Old guarded controller 12307 left stopped for Codex's control.py. Rule: `experiments/BDS-20261108-plan.json`.
+   Note: if production is resumed, M1 shares the GPU with Codex's GPU queue and slows it (M0 pilot contention).
 3. **Codex:** complete the fixed S0 full-blender scoping experiment.
 
 New-family pilots remain permanently closed. No cloud GPUs. No validated ETA for the target.
