@@ -135,4 +135,4 @@ there is no re-tuning after reading P2. The bank gate was not scored: a model
 A gap this large probably comes from one of the new pieces (3072-token
 context, MLP head, or the warmup/cosine schedule with lr_floor 0.05)
 rather than from tuning; no ablation was run to find out which.
-Evidence: `artifacts/moonshot/M1-select.{json,log}`, `M1-select.select.progress.json`.
+Evidence: `experiments/M1-20261109-{result,report}.json`, `experiments/M1-20261109-train.log` (checkpoint stays in artifacts/moonshot/).
