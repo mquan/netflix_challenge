@@ -1,0 +1,14 @@
+{
+  "experiment": "Moonshot M1 P2 selection run",
+  "owner": "Claude",
+  "created": "2026-11-09",
+  "doc": "MOONSHOT_REBUILD.md stage M1",
+  "authorized": "user 2026-11-09: 'let's not touch codex experiment, let's try to run yours' (production paused at 07:00 cutoff)",
+  "trainer": "scripts/moonshot_sequence.py --selection-only on artifacts/validation/train-matched-20260927.bin",
+  "recipe": "N1 recipe + d_model 128, layers 4, ff 512, seq_len 3072, attn_chunk 512, head_mlp 256, warmup_steps 500, cosine_epochs 12, pad_row_tokens 16384, checkpoint 1; epochs 14, patience 3",
+  "reference": "N1-select P2 best validation_rmse 0.868338 (epoch 13), artifacts/residual-chains/N1-select.select.progress.json",
+  "gate_standalone": "best P2 validation_rmse <= 0.865338 (>= 0.003 better than N1)",
+  "gate_bank": ">= 0.0010 beyond bank11 + N1 on the shared P2 gate (scored after selection, from the saved selection checkpoint)",
+  "stop_rule": "If M1 fails both gates, close the moonshot. No re-tuning after reading P2.",
+  "resources": "MPS capped via PYTORCH_MPS_HIGH/LOW_WATERMARK_RATIO=0.25/0.2 (pilot peak 7.3 GB); 1 CPU thread"
+}
