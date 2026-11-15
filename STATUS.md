@@ -108,6 +108,9 @@ Production and queued BDS were stopped at the requested cutoff. Completed audits
   final = `-NN2.avg.f32`); run logs `experiments/R9-LAT-A2h-20261010-*`.
   Full 79-column input bank (+46 support, manifests, run commands) tracked
   at `artifacts/r9/bank/` with `artifacts/r4/meta-context.npz`; see its README.
+  A2h refit predictions (final + e1–e12) tracked in `artifacts/masked/`.
+  Original K1 checkpoint tracked as 12 parts in
+  `artifacts/K1-joint256.bin.parts/` (README has the reassemble command).
 - **Older history:** PLAN_TO_TARGET.md, ROUND*.md, RESULTS.md.
   RESUME_CHECKPOINT.md is superseded by this page.
 - **Commits:** every step is committed and pushed on `codex/local-context`,
