@@ -1,0 +1,45 @@
+{
+  "experiment": "AS1",
+  "scope": "bounded training-only feasibility pilot; promotion conditional on later matched R9 ensemble evaluation",
+  "registered_before_outer_scoring": "See timing-run manifest.json, written before pilot fitting and outer scoring",
+  "input": "data/processed/netflix.bin",
+  "input_manifest": "artifacts/audience-shocks/AS1-pilot-20261115/manifest.json",
+  "split": "seed 711: 60% upstream, 20% residual fit, 10% inner selection, 10% outer scoring; selected complete user histories",
+  "baseline": "Fresh regularized user/item bias fit, explicitly weaker than R9-LAT-A2h",
+  "geometry": "Four seeded random item coordinates; independent of all ratings; profiles use upstream ratings centered at fixed 3.6 with all candidate-movie contributions removed",
+  "arms": [
+    "base",
+    "smooth viewer-conditioned movie-time",
+    "abrupt bias",
+    "abrupt viewer-conditioned",
+    "eight-week-shift placebo"
+  ],
+  "detection": {
+    "window_weeks": 4,
+    "minimum_distinct_users_each_side": 12,
+    "permutations": 19,
+    "cutoff": "99th percentile of permutation maximum scores across all tested movies/windows",
+    "null": "Permute movie assignments within 16-week strata, preserving stratum movie totals and all dated user events; destroy within-stratum timing and movie/user associations"
+  },
+  "inner_ridge_candidates": [
+    10,
+    100,
+    1000
+  ],
+  "pilot_gate": "Full correction improves overall outer RMSE over base, smooth, bias and placebo by at least 0.0001",
+  "promotion_gate": "Later matched full-ensemble improvement >=0.0001, all five user folds improve, paired user-cluster 95% interval favors correction",
+  "budget": "100-user timing sample then bounded default 500-user pilot, single BLAS thread; no checkpoint retraining or changes to concurrent work",
+  "audit": {
+    "neighboring_workspaces": "Read-only script search found no audience-shock implementation",
+    "promoted_baseline": "PROGRESS.md: R9-LAT-A2h 0.8668706425; B5 not promoted",
+    "clean_reusable_artifacts": "artifacts/validation absent; existing geometry and prediction provenance not verified for fresh pilot split",
+    "resource_snapshot": "32 GiB machine; three concurrent training workers about 22 GiB combined RSS",
+    "decision": "Use fresh weak base and rating-independent geometry for bounded screen; defer strong baseline retraining"
+  },
+  "restrictions": [
+    "No Probe labels used",
+    "No private-test achievement claim",
+    "No ensemble gain claim from weak pilot",
+    "No promotion or full Probe export unless pilot and provenance gates pass"
+  ]
+}
