@@ -1,0 +1,26 @@
+{
+  "rmse": 0.8660701635509173,
+  "fold_rmse": [
+    0.8670437913986769,
+    0.8661738406109657,
+    0.8621589757867955,
+    0.8675280858159496,
+    0.8674580008094827
+  ],
+  "inputs_sha256": "bb134af9a3d898c2786f251ce9b1ebdf8015aa8155b3d63524502478c2528985",
+  "metric": "Original Probe user-fold development contextual ridge, original-split bases only",
+  "target_rmse": 0.85725,
+  "comparison": {
+    "control": "R9-LAT-A2h",
+    "control_rmse": 0.8668706424555479,
+    "delta": -0.0008004789046306415,
+    "fold_delta": [
+      -0.0008153131931126767,
+      -0.0005150010885008882,
+      -0.0010291329909167812,
+      -0.0006803192790880708,
+      -0.0009627700621660518
+    ],
+    "all_folds_improve": true
+  }
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/streaming_blend.py", line 183, in <module>
+    if __name__ == '__main__': main()
+  File "/Users/quan/workspace/netflix_prize/scripts/streaming_blend.py", line 121, in main
+    from threadpoolctl import threadpool_limits
+ModuleNotFoundError: No module named 'threadpoolctl'

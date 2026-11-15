@@ -1,0 +1,4 @@
+{"stage": "csr", "seconds": 18.995481541147456, "nnz": 96654544, "items": 8192}
+{"stage": "gram", "seconds": 118.3251810001675}
+{"stage": "inverse", "seconds": 136.46600412507541}
+{"items": 8192, "covered": 0.9542649611792147, "seconds": 137.97019050014205, "config": {"data": "data/processed/netflix.bin", "output": "artifacts/ease/E1-top8192-r100", "items": 8192, "ridge": 100.0}, "data_sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673", "predictions_sha256": "f1251a25a3bc538206b0660d537487acc3264d70d38aaa2b20086037c0a4dad6", "probe_rmse": 0.9647099744127828, "fold_rmse": [0.9665328085189854, 0.9655011289064593, 0.9606260242935859, 0.9656272455599548, 0.9652734678618614], "metric": "Original Probe development; all Probe values excluded from fitting", "method": "EASE-inspired dense residual autoencoder, user-normalized, zero diagonal"}
