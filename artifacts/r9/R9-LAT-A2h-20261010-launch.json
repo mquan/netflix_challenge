@@ -1,0 +1,32 @@
+{
+  "run_id": "R9-LAT-A2h-20261010",
+  "pid": 97132,
+  "caffeinate_pid": 97133,
+  "started_utc": "2026-10-10T14:35:42.092407+00:00",
+  "command": [
+    "/usr/bin/nice",
+    "-n",
+    "10",
+    "/Users/quan/.cache/netflix-venv/bin/python",
+    "scripts/round9_latent_run.py",
+    "--run-id",
+    "R9-LAT-A2h-20261010",
+    "--base",
+    "artifacts/r8/R8-A2h-s3.json",
+    "--control",
+    "artifacts/r8/R8-A2h-NN2.json",
+    "--processes",
+    "1",
+    "--nn-threads",
+    "2"
+  ],
+  "log": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-pipeline.log",
+  "control": "R8-A2h-NN2",
+  "control_rmse": 0.867098452366342,
+  "source_hashes": {
+    "scripts/round9_latent_run.py": "80817e423d81385b007625ee3700267f409b9e4d7720960b05912cf52b0e444a",
+    "scripts/round4_boost.py": "c1064ebe16045d01b0d5f4e5c10cea648685e2e42f2d6c7b0e3a9de291bfd74c",
+    "scripts/round8_nn_blend.py": "696e9326d84b97d13d87195187c784c66bdb42f290204d20656d17238bd9bdd0"
+  },
+  "note": "CPU only: one LightGBM fold worker, followed by two-thread NN2. Runs separately from A2j; all five folds must improve."
+}
