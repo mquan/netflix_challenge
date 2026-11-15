@@ -69,6 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
+| Public predictor import screen | Codex, `codex/content-features` worktree | Three fixed original-probe columns imported and verified. Integrated time factor/neighborhood passed diagnostic: 0.00013076 RMSE gain, all five folds better; ALS and CF-NADE failed. Full 80-column R9 comparison remains pending while the other worktree's three-worker blend uses memory. No promotion. |
 | Personalized movie-content pilot | Codex, `codex/content-features` worktree | Lexical title/year control closed: one-weight R9 screen gained 0.0000008 RMSE and worsened two folds; fails fixed 0.0001 / four-fold gate. No full blend launched. Separate worktree and outputs retained. |
 | Notion PR #434555 review | Codex | In progress; read-only review in isolated temporary state, no research jobs or frozen files touched. |
 | Planned pause 2026-11-09 07:00 Pacific | Codex | CORRECTED: user wants work to continue UNTIL 07:00, not drain now. Immediate drain cancelled; original queues restored, joint resumes after audited T6 via runner 70419. Scheduled cutoff timer 74677 verified live/waiting in experiments/overnight-20261109/. At 07:00 pause all queue/worker trees and save disk resume plan. Completed stages retained; unfinished stages may rerun after restart. After cutoff resume only on explicit user instruction. |

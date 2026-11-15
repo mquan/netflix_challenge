@@ -1,0 +1,77 @@
+{
+  "kind": "fixed_three_public_predictor_screen",
+  "source": "gtakacs/netflix_prize preds_old original-probe arrays",
+  "source_index_sha256": "8714114b33345a63f5b254348015a5ff04427c9c901ffead120e6d4bc46e15e8",
+  "mapping_sha256": "4355330f53ca5c51f7bcfec273779ebe9c03e3445063ac2f5d33aa1945d0f9a8",
+  "mapping_checks": "all 1,408,395 pairs bijective; source and processed ratings agree",
+  "baseline_rmse": 0.8668706424233037,
+  "rows": [
+    {
+      "name": "als8-8",
+      "standalone_rmse": 0.960121727470398,
+      "screen_rmse": 0.8668561820076329,
+      "gain": 1.44604156707695e-05,
+      "fold_gains": [
+        5.300251426643143e-08,
+        1.634861205590532e-05,
+        2.3781857089177905e-05,
+        8.25949392435632e-06,
+        2.39018745558095e-05
+      ],
+      "weights": [
+        0.013544834726935866,
+        0.012296191504162663,
+        0.011614944612212926,
+        0.013032545334720456,
+        0.011623728350673794
+      ],
+      "gate_pass": false,
+      "processed_sha256": "7c34799b9195c0f05105fb4226e90e95595897169c89bf21670f64943452e05d"
+    },
+    {
+      "name": "cfnade_rmsew010_ep38",
+      "standalone_rmse": 0.8975491758099233,
+      "screen_rmse": 0.8668697490816868,
+      "gain": 8.933416169032427e-07,
+      "fold_gains": [
+        -2.1556591167426475e-05,
+        -9.408698314117281e-06,
+        2.0318313175948788e-05,
+        1.547771588472635e-05,
+        -3.8480779429583833e-07
+      ],
+      "weights": [
+        0.021657269933347767,
+        0.019682996021281273,
+        0.013114552066492938,
+        0.01485430780581501,
+        0.01837483733017602
+      ],
+      "gate_pass": false,
+      "processed_sha256": "4109542b472cd2541c5eb8f42d9d255f009eaf7a4e75dee29a8e441375cb560a"
+    },
+    {
+      "name": "tsvdx5-400__nlpp__knn3x",
+      "standalone_rmse": 0.8803494187981198,
+      "screen_rmse": 0.8667398821601418,
+      "gain": 0.00013076026316194422,
+      "fold_gains": [
+        0.000128965067380582,
+        0.0001151658118365706,
+        0.0001098174978942934,
+        0.00010383752107911981,
+        0.00019618043151725661
+      ],
+      "weights": [
+        0.08934864206648939,
+        0.0907422140813017,
+        0.09119557894342115,
+        0.09152321077854986,
+        0.0835531912689363
+      ],
+      "gate_pass": true,
+      "processed_sha256": "7b0ca24bb37803ae961110499af946b663e2999a0900e7061e900ce8d041b8bb"
+    }
+  ],
+  "limitation": "one-weight development diagnostic; source model selection may use Probe; full R9 blend not yet run"
+}

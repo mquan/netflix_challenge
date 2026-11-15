@@ -1,0 +1,54 @@
+{
+  "kind": "diagnostic_not_promotion",
+  "baseline_rmse": 0.8668706424233037,
+  "treatment_rmse": 0.8667398821601418,
+  "gain": 0.00013076026316194422,
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 281675,
+      "weight": 0.08934864206648939,
+      "baseline_rmse": 0.8678591044001163,
+      "treatment_rmse": 0.8677301393327357,
+      "gain": 0.000128965067380582
+    },
+    {
+      "fold": 1,
+      "rows": 281390,
+      "weight": 0.0907422140813017,
+      "baseline_rmse": 0.8666888417344772,
+      "treatment_rmse": 0.8665736759226407,
+      "gain": 0.0001151658118365706
+    },
+    {
+      "fold": 2,
+      "rows": 283006,
+      "weight": 0.09119557894342115,
+      "baseline_rmse": 0.8631881091907445,
+      "treatment_rmse": 0.8630782916928502,
+      "gain": 0.0001098174978942934
+    },
+    {
+      "fold": 3,
+      "rows": 281688,
+      "weight": 0.09152321077854986,
+      "baseline_rmse": 0.8682084049698912,
+      "treatment_rmse": 0.868104567448812,
+      "gain": 0.00010383752107911981
+    },
+    {
+      "fold": 4,
+      "rows": 280636,
+      "weight": 0.0835531912689363,
+      "baseline_rmse": 0.8684207705789156,
+      "treatment_rmse": 0.8682245901473984,
+      "gain": 0.00019618043151725661
+    }
+  ],
+  "candidate_mode": true,
+  "gate_pass": true,
+  "inputs": {
+    "artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+    "artifacts/community/gtakacs/tsvdx5-400__nlpp__knn3x.processed.f32": "7b0ca24bb37803ae961110499af946b663e2999a0900e7061e900ce8d041b8bb"
+  }
+}

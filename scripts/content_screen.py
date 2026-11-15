@@ -24,12 +24,16 @@ def main():
     ap.add_argument('--data', type=pathlib.Path, required=True)
     ap.add_argument('--baseline', type=pathlib.Path, required=True)
     ap.add_argument('--feature', type=pathlib.Path, required=True)
+    ap.add_argument('--candidate', action='store_true',
+                    help='feature is a full-rating prediction; screen its difference from baseline')
     ap.add_argument('--output', type=pathlib.Path, required=True)
     args = ap.parse_args()
     d = load(args.data)
     y = d['probe']['rating'].astype(np.float64)
     n = len(y)
     base, x = read(args.baseline, n), read(args.feature, n)
+    if args.candidate:
+        x = x - base
     folds = blend_fold(d['probe']['user'])
     pred = np.empty(n, dtype=np.float64)
     records = []
@@ -49,6 +53,7 @@ def main():
     new = np.sqrt(np.mean((y-pred)**2))
     result = dict(kind='diagnostic_not_promotion', baseline_rmse=float(old),
                   treatment_rmse=float(new), gain=float(old-new), folds=records,
+                  candidate_mode=args.candidate,
                   gate_pass=bool(old-new >= 0.0001 and sum(r['gain'] > 0 for r in records) >= 4),
                   inputs={str(p): hashlib.sha256(p.read_bytes()).hexdigest()
                           for p in (args.baseline, args.feature)})

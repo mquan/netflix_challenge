@@ -1,0 +1,54 @@
+{
+  "kind": "diagnostic_not_promotion",
+  "baseline_rmse": 0.8668706424233037,
+  "treatment_rmse": 0.8668697490816868,
+  "gain": 8.933416169032427e-07,
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 281675,
+      "weight": 0.021657269933347767,
+      "baseline_rmse": 0.8678591044001163,
+      "treatment_rmse": 0.8678806609912837,
+      "gain": -2.1556591167426475e-05
+    },
+    {
+      "fold": 1,
+      "rows": 281390,
+      "weight": 0.019682996021281273,
+      "baseline_rmse": 0.8666888417344772,
+      "treatment_rmse": 0.8666982504327914,
+      "gain": -9.408698314117281e-06
+    },
+    {
+      "fold": 2,
+      "rows": 283006,
+      "weight": 0.013114552066492938,
+      "baseline_rmse": 0.8631881091907445,
+      "treatment_rmse": 0.8631677908775686,
+      "gain": 2.0318313175948788e-05
+    },
+    {
+      "fold": 3,
+      "rows": 281688,
+      "weight": 0.01485430780581501,
+      "baseline_rmse": 0.8682084049698912,
+      "treatment_rmse": 0.8681929272540064,
+      "gain": 1.547771588472635e-05
+    },
+    {
+      "fold": 4,
+      "rows": 280636,
+      "weight": 0.01837483733017602,
+      "baseline_rmse": 0.8684207705789156,
+      "treatment_rmse": 0.8684211553867099,
+      "gain": -3.8480779429583833e-07
+    }
+  ],
+  "candidate_mode": true,
+  "gate_pass": false,
+  "inputs": {
+    "artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+    "artifacts/community/gtakacs/cfnade_rmsew010_ep38.processed.f32": "4109542b472cd2541c5eb8f42d9d255f009eaf7a4e75dee29a8e441375cb560a"
+  }
+}
