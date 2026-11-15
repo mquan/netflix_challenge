@@ -1,5 +1,7 @@
 # STATUS — start here
 
+**2026-11-15 isolated content pilot:** Work is on `codex/content-features` in `/Users/quan/workspace/netflix_content`, separate from the running household-persona worktree. The frozen title/year lexical control generated 1,408,395 training-only personalized features; repeat outputs were byte-identical. Its one-weight R9 screen gained only 0.0000008 RMSE and worsened two folds, failing the fixed 0.0001/four-fold gate. No full blend was launched. Richer semantic movie vectors remain untested; no API key or verified external catalog is present. The historical status below belongs to `codex/local-context`.
+
 **Last updated:** 2026-11-10 07:40 PST by Claude. Update on every state change and before ending a session.
 
 ## Goal and score

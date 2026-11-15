@@ -1,0 +1,53 @@
+{
+  "kind": "diagnostic_not_promotion",
+  "baseline_rmse": 0.8668706424233037,
+  "treatment_rmse": 0.8668698374497474,
+  "gain": 8.049735562565274e-07,
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 281675,
+      "weight": -0.010769493913205733,
+      "baseline_rmse": 0.8678591044001163,
+      "treatment_rmse": 0.8678554173564537,
+      "gain": 3.6870436626035286e-06
+    },
+    {
+      "fold": 1,
+      "rows": 281390,
+      "weight": -0.01626902292725356,
+      "baseline_rmse": 0.8666888417344772,
+      "treatment_rmse": 0.866693794766021,
+      "gain": -4.953031543797337e-06
+    },
+    {
+      "fold": 2,
+      "rows": 283006,
+      "weight": -0.010012854602212167,
+      "baseline_rmse": 0.8631881091907445,
+      "treatment_rmse": 0.8631836737869666,
+      "gain": 4.43540377792484e-06
+    },
+    {
+      "fold": 3,
+      "rows": 281688,
+      "weight": -0.009465315184495388,
+      "baseline_rmse": 0.8682084049698912,
+      "treatment_rmse": 0.8682038284542668,
+      "gain": 4.576515624354904e-06
+    },
+    {
+      "fold": 4,
+      "rows": 280636,
+      "weight": -0.0157070034862452,
+      "baseline_rmse": 0.8684207705789156,
+      "treatment_rmse": 0.8684245182359599,
+      "gain": -3.7476570442507295e-06
+    }
+  ],
+  "gate_pass": false,
+  "inputs": {
+    "artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+    "artifacts/content/title_year72.affinity.f32": "400ec44ac834250176ef44a4e1364f28d74dfb025f5fed9e653d00d367a2994f"
+  }
+}

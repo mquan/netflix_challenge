@@ -69,6 +69,7 @@ Current runtime state remains in [STATUS.md](STATUS.md).
 
 | Work | Owner | State |
 |---|---|---|
+| Personalized movie-content pilot | Codex, `codex/content-features` worktree | Lexical title/year control closed: one-weight R9 screen gained 0.0000008 RMSE and worsened two folds; fails fixed 0.0001 / four-fold gate. No full blend launched. Separate worktree and outputs retained. |
 | Notion PR #434555 review | Codex | In progress; read-only review in isolated temporary state, no research jobs or frozen files touched. |
 | Planned pause 2026-11-09 07:00 Pacific | Codex | CORRECTED: user wants work to continue UNTIL 07:00, not drain now. Immediate drain cancelled; original queues restored, joint resumes after audited T6 via runner 70419. Scheduled cutoff timer 74677 verified live/waiting in experiments/overnight-20261109/. At 07:00 pause all queue/worker trees and save disk resume plan. Completed stages retained; unfinished stages may rerun after restart. After cutoff resume only on explicit user instruction. |
 | Short-runs-first queue barrier (2026-11-08) | Codex | Complete: 7/7 CPU audits, 25/25 S0 receipts, complete S0 summary and short runner exit verified. Checker 92690 released all ten original controllers at 20:34 UTC after normal-memory checks; no active trainer stopped. `experiments/short-first-20261108/release.json`. |
