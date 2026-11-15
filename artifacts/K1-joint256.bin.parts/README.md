@@ -6,7 +6,8 @@ latent features (`scripts/round9_latent_features.py --model` default;
 PRODUCTION_READINESS.md requires this original checkpoint). Split into
 95 MiB parts because GitHub rejects files over 100 MB.
 
-Reassemble and verify from the repo root:
+Reassemble and verify (one step): `sh scripts/restore_k1_checkpoint.sh`.
+Equivalent manual commands from the repo root:
 
 ```sh
 cat artifacts/K1-joint256.bin.parts/K1-joint256.bin.part-* > artifacts/K1-joint256.bin

@@ -110,7 +110,8 @@ Production and queued BDS were stopped at the requested cutoff. Completed audits
   at `artifacts/r9/bank/` with `artifacts/r4/meta-context.npz`; see its README.
   A2h refit predictions (final + e1–e12) tracked in `artifacts/masked/`.
   Original K1 checkpoint tracked as 12 parts in
-  `artifacts/K1-joint256.bin.parts/` (README has the reassemble command).
+  `artifacts/K1-joint256.bin.parts/`; on a fresh clone run
+  `sh scripts/restore_k1_checkpoint.sh` to rebuild `artifacts/K1-joint256.bin`.
 - **Older history:** PLAN_TO_TARGET.md, ROUND*.md, RESULTS.md.
   RESUME_CHECKPOINT.md is superseded by this page.
 - **Commits:** every step is committed and pushed on `codex/local-context`,
