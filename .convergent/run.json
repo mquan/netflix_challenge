@@ -1,0 +1,13 @@
+{
+  "workspace": "/Users/quan/workspace/netflix_prize",
+  "planner_engine": "codex",
+  "worker_engine": "codex",
+  "worker_instructions": "Plan-only task. Review /Users/quan/workspace/netflix_prize/CONVERGENT_SOLUTION.md, copy or improve that document in the isolated worktree, and do not implement, train, or edit model code. Only the document is an authorized deliverable.",
+  "schema": "/Users/quan/workspace/convergent/schemas/decision.json",
+  "evaluator_id": "netflix-plan-only-check",
+  "evaluator_argv": ["/Users/quan/workspace/netflix_prize/.convergent/plan-evaluator.sh", "{worktree}"],
+  "max_steps": 6,
+  "timeout_seconds": 600,
+  "max_worker_attempts": 2,
+  "worker_timeout_seconds": 300
+}
