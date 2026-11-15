@@ -43,3 +43,20 @@ is closed without the costly full R9 blend. The result says little about richer
 plot or genre embeddings; those require verified content and their own arm.
 
 Inputs and per-fold scores: `experiments/CONTENT-title-year-screen.json`.
+
+## Exploratory slice audit
+
+Among users with fewer than 50 training ratings (450,585 Probe rows), the
+fixed correction gained 0.00000487 RMSE. Movies released in 2000 or later
+(911,904 rows) gained 0.00000419. Both are tiny compared with the 0.0001
+aggregate gate; no broad user or movie-support slice performed strongly.
+Movies with fewer than 100 training ratings worsened 0.00006569 RMSE.
+
+Of 261 individual movies with at least 1,000 Probe rows, High Fidelity gained
+0.00016158 on 1,363 rows and Being John Malkovich gained 0.00013368 on 2,348
+rows; both were positive in all five user folds. These are selected after
+looking at 261 movies, so their apparent consistency is not independent
+confirmation. Other movies worsened, and the full-Probe result stayed flat.
+No slice is promoted or used to retune the closed arm. Detailed slices are in
+`experiments/CONTENT-title-year-slices.json` and
+`experiments/CONTENT-title-year-movie-slices.json`.
