@@ -1,0 +1,157 @@
+{
+  "records": [
+    {
+      "epoch": 1,
+      "loss": 0.7777234645560581,
+      "train_rmse": 0.8818863110187937,
+      "users": 480189,
+      "targets": 29688351,
+      "tokens": 79519290,
+      "train_seconds": 1463.30422679201,
+      "seconds": 1717.7119736670284
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7284929424253376,
+      "train_rmse": 0.8535179801510322,
+      "users": 480189,
+      "targets": 29692368,
+      "tokens": 79523869,
+      "train_seconds": 1161.9862324999995,
+      "seconds": 1423.0362575830077
+    },
+    {
+      "epoch": 3,
+      "loss": 0.6984956933480998,
+      "train_rmse": 0.8357605472265802,
+      "users": 480189,
+      "targets": 29684067,
+      "tokens": 79521012,
+      "train_seconds": 1151.242386833008,
+      "seconds": 1411.9436522910255
+    },
+    {
+      "epoch": 4,
+      "loss": 0.68390903521243,
+      "train_rmse": 0.8269879283598436,
+      "users": 480189,
+      "targets": 29692016,
+      "tokens": 79518740,
+      "train_seconds": 1156.0075445830007,
+      "seconds": 1409.1593555000145
+    },
+    {
+      "epoch": 5,
+      "loss": 0.6757393301542415,
+      "train_rmse": 0.8220336555267217,
+      "users": 480189,
+      "targets": 29686255,
+      "tokens": 79521049,
+      "train_seconds": 1160.5458417499904,
+      "seconds": 1422.036166667007
+    },
+    {
+      "epoch": 6,
+      "loss": 0.6699101947572024,
+      "train_rmse": 0.8184804180684203,
+      "users": 480189,
+      "targets": 29691919,
+      "tokens": 79523335,
+      "train_seconds": 1166.9665815840126,
+      "seconds": 1437.9518734590383
+    },
+    {
+      "epoch": 7,
+      "loss": 0.6652270532027439,
+      "train_rmse": 0.815614524787847,
+      "users": 480189,
+      "targets": 29689333,
+      "tokens": 79520538,
+      "train_seconds": 1164.0024410840124,
+      "seconds": 1425.706991959014
+    },
+    {
+      "epoch": 8,
+      "loss": 0.6615018083157589,
+      "train_rmse": 0.8133276148128131,
+      "users": 480189,
+      "targets": 29685853,
+      "tokens": 79523117,
+      "train_seconds": 1145.0789187499904,
+      "seconds": 1425.6793442089693
+    },
+    {
+      "epoch": 9,
+      "loss": 0.6578412523906219,
+      "train_rmse": 0.8110741351357438,
+      "users": 480189,
+      "targets": 29687689,
+      "tokens": 79522594,
+      "train_seconds": 1158.3246282920009,
+      "seconds": 1424.305237124965
+    },
+    {
+      "epoch": 10,
+      "loss": 0.6548301067648342,
+      "train_rmse": 0.8092157353960905,
+      "users": 480189,
+      "targets": 29689387,
+      "tokens": 79526102,
+      "train_seconds": 1134.7483967079897,
+      "seconds": 1399.832817541028
+    },
+    {
+      "epoch": 11,
+      "loss": 0.6526126726833098,
+      "train_rmse": 0.8078444606517834,
+      "users": 480189,
+      "targets": 29688950,
+      "tokens": 79525508,
+      "train_seconds": 1133.1634849999682,
+      "seconds": 1401.653074916976
+    },
+    {
+      "epoch": 12,
+      "loss": 0.6498373056500149,
+      "train_rmse": 0.8061248695964838,
+      "users": 480189,
+      "targets": 29690383,
+      "tokens": 79526137,
+      "train_seconds": 1138.3475511660217,
+      "seconds": 1416.9863173750346
+    }
+  ],
+  "selected_epoch": 12,
+  "config": {
+    "representation": "categorical",
+    "head": "distribution",
+    "loss": "mse",
+    "objective": "masked",
+    "rank": 64,
+    "hidden": 256,
+    "dropout": 0.1,
+    "input_drop": 0.5,
+    "lr": 0.001,
+    "weight_decay": 0.001,
+    "batch_users": 512,
+    "nnz_budget": 131072,
+    "seed": 20260928,
+    "device": "mps",
+    "context": "session",
+    "suffix_prob": 0.0,
+    "time_bins": 32,
+    "week_days": 0,
+    "seq_len": 1536,
+    "recent_frac": 0.5,
+    "max_targets": 128,
+    "d_model": 64,
+    "layers": 2,
+    "heads": 4,
+    "ff": 256,
+    "batch_tokens": 16384,
+    "bucket": 32,
+    "windows": 1,
+    "pad_width": 32,
+    "pad_rows": 64
+  }
+}
