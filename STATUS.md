@@ -106,6 +106,8 @@ Production and queued BDS were stopped at the requested cutoff. Completed audits
 - **Promoted R9-LAT-A2h (79-column) ensemble:** `artifacts/r9/R9-LAT-A2h-20261010-*`
   (configs, comparison, SHA-256 manifest and `.f32` predictions all tracked;
   final = `-NN2.avg.f32`); run logs `experiments/R9-LAT-A2h-20261010-*`.
+  Full 79-column input bank (+46 support, manifests, run commands) tracked
+  at `artifacts/r9/bank/` with `artifacts/r4/meta-context.npz`; see its README.
 - **Older history:** PLAN_TO_TARGET.md, ROUND*.md, RESULTS.md.
   RESUME_CHECKPOINT.md is superseded by this page.
 - **Commits:** every step is committed and pushed on `codex/local-context`,
