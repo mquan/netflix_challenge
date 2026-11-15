@@ -1,6 +1,12 @@
 # STATUS — start here
 
-**Last updated:** 2026-11-10 07:40 PST by Claude. Update on every state change and before ending a session.
+**2026-11-15 isolated worktree note:** The user authorized the day-gated recurring-persona experiment on `codex/household-personas`, in `/Users/quan/workspace/netflix_personas`, and asked work to continue until done or input is needed. Its sole success target is private-test RMSE ≤ 0.85725. This worktree reads the original dataset and frozen geometry through ignored symlinks; the R9 input bank is tracked in this branch. The experiment uses separate code and outputs and will not touch the production queue. The earlier status below describes the historical `codex/local-context` branch.
+
+**Isolated run complete:** Feasibility and persona fits finished. The full two-persona prediction scored 0.89503934 versus 0.89516641 for its frozen joint base; the one-person control scored 0.89512799. The full-bank fixed average scored 0.86684476 versus R9's 0.86687064, a 0.00002588 gain, but folds 0 and 1 worsened. The predeclared all-five-fold gate failed; the candidate is closed and no result is promoted. See [PERSONA_RESULT.md](PERSONA_RESULT.md) and `experiments/PERSONA-P1-R9-final-comparison.json`.
+
+**Comparison stage:** LightGBM and the registered three-seed NN2 finished. No persona trainer or blender is running in this worktree. Stage C was not launched because the gate failed.
+
+**Isolated note updated:** 2026-11-15 by Codex. Historical status below was last updated 2026-11-10 07:40 PST by Claude.
 
 ## Goal and score
 

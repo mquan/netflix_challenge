@@ -1,0 +1,46 @@
+loaded rank=256 item_pc_variance=0.323
+users=10000 elapsed=6.7s
+users=20000 elapsed=13.0s
+users=30000 elapsed=19.4s
+users=40000 elapsed=25.5s
+users=50000 elapsed=31.6s
+users=60000 elapsed=37.7s
+users=70000 elapsed=43.2s
+users=80000 elapsed=48.4s
+users=90000 elapsed=53.5s
+users=100000 elapsed=58.9s
+users=110000 elapsed=64.3s
+users=120000 elapsed=69.8s
+users=130000 elapsed=74.9s
+users=140000 elapsed=80.1s
+users=150000 elapsed=85.2s
+users=160000 elapsed=90.0s
+users=170000 elapsed=95.2s
+users=180000 elapsed=99.9s
+users=190000 elapsed=104.7s
+users=200000 elapsed=108.9s
+users=210000 elapsed=113.1s
+users=220000 elapsed=117.2s
+{
+  "eligible_users": 226268,
+  "covered_rows": 697045,
+  "mean_abs_correction": 0.022346718107231434,
+  "base_rmse": 0.8951664067467574,
+  "one_rmse": 0.8951279866059354,
+  "two_rmse": 0.895050219325942,
+  "seconds": 119.89465329213999,
+  "config": {
+    "data": "data/processed/netflix.bin",
+    "model": "artifacts/persona/geometry-joint256.bin",
+    "train_residual": "artifacts/persona/J256.train-residual.f32",
+    "base_probe": "artifacts/persona/J256.probe.f32",
+    "output": "artifacts/persona/P1-ids-only",
+    "min_history": 100,
+    "dimensions": 8,
+    "penalty": 5.0,
+    "iterations": 4,
+    "day_weight": 0.0,
+    "implicit_weight": 0.5,
+    "max_users": 0
+  }
+}
