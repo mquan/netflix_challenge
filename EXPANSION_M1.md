@@ -2,11 +2,11 @@
 
 {
   "machine": "m1",
-  "state": "job-complete",
-  "active": "dnn-64",
+  "state": "waiting-for-m3",
+  "active": null,
   "completed": [
     "dnn-64"
   ],
   "error": null,
-  "updated": "2026-11-16T19:14:45.920229+00:00"
+  "updated": "2026-11-16T19:14:50.843461+00:00"
 }
