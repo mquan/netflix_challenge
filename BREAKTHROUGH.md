@@ -16,6 +16,36 @@ verification. It is not official Netflix scoring or an untouched private-test
 result. Those distinctions matter when explaining both the achievement and
 the apparent speedup.
 
+## What the apparent PUB466 → QUAL619 jump does and does not show
+
+PUB466's **0.8645337528** is original-Probe user-fold development CV;
+QUAL619's **0.8571903481** is a recovered qualifying audit after production
+refits and public pretrained blend integration. The **0.0073434** difference
+is across evaluation populations and training protocols. It cannot be
+attributed to a one-hour algorithmic improvement or used to calculate an
+apples-to-apples gain. Those records are actually **7h 28m apart**:
+November 15 at 11:14 am and 6:42 pm Pacific.
+
+On the same recovered source1 population, the initial 385-input control
+scores **0.8587390514**, and the final result is **0.8571903481**: an observed
+reduction of **0.0015487**. The closely matched final ridge comparison is
+**0.8575942364 → 0.8571903481**, a reduction of **0.0004038883**. These
+remain adaptive local measurements, with different upstream model histories.
+
+The overall graphs now use the same continuous **0.850–0.955** vertical
+range, including Cinematch at its actual scale position. Earlier versions
+zoomed the Probe axis to 0.855–0.895 and placed Cinematch in a separate
+reference band; visual distances there were not proportional across bands.
+The separate qualifying-detail graph explicitly labels its tighter zoom.
+
+Independent numerical rescoring verifies arithmetic and artifact consistency.
+It does not rule out every upstream information leak, remove selection bias,
+authenticate recovered historical Test membership, or establish performance
+on an untouched holdout. The recorded final-model policy acknowledges source
+hyperparameter adaptation to public Quiz, and the local qualifying audits were
+repeated. A numerical crossing of the historical threshold is a narrower claim
+than reproducing an official Netflix Prize win.
+
 ## What changed from the earlier month of work?
 
 The earlier work built the ingredients: joint factor models, neighborhood
