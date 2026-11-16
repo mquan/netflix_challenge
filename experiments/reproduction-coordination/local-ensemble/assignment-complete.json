@@ -1,0 +1,29 @@
+{
+  "policy": {
+    "primary_required": [
+      "baseline-tree",
+      "baseline-nn",
+      "snapshots-tree",
+      "snapshots-nn",
+      "calibration-tree",
+      "calibration-nn"
+    ],
+    "delegated": [
+      "combined-tree",
+      "combined-nn",
+      "baseline-enn-2026",
+      "baseline-enn-7",
+      "baseline-enn-13",
+      "combined-enn-2026",
+      "combined-enn-7",
+      "combined-enn-13"
+    ],
+    "remote_assignment": "User confirmed the 10-stage remote job: baseline, combined treatment and ENN stacking",
+    "primary_pid": 31589,
+    "monitor_pid": 35024,
+    "plan_sha256": "55367288573b853644e2f35a834c9624d50e095426282108d35f68fc0d79cd89",
+    "created_utc": "2026-11-16T06:07:10.352526+00:00",
+    "rule": "Finish all six assigned stages and verify their receipts before ending the remaining local queue; no quality-based selection"
+  },
+  "completed_utc": "2026-11-16T09:45:19.140916+00:00"
+}

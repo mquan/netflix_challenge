@@ -1,0 +1,67 @@
+{
+  "updated_utc": "2026-11-16T09:46:12.180103+00:00",
+  "metric": "Original-Probe development RMSE",
+  "historical_baseline_rmse": 0.8668706424233037,
+  "fresh_baseline_delta": 8.9536156266945e-12,
+  "enn_seed_scores": {
+    "baseline": {},
+    "combined": {}
+  },
+  "limitation": "Conditional comparisons on historically Probe-selected models, adaptive research; not independent Test",
+  "results": [
+    {
+      "name": "baseline",
+      "rmse": 0.8668706424322573,
+      "delta_rmse": 0.0,
+      "fold_delta": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "delta_mse": 0.0,
+      "paired_user_cluster_mse_interval": [
+        0.0,
+        0.0
+      ],
+      "sha256": "a7f70199049ac827811cb6ff6328be2acd3907a21826f2d7840ef9f0f12430b5"
+    },
+    {
+      "name": "snapshots",
+      "rmse": 0.866832316989262,
+      "delta_rmse": -3.832544299531282e-05,
+      "fold_delta": [
+        -2.731442282399854e-05,
+        4.0963439277730274e-05,
+        -0.0001010371438963098,
+        -3.3916939257139234e-05,
+        -7.028421174148924e-05
+      ],
+      "delta_mse": -6.644493394218889e-05,
+      "paired_user_cluster_mse_interval": [
+        -0.00013169847249247703,
+        -1.191395391900762e-06
+      ],
+      "sha256": "ab562fff9e0ca20220c16be9a685963c8d8c8c12c45c767da722a6c558944823"
+    },
+    {
+      "name": "calibration",
+      "rmse": 0.8669209956384674,
+      "delta_rmse": 5.0353206210052015e-05,
+      "fold_delta": [
+        6.885878912432641e-05,
+        0.00016949742571381599,
+        -2.3569490006702942e-05,
+        4.073070343035834e-05,
+        -3.6936008801502496e-06
+      ],
+      "delta_mse": 8.730196787690588e-05,
+      "paired_user_cluster_mse_interval": [
+        3.2088534948436834e-05,
+        0.00014251540080537493
+      ],
+      "sha256": "80f14e519b4ffb3c062178dfd397b47bc3fd77e8d1650a9102d641ddbb257922"
+    }
+  ]
+}

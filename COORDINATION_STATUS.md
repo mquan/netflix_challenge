@@ -1,6 +1,6 @@
 # Reproduction coordination
 
-Local machine: {"complete": false, "state": "running", "active": "calibration-nn"}.
+Local machine: {"complete": true, "state": "assigned-work-complete", "active": null}.
 
 Upstream worker: {"state": "running", "active": null, "completed": 2, "commit": "7158093447b885e07e7376d1f08ade53379fd509", "error": null}.
 
