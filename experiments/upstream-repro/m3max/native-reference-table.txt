@@ -1,0 +1,12 @@
+row                       probe   quiz (columns)   expected       delta
+tx                     0.863909           - (69)   0.863909    +3.70e-7  OK
+rbm                    0.869304           - (35)   0.869304    +2.44e-7  OK
+nn                     0.873266           - (21)   0.873266    -8.52e-9  OK
+other                  0.875514           - (12)   0.875514    +8.57e-9  OK
+gbmblend               0.858145           - (18)   0.858145    -4.65e-7  OK
+mlpblend               0.857265           - (23)   0.857265    -4.20e-7  OK
+fwlsblend              0.856522           - (10)   0.856522    +1.56e-7  OK
+ensemble               0.856167          - (188)   0.856167    +1.56e-7  OK
+
+Reference check: PASS (8 rows within 1e-5)
+

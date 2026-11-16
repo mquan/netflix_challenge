@@ -1,9 +1,9 @@
 {
   "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
-  "cargo": "cargo 1.100.0 (3acc79c0c 2026-11-05)",
+  "cargo": "cargo 1.93.0 (083ac5135 2025-12-15)",
   "rustflags": "-C link-arg=-framework -C link-arg=Accelerate",
   "command": [
-    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/toolchain/cargo/bin/cargo",
+    "/Users/quan/.cargo/bin/cargo",
     "build",
     "--release",
     "--locked",
@@ -33,16 +33,16 @@
     "repro_registry"
   ],
   "binaries": {
-    "repro_registry": "87d6fb8cb9a37cefdd5952049423007bf890543bf6c9dcc02522c6e4c525cd2b",
-    "fit": "fe0d7996a17564fef0f3f2b4912425c938c321479cd9c7d4b6542d78a225edae",
-    "ridge": "072a0013d631a6f6b889af808d5dd7adb1c547e674ac71e7a212a1a8707bc065",
-    "ingest": "d8f38cb5edac0b6bd10ce038d7e30c2043a093fa8bb3a269911ec3ffaf88b0f0",
-    "rbmx2-new": "d3378b3b642db66601aa4f79d5cf8fb93d6c733c03daf4eadf993c346bc761b0",
-    "tsvdx4-new": "34283fcdeb540be2325c7b7375750a015fb32381150b16c378c975e65002ba40",
-    "download": "7ad6ac1db11077bb158b8306da4c42bf3ada4b624e3f9234d81fc53bd783da2f",
-    "dnn": "5df03db583e5f0dbacaff9b01dc65ff7993a91df069ef3cef707122236d287c6",
-    "run": "054444d82eb92689ebce8e7a5de053be8261b59bd8837b8688cfa42ea69d66ac",
-    "newsplit": "697a6cd25454eca7bc7e8cb3736aa971c21c9b509dd7bd17b2b6270eeb795552",
-    "preds": "fba431472ab24005eba37a4fbaf3cc7f4d564be1059466d9d05b65cdcbcc942a"
+    "repro_registry": "36c8524206779bfa9d97cfa963ee40d318fb295959f827185f5bf762c1426966",
+    "fit": "601b9476ef5f86344e611b553492ca550af64a7d28306a8c59b5c9f45661b315",
+    "ridge": "7f5d5b9059f3c283c3a3e7bf6dddefc3629d9c248f19162248403abfeef09ead",
+    "ingest": "dc0a262da7667aca7341af86f784d0ecbd69527b907f7d7833c7d7ea3677fb21",
+    "rbmx2-new": "912ca70c2dfbee4ad2439d4af0ee2b8b62553e438ca456772b6ab09d81a89188",
+    "tsvdx4-new": "9f08dbb74d81fb9ce12683a89c299a288ba77ce5ebfa03327ba1f3a971b4a128",
+    "download": "1e92ba476a2604a9e4fcfd82703ab4b3264087c9891a803dd16284235c07d828",
+    "dnn": "d3382b9e1e59897bd383821718bcc9068bec9ec9c5394ccde0bc372d3565c61d",
+    "run": "72b0be5f922dd83b6d3fd498cc7f466375d6dbb14f4370128134482866d762d9",
+    "newsplit": "c41f6d60c6bcea9a103aa8024fa4447181fec7d0a1f7d01de36a07239540906d",
+    "preds": "73e249e2a4413dc61f4d4c48394716d994aa5f95a0cbbd77cc8088ee306a4131"
   }
 }
