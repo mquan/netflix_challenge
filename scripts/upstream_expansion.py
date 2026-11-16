@@ -49,8 +49,19 @@ def status(machine, state, active=None, error=None, pushing=False):
     u.write(dest/'status.json',value)
     page=ROOT/('EXPANSION_'+machine.upper()+'.md')
     page.write_text('# Upstream expansion: '+machine+'\n\n'+json.dumps(value,indent=2)+'\n')
-    x.publish(BRANCHES[machine], ['experiments/upstream-expansion',page.name],
-              'upstream expansion '+machine+': '+state+' '+(active or ''),pushing)
+    for attempt in range(3):
+        try:
+            x.publish(BRANCHES[machine], ['experiments/upstream-expansion',page.name],
+                      'upstream expansion '+machine+': '+state+' '+(active or ''),pushing)
+            break
+        except RuntimeError:
+            # A concurrent push of our own ancestor is safe to retry. Never
+            # merge, rebase or force a genuinely divergent branch here.
+            ref='refs/remotes/origin/'+BRANCHES[machine]
+            fetched=x.git('fetch','origin','refs/heads/'+BRANCHES[machine]+':'+ref,check=False)
+            if attempt==2 or fetched.returncode or x.git('merge-base','--is-ancestor',ref,'HEAD',check=False).returncode:
+                raise
+            time.sleep(2)
     return value
 
 
