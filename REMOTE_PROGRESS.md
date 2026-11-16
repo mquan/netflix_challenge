@@ -1,11 +1,11 @@
 # Second-computer progress (M3 Max, 96 GB)
 
-Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 22:55 PST.
+Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 23:03 PST.
 
 - State: **running**, device `mps`, arms ['combined']
-- Completed: 6/10
-- Active: baseline-enn-13
-- Runner heartbeat (UTC): 2026-11-16T06:55:28.335173+00:00
+- Completed: 7/10
+- Active: combined-enn-2026
+- Runner heartbeat (UTC): 2026-11-16T07:03:32.004814+00:00
 
 | Stage | Family | State | Elapsed |
 |---|---|---|---|
@@ -15,8 +15,8 @@ Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 22:
 | combined-nn | neural | done | 0.07 h |
 | baseline-enn-2026 | neural | done | 0.27 h |
 | baseline-enn-7 | neural | done | 0.19 h |
-| baseline-enn-13 | neural | running |  |
-| combined-enn-2026 | neural | queued |  |
+| baseline-enn-13 | neural | done | 0.14 h |
+| combined-enn-2026 | neural | running |  |
 | combined-enn-7 | neural | queued |  |
 | combined-enn-13 | neural | queued |  |
 
@@ -50,6 +50,19 @@ Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 22:
         4.690619361924497e-06
       ],
       "sha256": "e7ecb91ff55fd9296dea908e8abf5a198586e9d3855a64f55d2a932a5ea7f71a"
+    },
+    {
+      "name": "baseline-ENN-three-seed",
+      "rmse": 0.8672046100659176,
+      "delta_rmse": 0.00033740226135692275,
+      "fold_delta": [
+        0.0003844879285829217,
+        0.0003375927558650904,
+        0.0003087323921361351,
+        0.0003091661799833334,
+        0.000347052718584262
+      ],
+      "sha256": "3899b88e2e3d75f846ff21c55303d0746deb407d9636b01bc3b0a241299ae5e9"
     }
   ],
   "limitation": "Matched same-machine/backend original-Probe development comparisons; base checkpoints were historically Probe-selected; no qualifying result"
