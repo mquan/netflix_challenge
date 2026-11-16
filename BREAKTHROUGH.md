@@ -32,8 +32,9 @@ reduction of **0.0015487**. The closely matched final ridge comparison is
 **0.8575942364 → 0.8571903481**, a reduction of **0.0004038883**. These
 remain adaptive local measurements, with different upstream model histories.
 
-The overall graphs now use the same continuous **0.850–0.955** vertical
-range, including Cinematch at its actual scale position. Earlier versions
+The calendar graph uses a continuous **0.850–0.990** vertical range to include
+the earliest single-model results; the historical comparison uses **0.850–0.955**.
+Both put Cinematch at its actual scale position. Earlier versions
 zoomed the Probe axis to 0.855–0.895 and placed Cinematch in a separate
 reference band; visual distances there were not proportional across bands.
 The separate qualifying-detail graph explicitly labels its tighter zoom.

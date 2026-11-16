@@ -11,7 +11,7 @@ not the complete winning ensemble.
 
 ## Progress at a glance
 
-[![Netflix Prize progress: historical Probe CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+[![Netflix Prize progress: early Probe models, blend CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
 
 The image covers September–November on a continuous RMSE scale, with faded
 unpromoted screens and a separate recovered qualifying audit. Click it for the
