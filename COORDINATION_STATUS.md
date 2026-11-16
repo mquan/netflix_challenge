@@ -1,9 +1,5 @@
 # Reproduction coordination
 
-Local machine: {"complete": false, "state": "running", "active": "calibration-tree"}.
+Verification error: RuntimeError("Progress push failed; local artifacts retained: To github.com:mquan/netflix_challenge.git\n ! [rejected]        HEAD -> research/upstream-reproduction (fetch first)\nerror: failed to push some refs to 'github.com:mquan/netflix_challenge.git'\nhint: Updates were rejected because the remote contains work that you do\nhint: not have locally. This is usually caused by another repository pushing\nhint: to the same ref. You may want to first integrate the remote changes\nhint: (e.g., 'git pull ...') before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n")
 
-Upstream worker: {"state": "waiting-for-worker-branch", "error": "fatal: couldn't find remote ref refs/heads/research/upstream-worker\n"}.
-
-Fresh-only development blends: waiting for all eight fresh model artifacts.
-
-The 0.856167 released-prediction reference is not a fresh-training result.
+Artifacts are preserved; coordinator will retry.
