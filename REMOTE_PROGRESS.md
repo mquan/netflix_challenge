@@ -1,19 +1,19 @@
 # Second-computer progress (M3 Max, 96 GB)
 
-Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 22:37 PST.
+Auto-updated by `scripts/report_remote_progress.sh`. Last update: 2026-11-15 22:39 PST.
 
 - State: **running**, device `mps`, arms ['combined']
-- Completed: 3/10
-- Active: baseline-enn-2026
-- Runner heartbeat (UTC): 2026-11-16T06:37:21.336181+00:00
+- Completed: 4/10
+- Active: combined-nn
+- Runner heartbeat (UTC): 2026-11-16T06:39:24.942026+00:00
 
 | Stage | Family | State | Elapsed |
 |---|---|---|---|
 | baseline-tree | tree | done | 0.39 h |
 | baseline-nn | neural | done | 0.17 h |
 | combined-tree | tree | done | 0.41 h |
-| combined-nn | neural | queued |  |
-| baseline-enn-2026 | neural | running |  |
+| combined-nn | neural | running |  |
+| baseline-enn-2026 | neural | done | 0.27 h |
 | baseline-enn-7 | neural | queued |  |
 | baseline-enn-13 | neural | queued |  |
 | combined-enn-2026 | neural | queued |  |
