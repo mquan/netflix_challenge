@@ -1,5 +1,7 @@
 # Run the local ensemble experiment on a second computer
 
+**This run is complete. Next assignment:** [NEXT_COMPUTER_TASK.md](NEXT_COMPUTER_TASK.md) — fresh upstream training, with automatic per-model artifact publishing.
+
 Branch: **`research/independent-ensemble`**. Use a separate clone on Linux or
 macOS (or Linux under WSL). Python 3.10–3.12, Git, and internet access are
 needed. Downloading/ingesting the raw dataset additionally needs `curl`,
