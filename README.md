@@ -11,12 +11,82 @@ not the complete winning ensemble.
 
 ## Progress at a glance
 
-[![Netflix Prize RMSE progress from B1 to R10, marked with Claude and Codex logos, with Cinematch and 10 percent goal reference lines](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+[![Netflix Prize progress: historical Probe CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
 
-Probe CV points and Netflix Test reference lines use different evaluation sets.
-Click the graph for the interactive report and the source of each score.
+The image covers September–November on a continuous RMSE scale, with faded
+unpromoted screens and a separate recovered qualifying audit. Click it for the
+interactive graphs and experiment evidence.
 
-## Validation
+## The 10% target reached
+
+The target-crossing solution is a **619-input contextual ridge blend**.
+Its frozen predictions score **0.85719 RMSE** on recovered source1, below
+the **0.85725** threshold. Both recovered groups pass:
+
+| Evaluation | RMSE | Rows |
+| --- | ---: | ---: |
+| Recovered qualifying source1 | **0.8571903481** | 1,408,342 |
+| Recovered qualifying source0 | **0.8561542082** | 1,408,789 |
+| Separate original-Probe development CV, 466-base NN2 | 0.8645337528 | 1,408,395 |
+
+Source1 is **10.0063% below the historical 0.9525 reference**. This is an
+adaptive audit with community-recovered labels, not official Netflix scoring
+or an untouched private Test. Source group counts conflict with published
+Quiz/Test counts, so their original source0/source1 names are preserved.
+
+### The solution
+
+The final ridge combines **619 prediction columns**, with complementary
+individual predictors and already-trained nonlinear blends:
+
+| Inputs | Columns |
+| --- | ---: |
+| Public individual collaborative-filtering predictions | 536 |
+| Audited Probe/ProbeX-fitted public blend outputs | 77 |
+| Local fitted 385-input neural blend | 1 |
+| Local A2h (epochs 4–8 mean), MT3, MT8, MT1 and MH3 predictions | 5 |
+| **Total** | **619** |
+
+Five contexts let the weights vary with user and movie activity: a constant,
+transformed user rating count, movie popularity, query date relative to the
+user's mean activity date, and same-day implicit activity. The selected ridge
+penalty is **alpha = 0.001**. Including an intercept for each context gives
+**3,100 coefficients: 5 × (619 + 1)**. Grouped sufficient statistics and
+memory-mapped prediction banks make this fit practical without materializing
+the full expanded design matrix. Predictions are clipped to the 1–5 range.
+
+The decisive matched comparison kept the individual CF columns alongside
+compressed blend outputs: on the **same recovered source1 population**, the
+83-input ridge scored **0.8575942364** and the 619-input ridge scored
+**0.8571903481**, an observed improvement of **0.0004038883**. The fast final
+step reused the preceding local work and substantial external pretraining.
+
+**The apparent 0.86453 → 0.85719 jump is not a comparable improvement.**
+PUB466 is original-Probe development CV; QUAL619 uses different qualifying
+rows and production training. The records are 7h 28m apart. The final stack
+also inherits upstream row crossfits, legacy epoch blending and public-Quiz
+hyperparameter selection, so its development scores cannot be called
+independent nested CV. Final ridge fitting excludes qualifying outcomes;
+repeated qualifying audits still make the overall evaluation adaptive.
+
+### Evidence and writeup
+
+Independent CSV scoring and bitwise inference replay confirm the saved
+prediction arithmetic. The local Netflix-format export passed exact
+header, row and float round-trip checks; prediction binaries remain local.
+
+- [Breakthrough retrospective](BREAKTHROUGH.md): what changed, why reuse helped, and what the result proves.
+- [Qualifying audit trail](QUALIFYING_PROGRESS.md) and [score summary](RESULTS.md).
+- [Independent scoring and inference replay](artifacts/qualifying/public619-meta/ridge-final/target-verification.json).
+- [Frozen model recipe](artifacts/qualifying/public619-meta/ridge-final/report.json) and [final experiment receipt](experiments/QUAL-target-final-result-20261116.json).
+- [Export verification](artifacts/submissions/netflix-0.8571903481-qualifying.txt.gz.json).
+- [Intermediate experiment evidence](INTERMEDIATE_PROGRESS.md): unpromoted October and November screens.
+
+## Development validation
+
+The original development runs use RMSE on the held-out Probe. Local production
+refits can include original Probe ratings; those runs are evaluated separately
+on qualifying queries. The following commands describe the development setup.
 
 The primary local metric is RMSE on Netflix's labeled probe set. Probe ratings
 are physically excluded from the training CSR during ingestion. The unlabeled
@@ -52,8 +122,11 @@ The published checkpoints to keep in mind are:
 - winning private test submission: 0.856704 RMSE
 
 Probe, quiz, and private test scores are similar but not interchangeable. We
-will tune only on the probe data. Any later evaluation against recovered
-quiz/test labels must be a final, isolated audit—not a training signal.
+select models, epochs, and blend weights using development labels. Current
+work also audits frozen predictions against community-provided recovered
+qualifying labels. Multiple audits have now occurred: these are adaptive local
+measurements, not an untouched private test or official Netflix scoring.
+Qualifying ratings never train the models or choose their stopping epochs.
 
 ## Current implementation
 

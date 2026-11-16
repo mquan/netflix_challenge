@@ -3,6 +3,7 @@
 import base64
 import datetime as dt
 import json
+from html import escape
 import pathlib
 import re
 
@@ -35,6 +36,17 @@ MILESTONES = [
     ("R8 A2h", ".8670984524", "2026-10-09T04:26:14-07:00", "Sequence", "cv", "codex", "promoted", "1536-step A2h + NN2", "A2h improved every fold over the previous promoted ensemble.", "ROUND8.md", "observed run finish"),
     ("R9 LAT", ".8668706425", "2026-10-10T10:46:00-07:00", "Metadata", "cv", "codex", "promoted", "K1 latent and bias features", "Twenty-two features enriched the existing 79-column bank; every fold improved.", "ROUND9.md", "documented completion"),
     ("R10 B5", ".8668212", "2026-10-11T01:42:00-07:00", "Factors", "cv", "claude", "screen", "Bayesian item-frequency screen", "The mean improved by roughly 0.00005, but folds 0 and 1 worsened, so B5 was not promoted.", "ROUND10.md", "documented completion"),
+    ("PUB466 NN2", ".864533752805203", "2026-11-15T19:14:51+00:00", "Public bank", "cv", "codex", "development", "466-base local/public NN2", "The entire original Probe reached 0.8645337528 with a 466-base local/public bank and nested user-fold NN2 development evaluation. Probe-guided selection remains; this is separate from the recovered qualifying audit.", "PUBLIC_BANK.md", "observed run finish"),
+    ("QUAL619 ridge", ".8571903480630092", "2026-11-16T02:42:52+00:00", "Public bank", "qualifying", "codex", "audit", "619-input contextual ridge", "Frozen predictions score 0.8571903481 on recovered source1 and 0.8561542082 on source0. Both pass 0.85725. Adaptive community audit, not official Netflix scoring or an untouched private Test; this marker is not connected to the Probe CV series.", "experiments/QUAL-target-final-result-20261116.json", "frozen prediction audit"),
+    ('HR2a', '0.8668444070534381', '2026-10-18T19:11:48.291851+00:00', 'Residuals', 'cv', 'claude', 'screen', 'Honest A2h residual blend', 'Two folds worsened and the mean gain was below the continuation threshold.', 'experiments/journey-history/HR2a-blend.status.json', 'report timestamp'),
+    ('HR2b', '0.8668187324114364', '2026-10-19T01:13:09.403156+00:00', 'Residuals', 'cv', 'claude', 'screen', 'Honest Bayesian residual blend', 'The standalone correction helped, but the full blend failed two folds and was not promoted.', 'experiments/journey-history/HR2b-blend.status.json', 'report timestamp'),
+    ('LC6', '0.8668264382456018', '2026-10-19T07:28:32.408983+00:00', 'Local context', 'cv', 'codex', 'screen', 'Training-trajectory snapshots', 'The verified epochs 4/8 snapshot blend improved the mean slightly, but one fold worsened; not promoted.', 'experiments/journey-history/LC6-final-verification.json', 'report timestamp'),
+    ('N1 full', '0.8667006276575644', '2026-10-31T05:26:49-07:00', 'Sequence', 'cv', 'codex', 'screen', 'Choice-token transformer blend', 'Independent original-Probe scoring reproduced a 0.0001700 gain; fold 1 worsened, so the full-bank candidate was not promoted.', 'experiments/journey-history/N1-full-independent-verification-20261031.json', 'verification recording upper bound'),
+    ('H8 full', '0.8664848394547376', '2026-10-31T09:24:23-07:00', 'Blend', 'cv', 'codex', 'screen', 'Matched headroom-feature blend', 'All folds improved, but the gain versus its matched control was 0.0002203, below the fixed 0.0003 gate. It was not promoted.', 'experiments/journey-history/H8-full-independent-comparison-20261031.json', 'verification recording upper bound'),
+    ('PUB201 NN2', '0.8651051433018259', '2026-11-15T18:52:33.377678+00:00', 'Public bank', 'cv', 'codex', 'screen', '201-base local/public NN2', 'The first public-bank neural blend improved the development mean; no formal promotion is asserted.', 'experiments/journey-history/PUB1-union-NN2-20261115.events.jsonl', 'observed run finish'),
+    ('PUB201 tree', '0.865322345270635', '2026-11-15T18:54:32.926288+00:00', 'Public bank', 'cv', 'codex', 'screen', '201-base residual tree', 'Completed nested user-fold tree comparison on the original Probe; a measured development candidate, not a promoted checkpoint.', 'experiments/journey-history/PUB1-union-tree-20261115.events.jsonl', 'observed run finish'),
+    ('PUB466 ridge', '0.8655424521021198', '2026-11-15T18:51:41.178076+00:00', 'Public bank', 'cv', 'codex', 'screen', '466-base contextual ridge', 'Adding strict-training-subset public predictions improved the ridge screen; the subsequent 466-base NN2 was lower.', 'experiments/journey-history/PUB3-union-ridge-screen.json', 'observed run finish'),
+    ('PUB201 calibration', '0.8659848000118202', '2026-11-15T18:34:34.892615+00:00', 'Public bank', 'cv', 'codex', 'screen', 'Nested movie calibration', 'A user-disjoint inner split chose the per-movie correction penalty; all folds improved against the matched ridge. This is a separate screen.', 'experiments/journey-history/item-calibration.json', 'observed run finish'),
 ]
 
 RUNS = [
@@ -124,6 +136,50 @@ def run_curve(name, label, metric, step_key, description, credit):
                 source=f"experiments/{name}.events.jsonl")
 
 
+# Same recovered-label population throughout; never mix these with Probe CV.
+QUALIFYING = [
+    ("388-input ridge", "01:03", .8582647011016761, .8574231002840432),
+    ("58-input ridge", "02:19", .8578789678524765, .8567927057358324),
+    ("58-input NN2", "02:22", .8578011759258087, .8567189009050679),
+    ("83-input ridge", "02:31", .8575942363558479, .8565118571755685),
+    ("83-input NN2", "02:33", .8575337426262905, .8564604689103762),
+    ("619-input ridge", "02:42", .8571903480630092, .8561542082012507),
+]
+
+
+def qualifying_svg():
+    """One audited score sequence, reused by the site and README preview."""
+    parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="audit-title audit-desc">',
+             '<title id="audit-title">Recovered qualifying audit: both groups cross 0.85725</title>',
+             '<desc id="audit-desc">Six candidate audits on November 16 UTC. Source1 falls from 0.8582647 to 0.8571903; source0 from 0.8574231 to 0.8561542. Adaptive community evaluation, not official Netflix scoring. Horizontal positions are candidate order.</desc>',
+             '<rect width="960" height="440" fill="#181d29"/>']
+    def text(x, y, value, color="#a8b0c2", size=14, anchor="start"):
+        parts.append(f'<text x="{x}" y="{y}" fill="{color}" font-family="Arial,Helvetica,sans-serif" font-size="{size}" text-anchor="{anchor}">{escape(value)}</text>')
+    def y(score):
+        return 325-(score-.8560)/.0025*255
+    text(80, 30, "Recovered qualifying RMSE · lower is better", "#f2f1ed", 18)
+    text(80, 53, "Candidate order · audit times: Nov 16 UTC / Nov 15 Pacific", size=13)
+    for tick in (.8560, .8565, .8570, .8575, .8580, .8585):
+        yy=y(tick)
+        parts.append(f'<path d="M80 {yy} H875" stroke="#4b5364" opacity=".5"/>')
+        text(70, yy+5, f"{tick:.4f}", size=13, anchor="end")
+    parts.append(f'<path d="M80 {y(.85725)} H875" stroke="#baaaff" stroke-dasharray="6 5"/>')
+    text(875, y(.85725)-9, "10% target: 0.85725", "#baaaff", 14, "end")
+    for group, color, label in ((2, "#70d9d0", "source1"), (3, "#f6c26b", "source0")):
+        coords=[(100+i*150, y(row[group])) for i,row in enumerate(QUALIFYING)]
+        points=" ".join(f"{x},{yy}" for x,yy in coords)
+        parts.append(f'<polyline points="{points}" fill="none" stroke="{color}" stroke-width="3"/>')
+        for (x,yy),row in zip(coords,QUALIFYING):
+            parts.append(f'<circle cx="{x}" cy="{yy}" r="5" fill="{color}"><title>{escape(row[0])} · {label} · {row[group]:.10f} · {row[1]} UTC</title></circle>')
+        text(850, coords[-1][1]+24, f"{label}: {QUALIFYING[-1][group]:.7f}", color, 15, "end")
+    for i,(name,time,*_) in enumerate(QUALIFYING):
+        text(100+i*150, 358, name, "#f2f1ed", 13, "middle")
+        text(100+i*150, 378, time+" UTC", size=12, anchor="middle")
+    text(80, 413, "Adaptive recovered-label audit; different population and training protocol from Probe CV.", size=13)
+    parts.append('</svg>')
+    return "\n".join(parts)
+
+
 def main():
     items = []
     for ident, score, time, strategy, metric, credit, status, title, note, source, basis in MILESTONES:
@@ -132,6 +188,7 @@ def main():
         items.append(dict(id=ident, score=float(score), time=time, strategy=strategy,
                           metric=metric, credit=credit, creditCommit=RECORD_COMMITS.get(ident), status=status, title=title,
                           note=note, source=source, basis=basis))
+    items.sort(key=lambda item: dt.datetime.fromisoformat(item["time"]))
     frontier = [item["score"] for item in items if item["metric"] == "cv" and item["status"] == "promoted"]
     if any(before <= after for before, after in zip(frontier, frontier[1:])):
         raise ValueError("Main journey must descend; document screens separately")
@@ -143,6 +200,8 @@ def main():
     if template.count(marker) != 1:
         raise ValueError("Expected one data insertion marker")
     output = template.replace(marker, json.dumps(payload, separators=(",", ":")))
+    output = output.replace("__QUALIFYING_GRAPH__", qualifying_svg())
+    (ROOT / "assets/qualifying_progress.svg").write_text(qualifying_svg() + "\n")
     for name, filename, color in (("claude", "claude-code.svg", "#D97757"), ("codex", "codex.svg", "#b6a5ff")):
         icon = (ROOT / "assets" / filename).read_text().replace('fill="currentColor"', f'fill="{color}"')
         data_url = "data:image/svg+xml;base64," + base64.b64encode(icon.encode()).decode()

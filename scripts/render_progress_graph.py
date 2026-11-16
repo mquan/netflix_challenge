@@ -17,12 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 MILESTONES = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["MILESTONES"]
 OUT_SVG = ROOT / "assets/progress_graph.svg"
 OUT_PNG = ROOT / "assets/progress_graph.png"
-WIDTH, HEIGHT = 1600, 900
+WIDTH, HEIGHT = 1600, 1700
 X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
-SCORE_MIN, SCORE_MAX = .865, .895
+SCORE_MIN, SCORE_MAX = .850, .955
 START = datetime.fromisoformat("2026-09-27T08:00:00-07:00")
-END = datetime.fromisoformat("2026-10-11T09:30:00-07:00")
+END = datetime.fromisoformat("2026-11-16T18:00:00+00:00")
 
 
 def x_at(value):
@@ -46,7 +46,7 @@ COLOR = {"claude": "#D97757", "codex": "#BAAAFF"}
 svg = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">',
     '<title id="title">Can AI win the $1M Netflix Challenge</title>',
-    '<desc id="desc">Five-user-fold Probe CV scores from B1 through R10, with Codex and Claude logos, and separate Cinematch and ten-percent Test reference bands.</desc>',
+    '<desc id="desc">Probe CV through November, with a separate recovered qualifying audit diamond and historical Test reference bands.</desc>',
     '<rect width="1600" height="900" fill="#10131d"/>',
     '<rect x="92" y="232" width="1435" height="460" rx="16" fill="#181d29"/>',
     '<text x="94" y="70" fill="#f2f1ed" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700">Can AI win the $1M Netflix Challenge</text>',
@@ -76,27 +76,24 @@ def icon(name, x, y, size=23):
     )
 
 
-line(X0, 169, X1, 169, "#70d9d0", 2)
-text(X0, 150, "0.9525", "#70d9d0", 22, weight="700")
-text(X1, 150, "Cinematch baseline · Netflix Test", "#70d9d0", 22, "end", "700")
-text(X0, 221, "FIVE-USER-FOLD PROBE CV", "#a8b0c2", 21, weight="700")
+line(X0, y_at(.9525), X1, y_at(.9525), "#70d9d0", 2)
+text(X0, y_at(.9525)-18, "0.9525", "#70d9d0", 22, weight="700")
+text(X1, y_at(.9525)-18, "Cinematch baseline · Netflix Test", "#70d9d0", 22, "end", "700")
+text(X0, 221, "PROBE CV + SEPARATE QUALIFYING AUDIT", "#a8b0c2", 21, weight="700")
 icon("codex", 1242, 207, 24)
 text(1265, 215, "Codex", "#f2f1ed", 22)
 icon("claude", 1393, 207, 24)
 text(1415, 215, "Claude", "#f2f1ed", 22)
 
-for tick in (.865, .870, .875, .880, .885, .890, .895):
+for tick in (.850, .875, .900, .925):
     y = y_at(tick)
     line(X0, y, X1, y, "#4b5364", 1, .55)
     text(X0 - 16, y + 7, f"{tick:.3f}", "#a8b0c2", 20, "end")
 
 dates = [
-    ("2026-09-27", "Sep 27"),
-    ("2026-09-30", "Sep 30"),
-    ("2026-10-03", "Oct 3"),
-    ("2026-10-06", "Oct 6"),
-    ("2026-10-09", "Oct 9"),
-    ("2026-10-11", "Oct 11"),
+    ("2026-09-27", "Sep 27"), ("2026-10-07", "Oct 7"),
+    ("2026-10-17", "Oct 17"), ("2026-10-27", "Oct 27"),
+    ("2026-11-06", "Nov 6"), ("2026-11-15", "Nov 15"),
 ]
 for date, label in dates:
     x = x_at(date + "T12:00:00-07:00")
@@ -107,22 +104,33 @@ for date, label in dates:
 for ident, score, date, _strategy, metric, credit, _status, _title, _note, _source, _basis in MILESTONES:
     if metric == "single":
         continue
-    icon(credit, x_at(date), y_at(float(score)), 23 if credit == "claude" else 21)
+    if _status == "screen":
+        svg.append('<g opacity=".4">')
+    if metric == "qualifying":
+        x, y = x_at(date), y_at(float(score))
+        svg.append(f'<path d="M{x} {y-10} L{x+10} {y} L{x} {y+10} L{x-10} {y} Z" fill="#baaaff"/>')
+    else:
+        icon(credit, x_at(date), y_at(float(score)), 23 if credit == "claude" else 21)
+    if _status == "screen":
+        svg.append("</g>")
 
 for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
-    ("B6 tree", "B6 · 0.88040", 20, -8, "start"),
-    ("C12 parallel", "C12 · 0.87478", 20, 2, "start"),
-    ("R7-MT56-s3", "R7 · 0.87039", 20, 2, "start"),
-    ("R9 LAT", "R9 · 0.86687", -18, -19, "end"),
+    ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
+    ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
 
-line(X0, 754, X1, 754, "#baaaff", 2)
-text(X0, 738, "0.8572", "#baaaff", 22, weight="700")
-text(X1, 738, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
-text(X0, 860, "Test reference lines and Probe CV points use different evaluation sets. C5/C12 are parallel-branch results; R10 is an unpromoted screen.", "#a8b0c2", 19)
+line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
+text(X0, y_at(.85725)-18, "0.85725", "#baaaff", 22, weight="700")
+text(X1, y_at(.85725)-18, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
+text(X0, 860, "Probe CV and the recovered qualifying audit use different rows and training. Diamond: adaptive community audit, not an official Test score.", "#a8b0c2", 19)
+audit_svg = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["qualifying_svg"]()
+svg.append('<rect x="0" y="900" width="1600" height="800" fill="#10131d"/>')
+text(94, 957, "NOVEMBER BREAKTHROUGH · RECOVERED QUALIFYING AUDIT", "#70d9d0", 28, weight="700")
+text(94, 1002, "619-input ridge: 0.8571903481 · 10.00626267% below 0.9525", "#f2f1ed", 27, weight="700")
+svg.append(audit_svg.replace('<svg ', '<svg x="80" y="1030" width="1440" height="660" ', 1))
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 

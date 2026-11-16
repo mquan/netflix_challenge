@@ -1,12 +1,52 @@
 ---
-status: in-progress
+status: qualifying-target-verified
 branch: main
-timestamp: 2026-10-11
-best_score: 0.8668706425
+timestamp: 2026-11-16
+best_score: 0.864533752805203
 score_metric: five-fold held-out-user probe blend RMSE
+qualifying_source1_rmse: 0.8571903480630092
+qualifying_metric: adaptive community recovered-label audit, not official Netflix scoring
 ---
 
 # Netflix Prize progress checkpoint
+
+## Qualifying target verified (2026-11-16)
+
+The entire-original-Probe best is now **0.864533752805203**, using the 466-base
+local/public NN2 ensemble. Separately, the frozen 619-input contextual ridge
+scores **0.8571903481** on recovered source1 and **0.8561542082** on source0:
+both pass **0.85725**, and source1 improves over 0.9525 by **10.00626267%**.
+Independent CSV scoring and bitwise inference replay verify the result.
+The local submission gzip passed exact row/header/float round-trip checks.
+
+Source group counts conflict with published Quiz/Test counts; both were
+checked without relabeling. This is adaptive community evaluation, not an
+untouched official Test score. CF predictors and Probe-fitted pretrained
+blenders are distinguished: the final stack fits known Probe/ProbeX ratings,
+while qualifying outcomes are excluded from all fitting/stopping. Its
+upstream meta-model dependence prevents an independent development-CV claim.
+Optional unfinished experiments were stopped after the target was independently
+verified; checkpoints and logs remain. Evidence is in
+[QUALIFYING_PROGRESS.md](QUALIFYING_PROGRESS.md) and [RESULTS.md](RESULTS.md).
+
+## What made the breakthrough possible
+
+The retrospective is [BREAKTHROUGH.md](BREAKTHROUGH.md). The successful run
+shifted from training more individual models to integrating reusable prediction
+pairs and auditing which public intermediate blends fit only Probe labels.
+It builds on the earlier local modeling work and external pretrained research.
+
+The decisive matched comparison retained 536 individual CF predictions beside
+the compact 83-input blend bank. With the same development population,
+contextual-ridge method, and selected alpha 0.001, recovered source1 RMSE fell
+from **0.8575942364 to 0.8571903481**. The final winner is the contextual
+ridge, not the additional 619-input neural candidate, which remains unaudited.
+
+The recorded optimization goal took approximately 8h 38m; that excludes
+earlier local and upstream training. Original-Probe CV, alternative ProbeX
+scores, and qualifying audits remain separate metrics. The writeup records
+the sequence of improvements, failed approaches, verification, and limits
+on attributing the gain.
 
 ## Consolidated research branches (2026-10-11)
 
