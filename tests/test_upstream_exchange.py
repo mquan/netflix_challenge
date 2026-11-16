@@ -67,7 +67,7 @@ class ExchangeChecks(unittest.TestCase):
                             users_bytes_sha256=exchange.array_sha(users), jobs={name:entry})
             receipt = dict(source_commit=exchange.upstream.PIN, job=name,
                            outputs={'preds_new/'+name+'.probex.npy':'original-npy-sha'})
-            prefix = 'experiments/upstream-results/'
+            prefix = exchange.ARTIFACT_PREFIX
             blobs = {prefix+'manifest.json':json.dumps(manifest).encode(), prefix+'meta-plan.json':plan,
                      prefix+'development.npz':development, prefix+name+'.npz':prediction+(b'changed' if tampered else b''),
                      prefix+name+'.receipt.json':json.dumps(receipt).encode()}
@@ -84,6 +84,36 @@ class ExchangeChecks(unittest.TestCase):
     def test_changed_compressed_artifact_is_rejected(self):
         with self.assertRaisesRegex(ValueError, 'artifact hash mismatch'):
             self.run_artifact_case(True)
+
+class LiveQueueCompatibility(unittest.TestCase):
+    def test_absent_reference_keeps_live_renderer_running_without_claiming_a_score(self):
+        import contextlib
+        import upstream_repro_queue as queue
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder)
+            fresh = base/'fresh'
+            reference = base/'reference'
+            for root in [fresh, reference]:
+                (root/'data/probex').mkdir(parents=True)
+                np.save(root/'data/probex/ratings.npy', np.array([1, 3, 5], dtype=np.int8))
+            output = fresh/'preds_new/rbmx2-40.probex.npy'
+            output.parent.mkdir()
+            np.save(output, np.array([2, 3, 4], dtype=np.float32))
+            exchange.upstream.write(base/'fresh-receipts/rbmx2-40.json',
+                {'outputs': {'preds_new/rbmx2-40.probex.npy':exchange.upstream.sha(output)},
+                 'started':'2026-11-16T08:00:00+00:00','finished':'2026-11-16T08:01:00+00:00'})
+            exchange.upstream.write(base/'queue-state.json', {'state':'running'})
+            with patch.object(exchange.upstream, 'BASE', base), patch.object(exchange.upstream, 'FRESH', fresh), patch.object(exchange.upstream, 'REFERENCE', reference), patch.object(exchange.upstream, 'validate_fresh'), patch.object(exchange, 'export_existing_queue') as export, contextlib.redirect_stdout(io.StringIO()):
+                exchange.upstream.compare_model('rbmx2-40')
+            canonical = export.call_args.args[1]
+            self.assertIsNone(canonical['released_rmse'])
+            self.assertFalse(canonical['reference_available'])
+            legacy = exchange.upstream.read(base/'comparisons/rbmx2-40.json')
+            self.assertTrue(np.isnan(legacy['released_rmse']))
+            # This is the same renderer already loaded by the remote Python process.
+            with patch.object(queue, 'BASE', base), patch.object(queue, 'ROOT', base):
+                queue.render({'state':'running','current':None})
+            self.assertIn('nan', (base/'UPSTREAM_PROGRESS.md').read_text())
 
 
 if __name__ == '__main__':

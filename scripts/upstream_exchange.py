@@ -6,23 +6,22 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import platform
 import shutil
 import subprocess
 import sys
 import time
 import traceback
-import urllib.request
 
 import numpy as np
 import upstream_repro as upstream
 
 ROOT = upstream.ROOT
-OUT = ROOT/'experiments/upstream-results'
+OUT = ROOT/'experiments/upstream-repro/fresh-artifacts'
 LOCAL = ROOT/'artifacts/upstream-coordinator'
 REPORT = ROOT/'experiments/reproduction-coordination'
-WORKER_BRANCH = 'research/upstream-worker'
-COORDINATOR_BRANCH = 'research/upstream-reproduction'
+COORDINATOR_BRANCH = 'research/upstream-verification'
+SOURCE_BRANCH = 'research/upstream-reproduction'
+ARTIFACT_PREFIX = 'experiments/upstream-repro/fresh-artifacts/'
 JOBS = ['tsvdx4-60', 'tsvdx4-60__knns', 'rbmx2-40', 'rbmx2-40__knn3',
         'dnn-24', 'dnn-24__knn3', 'dnn-24__dnn-16p50', 'dnn-24__dnn-16p50__knn3']
 ARMS = {'base-only': ['tsvdx4-60', 'rbmx2-40', 'dnn-24'],
@@ -41,10 +40,6 @@ PLAN = dict(version=1, source_commit=upstream.PIN, jobs=JOBS, arms=ARMS,
 
 def now():
     return dt.datetime.now(dt.timezone.utc).isoformat()
-
-
-def run(command, **kwargs):
-    return subprocess.run(command, cwd=ROOT, check=True, **kwargs)
 
 
 def git(*args, check=True):
@@ -129,7 +124,9 @@ def evaluate(predictions, labels, users, output_dir):
                 input_provenance='Only fresh worker prediction artifacts; released reference predictions excluded from every fit')
 
 
-def export_job(name):
+def export_job(name, destination_root=None, comparison=None):
+    destination_root = destination_root or OUT
+    destination_root.mkdir(parents=True, exist_ok=True)
     upstream.validate_fresh()
     receipt = upstream.read(upstream.BASE/'fresh-receipts'/(name+'.json'))
     file = upstream.FRESH/'preds_new'/(name+'.probex.npy')
@@ -138,104 +135,38 @@ def export_job(name):
     value = np.load(file, allow_pickle=False)
     if value.dtype != np.dtype('float32') or value.shape != (1128164,) or not np.isfinite(value).all():
         raise ValueError('Unexpected native prediction type, row count or values')
-    destination = OUT/(name+'.npz')
+    destination = destination_root/(name+'.npz')
     np.savez_compressed(destination, prediction=value)
-    comparison = upstream.read(upstream.BASE/'comparisons'/(name+'.json'))
-    upstream.write(OUT/(name+'.receipt.json'), receipt)
-    shutil.copyfile(upstream.BASE/'fresh-receipts'/(name+'.log'), OUT/(name+'.log'))
+    comparison = comparison or upstream.read(upstream.BASE/'comparisons'/(name+'.json'))
+    # Normalize old queue's NaN display sentinels to canonical null in transfers.
+    comparison = {k: (None if isinstance(v, float) and not np.isfinite(v) else v) for k,v in comparison.items()}
+    upstream.write(destination_root/(name+'.receipt.json'), receipt)
+    shutil.copyfile(upstream.BASE/'fresh-receipts'/(name+'.log'), destination_root/(name+'.log'))
     return dict(job=name, artifact=destination.name, artifact_sha256=upstream.sha(destination),
                 prediction_bytes_sha256=array_sha(value), source_npy_sha256=upstream.sha(file),
                 comparison=comparison)
 
 
-def ensure_cargo():
-    """Install a verified official installer into this experiment only if needed."""
-    env = upstream.environment()
-    if shutil.which('cargo', path=env['PATH']):
-        return
-    system, machine = platform.system(), platform.machine().lower()
-    arch = {'arm64': 'aarch64', 'aarch64': 'aarch64', 'x86_64': 'x86_64', 'amd64': 'x86_64'}.get(machine)
-    suffix = {'Darwin': 'apple-darwin', 'Linux': 'unknown-linux-gnu'}.get(system)
-    if not arch or not suffix:
-        raise ValueError('Install Rust manually on this platform, then resume')
-    url = f'https://static.rust-lang.org/rustup/dist/{arch}-{suffix}/rustup-init'
-    toolchain = upstream.BASE/'toolchain'
-    toolchain.mkdir(parents=True, exist_ok=True)
-    installer = toolchain/'rustup-init'
-    with urllib.request.urlopen(url+'.sha256', timeout=60) as response:
-        expected = response.read().decode().split()[0]
-    with urllib.request.urlopen(url, timeout=120) as response, installer.open('wb') as destination:
-        shutil.copyfileobj(response, destination)
-    if len(expected) != 64 or upstream.sha(installer) != expected:
-        raise ValueError('Official Rust installer checksum mismatch')
-    installer.chmod(0o700)
-    env.update(CARGO_HOME=str(toolchain/'cargo'), RUSTUP_HOME=str(toolchain/'rustup'))
-    subprocess.run([str(installer), '-y', '--no-modify-path', '--profile', 'minimal',
-                    '--default-toolchain', '1.100.0'], env=env, check=True)
-
-
-def worker(pushing):
-    branch_guard(WORKER_BRANCH)
-    OUT.mkdir(parents=True, exist_ok=True)
-    upstream.write(OUT/'meta-plan.json', PLAN)
-    manifest = dict(version=1, source_commit=upstream.PIN, state='preparing', jobs={},
-                    plan_sha256=upstream.sha(OUT/'meta-plan.json'), started=now(),
-                    python=sys.version.split()[0], numpy=np.__version__, platform=platform.platform())
-    if (OUT/'manifest.json').exists():
-        previous = upstream.read(OUT/'manifest.json')
-        if previous['source_commit'] != upstream.PIN or previous['plan_sha256'] != manifest['plan_sha256']:
-            raise ValueError('Existing worker output uses a different frozen plan')
-        manifest = previous
-    def progress(state, active=None, error=None):
-        manifest.update(state=state, active=active, updated=now(), error=error)
-        upstream.write(OUT/'manifest.json', manifest)
-        (ROOT/'UPSTREAM_WORKER_STATUS.md').write_text(
-            '# Upstream worker progress\n\n'+f'Updated: {manifest["updated"]}\n\n'
-            +f'State: **{state}**. Completed: {len(manifest["jobs"])}/8. Active: {active or "none"}.\n\n'
-            +'Qualifying outcomes are zero sentinels. Exported predictions are fresh ProbeX only.\n'
-            +(f'\nError: {error}\n' if error else ''))
-        publish(WORKER_BRANCH, ['experiments/upstream-results', 'UPSTREAM_WORKER_STATUS.md'],
-                'upstream worker: '+state+' '+(active or ''), pushing)
-    try:
-        progress('preparing')
-        upstream.bootstrap()
-        ensure_cargo()
-        if not (upstream.BASE/'build-receipt.json').exists():
-            upstream.build()
-        if not upstream.FRESH.exists():
-            candidates = [ROOT/'data/raw/nf_prize_dataset.tar.gz', ROOT.parent/'netflix-independent/data/raw/nf_prize_dataset.tar.gz']
-            archive = next((p for p in candidates if p.exists()), None)
-            upstream.training_layout(archive)
-        if not (upstream.BASE/'fresh-data-receipt.json').exists():
-            upstream.setup_data()
-        reference_manifest = upstream.BASE/'reference-manifest.json'
-        if (not reference_manifest.exists() or upstream.read(reference_manifest).get('index_sha256')
-                != upstream.sha(ROOT/'experiments/upstream-repro/reference-index.toml')):
-            upstream.prepare_reference(ROOT/'experiments/upstream-repro/reference-index.toml',
-                ratings_path=upstream.FRESH/'data/probex/ratings.npy')
-        upstream.python_reference()
-        upstream.native_reference()
-        labels = np.load(upstream.FRESH/'data/probex/ratings.npy', allow_pickle=False)
-        users = np.load(upstream.FRESH/'data/probex/user_idxs.npy', allow_pickle=False)
-        if not np.array_equal(labels, np.load(upstream.REFERENCE/'data/probex/ratings.npy', allow_pickle=False)):
-            raise ValueError('Fresh/reference development label order differs')
-        np.savez_compressed(OUT/'development.npz', labels=labels, users=users)
-        manifest.update(development_sha256=upstream.sha(OUT/'development.npz'),
-                        labels_bytes_sha256=array_sha(labels), users_bytes_sha256=array_sha(users))
-        for name in JOBS:
-            progress('running', name)
-            upstream.model_job(name, execute=True)
-            upstream.compare_model(name)
-            manifest['jobs'][name] = export_job(name)
-            progress('running')
-        progress('complete')
-    except BaseException as error:
-        # Preserve the native log and partial artifacts; no automatic deletion/retraining.
-        try:
-            progress('failed', manifest.get('active'), repr(error))
-        except Exception:
-            traceback.print_exc()
-        raise
+def export_existing_queue(current, comparison):
+    """Backfill completed outputs; the already-running queue stages this directory."""
+    destination = ROOT/ARTIFACT_PREFIX
+    destination.mkdir(parents=True, exist_ok=True)
+    upstream.write(destination/'meta-plan.json', PLAN)
+    labels = np.load(upstream.FRESH/'data/probex/ratings.npy', allow_pickle=False)
+    users = np.load(upstream.FRESH/'data/probex/user_idxs.npy', allow_pickle=False)
+    np.savez_compressed(destination/'development.npz', labels=labels, users=users)
+    manifest = dict(version=1, source_commit=upstream.PIN,
+                    plan_sha256=upstream.sha(destination/'meta-plan.json'),
+                    development_sha256=upstream.sha(destination/'development.npz'),
+                    labels_bytes_sha256=array_sha(labels), users_bytes_sha256=array_sha(users),
+                    jobs={}, updated=now(), python=sys.version.split()[0], numpy=np.__version__)
+    for name in JOBS:
+        if name == current:
+            manifest['jobs'][name] = export_job(name, destination, comparison)
+        elif (upstream.BASE/'fresh-receipts'/(name+'.json')).exists() and (upstream.BASE/'comparisons'/(name+'.json')).exists():
+            manifest['jobs'][name] = export_job(name, destination)
+    manifest['state'] = 'complete' if len(manifest['jobs']) == len(JOBS) else 'running'
+    upstream.write(destination/'manifest.json', manifest)
 
 
 def worker_blob(ref, path):
@@ -243,7 +174,7 @@ def worker_blob(ref, path):
 
 
 def ingest_worker(ref):
-    prefix = 'experiments/upstream-results/'
+    prefix = ARTIFACT_PREFIX
     manifest = json.loads(worker_blob(ref, prefix+'manifest.json'))
     if manifest['source_commit'] != upstream.PIN:
         raise ValueError('Worker source commit differs')
@@ -347,10 +278,18 @@ def coordinate_once(local_root, pushing):
     (REPORT/'failure.json').unlink(missing_ok=True)
     upstream.write(REPORT/'meta-plan.json', PLAN)
     local = local_summary(local_root)
-    ref = 'refs/remotes/origin/'+WORKER_BRANCH
-    fetched = git('fetch', 'origin', 'refs/heads/'+WORKER_BRANCH+':'+ref, check=False)
+    ref = 'refs/remotes/origin/'+SOURCE_BRANCH
+    fetched = git('fetch', 'origin', 'refs/heads/'+SOURCE_BRANCH+':'+ref, check=False)
     if fetched.returncode:
-        remote = dict(state='waiting-for-worker-branch', error=fetched.stderr[-1500:])
+        remote = dict(state='waiting-for-training-branch', error=fetched.stderr[-1500:])
+        checks = []
+    elif git('cat-file', '-e', ref+':'+ARTIFACT_PREFIX+'manifest.json', check=False).returncode:
+        progress = worker_blob(ref, 'UPSTREAM_PROGRESS.md').decode()
+        active = next((line.split('`')[1] for line in progress.splitlines()
+                       if '— running `' in line), None)
+        remote = dict(state='training-queue-active', active=active, prediction_artifacts=0,
+                      note='Waiting for first compatible artifact push; current model continues',
+                      commit=git('rev-parse', ref).stdout.strip())
         checks = []
     else:
         remote, labels, users, predictions, checks = ingest_worker(ref)
@@ -412,18 +351,16 @@ def coordinate(local_root, pushing, once, interval):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    role = ap.add_mutually_exclusive_group(required=True)
-    role.add_argument('--worker', action='store_true')
-    role.add_argument('--coordinator', action='store_true')
+    ap.add_argument('--coordinator', action='store_true', required=True)
     ap.add_argument('--publish', action='store_true', help='Commit/push role-owned outputs to its designated branch')
     ap.add_argument('--once', action='store_true')
     ap.add_argument('--interval', type=int, default=120)
     ap.add_argument('--local-root', type=Path, default=ROOT.parent/'netflix_independent_ensemble')
     a = ap.parse_args()
-    branch_guard(WORKER_BRANCH if a.worker else COORDINATOR_BRANCH)
-    lock_dir = upstream.BASE if a.worker else LOCAL
+    branch_guard(COORDINATOR_BRANCH)
+    lock_dir = LOCAL
     lock_dir.mkdir(parents=True, exist_ok=True)
-    lock = lock_dir/('worker.lock' if a.worker else 'coordinator.lock')
+    lock = lock_dir/'coordinator.lock'
     if lock.exists():
         try:
             os.kill(int(lock.read_text()), 0)
@@ -439,10 +376,7 @@ def main():
         if Path('/usr/bin/caffeinate').exists():
             inhibitor = subprocess.Popen(['/usr/bin/caffeinate', '-i', '-w', str(os.getpid())])
         os.nice(10)
-        if a.worker:
-            worker(a.publish)
-        else:
-            coordinate(a.local_root.resolve(), a.publish, a.once, max(a.interval, 30))
+        coordinate(a.local_root.resolve(), a.publish, a.once, max(a.interval, 30))
     finally:
         lock.unlink(missing_ok=True)
         if inhibitor:

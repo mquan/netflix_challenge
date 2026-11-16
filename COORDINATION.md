@@ -1,77 +1,60 @@
-# Unattended two-computer assignment
+# Active two-computer research assignment
 
-The user authorized continued research and coordination through Git branches on November 16. Preserve all finished experiments, including negative results. No approval is needed to execute the bounded runs below or publish their progress to the designated branches.
+The user authorized continued execution and coordination through Git branches on November 16. Both computers already have active work. Preserve those runs and all negative results; do not launch duplicate training.
 
-## Branch ownership
+## Branch ownership and current runs
 
-- **`research/independent-ensemble`**: existing local experiment and completed second-computer experiment. Only handoff documentation is being added here. Existing frozen training scripts/inputs must stay unchanged.
-- **`research/upstream-reproduction`**: preparation code, this coordination document, the fixed fresh-only blend plan, local experiment summaries, and independent verification reports. Owned by the first Mac.
-- **`research/upstream-worker`**: fresh upstream training, eight compressed ProbeX prediction artifacts, execution receipts/logs, and stage progress. Owned by the second computer. Create this branch from `origin/research/upstream-reproduction`; the first Mac only fetches it.
+- **`research/independent-ensemble`**: the first Mac finishes its six assigned baseline/snapshot/calibration stages. Its existing assignment monitor ends the duplicate remaining queue afterward. The second computer's earlier 10-stage experiment is complete; combined features and ENN stacking did not improve its 0.8668672 baseline.
+- **`research/upstream-reproduction`**: the second computer is already running `scripts/upstream_repro_queue.py` inside tmux, with RAYON 8 / BLAS 1, starting with `tsvdx4-60`. It owns `UPSTREAM_PROGRESS.md`, native execution receipts, comparisons and exported fresh vectors. The pinned source is `49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c`.
+- **`research/upstream-verification`**: the first Mac's durable coordinator owns `COORDINATION_STATUS.md` and `experiments/reproduction-coordination/`. It fetches the training branch, independently checks fresh predictions, and runs the fixed fresh-only blend experiment when ready.
 
-No role force-pushes, rebases, merges, or automatically changes the other role's branch. Push rejection preserves all local results for inspection. Do not delete partial model outputs to force a retry.
+The initial preparation and compatibility changes are merged into the training branch once. Subsequent local verification reports go only to the verification branch, avoiding competing progress writers. Do not force-push, rewrite the other computer's history, or change its active model sources/configuration.
 
-## Second computer: start the worker
+## Second computer: continue the existing queue
 
-The previous 10-stage ensemble run is complete and found no gain from the combined features or ENN stacking. Its outputs must remain intact. Use a separate worktree from `~/workspace/netflix-independent`:
+**Do not start another worker or interrupt a model to adopt these changes.** The live queue runs `git pull --rebase` as it publishes progress between jobs. It will pick up the updated `scripts/upstream_repro.py` and `scripts/upstream_exchange.py` at a normal job boundary.
 
-```sh
-git fetch origin
-git worktree add -b research/upstream-worker ../netflix-upstream-worker origin/research/upstream-reproduction
-cd ../netflix-upstream-worker
-python3 -m venv .venv
-.venv/bin/python -m pip install numpy tomli
-PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream*.py' -v
-tmux new-session -d -s upstream-repro 'env UPSTREAM_REPRO_THREADS=8 .venv/bin/python -u scripts/upstream_exchange.py --worker --publish > upstream-worker.log 2>&1'
+The comparison subprocess now exports verified fresh predictions under `experiments/upstream-repro/fresh-artifacts/`. The existing queue already stages this directory's parent, so its regular commits publish the vectors automatically. Earlier completed jobs are backfilled from their original receipts; no retraining is necessary. The exporter does not modify model sources, hyperparameters, data, saved predictions, or the active queue process.
+
+Each completed model exports a compressed ProbeX vector, SHA256 manifest, native receipt/log and a canonical fresh-vs-released comparison. Only the eight development vectors and known development labels/user indices cross machines: about 36 MB of predictions uncompressed. Full-training predictions, qualifying predictions, epochs and latent files remain on the training computer. Receipts document remote execution; they are not remote attestation. Numerical rescoring happens independently on the first Mac.
+
+The eight jobs remain:
+
+```text
+tsvdx4-60
+tsvdx4-60__knns
+rbmx2-40
+rbmx2-40__knn3
+dnn-24
+dnn-24__dnn-16p50
+dnn-24__dnn-16p50__knn3
+dnn-24__knn3
 ```
 
-The worker automatically prepares the pinned upstream source, installs a checksum-verified official Rust installer into this experiment if Cargo is missing, builds the native tools, ingests the original archive with qualifying outcomes replaced by zeros, and verifies both development-reference implementations. It reuses the old clone's raw archive if present; otherwise upstream's downloader obtains it. Rust installation does not modify shell profiles. A missing platform build prerequisite is reported as a failed stage rather than silently changing the recipes.
+The 188-column reference is unchanged. Two extra DNN parent fixtures are available for comparison and are fetched when needed. The pinned store has **no `rbmx2-40` base fixture**. Its fresh score and fresh base-to-chain comparison are still useful. The canonical transfer manifest records the absent reference as `null`, with `reference_available=false`. For compatibility with the old renderer already loaded in the active Python process, its legacy comparison JSON may use numeric NaN display sentinels; the progress table will show `nan` for those unavailable reference fields. This does not represent a measured reference score. Portable manifests normalize those sentinels to null.
 
-It then trains these exact jobs sequentially, including their missing parents:
+On a real failure, preserve all partial outputs and logs. Publish the failure and investigate; do not delete files or force a retry. The existing receipt mechanism resumes completed jobs. This bounded assignment does not authorize a speculative parameter sweep or the full 201-job pipeline.
 
-1. `tsvdx4-60`
-2. `tsvdx4-60__knns`
-3. `rbmx2-40`
-4. `rbmx2-40__knn3`
-5. `dnn-24`
-6. `dnn-24__knn3`
-7. `dnn-24__dnn-16p50`
-8. `dnn-24__dnn-16p50__knn3`
+## First Mac: durable completion and verification
 
-Each completed job publishes its fresh ProbeX vector as a compressed `.npz` (roughly a few MB), a SHA256 manifest, the native execution receipt/log, and a fresh-vs-released score comparison. Only eight development vectors and known development labels/user indices cross machines. Full-training predictions, qualifying predictions, epochs and latent files stay on the worker. In total the development predictions are about 36 MB uncompressed. Git is the transfer mechanism so the first Mac can independently rescore real predictions, rather than trust a status summary.
-
-The released final ensemble has 188 inputs. Two extra DNN parent fixtures are downloaded for the eight-job comparison. The pinned store has **no `rbmx2-40` base fixture**; report that comparison unavailable. Its fresh score and the fresh base-to-chain contrast remain valid development diagnostics. Do not substitute another model's reference.
-
-On interruption, inspect the logs and rerun the **same worker command in the same branch/worktree**. Completed job receipts are verified and reused. Partial/unreceipted model outputs cause a stop and require inspection; preserve them. A role lock prevents duplicate workers. If Git rejects a push, keep the local commits and investigate instead of forcing it.
-
-Progress:
-
-```sh
-cat UPSTREAM_WORKER_STATUS.md
-tail -n 30 upstream-worker.log
-ls artifacts/upstream-repro/fresh-receipts/
-```
-
-The second computer's agent should handle platform/setup failures within this assignment, retaining the pinned model sources and recipes. Push an explicit failure report if external help is required. Do not launch speculative parameter sweeps or the full 201-job graph.
-
-## First Mac: completion and independent verification
-
-The current six assigned baseline/snapshot/calibration stages finish first. The existing assignment monitor then ends the duplicate queue. A separate durable coordinator checks every two minutes:
+From `research/upstream-verification`, the active coordinator runs:
 
 ```sh
 .venv/bin/python -u scripts/upstream_exchange.py --coordinator --publish \
   --local-root /Users/quan/workspace/netflix_independent_ensemble
 ```
 
-The coordinator owns `COORDINATION_STATUS.md` and `experiments/reproduction-coordination/`. It verifies and publishes the finished local experiment's six stage receipts and summary, fetches the worker branch, checks transferred artifact hashes and row ordering against the independently reproduced ProbeX labels, and recomputes each fresh model's score. Where a released fixture exists, it also measures the fresh/reference prediction difference. Receipts document remote execution but do not independently attest that execution; numerical rescoring is local and independent.
+It checks every two minutes, writes an untracked heartbeat, and commits only changed status/results. It first verifies the local experiment's frozen input/code hashes and six completed stage receipts, then publishes that experiment's summary. It fetches the training branch and verifies transferred artifact hashes, dtype/shape, native output receipt, and exact development label ordering against the independently reproduced reference. It recomputes fresh scores and fresh/reference prediction differences where a fixture exists. Active remote training is distinguished from waiting for its first artifact push.
 
-Once all eight fresh vectors arrive, it runs the predeclared comparisons automatically:
+Once the existing local run is complete **and** all eight verified fresh vectors have arrived, it automatically runs the committed plan:
 
 - Three base models versus all eight base/chain models.
-- Temporal base versus its chain; RBM base versus its chain; DNN base versus all four DNN base/chain outputs.
-- Five fixed user folds, seed `20261116`, ridge lambda `1000`, unpenalized intercept, input clip `[0,6]`, output clip `[1.05,4.95]`. No tuning or best-arm selection.
+- Temporal base versus its chain; RBM base versus its chain; DNN base versus all four DNN outputs.
+- Five fixed folds grouped by native upstream user index, seed `20261116`, ridge lambda `1000`, unpenalized intercept, input clip `[0,6]`, output clip `[1.05,4.95]`.
+- No tuning, best-arm selection, downloaded prediction features, or qualifying outcomes.
 
-Only fresh vectors enter these fits. Released fixtures are used for numerical comparisons, never as blend features. Each scored user's labels are excluded from its fold's meta-model fit. These are still **development comparisons**, because the published base recipes were historically development-selected. They do not establish an untouched or official test score.
+Each scored user's labels are excluded from its fold's meta-model fit. These remain **development comparisons**, because the published base recipes were historically development-selected. They are not untouched or official test scores. The 0.856167 released-prediction reference remains distinct from fresh-training results.
 
-The fixed plan is committed before fresh results in `experiments/reproduction-coordination/meta-plan.json`. Local out-of-fold vectors remain under ignored `artifacts/upstream-coordinator/predictions`; their hashes, scores and paired fold deltas are published. The coordinator exits once both the local six-stage experiment and fresh-only evaluation are complete. While waiting, it remains active and writes an untracked heartbeat; it commits only when tracked results/status change.
+The plan is frozen in `experiments/reproduction-coordination/meta-plan.json`. Local out-of-fold vectors stay under ignored `artifacts/upstream-coordinator/predictions`; their hashes, scores and paired fold deltas are published. The coordinator stops after both the existing local experiment and fresh-only evaluation complete. Integrity errors are published and preserve the artifacts.
 
-No remote shell or active-agent notification channel is available here. A pushed handoff does not itself launch the second computer. Its session needs to fetch/read this assignment; the coordinator will truthfully report waiting until the worker branch appears.
+No remote shell or direct active-agent notification channel is available here. Git branch pushes coordinate the existing queues; the training queue's normal job-boundary fetch picks up the handoff.

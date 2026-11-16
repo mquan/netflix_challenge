@@ -381,6 +381,9 @@ def compare_model(name):
         raise ValueError('Fresh output changed since its execution receipt')
     fresh = np.load(output, allow_pickle=False).astype(np.float64)
     reference_path = REFERENCE/'preds_new'/(name+'.probex.npy')
+    if not reference_path.exists() and name in ['dnn-24', 'dnn-24__dnn-16p50']:
+        prepare_reference(ROOT/'experiments/upstream-repro/reference-index.toml',
+                          ratings_path=FRESH/'data/probex/ratings.npy')
     reference = np.load(reference_path, allow_pickle=False).astype(np.float64) if reference_path.exists() else None
     y = np.load(FRESH/'data/probex/ratings.npy', allow_pickle=False)
     if not np.array_equal(y, np.load(REFERENCE/'data/probex/ratings.npy', allow_pickle=False)):
@@ -395,7 +398,16 @@ def compare_model(name):
                   max_absolute_difference=float(np.max(np.abs(fresh-reference))) if reference is not None else None,
                   fresh_sha256=sha(output), reference_sha256=sha(reference_path) if reference is not None else None,
                   scope='ProbeX diagnostic only; model training is fresh, reference vectors are imported')
-    write(BASE/'comparisons'/(name+'.json'), result)
+    # The live queue loaded its render code before this update. Keep numeric
+    # NaN display sentinels in its legacy report for missing references; the
+    # portable manifest below always normalizes these to explicit null.
+    legacy = dict(result)
+    if (BASE/'queue-state.json').exists() and reference is None:
+        for key in ['released_rmse', 'prediction_rmse_difference', 'max_absolute_difference']:
+            legacy[key] = float('nan')
+    write(BASE/'comparisons'/(name+'.json'), legacy)
+    from upstream_exchange import export_existing_queue
+    export_existing_queue(name, result)
     print(json.dumps(result, indent=2), flush=True)
 
 
