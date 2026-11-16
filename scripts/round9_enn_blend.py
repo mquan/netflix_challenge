@@ -129,7 +129,7 @@ def train(tx, index, rows, r, a, seed, epochs, valid=None):
 def ridge_solve(x, t, alpha):
     """Ridge with unpenalized intercept column 0; penalty scaled by the mean feature energy."""
     a = x.T@x
-    scale = np.mean(np.diag(a)[1:]) if x.shape[1] > 1 else 1.0
+    scale = max(float(np.mean(np.diag(a)[1:])), 1e-12) if x.shape[1] > 1 else 1.0
     pen = np.eye(x.shape[1])*alpha*scale; pen[0, 0] = 0
     return np.linalg.solve(a+pen, x.T@t)
 
@@ -144,10 +144,18 @@ def stack_fit(p, base, t, bins, nbins, split, alphas):
         for half in (0, 1):
             for b in range(nbins):
                 f, e = (bins == b) & (split != half), (bins == b) & (split == half)
+                if not e.any():
+                    continue
+                # Repeated quantile edges can leave a bin empty. Use the
+                # training half's pooled fit, never its validation labels.
+                if not f.any():
+                    f = split != half
                 total += float(np.sum((x[e]@ridge_solve(x[f], t[f], alpha)-t[e])**2))
         sse.append(total)
     alpha = alphas[int(np.argmin(sse))]
-    weights = np.stack([ridge_solve(x[bins == b], t[bins == b], alpha) for b in range(nbins)])
+    pooled = ridge_solve(x, t, alpha)
+    weights = np.stack([ridge_solve(x[bins == b], t[bins == b], alpha)
+                        if np.any(bins == b) else pooled for b in range(nbins)])
     return weights, alpha, [float(np.sqrt(s/len(t))) for s in sse]
 
 
