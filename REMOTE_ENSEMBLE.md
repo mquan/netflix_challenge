@@ -135,3 +135,16 @@ not promised end-to-end speedups or measurements of the second computer.
   Five tree workers with three threads each fit on this machine.
 - Check: `tmux attach -t independent-ensemble`, or
   `cat artifacts/independent-ensemble/remote/status.json`.
+- 2026-11-15 23:27 PST: **complete**, all 10 stages, no errors, ~1 h 40 min wall
+  time (tree stages ~24 min each, neural stages 4–16 min on `mps`).
+  - Baseline (fresh same-machine control): 0.8668672. That is within 0.000004 of
+    the saved 0.8668706, so the MPS backend matches.
+  - Combined (snapshots + calibration): 0.8669230, Δ +0.0000558. **Not
+    better.** Fold deltas −0.000003 / +0.000088 / +0.000006 / +0.000183 /
+    +0.000005. The +0.00018 ridge-screen gain does not survive the full
+    tree/neural blend.
+  - Three-seed ENN stacking: baseline +0.000337, combined +0.000355, worse on
+    every fold. **Negative.**
+  - Development-only evidence on historically Probe-selected models; no
+    qualifying claim. Outputs: `independent-ensemble-results.tar.gz` (local,
+    not committed); `comparison.json` is reproduced in REMOTE_PROGRESS.md.
