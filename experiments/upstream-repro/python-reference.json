@@ -1,0 +1,73 @@
+{
+  "state": "complete",
+  "all_reference_rows_reproduced": true,
+  "implementation": "Independent NumPy implementation of pinned upstream ridge/clipping/regularization",
+  "qualifying_labels_read": false,
+  "records": [
+    {
+      "group": "fwlsblend",
+      "columns": 10,
+      "rmse": 0.8565221557323057,
+      "expected": 0.856522,
+      "delta": 1.5573230571774843e-07,
+      "reproduced": true
+    },
+    {
+      "group": "gbmblend",
+      "columns": 18,
+      "rmse": 0.8581445354270442,
+      "expected": 0.858145,
+      "delta": -4.6457295588275827e-07,
+      "reproduced": true
+    },
+    {
+      "group": "mlpblend",
+      "columns": 23,
+      "rmse": 0.8572645801190026,
+      "expected": 0.857265,
+      "delta": -4.1988099741541163e-07,
+      "reproduced": true
+    },
+    {
+      "group": "nn",
+      "columns": 21,
+      "rmse": 0.8732659914792094,
+      "expected": 0.873266,
+      "delta": -8.520790628629982e-09,
+      "reproduced": true
+    },
+    {
+      "group": "other",
+      "columns": 12,
+      "rmse": 0.8755140085697749,
+      "expected": 0.875514,
+      "delta": 8.56977488972177e-09,
+      "reproduced": true
+    },
+    {
+      "group": "rbm",
+      "columns": 35,
+      "rmse": 0.8693042442398414,
+      "expected": 0.869304,
+      "delta": 2.4423984146260125e-07,
+      "reproduced": true
+    },
+    {
+      "group": "tx",
+      "columns": 69,
+      "rmse": 0.8639093696325618,
+      "expected": 0.863909,
+      "delta": 3.696325617807972e-07,
+      "reproduced": true
+    },
+    {
+      "group": "ensemble",
+      "columns": 188,
+      "rmse": 0.8561671559335715,
+      "expected": 0.856167,
+      "delta": 1.5593357149956688e-07,
+      "reproduced": true
+    }
+  ],
+  "limitation": "In-sample development-fitted blend reference, not independent CV or qualifying performance"
+}

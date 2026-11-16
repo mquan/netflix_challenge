@@ -1,0 +1,19 @@
+{
+  "state": "prepared-not-launched",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "reference": {
+    "native": "PASS (all eight rows within 1e-5)",
+    "independent_numpy_rmse": 0.8561671559335715,
+    "rows": 1128164,
+    "columns": 188,
+    "scope": "Development-fitted released prediction reference only"
+  },
+  "checks": [
+    "Native release build: ridge,preds,run,fit,ingest,newsplit,download,dnn,tsvdx4-new,rbmx2-new,repro_registry",
+    "5 guard tests passed",
+    "Fresh upstream source/config matches pinned commit except zero qualifying sentinel payload",
+    "Fresh prediction directory empty; eight-job plan resolves"
+  ],
+  "fresh_training_started": false,
+  "current_ensemble_runs_modified": false
+}

@@ -1,0 +1,167 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "stage": "prepared-not-launched",
+  "labels": "Original known training/development ratings; all qualifying ratings replaced by zero sentinels",
+  "synthetic_qualifying_payload_sha256": "b54d30be5426366c38db447f4f7b169c23eba6450c9e06c3bfcbb6e4f30411cc",
+  "source_model_code_modified": false,
+  "reference_predictions_accessible_as_training_inputs": false,
+  "initial_jobs": [
+    {
+      "name": "tsvdx4-60",
+      "command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60",
+      "inputs": [
+        "src/bin/tsvdx4-new.rs"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit"
+      ],
+      "outputs": [
+        "preds_new/tsvdx4-60.probex.npy",
+        "preds_new/tsvdx4-60.qual.npy",
+        "preds_new/tsvdx4-60.out"
+      ]
+    },
+    {
+      "name": "tsvdx4-60__knns",
+      "command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60__knns",
+      "inputs": [
+        "src/bin/tsvdx4-new.rs",
+        "preds_new/tsvdx4-60.trainx.npy",
+        "preds_new/tsvdx4-60.fulltrain.npy"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit",
+        "tsvdx4-60"
+      ],
+      "outputs": [
+        "preds_new/tsvdx4-60__knns.probex.npy",
+        "preds_new/tsvdx4-60__knns.qual.npy",
+        "preds_new/tsvdx4-60__knns.out"
+      ]
+    },
+    {
+      "name": "rbmx2-40",
+      "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-40",
+      "inputs": [
+        "src/bin/rbmx2-new.rs"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit"
+      ],
+      "outputs": [
+        "preds_new/rbmx2-40.probex.npy",
+        "preds_new/rbmx2-40.qual.npy",
+        "preds_new/rbmx2-40.out"
+      ]
+    },
+    {
+      "name": "rbmx2-40__knn3",
+      "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-40__knn3",
+      "inputs": [
+        "src/bin/rbmx2-new.rs",
+        "preds_new/rbmx2-40.trainx.npy",
+        "preds_new/rbmx2-40.fulltrain.npy"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit",
+        "rbmx2-40"
+      ],
+      "outputs": [
+        "preds_new/rbmx2-40__knn3.probex.npy",
+        "preds_new/rbmx2-40__knn3.qual.npy",
+        "preds_new/rbmx2-40__knn3.out"
+      ]
+    },
+    {
+      "name": "dnn-24",
+      "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24 -p pipeline-new.toml",
+      "inputs": [
+        "src/bin/dnn.rs"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit"
+      ],
+      "outputs": [
+        "preds_new/dnn-24.probex.npy",
+        "preds_new/dnn-24.qual.npy",
+        "preds_new/dnn-24.out"
+      ]
+    },
+    {
+      "name": "dnn-24__knn3",
+      "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__knn3 -p pipeline-new.toml",
+      "inputs": [
+        "src/bin/dnn.rs",
+        "preds_new/dnn-24.trainx.npy",
+        "preds_new/dnn-24.fulltrain.npy"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit",
+        "dnn-24"
+      ],
+      "outputs": [
+        "preds_new/dnn-24__knn3.probex.npy",
+        "preds_new/dnn-24__knn3.qual.npy",
+        "preds_new/dnn-24__knn3.out"
+      ]
+    },
+    {
+      "name": "dnn-24__dnn-16p50",
+      "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50 -p pipeline-new.toml",
+      "inputs": [
+        "src/bin/dnn.rs",
+        "preds_new/dnn-24.trainx.npy",
+        "preds_new/dnn-24.fulltrain.npy"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit",
+        "dnn-24"
+      ],
+      "outputs": [
+        "preds_new/dnn-24__dnn-16p50.probex.npy",
+        "preds_new/dnn-24__dnn-16p50.qual.npy",
+        "preds_new/dnn-24__dnn-16p50.out"
+      ]
+    },
+    {
+      "name": "dnn-24__dnn-16p50__knn3",
+      "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__knn3 -p pipeline-new.toml",
+      "inputs": [
+        "src/bin/dnn.rs",
+        "preds_new/dnn-24__dnn-16p50.trainx.npy",
+        "preds_new/dnn-24__dnn-16p50.fulltrain.npy"
+      ],
+      "inputs_from": [
+        "ingest",
+        "newsplit",
+        "dnn-24__dnn-16p50"
+      ],
+      "outputs": [
+        "preds_new/dnn-24__dnn-16p50__knn3.probex.npy",
+        "preds_new/dnn-24__dnn-16p50__knn3.qual.npy",
+        "preds_new/dnn-24__dnn-16p50__knn3.out"
+      ]
+    }
+  ],
+  "environment": {
+    "CARGO_TARGET_DIR": "artifacts/upstream-repro/target (absolute path resolved per checkout)",
+    "CARGO_BUILD_JOBS": "2",
+    "RAYON_NUM_THREADS": "2",
+    "RUSTFLAGS": "-C link-arg=-framework -C link-arg=Accelerate"
+  },
+  "caveats": [
+    "Legacy epoch-blend jobs embed upstream development-fitted coefficients; reproduce as reference, refit on local development predictions for strict fresh-fit attribution",
+    "Released fixtures remain in a separate directory and must not satisfy fresh model dependencies",
+    "The pinned single-split reference score is fitted on development labels; matching it is numerical reproduction, not held-out performance"
+  ],
+  "resolved_pipeline_jobs": 201,
+  "full_local_plan_sha256": "7d66fee6a515332b99cfc4125b61b34e1ab99411e61b6afd88f0ee355b773f63",
+  "note": "Full resolved graph is regenerated into ignored artifacts/upstream-repro/fresh-training-plan.json by --prepare-training."
+}

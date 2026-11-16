@@ -1,0 +1,13 @@
+{
+  "state": "verified",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/target/release/ridge",
+    "--ensemble",
+    "new"
+  ],
+  "binary_sha256": "072a0013d631a6f6b889af808d5dd7adb1c547e674ac71e7a212a1a8707bc065",
+  "log_sha256": "aec670be41c0fe25ad93077c9ecdc980ac3b00d229d4f14eab01f7da8bfca852",
+  "qualifying_labels_read": false,
+  "log": "Pipeline:  pipeline-new.toml (split = new)\nModels:    models-new.toml (188 unique across 7 group(s))\nGroups:    tx,rbm,nn,other,gbmblend,mlpblend,fwlsblend\nEnsemble:  new (ensembles.toml) - new split only, fitted on probex\nLambda \u03bb:  1000\nIn-clip:   [0, 6] (skips '>' columns)\nOut-clip:  [1.05, 4.95]\nBLAS:      Apple Accelerate\n\nProbe set: 1128164 ratings (data/probex/ratings.npy)\nQuiz set:  skipped, 188 column(s) have no qual predictions:\n           tsvdx5-1000__nlpp__knn3\n           tsvdx4-4800lm__knnf\n           tsvdx4-4800lm_ep13\n           re-run that model with --final to get its quiz number\nBuilding Gram matrix over 188 model(s) \u00d7 1128164 ratings...\n\n  gram block 1/12\n  gram block 2/12\n  gram block 3/12\n  gram block 4/12\n  gram block 5/12\n  gram block 6/12\n  gram block 7/12\n  gram block 8/12\n  gram block 9/12\n  gram block 10/12\n  gram block 11/12\n  gram block 12/12\n\n  probe block 1/12\n  probe block 2/12\n  probe block 3/12\n  probe block 4/12\n  probe block 5/12\n  probe block 6/12\n  probe block 7/12\n  probe block 8/12\n  probe block 9/12\n  probe block 10/12\n  probe block 11/12\n  probe block 12/12\n\nrow                       probe   quiz (columns)   expected       delta\ntx                     0.863909           - (69)   0.863909    +3.70e-7  OK\nrbm                    0.869304           - (35)   0.869304    +2.44e-7  OK\nnn                     0.873266           - (21)   0.873266    -8.52e-9  OK\nother                  0.875514           - (12)   0.875514    +8.57e-9  OK\ngbmblend               0.858145           - (18)   0.858145    -4.65e-7  OK\nmlpblend               0.857265           - (23)   0.857265    -4.20e-7  OK\nfwlsblend              0.856522           - (10)   0.856522    +1.56e-7  OK\nensemble               0.856167          - (188)   0.856167    +1.56e-7  OK\n\nReference check: PASS (8 rows within 1e-5)\n"
+}
