@@ -9,7 +9,7 @@ import upstream_expansion as expansion
 
 
 class ExpansionCollection(unittest.TestCase):
-    def collect(self, mismatch=False):
+    def collect(self, mismatch=False, relocate=False):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)
             labels=np.array([1,2,3,4,5],dtype=np.int8)
@@ -26,8 +26,8 @@ class ExpansionCollection(unittest.TestCase):
             tracked=root/'tracked'
             assignments={'m1':['new-a'],'m3':['new-b']}
             for machine,names in assignments.items():
-                destination=tracked/machine
-                destination.mkdir(parents=True)
+                destination=tracked/('m1' if relocate else machine)
+                destination.mkdir(parents=True,exist_ok=True)
                 np.savez_compressed(destination/'development.npz',labels=labels,users=users)
                 name=names[0]
                 values=np.full(5,3,dtype=np.float32)
@@ -51,6 +51,33 @@ class ExpansionCollection(unittest.TestCase):
     def test_native_receipt_and_export_mismatch_is_rejected(self):
         with self.assertRaisesRegex(ValueError,'native output receipt'):
             self.collect(mismatch=True)
+
+
+    def test_remaining_remote_outputs_can_be_trained_and_collected_on_m1(self):
+        _,_,predictions=self.collect(relocate=True)
+        self.assertEqual(set(predictions),{'original','new-a','new-b'})
+
+    def test_takeover_keeps_the_same_six_models(self):
+        jobs=expansion.execution_jobs('m1',take_over=True)
+        self.assertEqual(set(jobs),set(expansion.NEW))
+        self.assertEqual(len(jobs),len(set(jobs)))
+        with self.assertRaisesRegex(ValueError,'Local takeover'):
+            expansion.execution_jobs('m3',take_over=True)
+
+    def test_duplicate_execution_is_not_silently_selected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            for machine in ['m1','m3']:
+                expansion.u.write(root/machine/'same.json',{})
+            with patch.object(expansion,'TRACKED',root):
+                with self.assertRaisesRegex(ValueError,'Duplicate expansion'):
+                    expansion.report_location('same')
+
+    def test_local_completion_never_waits_for_or_fetches_m3(self):
+        with patch.object(expansion,'collect_expansion',return_value=None),patch.object(expansion.x,'git') as git:
+            with self.assertRaisesRegex(ValueError,'missing a completed'):
+                expansion.watch(False,local_only=True)
+            git.assert_not_called()
 
 
 class PublicationRetry(unittest.TestCase):

@@ -100,7 +100,7 @@ def export(machine,name):
     np.savez_compressed(destination/(name+'.npz'),prediction=prediction)
     np.savez_compressed(destination/'development.npz',labels=y,users=users)
     reference=u.REFERENCE/'preds_new'/(name+'.probex.npy')
-    report=dict(job=name,source_commit=u.PIN,receipt=receipt,
+    report=dict(job=name,source_commit=u.PIN,receipt=receipt,execution_machine=machine,
                 artifact_sha256=u.sha(destination/(name+'.npz')),prediction_bytes_sha256=x.array_sha(prediction),
                 native_npy_sha256=u.sha(native),
                 development_sha256=u.sha(destination/'development.npz'),
@@ -148,6 +148,21 @@ def diagnostic(machine,pushing):
     status(machine,'diagnostic-complete',pushing=pushing)
 
 
+def report_location(name):
+    candidates=[TRACKED/machine/(name+'.json') for machine in ['m1','m3']]
+    present=[path for path in candidates if path.exists()]
+    if len(present)>1:raise ValueError('Duplicate expansion executions require review: '+name)
+    return present[0] if present else None
+
+
+def execution_jobs(machine,take_over=False):
+    if take_over:
+        if machine!='m1':raise ValueError('Local takeover must run on m1')
+        return ASSIGNMENTS['m1']+['tsvdx4-400lm','tsvdx4-400lm__knnf',
+                                 'rbmx2-150','rbmx2-150__knns','dnn-24__attn-32']
+    return ASSIGNMENTS[machine]
+
+
 def collect_expansion():
     reference_labels=np.load(u.REFERENCE/'data/probex/ratings.npy',allow_pickle=False)
     predictions={}
@@ -159,8 +174,8 @@ def collect_expansion():
     users=None
     for machine in ['m1','m3']:
         for name in ASSIGNMENTS[machine]:
-            report_path=TRACKED/machine/(name+'.json')
-            if not report_path.exists():return None
+            report_path=report_location(name)
+            if report_path is None:return None
             report=u.read(report_path)
             artifact=report_path.with_suffix('.npz')
             if report['source_commit']!=u.PIN or u.sha(artifact)!=report['artifact_sha256']:
@@ -183,19 +198,20 @@ def collect_expansion():
     return reference_labels,users,predictions
 
 
-def watch(pushing):
+def watch(pushing,local_only=False):
     remote='refs/remotes/origin/research/upstream-reproduction'
     while True:
-        fetch=x.git('fetch','origin','refs/heads/research/upstream-reproduction:'+remote,check=False)
-        if fetch.returncode:raise RuntimeError(fetch.stderr)
-        paths=x.git('ls-tree','-r','--name-only',remote,'--','experiments/upstream-expansion/m3').stdout.splitlines()
-        for path in paths:
-            destination=ROOT/path
-            destination.parent.mkdir(parents=True,exist_ok=True)
-            destination.write_bytes(x.worker_blob(remote,path))
-        remote_status=TRACKED/'m3/status.json'
-        if remote_status.exists() and u.read(remote_status)['state']=='failed':
-            raise RuntimeError('M3 reported failure: '+str(u.read(remote_status).get('error')))
+        if not local_only:
+            fetch=x.git('fetch','origin','refs/heads/research/upstream-reproduction:'+remote,check=False)
+            if fetch.returncode:raise RuntimeError(fetch.stderr)
+            paths=x.git('ls-tree','-r','--name-only',remote,'--','experiments/upstream-expansion/m3').stdout.splitlines()
+            for path in paths:
+                destination=ROOT/path
+                destination.parent.mkdir(parents=True,exist_ok=True)
+                destination.write_bytes(x.worker_blob(remote,path))
+            remote_status=TRACKED/'m3/status.json'
+            if remote_status.exists() and u.read(remote_status)['state']=='failed':
+                raise RuntimeError('M3 reported failure: '+str(u.read(remote_status).get('error')))
         data=collect_expansion()
         if data is not None:
             y,users,predictions=data
@@ -211,9 +227,11 @@ def watch(pushing):
                 r['fold_delta']=[b-a for a,b in zip(base['fold_rmse'],r['fold_rmse'])]
             if abs(base['rmse']-u.read(x.REPORT/'fresh-only-blends.json')['records'][1]['rmse'])>1e-9:
                 raise ValueError('Original-eight control does not reproduce')
-            u.write(TRACKED/'evaluation.json',dict(plan=PLAN,records=records,remote_commit=x.git('rev-parse',remote).stdout.strip()))
+            u.write(TRACKED/'evaluation.json',dict(plan=PLAN,records=records,remote_commit=None if local_only else x.git('rev-parse',remote).stdout.strip(),
+                    execution=u.read(TRACKED/'execution.json') if (TRACKED/'execution.json').exists() else None))
             status('m1','complete',pushing=pushing)
             return
+        if local_only:raise ValueError('Local takeover is missing a completed expansion artifact')
         status('m1','waiting-for-m3',pushing=pushing)
         time.sleep(300)
 
@@ -223,9 +241,16 @@ def main():
     ap.add_argument('--machine',choices=['m1','m3'],required=True)
     ap.add_argument('--publish',action='store_true')
     ap.add_argument('--plan-only',action='store_true')
+    ap.add_argument('--take-over-m3',action='store_true',help='Run the remaining remote assignment locally; evaluation recipes stay fixed')
     args=ap.parse_args()
     if args.plan_only:
         print(json.dumps(PLAN,indent=2));return
+    deployment=u.read(TRACKED/'execution.json') if (TRACKED/'execution.json').exists() else {}
+    takeover=args.take_over_m3 or deployment.get('mode')=='local-takeover'
+    if takeover and args.machine!='m1':raise ValueError('M3 assignment revoked: the user moved this batch to the first computer')
+    jobs=execution_jobs(args.machine,takeover)
+    if deployment and deployment.get('plan_sha256')!=u.sha(TRACKED/'plan.json'):
+        raise ValueError('Execution assignment refers to a different scientific plan')
     x.branch_guard(BRANCHES[args.machine])
     RUN.mkdir(parents=True,exist_ok=True)
     plan_path=TRACKED/'plan.json'
@@ -242,12 +267,13 @@ def main():
     try:
         os.nice(10)
         if Path('/usr/bin/caffeinate').exists():inhibitor=subprocess.Popen(['/usr/bin/caffeinate','-i','-w',str(os.getpid())])
-        diagnostic(args.machine,args.publish)
-        for name in ASSIGNMENTS[args.machine]:
+        if not (takeover and (TRACKED/'m1/diagnostic.json').exists()):
+            diagnostic(args.machine,args.publish)
+        for name in jobs:
             step(args.machine,name,args.publish)
             export(args.machine,name)
             status(args.machine,'job-complete',name,pushing=args.publish)
-        if args.machine=='m1':watch(args.publish)
+        if args.machine=='m1':watch(args.publish,local_only=takeover)
         else:status('m3','complete',pushing=args.publish)
     except BaseException as error:
         traceback.print_exc()
