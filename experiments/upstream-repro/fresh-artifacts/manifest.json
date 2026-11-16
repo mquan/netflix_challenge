@@ -99,9 +99,28 @@
         "reference_sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
         "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
       }
+    },
+    "dnn-24__dnn-16p50": {
+      "job": "dnn-24__dnn-16p50",
+      "artifact": "dnn-24__dnn-16p50.npz",
+      "artifact_sha256": "4afef73ab6068587b7bde9d8f70c65c1626563f73f6c0ddff1e7e7c954b4e227",
+      "prediction_bytes_sha256": "51ad9c14696fe379cb04bb7f7059b3b04aa623efaab8e64311ebd7a14329c979",
+      "source_npy_sha256": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+      "comparison": {
+        "job": "dnn-24__dnn-16p50",
+        "rows": 1128164,
+        "fresh_rmse": 0.9071730456531065,
+        "released_rmse": 0.9071730456531065,
+        "reference_available": true,
+        "prediction_rmse_difference": 0.0,
+        "max_absolute_difference": 0.0,
+        "fresh_sha256": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+        "reference_sha256": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+        "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
+      }
     }
   },
-  "updated": "2026-11-16T11:53:56.979260+00:00",
+  "updated": "2026-11-16T12:38:10.959396+00:00",
   "python": "3.12.9",
   "numpy": "2.5.5",
   "state": "running"
