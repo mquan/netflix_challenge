@@ -1,0 +1,11 @@
+{
+  "completed_utc": "2026-11-16T05:08:33.021685+00:00",
+  "label_isolation_tests_passed": 2,
+  "round9_tests_passed": 13,
+  "legacy_latent_export_tests": {
+    "passed": 1,
+    "failed": 1,
+    "reason": "Existing reader accepts NFJOIN1/2, current C++ serializer writes NFJOIN3. Exporter is not used: all 46 historical support/latent columns are hash-verified preserved inputs."
+  },
+  "baseline_saved_rmse": 0.8668706424233037
+}
