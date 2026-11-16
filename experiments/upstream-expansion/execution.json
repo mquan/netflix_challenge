@@ -1,0 +1,18 @@
+{
+  "mode": "local-takeover",
+  "plan_sha256": "b02f0854e609ee4224845a0359917ef90ae8601d1cf7fe03955fc3250276761f",
+  "assignments": {
+    "m1": [
+      "dnn-64",
+      "tsvdx4-400lm",
+      "tsvdx4-400lm__knnf",
+      "rbmx2-150",
+      "rbmx2-150__knns",
+      "dnn-24__attn-32"
+    ],
+    "m3": []
+  },
+  "reason": "User requested all remaining work run on the first computer because the other computer is busy.",
+  "changed_at": "2026-11-16T19:46:33.056793+00:00",
+  "scientific_model_and_evaluation_plan_changed": false
+}

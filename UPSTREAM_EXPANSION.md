@@ -1,5 +1,15 @@
 # Next bounded run: mismatch diagnostics and six new models
 
+**Execution update:** the user moved all remaining work to the first Mac because the other computer is busy. `experiments/upstream-expansion/execution.json` supersedes the original machine assignment below. Do not start the M3 launcher. The scientific model set, folds and comparisons remain fixed.
+
+Local continuation command:
+
+```sh
+UPSTREAM_REPRO_THREADS=4 UPSTREAM_REPRO_BLAS_THREADS=1 .venv/bin/python -u scripts/upstream_expansion.py --machine m1 --take-over-m3 --publish
+```
+
+The completed wider DNN is verified and reused. The first new job is `tsvdx4-400lm`, followed by its factor-neighbor chain, the 150-unit RBM and its chain, then the attention chain. The latter automatically trains its missing `dnn-24` parent locally. Results are exported under `experiments/upstream-expansion/m1/`, with the actual execution host recorded. Afterward the fixed fourteen-model evaluation runs locally without waiting for M3. Existing diagnostics are retained.
+
 The user approved starting the mismatch investigation and a larger upstream model batch. The first eight-model replay is complete. Preserve it; none of its predictions, source recipes or receipts are overwritten by this continuation.
 
 ## Fixed assignment
