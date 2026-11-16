@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "assignments": {
+    "m1": [
+      "dnn-64"
+    ],
+    "m3": [
+      "dnn-24__attn-32",
+      "tsvdx4-400lm",
+      "tsvdx4-400lm__knnf",
+      "rbmx2-150",
+      "rbmx2-150__knns"
+    ]
+  },
+  "arms": {
+    "original-eight": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3"
+    ],
+    "plus-temporal": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3",
+      "tsvdx4-400lm",
+      "tsvdx4-400lm__knnf"
+    ],
+    "plus-rbm": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3",
+      "rbmx2-150",
+      "rbmx2-150__knns"
+    ],
+    "plus-neural": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3",
+      "dnn-64",
+      "dnn-24__attn-32"
+    ],
+    "all-fourteen": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3",
+      "dnn-64",
+      "dnn-24__attn-32",
+      "tsvdx4-400lm",
+      "tsvdx4-400lm__knnf",
+      "rbmx2-150",
+      "rbmx2-150__knns"
+    ]
+  },
+  "folds": 5,
+  "fold_seed": 20261116,
+  "ridge_lambda": 1000.0,
+  "input_clip": [
+    0,
+    6
+  ],
+  "output_clip": [
+    1.05,
+    4.95
+  ],
+  "unpenalized_intercept": true,
+  "tuning": "none; fixed before expansion fits",
+  "limitation": "ProbeX development comparisons; base recipes historically development-selected, not untouched Test",
+  "diagnostics": "Separate from expansion features; same-recipe replay versus support including qualifying query identities, with qualifying outcomes zero"
+}
