@@ -1,0 +1,39 @@
+{
+  "job": "dnn-64",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "job": "dnn-64",
+    "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-64 -p pipeline-new.toml",
+    "started": "2026-11-16T17:05:59.826271+00:00",
+    "finished": "2026-11-16T19:14:45.168007+00:00",
+    "outputs": {
+      "preds_new/dnn-64-base.probex.npy": "c8c6c5b4d251dfcfd6d328db49348f5e2e2278ba840931b68e2f429bcdc4cb15",
+      "preds_new/dnn-64-base.qual.npy": "d84f3ef2de9f464abd54d205b567a25581cf83ae49366e7ab70a9c16dcc374d2",
+      "preds_new/dnn-64-net.probex.npy": "1bbd075433e9d94151bbb817970c87181a06e84f56b7ed3d52da096b827288b0",
+      "preds_new/dnn-64-net.qual.npy": "0329907d4d99224f0563d202c704755e00bab86113ffdbb30241b6e076da7058",
+      "preds_new/dnn-64.out": "12eaf180d6b027103149341908f848d7a01b25097e5bef9bbc56ef26e201a7cc",
+      "preds_new/dnn-64.probex.npy": "53c40fb140e1fee83b7e1222d20be9f05897044355ce13435f1bfd908093936c",
+      "preds_new/dnn-64.qual.npy": "0f271fc10cdcb0f75f7b024b7cf44bd9d44b565991c4658ac6bbfa3c9c422e26",
+      "preds_new/dnn-64_ep01.probex.npy": "ac409ba1a7e86c2f7db7d44f7de49f5f8763360cc658c9f7f442f95542604467",
+      "preds_new/dnn-64_ep01.qual.npy": "f6429841a34eec88f2add98563b23e0f3a77032bd27951d5ea0e6ac1d12c8aff",
+      "preds_new/dnn-64_ep02.probex.npy": "f1870bc91d34a76f6826d413384f765a252b5676402e56ecedef858ce64446b2",
+      "preds_new/dnn-64_ep02.qual.npy": "ad10c6dbbccc991593fc3f256516ddc714952635b8691ac7d1cb91f9a2b79b89",
+      "preds_new/dnn-64_ep03.probex.npy": "0a1c5bbbdb41b90024f0a03baf860eb8a98455867863d4d4b1bbbceba5b1e7e4",
+      "preds_new/dnn-64_ep03.qual.npy": "9a2761eb0971423b3cec5e391e56d13f33c6736c1398926ed90f9db34ca848c7",
+      "preds_new/dnn-64_ep04.probex.npy": "90e7758ce4a382f0e0859f82690471072913971e099c429d99e3ff5b76932e87",
+      "preds_new/dnn-64_ep04.qual.npy": "11be6ecce8b89e76b730408fde3cb77226226dd3cf410bb83143352c43454015",
+      "preds_new/dnn-64_ep05.probex.npy": "53c40fb140e1fee83b7e1222d20be9f05897044355ce13435f1bfd908093936c",
+      "preds_new/dnn-64_ep05.qual.npy": "0f271fc10cdcb0f75f7b024b7cf44bd9d44b565991c4658ac6bbfa3c9c422e26"
+    },
+    "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+  },
+  "artifact_sha256": "e9a38555ac030541fefc67ace3811cc01c5c521d36b3e4f1c533e90c7c256be1",
+  "prediction_bytes_sha256": "8ff8f9c5ba71df217cbab682354e847939ad9119187b5aa32da3011d18c67530",
+  "native_npy_sha256": "53c40fb140e1fee83b7e1222d20be9f05897044355ce13435f1bfd908093936c",
+  "development_sha256": "017155edceae02bb22ed4aca6f35a73786aa90ba800298efb7ee171ee4e75c0d",
+  "fresh_rmse": 0.9147176508277151,
+  "reference_available": true,
+  "released_rmse": 0.9147176508277151,
+  "prediction_rms_difference": 0.0
+}

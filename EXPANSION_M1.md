@@ -2,9 +2,11 @@
 
 {
   "machine": "m1",
-  "state": "training",
+  "state": "job-complete",
   "active": "dnn-64",
-  "completed": [],
+  "completed": [
+    "dnn-64"
+  ],
   "error": null,
-  "updated": "2026-11-16T19:06:07.601847+00:00"
+  "updated": "2026-11-16T19:14:45.920229+00:00"
 }
