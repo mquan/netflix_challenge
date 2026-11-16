@@ -1,8 +1,8 @@
 # Upstream fresh-training progress (M3 Max, 96 GB)
 
-Auto-updated by `scripts/upstream_repro_queue.py`. Last update: 2026-11-16 04:38 PST.
+Auto-updated by `scripts/upstream_repro_queue.py`. Last update: 2026-11-16 04:41 PST.
 
-- Queue state: **running** — running `dnn-24__dnn-16p50__knn3`
+- Queue state: **running**
 - Threads: RAYON 8, BLAS 1
 
 ProbeX development diagnostics only: fresh training, released vectors imported for comparison.
@@ -15,7 +15,7 @@ ProbeX development diagnostics only: fresh training, released vectors imported f
 | rbmx2-40__knn3 | done | 0.05 | 0.903718 | 0.903674 | +0.000044 | 0.040524 | 3.7925 |
 | dnn-24 | done | 1.52 | 0.917593 | 0.917593 | +0.000000 | 0.000000 | 0.0000 |
 | dnn-24__dnn-16p50 | done | 0.74 | 0.907173 | 0.907173 | +0.000000 | 0.000000 | 0.0000 |
-| dnn-24__dnn-16p50__knn3 | running |  |  |  |  |  |  |
+| dnn-24__dnn-16p50__knn3 | done | 0.05 | 0.896837 | 0.896837 | +0.000000 | 0.000000 | 0.0000 |
 | dnn-24__knn3 | queued |  |  |  |  |  |  |
 
 ## Residual-chain gains (RMSE reduction from parent to child)
@@ -26,4 +26,4 @@ ProbeX development diagnostics only: fresh training, released vectors imported f
 | rbmx2-40 → rbmx2-40__knn3 | 0.017795 | nan |
 | dnn-24 → dnn-24__knn3 | pending | pending |
 | dnn-24 → dnn-24__dnn-16p50 | 0.010420 | 0.010420 |
-| dnn-24__dnn-16p50 → dnn-24__dnn-16p50__knn3 | pending | pending |
+| dnn-24__dnn-16p50 → dnn-24__dnn-16p50__knn3 | 0.010336 | 0.010336 |
