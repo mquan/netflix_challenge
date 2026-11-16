@@ -80,9 +80,28 @@
         "reference_sha256": "e4782de4fbcb5a3c98df4ef307b77faaade122da45d7b6dfc4af06ad68aeb19e",
         "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
       }
+    },
+    "dnn-24": {
+      "job": "dnn-24",
+      "artifact": "dnn-24.npz",
+      "artifact_sha256": "1708e41279944edb013c1ded5e0c31850980f456e5f82c996ee83129a80adef8",
+      "prediction_bytes_sha256": "b65218ee61311e826dc26b0795315e91148b05439dceefb89842c1d602028929",
+      "source_npy_sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+      "comparison": {
+        "job": "dnn-24",
+        "rows": 1128164,
+        "fresh_rmse": 0.9175934711575925,
+        "released_rmse": 0.9175934711575925,
+        "reference_available": true,
+        "prediction_rmse_difference": 0.0,
+        "max_absolute_difference": 0.0,
+        "fresh_sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+        "reference_sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+        "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
+      }
     }
   },
-  "updated": "2026-11-16T10:22:33.306288+00:00",
+  "updated": "2026-11-16T11:53:56.979260+00:00",
   "python": "3.12.9",
   "numpy": "2.5.5",
   "state": "running"

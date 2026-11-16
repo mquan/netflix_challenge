@@ -1,0 +1,26 @@
+Running 'dnn-24': cargo build --release --bin dnn && ./target/release/dnn dnn-24 -p pipeline-new.toml
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 8.93s
+[dnn-24]
+target = "rtg"
+DnnConfig { n_feat: 24, h1: 96, h2: 64, n_mf: 256, n_bins: 30, out_scale: 3.5, day_scale: 1128.0, dev_beta: 0.4, n_epochs: 8, seed: 43, lr_decay: 0.87, lr_mlp: 3e-5, lr_emb: 0.02, lr_mf: 0.008, lr_bias: 0.005, lr_alpha: 2e-6, reg_emb: 0.02, reg_mf: 0.015, reg_bias: 0.03, reg_bu_day: 0.03, reg_alpha: 50.0, reg_mlp: 0.0001, sigma: 0.05, grad_clip: 1.0, emb_cap: 1.0, n_threads: 1, block_users: 32, train_frac: 1.0 }
+trainx => probex
+Epoch 01 | RMSE 0.94397
+Epoch 02 | RMSE 0.92312
+Epoch 03 | RMSE 0.91681
+Epoch 04 | RMSE 0.91548
+Epoch 05 | RMSE 0.91587
+Epoch 06 | RMSE 0.91656
+Epoch 07 | RMSE 0.91752
+Epoch 08 | RMSE 0.91876
+probex RMSE 0.91876
+fulltrain => qual
+Epoch 01 | RMSE 3.71112
+Epoch 02 | RMSE 3.73947
+Epoch 03 | RMSE 3.74620
+Epoch 04 | RMSE 3.74644
+Epoch 05 | RMSE 3.74643
+Epoch 06 | RMSE 3.74789
+Epoch 07 | RMSE 3.75210
+Epoch 08 | RMSE 3.74849
+
