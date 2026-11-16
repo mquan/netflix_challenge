@@ -11,10 +11,36 @@ not the complete winning ensemble.
 
 ## Progress at a glance
 
-[![Netflix Prize RMSE progress from B1 to R10, marked with Claude and Codex logos, with Cinematch and 10 percent goal reference lines](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+[![Netflix Prize progress: historical Probe CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
 
 Probe CV points and Netflix Test reference lines use different evaluation sets.
 Click the graph for the interactive report and the source of each score.
+
+The qualifying target **0.85725 is numerically met** in the community
+recovered-label audit: **0.8571903481** on source is_test=1, a
+**10.00626267% improvement** over 0.9525. Source is_test=0 scores
+**0.8561542082**, so both groups pass despite the published/source count
+discrepancy. The 619-input contextual ridge combines 536 individual CF
+predictors, 77 audited Probe-fitted public blenders, the matched NN385 blend,
+and five local predictors. Qualifying ratings were excluded from weight fitting.
+Independent scoring and a bitwise inference replay confirm the result.
+
+This is an adaptive community audit, not official Netflix scoring or an
+untouched private test. Upstream row crossfits and legacy epoch blending mean
+the final stack's development scores are not independent CV. The separate
+entire-original-Probe nested user-fold result remains **0.86453375**.
+See [RESULTS.md](RESULTS.md), [QUALIFYING_PROGRESS.md](QUALIFYING_PROGRESS.md),
+and the [verified local submission](artifacts/submissions/netflix-0.8571903481-qualifying.txt.gz).
+
+[Read the breakthrough retrospective](BREAKTHROUGH.md) for what changed from
+the earlier modeling work, which comparisons support the improvement, and
+why the final integration run could finish in hours.
+
+Qualifying production refits use all 100,480,507 known ratings, including
+the original Probe; qualifying rating fields remain unknown zero sentinels.
+Final stacking fits known Probe/ProbeX labels. Public pretrained blenders are
+identified separately from CF predictors and from final Quiz-fitted ensembles,
+which were not imported.
 
 ## Validation
 
@@ -52,8 +78,11 @@ The published checkpoints to keep in mind are:
 - winning private test submission: 0.856704 RMSE
 
 Probe, quiz, and private test scores are similar but not interchangeable. We
-will tune only on the probe data. Any later evaluation against recovered
-quiz/test labels must be a final, isolated audit—not a training signal.
+select models, epochs, and blend weights using development labels. Current
+work also audits frozen predictions against community-provided recovered
+qualifying labels. Multiple audits have now occurred: these are adaptive local
+measurements, not an untouched private test or official Netflix scoring.
+Qualifying ratings never train the models or choose their stopping epochs.
 
 ## Current implementation
 

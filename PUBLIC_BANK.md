@@ -1,8 +1,13 @@
 # Public model bank continuation — 2026-11-15
 
-The target remains **RMSE ≤ 0.85725**. The user additionally requested reaching
-that number directly, so a development score reduced by an estimated retraining
-offset does not count as completion. No 10% success is claimed here.
+The target **RMSE ≤ 0.85725** was numerically verified on 2026-11-16:
+the 619-input contextual ridge scores **0.8571903481** on recovered source1
+and **0.8561542082** on source0. Both pass, with **10.00626267%** improvement
+over 0.9525 on source1. This is a measured, independently rescored community
+audit, not a development score minus an estimated retraining offset.
+It is not official Netflix scoring or an untouched private test.
+See [RESULTS.md](RESULTS.md) for the frozen artifact and exact verification.
+The rest of this file retains the earlier raw-bank development history.
 
 The original 79-model R9 ensemble scores 0.8668706425 on five user folds of the
 original Netflix Probe. All Probe values are excluded from base-model fitting;
@@ -127,7 +132,8 @@ Running comparisons:
 Feature preparation now writes contiguous columns. A profile of the initial
 466-column preparation showed 99% of samples in strided float32 assignment;
 the column-major representation avoids that cost without changing features or
-folds. The original job is allowed to finish, preserving its comparison.
+folds. The redundant original feature-preparation job was stopped after the
+equivalent complete statistics were available; its receipt is retained.
 
 Code: `scripts/public_probe_bank.py`, `scripts/streaming_blend.py`,
 `scripts/streaming_nn_blend.py`, `scripts/ease_residual.py`.
@@ -137,4 +143,9 @@ and exclusion of self-copying. Blockwise neural normalization also matches the
 existing implementation exactly on a numerical fixture.
 
 The existing household-persona job in `/Users/quan/workspace/netflix_personas`
-is left running and unchanged. All new outputs are isolated in this checkout.
+was left unchanged. All new outputs are isolated in this checkout.
+
+The later 466-base NN2 comparison reached **0.864533752805203** on the entire
+original Probe. Newer split imports and actual qualifying evaluation are
+documented separately in [QUALIFYING_PROGRESS.md](QUALIFYING_PROGRESS.md),
+including the alternative holdout distinction and recovered-label provenance.

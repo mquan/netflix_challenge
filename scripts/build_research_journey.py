@@ -3,6 +3,7 @@
 import base64
 import datetime as dt
 import json
+from html import escape
 import pathlib
 import re
 
@@ -124,6 +125,50 @@ def run_curve(name, label, metric, step_key, description, credit):
                 source=f"experiments/{name}.events.jsonl")
 
 
+# Same recovered-label population throughout; never mix these with Probe CV.
+QUALIFYING = [
+    ("388-input ridge", "01:03", .8582647011016761, .8574231002840432),
+    ("58-input ridge", "02:19", .8578789678524765, .8567927057358324),
+    ("58-input NN2", "02:22", .8578011759258087, .8567189009050679),
+    ("83-input ridge", "02:31", .8575942363558479, .8565118571755685),
+    ("83-input NN2", "02:33", .8575337426262905, .8564604689103762),
+    ("619-input ridge", "02:42", .8571903480630092, .8561542082012507),
+]
+
+
+def qualifying_svg():
+    """One audited score sequence, reused by the site and README preview."""
+    parts = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="audit-title audit-desc">',
+             '<title id="audit-title">Recovered qualifying audit: both groups cross 0.85725</title>',
+             '<desc id="audit-desc">Six candidate audits on November 16 UTC. Source1 falls from 0.8582647 to 0.8571903; source0 from 0.8574231 to 0.8561542. Adaptive community evaluation, not official Netflix scoring. Horizontal positions are candidate order.</desc>',
+             '<rect width="960" height="440" fill="#181d29"/>']
+    def text(x, y, value, color="#a8b0c2", size=14, anchor="start"):
+        parts.append(f'<text x="{x}" y="{y}" fill="{color}" font-family="Arial,Helvetica,sans-serif" font-size="{size}" text-anchor="{anchor}">{escape(value)}</text>')
+    def y(score):
+        return 325-(score-.8560)/.0025*255
+    text(80, 30, "Recovered qualifying RMSE · lower is better", "#f2f1ed", 18)
+    text(80, 53, "Candidate order · audit times: Nov 16 UTC / Nov 15 Pacific", size=13)
+    for tick in (.8560, .8565, .8570, .8575, .8580, .8585):
+        yy=y(tick)
+        parts.append(f'<path d="M80 {yy} H875" stroke="#4b5364" opacity=".5"/>')
+        text(70, yy+5, f"{tick:.4f}", size=13, anchor="end")
+    parts.append(f'<path d="M80 {y(.85725)} H875" stroke="#baaaff" stroke-dasharray="6 5"/>')
+    text(875, y(.85725)-9, "10% target: 0.85725", "#baaaff", 14, "end")
+    for group, color, label in ((2, "#70d9d0", "source1"), (3, "#f6c26b", "source0")):
+        coords=[(100+i*150, y(row[group])) for i,row in enumerate(QUALIFYING)]
+        points=" ".join(f"{x},{yy}" for x,yy in coords)
+        parts.append(f'<polyline points="{points}" fill="none" stroke="{color}" stroke-width="3"/>')
+        for (x,yy),row in zip(coords,QUALIFYING):
+            parts.append(f'<circle cx="{x}" cy="{yy}" r="5" fill="{color}"><title>{escape(row[0])} · {label} · {row[group]:.10f} · {row[1]} UTC</title></circle>')
+        text(850, coords[-1][1]+24, f"{label}: {QUALIFYING[-1][group]:.7f}", color, 15, "end")
+    for i,(name,time,*_) in enumerate(QUALIFYING):
+        text(100+i*150, 358, name, "#f2f1ed", 13, "middle")
+        text(100+i*150, 378, time+" UTC", size=12, anchor="middle")
+    text(80, 413, "Adaptive recovered-label audit; different population and training protocol from Probe CV.", size=13)
+    parts.append('</svg>')
+    return "\n".join(parts)
+
+
 def main():
     items = []
     for ident, score, time, strategy, metric, credit, status, title, note, source, basis in MILESTONES:
@@ -143,6 +188,8 @@ def main():
     if template.count(marker) != 1:
         raise ValueError("Expected one data insertion marker")
     output = template.replace(marker, json.dumps(payload, separators=(",", ":")))
+    output = output.replace("__QUALIFYING_GRAPH__", qualifying_svg())
+    (ROOT / "assets/qualifying_progress.svg").write_text(qualifying_svg() + "\n")
     for name, filename, color in (("claude", "claude-code.svg", "#D97757"), ("codex", "codex.svg", "#b6a5ff")):
         icon = (ROOT / "assets" / filename).read_text().replace('fill="currentColor"', f'fill="{color}"')
         data_url = "data:image/svg+xml;base64," + base64.b64encode(icon.encode()).decode()

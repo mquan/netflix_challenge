@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MILESTONES = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["MILESTONES"]
 OUT_SVG = ROOT / "assets/progress_graph.svg"
 OUT_PNG = ROOT / "assets/progress_graph.png"
-WIDTH, HEIGHT = 1600, 900
+WIDTH, HEIGHT = 1600, 1700
 X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
 SCORE_MIN, SCORE_MAX = .865, .895
@@ -123,6 +123,11 @@ line(X0, 754, X1, 754, "#baaaff", 2)
 text(X0, 738, "0.8572", "#baaaff", 22, weight="700")
 text(X1, 738, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
 text(X0, 860, "Test reference lines and Probe CV points use different evaluation sets. C5/C12 are parallel-branch results; R10 is an unpromoted screen.", "#a8b0c2", 19)
+audit_svg = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["qualifying_svg"]()
+svg.append('<rect x="0" y="900" width="1600" height="800" fill="#10131d"/>')
+text(94, 957, "NOVEMBER BREAKTHROUGH · RECOVERED QUALIFYING AUDIT", "#70d9d0", 28, weight="700")
+text(94, 1002, "619-input ridge: 0.8571903481 · 10.00626267% below 0.9525", "#f2f1ed", 27, weight="700")
+svg.append(audit_svg.replace('<svg ', '<svg x="80" y="1030" width="1440" height="660" ', 1))
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 

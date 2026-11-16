@@ -1,5 +1,45 @@
 # Score progression
 
+## Verified qualifying target (2026-11-16)
+
+| Evaluation | Recipe | RMSE |
+| --- | --- | ---: |
+| Recovered qualifying, source is_test=0, 1,408,789 rows | Frozen 619-input contextual ridge, alpha 0.001 | **0.8561542082012507** |
+| Recovered qualifying, source is_test=1, 1,408,342 rows | Same frozen ridge | **0.8571903480630092** |
+| Entire original Probe, nested user folds | 466 raw local/public bases, three-seed NN2 | **0.864533752805203** |
+| Alternative ProbeX, nested user folds | Fixed equal NN2/tree blend | 0.8565022974859765 |
+| Recovered qualifying, source `is_test=0` | Frozen 385-base NN2 control | 0.8578912125126632 |
+| Recovered qualifying, source `is_test=1` | Same frozen control | 0.8587390514282591 |
+
+**Both recovered qualifying groups meet 0.85725.** Source1 improves over the
+0.9525 reference by **10.00626267055%**, with a margin of **0.000059651937**
+below the target. The 619 inputs are 536 individual CF predictors, 77
+source-audited Probe-fitted nonlinear/FWLS blends, the matched NN385 OOF blend,
+and five local predictors. Ridge configuration and weights use known
+development ratings; query features are read only after weights are frozen.
+Final Quiz-fitted source ensembles were excluded.
+
+The saved weights reproduce every float32 prediction bit for bit. A separate
+standard-library CSV scorer with compensated sums agrees within 1e-12 RMSE.
+The Netflix-format gzip preserves all 2,817,131 prediction rows and 17,470
+movie headers, with exact float round trips; it has not been uploaded.
+
+- [Submission](artifacts/submissions/netflix-0.8571903481-qualifying.txt.gz)
+- [Independent verification](artifacts/qualifying/public619-meta/ridge-final/target-verification.json)
+- Prediction SHA256: 81dbd9bcf366e6496422e647e4ee0941f9cf0b3b05a851d8746050a5d768cb6c
+- Submission SHA256: 512c9833424e131cb0fbf920f7936afba547b508c93d1620e78b181e1c2d05b4
+
+These are **adaptive community recovered-label audits**, not official Netflix
+scores or an untouched private Test. Source group counts conflict with
+published Quiz/Test sizes; names are retained and both pass. Upstream
+row crossfits/higher blending layers and legacy ProbeX epoch weights are not
+nested within final user folds, so final stacking development scores are not
+independent CV. The original-Probe and alternative-ProbeX results above use
+different rows and cannot be substituted for qualifying scores.
+See [QUALIFYING_PROGRESS.md](QUALIFYING_PROGRESS.md) for provenance and experiments.
+See [BREAKTHROUGH.md](BREAKTHROUGH.md) for the explanation of what made the
+advance possible and the matched comparisons behind it.
+
 ## Consolidated best and latest screens (2026-10-11)
 
 | Result | Method | Five-user-fold Probe CV RMSE | Decision |

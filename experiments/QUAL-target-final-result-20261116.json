@@ -1,0 +1,33 @@
+{
+  "state": "target_verified_and_exported",
+  "verified_utc": "2026-11-16T02:56:42.556873+00:00",
+  "model_dir": "artifacts/qualifying/public619-meta/ridge-final",
+  "submission": "artifacts/submissions/netflix-0.8571903481-qualifying.txt.gz",
+  "verification_sha256": "bf6e42e205e78360391733e8be26dacede9f9d334e91bd2e3fe8ddece76b7b48",
+  "export_receipt_sha256": "4d4be07fa88326b7898c1776e797a01d74525c1882b640cccbe3165d7f8fc4b1",
+  "scores": {
+    "0": {
+      "rows": 1408789,
+      "rmse": 0.8561542082012505
+    },
+    "1": {
+      "rows": 1408342,
+      "rmse": 0.8571903480630091
+    }
+  },
+  "improvement_percent": 10.006262670550225,
+  "both_groups_below_target": true,
+  "baseline_rmse": 0.9525,
+  "target_rmse": 0.85725,
+  "tests_passed": 17,
+  "git_diff_check_passed": true,
+  "optional_jobs_stopped": true,
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "tomli": "2.5.0"
+  },
+  "provenance": "Adaptive community recovered-label audit, not official Netflix scoring or an untouched private test"
+}

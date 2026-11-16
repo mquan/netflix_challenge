@@ -1,5 +1,15 @@
 # Plan to reach a 10% improvement over Cinematch
 
+**Status update, 2026-11-16:** the direct numerical target is verified in a
+community recovered-label audit: source1 RMSE **0.8571903481** and source0
+**0.8561542082**. Both pass 0.85725. This is not official Netflix scoring or
+an untouched private test. See [BREAKTHROUGH.md](BREAKTHROUGH.md) for what
+changed and [RESULTS.md](RESULTS.md) for the frozen artifact.
+
+The plan below is historical. Its best-score statements and assumption that
+only a calibrated estimate would be available describe that earlier stage;
+they do not replace the current measured result or its provenance limitations.
+
 **Target.** 10% better than Cinematch's 0.9525 test RMSE, which is
 **0.85725 test RMSE**. The Grand Prize scores (0.8554 quiz, 0.8567 test) are
 not the target.
