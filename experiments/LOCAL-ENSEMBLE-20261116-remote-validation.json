@@ -1,0 +1,20 @@
+{
+  "completed_utc": "2026-11-16T05:35:03.773699+00:00",
+  "checks": {
+    "device_and_existing_isolation_tests": "5 passed, including CPU and Apple GPU end-to-end outer-label poisoning",
+    "clean_checkout_input_restoration": "passed: exact dataset/bank hashes and saved RMSE 0.8668706424233037",
+    "clean_checkout_remote_dry_run": "passed: 10 stages, paths rebased to checkout",
+    "remote_dependency_checks": "passed",
+    "python_compile": "passed",
+    "diff_whitespace": "passed"
+  },
+  "limitation": "CUDA was not available for local verification; raw-archive download/ingestion path was reviewed but clean-checkout test used the existing exact dataset.",
+  "source_sha256": {
+    "scripts/local_ensemble_device.py": "8fd927f1a4c51e8ea85ea5a50878a3cff5e3c0ef30f7a567b0f016972ec2630c",
+    "scripts/setup_local_ensemble_remote.py": "d31612f72fcf470984f7738dceec6b8bf24dd9c92f5abef314d54f9409324fe1",
+    "scripts/run_local_ensemble_remote.py": "1be27cd55136c5a7936737d04814cb28b8cf1b0f6d0f0871e334497ed01b1e7e",
+    "tests/test_local_ensemble_device.py": "246636570e2eae967b665c2fd80547c1ee05de87480405fb76baa4bac60be8fe",
+    "REMOTE_ENSEMBLE.md": "3ec4330f9fef70c7c0f8cd7ab36f163cc3f322846f66209a64b56ea045b24aa1",
+    "requirements-local-ensemble.txt": "d435aebdf1d671e71eecc94012c1ffe35a810bae86b7fe4e8712ca1348273b25"
+  }
+}

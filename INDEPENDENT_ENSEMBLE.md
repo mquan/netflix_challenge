@@ -95,3 +95,12 @@ and combined 0.8683478614. All three treatments improve every fold; combined
 gains 0.0001834284. This establishes a small development gain over the matched
 ridge only. The stronger 0.8668706424 R9 tree/neural blend remains unbeaten by
 this diagnostic, and the original full-treatment comparisons continue.
+
+## Second computer
+
+[REMOTE_ENSEMBLE.md](REMOTE_ENSEMBLE.md) provides clean-checkout setup, verified
+input restoration, automatic CPU/CUDA/Apple-GPU selection, five-fold CPU
+parallelism, resuming and result export. The separate worker overlaps one CPU
+tree job with one neural job and trains its own matched control. CPU and Apple
+GPU outer-label isolation were tested locally; CUDA is not available on the
+development Mac. The original Mac run continues with its frozen CPU plan.
