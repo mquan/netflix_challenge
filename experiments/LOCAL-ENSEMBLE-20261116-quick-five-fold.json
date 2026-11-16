@@ -1,0 +1,79 @@
+{
+  "state": "complete",
+  "elapsed_seconds": 27.540112290997058,
+  "rows": 1408395,
+  "folds": 5,
+  "alpha": 1e-05,
+  "historical_ridge_max_difference": 2.3858191511294535e-07,
+  "results": [
+    {
+      "name": "baseline",
+      "rmse": 0.8685312898070623,
+      "delta_rmse": 0.0,
+      "fold_delta": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "paired_user_cluster_mse_interval": [
+        0.0,
+        0.0
+      ],
+      "sha256": "3bd8eff2e325359e5cfc39b5676f49bd353089897e4f31b49335dc0f6e6f5ad1"
+    },
+    {
+      "name": "snapshots",
+      "rmse": 0.8684460182206799,
+      "delta_rmse": -8.527158638238497e-05,
+      "fold_delta": [
+        -9.950004954817349e-05,
+        -6.148925539406491e-05,
+        -0.00010409594167015701,
+        -8.353481366663029e-05,
+        -7.767646765732827e-05
+      ],
+      "paired_user_cluster_mse_interval": [
+        -0.00020200537231762926,
+        -9.422424881437466e-05
+      ],
+      "sha256": "e022f76bb80c0c8395e04b4fa49e453f910b948c7b48237f11198dabdc815971"
+    },
+    {
+      "name": "calibration",
+      "rmse": 0.8684287525787171,
+      "delta_rmse": -0.00010253722834518975,
+      "fold_delta": [
+        -0.0001305708309036202,
+        -7.49165302310617e-05,
+        -0.00013863381683854037,
+        -6.531221543204513e-05,
+        -0.00010323367713027665
+      ],
+      "paired_user_cluster_mse_interval": [
+        -0.00023060896827099562,
+        -0.00012559716871353007
+      ],
+      "sha256": "7d4f8e5a2d3d19ac53d6858cc44c36ece442c0097695eb49fccdd47fe353a4d5"
+    },
+    {
+      "name": "combined",
+      "rmse": 0.8683478613720391,
+      "delta_rmse": -0.00018342843502316963,
+      "fold_delta": [
+        -0.00023024931008464034,
+        -0.0001319616578502325,
+        -0.0002365991664652345,
+        -0.00013900848533110466,
+        -0.00017925372860638777
+      ],
+      "paired_user_cluster_mse_interval": [
+        -0.00039256617565030746,
+        -0.0002446198733992527
+      ],
+      "sha256": "73235e632a67862d3be30b9734fa79b7513527427439ab69fe3d47acaee25030"
+    }
+  ],
+  "limitation": "Fixed five-user-fold contextual ridge development diagnostic, not the stronger tree/neural control or an untouched Test; full trial unchanged"
+}

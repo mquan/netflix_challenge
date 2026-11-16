@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-16T05:17:04.151249+00:00",
+  "full_plan_sha256": "55367288573b853644e2f35a834c9624d50e095426282108d35f68fc0d79cd89",
+  "code_sha256": "d49e5352fdefdd3536fd038bea50288c7aeea98b2fe053120b9d1068a0a71d41",
+  "purpose": "Complete the same fixed ridge diagnostic on all five existing user folds; no arm selection or cancellation",
+  "alpha": 1e-05,
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "conditions": [
+    "baseline",
+    "snapshots",
+    "calibration",
+    "combined"
+  ]
+}

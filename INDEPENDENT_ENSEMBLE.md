@@ -88,3 +88,10 @@ This screen produces an early diagnostic rather than a full tree/neural
 comparison. Its results do not select or cancel the predeclared full-trial
 arms. Three tests now cover empty-bin fallback, one-versus-two-worker outer
 label poisoning, and streamed-versus-direct ridge fitting.
+
+The five-fold ridge diagnostic completed in 27.54 seconds: baseline
+0.8685312898, snapshots 0.8684460182, nonlinear calibration 0.8684287526,
+and combined 0.8683478614. All three treatments improve every fold; combined
+gains 0.0001834284. This establishes a small development gain over the matched
+ridge only. The stronger 0.8668706424 R9 tree/neural blend remains unbeaten by
+this diagnostic, and the original full-treatment comparisons continue.
