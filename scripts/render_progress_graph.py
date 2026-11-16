@@ -104,12 +104,7 @@ for date, label in dates:
 for ident, score, date, _strategy, metric, credit, _status, _title, _note, _source, _basis in MILESTONES:
     if _status == "screen":
         svg.append('<g opacity=".4">')
-    if metric == "single":
-        x, y = x_at(date), y_at(float(score))
-        svg.append(f'<circle cx="{x}" cy="{y}" r="13" stroke="#f6c26b" stroke-width="2" fill="#181d29"/>')
-        icon(credit, x, y, 16)
-        text(x+22, y+6, f"{ident} · {float(score):.5f}", "#f2f1ed", 19)
-    elif metric == "qualifying":
+    if metric == "qualifying":
         x, y = x_at(date), y_at(float(score))
         svg.append(f'<path d="M{x} {y-10} L{x+10} {y} L{x} {y+10} L{x-10} {y} Z" fill="#baaaff"/>')
     else:
