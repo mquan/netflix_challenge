@@ -2,11 +2,11 @@
 
 {
   "machine": "m1",
-  "state": "job-complete",
-  "active": "dnn-64",
+  "state": "training",
+  "active": "tsvdx4-400lm",
   "completed": [
     "dnn-64"
   ],
   "error": null,
-  "updated": "2026-11-16T19:48:23.526931+00:00"
+  "updated": "2026-11-16T19:48:25.402542+00:00"
 }
