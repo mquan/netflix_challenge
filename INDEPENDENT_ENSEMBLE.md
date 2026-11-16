@@ -104,3 +104,14 @@ parallelism, resuming and result export. The separate worker overlaps one CPU
 tree job with one neural job and trains its own matched control. CPU and Apple
 GPU outer-label isolation were tested locally; CUDA is not available on the
 development Mac. The original Mac run continues with its frozen CPU plan.
+
+## Confirmed distributed assignment
+
+The user confirmed that the second computer is running the default 10-stage
+job, with an estimated 5–8 hours total. The Mac therefore completes only its
+six stages: fresh control tree/NN, snapshots tree/NN, and calibration tree/NN.
+A separate assignment monitor checks every completion receipt and report hash
+before ending the remaining local queue. Combined treatment and both ENN
+comparisons are delegated to the remote machine. This allocation is based on
+job ownership, not observed treatment quality. The full original plan remains
+preserved. Remote results are compared to that machine's own fresh control.
