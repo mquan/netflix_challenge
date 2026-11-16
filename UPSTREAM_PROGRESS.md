@@ -2,7 +2,7 @@
 
 Auto-updated by `scripts/upstream_repro_queue.py`. Last update: 2026-11-16 01:16 PST.
 
-- Queue state: **running**
+- Queue state: **running** — running `tsvdx4-60__knns`
 - Threads: RAYON 8, BLAS 1
 
 ProbeX development diagnostics only: fresh training, released vectors imported for comparison.
@@ -10,7 +10,7 @@ ProbeX development diagnostics only: fresh training, released vectors imported f
 | Job | State | Train h | Fresh RMSE | Released RMSE | Fresh − released | Pred RMS diff | Max abs diff |
 |---|---|---:|---:|---:|---:|---:|---:|
 | tsvdx4-60 | done | 0.96 | 0.879210 | 0.879210 | +0.000000 | 0.000001 | 0.0000 |
-| tsvdx4-60__knns | queued |  |  |  |  |  |  |
+| tsvdx4-60__knns | running |  |  |  |  |  |  |
 | rbmx2-40 | queued |  |  |  |  |  |  |
 | rbmx2-40__knn3 | queued |  |  |  |  |  |  |
 | dnn-24 | queued |  |  |  |  |  |  |
