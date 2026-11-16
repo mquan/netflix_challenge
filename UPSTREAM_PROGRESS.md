@@ -2,7 +2,7 @@
 
 Auto-updated by `scripts/upstream_repro_queue.py`. Last update: 2026-11-16 04:44 PST.
 
-- Queue state: **running**
+- Queue state: **complete**
 - Threads: RAYON 8, BLAS 1
 
 ProbeX development diagnostics only: fresh training, released vectors imported for comparison.
