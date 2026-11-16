@@ -1,0 +1,22 @@
+{
+  "machine": "m1",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "helper_sha256": "ec614b25c99d1610aa1022914cac343794b2ffa62176adcbbf5b251933410a18",
+  "qualifying_outcomes_zero": true,
+  "support_matrix_sha256": "97a700ec75e6de08897ca38d126c1bc52cc9895d44234c296d9bd22074364820",
+  "records": [
+    {
+      "mode": "same-recipe",
+      "rmse": 0.8790956020255745,
+      "prediction_rms_difference": 0.01785917837783448,
+      "native_sha256": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb"
+    },
+    {
+      "mode": "support-with-qual",
+      "rmse": 0.8789526546442673,
+      "prediction_rms_difference": 1.4908420406801565e-06,
+      "native_sha256": "48396ac8e13f05ccfd8b3e7540caee260dce4aedd0b71891ea5d03103ca2e29c"
+    }
+  ],
+  "conclusion": "Diagnostic measurement only; support-provenance hypothesis requires prediction-level agreement, not merely lower RMSE"
+}
