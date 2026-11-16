@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-16T05:07:26.152525+00:00",
+  "created_utc": "2026-11-16T05:15:53.118718+00:00",
   "purpose": "Predeclared local-only R9 ensemble continuation",
   "package_versions": {
     "numpy": "2.2.6",
@@ -171,10 +171,10 @@
     "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/calibration/R4D-rbm200-cond.f32.power3.f32": "9314bac17bf22d6b82e022caa9104df03306a07b2ab77df9fa9b1b87bf986f86",
     "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/calibration/joint256-reg01.f32.power2.f32": "f8e9ae5271662d4b3c745342af730d7469fc3e82b25be1b0180f0bf30b738254",
     "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/calibration/joint256-reg01.f32.power3.f32": "e43eae8a7217fd12cd3679f6a9031a45c1cbf14474dc368e8014516feaef1e7c",
-    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/baseline.json": "494ec9417454091cb4bc595643556d92f2fad501ae5e14a4930ab95c7ba8d43e",
-    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/snapshots.json": "c660a3e8cdcac8a5afe897594044652d75267ca96c6675f355eb3631a154dc2e",
-    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/calibration.json": "6767c1b0c6a8249fdd8dd85c5c04a596d5c1c83daace98d669b0a1f30da274dc",
-    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/combined.json": "031a016959b247b7e1f3f94fa80e4d3696aba93d061edf0f94c4769e3d4b7f7e"
+    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/baseline.json": "230782518e61db81045063afc6bfb4923d75f0d7f90a286e6c588caa06359656",
+    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/snapshots.json": "4d78f5f3abce91a981f6041b3254a06391dfd760ac56f3035d4d1c603e80ab80",
+    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/calibration.json": "df8c3256f2d2c70cd69cc9c094d5f050a7e506b667f92fdc0bf1c47ce5de929d",
+    "/Users/quan/workspace/netflix_independent_ensemble/artifacts/independent-ensemble/conditions/combined.json": "5d10845abe2d8ba19c53e9dae0d752a821979658f2432deb4350b1a588c78981"
   },
   "code": {
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/verify_public_metadata.py": "cde7ac149183e8c1a12961a1f4e244bdd8554eb3a67e6229f3ea94ed6889c2b7",
@@ -202,7 +202,7 @@
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/build_research_journey.py": "59cf5d4fef359415e6dfb3d4a79dff4534b029e3107bf63647bb3945f8aedd81",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/feature_adaptation.py": "6517cd83583a10c8d7c8da4fa774265ae2dee1b869f444526357d57809b5b3f6",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/train_only_residual.py": "b76f5ea9d66d117c5401a1183bded844393719663d46bd0c8e913913fc557a18",
-    "/Users/quan/workspace/netflix_independent_ensemble/scripts/local_ensemble_run.py": "31b15309d5d8bb270f46c8aa090f3854070631e9641b95019d8b8fa61a5daa02",
+    "/Users/quan/workspace/netflix_independent_ensemble/scripts/local_ensemble_run.py": "b1a17afc34f68b1ea4d7dafd9834de5c5dec675a609ce4086fd122e72446e7c8",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/prepare_qual_features.py": "2864fde7ea652bd6cd4115c45e4fcadc015b8a0191d73a5887ca3e7c0d1a2837",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/masked_history_predict.py": "30d29828157b58bc2e2279eebe239312e8fa186aab546bb32435e77cb49b7203",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/predict_tree_models.py": "a078711f22024798a5bc9107903aa4ff960694cef6aeba5c9e7e58ace17db597",
@@ -284,7 +284,8 @@
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/round9_latent_features.py": "92492075a9f9e445e1406aa5e93c299c0fa73106ebd47acd3982893de0ec7dfd",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/rank_local_additions.py": "f4578e4e9a1f801e680b87153fd59e5835b6cd792564b77254ec1b68649e71e3",
     "/Users/quan/workspace/netflix_independent_ensemble/scripts/masked_history_compare.py": "918b18daaafce86a0302df6bea179408bdd9765d11e7f2ed7dabdc1379d45db3",
-    "/Users/quan/workspace/netflix_independent_ensemble/scripts/export_qualifying.py": "c0f05fd6f532570970a00a37e480ee5112855276f4e1735d6c034604e172bd3d"
+    "/Users/quan/workspace/netflix_independent_ensemble/scripts/export_qualifying.py": "c0f05fd6f532570970a00a37e480ee5112855276f4e1735d6c034604e172bd3d",
+    "/Users/quan/workspace/netflix_independent_ensemble/scripts/local_ensemble_quick_screen.py": "a032c7616b954e3975023cf1ff82baa37fd8600be632f3b35e36eaf11c33ecaa"
   },
   "stages": [
     {
@@ -308,7 +309,7 @@
         "--min-leaf",
         "200",
         "--processes",
-        "1",
+        "2",
         "--seeds",
         "2026",
         "7",
@@ -384,7 +385,7 @@
         "--min-leaf",
         "200",
         "--processes",
-        "1",
+        "2",
         "--seeds",
         "2026",
         "7",
@@ -461,7 +462,7 @@
         "--min-leaf",
         "200",
         "--processes",
-        "1",
+        "2",
         "--seeds",
         "2026",
         "7",
@@ -549,7 +550,7 @@
         "--min-leaf",
         "200",
         "--processes",
-        "1",
+        "2",
         "--seeds",
         "2026",
         "7",

@@ -15,6 +15,26 @@ from gbdt_blend import HEADER, PROBE, blend_fold
 
 
 class OuterIsolation(unittest.TestCase):
+    def test_streamed_ridge_matches_direct_fit_and_ignores_held_labels(self):
+        from local_ensemble_quick_screen import accumulate, design_block, solve
+        rng = np.random.default_rng(99)
+        p = rng.normal(3.6, .5, (50, 6))
+        c = np.column_stack([np.ones(50), rng.normal(size=50)])
+        y = rng.uniform(1, 5, 50)
+        fit = np.arange(50) % 3 != 0
+        gram, rhs, count = accumulate(p, c, y, fit, chunk=7)
+        poisoned = y.copy()
+        poisoned[~fit] = 1000
+        g2, r2, _ = accumulate(p, c, poisoned, fit, chunk=7)
+        np.testing.assert_array_equal(gram, g2)
+        np.testing.assert_array_equal(rhs, r2)
+        x = design_block(p[fit], c[fit])
+        penalty = np.eye(x.shape[1])*count*1e-5
+        penalty[0, 0] = 0
+        direct = np.linalg.solve(x.T@x+penalty, x.T@(y[fit]-3.6))
+        np.testing.assert_allclose(solve(gram, rhs, count, np.arange(x.shape[1])), direct,
+                                   rtol=1e-10, atol=1e-10)
+
     def test_empty_support_bins_and_zero_network_outputs_use_pooled_fit(self):
         from round9_enn_blend import stack_apply, stack_fit
         p = np.zeros((12, 4))
@@ -83,7 +103,8 @@ class OuterIsolation(unittest.TestCase):
                     if result.returncode:
                         self.fail(result.stdout[-6000:])
                 run('round4_boost.py', '--data', data, '--output', root/'tree', '--bank-root', bank,
-                    '--rounds', 3, '--leaves', 3, '--min-leaf', 5, '--processes', 1, '--seeds', 29)
+                    '--rounds', 3, '--leaves', 3, '--min-leaf', 5, '--processes',
+                    2 if poisoned else 1, '--seeds', 29)
                 run('round8_nn_blend.py', '--data', data, '--like', root/'tree.json', '--output', root/'nn',
                     '--epochs', 2, '--patience', 1, '--hidden', 4, '--layers', 1,
                     '--batch', 128, '--threads', 1, '--seeds', 29)

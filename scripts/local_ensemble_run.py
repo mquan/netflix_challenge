@@ -168,7 +168,7 @@ def prepare():
         config = dict(data=str(DATA), output=str(RUN/'results'/name),
                       bank_root=str(bank), no_union=False, extra=extras, extra_support=[],
                       rounds=8000, learning_rate=.02, leaves=63, min_leaf=200,
-                      processes=1, seeds=SEEDS, extra_meta=True)
+                      processes=2, seeds=SEEDS, extra_meta=True)
         path = RUN/'conditions'/f'{name}.json'
         write(path, config)
         frozen[str(path)] = digest(path)

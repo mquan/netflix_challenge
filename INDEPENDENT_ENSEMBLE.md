@@ -53,7 +53,7 @@ Run `./.venv/bin/python scripts/local_ensemble_run.py --prepare`, then
 `./.venv/bin/python scripts/local_ensemble_run.py --run` from this worktree.
 The prepared plan, input/code hashes, status, logs and results live under
 `artifacts/independent-ensemble/`. Training is sequential, CPU-only, at reduced
-priority, with one tree worker and two numerical/Torch threads. There is no
+priority, with two parallel tree fold workers and two numerical/Torch threads. There is no
 base-model retraining in this first experiment. A successful development arm
 requires a separate production/refit feasibility audit before a qualifying run.
 
@@ -73,3 +73,18 @@ checkpoint versions 1/2 while the current C++ writer emits version 3. That
 exporter is not invoked by this run: the original 46 support/latent columns
 are preserved and hash-verified. The failure is recorded in the validation
 receipt rather than represented as a passing full-suite check.
+
+## Parallel execution revision
+
+The user requested a shorter turnaround. Before any full-data fold result was
+reported, the initial one-worker run was interrupted and its logs preserved.
+The same 14-stage protocol now uses two concurrent tree folds. A separate
+low-memory ridge screen evaluates the baseline, snapshots, calibration and
+combined inputs on outer user fold 0, with the same fixed penalty as R9. It
+shares one streamed Gram accumulation across the four conditions, matches the
+historical ridge control, and fits only on the other four user folds.
+
+This screen produces an early diagnostic rather than a full tree/neural
+comparison. Its results do not select or cancel the predeclared full-trial
+arms. Three tests now cover empty-bin fallback, one-versus-two-worker outer
+label poisoning, and streamed-versus-direct ridge fitting.
