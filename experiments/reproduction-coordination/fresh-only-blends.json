@@ -1,0 +1,272 @@
+{
+  "plan": {
+    "version": 1,
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "jobs": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3"
+    ],
+    "arms": {
+      "base-only": [
+        "tsvdx4-60",
+        "rbmx2-40",
+        "dnn-24"
+      ],
+      "base-plus-chains": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3"
+      ],
+      "temporal-base": [
+        "tsvdx4-60"
+      ],
+      "temporal-chain": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns"
+      ],
+      "rbm-base": [
+        "rbmx2-40"
+      ],
+      "rbm-chain": [
+        "rbmx2-40",
+        "rbmx2-40__knn3"
+      ],
+      "dnn-base": [
+        "dnn-24"
+      ],
+      "dnn-chain": [
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3"
+      ]
+    },
+    "folds": 5,
+    "fold_seed": 20261116,
+    "grouping": "native upstream user index",
+    "ridge_lambda": 1000.0,
+    "input_clip": [
+      0,
+      6
+    ],
+    "output_clip": [
+      1.05,
+      4.95
+    ],
+    "intercept": "unpenalized",
+    "tuning": "none; all arms/lambda/folds fixed before fresh results",
+    "metric": "ProbeX development RMSE",
+    "limitation": "Meta-level user-fold cross-fitting only; published base recipes were historically development-selected. Not untouched test evidence.",
+    "artifact_scope": "Fresh ProbeX predictions, known development labels and user indices only; no qualifying predictions or outcomes"
+  },
+  "rows": 1128164,
+  "records": [
+    {
+      "arm": "base-only",
+      "columns": [
+        "tsvdx4-60",
+        "rbmx2-40",
+        "dnn-24"
+      ],
+      "rmse": 0.8764113859651349,
+      "fold_rmse": [
+        0.8759565838183884,
+        0.8740789871803283,
+        0.8775001349633907,
+        0.8770905351784153,
+        0.8774380163496099
+      ],
+      "prediction_sha256": "7a63e3e97ffb2337f553aadf88e64f02af1d4f865fba26d760b154ffeef3528b"
+    },
+    {
+      "arm": "base-plus-chains",
+      "columns": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3"
+      ],
+      "rmse": 0.8695493650137697,
+      "fold_rmse": [
+        0.8690373774202033,
+        0.8670620650864613,
+        0.8705403577784088,
+        0.8707442803486884,
+        0.8703685702398668
+      ],
+      "prediction_sha256": "1cc4421329ec8ee3aa7dec7f6d253cd7417e92234fe824798ddce7d8cbfa5a50"
+    },
+    {
+      "arm": "temporal-base",
+      "columns": [
+        "tsvdx4-60"
+      ],
+      "rmse": 0.8792677903456017,
+      "fold_rmse": [
+        0.8787077882246863,
+        0.8770205370855209,
+        0.8805031303033884,
+        0.8800164033232698,
+        0.8800999614142794
+      ],
+      "prediction_sha256": "173302c8c918588a0b0d06690df26b679d1f118392444f4f546d0db177ccaacb"
+    },
+    {
+      "arm": "temporal-chain",
+      "columns": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns"
+      ],
+      "rmse": 0.8766168504362445,
+      "fold_rmse": [
+        0.876120956833536,
+        0.8743575018986519,
+        0.877634828470535,
+        0.8775222872105212,
+        0.8774556266611344
+      ],
+      "prediction_sha256": "971fca148576a2082d61e7269f0488a87daf101b1969d2f4bad1ea03dc80cee5"
+    },
+    {
+      "arm": "rbm-base",
+      "columns": [
+        "rbmx2-40"
+      ],
+      "rmse": 0.9212719031244667,
+      "fold_rmse": [
+        0.9212582198795282,
+        0.9178359597999879,
+        0.9223295225621222,
+        0.9221039714871129,
+        0.9228339347862241
+      ],
+      "prediction_sha256": "d28ed8d99a0cdc3bb5ce417421fff4b8fd2243ddddac6c110f13a2cf45a6f0c6"
+    },
+    {
+      "arm": "rbm-chain",
+      "columns": [
+        "rbmx2-40",
+        "rbmx2-40__knn3"
+      ],
+      "rmse": 0.9026567416672386,
+      "fold_rmse": [
+        0.9024745127495137,
+        0.8990287774927358,
+        0.9039186796046454,
+        0.9041866413229535,
+        0.9036776448974225
+      ],
+      "prediction_sha256": "293820066a5112f30a6c33678cccce83e51163def13bf1f14feead2048d07b7c"
+    },
+    {
+      "arm": "dnn-base",
+      "columns": [
+        "dnn-24"
+      ],
+      "rmse": 0.9123004252829842,
+      "fold_rmse": [
+        0.9122857785078443,
+        0.9103560761616527,
+        0.9129373497487335,
+        0.9123957652521915,
+        0.9135308443709393
+      ],
+      "prediction_sha256": "a6c9dc44904b3f873ba6bc168b9254a571b96dfe0f1fd36b196b6556d160426a"
+    },
+    {
+      "arm": "dnn-chain",
+      "columns": [
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3"
+      ],
+      "rmse": 0.8937560447444809,
+      "fold_rmse": [
+        0.8933251821171821,
+        0.8915428807475131,
+        0.8947001211992641,
+        0.8947355490839665,
+        0.8944827926047898
+      ],
+      "prediction_sha256": "c48d3dc5aee2ee754e55c54f30c27bdfe8f7a378256d79e07a405b164452e884"
+    }
+  ],
+  "contrasts": [
+    {
+      "base": "base-only",
+      "treatment": "base-plus-chains",
+      "delta_rmse": -0.006862020951365233,
+      "fold_delta": [
+        -0.006919206398185107,
+        -0.007016922093866951,
+        -0.0069597771849819745,
+        -0.006346254829726838,
+        -0.007069446109743138
+      ]
+    },
+    {
+      "base": "temporal-base",
+      "treatment": "temporal-chain",
+      "delta_rmse": -0.002650939909357164,
+      "fold_delta": [
+        -0.002586831391150346,
+        -0.002663035186868945,
+        -0.0028683018328534704,
+        -0.0024941161127486344,
+        -0.0026443347531449612
+      ]
+    },
+    {
+      "base": "rbm-base",
+      "treatment": "rbm-chain",
+      "delta_rmse": -0.01861516145722808,
+      "fold_delta": [
+        -0.018783707130014426,
+        -0.01880718230725209,
+        -0.018410842957476747,
+        -0.017917330164159417,
+        -0.01915628988880158
+      ]
+    },
+    {
+      "base": "dnn-base",
+      "treatment": "dnn-chain",
+      "delta_rmse": -0.01854438053850327,
+      "fold_delta": [
+        -0.018960596390662166,
+        -0.018813195414139616,
+        -0.01823722854946941,
+        -0.017660216168224996,
+        -0.019048051766149543
+      ]
+    }
+  ],
+  "input_provenance": "Only fresh worker prediction artifacts; released reference predictions excluded from every fit",
+  "worker_commit": "db394c1125068de57b317f99b762bbb14c0b42f2",
+  "input_artifact_sha256": {
+    "tsvdx4-60": "97795f226d0e130bff3261894973725dd80b22e2568dc1b740daa7f75c21efd4",
+    "tsvdx4-60__knns": "b8cedc147eef343114b158b995ff7e1e71a31ef4383900ed969d5f9d93084d7a",
+    "rbmx2-40": "0f863788e5cb1174d94b6f5c9583c1798996c508affe0c5d45fa79ec59ca8ca8",
+    "rbmx2-40__knn3": "255881309662b4dba44c66c0f8ba5b04e6b085f182c1b783a34f4d9d7276e747",
+    "dnn-24": "1708e41279944edb013c1ded5e0c31850980f456e5f82c996ee83129a80adef8",
+    "dnn-24__knn3": "e13fb5711fa78f1bf33f5fdf3f7d5f2cf4002c1c2bc9edc589200d28e65bf789",
+    "dnn-24__dnn-16p50": "4afef73ab6068587b7bde9d8f70c65c1626563f73f6c0ddff1e7e7c954b4e227",
+    "dnn-24__dnn-16p50__knn3": "59257b05947062d88a760a4e76be53d3f07c26acf6759b0b596fdf13ca5b5065"
+  }
+}

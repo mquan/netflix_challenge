@@ -2,9 +2,9 @@
 
 Local machine: {"complete": true, "state": "assigned-work-complete", "active": null}.
 
-Upstream worker: {"state": "running", "active": null, "completed": 7, "commit": "c408d3998a9c15986f6ffb57679b2c13b9db4e7e", "error": null}.
+Upstream worker: {"state": "complete", "active": null, "completed": 8, "commit": "db394c1125068de57b317f99b762bbb14c0b42f2", "error": null}.
 
-Fresh-only development blends: waiting for all eight fresh model artifacts.
+Fresh-only development blends: complete.
 
 The 0.856167 released-prediction reference is not a fresh-training result.
 
@@ -15,5 +15,6 @@ The 0.856167 released-prediction reference is not a fresh-training result.
 | rbmx2-40 | 0.921512211 | unavailable |
 | rbmx2-40__knn3 | 0.903717708 | 0.903673503 |
 | dnn-24 | 0.917593471 | 0.917593471 |
+| dnn-24__knn3 | 0.907716749 | 0.907716749 |
 | dnn-24__dnn-16p50 | 0.907173046 | 0.907173046 |
 | dnn-24__dnn-16p50__knn3 | 0.896837159 | 0.896837159 |
