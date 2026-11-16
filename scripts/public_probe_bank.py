@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Import only original-split base predictions from gtakacs' public store.
+"""Import explicitly selected, mapped base predictions from a public store.
 
-Never fetches qualifying labels/predictions, alternative splits, or trained
-blender outputs. Source model checkpoint/hyperparameter selection used Probe,
-so these columns support development comparisons, not an untouched test claim.
+Never fetches qualifying labels/predictions or trained blender outputs.
+Default 'old' and explicit 'three' exclude all original Probe values upstream.
+Explicit 'new' requires a separately reconstructed ProbeX holdout and must not
+be reported as full original-Probe CV. Source model selection used development
+targets, so none of these imports establish an untouched test claim.
 """
 import argparse
 import concurrent.futures
@@ -42,6 +44,19 @@ def eligible_three_support(path):
             and path.endswith('.probe_3.npy') and '..' not in path)
 
 
+def eligible_new(path):
+    name = path.removeprefix('preds_new/')
+    prefixes = PREFIXES+('aex-', 'cfnade-', 'bk3-', 'rbmx2-')
+    return (path.startswith('preds_new/') and '/' not in name
+            and name.endswith('.probex.npy') and name.startswith(prefixes)
+            and not any(s in name for s in ('fwls', 'blended', '__epochs')))
+
+
+def eligible_new_support(path):
+    return ((path.startswith('preds_new/vf/vf') or path.startswith('preds_new/lat/'))
+            and path.endswith('.probex.npy') and '..' not in path)
+
+
 def remap(values, mapping, source_rows=None):
     if values.ndim != 1 or len(values) != (len(mapping) if source_rows is None else source_rows):
         raise ValueError('source column shape does not match mapping')
@@ -61,7 +76,7 @@ def main():
     ap.add_argument('--mapping', required=True, help='processed row -> source row u32')
     ap.add_argument('--output', required=True)
     ap.add_argument('--jobs', type=int, default=4)
-    ap.add_argument('--split', choices=['old', 'three'], default='old')
+    ap.add_argument('--split', choices=['old', 'three', 'new'], default='old')
     ap.add_argument('--source-rows', type=int)
     ap.add_argument('--kind', choices=['predictions', 'support'], default='predictions')
     a = ap.parse_args()
@@ -69,7 +84,8 @@ def main():
     entries = [dict(path=p, size=int(n), md5=h) for p, n, h in re.findall(
         r'path = "([^"]+)"\s+size = (\d+)\s+md5 = "([^"]+)"', Path(a.index).read_text())
         if (eligible(p) if a.split == 'old' else
-            eligible_three(p) if a.kind == 'predictions' else eligible_three_support(p))]
+            (eligible_three(p) if a.kind == 'predictions' else eligible_three_support(p)) if a.split == 'three' else
+            (eligible_new(p) if a.kind == 'predictions' else eligible_new_support(p)))]
     if not entries: raise ValueError('no eligible original-split columns')
     mapping = np.fromfile(a.mapping, dtype='<u4')
     source_rows = a.source_rows or len(mapping)
@@ -81,8 +97,9 @@ def main():
                 index_sha256=hashlib.sha256(Path(a.index).read_bytes()).hexdigest(),
                 mapping_sha256=hashlib.sha256(Path(a.mapping).read_bytes()).hexdigest(),
                 rows=len(mapping), source_rows=source_rows, split=a.split, kind=a.kind, entries=entries,
-                exclusion='qualifying labels and predictions, label-containing splits, learned blender outputs',
-                metric='Probe development only; source checkpoint selection used Probe')
+                exclusion='qualifying labels and predictions, learned blender outputs',
+                metric=('Alternative ProbeX holdout; NOT original full-Probe CV' if a.split == 'new' else
+                        'Original Probe development only; source checkpoint selection used Probe'))
     plan_path = root/'plan.json'
     if plan_path.exists() and json.loads(plan_path.read_text()) != plan:
         raise ValueError('existing import plan differs')
@@ -106,7 +123,7 @@ def main():
                     if attempt == 3: raise
                     time.sleep(1+attempt)
         values = remap(np.load(raw, allow_pickle=False), mapping, source_rows)
-        dest = root/name.replace('.probe_3.npy', '.f32').replace('.probe.npy', '.f32')
+        dest = root/name.replace('.probe_3.npy', '.f32').replace('.probe.npy', '.f32').replace('.probex.npy', '.f32')
         temporary = dest.with_suffix('.part'); values.tofile(temporary); temporary.replace(dest)
         return dict(source=e['path'], path=str(dest.resolve()),
                     sha256=hashlib.sha256(dest.read_bytes()).hexdigest(), md5=e['md5'])

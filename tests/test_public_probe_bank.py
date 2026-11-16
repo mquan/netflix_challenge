@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
-from public_probe_bank import eligible, eligible_three, remap
+from public_probe_bank import eligible, eligible_three, eligible_new, eligible_new_support, remap
 
 
 class ImportTests(unittest.TestCase):
@@ -26,6 +26,14 @@ class ImportTests(unittest.TestCase):
         self.assertFalse(eligible_three('preds_3/s3-tx300lm.qual.npy'))
         self.assertFalse(eligible_three('preds_new/s3-tx300lm.probe_3.npy'))
         np.testing.assert_array_equal(remap(np.array([1., 2., 3., 4.]), np.array([3, 1]), 4), [4, 2])
+
+    def test_newsplit_requires_its_separate_selector(self):
+        p='preds_new/aex-128.probex.npy'
+        self.assertFalse(eligible(p)); self.assertFalse(eligible_three(p))
+        self.assertTrue(eligible_new(p))
+        self.assertFalse(eligible_new('preds_new/mlpr2x-s1.probex.npy'))
+        self.assertFalse(eligible_new('preds_new/tsvdx5-1200lm__epochs.probex.npy'))
+        self.assertTrue(eligible_new_support('preds_new/lat/tx20lat.u00.probex.npy'))
 
 
 if __name__ == '__main__': unittest.main()

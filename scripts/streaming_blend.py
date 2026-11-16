@@ -31,18 +31,23 @@ def design(p, c):
     return (c[:, :, None].astype(np.float64)*z[:, None, :]).reshape(len(p), -1)
 
 
-def grouped_statistics(predictions, context, y, groups, chunks=8192):
+def grouped_statistics(predictions, context, y, groups, chunks=8192, sample_weights=None):
     width = (predictions.shape[1]+1)*context.shape[1]
     gram = np.zeros((10, width, width), dtype=np.float64)
     rhs = np.zeros((10, width), dtype=np.float64)
-    count = np.bincount(groups, minlength=10)
+    count = np.bincount(groups, weights=sample_weights, minlength=10)
     for group in range(10):
         rows = np.flatnonzero(groups == group)
         for start in range(0, len(rows), chunks):
             take = rows[start:start+chunks]
             x = design(predictions[take], context[take])
-            gram[group] += x.T@x
-            rhs[group] += x.T@(y[take]-3.6)
+            if sample_weights is None:
+                gram[group] += x.T@x
+                rhs[group] += x.T@(y[take]-3.6)
+            else:
+                sw=sample_weights[take]
+                gram[group] += x.T@(x*sw[:,None])
+                rhs[group] += x.T@((y[take]-3.6)*sw)
     return gram, rhs, count
 
 
@@ -57,11 +62,13 @@ def weights(stats, fold, inner=False):
     return np.linalg.solve(a, rhs[selected].sum(0))
 
 
-def predict_ridge(p, context, w, chunks=8192):
-    out = np.empty(len(p))
-    for start in range(0, len(p), chunks):
+def predict_ridge(p, context, w, chunks=8192, rows=None):
+    size=len(p) if rows is None else len(rows)
+    out = np.empty(size)
+    for start in range(0, size, chunks):
         stop = start+chunks
-        out[start:stop] = 3.6+design(p[start:stop], context[start:stop])@w
+        take=slice(start,stop) if rows is None else rows[start:stop]
+        out[start:stop] = 3.6+design(p[take], context[take])@w
     return out
 
 
@@ -79,7 +86,8 @@ def prepare(a, y, data):
         public = json.loads(Path(a.public).read_text())
         entries += [(v['path'], v['sha256']) for v in public['columns']]
     entries += [(str(Path(p).resolve()), digest(p)) for p in a.extra]
-    support = json.loads((base/'experiments/BOOST-support-inputs.json').read_text())
+    support = ({} if a.no_local_support else
+               json.loads((base/'experiments/BOOST-support-inputs.json').read_text()))
     supports = [(str(base/k), v) for k, v in support.items()]
     if a.support_manifest:
         extra_support = json.loads(Path(a.support_manifest).read_text())
@@ -87,6 +95,9 @@ def prepare(a, y, data):
     if not entries: raise ValueError('empty bank')
     cache = np.load(a.meta)
     meta, context = cache['meta'], cache['context']
+    data_sha = digest(a.data)
+    if 'data_sha256' in cache and str(cache['data_sha256'].item()) != data_sha:
+        raise ValueError('metadata cache belongs to a different dataset')
     if len(context) != len(y): raise ValueError('meta/context row mismatch')
     from round4_boost import extra_meta
     more, more_names = extra_meta(data)
@@ -108,7 +119,7 @@ def prepare(a, y, data):
     record = dict(config=vars(a), inputs=dict(all_entries), names=names,
                   columns=len(entries), support=len(supports), extra_meta_names=more_names,
                   meta_sha256=digest(a.meta),
-                  data_sha256=digest(a.data), public_manifest_sha256=digest(a.public) if a.public else None)
+                  data_sha256=data_sha, public_manifest_sha256=digest(a.public) if a.public else None)
     Path(a.output+'.inputs.json').write_text(json.dumps(record, indent=2)+'\n')
     return x, context, record
 
@@ -121,6 +132,8 @@ def main():
     ap.add_argument('--public')
     ap.add_argument('--extra', nargs='*', default=[])
     ap.add_argument('--support-manifest')
+    ap.add_argument('--no-local-support', action='store_true')
+    ap.add_argument('--metric-label', default='Original Probe')
     ap.add_argument('--include-local', action='store_true')
     ap.add_argument('--output', required=True)
     ap.add_argument('--ridge-only', action='store_true')
@@ -150,14 +163,18 @@ def main():
         start = time.monotonic()
         train, held = outer != fold, outer == fold
         fit, valid = train & ~inner, train & inner
-        iw, w = weights(stats, fold, True), weights(stats, fold)
-        base = predict_ridge(p, context, w)
-        inner_base = predict_ridge(p, context, iw)
-        rb[held] = base[held]
-        rec = dict(fold=fold, ridge_rmse=rmse(base[held], y[held]))
+        w = weights(stats, fold)
         if a.ridge_only:
-            out[held] = base[held]
+            # There is no downstream residual learner needing inner/all-row
+            # predictions in this branch. Score only the held rows.
+            base=predict_ridge(p,context,w,rows=np.flatnonzero(held))
+            rb[held]=out[held]=base
+            rec=dict(fold=fold,ridge_rmse=rmse(base,y[held]))
         else:
+            iw=weights(stats,fold,True)
+            base=predict_ridge(p,context,w);inner_base=predict_ridge(p,context,iw)
+            rb[held]=base[held]
+            rec=dict(fold=fold,ridge_rmse=rmse(base[held],y[held]))
             correction = np.zeros(held.sum()); chosen = []
             for seed in a.seeds:
                 params = dict(objective='regression', learning_rate=.02, num_leaves=63,
@@ -182,7 +199,7 @@ def main():
         col.astype('<f4').tofile(a.output+'.'+name+'.f32')
         record[name+'_rmse'] = rmse(col, y)
         record[name+'_fold_rmse'] = [rmse(col[outer == k], y[outer == k]) for k in range(5)]
-    record.update(folds=records, metric='Nested user-fold Probe development CV; no private-test claim',
+    record.update(folds=records, metric=a.metric_label+' nested user-fold development CV; no private-test claim',
                   target_rmse=.85725, target_reached=record['refit_rmse'] <= .85725)
     Path(a.output+'.json').write_text(json.dumps(record, indent=2)+'\n')
     print(json.dumps({k:v for k,v in record.items() if k.endswith('rmse') or k=='target_reached'}), flush=True)
