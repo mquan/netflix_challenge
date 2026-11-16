@@ -1,17 +1,11 @@
-# Next assignment: start the bounded upstream expansion
+# Expansion reassigned to the first Mac
 
-The first eight-job source replay is complete and independently verified. The user has now explicitly approved investigating the two neighborhood mismatches and training the next larger batch.
+The user said the other computer is busy and explicitly requested the remaining upstream batch run on the first computer. **Do not launch the M3 expansion worker.**
 
-**M3 Max:** fetch/pull `research/upstream-reproduction` in the existing upstream worktree and follow **UPSTREAM_EXPANSION.md**. Confirm the old queue exited, then launch:
+The first Mac now owns the five remaining expansion outputs and any missing native parent models. Its wider DNN and support-provenance diagnostic are already complete. It will train the remaining jobs sequentially, independently verify their artifacts, and run the fixed original-eight versus fourteen-model comparisons automatically.
 
-```sh
-tmux new-session -d -s upstream-expansion 'env UPSTREAM_REPRO_THREADS=8 UPSTREAM_REPRO_BLAS_THREADS=1 OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 .venv/bin/python -u scripts/upstream_expansion.py --machine m3 --publish > upstream-expansion.log 2>&1'
-```
+The scientific plan is unchanged. `experiments/upstream-expansion/execution.json` records the updated execution assignment. The updated launcher rejects the revoked M3 role to prevent accidental duplicate training.
 
-The driver reuses the original native training artifacts for a support-provenance diagnostic, then trains `dnn-24__attn-32`, `tsvdx4-400lm`, `tsvdx4-400lm__knnf`, `rbmx2-150`, and `rbmx2-150__knns`, sequentially. It publishes verified fresh vectors, native receipts/logs and per-stage progress. No setup rerun, predictor-bank download into the training directory, or retraining of the first eight models is needed.
+Progress: https://github.com/mquan/netflix_challenge/blob/research/upstream-verification/EXPANSION_M1.md
 
-**First Mac:** a local replay is already training for independent diagnosis. Its durable continuation driver then runs the support diagnostic and `dnn-64`, fetches the M3 expansion outputs, and performs the fixed original-eight versus fourteen-column comparisons. It owns `research/upstream-verification`.
-
-Preserve all previous outputs, including negative results and unresolved discrepancies. Do not force-push, delete partial predictions, change the pinned model code, or launch the full 201-job pipeline. Publish failures for investigation. The published RBM parent identity differs from the pinned recipe; that is recorded as unresolved, not silently patched.
-
-Full instructions: https://github.com/mquan/netflix_challenge/blob/research/upstream-reproduction/UPSTREAM_EXPANSION.md
+Instructions: https://github.com/mquan/netflix_challenge/blob/research/upstream-verification/UPSTREAM_EXPANSION.md
