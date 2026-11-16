@@ -1,0 +1,74 @@
+{
+  "verified_utc": "2026-10-19T07:28:32.408983+00:00",
+  "status": "verified_complete",
+  "frozen_hashes_verified": 141,
+  "rows": 1408395,
+  "users": 462858,
+  "metrics": {
+    "control": {
+      "path": "/Users/quan/workspace/netflix_round9/artifacts/r9/R9-LAT-A2h-20261010-NN2.avg.f32",
+      "sha256": "881a5ad921d381e0bd7214f3f3f2975161af8efddedd7434a99d0850c29db487",
+      "rmse": 0.8668706424233039,
+      "fold_rmse": [
+        0.8678591044001162,
+        0.8666888417344772,
+        0.8631881091907445,
+        0.868208404969891,
+        0.8684207705789156
+      ]
+    },
+    "candidate": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC6/LC6-trajectory-NN2.avg.f32",
+      "sha256": "225524dab80b62aa6fd6495775f92fc7d99b6f82a34190ef8314b01a22439d7b",
+      "rmse": 0.8668264382456018,
+      "fold_rmse": [
+        0.8678070184544003,
+        0.8667724190384305,
+        0.8630938000585916,
+        0.8681348538381253,
+        0.8683362634487416
+      ]
+    },
+    "neural": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC6/LC6-trajectory-NN2.nn.f32",
+      "sha256": "63b0e69f6cadb64594e3e1bb33e158ea1a3438f1bb611a8b73e68dcae15701b0",
+      "rmse": 0.8670938826415056,
+      "fold_rmse": [
+        0.868100697098886,
+        0.8670459578741885,
+        0.8633919225572029,
+        0.8683958505730464,
+        0.8685470131075417
+      ]
+    },
+    "tree": {
+      "path": "/Users/quan/workspace/netflix_challenge/artifacts/local-context/LC6/LC6-trajectory-s3.refit.f32",
+      "sha256": "142f57d87369c3e17a08067f1016272820c7260b630a99fe91564e40e7080ab6",
+      "rmse": 0.8670769771641967,
+      "fold_rmse": [
+        0.8680220252212172,
+        0.8670619115278249,
+        0.8633055906700556,
+        0.8683928142780117,
+        0.8686148487155119
+      ]
+    }
+  },
+  "fold_deltas": [
+    -5.208594571581848e-05,
+    8.35773039532528e-05,
+    -9.430913215291437e-05,
+    -7.355113176577e-05,
+    -8.450713017404965e-05
+  ],
+  "delta_rmse": -4.4204177702122927e-05,
+  "paired_user_cluster_95_mse_interval": [
+    -0.0001279541467928004,
+    -2.531916087787363e-05
+  ],
+  "max_saved_average_rounding_error": 2.384185791015625e-07,
+  "promoted": false,
+  "substantial_investment_gate": false,
+  "decision": "Close the fixed epochs 4/8 snapshot recipe: one fold regresses and gain is below 0.0003. Promoted best remains unchanged.",
+  "limitation": "Reused development probe; no independent hidden-test accuracy claim."
+}
