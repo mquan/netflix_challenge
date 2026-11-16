@@ -1,0 +1,16 @@
+{
+  "column": "MT8-refit.refit.e7.f32",
+  "sources": {
+    "masked_history.py": "e0d23a886e4344868ddd6681e5e758c1022a7da4ab857434d7160d0e95976795",
+    "gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c"
+  },
+  "fixture_epochs": 2,
+  "checks": [
+    "identical trained parameters and predictions with zero versus poisoned query labels",
+    "prediction order preserved",
+    "final epoch checkpoint matches trained state",
+    "selection configuration rejected",
+    "no query metric reported"
+  ],
+  "passed": true
+}

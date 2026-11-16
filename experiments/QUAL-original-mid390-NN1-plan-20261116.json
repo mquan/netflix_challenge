@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-original-mid390-NN1-ready-20261116",
+  "output": "artifacts/qualifying/original-mid390-NN1",
+  "audit_output": "artifacts/private-audit/original-mid390-NN1-20261116",
+  "models_dir": "artifacts/qualifying/original-mid390-NN1/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Verified query matrix inference from frozen development-only neural models; no qualifying labels before prediction hash",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-mid390-NN1/models",
+        "--qual",
+        "artifacts/qualifying/original-mid390/qual5",
+        "--output",
+        "artifacts/qualifying/original-mid390-NN1/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting or stopping on labels; adaptive evaluation and split ambiguity retained",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-mid390-NN1/final",
+        "--output-dir",
+        "artifacts/private-audit/original-mid390-NN1-20261116"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "QUAL-mid390-CatBoost-ready-20261116",
+  "output": "artifacts/qualifying/original-mid390-CatBoost",
+  "audit_output": "artifacts/private-audit/mid390-CatBoost-hybrid-20261116",
+  "models_dir": "artifacts/qualifying/original-mid390-CatBoost/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Freeze both CatBoost-only and fixed50percent NN2 hybrid rules before any audit",
+      "command": [
+        "scripts/catboost_blender.py",
+        "predict",
+        "--models",
+        "artifacts/qualifying/original-mid390-CatBoost/models",
+        "--qual",
+        "artifacts/qualifying/original-mid390/qual5",
+        "--neural-reference",
+        "artifacts/qualifying/original-mid390/final",
+        "--output",
+        "artifacts/qualifying/original-mid390-CatBoost/predictions",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit-cat",
+      "strategy": "Postfreeze recovered-label audit only, no fitting or calibration",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-mid390-CatBoost/predictions/cat-only",
+        "--output-dir",
+        "artifacts/private-audit/mid390-CatBoost-only-20261116"
+      ]
+    },
+    {
+      "name": "audit-hybrid",
+      "strategy": "Postfreeze recovered-label audit only, no fitting or calibration",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-mid390-CatBoost/predictions/hybrid",
+        "--output-dir",
+        "artifacts/private-audit/mid390-CatBoost-hybrid-20261116"
+      ]
+    }
+  ]
+}

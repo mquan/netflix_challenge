@@ -1,0 +1,9 @@
+{
+  "reason": "Half-batch inference still accumulated unused shape buffers until7.47GiBcap; clear unoccupied MPS allocator blocks between completed inference batches, preserve all weights/history, increase boundedcap to8.53GiB",
+  "coordinators_replaced": [
+    {
+      "pid": 98518,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad16 --reference artifacts/retained-neural/A2h-snapshot-3-6.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-early-cache-completion-v2 --name QUAL-A2h-early-cache-export-v3-20261115 --resume"
+    }
+  ]
+}

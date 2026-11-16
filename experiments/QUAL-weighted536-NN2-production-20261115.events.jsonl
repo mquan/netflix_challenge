@@ -1,0 +1,8 @@
+{"observed_utc": "2026-11-15T20:28:36.762082+00:00", "line": "{\"state\": \"normalization\"}"}
+{"observed_utc": "2026-11-15T20:29:34.781421+00:00", "line": "{\"state\": \"refit\", \"seed\": 2026, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T20:29:53.323044+00:00", "line": "{\"state\": \"seed_complete\", \"seed\": 2026, \"epochs_used\": [6]}"}
+{"observed_utc": "2026-11-15T20:30:09.525201+00:00", "line": "{\"state\": \"refit\", \"seed\": 7, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T20:30:18.558583+00:00", "line": "{\"state\": \"seed_complete\", \"seed\": 7, \"epochs_used\": [6, 5]}"}
+{"observed_utc": "2026-11-15T20:30:36.864750+00:00", "line": "{\"state\": \"refit\", \"seed\": 13, \"epochs\": 7}"}
+{"observed_utc": "2026-11-15T20:30:50.947949+00:00", "line": "{\"state\": \"seed_complete\", \"seed\": 13, \"epochs_used\": [6, 5, 7]}"}
+{"observed_utc": "2026-11-15T20:31:40.049398+00:00", "line": "{\"state\": \"complete\", \"outputs\": {\"scaler.npz\": \"f16f5e30225a43f9feabc79d4fff2f0b1d9dbd4483e4bc846865847283f70be6\", \"nn-13.pt\": \"9f1564dad49770cc8f6b355d6bcb3a4aec1544656a735ceb085005028133ff87\", \"nn-2026.pt\": \"09f70fe209653b47f78f132edeb00490a0580eb5cca71f3555a3aaaec9f78029\", \"nn-7.pt\": \"22d35a0da342054fcf8c1e961f5cadca4fda20b93adf920c4660a23e22c67b19\", \"qualifying-final.f32\": \"7ead54c6627536769b5e695857755ed6cc1d6b871228ac01acec4ae0e58936eb\"}, \"nn_epochs\": [6, 5, 7], \"frozen_prediction_sha256\": \"7ead54c6627536769b5e695857755ed6cc1d6b871228ac01acec4ae0e58936eb\", \"prediction_min\": 1.0, \"prediction_max\": 5.0}"}

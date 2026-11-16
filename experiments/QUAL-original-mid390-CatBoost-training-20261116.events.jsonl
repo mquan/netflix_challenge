@@ -1,0 +1,8 @@
+{"observed_utc": "2026-11-16T02:17:54.305582+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-16T02:17:54.305896+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py\", line 133, in <module>"}
+{"observed_utc": "2026-11-16T02:17:54.305948+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-16T02:17:54.305968+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py\", line 130, in main"}
+{"observed_utc": "2026-11-16T02:17:54.305983+00:00", "line": "    a=ap.parse_args();(train if a.mode=='train' else predict)(a)"}
+{"observed_utc": "2026-11-16T02:17:54.305994+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py\", line 42, in train"}
+{"observed_utc": "2026-11-16T02:17:54.306005+00:00", "line": "    raise ValueError('feature encoding differs')"}
+{"observed_utc": "2026-11-16T02:17:54.306019+00:00", "line": "ValueError: feature encoding differs"}

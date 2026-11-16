@@ -1,0 +1,144 @@
+{
+  "name": "QUAL-early539-ready-20261115-cached",
+  "output": "artifacts/qualifying/early539-cached",
+  "audit_output": "artifacts/private-audit/early539-ready-20261115-cached",
+  "producers": [
+    "artifacts/qualifying/MT3-fixed7",
+    "artifacts/qualifying/MT8-fixed7",
+    "artifacts/qualifying/A2h-early-cache-completion-v2"
+  ],
+  "snapshot_producer": "artifacts/qualifying/A2h-fixed12-pad16",
+  "snapshot_epochs": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "models_dir": "artifacts/qualifying/early539/models",
+  "stages": [
+    {
+      "name": "snapshot",
+      "strategy": "Verify frozen predeclared GPU component caches and average predictions, preserving the checkpoint provenance and no-label policy; no extra fitting",
+      "command": [
+        "scripts/predict_snapshot_ensemble.py",
+        "--producer",
+        "artifacts/qualifying/A2h-fixed12-pad16",
+        "--reference",
+        "artifacts/retained-neural/A2h-snapshot-3-6.f32.json",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/A2h-snapshot-3-6",
+        "--registry",
+        "experiments/QUAL-A2h-registry.json",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "append1",
+      "strategy": "Insert completed fixed-budget local base with exact development schema and verified original-Probe projection; no qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/public-new/ensemble-tree-s1",
+        "--base-qual",
+        "artifacts/qualifying/public536/qual",
+        "--bank",
+        "artifacts/public-new/early539-schemas/stage1",
+        "--local-report",
+        "artifacts/qualifying/A2h-snapshot-3-6/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-snapshot-3-6/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/early539-cached/qual1",
+        "--reference-column",
+        "artifacts/retained-neural/A2h-snapshot-3-6.f32",
+        "--row-map",
+        "artifacts/public-new/dataset/original-probe-rows.u32"
+      ]
+    },
+    {
+      "name": "append2",
+      "strategy": "Insert completed fixed-budget local base with exact development schema and verified original-Probe projection; no qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/public-new/early539-schemas/stage1",
+        "--base-qual",
+        "artifacts/qualifying/early539-cached/qual1",
+        "--bank",
+        "artifacts/public-new/early539-schemas/stage2",
+        "--local-report",
+        "artifacts/qualifying/MT3-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT3-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/early539-cached/qual2",
+        "--reference-column",
+        "artifacts/retained-neural/MT3-refit.refit.e7.f32",
+        "--row-map",
+        "artifacts/public-new/dataset/original-probe-rows.u32"
+      ]
+    },
+    {
+      "name": "append3",
+      "strategy": "Insert completed fixed-budget local base with exact development schema and verified original-Probe projection; no qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/public-new/early539-schemas/stage2",
+        "--base-qual",
+        "artifacts/qualifying/early539-cached/qual2",
+        "--bank",
+        "artifacts/public-new/early539-bank",
+        "--local-report",
+        "artifacts/qualifying/MT8-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT8-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/early539-cached/qual3",
+        "--reference-column",
+        "artifacts/retained-neural/MT8-refit.refit.e7.f32",
+        "--row-map",
+        "artifacts/public-new/dataset/original-probe-rows.u32"
+      ]
+    },
+    {
+      "name": "predict",
+      "strategy": "Frozen NN-only model inference on verified nested qualifying overlays; freeze output hash before any audit",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/early539/models",
+        "--qual",
+        "artifacts/qualifying/early539-cached/qual3",
+        "--output",
+        "artifacts/qualifying/early539-cached/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; preserve source split ambiguity and adaptive evaluation caveat; no model updates",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/early539-cached/final",
+        "--output-dir",
+        "artifacts/private-audit/early539-ready-20261115-cached"
+      ]
+    }
+  ]
+}

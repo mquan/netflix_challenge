@@ -1,0 +1,10 @@
+{"observed_utc": "2026-11-15T23:45:02.195970+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T23:45:02.196211+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/cache_snapshot_components.py\", line 79, in <module>"}
+{"observed_utc": "2026-11-15T23:45:02.196240+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-15T23:45:02.196256+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/cache_snapshot_components.py\", line 26, in main"}
+{"observed_utc": "2026-11-15T23:45:02.196267+00:00", "line": "    a=ap.parse_args();reference=json.loads(Path(a.reference).read_text())"}
+{"observed_utc": "2026-11-15T23:45:02.196279+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1134, in read_text"}
+{"observed_utc": "2026-11-15T23:45:02.196817+00:00", "line": "    with self.open(mode='r', encoding=encoding, errors=errors) as f:"}
+{"observed_utc": "2026-11-15T23:45:02.196890+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1119, in open"}
+{"observed_utc": "2026-11-15T23:45:02.197017+00:00", "line": "    return self._accessor.open(self, mode, buffering, encoding, errors,"}
+{"observed_utc": "2026-11-15T23:45:02.197047+00:00", "line": "FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/retained-neural/A2h-snapshot-4-8.f32.json'"}

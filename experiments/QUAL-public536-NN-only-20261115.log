@@ -1,0 +1,8 @@
+{"state": "normalization"}
+{"state": "refit", "seed": 2026, "epochs": 6}
+{"state": "seed_complete", "seed": 2026, "epochs_used": [6]}
+{"state": "refit", "seed": 7, "epochs": 5}
+{"state": "seed_complete", "seed": 7, "epochs_used": [6, 5]}
+{"state": "refit", "seed": 13, "epochs": 6}
+{"state": "seed_complete", "seed": 13, "epochs_used": [6, 5, 6]}
+{"state": "complete", "outputs": {"scaler.npz": "f16f5e30225a43f9feabc79d4fff2f0b1d9dbd4483e4bc846865847283f70be6", "nn-13.pt": "160ee69c41c08d18492e3f99585dd0654389de2fe834e8ec95d34c94b2a040ea", "nn-2026.pt": "cbf042935e40961b8d51158ae0371941eab2911a37326f4382122def47292680", "nn-7.pt": "f14cec90cf4d5a3b18d15bfde41f196a25b1c531e8a5856526103441e4ed0396", "qualifying-final.f32": "6b67bbad935281b81dde2bd966b5a7c3a29e34d43e381050b5356dfab8ca16be"}, "nn_epochs": [6, 5, 6], "frozen_prediction_sha256": "6b67bbad935281b81dde2bd966b5a7c3a29e34d43e381050b5356dfab8ca16be", "prediction_min": 1.0, "prediction_max": 5.0}

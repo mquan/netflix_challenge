@@ -1,0 +1,28 @@
+{
+  "binary": "/Users/quan/workspace/netflix_prize/artifacts/qualifying/bayes-source-0c1f29d/netflix",
+  "source_manifest": "artifacts/qualifying/bayes-source-0c1f29d/source-manifest.json",
+  "column": "/Users/quan/workspace/netflix_prize/artifacts/retained-neural/B2-full-r64.s0128.f32",
+  "historical_report": "/Users/quan/workspace/netflix_personas/experiments/B2-full-r64.json",
+  "verified_files": {
+    "artifacts/retained-neural/B2-full-r64.s0128.f32": "4470a329ceb60cba1edaeb5f5eb405502741f1c9dd2f86aa3dd5b1c0040b2c5f",
+    "/Users/quan/workspace/netflix_personas/experiments/B2-full-r64.json": "8f45a3240d978fa392402ea31098f823b25867a8b4143424d6f456da4c16efcd",
+    "artifacts/qualifying/bayes-source-0c1f29d/netflix": "e975955e31ae34d21597f0b8c274cb14c4bf24e2b9eec8e160b4409cc8ed7221",
+    "artifacts/qualifying/bayes-source-0c1f29d/source-manifest.json": "aba02faee34c8e24beea17f739888d6cea2af84b2231f58d5de0853aaf669292",
+    "experiments/QUAL-bayes-archived-parity-20261116.json": "60ae1d69d0e9dc00018ec97cfb304175c3974a3412591d6442124ffce7b15d19",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/bayes.hpp": "af970f67cb78cab028a8da066a8c66f90cf57b3af2b1b6d8facaad598a72940d",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/neighborhood.hpp": "91bdc2f0e9cd04ff1a6083c81bf7feca5bfe8ba8b775750e39ce515cc1de4244",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/integrated.hpp": "e6bed8b34db4f4b9df68bd386b5893a69fd329c609c7b843321801bfb2fe6436",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/rbm.hpp": "bd1868ee4d3653ae61f40a7b76c906b72510ba3cd7a6d672115d0d76442d5a05",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/netflix.cpp": "f22a0d4608cc767fda295f35ef8e3777292ec719300a02ff6bea29ab84c2ba42",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/moonshot_adaptive.cpp": "6660d83dc1ed1fd8038c4d5fabf02468ccc46fdc2d0093c67f6cf262f039a844",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/rbm_visible_context.hpp": "fc9e592bcca927e7334f4db2ccb356e19bae4bf2966305a955ecc8c9dd796988",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/ensemble.hpp": "e6ef9631a3f8a5ae61f2386445896eae1abaeb43cf701b8ef0afcbf8f9dbcf41",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/temporal_neighborhood.hpp": "6a5d92bd96b66d2f8103dab6e39086624fcfec903150006e06d8df3947f35355",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/moonshot_session_meta.cpp": "360658b9f9a3f621624bdeb02027574c0b55b2b7bef4c6e89f94306c954ef1c0",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/moonshot_gp.cpp": "fb19292fbfb92d365f450dfd77bff30abdb905dea34723368fbe654a68ce1063",
+    "artifacts/qualifying/bayes-source-0c1f29d/src/joint.hpp": "b397ac6e61410cb4c808aaa1f18759e2382df935f07017d5cac2bf92f475f996"
+  },
+  "production_nondeterminism": "Archived code explicitly uses Hogwild bag draws with racing block statistics for threads>1; bitwise parity checked at threads1, production retains historical threads4 recipe"
+}

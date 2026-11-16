@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-16T01:33:01.833872+00:00",
+  "actions": [
+    {
+      "pid": 3850,
+      "command": ".venv/bin/python scripts/production_neural.py --column A2h-refit.refit.e12.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/A2h-fixed12-pad4 --registry experiments/QUAL-A2h-registry.json --archive experiments/QUAL-neural-sources.zip --pad-rows 4 --journal-optimizer --training-only --train",
+      "signal": 2,
+      "reason": "Superseded per-step cache flush with every100-step cache flush before completing epoch1"
+    },
+    {
+      "pid": 98544,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-late539-cached-pipeline-plan-20261115.json",
+      "signal": 15,
+      "reason": "Superseded failed pad16 producer with journaled pad4 producer"
+    },
+    {
+      "pid": 98859,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad16 --reference artifacts/retained-neural/A2h-snapshot-6-8-10-12.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-late-cache-completion-v2 --name QUAL-A2h-late-cache-export-v3-20261115 --wait-producer artifacts/qualifying/A2h-early-cache-completion-v2 --resume",
+      "signal": 15,
+      "reason": "Producer failed at epoch10; preserved completed caches, switching late pipeline to restarted producer"
+    }
+  ]
+}

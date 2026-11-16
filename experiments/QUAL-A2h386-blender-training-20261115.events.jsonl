@@ -1,0 +1,13 @@
+{"observed_utc": "2026-11-15T20:54:51.085707+00:00", "line": "{\"state\": \"ridge\"}"}
+{"observed_utc": "2026-11-15T20:55:51.641033+00:00", "line": "{\"state\": \"tree_worker\"}"}
+{"observed_utc": "2026-11-15T21:07:54.696601+00:00", "line": "{\"state\": \"tree_refit\", \"seed\": 2026, \"rounds\": 968}"}
+{"observed_utc": "2026-11-15T21:22:18.182289+00:00", "line": "{\"state\": \"tree_seed_complete\", \"seed\": 2026, \"rounds\": [968]}"}
+{"observed_utc": "2026-11-15T21:37:11.062044+00:00", "line": "{\"state\": \"tree_refit\", \"seed\": 7, \"rounds\": 789}"}
+{"observed_utc": "2026-11-16T00:00:22.522097+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-16T00:00:22.526893+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/train_development_blender.py\", line 92, in <module>"}
+{"observed_utc": "2026-11-16T00:00:22.530267+00:00", "line": "    features=(np.load(feature_path,mmap_mode='r') if a.features else"}
+{"observed_utc": "2026-11-16T00:00:22.530344+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/train_development_blender.py\", line 61, in main"}
+{"observed_utc": "2026-11-16T00:00:22.530569+00:00", "line": "    blend_rule=('Seed-averaged NN2 residuals' if a.nn_only else"}
+{"observed_utc": "2026-11-16T00:00:22.530586+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/subprocess.py\", line 526, in run"}
+{"observed_utc": "2026-11-16T00:00:22.530767+00:00", "line": "    raise CalledProcessError(retcode, process.args,"}
+{"observed_utc": "2026-11-16T00:00:22.530812+00:00", "line": "subprocess.CalledProcessError: Command '['/Users/quan/workspace/netflix_prize/.venv/bin/python', '/Users/quan/workspace/netflix_prize/scripts/train_tree_models.py', '--plan', 'artifacts/qualifying/public386/models/tree-plan.json']' died with <Signals.SIGTERM: 15>."}

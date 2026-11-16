@@ -1,0 +1,9 @@
+{
+  "state": "superseded_and_terminated",
+  "pid": 92886,
+  "command": "/Users/quan/workspace/netflix_prize/.venv/bin/python /Users/quan/workspace/netflix_prize/scripts/train_tree_models.py --plan artifacts/qualifying/public386/models/tree-plan.json",
+  "utc": "2026-11-16T00:00:22.470329+00:00",
+  "reason": "Prioritize new early388 averaged-checkpoint tree/NN ensemble over old single-epoch12 fallback; preserve partial models/logs and all datasets",
+  "replacement": "QUAL-original-early388-tree-extension-20261115",
+  "preserved_partial_tree_sha256": "219d90126c02b91ad0b976b90533be0946550afe1a276b124f46c043f5eb9994"
+}

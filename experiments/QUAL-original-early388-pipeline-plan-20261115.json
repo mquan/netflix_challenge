@@ -1,0 +1,104 @@
+{
+  "name": "QUAL-original-early388-ready-20261115",
+  "output": "artifacts/qualifying/original-early388",
+  "audit_output": "artifacts/private-audit/original-early388-ready-20261115",
+  "models_dir": "artifacts/qualifying/original-early388/models",
+  "producers": [
+    "artifacts/qualifying/A2h-snapshot-3-6",
+    "artifacts/qualifying/MT3-fixed7",
+    "artifacts/qualifying/MT8-fixed7"
+  ],
+  "stages": [
+    {
+      "name": "append1",
+      "strategy": "Insert verified completed local predictor in original-Probe schema; exact retained development digest, no projection or qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/dev-public385",
+        "--base-qual",
+        "artifacts/qualifying/public385/qual",
+        "--bank",
+        "artifacts/qualifying/original-early388-schemas/stage1",
+        "--local-report",
+        "artifacts/qualifying/A2h-snapshot-3-6/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-snapshot-3-6/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early388/qual1"
+      ]
+    },
+    {
+      "name": "append2",
+      "strategy": "Insert verified completed local predictor in original-Probe schema; exact retained development digest, no projection or qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early388-schemas/stage1",
+        "--base-qual",
+        "artifacts/qualifying/original-early388/qual1",
+        "--bank",
+        "artifacts/qualifying/original-early388-schemas/stage2",
+        "--local-report",
+        "artifacts/qualifying/MT3-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT3-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early388/qual2"
+      ]
+    },
+    {
+      "name": "append3",
+      "strategy": "Insert verified completed local predictor in original-Probe schema; exact retained development digest, no projection or qualifying labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early388-schemas/stage2",
+        "--base-qual",
+        "artifacts/qualifying/original-early388/qual2",
+        "--bank",
+        "artifacts/qualifying/original-early388-bank",
+        "--local-report",
+        "artifacts/qualifying/MT8-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT8-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early388/qual3"
+      ]
+    },
+    {
+      "name": "predict",
+      "strategy": "Frozen original-Probe NN2 blend inference on verified qualifying overlays, prediction hash before audit",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-early388/models",
+        "--qual",
+        "artifacts/qualifying/original-early388/qual3",
+        "--output",
+        "artifacts/qualifying/original-early388/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fit, retain adaptive evaluation and split ambiguity",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-early388/final",
+        "--output-dir",
+        "artifacts/private-audit/original-early388-ready-20261115"
+      ]
+    }
+  ]
+}

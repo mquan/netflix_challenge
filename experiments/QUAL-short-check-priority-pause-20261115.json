@@ -1,0 +1,19 @@
+{
+  "state": "resolved",
+  "reason": "Temporarily prioritize short feature-shift blender checks while GPU bases continue; preserve long CPU training state for exact resume",
+  "utc": "2026-11-15T21:37:52.084196+00:00",
+  "processes": [
+    {
+      "pid": 92886,
+      "command": "/Users/quan/workspace/netflix_prize/.venv/bin/python /Users/quan/workspace/netflix_prize/scripts/train_tree_models.py --plan artifacts/qualifying/public386/models/tree-plan.json",
+      "final_state": "superseded_and_terminated"
+    },
+    {
+      "pid": 93029,
+      "command": ".venv/bin/python scripts/production_neural.py --column MT3-refit.refit.e7.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/MT3-fixed7 --registry experiments/QUAL-local-neural-registry.json --archive experiments/QUAL-neural-sources.zip --train",
+      "resumed_utc": "2026-11-15T21:57:04.048617+00:00",
+      "final_state": "resumed_and_completed"
+    }
+  ],
+  "resolution_note": "Do not resume these PIDs; original386 tree superseded by early388 tree extension; MT3 completed7fixed epochs"
+}

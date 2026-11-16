@@ -1,0 +1,37 @@
+{"observed_utc": "2026-11-15T20:35:30.080532+00:00", "line": "{\"stage\": \"start\", \"config\": {\"bank\": \"artifacts/qualifying/dev-A2h-tree-s1\", \"output\": \"artifacts/qualifying/dev-A2h-NN2-CPU\", \"hidden\": 128, \"layers\": 2, \"dropout\": 0.2, \"lr\": 0.0003, \"weight_decay\": 0.01, \"batch\": 4096, \"epochs\": 60, \"patience\": 5, \"seeds\": [2026, 7, 13], \"threads\": 2, \"disk_features\": true, \"device\": \"cpu\", \"resident_features\": false, \"reuse_features\": null}, \"columns\": 386, \"features\": 625}"}
+{"observed_utc": "2026-11-15T20:37:05.768632+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 2026, \"epochs\": 8}"}
+{"observed_utc": "2026-11-15T20:37:43.993096+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 2026, \"seconds\": 133.911027707858}"}
+{"observed_utc": "2026-11-15T20:38:27.271467+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 7, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T20:39:31.784159+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 7, \"seconds\": 241.70030862488784}"}
+{"observed_utc": "2026-11-15T20:40:56.998368+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 13, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T20:41:59.410052+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 13, \"seconds\": 389.32429412496276}"}
+{"observed_utc": "2026-11-15T20:41:59.459648+00:00", "line": "{\"fold\": 0, \"nn_rmse\": 0.8669267771242157, \"ridge_rmse\": 0.8681507649155545, \"chosen_epochs\": [8, 6, 5], \"seconds\": 389.37440520804375}"}
+{"observed_utc": "2026-11-15T20:45:05.905950+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 2026, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:46:09.766813+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 2026, \"seconds\": 250.28932254202664}"}
+{"observed_utc": "2026-11-15T20:47:41.151612+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 7, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T20:48:47.714826+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 7, \"seconds\": 408.25202579190955}"}
+{"observed_utc": "2026-11-15T20:49:49.862205+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 13, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T20:50:48.499134+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 13, \"seconds\": 529.0372708749492}"}
+{"observed_utc": "2026-11-15T20:50:48.553476+00:00", "line": "{\"fold\": 1, \"nn_rmse\": 0.866057102570626, \"ridge_rmse\": 0.8671653203291143, \"chosen_epochs\": [4, 6, 6], \"seconds\": 529.0917572078761}"}
+{"observed_utc": "2026-11-15T20:52:59.960593+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 2026, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:53:30.148080+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 2026, \"seconds\": 161.57996616698802}"}
+{"observed_utc": "2026-11-15T20:54:14.073931+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 7, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T20:54:56.186299+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 7, \"seconds\": 247.6179202918429}"}
+{"observed_utc": "2026-11-15T20:55:53.676760+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 13, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T20:56:59.436557+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 13, \"seconds\": 370.86718770791776}"}
+{"observed_utc": "2026-11-15T20:56:59.491901+00:00", "line": "{\"fold\": 2, \"nn_rmse\": 0.8622308198628815, \"ridge_rmse\": 0.8633394407656497, \"chosen_epochs\": [4, 6, 5], \"seconds\": 370.9234349578619}"}
+{"observed_utc": "2026-11-15T20:59:32.924626+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 2026, \"epochs\": 7}"}
+{"observed_utc": "2026-11-15T21:00:16.218789+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 2026, \"seconds\": 196.71646370808594}"}
+{"observed_utc": "2026-11-15T21:00:56.982205+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 7, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T21:01:23.094147+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 7, \"seconds\": 263.59150504204445}"}
+{"observed_utc": "2026-11-15T21:02:04.686547+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 13, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T21:02:38.367094+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 13, \"seconds\": 338.8635937080253}"}
+{"observed_utc": "2026-11-15T21:02:38.411357+00:00", "line": "{\"fold\": 3, \"nn_rmse\": 0.8677260895736311, \"ridge_rmse\": 0.8688985926336569, \"chosen_epochs\": [7, 5, 5], \"seconds\": 338.9083202080801}"}
+{"observed_utc": "2026-11-15T21:05:34.463212+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 2026, \"epochs\": 5}"}
+{"observed_utc": "2026-11-15T21:06:10.867087+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 2026, \"seconds\": 212.43429825012572}"}
+{"observed_utc": "2026-11-15T21:06:59.969703+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 7, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T21:07:32.547019+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 7, \"seconds\": 294.11429562512785}"}
+{"observed_utc": "2026-11-15T21:08:29.677755+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 13, \"epochs\": 6}"}
+{"observed_utc": "2026-11-15T21:09:36.883793+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 13, \"seconds\": 418.4505633751396}"}
+{"observed_utc": "2026-11-15T21:09:36.935918+00:00", "line": "{\"fold\": 4, \"nn_rmse\": 0.8677813950500558, \"ridge_rmse\": 0.8688583947037722, \"chosen_epochs\": [5, 4, 6], \"seconds\": 418.5031299160328}"}
+{"observed_utc": "2026-11-15T21:09:37.224332+00:00", "line": "{\"nn_rmse\": 0.8661420082136325, \"nn_fold_rmse\": [0.8669267771242157, 0.866057102570626, 0.8622308198628815, 0.8677260895736311, 0.8677813950500558], \"target_rmse\": 0.85725}"}

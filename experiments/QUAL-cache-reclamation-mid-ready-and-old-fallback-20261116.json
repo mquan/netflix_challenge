@@ -1,0 +1,27 @@
+{
+  "state": "removed",
+  "utc": "2026-11-16T00:07:12.500928+00:00",
+  "reason": "Mid models frozen, original386 single-checkpoint fallback explicitly superseded and terminated; retain all raw source columns, original385 rebuilt raw bank, qualifying matrices, statistics and model weights",
+  "files": [
+    {
+      "path": "artifacts/qualifying/original-mid388/models/nn-features.npy",
+      "bytes": 3532254788,
+      "sha256": "bf3e9932e68ffb08e1ffc9dc95dce012ae17ec5e5e2502ac247acb0170a108ef"
+    },
+    {
+      "path": "artifacts/qualifying/original-mid388/models/nn-normalized.npy",
+      "bytes": 3532254788,
+      "sha256": "3f0d5fcf0ba45aac3baac0ec2365deb0f22ca948940cb785fe9de6ecb8667ae6"
+    },
+    {
+      "path": "artifacts/qualifying/dev-A2h-tree-s1.x.npy",
+      "bytes": 3515354048,
+      "sha256": "e0fae6b9088a7c4b40424cdcc1ad1f02514957805947f41ce9bfd5cf42286949"
+    },
+    {
+      "path": "artifacts/qualifying/dev-A2h-NN2-CPU.features.npy",
+      "bytes": 3520987628,
+      "sha256": "f2a761504b3e1e354548bec2f4557447a3d425d0cd0481ed1c7116cdbdbdfaf3"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "state": "removed",
+  "files": [
+    {
+      "path": "artifacts/qualifying/original-early388/models/nn-features.npy",
+      "bytes": 3532254788,
+      "sha256": "e87ad6b53d40032d66a0ea253fe85849b5befe9914b152acc064abf8404d7c91"
+    },
+    {
+      "path": "artifacts/qualifying/original-early388/models/nn-normalized.npy",
+      "bytes": 3532254788,
+      "sha256": "82f9a343c13c2cb08ff5788c33b09bd518f0a9d8b0f56b64b4ecff838e7bcb51"
+    }
+  ],
+  "reason": "All three models frozen; raw sources, stats, scaler, model checkpoints preserved; portable inference does not use development encodings"
+}

@@ -1,0 +1,37 @@
+{"observed_utc": "2026-11-15T20:17:09.174956+00:00", "line": "{\"stage\": \"start\", \"config\": {\"bank\": \"artifacts/public-new/ensemble-tree-s1\", \"output\": \"artifacts/public-new/ensemble-NN3-resident\", \"hidden\": 256, \"layers\": 3, \"dropout\": 0.1, \"lr\": 0.0003, \"weight_decay\": 0.01, \"batch\": 4096, \"epochs\": 60, \"patience\": 5, \"seeds\": [2026, 7, 13], \"threads\": 2, \"disk_features\": true, \"device\": \"mps\", \"resident_features\": true, \"reuse_features\": \"artifacts/public-new/ensemble-NN2.features.npy\"}, \"columns\": 536, \"features\": 775}"}
+{"observed_utc": "2026-11-15T20:18:33.096579+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 2026, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:18:42.182001+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 2026, \"seconds\": 93.00607595802285}"}
+{"observed_utc": "2026-11-15T20:18:59.919316+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 7, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:19:09.367467+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 7, \"seconds\": 120.19140691589564}"}
+{"observed_utc": "2026-11-15T20:19:25.454506+00:00", "line": "{\"stage\": \"selection\", \"fold\": 0, \"seed\": 13, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:19:38.822788+00:00", "line": "{\"stage\": \"refit\", \"fold\": 0, \"seed\": 13, \"seconds\": 149.64632058283314}"}
+{"observed_utc": "2026-11-15T20:19:38.853244+00:00", "line": "{\"fold\": 0, \"nn_rmse\": 0.8572044827762472, \"ridge_rmse\": 0.8582453787433721, \"chosen_epochs\": [3, 4, 3], \"seconds\": 149.67676070798188}"}
+{"observed_utc": "2026-11-15T20:21:12.258085+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 2026, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:21:22.931293+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 2026, \"seconds\": 104.06524262507446}"}
+{"observed_utc": "2026-11-15T20:21:40.014372+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 7, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:21:50.411594+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 7, \"seconds\": 131.5451368340291}"}
+{"observed_utc": "2026-11-15T20:22:06.275179+00:00", "line": "{\"stage\": \"selection\", \"fold\": 1, \"seed\": 13, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:22:17.842834+00:00", "line": "{\"stage\": \"refit\", \"fold\": 1, \"seed\": 13, \"seconds\": 158.9761275839992}"}
+{"observed_utc": "2026-11-15T20:22:17.875495+00:00", "line": "{\"fold\": 1, \"nn_rmse\": 0.8563134207078194, \"ridge_rmse\": 0.8573168272724695, \"chosen_epochs\": [4, 4, 4], \"seconds\": 159.0088303340599}"}
+{"observed_utc": "2026-11-15T20:24:03.057230+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 2026, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:24:11.345490+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 2026, \"seconds\": 113.45691974996589}"}
+{"observed_utc": "2026-11-15T20:24:25.682071+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 7, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:24:34.304896+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 7, \"seconds\": 136.41607666690834}"}
+{"observed_utc": "2026-11-15T20:24:47.226535+00:00", "line": "{\"stage\": \"selection\", \"fold\": 2, \"seed\": 13, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:24:54.249688+00:00", "line": "{\"stage\": \"refit\", \"fold\": 2, \"seed\": 13, \"seconds\": 156.36066508386284}"}
+{"observed_utc": "2026-11-15T20:24:54.279660+00:00", "line": "{\"fold\": 2, \"nn_rmse\": 0.8520190737426165, \"ridge_rmse\": 0.8530179301812828, \"chosen_epochs\": [3, 4, 3], \"seconds\": 156.3906156248413}"}
+{"observed_utc": "2026-11-15T20:26:33.484287+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 2026, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:26:42.466870+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 2026, \"seconds\": 108.17622604197823}"}
+{"observed_utc": "2026-11-15T20:26:57.092799+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 7, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:27:04.672342+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 7, \"seconds\": 130.38144220900722}"}
+{"observed_utc": "2026-11-15T20:27:18.107605+00:00", "line": "{\"stage\": \"selection\", \"fold\": 3, \"seed\": 13, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:27:24.985891+00:00", "line": "{\"stage\": \"refit\", \"fold\": 3, \"seed\": 13, \"seconds\": 150.69478712487034}"}
+{"observed_utc": "2026-11-15T20:27:25.017669+00:00", "line": "{\"fold\": 3, \"nn_rmse\": 0.8588338566717776, \"ridge_rmse\": 0.8597535820624772, \"chosen_epochs\": [3, 3, 3], \"seconds\": 150.72651645890437}"}
+{"observed_utc": "2026-11-15T20:28:40.432631+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 2026, \"epochs\": 4}"}
+{"observed_utc": "2026-11-15T20:28:50.828731+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 2026, \"seconds\": 85.79781199991703}"}
+{"observed_utc": "2026-11-15T20:29:05.892483+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 7, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:29:14.134988+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 7, \"seconds\": 109.1037797499448}"}
+{"observed_utc": "2026-11-15T20:29:36.123794+00:00", "line": "{\"stage\": \"selection\", \"fold\": 4, \"seed\": 13, \"epochs\": 3}"}
+{"observed_utc": "2026-11-15T20:29:46.999206+00:00", "line": "{\"stage\": \"refit\", \"fold\": 4, \"seed\": 13, \"seconds\": 141.96721604187042}"}
+{"observed_utc": "2026-11-15T20:29:47.034611+00:00", "line": "{\"fold\": 4, \"nn_rmse\": 0.8584713480949767, \"ridge_rmse\": 0.8595067775169026, \"chosen_epochs\": [4, 3, 3], \"seconds\": 142.00305204186589}"}
+{"observed_utc": "2026-11-15T20:29:47.487542+00:00", "line": "{\"nn_rmse\": 0.8565661374803174, \"nn_fold_rmse\": [0.8572044827762472, 0.8563134207078194, 0.8520190737426165, 0.8588338566717776, 0.8584713480949767], \"target_rmse\": 0.85725, \"avg_rmse\": 0.8565224661495514, \"avg_fold_rmse\": [0.8571362260236274, 0.8561848977633676, 0.8519764944271624, 0.8588848584759704, 0.8584409269509203]}"}

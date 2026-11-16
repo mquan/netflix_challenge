@@ -1,0 +1,17 @@
+{"stage": "feature_statistics"}
+{"stage": "statistics", "group": 0, "seconds": 51.13894062512554}
+{"stage": "statistics", "group": 1, "seconds": 60.22592529212125}
+{"stage": "statistics", "group": 2, "seconds": 70.3054966670461}
+{"stage": "statistics", "group": 3, "seconds": 72.8601964591071}
+{"stage": "statistics", "group": 4, "seconds": 82.98643841710873}
+{"stage": "statistics", "group": 5, "seconds": 85.6110204171855}
+{"stage": "statistics", "group": 6, "seconds": 95.67531004198827}
+{"stage": "statistics", "group": 7, "seconds": 98.24367695907131}
+{"stage": "statistics", "group": 8, "seconds": 108.11559683410451}
+{"stage": "statistics", "group": 9, "seconds": 110.43455837504007}
+{"fold": 0, "alpha": 0.001, "rmse": 0.8698148397633619}
+{"fold": 1, "alpha": 0.001, "rmse": 0.868523122293409}
+{"fold": 2, "alpha": 0.001, "rmse": 0.86475335474851}
+{"fold": 3, "alpha": 0.001, "rmse": 0.8700087955919288}
+{"fold": 4, "alpha": 0.001, "rmse": 0.870152124019047}
+{"state": "complete", "config": {"bank": "artifacts/qualifying/dev-public385", "qual": "artifacts/qualifying/public385/qual", "output": "artifacts/qualifying/public385/projected-fwls"}, "qualifying_labels_read": false, "qualifying_rows": 2817131, "bank_sha256": "bcb14500e8a5a82be95f5d19a6a957ba3241b0d8977c03104c5a066adf992b4f", "qual_manifest_sha256": "6019ef1b2b2965d7c239bf1629bc20eaee634bf2704879405e1fce8c6f5ea466", "development_rmse": 0.8686480804524952, "folds": [{"fold": 0, "alpha": 0.001, "rmse": 0.8698148397633619}, {"fold": 1, "alpha": 0.001, "rmse": 0.868523122293409}, {"fold": 2, "alpha": 0.001, "rmse": 0.86475335474851}, {"fold": 3, "alpha": 0.001, "rmse": 0.8700087955919288}, {"fold": 4, "alpha": 0.001, "rmse": 0.870152124019047}], "production_alpha": 0.0001, "features": 2766, "unsupervised_encoding": "Development feature covariance and quantiles; no label dependence", "frozen_prediction_sha256": "b4513e2e86b405448ca20dd334b9bbf73763102825a47877a3b6dd2330aba0ec"}

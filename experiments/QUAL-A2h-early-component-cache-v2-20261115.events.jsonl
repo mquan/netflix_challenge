@@ -1,0 +1,19 @@
+{"observed_utc": "2026-11-15T23:11:22.355740+00:00", "line": "{\"state\": \"waiting\"}"}
+{"observed_utc": "2026-11-15T23:11:22.356008+00:00", "line": "{\"state\": \"waiting_checkpoint\", \"epoch\": 3}"}
+{"observed_utc": "2026-11-15T23:11:22.356373+00:00", "line": "{\"state\": \"exporting\", \"epoch\": 3}"}
+{"observed_utc": "2026-11-15T23:11:24.877775+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T23:11:24.879094+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 102, in <module>"}
+{"observed_utc": "2026-11-15T23:11:24.879154+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-15T23:11:24.879175+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 54, in main"}
+{"observed_utc": "2026-11-15T23:11:24.879188+00:00", "line": "    root=Path(a.output);root.mkdir(parents=True,exist_ok=False)"}
+{"observed_utc": "2026-11-15T23:11:24.879200+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1175, in mkdir"}
+{"observed_utc": "2026-11-15T23:11:24.879219+00:00", "line": "    self._accessor.mkdir(self, mode)"}
+{"observed_utc": "2026-11-15T23:11:24.879230+00:00", "line": "FileExistsError: [Errno 17] File exists: 'artifacts/qualifying/A2h-fixed12-pad16/inference-cache/e3'"}
+{"observed_utc": "2026-11-15T23:11:25.245004+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T23:11:25.245145+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/cache_snapshot_components.py\", line 70, in <module>"}
+{"observed_utc": "2026-11-15T23:11:25.245527+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-15T23:11:25.245682+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/cache_snapshot_components.py\", line 54, in main"}
+{"observed_utc": "2026-11-15T23:11:25.245804+00:00", "line": "    subprocess.run([sys.executable,'scripts/experiment.py','--name',a.name+'-e'+str(epoch),"}
+{"observed_utc": "2026-11-15T23:11:25.245865+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/subprocess.py\", line 526, in run"}
+{"observed_utc": "2026-11-15T23:11:25.246361+00:00", "line": "    raise CalledProcessError(retcode, process.args,"}
+{"observed_utc": "2026-11-15T23:11:25.246467+00:00", "line": "subprocess.CalledProcessError: Command '['/Users/quan/workspace/netflix_prize/.venv/bin/python', 'scripts/experiment.py', '--name', 'QUAL-A2h-early-cache-export-v2-20261115-e3', '--strategy', 'Predeclared checkpoint inference cache; no fitting or rating labels; bounded GPU allocator', '--', '/usr/bin/env', 'PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.35', 'PYTORCH_MPS_LOW_WATERMARK_RATIO=0.1', '/Users/quan/workspace/netflix_prize/.venv/bin/python', 'scripts/predict_snapshot_ensemble.py', '--producer', 'artifacts/qualifying/A2h-fixed12-pad16', '--reference', 'artifacts/retained-neural/A2h-snapshot-3-6.f32.json', '--dataset-manifest', 'artifacts/qualifying/dataset/manifest.json', '--output', 'artifacts/qualifying/A2h-fixed12-pad16/inference-cache/e3', '--registry', 'experiments/QUAL-A2h-registry.json', '--device', 'mps', '--threads', '1', '--export-component', '3', '--inference-token-multiplier', '0.5']' returned non-zero exit status 1."}

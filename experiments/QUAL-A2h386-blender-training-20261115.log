@@ -1,0 +1,13 @@
+{"state": "ridge"}
+{"state": "tree_worker"}
+{"state": "tree_refit", "seed": 2026, "rounds": 968}
+{"state": "tree_seed_complete", "seed": 2026, "rounds": [968]}
+{"state": "tree_refit", "seed": 7, "rounds": 789}
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/train_development_blender.py", line 92, in <module>
+    features=(np.load(feature_path,mmap_mode='r') if a.features else
+  File "/Users/quan/workspace/netflix_prize/scripts/train_development_blender.py", line 61, in main
+    blend_rule=('Seed-averaged NN2 residuals' if a.nn_only else
+  File "/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Users/quan/workspace/netflix_prize/.venv/bin/python', '/Users/quan/workspace/netflix_prize/scripts/train_tree_models.py', '--plan', 'artifacts/qualifying/public386/models/tree-plan.json']' died with <Signals.SIGTERM: 15>.

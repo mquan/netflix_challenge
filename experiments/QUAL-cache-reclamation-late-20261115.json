@@ -1,0 +1,22 @@
+{
+  "reason": "Reclaim only completed neural-normalization scratch before full A2h training; raw encodings, inputs, scalers/models and predictions retained",
+  "utc": "2026-11-15T20:34:16.583073+00:00",
+  "removed": [
+    {
+      "path": "artifacts/qualifying/dev-public385-NN2.normalized.npy",
+      "bytes": 3515354048
+    },
+    {
+      "path": "artifacts/qualifying/public385/nn-only/normalized.npy",
+      "bytes": 3515354048
+    },
+    {
+      "path": "artifacts/public-new/ensemble-NN3-resident.normalized.npy",
+      "bytes": 3497308528
+    },
+    {
+      "path": "artifacts/qualifying/weighted536/nn2/normalized.npy",
+      "bytes": 3497308528
+    }
+  ]
+}

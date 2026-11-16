@@ -1,0 +1,17 @@
+{
+  "metric": "Alternative ProbeX, not entire original Probe or qualifying",
+  "rule": "Fixed equal NN2/tree average",
+  "rmse": 0.8565022974859765,
+  "fold_rmse": [
+    0.8570739213156628,
+    0.8562331245150349,
+    0.8519019167929718,
+    0.8588304292927155,
+    0.8584835934263699
+  ],
+  "inputs": {
+    "artifacts/public-new/ensemble-tree-s1.refit.f32": "01be77755d1d26b9ab281fdfcc77730e004c33bd78e3fe0e66650d2026a4cfc5",
+    "artifacts/public-new/ensemble-NN2.nn.f32": "195c6209b2deab3f692c88014be6dedd7fc446e6bfbeca3141a25865d8b79280"
+  },
+  "output_sha256": "af8f6050fe14c4234690eff5b1cc45787a4bc059c2b3be8af690d369e5ad64a8"
+}

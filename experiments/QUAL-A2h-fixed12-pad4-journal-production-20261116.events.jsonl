@@ -1,0 +1,16 @@
+{"observed_utc": "2026-11-16T01:31:56.727501+00:00", "line": "{\"phase\": \"artifacts/qualifying/A2h-fixed12-pad4/model\", \"epoch\": 1, \"batch\": 100, \"users\": 7468, \"targets\": 479341, \"tokens\": 1286343, \"train_rmse\": 0.946380922051064, \"seconds\": 41.776999292196706, \"mps_allocated_mb\": 385.755126953125, \"mps_driver_mb\": 1089.625}"}
+{"observed_utc": "2026-11-16T01:32:31.868506+00:00", "line": "{\"phase\": \"artifacts/qualifying/A2h-fixed12-pad4/model\", \"epoch\": 1, \"batch\": 200, \"users\": 16448, \"targets\": 942989, \"tokens\": 2536377, \"train_rmse\": 0.9468388119237111, \"seconds\": 76.91778725013137, \"mps_allocated_mb\": 387.239501953125, \"mps_driver_mb\": 1093.625}"}
+{"observed_utc": "2026-11-16T01:33:01.887059+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-16T01:33:01.887126+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/production_neural.py\", line 218, in <module>"}
+{"observed_utc": "2026-11-16T01:33:01.887154+00:00", "line": "    "}
+{"observed_utc": "2026-11-16T01:33:01.887171+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/production_neural.py\", line 199, in main"}
+{"observed_utc": "2026-11-16T01:33:01.887186+00:00", "line": "    trainer.atomic_json(report_path, report)"}
+{"observed_utc": "2026-11-16T01:33:01.887201+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-pad4/source/masked_sequence.py\", line 440, in fit"}
+{"observed_utc": "2026-11-16T01:33:01.887329+00:00", "line": "    loss.backward()"}
+{"observed_utc": "2026-11-16T01:33:01.887382+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/_tensor.py\", line 623, in backward"}
+{"observed_utc": "2026-11-16T01:33:01.887888+00:00", "line": "    torch.autograd.backward("}
+{"observed_utc": "2026-11-16T01:33:01.887952+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/autograd/__init__.py\", line 395, in backward"}
+{"observed_utc": "2026-11-16T01:33:01.888290+00:00", "line": "    _engine_run_backward("}
+{"observed_utc": "2026-11-16T01:33:01.888311+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/autograd/graph.py\", line 1072, in _engine_run_backward"}
+{"observed_utc": "2026-11-16T01:33:01.888614+00:00", "line": "    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass"}
+{"observed_utc": "2026-11-16T01:33:01.888632+00:00", "line": "KeyboardInterrupt"}

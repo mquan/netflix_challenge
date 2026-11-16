@@ -1,0 +1,16 @@
+{
+  "state": "removed",
+  "files": [
+    {
+      "path": "artifacts/qualifying/late539/models/nn-features.npy",
+      "sha256": "ac7c7ffe3136cbe0311f0f389c8a597207134872aefa61c730c38bbe607f98a8",
+      "bytes": 3510846496
+    },
+    {
+      "path": "artifacts/qualifying/late539/models/nn-normalized.npy",
+      "sha256": "512e374629973b8df38b815a2f0c831228ff5b6ee9013bf39572cdea79198528",
+      "bytes": 3510846496
+    }
+  ],
+  "reason": "Final blend models frozen; reproducible normalization/encoding only; saved models, scaler, raw columns, statistics and predictions retained"
+}

@@ -1,0 +1,45 @@
+{
+  "diagnostics": [
+    {
+      "bank": "artifacts/qualifying/dev-public385",
+      "mode": "absolute",
+      "dev_mean": 2.296491891541005,
+      "dev_std": 0.04260419810826965,
+      "qual_mean": 2.033837613330351,
+      "qual_standardized_mean": -6.164985843488314,
+      "labels_read": false
+    },
+    {
+      "bank": "artifacts/qualifying/dev-public385",
+      "mode": "relative",
+      "dev_mean": 0.12847995518338326,
+      "dev_std": 0.12078303314267531,
+      "qual_mean": 0.08784693025484894,
+      "qual_standardized_mean": -0.336413351041917,
+      "labels_read": false
+    },
+    {
+      "bank": "artifacts/public-new/ensemble-tree-s1",
+      "mode": "absolute",
+      "dev_mean": 2.2328106158508776,
+      "dev_std": 0.07196962337328484,
+      "qual_mean": 1.9921533866881385,
+      "qual_standardized_mean": -3.3438722878195746,
+      "labels_read": false
+    },
+    {
+      "bank": "artifacts/public-new/ensemble-tree-s1",
+      "mode": "relative",
+      "dev_mean": 0.12044719899438147,
+      "dev_std": 0.11236327393920267,
+      "qual_mean": 0.08781380310635335,
+      "qual_standardized_mean": -0.2904275991965608,
+      "labels_read": false
+    }
+  ],
+  "bank_manifests": {
+    "artifacts/qualifying/dev-public385": "bcb14500e8a5a82be95f5d19a6a957ba3241b0d8977c03104c5a066adf992b4f",
+    "artifacts/public-new/ensemble-tree-s1": "567b4bc6f395ff786231792e297e8e0abde81326c0e2c8e75306358477b615d5"
+  },
+  "purpose": "Feature-distribution diagnostic only; no rating-based selection or fitting"
+}

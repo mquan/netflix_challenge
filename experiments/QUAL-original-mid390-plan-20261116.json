@@ -1,0 +1,82 @@
+{
+  "name": "QUAL-original-mid390-ready-20261116",
+  "output": "artifacts/qualifying/original-mid390",
+  "audit_output": "artifacts/private-audit/original-mid390-ready-20261116",
+  "models_dir": "artifacts/qualifying/original-mid390/models",
+  "producers": [
+    "artifacts/qualifying/MT1-fixed10",
+    "artifacts/qualifying/MH3-fixed4"
+  ],
+  "stages": [
+    {
+      "name": "append4",
+      "strategy": "Insert verified fixed-budget history encoder, unchanged original-Probe schema and query order",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-mid388-bank",
+        "--base-qual",
+        "artifacts/qualifying/original-mid388/qual3",
+        "--bank",
+        "artifacts/qualifying/original-mid390-schemas/stage4",
+        "--local-report",
+        "artifacts/qualifying/MT1-fixed10/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT1-fixed10/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-mid390/qual4"
+      ]
+    },
+    {
+      "name": "append5",
+      "strategy": "Insert verified fixed-budget history encoder, unchanged original-Probe schema and query order",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-mid390-schemas/stage4",
+        "--base-qual",
+        "artifacts/qualifying/original-mid390/qual4",
+        "--bank",
+        "artifacts/qualifying/original-mid390-bank",
+        "--local-report",
+        "artifacts/qualifying/MH3-fixed4/report.json",
+        "--local-column",
+        "artifacts/qualifying/MH3-fixed4/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-mid390/qual5"
+      ]
+    },
+    {
+      "name": "predict",
+      "strategy": "Predict with frozen development-only NN2, hash before audit",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-mid390/models",
+        "--qual",
+        "artifacts/qualifying/original-mid390/qual5",
+        "--output",
+        "artifacts/qualifying/original-mid390/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Recovered-label audit only after prediction freeze, adaptive local evaluation",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-mid390/final",
+        "--output-dir",
+        "artifacts/private-audit/original-mid390-ready-20261116"
+      ]
+    }
+  ]
+}

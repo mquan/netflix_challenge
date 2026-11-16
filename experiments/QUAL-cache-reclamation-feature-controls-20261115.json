@@ -1,0 +1,18 @@
+{
+  "reason": "Completed feature-control exports/audits; portable inference no longer needs development feature caches. Preserve every source column, statistics, metadata, model/scaler and frozen prediction.",
+  "utc": "2026-11-15T22:24:00.221010+00:00",
+  "removed": [
+    {
+      "path": "artifacts/qualifying/public385/nn-relative-unrated/models/nn-normalized.npy",
+      "bytes": 3515354048
+    },
+    {
+      "path": "artifacts/qualifying/public385/nn-drop-unrated/models/nn-features.npy",
+      "bytes": 3515354048
+    },
+    {
+      "path": "artifacts/qualifying/dev-public385.x.npy",
+      "bytes": 3509720468
+    }
+  ]
+}

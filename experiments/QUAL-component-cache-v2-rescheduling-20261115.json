@@ -1,0 +1,15 @@
+{
+  "records": [
+    {
+      "pid": 98419,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad16 --reference artifacts/retained-neural/A2h-snapshot-3-6.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-early-cache-completion --name QUAL-A2h-early-cache-export-20261115",
+      "action": "terminated waiting coordinator; v2 uses smaller inference batches and bounded0.35allocator"
+    },
+    {
+      "pid": 98426,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad16 --reference artifacts/retained-neural/A2h-snapshot-6-8-10-12.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-late-cache-completion --name QUAL-A2h-late-cache-export-20261115 --wait-producer artifacts/qualifying/A2h-early-cache-completion",
+      "action": "terminated waiting coordinator; v2 uses smaller inference batches and bounded0.35allocator"
+    }
+  ],
+  "reason": "MPS inference doubled training batch packing and exceeded5.33GiBcap; preserve failed outputs, reduce inference batch size before retry"
+}

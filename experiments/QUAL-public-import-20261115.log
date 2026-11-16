@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/public_qual_bank.py", line 72, in <module>
+    if __name__=='__main__': main()
+  File "/Users/quan/workspace/netflix_prize/scripts/public_qual_bank.py", line 36, in main
+    if target not in index: raise ValueError('qualifying counterpart absent: '+target)
+ValueError: qualifying counterpart absent: preds_3/s3-rbm50lat.qual.npy

@@ -1,0 +1,14 @@
+{
+  "reason": "Reclaim completed weighted-CV normalization and superseded385 raw NN encoding; retain386encoding and all raw source banks",
+  "utc": "2026-11-15T20:55:03.750249+00:00",
+  "removed": [
+    {
+      "path": "artifacts/public-new/weighted/NN2.normalized.npy",
+      "bytes": 3497308528
+    },
+    {
+      "path": "artifacts/qualifying/dev-public385-NN2.features.npy",
+      "bytes": 3515354048
+    }
+  ]
+}

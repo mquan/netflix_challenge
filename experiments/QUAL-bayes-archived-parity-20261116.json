@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "binary_sha256": "e975955e31ae34d21597f0b8c274cb14c4bf24e2b9eec8e160b4409cc8ed7221",
+  "checks": [
+    "Identical model bytes excluding fingerprint and predictions under flipped/zero query labels",
+    "Zero query diagnostics explicitly undefined NaN"
+  ],
+  "samples": 4,
+  "threads": 1,
+  "production_threads": 4,
+  "production_nondeterminism": "Archived code explicitly uses Hogwild bag draws with racing block statistics for threads>1; bitwise parity checked at threads1, production retains historical threads4 recipe"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py", line 102, in <module>
+    if __name__=='__main__':main()
+  File "/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py", line 54, in main
+    root=Path(a.output);root.mkdir(parents=True,exist_ok=False)
+  File "/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: 'artifacts/qualifying/A2h-fixed12-pad16/inference-cache/e3'

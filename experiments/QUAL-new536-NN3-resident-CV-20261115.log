@@ -1,0 +1,37 @@
+{"stage": "start", "config": {"bank": "artifacts/public-new/ensemble-tree-s1", "output": "artifacts/public-new/ensemble-NN3-resident", "hidden": 256, "layers": 3, "dropout": 0.1, "lr": 0.0003, "weight_decay": 0.01, "batch": 4096, "epochs": 60, "patience": 5, "seeds": [2026, 7, 13], "threads": 2, "disk_features": true, "device": "mps", "resident_features": true, "reuse_features": "artifacts/public-new/ensemble-NN2.features.npy"}, "columns": 536, "features": 775}
+{"stage": "selection", "fold": 0, "seed": 2026, "epochs": 3}
+{"stage": "refit", "fold": 0, "seed": 2026, "seconds": 93.00607595802285}
+{"stage": "selection", "fold": 0, "seed": 7, "epochs": 4}
+{"stage": "refit", "fold": 0, "seed": 7, "seconds": 120.19140691589564}
+{"stage": "selection", "fold": 0, "seed": 13, "epochs": 3}
+{"stage": "refit", "fold": 0, "seed": 13, "seconds": 149.64632058283314}
+{"fold": 0, "nn_rmse": 0.8572044827762472, "ridge_rmse": 0.8582453787433721, "chosen_epochs": [3, 4, 3], "seconds": 149.67676070798188}
+{"stage": "selection", "fold": 1, "seed": 2026, "epochs": 4}
+{"stage": "refit", "fold": 1, "seed": 2026, "seconds": 104.06524262507446}
+{"stage": "selection", "fold": 1, "seed": 7, "epochs": 4}
+{"stage": "refit", "fold": 1, "seed": 7, "seconds": 131.5451368340291}
+{"stage": "selection", "fold": 1, "seed": 13, "epochs": 4}
+{"stage": "refit", "fold": 1, "seed": 13, "seconds": 158.9761275839992}
+{"fold": 1, "nn_rmse": 0.8563134207078194, "ridge_rmse": 0.8573168272724695, "chosen_epochs": [4, 4, 4], "seconds": 159.0088303340599}
+{"stage": "selection", "fold": 2, "seed": 2026, "epochs": 3}
+{"stage": "refit", "fold": 2, "seed": 2026, "seconds": 113.45691974996589}
+{"stage": "selection", "fold": 2, "seed": 7, "epochs": 4}
+{"stage": "refit", "fold": 2, "seed": 7, "seconds": 136.41607666690834}
+{"stage": "selection", "fold": 2, "seed": 13, "epochs": 3}
+{"stage": "refit", "fold": 2, "seed": 13, "seconds": 156.36066508386284}
+{"fold": 2, "nn_rmse": 0.8520190737426165, "ridge_rmse": 0.8530179301812828, "chosen_epochs": [3, 4, 3], "seconds": 156.3906156248413}
+{"stage": "selection", "fold": 3, "seed": 2026, "epochs": 3}
+{"stage": "refit", "fold": 3, "seed": 2026, "seconds": 108.17622604197823}
+{"stage": "selection", "fold": 3, "seed": 7, "epochs": 3}
+{"stage": "refit", "fold": 3, "seed": 7, "seconds": 130.38144220900722}
+{"stage": "selection", "fold": 3, "seed": 13, "epochs": 3}
+{"stage": "refit", "fold": 3, "seed": 13, "seconds": 150.69478712487034}
+{"fold": 3, "nn_rmse": 0.8588338566717776, "ridge_rmse": 0.8597535820624772, "chosen_epochs": [3, 3, 3], "seconds": 150.72651645890437}
+{"stage": "selection", "fold": 4, "seed": 2026, "epochs": 4}
+{"stage": "refit", "fold": 4, "seed": 2026, "seconds": 85.79781199991703}
+{"stage": "selection", "fold": 4, "seed": 7, "epochs": 3}
+{"stage": "refit", "fold": 4, "seed": 7, "seconds": 109.1037797499448}
+{"stage": "selection", "fold": 4, "seed": 13, "epochs": 3}
+{"stage": "refit", "fold": 4, "seed": 13, "seconds": 141.96721604187042}
+{"fold": 4, "nn_rmse": 0.8584713480949767, "ridge_rmse": 0.8595067775169026, "chosen_epochs": [4, 3, 3], "seconds": 142.00305204186589}
+{"nn_rmse": 0.8565661374803174, "nn_fold_rmse": [0.8572044827762472, 0.8563134207078194, 0.8520190737426165, 0.8588338566717776, 0.8584713480949767], "target_rmse": 0.85725, "avg_rmse": 0.8565224661495514, "avg_fold_rmse": [0.8571362260236274, 0.8561848977633676, 0.8519764944271624, 0.8588848584759704, 0.8584409269509203]}

@@ -1,0 +1,37 @@
+{
+  "state": "removed",
+  "utc": "2026-11-15T22:45:50.744453+00:00",
+  "reason": "Completed reproducible caches; active early539 fit, A2h386 fit and canonical qualifying matrices preserved; portable inference reads saved weights and overlays only",
+  "files": [
+    {
+      "path": "artifacts/public-new/weighted/qual.x.npy",
+      "sha256": "3286aeaa9990878865a5c99ca088ef9f2d75f61bc49fe34e8a52182aa53ba104",
+      "bytes": 8721837704
+    },
+    {
+      "path": "artifacts/public-new/weighted/bank.x.npy",
+      "sha256": "5215c1ec9dfe9efffff19758f287835b6d8f0d1be2b33da49b17ff6a7567971c",
+      "bytes": 3492795872
+    },
+    {
+      "path": "artifacts/qualifying/dev-A2h-NN2-CPU.normalized.npy",
+      "sha256": "d84e4b5a729f2fe6fc5ec795f45166cae9e4517f902c75e30d1e28c2e3b1d658",
+      "bytes": 3520987628
+    },
+    {
+      "path": "artifacts/public-new/A2h537-bank.x.npy",
+      "sha256": "69f4a1c7c56c8418b4951bc37612e67a984c3bc98be50a1bcea718e46cd1929a",
+      "bytes": 3497308528
+    },
+    {
+      "path": "artifacts/public-new/MT8-537-bank.x.npy",
+      "sha256": "2ad1e575aaabc83312db848b39f0c98e4853d57c95ad468c9f28c2112199256b",
+      "bytes": 3497308528
+    },
+    {
+      "path": "artifacts/public-new/ensemble-NN2.features.npy",
+      "sha256": "0d3fbe299731a72caba0bc2276e8d3e845dbcabab85a50863d363c8e54f8b3f3",
+      "bytes": 3497308528
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "qualifying_labels_read": false,
+  "base_columns": 536,
+  "distinct_qualifying_columns": 506,
+  "duplicate_groups": [
+    {
+      "indices": [
+        0,
+        122,
+        389
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/als8-8.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-als8.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/als8-8.f32"
+      ]
+    },
+    {
+      "indices": [
+        5,
+        391
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/attn-32-t.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/attn-32-t.f32"
+      ]
+    },
+    {
+      "indices": [
+        6,
+        128,
+        392
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/attn-32.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-attn32.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/attn-32.f32"
+      ]
+    },
+    {
+      "indices": [
+        7,
+        131,
+        393
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/attn-32__nlpp.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-attn32__nlpp.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/attn-32__nlpp.f32"
+      ]
+    },
+    {
+      "indices": [
+        8,
+        134,
+        394
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/attn-32__nlpp__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-attn32__nlpp__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/attn-32__nlpp__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        21,
+        411
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-16.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-16.f32"
+      ]
+    },
+    {
+      "indices": [
+        22,
+        180,
+        412
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-dnn24.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24.f32"
+      ]
+    },
+    {
+      "indices": [
+        23,
+        413
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__asym-16p75.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__asym-16p75.f32"
+      ]
+    },
+    {
+      "indices": [
+        24,
+        414
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__asym-16p75__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__asym-16p75__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        25,
+        415
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__attn-32.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__attn-32.f32"
+      ]
+    },
+    {
+      "indices": [
+        26,
+        416
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16.f32"
+      ]
+    },
+    {
+      "indices": [
+        27,
+        417
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        28,
+        418
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50.f32"
+      ]
+    },
+    {
+      "indices": [
+        29,
+        419
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50__asym-16p50.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50__asym-16p50.f32"
+      ]
+    },
+    {
+      "indices": [
+        30,
+        420
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50__asym-16p75.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50__asym-16p75.f32"
+      ]
+    },
+    {
+      "indices": [
+        31,
+        421
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50__asym-16p75__knn3b.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50__asym-16p75__knn3b.f32"
+      ]
+    },
+    {
+      "indices": [
+        32,
+        422
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50__asym-16p75__knn3c.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50__asym-16p75__knn3c.f32"
+      ]
+    },
+    {
+      "indices": [
+        33,
+        423
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-16p50__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-16p50__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        34,
+        424
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__dnn-24p50.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__dnn-24p50.f32"
+      ]
+    },
+    {
+      "indices": [
+        35,
+        425
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-24__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-24__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        36,
+        426
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_old/dnn-64.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/dnn-64.f32"
+      ]
+    },
+    {
+      "indices": [
+        123,
+        390
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-als8__knn3.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/als8-8__knn3.f32"
+      ]
+    },
+    {
+      "indices": [
+        154,
+        397
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-bk3-20__knns.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns/bk3-20__knns.f32"
+      ]
+    },
+    {
+      "indices": [
+        350,
+        353
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-tx50n__attn32p.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-tx50n__attn32p_ep12.f32"
+      ]
+    },
+    {
+      "indices": [
+        365,
+        366
+      ],
+      "names": [
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-tx60o__attn32p.f32",
+        "/Users/quan/workspace/netflix_prize/artifacts/public-new/prior-columns/preds_3/s3-tx60o__attn32p_ep12.f32"
+      ]
+    }
+  ]
+}

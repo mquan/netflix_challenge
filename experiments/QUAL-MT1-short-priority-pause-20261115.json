@@ -1,0 +1,10 @@
+{
+  "state": "resumed",
+  "pid": 97306,
+  "command": ".venv/bin/python scripts/production_neural.py --column MT1-refit.refit.e10.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/MT1-fixed10 --registry experiments/QUAL-local-neural-registry-v2.json --archive experiments/QUAL-neural-sources.zip --train",
+  "utc": "2026-11-15T23:17:45.555652+00:00",
+  "reason": "Reduce memory working set during GPU checkpoint exports and two short CPU neural blender fits; MT1 is not required by earliest candidate",
+  "resume_when": "original-early388 NN fit reaches models_ready, or sooner if critical jobs finish and memory allows",
+  "resumed_utc": "2026-11-15T23:37:10.934629+00:00",
+  "resume_reason": "Original-early388 blend models ready, MT3 complete, length-sliced inference reduces GPU memory"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-original-early388-drop-support-ready-20261116",
+  "output": "artifacts/qualifying/original-early388-drop-support",
+  "audit_output": "artifacts/private-audit/original-early388-drop-support-20261116",
+  "models_dir": "artifacts/qualifying/original-early388-drop-support/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Frozen metadata-ablation NN on verified early388 qualifying features; saved scaler removes supports identically, no labels before prediction hash",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-early388-drop-support/models",
+        "--qual",
+        "artifacts/qualifying/original-early388/qual3",
+        "--output",
+        "artifacts/qualifying/original-early388-drop-support/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting or stopping on labels; adaptive evaluation and split ambiguity retained",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-early388-drop-support/final",
+        "--output-dir",
+        "artifacts/private-audit/original-early388-drop-support-20261116"
+      ]
+    }
+  ]
+}

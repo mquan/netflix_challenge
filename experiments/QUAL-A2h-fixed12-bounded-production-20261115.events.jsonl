@@ -1,0 +1,20 @@
+{"observed_utc": "2026-11-15T20:34:34.920152+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T20:34:34.920675+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/production_neural.py\", line 174, in <module>"}
+{"observed_utc": "2026-11-15T20:34:34.920719+00:00", "line": "    main()"}
+{"observed_utc": "2026-11-15T20:34:34.920738+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/production_neural.py\", line 161, in main"}
+{"observed_utc": "2026-11-15T20:34:34.920751+00:00", "line": "    _, _, result = train_fixed(trainer, d, c, recipe['fixed_epochs'], output / 'model')"}
+{"observed_utc": "2026-11-15T20:34:34.920767+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/production_neural.py\", line 85, in train_fixed"}
+{"observed_utc": "2026-11-15T20:34:34.920780+00:00", "line": "    model, records, completed = trainer.fit(d, c, epochs, str(prefix), select=False, max_batches=0)"}
+{"observed_utc": "2026-11-15T20:34:34.920790+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py\", line 435, in fit"}
+{"observed_utc": "2026-11-15T20:34:34.920817+00:00", "line": "    raw = model.forward_batch(b)"}
+{"observed_utc": "2026-11-15T20:34:34.920828+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py\", line 321, in forward_batch"}
+{"observed_utc": "2026-11-15T20:34:34.920838+00:00", "line": "    return self.decode(self.encode(b), b['features'], b['target_rows'], b['target_items'], b)"}
+{"observed_utc": "2026-11-15T20:34:34.920848+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py\", line 299, in encode"}
+{"observed_utc": "2026-11-15T20:34:34.920889+00:00", "line": "    x = block(x, mask)"}
+{"observed_utc": "2026-11-15T20:34:34.920902+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl"}
+{"observed_utc": "2026-11-15T20:34:34.921592+00:00", "line": "    return self._call_impl(*args, **kwargs)"}
+{"observed_utc": "2026-11-15T20:34:34.921686+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1794, in _call_impl"}
+{"observed_utc": "2026-11-15T20:34:34.921755+00:00", "line": "    return forward_call(*args, **kwargs)"}
+{"observed_utc": "2026-11-15T20:34:34.921820+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py\", line 256, in forward"}
+{"observed_utc": "2026-11-15T20:34:34.921908+00:00", "line": "    a = F.scaled_dot_product_attention(q, k, v, attn_mask=mask,"}
+{"observed_utc": "2026-11-15T20:34:34.921967+00:00", "line": "RuntimeError: MPS backend out of memory (MPS allocated: 9.29 GiB, other allocations: 30.72 MiB, max allowed: 10.67 GiB). Tried to allocate 2.19 GiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure)."}

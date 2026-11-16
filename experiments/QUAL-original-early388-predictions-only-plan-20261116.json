@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-original-early388-predictions-only-ready-20261116",
+  "output": "artifacts/qualifying/original-early388-predictions-only",
+  "audit_output": "artifacts/private-audit/original-early388-predictions-only-20261116",
+  "models_dir": "artifacts/qualifying/original-early388-predictions-only/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Frozen neural prediction-only ablation on verified query bank, with all side features suppressed by the saved scaler",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-early388-predictions-only/models",
+        "--qual",
+        "artifacts/qualifying/original-early388/qual3",
+        "--output",
+        "artifacts/qualifying/original-early388-predictions-only/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting or stopping on labels; adaptive evaluation and split ambiguity retained",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-early388-predictions-only/final",
+        "--output-dir",
+        "artifacts/private-audit/original-early388-predictions-only-20261116"
+      ]
+    }
+  ]
+}

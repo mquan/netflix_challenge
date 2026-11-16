@@ -1,0 +1,9 @@
+{
+  "terminated_waiting_coordinator": [
+    {
+      "pid": 98468,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad16 --reference artifacts/retained-neural/A2h-snapshot-6-8-10-12.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-late-cache-completion-v2 --name QUAL-A2h-late-cache-export-v2-20261115 --wait-producer artifacts/qualifying/A2h-early-cache-completion-v2"
+    }
+  ],
+  "reason": "Use same bounded0.4allocator and per-batch cache release as corrected early exports"
+}

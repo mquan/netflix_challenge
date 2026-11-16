@@ -1,0 +1,8 @@
+{
+  "state": "resumed",
+  "pid": 93029,
+  "command": ".venv/bin/python scripts/production_neural.py --column MT3-refit.refit.e7.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/MT3-fixed7 --registry experiments/QUAL-local-neural-registry.json --archive experiments/QUAL-neural-sources.zip --train",
+  "time": "2026-11-15T22:42:04.024488+00:00",
+  "reason": "Temporarily reduce CPU and memory traffic until final MT8 epoch and early539 normalization finish; resume promptly after priority stage",
+  "resumed_utc": "2026-11-15T22:45:31.985527+00:00"
+}

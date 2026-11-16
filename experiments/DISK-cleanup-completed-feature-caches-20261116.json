@@ -1,0 +1,42 @@
+{
+  "reason": "User-requested disk cleanup: rebuildable development feature matrices for completed frozen fits; retain source columns, manifests, statistics, model weights, scalers, qualifying matrices and checkpoints.",
+  "removed": [
+    {
+      "path": "artifacts/qualifying/original-early388-bank.x.npy",
+      "bytes": 3526621208,
+      "sha256": "4236522fe99b77427752f9f146ba294e7ae30cf684752b664f5248862f10f36a",
+      "models_report": "artifacts/qualifying/original-early388/models/report.json"
+    },
+    {
+      "path": "artifacts/qualifying/original-mid388-bank.x.npy",
+      "bytes": 3526621208,
+      "sha256": "273457de5d6bb6225541c896784202092648a091c2ea08407931d60f181a789e",
+      "models_report": "artifacts/qualifying/original-mid388/models/report.json"
+    },
+    {
+      "path": "artifacts/qualifying/original-late388-bank.x.npy",
+      "bytes": 3526621208,
+      "sha256": "586e9e13798337659d8fc2f9961fcd3ba1b1e746d1be4cacf58980f73fee5860",
+      "models_report": "artifacts/qualifying/original-late388/models/report.json"
+    },
+    {
+      "path": "artifacts/qualifying/native-split3-full/bank.x.npy",
+      "bytes": 3528030104,
+      "sha256": "9945ea876f77afc6d3ea03763f1734ceecaeb2ed9113205c6c82720a7d3af9d8",
+      "models_report": "artifacts/qualifying/native-split3-full/models/report.json"
+    },
+    {
+      "path": "artifacts/qualifying/probe-meta83/models/nn-features.npy",
+      "bytes": 1453075360,
+      "sha256": "f226af3cff5c564b4f90169bc96f2428a653099c8ec020cac72ab028b6f6d2c3",
+      "models_report": "artifacts/qualifying/probe-meta83/models/report.json"
+    },
+    {
+      "path": "artifacts/qualifying/probe-meta83/models/nn-normalized.npy",
+      "bytes": 1453075360,
+      "sha256": "59b5561661c757254f22a1dcc838f9af6fd505d2308952588d0ac393839337b9",
+      "models_report": "artifacts/qualifying/probe-meta83/models/report.json"
+    }
+  ],
+  "total_bytes": 17014044448
+}

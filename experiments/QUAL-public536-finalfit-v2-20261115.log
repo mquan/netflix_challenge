@@ -1,0 +1,13 @@
+{"state": "ridge"}
+{"state": "tree_worker"}
+{"state": "tree_refit", "seed": 2026, "rounds": 763}
+{"state": "tree_seed_complete", "seed": 2026, "tree_rounds": [763]}
+{"state": "tree_refit", "seed": 7, "rounds": 888}
+{"state": "tree_seed_complete", "seed": 7, "tree_rounds": [763, 888]}
+{"state": "tree_refit", "seed": 13, "rounds": 640}
+{"state": "tree_seed_complete", "seed": 13, "tree_rounds": [763, 888, 640]}
+{"state": "tree_complete", "tree_rounds": [763, 888, 640], "isolated_tree_worker": true}
+{"state": "nn_refit", "seed": 2026, "epochs": 6, "nn_epochs": [6]}
+{"state": "nn_refit", "seed": 7, "epochs": 5, "nn_epochs": [6, 5]}
+{"state": "nn_refit", "seed": 13, "epochs": 6, "nn_epochs": [6, 5, 6]}
+{"state": "complete", "tree_rounds": [763, 888, 640], "nn_epochs": [6, 5, 6], "outputs": {"nn-13.pt": "adccb7e42104a179b87b0a6641c089c741144f0babf94810a39ca7a152643431", "nn-2026.pt": "346c6be85bd3ee73a2297ab50b4c47e41cc761aee9e06a1cb87fb94cf8b58d95", "nn-scaler.npz": "f16f5e30225a43f9feabc79d4fff2f0b1d9dbd4483e4bc846865847283f70be6", "nn.f32": "8cb24ed40b6b587cb8554e4321c06a954960df2be86750a4a19520487f96ba19", "tree-2026.txt": "8246a6b286bb131d80579a80dbeeb56e3ff533b4fcf8c96a864a2fd3b85b756b", "tree-7.txt": "9243fbf230fcf07547605305338adff0983c5a4ec6c094e7f7cb1c0253e95adf", "ridge-weights.npz": "135b789e941cbf934150763765dab6e9da9c2b6736810ec77ec03eb31a350ae3", "nn-7.pt": "2670a87bbb20015f05e9d1f728086fd41588828ed54ffef00d2b1324a27b7574", "tree.f32": "c35ef16a274a398aec22c324d09ddc79b27ec759693abf8122af14445dab4622", "tree-13.txt": "5bcb308160be7c7fa52bbeda582096878175bdc68338cbda1aeda3b4b7c3e706", "qualifying-final.f32": "90b79276b8f940682a622989a7ae20a014e037dd40168ec3aaa8362e7d54351c"}, "frozen_prediction_sha256": "90b79276b8f940682a622989a7ae20a014e037dd40168ec3aaa8362e7d54351c", "prediction_min": 1.0, "prediction_max": 5.0, "qualifying_labels_read": false, "metric": null}

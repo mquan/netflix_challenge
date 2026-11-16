@@ -1,0 +1,10 @@
+{
+  "pid": 91991,
+  "command": ".venv/bin/python scripts/production_neural.py --column A2h-refit.refit.e12.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/A2h-fixed12-pad16 --registry experiments/QUAL-A2h-registry.json --archive experiments/QUAL-neural-sources.zip --pad-rows 16 --train",
+  "epoch": 6,
+  "capture_report": "artifacts/qualifying/A2h-fixed12-pad16/snapshots/report.json",
+  "completion_report": "artifacts/qualifying/A2h-early-cache-completion-v2/report.json",
+  "completion_experiment": "experiments/QUAL-A2h-early-component-cache-v4-20261115.json",
+  "output": "experiments/QUAL-A2h-early-export-priority-state-20261115.json",
+  "reason": "Prioritize first predeclared6-epoch qualifying ensemble audit; prefix chosen on development before qualifying scoring; resume fixed12-epoch continuation immediately after component caches finish"
+}

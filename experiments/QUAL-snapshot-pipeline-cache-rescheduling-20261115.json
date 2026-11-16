@@ -1,0 +1,13 @@
+{
+  "state": "superseded_waiting_only",
+  "terminated": [
+    {
+      "pid": 96866,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-early539-pipeline-plan-20261115.json"
+    },
+    {
+      "pid": 97276,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-late539-pipeline-plan-20261115.json"
+    }
+  ]
+}

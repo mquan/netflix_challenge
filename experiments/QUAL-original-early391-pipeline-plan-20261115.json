@@ -1,0 +1,251 @@
+{
+  "name": "QUAL-original-early391-ready-20261115",
+  "output": "artifacts/qualifying/original-early391",
+  "audit_output": "artifacts/private-audit/original-early391-ready-20261115",
+  "models_dir": "artifacts/qualifying/original-early391/models",
+  "producers": [
+    "artifacts/qualifying/A2h-early-cache-completion-v2",
+    "artifacts/qualifying/MT3-fixed7",
+    "artifacts/qualifying/MT8-fixed7"
+  ],
+  "stages": [
+    {
+      "name": "prefix3",
+      "strategy": "Repackage verified cached checkpoint as a completed fixed training prefix matched to its retained development predictor; no new fitting or labels",
+      "command": [
+        "scripts/predict_snapshot_ensemble.py",
+        "--producer",
+        "artifacts/qualifying/A2h-fixed12-pad16",
+        "--reference",
+        "artifacts/retained-neural/A2h-epoch3.f32.json",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/A2h-epoch3",
+        "--registry",
+        "experiments/QUAL-A2h-registry.json",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ]
+    },
+    {
+      "name": "prefix4",
+      "strategy": "Repackage verified cached checkpoint as a completed fixed training prefix matched to its retained development predictor; no new fitting or labels",
+      "command": [
+        "scripts/predict_snapshot_ensemble.py",
+        "--producer",
+        "artifacts/qualifying/A2h-fixed12-pad16",
+        "--reference",
+        "artifacts/retained-neural/A2h-epoch4.f32.json",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/A2h-epoch4",
+        "--registry",
+        "experiments/QUAL-A2h-registry.json",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ]
+    },
+    {
+      "name": "prefix5",
+      "strategy": "Repackage verified cached checkpoint as a completed fixed training prefix matched to its retained development predictor; no new fitting or labels",
+      "command": [
+        "scripts/predict_snapshot_ensemble.py",
+        "--producer",
+        "artifacts/qualifying/A2h-fixed12-pad16",
+        "--reference",
+        "artifacts/retained-neural/A2h-epoch5.f32.json",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/A2h-epoch5",
+        "--registry",
+        "experiments/QUAL-A2h-registry.json",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ]
+    },
+    {
+      "name": "prefix6",
+      "strategy": "Repackage verified cached checkpoint as a completed fixed training prefix matched to its retained development predictor; no new fitting or labels",
+      "command": [
+        "scripts/predict_snapshot_ensemble.py",
+        "--producer",
+        "artifacts/qualifying/A2h-fixed12-pad16",
+        "--reference",
+        "artifacts/retained-neural/A2h-epoch6.f32.json",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/A2h-epoch6",
+        "--registry",
+        "experiments/QUAL-A2h-registry.json",
+        "--device",
+        "cpu",
+        "--threads",
+        "1"
+      ]
+    },
+    {
+      "name": "append1",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/dev-public385",
+        "--base-qual",
+        "artifacts/qualifying/public385/qual",
+        "--bank",
+        "artifacts/qualifying/original-early391-schemas/stage1",
+        "--local-report",
+        "artifacts/qualifying/A2h-epoch3/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-epoch3/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual1"
+      ]
+    },
+    {
+      "name": "append2",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early391-schemas/stage1",
+        "--base-qual",
+        "artifacts/qualifying/original-early391/qual1",
+        "--bank",
+        "artifacts/qualifying/original-early391-schemas/stage2",
+        "--local-report",
+        "artifacts/qualifying/A2h-epoch4/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-epoch4/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual2"
+      ]
+    },
+    {
+      "name": "append3",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early391-schemas/stage2",
+        "--base-qual",
+        "artifacts/qualifying/original-early391/qual2",
+        "--bank",
+        "artifacts/qualifying/original-early391-schemas/stage3",
+        "--local-report",
+        "artifacts/qualifying/A2h-epoch5/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-epoch5/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual3"
+      ]
+    },
+    {
+      "name": "append4",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early391-schemas/stage3",
+        "--base-qual",
+        "artifacts/qualifying/original-early391/qual3",
+        "--bank",
+        "artifacts/qualifying/original-early391-schemas/stage4",
+        "--local-report",
+        "artifacts/qualifying/A2h-epoch6/report.json",
+        "--local-column",
+        "artifacts/qualifying/A2h-epoch6/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual4"
+      ]
+    },
+    {
+      "name": "append5",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early391-schemas/stage4",
+        "--base-qual",
+        "artifacts/qualifying/original-early391/qual4",
+        "--bank",
+        "artifacts/qualifying/original-early391-schemas/stage5",
+        "--local-report",
+        "artifacts/qualifying/MT3-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT3-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual5"
+      ]
+    },
+    {
+      "name": "append6",
+      "strategy": "Insert completed prefix predictor at exact original-Probe bank position; verify source model/data/checkpoint/prediction hashes, no labels",
+      "command": [
+        "scripts/append_qual_column.py",
+        "--base-bank",
+        "artifacts/qualifying/original-early391-schemas/stage5",
+        "--base-qual",
+        "artifacts/qualifying/original-early391/qual5",
+        "--bank",
+        "artifacts/qualifying/original-early391-bank",
+        "--local-report",
+        "artifacts/qualifying/MT8-fixed7/report.json",
+        "--local-column",
+        "artifacts/qualifying/MT8-fixed7/model.f32",
+        "--dataset-manifest",
+        "artifacts/qualifying/dataset/manifest.json",
+        "--output",
+        "artifacts/qualifying/original-early391/qual6"
+      ]
+    },
+    {
+      "name": "predict",
+      "strategy": "Frozen learned-checkpoint NN2 inference on verified query features; freeze final hash before audit",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-early391/models",
+        "--qual",
+        "artifacts/qualifying/original-early391/qual6",
+        "--output",
+        "artifacts/qualifying/original-early391/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting, retain adaptive evaluation and split-count warning",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-early391/final",
+        "--output-dir",
+        "artifacts/private-audit/original-early391-ready-20261115"
+      ]
+    }
+  ]
+}

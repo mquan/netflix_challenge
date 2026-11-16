@@ -1,0 +1,21 @@
+{
+  "state": "removed",
+  "files": [
+    {
+      "path": "artifacts/public-new/early539-bank.x.npy",
+      "bytes": 3506333840,
+      "sha256": "04d7696840fe706fbbee080cfa6af74a263a236fa85f8b15462cd54eba6ef4ff"
+    },
+    {
+      "path": "artifacts/public-new/late539-bank.x.npy",
+      "bytes": 3506333840,
+      "sha256": "8ec58a1e1fc105aedde1daf906507fc722f1119b022b73cb10e134de093d5c80"
+    },
+    {
+      "path": "artifacts/public-new/ensemble-tree-s1.x.npy",
+      "bytes": 3492795872,
+      "sha256": "5215c1ec9dfe9efffff19758f287835b6d8f0d1be2b33da49b17ff6a7567971c"
+    }
+  ],
+  "reason": "All536/539models frozen, verified portable inference uses saved checkpoints/scalers and qualifying matrices; input schemas/stats plus every original source column remain; future development caches can be rebuilt"
+}

@@ -1,0 +1,5 @@
+{
+  "root_cause": "MPS framework buffers persist for many compiled attention shapes even after allocator cache release",
+  "change": "Infer complete-user sequence-length bands in fresh workers; no user loses targets or known history; merge verified disjoint row slices, retain completed slices for identical-plan resume",
+  "preserved_failed_output": "artifacts/qualifying/A2h-fixed12-pad16/inference-cache/e3-failed-cap04-flush"
+}

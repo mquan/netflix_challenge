@@ -1,0 +1,16 @@
+{
+  "state": "cancelled_superseded",
+  "utc": "2026-11-15T20:04:08.424309+00:00",
+  "reason": "Suspended fallback fits retained large working sets; terminate only these own superseded jobs to relieve measured15GiB swap pressure. Completed fold predictions/logs and source inputs remain.",
+  "processes": [
+    {
+      "pid": 50427,
+      "command": ".venv/bin/python scripts/streaming_blend.py --data data/processed/netflix.bin --base-bank /Users/quan/workspace/netflix_personas/artifacts/r9/bank --meta /Users/quan/workspace/netflix_personas/artifacts/r4/meta-context.npz --include-local --public artifacts/public-bank/merged-manifest.json --support-manifest artifacts/public-bank/split3-support/manifest.json --output artifacts/public-bank/union466-full-tree-s1 --threads 2"
+    },
+    {
+      "pid": 53498,
+      "command": ".venv/bin/python scripts/streaming_blend.py --data data/processed/netflix.bin --base-bank /Users/quan/workspace/netflix_personas/artifacts/r9/bank --meta /Users/quan/workspace/netflix_personas/artifacts/r4/meta-context.npz --no-local-support --public artifacts/public-bank/production-dev-manifest.json --support-manifest artifacts/public-bank/split3-support/manifest.json --extra /Users/quan/workspace/netflix_personas/artifacts/masked/A2h-refit.refit.e12.f32 --output artifacts/qualifying/dev-A2h-tree-s1 --threads 2"
+    }
+  ],
+  "ended_utc": "2026-11-15T20:10:07.156707+00:00"
+}

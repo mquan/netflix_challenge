@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-public619-meta-ready-20261116",
+  "output": "artifacts/qualifying/public619-meta",
+  "audit_output": "artifacts/private-audit/public619-meta-20261116",
+  "models_dir": "artifacts/qualifying/public619-meta/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Frozen neural stack using audited Probe-fitted source blenders, no qualifying labels; source development dependence disclosed",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/public619-meta/models",
+        "--qual",
+        "artifacts/qualifying/public619-meta/qual",
+        "--output",
+        "artifacts/qualifying/public619-meta/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting or stopping on labels; adaptive evaluation and split ambiguity retained",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/public619-meta/final",
+        "--output-dir",
+        "artifacts/private-audit/public619-meta-20261116"
+      ]
+    }
+  ]
+}

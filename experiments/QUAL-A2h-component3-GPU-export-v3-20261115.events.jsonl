@@ -1,0 +1,20 @@
+{"observed_utc": "2026-11-15T23:27:08.953788+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T23:27:08.962743+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 118, in <module>"}
+{"observed_utc": "2026-11-15T23:27:08.963084+00:00", "line": "    reference_sha256=digest(a.reference),source_snapshots=selected,"}
+{"observed_utc": "2026-11-15T23:27:08.963118+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 88, in main"}
+{"observed_utc": "2026-11-15T23:27:08.963258+00:00", "line": "    device=cached['inference_device'],token_multiplier=cached['inference_token_multiplier']))"}
+{"observed_utc": "2026-11-15T23:27:08.963342+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context"}
+{"observed_utc": "2026-11-15T23:27:08.963397+00:00", "line": "    return func(*args, **kwargs)"}
+{"observed_utc": "2026-11-15T23:27:08.963424+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-pad16/source/masked_sequence.py\", line 399, in predict"}
+{"observed_utc": "2026-11-15T23:27:08.963441+00:00", "line": "    result[q] = model.expected(model.forward_batch(b)).cpu().numpy()"}
+{"observed_utc": "2026-11-15T23:27:08.963455+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-pad16/source/masked_sequence.py\", line 321, in forward_batch"}
+{"observed_utc": "2026-11-15T23:27:08.963471+00:00", "line": "    return self.decode(self.encode(b), b['features'], b['target_rows'], b['target_items'], b)"}
+{"observed_utc": "2026-11-15T23:27:08.963484+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-pad16/source/masked_sequence.py\", line 299, in encode"}
+{"observed_utc": "2026-11-15T23:27:08.963496+00:00", "line": "    x = block(x, mask)"}
+{"observed_utc": "2026-11-15T23:27:08.963508+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl"}
+{"observed_utc": "2026-11-15T23:27:08.963522+00:00", "line": "    return self._call_impl(*args, **kwargs)"}
+{"observed_utc": "2026-11-15T23:27:08.963534+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1794, in _call_impl"}
+{"observed_utc": "2026-11-15T23:27:08.963547+00:00", "line": "    return forward_call(*args, **kwargs)"}
+{"observed_utc": "2026-11-15T23:27:08.963567+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-pad16/source/masked_sequence.py\", line 256, in forward"}
+{"observed_utc": "2026-11-15T23:27:08.963579+00:00", "line": "    a = F.scaled_dot_product_attention(q, k, v, attn_mask=mask,"}
+{"observed_utc": "2026-11-15T23:27:08.963598+00:00", "line": "RuntimeError: MPS backend out of memory (MPS allocated: 1.05 GiB, other allocations: 6.97 GiB, max allowed: 8.53 GiB). Tried to allocate 576.00 MiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure)."}

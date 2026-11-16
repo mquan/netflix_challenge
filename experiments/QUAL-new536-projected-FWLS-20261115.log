@@ -1,0 +1,17 @@
+{"stage": "feature_statistics"}
+{"stage": "statistics", "group": 0, "seconds": 28.575995333958417}
+{"stage": "statistics", "group": 1, "seconds": 31.587510667042807}
+{"stage": "statistics", "group": 2, "seconds": 42.146798874950036}
+{"stage": "statistics", "group": 3, "seconds": 45.04160970891826}
+{"stage": "statistics", "group": 4, "seconds": 56.1731064170599}
+{"stage": "statistics", "group": 5, "seconds": 58.96130149997771}
+{"stage": "statistics", "group": 6, "seconds": 69.82857870892622}
+{"stage": "statistics", "group": 7, "seconds": 72.8119210419245}
+{"stage": "statistics", "group": 8, "seconds": 82.80473841703497}
+{"stage": "statistics", "group": 9, "seconds": 85.48454899992794}
+{"fold": 0, "alpha": 0.01, "rmse": 0.858584060526886}
+{"fold": 1, "alpha": 0.01, "rmse": 0.8577141020594293}
+{"fold": 2, "alpha": 0.01, "rmse": 0.853316647000879}
+{"fold": 3, "alpha": 0.01, "rmse": 0.8598543633029982}
+{"fold": 4, "alpha": 0.01, "rmse": 0.8597834373966395}
+{"state": "complete", "config": {"bank": "artifacts/public-new/ensemble-tree-s1", "qual": "artifacts/qualifying/public536/qual", "output": "artifacts/qualifying/public536/projected-fwls"}, "qualifying_labels_read": false, "qualifying_rows": 2817131, "bank_sha256": "567b4bc6f395ff786231792e297e8e0abde81326c0e2c8e75306358477b615d5", "qual_manifest_sha256": "5f3d8bcdde2f0a54983fe1d74d27c437e80ecf27c88ac72c9995a9489d836c77", "development_rmse": 0.8578480305735148, "folds": [{"fold": 0, "alpha": 0.01, "rmse": 0.858584060526886}, {"fold": 1, "alpha": 0.01, "rmse": 0.8577141020594293}, {"fold": 2, "alpha": 0.01, "rmse": 0.853316647000879}, {"fold": 3, "alpha": 0.01, "rmse": 0.8598543633029982}, {"fold": 4, "alpha": 0.01, "rmse": 0.8597834373966395}], "production_alpha": 0.001, "features": 2917, "unsupervised_encoding": "Development feature covariance and quantiles; no label dependence", "frozen_prediction_sha256": "9cd71b2c8b1725607a0d22d42c58cee0fd6aa784a0b656811691dfc8e00bbef5"}

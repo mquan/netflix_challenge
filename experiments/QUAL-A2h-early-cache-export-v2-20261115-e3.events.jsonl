@@ -1,0 +1,8 @@
+{"observed_utc": "2026-11-15T23:11:24.875606+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-15T23:11:24.876929+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 102, in <module>"}
+{"observed_utc": "2026-11-15T23:11:24.877191+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-15T23:11:24.877255+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/predict_snapshot_ensemble.py\", line 54, in main"}
+{"observed_utc": "2026-11-15T23:11:24.877274+00:00", "line": "    root=Path(a.output);root.mkdir(parents=True,exist_ok=False)"}
+{"observed_utc": "2026-11-15T23:11:24.877288+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1175, in mkdir"}
+{"observed_utc": "2026-11-15T23:11:24.877420+00:00", "line": "    self._accessor.mkdir(self, mode)"}
+{"observed_utc": "2026-11-15T23:11:24.877541+00:00", "line": "FileExistsError: [Errno 17] File exists: 'artifacts/qualifying/A2h-fixed12-pad16/inference-cache/e3'"}

@@ -1,0 +1,22 @@
+{
+  "reason": "Reclaim feature/normalization scratch from completed NN jobs; source banks, predictions and production scalers/models retained",
+  "utc": "2026-11-15T20:06:47.429461+00:00",
+  "removed": [
+    {
+      "path": "artifacts/public-bank/union466-full-NN2.features.npy",
+      "bytes": 4230818708
+    },
+    {
+      "path": "artifacts/public-bank/union466-full-NN2.normalized.npy",
+      "bytes": 4230818708
+    },
+    {
+      "path": "artifacts/public-new/ensemble-NN2.normalized.npy",
+      "bytes": 3497308528
+    },
+    {
+      "path": "artifacts/qualifying/public536/nn-only/normalized.npy",
+      "bytes": 3497308528
+    }
+  ]
+}

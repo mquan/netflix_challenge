@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/capture_epoch_checkpoints.py", line 46, in <module>
+    if __name__=='__main__':main()
+  File "/Users/quan/workspace/netflix_prize/scripts/capture_epoch_checkpoints.py", line 21, in main
+    r=json.loads((producer/'report.json').read_text())
+  File "/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/qualifying/A2h-fixed12-pad4/report.json'

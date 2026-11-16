@@ -1,0 +1,39 @@
+{
+  "name": "QUAL-original-early388-hybrid-ready-20261115",
+  "output": "artifacts/qualifying/original-early388-hybrid",
+  "audit_output": "artifacts/private-audit/original-early388-hybrid-ready-20261115",
+  "models_dir": "artifacts/qualifying/original-early388-hybrid/models",
+  "producers": [
+    "artifacts/qualifying/original-early388/final"
+  ],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Frozen fixed50/50 tree/NN blend on verified early388 qualifying overlays; ignored unrated-count tree feature verified, no labels before output hash",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-early388-hybrid/models",
+        "--qual",
+        "artifacts/qualifying/original-early388/qual3",
+        "--output",
+        "artifacts/qualifying/original-early388-hybrid/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit of predeclared fixed tree/NN blend; no fitting, retain adaptive evaluation and split provenance warning",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-early388-hybrid/final",
+        "--output-dir",
+        "artifacts/private-audit/original-early388-hybrid-ready-20261115"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "state": "complete",
+  "reason": "Both recovered qualifying groups independently verified below0.85725; optional experiments no longer required",
+  "verified_prediction_sha256": "81dbd9bcf366e6496422e647e4ee0941f9cf0b3b05a851d8746050a5d768cb6c",
+  "utc": "2026-11-16T02:50:05.459117+00:00",
+  "actions": [
+    {
+      "pid": 921,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-original-late388-pipeline-plan-20261115.json",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 3918,
+      "command": ".venv/bin/python scripts/capture_epoch_checkpoints.py --producer artifacts/qualifying/A2h-fixed12-pad4-v2 --output artifacts/qualifying/A2h-fixed12-pad4-v2/snapshots --epochs 3 4 5 6 7 8 9 10 11 12",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 3946,
+      "command": ".venv/bin/python scripts/cache_snapshot_components.py --producer artifacts/qualifying/A2h-fixed12-pad4-v2 --reference artifacts/retained-neural/A2h-snapshot-6-8-10-12.f32.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/A2h-pad4-v2-late-cache --name QUAL-A2h-pad4-v2-late-export-20261116",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 3954,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-late539-pad4-v2-plan-20261116.json",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 6977,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-public619-meta-plan-20261116.json",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 6990,
+      "command": ".venv/bin/python scripts/run_multi_qual_pipeline.py --plan experiments/QUAL-mid390-CatBoost-plan-20261116.json",
+      "stat": "S",
+      "signal": 15
+    },
+    {
+      "pid": 3910,
+      "command": ".venv/bin/python scripts/production_neural.py --column A2h-refit.refit.e12.f32 --dataset-manifest artifacts/qualifying/dataset/manifest.json --output-dir artifacts/qualifying/A2h-fixed12-pad4-v2 --registry experiments/QUAL-A2h-registry.json --archive experiments/QUAL-neural-sources.zip --pad-rows 4 --journal-optimizer --training-only --train",
+      "stat": "S",
+      "signal": 2
+    },
+    {
+      "pid": 4124,
+      "command": ".venv/bin/python scripts/production_bayes.py --recipe experiments/QUAL-B2-fixed128-recipe-20261116.json --dataset-manifest artifacts/qualifying/dataset/manifest.json --output artifacts/qualifying/B2-fixed128",
+      "stat": "S",
+      "signal": 2
+    },
+    {
+      "pid": 6235,
+      "command": ".venv/bin/python scripts/catboost_blender.py train --neural-models artifacts/qualifying/original-mid390/models --features artifacts/qualifying/original-mid390/models/nn-features.npy --output artifacts/qualifying/original-mid390-CatBoost/models --threads 2",
+      "stat": "R",
+      "signal": 2
+    }
+  ],
+  "confirmed_utc": "2026-11-16T02:55:00.187685+00:00",
+  "remaining_pids": [],
+  "updated_reports": [
+    {
+      "path": "artifacts/qualifying/A2h-fixed12-pad4-v2/report.json",
+      "previous_state": "failed",
+      "sha256": "210e4fa7cffd224abaf608f315f7655ff9ecf6c93fdffed0c01bc7c67f1ee811"
+    },
+    {
+      "path": "artifacts/qualifying/B2-fixed128/report.json",
+      "previous_state": "failed",
+      "sha256": "66f18e13776f31c39b8424a8565e839da5cb0004f37597f766531240ef21ea79"
+    },
+    {
+      "path": "artifacts/qualifying/original-mid390-CatBoost/models/report.json",
+      "previous_state": "refitting",
+      "sha256": "45d359f74ac657511472443af533f15e51d0db9ef102544102bf91f70ebf70bb"
+    },
+    {
+      "path": "artifacts/qualifying/A2h-pad4-v2-late-cache/report.json",
+      "previous_state": "waiting_checkpoint",
+      "sha256": "b9dcd23595ba64d4a9d12f2d762b680c11aeadb7d271b25cb8002b16ee8d67b7"
+    },
+    {
+      "path": "artifacts/qualifying/original-late388/pipeline-report.json",
+      "previous_state": "waiting",
+      "sha256": "94c99c6c27a2768893ae60bdbec50e513d9309ec7ea6e92f9f3893ffbb44a075"
+    },
+    {
+      "path": "artifacts/qualifying/late539-pad4-v2/pipeline-report.json",
+      "previous_state": "waiting",
+      "sha256": "5064ee868522475e179f267fedc854681efe85e96fff9ba3fe4389d82d6b0d67"
+    },
+    {
+      "path": "artifacts/qualifying/public619-meta/pipeline-report.json",
+      "previous_state": "predict",
+      "sha256": "5ac4718afdbcd7c6e54b9c607a75803362f5452a36d94e644be0bee59a5cfffb"
+    },
+    {
+      "path": "artifacts/qualifying/original-mid390-CatBoost/pipeline-report.json",
+      "previous_state": "waiting",
+      "sha256": "bf8b66bb963b000b792170eaaf3a59423c6afe90ed20c49ca050909a27e87018"
+    }
+  ],
+  "all_requested_jobs_ended": true,
+  "tests": {
+    "command": "PYTHONPATH=tests .venv/bin/python -m unittest test_qual_matrix test_fit_qual_blend test_snapshot_export test_production_neural test_streaming_nn_blend test_audit_qualifying test_catboost_blender",
+    "passed": 17,
+    "seconds": 42.474
+  }
+}

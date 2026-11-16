@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 174, in <module>
+    main()
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 130, in main
+    recipe = find_recipe(registry, args.column)
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 32, in find_recipe
+    raise ValueError('column must identify exactly one retained recipe')
+ValueError: column must identify exactly one retained recipe

@@ -1,0 +1,33 @@
+{
+  "rmse": 0.864964900810794,
+  "fold_rmse": [
+    0.8658349913100541,
+    0.8650048187680757,
+    0.8611279692594436,
+    0.8664939786876652,
+    0.8663745612478827
+  ],
+  "control_rmse": 0.8668706424555479,
+  "gain": 0.0019057416447538778,
+  "fold_delta": [
+    -0.0020241132817354623,
+    -0.001684022931390916,
+    -0.0020601395182686666,
+    -0.0017144264073725157,
+    -0.0020462096237660043
+  ],
+  "cluster_mse_delta_95": [
+    -0.003531664113745581,
+    -0.003069198007784225
+  ],
+  "rows": 1408395,
+  "prediction_sha256": "542a72e6c93a201ac64cb1439b27423156d3111c00df6a4398673eb613cfaee3",
+  "component_hashes": {
+    "artifacts/public-bank/union-NN2.nn.f32": "2475884ce9439e1d69bbb37a8fb3d8c769e695b9c32d08edea99be171f8e53c6",
+    "artifacts/public-bank/union-tree-s1.refit.f32": "a703780fceb308641b45e21fd7f88f4546245a5abac9fc762bad64135162f8d1"
+  },
+  "rule": "Predeclared equal tree/NN average; NN seeds2026/7/13, tree seed2026",
+  "metric": "Original Probe development CV; upstream Probe excluded; not an untouched private-test result",
+  "target_rmse": 0.85725,
+  "target_reached": false
+}

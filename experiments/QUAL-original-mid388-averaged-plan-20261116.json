@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-original-mid388-averaged-ready-20261116",
+  "output": "artifacts/qualifying/original-mid388-averaged",
+  "audit_output": "artifacts/private-audit/original-mid388-averaged-20261116",
+  "models_dir": "artifacts/qualifying/original-mid388-averaged/models",
+  "producers": [],
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Frozen NN2 on verified unchanged qualifying matrix; development contrasts among exact qualifying duplicates averaged without reading outcomes",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-mid388-averaged/models",
+        "--qual",
+        "artifacts/qualifying/original-mid388-averaged/qual",
+        "--output",
+        "artifacts/qualifying/original-mid388-averaged/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only; no fitting or stopping on labels; adaptive evaluation and split ambiguity retained",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-mid388-averaged/final",
+        "--output-dir",
+        "artifacts/private-audit/original-mid388-averaged-20261116"
+      ]
+    }
+  ]
+}

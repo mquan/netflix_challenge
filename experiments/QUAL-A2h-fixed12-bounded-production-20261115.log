@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 174, in <module>
+    main()
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 161, in main
+    _, _, result = train_fixed(trainer, d, c, recipe['fixed_epochs'], output / 'model')
+  File "/Users/quan/workspace/netflix_prize/scripts/production_neural.py", line 85, in train_fixed
+    model, records, completed = trainer.fit(d, c, epochs, str(prefix), select=False, max_batches=0)
+  File "/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py", line 435, in fit
+    raw = model.forward_batch(b)
+  File "/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py", line 321, in forward_batch
+    return self.decode(self.encode(b), b['features'], b['target_rows'], b['target_items'], b)
+  File "/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py", line 299, in encode
+    x = block(x, mask)
+  File "/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/quan/workspace/netflix_prize/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/quan/workspace/netflix_prize/artifacts/qualifying/A2h-fixed12-bounded/source/masked_sequence.py", line 256, in forward
+    a = F.scaled_dot_product_attention(q, k, v, attn_mask=mask,
+RuntimeError: MPS backend out of memory (MPS allocated: 9.29 GiB, other allocations: 30.72 MiB, max allowed: 10.67 GiB). Tried to allocate 2.19 GiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

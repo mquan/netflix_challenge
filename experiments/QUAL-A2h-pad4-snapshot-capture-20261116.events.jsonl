@@ -1,0 +1,10 @@
+{"observed_utc": "2026-11-16T01:31:12.914146+00:00", "line": "Traceback (most recent call last):"}
+{"observed_utc": "2026-11-16T01:31:12.914365+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/capture_epoch_checkpoints.py\", line 46, in <module>"}
+{"observed_utc": "2026-11-16T01:31:12.914393+00:00", "line": "    if __name__=='__main__':main()"}
+{"observed_utc": "2026-11-16T01:31:12.914410+00:00", "line": "  File \"/Users/quan/workspace/netflix_prize/scripts/capture_epoch_checkpoints.py\", line 21, in main"}
+{"observed_utc": "2026-11-16T01:31:12.914426+00:00", "line": "    r=json.loads((producer/'report.json').read_text())"}
+{"observed_utc": "2026-11-16T01:31:12.914442+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1134, in read_text"}
+{"observed_utc": "2026-11-16T01:31:12.914918+00:00", "line": "    with self.open(mode='r', encoding=encoding, errors=errors) as f:"}
+{"observed_utc": "2026-11-16T01:31:12.914938+00:00", "line": "  File \"/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py\", line 1119, in open"}
+{"observed_utc": "2026-11-16T01:31:12.915112+00:00", "line": "    return self._accessor.open(self, mode, buffering, encoding, errors,"}
+{"observed_utc": "2026-11-16T01:31:12.915213+00:00", "line": "FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/qualifying/A2h-fixed12-pad4/report.json'"}

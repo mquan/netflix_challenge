@@ -1,0 +1,9 @@
+{"state": "ridge"}
+{"state": "normalization", "tree_rounds": []}
+{"state": "nn_refit", "seed": 2026, "epochs": 5}
+{"state": "nn_seed_complete", "seed": 2026, "nn_epochs": [5]}
+{"state": "nn_refit", "seed": 7, "epochs": 4}
+{"state": "nn_seed_complete", "seed": 7, "nn_epochs": [5, 4]}
+{"state": "nn_refit", "seed": 13, "epochs": 4}
+{"state": "nn_seed_complete", "seed": 13, "nn_epochs": [5, 4, 4]}
+{"state": "models_ready", "outputs": {"nn-13.pt": "6e94db12ffd5adca063dece787cc1c3dbaf8cfb986b10a8966e0819c0b49be5b", "nn-2026.pt": "3f1684ac6b0714ac4cb75bfac59f7dad8e4027e035823601fbe37c992356cf7f", "nn-scaler.npz": "31dcdf61e1271b1cfbca95a8078630bfa74ef4c3b3462794f6da8c312e7f4664", "ridge-weights.npz": "024d79ab31c86c798dcac0b76ebc329e1fa2127ca6ee0674be4927133645bf1b", "nn-7.pt": "b5755faef3c313f9fdd819fc5c2875bdc6b2a30ef57668af9980232bc940226b"}, "nn_epochs": [5, 4, 4]}

@@ -1,0 +1,9 @@
+{"observed_utc": "2026-11-16T01:48:01.937946+00:00", "line": "{\"state\": \"ridge\"}"}
+{"observed_utc": "2026-11-16T01:48:37.949460+00:00", "line": "{\"state\": \"normalization\", \"tree_rounds\": []}"}
+{"observed_utc": "2026-11-16T01:52:26.320178+00:00", "line": "{\"state\": \"nn_refit\", \"seed\": 2026, \"epochs\": 8}"}
+{"observed_utc": "2026-11-16T01:53:56.910803+00:00", "line": "{\"state\": \"nn_seed_complete\", \"seed\": 2026, \"nn_epochs\": [8]}"}
+{"observed_utc": "2026-11-16T01:57:30.815357+00:00", "line": "{\"state\": \"nn_refit\", \"seed\": 7, \"epochs\": 11}"}
+{"observed_utc": "2026-11-16T01:59:30.752586+00:00", "line": "{\"state\": \"nn_seed_complete\", \"seed\": 7, \"nn_epochs\": [8, 11]}"}
+{"observed_utc": "2026-11-16T02:01:42.578302+00:00", "line": "{\"state\": \"nn_refit\", \"seed\": 13, \"epochs\": 10}"}
+{"observed_utc": "2026-11-16T02:03:22.317610+00:00", "line": "{\"state\": \"nn_seed_complete\", \"seed\": 13, \"nn_epochs\": [8, 11, 10]}"}
+{"observed_utc": "2026-11-16T02:03:22.321916+00:00", "line": "{\"state\": \"models_ready\", \"outputs\": {\"nn-13.pt\": \"e88748ebf9e3935fa5181bb6187d4e51755fd86a08167da910e150c7ef3f7dfe\", \"nn-2026.pt\": \"71630ce5779c3259d9d3319456e0aecde7b2521ace0b785736c1e76fb430ad53\", \"nn-scaler.npz\": \"98e122d3af4b9e62777b4385bf9e6e71b38eeda26d120e2f58d1d5ad3b6bd21c\", \"ridge-weights.npz\": \"43720b48e91e0f90676f6b791a95f460accef30932855b38124d02a4c4452bde\", \"nn-7.pt\": \"157a54c7998f7df7895581d52dc238b4e0c711d75b892b674b890a5bca9b3de6\"}, \"nn_epochs\": [8, 11, 10]}"}

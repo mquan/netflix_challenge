@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py", line 133, in <module>
+    if __name__=='__main__':main()
+  File "/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py", line 130, in main
+    a=ap.parse_args();(train if a.mode=='train' else predict)(a)
+  File "/Users/quan/workspace/netflix_prize/scripts/catboost_blender.py", line 42, in train
+    raise ValueError('feature encoding differs')
+ValueError: feature encoding differs

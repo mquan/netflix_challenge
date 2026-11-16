@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_prize/scripts/audit_qualifying.py", line 95, in <module>
+    if __name__=='__main__': main()
+  File "/Users/quan/workspace/netflix_prize/scripts/audit_qualifying.py", line 84, in main
+    raise ValueError('source Quiz/Test counts do not match the original competition')
+ValueError: source Quiz/Test counts do not match the original competition

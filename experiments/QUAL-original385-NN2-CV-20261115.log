@@ -1,0 +1,37 @@
+{"stage": "start", "config": {"bank": "artifacts/qualifying/dev-public385", "output": "artifacts/qualifying/dev-public385-NN2", "hidden": 128, "layers": 2, "dropout": 0.2, "lr": 0.0003, "weight_decay": 0.01, "batch": 4096, "epochs": 60, "patience": 5, "seeds": [2026, 7, 13], "threads": 2, "disk_features": true, "device": "mps"}, "columns": 385, "features": 624}
+{"stage": "selection", "fold": 0, "seed": 2026, "epochs": 7}
+{"stage": "refit", "fold": 0, "seed": 2026, "seconds": 201.94797583390027}
+{"stage": "selection", "fold": 0, "seed": 7, "epochs": 7}
+{"stage": "refit", "fold": 0, "seed": 7, "seconds": 272.47276341705583}
+{"stage": "selection", "fold": 0, "seed": 13, "epochs": 6}
+{"stage": "refit", "fold": 0, "seed": 13, "seconds": 360.99834854202345}
+{"fold": 0, "nn_rmse": 0.8680948682172787, "ridge_rmse": 0.8695460617965888, "chosen_epochs": [7, 7, 6], "seconds": 361.0574735000264}
+{"stage": "selection", "fold": 1, "seed": 2026, "epochs": 5}
+{"stage": "refit", "fold": 1, "seed": 2026, "seconds": 311.02573183295317}
+{"stage": "selection", "fold": 1, "seed": 7, "epochs": 5}
+{"stage": "refit", "fold": 1, "seed": 7, "seconds": 410.5165444579907}
+{"stage": "selection", "fold": 1, "seed": 13, "epochs": 6}
+{"stage": "refit", "fold": 1, "seed": 13, "seconds": 451.1725910829846}
+{"fold": 1, "nn_rmse": 0.8670367066603945, "ridge_rmse": 0.8684234044268613, "chosen_epochs": [5, 5, 6], "seconds": 451.2278714159038}
+{"stage": "selection", "fold": 2, "seed": 2026, "epochs": 5}
+{"stage": "refit", "fold": 2, "seed": 2026, "seconds": 142.0057197920978}
+{"stage": "selection", "fold": 2, "seed": 7, "epochs": 7}
+{"stage": "refit", "fold": 2, "seed": 7, "seconds": 186.72328445804305}
+{"stage": "selection", "fold": 2, "seed": 13, "epochs": 7}
+{"stage": "refit", "fold": 2, "seed": 13, "seconds": 222.88757300004363}
+{"fold": 2, "nn_rmse": 0.8632224273361823, "ridge_rmse": 0.8646794801921297, "chosen_epochs": [5, 7, 7], "seconds": 222.92797808302566}
+{"stage": "selection", "fold": 3, "seed": 2026, "epochs": 6}
+{"stage": "refit", "fold": 3, "seed": 2026, "seconds": 123.38729320815764}
+{"stage": "selection", "fold": 3, "seed": 7, "epochs": 6}
+{"stage": "refit", "fold": 3, "seed": 7, "seconds": 153.6707450831309}
+{"stage": "selection", "fold": 3, "seed": 13, "epochs": 6}
+{"stage": "refit", "fold": 3, "seed": 13, "seconds": 183.98705691611394}
+{"fold": 3, "nn_rmse": 0.8687802089301009, "ridge_rmse": 0.8702347319198044, "chosen_epochs": [6, 6, 6], "seconds": 184.0276293749921}
+{"stage": "selection", "fold": 4, "seed": 2026, "epochs": 6}
+{"stage": "refit", "fold": 4, "seed": 2026, "seconds": 112.68349408288486}
+{"stage": "selection", "fold": 4, "seed": 7, "epochs": 5}
+{"stage": "refit", "fold": 4, "seed": 7, "seconds": 149.65643224981613}
+{"stage": "selection", "fold": 4, "seed": 13, "epochs": 7}
+{"stage": "refit", "fold": 4, "seed": 13, "seconds": 189.35219145799056}
+{"fold": 4, "nn_rmse": 0.8686148989176121, "ridge_rmse": 0.8699525737071001, "chosen_epochs": [6, 5, 7], "seconds": 189.39511720789596}
+{"nn_rmse": 0.8671475123178725, "nn_fold_rmse": [0.8680948682172787, 0.8670367066603945, 0.8632224273361823, 0.8687802089301009, 0.8686148989176121], "target_rmse": 0.85725}

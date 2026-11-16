@@ -1,0 +1,37 @@
+{
+  "name": "QUAL-original-domain-ready-20261115",
+  "output": "artifacts/qualifying/original-domain-weighted",
+  "audit_output": "artifacts/private-audit/original-domain-ready-20261115",
+  "producers": [],
+  "models_dir": "artifacts/qualifying/original-domain-weighted/models",
+  "stages": [
+    {
+      "name": "predict",
+      "strategy": "Infer frozen weighted NN2 on verified qualifying inputs; no label scoring before hash freeze",
+      "command": [
+        "scripts/predict_blender_models.py",
+        "--models-dir",
+        "artifacts/qualifying/original-domain-weighted/models",
+        "--qual",
+        "artifacts/qualifying/original-domain-weighted/qual",
+        "--output",
+        "artifacts/qualifying/original-domain-weighted/final",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ]
+    },
+    {
+      "name": "audit",
+      "strategy": "Postfreeze recovered-label audit only, no fitting; retain source split discrepancy and adaptive local evaluation caveat",
+      "command": [
+        "scripts/audit_qualifying.py",
+        "--model-dir",
+        "artifacts/qualifying/original-domain-weighted/final",
+        "--output-dir",
+        "artifacts/private-audit/original-domain-ready-20261115"
+      ]
+    }
+  ]
+}

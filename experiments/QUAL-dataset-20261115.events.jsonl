@@ -1,0 +1,51 @@
+{"observed_utc": "2026-11-15T19:00:53.279547+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 1000, \"users\": 404555}"}
+{"observed_utc": "2026-11-15T19:00:56.067253+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 2000, \"users\": 449098}"}
+{"observed_utc": "2026-11-15T19:00:58.966534+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 3000, \"users\": 462188}"}
+{"observed_utc": "2026-11-15T19:01:02.054877+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 4000, \"users\": 469174}"}
+{"observed_utc": "2026-11-15T19:01:04.973671+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 5000, \"users\": 472542}"}
+{"observed_utc": "2026-11-15T19:01:08.001630+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 6000, \"users\": 475144}"}
+{"observed_utc": "2026-11-15T19:01:11.283124+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 7000, \"users\": 476858}"}
+{"observed_utc": "2026-11-15T19:01:14.046216+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 8000, \"users\": 477516}"}
+{"observed_utc": "2026-11-15T19:01:16.659209+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 9000, \"users\": 477969}"}
+{"observed_utc": "2026-11-15T19:01:19.238894+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 10000, \"users\": 478350}"}
+{"observed_utc": "2026-11-15T19:01:21.830267+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 11000, \"users\": 478671}"}
+{"observed_utc": "2026-11-15T19:01:24.782225+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 12000, \"users\": 479063}"}
+{"observed_utc": "2026-11-15T19:01:27.985334+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 13000, \"users\": 479351}"}
+{"observed_utc": "2026-11-15T19:01:30.928151+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 14000, \"users\": 479557}"}
+{"observed_utc": "2026-11-15T19:01:34.618264+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 15000, \"users\": 479759}"}
+{"observed_utc": "2026-11-15T19:01:37.783209+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 16000, \"users\": 479908}"}
+{"observed_utc": "2026-11-15T19:01:40.972130+00:00", "line": "{\"stage\": \"recover_users\", \"movies\": 17000, \"users\": 480047}"}
+{"observed_utc": "2026-11-15T19:01:47.168118+00:00", "line": "{\"stage\": \"merge_and_verify\", \"training\": 100480507, \"queries\": 2817131}"}
+{"observed_utc": "2026-11-15T19:02:02.521043+00:00", "line": "{"}
+{"observed_utc": "2026-11-15T19:02:02.521702+00:00", "line": "  \"state\": \"complete\","}
+{"observed_utc": "2026-11-15T19:02:02.521743+00:00", "line": "  \"purpose\": \"production_only_unlabeled_queries\","}
+{"observed_utc": "2026-11-15T19:02:02.521764+00:00", "line": "  \"source\": \"/Users/quan/workspace/netflix_prize/data/processed/netflix.bin\","}
+{"observed_utc": "2026-11-15T19:02:02.521778+00:00", "line": "  \"source_sha256\": \"08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673\","}
+{"observed_utc": "2026-11-15T19:02:02.521791+00:00", "line": "  \"training_dir\": \"/Users/quan/workspace/netflix_prize/data/raw/extracted/download/training_set/training_set\","}
+{"observed_utc": "2026-11-15T19:02:02.521812+00:00", "line": "  \"raw_training_fingerprint\": \"becbb5c53fe59542f13a5ec8522d5b0ea75c8ca46ff4fb5aa3b7d371402cbc02\","}
+{"observed_utc": "2026-11-15T19:02:02.521823+00:00", "line": "  \"raw_training_fingerprint_method\": \"SHA256 of ascending filename, NUL, and binary SHA256 of each movie file\","}
+{"observed_utc": "2026-11-15T19:02:02.521836+00:00", "line": "  \"qualifying\": \"/Users/quan/workspace/netflix_prize/data/raw/extracted/download/qualifying.txt\","}
+{"observed_utc": "2026-11-15T19:02:02.521846+00:00", "line": "  \"qualifying_sha256\": \"62b3bbc22ff5531a0f61dfa8db658b7cff29da51402da5463f2230b3fbb1532b\","}
+{"observed_utc": "2026-11-15T19:02:02.521855+00:00", "line": "  \"script_sha256\": \"ed619b331065f4d37a1bfca3b1a1c7fa32c6f81a03067b926d2242d55bf8b656\","}
+{"observed_utc": "2026-11-15T19:02:02.521865+00:00", "line": "  \"users\": 480189,"}
+{"observed_utc": "2026-11-15T19:02:02.521876+00:00", "line": "  \"items\": 17770,"}
+{"observed_utc": "2026-11-15T19:02:02.521901+00:00", "line": "  \"train_count\": 100480507,"}
+{"observed_utc": "2026-11-15T19:02:02.521911+00:00", "line": "  \"qualifying_count\": 2817131,"}
+{"observed_utc": "2026-11-15T19:02:02.521921+00:00", "line": "  \"original_train_count\": 99072112,"}
+{"observed_utc": "2026-11-15T19:02:02.521930+00:00", "line": "  \"original_probe_count\": 1408395,"}
+{"observed_utc": "2026-11-15T19:02:02.521939+00:00", "line": "  \"implicit_count\": 103297638,"}
+{"observed_utc": "2026-11-15T19:02:02.521950+00:00", "line": "  \"mean\": 3.604289964420661,"}
+{"observed_utc": "2026-11-15T19:02:02.521959+00:00", "line": "  \"outputs\": {"}
+{"observed_utc": "2026-11-15T19:02:02.521968+00:00", "line": "    \"train-probe-qualifying.bin\": \"3904af4b4a29444b166a9c77f1c82c5fa87cfe3876a22b4c3dd31e7dd7cfb3fd\","}
+{"observed_utc": "2026-11-15T19:02:02.521977+00:00", "line": "    \"dense-to-raw-user.npy\": \"62635da2e71b85fdcde38a0c30634341e1f7155d787c9b6c770b79aa007ceeaf\","}
+{"observed_utc": "2026-11-15T19:02:02.521986+00:00", "line": "    \"qualifying-order.npy\": \"092bbb123639f744a8c8839638e69f0fe0ba3efe53f24520254441d07c695ecb\""}
+{"observed_utc": "2026-11-15T19:02:02.521995+00:00", "line": "  },"}
+{"observed_utc": "2026-11-15T19:02:02.522006+00:00", "line": "  \"checks\": ["}
+{"observed_utc": "2026-11-15T19:02:02.522015+00:00", "line": "    \"raw first-appearance user mapping round trips\","}
+{"observed_utc": "2026-11-15T19:02:02.522023+00:00", "line": "    \"labeled train+probe and qualifying exactly partition original implicit interactions\","}
+{"observed_utc": "2026-11-15T19:02:02.522032+00:00", "line": "    \"qualifying file order preserved\","}
+{"observed_utc": "2026-11-15T19:02:02.522042+00:00", "line": "    \"original implicit arrays unchanged\","}
+{"observed_utc": "2026-11-15T19:02:02.522051+00:00", "line": "    \"original source digest unchanged\""}
+{"observed_utc": "2026-11-15T19:02:02.522062+00:00", "line": "  ],"}
+{"observed_utc": "2026-11-15T19:02:02.522077+00:00", "line": "  \"limitation\": \"Query ratings are zero sentinels. Never use this dataset to select epochs, fit a blender on query labels, or report query RMSE. Fixed-budget production trainers remain required.\""}
+{"observed_utc": "2026-11-15T19:02:02.522099+00:00", "line": "}"}

@@ -1,0 +1,16 @@
+{
+  "state": "removed",
+  "files": [
+    {
+      "path": "artifacts/qualifying/original-early391/models/nn-features.npy",
+      "bytes": 3549155528,
+      "sha256": "ee916a7f636601f5d3b0de6d879037983d79d58efb62e2d6213f2cb4b2dff2fe"
+    },
+    {
+      "path": "artifacts/qualifying/original-early391/models/nn-normalized.npy",
+      "bytes": 3549155528,
+      "sha256": "1a311b3942f7e3580659e29836a8025092e7607b32d74eb888e9cba48d5afafa"
+    }
+  ],
+  "reason": "All learned-checkpoint blend models frozen; retain raw source columns/statistics/scaler/weights, portable qualifying inference does not use development encodings"
+}

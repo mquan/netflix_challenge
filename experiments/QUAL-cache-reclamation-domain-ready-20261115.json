@@ -1,0 +1,16 @@
+{
+  "state": "removed",
+  "files": [
+    {
+      "path": "artifacts/qualifying/original-domain-weighted/models/nn-features.npy",
+      "bytes": 3515354048,
+      "sha256": "efd689610c4d636d9c7626baeb1a67b0d2c2b665613cc78d2887467859a0d7bd"
+    },
+    {
+      "path": "artifacts/qualifying/original-domain-weighted/models/nn-normalized.npy",
+      "bytes": 3515354048,
+      "sha256": "6cb4eafd8cab863e67c91ad4acc271e067cf8d02e683b094ba0bbd3a7b184a79"
+    }
+  ],
+  "reason": "Weighted models frozen; portable inference only uses model/scaler and qualifying blocks; all training source columns, stats, weights and metadata retained"
+}
