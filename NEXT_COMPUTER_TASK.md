@@ -1,15 +1,15 @@
-# Next assignment: fresh upstream training
+# Current assignment: preserve the active upstream queue
 
-The user approved the next two-computer plan on November 16 and authorized autonomous execution and coordination through branch pushes. The completed 10-stage experiment is preserved: baseline 0.8668672; combined and ENN did not improve it. Do not repeat that run.
+**The second computer has already started the eight-job upstream replay on `research/upstream-reproduction`. Do not launch another worker or restart an active model.** Its progress is in `UPSTREAM_PROGRESS.md`; the first confirmed active job is `tsvdx4-60`.
 
-**Second computer:** fetch `origin/research/upstream-reproduction` and follow its **COORDINATION.md**. Create a separate worktree/branch `research/upstream-worker`, then launch `scripts/upstream_exchange.py --worker --publish` inside tmux with eight compute threads. The document has exact commands. Do not check out another branch in the completed experiment's worktree.
+The user authorized autonomous execution and branch coordination. The first Mac is adding compatible per-model artifact export to the existing `--compare-model` command. The already-running queue fetches updates at job boundaries and stages `experiments/upstream-repro`, so it will publish the fresh prediction artifacts along with its normal receipts. Earlier completed outputs are backfilled; no retraining is needed.
 
-The worker prepares source/data and the reference, trains the bounded eight-model upstream replay, and pushes compressed fresh development predictions and receipts after each job to `research/upstream-worker`. This includes actual prediction artifacts so the first Mac can independently rescore them. No qualifying outcomes are used. Preserve partial outputs and publish failures; do not force-push or delete them to restart.
+Keep the current queue running. Follow the current `COORDINATION.md` on `research/upstream-reproduction` for details. A missing `rbmx2-40` released base fixture is explicitly unavailable, not an experiment failure; portable reports use null. The old in-memory progress renderer may display `nan` for that absent reference, and its fresh score remains valid.
 
-**First Mac:** finish its six existing assigned stages, publish their verified results, fetch worker progress, independently verify fresh outputs, then run the predeclared fresh-only base-vs-chain blends. Its durable coordinator lives on `research/upstream-reproduction` and does not execute remote jobs.
+The first Mac finishes its assigned snapshot/calibration stages and monitors the training branch from **`research/upstream-verification`**. It independently verifies transferred vectors and runs the committed fresh-only blend plan after its existing work is complete and all eight vectors arrive.
 
-Instructions: https://github.com/mquan/netflix_challenge/blob/research/upstream-reproduction/COORDINATION.md
+If a real training or integrity error occurs, preserve all partial outputs/logs, publish the failure, and investigate. Do not delete outputs, duplicate training, or force-push. The completed original 10-stage ensemble experiment remains intact.
 
-Status: https://github.com/mquan/netflix_challenge/blob/research/upstream-reproduction/COORDINATION_STATUS.md
+Training: https://github.com/mquan/netflix_challenge/blob/research/upstream-reproduction/UPSTREAM_PROGRESS.md
 
-A branch push is the handoff channel, not a remote launch. The second computer's session should pick up this assignment and execute it without waiting for the user to return.
+Local verification: https://github.com/mquan/netflix_challenge/blob/research/upstream-verification/COORDINATION_STATUS.md
