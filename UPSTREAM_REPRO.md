@@ -71,7 +71,7 @@ Download just the pinned development fixtures and verify both reference implemen
   --python-reference --native-reference
 ```
 
-The reference index contains only the 188 required development arrays, with pinned size and MD5. This is roughly 0.85 GB of float32 predictions; upstream documents about 3.3 GB for ingested datasets. Saved training predictions, epochs, latent features, compilation, and expanded blends require additional disk space.
+The reference index contains the 188 ensemble development arrays plus two DNN parent fixtures, with pinned size and MD5. The `rbmx2-40` base has no released fixture in the pinned store; its comparison reports unavailable. This is roughly 0.85 GB of float32 predictions; upstream documents about 3.3 GB for ingested datasets. Saved training predictions, epochs, latent features, compilation, and expanded blends require additional disk space.
 
 ## First fresh jobs
 
@@ -122,5 +122,7 @@ This first pass proves whether we can retrain representative upstream models and
 ```sh
 PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p test_upstream_repro.py -v
 ```
+
+For the unattended worker and local verification assignments, see [COORDINATION.md](COORDINATION.md).
 
 The tests check dependency ordering (including implicit file producers), cycle rejection, outcome-zero enforcement, refusal of unreceipted existing predictions, and detection of altered completed outputs. The native build and both real-data reference reproductions are separate integration checks.

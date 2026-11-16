@@ -1,5 +1,6 @@
 # Development-only subset of the upstream store index captured 2026-11-15.
 # Content is pinned by size and MD5; no qualifying predictions are included.
+# Includes 188 ensemble fixtures plus two DNN parent fixtures for direct replay.
 
 [[file]]
 path = "preds_new/aex-128.probex.npy"
@@ -940,3 +941,13 @@ md5 = "01059e565c9146c3ade59b31401271bf"
 path = "preds_new/tsvdx6-300_ep20.probex.npy"
 size = 4512784
 md5 = "c08e5221dd42d043177a4e4aa2cc7998"
+
+[[file]]
+path = "preds_new/dnn-24.probex.npy"
+size = 4512784
+md5 = "e5e1d9b5984a1b2660eca8d12bfc961e"
+
+[[file]]
+path = "preds_new/dnn-24__dnn-16p50.probex.npy"
+size = 4512784
+md5 = "345a4d8c6aabf034068b02e9821a386f"

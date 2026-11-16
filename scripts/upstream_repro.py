@@ -153,14 +153,18 @@ def prepare_reference(index_path, dataset_path=None, mapping_path=None, cache_ro
             raise ValueError(f'Invalid source fixture {key}')
         return dict(name=name, path=str(destination.relative_to(REFERENCE)),
                     rows=n, md5=entry['md5'], sha256=sha(destination), provenance='released reference fixture, not trained locally')
+    auxiliary = ['dnn-24', 'dnn-24__dnn-16p50']
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         entries = list(pool.map(fetch, registry['names']))
+        auxiliary_entries = list(pool.map(fetch, auxiliary))
     if list(REFERENCE.glob('preds_new/**/*.qual.npy')):
         raise ValueError('Qualifying predictions must stay outside the development reference directory')
     manifest = dict(source_commit=PIN, index_sha256=sha(index_path), **provenance,
                     rows=n, columns=len(entries),
                     labels='ProbeX development labels only', qualifying_labels_read=False,
-                    entries=entries, groups=registry['groups'], clip=registry['clip'])
+                    entries=entries, auxiliary_entries=auxiliary_entries,
+                    unavailable_reference_jobs=['rbmx2-40'],
+                    groups=registry['groups'], clip=registry['clip'])
     write(BASE/'reference-manifest.json', manifest)
     print(json.dumps(dict(stage='reference-prepared', rows=n, columns=len(entries))), flush=True)
 
@@ -376,17 +380,20 @@ def compare_model(name):
     if sha(output) != read(receipt)['outputs'][str(output.relative_to(FRESH))]:
         raise ValueError('Fresh output changed since its execution receipt')
     fresh = np.load(output, allow_pickle=False).astype(np.float64)
-    reference = np.load(REFERENCE/'preds_new'/(name+'.probex.npy'), allow_pickle=False).astype(np.float64)
+    reference_path = REFERENCE/'preds_new'/(name+'.probex.npy')
+    reference = np.load(reference_path, allow_pickle=False).astype(np.float64) if reference_path.exists() else None
     y = np.load(FRESH/'data/probex/ratings.npy', allow_pickle=False)
     if not np.array_equal(y, np.load(REFERENCE/'data/probex/ratings.npy', allow_pickle=False)):
         raise ValueError('Development label order differs')
     if fresh.shape != y.shape or not np.isfinite(fresh).all():
         raise ValueError('Invalid fresh predictions')
     score = lambda p: float(np.sqrt(np.mean((np.clip(p, 1.05, 4.95)-y)**2)))
-    result = dict(job=name, rows=len(y), fresh_rmse=score(fresh), released_rmse=score(reference),
-                  prediction_rmse_difference=float(np.sqrt(np.mean((fresh-reference)**2))),
-                  max_absolute_difference=float(np.max(np.abs(fresh-reference))),
-                  fresh_sha256=sha(output), reference_sha256=sha(REFERENCE/'preds_new'/(name+'.probex.npy')),
+    result = dict(job=name, rows=len(y), fresh_rmse=score(fresh),
+                  released_rmse=score(reference) if reference is not None else None,
+                  reference_available=reference is not None,
+                  prediction_rmse_difference=float(np.sqrt(np.mean((fresh-reference)**2))) if reference is not None else None,
+                  max_absolute_difference=float(np.max(np.abs(fresh-reference))) if reference is not None else None,
+                  fresh_sha256=sha(output), reference_sha256=sha(reference_path) if reference is not None else None,
                   scope='ProbeX diagnostic only; model training is fresh, reference vectors are imported')
     write(BASE/'comparisons'/(name+'.json'), result)
     print(json.dumps(result, indent=2), flush=True)

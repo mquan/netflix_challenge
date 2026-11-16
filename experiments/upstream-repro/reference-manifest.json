@@ -1,8 +1,8 @@
 {
   "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
-  "index_sha256": "e53bb7f496f938399f9d5fbe566aa43f6052d7253f527eab222d86361bf974a0",
-  "dataset_sha256": "4a41f098ed3cb49c484856961a73f621f3d68e5cec39a7ba39fac8930dd7c0a5",
-  "mapping_sha256": "b17862aaa09b84469604953cdb5f01d543c2f608ccb274ca7115282a5efd5b47",
+  "index_sha256": "ae3bab13a1b54d7fc4eebf517c205cea8f0a080c07d5cc95f612448ef95cbb73",
+  "ratings_sha256": "8abe6f38c35605fa5112cedea55b94fc9d5e9f2bd9b06594d4dbdf2f9500ba88",
+  "users_sha256": "1db53929c8160cf44f1fa9b83f91a261fd95fd3aa13b3c0ea6cc54887c685601",
   "rows": 1128164,
   "columns": 188,
   "labels": "ProbeX development labels only",
@@ -1512,6 +1512,27 @@
       "sha256": "870d6b4e57bc88424043572a81192f7f8cfc78824f6fba2880864075dc698399",
       "provenance": "released reference fixture, not trained locally"
     }
+  ],
+  "auxiliary_entries": [
+    {
+      "name": "dnn-24",
+      "path": "preds_new/dnn-24.probex.npy",
+      "rows": 1128164,
+      "md5": "e5e1d9b5984a1b2660eca8d12bfc961e",
+      "sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+      "provenance": "released reference fixture, not trained locally"
+    },
+    {
+      "name": "dnn-24__dnn-16p50",
+      "path": "preds_new/dnn-24__dnn-16p50.probex.npy",
+      "rows": 1128164,
+      "md5": "345a4d8c6aabf034068b02e9821a386f",
+      "sha256": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+      "provenance": "released reference fixture, not trained locally"
+    }
+  ],
+  "unavailable_reference_jobs": [
+    "rbmx2-40"
   ],
   "groups": {
     "fwlsblend": [
