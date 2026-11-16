@@ -56,7 +56,6 @@
         <div class="competition-detail" id="competition-detail" aria-live="polite"></div>
         <div class="competition-foot">The historical line joins six sourced snapshots, not a complete daily leaderboard. Our main Probe checkpoints are B1, R7-MT56-s3 and November's 466-base NN2. Faded, unconnected markers show intermediate screens, including HR2a/HR2b and LC6 on October 18, N1/H8 on October 31, and November's public-bank comparisons. The separate, unconnected violet diamond marks the November 15 recovered qualifying audit; it uses different rows and production training. These series cannot establish an official leaderboard position. First-day single-model scores use another protocol and are omitted. <strong>Prize outcome:</strong> The Ensemble led the public Quiz board at 0.8553; BellKor’s Pragmatic Chaos had 0.8554. Both rounded to 0.8567 on hidden Test, so the earlier submission won. The Test baseline and 10% mark were 0.9525 and 0.8572. <a href="https://www.asc.ohio-state.edu/statistics/statgen/joul_aut2009/NetflixAwardsOneMillionPrize2009.pdf">Netflix’s prize announcement</a> · <a href="https://utstat.toronto.edu/andrey/pubs/Netflix.pdf">final Quiz and Test scores</a>.</div>
       </div>
-      <div class="ledger-wrap"><table class="ledger"><thead><tr><th>When (Pacific)</th><th>Milestone</th><th>Strategy</th><th>Evaluation</th><th>RMSE</th><th>Credit evidence</th></tr></thead><tbody id="milestone-rows"></tbody></table></div>
     </section>
 
     <section id="breakthrough" aria-labelledby="breakthrough-title">
@@ -70,6 +69,8 @@
       </div>
       <div class="note"><strong>Development remains separate:</strong> the best entire-original-Probe nested user-fold development result is now <strong>0.8645337528</strong> from the 466-base local/public NN2. Alternative ProbeX development reached 0.8565023 on a different population. Production refits include the original Probe ratings; the final ridge fits known ProbeX labels. Upstream intermediate blends prevent an independent nested-CV claim for the final stack. <a href="QUALIFYING_PROGRESS.md">Audit trail</a> · <a href="experiments/QUAL-target-final-result-20261116.json">Verification receipt</a>.</div>
     </section>
+
+      <div class="ledger-wrap"><table class="ledger"><thead><tr><th>When (Pacific)</th><th>Milestone</th><th>Strategy</th><th>Evaluation</th><th>RMSE</th><th>Credit evidence</th></tr></thead><tbody id="milestone-rows"></tbody></table></div>
 
     <section id="runtime" aria-labelledby="runtime-title">
       <div class="section-head"><div><div class="section-num">02 / Recorded run time</div><h2 id="runtime-title">Inside the training runs</h2></div><p>Here the clock resets at each run's recorded start. Choose a model to see how its standalone Probe score changed as computation accumulated. This is elapsed run time, not total project work or a model cost comparison.</p></div>
