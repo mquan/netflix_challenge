@@ -61,3 +61,15 @@ requires a separate production/refit feasibility audit before a qualifying run.
 each completed stage; a resumed run verifies the original plan and code hashes.
 It refuses changed inputs, changed code, conflicting output files and duplicate
 runners. Other worktrees' jobs and files are not modified.
+
+## Launch checkpoint
+
+The runner started at 2026-11-16 05:08 UTC (November 15 Pacific), PID 29626,
+with 14 predeclared stages. The initial stage is the fresh baseline tree fit.
+See `experiments/LOCAL-ENSEMBLE-20261116-launch.json` for the launch receipt.
+Two new end-to-end/edge-case checks and 13 existing Round 9 checks passed.
+A separate historical latent-export test fails because its reader accepts
+checkpoint versions 1/2 while the current C++ writer emits version 3. That
+exporter is not invoked by this run: the original 46 support/latent columns
+are preserved and hash-verified. The failure is recorded in the validation
+receipt rather than represented as a passing full-suite check.
