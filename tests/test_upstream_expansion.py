@@ -53,4 +53,26 @@ class ExpansionCollection(unittest.TestCase):
             self.collect(mismatch=True)
 
 
+class PublicationRetry(unittest.TestCase):
+    def test_concurrent_ancestor_push_retries_without_merging(self):
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            with patch.object(expansion,'ROOT',root),patch.object(expansion,'TRACKED',root/'tracked'),patch.object(expansion.x,'publish',side_effect=[RuntimeError('concurrent ref update'),None]) as publish,patch.object(expansion.x,'git',return_value=SimpleNamespace(returncode=0)) as git,patch.object(expansion.time,'sleep'):
+                expansion.status('m1','diagnostic',pushing=True)
+                self.assertEqual(publish.call_count,2)
+                self.assertTrue(any(call.args[:2]==('merge-base','--is-ancestor') for call in git.call_args_list))
+
+    def test_divergent_remote_history_is_not_retried_or_merged(self):
+        from types import SimpleNamespace
+        def git(*args,**kwargs):
+            return SimpleNamespace(returncode=1 if args[0]=='merge-base' else 0)
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            with patch.object(expansion,'ROOT',root),patch.object(expansion,'TRACKED',root/'tracked'),patch.object(expansion.x,'publish',side_effect=RuntimeError('divergence')) as publish,patch.object(expansion.x,'git',side_effect=git),patch.object(expansion.time,'sleep'):
+                with self.assertRaisesRegex(RuntimeError,'divergence'):
+                    expansion.status('m1','diagnostic',pushing=True)
+                self.assertEqual(publish.call_count,1)
+
+
 if __name__=='__main__':unittest.main()
