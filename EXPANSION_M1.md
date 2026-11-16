@@ -2,9 +2,9 @@
 
 {
   "machine": "m1",
-  "state": "failed",
-  "active": null,
+  "state": "diagnostic",
+  "active": "tsvdx4-60 support provenance",
   "completed": [],
-  "error": "RuntimeError(\"Progress push failed; local artifacts retained: To github.com:mquan/netflix_challenge.git\\n ! [remote rejected] HEAD -> research/upstream-verification (cannot lock ref 'refs/heads/research/upstream-verification': is at e851fb10a718ba6e5f8221978ad3685ff4be5937 but expected 0da9fe68a817aa189dab537e16916c2b92d69187)\\nerror: failed to push some refs to 'github.com:mquan/netflix_challenge.git'\\n\")",
-  "updated": "2026-11-16T15:56:27.543650+00:00"
+  "error": null,
+  "updated": "2026-11-16T15:58:08.474568+00:00"
 }
