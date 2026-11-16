@@ -1,6 +1,6 @@
 # Intermediate progress after October 11
 
-These are completed original-Probe development measurements, not official Netflix scores. Unpromoted screens appear faded on both graphs. They are not joined into the retained score frontier.
+These are completed original-Probe development measurements, not official Netflix scores. Unpromoted screens appear faded on the calendar graph and remain in the milestones table. The historical competition comparison omits them. They are not joined into the retained score frontier.
 
 | When (Pacific) | Experiment | RMSE | Status / reason |
 | --- | --- | ---: | --- |
