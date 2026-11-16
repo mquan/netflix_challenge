@@ -1,0 +1,9 @@
+Running 'tsvdx4-60__knns': cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60__knns
+    Finished `release` profile [optimized] target(s) in 0.15s
+[tsvdx4-60__knns]
+target = "1.0*tsvdx4-60"
+KnnsConfig { k: 25, shrinkage: 100.0, scaling: 1.0, tau: 0.025, supp_source: Compute }
+trainx => probex
+probex RMSE 0.88048
+fulltrain => qual
+

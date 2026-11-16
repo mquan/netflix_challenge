@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "383fc2c2e8d8fb574507be892d8febeee8f06ad31d2d7aa4f668f98b8874da87",
+  "development_sha256": "bfa5eb6443d95fe86d91adaddbc1ec8d7ec732a71bc0aed859747cae1ae66f69",
+  "labels_bytes_sha256": "46742ce2f7803769bfa462d8e89fd9e3ea589226b0a78062d5365eb2d7b5b70e",
+  "users_bytes_sha256": "4694de759290f9ff40dbfa796af7fe55c5648d6bccd6af24c2e04ded2b038320",
+  "jobs": {
+    "tsvdx4-60": {
+      "job": "tsvdx4-60",
+      "artifact": "tsvdx4-60.npz",
+      "artifact_sha256": "97795f226d0e130bff3261894973725dd80b22e2568dc1b740daa7f75c21efd4",
+      "prediction_bytes_sha256": "bc98c7ba33ee59b7f06001d88563de778cb05c1686f524157fdd67d50fb04faa",
+      "source_npy_sha256": "1db4f350bf783d3890e6c760a5646d836ab0ee7ff66180e215987a34aef9c70f",
+      "comparison": {
+        "job": "tsvdx4-60",
+        "rows": 1128164,
+        "fresh_rmse": 0.8792104162979837,
+        "released_rmse": 0.8792104149700637,
+        "prediction_rmse_difference": 1.4923605160423095e-06,
+        "max_absolute_difference": 2.3365020751953125e-05,
+        "fresh_sha256": "1db4f350bf783d3890e6c760a5646d836ab0ee7ff66180e215987a34aef9c70f",
+        "reference_sha256": "9c354c355eb586fb179cfc177b3cfc6e704afd1a1d06bdf6a0688be84741fbb1",
+        "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
+      }
+    },
+    "tsvdx4-60__knns": {
+      "job": "tsvdx4-60__knns",
+      "artifact": "tsvdx4-60__knns.npz",
+      "artifact_sha256": "b8cedc147eef343114b158b995ff7e1e71a31ef4383900ed969d5f9d93084d7a",
+      "prediction_bytes_sha256": "e134c48c1f1df98cfc7365f894f0560b557df9cdc0d912f9b1434717f79a3093",
+      "source_npy_sha256": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+      "comparison": {
+        "job": "tsvdx4-60__knns",
+        "rows": 1128164,
+        "fresh_rmse": 0.8790956020255746,
+        "released_rmse": 0.8789526526067221,
+        "reference_available": true,
+        "prediction_rmse_difference": 0.017859178377834475,
+        "max_absolute_difference": 0.49936461448669434,
+        "fresh_sha256": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+        "reference_sha256": "2618181b442191d35d47bbe8542d717519e964fcae6c722e23febf1f8f876ed0",
+        "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
+      }
+    }
+  },
+  "updated": "2026-11-16T09:21:27.192917+00:00",
+  "python": "3.12.9",
+  "numpy": "2.5.5",
+  "state": "running"
+}

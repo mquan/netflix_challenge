@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "jobs": [
+    "tsvdx4-60",
+    "tsvdx4-60__knns",
+    "rbmx2-40",
+    "rbmx2-40__knn3",
+    "dnn-24",
+    "dnn-24__knn3",
+    "dnn-24__dnn-16p50",
+    "dnn-24__dnn-16p50__knn3"
+  ],
+  "arms": {
+    "base-only": [
+      "tsvdx4-60",
+      "rbmx2-40",
+      "dnn-24"
+    ],
+    "base-plus-chains": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns",
+      "rbmx2-40",
+      "rbmx2-40__knn3",
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3"
+    ],
+    "temporal-base": [
+      "tsvdx4-60"
+    ],
+    "temporal-chain": [
+      "tsvdx4-60",
+      "tsvdx4-60__knns"
+    ],
+    "rbm-base": [
+      "rbmx2-40"
+    ],
+    "rbm-chain": [
+      "rbmx2-40",
+      "rbmx2-40__knn3"
+    ],
+    "dnn-base": [
+      "dnn-24"
+    ],
+    "dnn-chain": [
+      "dnn-24",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50",
+      "dnn-24__dnn-16p50__knn3"
+    ]
+  },
+  "folds": 5,
+  "fold_seed": 20261116,
+  "grouping": "native upstream user index",
+  "ridge_lambda": 1000.0,
+  "input_clip": [
+    0,
+    6
+  ],
+  "output_clip": [
+    1.05,
+    4.95
+  ],
+  "intercept": "unpenalized",
+  "tuning": "none; all arms/lambda/folds fixed before fresh results",
+  "metric": "ProbeX development RMSE",
+  "limitation": "Meta-level user-fold cross-fitting only; published base recipes were historically development-selected. Not untouched test evidence.",
+  "artifact_scope": "Fresh ProbeX predictions, known development labels and user indices only; no qualifying predictions or outcomes"
+}

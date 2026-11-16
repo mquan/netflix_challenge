@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "tsvdx4-60__knns",
+  "command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60__knns",
+  "started": "2026-11-16T09:16:58.604594+00:00",
+  "finished": "2026-11-16T09:21:26.724547+00:00",
+  "outputs": {
+    "preds_new/tsvdx4-60__knns.out": "abb3cb157144fc48d2b066dc9b71dcf734015e60a14a3fa1a22c339726a665fb",
+    "preds_new/tsvdx4-60__knns.probex.npy": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+    "preds_new/tsvdx4-60__knns.qual.npy": "b3841a416458d72faee0b97c481f6a91dd7a4be324fb5eee5a8579b0c0eecdb2"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}
