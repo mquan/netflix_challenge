@@ -1,0 +1,38 @@
+{
+  "scope": "Exploratory interim ProbeX diagnostic on completed phase-one output; full native job and predeclared expansion evaluation remain pending",
+  "records": [
+    {
+      "arm": "original-eight",
+      "rmse": 0.8695493650137697,
+      "fold_rmse": [
+        0.8690373774202033,
+        0.8670620650864613,
+        0.8705403577784088,
+        0.8707442803486884,
+        0.8703685702398668
+      ]
+    },
+    {
+      "arm": "plus-400-factor-base",
+      "rmse": 0.8690875528728305,
+      "fold_rmse": [
+        0.868525791854301,
+        0.8666261076528052,
+        0.870016489006748,
+        0.8703581539914661,
+        0.86991672542519
+      ]
+    }
+  ],
+  "delta_rmse": -0.00046181214093921064,
+  "fold_delta": [
+    -0.0005115855659022506,
+    -0.00043595743365609785,
+    -0.0005238687716607737,
+    -0.00038612635722234945,
+    -0.00045184481467674953
+  ],
+  "candidate_sha256": "28a7831bd1fc4a90079918b44c8f7e5dfd170bde049ec4620e2a444fbac3a344",
+  "candidate_standalone_rmse": 0.8831462818651407,
+  "recipe": "Same fixed five user folds and lambda1000 as prior evaluation; fresh vectors only"
+}
