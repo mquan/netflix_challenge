@@ -116,3 +116,22 @@ On the M1 Pro, short synthetic tests measured roughly 6× NN2 and 3.8× ENN
 throughput on its GPU versus two CPU threads. A 131k-row tree benchmark was
 about 1.8× faster with three threads than one. These are microbenchmarks,
 not promised end-to-end speedups or measurements of the second computer.
+
+## Run log: second computer (M3 Max, 14 cores, 96 GB)
+
+- 2026-11-15 21:37–21:39 PST: clean clone at `~/workspace/netflix-independent`,
+  Python 3.12.9 venv. Setup verified the 79-column bank and reproduced
+  0.8668706424 (fold RMSE 0.86786 / 0.86669 / 0.86319 / 0.86821 / 0.86842).
+- 21:39: first launch (`--arms combined --device auto --fold-workers 5
+  --tree-threads 3 --nn-threads 4`, device resolved to `mps`). The runner and
+  `baseline-tree` were hard-killed about 21:42. `status.json` was left at
+  `running`, so the runner was SIGKILLed and never reached its exception handler.
+  No jetsam/memory-pressure entry was logged. The likely cause is that the
+  launching shell session ended. No report or receipt was written.
+- 21:48: relaunched with identical arguments (plan check passed) inside a
+  detached tmux session `independent-ensemble` under `caffeinate -ims`.
+  Output goes to `remote-ensemble.log`. The tree stage peaks at ~78 GB RSS summed
+  across parent plus five fold workers, then settles to ~50 GB. There was no swap.
+  Five tree workers with three threads each fit on this machine.
+- Check: `tmux attach -t independent-ensemble`, or
+  `cat artifacts/independent-ensemble/remote/status.json`.
