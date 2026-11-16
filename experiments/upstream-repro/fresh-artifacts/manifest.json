@@ -42,9 +42,28 @@
         "reference_sha256": "2618181b442191d35d47bbe8542d717519e964fcae6c722e23febf1f8f876ed0",
         "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
       }
+    },
+    "rbmx2-40": {
+      "job": "rbmx2-40",
+      "artifact": "rbmx2-40.npz",
+      "artifact_sha256": "0f863788e5cb1174d94b6f5c9583c1798996c508affe0c5d45fa79ec59ca8ca8",
+      "prediction_bytes_sha256": "994f7fb04b1c5b692253676b5608e4c38544a4b51d84c72e72c092ad25e50327",
+      "source_npy_sha256": "a22f3f1256f1b56269d542cb03aacac71593a0232fe194a5f66ceaabe5b49a69",
+      "comparison": {
+        "job": "rbmx2-40",
+        "rows": 1128164,
+        "fresh_rmse": 0.9215122108231661,
+        "released_rmse": null,
+        "reference_available": false,
+        "prediction_rmse_difference": null,
+        "max_absolute_difference": null,
+        "fresh_sha256": "a22f3f1256f1b56269d542cb03aacac71593a0232fe194a5f66ceaabe5b49a69",
+        "reference_sha256": null,
+        "scope": "ProbeX diagnostic only; model training is fresh, reference vectors are imported"
+      }
     }
   },
-  "updated": "2026-11-16T09:21:27.192917+00:00",
+  "updated": "2026-11-16T10:19:18.662385+00:00",
   "python": "3.12.9",
   "numpy": "2.5.5",
   "state": "running"

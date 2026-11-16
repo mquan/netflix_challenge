@@ -1,0 +1,70 @@
+Running 'rbmx2-40': cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-40
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 10.41s
+[rbmx2-40]
+target = "rtg"
+Rbmx2Config { hidden_type: Bernoulli, visible_type: Softmax, temperature: 1.0, n_hidden: 40, n_epochs: 30, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.04, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: false, n_factors: None, mf_dim: 0, lr_mf_u: 0.001, lr_mf_i: 0.0005, wd_mf: 0.01, n_freq_bins: 8, lr_bif: 0.001, wd_bif: 0.01, lr_bif_bug: true }
+trainx => probex
+Epoch 01 | RMSE 1.01733
+Epoch 02 | RMSE 1.00059
+Epoch 03 | RMSE 0.98047
+Epoch 04 | RMSE 0.96804
+Epoch 05 | RMSE 0.95985
+Epoch 06 | RMSE 0.95255
+Epoch 07 | RMSE 0.94802
+Epoch 08 | RMSE 0.94492
+Epoch 09 | RMSE 0.94109
+Epoch 10 | RMSE 0.93925
+Epoch 11 | RMSE 0.93702
+Epoch 12 | RMSE 0.93512
+Epoch 13 | RMSE 0.93332
+Epoch 14 | RMSE 0.93221
+Epoch 15 | RMSE 0.93116
+Epoch 16 | RMSE 0.92973
+Epoch 17 | RMSE 0.92882
+Epoch 18 | RMSE 0.92807
+Epoch 19 | RMSE 0.92724
+Epoch 20 | RMSE 0.92669
+Epoch 21 | RMSE 0.92563
+Epoch 22 | RMSE 0.92550
+Epoch 23 | RMSE 0.92490
+Epoch 24 | RMSE 0.92405
+Epoch 25 | RMSE 0.92339
+Epoch 26 | RMSE 0.92315
+Epoch 27 | RMSE 0.92280
+Epoch 28 | RMSE 0.92267
+Epoch 29 | RMSE 0.92186
+Epoch 30 | RMSE 0.92152
+probex RMSE 0.92152
+fulltrain => qual
+Epoch 01 | RMSE 3.64996
+Epoch 02 | RMSE 3.66999
+Epoch 03 | RMSE 3.68391
+Epoch 04 | RMSE 3.69514
+Epoch 05 | RMSE 3.69969
+Epoch 06 | RMSE 3.71606
+Epoch 07 | RMSE 3.71329
+Epoch 08 | RMSE 3.72313
+Epoch 09 | RMSE 3.71915
+Epoch 10 | RMSE 3.71923
+Epoch 11 | RMSE 3.72623
+Epoch 12 | RMSE 3.73285
+Epoch 13 | RMSE 3.72798
+Epoch 14 | RMSE 3.73158
+Epoch 15 | RMSE 3.73562
+Epoch 16 | RMSE 3.73415
+Epoch 17 | RMSE 3.73758
+Epoch 18 | RMSE 3.73282
+Epoch 19 | RMSE 3.73436
+Epoch 20 | RMSE 3.73492
+Epoch 21 | RMSE 3.73304
+Epoch 22 | RMSE 3.73780
+Epoch 23 | RMSE 3.74089
+Epoch 24 | RMSE 3.73822
+Epoch 25 | RMSE 3.74155
+Epoch 26 | RMSE 3.74128
+Epoch 27 | RMSE 3.73527
+Epoch 28 | RMSE 3.74068
+Epoch 29 | RMSE 3.74019
+Epoch 30 | RMSE 3.74180
+

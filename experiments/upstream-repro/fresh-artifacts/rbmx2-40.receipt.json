@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "rbmx2-40",
+  "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-40",
+  "started": "2026-11-16T09:21:33.358638+00:00",
+  "finished": "2026-11-16T10:19:17.846477+00:00",
+  "outputs": {
+    "preds_new/rbmx2-40.fulltrain.npy": "6abc5d3ad1785ea3040b12443c11757c540f6f563c6c39116188cba3c776b5f2",
+    "preds_new/rbmx2-40.out": "cc005a7d031a4096f900f84bc77fbea2eb0556d56c78742c378cff25bfe5dac6",
+    "preds_new/rbmx2-40.probex.npy": "a22f3f1256f1b56269d542cb03aacac71593a0232fe194a5f66ceaabe5b49a69",
+    "preds_new/rbmx2-40.qual.npy": "b414e9e1b50128357442dc7ada649dcb33610dc0e0983fd4eedc9ee2cc771127",
+    "preds_new/rbmx2-40.trainx.npy": "0b652265f37fb9e9da391fb16348f2303280904c519c88f6b9953c333f4bdd96"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}
