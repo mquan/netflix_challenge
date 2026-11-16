@@ -1,0 +1,50 @@
+Running 'tsvdx4-60': cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 8.97s
+[tsvdx4-60]
+target = "rtg"
+TxConfig { n_feat: 60, n_epochs: 20, seed: 42, shuffle_users: true, n_time_bins: 29, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.00125, lr_u2: 7e-6, lr_ub: 0.0031, lr_ubd: 0.003, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_yb: 2.5e-5, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.000225, lr_ta: 2.25e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.0504, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.00735, reg_y: 0.04, reg_yd: 0.02667, sigma_iqf: 0.005, sigma_u: 0.0015, sigma_i: 0.005, sigma_y: 0.00333, sigma_yd: 0.009, reset_u_epoch: 13, max_neighbors: 0, lr_w: 0.0, lr_c: 0.0, reg_w: 0.0, reg_c: 0.0, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.0, w_factor: 1.0, w_nbr: 1.0, sum_err_bug: false, lambda1: 0.0, lambda2: 0.0, ordinal_head: None, save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
+trainx => probex
+Epoch 01 | RMSE 0.95836
+Epoch 02 | RMSE 0.93434
+Epoch 03 | RMSE 0.91991
+Epoch 04 | RMSE 0.91008
+Epoch 05 | RMSE 0.90281
+Epoch 06 | RMSE 0.89735
+Epoch 07 | RMSE 0.89296
+Epoch 08 | RMSE 0.88961
+Epoch 09 | RMSE 0.88730
+Epoch 10 | RMSE 0.88504
+Epoch 11 | RMSE 0.88359
+Epoch 12 | RMSE 0.88247
+Epoch 13 | RMSE 0.89876
+Epoch 14 | RMSE 0.89086
+Epoch 15 | RMSE 0.88669
+Epoch 16 | RMSE 0.88384
+Epoch 17 | RMSE 0.88222
+Epoch 18 | RMSE 0.88097
+Epoch 19 | RMSE 0.88024
+Epoch 20 | RMSE 0.88003
+probex RMSE 0.88003
+fulltrain => qual
+Epoch 01 | RMSE 3.70756
+Epoch 02 | RMSE 3.70543
+Epoch 03 | RMSE 3.72392
+Epoch 04 | RMSE 3.72303
+Epoch 05 | RMSE 3.72573
+Epoch 06 | RMSE 3.72475
+Epoch 07 | RMSE 3.73002
+Epoch 08 | RMSE 3.73261
+Epoch 09 | RMSE 3.73360
+Epoch 10 | RMSE 3.73449
+Epoch 11 | RMSE 3.73605
+Epoch 12 | RMSE 3.73798
+Epoch 13 | RMSE 3.72241
+Epoch 14 | RMSE 3.73244
+Epoch 15 | RMSE 3.73131
+Epoch 16 | RMSE 3.73474
+Epoch 17 | RMSE 3.73435
+Epoch 18 | RMSE 3.73688
+Epoch 19 | RMSE 3.73702
+Epoch 20 | RMSE 3.74024
+
