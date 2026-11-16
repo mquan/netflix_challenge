@@ -40,8 +40,8 @@
     <section id="timeline" aria-labelledby="timeline-title">
       <div class="section-head"><div><div class="section-num">01 / Calendar time</div><h2 id="timeline-title">Overall progress · September–November</h2></div></div>
       <div class="panel">
-        <div class="early-records">The chart begins at B1 and now runs through November 15 Pacific. Logos show Probe development; faded markers are unpromoted screens. The separate violet diamond shows the recovered qualifying audit on a different population. <a href="INTERMEDIATE_PROGRESS.md">Intermediate experiment evidence</a>. <a href="RESULTS.md">Full early record</a>.</div>
-        <div class="chart-head"><h3>Probe CV and qualifying audit by real date</h3><span class="small">Begins at B1 · 0.8936901</span></div>
+        <div class="early-records">The chart begins at B1 and runs through November 15 Pacific. <strong>PUB466 → QUAL619 is an evaluation change, not a measured 0.00734 improvement.</strong> Probe CV and recovered qualifying audits use different rows and training setups. Logos show Probe development; faded markers are unpromoted screens. The separate violet diamond shows the recovered qualifying audit on a different population. <a href="INTERMEDIATE_PROGRESS.md">Intermediate experiment evidence</a>. <a href="RESULTS.md">Full early record</a>.</div>
+        <div class="chart-head"><h3>Probe CV and qualifying audit by real date</h3><span class="small">Continuous RMSE scale · 0.850–0.955</span></div>
         <div class="controls strategy-controls" id="strategy-controls" role="group" aria-label="Highlight strategy"></div>
         <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 620" role="img" aria-label="Probe CV through November 15, with a separate recovered qualifying audit diamond and the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
         <div class="legend"><span>Tap a marker for its record · faded = unpromoted · violet diamond = recovered audit</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
@@ -61,11 +61,11 @@
     <section id="breakthrough" aria-labelledby="breakthrough-title">
       <div class="section-head"><div><div class="section-num">Latest / November 15 Pacific · November 16 UTC</div><h2 id="breakthrough-title">The 10% target, reached locally</h2></div><p>The frozen 619-input contextual ridge crosses 0.85725 on both recovered qualifying groups. Independent scoring and inference replay verify the saved predictions.</p></div>
       <div class="comparison-note"><div class="comparison-metric"><span class="comparison-kicker">Verified recovered-label result</span><strong class="comparison-score">0.85719</strong><span class="small">Source1 · 1,408,342 ratings</span><span class="comparison-status">10.00626267% below 0.9525</span></div><div><h3>Both recovered groups pass</h3><p>Source0: <strong>0.8561542082</strong> on 1,408,789 ratings. The worse group clears the target by 0.0000596519 RMSE.</p><p class="comparison-caveat">This is adaptive evaluation using community-recovered qualifying labels, not official Netflix scoring or an untouched private Test. Group counts conflict with published Quiz/Test counts, so source0/source1 names are preserved. Repeated audits and upstream public-Quiz selection limit the generalization claim.</p></div></div>
-      <div class="panel" style="margin-top:24px"><div class="chart-head"><h3>The final integration sequence</h3><span class="small">Same recovered groups · separate from Probe CV</span></div><div class="chart-shell competition-shell">__QUALIFYING_GRAPH__</div><p class="competition-intro">The final matched ridge comparison improved source1 from 0.8575942 with 83 inputs to 0.8571903 with 619, using the same context design and alpha 0.001. These selected candidates show the path to the winner, not every attempted run.</p></div>
+      <div class="panel" style="margin-top:24px"><div class="chart-head"><h3>The final integration sequence</h3><span class="small">Same recovered groups · separate from Probe CV</span></div><div class="chart-shell competition-shell">__QUALIFYING_GRAPH__</div><p class="competition-intro"><strong>This separate chart zooms to RMSE 0.8560–0.8585.</strong> It compares the same recovered qualifying groups throughout; unlike the overall graph, it can show measured candidate-to-candidate changes. The final matched ridge comparison improved source1 from 0.8575942 with 83 inputs to 0.8571903 with 619, using the same context design and alpha 0.001. These selected candidates show the path to the winner, not every attempted run.</p></div>
       <div class="arc" style="margin-top:20px">
         <article data-no="01"><span class="tag">Reuse + audit</span><h3>Combine existing research</h3><p>536 public individual collaborative-filtering predictions, 77 audited Probe/ProbeX-fitted blend outputs, and six local inputs formed the final 619-column bank. Prediction pairs and row mapping made reuse possible; final Quiz-fitted source ensembles were excluded.</p></article>
         <article data-no="02"><span class="tag">Decisive gain</span><h3>Keep raw signal beside blends</h3><p>Compressed blend outputs helped, but keeping the individual CF predictions alongside them delivered the last 0.0004039 RMSE improvement. Five user, movie and date contexts let a regularized ridge vary its weights.</p></article>
-        <article data-no="03"><span class="tag">Why hours after a month?</span><h3>Integration changed the pace</h3><p>The approximately 8h 38m optimization run reused earlier local work and substantial external pretraining. The final expansion took minutes; hundreds of models were not trained from scratch in that time. <a href="BREAKTHROUGH.md">Read the full retrospective</a>.</p></article>
+        <article data-no="03"><span class="tag">Why hours after a month?</span><h3>Integration changed the pace</h3><p>PUB466 finished at 11:14 am Pacific and QUAL619 was audited at 6:42 pm: 7h 28m apart, on different evaluation sets. The approximately 8h 38m optimization run reused earlier local work and substantial external pretraining. The final expansion took minutes; hundreds of models were not trained from scratch in that time. <a href="BREAKTHROUGH.md">Read the full retrospective</a>.</p></article>
       </div>
       <div class="note"><strong>Development remains separate:</strong> the best entire-original-Probe nested user-fold development result is now <strong>0.8645337528</strong> from the 466-base local/public NN2. Alternative ProbeX development reached 0.8565023 on a different population. Production refits include the original Probe ratings; the final ridge fits known ProbeX labels. Upstream intermediate blends prevent an independent nested-CV claim for the final stack. <a href="QUALIFYING_PROGRESS.md">Audit trail</a> · <a href="experiments/QUAL-target-final-result-20261116.json">Verification receipt</a>.</div>
     </section>
@@ -128,16 +128,16 @@
   let strategy = 'All';
   const dateMin = Date.parse(DATA.milestones[0].time), dateMax = Math.max(...DATA.milestones.map(d=>Date.parse(d.time)))+864e5;
   const sx = t => 72+(Date.parse(t)-dateMin)/(dateMax-dateMin)*830;
-  const sy = score => 443-(score-.855)/(.895-.855)*298;
+  const sy = score => 443-(score-.850)/(.955-.850)*350;
   function textNode(x,y,value,cls,anchor){const e=svgEl('text',{x,y,class:cls,'text-anchor':anchor||'start'});e.textContent=value;return e;}
   function showTip(tip,shell,text,x,y){tip.innerHTML=text;tip.style.display='block';const sw=shell.clientWidth,tw=tip.offsetWidth;tip.style.left=Math.max(8,Math.min(sw-tw-8,x))+'px';tip.style.top=Math.max(4,y-12-tip.offsetHeight)+'px';}
   function hideTip(tip){tip.style.display='none';}
   function selectMilestone(d,scrollToRow=false){selected=d;hideTip($('timeline-tip'));drawTimeline();renderRows();if(scrollToRow)$('milestone-rows').querySelector('tr.active')?.scrollIntoView({behavior:'smooth',block:'center'});}
-  function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=[.855,.86,.865,.87,.875,.88,.885,.89,.895];
-    svg.append(textNode(72,27,'RMSE ↓ lower is better','axis-title'));
-    svg.append(svgEl('line',{x1:72,y1:84,x2:902,y2:84,class:'benchmark-line'}));
-    svg.append(textNode(61,88,'0.9525','axis','end'));
-    svg.append(textNode(902,70,'Cinematch · Netflix Test reference','benchmark-label','end'));
+  function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=[.850,.875,.900,.925];
+    svg.append(textNode(72,27,'RMSE ↓ continuous scale · 0.850–0.955','axis-title'));
+    svg.append(svgEl('line',{x1:72,y1:sy(.9525),x2:902,y2:sy(.9525),class:'benchmark-line'}));
+    svg.append(textNode(61,sy(.9525)+4,'0.9525','axis','end'));
+    svg.append(textNode(902,sy(.9525)-14,'Cinematch · Netflix Test reference','benchmark-label','end'));
     for(const v of ticks){const y=sy(v);svg.append(svgEl('line',{x1:72,y1:y,x2:902,y2:y,class:'grid'}));svg.append(textNode(61,y+4,v.toFixed(3),'axis','end'));}
     svg.append(svgEl('line',{x1:72,y1:sy(.85725),x2:902,y2:sy(.85725),class:'goal-line'}));
     svg.append(textNode(61,sy(.85725)+4,'0.85725','axis','end'));
@@ -170,7 +170,7 @@
   function drawCompetition(){const svg=$('competition-chart');clear(svg);const maxDays=competitionZoom?60:fullDays;
     const x=days=>72+days/maxDays*832;
     const y=score=>310-(score-.85)/(.955-.85)*250;
-    svg.append(textNode(72,30,'RMSE ↓ lower is better · distinct evaluation sets','axis-title'));
+    svg.append(textNode(72,30,'RMSE ↓ continuous scale · distinct evaluation sets','axis-title'));
     for(const score of [.95,.925,.9,.875,.85]){const yy=y(score);svg.append(svgEl('line',{x1:72,y1:yy,x2:904,y2:yy,class:'grid'}));svg.append(textNode(61,yy+4,score.toFixed(3),'axis','end'));}
     const goalY=y(.8563);svg.append(svgEl('line',{x1:72,y1:goalY,x2:904,y2:goalY,class:'competition-guide'}));svg.append(textNode(76,goalY-8,'10% Quiz threshold · 0.8563','goal-label'));
     const ticks=competitionZoom?[[0,'0'],[15,'15'],[30,'30'],[45,'45'],[60,'60']]:[[0,'0'],[365,'1 year'],[730,'2 years'],[fullDays,'1,028 days']];

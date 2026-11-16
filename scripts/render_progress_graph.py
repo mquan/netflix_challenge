@@ -20,7 +20,7 @@ OUT_PNG = ROOT / "assets/progress_graph.png"
 WIDTH, HEIGHT = 1600, 1700
 X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
-SCORE_MIN, SCORE_MAX = .855, .895
+SCORE_MIN, SCORE_MAX = .850, .955
 START = datetime.fromisoformat("2026-09-27T08:00:00-07:00")
 END = datetime.fromisoformat("2026-11-16T18:00:00+00:00")
 
@@ -76,16 +76,16 @@ def icon(name, x, y, size=23):
     )
 
 
-line(X0, 169, X1, 169, "#70d9d0", 2)
-text(X0, 150, "0.9525", "#70d9d0", 22, weight="700")
-text(X1, 150, "Cinematch baseline · Netflix Test", "#70d9d0", 22, "end", "700")
+line(X0, y_at(.9525), X1, y_at(.9525), "#70d9d0", 2)
+text(X0, y_at(.9525)-18, "0.9525", "#70d9d0", 22, weight="700")
+text(X1, y_at(.9525)-18, "Cinematch baseline · Netflix Test", "#70d9d0", 22, "end", "700")
 text(X0, 221, "PROBE CV + SEPARATE QUALIFYING AUDIT", "#a8b0c2", 21, weight="700")
 icon("codex", 1242, 207, 24)
 text(1265, 215, "Codex", "#f2f1ed", 22)
 icon("claude", 1393, 207, 24)
 text(1415, 215, "Claude", "#f2f1ed", 22)
 
-for tick in (.855, .860, .865, .870, .875, .880, .885, .890, .895):
+for tick in (.850, .875, .900, .925):
     y = y_at(tick)
     line(X0, y, X1, y, "#4b5364", 1, .55)
     text(X0 - 16, y + 7, f"{tick:.3f}", "#a8b0c2", 20, "end")
@@ -122,9 +122,9 @@ for ident, label, dx, dy, anchor in (
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
 
-line(X0, 754, X1, 754, "#baaaff", 2)
-text(X0, 738, "0.8572", "#baaaff", 22, weight="700")
-text(X1, 738, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
+line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
+text(X0, y_at(.85725)-18, "0.85725", "#baaaff", 22, weight="700")
+text(X1, y_at(.85725)-18, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
 text(X0, 860, "Probe CV and the recovered qualifying audit use different rows and training. Diamond: adaptive community audit, not an official Test score.", "#a8b0c2", 19)
 audit_svg = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["qualifying_svg"]()
 svg.append('<rect x="0" y="900" width="1600" height="800" fill="#10131d"/>')
