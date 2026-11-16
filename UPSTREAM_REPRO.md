@@ -2,7 +2,7 @@
 
 This branch prepares a fresh training replay of [gtakacs/netflix_prize](https://github.com/gtakacs/netflix_prize/tree/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c), pinned to commit `49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c`. It uses the author's Rust models, hyperparameters, data ingestion, ProbeX split, and pipeline recipes. Python only orchestrates execution and independently checks the reference blend.
 
-**Fresh training is now running on the M3 Max.** See [UPSTREAM_PROGRESS.md](UPSTREAM_PROGRESS.md) and [COORDINATION.md](COORDINATION.md). Preserve that existing queue; the manual commands below describe the original setup and should not be used to start duplicate training.
+**The first eight-model replay is complete. Next assignment: [UPSTREAM_EXPANSION.md](UPSTREAM_EXPANSION.md).** See [UPSTREAM_PROGRESS.md](UPSTREAM_PROGRESS.md) and [COORDINATION.md](COORDINATION.md). Preserve that existing queue; the manual commands below describe the original setup and should not be used to start duplicate training.
 
 ## What has been verified
 
