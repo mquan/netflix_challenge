@@ -116,5 +116,40 @@ class LiveQueueCompatibility(unittest.TestCase):
             self.assertIn('nan', (base/'UPSTREAM_PROGRESS.md').read_text())
 
 
+class ExportBackfill(unittest.TestCase):
+    def test_real_native_vectors_backfill_and_transfer_json_has_no_nan(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            base, fresh = root/'artifacts/upstream-repro', root/'fresh'
+            data = fresh/'data/probex'
+            data.mkdir(parents=True)
+            n = 1128164
+            np.save(data/'ratings.npy', np.full(n, 3, dtype=np.int8))
+            np.save(data/'user_idxs.npy', np.arange(n, dtype=np.int32))
+            (fresh/'preds_new').mkdir()
+            current = 'dnn-24'
+            for name in ['rbmx2-40', current]:
+                output = fresh/'preds_new'/(name+'.probex.npy')
+                np.save(output, np.full(n, 3, dtype=np.float32))
+                exchange.upstream.write(base/'fresh-receipts'/(name+'.json'),
+                    dict(job=name, source_commit=exchange.upstream.PIN,
+                         outputs={'preds_new/'+name+'.probex.npy':exchange.upstream.sha(output)}))
+                (base/'fresh-receipts'/(name+'.log')).write_text('unit fixture, no actual training\n')
+            exchange.upstream.write(base/'comparisons/rbmx2-40.json',
+                dict(fresh_rmse=0, released_rmse=float('nan'), reference_available=False))
+            canonical = dict(fresh_rmse=0, released_rmse=.01, reference_available=True)
+            with patch.object(exchange, 'ROOT', root), patch.object(exchange.upstream, 'BASE', base), patch.object(exchange.upstream, 'FRESH', fresh), patch.object(exchange.upstream, 'validate_fresh'):
+                exchange.export_existing_queue(current, canonical)
+            manifest = exchange.upstream.read(root/exchange.ARTIFACT_PREFIX/'manifest.json')
+            self.assertEqual(set(manifest['jobs']), {'rbmx2-40', current})
+            self.assertIsNone(manifest['jobs']['rbmx2-40']['comparison']['released_rmse'])
+            json.dumps(manifest, allow_nan=False)
+            for entry in manifest['jobs'].values():
+                artifact = root/exchange.ARTIFACT_PREFIX/entry['artifact']
+                self.assertEqual(exchange.upstream.sha(artifact), entry['artifact_sha256'])
+                with np.load(artifact, allow_pickle=False) as saved:
+                    self.assertEqual(exchange.array_sha(saved['prediction']), entry['prediction_bytes_sha256'])
+
+
 if __name__ == '__main__':
     unittest.main()
