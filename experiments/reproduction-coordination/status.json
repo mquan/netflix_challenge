@@ -5,8 +5,11 @@
     "active": "calibration-tree"
   },
   "remote": {
-    "state": "waiting-for-worker-branch",
-    "error": "fatal: couldn't find remote ref refs/heads/research/upstream-worker\n"
+    "state": "training-queue-active",
+    "active": "tsvdx4-60",
+    "prediction_artifacts": 0,
+    "note": "Waiting for first compatible artifact push; current model continues",
+    "commit": "8f84af348a6818fba6caa2983b6f218dbfdf9698"
   },
   "fresh_only_blends_complete": false
 }
