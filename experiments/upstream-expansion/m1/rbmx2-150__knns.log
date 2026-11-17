@@ -1,0 +1,9 @@
+Running 'rbmx2-150__knns': cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150__knns
+    Finished `release` profile [optimized] target(s) in 0.23s
+[rbmx2-150__knns]
+target = "0.9*rbmx2-150"
+KnnsConfig { k: 50, shrinkage: 100.0, scaling: 0.5, tau: 0.025, supp_source: Compute }
+trainx => probex
+probex RMSE 0.90056
+fulltrain => qual
+

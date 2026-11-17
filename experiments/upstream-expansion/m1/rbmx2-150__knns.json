@@ -1,0 +1,26 @@
+{
+  "job": "rbmx2-150__knns",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "job": "rbmx2-150__knns",
+    "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150__knns",
+    "started": "2026-11-17T05:59:29.739400+00:00",
+    "finished": "2026-11-17T06:05:09.822800+00:00",
+    "outputs": {
+      "preds_new/rbmx2-150__knns.out": "cc4664be2cf1e5028d87d80755a78a21da59b8aca62f77a5984d98e723525931",
+      "preds_new/rbmx2-150__knns.probex.npy": "73d2bf2a525d0fe23fc2d737ceb395fae33ff43494e11491a71d85079156bd16",
+      "preds_new/rbmx2-150__knns.qual.npy": "b029f6922f30b4a7a82a677fb345714161a274e6e8f74fab647fa53d3b517ce3"
+    },
+    "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+  },
+  "execution_machine": "m1",
+  "artifact_sha256": "63bc02768837d7408bf3819e5921aa2ff3b935d5c9153ff6cd63c32764d42140",
+  "prediction_bytes_sha256": "a3c48c312c47f1732b1b494f25fd1a0b59b66f1728e0b4ef84078f2d5aa004b6",
+  "native_npy_sha256": "73d2bf2a525d0fe23fc2d737ceb395fae33ff43494e11491a71d85079156bd16",
+  "development_sha256": "017155edceae02bb22ed4aca6f35a73786aa90ba800298efb7ee171ee4e75c0d",
+  "fresh_rmse": 0.9003214644873604,
+  "reference_available": true,
+  "released_rmse": 0.9001381629728847,
+  "prediction_rms_difference": 0.04969005822519374
+}
