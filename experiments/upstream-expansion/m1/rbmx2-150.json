@@ -1,0 +1,28 @@
+{
+  "job": "rbmx2-150",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "job": "rbmx2-150",
+    "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150",
+    "started": "2026-11-17T00:27:09.448352+00:00",
+    "finished": "2026-11-17T05:59:23.333100+00:00",
+    "outputs": {
+      "preds_new/rbmx2-150.fulltrain.npy": "21a0e0fd19594f818c700ce2dc327b3a85f012b8941c2a63bdfa4858bde0eee5",
+      "preds_new/rbmx2-150.ifeat.fulltrain.npy": "b37cb965710cae3fde34b1c0d4cabc51c92250c9f6c3da36242b91ee6a94f65a",
+      "preds_new/rbmx2-150.ifeat.trainx.npy": "2dd2ce595a9cad16a0991ebf21b992fe6e9eeca1b08a429f528815c4f5903723",
+      "preds_new/rbmx2-150.out": "04876f685a3038e633c2f349a8d7ffdeaa3c1facd47306ec65c27efb7de4d0dd",
+      "preds_new/rbmx2-150.probex.npy": "aa4e90ac650241ab3e04eae4fdf11479582de3287f5c0128bbc6653a983368df",
+      "preds_new/rbmx2-150.qual.npy": "433b39e97f0fdc9cc2430db7f7f61432746a0a1fb5ff5ecf57c9ca1e5fc54af6",
+      "preds_new/rbmx2-150.trainx.npy": "f6fbdf4829a784b2fdf59cc3f6041e5979fece52201e5ff79ee56177bee1f342"
+    },
+    "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+  },
+  "execution_machine": "m1",
+  "artifact_sha256": "6c474b3c207da8ddcef056a63a5e3d623f348fc9ace235afe910a5a9ba52e359",
+  "prediction_bytes_sha256": "833879cf8d1752d1701f0e3a93a43ed0ff6847a1e585e8e24c80625a592356c5",
+  "native_npy_sha256": "aa4e90ac650241ab3e04eae4fdf11479582de3287f5c0128bbc6653a983368df",
+  "development_sha256": "017155edceae02bb22ed4aca6f35a73786aa90ba800298efb7ee171ee4e75c0d",
+  "fresh_rmse": 0.9088557012540655,
+  "reference_available": false
+}

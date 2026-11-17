@@ -1,0 +1,72 @@
+Running 'rbmx2-150': cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 12.04s
+[rbmx2-150]
+target = "rtg"
+Rbmx2Config { hidden_type: Bernoulli, visible_type: Softmax, temperature: 1.0, n_hidden: 150, n_epochs: 30, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.03, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: true, n_factors: None, mf_dim: 0, lr_mf_u: 0.001, lr_mf_i: 0.0005, wd_mf: 0.01, n_freq_bins: 8, lr_bif: 0.001, wd_bif: 0.01, lr_bif_bug: true }
+trainx => probex
+Epoch 01 | RMSE 1.01420
+Epoch 02 | RMSE 0.99858
+Epoch 03 | RMSE 0.97517
+Epoch 04 | RMSE 0.96091
+Epoch 05 | RMSE 0.95085
+Epoch 06 | RMSE 0.94094
+Epoch 07 | RMSE 0.93611
+Epoch 08 | RMSE 0.93225
+Epoch 09 | RMSE 0.92827
+Epoch 10 | RMSE 0.92532
+Epoch 11 | RMSE 0.92254
+Epoch 12 | RMSE 0.92079
+Epoch 13 | RMSE 0.91936
+Epoch 14 | RMSE 0.91821
+Epoch 15 | RMSE 0.91646
+Epoch 16 | RMSE 0.91531
+Epoch 17 | RMSE 0.91513
+Epoch 18 | RMSE 0.91430
+Epoch 19 | RMSE 0.91362
+Epoch 20 | RMSE 0.91275
+Epoch 21 | RMSE 0.91238
+Epoch 22 | RMSE 0.91165
+Epoch 23 | RMSE 0.91074
+Epoch 24 | RMSE 0.91072
+Epoch 25 | RMSE 0.91010
+Epoch 26 | RMSE 0.91019
+Epoch 27 | RMSE 0.90978
+Epoch 28 | RMSE 0.90950
+Epoch 29 | RMSE 0.90879
+Epoch 30 | RMSE 0.90886
+probex RMSE 0.90886
+Saved W matrix to preds_new/rbmx2-150.ifeat.trainx.npy
+fulltrain => qual
+Epoch 01 | RMSE 3.65037
+Epoch 02 | RMSE 3.66025
+Epoch 03 | RMSE 3.67442
+Epoch 04 | RMSE 3.68802
+Epoch 05 | RMSE 3.68989
+Epoch 06 | RMSE 3.70270
+Epoch 07 | RMSE 3.70436
+Epoch 08 | RMSE 3.70817
+Epoch 09 | RMSE 3.70979
+Epoch 10 | RMSE 3.70518
+Epoch 11 | RMSE 3.71642
+Epoch 12 | RMSE 3.72146
+Epoch 13 | RMSE 3.71731
+Epoch 14 | RMSE 3.71461
+Epoch 15 | RMSE 3.72723
+Epoch 16 | RMSE 3.72664
+Epoch 17 | RMSE 3.72598
+Epoch 18 | RMSE 3.72523
+Epoch 19 | RMSE 3.71825
+Epoch 20 | RMSE 3.72818
+Epoch 21 | RMSE 3.72677
+Epoch 22 | RMSE 3.72485
+Epoch 23 | RMSE 3.73083
+Epoch 24 | RMSE 3.73064
+Epoch 25 | RMSE 3.73190
+Epoch 26 | RMSE 3.73227
+Epoch 27 | RMSE 3.73333
+Epoch 28 | RMSE 3.72742
+Epoch 29 | RMSE 3.73035
+Epoch 30 | RMSE 3.73459
+Saved W matrix to preds_new/rbmx2-150.ifeat.fulltrain.npy
+
