@@ -2,8 +2,8 @@
 
 {
   "machine": "m1",
-  "state": "job-complete",
-  "active": "dnn-24__attn-32",
+  "state": "complete",
+  "active": null,
   "completed": [
     "dnn-24__attn-32",
     "dnn-64",
@@ -13,5 +13,5 @@
     "tsvdx4-400lm__knnf"
   ],
   "error": null,
-  "updated": "2026-11-17T08:33:23.250068+00:00"
+  "updated": "2026-11-17T08:33:27.928546+00:00"
 }

@@ -1,0 +1,218 @@
+{
+  "plan": {
+    "version": 2,
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "assignments": {
+      "m1": [
+        "dnn-64"
+      ],
+      "m3": [
+        "dnn-24__attn-32",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__knnf",
+        "rbmx2-150",
+        "rbmx2-150__knns"
+      ]
+    },
+    "arms": {
+      "original-eight": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3"
+      ],
+      "plus-temporal": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__knnf"
+      ],
+      "plus-rbm": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3",
+        "rbmx2-150",
+        "rbmx2-150__knns"
+      ],
+      "plus-neural": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3",
+        "dnn-64",
+        "dnn-24__attn-32"
+      ],
+      "all-fourteen": [
+        "tsvdx4-60",
+        "tsvdx4-60__knns",
+        "rbmx2-40",
+        "rbmx2-40__knn3",
+        "dnn-24",
+        "dnn-24__knn3",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__knn3",
+        "dnn-64",
+        "dnn-24__attn-32",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__knnf",
+        "rbmx2-150",
+        "rbmx2-150__knns"
+      ]
+    },
+    "folds": 5,
+    "fold_seed": 20261116,
+    "ridge_lambda": 1000.0,
+    "input_clip": [
+      0,
+      6
+    ],
+    "output_clip": [
+      1.05,
+      4.95
+    ],
+    "unpenalized_intercept": true,
+    "tuning": "none; fixed before expansion fits",
+    "limitation": "ProbeX development comparisons; base recipes historically development-selected, not untouched Test",
+    "diagnostics": "Separate from expansion features; same-recipe replay versus support including qualifying query identities, with qualifying outcomes zero"
+  },
+  "records": [
+    {
+      "arm": "original-eight",
+      "rmse": 0.8695493650137697,
+      "fold_rmse": [
+        0.8690373774202033,
+        0.8670620650864613,
+        0.8705403577784088,
+        0.8707442803486884,
+        0.8703685702398668
+      ],
+      "prediction_sha256": "1cc4421329ec8ee3aa7dec7f6d253cd7417e92234fe824798ddce7d8cbfa5a50",
+      "delta_rmse": 0.0,
+      "fold_delta": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "arm": "plus-temporal",
+      "rmse": 0.8683842066683721,
+      "fold_rmse": [
+        0.867805424693903,
+        0.8658989196083526,
+        0.8693251327508205,
+        0.8696957113437158,
+        0.8692013579373036
+      ],
+      "prediction_sha256": "29ad4c88be34045b2d666e26a3a0c8cb90926783cfc3a13921e1a995e9db791f",
+      "delta_rmse": -0.0011651583453975434,
+      "fold_delta": [
+        -0.0012319527263002783,
+        -0.0011631454781086958,
+        -0.001215225027588307,
+        -0.0010485690049726326,
+        -0.0011672123025632253
+      ]
+    },
+    {
+      "arm": "plus-rbm",
+      "rmse": 0.868901726279527,
+      "fold_rmse": [
+        0.8684930428882621,
+        0.866382367286707,
+        0.8699221869478664,
+        0.8700774032881371,
+        0.8696392445223191
+      ],
+      "prediction_sha256": "540262a87f8468ce33a7dd16b9aa44ab6c633e8a63fcbdd95a568176b5c29a9f",
+      "delta_rmse": -0.0006476387342426726,
+      "fold_delta": [
+        -0.0005443345319411375,
+        -0.0006796977997542974,
+        -0.0006181708305423861,
+        -0.0006668770605513519,
+        -0.0007293257175476908
+      ]
+    },
+    {
+      "arm": "plus-neural",
+      "rmse": 0.869423841582711,
+      "fold_rmse": [
+        0.8688954785113511,
+        0.8669586465081252,
+        0.8704031015080833,
+        0.8706348622895361,
+        0.8702329509374064
+      ],
+      "prediction_sha256": "fd8c7ea7931713d9cc81fdd5586ad4a131125e7fa27ef6b68de08e99f09cb0cc",
+      "delta_rmse": -0.0001255234310586495,
+      "fold_delta": [
+        -0.00014189890885218936,
+        -0.00010341857833617851,
+        -0.00013725627032545873,
+        -0.00010941805915232194,
+        -0.0001356193024604213
+      ]
+    },
+    {
+      "arm": "all-fourteen",
+      "rmse": 0.8677119362283443,
+      "fold_rmse": [
+        0.8672049419730956,
+        0.8652190464617752,
+        0.8686868976272489,
+        0.8690088136037071,
+        0.8684454912321529
+      ],
+      "prediction_sha256": "684f415bf72a0e4ea7b6b26102662577fdc236463cf019075a18252625cb026c",
+      "delta_rmse": -0.0018374287854253657,
+      "fold_delta": [
+        -0.0018324354471076498,
+        -0.0018430186246861657,
+        -0.0018534601511598359,
+        -0.0017354667449813732,
+        -0.0019230790077139348
+      ]
+    }
+  ],
+  "remote_commit": null,
+  "execution": {
+    "mode": "local-takeover",
+    "plan_sha256": "b02f0854e609ee4224845a0359917ef90ae8601d1cf7fe03955fc3250276761f",
+    "assignments": {
+      "m1": [
+        "dnn-64",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__knnf",
+        "rbmx2-150",
+        "rbmx2-150__knns",
+        "dnn-24__attn-32"
+      ],
+      "m3": []
+    },
+    "reason": "User requested all remaining work run on the first computer because the other computer is busy.",
+    "changed_at": "2026-11-16T19:46:33.056793+00:00",
+    "scientific_model_and_evaluation_plan_changed": false
+  }
+}
