@@ -1,0 +1,125 @@
+{
+  "rows": 1128164,
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "records": [
+    {
+      "arm": "fresh-fourteen",
+      "columns": 14,
+      "fitted_rmse": 0.8676901081316817,
+      "final_layer_user_cv_rmse": 0.867711936228347,
+      "fold_rmse": [
+        0.8672049419730972,
+        0.8652190464617779,
+        0.8686868976272517,
+        0.8690088136037095,
+        0.8684454912321574
+      ]
+    },
+    {
+      "arm": "released-base-bank",
+      "columns": 137,
+      "fitted_rmse": 0.8603453215477412,
+      "final_layer_user_cv_rmse": 0.8604853106515593,
+      "fold_rmse": [
+        0.8597675130442893,
+        0.8577939709471161,
+        0.8612273520741546,
+        0.8623907377008974,
+        0.8612497095852407
+      ]
+    },
+    {
+      "arm": "released-base-plus-gbm",
+      "columns": 155,
+      "fitted_rmse": 0.8574654955516099,
+      "final_layer_user_cv_rmse": 0.8576148720743335,
+      "fold_rmse": [
+        0.8563040730250004,
+        0.8550938658094925,
+        0.8587426091845759,
+        0.8597244375388035,
+        0.8582164213237031
+      ]
+    },
+    {
+      "arm": "released-base-plus-mlp",
+      "columns": 160,
+      "fitted_rmse": 0.8571086950782646,
+      "final_layer_user_cv_rmse": 0.8572429090159421,
+      "fold_rmse": [
+        0.8561874152166541,
+        0.8545921268557773,
+        0.8582893126982463,
+        0.8592813945787814,
+        0.8578699390774411
+      ]
+    },
+    {
+      "arm": "released-base-plus-fwls",
+      "columns": 147,
+      "fitted_rmse": 0.8564859454361323,
+      "final_layer_user_cv_rmse": 0.8566107574917143,
+      "fold_rmse": [
+        0.8554137494715066,
+        0.8539944334863875,
+        0.8576793995006925,
+        0.858637827895877,
+        0.8573346839800391
+      ]
+    },
+    {
+      "arm": "released-all",
+      "columns": 188,
+      "fitted_rmse": 0.8561671559335605,
+      "final_layer_user_cv_rmse": 0.85632324086937,
+      "fold_rmse": [
+        0.8550849780175549,
+        0.8537509394745845,
+        0.85745719292082,
+        0.8583339127670573,
+        0.8569961983167778
+      ]
+    },
+    {
+      "arm": "released-without-gbmblend",
+      "columns": 170,
+      "fitted_rmse": 0.8563455975830517,
+      "final_layer_user_cv_rmse": 0.8564857923125245,
+      "fold_rmse": [
+        0.855303873675363,
+        0.8538797907573594,
+        0.8575630442594362,
+        0.8584935973161159,
+        0.8571950572151653
+      ]
+    },
+    {
+      "arm": "released-without-mlpblend",
+      "columns": 165,
+      "fitted_rmse": 0.8563067822202693,
+      "final_layer_user_cv_rmse": 0.8564471681618789,
+      "fold_rmse": [
+        0.8551829131937025,
+        0.8538689562838828,
+        0.8575803962404229,
+        0.8584736756081035,
+        0.857136924675685
+      ]
+    },
+    {
+      "arm": "released-without-fwlsblend",
+      "columns": 178,
+      "fitted_rmse": 0.8566862909149103,
+      "final_layer_user_cv_rmse": 0.8568409193419856,
+      "fold_rmse": [
+        0.8556424159058902,
+        0.854251802404163,
+        0.857980029259081,
+        0.8589150790794503,
+        0.8574220033964703
+      ]
+    }
+  ],
+  "scope": "Diagnostic only: released arrays and their prelearned intermediate blends; only final ridge is user-fold cross-fitted. This is not end-to-end held-out performance or fresh model training.",
+  "scientific_use": "Attribute missing-bank and blending-layer gaps before committing more base-model CPU time"
+}
