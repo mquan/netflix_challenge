@@ -1,0 +1,12 @@
+{
+  "repeated_evaluation_identical_scores": true,
+  "measured_command": "/usr/bin/time -l env PYTHONPATH=scripts .venv/bin/python scripts/upstream_snapshot_blend.py",
+  "wall_seconds": 11.7,
+  "max_resident_bytes": 2862432256,
+  "peak_memory_footprint_bytes": 1692981888,
+  "implementation_sha256": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+  "tests_sha256": "6d28d43d45842fc2982017d997702684b38ee769739953d1fee84e771cebfd87",
+  "tests_passed": 24,
+  "output_files_verified": true,
+  "base_training_jobs_started": 0
+}

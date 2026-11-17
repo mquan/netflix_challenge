@@ -56,8 +56,12 @@ At each checkpoint publish:
 
 The 0.860485 base-bank and 0.856323 full-stack controls are diagnostic targets, not promises that any particular compact fresh bank will match them. A fresh result near 0.856 requires reproducing enough of both the base bank and learned stack. We have not demonstrated that yet.
 
+## Snapshot/context checkpoint completed
+
+The six saved-output ablations are complete; see [SNAPSHOT_BLEND_PROGRESS.md](SNAPSHOT_BLEND_PROGRESS.md). The original fourteen reproduced at 0.867711936. Adding 42 nonduplicate saved snapshots and five unclipped components reaches 0.867287793. Adding a single-layer context-weighted blend reaches **0.866320074**, improving over fourteen in every user fold. Context uses known trainx identities/dates and query metadata only, with fold-local regression coefficients. No released prediction features or published epoch coefficients enter these fits. The implementation suite passes 24 tests.
+
 ## Immediate next work
 
-The gap audit is complete. The next experiment is the snapshot/component bank plus a fold-safe context-weighted blend using already generated predictions. No additional long base-model training has been started as part of this planning step.
+Screen the missing released predictors against the new fresh snapshot/context control, with explicit diagnostic labeling. Resolve each promising recipe's complete dependency bundle and rank gain against actual native training/RAM cost before launching additional training. Optional GBM/MLP evaluation requires full isolation of final scoring folds through all layers. No additional base-model training has started.
 
 Evidence: [gap-audit.json](experiments/upstream-expansion/gap-audit.json). Existing fresh results: [evaluation.json](experiments/upstream-expansion/evaluation.json).

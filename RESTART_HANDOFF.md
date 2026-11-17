@@ -7,12 +7,12 @@ Saved 2026-11-17T09:29:47.007474-08:00. Completed baseline/expansion and gap aud
 - Working tree: `/Users/quan/workspace/netflix_upstream_repro`
 - Branch: `research/upstream-verification`
 - Main plan: [UPSTREAM_TARGET_PLAN.md](UPSTREAM_TARGET_PLAN.md)
-- First task after restart: assemble the saved snapshot/component prediction bank, freeze its inputs, and evaluate it against the existing fourteen-column control. Then implement a fold-safe context-weighted blend. Neither task has started yet.
+- Snapshot/component bank and single-layer context blend are now complete: best fresh user-fold development RMSE **0.8663200739003126**. Read `SNAPSHOT_BLEND_PROGRESS.md` and `experiments/upstream-snapshot-blend/{manifest,evaluation}.json`. Next: diagnostic missing-predictor screening and full native dependency/cost resolution before selecting training bundles.
 - No research jobs are running. Nothing needs to be resumed at the OS/process level. Do not rerun the completed training queues.
 
 Suggested prompt for the next session:
 
-> Read `/Users/quan/workspace/netflix_upstream_repro/RESTART_HANDOFF.md` and `UPSTREAM_TARGET_PLAN.md`. Continue the saved snapshot/component bank and context-weighted blending plan. Preserve the verified fourteen-model control and publish progress to `research/upstream-verification`.
+> Read `/Users/quan/workspace/netflix_upstream_repro/RESTART_HANDOFF.md` and `UPSTREAM_TARGET_PLAN.md`. Continue diagnostic missing-predictor screening against the completed fresh snapshot/context control, then resolve promising native dependency bundles and costs. Preserve the verified fourteen-model control and publish progress to `research/upstream-verification`.
 
 ## What is complete
 
@@ -33,7 +33,13 @@ Suggested prompt for the next session:
 
 The full released stack's fitted score remains **0.856167156**. We have NOT achieved this through our own training. Its final-layer fitting/CV difference is only about 0.000156. Most of the gap lies in the missing model bank and blending layers. Released intermediate columns are already learned; this audit is conditional final-layer CV, not end-to-end held-out evaluation. FWLS outputs can depend on GBM/MLP outputs, so trace full dependencies before estimating a reduced replay's cost.
 
-## Next steps, in order
+## Completed since restart
+
+The original fourteen control reproduced at 0.8677119362283469. All 45 saved epochs and five components were verified against native receipts; three exact terminal-epoch duplicates were removed. The combined 61-column fresh bank scores 0.8672877930850104. A single-layer context-weighted fit over this bank scores **0.8663200739003126**, improving in all five folds. Context uses trainx identities/dates and query identities/dates only, with fixed normalization and no outcome-derived transforms. Five context main effects and 70 interactions with the original fourteen predictions yield 137 design columns including the intercept. No additional base training or corrected-support substitution occurred. All 24 upstream tests pass. See `SNAPSHOT_BLEND_PROGRESS.md` for details and reproduction commands.
+
+## Original experiment sequence
+
+Steps 1–4 are complete through the first context regression. Optional GBM/MLP fits remain; step 5 is next.
 
 1. Read the plan and audit, then reproduce the fresh-fourteen control before adding features.
 2. Use the already saved 45 epoch predictions (20 temporal-60, 20 temporal-400, 5 DNN-64) and five component outputs. Freeze content hashes; remove exact duplicates. Preserve clipping rules: rating predictions clip to [0,6] at ridge input, but component features may need to remain unclipped.
@@ -49,7 +55,7 @@ git status --short
 PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream*.py' -v
 ```
 
-The last full implementation suite passed 20 tests. The newer read-only gap audit verified frozen input hashes and asserted both prior numerical controls.
+The current full implementation suite passes 24 tests. The newer read-only gap audit verified frozen input hashes and asserted both prior numerical controls.
 
 - `scripts/upstream_repro.py`: native source/build/data wrapper and receipt verification.
 - `scripts/upstream_exchange.py`: original fresh-only control, fold assignment and ridge cross-fitting. `crossfit` clips all inputs to [0,6]; **do not blindly reuse it for unbounded component features** without explicitly handling the clip mask.
