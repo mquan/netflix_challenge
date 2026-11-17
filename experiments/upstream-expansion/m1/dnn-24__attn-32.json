@@ -1,0 +1,26 @@
+{
+  "job": "dnn-24__attn-32",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "job": "dnn-24__attn-32",
+    "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__attn-32 -p pipeline-new.toml",
+    "started": "2026-11-17T07:53:20.623519+00:00",
+    "finished": "2026-11-17T08:33:22.584532+00:00",
+    "outputs": {
+      "preds_new/dnn-24__attn-32.out": "54931a85fae051bcd04b19f55ca15c3a5550c0ec1d4e77b2f8f6ddafbf949c70",
+      "preds_new/dnn-24__attn-32.probex.npy": "9551c7f9e86e8535f245d1c9299e5655baa7f64ed80d147a9251ff6ab968a17a",
+      "preds_new/dnn-24__attn-32.qual.npy": "f5d2a9a3b5f0e75a32848833f8c1cd855dd303f5b067004d323b46e5fb93ede6"
+    },
+    "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+  },
+  "execution_machine": "m1",
+  "artifact_sha256": "bb415c1d79a3d943222218579aa6c485bcd2080c2582fdbb4a42cbb493ee435a",
+  "prediction_bytes_sha256": "c5acd5e2e6774d1bdbceaef640a2c384f61b3d8c656964e8c450e164ce7f4340",
+  "native_npy_sha256": "9551c7f9e86e8535f245d1c9299e5655baa7f64ed80d147a9251ff6ab968a17a",
+  "development_sha256": "017155edceae02bb22ed4aca6f35a73786aa90ba800298efb7ee171ee4e75c0d",
+  "fresh_rmse": 0.9157500278978129,
+  "reference_available": true,
+  "released_rmse": 0.9157500278978129,
+  "prediction_rms_difference": 0.0
+}

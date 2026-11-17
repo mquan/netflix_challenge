@@ -1,0 +1,29 @@
+Running 'dnn-24__attn-32': cargo build --release --bin dnn && ./target/release/dnn dnn-24__attn-32 -p pipeline-new.toml
+    Finished `release` profile [optimized] target(s) in 0.18s
+[dnn-24__attn-32]
+target = "1.0*dnn-24"
+AttnConfig { n_feat: 32, n_pool: 32, n_mf: 0, n_bins: 30, out_scale: 2.5, beta: 0.3, dev_beta: 0.4, n_epochs: 10, seed: 42, lr_decay: 0.9, lr_q: 0.005, lr_c: 0.005, lr_mf: 0.008, lr_bias: 0.005, lr_alpha: 2e-6, reg_q: 0.02, reg_c: 0.02, reg_mf: 0.015, reg_bias: 0.03, reg_bu_day: 0.03, reg_alpha: 50.0, sigma: 0.05, huber: 0.0, grad_clip: 1.0, emb_cap: 1.0, n_threads: 1, block_users: 32, train_frac: 1.0 }
+trainx => probex
+Epoch 01 | RMSE 0.91827
+Epoch 02 | RMSE 0.91798
+Epoch 03 | RMSE 0.91757
+Epoch 04 | RMSE 0.91738
+Epoch 05 | RMSE 0.91719
+Epoch 06 | RMSE 0.91710
+Epoch 07 | RMSE 0.91691
+Epoch 08 | RMSE 0.91686
+Epoch 09 | RMSE 0.91691
+Epoch 10 | RMSE 0.91680
+probex RMSE 0.91680
+fulltrain => qual
+Epoch 01 | RMSE 3.74080
+Epoch 02 | RMSE 3.74225
+Epoch 03 | RMSE 3.74300
+Epoch 04 | RMSE 3.74313
+Epoch 05 | RMSE 3.74317
+Epoch 06 | RMSE 3.74176
+Epoch 07 | RMSE 3.74234
+Epoch 08 | RMSE 3.74272
+Epoch 09 | RMSE 3.74296
+Epoch 10 | RMSE 3.74221
+
