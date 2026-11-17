@@ -1,0 +1,51 @@
+Running 'tsvdx4-400lm': cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-400lm
+    Finished `release` profile [optimized] target(s) in 0.25s
+[tsvdx4-400lm]
+target = "rtg"
+TxConfig { n_feat: 400, n_epochs: 20, seed: 42, shuffle_users: true, n_time_bins: 29, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.00125, lr_u2: 7e-6, lr_ub: 0.0031, lr_ubd: 0.003, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_yb: 2.5e-5, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.000225, lr_ta: 2.25e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.0504, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.00735, reg_y: 0.04, reg_yd: 0.02667, sigma_iqf: 0.005, sigma_u: 0.0015, sigma_i: 0.005, sigma_y: 0.00333, sigma_yd: 0.009, reset_u_epoch: 13, max_neighbors: 0, lr_w: 0.0, lr_c: 0.0, reg_w: 0.0, reg_c: 0.0, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.0, w_factor: 1.0, w_nbr: 1.0, sum_err_bug: false, lambda1: 0.0, lambda2: 0.0, ordinal_head: None, save_ifeat: true, save_ufeat: false, low_memory: true, full_su: true, lazy_day: false, ud_dim: None }
+trainx => probex
+Epoch 01 | RMSE 0.95963
+Epoch 02 | RMSE 0.93647
+Epoch 03 | RMSE 0.92265
+Epoch 04 | RMSE 0.91321
+Epoch 05 | RMSE 0.90620
+Epoch 06 | RMSE 0.90070
+Epoch 07 | RMSE 0.89638
+Epoch 08 | RMSE 0.89289
+Epoch 09 | RMSE 0.89037
+Epoch 10 | RMSE 0.88773
+Epoch 11 | RMSE 0.88580
+Epoch 12 | RMSE 0.88408
+Epoch 13 | RMSE 0.91100
+Epoch 14 | RMSE 0.90329
+Epoch 15 | RMSE 0.89801
+Epoch 16 | RMSE 0.89373
+Epoch 17 | RMSE 0.89033
+Epoch 18 | RMSE 0.88754
+Epoch 19 | RMSE 0.88530
+Epoch 20 | RMSE 0.88360
+probex RMSE 0.88360
+Saved item factors to preds_new/tsvdx4-400lm.ifeat.trainx.npy
+fulltrain => qual
+Epoch 01 | RMSE 3.69990
+Epoch 02 | RMSE 3.69956
+Epoch 03 | RMSE 3.71560
+Epoch 04 | RMSE 3.71433
+Epoch 05 | RMSE 3.71603
+Epoch 06 | RMSE 3.71507
+Epoch 07 | RMSE 3.72020
+Epoch 08 | RMSE 3.72156
+Epoch 09 | RMSE 3.72216
+Epoch 10 | RMSE 3.72198
+Epoch 11 | RMSE 3.72380
+Epoch 12 | RMSE 3.72499
+Epoch 13 | RMSE 3.71092
+Epoch 14 | RMSE 3.71457
+Epoch 15 | RMSE 3.71493
+Epoch 16 | RMSE 3.72008
+Epoch 17 | RMSE 3.71991
+Epoch 18 | RMSE 3.72136
+Epoch 19 | RMSE 3.71994
+Epoch 20 | RMSE 3.72450
+Saved item factors to preds_new/tsvdx4-400lm.ifeat.fulltrain.npy
+
