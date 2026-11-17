@@ -2,12 +2,13 @@
 
 {
   "machine": "m1",
-  "state": "training",
+  "state": "job-complete",
   "active": "tsvdx4-400lm__knnf",
   "completed": [
     "dnn-64",
-    "tsvdx4-400lm"
+    "tsvdx4-400lm",
+    "tsvdx4-400lm__knnf"
   ],
   "error": null,
-  "updated": "2026-11-17T00:26:41.402475+00:00"
+  "updated": "2026-11-17T00:27:04.652262+00:00"
 }

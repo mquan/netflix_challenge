@@ -1,0 +1,9 @@
+Running 'tsvdx4-400lm__knnf': cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-400lm__knnf
+    Finished `release` profile [optimized] target(s) in 0.25s
+[tsvdx4-400lm__knnf]
+target = "1.0*tsvdx4-400lm"
+KnnfConfig { factors: "preds_new/tsvdx4-400lm.ifeat", k: 25, scaling: 1.0, tau: 0.025 }
+trainx => probex
+probex RMSE 0.88401
+fulltrain => qual
+

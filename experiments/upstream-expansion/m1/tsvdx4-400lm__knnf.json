@@ -1,0 +1,26 @@
+{
+  "job": "tsvdx4-400lm__knnf",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "job": "tsvdx4-400lm__knnf",
+    "command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-400lm__knnf",
+    "started": "2026-11-17T00:26:44.315872+00:00",
+    "finished": "2026-11-17T00:27:03.964299+00:00",
+    "outputs": {
+      "preds_new/tsvdx4-400lm__knnf.out": "bad4905cf15804f03aab098b09fb6fc8969a8f89fc8d96eb6b2be437419b1839",
+      "preds_new/tsvdx4-400lm__knnf.probex.npy": "a3bf900a1e835479b720d4aa6b39407311cdfad4704917497501e4b5fe0bb78c",
+      "preds_new/tsvdx4-400lm__knnf.qual.npy": "93a8a5b611583712108ed633332efc7236596bd60d7928f4e2ae6e5a38daa228"
+    },
+    "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+  },
+  "execution_machine": "m1",
+  "artifact_sha256": "cbf60eae3c2ceaa8de333d3796d9a574ac3d9a63555a48e728dbcda43fac45cd",
+  "prediction_bytes_sha256": "8641c4ab0c97eff34db21a997d84aa818d8de8bdebda68681da2160b77e484a3",
+  "native_npy_sha256": "a3bf900a1e835479b720d4aa6b39407311cdfad4704917497501e4b5fe0bb78c",
+  "development_sha256": "017155edceae02bb22ed4aca6f35a73786aa90ba800298efb7ee171ee4e75c0d",
+  "fresh_rmse": 0.8825856223044821,
+  "reference_available": true,
+  "released_rmse": 0.8825856058233507,
+  "prediction_rms_difference": 4.284305117314429e-05
+}
