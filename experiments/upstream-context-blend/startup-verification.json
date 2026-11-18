@@ -1,0 +1,29 @@
+{
+  "state": "verified_live_nested_training",
+  "observed": "2026-11-18T21:57:44.290713+00:00",
+  "commands": {
+    "master": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context_blend.py",
+    "worker": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context_blend.py --worker"
+  },
+  "manifest_sha256": "5fa58407292a923d489666bdb5707af6246da3f1357640d16632884f7ca91494",
+  "manifest_inputs_and_sources_rehashed": true,
+  "last_inner_epoch": {
+    "utc": "2026-11-18T21:57:08.403953+00:00",
+    "stage": "nn_epoch",
+    "seed": 2026,
+    "epoch": 28,
+    "inner_mse": 0.7404161349920669,
+    "chosen": 24
+  },
+  "resource_observation": {
+    "pid": 63517,
+    "rss_bytes": 2389737472,
+    "native_rss_bytes": 12806815744,
+    "disk_free_bytes": 147178504192,
+    "heartbeat": "2026-11-18T21:57:44.239588+00:00"
+  },
+  "resource_limit_gib": 25,
+  "prepared_rows": 1128164,
+  "qualifying_labels_read": false,
+  "limitation": "Startup and inner-budget selection only; no complete outer-fold or final quality result yet."
+}

@@ -1,0 +1,22 @@
+{
+  "state": "verified",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_receipt_sha256": "1d76fdfe872b6891c45fbef5ed67d7fd06c27445f8922b97a4a0e99757a152bb",
+  "command_matches_registry": true,
+  "all_receipt_outputs_rehashed": 3,
+  "pairs": {
+    "probex": {
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__asym-16p75__knn3.probex.npy",
+      "sha256": "131f02f1b72675dd8d6c64caaa976fb40243826fc4eb14b1e613141cfc147038",
+      "rows": 1128164
+    },
+    "qual": {
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__asym-16p75__knn3.qual.npy",
+      "sha256": "916286b93d2306a0c037c19691b43488e8101ae69b7e14579c70e1bca33a64b2",
+      "rows": 2817131
+    }
+  },
+  "qualifying_outcomes_all_zero": true,
+  "qualifying_labels_read": false,
+  "scope": "Native paired outputs only; no qualifying quality score."
+}
