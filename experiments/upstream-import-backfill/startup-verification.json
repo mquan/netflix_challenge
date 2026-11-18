@@ -1,0 +1,12 @@
+{
+  "observed": "2026-11-18T23:52:04.201439+00:00",
+  "controller_pid": 81601,
+  "controller_live_command": "Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_import_backfill.py",
+  "primary_live_command": "Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_full_reproduce.py",
+  "controller_state": {
+    "state": "waiting_for_complete_auxiliary_run"
+  },
+  "primary_not_suspended": true,
+  "no_import_result_yet": true,
+  "scope": "Verified live waiting controller only; no primary prediction tree changes or new training result."
+}
