@@ -1,0 +1,13 @@
+# Practical reproduction of the larger published CFNADE models
+
+Keep the canonical `cfnade-96` preset: 320 hidden units, rank 96, 95 epochs per phase, original batch size, optimizer, schedule, ordinal objective and weight averaging. Use freshly trained outputs and known development labels. Qualifying outcomes remain zero.
+
+The first isolated optimization makes dense gradient writes contiguous and interleaves independent backward outputs while preserving every output's accumulation order. It passed 12 synthetic cases through seven epochs: all 84 live/Adam/averaged parameter arrays, RNG continuation and predictions matched the untouched implementation bit for bit. Its small synthetic training-time ratio was 1.17; this is not a full-data runtime estimate.
+
+The second candidate adds interleaved projection rows, reuses identical forward states across target-day bins when target-day context weights are disabled, and predicts query rows by user with local latent caches. It passed 24 configurations, including optional second hidden layers, temporal/implicit combinations, seven epochs, averaging swaps, and grouped predictions. All model/optimizer/RNG bits and predictions matched. Small synthetic training-time ratio: 1.20 relative to untouched source. Grouped inference and representative full-data runtime still need profiling.
+
+The source trees, patches, compiler receipts and tests are isolated under `artifacts/upstream-cfnade-fast{,-v2}` and `experiments/upstream-cfnade-fast{,-v2}`. Original training source and current model jobs are unchanged. Native deployment requires explicit patch/source/binary provenance and full-data resource checks.
+
+Next: add exact optimizer/averaging/RNG checkpoints before a long canonical run. The pinned `rand 0.9.2` StdRng uses ChaCha12Rng; a directly serializable ChaCha12 wrapper must first reproduce the pinned model's stream and all parameter bits. Test interrupted-versus-uninterrupted trajectories, all saved tensor shapes/hashes, averaged/live swaps and retained snapshot predictions. Save checkpoints after complete epoch predictions and keep bounded checkpoint history in an exclusively owned directory. Do not treat prediction exports as optimizer checkpoints.
+
+After parity and an available memory window, profile the canonical size on known trainx/ProbeX data, then train both phases if practical. Treat resulting CFNADE columns as a predeclared fresh extension, independently evaluate development performance and freeze a new production recipe before a recovered-label audit. The existing 85-column production path continues independently.

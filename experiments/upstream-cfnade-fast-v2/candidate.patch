@@ -1,0 +1,299 @@
+diff --git a/src/cfnade.rs b/src/cfnade.rs
+index 8832983..35f51d4 100644
+--- a/src/cfnade.rs
++++ b/src/cfnade.rs
+@@ -865,43 +865,21 @@ impl CfNadeModel {
+     }
+ 
+     /// Runs the context sum through the encoder/decoder layers to produce the latent vector z.
+-    fn encode_ctx_sum(&self, ctx_sum: &[f64]) -> Array1<f32> {
+-        let rank = self.cfg.rank;
+-        let hidden = self.cfg.n_hidden;
+-        let hidden2 = self.cfg.n_hidden2;
+-
+-        let mut h = vec![0.0; hidden];
+-        for i in 0..hidden {
+-            let mut s = self.enc_bias[i] as f64;
+-            for j in 0..rank {
+-                s += self.enc_proj[[i, j]] as f64 * ctx_sum[j];
+-            }
+-            h[i] = tanh(s as f32);
+-        }
+-
+-        let top = if hidden2 > 0 {
+-            let mut h2 = vec![0.0; hidden2];
+-            for i in 0..hidden2 {
+-                let mut s = self.hidden2_bias[i] as f64;
+-                for j in 0..hidden {
+-                    s += self.hidden2_proj[[i, j]] as f64 * h[j] as f64;
+-                }
+-                h2[i] = tanh(s as f32);
+-            }
+-            h2
+-        } else {
+-            h
+-        };
++    fn training_forward(&self,ctx_sum:&[f64])->(Vec<f32>,Vec<f32>,Vec<f32>){
++        let h:Vec<f32>=exact_matvec(&self.enc_proj,ctx_sum,Some(self.enc_bias.as_slice().unwrap()))
++            .into_iter().map(|s|tanh(s as f32)).collect();
++        let top=if self.cfg.n_hidden2>0{
++            let input:Vec<f64>=h.iter().map(|&v|v as f64).collect();
++            exact_matvec(&self.hidden2_proj,&input,Some(self.hidden2_bias.as_slice().unwrap()))
++                .into_iter().map(|s|tanh(s as f32)).collect()
++        }else{h.clone()};
++        let input:Vec<f64>=top.iter().map(|&v|v as f64).collect();
++        let z=exact_matvec(&self.dec_proj,&input,None).into_iter().map(|s|s as f32).collect();
++        (h,top,z)
++    }
+ 
+-        let mut z = Array1::zeros(rank);
+-        for j in 0..rank {
+-            let mut s = 0.0;
+-            for i in 0..top.len() {
+-                s += self.dec_proj[[j, i]] as f64 * top[i] as f64;
+-            }
+-            z[j] = s as f32;
+-        }
+-        z
++    fn encode_ctx_sum(&self,ctx_sum:&[f64])->Array1<f32>{
++        let (_,_,z)=self.training_forward(ctx_sum);Array1::from_vec(z)
+     }
+ 
+     /// Sums the A factors of rated items into per-day-bin context vectors.
+@@ -1246,6 +1224,7 @@ impl CfNadeModel {
+         let mut grad_ctx_bin_sums = vec![vec![0.0; rank]; DAY_BINS];
+         let mut grad_implicit_ctx_bin_sums = vec![vec![0.0; rank]; DAY_BINS];
+ 
++        let mut shared_forward:Option<(Vec<f32>,Vec<f32>,Vec<f32>)>=None;
+         for target_day_index in 0..DAY_BINS {
+             if suffix_by_day[target_day_index].is_empty() {
+                 continue;
+@@ -1268,37 +1247,12 @@ impl CfNadeModel {
+             }
+             let ctx_scale = self.apply_ctx_scale(&mut ctx_sum, ctx_len);
+ 
+-            let mut h = vec![0.0; hidden];
+-            for i in 0..hidden {
+-                let mut s = self.enc_bias[i] as f64;
+-                for j in 0..rank {
+-                    s += self.enc_proj[[i, j]] as f64 * ctx_sum[j];
+-                }
+-                h[i] = tanh(s as f32);
+-            }
+-
+-            let top = if hidden2 > 0 {
+-                let mut h2 = vec![0.0; hidden2];
+-                for i in 0..hidden2 {
+-                    let mut s = self.hidden2_bias[i] as f64;
+-                    for j in 0..hidden {
+-                        s += self.hidden2_proj[[i, j]] as f64 * h[j] as f64;
+-                    }
+-                    h2[i] = tanh(s as f32);
++            let (h,top,z)=if !self.cfg.use_ctx_target_day_scale {
++                if let Some(ref cached)=shared_forward {cached.clone()} else {
++                    let values=self.training_forward(&ctx_sum);
++                    shared_forward=Some(values.clone());values
+                 }
+-                h2
+-            } else {
+-                h.clone()
+-            };
+-
+-            let mut z = vec![0.0; rank];
+-            for j in 0..rank {
+-                let mut s = 0.0;
+-                for i in 0..top.len() {
+-                    s += self.dec_proj[[j, i]] as f64 * top[i] as f64;
+-                }
+-                z[j] = s as f32;
+-            }
++            }else{self.training_forward(&ctx_sum)};
+ 
+             let mut grad_z = vec![0.0; rank];
+ 
+@@ -1431,8 +1385,9 @@ impl CfNadeModel {
+             }
+ 
+             for j in 0..rank {
+-                for i in 0..top.len() {
+-                    grads.dec_proj[[j, i]] += (grad_z[j] * top[i] as f64) as f32;
++                let mut row=grads.dec_proj.row_mut(j);
++                for (g,&value) in row.iter_mut().zip(top.iter()) {
++                    *g += (grad_z[j] * value as f64) as f32;
+                 }
+             }
+ 
+@@ -1458,30 +1413,34 @@ impl CfNadeModel {
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             } else {
+-                for i in 0..hidden {
+-                    let mut s = 0.0;
+-                    for j in 0..rank {
+-                        s += self.dec_proj[[j, i]] as f64 * grad_z[j];
++                // Each output still sums j in exactly the original order.
++                for j in 0..rank {
++                    let row=self.dec_proj.row(j);
++                    for (sum,&weight) in grad_h.iter_mut().zip(row.iter()) {
++                        *sum += weight as f64 * grad_z[j];
+                     }
+-                    grad_h[i] = s * (1.0 - h[i] as f64 * h[i] as f64);
++                }
++                for i in 0..hidden {
++                    grad_h[i] *= 1.0 - h[i] as f64 * h[i] as f64;
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             }
+ 
+-            for j in 0..rank {
+-                for i in 0..hidden {
+-                    grads.enc_proj[[i, j]] += (grad_h[i] * ctx_sum[j]) as f32;
++            for i in 0..hidden {
++                let mut row=grads.enc_proj.row_mut(i);
++                for (g,&value) in row.iter_mut().zip(ctx_sum.iter()) {
++                    *g += (grad_h[i] * value) as f32;
+                 }
+             }
+ 
+             let mut grad_ctx_sum = vec![0.0; rank];
+-            for j in 0..rank {
+-                let mut s = 0.0;
+-                for i in 0..hidden {
+-                    s += self.enc_proj[[i, j]] as f64 * grad_h[i];
++            for i in 0..hidden {
++                let row=self.enc_proj.row(i);
++                for (sum,&weight) in grad_ctx_sum.iter_mut().zip(row.iter()) {
++                    *sum += weight as f64 * grad_h[i];
+                 }
+-                grad_ctx_sum[j] = s * ctx_scale as f64;
+             }
++            for value in &mut grad_ctx_sum { *value *= ctx_scale as f64; }
+ 
+             for ctx_day_index in 0..DAY_BINS {
+                 let ctx_weight =
+@@ -2262,6 +2221,19 @@ impl Regressor for CfNadeModel {
+         }
+     }
+ 
++    fn groups_by_user(&self)->bool{true}
++
++    fn predict_user_rows(&self,ds:&Dataset,u:usize,rows:&[usize],out:&mut[f32]){
++        let ratings=&self.user_ratings[u];
++        let mut latents:HashMap<usize,Array1<f32>>=HashMap::new();
++        for (value,&idx) in out.iter_mut().zip(rows){
++            let day=ds.dates[idx] as i32;
++            let key=if self.cfg.use_ctx_target_day_scale{self.day_index(day)}else{0};
++            let z=latents.entry(key).or_insert_with(||self.encode_user_for_day(u,ratings,day));
++            *value=self.predict_with_z(z.as_slice().unwrap(),u,ds.item_idxs[idx] as usize,day);
++        }
++    }
++
+     /// Predicts a rating, reusing the cached per-user/day-bin latent z when possible.
+     fn predict(&self, u: usize, i: usize, day: i32) -> f32 {
+         let ratings = &self.user_ratings[u];
+@@ -2282,3 +2254,95 @@ impl Regressor for CfNadeModel {
+         self.predict_with_z(guard.2.as_slice().unwrap(), u, i, day)
+     }
+ }
++
++impl CfNadeModel { pub fn audit_parameters(&self)->Vec<u32> {
++let mut out=vec![self.timestep as u32,self.swa_count as u32,self.swapped_in as u32];
++out.extend(self.a.iter().map(|v|v.to_bits()));
++out.extend(self.p.iter().map(|v|v.to_bits()));
++out.extend(self.b.iter().map(|v|v.to_bits()));
++out.extend(self.user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.swa_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_p.iter().map(|v|v.to_bits()));
++out.extend(self.swa_b.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.m_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_p.iter().map(|v|v.to_bits()));
++out.extend(self.v_p.iter().map(|v|v.to_bits()));
++out.extend(self.m_b.iter().map(|v|v.to_bits()));
++out.extend(self.v_b.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.v_wide_w.iter().map(|v|v.to_bits()));
++let mut rng=self.rng.clone();for _ in 0..8 {out.push(rng.random::<u32>());}
++out
++}}
++
++include!("cfnade_kernels.rs");
+diff --git a/src/lib.rs b/src/lib.rs
+index 6e19419..992b9e9 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -1562,3 +1562,5 @@ pub fn fit3_inner<M: Regressor + Sync>(
+         let _ = lf.flush();
+     }
+ }
++
++pub mod cfnade_original;

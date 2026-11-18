@@ -1,0 +1,14 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "script_sha256": "6df549d4d1fd83bb0b4d0cb1fb48868a8905f104d6392e51b6cab2a353243531",
+  "base_script_sha256": "0755f30320f1420fd8c7c029ecc31b9f0cf718ff7db2698334ccbfabefbb9061",
+  "patch_sha256": "9e312bf58be07b3af7a8c329c94bbf5f72e89a27a4a6522a3a83a0ead9a2aa9c",
+  "files": {
+    "src/cfnade.rs": "eb05b387cf1a3afc45389ff8ec598cf355952d9466b1b0f5d20720f8345d06b8",
+    "src/cfnade_original.rs": "dff5625edcb84fb1c630428f17876deba3abd1ce91b1c2118df3fcc2e3951ca7",
+    "src/cfnade_kernels.rs": "f66852552752b98b753bed7ad791c2cd6ebd87afec8a7032e2de7ee5e26b83da",
+    "src/lib.rs": "42be7fdeecf79178e4ad0d149e86c81fd284212fa77ad9d7fe18b9b53e59703d",
+    "src/bin/cfnade-fast-parity.rs": "ca437e13a5aa322ce8a3f7ddf01b88fc3cc2f1a44f40402e91d4767f07b83b9f"
+  },
+  "scope": "Candidate exact arithmetic optimization; model capacities, update order and optimizers unchanged. No full-scale performance claim."
+}
