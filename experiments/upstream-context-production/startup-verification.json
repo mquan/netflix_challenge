@@ -1,0 +1,12 @@
+{
+  "observed": "2026-11-18T22:34:47.882214+00:00",
+  "pid": 70908,
+  "live_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context_production.py",
+  "queue_state": {
+    "state": "waiting_for_first_frozen_audit",
+    "first_gate": "waiting"
+  },
+  "final_model_cache_not_created": true,
+  "first_qualifying_attempt_unchanged": true,
+  "scope": "Verified idle queued follow-on only, not an active fit or qualifying result."
+}
