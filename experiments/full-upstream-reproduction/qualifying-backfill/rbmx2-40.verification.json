@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T19:50:18.827429+00:00",
+  "job": "rbmx2-40",
+  "receipt_sha256": "ccebf3e6b6696bddb1ba291d403c539faefbe0cfbe46dd8e13d42d28c075f13c",
+  "outputs_verified": 5,
+  "paired_files": {
+    "probex": "artifacts/upstream-qualifying-backfill/fresh/preds_new/rbmx2-40.probex.npy",
+    "qual": "artifacts/upstream-qualifying-backfill/fresh/preds_new/rbmx2-40.qual.npy"
+  },
+  "paired_sha256": {
+    "probex": "4396204578b110b584943b4d9d9960e7762b35d74c1bddee84ae5e09190fe97a",
+    "qual": "b414e9e1b50128357442dc7ada649dcb33610dc0e0983fd4eedc9ee2cc771127"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_command_matches_registry": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Completed freshly trained two-phase base model admitted by the production resolver. No ensemble or qualifying quality claim."
+}

@@ -1,0 +1,72 @@
+{
+  "utc": "2026-11-18T19:47:54.211565+00:00",
+  "users": 480189,
+  "items": 17770,
+  "source_sha256": {
+    "artifacts/upstream-repro/source/src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "artifacts/upstream-repro/source/src/tsvdx4p.rs": "3e9efc8f0b624fb5b2024a01206de3c634bc6070a4841fdd5fac3c9ad891d3bd",
+    "artifacts/upstream-repro/source/src/bin/tsvdx4p-new.rs": "6489ccfaa1f9df3fe2205feff874bad7d68d2b53c281cc5303ce504986b3cfd5"
+  },
+  "n_freq_bins": 16,
+  "logical_chunks": 16,
+  "low_memory": true,
+  "formula": "float32 * factors * (3 * n_users + (16 frequency + 2 item factors + 16 thread deltas + 1 master reduction) * n_items)",
+  "records": [
+    {
+      "factors": 1000,
+      "user_factor_and_cache_bytes": 5762268000,
+      "item_frequency_and_factor_bytes": 1279440000,
+      "parallel_delta_and_reduction_bytes": 1208360000,
+      "subtotal_bytes": 8250068000,
+      "subtotal_gib": 7.683474570512772
+    },
+    {
+      "factors": 2000,
+      "user_factor_and_cache_bytes": 11524536000,
+      "item_frequency_and_factor_bytes": 2558880000,
+      "parallel_delta_and_reduction_bytes": 2416720000,
+      "subtotal_bytes": 16500136000,
+      "subtotal_gib": 15.366949141025543
+    },
+    {
+      "factors": 4000,
+      "user_factor_and_cache_bytes": 23049072000,
+      "item_frequency_and_factor_bytes": 5117760000,
+      "parallel_delta_and_reduction_bytes": 4833440000,
+      "subtotal_bytes": 33000272000,
+      "subtotal_gib": 30.733898282051086
+    },
+    {
+      "factors": 6000,
+      "user_factor_and_cache_bytes": 34573608000,
+      "item_frequency_and_factor_bytes": 7676640000,
+      "parallel_delta_and_reduction_bytes": 7250160000,
+      "subtotal_bytes": 49500408000,
+      "subtotal_gib": 46.10084742307663
+    },
+    {
+      "factors": 8000,
+      "user_factor_and_cache_bytes": 46098144000,
+      "item_frequency_and_factor_bytes": 10235520000,
+      "parallel_delta_and_reduction_bytes": 9666880000,
+      "subtotal_bytes": 66000544000,
+      "subtotal_gib": 61.46779656410217
+    },
+    {
+      "factors": 16000,
+      "user_factor_and_cache_bytes": 92196288000,
+      "item_frequency_and_factor_bytes": 20471040000,
+      "parallel_delta_and_reduction_bytes": 19333760000,
+      "subtotal_bytes": 132001088000,
+      "subtotal_gib": 122.93559312820435
+    }
+  ],
+  "limitations": [
+    "Static allocation lower bound, not measured peak RSS. Excludes native datasets, indices, user/day biases, allocator overhead, temporary vectors, other workers and OS.",
+    "Source low_memory=true disables per-user/day factor/cache matrices. Do NOT incorrectly add the large daily matrix used by the currently running ordinal temporal model.",
+    "Configured16 logical chunks retain16 delta matrices even when Rayon has fewer active threads.",
+    "Original first-epoch sequential recipes defer the delta allocation; later parallel epochs still need it.",
+    "Current serial mapped backend maps the three user-factor/cache matrices but leaves large item-frequency and thread-delta matrices on the heap; high-capacity parallel presets need additional verification/storage work."
+  ],
+  "policy": "Preserve source factors, epochs, chunks and arithmetic. Before later primary queue reaches unsafe concurrent allocations, use a separately versioned scheduler/storage plan; do not edit the active frozen primary source runner or downscale recipes silently."
+}
