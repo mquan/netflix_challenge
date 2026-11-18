@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "mf-60",
+  "command": "cargo build --release --bin mf-new && ./target/release/mf-new mf-60",
+  "started": "2026-11-18T16:45:14.162541+00:00",
+  "finished": "2026-11-18T16:52:36.368998+00:00",
+  "outputs": {
+    "preds_new/mf-60.fulltrain.npy": "6ef4a535668a7ad5d24ed28202f87100371cef81c48adedd89f4cf1aa57485e2",
+    "preds_new/mf-60.out": "028da46447ac012f39db51e6dcd283a255b9dbd823d067421c3a9cc12df8d8c7",
+    "preds_new/mf-60.probex.npy": "996c1e716e4385bd8ae0a5175384449f8f03fe5e0ee602321b841bc2e5f7d0db",
+    "preds_new/mf-60.qual.npy": "d32a7a3f880764e4bdf81760fb5017f06351772eef2d0983c11ca1a9edd7ff0e",
+    "preds_new/mf-60.trainx.npy": "e5485ea6b47c6cf8fd4712af16dccfa3d876e1d3993ca8589320f741cb02be4c"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

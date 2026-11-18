@@ -1,35 +1,32 @@
-# Current handoff: full fresh remote batch verified
+# Active goal: our own 10% Netflix improvement, local machine only
 
-Saved 2026-11-18T15:55:52.842432+00:00. Branch: `research/fresh-remote-batch`.
+User: **DO NOT stop until we achieve it.** Reproduce the public training bank; downloaded pretrained prediction features/blend inputs are excluded. The other laptop is unavailable. The tool goal is active and must stay active until both recovered qualifying groups independently pass 0.85725. No qualifying success has been established yet.
 
-Best fresh-only ProbeX development RMSE: **0.8621943362**, fixed equal average of three-seed tree/neural corrections over 83 fresh prediction columns. Previous best 0.8636584760; matched gain 0.0014641399, all five folds.
+Worktree: `/Users/quan/workspace/netflix_upstream_repro`, branch `research/full-upstream-reproduction`. Original `/Users/quan/workspace/netflix_prize` has unrelated user README changes; leave it alone. Source pin: `49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c`. Host: 10-core / 32-GiB Mac. No subagents are authorized by current instructions.
 
-All local fitting/auditing is complete. No owned training or sleep-prevention process remains. Read REMOTE_BATCH_PROGRESS.md, REMOTE_BATCH_PLAN.md and experiments/upstream-remote-batch/completion.json. Do not rerun completed queues.
+## Active processes — inspect launch/status files; do not launch duplicates
 
-## Completed checks
+- Sequential full native source DAG: `experiments/full-upstream-reproduction/launch.json`, `status.json`, `runner.log`. Script `upstream_full_reproduce.py`, native outputs/receipts `artifacts/upstream-repro/fresh{,-receipts}`. MF61, its KNN and asymmetry chains, MF60 and its KNN, and all 130 voting features have completed both phases. ALS is active at this checkpoint. Later source jobs continue automatically.
+- Original-capacity temporal model: `experiments/full-upstream-reproduction/mapped-training/launch.json`, `tsvdx5-150o.status.json`, `tsvdx5-150o.log`. Separate patched tree `artifacts/full-upstream-mapped/source`, independent target and receipts. First trainx epoch finished (0.95597); 25 epochs per phase. Keep it running. Disk-backed arrays plus lazy cache preserve source arithmetic/capacity; 4 execution modes x 288 cases passed exact parameter/prediction/component comparisons through 4800 factors, plus 72-MB mapping persistence. Source patches/proof are disclosed in MAPPED_TEMPORAL_REPRODUCTION.md. Final proof: `mapped-parity/verification.json`. A setup-check launch was blocked before fitting; logs preserved separately.
+- Missing old qualifying predictors: `experiments/full-upstream-reproduction/qualifying-backfill/launch.json`, `status.json`; isolated unmodified source/receipts `artifacts/upstream-qualifying-backfill/`. RBM40 -> KNN3, temporal KNN and two neural KNN endpoints. Only completed verified native parents were hardlinked. Independent output scans; no global-directory contamination.
+- Published voting-feature experiment: `experiments/upstream-voting-blend/{launch,status,manifest}.json`, tree.log/nn.log. Fixed 85 predictors (83 prior plus MF61/base+KNN), all 130 newly trained source voting features; 161 ridge columns / 221 nonlinear inputs. Same nested folds, scalers, three seeds, fixed half average. Tree then NN sequentially; replay and independent score automatic. Ridge baseline .8636297008006221 versus .8637056490665563. First held-out tree fold .86006421899 versus its ridge .86311251934. All five folds and NN remain required; partial fold is not target success.
+- Paired production bank watcher: `experiments/upstream-production-bank/launch.json`, inventory.json. Waits for all 85 paired native ProbeX/qual outputs, then builds both feature matrices. Resolves source receipts across main, backfill and mapped trees without importing into their active prediction directories. Recipe exactly preserves old float32 mean order even in a one-row chunk. Rebuild paired ProbeX because freshly retrained Hogwild models can differ from remote development predictions.
+- Final production watcher: `experiments/upstream-production/{launch,status}.json`. Waits for paired bank and independently verified nested voting budgets. Refits ridge/tree/NN on all known ProbeX, freezes per-seed median nested budgets, replays saved models, fixes equal average and final qualifying hash, then invokes existing recovered-label audit. Independently verifies both group scores with math.fsum. Script `upstream_production.py`. Final success requires reviewing this evidence; a waiting process is not completion.
 
-- All 25 exports from remote commit f130172 are accounted for: 24 unique, two previously integrated, nineteen primary additions, three separate intermediate-parent ridge sensitivity inputs.
-- Sixteen pinned commands/native receipts and native.out hashes, all export hashes/content, all metadata alignment hashes and raw standalone scores passed. Eighteen available released fixtures were independently checked; eight exact, six near-exact, four reported Hogwild differences. Released arrays never became fit features.
-- All 49 tests pass; both fitted families replay every prediction bit for bit, independent compensated-sum scoring agrees within 1e-12 and the fixed average is exact. The retained ridge vector is bit-identical to its old control.
-- Preserve scripts/upstream_nonlinear.py, upstream_remote_integration.py and upstream_remote_batch.py and their manifests. Changing frozen source/configuration invalidates resume verification.
+## Preserve frozen code and data
 
-```sh
-cd /Users/quan/workspace/netflix_upstream_repro
-PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream*.py' -v
-.venv/bin/python scripts/upstream_remote_batch.py --prepare
-.venv/bin/python scripts/upstream_remote_batch.py --verify-family tree
-.venv/bin/python scripts/upstream_remote_batch.py --verify-family nn
-.venv/bin/python scripts/upstream_remote_batch.py --verify-scores
-```
+Do not edit currently running/frozen scripts or support Rust files. Code hashes bind the nonlinear manifests, parity proof, or in-memory workers. For an implementation change, use a new version/experiment and preserve previous receipts. This includes original nonlinear/snapshot/exchange/repro/expansion/remote scripts, `upstream_full_reproduce.py`, mapped scripts/Rust, voting script, backfill and production scripts.
 
-Prepare verifies existing caches without fitting. Models, ridge weights/scalers and prepared data remain in artifacts/upstream-remote-batch/. Track evidence/prediction archive under experiments/upstream-remote-batch/. Earlier 62-/64-column caches remain intact. The failed pretraining report-format audit is preserved separately; it never trained nonlinear models.
+Run one original wrapper at a time **per prediction tree**. Its receipt scanner sees all directory changes; never copy other outputs into a tree while a wrapper there is running. Independent trees are intentional. Qualifying labels stay zero in all training trees, including isolated mapped and backfill trees. Native jobs contain both trainx/ProbeX and fulltrain/qual phases; partial predictions are not optimizer checkpoints. Preserve partial outputs rather than overwrite/restart silently.
 
-## Frozen controls and next work
+Model/feature selection stays on known development data. Final output must be frozen before recovered-label access. Recovered groups reverse published split counts; report both and distinguish this adaptive local audit from official/untouched Test. Never apply the older original-Probe score offset to ProbeX.
 
-- Fourteen ridge 0.8677119362283443; snapshot/context ridge 0.8663200739003126; 62-column ridge 0.866286461848646; 62-column average 0.8644717283393785; 64-column ridge 0.8655052917304086; 64-column average 0.8636584760350996; 83-column ridge 0.8637056490665563.
-- All incoming work is evaluated. The three intermediate parents were tested only in the separately declared ridge arms; they improve the main ridge by about 0.000012, and were not silently added to the nonlinear primary.
-- The original remote availability ended at 2026-11-18 15:01:05Z (training cutoff 13:01:05Z). No new remote training is assigned. Preserve its native model/fulltrain/qual output files; they are not all in Git.
-- Larger temporal and small CF-NADE feasibility remains an option for a newly authorized compute window. Read REMOTE_TEMPORAL_PLAN.md on research/remote-temporal-push, but do not reuse its expired hard-coded deadline. The remote large-model RAM claim in its handoff was based on the smaller host; do not mistake lower bounds for actual native peak RAM.
-- A qualifying target check needs an explicitly frozen production meta-model and verified fulltrain/qual inputs gathered from both hosts. Current exports are ProbeX only. Do not apply the original-Probe calibration offset to ProbeX or claim the 10% target from this CV score.
+## Immediate continuation
 
-The user wants our own training outputs, not blending downloaded predictions. Source implementations remain pinned at 49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c and are attributed. No downloaded prediction features, pretrained weights, published epoch coefficients or qualifying outcomes enter these fits. Source recipes have historical development-selection exposure; this is not untouched/official Test scoring. Original-Probe R9 scores use a different split.
+1. Inspect all launch PIDs/status/logs, memory, disk and new native receipts. Do not start duplicate workers. Keep user informed roughly every minute during active work.
+2. Verify completed voting tree and NN outputs, all fold receipts, exact saved-model replay and compensated score. Automatic master handles this; inspect failures rather than alter frozen files.
+3. Continue checking native/mapped/backfill training and paired qualifying coverage. The mapped job is the long dependency; first epoch took about 20 minutes including initialization under concurrent jobs. Sample showed active SGD plus flush overhead, not a stuck process. Resource guards retain partial failures.
+4. Main DAG has 201 jobs / 188 published columns. Five registry entries have no implementation in the available 84-commit source history: see unresolved-source-audit.json. Do not silently alias. Large models and descendants are held for storage work; additional very large parallel recipes may need a safer revised scheduler before reaching them. Do not change the frozen full-reproducer file referenced by the voting manifest; use a separate version if changing scheduling.
+5. Review final production proof/audit once automatic watchers complete. If either group misses, goal remains active: continue measured fresh source-model/feature iterations. If both pass, independently review provenance and scores, stop only redundant owned training groups, publish evidence/branch and mark goal complete. Do not equate process completion or CV improvement with success.
+
+Relevant plans: FULL_REPRODUCTION_PLAN.md, MAPPED_TEMPORAL_REPRODUCTION.md, VOTING_BLEND_PLAN.md, PRODUCTION_BANK_PLAN.md. Last full test run: 60 upstream tests + 4 remote-run tests passed. Pending code/evidence commits should be pushed to the current research branch. The previous 83-column fresh fixed-average best is .8621943361714148, fully verified; historical completion details are in REMOTE_BATCH_HANDOFF.md and REMOTE_BATCH_PROGRESS.md.
