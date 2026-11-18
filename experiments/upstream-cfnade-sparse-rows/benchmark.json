@@ -1,0 +1,39 @@
+{
+  "parity_proof_sha256": "bdf6fb36c90a0502a44585671d4bc4357c0b0e2515d04ad8980b1b836caa2018",
+  "source_sha256": "b1b46cdc59a4cbf0f102444b4fbd03d925faba6cb87269cf2ecb92a82b940525",
+  "driver_sha256": "b1b46cdc59a4cbf0f102444b4fbd03d925faba6cb87269cf2ecb92a82b940525",
+  "script_sha256": "f4fe6cb882de2fe401d461515167b44e2a76dd8edbc7ceee0017cf5e54e1be9e",
+  "executable_sha256": "592c287a9e2b2c33fcde51a866f19938daa7a6c6048ac94ce512ae95c4dbd10a",
+  "log_sha256": "faf2435a41d9d62df0834919d67817bcceab02ebffa25357ed5429865ce5ac10",
+  "timings_seconds": {
+    "baseline": [
+      3.574614292,
+      3.620022291,
+      3.699743333,
+      3.587895667,
+      3.61745375,
+      3.681919542,
+      3.591977291,
+      3.643949125,
+      3.581992709
+    ],
+    "candidate": [
+      3.534081542,
+      3.5149045,
+      3.536472792,
+      3.592656166,
+      3.495781083,
+      3.521226708,
+      3.551166583,
+      3.4864985,
+      3.5222005
+    ]
+  },
+  "medians_seconds": {
+    "baseline": 3.61745375,
+    "candidate": 3.5222005
+  },
+  "speedup": 1.0270436762472779,
+  "all_state_and_prediction_bits_equal": true,
+  "scope": "Canonical320/96,batch8,512 synthetic users with200 ratings each/2048 items. Nine timed epochs per implementation with alternating order; full-state/query equality after every epoch. Concurrently busy host; not full-scale throughput or goal quality."
+}

@@ -1,0 +1,637 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index d5260c4..515f49d 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -4,6 +4,8 @@ name = "netflix_prize"
+ version = "1.0.0"
+ 
+ [dependencies]
++rand_chacha = "0.9.0"
++libc = "0.2"
+ blas = {version="0.22", optional=true}
+ byteorder = "1.5.0"
+ flate2 = "1.0"
+diff --git a/src/cfnade.rs b/src/cfnade.rs
+index 8832983..0d16ea0 100644
+--- a/src/cfnade.rs
++++ b/src/cfnade.rs
+@@ -6,7 +6,8 @@ use crate::{Dataset, MaskedDataset, Regressor, get_users, rand_array2, rand_arra
+ use indicatif::ProgressIterator;
+ use ndarray::{Array1, Array2, Array3};
+ use parking_lot::Mutex;
+-use rand::{Rng, SeedableRng, prelude::SliceRandom, rngs::StdRng};
++use rand::{Rng, SeedableRng, prelude::SliceRandom};
++use rand_chacha::ChaCha12Rng as StdRng;
+ use std::collections::HashMap;
+ 
+ /// Transcendental f32 ops. With `--features det-math` they route through the
+@@ -274,6 +275,10 @@ struct SideStats {
+ 
+ /// Factored CF-NADE-S model: parameters, Adam/SWA state, and cached per-user data.
+ pub struct CfNadeModel {
++    checkpoint_directory: Option<std::path::PathBuf>,
++    checkpoint_lock: Option<std::fs::File>,
++    checkpoint_identity: serde_json::Value,
++    checkpoint_loaded_epoch: usize,
+     cfg: CfNadeConfig,
+ 
+     // Factored CF-NADE-S parameters.
+@@ -865,43 +870,21 @@ impl CfNadeModel {
+     }
+ 
+     /// Runs the context sum through the encoder/decoder layers to produce the latent vector z.
+-    fn encode_ctx_sum(&self, ctx_sum: &[f64]) -> Array1<f32> {
+-        let rank = self.cfg.rank;
+-        let hidden = self.cfg.n_hidden;
+-        let hidden2 = self.cfg.n_hidden2;
+-
+-        let mut h = vec![0.0; hidden];
+-        for i in 0..hidden {
+-            let mut s = self.enc_bias[i] as f64;
+-            for j in 0..rank {
+-                s += self.enc_proj[[i, j]] as f64 * ctx_sum[j];
+-            }
+-            h[i] = tanh(s as f32);
+-        }
+-
+-        let top = if hidden2 > 0 {
+-            let mut h2 = vec![0.0; hidden2];
+-            for i in 0..hidden2 {
+-                let mut s = self.hidden2_bias[i] as f64;
+-                for j in 0..hidden {
+-                    s += self.hidden2_proj[[i, j]] as f64 * h[j] as f64;
+-                }
+-                h2[i] = tanh(s as f32);
+-            }
+-            h2
+-        } else {
+-            h
+-        };
++    fn training_forward(&self,ctx_sum:&[f64])->(Vec<f32>,Vec<f32>,Vec<f32>){
++        let h:Vec<f32>=exact_matvec(&self.enc_proj,ctx_sum,Some(self.enc_bias.as_slice().unwrap()))
++            .into_iter().map(|s|tanh(s as f32)).collect();
++        let top=if self.cfg.n_hidden2>0{
++            let input:Vec<f64>=h.iter().map(|&v|v as f64).collect();
++            exact_matvec(&self.hidden2_proj,&input,Some(self.hidden2_bias.as_slice().unwrap()))
++                .into_iter().map(|s|tanh(s as f32)).collect()
++        }else{h.clone()};
++        let input:Vec<f64>=top.iter().map(|&v|v as f64).collect();
++        let z=exact_matvec(&self.dec_proj,&input,None).into_iter().map(|s|s as f32).collect();
++        (h,top,z)
++    }
+ 
+-        let mut z = Array1::zeros(rank);
+-        for j in 0..rank {
+-            let mut s = 0.0;
+-            for i in 0..top.len() {
+-                s += self.dec_proj[[j, i]] as f64 * top[i] as f64;
+-            }
+-            z[j] = s as f32;
+-        }
+-        z
++    fn encode_ctx_sum(&self,ctx_sum:&[f64])->Array1<f32>{
++        let (_,_,z)=self.training_forward(ctx_sum);Array1::from_vec(z)
+     }
+ 
+     /// Sums the A factors of rated items into per-day-bin context vectors.
+@@ -1246,6 +1229,7 @@ impl CfNadeModel {
+         let mut grad_ctx_bin_sums = vec![vec![0.0; rank]; DAY_BINS];
+         let mut grad_implicit_ctx_bin_sums = vec![vec![0.0; rank]; DAY_BINS];
+ 
++        let mut shared_forward:Option<(Vec<f32>,Vec<f32>,Vec<f32>)>=None;
+         for target_day_index in 0..DAY_BINS {
+             if suffix_by_day[target_day_index].is_empty() {
+                 continue;
+@@ -1268,37 +1252,12 @@ impl CfNadeModel {
+             }
+             let ctx_scale = self.apply_ctx_scale(&mut ctx_sum, ctx_len);
+ 
+-            let mut h = vec![0.0; hidden];
+-            for i in 0..hidden {
+-                let mut s = self.enc_bias[i] as f64;
+-                for j in 0..rank {
+-                    s += self.enc_proj[[i, j]] as f64 * ctx_sum[j];
+-                }
+-                h[i] = tanh(s as f32);
+-            }
+-
+-            let top = if hidden2 > 0 {
+-                let mut h2 = vec![0.0; hidden2];
+-                for i in 0..hidden2 {
+-                    let mut s = self.hidden2_bias[i] as f64;
+-                    for j in 0..hidden {
+-                        s += self.hidden2_proj[[i, j]] as f64 * h[j] as f64;
+-                    }
+-                    h2[i] = tanh(s as f32);
++            let (h,top,z)=if !self.cfg.use_ctx_target_day_scale {
++                if let Some(ref cached)=shared_forward {cached.clone()} else {
++                    let values=self.training_forward(&ctx_sum);
++                    shared_forward=Some(values.clone());values
+                 }
+-                h2
+-            } else {
+-                h.clone()
+-            };
+-
+-            let mut z = vec![0.0; rank];
+-            for j in 0..rank {
+-                let mut s = 0.0;
+-                for i in 0..top.len() {
+-                    s += self.dec_proj[[j, i]] as f64 * top[i] as f64;
+-                }
+-                z[j] = s as f32;
+-            }
++            }else{self.training_forward(&ctx_sum)};
+ 
+             let mut grad_z = vec![0.0; rank];
+ 
+@@ -1431,8 +1390,9 @@ impl CfNadeModel {
+             }
+ 
+             for j in 0..rank {
+-                for i in 0..top.len() {
+-                    grads.dec_proj[[j, i]] += (grad_z[j] * top[i] as f64) as f32;
++                let mut row=grads.dec_proj.row_mut(j);
++                for (g,&value) in row.iter_mut().zip(top.iter()) {
++                    *g += (grad_z[j] * value as f64) as f32;
+                 }
+             }
+ 
+@@ -1458,30 +1418,34 @@ impl CfNadeModel {
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             } else {
+-                for i in 0..hidden {
+-                    let mut s = 0.0;
+-                    for j in 0..rank {
+-                        s += self.dec_proj[[j, i]] as f64 * grad_z[j];
++                // Each output still sums j in exactly the original order.
++                for j in 0..rank {
++                    let row=self.dec_proj.row(j);
++                    for (sum,&weight) in grad_h.iter_mut().zip(row.iter()) {
++                        *sum += weight as f64 * grad_z[j];
+                     }
+-                    grad_h[i] = s * (1.0 - h[i] as f64 * h[i] as f64);
++                }
++                for i in 0..hidden {
++                    grad_h[i] *= 1.0 - h[i] as f64 * h[i] as f64;
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             }
+ 
+-            for j in 0..rank {
+-                for i in 0..hidden {
+-                    grads.enc_proj[[i, j]] += (grad_h[i] * ctx_sum[j]) as f32;
++            for i in 0..hidden {
++                let mut row=grads.enc_proj.row_mut(i);
++                for (g,&value) in row.iter_mut().zip(ctx_sum.iter()) {
++                    *g += (grad_h[i] * value) as f32;
+                 }
+             }
+ 
+             let mut grad_ctx_sum = vec![0.0; rank];
+-            for j in 0..rank {
+-                let mut s = 0.0;
+-                for i in 0..hidden {
+-                    s += self.enc_proj[[i, j]] as f64 * grad_h[i];
++            for i in 0..hidden {
++                let row=self.enc_proj.row(i);
++                for (sum,&weight) in grad_ctx_sum.iter_mut().zip(row.iter()) {
++                    *sum += weight as f64 * grad_h[i];
+                 }
+-                grad_ctx_sum[j] = s * ctx_scale as f64;
+             }
++            for value in &mut grad_ctx_sum { *value *= ctx_scale as f64; }
+ 
+             for ctx_day_index in 0..DAY_BINS {
+                 let ctx_weight =
+@@ -1617,17 +1581,24 @@ impl CfNadeModel {
+         timestep: usize,
+         batch_count: usize,
+     ) {
++        let shape=param.dim();
++        assert_eq!(shape,m.dim());assert_eq!(shape,v.dim());assert_eq!(shape.0,K);
++        let items=shape.1;let rank=shape.2;
++        let params=param.as_slice_mut().expect("contiguous factor rows");
++        let moments=m.as_slice_mut().expect("contiguous first moments");
++        let variances=v.as_slice_mut().expect("contiguous second moments");
+         let bc = batch_count.max(1) as f32;
+         let t = timestep as i32;
+         let corr1 = 1.0 - beta1.powi(t);
+         let corr2 = 1.0 - beta2.powi(t);
+         for rating in 0..K {
+-            for (&item, row_grad) in &grads[rating] {
+-                for j in 0..row_grad.len() {
+-                    let p = &mut param[[rating, item, j]];
+-                    let m_t = &mut m[[rating, item, j]];
+-                    let v_t = &mut v[[rating, item, j]];
+-                    let g = row_grad[j] / bc;
++            for (&item,row_grad) in &grads[rating] {
++                assert!(item<items);assert_eq!(row_grad.len(),rank);
++                let start=(rating*items+item)*rank;let end=start+rank;
++                for (((p,m_t),v_t),&gradient) in params[start..end].iter_mut()
++                    .zip(moments[start..end].iter_mut()).zip(variances[start..end].iter_mut())
++                    .zip(row_grad.iter()) {
++                    let g = gradient / bc;
+                     *m_t = beta1 * *m_t + (1.0 - beta1) * g;
+                     *v_t = beta2 * *v_t + (1.0 - beta2) * g * g;
+                     let mhat = *m_t / corr1;
+@@ -2114,7 +2085,9 @@ impl Regressor for CfNadeModel {
+         crate::teeln!("CF-NADE init: computing side-feature statistics...");
+         let side_stats = build_side_stats(tr);
+ 
+-        Self {
++        let mut model=Self {
++            checkpoint_directory:None,checkpoint_lock:None,
++            checkpoint_identity:serde_json::Value::Null,checkpoint_loaded_epoch:0,
+             cfg,
+             swa_a: a.clone(),
+             swa_p: p.clone(),
+@@ -2209,7 +2182,9 @@ impl Regressor for CfNadeModel {
+             timestep: 0,
+             swa_count: 0,
+             swapped_in: false,
+-        }
++        };
++        model.checkpoint_open(tr,pr);
++        model
+     }
+ 
+     /// Number of training epochs from the config.
+@@ -2217,6 +2192,16 @@ impl Regressor for CfNadeModel {
+         self.cfg.n_epochs
+     }
+ 
++    fn resumed_epoch(&self)->usize{self.checkpoint_loaded_epoch}
++    fn save_epoch_checkpoint(&mut self,epoch:usize){self.checkpoint_save(epoch);}
++    fn restore_epoch_prediction(&self,ds:&Dataset,model:&str,preds:&str,save_each:bool){
++        let epoch=self.checkpoint_loaded_epoch;
++        if save_each && epoch>0{
++            let values=crate::gen_preds_parallel(self,ds);
++            ndarray_npy::write_npy(format!("{preds}/{model}_ep{epoch:02}.{}.npy",ds.name),&values).unwrap();
++        }
++    }
++
+     /// Runs one epoch: batched SGD over all users, then updates (and finally swaps in) the SWA model.
+     fn fit_epoch(&mut self, _tr: &Dataset, _pr: &MaskedDataset, epoch: usize) {
+         self.clear_cache();
+@@ -2262,6 +2247,19 @@ impl Regressor for CfNadeModel {
+         }
+     }
+ 
++    fn groups_by_user(&self)->bool{true}
++
++    fn predict_user_rows(&self,ds:&Dataset,u:usize,rows:&[usize],out:&mut[f32]){
++        let ratings=&self.user_ratings[u];
++        let mut latents:HashMap<usize,Array1<f32>>=HashMap::new();
++        for (value,&idx) in out.iter_mut().zip(rows){
++            let day=ds.dates[idx] as i32;
++            let key=if self.cfg.use_ctx_target_day_scale{self.day_index(day)}else{0};
++            let z=latents.entry(key).or_insert_with(||self.encode_user_for_day(u,ratings,day));
++            *value=self.predict_with_z(z.as_slice().unwrap(),u,ds.item_idxs[idx] as usize,day);
++        }
++    }
++
+     /// Predicts a rating, reusing the cached per-user/day-bin latent z when possible.
+     fn predict(&self, u: usize, i: usize, day: i32) -> f32 {
+         let ratings = &self.user_ratings[u];
+@@ -2282,3 +2280,275 @@ impl Regressor for CfNadeModel {
+         self.predict_with_z(guard.2.as_slice().unwrap(), u, i, day)
+     }
+ }
++
++impl CfNadeModel { pub fn audit_parameters(&self)->Vec<u32> {
++let mut out=vec![self.timestep as u32,self.swa_count as u32,self.swapped_in as u32];
++out.extend(self.a.iter().map(|v|v.to_bits()));
++out.extend(self.p.iter().map(|v|v.to_bits()));
++out.extend(self.b.iter().map(|v|v.to_bits()));
++out.extend(self.user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.swa_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_p.iter().map(|v|v.to_bits()));
++out.extend(self.swa_b.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.m_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_p.iter().map(|v|v.to_bits()));
++out.extend(self.v_p.iter().map(|v|v.to_bits()));
++out.extend(self.m_b.iter().map(|v|v.to_bits()));
++out.extend(self.v_b.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.v_wide_w.iter().map(|v|v.to_bits()));
++let mut rng=self.rng.clone();for _ in 0..8 {out.push(rng.random::<u32>());}
++out
++}}
++
++include!("cfnade_kernels.rs");
++
++include!("cfnade_checkpoint.rs");
++
++impl CfNadeModel {
++fn checkpoint_write_arrays(&self,root:&std::path::Path)->serde_json::Map<String,serde_json::Value>{
++let mut files=serde_json::Map::new();
++let path=root.join("a.npy");ndarray_npy::write_npy(&path,&self.a).unwrap();checkpoint_sync(&path);files.insert("a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("p.npy");ndarray_npy::write_npy(&path,&self.p).unwrap();checkpoint_sync(&path);files.insert("p.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("b.npy");ndarray_npy::write_npy(&path,&self.b).unwrap();checkpoint_sync(&path);files.insert("b.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_bias.npy");ndarray_npy::write_npy(&path,&self.user_bias).unwrap();checkpoint_sync(&path);files.insert("user_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_drift.npy");ndarray_npy::write_npy(&path,&self.user_drift).unwrap();checkpoint_sync(&path);files.insert("user_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_item_scale.npy");ndarray_npy::write_npy(&path,&self.user_item_scale).unwrap();checkpoint_sync(&path);files.insert("user_item_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_item_scale_drift.npy");ndarray_npy::write_npy(&path,&self.user_item_scale_drift).unwrap();checkpoint_sync(&path);files.insert("user_item_scale_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_item_scale_bin.npy");ndarray_npy::write_npy(&path,&self.user_item_scale_bin).unwrap();checkpoint_sync(&path);files.insert("user_item_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_day_bias_bin.npy");ndarray_npy::write_npy(&path,&self.user_day_bias_bin).unwrap();checkpoint_sync(&path);files.insert("user_day_bias_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("user_day_scale_bin.npy");ndarray_npy::write_npy(&path,&self.user_day_scale_bin).unwrap();checkpoint_sync(&path);files.insert("user_day_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("day_bias.npy");ndarray_npy::write_npy(&path,&self.day_bias).unwrap();checkpoint_sync(&path);files.insert("day_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("item_time_bias.npy");ndarray_npy::write_npy(&path,&self.item_time_bias).unwrap();checkpoint_sync(&path);files.insert("item_time_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("day_freq_bias.npy");ndarray_npy::write_npy(&path,&self.day_freq_bias).unwrap();checkpoint_sync(&path);files.insert("day_freq_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("ctx_target_day_scale.npy");ndarray_npy::write_npy(&path,&self.ctx_target_day_scale).unwrap();checkpoint_sync(&path);files.insert("ctx_target_day_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("implicit_a.npy");ndarray_npy::write_npy(&path,&self.implicit_a).unwrap();checkpoint_sync(&path);files.insert("implicit_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("enc_proj.npy");ndarray_npy::write_npy(&path,&self.enc_proj).unwrap();checkpoint_sync(&path);files.insert("enc_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("hidden2_proj.npy");ndarray_npy::write_npy(&path,&self.hidden2_proj).unwrap();checkpoint_sync(&path);files.insert("hidden2_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("dec_proj.npy");ndarray_npy::write_npy(&path,&self.dec_proj).unwrap();checkpoint_sync(&path);files.insert("dec_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("enc_bias.npy");ndarray_npy::write_npy(&path,&self.enc_bias).unwrap();checkpoint_sync(&path);files.insert("enc_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("hidden2_bias.npy");ndarray_npy::write_npy(&path,&self.hidden2_bias).unwrap();checkpoint_sync(&path);files.insert("hidden2_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("wide_w.npy");ndarray_npy::write_npy(&path,&self.wide_w).unwrap();checkpoint_sync(&path);files.insert("wide_w.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_a.npy");ndarray_npy::write_npy(&path,&self.swa_a).unwrap();checkpoint_sync(&path);files.insert("swa_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_p.npy");ndarray_npy::write_npy(&path,&self.swa_p).unwrap();checkpoint_sync(&path);files.insert("swa_p.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_b.npy");ndarray_npy::write_npy(&path,&self.swa_b).unwrap();checkpoint_sync(&path);files.insert("swa_b.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_bias.npy");ndarray_npy::write_npy(&path,&self.swa_user_bias).unwrap();checkpoint_sync(&path);files.insert("swa_user_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_drift.npy");ndarray_npy::write_npy(&path,&self.swa_user_drift).unwrap();checkpoint_sync(&path);files.insert("swa_user_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_item_scale.npy");ndarray_npy::write_npy(&path,&self.swa_user_item_scale).unwrap();checkpoint_sync(&path);files.insert("swa_user_item_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_item_scale_drift.npy");ndarray_npy::write_npy(&path,&self.swa_user_item_scale_drift).unwrap();checkpoint_sync(&path);files.insert("swa_user_item_scale_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_item_scale_bin.npy");ndarray_npy::write_npy(&path,&self.swa_user_item_scale_bin).unwrap();checkpoint_sync(&path);files.insert("swa_user_item_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_day_bias_bin.npy");ndarray_npy::write_npy(&path,&self.swa_user_day_bias_bin).unwrap();checkpoint_sync(&path);files.insert("swa_user_day_bias_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_user_day_scale_bin.npy");ndarray_npy::write_npy(&path,&self.swa_user_day_scale_bin).unwrap();checkpoint_sync(&path);files.insert("swa_user_day_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_day_bias.npy");ndarray_npy::write_npy(&path,&self.swa_day_bias).unwrap();checkpoint_sync(&path);files.insert("swa_day_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_item_time_bias.npy");ndarray_npy::write_npy(&path,&self.swa_item_time_bias).unwrap();checkpoint_sync(&path);files.insert("swa_item_time_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_day_freq_bias.npy");ndarray_npy::write_npy(&path,&self.swa_day_freq_bias).unwrap();checkpoint_sync(&path);files.insert("swa_day_freq_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_ctx_target_day_scale.npy");ndarray_npy::write_npy(&path,&self.swa_ctx_target_day_scale).unwrap();checkpoint_sync(&path);files.insert("swa_ctx_target_day_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_implicit_a.npy");ndarray_npy::write_npy(&path,&self.swa_implicit_a).unwrap();checkpoint_sync(&path);files.insert("swa_implicit_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_enc_proj.npy");ndarray_npy::write_npy(&path,&self.swa_enc_proj).unwrap();checkpoint_sync(&path);files.insert("swa_enc_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_hidden2_proj.npy");ndarray_npy::write_npy(&path,&self.swa_hidden2_proj).unwrap();checkpoint_sync(&path);files.insert("swa_hidden2_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_dec_proj.npy");ndarray_npy::write_npy(&path,&self.swa_dec_proj).unwrap();checkpoint_sync(&path);files.insert("swa_dec_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_enc_bias.npy");ndarray_npy::write_npy(&path,&self.swa_enc_bias).unwrap();checkpoint_sync(&path);files.insert("swa_enc_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_hidden2_bias.npy");ndarray_npy::write_npy(&path,&self.swa_hidden2_bias).unwrap();checkpoint_sync(&path);files.insert("swa_hidden2_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("swa_wide_w.npy");ndarray_npy::write_npy(&path,&self.swa_wide_w).unwrap();checkpoint_sync(&path);files.insert("swa_wide_w.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_a.npy");ndarray_npy::write_npy(&path,&self.m_a).unwrap();checkpoint_sync(&path);files.insert("m_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_a.npy");ndarray_npy::write_npy(&path,&self.v_a).unwrap();checkpoint_sync(&path);files.insert("v_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_p.npy");ndarray_npy::write_npy(&path,&self.m_p).unwrap();checkpoint_sync(&path);files.insert("m_p.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_p.npy");ndarray_npy::write_npy(&path,&self.v_p).unwrap();checkpoint_sync(&path);files.insert("v_p.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_b.npy");ndarray_npy::write_npy(&path,&self.m_b).unwrap();checkpoint_sync(&path);files.insert("m_b.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_b.npy");ndarray_npy::write_npy(&path,&self.v_b).unwrap();checkpoint_sync(&path);files.insert("v_b.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_bias.npy");ndarray_npy::write_npy(&path,&self.m_user_bias).unwrap();checkpoint_sync(&path);files.insert("m_user_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_bias.npy");ndarray_npy::write_npy(&path,&self.v_user_bias).unwrap();checkpoint_sync(&path);files.insert("v_user_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_drift.npy");ndarray_npy::write_npy(&path,&self.m_user_drift).unwrap();checkpoint_sync(&path);files.insert("m_user_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_drift.npy");ndarray_npy::write_npy(&path,&self.v_user_drift).unwrap();checkpoint_sync(&path);files.insert("v_user_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_item_scale.npy");ndarray_npy::write_npy(&path,&self.m_user_item_scale).unwrap();checkpoint_sync(&path);files.insert("m_user_item_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_item_scale.npy");ndarray_npy::write_npy(&path,&self.v_user_item_scale).unwrap();checkpoint_sync(&path);files.insert("v_user_item_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_item_scale_drift.npy");ndarray_npy::write_npy(&path,&self.m_user_item_scale_drift).unwrap();checkpoint_sync(&path);files.insert("m_user_item_scale_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_item_scale_drift.npy");ndarray_npy::write_npy(&path,&self.v_user_item_scale_drift).unwrap();checkpoint_sync(&path);files.insert("v_user_item_scale_drift.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_item_scale_bin.npy");ndarray_npy::write_npy(&path,&self.m_user_item_scale_bin).unwrap();checkpoint_sync(&path);files.insert("m_user_item_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_item_scale_bin.npy");ndarray_npy::write_npy(&path,&self.v_user_item_scale_bin).unwrap();checkpoint_sync(&path);files.insert("v_user_item_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_day_bias_bin.npy");ndarray_npy::write_npy(&path,&self.m_user_day_bias_bin).unwrap();checkpoint_sync(&path);files.insert("m_user_day_bias_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_day_bias_bin.npy");ndarray_npy::write_npy(&path,&self.v_user_day_bias_bin).unwrap();checkpoint_sync(&path);files.insert("v_user_day_bias_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_user_day_scale_bin.npy");ndarray_npy::write_npy(&path,&self.m_user_day_scale_bin).unwrap();checkpoint_sync(&path);files.insert("m_user_day_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_user_day_scale_bin.npy");ndarray_npy::write_npy(&path,&self.v_user_day_scale_bin).unwrap();checkpoint_sync(&path);files.insert("v_user_day_scale_bin.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_day_bias.npy");ndarray_npy::write_npy(&path,&self.m_day_bias).unwrap();checkpoint_sync(&path);files.insert("m_day_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_day_bias.npy");ndarray_npy::write_npy(&path,&self.v_day_bias).unwrap();checkpoint_sync(&path);files.insert("v_day_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_item_time_bias.npy");ndarray_npy::write_npy(&path,&self.m_item_time_bias).unwrap();checkpoint_sync(&path);files.insert("m_item_time_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_item_time_bias.npy");ndarray_npy::write_npy(&path,&self.v_item_time_bias).unwrap();checkpoint_sync(&path);files.insert("v_item_time_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_day_freq_bias.npy");ndarray_npy::write_npy(&path,&self.m_day_freq_bias).unwrap();checkpoint_sync(&path);files.insert("m_day_freq_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_day_freq_bias.npy");ndarray_npy::write_npy(&path,&self.v_day_freq_bias).unwrap();checkpoint_sync(&path);files.insert("v_day_freq_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_ctx_target_day_scale.npy");ndarray_npy::write_npy(&path,&self.m_ctx_target_day_scale).unwrap();checkpoint_sync(&path);files.insert("m_ctx_target_day_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_ctx_target_day_scale.npy");ndarray_npy::write_npy(&path,&self.v_ctx_target_day_scale).unwrap();checkpoint_sync(&path);files.insert("v_ctx_target_day_scale.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_implicit_a.npy");ndarray_npy::write_npy(&path,&self.m_implicit_a).unwrap();checkpoint_sync(&path);files.insert("m_implicit_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_implicit_a.npy");ndarray_npy::write_npy(&path,&self.v_implicit_a).unwrap();checkpoint_sync(&path);files.insert("v_implicit_a.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_enc_proj.npy");ndarray_npy::write_npy(&path,&self.m_enc_proj).unwrap();checkpoint_sync(&path);files.insert("m_enc_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_enc_proj.npy");ndarray_npy::write_npy(&path,&self.v_enc_proj).unwrap();checkpoint_sync(&path);files.insert("v_enc_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_hidden2_proj.npy");ndarray_npy::write_npy(&path,&self.m_hidden2_proj).unwrap();checkpoint_sync(&path);files.insert("m_hidden2_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_hidden2_proj.npy");ndarray_npy::write_npy(&path,&self.v_hidden2_proj).unwrap();checkpoint_sync(&path);files.insert("v_hidden2_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_dec_proj.npy");ndarray_npy::write_npy(&path,&self.m_dec_proj).unwrap();checkpoint_sync(&path);files.insert("m_dec_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_dec_proj.npy");ndarray_npy::write_npy(&path,&self.v_dec_proj).unwrap();checkpoint_sync(&path);files.insert("v_dec_proj.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_enc_bias.npy");ndarray_npy::write_npy(&path,&self.m_enc_bias).unwrap();checkpoint_sync(&path);files.insert("m_enc_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_enc_bias.npy");ndarray_npy::write_npy(&path,&self.v_enc_bias).unwrap();checkpoint_sync(&path);files.insert("v_enc_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_hidden2_bias.npy");ndarray_npy::write_npy(&path,&self.m_hidden2_bias).unwrap();checkpoint_sync(&path);files.insert("m_hidden2_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_hidden2_bias.npy");ndarray_npy::write_npy(&path,&self.v_hidden2_bias).unwrap();checkpoint_sync(&path);files.insert("v_hidden2_bias.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("m_wide_w.npy");ndarray_npy::write_npy(&path,&self.m_wide_w).unwrap();checkpoint_sync(&path);files.insert("m_wide_w.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++let path=root.join("v_wide_w.npy");ndarray_npy::write_npy(&path,&self.v_wide_w).unwrap();checkpoint_sync(&path);files.insert("v_wide_w.npy".into(),serde_json::json!(checkpoint_md5(&path)));
++files
++}
++fn checkpoint_read_arrays(&mut self,root:&std::path::Path,files:&serde_json::Map<String,serde_json::Value>){
++assert_eq!(files.len(),84);
++let path=root.join("a.npy");assert_eq!(checkpoint_md5(&path),files["a.npy"].as_str().unwrap(),"checkpoint tensor checksum: a");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.a.raw_dim(),"checkpoint tensor shape: a");self.a=value;
++let path=root.join("p.npy");assert_eq!(checkpoint_md5(&path),files["p.npy"].as_str().unwrap(),"checkpoint tensor checksum: p");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.p.raw_dim(),"checkpoint tensor shape: p");self.p=value;
++let path=root.join("b.npy");assert_eq!(checkpoint_md5(&path),files["b.npy"].as_str().unwrap(),"checkpoint tensor checksum: b");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.b.raw_dim(),"checkpoint tensor shape: b");self.b=value;
++let path=root.join("user_bias.npy");assert_eq!(checkpoint_md5(&path),files["user_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_bias.raw_dim(),"checkpoint tensor shape: user_bias");self.user_bias=value;
++let path=root.join("user_drift.npy");assert_eq!(checkpoint_md5(&path),files["user_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_drift");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_drift.raw_dim(),"checkpoint tensor shape: user_drift");self.user_drift=value;
++let path=root.join("user_item_scale.npy");assert_eq!(checkpoint_md5(&path),files["user_item_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_item_scale");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_item_scale.raw_dim(),"checkpoint tensor shape: user_item_scale");self.user_item_scale=value;
++let path=root.join("user_item_scale_drift.npy");assert_eq!(checkpoint_md5(&path),files["user_item_scale_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_item_scale_drift");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_item_scale_drift.raw_dim(),"checkpoint tensor shape: user_item_scale_drift");self.user_item_scale_drift=value;
++let path=root.join("user_item_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["user_item_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_item_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_item_scale_bin.raw_dim(),"checkpoint tensor shape: user_item_scale_bin");self.user_item_scale_bin=value;
++let path=root.join("user_day_bias_bin.npy");assert_eq!(checkpoint_md5(&path),files["user_day_bias_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_day_bias_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_day_bias_bin.raw_dim(),"checkpoint tensor shape: user_day_bias_bin");self.user_day_bias_bin=value;
++let path=root.join("user_day_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["user_day_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: user_day_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.user_day_scale_bin.raw_dim(),"checkpoint tensor shape: user_day_scale_bin");self.user_day_scale_bin=value;
++let path=root.join("day_bias.npy");assert_eq!(checkpoint_md5(&path),files["day_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: day_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.day_bias.raw_dim(),"checkpoint tensor shape: day_bias");self.day_bias=value;
++let path=root.join("item_time_bias.npy");assert_eq!(checkpoint_md5(&path),files["item_time_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: item_time_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.item_time_bias.raw_dim(),"checkpoint tensor shape: item_time_bias");self.item_time_bias=value;
++let path=root.join("day_freq_bias.npy");assert_eq!(checkpoint_md5(&path),files["day_freq_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: day_freq_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.day_freq_bias.raw_dim(),"checkpoint tensor shape: day_freq_bias");self.day_freq_bias=value;
++let path=root.join("ctx_target_day_scale.npy");assert_eq!(checkpoint_md5(&path),files["ctx_target_day_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: ctx_target_day_scale");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.ctx_target_day_scale.raw_dim(),"checkpoint tensor shape: ctx_target_day_scale");self.ctx_target_day_scale=value;
++let path=root.join("implicit_a.npy");assert_eq!(checkpoint_md5(&path),files["implicit_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: implicit_a");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.implicit_a.raw_dim(),"checkpoint tensor shape: implicit_a");self.implicit_a=value;
++let path=root.join("enc_proj.npy");assert_eq!(checkpoint_md5(&path),files["enc_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: enc_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.enc_proj.raw_dim(),"checkpoint tensor shape: enc_proj");self.enc_proj=value;
++let path=root.join("hidden2_proj.npy");assert_eq!(checkpoint_md5(&path),files["hidden2_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: hidden2_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.hidden2_proj.raw_dim(),"checkpoint tensor shape: hidden2_proj");self.hidden2_proj=value;
++let path=root.join("dec_proj.npy");assert_eq!(checkpoint_md5(&path),files["dec_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: dec_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.dec_proj.raw_dim(),"checkpoint tensor shape: dec_proj");self.dec_proj=value;
++let path=root.join("enc_bias.npy");assert_eq!(checkpoint_md5(&path),files["enc_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: enc_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.enc_bias.raw_dim(),"checkpoint tensor shape: enc_bias");self.enc_bias=value;
++let path=root.join("hidden2_bias.npy");assert_eq!(checkpoint_md5(&path),files["hidden2_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: hidden2_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.hidden2_bias.raw_dim(),"checkpoint tensor shape: hidden2_bias");self.hidden2_bias=value;
++let path=root.join("wide_w.npy");assert_eq!(checkpoint_md5(&path),files["wide_w.npy"].as_str().unwrap(),"checkpoint tensor checksum: wide_w");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.wide_w.raw_dim(),"checkpoint tensor shape: wide_w");self.wide_w=value;
++let path=root.join("swa_a.npy");assert_eq!(checkpoint_md5(&path),files["swa_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_a");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_a.raw_dim(),"checkpoint tensor shape: swa_a");self.swa_a=value;
++let path=root.join("swa_p.npy");assert_eq!(checkpoint_md5(&path),files["swa_p.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_p");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_p.raw_dim(),"checkpoint tensor shape: swa_p");self.swa_p=value;
++let path=root.join("swa_b.npy");assert_eq!(checkpoint_md5(&path),files["swa_b.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_b");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_b.raw_dim(),"checkpoint tensor shape: swa_b");self.swa_b=value;
++let path=root.join("swa_user_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_bias.raw_dim(),"checkpoint tensor shape: swa_user_bias");self.swa_user_bias=value;
++let path=root.join("swa_user_drift.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_drift");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_drift.raw_dim(),"checkpoint tensor shape: swa_user_drift");self.swa_user_drift=value;
++let path=root.join("swa_user_item_scale.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_item_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_item_scale");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_item_scale.raw_dim(),"checkpoint tensor shape: swa_user_item_scale");self.swa_user_item_scale=value;
++let path=root.join("swa_user_item_scale_drift.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_item_scale_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_item_scale_drift");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_item_scale_drift.raw_dim(),"checkpoint tensor shape: swa_user_item_scale_drift");self.swa_user_item_scale_drift=value;
++let path=root.join("swa_user_item_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_item_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_item_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_item_scale_bin.raw_dim(),"checkpoint tensor shape: swa_user_item_scale_bin");self.swa_user_item_scale_bin=value;
++let path=root.join("swa_user_day_bias_bin.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_day_bias_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_day_bias_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_day_bias_bin.raw_dim(),"checkpoint tensor shape: swa_user_day_bias_bin");self.swa_user_day_bias_bin=value;
++let path=root.join("swa_user_day_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["swa_user_day_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_user_day_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_user_day_scale_bin.raw_dim(),"checkpoint tensor shape: swa_user_day_scale_bin");self.swa_user_day_scale_bin=value;
++let path=root.join("swa_day_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_day_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_day_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_day_bias.raw_dim(),"checkpoint tensor shape: swa_day_bias");self.swa_day_bias=value;
++let path=root.join("swa_item_time_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_item_time_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_item_time_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_item_time_bias.raw_dim(),"checkpoint tensor shape: swa_item_time_bias");self.swa_item_time_bias=value;
++let path=root.join("swa_day_freq_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_day_freq_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_day_freq_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_day_freq_bias.raw_dim(),"checkpoint tensor shape: swa_day_freq_bias");self.swa_day_freq_bias=value;
++let path=root.join("swa_ctx_target_day_scale.npy");assert_eq!(checkpoint_md5(&path),files["swa_ctx_target_day_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_ctx_target_day_scale");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_ctx_target_day_scale.raw_dim(),"checkpoint tensor shape: swa_ctx_target_day_scale");self.swa_ctx_target_day_scale=value;
++let path=root.join("swa_implicit_a.npy");assert_eq!(checkpoint_md5(&path),files["swa_implicit_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_implicit_a");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_implicit_a.raw_dim(),"checkpoint tensor shape: swa_implicit_a");self.swa_implicit_a=value;
++let path=root.join("swa_enc_proj.npy");assert_eq!(checkpoint_md5(&path),files["swa_enc_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_enc_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_enc_proj.raw_dim(),"checkpoint tensor shape: swa_enc_proj");self.swa_enc_proj=value;
++let path=root.join("swa_hidden2_proj.npy");assert_eq!(checkpoint_md5(&path),files["swa_hidden2_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_hidden2_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_hidden2_proj.raw_dim(),"checkpoint tensor shape: swa_hidden2_proj");self.swa_hidden2_proj=value;
++let path=root.join("swa_dec_proj.npy");assert_eq!(checkpoint_md5(&path),files["swa_dec_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_dec_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_dec_proj.raw_dim(),"checkpoint tensor shape: swa_dec_proj");self.swa_dec_proj=value;
++let path=root.join("swa_enc_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_enc_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_enc_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_enc_bias.raw_dim(),"checkpoint tensor shape: swa_enc_bias");self.swa_enc_bias=value;
++let path=root.join("swa_hidden2_bias.npy");assert_eq!(checkpoint_md5(&path),files["swa_hidden2_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_hidden2_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_hidden2_bias.raw_dim(),"checkpoint tensor shape: swa_hidden2_bias");self.swa_hidden2_bias=value;
++let path=root.join("swa_wide_w.npy");assert_eq!(checkpoint_md5(&path),files["swa_wide_w.npy"].as_str().unwrap(),"checkpoint tensor checksum: swa_wide_w");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.swa_wide_w.raw_dim(),"checkpoint tensor shape: swa_wide_w");self.swa_wide_w=value;
++let path=root.join("m_a.npy");assert_eq!(checkpoint_md5(&path),files["m_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_a");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_a.raw_dim(),"checkpoint tensor shape: m_a");self.m_a=value;
++let path=root.join("v_a.npy");assert_eq!(checkpoint_md5(&path),files["v_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_a");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_a.raw_dim(),"checkpoint tensor shape: v_a");self.v_a=value;
++let path=root.join("m_p.npy");assert_eq!(checkpoint_md5(&path),files["m_p.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_p");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_p.raw_dim(),"checkpoint tensor shape: m_p");self.m_p=value;
++let path=root.join("v_p.npy");assert_eq!(checkpoint_md5(&path),files["v_p.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_p");let value:Array3<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_p.raw_dim(),"checkpoint tensor shape: v_p");self.v_p=value;
++let path=root.join("m_b.npy");assert_eq!(checkpoint_md5(&path),files["m_b.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_b");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_b.raw_dim(),"checkpoint tensor shape: m_b");self.m_b=value;
++let path=root.join("v_b.npy");assert_eq!(checkpoint_md5(&path),files["v_b.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_b");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_b.raw_dim(),"checkpoint tensor shape: v_b");self.v_b=value;
++let path=root.join("m_user_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_user_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_bias.raw_dim(),"checkpoint tensor shape: m_user_bias");self.m_user_bias=value;
++let path=root.join("v_user_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_user_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_bias.raw_dim(),"checkpoint tensor shape: v_user_bias");self.v_user_bias=value;
++let path=root.join("m_user_drift.npy");assert_eq!(checkpoint_md5(&path),files["m_user_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_drift");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_drift.raw_dim(),"checkpoint tensor shape: m_user_drift");self.m_user_drift=value;
++let path=root.join("v_user_drift.npy");assert_eq!(checkpoint_md5(&path),files["v_user_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_drift");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_drift.raw_dim(),"checkpoint tensor shape: v_user_drift");self.v_user_drift=value;
++let path=root.join("m_user_item_scale.npy");assert_eq!(checkpoint_md5(&path),files["m_user_item_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_item_scale");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_item_scale.raw_dim(),"checkpoint tensor shape: m_user_item_scale");self.m_user_item_scale=value;
++let path=root.join("v_user_item_scale.npy");assert_eq!(checkpoint_md5(&path),files["v_user_item_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_item_scale");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_item_scale.raw_dim(),"checkpoint tensor shape: v_user_item_scale");self.v_user_item_scale=value;
++let path=root.join("m_user_item_scale_drift.npy");assert_eq!(checkpoint_md5(&path),files["m_user_item_scale_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_item_scale_drift");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_item_scale_drift.raw_dim(),"checkpoint tensor shape: m_user_item_scale_drift");self.m_user_item_scale_drift=value;
++let path=root.join("v_user_item_scale_drift.npy");assert_eq!(checkpoint_md5(&path),files["v_user_item_scale_drift.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_item_scale_drift");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_item_scale_drift.raw_dim(),"checkpoint tensor shape: v_user_item_scale_drift");self.v_user_item_scale_drift=value;
++let path=root.join("m_user_item_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["m_user_item_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_item_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_item_scale_bin.raw_dim(),"checkpoint tensor shape: m_user_item_scale_bin");self.m_user_item_scale_bin=value;
++let path=root.join("v_user_item_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["v_user_item_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_item_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_item_scale_bin.raw_dim(),"checkpoint tensor shape: v_user_item_scale_bin");self.v_user_item_scale_bin=value;
++let path=root.join("m_user_day_bias_bin.npy");assert_eq!(checkpoint_md5(&path),files["m_user_day_bias_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_day_bias_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_day_bias_bin.raw_dim(),"checkpoint tensor shape: m_user_day_bias_bin");self.m_user_day_bias_bin=value;
++let path=root.join("v_user_day_bias_bin.npy");assert_eq!(checkpoint_md5(&path),files["v_user_day_bias_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_day_bias_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_day_bias_bin.raw_dim(),"checkpoint tensor shape: v_user_day_bias_bin");self.v_user_day_bias_bin=value;
++let path=root.join("m_user_day_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["m_user_day_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_user_day_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_user_day_scale_bin.raw_dim(),"checkpoint tensor shape: m_user_day_scale_bin");self.m_user_day_scale_bin=value;
++let path=root.join("v_user_day_scale_bin.npy");assert_eq!(checkpoint_md5(&path),files["v_user_day_scale_bin.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_user_day_scale_bin");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_user_day_scale_bin.raw_dim(),"checkpoint tensor shape: v_user_day_scale_bin");self.v_user_day_scale_bin=value;
++let path=root.join("m_day_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_day_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_day_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_day_bias.raw_dim(),"checkpoint tensor shape: m_day_bias");self.m_day_bias=value;
++let path=root.join("v_day_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_day_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_day_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_day_bias.raw_dim(),"checkpoint tensor shape: v_day_bias");self.v_day_bias=value;
++let path=root.join("m_item_time_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_item_time_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_item_time_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_item_time_bias.raw_dim(),"checkpoint tensor shape: m_item_time_bias");self.m_item_time_bias=value;
++let path=root.join("v_item_time_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_item_time_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_item_time_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_item_time_bias.raw_dim(),"checkpoint tensor shape: v_item_time_bias");self.v_item_time_bias=value;
++let path=root.join("m_day_freq_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_day_freq_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_day_freq_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_day_freq_bias.raw_dim(),"checkpoint tensor shape: m_day_freq_bias");self.m_day_freq_bias=value;
++let path=root.join("v_day_freq_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_day_freq_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_day_freq_bias");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_day_freq_bias.raw_dim(),"checkpoint tensor shape: v_day_freq_bias");self.v_day_freq_bias=value;
++let path=root.join("m_ctx_target_day_scale.npy");assert_eq!(checkpoint_md5(&path),files["m_ctx_target_day_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_ctx_target_day_scale");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_ctx_target_day_scale.raw_dim(),"checkpoint tensor shape: m_ctx_target_day_scale");self.m_ctx_target_day_scale=value;
++let path=root.join("v_ctx_target_day_scale.npy");assert_eq!(checkpoint_md5(&path),files["v_ctx_target_day_scale.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_ctx_target_day_scale");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_ctx_target_day_scale.raw_dim(),"checkpoint tensor shape: v_ctx_target_day_scale");self.v_ctx_target_day_scale=value;
++let path=root.join("m_implicit_a.npy");assert_eq!(checkpoint_md5(&path),files["m_implicit_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_implicit_a");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_implicit_a.raw_dim(),"checkpoint tensor shape: m_implicit_a");self.m_implicit_a=value;
++let path=root.join("v_implicit_a.npy");assert_eq!(checkpoint_md5(&path),files["v_implicit_a.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_implicit_a");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_implicit_a.raw_dim(),"checkpoint tensor shape: v_implicit_a");self.v_implicit_a=value;
++let path=root.join("m_enc_proj.npy");assert_eq!(checkpoint_md5(&path),files["m_enc_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_enc_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_enc_proj.raw_dim(),"checkpoint tensor shape: m_enc_proj");self.m_enc_proj=value;
++let path=root.join("v_enc_proj.npy");assert_eq!(checkpoint_md5(&path),files["v_enc_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_enc_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_enc_proj.raw_dim(),"checkpoint tensor shape: v_enc_proj");self.v_enc_proj=value;
++let path=root.join("m_hidden2_proj.npy");assert_eq!(checkpoint_md5(&path),files["m_hidden2_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_hidden2_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_hidden2_proj.raw_dim(),"checkpoint tensor shape: m_hidden2_proj");self.m_hidden2_proj=value;
++let path=root.join("v_hidden2_proj.npy");assert_eq!(checkpoint_md5(&path),files["v_hidden2_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_hidden2_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_hidden2_proj.raw_dim(),"checkpoint tensor shape: v_hidden2_proj");self.v_hidden2_proj=value;
++let path=root.join("m_dec_proj.npy");assert_eq!(checkpoint_md5(&path),files["m_dec_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_dec_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_dec_proj.raw_dim(),"checkpoint tensor shape: m_dec_proj");self.m_dec_proj=value;
++let path=root.join("v_dec_proj.npy");assert_eq!(checkpoint_md5(&path),files["v_dec_proj.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_dec_proj");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_dec_proj.raw_dim(),"checkpoint tensor shape: v_dec_proj");self.v_dec_proj=value;
++let path=root.join("m_enc_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_enc_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_enc_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_enc_bias.raw_dim(),"checkpoint tensor shape: m_enc_bias");self.m_enc_bias=value;
++let path=root.join("v_enc_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_enc_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_enc_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_enc_bias.raw_dim(),"checkpoint tensor shape: v_enc_bias");self.v_enc_bias=value;
++let path=root.join("m_hidden2_bias.npy");assert_eq!(checkpoint_md5(&path),files["m_hidden2_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_hidden2_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_hidden2_bias.raw_dim(),"checkpoint tensor shape: m_hidden2_bias");self.m_hidden2_bias=value;
++let path=root.join("v_hidden2_bias.npy");assert_eq!(checkpoint_md5(&path),files["v_hidden2_bias.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_hidden2_bias");let value:Array1<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_hidden2_bias.raw_dim(),"checkpoint tensor shape: v_hidden2_bias");self.v_hidden2_bias=value;
++let path=root.join("m_wide_w.npy");assert_eq!(checkpoint_md5(&path),files["m_wide_w.npy"].as_str().unwrap(),"checkpoint tensor checksum: m_wide_w");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.m_wide_w.raw_dim(),"checkpoint tensor shape: m_wide_w");self.m_wide_w=value;
++let path=root.join("v_wide_w.npy");assert_eq!(checkpoint_md5(&path),files["v_wide_w.npy"].as_str().unwrap(),"checkpoint tensor checksum: v_wide_w");let value:Array2<f32>=ndarray_npy::read_npy(&path).unwrap();assert_eq!(value.raw_dim(),self.v_wide_w.raw_dim(),"checkpoint tensor shape: v_wide_w");self.v_wide_w=value;
++}
++}
+diff --git a/src/lib.rs b/src/lib.rs
+index 6e19419..59f610f 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -663,6 +663,9 @@ pub trait Regressor {
+ 
+     /// Return total number of training epochs
+     fn n_epochs(&self) -> usize { 0 }
++    fn resumed_epoch(&self)->usize{0}
++    fn save_epoch_checkpoint(&mut self,_epoch:usize){}
++    fn restore_epoch_prediction(&self,_ds:&Dataset,_model:&str,_preds:&str,_save_each:bool){}
+ 
+     /// Train one epoch (epoch is 1-based: 1..=n_epochs()).
+     /// `pr` is a restricted view that hides the probe set's `raw_ratings`
+@@ -908,8 +911,9 @@ pub fn fit<M: Regressor + Sync>(
+     let pr_masked = MaskedDataset::from(&pr);
+     let mut model = M::new(&tr, &pr_masked, cfg);
+     let n_epochs = model.n_epochs();
++    model.restore_epoch_prediction(&pr,model_name,preds_dir,save_probe_each_epoch);
+ 
+-    for epoch in 1..=n_epochs {
++    for epoch in (model.resumed_epoch()+1)..=n_epochs {
+         model.fit_epoch(&tr, &pr_masked, epoch);
+         report_rmse(&mut model, epoch, n_epochs, &pr);
+         if save_probe_each_epoch {
+@@ -917,7 +921,8 @@ pub fn fit<M: Regressor + Sync>(
+             let ep_preds = gen_preds_parallel(&model, &pr);
+             write_npy(&ep_path, &ep_preds).unwrap();
+         }
+-    }
++        model.save_epoch_checkpoint(epoch);
++}
+ 
+     let pr_preds = gen_preds_parallel(&model, &pr);
+     let path = format!("{}/{}.{}.npy", preds_dir, model_name, pr_set);
+@@ -1094,8 +1099,9 @@ pub fn fit2_inner<M: Regressor + Sync>(
+         let pr_masked = MaskedDataset::from(&pr);
+         let mut model = M::new(&tr, &pr_masked, cfg);
+         let n_epochs = model.n_epochs();
++    model.restore_epoch_prediction(&pr,model_name,preds_dir,save_probe_each_epoch);
+ 
+-        for epoch in 1..=n_epochs {
++        for epoch in (model.resumed_epoch()+1)..=n_epochs {
+             model.fit_epoch(&tr, &pr_masked, epoch);
+             report_rmse(&mut model, epoch, n_epochs, &pr);
+             if save_probe_each_epoch {
+@@ -1108,7 +1114,8 @@ pub fn fit2_inner<M: Regressor + Sync>(
+                     write_npy(&ep_qual_path, &ep_qual_preds).unwrap();
+                 }
+             }
+-        }
++            model.save_epoch_checkpoint(epoch);
++}
+ 
+         let pr_preds = gen_preds_parallel(&model, &pr);
+         let rmse = rmse_from_preds(&pr_preds, &pr);
+@@ -1562,3 +1569,7 @@ pub fn fit3_inner<M: Regressor + Sync>(
+         let _ = lf.flush();
+     }
+ }
++
++pub mod cfnade_original;
++
++pub mod cfnade_baseline;
