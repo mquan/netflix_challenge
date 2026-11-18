@@ -1,0 +1,243 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index d5260c4..16e8721 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -4,6 +4,7 @@ name = "netflix_prize"
+ version = "1.0.0"
+ 
+ [dependencies]
++libc = "0.2"
+ blas = {version="0.22", optional=true}
+ byteorder = "1.5.0"
+ flate2 = "1.0"
+diff --git a/src/lib.rs b/src/lib.rs
+index 6e19419..34ebb2f 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -1562,3 +1562,8 @@ pub fn fit3_inner<M: Regressor + Sync>(
+         let _ = lf.flush();
+     }
+ }
++
++pub mod tx_storage;
++pub mod tx_original;
++
++pub mod tsvdx4p_original;
+diff --git a/src/tsvdx4p.rs b/src/tsvdx4p.rs
+index 7246331..f0d5b26 100644
+--- a/src/tsvdx4p.rs
++++ b/src/tsvdx4p.rs
+@@ -807,3 +807,5 @@ impl Regressor for Tsvdx4pModel {
+         }
+     }
+ }
++
++impl Tsvdx4pModel { pub fn audit_parameters(&self)->Vec<u32>{self.inner.audit_parameters()} }
+diff --git a/src/tx.rs b/src/tx.rs
+index 06168ce..c091292 100644
+--- a/src/tx.rs
++++ b/src/tx.rs
+@@ -5,6 +5,7 @@
+ // tx6 mode: sum_err_bug=false, global + same-day neighborhood (w_day, c_day)
+ 
+ use indicatif::ProgressIterator;
++use crate::tx_storage::StorageMatrix;
+ use crate::{
+     calc_gbias, calc_user_offsets, get_users, rand_array2,
+     Dataset, MaskedDataset, Regressor, OrdinalHeadConfig, OrdinalHead,
+@@ -212,6 +213,7 @@ pub struct TxConfig {
+ // ---------------------------------------------------------------------------
+ 
+ pub struct TxModel {
++    storage_cache_ready: bool,
+     cfg: TxConfig,                  // immutable training config
+ 
+     // Bias terms
+@@ -220,11 +222,11 @@ pub struct TxModel {
+     ibias: Array1<f32>,             // item biases [n_items]
+ 
+     // Latent factors
+-    ufeat: Array2<f32>,             // user factors [n_users, n_feat]
+-    ufeat2: Array2<f32>,            // user time-drift factors [n_users, n_feat]
++    ufeat: StorageMatrix,             // user factors [n_users, n_feat]
++    ufeat2: StorageMatrix,            // user time-drift factors [n_users, n_feat]
+     ifeat: Array2<f32>,             // item factors [n_items, n_feat]
+     yfeat: Array2<f32>,             // NSVD1 implicit-feedback factor [n_items, n_feat]
+-    ycache: Array2<f32>,            // cached Σ yfeat[j] / √|N(u)| per user [n_users, n_feat]
++    ycache: StorageMatrix,            // cached Σ yfeat[j] / √|N(u)| per user [n_users, n_feat]
+     yfeat_day: Array2<f32>,         // per-day NSVD1 factors [n_items, n_feat]
+ 
+     // Temporal-bias state
+@@ -241,7 +243,7 @@ pub struct TxModel {
+     // Per-(user, day) state
+     ud: SparseUD,                   // sparse (user, day) → linear index
+     ubias_day: Vec<f32>,            // per-(user, day) bias [n_ud]
+-    ufeat_day: Array2<f32>,         // per-(user, day) factor [n_ud, ud_dim]
++    ufeat_day: StorageMatrix,         // per-(user, day) factor [n_ud, ud_dim]
+     ud_dim: usize,                  // dims of ufeat_day (cfg.ud_dim, default n_feat)
+     ycache_day: Array2<f32>,        // cached per-(user, day) NSVD1 sum [n_ud, n_feat] (empty with lazy_day)
+     ud_tr_starts: Vec<usize>,       // lazy_day: train items of (user, day) idx are
+@@ -279,6 +281,13 @@ pub struct TxModel {
+ }
+ 
+ impl TxModel {
++
++    fn storage_release_user(&self,u:usize) {
++        self.ufeat.release_rows(u,u+1);
++        self.ufeat2.release_rows(u,u+1);
++        self.ycache.release_rows(u,u+1);
++        self.ufeat_day.release_rows(self.ud.starts[u],self.ud.starts[u+1]);
++    }
+     #[inline]
+     fn has_nbr(&self) -> bool { !self.w.is_empty() || !self.c.is_empty() }
+ 
+@@ -310,6 +319,7 @@ impl TxModel {
+     /// prediction set's items, then the train items, over √count), for `lazy_day`.
+     fn day_nsvd1(&self, ud_idx: usize, out: &mut [f32]) {
+         out.fill(0.0);
++        if !self.storage_cache_ready { return; }
+         let mut cnt = 0.0_f32;
+         let pr_items = &self.probe_items_by_ud[ud_idx];
+         let tr_items = &self.ud_tr_items[self.ud_tr_starts[ud_idx]..self.ud_tr_starts[ud_idx + 1]];
+@@ -340,6 +350,7 @@ impl TxModel {
+     /// `predict` with the per-day NSVD1 sum of (u, day) given (`day_nsvd1`; read only
+     /// with `lazy_day`).
+     fn predict_day(&self, u: usize, i: usize, day: i32, day_su: &[f32]) -> f32 {
++        self.storage_release_user(u);
+         let (bias_part, dot_part) = self.factor_parts(u, i, day, day_su);
+         let nbr_part = if self.has_nbr() { self.nbr_score(u, i, day as i16) } else { 0.0 };
+         let score = bias_part + dot_part + nbr_part;
+@@ -510,7 +521,9 @@ impl TxModel {
+ impl Regressor for TxModel {
+     type Config = TxConfig;
+ 
+-    fn new(tr: &Dataset, pr: &MaskedDataset, cfg: Self::Config) -> Self {
++    fn new(tr: &Dataset, pr: &MaskedDataset, mut cfg: Self::Config) -> Self {
++        let storage_cache_ready = cfg.lazy_day;
++        if !cfg.low_memory && std::env::var_os("TX_LAZY_DAY").is_some() { cfg.lazy_day = true; }
+         let mut rng = StdRng::seed_from_u64(cfg.seed);
+         let n_users = tr.n_users;
+         let n_items = tr.n_items;
+@@ -675,16 +688,17 @@ impl Regressor for TxModel {
+         };
+ 
+         Self {
++            storage_cache_ready,
+             cfg,
+             gbias,
+             ubias: Array1::zeros(n_users),
+             ibias: Array1::zeros(n_items),
+ 
+-            ufeat: rand_array2(n_users, cfg.n_feat, &mut rng, cfg.sigma_u),
+-            ufeat2: Array2::zeros((n_users, cfg.n_feat)),
++            ufeat: StorageMatrix::normal(n_users, cfg.n_feat, &mut rng, cfg.sigma_u),
++            ufeat2: StorageMatrix::zeros((n_users, cfg.n_feat)),
+             ifeat: rand_array2(n_items, cfg.n_feat, &mut rng, cfg.sigma_i),
+             yfeat: rand_array2(n_items, cfg.n_feat, &mut rng, cfg.sigma_y),
+-            ycache: Array2::zeros((n_users, cfg.n_feat)),
++            ycache: StorageMatrix::zeros((n_users, cfg.n_feat)),
+             yfeat_day: if low_mem { Array2::zeros((0, cfg.n_feat)) }
+                        else { rand_array2(n_items, cfg.n_feat, &mut rng, cfg.sigma_yd) },
+ 
+@@ -697,8 +711,8 @@ impl Regressor for TxModel {
+             ycache_bias: Array1::zeros(n_users),
+ 
+             ubias_day: vec![0.0; n_ud],
+-            ufeat_day: if low_mem { Array2::zeros((0, ud_dim)) }
+-                       else { Array2::zeros((n_ud, ud_dim)) },
++            ufeat_day: if low_mem { StorageMatrix::zeros((0, ud_dim)) }
++                       else { StorageMatrix::zeros((n_ud, ud_dim)) },
+             ud_dim,
+             ycache_day: if low_mem || cfg.lazy_day { Array2::zeros((0, cfg.n_feat)) }
+                         else { Array2::zeros((n_ud, cfg.n_feat)) },
+@@ -741,6 +755,7 @@ impl Regressor for TxModel {
+     }
+ 
+     fn predict_subscores(&self, u: usize, i: usize, day: i32) -> Array1<f32> {
++        self.storage_release_user(u);
+         let cfg = &self.cfg;
+         let b = self.time_bin(day);
+         let dev = self.dev(u, day);
+@@ -819,7 +834,7 @@ impl Regressor for TxModel {
+         if self.cfg.save_ufeat {
+             // p_u + |N(u)|^-1/2 sum y_j: the user vector without its day / drift terms
+             let path = format!("{}/{}.ufeat.{}.npy", preds_dir, model_name, tr_set);
+-            write_npy(&path, &(&self.ufeat + &self.ycache)).unwrap();
++            write_npy(&path, &(&self.ufeat.view() + &self.ycache.view())).unwrap();
+             crate::teeln!("Saved user factors to {}", path);
+         }
+     }
+@@ -1198,10 +1213,14 @@ impl Regressor for TxModel {
+                 }
+                 self.ybias[j] -= cfg.lr_yb * (sum_err / norm);
+             }
++            self.storage_release_user(u);
+         }
+ 
++        self.ycache.release_rows(0,tr.n_users);
+         self.rebuild_ycache(tr, pr);
++        self.ycache.release_rows(0,tr.n_users);
+         if !low_mem && !cfg.lazy_day { self.rebuild_ycache_day(tr, pr); }
++        self.storage_cache_ready = true;
+ 
+         if let Some(ordinal_head) = &mut self.ordinal_head {
+             ordinal_head.enforce_sorted_with_gap();
+@@ -1231,11 +1250,11 @@ txm_accessors! {
+     gbias,       gbias_mut:       f32;
+     ubias,       ubias_mut:       Array1<f32>;
+     ibias,       ibias_mut:       Array1<f32>;
+-    ufeat,       ufeat_mut:       Array2<f32>;
+-    ufeat2,      ufeat2_mut:      Array2<f32>;
++    ufeat,       ufeat_mut:       StorageMatrix;
++    ufeat2,      ufeat2_mut:      StorageMatrix;
+     ifeat,       ifeat_mut:       Array2<f32>;
+     yfeat,       yfeat_mut:       Array2<f32>;
+-    ycache,      ycache_mut:      Array2<f32>;
++    ycache,      ycache_mut:      StorageMatrix;
+     yfeat_day,   yfeat_day_mut:   Array2<f32>;
+     day_range,   day_range_mut:   i32;
+     tu_mean,     tu_mean_mut:     Array1<f32>;
+@@ -1246,7 +1265,7 @@ txm_accessors! {
+     ycache_bias, ycache_bias_mut: Array1<f32>;
+     ud,          ud_mut:          SparseUD;
+     ubias_day,   ubias_day_mut:   Vec<f32>;
+-    ufeat_day,   ufeat_day_mut:   Array2<f32>;
++    ufeat_day,   ufeat_day_mut:   StorageMatrix;
+     ycache_day,  ycache_day_mut:  Array2<f32>;
+     ibias_freq,  ibias_freq_mut:  Array2<f32>;
+     ifeat_freq,  ifeat_freq_mut:  Array2<f32>;
+@@ -1256,3 +1275,34 @@ txm_accessors! {
+     probe_items_by_ud,   probe_items_by_ud_mut:   Vec<Vec<u32>>;
+     user_offsets, user_offsets_mut: Array1<usize>;
+ }
++
++impl TxModel {
++    pub fn audit_parameters(&self)->Vec<u32> {
++        let mut out=vec![self.gbias.to_bits()];
++        out.extend(self.ufeat.iter().map(|v|v.to_bits()));
++out.extend(self.ufeat2.iter().map(|v|v.to_bits()));
++out.extend(self.ifeat.iter().map(|v|v.to_bits()));
++out.extend(self.yfeat.iter().map(|v|v.to_bits()));
++out.extend(self.ycache.iter().map(|v|v.to_bits()));
++out.extend(self.yfeat_day.iter().map(|v|v.to_bits()));
++out.extend(self.but_bin.iter().map(|v|v.to_bits()));
++out.extend(self.bit_bin.iter().map(|v|v.to_bits()));
++out.extend(self.ufeat_day.iter().map(|v|v.to_bits()));
++out.extend(self.ibias_freq.iter().map(|v|v.to_bits()));
++out.extend(self.ifeat_freq.iter().map(|v|v.to_bits()));
++        out.extend(self.ubias.iter().map(|v|v.to_bits()));
++out.extend(self.ibias.iter().map(|v|v.to_bits()));
++out.extend(self.tu_mean.iter().map(|v|v.to_bits()));
++out.extend(self.alpha_u.iter().map(|v|v.to_bits()));
++out.extend(self.ybias.iter().map(|v|v.to_bits()));
++out.extend(self.ycache_bias.iter().map(|v|v.to_bits()));
++out.extend(self.ubias_day.iter().map(|v|v.to_bits()));
++out.extend(self.cu.iter().map(|v|v.to_bits()));
++out.extend(self.cut.iter().map(|v|v.to_bits()));
++out.extend(self.w.iter().map(|v|v.to_bits()));
++out.extend(self.c.iter().map(|v|v.to_bits()));
++out.extend(self.w_day.iter().map(|v|v.to_bits()));
++out.extend(self.c_day.iter().map(|v|v.to_bits()));
++        out
++    }
++}

@@ -1,0 +1,62 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "preparation": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "generated": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d",
+      "src/tsvdx4p.rs": "b4e69ada685f64ed57fa3b9199524c95f8537f8a5cc011efa5190985212807e6",
+      "src/tsvdx4p_original.rs": "704a2e81e6baa969cf8a50e8e53583b5cb73891bfd51d698dabe305b9a3cb0c2",
+      "src/lib.rs": "00064c4f5cd1d70ccc79d8d43ec50d0cea2ccd5cf6429fdd69076f115191744d",
+      "src/bin/tsvdx4p-storage-parity.rs": "83273b4b7257e012393a12443239fd024d7fc4b7b8e660af3ed14898de231f0d",
+      "Cargo.toml": "d9fa51dd2d57db00c4fb0532a672d9209d9430e5b0b0353d8f71a45fdf7d9087",
+      "data/qual_ratings/qual_ratings.csv.gz": "b54d30be5426366c38db447f4f7b169c23eba6450c9e06c3bfcbb6e4f30411cc"
+    },
+    "patch_sha256": "67476c2cd63121b81ce51849005bd20bbed0c0e8246e574a0d50e9736f45d555",
+    "inherited_serial_source": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d"
+    },
+    "serial_prepare_sha256": "155416feec6a290f005d5b9fb043dc53a2f4a32095fa063ceeaefdf8e441a3fb",
+    "serial_proof_sha256": "56997530516d29c7c6e3f0a7c1507e568e579df3bcf1ac4445aac77071dd5b7b",
+    "support_sha256": "16d6d37d8470fe18f3d546fcaeda19fd93c17c0eb45a08b4906303b08790cf65",
+    "script_sha256": "909c043f8f33305fdd9fb9be40eb5821103115c2ff0473e3c8169456894f9bc8",
+    "scope": "Storage candidate only. Published low_memory=true, factors/epochs and logical chunk configurations preserved in parity cases. No full-data training or resource-feasibility claim."
+  },
+  "executable_sha256": "0b5232d995a6bf6d5b854844adadc6101b8efa729d40dc77b6940fb3c0b50d32",
+  "cargo_lock_sha256": "dfb4f58a21c4738f2df9c9429ecf0e48c20ad4460e100406678efc9ae2382575",
+  "arms": [
+    {
+      "arm": "heap-workers2",
+      "exit_code": 0,
+      "log_sha256": "99dcd8969d6987599ab33c638962e9a288b199f98e5af9a00de16a9949b3b3b3",
+      "signatures_match_across_storage_and_workers": true,
+      "tail": "quential=false: 95fb3ed4cacef4ac6aedca6a9ca1d0f5\nCASE nf=1,chunks=16,sequential=true: 85f1f292bc399fad520491d603c7174d\nCASE nf=17,chunks=1,sequential=false: 89a5acd69a1b8ad066ed16294a109b52\nCASE nf=17,chunks=1,sequential=true: 3e559daa6403372c1676c0ffa5cf1e96\nCASE nf=17,chunks=16,sequential=false: 2229e46cedd98170992ed9d0d06da90c\nCASE nf=17,chunks=16,sequential=true: 542b217f9c5a3cfd069a60184f5b5207\nCASE nf=1000,chunks=1,sequential=false: bd5bd00686cd522a489872e4bd0db6cb\nCASE nf=1000,chunks=1,sequential=true: 803e7616d412d69c10c66d0d080e7833\nCASE nf=1000,chunks=16,sequential=false: 8b8231cea02006e0e3d92672210796f1\nCASE nf=1000,chunks=16,sequential=true: 7801441a0ccf93e0d8961698778edf4b\nCASE nf=4000,chunks=1,sequential=false: ac26db7078bea7880d8194aa0ba5cf12\nCASE nf=4000,chunks=1,sequential=true: 2266aaba51d9e1eab5158e7ca56b93f1\nCASE nf=4000,chunks=16,sequential=false: 195531db7e95bd1d36f486b2333c4bdc\nCASE nf=4000,chunks=16,sequential=true: 52d6dbfa5dc86626a7e4f36473194bd3\nCASE nf=16000,chunks=1,sequential=false: 940bc5d9bb11acce10b1c92f0be1dcb9\nCASE nf=16000,chunks=1,sequential=true: da1587550b921d780a7f70442c3a415f\nCASE nf=16000,chunks=16,sequential=false: 02e2f0bae42631aa16cfd152f4fc4b77\nCASE nf=16000,chunks=16,sequential=true: d9646a273653297a52c702f99b88dd40\nPASS: 24 cases, initialization plus20 epochs; all inner parameter/cache bits, row/grouped predictions and components\n"
+    },
+    {
+      "arm": "mapped-workers2",
+      "exit_code": 0,
+      "log_sha256": "99dcd8969d6987599ab33c638962e9a288b199f98e5af9a00de16a9949b3b3b3",
+      "signatures_match_across_storage_and_workers": true,
+      "tail": "quential=false: 95fb3ed4cacef4ac6aedca6a9ca1d0f5\nCASE nf=1,chunks=16,sequential=true: 85f1f292bc399fad520491d603c7174d\nCASE nf=17,chunks=1,sequential=false: 89a5acd69a1b8ad066ed16294a109b52\nCASE nf=17,chunks=1,sequential=true: 3e559daa6403372c1676c0ffa5cf1e96\nCASE nf=17,chunks=16,sequential=false: 2229e46cedd98170992ed9d0d06da90c\nCASE nf=17,chunks=16,sequential=true: 542b217f9c5a3cfd069a60184f5b5207\nCASE nf=1000,chunks=1,sequential=false: bd5bd00686cd522a489872e4bd0db6cb\nCASE nf=1000,chunks=1,sequential=true: 803e7616d412d69c10c66d0d080e7833\nCASE nf=1000,chunks=16,sequential=false: 8b8231cea02006e0e3d92672210796f1\nCASE nf=1000,chunks=16,sequential=true: 7801441a0ccf93e0d8961698778edf4b\nCASE nf=4000,chunks=1,sequential=false: ac26db7078bea7880d8194aa0ba5cf12\nCASE nf=4000,chunks=1,sequential=true: 2266aaba51d9e1eab5158e7ca56b93f1\nCASE nf=4000,chunks=16,sequential=false: 195531db7e95bd1d36f486b2333c4bdc\nCASE nf=4000,chunks=16,sequential=true: 52d6dbfa5dc86626a7e4f36473194bd3\nCASE nf=16000,chunks=1,sequential=false: 940bc5d9bb11acce10b1c92f0be1dcb9\nCASE nf=16000,chunks=1,sequential=true: da1587550b921d780a7f70442c3a415f\nCASE nf=16000,chunks=16,sequential=false: 02e2f0bae42631aa16cfd152f4fc4b77\nCASE nf=16000,chunks=16,sequential=true: d9646a273653297a52c702f99b88dd40\nPASS: 24 cases, initialization plus20 epochs; all inner parameter/cache bits, row/grouped predictions and components\n"
+    },
+    {
+      "arm": "heap-workers4",
+      "exit_code": 0,
+      "log_sha256": "99dcd8969d6987599ab33c638962e9a288b199f98e5af9a00de16a9949b3b3b3",
+      "signatures_match_across_storage_and_workers": true,
+      "tail": "quential=false: 95fb3ed4cacef4ac6aedca6a9ca1d0f5\nCASE nf=1,chunks=16,sequential=true: 85f1f292bc399fad520491d603c7174d\nCASE nf=17,chunks=1,sequential=false: 89a5acd69a1b8ad066ed16294a109b52\nCASE nf=17,chunks=1,sequential=true: 3e559daa6403372c1676c0ffa5cf1e96\nCASE nf=17,chunks=16,sequential=false: 2229e46cedd98170992ed9d0d06da90c\nCASE nf=17,chunks=16,sequential=true: 542b217f9c5a3cfd069a60184f5b5207\nCASE nf=1000,chunks=1,sequential=false: bd5bd00686cd522a489872e4bd0db6cb\nCASE nf=1000,chunks=1,sequential=true: 803e7616d412d69c10c66d0d080e7833\nCASE nf=1000,chunks=16,sequential=false: 8b8231cea02006e0e3d92672210796f1\nCASE nf=1000,chunks=16,sequential=true: 7801441a0ccf93e0d8961698778edf4b\nCASE nf=4000,chunks=1,sequential=false: ac26db7078bea7880d8194aa0ba5cf12\nCASE nf=4000,chunks=1,sequential=true: 2266aaba51d9e1eab5158e7ca56b93f1\nCASE nf=4000,chunks=16,sequential=false: 195531db7e95bd1d36f486b2333c4bdc\nCASE nf=4000,chunks=16,sequential=true: 52d6dbfa5dc86626a7e4f36473194bd3\nCASE nf=16000,chunks=1,sequential=false: 940bc5d9bb11acce10b1c92f0be1dcb9\nCASE nf=16000,chunks=1,sequential=true: da1587550b921d780a7f70442c3a415f\nCASE nf=16000,chunks=16,sequential=false: 02e2f0bae42631aa16cfd152f4fc4b77\nCASE nf=16000,chunks=16,sequential=true: d9646a273653297a52c702f99b88dd40\nPASS: 24 cases, initialization plus20 epochs; all inner parameter/cache bits, row/grouped predictions and components\n"
+    },
+    {
+      "arm": "mapped-workers4",
+      "exit_code": 0,
+      "log_sha256": "99dcd8969d6987599ab33c638962e9a288b199f98e5af9a00de16a9949b3b3b3",
+      "signatures_match_across_storage_and_workers": true,
+      "tail": "quential=false: 95fb3ed4cacef4ac6aedca6a9ca1d0f5\nCASE nf=1,chunks=16,sequential=true: 85f1f292bc399fad520491d603c7174d\nCASE nf=17,chunks=1,sequential=false: 89a5acd69a1b8ad066ed16294a109b52\nCASE nf=17,chunks=1,sequential=true: 3e559daa6403372c1676c0ffa5cf1e96\nCASE nf=17,chunks=16,sequential=false: 2229e46cedd98170992ed9d0d06da90c\nCASE nf=17,chunks=16,sequential=true: 542b217f9c5a3cfd069a60184f5b5207\nCASE nf=1000,chunks=1,sequential=false: bd5bd00686cd522a489872e4bd0db6cb\nCASE nf=1000,chunks=1,sequential=true: 803e7616d412d69c10c66d0d080e7833\nCASE nf=1000,chunks=16,sequential=false: 8b8231cea02006e0e3d92672210796f1\nCASE nf=1000,chunks=16,sequential=true: 7801441a0ccf93e0d8961698778edf4b\nCASE nf=4000,chunks=1,sequential=false: ac26db7078bea7880d8194aa0ba5cf12\nCASE nf=4000,chunks=1,sequential=true: 2266aaba51d9e1eab5158e7ca56b93f1\nCASE nf=4000,chunks=16,sequential=false: 195531db7e95bd1d36f486b2333c4bdc\nCASE nf=4000,chunks=16,sequential=true: 52d6dbfa5dc86626a7e4f36473194bd3\nCASE nf=16000,chunks=1,sequential=false: 940bc5d9bb11acce10b1c92f0be1dcb9\nCASE nf=16000,chunks=1,sequential=true: da1587550b921d780a7f70442c3a415f\nCASE nf=16000,chunks=16,sequential=false: 02e2f0bae42631aa16cfd152f4fc4b77\nCASE nf=16000,chunks=16,sequential=true: d9646a273653297a52c702f99b88dd40\nPASS: 24 cases, initialization plus20 epochs; all inner parameter/cache bits, row/grouped predictions and components\n"
+    }
+  ],
+  "pass_all": true,
+  "scope": "Synthetic arithmetic parity through16000 factors and20 epochs, including original sequential epochs1/10/20 and16 logical chunks, both heap/mapped backends and2/4 physical worker pools. Not full-scale resource validation or a target score."
+}
