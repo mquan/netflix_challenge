@@ -1,0 +1,40 @@
+{
+  "state": "complete_and_independently_verified",
+  "utc": "2026-11-18T03:35:37.044783+00:00",
+  "implementation_commit": "e431d5880dadf043f449f87a6adaddd0bfd48b34",
+  "tests_passed": 35,
+  "current_branch": "research/fresh-nonlinear-blend",
+  "training_seconds": {
+    "tree": 1046.6298447083682,
+    "nn": 1348.36565370881
+  },
+  "verification_sha256": {
+    "experiments/upstream-nonlinear/manifest.json": "fea7d2fa0d66d7553acb58c6b8cb4b388b192f4fb3a28b3f208bf44d2ee509df",
+    "experiments/upstream-nonlinear/evaluation.json": "4a044d5e9a541be577d966035ad63cead1036487284adc654a1f1385903da051",
+    "experiments/upstream-nonlinear/independent-verification.json": "4e8da38d6d063410f3b4bb576444592c59d3c2330e20ff0e70e94d491475e080",
+    "experiments/upstream-nonlinear/tree-replay.json": "ab307d710725876fe4408fdde1aac7a5694504236a9e68dd8819de26becdf671",
+    "experiments/upstream-nonlinear/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+    "experiments/upstream-nonlinear/tree/0.json": "907f9d51ec9ea42d14484654863d303303e15903f8fd7930f43f5d83329b765d",
+    "experiments/upstream-nonlinear/tree/1.json": "a66fc1b7fd215a4cbae9daa3b876ed91df0dc1c4cb04798d39700e3d88f64e59",
+    "experiments/upstream-nonlinear/tree/2.json": "bff555804b4620c2e9437b8cef38c52208e98eb49c309346df9f53586f25df5c",
+    "experiments/upstream-nonlinear/tree/3.json": "d8a640b26a3d64af24072791772e63652d52510fb06da65ba23fedd200dd35e6",
+    "experiments/upstream-nonlinear/tree/4.json": "be3dea271b167a66025d6e7dcbef608677c925f8213a637aa73227419cf843f5",
+    "experiments/upstream-nonlinear/nn/0.json": "e5d2254836f9afeace274b67954b864c79d64e7e487fd02c5719c109f77dba95",
+    "experiments/upstream-nonlinear/nn/1.json": "ba888b40541d6a075b73c2e299f12d2e2d32da17a324cd585b4637d43613296b",
+    "experiments/upstream-nonlinear/nn/2.json": "866f97f247e0b0e7f11428f60bb40051324bc62e33e56bf179282786a9928fa7",
+    "experiments/upstream-nonlinear/nn/3.json": "6507827cac7bdacfe9e142e79b38592421e9efa9c8f252e36044cbb8057d0593",
+    "experiments/upstream-nonlinear/nn/4.json": "a5e7ad8817c47702f77679c5518fe52663216fd33331cd1b4b4c4858fbfa3fe9",
+    "experiments/upstream-nonlinear/tests.log": "724d7fde485bc489957ca973113ec0091f37db1c0aee185b4aba2125b36e47f8"
+  },
+  "compressed_predictions_sha256": "dc9b2a4cba7345cdb9ce0666ebb082a8b1902f1c4737b16db2bf72eb2a1dc817",
+  "compressed_predictions_bytes": 15255218,
+  "float32_content_sha256": {
+    "control": "7e57f67f06412c971d98bb0051384f765c383510aaed6d835145ce1c962ce69e",
+    "tree": "33a36c240cdf06c9ec8b7d826aa528bf0ca6217446baa1566dd9e0ca3e317383",
+    "nn": "0a8eacb80aaf0efbc41a53f6b35e5a337d6014083f4553f610eb43e4315d9005",
+    "fixed-half-tree-nn": "42db26586ef3fa0b2af1ee7fbe73ec73404b391aa9340799659d1fa70db8eaf5"
+  },
+  "all_training_processes_exited": true,
+  "scope": "Fresh-only ProbeX development, not a qualifying/Test result; historically selected source recipes.",
+  "saved_models": "artifacts/upstream-nonlinear/{tree,nn}/{fold}/; ridge/scalers and per-seed model files retained locally"
+}
