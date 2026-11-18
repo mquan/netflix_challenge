@@ -1,0 +1,11 @@
+{
+  "requested": "mf-60__knn3",
+  "order": [
+    "mf-60",
+    "mf-60__knn3"
+  ],
+  "commands": [
+    "cargo build --release --bin mf-new && ./target/release/mf-new mf-60",
+    "cargo build --release --bin mf-new && ./target/release/mf-new mf-60__knn3"
+  ]
+}
