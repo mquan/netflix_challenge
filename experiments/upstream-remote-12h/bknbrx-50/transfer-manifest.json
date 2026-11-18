@@ -1,0 +1,115 @@
+{
+  "job": "bknbrx-50",
+  "created": "2026-11-18T10:14:11.297201+00:00",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_commit_matches_pin": true,
+  "native_receipt": "experiments/upstream-remote-12h/bknbrx-50/native-receipt.json",
+  "native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+  "all_receipt_output_hashes_verified": 53,
+  "native_command": "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-50",
+  "native_started": "2026-11-18T09:36:54.392742+00:00",
+  "native_finished": "2026-11-18T10:13:45.391468+00:00",
+  "outputs": [
+    {
+      "kind": "terminal",
+      "source": "preds_new/bknbrx-50.probex.npy",
+      "source_npy_sha256": "f97a21ffe9d397757078494ea798d98ecbb91b43a88a8e1c3ca58d6c900b9188",
+      "receipt_bound_sha256": "f97a21ffe9d397757078494ea798d98ecbb91b43a88a8e1c3ca58d6c900b9188",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-50.probex.npz",
+      "npz_sha256": "f4df0b0d46955f873491446387fbe962ad17bfc422a07442a931f42d7f6261a7",
+      "prediction_content_sha256": "4b98ab6a6e07a26ca729494a79cdfe383ff7d29921e2eb907d6b0207f066e14a",
+      "owning_native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+      "diagnostic_standalone_probex_rmse": 0.9003744489095309,
+      "min": -3.1277523040771484,
+      "max": 7.9085917472839355
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-50_ep05.probex.npy",
+      "source_npy_sha256": "6e28385dfcc97f81235f770bcfc708a9db72171a728be0fff7728ac8d5db8953",
+      "receipt_bound_sha256": "6e28385dfcc97f81235f770bcfc708a9db72171a728be0fff7728ac8d5db8953",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-50_ep05.probex.npz",
+      "npz_sha256": "2c6997db88e5c2b1401714cad580552526d30e0d594409f2d6565e4529590f72",
+      "prediction_content_sha256": "15c8be28df485a096ea5e022761783c02c3b81f29e9bf1317bb229add49243d1",
+      "owning_native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+      "diagnostic_standalone_probex_rmse": 0.908795389419111,
+      "min": -3.1942129135131836,
+      "max": 7.518636703491211
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-50_ep09.probex.npy",
+      "source_npy_sha256": "19b4313e2d5354023c60d20119130e943f8196967550ab470f2509638c31eed8",
+      "receipt_bound_sha256": "19b4313e2d5354023c60d20119130e943f8196967550ab470f2509638c31eed8",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-50_ep09.probex.npz",
+      "npz_sha256": "a6061e9552a3f91dd4838df2b9dc7e6a105f456a93ce18b2ab7f8b546abd9292",
+      "prediction_content_sha256": "4c0b0528aba9c639a30038cb8009677e3b87663251739e61ee07594e9aa8728a",
+      "owning_native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+      "diagnostic_standalone_probex_rmse": 0.9025050582133585,
+      "min": -2.9542794227600098,
+      "max": 7.970379829406738
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-50_ep17.probex.npy",
+      "source_npy_sha256": "b1790a0e4cfdbcacd5b1d1df5abea15f49b30bf5c3ae1f241bf91d99565e50ad",
+      "receipt_bound_sha256": "b1790a0e4cfdbcacd5b1d1df5abea15f49b30bf5c3ae1f241bf91d99565e50ad",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-50_ep17.probex.npz",
+      "npz_sha256": "4fbfbd3a2ac1c07634753521d778f017bf419283e0abb95ae7767cd1c2062c18",
+      "prediction_content_sha256": "63be3c34025d71bae5e06dab4d539570d21e09e57ebd4fcc5725eed691856b40",
+      "owning_native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+      "diagnostic_standalone_probex_rmse": 0.8998120252822704,
+      "min": -2.925574779510498,
+      "max": 7.9161787033081055
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-50_ep21.probex.npy",
+      "source_npy_sha256": "91110040a374db0e13d6302440ae02de37c1d845164599a6e72fc9229b42216e",
+      "receipt_bound_sha256": "91110040a374db0e13d6302440ae02de37c1d845164599a6e72fc9229b42216e",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-50_ep21.probex.npz",
+      "npz_sha256": "b828a80b57fd2740f33419c56375245008560847f856d203e35613dda960d47f",
+      "prediction_content_sha256": "6a8cdda67566d0ee39627dad0cc252488f5cec323621f1d4b49d8dc16f7802a3",
+      "owning_native_receipt_sha256": "9d3df063ae20d4921f948185ae3d17994e242fb3a91aca17a8423d9954d53ccb",
+      "diagnostic_standalone_probex_rmse": 0.8999384030149271,
+      "min": -3.08657169342041,
+      "max": 7.914919376373291
+    }
+  ],
+  "identical_content_groups": [],
+  "probex_rows": 1128164,
+  "alignment_sha256": {
+    "ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47"
+  },
+  "fresh_data_receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "rows": 1128164,
+    "ratings_sha256": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "qualifying_outcomes_zero": true
+  },
+  "host": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "cpu": "Apple M3 Max",
+    "ncpu": 14,
+    "physical_ram_bytes": 103079215104
+  },
+  "environment": {
+    "UPSTREAM_REPRO_THREADS": "8",
+    "UPSTREAM_REPRO_BLAS_THREADS": "1",
+    "RAYON_NUM_THREADS": "8",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "wrapper": ".venv/bin/python -u scripts/upstream_repro.py --run-job bknbrx-50",
+    "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
+  },
+  "notes": [
+    "Raw native float32 values, native ProbeX order, no export-time clipping",
+    "Standalone ProbeX RMSE is a diagnostic only, not an ensemble result",
+    "Model weights and fulltrain/qual predictions remain on the originating machine",
+    "Labels not transferred; use alignment hashes"
+  ]
+}

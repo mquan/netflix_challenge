@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "dnn-24__dnn-16__knn3",
+  "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16__knn3 -p pipeline-new.toml",
+  "started": "2026-11-18T12:56:07.178000+00:00",
+  "finished": "2026-11-18T12:58:54.043726+00:00",
+  "outputs": {
+    "preds_new/dnn-24__dnn-16__knn3.out": "1bd3bd69b17594f045ac88cc9442def9f3b3970d3eb72448a5337aa6e35d5178",
+    "preds_new/dnn-24__dnn-16__knn3.probex.npy": "c3ca50b75475f72335b24f67d8a0906064cfc844732455a58d17ae0a2b1e09d1",
+    "preds_new/dnn-24__dnn-16__knn3.qual.npy": "62537e01fece53662c3775bd1fdab90ec16b47823d1676f3c645ee522a217320"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

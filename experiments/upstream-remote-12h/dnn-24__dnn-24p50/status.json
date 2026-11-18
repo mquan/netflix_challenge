@@ -1,0 +1,33 @@
+{
+  "name": "dnn-24__dnn-24p50",
+  "command": [
+    "env",
+    "UPSTREAM_REPRO_THREADS=8",
+    "UPSTREAM_REPRO_BLAS_THREADS=1",
+    ".venv/bin/python",
+    "-u",
+    "scripts/upstream_repro.py",
+    "--run-job",
+    "dnn-24__dnn-24p50"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro",
+  "pgid": 33961,
+  "started": "2026-11-18T10:44:36.522901+00:00",
+  "deadline": "2026-11-18T13:01:05+00:00",
+  "baseline": {
+    "memory_level_pct": 86,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 103.78
+  },
+  "state": "completed",
+  "exit_code": 0,
+  "finished": "2026-11-18T12:13:21.848538+00:00",
+  "elapsed_h": 1.479,
+  "peak_group_rss_mb": 4837.4,
+  "leftover_group_members": [],
+  "final_host": {
+    "memory_level_pct": 86,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 103.76
+  }
+}

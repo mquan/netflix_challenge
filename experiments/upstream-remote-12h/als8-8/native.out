@@ -1,0 +1,27 @@
+[als8-8]
+target = "rtg"
+Als8Config { n_epochs: 10, seed: 42, n_feat: 8, sigma_u: 0.005, sigma_i: 0.005, reg_ub: 20.0, reg_ib: 20.0, reg_u: 0.05, reg_i: 0.01, shrink_m: 40.0, use_probe: true, n_bias_used: 8 }
+trainx => probex
+Epoch 01 | RMSE 1.00087
+Epoch 02 | RMSE 0.97654
+Epoch 03 | RMSE 0.96022
+Epoch 04 | RMSE 0.95495
+Epoch 05 | RMSE 0.95350
+Epoch 06 | RMSE 0.95348
+Epoch 07 | RMSE 0.95404
+Epoch 08 | RMSE 0.95486
+Epoch 09 | RMSE 0.95580
+Epoch 10 | RMSE 0.95681
+probex RMSE 0.95681
+fulltrain => qual
+Epoch 01 | RMSE 3.72902
+Epoch 02 | RMSE 3.74302
+Epoch 03 | RMSE 3.75030
+Epoch 04 | RMSE 3.75473
+Epoch 05 | RMSE 3.75770
+Epoch 06 | RMSE 3.75974
+Epoch 07 | RMSE 3.76121
+Epoch 08 | RMSE 3.76232
+Epoch 09 | RMSE 3.76321
+Epoch 10 | RMSE 3.76395
+

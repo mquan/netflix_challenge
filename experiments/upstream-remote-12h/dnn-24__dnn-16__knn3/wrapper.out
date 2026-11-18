@@ -1,0 +1,15 @@
+{
+  "requested": "dnn-24__dnn-16__knn3",
+  "order": [
+    "dnn-24",
+    "dnn-24__dnn-16",
+    "dnn-24__dnn-16__knn3"
+  ],
+  "commands": [
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24 -p pipeline-new.toml",
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16 -p pipeline-new.toml",
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16__knn3 -p pipeline-new.toml"
+  ]
+}
+Finished dnn-24__dnn-16
+Finished dnn-24__dnn-16__knn3

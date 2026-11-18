@@ -1,0 +1,33 @@
+{
+  "name": "bknbrx-50",
+  "command": [
+    "env",
+    "UPSTREAM_REPRO_THREADS=8",
+    "UPSTREAM_REPRO_BLAS_THREADS=1",
+    ".venv/bin/python",
+    "-u",
+    "scripts/upstream_repro.py",
+    "--run-job",
+    "bknbrx-50"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro",
+  "pgid": 27312,
+  "started": "2026-11-18T09:36:54.248129+00:00",
+  "deadline": "2026-11-18T13:01:05+00:00",
+  "baseline": {
+    "memory_level_pct": 85,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 108.39
+  },
+  "state": "completed",
+  "exit_code": 0,
+  "finished": "2026-11-18T10:13:46.503635+00:00",
+  "elapsed_h": 0.615,
+  "peak_group_rss_mb": 10180.0,
+  "leftover_group_members": [],
+  "final_host": {
+    "memory_level_pct": 86,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 107.59
+  }
+}

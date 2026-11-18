@@ -1,0 +1,29 @@
+Running 'dnn-24__asym-16p75': cargo build --release --bin dnn && ./target/release/dnn dnn-24__asym-16p75 -p pipeline-new.toml
+    Finished `release` profile [optimized] target(s) in 0.08s
+[dnn-24__asym-16p75]
+target = "0.75*dnn-24"
+AsymConfig { n_feat: 16, n_epochs: 10, seed: 42, shuffle_users: true, lr_ub: 0.0031, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_us: 0.0, reg_i: 0.007, reg_y: 0.04, reg_us: 0.0, sigma_i: 0.005, sigma_y: 0.005, init_with_user_std: false, save_ifeat: false, save_ufeat: false }
+trainx => probex
+Epoch 01 | RMSE 0.90595
+Epoch 02 | RMSE 0.90405
+Epoch 03 | RMSE 0.90283
+Epoch 04 | RMSE 0.90219
+Epoch 05 | RMSE 0.90188
+Epoch 06 | RMSE 0.90166
+Epoch 07 | RMSE 0.90148
+Epoch 08 | RMSE 0.90151
+Epoch 09 | RMSE 0.90166
+Epoch 10 | RMSE 0.90157
+probex RMSE 0.90157
+fulltrain => qual
+Epoch 01 | RMSE 3.71944
+Epoch 02 | RMSE 3.72248
+Epoch 03 | RMSE 3.72446
+Epoch 04 | RMSE 3.72737
+Epoch 05 | RMSE 3.72520
+Epoch 06 | RMSE 3.72379
+Epoch 07 | RMSE 3.72644
+Epoch 08 | RMSE 3.72625
+Epoch 09 | RMSE 3.72839
+Epoch 10 | RMSE 3.72689
+

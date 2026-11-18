@@ -1,0 +1,60 @@
+2026-11-18T03:50:07Z Running 'tsvdx5-150o': cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150o
+2026-11-18T03:50:07Z    Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+2026-11-18T03:50:13Z     Finished `release` profile [optimized] target(s) in 9.91s
+2026-11-18T03:50:13Z [tsvdx5-150o]
+2026-11-18T03:50:13Z target = "rtg"
+2026-11-18T03:50:13Z TxConfig { n_feat: 150, n_epochs: 25, seed: 64, shuffle_users: true, n_time_bins: 20, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.0015, lr_u2: 1e-5, lr_ub: 0.006, lr_ubd: 0.006, lr_i: 0.0072, lr_ib: 0.0072, lr_y: 0.0012, lr_yb: 2e-6, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.0001, lr_ta: 1.5e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.04, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.007, reg_y: 0.04, reg_yd: 0.04, sigma_iqf: 0.005, sigma_u: 0.0, sigma_i: 0.005, sigma_y: 0.005, sigma_yd: 0.005, reset_u_epoch: 1024, max_neighbors: 120, lr_w: 0.0015, lr_c: 0.0015, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.2, w_factor: 1.2, w_nbr: 1.2, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: Some(OrdinalHeadConfig { th_init: [0.5, 1.25, 3.75, 5.5], th_gap: 0.001, lr_t: 0.0, reg_t: 0.0 }), save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
+2026-11-18T03:50:13Z trainx => probex
+2026-11-18T03:57:17Z Epoch 01 | RMSE 0.95597
+2026-11-18T04:04:08Z Epoch 02 | RMSE 0.93154
+2026-11-18T04:10:58Z Epoch 03 | RMSE 0.91803
+2026-11-18T04:17:46Z Epoch 04 | RMSE 0.90889
+2026-11-18T04:24:43Z Epoch 05 | RMSE 0.90216
+2026-11-18T04:33:35Z Epoch 06 | RMSE 0.89722
+2026-11-18T04:40:26Z Epoch 07 | RMSE 0.89314
+2026-11-18T04:47:13Z Epoch 08 | RMSE 0.88988
+2026-11-18T04:53:58Z Epoch 09 | RMSE 0.88728
+2026-11-18T05:00:45Z Epoch 10 | RMSE 0.88489
+2026-11-18T05:07:30Z Epoch 11 | RMSE 0.88292
+2026-11-18T05:14:17Z Epoch 12 | RMSE 0.88123
+2026-11-18T05:21:06Z Epoch 13 | RMSE 0.87989
+2026-11-18T05:27:53Z Epoch 14 | RMSE 0.87867
+2026-11-18T05:34:42Z Epoch 15 | RMSE 0.87779
+2026-11-18T05:41:36Z Epoch 16 | RMSE 0.87688
+2026-11-18T05:48:22Z Epoch 17 | RMSE 0.87637
+2026-11-18T05:55:07Z Epoch 18 | RMSE 0.87594
+2026-11-18T06:01:55Z Epoch 19 | RMSE 0.87561
+2026-11-18T06:08:41Z Epoch 20 | RMSE 0.87538
+2026-11-18T06:15:26Z Epoch 21 | RMSE 0.87530
+2026-11-18T06:22:11Z Epoch 22 | RMSE 0.87530
+2026-11-18T06:28:55Z Epoch 23 | RMSE 0.87537
+2026-11-18T06:35:39Z Epoch 24 | RMSE 0.87531
+2026-11-18T06:42:24Z Epoch 25 | RMSE 0.87558
+2026-11-18T06:42:25Z probex RMSE 0.87558
+2026-11-18T06:44:07Z fulltrain => qual
+2026-11-18T06:51:14Z Epoch 01 | RMSE 3.71341
+2026-11-18T06:58:04Z Epoch 02 | RMSE 3.74932
+2026-11-18T07:05:01Z Epoch 03 | RMSE 3.74539
+2026-11-18T07:11:58Z Epoch 04 | RMSE 3.74475
+2026-11-18T07:18:52Z Epoch 05 | RMSE 3.73909
+2026-11-18T07:25:46Z Epoch 06 | RMSE 3.74771
+2026-11-18T07:32:39Z Epoch 07 | RMSE 3.74699
+2026-11-18T07:39:25Z Epoch 08 | RMSE 3.74695
+2026-11-18T07:46:13Z Epoch 09 | RMSE 3.75185
+2026-11-18T07:53:07Z Epoch 10 | RMSE 3.75052
+2026-11-18T08:00:01Z Epoch 11 | RMSE 3.75131
+2026-11-18T08:06:44Z Epoch 12 | RMSE 3.74986
+2026-11-18T08:13:31Z Epoch 13 | RMSE 3.75055
+2026-11-18T08:20:18Z Epoch 14 | RMSE 3.75097
+2026-11-18T08:27:10Z Epoch 15 | RMSE 3.75177
+2026-11-18T08:33:53Z Epoch 16 | RMSE 3.75313
+2026-11-18T08:40:36Z Epoch 17 | RMSE 3.75388
+2026-11-18T08:47:21Z Epoch 18 | RMSE 3.75292
+2026-11-18T08:54:06Z Epoch 19 | RMSE 3.75400
+2026-11-18T09:00:54Z Epoch 20 | RMSE 3.75789
+2026-11-18T09:07:43Z Epoch 21 | RMSE 3.75650
+2026-11-18T09:14:25Z Epoch 22 | RMSE 3.75682
+2026-11-18T09:21:08Z Epoch 23 | RMSE 3.75848
+2026-11-18T09:27:52Z Epoch 24 | RMSE 3.75825
+2026-11-18T09:34:38Z Epoch 25 | RMSE 3.75949
+2026-11-18T09:36:20Z 

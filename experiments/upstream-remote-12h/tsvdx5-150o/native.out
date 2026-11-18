@@ -1,0 +1,57 @@
+[tsvdx5-150o]
+target = "rtg"
+TxConfig { n_feat: 150, n_epochs: 25, seed: 64, shuffle_users: true, n_time_bins: 20, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.0015, lr_u2: 1e-5, lr_ub: 0.006, lr_ubd: 0.006, lr_i: 0.0072, lr_ib: 0.0072, lr_y: 0.0012, lr_yb: 2e-6, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.0001, lr_ta: 1.5e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.04, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.007, reg_y: 0.04, reg_yd: 0.04, sigma_iqf: 0.005, sigma_u: 0.0, sigma_i: 0.005, sigma_y: 0.005, sigma_yd: 0.005, reset_u_epoch: 1024, max_neighbors: 120, lr_w: 0.0015, lr_c: 0.0015, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.2, w_factor: 1.2, w_nbr: 1.2, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: Some(OrdinalHeadConfig { th_init: [0.5, 1.25, 3.75, 5.5], th_gap: 0.001, lr_t: 0.0, reg_t: 0.0 }), save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
+trainx => probex
+Epoch 01 | RMSE 0.95597
+Epoch 02 | RMSE 0.93154
+Epoch 03 | RMSE 0.91803
+Epoch 04 | RMSE 0.90889
+Epoch 05 | RMSE 0.90216
+Epoch 06 | RMSE 0.89722
+Epoch 07 | RMSE 0.89314
+Epoch 08 | RMSE 0.88988
+Epoch 09 | RMSE 0.88728
+Epoch 10 | RMSE 0.88489
+Epoch 11 | RMSE 0.88292
+Epoch 12 | RMSE 0.88123
+Epoch 13 | RMSE 0.87989
+Epoch 14 | RMSE 0.87867
+Epoch 15 | RMSE 0.87779
+Epoch 16 | RMSE 0.87688
+Epoch 17 | RMSE 0.87637
+Epoch 18 | RMSE 0.87594
+Epoch 19 | RMSE 0.87561
+Epoch 20 | RMSE 0.87538
+Epoch 21 | RMSE 0.87530
+Epoch 22 | RMSE 0.87530
+Epoch 23 | RMSE 0.87537
+Epoch 24 | RMSE 0.87531
+Epoch 25 | RMSE 0.87558
+probex RMSE 0.87558
+fulltrain => qual
+Epoch 01 | RMSE 3.71341
+Epoch 02 | RMSE 3.74932
+Epoch 03 | RMSE 3.74539
+Epoch 04 | RMSE 3.74475
+Epoch 05 | RMSE 3.73909
+Epoch 06 | RMSE 3.74771
+Epoch 07 | RMSE 3.74699
+Epoch 08 | RMSE 3.74695
+Epoch 09 | RMSE 3.75185
+Epoch 10 | RMSE 3.75052
+Epoch 11 | RMSE 3.75131
+Epoch 12 | RMSE 3.74986
+Epoch 13 | RMSE 3.75055
+Epoch 14 | RMSE 3.75097
+Epoch 15 | RMSE 3.75177
+Epoch 16 | RMSE 3.75313
+Epoch 17 | RMSE 3.75388
+Epoch 18 | RMSE 3.75292
+Epoch 19 | RMSE 3.75400
+Epoch 20 | RMSE 3.75789
+Epoch 21 | RMSE 3.75650
+Epoch 22 | RMSE 3.75682
+Epoch 23 | RMSE 3.75848
+Epoch 24 | RMSE 3.75825
+Epoch 25 | RMSE 3.75949
+

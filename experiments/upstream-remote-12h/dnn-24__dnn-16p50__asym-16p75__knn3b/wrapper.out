@@ -1,0 +1,17 @@
+{
+  "requested": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+  "order": [
+    "dnn-24",
+    "dnn-24__dnn-16p50",
+    "dnn-24__dnn-16p50__asym-16p75",
+    "dnn-24__dnn-16p50__asym-16p75__knn3b"
+  ],
+  "commands": [
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24 -p pipeline-new.toml",
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50 -p pipeline-new.toml",
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p75 -p pipeline-new.toml",
+    "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p75__knn3b -p pipeline-new.toml"
+  ]
+}
+Finished dnn-24__dnn-16p50__asym-16p75
+Finished dnn-24__dnn-16p50__asym-16p75__knn3b

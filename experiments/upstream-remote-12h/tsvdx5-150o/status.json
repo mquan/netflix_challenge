@@ -1,0 +1,33 @@
+{
+  "name": "tsvdx5-150o",
+  "command": [
+    "env",
+    "UPSTREAM_REPRO_THREADS=8",
+    "UPSTREAM_REPRO_BLAS_THREADS=1",
+    ".venv/bin/python",
+    "-u",
+    "scripts/upstream_repro.py",
+    "--run-job",
+    "tsvdx5-150o"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro",
+  "pgid": 89868,
+  "started": "2026-11-18T03:50:02.950747+00:00",
+  "deadline": "2026-11-18T13:01:05+00:00",
+  "baseline": {
+    "memory_level_pct": 92,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 111.59
+  },
+  "state": "completed",
+  "exit_code": 0,
+  "finished": "2026-11-18T09:36:21.491593+00:00",
+  "elapsed_h": 5.772,
+  "peak_group_rss_mb": 28684.1,
+  "leftover_group_members": [],
+  "final_host": {
+    "memory_level_pct": 85,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 108.39
+  }
+}
