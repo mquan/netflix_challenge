@@ -1,0 +1,35 @@
+{
+  "job": "rbmx2-150__knnf",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "rows": 1128164,
+  "selected_plan_sha256": "e71ca9aa7c533dad937e490ed4c90f075d247247ff77ed60140956efc108690e",
+  "baseline_manifest_sha256": "5e2c93f45f355acb995e3c1d166321a2c11dc16e8b250b74d3b55b2a66bdb5cc",
+  "prediction_columns": 62,
+  "design_columns": 138,
+  "rmse": 0.866286461848646,
+  "previous_fresh_control_rmse": 0.8663200739003126,
+  "original_fourteen_control_rmse": 0.8677119362283469,
+  "delta_vs_previous": -3.3612051666631615e-05,
+  "fold_rmse": [
+    0.8657325557936907,
+    0.8637408906983364,
+    0.8672154062498525,
+    0.8676331480523449,
+    0.867115420643345
+  ],
+  "fold_delta_vs_previous": [
+    -1.4488680306623536e-06,
+    -5.191275792537642e-05,
+    -3.084620754123524e-05,
+    -2.834121185169014e-05,
+    -5.565562876941321e-05
+  ],
+  "fresh_base_rmse": 0.902769795987186,
+  "released_base_rmse": 0.9026415894616654,
+  "fresh_released_prediction_rms_difference": 0.05614645914018576,
+  "native_receipt_sha256": "01a7e20a5977e47162e37dc73b319d82653d15cc6e7bb7765f74a93ad905b5bc",
+  "exported_artifact_sha256": "c01083289729207976c2e9f9ed185762a37c4fa35d17fe6acbcb03052e13d384",
+  "output_prediction_sha256": "7e57f67f06412c971d98bb0051384f765c383510aaed6d835145ce1c962ce69e",
+  "scope": "Fresh output and fold-refitted fresh single-layer blend; recipe selected by the released-vector development screen, so this is exploratory development evidence, not untouched/selection-adjusted performance.",
+  "input_provenance": "Only receipt-verified fresh predictions plus training/query metadata. Released vectors used solely for post-fit numerical comparison. New rating column has a global coefficient; original fourteen-only context interactions preserved."
+}

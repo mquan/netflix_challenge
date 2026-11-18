@@ -1,0 +1,2965 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "baseline_manifest_sha256": "5e2c93f45f355acb995e3c1d166321a2c11dc16e8b250b74d3b55b2a66bdb5cc",
+  "reference_manifest_sha256": "daeb1889e0511de7b94cdcbb1f200154e5cc405dd96f1747e41f072bdf07fa44",
+  "registry_sha256": "1f6d235dcee23e9ded06fa300e6e72b14a40de0cb63d814e9042bb0013ecb416",
+  "pipeline_sha256": "c9b3cedc45ab237277fe410973341e45bd26633bc3f0532485e62f95c0784ee4",
+  "base_width": 137,
+  "entries": [
+    {
+      "name": "tsvdx5-1000__nlpp__knn3",
+      "path": "preds_new/tsvdx5-1000__nlpp__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "3f6ded730ab094071417a65175f6604a",
+      "sha256": "5c345d844a4e88d2323237d27645a1940c34565d2578c8938c68ee630c7c99ed",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-1000__nlpp__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-1000",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-1000",
+        "tsvdx5-1000__nlpp_paropt",
+        "tsvdx5-1000__nlpp",
+        "tsvdx5-1000__nlpp__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm__knnf",
+      "path": "preds_new/tsvdx4-4800lm__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "116e72f5c8c6cf60c72e92f0cfb58766",
+      "sha256": "e9c21bfe6e8686417f19c454090de69c74cdecca920a89f0a0fb566ca8073f04",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm",
+        "tsvdx4-4800lm__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep13",
+      "path": "preds_new/tsvdx4-4800lm_ep13.probex.npy",
+      "rows": 1128164,
+      "md5": "97783c5271f70e7d701b5c87001bd9ad",
+      "sha256": "70de3e04cae22f868089687d5be117010c6c67f444f7971a8d98f9626425f705",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-150o_ep24",
+      "path": "preds_new/tsvdx5-150o_ep24.probex.npy",
+      "rows": 1128164,
+      "md5": "04a52e2c2bcdadb73d40def210b3e1d6",
+      "sha256": "e4749f211eb3bb9d650fa51e44994139a0998829f67aa38056c14c14d0c6e1aa",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-150o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm__knns",
+      "path": "preds_new/tsvdx4-4800lm__knns.probex.npy",
+      "rows": 1128164,
+      "md5": "3e3e944ba10d56f9f72c09dc2212f951",
+      "sha256": "6315ce8eb57e40011ed15bc3a10affd1a5740f47301c8aa9d1c7d1b126f7b78e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm__knns",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm",
+        "tsvdx4-4800lm__knns"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-60",
+      "path": "preds_new/tsvdx5-60.probex.npy",
+      "rows": 1128164,
+      "md5": "d06a60e6ba46be06f01ae24f61748a29",
+      "sha256": "5858b4dba9265f38ee3db12c6d4a37e667da2fa1e5122450e59c25983b295e38",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-60",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-60",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-60"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx6-300_ep20",
+      "path": "preds_new/tsvdx6-300_ep20.probex.npy",
+      "rows": 1128164,
+      "md5": "c08e5221dd42d043177a4e4aa2cc7998",
+      "sha256": "09167fdf8578a9028eda1a082357497677871ce319cea6bfdec4c11039c42043",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx6-300",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx6-300",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-q16tb__epochs",
+      "path": "preds_new/tsvdx4-q16tb__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "44365b276b23f589f5c86582301a669b",
+      "sha256": "8d50e1816422525b357c9ceca474a5a0724448e9596d198b1edbfa39e6b575ea",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-q16tb__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-q16tb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-q16tb",
+        "tsvdx4-q16tb__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx5-1200lm__epochs",
+      "path": "preds_new/tsvdx5-1200lm__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "27b29b057667b32c21591fb2ecfa2b69",
+      "sha256": "aec5efcefb4cfed18f77b721e60ad61cebf5219c6e44dccc435b0670b2a74d4b",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": null,
+      "producer_basis": "unresolved; do not infer a historical recipe from a similar name",
+      "bundle": "unresolved:tsvdx5-1200lm__epochs",
+      "full_dependency_order": [],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx6-300_ep03",
+      "path": "preds_new/tsvdx6-300_ep03.probex.npy",
+      "rows": 1128164,
+      "md5": "20b97eccd7d085df4792dfd8606c4c20",
+      "sha256": "809a23a456ea889af92015b0ba8fb3c345cc09a7e7e804772a11e90a4ba82f82",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx6-300",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx6-300",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-16-t_ep01",
+      "path": "preds_new/tsvdx4-16-t_ep01.probex.npy",
+      "rows": 1128164,
+      "md5": "136848d636f6f4788feb2d18c2e71eae",
+      "sha256": "d64755fe3e87170c3cb6643c81c910f58bd0f06e8b7208f6596c12433d466b05",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-16-t",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-16-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-16-t"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-16-t",
+      "path": "preds_new/tsvdx4-16-t.probex.npy",
+      "rows": 1128164,
+      "md5": "255ea1cafc47b5173a50393d69307761",
+      "sha256": "f5a5a39a8166e6f223b04c493480e761a7dfcd1c31523854b13ac90021e1b46f",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-16-t",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-16-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-16-t"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-150__nlpp__knnf",
+      "path": "preds_new/tsvdx5-150__nlpp__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "2a89967d0896a566dd485621c112370f",
+      "sha256": "26e8db544c5ad69aba09b9a8830560b59e0738e20b84701d1e2f293dc4b4bb0d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-150__nlpp__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-150",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120",
+        "tsvdx5-150",
+        "tsvdx5-150__nlpp_paropt",
+        "tsvdx5-150__nlpp",
+        "tsvdx5-150__nlpp__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4p-8000lm__knnf",
+      "path": "preds_new/tsvdx4p-8000lm__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "749ce334943b764e34816f352432a18e",
+      "sha256": "0bb1c15fc8b7f756bcf5643c49f4c05ccdd6a16118eca9212c91182d6f48cd92",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4p-8000lm__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4p-8000lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-8000lm",
+        "tsvdx4p-8000lm__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm__knn-d",
+      "path": "preds_new/tsvdx4-4800lm__knn-d.probex.npy",
+      "rows": 1128164,
+      "md5": "efe7a5e3e1166afa1f7a5ff015b1f39a",
+      "sha256": "7be98cbe422adeafcaf63ccdbfe9ec9009b845365bf76b91f764f77583460885",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm__knn-d",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rtg_supp",
+        "tsvdx4-4800lm",
+        "tsvdx4-4800lm_diff1",
+        "tsvdx4-4800lm__knn-d"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-40-nsvd1",
+      "path": "preds_new/tsvdx5-40-nsvd1.probex.npy",
+      "rows": 1128164,
+      "md5": "f0dfce5d68a5805fedd399a482dc8d31",
+      "sha256": "1f287bd98134415e263e35db4c8fadb63fc8292a562be3103e096f595093d887",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-40",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-40",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-40"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep03",
+      "path": "preds_new/tsvdx4-4800lm_ep03.probex.npy",
+      "rows": 1128164,
+      "md5": "68ee994adb9c4e54a6d50bb338377e45",
+      "sha256": "222d9e85e17f7510707d6c9d41b247165bb0be7c23c69627054a8d120a6a9248",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-150-mf",
+      "path": "preds_new/tsvdx5-150-mf.probex.npy",
+      "rows": 1128164,
+      "md5": "709b1089a6d3be6758fa5aeb295fc989",
+      "sha256": "353dc76dbe6ba2b0764b4948b55227b94a346b632f7bebd0caf49e47b3647afa",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-150",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-150",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-2400lm-bias",
+      "path": "preds_new/tsvdx4-2400lm-bias.probex.npy",
+      "rows": 1128164,
+      "md5": "6d39eb218b9e6d2901ca15cbb7bf636e",
+      "sha256": "b8e78b80a969e47b546da590a7c442364ea2dbc42be7eb7a072253d872323581",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx4-2400lm",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx4-2400lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-2400lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-2400lm__knns",
+      "path": "preds_new/tsvdx4-2400lm__knns.probex.npy",
+      "rows": 1128164,
+      "md5": "e669818c30d2998a3ebdd98d711f2bbc",
+      "sha256": "ddeb02098607ffc279a4b17e3a49acd58ad02acafaba7206cea7e05aecdcd4cc",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-2400lm__knns",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-2400lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-2400lm",
+        "tsvdx4-2400lm__knns"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-1200lm-bias",
+      "path": "preds_new/tsvdx5-1200lm-bias.probex.npy",
+      "rows": 1128164,
+      "md5": "d50c9d9912a4efb2b6480b5a2faa5307",
+      "sha256": "0eff022381b2e52b2aa46b82338ed83d5224a75110b88e5cddeea20357ca5d26",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-1200lm",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-1200lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-1200lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-120o__dnn-16p50",
+      "path": "preds_new/tsvdx5-120o__dnn-16p50.probex.npy",
+      "rows": 1128164,
+      "md5": "634b7c5ab163bf19c6b975340897a2f1",
+      "sha256": "9e20ed86e8c81142fdce7e41d48f1e34e6faa758f750d9fd4ad027d09e13ec44",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-120o__dnn-16p50",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-120o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o",
+        "tsvdx5-120o__dnn-16p50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-h8nb_ep01",
+      "path": "preds_new/tsvdx4-h8nb_ep01.probex.npy",
+      "rows": 1128164,
+      "md5": "21e70ffd83467540f5e908a5f270db12",
+      "sha256": "9e5e59abe51184ef20bab94c0067a96f5973bb17d4fe389ece3b1507008e2d75",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-h8nb",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-h8nb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-h8nb"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-t8cu_ep06",
+      "path": "preds_new/tsvdx4-t8cu_ep06.probex.npy",
+      "rows": 1128164,
+      "md5": "563025fb0e7edf75a796fc636ef1d0dc",
+      "sha256": "d81857e7382df00e233c5a1f63d6b6df9f783cbd87264c53ac5dcf99e9322116",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-t8cu",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-t8cu",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-t8cu"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-150o_ep06",
+      "path": "preds_new/tsvdx5-150o_ep06.probex.npy",
+      "rows": 1128164,
+      "md5": "8e5b00e991bdbaf50df043b650a0d27c",
+      "sha256": "089385b706d577e66c2ab5fca2c486f26562b2b6427c28e3333bbc67fb3a631d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-150o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-60o__epochs",
+      "path": "preds_new/tsvdx4-60o__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "1f875fba8559ec73d3d1369d4fab0c8a",
+      "sha256": "a68cb75fe8a4e01e908dc8b0d75666b23a07284f5d66cce56c0240b1f4e315c3",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-60o__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-60o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-60o",
+        "tsvdx4-60o__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx5-150o_ep16",
+      "path": "preds_new/tsvdx5-150o_ep16.probex.npy",
+      "rows": 1128164,
+      "md5": "7eee502bdf9adc03d4818d5f2a6ce9c6",
+      "sha256": "205ae6eb7ec1e059634d07b03d371723b9b197b7e10befc7fbde0b778397b2bc",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-150o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-120o__knn3",
+      "path": "preds_new/tsvdx5-120o__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "6961b6879bef3e2462f1f4a841b87890",
+      "sha256": "1deed498e8cb72cfe1fc27538ad972d1fccd66f9816cd07deeb74cb9e88e42b5",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-120o__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-120o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o",
+        "tsvdx5-120o__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-120o",
+      "path": "preds_new/tsvdx5-120o.probex.npy",
+      "rows": 1128164,
+      "md5": "2af2fa060581659bc746d8e766200398",
+      "sha256": "b4853117b2ee0505cd16b36082479194936635fa85450d7c61af2a02cec21225",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-120o",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-120o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-400__knn3",
+      "path": "preds_new/tsvdx5-400__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "036610582e7ae7bbd2d35b632948a735",
+      "sha256": "bbe533ac4b077149ca53cb1de647ebf68c4883d270916192444c626869b42244",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": null,
+      "producer_basis": "unresolved; do not infer a historical recipe from a similar name",
+      "bundle": "unresolved:tsvdx5-400__knn3",
+      "full_dependency_order": [],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-400__nlpp__knn3",
+      "path": "preds_new/tsvdx5-400__nlpp__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "3accdf9bf8734bc13404423c966eeba4",
+      "sha256": "9038b638f5c2c21e1b2b30b7da92479a587b1d92474deb3778670a73c63e2312",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-400__nlpp__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-400",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-400",
+        "tsvdx5-400__nlpp_paropt",
+        "tsvdx5-400__nlpp",
+        "tsvdx5-400__nlpp__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-60__epochs",
+      "path": "preds_new/tsvdx4-60__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "44053bb2f636539f59feb9d93a638094",
+      "sha256": "838b0348b84c0bba8503aec05427bc949e338ca7f08193ff034718f8c23039f5",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-60__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-60",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-60",
+        "tsvdx4-60__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx4p-16000lm_ep09",
+      "path": "preds_new/tsvdx4p-16000lm_ep09.probex.npy",
+      "rows": 1128164,
+      "md5": "8a6831e8021f6fed814c3202f5432ebe",
+      "sha256": "093de1b9e0946ba8f0777dd286fe0c7853397d456bb0d09177b62df02b6ecc12",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4p-16000lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4p-16000lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-16000lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-300__nlpp__knn3",
+      "path": "preds_new/tsvdx5-300__nlpp__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "26f9e8f3f099cd53c0dc875ddf825f8d",
+      "sha256": "9bbc89d769c5eae7bdf1ac9729279d1ebd8c94c0f190715904cc34a63cbc705a",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-300__nlpp__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-300",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-300",
+        "tsvdx5-300__nlpp_paropt",
+        "tsvdx5-300__nlpp",
+        "tsvdx5-300__nlpp__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-150o",
+      "path": "preds_new/tsvdx5-150o.probex.npy",
+      "rows": 1128164,
+      "md5": "99189d2445888cf884804ec95b24db67",
+      "sha256": "8f1ddc6dd1f7ab76314a607d46bd52c6f35b20a4b6651c36309f5a9944e5e945",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-150o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-d0tb__epochs",
+      "path": "preds_new/tsvdx4-d0tb__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "dc92c17f9ddd84a22e290dfac1f472a3",
+      "sha256": "96bb7419f53d76f60d9b671c075a483cd8597cc65c43c9d104bec0879d758584",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-d0tb__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-d0tb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-d0tb",
+        "tsvdx4-d0tb__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx4-d0tb__knn3",
+      "path": "preds_new/tsvdx4-d0tb__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "28597c34b3549fb86662e624424a8fd5",
+      "sha256": "12f4496b6f57baeeb79f2226674c0ba9f2e62f212a48f1d97edc493355076e1b",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-d0tb__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-d0tb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-d0tb",
+        "tsvdx4-d0tb__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4p-16000lm_ep19",
+      "path": "preds_new/tsvdx4p-16000lm_ep19.probex.npy",
+      "rows": 1128164,
+      "md5": "111ed5dfe745a32b4b59b96376cd42eb",
+      "sha256": "e66cf42d13d427c15ce2fac270f178dd9f477a2222739fa6510066858345a7f3",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4p-16000lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4p-16000lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-16000lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-120o__epochs",
+      "path": "preds_new/tsvdx5-120o__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "1e00cc30a3659f499c8510a1e1525ebd",
+      "sha256": "189c3f70c861f365d5bb016604bfe733c9d7c763dd53b362a2a7c32731a82c4e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-120o__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-120o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o",
+        "tsvdx5-120o__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx5-150o-bias",
+      "path": "preds_new/tsvdx5-150o-bias.probex.npy",
+      "rows": 1128164,
+      "md5": "3264edfbd13366d4ee889254f3c2e206",
+      "sha256": "b9f23a50db027dfdb5ce26df4560d2cdb5e2e3a95eedabc2ad07683fc9c7232e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-150o",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-150o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-80o-bias",
+      "path": "preds_new/tsvdx4-80o-bias.probex.npy",
+      "rows": 1128164,
+      "md5": "fcd75c8edcc8a48d2c42c24439bd2815",
+      "sha256": "c7fd5513d01e85bcc33cd326d73577bc29d00c61c2a9c4b619883515dc495ddd",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx4-80o",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx4-80o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-80o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-120o-bias",
+      "path": "preds_new/tsvdx5-120o-bias.probex.npy",
+      "rows": 1128164,
+      "md5": "5e2672489efa13e312dc3551e8a5ad1b",
+      "sha256": "3f356cd2a2976af46027926e73451e55c6778805adf3a5ef4080335ed39b2493",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-120o",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-120o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-16-t__knnf",
+      "path": "preds_new/tsvdx4-16-t__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "ecd4b0d017c99846ae908705bf371858",
+      "sha256": "dc746d3602a154e750219124358616ef5a6ec39af6164e70f85a6e4f598e5622",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx4-16-t__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-16-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-16-t",
+        "tsvdx4-16-t__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4p-2000lm__knnf",
+      "path": "preds_new/tsvdx4p-2000lm__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "cb6e47382da764b9832e9c99ccb6a243",
+      "sha256": "391afd604180525b57d34b290a06f9f81543afb8a91c32b3ac41bda77b678da6",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4p-2000lm__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4p-2000lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-2000lm",
+        "tsvdx4p-2000lm__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-n8nbo__knn3",
+      "path": "preds_new/tsvdx4-n8nbo__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "4764ee1827c75393ef40b8da5a317c20",
+      "sha256": "a75cff46ce03614bf8c420eef0a56ac9d8848c01adcab94f01843c690fb8283c",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-n8nbo__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-n8nbo",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-n8nbo",
+        "tsvdx4-n8nbo__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx6-300_ep12",
+      "path": "preds_new/tsvdx6-300_ep12.probex.npy",
+      "rows": 1128164,
+      "md5": "01059e565c9146c3ade59b31401271bf",
+      "sha256": "f03dd7fc2247cf74d09cf40a6b8f7420a3c81b7d7936783c2c0be245ae3b4727",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx6-300",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx6-300",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep21",
+      "path": "preds_new/tsvdx4-4800lm_ep21.probex.npy",
+      "rows": 1128164,
+      "md5": "833e76dc068e3335a3dccf1867512862",
+      "sha256": "3deb06e639e3dcc82005dc2000bc99a8e410f1ac8a264cd8558c9cb8e49dbc23",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-4800lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-4800lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-60o__knns",
+      "path": "preds_new/tsvdx4-60o__knns.probex.npy",
+      "rows": 1128164,
+      "md5": "6b704c988526fdcc5c120d2fc2627523",
+      "sha256": "d2bdfc007759d0c5edb951314952e16819ae6876e9671056eae25c9464995756",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-60o__knns",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-60o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-60o",
+        "tsvdx4-60o__knns"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-1600lm_ep02",
+      "path": "preds_new/tsvdx4-1600lm_ep02.probex.npy",
+      "rows": 1128164,
+      "md5": "43281213cfd832c7355917296f97f013",
+      "sha256": "ec38a0dd2ed549366291c8e33f92a8553a354c40cc200d784080a3ab04d0251a",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-1600lm",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-1600lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-1600lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-m1n",
+      "path": "preds_new/tsvdx4-m1n.probex.npy",
+      "rows": 1128164,
+      "md5": "d120d302006cb5b7cb861da3352681c5",
+      "sha256": "2076193e93334c878827b00df167e055a491c51f630935a74534e5a0d5d230d0",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-m1n",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-m1n",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-m1n"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-s20fo_ep08",
+      "path": "preds_new/tsvdx4-s20fo_ep08.probex.npy",
+      "rows": 1128164,
+      "md5": "36aed298cb3b42460787ab024f02be2a",
+      "sha256": "a75a641d7f7b2be45b8557fbf1084c53968b379a426866f7022901ff6108312b",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-s20fo",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-s20fo",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-s20fo"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-160o-nsvd1",
+      "path": "preds_new/tsvdx4-160o-nsvd1.probex.npy",
+      "rows": 1128164,
+      "md5": "b1778b823a35d6e5f65f2cc024082479",
+      "sha256": "d557c0597e4a2592bb4456fc29596f658c0177c4403e21af098adf1a3f837d2b",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-160o",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx4-160o",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-160o"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4p-6000lm__knnf",
+      "path": "preds_new/tsvdx4p-6000lm__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "cbc219bc6ae2ba0017f3176c8c03820e",
+      "sha256": "5d0e58d47f2c3d58a7afabdcfc3e165198beae42fe5de599e8b754338d53aa87",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4p-6000lm__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4p-6000lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-6000lm",
+        "tsvdx4p-6000lm__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-400lm__epochs",
+      "path": "preds_new/tsvdx4-400lm__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "afa85a03f4b59322582babcf9daabac5",
+      "sha256": "aec8f11ef04cb7e59d8d27c1fa963fe4c82170ddc88fa624a81d8331c3b84ecc",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-400lm__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-400lm",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx5-20",
+      "path": "preds_new/tsvdx5-20.probex.npy",
+      "rows": 1128164,
+      "md5": "eec0543ee4c04719c043e606903693a3",
+      "sha256": "504706ac5c199b2a262528c1685821bae32dbeee1156dadc8705f3c1b4df9c6a",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx5-20",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx5-20",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-20"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx5-20-mf",
+      "path": "preds_new/tsvdx5-20-mf.probex.npy",
+      "rows": 1128164,
+      "md5": "cb7ed2eaca731dd993e43f457b999dfb",
+      "sha256": "4daa036c6a6c1793ddda44e962fb05eef0c4689d4bd4c763f1fefdfc4da442b4",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "tsvdx5-20",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "tsvdx5-20",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-20"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-f1__epochs",
+      "path": "preds_new/tsvdx4-f1__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "efd17a324d2a0f1a8dacaefe52248a07",
+      "sha256": "7365e302647d19dfef6adfb79fee4009d716a9f3247e12ddcad11e78eead6b45",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-f1__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-f1",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-f1",
+        "tsvdx4-f1__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "tsvdx4-h8nb__knn3",
+      "path": "preds_new/tsvdx4-h8nb__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "55eb7b3944c1038b5c25a2becd74e5bc",
+      "sha256": "2ca3de0e0ca02a719c7dd8619f1479918edf3f29d0a3f13ac22fe0f6da1326b2",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-h8nb__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-h8nb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-h8nb",
+        "tsvdx4-h8nb__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx4-h8nb",
+      "path": "preds_new/tsvdx4-h8nb.probex.npy",
+      "rows": 1128164,
+      "md5": "23caf10a9866e0486c5394be681585d7",
+      "sha256": "712864927bd0dd0e177e385d1f7570244ae41c52b70a0b5b73114cc3c4b04df9",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx4-h8nb",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx4-h8nb",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-h8nb"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx6-300-v2",
+      "path": "preds_new/tsvdx6-300-v2.probex.npy",
+      "rows": 1128164,
+      "md5": "c2f91d559a6fc95d91fedf692584ba1f",
+      "sha256": "161ec932be199bdc98a1377fdb2439fec8db8e00992845c016ce2f66afbdd1b6",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx6-300-v2",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx6-300-v2",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300-v2"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "tsvdx6-300",
+      "path": "preds_new/tsvdx6-300.probex.npy",
+      "rows": 1128164,
+      "md5": "e7821fc4859a1458586043f2a78503d8",
+      "sha256": "46c6ca297cf1c5f53a0a62517a27ad1ec8ce86f5f4259b1d080d07c7b18e19d5",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "tsvdx6-300",
+      "producer_basis": "declared native output",
+      "bundle": "tsvdx6-300",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bk3-30",
+      "path": "preds_new/bk3-30.probex.npy",
+      "rows": 1128164,
+      "md5": "4ce7a7b39a68610c1660d4415dd88644",
+      "sha256": "ae511a019f755a2d1d156882b64cf3c82354387ab27b40014f7657994e9d1b5d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bk3-30",
+      "producer_basis": "declared native output",
+      "bundle": "bk3-30",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk3-30"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bk3-20__knns",
+      "path": "preds_new/bk3-20__knns.probex.npy",
+      "rows": 1128164,
+      "md5": "5a6165b290f15ee3b2352c17e840bb39",
+      "sha256": "ae3dc50d6ad756e40246a33f094330c18128c4609cd76b00da69b30e95f9c0c9",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bk3-20__knns",
+      "producer_basis": "declared native output",
+      "bundle": "bk3-20",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk3-20",
+        "bk3-20__knns"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bk1-10_ep04",
+      "path": "preds_new/bk1-10_ep04.probex.npy",
+      "rows": 1128164,
+      "md5": "d17a2cf2514d9de9fa30c86f59cf0180",
+      "sha256": "45800adc699a50fe8c30bbfdd0163c8f78b5553ed6a49a40405d26d92b2cdf8f",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bk1-10",
+      "producer_basis": "declared native output",
+      "bundle": "bk1-10",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk1-10"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-500__knn-w",
+      "path": "preds_new/rbmx2-500__knn-w.probex.npy",
+      "rows": 1128164,
+      "md5": "a64821ad386844eaa43d1938e4aead08",
+      "sha256": "4116963807da0e29d00c888562438b4935ee35c6547d074c27856de7142ef9ee",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": null,
+      "producer_basis": "unresolved; do not infer a historical recipe from a similar name",
+      "bundle": "unresolved:rbmx2-500__knn-w",
+      "full_dependency_order": [],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-200__knn3",
+      "path": "preds_new/rbmx2-200__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "3e48729246c4a16a64a227e55493104f",
+      "sha256": "f77bda7782a9c0347a059284325f99da69637ed4d1aea527a940e7077b058447",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-200__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-200",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-200",
+        "rbmx2-200__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-500bp__knnf",
+      "path": "preds_new/rbmx2-500bp__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "927c61b1ac5255ebd5a7f526b47ef925",
+      "sha256": "cdb55c0bd2f98fa632495b05a5e29986982c1c8ccef5273a4752e0d38ecf3341",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-500bp__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-500bp",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-500bp",
+        "rbmx2-500bp__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-16-t",
+      "path": "preds_new/rbmx2-16-t.probex.npy",
+      "rows": 1128164,
+      "md5": "157bebc0acceef5011786cb3c455c382",
+      "sha256": "9b0869538929956694ec00e01c8905a616d386026d4b5dce43d2f1d8a9bf822e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-16-t",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-16-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-16-t"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-600_ep27",
+      "path": "preds_new/rbmx2-600_ep27.probex.npy",
+      "rows": 1128164,
+      "md5": "a0cc79dec2730ec870e541a75903608f",
+      "sha256": "69cf1d56a6b611c2ce0594e1370bafec0f87c6e745b5d9d9a8c6ca2e2ba2aaf9",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-600",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-600",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-600"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-350e__epochs",
+      "path": "preds_new/rbmx2-350e__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "1d4edfb3c53277b3e051dde289da52da",
+      "sha256": "d7adc22e77c539867f1312af3bdfdd63b004d6c05484c7eea9d47f183047bca4",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-350e__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-350e",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-350e",
+        "rbmx2-350e__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "rbmx2-300s__knn3",
+      "path": "preds_new/rbmx2-300s__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "8116f7a8deafe42d497244783303a0bd",
+      "sha256": "d84695672c8c1091f3ff0bed42cd5d9dab05ef823ada7a63354635668e23d347",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-300s__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-300s",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-300s",
+        "rbmx2-300s__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-12__asym-16__knnf",
+      "path": "preds_new/rbmx2-12__asym-16__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "8d1ba645865fda1e10b74ca515b16ba6",
+      "sha256": "cb083445cd2fa0db98f4f993582b247c27fea03a9d2162f2a4a216729f7318df",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-12__asym-16__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-12",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-12",
+        "rbmx2-12__asym-16",
+        "rbmx2-12__asym-16__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-400__knnf",
+      "path": "preds_new/rbmx2-400__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "ad06646933311dd0e0b43da5846a00e6",
+      "sha256": "e33420466d2cbd7e58267accaf281487b30583031ea7c096c54758bf0a404146",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-400__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-400",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-400",
+        "rbmx2-400__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-300s_ep46",
+      "path": "preds_new/rbmx2-300s_ep46.probex.npy",
+      "rows": 1128164,
+      "md5": "8a3f0921c10ab6ad3cedc26901bd9d9c",
+      "sha256": "5c50fb7e5425026689b99690e25761ec49d99d1bf21461bd44a43cb9baae8799",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-300s",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-300s",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-300s"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-0",
+      "path": "preds_new/rbmx2-0.probex.npy",
+      "rows": 1128164,
+      "md5": "c7f62343c6004b24b94e1e76373faf20",
+      "sha256": "74d33c3a680c3cab7702dabd0c319179e918c179e7cb49bf8bedab3edc1979ab",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-0",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-0",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-0"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-800bp_ep27",
+      "path": "preds_new/rbmx2-800bp_ep27.probex.npy",
+      "rows": 1128164,
+      "md5": "3d3c71086ac1af17e60e49083366ad3f",
+      "sha256": "a6a7184b33ef4629a2a58bb714196210d9903094c428b6704f9e2d1e731be57f",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-800bp",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-800bp",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-800bp"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-800bp_ep03",
+      "path": "preds_new/rbmx2-800bp_ep03.probex.npy",
+      "rows": 1128164,
+      "md5": "18a831251af321dbb3b5c188d7555885",
+      "sha256": "ce4060c98c255d7571b6d65df0c32b6c16c697295f5ebc639c6a081540294154",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-800bp",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-800bp",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-800bp"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-14e",
+      "path": "preds_new/rbmx2-14e.probex.npy",
+      "rows": 1128164,
+      "md5": "d9036b6c6f0713170acf5c1e12aa2d92",
+      "sha256": "e1a79077ffd7f77f7b51bcdcc462c76af74cbfa8ca41b3acf214161730b49b8f",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-14e",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-14e",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-14e"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-100e_ep02",
+      "path": "preds_new/rbmx2-100e_ep02.probex.npy",
+      "rows": 1128164,
+      "md5": "d8bdc654b0fa86550855b76f889b6c2a",
+      "sha256": "a95a0d0faff466c5862cab25e5e3bf0f34c228be8a3589163991018e3645eb4e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-100e",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-100e",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-100e"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-10__knn3",
+      "path": "preds_new/rbmx2-10__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "b5f78a059b7d82e257fe3aecdc092872",
+      "sha256": "858d7d63a974bf2ab07519c209a5ab63a96f6e28060879138a04d2f4c44b6215",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-10__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-10",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-10",
+        "rbmx2-10__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-10__tsvdx4-10lm__epochs",
+      "path": "preds_new/rbmx2-10__tsvdx4-10lm__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "fab21d37c95db635ba8ae81e3a041b54",
+      "sha256": "e57538bf3e2300de467f14b944f792f4c343ab9902ddc6ed0df6c7355b795aea",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-10__tsvdx4-10lm__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-10",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-10",
+        "rbmx2-10__tsvdx4-10lm",
+        "rbmx2-10__tsvdx4-10lm__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "rbmx2-32-t",
+      "path": "preds_new/rbmx2-32-t.probex.npy",
+      "rows": 1128164,
+      "md5": "01b74b7c5a1d9d58168c5c0d1c4dea41",
+      "sha256": "f200f0799a60c05e21e75e43e01ebbb3fa4006d92776975154c03590d174e17d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-32-t",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-32-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-32-t"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-150__knnf",
+      "path": "preds_new/rbmx2-150__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "434c34dd91ed25d85f1e4f7cdc7a0d40",
+      "sha256": "019a73f2546ac16cf1d5cecebf916ee55a201044c7b98a116a271bc64c5a0645",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-150__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-150",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-150",
+        "rbmx2-150__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-8e__knnf",
+      "path": "preds_new/rbmx2-8e__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "8addb422e4584e4cab1f465576418481",
+      "sha256": "e8120ef34ecb49061ff1f96db917920c26363e46383964246f84c54522a90cdc",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-8e__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-8e",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-8e",
+        "rbmx2-8e__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-100e_ep15",
+      "path": "preds_new/rbmx2-100e_ep15.probex.npy",
+      "rows": 1128164,
+      "md5": "7afc884106d603e2b0eebf943c2d5793",
+      "sha256": "6b8d55e8ab9bea4a50ab17893d3126ca0cac86efe907f3745ac1493a1221ec45",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-100e",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-100e",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-100e"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-500__knnf",
+      "path": "preds_new/rbmx2-500__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "fc9f77d92cd714c2dd573a0a00f96b99",
+      "sha256": "2eeb7f7c7baf837882f814f76047e82185437b89605b3e788155e385a0a2b289",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-500__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-500",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-500",
+        "rbmx2-500__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-10__tsvdx4-10lm-nsvd1",
+      "path": "preds_new/rbmx2-10__tsvdx4-10lm-nsvd1.probex.npy",
+      "rows": 1128164,
+      "md5": "2fa5e885a050d75c801ff86d1acf0985",
+      "sha256": "344b0faff654e14db7e68e7b6e9bc203646730ce1b58a9e9f530220475c8e66d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "rbmx2-10__tsvdx4-10lm",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "rbmx2-10",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-10",
+        "rbmx2-10__tsvdx4-10lm"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-160f__epochs",
+      "path": "preds_new/rbmx2-160f__epochs.probex.npy",
+      "rows": 1128164,
+      "md5": "ba666028f306539a732a9a2f192cb821",
+      "sha256": "3ef581d32108aea5f877f77bcb8d8a26d9c65536e682dde708f03a8bbe051802",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-160f__epochs",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-160f",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-160f",
+        "rbmx2-160f__epochs"
+      ],
+      "historical_epoch_coefficients": true
+    },
+    {
+      "name": "rbmx2-300s_ep38",
+      "path": "preds_new/rbmx2-300s_ep38.probex.npy",
+      "rows": 1128164,
+      "md5": "725e1853d7ec1871c4cb2744ea6c3ecd",
+      "sha256": "8b294b73bda5daafbc3b3f601e43e99e10bb91a342aca5025a6ac3a6eb11b97c",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-300s",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-300s",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-300s"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-12__asym-16__knn3",
+      "path": "preds_new/rbmx2-12__asym-16__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "10eaf87dd04b18b491c450be70750a30",
+      "sha256": "05198f37612e5d6ba8c77b35d545590c0386fc6df5da4fae55cf80caf1c32945",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-12__asym-16__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-12",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-12",
+        "rbmx2-12__asym-16",
+        "rbmx2-12__asym-16__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-60__knn3",
+      "path": "preds_new/rbmx2-60__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "7e6227c1cc07bcfba7b274389f3e6645",
+      "sha256": "7194c69056d0a44b4f2ac3579e1f8086ee7443f56857e91f4347ed9ca3013cba",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-60__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-60",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-60",
+        "rbmx2-60__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-10r__knn3",
+      "path": "preds_new/rbmx2-10r__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "e8812864718d5d42991a8bf2339a0735",
+      "sha256": "b2e0dbff4ad1f382f5b676c7c3f61867b2ac25afd97518a5b96909e31049ebc7",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": null,
+      "producer_basis": "unresolved; do not infer a historical recipe from a similar name",
+      "bundle": "unresolved:rbmx2-10r__knn3",
+      "full_dependency_order": [],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-300s__knnf",
+      "path": "preds_new/rbmx2-300s__knnf.probex.npy",
+      "rows": 1128164,
+      "md5": "57c789dfa84de0b172a9df41f3a65912",
+      "sha256": "ba1d24ac0e14e5d151c252ca564832bd8890ae120574c33cead9144e154f1067",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-300s__knnf",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-300s",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-300s",
+        "rbmx2-300s__knnf"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-800bp_ep24",
+      "path": "preds_new/rbmx2-800bp_ep24.probex.npy",
+      "rows": 1128164,
+      "md5": "801b36ae0ec972c6216ed5906036e109",
+      "sha256": "64d38d7c989012f5e06d324da76063447b3ddd9d1c5b0edbe68c0a7e87317b89",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-800bp",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-800bp",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-800bp"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-400-p4",
+      "path": "preds_new/rbmx2-400-p4.probex.npy",
+      "rows": 1128164,
+      "md5": "b8d8ee8554e5464df62755334a8e2181",
+      "sha256": "307fa08d695f1967b30a6551c73fe56c1b98b79bac3eac9c523f2bb748b20732",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": false,
+      "producer": "rbmx2-400",
+      "producer_basis": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "bundle": "rbmx2-400",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-400"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-500__knn-m",
+      "path": "preds_new/rbmx2-500__knn-m.probex.npy",
+      "rows": 1128164,
+      "md5": "994ac6c2402e1e40be167b9ec1942934",
+      "sha256": "291ed1ab29c860012823c56ef003f356ba1364c6f0f8e2d864d8a2bb5d4b37f6",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": null,
+      "producer_basis": "unresolved; do not infer a historical recipe from a similar name",
+      "bundle": "unresolved:rbmx2-500__knn-m",
+      "full_dependency_order": [],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "rbmx2-500",
+      "path": "preds_new/rbmx2-500.probex.npy",
+      "rows": 1128164,
+      "md5": "d286339dbd88c3890735f83a3b8baed9",
+      "sha256": "6b940c1828607f3834e2fb145f64bbfaebd64bc8961879febc82d002f2ff235d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "rbmx2-500",
+      "producer_basis": "declared native output",
+      "bundle": "rbmx2-500",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-500"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "cfnade-96_ep95",
+      "path": "preds_new/cfnade-96_ep95.probex.npy",
+      "rows": 1128164,
+      "md5": "fd2ea515abebbd907e3ae48db5bf7fff",
+      "sha256": "2be2479e92f2314a0aeab559ac2e28ae4b427d5752187d14fd4738bfd95d8c18",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "cfnade-96",
+      "producer_basis": "declared native output",
+      "bundle": "cfnade-96",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-96"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "path": "preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.probex.npy",
+      "rows": 1128164,
+      "md5": "012588f95ac9f11ff539140877f00e23",
+      "sha256": "210b8a00a9c14fbeb2e5f824376188aac13e35d53097b10b000a057bfbe4781e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__asym-16p75",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "aex-64",
+      "path": "preds_new/aex-64.probex.npy",
+      "rows": 1128164,
+      "md5": "f45b810fc781619ecfc5637923ee58ce",
+      "sha256": "1f2490b1c24da277ab185bbfe000826dc749fec867a10180d561078f74f84503",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "aex-64",
+      "producer_basis": "declared native output",
+      "bundle": "aex-64",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-64"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "cfnade-48_ep25",
+      "path": "preds_new/cfnade-48_ep25.probex.npy",
+      "rows": 1128164,
+      "md5": "9eea633c6d4ffec6a1a3d3ebef8873b8",
+      "sha256": "e12b59bee7cac79157a80198c56c5e630f7ff48ede6f02f4ac4dfd7e8b1938da",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "cfnade-48",
+      "producer_basis": "declared native output",
+      "bundle": "cfnade-48",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-48"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__dnn-24p50",
+      "path": "preds_new/dnn-24__dnn-24p50.probex.npy",
+      "rows": 1128164,
+      "md5": "c1db6b6d7e01c69a8e68f353160c98b0",
+      "sha256": "d9e6d63c45c5420aa6d4f334019e070af107fb3446ce8f7de55aa735803cd65e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__dnn-24p50",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-24p50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "attn-32__nlpp__knn3",
+      "path": "preds_new/attn-32__nlpp__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "2eaaa0f049209f14f70adc8880e075ae",
+      "sha256": "3c02b8f92f0c17b6e845a995f7fbd9f181f35b9780f47e28c20f0459c7a4b31f",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "attn-32__nlpp__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "attn-32",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "attn-32",
+        "attn-32__nlpp",
+        "attn-32__nlpp__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p50",
+      "path": "preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy",
+      "rows": 1128164,
+      "md5": "551a598d313c41a6fb03583b751f449f",
+      "sha256": "1c129b73cee09715dbe59c6f480d31877aad456b7b4a432bd0a1046a214d0c2b",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p50",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__asym-16p50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "path": "preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.probex.npy",
+      "rows": 1128164,
+      "md5": "ca2bd65bf6bfbf69aa553ee9771afd7e",
+      "sha256": "a2457efd645b7e6d978ba2b35a43f648d7be2a6c60a3765ff37fae20efb3fb53",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__asym-16p75",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-16",
+      "path": "preds_new/dnn-16.probex.npy",
+      "rows": 1128164,
+      "md5": "f4d0baa8cd86ce21f488be077e31d130",
+      "sha256": "da78b0f5a259f33dd33532a22bf4b7ff2d604e775414e2499a40b22ed0234568",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-16",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-16",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-16"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "attn-32-t",
+      "path": "preds_new/attn-32-t.probex.npy",
+      "rows": 1128164,
+      "md5": "3fb17353a36017b9b8c83b8d1f90df10",
+      "sha256": "6f67f1b806bd3f628553f8b9a8278878ca1a474edbfa65545d29148206603de7",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "attn-32-t",
+      "producer_basis": "declared native output",
+      "bundle": "attn-32-t",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "attn-32-t"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "aex-128",
+      "path": "preds_new/aex-128.probex.npy",
+      "rows": 1128164,
+      "md5": "ca64c9b14c2457f1863dc0ed8e56bcee",
+      "sha256": "297738de1ef30b6197f8b39e0613eab8a7206cf28bce6e80697678190e2f2bc1",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "aex-128",
+      "producer_basis": "declared native output",
+      "bundle": "aex-128",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-128"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "cfnade-96r_ep95",
+      "path": "preds_new/cfnade-96r_ep95.probex.npy",
+      "rows": 1128164,
+      "md5": "98da17c5a15ed653691fcdeb6842f1a4",
+      "sha256": "ea10831c6553b06f817451b46a7e57ef34e6890d45c91a9e7ac74e7ab988182e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "cfnade-96r",
+      "producer_basis": "declared native output",
+      "bundle": "cfnade-96r",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-96r"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "aex-16",
+      "path": "preds_new/aex-16.probex.npy",
+      "rows": 1128164,
+      "md5": "ea3529036f893aa6ceeb6adf4d3d8ca6",
+      "sha256": "29febc1978b6f2d724658b57fb44852dfbeb85c101917dfddfc773f340aed893",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "aex-16",
+      "producer_basis": "declared native output",
+      "bundle": "aex-16",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-16"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__dnn-16__knn3",
+      "path": "preds_new/dnn-24__dnn-16__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "d7b72f930b1e5212a5268f8389e27392",
+      "sha256": "c3ca50b75475f72335b24f67d8a0906064cfc844732455a58d17ae0a2b1e09d1",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__dnn-16__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-16",
+        "dnn-24__dnn-16__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "dnn-24__asym-16p75__knn3",
+      "path": "preds_new/dnn-24__asym-16p75__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "34e3817c273eca59f8f734dbb9cd99e1",
+      "sha256": "131f02f1b72675dd8d6c64caaa976fb40243826fc4eb14b1e613141cfc147038",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "dnn-24__asym-16p75__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "dnn-24",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__asym-16p75",
+        "dnn-24__asym-16p75__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "cfnade-12_ep40",
+      "path": "preds_new/cfnade-12_ep40.probex.npy",
+      "rows": 1128164,
+      "md5": "922d8d4cac324539fc0bbf810f0aac48",
+      "sha256": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "cfnade-12",
+      "producer_basis": "declared native output",
+      "bundle": "cfnade-12",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-12"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "cfnade-96_ep10",
+      "path": "preds_new/cfnade-96_ep10.probex.npy",
+      "rows": 1128164,
+      "md5": "9e9a6726f32bef24e5b090565960b584",
+      "sha256": "2a4bc4b2c0d7b4c67693612b2ba86a492c6f9a37ae9e69a4ec8e243973d7e796",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "cfnade-96",
+      "producer_basis": "declared native output",
+      "bundle": "cfnade-96",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-96"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mf-61__asym-16",
+      "path": "preds_new/mf-61__asym-16.probex.npy",
+      "rows": 1128164,
+      "md5": "9fac56717e24a8503889af6e74fa9029",
+      "sha256": "0be51257afdd0dba2665129dfadada9402fd23aff5cf047310fc061b999349e8",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mf-61__asym-16",
+      "producer_basis": "declared native output",
+      "bundle": "mf-61",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-61",
+        "mf-61__asym-16"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bknbrx-50_ep17",
+      "path": "preds_new/bknbrx-50_ep17.probex.npy",
+      "rows": 1128164,
+      "md5": "14beea62823b77091299a0f4b6637c85",
+      "sha256": "a16d532713fad12c5208dbcd61efe6e540cb7b45157afd2d2b4e1d5f500eded8",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "producer_basis": "declared native output",
+      "bundle": "bknbrx-50",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "als8-8__knn3",
+      "path": "preds_new/als8-8__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "66ff91e27610e777511ade297dcc6a5d",
+      "sha256": "1bb9b90d18c20a37a67102a99a121eccdb41c006c11f56d09e2a2c69340d2b5e",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "als8-8__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "als8-8",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "als8-8",
+        "als8-8__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "als8-8",
+      "path": "preds_new/als8-8.probex.npy",
+      "rows": 1128164,
+      "md5": "0e35a0f0477e86dd52ab807a5f0c364c",
+      "sha256": "f3ff0262cec88457a4a8cbc6081af62a0feb911684108695158537b70721e295",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "als8-8",
+      "producer_basis": "declared native output",
+      "bundle": "als8-8",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "als8-8"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mf-60__knn3",
+      "path": "preds_new/mf-60__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "4c0eecbae856f9f5a30ec1f10b49415a",
+      "sha256": "379f506a793531cc678601cdf0eb84ced26f7d3275b4190dd2b73160c2bb844d",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mf-60__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "mf-60",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-60",
+        "mf-60__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bknbrx-100_ep01",
+      "path": "preds_new/bknbrx-100_ep01.probex.npy",
+      "rows": 1128164,
+      "md5": "e45af7f3840a9f26b06d4c28d628f74b",
+      "sha256": "6b5e2e1f9e7c1d626c7a1fe725be13d082f5f3a62a5e27cd5c4e527dca5579ed",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bknbrx-100",
+      "producer_basis": "declared native output",
+      "bundle": "bknbrx-100",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-100"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bknbrx-50_ep05",
+      "path": "preds_new/bknbrx-50_ep05.probex.npy",
+      "rows": 1128164,
+      "md5": "49b4bc63992ab0151a44f9a1bccdff07",
+      "sha256": "a95f7cbe8578cec33f75449ae481f04009bcf7e149629d40719f1888d437519a",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "producer_basis": "declared native output",
+      "bundle": "bknbrx-50",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mfrbmx-50",
+      "path": "preds_new/mfrbmx-50.probex.npy",
+      "rows": 1128164,
+      "md5": "49dc0d9f42a6ddd34698a934e270bdd1",
+      "sha256": "53e4d066e22de0a3e912669b6fb3535613a8795c21cffb5156358c8e53aeedf7",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mfrbmx-50",
+      "producer_basis": "declared native output",
+      "bundle": "mfrbmx-50",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mfrbmx-50"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mf-61__knn3",
+      "path": "preds_new/mf-61__knn3.probex.npy",
+      "rows": 1128164,
+      "md5": "1cde1e56f27cc4b8b309693ed4b91e1d",
+      "sha256": "2f1f720910059f1a8dc9464afd30dcc3bcb7410802928805693c806c7126b7d0",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mf-61__knn3",
+      "producer_basis": "declared native output",
+      "bundle": "mf-61",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-61",
+        "mf-61__knn3"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mf-60",
+      "path": "preds_new/mf-60.probex.npy",
+      "rows": 1128164,
+      "md5": "6c78344345163958979456e06931de86",
+      "sha256": "996c1e716e4385bd8ae0a5175384449f8f03fe5e0ee602321b841bc2e5f7d0db",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mf-60",
+      "producer_basis": "declared native output",
+      "bundle": "mf-60",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-60"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "bknbrx-100_ep05",
+      "path": "preds_new/bknbrx-100_ep05.probex.npy",
+      "rows": 1128164,
+      "md5": "ff0fe24c00404564a7732ba2eea3720e",
+      "sha256": "2fcc1cff1efc57c7e5593a947621518ac42abfaa4001ab2eefe3c5cc0ae9ff6a",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "bknbrx-100",
+      "producer_basis": "declared native output",
+      "bundle": "bknbrx-100",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-100"
+      ],
+      "historical_epoch_coefficients": false
+    },
+    {
+      "name": "mf-61__asym-16_ep02",
+      "path": "preds_new/mf-61__asym-16_ep02.probex.npy",
+      "rows": 1128164,
+      "md5": "86689c54a0f5c644662ab864c5fa3611",
+      "sha256": "c1f40ef4a1334b106e79cf73302b741bc81db81e8f201d6d2cdf8c8cd41e7858",
+      "provenance": "released reference fixture, not trained locally",
+      "clip": true,
+      "producer": "mf-61__asym-16",
+      "producer_basis": "declared native output",
+      "bundle": "mf-61",
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-61",
+        "mf-61__asym-16"
+      ],
+      "historical_epoch_coefficients": false
+    }
+  ],
+  "arms": {
+    "fresh-control": [],
+    "single:tsvdx5-1000__nlpp__knn3": [
+      137
+    ],
+    "single:tsvdx4-4800lm__knnf": [
+      138
+    ],
+    "single:tsvdx4-4800lm_ep13": [
+      139
+    ],
+    "single:tsvdx5-150o_ep24": [
+      140
+    ],
+    "single:tsvdx4-4800lm__knns": [
+      141
+    ],
+    "single:tsvdx5-60": [
+      142
+    ],
+    "single:tsvdx6-300_ep20": [
+      143
+    ],
+    "single:tsvdx4-q16tb__epochs": [
+      144
+    ],
+    "single:tsvdx5-1200lm__epochs": [
+      145
+    ],
+    "single:tsvdx6-300_ep03": [
+      146
+    ],
+    "single:tsvdx4-16-t_ep01": [
+      147
+    ],
+    "single:tsvdx4-16-t": [
+      148
+    ],
+    "single:tsvdx5-150__nlpp__knnf": [
+      149
+    ],
+    "single:tsvdx4p-8000lm__knnf": [
+      150
+    ],
+    "single:tsvdx4-4800lm__knn-d": [
+      151
+    ],
+    "single:tsvdx5-40-nsvd1": [
+      152
+    ],
+    "single:tsvdx4-4800lm_ep03": [
+      153
+    ],
+    "single:tsvdx5-150-mf": [
+      154
+    ],
+    "single:tsvdx4-2400lm-bias": [
+      155
+    ],
+    "single:tsvdx4-2400lm__knns": [
+      156
+    ],
+    "single:tsvdx5-1200lm-bias": [
+      157
+    ],
+    "single:tsvdx5-120o__dnn-16p50": [
+      158
+    ],
+    "single:tsvdx4-h8nb_ep01": [
+      159
+    ],
+    "single:tsvdx4-t8cu_ep06": [
+      160
+    ],
+    "single:tsvdx5-150o_ep06": [
+      161
+    ],
+    "single:tsvdx4-60o__epochs": [
+      162
+    ],
+    "single:tsvdx5-150o_ep16": [
+      163
+    ],
+    "single:tsvdx5-120o__knn3": [
+      164
+    ],
+    "single:tsvdx5-120o": [
+      165
+    ],
+    "single:tsvdx5-400__knn3": [
+      166
+    ],
+    "single:tsvdx5-400__nlpp__knn3": [
+      167
+    ],
+    "single:tsvdx4-60__epochs": [
+      168
+    ],
+    "single:tsvdx4p-16000lm_ep09": [
+      169
+    ],
+    "single:tsvdx5-300__nlpp__knn3": [
+      170
+    ],
+    "single:tsvdx5-150o": [
+      171
+    ],
+    "single:tsvdx4-d0tb__epochs": [
+      172
+    ],
+    "single:tsvdx4-d0tb__knn3": [
+      173
+    ],
+    "single:tsvdx4p-16000lm_ep19": [
+      174
+    ],
+    "single:tsvdx5-120o__epochs": [
+      175
+    ],
+    "single:tsvdx5-150o-bias": [
+      176
+    ],
+    "single:tsvdx4-80o-bias": [
+      177
+    ],
+    "single:tsvdx5-120o-bias": [
+      178
+    ],
+    "single:tsvdx4-16-t__knnf": [
+      179
+    ],
+    "single:tsvdx4p-2000lm__knnf": [
+      180
+    ],
+    "single:tsvdx4-n8nbo__knn3": [
+      181
+    ],
+    "single:tsvdx6-300_ep12": [
+      182
+    ],
+    "single:tsvdx4-4800lm_ep21": [
+      183
+    ],
+    "single:tsvdx4-60o__knns": [
+      184
+    ],
+    "single:tsvdx4-1600lm_ep02": [
+      185
+    ],
+    "single:tsvdx4-m1n": [
+      186
+    ],
+    "single:tsvdx4-s20fo_ep08": [
+      187
+    ],
+    "single:tsvdx4-160o-nsvd1": [
+      188
+    ],
+    "single:tsvdx4p-6000lm__knnf": [
+      189
+    ],
+    "single:tsvdx4-400lm__epochs": [
+      190
+    ],
+    "single:tsvdx5-20": [
+      191
+    ],
+    "single:tsvdx5-20-mf": [
+      192
+    ],
+    "single:tsvdx4-f1__epochs": [
+      193
+    ],
+    "single:tsvdx4-h8nb__knn3": [
+      194
+    ],
+    "single:tsvdx4-h8nb": [
+      195
+    ],
+    "single:tsvdx6-300-v2": [
+      196
+    ],
+    "single:tsvdx6-300": [
+      197
+    ],
+    "single:bk3-30": [
+      198
+    ],
+    "single:bk3-20__knns": [
+      199
+    ],
+    "single:bk1-10_ep04": [
+      200
+    ],
+    "single:rbmx2-500__knn-w": [
+      201
+    ],
+    "single:rbmx2-200__knn3": [
+      202
+    ],
+    "single:rbmx2-500bp__knnf": [
+      203
+    ],
+    "single:rbmx2-16-t": [
+      204
+    ],
+    "single:rbmx2-600_ep27": [
+      205
+    ],
+    "single:rbmx2-350e__epochs": [
+      206
+    ],
+    "single:rbmx2-300s__knn3": [
+      207
+    ],
+    "single:rbmx2-12__asym-16__knnf": [
+      208
+    ],
+    "single:rbmx2-400__knnf": [
+      209
+    ],
+    "single:rbmx2-300s_ep46": [
+      210
+    ],
+    "single:rbmx2-0": [
+      211
+    ],
+    "single:rbmx2-800bp_ep27": [
+      212
+    ],
+    "single:rbmx2-800bp_ep03": [
+      213
+    ],
+    "single:rbmx2-14e": [
+      214
+    ],
+    "single:rbmx2-100e_ep02": [
+      215
+    ],
+    "single:rbmx2-10__knn3": [
+      216
+    ],
+    "single:rbmx2-10__tsvdx4-10lm__epochs": [
+      217
+    ],
+    "single:rbmx2-32-t": [
+      218
+    ],
+    "single:rbmx2-150__knnf": [
+      219
+    ],
+    "single:rbmx2-8e__knnf": [
+      220
+    ],
+    "single:rbmx2-100e_ep15": [
+      221
+    ],
+    "single:rbmx2-500__knnf": [
+      222
+    ],
+    "single:rbmx2-10__tsvdx4-10lm-nsvd1": [
+      223
+    ],
+    "single:rbmx2-160f__epochs": [
+      224
+    ],
+    "single:rbmx2-300s_ep38": [
+      225
+    ],
+    "single:rbmx2-12__asym-16__knn3": [
+      226
+    ],
+    "single:rbmx2-60__knn3": [
+      227
+    ],
+    "single:rbmx2-10r__knn3": [
+      228
+    ],
+    "single:rbmx2-300s__knnf": [
+      229
+    ],
+    "single:rbmx2-800bp_ep24": [
+      230
+    ],
+    "single:rbmx2-400-p4": [
+      231
+    ],
+    "single:rbmx2-500__knn-m": [
+      232
+    ],
+    "single:rbmx2-500": [
+      233
+    ],
+    "single:cfnade-96_ep95": [
+      234
+    ],
+    "single:dnn-24__dnn-16p50__asym-16p75__knn3b": [
+      235
+    ],
+    "single:aex-64": [
+      236
+    ],
+    "single:cfnade-48_ep25": [
+      237
+    ],
+    "single:dnn-24__dnn-24p50": [
+      238
+    ],
+    "single:attn-32__nlpp__knn3": [
+      239
+    ],
+    "single:dnn-24__dnn-16p50__asym-16p50": [
+      240
+    ],
+    "single:dnn-24__dnn-16p50__asym-16p75__knn3c": [
+      241
+    ],
+    "single:dnn-16": [
+      242
+    ],
+    "single:attn-32-t": [
+      243
+    ],
+    "single:aex-128": [
+      244
+    ],
+    "single:cfnade-96r_ep95": [
+      245
+    ],
+    "single:aex-16": [
+      246
+    ],
+    "single:dnn-24__dnn-16__knn3": [
+      247
+    ],
+    "single:dnn-24__asym-16p75__knn3": [
+      248
+    ],
+    "single:cfnade-12_ep40": [
+      249
+    ],
+    "single:cfnade-96_ep10": [
+      250
+    ],
+    "single:mf-61__asym-16": [
+      251
+    ],
+    "single:bknbrx-50_ep17": [
+      252
+    ],
+    "single:als8-8__knn3": [
+      253
+    ],
+    "single:als8-8": [
+      254
+    ],
+    "single:mf-60__knn3": [
+      255
+    ],
+    "single:bknbrx-100_ep01": [
+      256
+    ],
+    "single:bknbrx-50_ep05": [
+      257
+    ],
+    "single:mfrbmx-50": [
+      258
+    ],
+    "single:mf-61__knn3": [
+      259
+    ],
+    "single:mf-60": [
+      260
+    ],
+    "single:bknbrx-100_ep05": [
+      261
+    ],
+    "single:mf-61__asym-16_ep02": [
+      262
+    ],
+    "bundle:tsvdx4-4800lm": [
+      138,
+      139,
+      141,
+      151,
+      153,
+      183
+    ],
+    "bundle:tsvdx5-150o": [
+      140,
+      161,
+      163,
+      171,
+      176
+    ],
+    "bundle:tsvdx6-300": [
+      143,
+      146,
+      182,
+      197
+    ],
+    "bundle:tsvdx4-16-t": [
+      147,
+      148,
+      179
+    ],
+    "bundle:tsvdx5-150": [
+      149,
+      154
+    ],
+    "bundle:tsvdx4-2400lm": [
+      155,
+      156
+    ],
+    "bundle:tsvdx5-120o": [
+      158,
+      164,
+      165,
+      175,
+      178
+    ],
+    "bundle:tsvdx4-h8nb": [
+      159,
+      194,
+      195
+    ],
+    "bundle:tsvdx4-60o": [
+      162,
+      184
+    ],
+    "bundle:tsvdx4p-16000lm": [
+      169,
+      174
+    ],
+    "bundle:tsvdx4-d0tb": [
+      172,
+      173
+    ],
+    "bundle:tsvdx5-20": [
+      191,
+      192
+    ],
+    "bundle:rbmx2-300s": [
+      207,
+      210,
+      225,
+      229
+    ],
+    "bundle:rbmx2-12": [
+      208,
+      226
+    ],
+    "bundle:rbmx2-400": [
+      209,
+      231
+    ],
+    "bundle:rbmx2-800bp": [
+      212,
+      213,
+      230
+    ],
+    "bundle:rbmx2-100e": [
+      215,
+      221
+    ],
+    "bundle:rbmx2-10": [
+      216,
+      217,
+      223
+    ],
+    "bundle:rbmx2-500": [
+      222,
+      233
+    ],
+    "bundle:cfnade-96": [
+      234,
+      250
+    ],
+    "bundle:dnn-24": [
+      235,
+      238,
+      240,
+      241,
+      247,
+      248
+    ],
+    "bundle:mf-61": [
+      251,
+      259,
+      262
+    ],
+    "bundle:bknbrx-50": [
+      252,
+      257
+    ],
+    "bundle:als8-8": [
+      253,
+      254
+    ],
+    "bundle:mf-60": [
+      255,
+      260
+    ],
+    "bundle:bknbrx-100": [
+      256,
+      261
+    ]
+  },
+  "recipe": "Fixed context interactions on fresh fourteen only; each released column enters as a global linear feature, with native per-column clipping. Lambda 1000; intercept unpenalized; five fixed user folds.",
+  "scope": "Exploratory conditional released-vector screen; NOT independently achieved performance. Ranking and group construction use the same development set; no selection-adjusted performance claim."
+}

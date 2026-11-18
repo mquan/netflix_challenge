@@ -1,0 +1,9 @@
+Running 'rbmx2-150__knnf': cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150__knnf
+    Finished `release` profile [optimized] target(s) in 0.25s
+[rbmx2-150__knnf]
+target = "rbmx2-150"
+KnnfConfig { factors: "preds_new/rbmx2-150.ifeat", k: 25, scaling: 1.0, tau: 0.025 }
+trainx => probex
+probex RMSE 0.90327
+fulltrain => qual
+

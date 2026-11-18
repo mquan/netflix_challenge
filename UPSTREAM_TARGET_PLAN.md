@@ -60,8 +60,12 @@ The 0.860485 base-bank and 0.856323 full-stack controls are diagnostic targets, 
 
 The six saved-output ablations are complete; see [SNAPSHOT_BLEND_PROGRESS.md](SNAPSHOT_BLEND_PROGRESS.md). The original fourteen reproduced at 0.867711936. Adding 42 nonduplicate saved snapshots and five unclipped components reaches 0.867287793. Adding a single-layer context-weighted blend reaches **0.866320074**, improving over fourteen in every user fold. Context uses known trainx identities/dates and query metadata only, with fold-local regression coefficients. No released prediction features or published epoch coefficients enter these fits. The implementation suite passes 24 tests.
 
+## Missing-predictor checkpoint completed
+
+The 126-column diagnostic screen and native dependency/cost audit are complete; see [MISSING_PREDICTOR_PROGRESS.md](MISSING_PREDICTOR_PROGRESS.md). The largest released-vector gains require dense temporal parents with memory lower bounds above this machine's capacity. Five historical output names have unresolved pinned producers. A cheap cached-parent `rbmx2-150__knnf` replay was trained and freshly evaluated, reaching **0.866286462** in all five user folds, with the prior controls preserved. Its released-vector RMS mismatch of 0.056146459 remains unresolved. These are development comparisons, with candidate selection informed by the released-vector screen.
+
 ## Immediate next work
 
-Screen the missing released predictors against the new fresh snapshot/context control, with explicit diagnostic labeling. Resolve each promising recipe's complete dependency bundle and rank gain against actual native training/RAM cost before launching additional training. Optional GBM/MLP evaluation requires full isolation of final scoring folds through all layers. No additional base-model training has started.
+Profile a bounded feasible new-family candidate, starting with `bknbrx-100` or CF-NADE. Full dependencies are resolved, but native time and peak RAM remain unmeasured for those parents. Record that cost before expanding a queue. Do not launch the dense temporal recipes whose source-derived lower bounds already exceed physical RAM. Optional GBM/MLP evaluation requires full isolation of final scoring folds through all layers. Only the small cached-parent neighborhood replay was trained in this checkpoint; no large training queue is running.
 
 Evidence: [gap-audit.json](experiments/upstream-expansion/gap-audit.json). Existing fresh results: [evaluation.json](experiments/upstream-expansion/evaluation.json).

@@ -1,0 +1,24 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "tests_passed": 29,
+  "repeated_diagnostic_evaluation_identical": true,
+  "repeated_fresh_evaluation_identical": true,
+  "exported_native_vector_equal": true,
+  "out_of_fold_output_hash_verified": true,
+  "code_sha256": {
+    "scripts/upstream_missing_screen.py": "e758070a00714edb647d6b25cb463375fba0465388130586a9072d79e13e1b48",
+    "scripts/upstream_recipe_costs.py": "aa824e03417b7d8128ed3e665d19b9ba351ea8b79d3803df3e1407024c498ff4",
+    "scripts/upstream_selected_replay.py": "9897753b8b4edc9a3d9236a7bd63f078df0f113f9b5937f8dcdecaa00bf3616b",
+    "tests/test_upstream_missing_screen.py": "84b1d9e64040353a6f94da7b09b3a07d8068fabc56c479184e13e8eb6507a015"
+  },
+  "diagnostic_command_wall_seconds": 13.57,
+  "diagnostic_command_max_resident_bytes": 2839314432,
+  "replay_command_wall_seconds": 63.48,
+  "replay_command_max_resident_bytes": 6468108288,
+  "memory_measurement_scope": "macOS /usr/bin/time -l command accounting; not a sampled per-child RSS trace",
+  "fresh_native_job_count": 1,
+  "expensive_parent_retraining_count": 0,
+  "original_fourteen_unchanged": true,
+  "snapshot_control_unchanged": true,
+  "limitation": "Released-vector diagnostic selection is exploratory. Historical RBM parent fixture absent; 0.056146459 prediction RMS discrepancy unresolved. Unmeasured new-family runtimes/RAM remain unknown."
+}

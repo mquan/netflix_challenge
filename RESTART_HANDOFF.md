@@ -7,12 +7,12 @@ Saved 2026-11-17T09:29:47.007474-08:00. Completed baseline/expansion and gap aud
 - Working tree: `/Users/quan/workspace/netflix_upstream_repro`
 - Branch: `research/upstream-verification`
 - Main plan: [UPSTREAM_TARGET_PLAN.md](UPSTREAM_TARGET_PLAN.md)
-- Snapshot/component bank and single-layer context blend are now complete: best fresh user-fold development RMSE **0.8663200739003126**. Read `SNAPSHOT_BLEND_PROGRESS.md` and `experiments/upstream-snapshot-blend/{manifest,evaluation}.json`. Next: diagnostic missing-predictor screening and full native dependency/cost resolution before selecting training bundles.
+- Snapshot/context blend, missing-predictor diagnostic screen, dependency/cost audit and a cheap cached-parent replay are complete. Best fresh user-fold development RMSE: **0.866286461848646**. Read `MISSING_PREDICTOR_PROGRESS.md` and `experiments/upstream-missing-screen/replay/evaluation.json`. Next: bounded native time/RAM profiling of a feasible new-family candidate (`bknbrx-100` or CF-NADE); several top temporal candidates exceed RAM by source-derived lower bounds.
 - No research jobs are running. Nothing needs to be resumed at the OS/process level. Do not rerun the completed training queues.
 
 Suggested prompt for the next session:
 
-> Read `/Users/quan/workspace/netflix_upstream_repro/RESTART_HANDOFF.md` and `UPSTREAM_TARGET_PLAN.md`. Continue diagnostic missing-predictor screening against the completed fresh snapshot/context control, then resolve promising native dependency bundles and costs. Preserve the verified fourteen-model control and publish progress to `research/upstream-verification`.
+> Read `/Users/quan/workspace/netflix_upstream_repro/RESTART_HANDOFF.md` and `UPSTREAM_TARGET_PLAN.md`. Continue bounded time/RAM profiling of feasible new-family candidates from the completed missing-predictor screen. Read MISSING_PREDICTOR_PROGRESS.md and preserve the 0.866286462 fresh control. Preserve the verified fourteen-model control and publish progress to `research/upstream-verification`.
 
 ## What is complete
 
@@ -37,9 +37,11 @@ The full released stack's fitted score remains **0.856167156**. We have NOT achi
 
 The original fourteen control reproduced at 0.8677119362283469. All 45 saved epochs and five components were verified against native receipts; three exact terminal-epoch duplicates were removed. The combined 61-column fresh bank scores 0.8672877930850104. A single-layer context-weighted fit over this bank scores **0.8663200739003126**, improving in all five folds. Context uses trainx identities/dates and query identities/dates only, with fixed normalization and no outcome-derived transforms. Five context main effects and 70 interactions with the original fourteen predictions yield 137 design columns including the intercept. No additional base training or corrected-support substitution occurred. All 24 upstream tests pass. See `SNAPSHOT_BLEND_PROGRESS.md` for details and reproduction commands.
 
+The next checkpoint screened 126 missing released columns and 26 multi-column bundles. Complete dependencies, reusable native artifacts, measured prior job times and source-derived temporal memory lower bounds are saved under `experiments/upstream-missing-screen/`. Five producers remain unresolved. A fresh `rbmx2-150__knnf` replay reused its verified parent and improved the 61-column context blend to **0.866286461848646**, now with 62 fresh prediction columns and 138 total design columns. Improvements occur in all five folds. Its 0.056146459 RMS difference from the released fixture remains unresolved; no historical parent fixture is available. See `MISSING_PREDICTOR_PROGRESS.md`. All 29 upstream tests pass.
+
 ## Original experiment sequence
 
-Steps 1–4 are complete through the first context regression. Optional GBM/MLP fits remain; step 5 is next.
+Steps 1–5 have been completed through a first cheap selected replay. Next is measured profiling of a feasible additional new-family parent; optional GBM/MLP fits remain.
 
 1. Read the plan and audit, then reproduce the fresh-fourteen control before adding features.
 2. Use the already saved 45 epoch predictions (20 temporal-60, 20 temporal-400, 5 DNN-64) and five component outputs. Freeze content hashes; remove exact duplicates. Preserve clipping rules: rating predictions clip to [0,6] at ridge input, but component features may need to remain unclipped.
@@ -55,7 +57,7 @@ git status --short
 PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream*.py' -v
 ```
 
-The current full implementation suite passes 24 tests. The newer read-only gap audit verified frozen input hashes and asserted both prior numerical controls.
+The current full implementation suite passes 29 tests. The newer read-only gap audit verified frozen input hashes and asserted both prior numerical controls.
 
 - `scripts/upstream_repro.py`: native source/build/data wrapper and receipt verification.
 - `scripts/upstream_exchange.py`: original fresh-only control, fold assignment and ridge cross-fitting. `crossfit` clips all inputs to [0,6]; **do not blindly reuse it for unbounded component features** without explicitly handling the clip mask.

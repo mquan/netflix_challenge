@@ -1,0 +1,2659 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "hardware_memory_bytes": 34359738368,
+  "scope": "Complete native dependencies from resolved registry, verified local reusable outputs, measured historical job times, source-derived memory LOWER BOUNDS. New-job times and native RAM are unknown unless measured separately.",
+  "memory_metadata_sha256": "871355c6a54104661971bf6ef62238e54c25033c60886866d243c47122ed7310",
+  "source_sha256": {
+    "src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be",
+    "src/bin/tsvdx4-new.rs": "f96f55745f13f70a558af7c1f19dfc262c93938046a1d64019ca2981eb381b13",
+    "src/bin/tsvdx5-new.rs": "790e34f115024a8961de63ca6e958c78158559f6ccd9d7bf1975190f61933f2b",
+    "src/bin/tsvdx6-300-new.rs": "4803d5e4ca620f70d8a8df6bdd769fab805cbecf10e3a720b075ad55a03b1f6f",
+    "src/bin/tsvdx6-300-v2-new.rs": "2b195142ac05892a7af6d163d634e7abb475381ebda02b34d738be51c6e58951"
+  },
+  "verified_local_receipts": {
+    "dnn-24": {
+      "receipt_sha256": "871f96c30ab3af6950cf68b6efaa2f5c6b7f365c7f5c37842e6b88860c8f26b1",
+      "outputs_verified": 9,
+      "measured_wall_seconds": 6484.81841,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "dnn-24__attn-32": {
+      "receipt_sha256": "f932946d60b4d11527d7d8100f2a27cb02943c693d686763e2250072cd3c6f78",
+      "outputs_verified": 3,
+      "measured_wall_seconds": 2401.961013,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "dnn-64": {
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "outputs_verified": 17,
+      "measured_wall_seconds": 7725.341736,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "rbmx2-150": {
+      "receipt_sha256": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+      "outputs_verified": 7,
+      "measured_wall_seconds": 19933.884748,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "rbmx2-150__knnf": {
+      "receipt_sha256": "01a7e20a5977e47162e37dc73b319d82653d15cc6e7bb7765f74a93ad905b5bc",
+      "outputs_verified": 3,
+      "measured_wall_seconds": 62.708981,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "rbmx2-150__knns": {
+      "receipt_sha256": "cff0be4691050256c007d22c875f6fcc873314837b7cd7d9fe8f3f1a87168c2a",
+      "outputs_verified": 3,
+      "measured_wall_seconds": 340.0834,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "tsvdx4-400lm": {
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "outputs_verified": 53,
+      "measured_wall_seconds": 16689.728299,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "tsvdx4-400lm__knnf": {
+      "receipt_sha256": "a46a688ad30397f8c07f75765f548f1da5c13691aef5892d610c678dc0043d7b",
+      "outputs_verified": 3,
+      "measured_wall_seconds": 19.648427,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    },
+    "tsvdx4-60": {
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "outputs_verified": 45,
+      "measured_wall_seconds": 4247.643577,
+      "source": "Local receipt wall time; includes both native phases and job build. Peak RAM not recorded."
+    }
+  },
+  "ranked_bundles": [
+    {
+      "bundle": "tsvdx5-1000",
+      "columns": [
+        "tsvdx5-1000__nlpp__knn3"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-1000__nlpp__knn3",
+      "best_diagnostic_rmse": 0.8642881102115805,
+      "diagnostic_delta": -0.0020319636887327075,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-1000",
+        "tsvdx5-1000__nlpp_paropt",
+        "tsvdx5-1000__nlpp",
+        "tsvdx5-1000__nlpp__knn3"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-1000",
+        "tsvdx5-1000__nlpp_paropt",
+        "tsvdx5-1000__nlpp",
+        "tsvdx5-1000__nlpp__knn3"
+      ],
+      "commands": {
+        "tsvdx5-1000": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1000",
+        "tsvdx5-1000__nlpp_paropt": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1000__nlpp_paropt",
+        "tsvdx5-1000__nlpp": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1000__nlpp",
+        "tsvdx5-1000__nlpp__knn3": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1000__nlpp__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 1000,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 145353116000,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 149386506805
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 152204644000,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 156280291770
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "tsvdx4-4800lm",
+      "columns": [
+        "tsvdx4-4800lm__knnf",
+        "tsvdx4-4800lm_ep13",
+        "tsvdx4-4800lm__knns",
+        "tsvdx4-4800lm__knn-d",
+        "tsvdx4-4800lm_ep03",
+        "tsvdx4-4800lm_ep21"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-4800lm",
+      "best_diagnostic_rmse": 0.8646805539794415,
+      "diagnostic_delta": -0.001639519920871635,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-4800lm",
+        "tsvdx4-4800lm__knnf",
+        "tsvdx4-4800lm__knns",
+        "rtg_supp",
+        "tsvdx4-4800lm_diff1",
+        "tsvdx4-4800lm__knn-d"
+      ],
+      "distinct_non_setup_jobs": 6,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-4800lm",
+        "tsvdx4-4800lm__knnf",
+        "tsvdx4-4800lm__knns",
+        "rtg_supp",
+        "tsvdx4-4800lm_diff1",
+        "tsvdx4-4800lm__knn-d"
+      ],
+      "commands": {
+        "tsvdx4-4800lm": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-4800lm",
+        "tsvdx4-4800lm__knnf": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-4800lm__knnf",
+        "tsvdx4-4800lm__knns": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-4800lm__knns",
+        "rtg_supp": "cargo build --release --bin nbstats-new && ./target/release/nbstats-new rtg_supp",
+        "tsvdx4-4800lm_diff1": "cargo build --release --bin nbstats-new && ./target/release/nbstats-new tsvdx4-4800lm_diff1",
+        "tsvdx4-4800lm__knn-d": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-4800lm__knn-d"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 4800,
+        "low_memory": true,
+        "neighborhood_matrices": 0
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 33800198400,
+          "neighborhood_bytes": 0,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 35307406005
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 33800198400,
+          "neighborhood_bytes": 0,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 35349662970
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "tsvdx5-400",
+      "columns": [
+        "tsvdx5-400__nlpp__knn3"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-400__nlpp__knn3",
+      "best_diagnostic_rmse": 0.8647200294454612,
+      "diagnostic_delta": -0.0016000444548519566,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-400",
+        "tsvdx5-400__nlpp_paropt",
+        "tsvdx5-400__nlpp",
+        "tsvdx5-400__nlpp__knn3"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-400",
+        "tsvdx5-400__nlpp_paropt",
+        "tsvdx5-400__nlpp",
+        "tsvdx5-400__nlpp__knn3"
+      ],
+      "commands": {
+        "tsvdx5-400": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-400",
+        "tsvdx5-400__nlpp_paropt": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-400__nlpp_paropt",
+        "tsvdx5-400__nlpp": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-400__nlpp",
+        "tsvdx5-400__nlpp__knn3": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-400__nlpp__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 400,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 58141246400,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 62174637205
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 60881857600,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 64957505370
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "tsvdx5-300",
+      "columns": [
+        "tsvdx5-300__nlpp__knn3"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-300__nlpp__knn3",
+      "best_diagnostic_rmse": 0.8648680945936957,
+      "diagnostic_delta": -0.0014519793066174458,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-300",
+        "tsvdx5-300__nlpp_paropt",
+        "tsvdx5-300__nlpp",
+        "tsvdx5-300__nlpp__knn3"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-300",
+        "tsvdx5-300__nlpp_paropt",
+        "tsvdx5-300__nlpp",
+        "tsvdx5-300__nlpp__knn3"
+      ],
+      "commands": {
+        "tsvdx5-300": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-300",
+        "tsvdx5-300__nlpp_paropt": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-300__nlpp_paropt",
+        "tsvdx5-300__nlpp": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-300__nlpp",
+        "tsvdx5-300__nlpp__knn3": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-300__nlpp__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 300,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 43605934800,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 47639325605
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 45661393200,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 49737040970
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "unresolved:rbmx2-500__knn-w",
+      "columns": [
+        "rbmx2-500__knn-w"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-500__knn-w",
+      "best_diagnostic_rmse": 0.8649154109785586,
+      "diagnostic_delta": -0.0014046629217545625,
+      "full_dependency_order": [],
+      "distinct_non_setup_jobs": 0,
+      "reusable_jobs": [],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": true,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-500bp",
+      "columns": [
+        "rbmx2-500bp__knnf"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-500bp__knnf",
+      "best_diagnostic_rmse": 0.8649612027690261,
+      "diagnostic_delta": -0.001358871131287076,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-500bp",
+        "rbmx2-500bp__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-500bp",
+        "rbmx2-500bp__knnf"
+      ],
+      "commands": {
+        "rbmx2-500bp": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-500bp",
+        "rbmx2-500bp__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-500bp__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "unresolved:rbmx2-500__knn-m",
+      "columns": [
+        "rbmx2-500__knn-m"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-500__knn-m",
+      "best_diagnostic_rmse": 0.8649745452031603,
+      "diagnostic_delta": -0.0013455286971528757,
+      "full_dependency_order": [],
+      "distinct_non_setup_jobs": 0,
+      "reusable_jobs": [],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": true,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-150o",
+      "columns": [
+        "tsvdx5-150o_ep24",
+        "tsvdx5-150o_ep06",
+        "tsvdx5-150o_ep16",
+        "tsvdx5-150o",
+        "tsvdx5-150o-bias"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx5-150o",
+      "best_diagnostic_rmse": 0.8649767396858721,
+      "diagnostic_delta": -0.0013433342144411053,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-150o"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-150o"
+      ],
+      "commands": {
+        "tsvdx5-150o": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150o"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 150,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 21802967400,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 25836358205
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 22830696600,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 26906344370
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": false
+    },
+    {
+      "bundle": "rbmx2-500",
+      "columns": [
+        "rbmx2-500__knnf",
+        "rbmx2-500"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-500",
+      "best_diagnostic_rmse": 0.8650033008241281,
+      "diagnostic_delta": -0.0013167730761850516,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-500",
+        "rbmx2-500__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-500",
+        "rbmx2-500__knnf"
+      ],
+      "commands": {
+        "rbmx2-500": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-500",
+        "rbmx2-500__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-500__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx6-300",
+      "columns": [
+        "tsvdx6-300_ep20",
+        "tsvdx6-300_ep03",
+        "tsvdx6-300_ep12",
+        "tsvdx6-300"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx6-300",
+      "best_diagnostic_rmse": 0.8650402743232023,
+      "diagnostic_delta": -0.001279799577110885,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx6-300"
+      ],
+      "commands": {
+        "tsvdx6-300": "cargo build --release --bin tsvdx6-300-new && ./target/release/tsvdx6-300-new tsvdx6-300"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 300,
+        "low_memory": false,
+        "neighborhood_matrices": 4
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 43605934800,
+          "neighborhood_bytes": 5052366400,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 50165508805
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 45661393200,
+          "neighborhood_bytes": 5052366400,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 52263224170
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "tsvdx6-300-v2",
+      "columns": [
+        "tsvdx6-300-v2"
+      ],
+      "best_diagnostic_arm": "single:tsvdx6-300-v2",
+      "best_diagnostic_rmse": 0.8650698390267212,
+      "diagnostic_delta": -0.0012502348735919933,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx6-300-v2"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx6-300-v2"
+      ],
+      "commands": {
+        "tsvdx6-300-v2": "cargo build --release --bin tsvdx6-300-v2-new && ./target/release/tsvdx6-300-v2-new tsvdx6-300-v2"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 300,
+        "low_memory": false,
+        "neighborhood_matrices": 4
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 43605934800,
+          "neighborhood_bytes": 5052366400,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 50165508805
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 45661393200,
+          "neighborhood_bytes": 5052366400,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 52263224170
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": true
+    },
+    {
+      "bundle": "rbmx2-800bp",
+      "columns": [
+        "rbmx2-800bp_ep27",
+        "rbmx2-800bp_ep03",
+        "rbmx2-800bp_ep24"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-800bp",
+      "best_diagnostic_rmse": 0.8650776003103209,
+      "diagnostic_delta": -0.001242473589992299,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-800bp"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-800bp"
+      ],
+      "commands": {
+        "rbmx2-800bp": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-800bp"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "unresolved:tsvdx5-400__knn3",
+      "columns": [
+        "tsvdx5-400__knn3"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-400__knn3",
+      "best_diagnostic_rmse": 0.8652098214530812,
+      "diagnostic_delta": -0.001110252447231952,
+      "full_dependency_order": [],
+      "distinct_non_setup_jobs": 0,
+      "reusable_jobs": [],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": true,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-600",
+      "columns": [
+        "rbmx2-600_ep27"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-600_ep27",
+      "best_diagnostic_rmse": 0.8652202835732183,
+      "diagnostic_delta": -0.0010997903270948406,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-600"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-600"
+      ],
+      "commands": {
+        "rbmx2-600": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-600"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-400",
+      "columns": [
+        "rbmx2-400__knnf",
+        "rbmx2-400-p4"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-400__knnf",
+      "best_diagnostic_rmse": 0.8652225973019368,
+      "diagnostic_delta": -0.0010974765983763346,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-400",
+        "rbmx2-400__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-400",
+        "rbmx2-400__knnf"
+      ],
+      "commands": {
+        "rbmx2-400": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-400",
+        "rbmx2-400__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-400__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-300s",
+      "columns": [
+        "rbmx2-300s__knn3",
+        "rbmx2-300s_ep46",
+        "rbmx2-300s_ep38",
+        "rbmx2-300s__knnf"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-300s",
+      "best_diagnostic_rmse": 0.8652467238565144,
+      "diagnostic_delta": -0.0010733500437988264,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-300s",
+        "rbmx2-300s__knn3",
+        "rbmx2-300s__knnf"
+      ],
+      "distinct_non_setup_jobs": 3,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-300s",
+        "rbmx2-300s__knn3",
+        "rbmx2-300s__knnf"
+      ],
+      "commands": {
+        "rbmx2-300s": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-300s",
+        "rbmx2-300s__knn3": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-300s__knn3",
+        "rbmx2-300s__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-300s__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-120o",
+      "columns": [
+        "tsvdx5-120o__dnn-16p50",
+        "tsvdx5-120o__knn3",
+        "tsvdx5-120o",
+        "tsvdx5-120o__epochs",
+        "tsvdx5-120o-bias"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx5-120o",
+      "best_diagnostic_rmse": 0.8652811988528356,
+      "diagnostic_delta": -0.001038875047477572,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120o",
+        "tsvdx5-120o__dnn-16p50",
+        "tsvdx5-120o__knn3",
+        "tsvdx5-120o__epochs"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-120o",
+        "tsvdx5-120o__dnn-16p50",
+        "tsvdx5-120o__knn3",
+        "tsvdx5-120o__epochs"
+      ],
+      "commands": {
+        "tsvdx5-120o": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-120o",
+        "tsvdx5-120o__dnn-16p50": "cargo build --release --bin dnn && ./target/release/dnn tsvdx5-120o__dnn-16p50 -p pipeline-new.toml",
+        "tsvdx5-120o__knn3": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-120o__knn3",
+        "tsvdx5-120o__epochs": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-120o__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 120,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 17442373920,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 21475764725
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 18264557280,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 22340205050
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": false
+    },
+    {
+      "bundle": "cfnade-96",
+      "columns": [
+        "cfnade-96_ep95",
+        "cfnade-96_ep10"
+      ],
+      "best_diagnostic_arm": "single:cfnade-96_ep95",
+      "best_diagnostic_rmse": 0.8652864019903386,
+      "diagnostic_delta": -0.0010336719099746094,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-96"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "cfnade-96"
+      ],
+      "commands": {
+        "cfnade-96": "cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-96"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4p-16000lm",
+      "columns": [
+        "tsvdx4p-16000lm_ep09",
+        "tsvdx4p-16000lm_ep19"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4p-16000lm",
+      "best_diagnostic_rmse": 0.8652869026714041,
+      "diagnostic_delta": -0.0010331712289091133,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-16000lm"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4p-16000lm"
+      ],
+      "commands": {
+        "tsvdx4p-16000lm": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-16000lm"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "cfnade-48",
+      "columns": [
+        "cfnade-48_ep25"
+      ],
+      "best_diagnostic_arm": "single:cfnade-48_ep25",
+      "best_diagnostic_rmse": 0.8654948140856481,
+      "diagnostic_delta": -0.0008252598146650802,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-48"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "cfnade-48"
+      ],
+      "commands": {
+        "cfnade-48": "cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-48"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "bknbrx-100",
+      "columns": [
+        "bknbrx-100_ep01",
+        "bknbrx-100_ep05"
+      ],
+      "best_diagnostic_arm": "bundle:bknbrx-100",
+      "best_diagnostic_rmse": 0.8655408504734038,
+      "diagnostic_delta": -0.0007792234269093923,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-100"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "bknbrx-100"
+      ],
+      "commands": {
+        "bknbrx-100": "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-100"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "bknbrx-50",
+      "columns": [
+        "bknbrx-50_ep17",
+        "bknbrx-50_ep05"
+      ],
+      "best_diagnostic_arm": "bundle:bknbrx-50",
+      "best_diagnostic_rmse": 0.8655678850469567,
+      "diagnostic_delta": -0.0007521888533564836,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bknbrx-50"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "bknbrx-50"
+      ],
+      "commands": {
+        "bknbrx-50": "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-50"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-150",
+      "columns": [
+        "tsvdx5-150__nlpp__knnf",
+        "tsvdx5-150-mf"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx5-150",
+      "best_diagnostic_rmse": 0.8655685416547722,
+      "diagnostic_delta": -0.0007515322455410312,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-120",
+        "tsvdx5-150",
+        "tsvdx5-150__nlpp_paropt",
+        "tsvdx5-150__nlpp",
+        "tsvdx5-150__nlpp__knnf"
+      ],
+      "distinct_non_setup_jobs": 5,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-120",
+        "tsvdx5-150",
+        "tsvdx5-150__nlpp_paropt",
+        "tsvdx5-150__nlpp",
+        "tsvdx5-150__nlpp__knnf"
+      ],
+      "commands": {
+        "tsvdx5-120": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-120",
+        "tsvdx5-150": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150",
+        "tsvdx5-150__nlpp_paropt": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150__nlpp_paropt",
+        "tsvdx5-150__nlpp": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150__nlpp",
+        "tsvdx5-150__nlpp__knnf": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-150__nlpp__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 150,
+        "low_memory": false,
+        "neighborhood_matrices": 2
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 21802967400,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 25836358205
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 22830696600,
+          "neighborhood_bytes": 2526183200,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 26906344370
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": false
+    },
+    {
+      "bundle": "tsvdx4p-8000lm",
+      "columns": [
+        "tsvdx4p-8000lm__knnf"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4p-8000lm__knnf",
+      "best_diagnostic_rmse": 0.8655942298892384,
+      "diagnostic_delta": -0.0007258440110747832,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-8000lm",
+        "tsvdx4p-8000lm__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4p-8000lm",
+        "tsvdx4p-8000lm__knnf"
+      ],
+      "commands": {
+        "tsvdx4p-8000lm": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-8000lm",
+        "tsvdx4p-8000lm__knnf": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-8000lm__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "cfnade-96r",
+      "columns": [
+        "cfnade-96r_ep95"
+      ],
+      "best_diagnostic_arm": "single:cfnade-96r_ep95",
+      "best_diagnostic_rmse": 0.8656175008669584,
+      "diagnostic_delta": -0.0007025730333547475,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-96r"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "cfnade-96r"
+      ],
+      "commands": {
+        "cfnade-96r": "cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-96r"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "unresolved:tsvdx5-1200lm__epochs",
+      "columns": [
+        "tsvdx5-1200lm__epochs"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-1200lm__epochs",
+      "best_diagnostic_rmse": 0.8657369541296134,
+      "diagnostic_delta": -0.0005831197706998026,
+      "full_dependency_order": [],
+      "distinct_non_setup_jobs": 0,
+      "reusable_jobs": [],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": true,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "dnn-24",
+      "columns": [
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-24p50",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__asym-16p75__knn3"
+      ],
+      "best_diagnostic_arm": "bundle:dnn-24",
+      "best_diagnostic_rmse": 0.8658005061321178,
+      "diagnostic_delta": -0.0005195677681953947,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-24",
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__asym-16p75",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-24p50",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-16",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__asym-16p75",
+        "dnn-24__asym-16p75__knn3"
+      ],
+      "distinct_non_setup_jobs": 11,
+      "reusable_jobs": [
+        "dnn-24"
+      ],
+      "new_jobs": [
+        "dnn-24__dnn-16p50",
+        "dnn-24__dnn-16p50__asym-16p75",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-24p50",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-16",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__asym-16p75",
+        "dnn-24__asym-16p75__knn3"
+      ],
+      "commands": {
+        "dnn-24__dnn-16p50": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50 -p pipeline-new.toml",
+        "dnn-24__dnn-16p50__asym-16p75": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p75 -p pipeline-new.toml",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p75__knn3b -p pipeline-new.toml",
+        "dnn-24__dnn-24p50": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-24p50 -p pipeline-new.toml",
+        "dnn-24__dnn-16p50__asym-16p50": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p50 -p pipeline-new.toml",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p75__knn3c -p pipeline-new.toml",
+        "dnn-24__dnn-16": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16 -p pipeline-new.toml",
+        "dnn-24__dnn-16__knn3": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16__knn3 -p pipeline-new.toml",
+        "dnn-24__asym-16p75": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__asym-16p75 -p pipeline-new.toml",
+        "dnn-24__asym-16p75__knn3": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__asym-16p75__knn3 -p pipeline-new.toml"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-2400lm",
+      "columns": [
+        "tsvdx4-2400lm-bias",
+        "tsvdx4-2400lm__knns"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-2400lm",
+      "best_diagnostic_rmse": 0.8658574738175352,
+      "diagnostic_delta": -0.00046260008277798637,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-2400lm",
+        "tsvdx4-2400lm__knns"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-2400lm",
+        "tsvdx4-2400lm__knns"
+      ],
+      "commands": {
+        "tsvdx4-2400lm": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-2400lm",
+        "tsvdx4-2400lm__knns": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-2400lm__knns"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time.",
+      "tx_settings": {
+        "factors": 2400,
+        "low_memory": true,
+        "neighborhood_matrices": 0
+      },
+      "source_derived_memory_lower_bounds": [
+        {
+          "training": "trainx",
+          "factor_bytes": 16900099200,
+          "neighborhood_bytes": 0,
+          "dataset_bytes": 1507207605,
+          "minimum_total_bytes": 18407306805
+        },
+        {
+          "training": "fulltrain",
+          "factor_bytes": 16900099200,
+          "neighborhood_bytes": 0,
+          "dataset_bytes": 1549464570,
+          "minimum_total_bytes": 18449563770
+        }
+      ],
+      "exceeds_physical_ram_before_overheads": false
+    },
+    {
+      "bundle": "tsvdx4p-2000lm",
+      "columns": [
+        "tsvdx4p-2000lm__knnf"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4p-2000lm__knnf",
+      "best_diagnostic_rmse": 0.8659113838902676,
+      "diagnostic_delta": -0.00040869001004562033,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-2000lm",
+        "tsvdx4p-2000lm__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4p-2000lm",
+        "tsvdx4p-2000lm__knnf"
+      ],
+      "commands": {
+        "tsvdx4p-2000lm": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-2000lm",
+        "tsvdx4p-2000lm__knnf": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-2000lm__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-60",
+      "columns": [
+        "tsvdx5-60"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-60",
+      "best_diagnostic_rmse": 0.865936583888593,
+      "diagnostic_delta": -0.00038349001172022223,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-60"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-60"
+      ],
+      "commands": {
+        "tsvdx5-60": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-60"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-200",
+      "columns": [
+        "rbmx2-200__knn3"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-200__knn3",
+      "best_diagnostic_rmse": 0.8659552453647147,
+      "diagnostic_delta": -0.0003648285355984937,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-200",
+        "rbmx2-200__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-200",
+        "rbmx2-200__knn3"
+      ],
+      "commands": {
+        "rbmx2-200": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-200",
+        "rbmx2-200__knn3": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-200__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-160f",
+      "columns": [
+        "rbmx2-160f__epochs"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-160f__epochs",
+      "best_diagnostic_rmse": 0.8660095313451294,
+      "diagnostic_delta": -0.0003105425551838126,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-160f",
+        "rbmx2-160f__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-160f",
+        "rbmx2-160f__epochs"
+      ],
+      "commands": {
+        "rbmx2-160f": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-160f",
+        "rbmx2-160f__epochs": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-160f__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-60o",
+      "columns": [
+        "tsvdx4-60o__epochs",
+        "tsvdx4-60o__knns"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-60o",
+      "best_diagnostic_rmse": 0.8660117722914727,
+      "diagnostic_delta": -0.00030830160884043334,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-60o",
+        "tsvdx4-60o__epochs",
+        "tsvdx4-60o__knns"
+      ],
+      "distinct_non_setup_jobs": 3,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-60o",
+        "tsvdx4-60o__epochs",
+        "tsvdx4-60o__knns"
+      ],
+      "commands": {
+        "tsvdx4-60o": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60o",
+        "tsvdx4-60o__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60o__epochs",
+        "tsvdx4-60o__knns": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60o__knns"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "cfnade-12",
+      "columns": [
+        "cfnade-12_ep40"
+      ],
+      "best_diagnostic_arm": "single:cfnade-12_ep40",
+      "best_diagnostic_rmse": 0.8660811445358562,
+      "diagnostic_delta": -0.00023892936445701896,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "cfnade-12"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "cfnade-12"
+      ],
+      "commands": {
+        "cfnade-12": "cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-12"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4p-6000lm",
+      "columns": [
+        "tsvdx4p-6000lm__knnf"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4p-6000lm__knnf",
+      "best_diagnostic_rmse": 0.8661316217361115,
+      "diagnostic_delta": -0.0001884521642017134,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4p-6000lm",
+        "tsvdx4p-6000lm__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4p-6000lm",
+        "tsvdx4p-6000lm__knnf"
+      ],
+      "commands": {
+        "tsvdx4p-6000lm": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-6000lm",
+        "tsvdx4p-6000lm__knnf": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-6000lm__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "mf-60",
+      "columns": [
+        "mf-60__knn3",
+        "mf-60"
+      ],
+      "best_diagnostic_arm": "bundle:mf-60",
+      "best_diagnostic_rmse": 0.8661541319210584,
+      "diagnostic_delta": -0.00016594197925479115,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-60",
+        "mf-60__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "mf-60",
+        "mf-60__knn3"
+      ],
+      "commands": {
+        "mf-60": "cargo build --release --bin mf-new && ./target/release/mf-new mf-60",
+        "mf-60__knn3": "cargo build --release --bin mf-new && ./target/release/mf-new mf-60__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "als8-8",
+      "columns": [
+        "als8-8__knn3",
+        "als8-8"
+      ],
+      "best_diagnostic_arm": "bundle:als8-8",
+      "best_diagnostic_rmse": 0.8661635220628124,
+      "diagnostic_delta": -0.0001565518375007402,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "als8-8",
+        "als8-8__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "als8-8",
+        "als8-8__knn3"
+      ],
+      "commands": {
+        "als8-8": "cargo build --release --bin als8-new && ./target/release/als8-new als8-8",
+        "als8-8__knn3": "cargo build --release --bin als8-new && ./target/release/als8-new als8-8__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "mf-61",
+      "columns": [
+        "mf-61__asym-16",
+        "mf-61__knn3",
+        "mf-61__asym-16_ep02"
+      ],
+      "best_diagnostic_arm": "bundle:mf-61",
+      "best_diagnostic_rmse": 0.8662073972614183,
+      "diagnostic_delta": -0.00011267663889491519,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mf-61",
+        "mf-61__asym-16",
+        "mf-61__knn3"
+      ],
+      "distinct_non_setup_jobs": 3,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "mf-61",
+        "mf-61__asym-16",
+        "mf-61__knn3"
+      ],
+      "commands": {
+        "mf-61": "cargo build --release --bin mf-new && ./target/release/mf-new mf-61",
+        "mf-61__asym-16": "cargo build --release --bin mf-new && ./target/release/mf-new mf-61__asym-16",
+        "mf-61__knn3": "cargo build --release --bin mf-new && ./target/release/mf-new mf-61__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-d0tb",
+      "columns": [
+        "tsvdx4-d0tb__epochs",
+        "tsvdx4-d0tb__knn3"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-d0tb",
+      "best_diagnostic_rmse": 0.8662216057895625,
+      "diagnostic_delta": -9.84681107506491e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-d0tb",
+        "tsvdx4-d0tb__epochs",
+        "tsvdx4-d0tb__knn3"
+      ],
+      "distinct_non_setup_jobs": 3,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-d0tb",
+        "tsvdx4-d0tb__epochs",
+        "tsvdx4-d0tb__knn3"
+      ],
+      "commands": {
+        "tsvdx4-d0tb": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-d0tb",
+        "tsvdx4-d0tb__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-d0tb__epochs",
+        "tsvdx4-d0tb__knn3": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-d0tb__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-h8nb",
+      "columns": [
+        "tsvdx4-h8nb_ep01",
+        "tsvdx4-h8nb__knn3",
+        "tsvdx4-h8nb"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-h8nb",
+      "best_diagnostic_rmse": 0.8662271153201839,
+      "diagnostic_delta": -9.295858012925429e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-h8nb",
+        "tsvdx4-h8nb__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-h8nb",
+        "tsvdx4-h8nb__knn3"
+      ],
+      "commands": {
+        "tsvdx4-h8nb": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-h8nb",
+        "tsvdx4-h8nb__knn3": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-h8nb__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-12",
+      "columns": [
+        "rbmx2-12__asym-16__knnf",
+        "rbmx2-12__asym-16__knn3"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-12",
+      "best_diagnostic_rmse": 0.8662362480769242,
+      "diagnostic_delta": -8.382582338894995e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-12",
+        "rbmx2-12__asym-16",
+        "rbmx2-12__asym-16__knnf",
+        "rbmx2-12__asym-16__knn3"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-12",
+        "rbmx2-12__asym-16",
+        "rbmx2-12__asym-16__knnf",
+        "rbmx2-12__asym-16__knn3"
+      ],
+      "commands": {
+        "rbmx2-12": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-12",
+        "rbmx2-12__asym-16": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-12__asym-16",
+        "rbmx2-12__asym-16__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-12__asym-16__knnf",
+        "rbmx2-12__asym-16__knn3": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-12__asym-16__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-10",
+      "columns": [
+        "rbmx2-10__knn3",
+        "rbmx2-10__tsvdx4-10lm__epochs",
+        "rbmx2-10__tsvdx4-10lm-nsvd1"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-10",
+      "best_diagnostic_rmse": 0.8662394092421318,
+      "diagnostic_delta": -8.066465818135082e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-10",
+        "rbmx2-10__knn3",
+        "rbmx2-10__tsvdx4-10lm",
+        "rbmx2-10__tsvdx4-10lm__epochs"
+      ],
+      "distinct_non_setup_jobs": 4,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-10",
+        "rbmx2-10__knn3",
+        "rbmx2-10__tsvdx4-10lm",
+        "rbmx2-10__tsvdx4-10lm__epochs"
+      ],
+      "commands": {
+        "rbmx2-10": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-10",
+        "rbmx2-10__knn3": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-10__knn3",
+        "rbmx2-10__tsvdx4-10lm": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-10__tsvdx4-10lm",
+        "rbmx2-10__tsvdx4-10lm__epochs": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-10__tsvdx4-10lm__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-n8nbo",
+      "columns": [
+        "tsvdx4-n8nbo__knn3"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-n8nbo__knn3",
+      "best_diagnostic_rmse": 0.8662473035733399,
+      "diagnostic_delta": -7.277032697328156e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-n8nbo",
+        "tsvdx4-n8nbo__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-n8nbo",
+        "tsvdx4-n8nbo__knn3"
+      ],
+      "commands": {
+        "tsvdx4-n8nbo": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-n8nbo",
+        "tsvdx4-n8nbo__knn3": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-n8nbo__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "dnn-16",
+      "columns": [
+        "dnn-16"
+      ],
+      "best_diagnostic_arm": "single:dnn-16",
+      "best_diagnostic_rmse": 0.8662476835932759,
+      "diagnostic_delta": -7.239030703731775e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "dnn-16"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "dnn-16"
+      ],
+      "commands": {
+        "dnn-16": "cargo build --release --bin dnn && ./target/release/dnn dnn-16 -p pipeline-new.toml"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "mfrbmx-50",
+      "columns": [
+        "mfrbmx-50"
+      ],
+      "best_diagnostic_arm": "single:mfrbmx-50",
+      "best_diagnostic_rmse": 0.8662501618633731,
+      "diagnostic_delta": -6.991203694006742e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "mfrbmx-50"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "mfrbmx-50"
+      ],
+      "commands": {
+        "mfrbmx-50": "cargo build --release --bin mfrbmx-50-new && ./target/release/mfrbmx-50-new mfrbmx-50"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-60",
+      "columns": [
+        "rbmx2-60__knn3"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-60__knn3",
+      "best_diagnostic_rmse": 0.8662585564851444,
+      "diagnostic_delta": -6.151741516879916e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-60",
+        "rbmx2-60__knn3"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-60",
+        "rbmx2-60__knn3"
+      ],
+      "commands": {
+        "rbmx2-60": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-60",
+        "rbmx2-60__knn3": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-60__knn3"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-1200lm",
+      "columns": [
+        "tsvdx5-1200lm-bias"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-1200lm-bias",
+      "best_diagnostic_rmse": 0.8662663645586192,
+      "diagnostic_delta": -5.370934169401931e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-1200lm"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-1200lm"
+      ],
+      "commands": {
+        "tsvdx5-1200lm": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1200lm"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-150",
+      "columns": [
+        "rbmx2-150__knnf"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-150__knnf",
+      "best_diagnostic_rmse": 0.8662708485282503,
+      "diagnostic_delta": -4.922537206286659e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-150",
+        "rbmx2-150__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [
+        "rbmx2-150",
+        "rbmx2-150__knnf"
+      ],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-m1n",
+      "columns": [
+        "tsvdx4-m1n"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-m1n",
+      "best_diagnostic_rmse": 0.8662774834550714,
+      "diagnostic_delta": -4.259044524179689e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-m1n"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-m1n"
+      ],
+      "commands": {
+        "tsvdx4-m1n": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-m1n"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-s20fo",
+      "columns": [
+        "tsvdx4-s20fo_ep08"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-s20fo_ep08",
+      "best_diagnostic_rmse": 0.8662787613988577,
+      "diagnostic_delta": -4.131250145544829e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-s20fo"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-s20fo"
+      ],
+      "commands": {
+        "tsvdx4-s20fo": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-s20fo"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-20",
+      "columns": [
+        "tsvdx5-20",
+        "tsvdx5-20-mf"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx5-20",
+      "best_diagnostic_rmse": 0.866282023435059,
+      "diagnostic_delta": -3.805046525418021e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-20"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-20"
+      ],
+      "commands": {
+        "tsvdx5-20": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-20"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "bk3-20",
+      "columns": [
+        "bk3-20__knns"
+      ],
+      "best_diagnostic_arm": "single:bk3-20__knns",
+      "best_diagnostic_rmse": 0.8662922249533257,
+      "diagnostic_delta": -2.7848946987485412e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk3-20",
+        "bk3-20__knns"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "bk3-20",
+        "bk3-20__knns"
+      ],
+      "commands": {
+        "bk3-20": "cargo build --release --bin bk-new && ./target/release/bk-new bk3-20",
+        "bk3-20__knns": "cargo build --release --bin bk-new && ./target/release/bk-new bk3-20__knns"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "unresolved:rbmx2-10r__knn3",
+      "columns": [
+        "rbmx2-10r__knn3"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-10r__knn3",
+      "best_diagnostic_rmse": 0.8662923711394911,
+      "diagnostic_delta": -2.7702760822090333e-05,
+      "full_dependency_order": [],
+      "distinct_non_setup_jobs": 0,
+      "reusable_jobs": [],
+      "new_jobs": [],
+      "commands": {},
+      "unresolved": true,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "attn-32",
+      "columns": [
+        "attn-32__nlpp__knn3"
+      ],
+      "best_diagnostic_arm": "single:attn-32__nlpp__knn3",
+      "best_diagnostic_rmse": 0.8662942456081942,
+      "diagnostic_delta": -2.582829211894566e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "attn-32",
+        "attn-32__nlpp",
+        "attn-32__nlpp__knn3"
+      ],
+      "distinct_non_setup_jobs": 3,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "attn-32",
+        "attn-32__nlpp",
+        "attn-32__nlpp__knn3"
+      ],
+      "commands": {
+        "attn-32": "cargo build --release --bin attn && ./target/release/attn attn-32 -p pipeline-new.toml",
+        "attn-32__nlpp": "cargo build --release --bin attn && ./target/release/attn attn-32__nlpp -p pipeline-new.toml",
+        "attn-32__nlpp__knn3": "cargo build --release --bin attn && ./target/release/attn attn-32__nlpp__knn3 -p pipeline-new.toml"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-16-t",
+      "columns": [
+        "tsvdx4-16-t_ep01",
+        "tsvdx4-16-t",
+        "tsvdx4-16-t__knnf"
+      ],
+      "best_diagnostic_arm": "bundle:tsvdx4-16-t",
+      "best_diagnostic_rmse": 0.8662959486083227,
+      "diagnostic_delta": -2.4125291990473308e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-16-t",
+        "tsvdx4-16-t__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-16-t",
+        "tsvdx4-16-t__knnf"
+      ],
+      "commands": {
+        "tsvdx4-16-t": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-16-t",
+        "tsvdx4-16-t__knnf": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-16-t__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-100e",
+      "columns": [
+        "rbmx2-100e_ep02",
+        "rbmx2-100e_ep15"
+      ],
+      "best_diagnostic_arm": "bundle:rbmx2-100e",
+      "best_diagnostic_rmse": 0.8662974318886746,
+      "diagnostic_delta": -2.2642011638596138e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-100e"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-100e"
+      ],
+      "commands": {
+        "rbmx2-100e": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-100e"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "aex-128",
+      "columns": [
+        "aex-128"
+      ],
+      "best_diagnostic_arm": "single:aex-128",
+      "best_diagnostic_rmse": 0.8663004390965666,
+      "diagnostic_delta": -1.9634803746559903e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-128"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "aex-128"
+      ],
+      "commands": {
+        "aex-128": "cargo build --release --bin aex-new && ./target/release/aex-new aex-128"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-350e",
+      "columns": [
+        "rbmx2-350e__epochs"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-350e__epochs",
+      "best_diagnostic_rmse": 0.8663011692567028,
+      "diagnostic_delta": -1.8904643610428984e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-350e",
+        "rbmx2-350e__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-350e",
+        "rbmx2-350e__epochs"
+      ],
+      "commands": {
+        "rbmx2-350e": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-350e",
+        "rbmx2-350e__epochs": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-350e__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx5-40",
+      "columns": [
+        "tsvdx5-40-nsvd1"
+      ],
+      "best_diagnostic_arm": "single:tsvdx5-40-nsvd1",
+      "best_diagnostic_rmse": 0.8663045884031515,
+      "diagnostic_delta": -1.548549716168246e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx5-40"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx5-40"
+      ],
+      "commands": {
+        "tsvdx5-40": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-40"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "attn-32-t",
+      "columns": [
+        "attn-32-t"
+      ],
+      "best_diagnostic_arm": "single:attn-32-t",
+      "best_diagnostic_rmse": 0.8663048097297051,
+      "diagnostic_delta": -1.5264170608042527e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "attn-32-t"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "attn-32-t"
+      ],
+      "commands": {
+        "attn-32-t": "cargo build --release --bin attn && ./target/release/attn attn-32-t -p pipeline-new.toml"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-t8cu",
+      "columns": [
+        "tsvdx4-t8cu_ep06"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-t8cu_ep06",
+      "best_diagnostic_rmse": 0.8663081897264221,
+      "diagnostic_delta": -1.1884173891085759e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-t8cu"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-t8cu"
+      ],
+      "commands": {
+        "tsvdx4-t8cu": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-t8cu"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-0",
+      "columns": [
+        "rbmx2-0"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-0",
+      "best_diagnostic_rmse": 0.8663085661359229,
+      "diagnostic_delta": -1.1507764390294994e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-0"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-0"
+      ],
+      "commands": {
+        "rbmx2-0": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-0"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "aex-16",
+      "columns": [
+        "aex-16"
+      ],
+      "best_diagnostic_arm": "single:aex-16",
+      "best_diagnostic_rmse": 0.8663086548599761,
+      "diagnostic_delta": -1.1419040337079522e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-16"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "aex-16"
+      ],
+      "commands": {
+        "aex-16": "cargo build --release --bin aex-new && ./target/release/aex-new aex-16"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-8e",
+      "columns": [
+        "rbmx2-8e__knnf"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-8e__knnf",
+      "best_diagnostic_rmse": 0.866309410765508,
+      "diagnostic_delta": -1.0663134805133367e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-8e",
+        "rbmx2-8e__knnf"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-8e",
+        "rbmx2-8e__knnf"
+      ],
+      "commands": {
+        "rbmx2-8e": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-8e",
+        "rbmx2-8e__knnf": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-8e__knnf"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-16-t",
+      "columns": [
+        "rbmx2-16-t"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-16-t",
+      "best_diagnostic_rmse": 0.8663097205054827,
+      "diagnostic_delta": -1.0353394830464602e-05,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-16-t"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-16-t"
+      ],
+      "commands": {
+        "rbmx2-16-t": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-16-t"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-f1",
+      "columns": [
+        "tsvdx4-f1__epochs"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-f1__epochs",
+      "best_diagnostic_rmse": 0.866313876378752,
+      "diagnostic_delta": -6.197521561168706e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-f1",
+        "tsvdx4-f1__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-f1",
+        "tsvdx4-f1__epochs"
+      ],
+      "commands": {
+        "tsvdx4-f1": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-f1",
+        "tsvdx4-f1__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-f1__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-1600lm",
+      "columns": [
+        "tsvdx4-1600lm_ep02"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-1600lm_ep02",
+      "best_diagnostic_rmse": 0.8663149387667044,
+      "diagnostic_delta": -5.135133608780151e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-1600lm"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-1600lm"
+      ],
+      "commands": {
+        "tsvdx4-1600lm": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-1600lm"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-32-t",
+      "columns": [
+        "rbmx2-32-t"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-32-t",
+      "best_diagnostic_rmse": 0.8663155880201251,
+      "diagnostic_delta": -4.485880188087599e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-32-t"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-32-t"
+      ],
+      "commands": {
+        "rbmx2-32-t": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-32-t"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-q16tb",
+      "columns": [
+        "tsvdx4-q16tb__epochs"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-q16tb__epochs",
+      "best_diagnostic_rmse": 0.8663157193453809,
+      "diagnostic_delta": -4.35455493230652e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-q16tb",
+        "tsvdx4-q16tb__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-q16tb",
+        "tsvdx4-q16tb__epochs"
+      ],
+      "commands": {
+        "tsvdx4-q16tb": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-q16tb",
+        "tsvdx4-q16tb__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-q16tb__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-80o",
+      "columns": [
+        "tsvdx4-80o-bias"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-80o-bias",
+      "best_diagnostic_rmse": 0.8663190786574657,
+      "diagnostic_delta": -9.95242847467992e-07,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-80o"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-80o"
+      ],
+      "commands": {
+        "tsvdx4-80o": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-80o"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "rbmx2-14e",
+      "columns": [
+        "rbmx2-14e"
+      ],
+      "best_diagnostic_arm": "single:rbmx2-14e",
+      "best_diagnostic_rmse": 0.8663191748518777,
+      "diagnostic_delta": -8.990484354765016e-07,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "rbmx2-14e"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "rbmx2-14e"
+      ],
+      "commands": {
+        "rbmx2-14e": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-14e"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "bk1-10",
+      "columns": [
+        "bk1-10_ep04"
+      ],
+      "best_diagnostic_arm": "single:bk1-10_ep04",
+      "best_diagnostic_rmse": 0.8663198472858257,
+      "diagnostic_delta": -2.266144875084919e-07,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk1-10"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "bk1-10"
+      ],
+      "commands": {
+        "bk1-10": "cargo build --release --bin bk-new && ./target/release/bk-new bk1-10"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-400lm",
+      "columns": [
+        "tsvdx4-400lm__epochs"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-400lm__epochs",
+      "best_diagnostic_rmse": 0.866320067304586,
+      "diagnostic_delta": -6.595727186642364e-09,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-400lm",
+        "tsvdx4-400lm__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [
+        "tsvdx4-400lm"
+      ],
+      "new_jobs": [
+        "tsvdx4-400lm__epochs"
+      ],
+      "commands": {
+        "tsvdx4-400lm__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-400lm__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-60",
+      "columns": [
+        "tsvdx4-60__epochs"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-60__epochs",
+      "best_diagnostic_rmse": 0.8663200795487609,
+      "diagnostic_delta": 5.648447709560855e-09,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-60",
+        "tsvdx4-60__epochs"
+      ],
+      "distinct_non_setup_jobs": 2,
+      "reusable_jobs": [
+        "tsvdx4-60"
+      ],
+      "new_jobs": [
+        "tsvdx4-60__epochs"
+      ],
+      "commands": {
+        "tsvdx4-60__epochs": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-60__epochs"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": true,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "bk3-30",
+      "columns": [
+        "bk3-30"
+      ],
+      "best_diagnostic_arm": "single:bk3-30",
+      "best_diagnostic_rmse": 0.8663207192864554,
+      "diagnostic_delta": 6.453861421951146e-07,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "bk3-30"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "bk3-30"
+      ],
+      "commands": {
+        "bk3-30": "cargo build --release --bin bk-new && ./target/release/bk-new bk3-30"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "aex-64",
+      "columns": [
+        "aex-64"
+      ],
+      "best_diagnostic_arm": "single:aex-64",
+      "best_diagnostic_rmse": 0.8663213259404883,
+      "diagnostic_delta": 1.2520401750926169e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "aex-64"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "aex-64"
+      ],
+      "commands": {
+        "aex-64": "cargo build --release --bin aex-new && ./target/release/aex-new aex-64"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    },
+    {
+      "bundle": "tsvdx4-160o",
+      "columns": [
+        "tsvdx4-160o-nsvd1"
+      ],
+      "best_diagnostic_arm": "single:tsvdx4-160o-nsvd1",
+      "best_diagnostic_rmse": 0.8663235536494811,
+      "diagnostic_delta": 3.4797491679228187e-06,
+      "full_dependency_order": [
+        "download",
+        "ingest",
+        "newsplit",
+        "tsvdx4-160o"
+      ],
+      "distinct_non_setup_jobs": 1,
+      "reusable_jobs": [],
+      "new_jobs": [
+        "tsvdx4-160o"
+      ],
+      "commands": {
+        "tsvdx4-160o": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-160o"
+      },
+      "unresolved": false,
+      "historical_epoch_coefficients": false,
+      "exact_new_bundle_time_seconds": null,
+      "exact_peak_memory_bytes": null,
+      "missing_cost_evidence": "Unmeasured new jobs require profiling; family/capacity is insufficient to claim actual execution time."
+    }
+  ]
+}

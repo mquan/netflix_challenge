@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "training": "trainx",
+      "query": "probex",
+      "users": 480189,
+      "items": 17770,
+      "user_day_pairs": 17280041,
+      "rows": 100480507,
+      "metadata_sha256": {
+        "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+        "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+        "artifacts/upstream-repro/fresh/data/trainx/dates.npy": "0ddc3e91610d2672cc2a7badcd20c5d5bc62b76f4202b4d8859a69c19bd1ff1b",
+        "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+        "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+        "artifacts/upstream-repro/fresh/data/probex/dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47"
+      }
+    },
+    {
+      "training": "fulltrain",
+      "query": "qual",
+      "users": 480189,
+      "items": 17770,
+      "user_day_pairs": 18136482,
+      "rows": 103297638,
+      "metadata_sha256": {
+        "artifacts/upstream-repro/fresh/data/fulltrain/user_idxs.npy": "2c05ede890433de83e39633b977fdaf77b1db78fee3d83e4f806b46c856c3754",
+        "artifacts/upstream-repro/fresh/data/fulltrain/item_idxs.npy": "e8dd3bd36995c07dccfc47a88d924dc881e9f1ecd1ed7512bbf900b204487a3c",
+        "artifacts/upstream-repro/fresh/data/fulltrain/dates.npy": "4a16cca08c23642e7b18251d11662bb71377b102f3b78defeec2bbfda9c149e3",
+        "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+        "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+        "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe"
+      }
+    }
+  ],
+  "provenance": "Independent metadata-only replication of Tx SparseUD union counts. This is not measured native training peak RAM."
+}

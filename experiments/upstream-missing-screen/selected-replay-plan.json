@@ -1,0 +1,51 @@
+{
+  "job": "rbmx2-150__knnf",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "diagnostic_only": {
+    "arm": "single:rbmx2-150__knnf",
+    "released_columns": 1,
+    "rmse": 0.8662708485282503,
+    "fold_rmse": [
+      0.8657132455845802,
+      0.8637369432006997,
+      0.8671994084552465,
+      0.8676193984094346,
+      0.8670903974197663
+    ],
+    "delta_vs_fresh": -4.922537206286659e-05,
+    "fold_delta_vs_fresh": [
+      -2.0759077141385696e-05,
+      -5.586025556236773e-05,
+      -4.6844002147494734e-05,
+      -4.2090854762366625e-05,
+      -8.067885234841476e-05
+    ]
+  },
+  "selection": "Cheap positive-gain cached-parent replay; not highest absolute released-vector gain. Exact pinned recipe, no published epoch blend coefficients.",
+  "dependency_order": [
+    "download",
+    "ingest",
+    "newsplit",
+    "rbmx2-150",
+    "rbmx2-150__knnf"
+  ],
+  "reusable": [
+    "download",
+    "ingest",
+    "newsplit",
+    "rbmx2-150"
+  ],
+  "new_jobs": [
+    "rbmx2-150__knnf"
+  ],
+  "reusable_parent_receipt_sha256": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+  "parent_all_outputs_verified": true,
+  "source_and_zero_qualifying_payload_validated": true,
+  "cost_evidence": {
+    "analogue": "tsvdx4-400lm__knnf",
+    "measured_wall_seconds": 19.648427,
+    "scope": "Same KnnfModel family, different factor width and source; not an exact runtime prediction",
+    "unknown": "No prior rbmx2-150__knnf runtime or measured RAM"
+  },
+  "evaluation": "Add newly trained prediction to frozen 61-column/context bank as one global rating feature; same folds/lambda/clipping. Preserve fourteen and combined-context controls."
+}

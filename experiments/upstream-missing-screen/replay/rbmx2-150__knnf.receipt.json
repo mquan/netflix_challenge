@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "rbmx2-150__knnf",
+  "command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150__knnf",
+  "started": "2026-11-18T00:47:39.561314+00:00",
+  "finished": "2026-11-18T00:48:42.270295+00:00",
+  "outputs": {
+    "preds_new/rbmx2-150__knnf.out": "b6166b2fa94ce559b17457b220786d54ed94fc033e3f0c7c00de4cb696d5cb12",
+    "preds_new/rbmx2-150__knnf.probex.npy": "b2cfdf4629a2055a9469e4bd160611d32dd7061bbbfcba670d21c8fbdcd6b37c",
+    "preds_new/rbmx2-150__knnf.qual.npy": "2b82b1b0a8fdf672eabe5172f330bac845ac8b002173a1be199fb11897c36247"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}
