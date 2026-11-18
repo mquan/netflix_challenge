@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "als8-8",
+  "command": "cargo build --release --bin als8-new && ./target/release/als8-new als8-8",
+  "started": "2026-11-18T16:58:45.791163+00:00",
+  "finished": "2026-11-18T17:10:21.649954+00:00",
+  "outputs": {
+    "preds_new/als8-8.fulltrain.npy": "09fa26dcb647438916f75181ef1a261734147f710f3f765b5456c1a0e44323ad",
+    "preds_new/als8-8.out": "57d7fcbc845f6307e09f880b5a7e16ccf265c64e322be2c5e9cb56d9f4ce5d5b",
+    "preds_new/als8-8.probex.npy": "1d2a24670e53e073a9affb9ff7fc7846e111dff4f738a8ce12c78981e9ca7ec2",
+    "preds_new/als8-8.qual.npy": "f75e11b2488ff6d4c3e7ee0f8a2af4efe83b35ac30768fe885e76561548eb51d",
+    "preds_new/als8-8.trainx.npy": "05c539ea70927c867f7e4aeb503045f892673a4fc225868e486baeb19678f76d"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

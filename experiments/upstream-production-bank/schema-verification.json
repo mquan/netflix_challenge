@@ -1,0 +1,23 @@
+{
+  "state": "complete",
+  "scope": "Transformation schema only: same frozen fresh development predictions, not a claim that retrained model outputs equal remote outputs.",
+  "production_code_sha256": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+  "development_manifest_sha256": "d8173789aa3ff9cb6ff961b9e23c8e613f3171cef8bc0f40d17f5f78c53e970e",
+  "verifier_sha256": "fb373997113a05765906988f9796eb15d16ff9c322aa6fda7124eb957bd89eb9",
+  "prediction_columns": 85,
+  "design_columns": 161,
+  "nonlinear_features": 221,
+  "checks": [
+    {
+      "chunk_size": 1,
+      "rows_checked": 1,
+      "bitwise_equal": true
+    },
+    {
+      "chunk_size": 8192,
+      "rows_checked": 20105,
+      "bitwise_equal": true
+    }
+  ],
+  "qualifying_labels_read": false
+}
