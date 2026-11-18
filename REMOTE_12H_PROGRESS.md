@@ -83,3 +83,5 @@ aside (not deleted).
 - 10:14Z `mf-60__knn3` chain launched (runs `mf-60` then `mf-60__knn3`).
 - 10:22Z `mf-60` + `mf-60__knn3` **completed** (0.131 h total, peak 3.5 GB). Exported terminal vectors (no kept epochs declared); fixture diagnostic: bit-identical to released (RMSE 0.926041 / 0.907782).
 - 10:23Z `als8-8__knn3` chain launched.
+- 10:29Z `als8-8` + `als8-8__knn3` **completed** (0.116 h, peak 7.9 GB; probex 0.95681 / 0.94645). Exported; fixture diagnostic near-exact (RMSE equal to 1e-9).
+- 10:29Z queue started (`scripts/remote12h_queue.sh`, tmux `r12-queue`; no launch after 12:31:05Z, hard stop 13:01:05Z; log `experiments/upstream-remote-12h/queue.log`). Order: dnn-24 residual chains reusing local receipted `dnn-24`/`dnn-24__dnn-16p50` parents (`…__asym-16p75__knn3b`, `…__knn3c`, `dnn-24__asym-16p75__knn3`, `…__asym-16p50`, `dnn-24__dnn-24p50`, `dnn-24__dnn-16__knn3`), then `mf-61__knn3`, `mf-61__asym-16`.

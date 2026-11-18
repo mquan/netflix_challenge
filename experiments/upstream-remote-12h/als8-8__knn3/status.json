@@ -19,16 +19,15 @@
     "swap_used_mb": 0.0,
     "disk_free_gb": 106.78
   },
-  "state": "running",
-  "last_sample": {
-    "time": "2026-11-18T10:22:15.047005+00:00",
-    "group_rss_mb": 0.4,
-    "peak_group_rss_mb": 0.4,
-    "n_procs": 1,
-    "swap_growth_mb": 0,
-    "memory_level_pct": 85,
+  "state": "completed",
+  "exit_code": 0,
+  "finished": "2026-11-18T10:29:11.303141+00:00",
+  "elapsed_h": 0.116,
+  "peak_group_rss_mb": 7927.3,
+  "leftover_group_members": [],
+  "final_host": {
+    "memory_level_pct": 86,
     "swap_used_mb": 0.0,
-    "disk_free_gb": 106.78
-  },
-  "elapsed_h": 0.0
+    "disk_free_gb": 106.0
+  }
 }
