@@ -1,0 +1,211 @@
+{
+  "records": [
+    {
+      "arm": "control",
+      "added_columns": 0,
+      "columns": [],
+      "rmse": 0.8655052917304086,
+      "delta_vs_control": 0.0,
+      "fold_delta": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prediction_sha256": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6"
+    },
+    {
+      "arm": "temporal",
+      "added_columns": 4,
+      "columns": [
+        "tsvdx5-150o",
+        "tsvdx5-150o_ep06",
+        "tsvdx5-150o_ep16",
+        "tsvdx5-150o_ep24"
+      ],
+      "rmse": 0.8645096693871115,
+      "delta_vs_control": -0.0009956223432970868,
+      "fold_delta": [
+        -0.0009710232282652553,
+        -0.0011465819726985682,
+        -0.0010752113219354431,
+        -0.000899574317620222,
+        -0.0008869750785739372
+      ],
+      "prediction_sha256": "9f445aa8f6537d078fdd32fb1e9227e2b05bb43e999b8242ca8dc81bdd38e782"
+    },
+    {
+      "arm": "neighborhood",
+      "added_columns": 5,
+      "columns": [
+        "bknbrx-50",
+        "bknbrx-50_ep05",
+        "bknbrx-50_ep09",
+        "bknbrx-50_ep17",
+        "bknbrx-50_ep21"
+      ],
+      "rmse": 0.8654334353707364,
+      "delta_vs_control": -7.18563596722177e-05,
+      "fold_delta": [
+        -6.26085029061807e-05,
+        -0.0001028802811068319,
+        -3.075364106253087e-05,
+        -6.202199287796972e-05,
+        -0.0001008627570583398
+      ],
+      "prediction_sha256": "a4d9264bea74bfbc696cfb20c4bb719a392f950314f8ee1f497f23588c749749"
+    },
+    {
+      "arm": "matrix_factorization",
+      "added_columns": 2,
+      "columns": [
+        "mf-60",
+        "mf-60__knn3"
+      ],
+      "rmse": 0.8652674055190973,
+      "delta_vs_control": -0.00023788621131126675,
+      "fold_delta": [
+        -0.0002455799908246403,
+        -0.00022354496343646169,
+        -0.0002763612606370147,
+        -0.00018690116047970218,
+        -0.00025734105372143823
+      ],
+      "prediction_sha256": "aa0fccc9d28493b70072ac4f963e79d6f070652d4716688f67770f583848dc4b"
+    },
+    {
+      "arm": "als",
+      "added_columns": 2,
+      "columns": [
+        "als8-8",
+        "als8-8__knn3"
+      ],
+      "rmse": 0.865341782685815,
+      "delta_vs_control": -0.0001635090445936127,
+      "fold_delta": [
+        -0.0001746021845924206,
+        -0.00018758714863553738,
+        -0.00022112456824641136,
+        -0.00014643268252412245,
+        -8.826846128240362e-05
+      ],
+      "prediction_sha256": "22ca188286ae422aa0a414d7e6b99cd6ef6866501a109e16da2f99d8139d05ea"
+    },
+    {
+      "arm": "dnn",
+      "added_columns": 6,
+      "columns": [
+        "dnn-24__asym-16p75__knn3",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-24p50"
+      ],
+      "rmse": 0.8650799875547994,
+      "delta_vs_control": -0.00042530417560915357,
+      "fold_delta": [
+        -0.00043121696679704336,
+        -0.0003790342533398494,
+        -0.0004907759216138396,
+        -0.0004345531585313589,
+        -0.0003912474921758946
+      ],
+      "prediction_sha256": "c9c75a31fd33d9ebeb46829142777e8eec0b418fc612926efeeee89d58610f19"
+    },
+    {
+      "arm": "main",
+      "added_columns": 19,
+      "columns": [
+        "als8-8",
+        "als8-8__knn3",
+        "bknbrx-50",
+        "bknbrx-50_ep05",
+        "bknbrx-50_ep09",
+        "bknbrx-50_ep17",
+        "bknbrx-50_ep21",
+        "dnn-24__asym-16p75__knn3",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-24p50",
+        "mf-60",
+        "mf-60__knn3",
+        "tsvdx5-150o",
+        "tsvdx5-150o_ep06",
+        "tsvdx5-150o_ep16",
+        "tsvdx5-150o_ep24"
+      ],
+      "rmse": 0.8637056490665563,
+      "delta_vs_control": -0.0017996426638522411,
+      "fold_delta": [
+        -0.0017836990068308411,
+        -0.0019420431870340593,
+        -0.001978130266088951,
+        -0.0016437628790556547,
+        -0.001652611800232684
+      ],
+      "prediction_sha256": "b96d9f97939384770720512bfd7d03e81015b2d5e2771eacd78a4c27a625384a"
+    },
+    {
+      "arm": "intermediates",
+      "added_columns": 3,
+      "columns": [
+        "dnn-24__asym-16p75",
+        "dnn-24__dnn-16",
+        "dnn-24__dnn-16p50__asym-16p75"
+      ],
+      "rmse": 0.8654516524179212,
+      "delta_vs_control": -5.363931248736353e-05,
+      "fold_delta": [
+        -4.638534710088571e-05,
+        -4.596711839499612e-05,
+        -6.743443471868282e-05,
+        -6.677816650157986e-05,
+        -4.171054763535409e-05
+      ],
+      "prediction_sha256": "55f43e535429fdc96317402c5d35dd13863ea9e8e6aa43c6f68b0675e29d095f"
+    },
+    {
+      "arm": "extended",
+      "added_columns": 22,
+      "columns": [
+        "als8-8",
+        "als8-8__knn3",
+        "bknbrx-50",
+        "bknbrx-50_ep05",
+        "bknbrx-50_ep09",
+        "bknbrx-50_ep17",
+        "bknbrx-50_ep21",
+        "dnn-24__asym-16p75",
+        "dnn-24__asym-16p75__knn3",
+        "dnn-24__dnn-16",
+        "dnn-24__dnn-16__knn3",
+        "dnn-24__dnn-16p50__asym-16p50",
+        "dnn-24__dnn-16p50__asym-16p75",
+        "dnn-24__dnn-16p50__asym-16p75__knn3b",
+        "dnn-24__dnn-16p50__asym-16p75__knn3c",
+        "dnn-24__dnn-24p50",
+        "mf-60",
+        "mf-60__knn3",
+        "tsvdx5-150o",
+        "tsvdx5-150o_ep06",
+        "tsvdx5-150o_ep16",
+        "tsvdx5-150o_ep24"
+      ],
+      "rmse": 0.8636936148019512,
+      "delta_vs_control": -0.0018116769284574064,
+      "fold_delta": [
+        -0.0018019550046682875,
+        -0.0019511661567233052,
+        -0.0019843362570891587,
+        -0.0016507466250014202,
+        -0.0016721511537365341
+      ],
+      "prediction_sha256": "5a1b03efbe8984627a5c05aab0bc3c3214c5e757973aa883686cc8718602cd90"
+    }
+  ],
+  "scope": "Predeclared fresh family bundles; all fits exclude scoring users; intermediates are separate ridge-only sensitivity arms."
+}

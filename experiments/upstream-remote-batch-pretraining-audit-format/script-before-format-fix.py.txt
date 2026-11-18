@@ -1,0 +1,315 @@
+#!/usr/bin/env python3
+"""Verify the full remote export set; screen fixed bundles and fit the main bank."""
+import argparse
+import datetime as dt
+import fcntl
+import os
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import time
+os.environ.setdefault('OPENBLAS_NUM_THREADS','2')
+os.environ.setdefault('VECLIB_MAXIMUM_THREADS','2')
+os.environ.setdefault('OMP_NUM_THREADS','2')
+import numpy as np
+import upstream_nonlinear as n
+import upstream_remote_integration as parent
+import verify_upstream_nonlinear as verifier
+
+u, x = n.u, n.x
+PARENT_RUN, PARENT_REPORT = parent.RUN, parent.REPORT
+RUN = u.ROOT/'artifacts/upstream-remote-batch'
+REPORT = u.ROOT/'experiments/upstream-remote-batch'
+REMOTE = u.ROOT/'experiments/upstream-remote-12h'
+INDEX = REMOTE/'transfer-index.json'
+INTERMEDIATES = ['dnn-24__asym-16p75', 'dnn-24__dnn-16',
+                 'dnn-24__dnn-16p50__asym-16p75']
+DNN = ['dnn-24__asym-16p75__knn3', 'dnn-24__dnn-16__knn3',
+       'dnn-24__dnn-16p50__asym-16p50', 'dnn-24__dnn-16p50__asym-16p75__knn3b',
+       'dnn-24__dnn-16p50__asym-16p75__knn3c', 'dnn-24__dnn-24p50']
+JOBS = sorted(['als8-8','als8-8__knn3','bknbrx-100','bknbrx-50',
+               'mf-60','mf-60__knn3','tsvdx5-150o']+DNN+INTERMEDIATES)
+GROUPS = dict(temporal=['tsvdx5-150o','tsvdx5-150o_ep06','tsvdx5-150o_ep16','tsvdx5-150o_ep24'],
+              neighborhood=['bknbrx-50','bknbrx-50_ep05','bknbrx-50_ep09','bknbrx-50_ep17','bknbrx-50_ep21'],
+              matrix_factorization=['mf-60','mf-60__knn3'], als=['als8-8','als8-8__knn3'], dnn=DNN)
+MAIN = sorted(name for names in GROUPS.values() for name in names)
+ALL = sorted(MAIN+INTERMEDIATES)
+
+
+def code_hashes():
+    return {**parent.code_hashes(), str(Path(__file__).relative_to(u.ROOT)):u.sha(Path(__file__))}
+
+
+def configure():
+    n.RUN, n.REPORT, n.code_hashes = RUN, REPORT, code_hashes
+
+
+def inside(root, name, subtree):
+    p = (root/name).resolve()
+    if not p.is_relative_to((root/subtree).resolve()): raise ValueError('Unexpected transfer path')
+    return p
+
+
+def receive(index_path=INDEX, root=u.ROOT, data=u.FRESH/'data/probex', registry=None):
+    """Verify transfer/receipt bindings; fulltrain native files remain on sender."""
+    root, data = Path(root).resolve(), Path(data).resolve()
+    index = u.read(index_path); rows = index['rows']
+    if len({row['npz'] for row in rows}) != len(rows): raise ValueError('Repeated index path')
+    registry = registry if registry is not None else u.read(u.BASE/'registry.json')['jobs']
+    labels = np.load(data/'ratings.npy',allow_pickle=False).astype(np.float64)
+    align = {name:u.sha(data/name) for name in ['ratings.npy','user_idxs.npy','item_idxs.npy','dates.npy']}
+    arrays, seen, records, sources, diagnostics, duplicate = {}, {}, [], {}, [], {}
+    for job in sorted({row['job'] for row in rows}):
+        directory = root/'experiments/upstream-remote-12h'/job
+        mp = directory/'transfer-manifest.json'; manifest = u.read(mp)
+        rp = inside(root,manifest['native_receipt'],'experiments/upstream-remote-12h')
+        receipt = u.read(rp); receipt_sha = u.sha(rp)
+        if (job not in registry or manifest['job'] != job or receipt['job'] != job or
+                manifest['source_commit'] != u.PIN or receipt['source_commit'] != u.PIN):
+            raise ValueError('Wrong pinned remote job')
+        if receipt_sha != manifest['native_receipt_sha256']: raise ValueError('Changed native receipt')
+        if receipt['command'] != registry[job]['command'] or manifest['native_command'] != receipt['command']:
+            raise ValueError('Remote command differs from pinned registry')
+        if manifest['alignment_sha256'] != align: raise ValueError('Remote alignment mismatch')
+        dr = manifest['fresh_data_receipt']
+        if (dr['source_commit'] != u.PIN or dr['qualifying_outcomes_zero'] is not True or
+                dr['ratings_sha256'] != align['ratings.npy'] or dr['rows'] != len(labels) or manifest['probex_rows'] != len(labels)):
+            raise ValueError('Invalid native data receipt')
+        if manifest['all_receipt_output_hashes_verified'] != len(receipt['outputs']):
+            raise ValueError('Sender output verification count differs')
+        native_out = directory/'native.out'
+        if u.sha(native_out) != receipt['outputs'].get('preds_new/'+job+'.out'):
+            raise ValueError('Changed native output log')
+        indexed = {row['npz']:row for row in rows if row['job']==job}
+        if set(indexed) != {entry['npz'] for entry in manifest['outputs']}:
+            raise ValueError('Transfer index and job inventory differ')
+        for entry in manifest['outputs']:
+            row = indexed[entry['npz']]; source = entry['source']
+            name = Path(source).name.removesuffix('.probex.npy')
+            if not source.startswith('preds_new/'+job) or not source.endswith('.probex.npy'):
+                raise ValueError('Wrong native source path')
+            p = inside(root,entry['npz'],'experiments/upstream-remote-12h/outputs')
+            if (receipt['outputs'].get(source) != entry['source_npy_sha256'] or
+                    entry['receipt_bound_sha256'] != entry['source_npy_sha256'] or
+                    entry['owning_native_receipt_sha256'] != receipt_sha or row['receipt_sha256'] != receipt_sha):
+                raise ValueError('Missing native receipt binding')
+            if u.sha(p) != entry['npz_sha256'] or row['npz_sha256'] != entry['npz_sha256']:
+                raise ValueError('Compressed prediction changed')
+            with np.load(p,allow_pickle=False) as saved:
+                if saved.files != ['prediction']: raise ValueError('Unexpected NPZ fields')
+                value = saved['prediction']
+            if value.dtype != np.float32 or value.shape != labels.shape or not np.isfinite(value).all():
+                raise ValueError('Malformed fresh prediction')
+            digest = x.array_sha(value)
+            if digest != entry['prediction_content_sha256'] or digest != row['content_sha256']:
+                raise ValueError('Fresh content changed')
+            raw_rmse = float(np.sqrt(np.mean((value.astype(np.float64)-labels)**2)))
+            if abs(raw_rmse-entry['diagnostic_standalone_probex_rmse']) > 1e-12:
+                raise ValueError('Independent standalone score differs')
+            if digest in seen: duplicate[name] = seen[digest]
+            else:
+                arrays[name] = value; seen[digest] = name
+            records.append(dict(name=name,job=job,content_sha256=digest,npz_sha256=u.sha(p),
+                source_npy_sha256=entry['source_npy_sha256'],receipt_sha256=receipt_sha,raw_rmse=raw_rmse,
+                duplicate_of=duplicate.get(name)))
+            diagnostics.append(dict(name=name,job=job,npz=str(p.relative_to(root)),fresh_rmse=raw_rmse))
+            sources[str(p.relative_to(root))] = u.sha(p)
+        for p in [mp,rp,native_out]: sources[str(p.relative_to(root))] = u.sha(p)
+    if index['unique_vectors'] != len(arrays): raise ValueError('Unique transfer count differs')
+    sources[str(Path(index_path).resolve().relative_to(root))] = u.sha(index_path)
+    return arrays,dict(exports=len(rows),jobs=len({row['job'] for row in rows}),unique_vectors=len(arrays),
+        records=records,duplicate_of=duplicate,alignment_sha256=align,source_sha256=sources,
+        scope='Receiver verifies every ProbeX export, metadata alignment, pinned command, receipt binding and native.out hash. Other native outputs were verified on sender and are not locally rehashed.'),diagnostics
+
+
+def parent_verified():
+    manifest = u.read(PARENT_REPORT/'manifest.json')
+    if manifest['config'] != n.CONFIG or manifest['code_sha256'] != parent.code_hashes() or manifest['versions'] != n.versions():
+        raise ValueError('Parent implementation changed')
+    for name,digest in manifest['prepared_sha256'].items():
+        if u.sha(PARENT_RUN/name) != digest: raise ValueError('Parent prepared data changed')
+    for name,digest in manifest['source_manifests_sha256'].items():
+        if u.sha(u.ROOT/name) != digest: raise ValueError('Parent source evidence changed')
+    evaluation = u.read(PARENT_REPORT/'evaluation.json')
+    check = u.read(PARENT_REPORT/'independent-verification.json')
+    if check['evaluation_sha256'] != u.sha(PARENT_REPORT/'evaluation.json'): raise ValueError('Parent scoring changed')
+    for row in evaluation['records']:
+        if u.sha(PARENT_RUN/(row['arm']+'.f32')) != row['prediction_sha256']:
+            raise ValueError('Parent predictions changed')
+    return manifest,evaluation
+
+
+def augmented_block(old,added,lo,hi):
+    return np.column_stack([old[lo:hi,:-1],added[lo:hi],old[lo:hi,-1:]])
+
+
+def screen(old,added,y,groups,arms):
+    """Shared grouped stats, explicit final intercept, all fixed arms retained."""
+    width=old.shape[1]+added.shape[1];base_width=old.shape[1]-1
+    gram=np.zeros((10,width,width));rhs=np.zeros((10,width))
+    for lo in range(0,len(y),8192):
+        hi=min(lo+8192,len(y));z=augmented_block(old,added,lo,hi)
+        for g in range(10):
+            keep=groups[lo:hi]==g;a=z[keep]
+            gram[g]+=a.T@a;rhs[g]+=a.T@y[lo:hi][keep]
+    result={};folds=groups//2
+    for name,columns in arms.items():
+        ix=np.array(list(range(base_width))+[base_width+i for i in columns]+[width-1])
+        sg=gram[:,ix][:,:,ix];sr=rhs[:,ix]
+        weights=[n.ridge_weights(sg,sr,np.arange(10)//2!=fold) for fold in range(5)]
+        prediction=np.empty(len(y))
+        for lo in range(0,len(y),8192):
+            hi=min(lo+8192,len(y));z=augmented_block(old,added,lo,hi)[:,ix]
+            for fold in range(5):
+                keep=folds[lo:hi]==fold
+                prediction[lo:hi][keep]=np.clip(z[keep]@weights[fold],1.05,4.95)
+        result[name]=dict(prediction=prediction,gram=sg,rhs=sr)
+    return result
+
+
+def audit_fixtures(diagnostics):
+    """Post-freeze diagnostics only; released arrays never enter prepared features."""
+    reference=u.read(u.BASE/'reference-manifest.json')
+    fixtures={row['name']:row for row in reference['entries']}
+    y=np.load(RUN/'labels.npy');rows=[]
+    for entry in diagnostics:
+        name=entry['name'];fixture=fixtures.get(name)
+        row=dict(name=name,fresh_rmse=entry['fresh_rmse'])
+        sender=u.read(REMOTE/entry['job']/'fixture-comparison.json').get(name+'.probex')
+        if fixture is None:
+            row.update(fixture_available=False,sender_report=sender)
+        else:
+            path=u.REFERENCE/fixture['path']
+            if u.sha(path)!=fixture['sha256']:raise ValueError('Released diagnostic fixture changed')
+            with np.load(u.ROOT/entry['npz'],allow_pickle=False) as a:fresh=a['prediction'].astype(np.float64)
+            released=np.load(path,allow_pickle=False).astype(np.float64)
+            diff=float(np.sqrt(np.mean((fresh-released)**2)))
+            if not isinstance(sender,dict) or abs(diff-sender['rms_diff'])>1e-12:
+                raise ValueError('Sender fixture diagnostic differs')
+            row.update(fixture_available=True,rms_difference=diff,bitwise_equal=bool(np.array_equal(fresh,released)),
+                released_rmse=float(np.sqrt(np.mean((released-y)**2))),fixture_sha256=fixture['sha256'],sender_agrees=True)
+        rows.append(row)
+    u.write(REPORT/'remote-fixture-audit.json',dict(records=rows,
+        available=sum(r['fixture_available'] for r in rows),exact=sum(r.get('bitwise_equal',False) for r in rows),
+        prepared_manifest_sha256=u.sha(REPORT/'manifest.json'),scope='Post-freeze source replay diagnostics; no released prediction features used in fits.'))
+
+
+def prepare():
+    configure()
+    if (REPORT/'manifest.json').exists():
+        result=n.verify_prepared()
+        if not (REPORT/'remote-fixture-audit.json').exists():
+            raise ValueError('Post-freeze remote diagnostic audit incomplete; inspect before resuming')
+        if u.read(REPORT/'remote-fixture-audit.json')['prepared_manifest_sha256']!=u.sha(REPORT/'manifest.json'):
+            raise ValueError('Remote audit does not bind this prepared bank')
+        return result
+    if RUN.exists():raise ValueError('Partial preparation exists; preserve before recovery')
+    parent_manifest,parent_scores=parent_verified()
+    arrays,received,diagnostics=receive()
+    if received['jobs']!=16 or received['exports']!=25 or set(row['job'] for row in received['records'])!=set(JOBS):
+        raise ValueError('Unexpected full remote inventory')
+    if set(arrays)!=set(ALL+['bknbrx-100','bknbrx-100_ep01']):raise ValueError('Unexpected unique output names')
+    # Already-integrated vectors must be exact matches, never appended again.
+    previous_transfer=u.read(parent.TRANSFER)
+    for name in ['bknbrx-100','bknbrx-100_ep01']:
+        entry=next(e for e in previous_transfer['outputs'] if e['source']==f'preds_new/{name}.probex.npy')
+        if x.array_sha(arrays.pop(name))!=entry['prediction_content_sha256']:raise ValueError('Old bknbrx vector changed')
+    y,users,groups=[np.load(PARENT_RUN/(name+'.npy')) for name in ['labels','users','groups']]
+    native=u.FRESH/'data/probex'
+    if not np.array_equal(y,np.load(native/'ratings.npy')) or not np.array_equal(users,np.load(native/'user_idxs.npy')):
+        raise ValueError('Native/cache alignment changed')
+    old=np.load(PARENT_RUN/'design.npy',mmap_mode='r')
+    added=np.clip(np.column_stack([arrays[name] for name in ALL]),0,6)
+    arms={'control':[]}
+    arms.update({group:[ALL.index(name) for name in names] for group,names in GROUPS.items()})
+    arms.update(main=[ALL.index(name) for name in MAIN],intermediates=[ALL.index(name) for name in INTERMEDIATES],
+                extended=list(range(len(ALL))))
+    scores=screen(old,added,y,groups,arms)
+    control=scores['control']['prediction']
+    if abs(x.metric(control,y)-0.8655052917304086)>1e-9:raise ValueError('Retained ridge control mismatch')
+    RUN.mkdir(parents=True)
+    records=[];folds=groups//2
+    for name,scored in scores.items():
+        pred=scored['prediction'];pred.astype('<f4').tofile(RUN/(name+'-ridge.f32'))
+        records.append(dict(arm=name,added_columns=len(arms[name]),columns=[ALL[i] for i in arms[name]],
+            rmse=x.metric(pred,y),delta_vs_control=x.metric(pred,y)-x.metric(control,y),
+            fold_delta=[x.metric(pred[folds==f],y[folds==f])-x.metric(control[folds==f],y[folds==f]) for f in range(5)],
+            prediction_sha256=u.sha(RUN/(name+'-ridge.f32'))))
+    u.write(REPORT/'ridge-screen.json',dict(records=records,scope='Predeclared fresh family bundles; all fits exclude scoring users; intermediates are separate ridge-only sensitivity arms.'))
+    primary=scores['main'];selection=arms['main'];chosen=added[:,selection]
+    design=np.lib.format.open_memmap(RUN/'design.npy',mode='w+',dtype=np.float64,
+        shape=(len(y),old.shape[1]+len(selection)))
+    for lo in range(0,len(y),8192):
+        hi=min(lo+8192,len(y));design[lo:hi]=augmented_block(old,chosen,lo,hi)
+    design.flush()
+    features=np.load(PARENT_RUN/'features.npy',mmap_mode='r')
+    np.save(RUN/'features.npy',np.column_stack([features,chosen-3.6]).astype(np.float32))
+    np.savez(RUN/'stats.npz',gram=primary['gram'],rhs=primary['rhs'])
+    for name,value in [('labels',y),('users',users),('groups',groups),('baseline',primary['prediction'])]:
+        np.save(RUN/(name+'.npy'),value)
+    received['already_integrated_columns']=['bknbrx-100','bknbrx-100_ep01']
+    received['primary_new_columns']=MAIN;received['secondary_intermediate_columns']=INTERMEDIATES
+    u.write(REPORT/'remote-verification.json',received)
+    sources={**received['source_sha256'],**{str(p.relative_to(u.ROOT)):u.sha(p) for p in
+        [PARENT_REPORT/'manifest.json',PARENT_REPORT/'evaluation.json',PARENT_REPORT/'independent-verification.json']}}
+    manifest=dict(config=n.CONFIG,versions=n.versions(),code_sha256=code_hashes(),source_commit=u.PIN,
+        source_manifests_sha256=sources,prepared_sha256={p.name:u.sha(p) for p in RUN.iterdir() if p.is_file()},
+        baseline_rmse=x.metric(primary['prediction'],y),rows=len(y),prediction_columns=83,design_columns=159,
+        parent_nonlinear_rmse=parent_scores['records'][-1]['rmse'],remote_columns=MAIN,
+        isolation=parent_manifest['isolation'],scope=parent_manifest['scope'],arms=parent_manifest['arms'])
+    u.write(REPORT/'manifest.json',manifest)
+    audit_fixtures(diagnostics)
+    n.event(stage='batch_prepared',ridge_records=records)
+    return manifest
+
+
+def summarize():
+    result=n.summarize();old=u.read(PARENT_REPORT/'evaluation.json')
+    previous={row['arm']:row for row in old['records']}
+    for row in result['records']:
+        reference=previous[row['arm']]
+        row['delta_vs_previous_same_family']=row['rmse']-reference['rmse']
+        row['fold_delta_vs_previous_same_family']=[a-b for a,b in zip(row['fold_rmse'],reference['fold_rmse'])]
+        row['delta_vs_previous_best']=row['rmse']-old['records'][-1]['rmse']
+    result['parent_evaluation_sha256']=u.sha(PARENT_REPORT/'evaluation.json')
+    u.write(REPORT/'evaluation.json',result);return result
+
+
+def run():
+    def stop(signum,frame):raise KeyboardInterrupt('Signal '+str(signum))
+    signal.signal(signal.SIGTERM,stop);REPORT.mkdir(parents=True,exist_ok=True)
+    with (REPORT/'run.lock').open('w') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);prepare();children=[];logs=[]
+        try:
+            for family in ['tree','nn']:
+                log=(REPORT/(family+'.log')).open('a');logs.append(log)
+                children.append(subprocess.Popen([sys.executable,'-u',str(Path(__file__)),'--worker',family],
+                    cwd=u.ROOT,stdout=log,stderr=subprocess.STDOUT,start_new_session=True))
+            while any(p.poll() is None for p in children):
+                if any(p.poll() not in [None,0] for p in children):raise RuntimeError('Batch worker failed')
+                u.write(REPORT/'status.json',dict(state='running',utc=dt.datetime.now(dt.timezone.utc).isoformat(),
+                    workers={family:dict(pid=p.pid,returncode=p.poll()) for family,p in zip(['tree','nn'],children)}))
+                time.sleep(30)
+            if any(p.returncode for p in children):raise RuntimeError('Batch worker failed')
+            summarize();u.write(REPORT/'status.json',dict(state='complete'))
+        except BaseException as error:
+            for p in children:
+                if p.poll() is None:os.killpg(p.pid,signal.SIGTERM)
+            for p in children:
+                try:p.wait(timeout=10)
+                except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGKILL);p.wait()
+            u.write(REPORT/'status.json',dict(state='failed',error=repr(error)));raise
+        finally:
+            for log in logs:log.close()
+
+
+if __name__=='__main__':
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--prepare',action='store_true')
+    ap.add_argument('--worker',choices=['tree','nn']);ap.add_argument('--verify-family',choices=['tree','nn'])
+    ap.add_argument('--verify-scores',action='store_true');args=ap.parse_args();os.nice(10);configure()
+    if args.prepare:prepare()
+    elif args.worker:n.worker(args.worker)
+    elif args.verify_family:verifier.replay(args.verify_family)
+    elif args.verify_scores:verifier.score()
+    else:run()
