@@ -13,3 +13,7 @@ The candidate uses upstream's existing lazy per-day cache instead of materializi
 Mapped jobs may run alongside the sequential native queue because they write to separate directories. They never copy outputs into the original wrapper's directory during its whole-directory receipt scan. The mapped worker watches both process groups' memory, disk space and its own memory; resource guards stop only its owned process group and retain incomplete output. Start with `tsvdx5-150o` to regenerate the missing ProbeX snapshots and fulltrain/qual predictions. Subsequent dependent jobs require explicit verified artifact integration, not unreceipted copying.
 
 The overall target remains recovered qualifying RMSE below 0.85725 on both groups. No qualifying audit is performed by these scripts.
+
+## Full-data epoch-6 comparison
+
+The local mapped tsvdx5-150o epoch-6 ProbeX snapshot matches our earlier freshly trained native remote snapshot bit for bit across all1,128,164 float32 values. Both complete NPY files have SHA256 `e25212cee6242dd7342f91ca4a48ac70c718b439ceee497c69d0805ea9d74996`. The comparison revalidated the remote transfer manifest, native source/command receipt, array content hash and all ProbeX metadata alignment hashes. Evidence: `experiments/full-upstream-reproduction/mapped-training/epoch06-fullscale-comparison.json`. This is a partial-snapshot diagnostic, not a completed local native-job receipt or a qualifying score. Neither recovered outcomes nor downloaded public prediction features were used.
