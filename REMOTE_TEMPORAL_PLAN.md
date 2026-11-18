@@ -28,13 +28,22 @@ determine whether to launch the next queued model.
 | 3, capacity stretch | `tsvdx4-4800lm` | High-capacity low-memory temporal regime; 27 epochs per phase | 35.35 GB |
 | 3a, after stretch parent | `tsvdx4-4800lm__knns` | Residual support-neighborhood chain, reusing its receipt-verified parent | Measure actual peak |
 | 3b, after stretch parent | `tsvdx4-4800lm__knnf` | Factor-neighborhood chain, reusing the same parent | Measure actual peak |
-| Fallback | `bknbrx-50` | A complete cheaper neighborhood recipe when another temporal parent cannot fit the remaining time; 25 epochs per phase | Measure actual peak |
+| First fallback, profile first | `cfnade-12` | A new autoregressive family at 40 hidden units/rank 12, 40 epochs per phase; substantially smaller than the rejected 320-hidden/rank-96 preset | Measure actual peak |
+| Second fallback | `bknbrx-50` | A complete cheaper neighborhood recipe when another temporal parent cannot fit the remaining time; 25 epochs per phase | Measure actual peak |
 
 The stretch model has a lower RAM bound than the 300-factor dense model
 because its low-memory implementation uses a different parameterization.
 The 4800 name is not evidence it will train quickly. These are decimal GB
 **lower bounds**, not measured peak RAM or promises of fitting. Leave at least
 20% physical RAM for other allocations/OS and enforce the pressure guard.
+
+Planning revision before new training results: the source also exposes the
+small canonical CF-NADE preset. The 96-preset's 50-hour projection does not
+establish the smaller preset's runtime. Profile `cfnade-12` at its actual
+40-hidden/rank-12 settings before rejecting the whole family. The released
+epoch-40 diagnostic improved the earlier ridge by 0.000239, so it is a lower
+priority than the main temporal work but a useful new-family fallback. This
+is one fixed native recipe, not a capacity sweep or permission to retry 96.
 
 Released-vector diagnostics against the older 0.86632007 ridge suggested
 bundle improvements of about 0.00134 for 150o and 0.00164 for 4800lm. The
@@ -78,7 +87,8 @@ Estimate both phases plus inference/export from measured timings, using at
 least a 1.5x time margin and a 30-minute export allowance. Include memory
 growth and the larger fulltrain user/day population in the estimate. If the
 primary clearly cannot complete by the training cutoff, stop it early,
-preserve partials as a failed feasibility finding, and try the fallback.
+preserve partials as a failed feasibility finding, and try the first feasible
+fallback. Do not rerun the large CF-NADE preset.
 Do not let an obviously infeasible primary consume the whole window.
 
 For subsequent parents, perform a bounded feasibility profile **before**
@@ -97,9 +107,16 @@ No optimizer checkpoint/resume is assumed. Snapshot prediction files are not
 resumable model state.
 
 If 300 fails its cost gate, assess the stretch model; if stretch also cannot
-fit, try the fallback. If 300 succeeds, assess stretch next. After a stretch
+fit, profile and try `cfnade-12`, then `bknbrx-50`. If 300 succeeds, assess stretch next. After a stretch
 parent completes, prefer its cheap compatible chains over another large
-parent. After all feasible temporal work, run the fallback if time remains.
+parent. After all feasible temporal work, run feasible fallbacks in that order
+if time remains. For CF-NADE, a faithful two-epoch profiling command uses the
+already-built `cfnade-new --test --hidden 40 --rank 12 --epochs 2 --data x`
+with no `--save`, under a 20-minute cap and from the native fresh checkout.
+Record the modified profiling budget separately; only the complete canonical
+`--run-job cfnade-12` earns a full native receipt. Include fulltrain and all
+40 epochs per phase in its time projection; do not extrapolate from capacity
+ratios alone.
 Skip any already-receipted job only after verifying all of its hashes.
 
 If every remaining item fails a documented feasibility gate, stop rather
@@ -122,6 +139,7 @@ PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_remot
 .venv/bin/python scripts/upstream_repro.py --plan-job tsvdx5-300
 .venv/bin/python scripts/upstream_repro.py --plan-job tsvdx4-4800lm__knns
 .venv/bin/python scripts/upstream_repro.py --plan-job tsvdx4-4800lm__knnf
+.venv/bin/python scripts/upstream_repro.py --plan-job cfnade-12
 .venv/bin/python scripts/upstream_repro.py --plan-job bknbrx-50
 ```
 
@@ -172,8 +190,9 @@ alignment hashes, following the previous transfer contract. Export:
   emitted them; inspect receipts rather than invent filenames. Preserve
   pipeline-kept epochs in any case (150o: 6/16/24; 4800lm: 3/13/21/24).
 - Any completed chain's terminal output.
-- For the fallback, terminal and receipt-bound saved epochs; pipeline-kept
-  epochs include 5/9/17/21. Deduplicate exact terminal/epoch copies by content.
+- For `cfnade-12`, terminal and receipt-bound saved epochs; pipeline-kept
+  epoch 40 duplicates the terminal if numerically identical. For `bknbrx-50`,
+  pipeline-kept epochs include 5/9/17/21. Deduplicate copies by content.
 - Keep component predictions unclipped and label their semantics explicitly.
   Rating predictions are clipped later at ridge input, not during export.
 
