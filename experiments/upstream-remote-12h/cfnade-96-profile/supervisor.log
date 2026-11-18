@@ -1,0 +1,4 @@
+2026-11-18T03:13:09.222747+00:00 launched pid/pgid 1602: env RAYON_NUM_THREADS=8 VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 ./target/release/cfnade-new --test --hidden 320 --rank 96 --epochs 4 --swa-start 3 --eval-every 1 deadline 2026-11-18T03:33:09+00:00
+2026-11-18T03:33:09.367440+00:00 stopping owned group: deadline
+2026-11-18T03:33:09.367500+00:00 SIGTERM to process group 1602
+2026-11-18T03:33:09.964278+00:00 finished state=interrupted-deadline exit=-15 leftover=[]

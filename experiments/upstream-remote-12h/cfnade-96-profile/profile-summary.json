@@ -1,0 +1,25 @@
+{
+  "label": "PROFILING ONLY - modified budget (--test, 4 epochs, swa_start 3, eval every epoch, trainx->probex, no --save). Not a completed pinned recipe; no predictions written or used.",
+  "binary": "cfnade-new built from pinned 49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c with wrapper environment (cargo build --release --bin cfnade-new)",
+  "command": "env RAYON_NUM_THREADS=8 VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 ./target/release/cfnade-new --test --hidden 320 --rank 96 --epochs 4 --swa-start 3 --eval-every 1",
+  "matches_preset_except": ["n_epochs 4 instead of 95", "swa_start 3 instead of 18", "trainx/probex only (no fulltrain/qual phase)"],
+  "started_utc": "2026-11-18T03:13:09Z",
+  "init_done_utc": "2026-11-18T03:13:12Z",
+  "epoch01_reported_utc": "2026-11-18T03:31:24Z",
+  "epoch01_train_seconds": 942.8,
+  "epoch01_wall_seconds_incl_init_and_probex_eval": 1095,
+  "stopped_utc": "2026-11-18T03:33:09Z",
+  "stop_reason": "20-minute profiling deadline (SIGTERM, exited within 1 s, no leftover processes)",
+  "cpu_utilisation": "~99% of one core (CF-NADE fit_epoch is single-threaded; no rayon in src/cfnade.rs); RAYON/thread settings do not help",
+  "peak_rss_mb": 4066,
+  "swap_growth_mb": 0,
+  "preds_new_unchanged": true,
+  "projection": {
+    "per_phase_train_only_hours": 24.9,
+    "both_phases_lower_bound_hours": 49.8,
+    "conservative_1p5x_plus_30min_hours": 75.2,
+    "remaining_training_budget_at_decision_hours": 9.47,
+    "decision": "cfnade-96 full recipe NOT launched: does not fit (needs >= ~50 h single-threaded on this M3 Max even before the 1.5x margin)"
+  },
+  "diagnostic_epoch01_probex_rmse": 0.9270
+}

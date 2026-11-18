@@ -48,9 +48,13 @@ commit/push of its status files every 30 min.
 
 | Job | State | Started | Finished | Notes |
 | --- | --- | --- | --- | --- |
-| bknbrx-100 | running | 2026-11-18T03:03:00Z | | `UPSTREAM_REPRO_THREADS=8 UPSTREAM_REPRO_BLAS_THREADS=1`; native config n_epochs 5, seed 42, Hogwild, n_threads 8 (unpatched) |
-| cfnade-96 | not started | | | conditional on measured cost fitting before 12:31Z |
+| bknbrx-100 | **completed**, exported | 2026-11-18T03:03:00Z | 2026-11-18T03:12:05Z | 9.1 min, peak group RSS 9.98 GB, no swap; all 13 receipt hashes verified; terminal/ep01/ep05 NPZ in `experiments/upstream-remote-12h/outputs/` |
+| cfnade-96 | **not launched (does not fit)** | | | bounded profile 03:13–03:33Z: epoch-1 train 942.8 s single-threaded, 4.1 GB; ≥50 h for both phases vs 9.5 h budget |
 
 ## Log
 
 - 03:01Z start; 03:03Z bknbrx-100 launched (trainx => probex phase).
+- 03:12Z bknbrx-100 completed (trainx 5 epochs ~54 s each, probex 0.90551; fulltrain 5 epochs). Exported and pushed.
+- 03:13Z CF-NADE profile (`--test`, 4-epoch/swa 3, no `--save`) under 20-min supervisor deadline. First attempt 03:12:43Z failed exit 127 (cfnade-new binary not yet built; record kept in `cfnade-96-profile-attempt0-missing-binary/`); built with wrapper env and relaunched.
+- 03:31Z epoch 1: 942.8 s train (99% of one core). 03:33Z profile stopped at deadline (SIGTERM, clean, no leftovers, `preds_new` unchanged).
+- Decision: cfnade-96 full recipe not launched. Coordinator control bank (M1 receipts, rbmx2-150 chain) is not present here, so no in-place evaluation. See `REMOTE_12H_HANDOFF.md`.
