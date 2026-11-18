@@ -58,3 +58,21 @@ commit/push of its status files every 30 min.
 - 03:13Z CF-NADE profile (`--test`, 4-epoch/swa 3, no `--save`) under 20-min supervisor deadline. First attempt 03:12:43Z failed exit 127 (cfnade-new binary not yet built; record kept in `cfnade-96-profile-attempt0-missing-binary/`); built with wrapper env and relaunched.
 - 03:31Z epoch 1: 942.8 s train (99% of one core). 03:33Z profile stopped at deadline (SIGTERM, clean, no leftovers, `preds_new` unchanged).
 - Decision: cfnade-96 full recipe not launched. Coordinator control bank (M1 receipts, rbmx2-150 chain) is not present here, so no in-place evaluation. See `REMOTE_12H_HANDOFF.md`.
+
+## Extension (user-approved 2026-11-18 ~03:45Z)
+
+After the original assignment finished early, the user approved continuing
+inside the same 12 h window: train further candidates from
+`experiments/upstream-missing-screen/recipe-costs.json`, same rules (pinned
+source, fresh receipts, supervisor deadline 13:01:05Z, no new native job after
+12:31:05Z, one native job at a time). The 10% target can't be measured here
+(control bank absent); exports go to the coordinator for evaluation.
+
+Order: `tsvdx5-150o` (rank 7, released-vector diagnostic −0.00134; 25 epochs,
+150 factors, ordinal; kept ep06/16/24), then `bknbrx-50` (rank 21, −0.00075;
+25 epochs; kept ep05/09/17/21). Continue with further feasible candidates if
+time remains. `tsvdx5-150o` runs as the real pinned job; if its projected time
+from the first epochs doesn't fit, it is stopped and partial outputs are moved
+aside (not deleted).
+
+- 03:49Z `tsvdx5-150o` launched (`scripts/remote12h_launch.sh`, tmux `r12-tsvdx5-150o`).
