@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T21:21:19.201880+00:00",
+  "job": "dnn-24__dnn-16p50",
+  "receipt_sha256": "65ab0dbeb2d837c5ad21252272dc9f2ef233c9b8eb4f83f45e31a9547081d813",
+  "outputs_verified": 5,
+  "paired_files": {
+    "probex": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-16p50.probex.npy",
+    "qual": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-16p50.qual.npy"
+  },
+  "paired_sha256": {
+    "probex": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+    "qual": "2b7ed37dd516a291aeee125d382b663fcfbae926783fe495f72c44e79fe7a7b3"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_command_matches_registry": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Completed fresh native two-phase DNN16 model, all native output hashes checked. No qualifying quality or final-ensemble claim."
+}

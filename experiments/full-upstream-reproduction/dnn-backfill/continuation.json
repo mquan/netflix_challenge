@@ -1,0 +1,33 @@
+{
+  "endpoints": [
+    "dnn-24__asym-16p75__knn3",
+    "dnn-24__dnn-16__knn3",
+    "dnn-24__dnn-16p50__asym-16p50",
+    "dnn-24__dnn-16p50__asym-16p75__knn3b",
+    "dnn-24__dnn-16p50__asym-16p75__knn3c",
+    "dnn-24__dnn-24p50"
+  ],
+  "script_sha256": "065d6b2446a1ad973c2d35682ae15b8ec288651824004446c1a829b092a00c78",
+  "previous_operational_state": {
+    "state": "complete",
+    "endpoints": [
+      "rbmx2-40__knn3",
+      "tsvdx4-60__knns",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50__knn3"
+    ],
+    "completed": [
+      "rbmx2-40__knn3",
+      "tsvdx4-60__knns",
+      "dnn-24__knn3",
+      "dnn-24__dnn-16p50__knn3"
+    ],
+    "current": null,
+    "pid": 52511,
+    "rss_bytes": 1555120128,
+    "other_training_rss_bytes": 14376321024,
+    "disk_free_bytes": 150608818176,
+    "heartbeat": "2026-11-18T21:29:58.453469+00:00"
+  },
+  "scope": "Same isolated native tree, exclusive original backfill lock. Six fixed published endpoints needed by the 85-column bank. Completed parents alone are reused."
+}
