@@ -1,0 +1,6 @@
+
+thread 'main' (27647908) panicked at src/bin/tx-storage-parity.rs:83:13:
+assertion `left == right` failed: prediction: nf=1, low_mem=false, full_su=false, ordinal=false, bug=false, neighbors=0 epoch 0 row 0
+  left: 1077797854
+ right: 1077797856
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

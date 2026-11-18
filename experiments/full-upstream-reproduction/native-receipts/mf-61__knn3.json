@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "mf-61__knn3",
+  "command": "cargo build --release --bin mf-new && ./target/release/mf-new mf-61__knn3",
+  "started": "2026-11-18T16:25:53.197083+00:00",
+  "finished": "2026-11-18T16:31:16.408390+00:00",
+  "outputs": {
+    "preds_new/mf-61__knn3.out": "1093c5cc6182aed99b411fdc30207635952a3fb74b2090b12c6dd532b423521f",
+    "preds_new/mf-61__knn3.probex.npy": "2f1f720910059f1a8dc9464afd30dcc3bcb7410802928805693c806c7126b7d0",
+    "preds_new/mf-61__knn3.qual.npy": "1804e04226be3ea3c368a723ba3b9693b5e71ced40ac54418985446a4f8fe59f"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

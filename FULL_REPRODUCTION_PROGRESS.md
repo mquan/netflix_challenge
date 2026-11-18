@@ -2,8 +2,8 @@
 
 Goal: verified recovered qualifying RMSE below 0.85725 using freshly trained outputs. No other laptop is assumed available.
 
-Current state: **waiting_for_owned_initial_chain**; current native job: `mf-61__knn3`.
-Completed native jobs on this machine: 9. Registry: 201 jobs / 188 final input columns.
+Current state: **training**; current native job: `mf-60`.
+Completed native jobs on this machine: 13. Registry: 201 jobs / 188 final input columns.
 
 The full exact source DAG is the work list. Completed remote ProbeX exports do not stand in for missing native fulltrain/qual or parent-training artifacts. Resource-limited jobs remain in the inventory for the memory-compatible backend; no smaller factor count is substituted.
 

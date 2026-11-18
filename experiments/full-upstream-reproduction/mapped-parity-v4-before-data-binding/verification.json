@@ -1,0 +1,48 @@
+{
+  "executable_sha256": "fa3ca7847bd0cd73dede09c1af1ec2ad0f9967ce2930c4772b01826d67d263b2",
+  "preparation": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "patch_sha256": "216669f38ad28f0dbb13a7af1f9b7a797442fa248b44e2c66baf99dd9881bd08",
+    "support": {
+      "parity.rs": "b90ca97d1fb9fa3a4700f77dc4512187487544ab265b51ad7a051114f3a74e84",
+      "storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d"
+    },
+    "generated": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d",
+      "src/lib.rs": "d71776e11dc3ffe6f1c54c6d301b1442bc087a2d00066ca117abe51fb08c4de6",
+      "src/bin/tx-storage-parity.rs": "b19740a118d6c9d605c8c3c8945dc15d61d742fb79730bada257f69e6f6b88fd",
+      "Cargo.toml": "d9fa51dd2d57db00c4fb0532a672d9209d9430e5b0b0353d8f71a45fdf7d9087"
+    },
+    "note": "Isolated candidate only. No production claim before bitwise parity and full-scale resource validation."
+  },
+  "arms": [
+    {
+      "arm": "heap-cached",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "heap-lazy",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "mapped-cached",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "mapped-lazy",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    }
+  ],
+  "pass_all": true,
+  "scope": "Synthetic bitwise arithmetic and 72 MB backing-file persistence; full-scale training resource validation remains required."
+}

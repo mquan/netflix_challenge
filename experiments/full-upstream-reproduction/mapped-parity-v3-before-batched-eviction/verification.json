@@ -1,0 +1,40 @@
+{
+  "executable_sha256": "bca8b31c527d5848b43a1a21be2fdc602f38c4070f2c58dde0413e1f689d465c",
+  "preparation": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "patch_sha256": "2201dc55f2603b34faa85247d76afc560b0a79564ebc29b844779baa41ecea0b",
+    "support": {
+      "parity.rs": "c6fd44d67c2db0319ecef14aecb412bb72792d2c6008640244c93692805dd393",
+      "storage.rs": "9635e191a8f77e77022effb70373f6fd44aafc196200de38d2bf9f2472f7b83a"
+    },
+    "note": "Isolated candidate only. No production claim before bitwise parity and full-scale resource validation."
+  },
+  "arms": [
+    {
+      "arm": "heap-cached",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "heap-lazy",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "mapped-cached",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "mapped-lazy",
+      "exit_code": 0,
+      "log_sha256": "097dc228187f6d3b33ed50f5dbc624ba9ccc470412e4a67b82f58cf285685a7c",
+      "tail": "PASS: 288 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    }
+  ],
+  "pass_all": true,
+  "scope": "Synthetic bitwise arithmetic and 72 MB backing-file persistence; full-scale training resource validation remains required."
+}

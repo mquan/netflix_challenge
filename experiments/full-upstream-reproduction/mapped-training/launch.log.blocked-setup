@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_mapped_job.py", line 141, in <module>
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('job',choices=sorted(ALLOWED));run(ap.parse_args().job)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_mapped_job.py", line 118, in run
+    if child.returncode:raise RuntimeError('Native mapped execution failed: '+str(child.returncode))
+RuntimeError: Native mapped execution failed: 1

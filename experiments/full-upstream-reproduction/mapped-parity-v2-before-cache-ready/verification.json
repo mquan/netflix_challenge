@@ -1,0 +1,39 @@
+{
+  "executable_sha256": "16fd43f3ed70f5efebcda890f849e9a5ed0ce0f403468f8792fcf5e7af410d69",
+  "preparation": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "patch_sha256": "e797520c1693de563be17db160cb11f6d184d189a4ce0ada4525827c4b17e600",
+    "support": {
+      "parity.rs": "dbc715d23fdd9901548b48d2eb07c2ac8b810bc5d405a376cc132d007a5b190b",
+      "storage.rs": "9635e191a8f77e77022effb70373f6fd44aafc196200de38d2bf9f2472f7b83a"
+    },
+    "note": "Isolated candidate only. No production claim before bitwise parity and full-scale resource validation."
+  },
+  "arms": [
+    {
+      "arm": "heap-cached",
+      "exit_code": 0,
+      "log_sha256": "52d462bfc24772d77315c0bf1b55de80b187873c3877c10b7acc0ba376b842c4",
+      "tail": "PASS: 128 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "heap-lazy",
+      "exit_code": 101,
+      "log_sha256": "9d5053206ae0fe1ac0de8649e8ea4acccb59a2451dfb388d15b6239d95aa34fb",
+      "tail": "\nthread 'main' (27647908) panicked at src/bin/tx-storage-parity.rs:83:13:\nassertion `left == right` failed: prediction: nf=1, low_mem=false, full_su=false, ordinal=false, bug=false, neighbors=0 epoch 0 row 0\n  left: 1077797854\n right: 1077797856\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+    },
+    {
+      "arm": "mapped-cached",
+      "exit_code": 0,
+      "log_sha256": "52d462bfc24772d77315c0bf1b55de80b187873c3877c10b7acc0ba376b842c4",
+      "tail": "PASS: 128 cases; initialization plus five epochs; bitwise parameters, row/grouped predictions, components\n"
+    },
+    {
+      "arm": "mapped-lazy",
+      "exit_code": 101,
+      "log_sha256": "1e8477cdf57957ff98170a8f41a170a6436b340f5d8ec7553c2b875995c63a72",
+      "tail": "\nthread 'main' (27647917) panicked at src/bin/tx-storage-parity.rs:83:13:\nassertion `left == right` failed: prediction: nf=1, low_mem=false, full_su=false, ordinal=false, bug=false, neighbors=0 epoch 0 row 0\n  left: 1077797854\n right: 1077797856\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+    }
+  ],
+  "pass_all": false
+}
