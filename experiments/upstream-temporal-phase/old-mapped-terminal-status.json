@@ -1,0 +1,33 @@
+{
+  "state": "incomplete_preserved",
+  "job": "tsvdx5-150o",
+  "started": "2026-11-18T16:41:09.659144+00:00",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "storage": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "patch_sha256": "216669f38ad28f0dbb13a7af1f9b7a797442fa248b44e2c66baf99dd9881bd08",
+    "support": {
+      "parity.rs": "b90ca97d1fb9fa3a4700f77dc4512187487544ab265b51ad7a051114f3a74e84",
+      "storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d"
+    },
+    "generated": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d",
+      "src/lib.rs": "d71776e11dc3ffe6f1c54c6d301b1442bc087a2d00066ca117abe51fb08c4de6",
+      "src/bin/tx-storage-parity.rs": "b19740a118d6c9d605c8c3c8945dc15d61d742fb79730bada257f69e6f6b88fd",
+      "Cargo.toml": "d9fa51dd2d57db00c4fb0532a672d9209d9430e5b0b0353d8f71a45fdf7d9087",
+      "data/qual_ratings/qual_ratings.csv.gz": "b54d30be5426366c38db447f4f7b169c23eba6450c9e06c3bfcbb6e4f30411cc"
+    },
+    "note": "Isolated candidate only. No production claim before bitwise parity and full-scale resource validation."
+  },
+  "parity_sha256": "56997530516d29c7c6e3f0a7c1507e568e579df3bcf1ac4445aac77071dd5b7b",
+  "regular_tree_outputs_modified": false,
+  "heartbeat": "2026-11-18T19:33:39.552892+00:00",
+  "pid": 23660,
+  "rss_bytes": 9471361024,
+  "other_native_rss_bytes": 1916010496,
+  "peak_rss_bytes": 12981010432,
+  "disk_free_bytes": 165825347584,
+  "error": "KeyboardInterrupt('Signal 15')"
+}
