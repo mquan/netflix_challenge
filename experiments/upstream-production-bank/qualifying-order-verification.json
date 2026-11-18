@@ -1,0 +1,15 @@
+{
+  "rows": 2817131,
+  "all_user_item_date_identities_equal": true,
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "verifier_sha256": "c3298479639fdd7eb2e1f53e0b9e953fec3938a27f92d7f704f5fea89c56b259",
+  "input_sha256": {
+    "artifacts/upstream-repro/fresh/data/raw/qualifying.txt": "62b3bbc22ff5531a0f61dfa8db658b7cff29da51402da5463f2230b3fbb1532b",
+    "artifacts/upstream-repro/fresh/data/fulltrain/uidx_to_uid.npy": "97bca1706a3c73efa04796c380acf333c8a693249ce7dabb399f185068b02332",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe"
+  },
+  "qualifying_outcomes_read": false,
+  "scope": "All native qualifying row identities equal the original qualifying.txt parse order; independently parsed with Python dates. No ratings or recovered split outcomes read."
+}
