@@ -1,0 +1,15 @@
+# Fixed six-model source extension
+
+This is a separate development experiment after the verified 85-column voting blend (0.8604038556527669 ProbeX RMSE). It adds the six published source recipes already scheduled in the primary native DAG: `cfnade-12`, `attn-32`, `attn-32-t`, `aex-16`, `aex-64`, and `aex-128`. All six remain the main candidate; family-specific ridge screens are diagnostics, not a feature-subset selection procedure.
+
+`upstream_source_extension.py --watch` is running and waits for all six complete, verified native two-phase receipts. Fast polling checks receipt identity and declared file existence. Before any array enters fitting, preparation verifies the full native receipt hashes, both ProbeX and qual shapes/types/finiteness, the pinned source, zero qualifying labels, known ProbeX row identities, the frozen parent cache, and its independent evaluation binding. Partial epoch exports cannot enter. The original 85-column production recipe and its watcher are unchanged.
+
+Preparation runs the fixed five-user-fold ridge screen, retaining control/CFNADE/attention/autoencoder/all-six predictions and per-fold scores. Compensated summation independently checks every screen score. The parent ridge control must match before a result is accepted. The cache has 91 rating predictors, 167 ridge columns, and 227 nonlinear features; the original parent feature order, centering, final ridge intercept and all nested-fold configuration remain unchanged. No recovered qualifying outcomes enter this work.
+
+The watcher prepares data only. Before starting `--worker tree` followed by `--worker nn`, inspect memory and process groups across primary, mapped, backfill, canonical CFNADE, and any production fitter. Both model families require separate process replay, all five fold receipts and independent scoring using the existing nonlinear verifier configured to this experiment. Retain the fixed equal family average and compare to the verified parent on the same users. Do not claim a qualifying result from this development screen.
+
+A later production extension must append the same six paired vectors to the locally rebuilt paired 85-column bank and refit all supervised weights on known ProbeX. It must bind its own complete source receipts, feature schema, nested iteration budgets, saved-model replay and frozen final prediction hash before any recovered-label audit. It must use separate artifacts and reports. The existing 85-column production audit remains the immediate route to testing the target.
+
+The two canonical CFNADE-96 phases and same-trajectory raw-SGD counterpart are a further independent extension, not silently included in these six columns. They require completed canonical receipts and disclosed exact-optimization/checkpoint provenance.
+
+Do not modify the queued extension script or its frozen parent code while the watcher is live. Reports: `experiments/upstream-source-extension/`; prepared data: `artifacts/upstream-source-extension/`. Missing native recipes are a verified wait, not completion of the 0.85725 qualifying target.
