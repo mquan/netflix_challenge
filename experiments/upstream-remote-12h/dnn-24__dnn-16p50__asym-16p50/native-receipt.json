@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "dnn-24__dnn-16p50__asym-16p50",
+  "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16p50__asym-16p50 -p pipeline-new.toml",
+  "started": "2026-11-18T10:43:15.755810+00:00",
+  "finished": "2026-11-18T10:44:35.211493+00:00",
+  "outputs": {
+    "preds_new/dnn-24__dnn-16p50__asym-16p50.fulltrain.npy": "ce844dd14aff619feb1f3eb8765cac4bd4badc5a4bdb7143a1a517ca56d29aca",
+    "preds_new/dnn-24__dnn-16p50__asym-16p50.out": "399022180fb5585bfffd2c7c46bcaacf048f720b88c4dd7452f7d57b31b0d262",
+    "preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy": "1c129b73cee09715dbe59c6f480d31877aad456b7b4a432bd0a1046a214d0c2b",
+    "preds_new/dnn-24__dnn-16p50__asym-16p50.qual.npy": "96f91b355c23c4818943141c835e681c918743363dfdcc47115da90576bd8d6f",
+    "preds_new/dnn-24__dnn-16p50__asym-16p50.trainx.npy": "b553452fe35794b41fa6042edc5001b07420bcc816673d8b1dabd0aba89017ec"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

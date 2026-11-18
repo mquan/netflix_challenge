@@ -1,115 +1,152 @@
 # Remote 12-hour fresh-model assignment: handoff
 
-Branch `research/fresh-models-12h`, plan [REMOTE_12H_PLAN.md](REMOTE_12H_PLAN.md),
-detailed log [REMOTE_12H_PROGRESS.md](REMOTE_12H_PROGRESS.md). Host: Apple M3 Max,
-14 cores, 96 GiB RAM, macOS 27.2.1, checkout `~/workspace/netflix_upstream_repro`.
+Branch `research/fresh-models-12h`. The plan is
+[REMOTE_12H_PLAN.md](REMOTE_12H_PLAN.md) and the full timeline is in
+[REMOTE_12H_PROGRESS.md](REMOTE_12H_PROGRESS.md). Host: Apple M3 Max, 14 cores,
+96 GiB RAM, macOS 27.2.1. Checkout: `~/workspace/netflix_upstream_repro`, which was
+switched from `research/upstream-reproduction` @ db394c1 (already on origin).
 
-## Outcome
+Clock (UTC): start 2026-11-18T03:01:05Z, no new launches after 12:31:05Z, hard
+training stop 13:01:05Z, final deadline 15:01:05Z.
 
-| Job | Status | Wall time | Peak RAM | Deliverable |
-| --- | --- | --- | --- | --- |
-| `bknbrx-100` | **Completed** with a fresh native receipt | 9.1 min (03:03:00–03:12:05Z) | 9.98 GB process group, 0 swap | 3 ProbeX NPZ + manifest |
-| `cfnade-96` | **Not launched**: the measured cost doesn't fit | — | — | Bounded profile (resource-limit finding) |
+## Summary
 
-The clock started at 2026-11-18T03:01:05Z. Training ended at 03:33Z, far
-ahead of the 12:31Z no-new-job cutoff and the 13:01Z hard stop. The rest of the
-budget was left unused because the plan assigns nothing else. **No training
-processes owned by this assignment are running.** The tmux session `remote12h`
-has exited, and no `cfnade-new`, `bknbrx-new`, wrapper or supervisor process
-remains (checked with `ps`).
+- **16 native jobs completed**, each with a fresh receipt. Every receipt
+  output hash was re-verified before export.
+- **25 ProbeX NPZ files, 24 unique vectors**, are in `experiments/upstream-remote-12h/outputs/`.
+  The index with all hashes is `experiments/upstream-remote-12h/transfer-index.json`.
+- **cfnade-96 was not launched.** The measured cost is ≥50 h single-threaded.
+- **No ensemble evaluation was run here.** The coordinator's control bank
+  (the M1 receipts and outputs) is absent from this machine.
+- **No owned processes remain.** All `r12-*` tmux sessions are closed, and
+  `ps` shows no supervisor, wrapper or native model process.
+- Scope extension: after the assigned primary finished early (and CF-NADE was
+  ruled out), the user approved training further candidates from
+  `experiments/upstream-missing-screen/recipe-costs.json` inside the same window.
+  The user asked to continue toward the 10% goal, but that can't be measured
+  here, because the control bank is absent.
 
-## bknbrx-100 (primary)
+## Jobs
 
-- I ran the pinned source `49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c` unmodified,
-  with `validate_fresh()` passing beforehand. Native config: 5 epochs per phase,
-  seed 42, Hogwild, 8 internal threads (not patched). Wrapper environment:
-  `UPSTREAM_REPRO_THREADS=8 UPSTREAM_REPRO_BLAS_THREADS=1`. Rust 1.93.0.
-  Hogwild is nondeterministic, so bitwise reproduction isn't expected.
-- Phase timings came from the timestamped native log. Trainx epochs took about
-  54 s each, and probex reached 0.90551 at 03:07:43Z. The 5 fulltrain epochs
-  ended at 03:12:03Z.
-- I verified all 13 receipt output hashes (12 `.npy` plus `.out`). The native
-  receipt SHA256 is `fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f`.
-- Exports are raw finite float32 arrays of shape (1128164,), in native order and
-  unclipped:
+| Job | Start–finish (UTC) | Native min | Peak group RSS | Kept epochs exported | Diagnostic ProbeX RMSE | Fresh vs released RMS diff |
+| --- | --- | ---: | ---: | --- | ---: | --- |
+| `bknbrx-100` (assigned primary) | 03:03–03:12 | 9.1 | 10.0 GB | 01, 05 (≡ terminal) | 0.905514 | ep05 0.0101 (Hogwild) |
+| `tsvdx5-150o` | 03:50–09:36 | 346.3 | 28.7 GB | 06, 16, 24 | 0.875583 | 6.8e-7 |
+| `bknbrx-50` | 09:37–10:14 | 36.8 | 10.2 GB | 05, 09, 17, 21 | 0.900374 | ep05 8.0e-3, ep17 7.3e-3 (Hogwild) |
+| `mf-60` → `mf-60__knn3` | 10:14–10:22 | 5.3 + 2.5 | 3.5 GB | — | 0.926041 / 0.907782 | 0 / 0 |
+| `als8-8` → `als8-8__knn3` | 10:22–10:29 | 4.2 + 2.7 | 7.9 GB | — | 0.956807 / 0.946445 | 2e-7 / 2e-7 |
+| `dnn-24__dnn-16p50__asym-16p75` | 10:29–10:31 | 1.4 | | — | 0.897370 | no fixture |
+| `…__asym-16p75__knn3b` | 10:31–10:36 | 4.8 | 5.4 GB | — | 0.886205 | 0 |
+| `…__asym-16p75__knn3c` | 10:36–10:39 | 3.6 | 5.1 GB | — | 0.887052 | 0 |
+| `dnn-24__asym-16p75` → `__knn3` | 10:39–10:43 | 1.3 + 2.6 | 4.3 GB | — | 0.901566 / 0.890907 | no fixture / 0 |
+| `dnn-24__dnn-16p50__asym-16p50` | 10:43–10:45 | 1.3 | 3.5 GB | — | 0.901492 | 0 |
+| `dnn-24__dnn-24p50` | 10:45–12:13 | 88.7 | 4.8 GB | — | 0.910467 | 0 |
+| `dnn-24__dnn-16` → `__knn3` | 12:13–12:59 | 42.7 + 2.8 | 5.4 GB | — | 0.917338 / 0.908362 | no fixture / 0 |
 
-| NPZ (`experiments/upstream-remote-12h/outputs/`) | Source NPY SHA256 | NPZ SHA256 | Content SHA256 | Diagnostic ProbeX RMSE |
-| --- | --- | --- | --- | --- |
-| `bknbrx-100.probex.npz` (terminal) | `3e840eb4…30e7ee` | `a6a30251…83e15c` | `0800803c…eab255` | 0.905514 |
-| `bknbrx-100_ep01.probex.npz` | `ba4370e3…3368ae` | `1c5778a2…40e9` | `5db9dd90…bf271` | 0.940372 |
-| `bknbrx-100_ep05.probex.npz` | `3e840eb4…30e7ee` | `a6a30251…83e15c` | `0800803c…eab255` | 0.905514 |
+Notes:
 
-The full hashes are in `experiments/upstream-remote-12h/bknbrx-100/transfer-manifest.json`.
-The **terminal vector and ep05 are identical**, so there are only two unique
-vectors to add (ep01 and ep05/terminal). Deduplicate by content hash.
+- **Swap growth was 0 throughout.** Free memory stayed at or above 85%.
+- The dnn-24 chains reused the receipt-verified local `dnn-24` and
+  `dnn-24__dnn-16p50` parents, which the wrapper verified and skipped.
+  Intermediate parents with no released fixture (`…asym-16p75`, `dnn-24__dnn-16`)
+  are exported too, but they aren't columns of the released bank. Include them
+  only as a separately declared arm.
+- "Fresh vs released" is a post-freeze diagnostic. Released vectors never
+  entered training. A zero diff means the fresh vector is bit-identical to the
+  released one.
+- Standalone RMSEs are diagnostics, not ensemble gains.
+- **Skipped at the launch cutoff:** `mf-61__knn3` and `mf-61__asym-16`. Neither
+  was started, and neither has partial outputs.
 
-- The alignment SHA256s of the native ProbeX arrays are recorded in the manifest.
-  They are: ratings `5a554ca0…a7f2`, user_idxs `d961f596…7b06`, item_idxs
-  `b6e42d9d…a856`, dates `c9555bb4…4f47`. They match `fresh-data-receipt.json`,
-  which is embedded in the manifest.
-- These files were copied to `experiments/upstream-remote-12h/bknbrx-100/`:
-  `native-receipt.json`, `native.log`, `native.out`, `native-log-timestamps.txt`,
-  `resources.jsonl` (60 s samples), `status.json`, `supervisor.log` and
-  `wrapper.out`.
-- An optional diagnostic ran after the exports were frozen, comparing them with
-  the released fixtures (`fixture-comparison.json`). For ep05, fresh scores
-  0.905514 and released scores 0.905493, with RMS difference 0.0101 and
-  correlation 0.99985. For ep01, fresh scores 0.940372 and released scores
-  0.940417. Released vectors were never used as training inputs.
-- Model weights and fulltrain/qual outputs stay in
-  `artifacts/upstream-repro/fresh/preds_new/` on this machine.
+## Per-job transfer contents
 
-## cfnade-96 (conditional second): resource-limit finding
+Each job has a directory `experiments/upstream-remote-12h/<job>/` containing:
+
+- `transfer-manifest.json`: per output, the source NPY SHA256, NPZ SHA256,
+  prediction-content SHA256 and owning native receipt SHA256. It also holds the
+  alignment SHA256s (ratings, user_idxs, item_idxs, dates), the embedded
+  `fresh-data-receipt.json`, the source pin, host details, and the command and
+  environment.
+- `native-receipt.json`, `native.log`, `native.out`.
+- `fixture-comparison.json`.
+
+The supervisor files (`status.json`, `resources.jsonl` sampled every 60 s,
+`supervisor.log` and `wrapper.out`) sit in the directory of the job that was
+launched. For a chain, that is the endpoint's directory. Exports are raw, finite
+float32 arrays of shape (1128164,), in native order and unclipped. Weights and
+fulltrain/qual outputs stay in `artifacts/upstream-repro/fresh/preds_new/` on
+this machine.
+
+The alignment hashes are identical for every job:
+
+| Array | SHA256 |
+| --- | --- |
+| ratings | `5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7` |
+| user_idxs | `d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06` |
+| item_idxs | `b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856` |
+| dates | `c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47` |
+
+## cfnade-96: resource-limit finding
 
 The profile is in `experiments/upstream-remote-12h/cfnade-96-profile/profile-summary.json`.
-It is **profiling only**, with modified budgets: `--test`, 4 epochs, `swa_start` 3,
-trainx/probex only and no `--save`. No predictions were written, and
-`preds_new` was unchanged before and after.
+It is **profiling only**: `--test`, 4 epochs, swa 3, no `--save`, with
+`preds_new` unchanged before and after.
 
-- The binary was built from the pinned source with the wrapper's environment.
-  The first profile attempt (03:12:43Z) failed with exit 127 because the binary
-  didn't exist yet. Its record is kept in `cfnade-96-profile-attempt0-missing-binary/`.
-- Epoch 1 took **942.8 s of training** (about 1095 s wall time including init
-  and probex eval). It used about 99% of one core: `src/cfnade.rs` has no rayon
-  parallelism, so thread settings don't help. Peak RSS was 4.07 GB with no swap.
-  The supervisor stopped the profile at its 20-min deadline, and it exited
-  cleanly on SIGTERM.
-- Projection: training alone takes about 24.9 h per phase, or **≥49.8 h for
-  both phases** (75 h with the plan's 1.5× + 30 min margin). Only 9.47 h of
-  training budget remained, so the full recipe was not launched. Running it
-  needs a dedicated host for about 2–3 days. The two phases are independent in
-  their data, but the pinned recipe runs them one after the other in a single
-  process. Splitting them across hosts would therefore mean a non-pinned
-  invocation.
+- Epoch 1 took **942.8 s** using one core; `src/cfnade.rs` has no rayon
+  parallelism. RSS was 4.1 GB.
+- At 95 epochs × 2 phases, that is ≥49.8 h, or about 75 h with the plan's margin.
+- The full recipe needs a dedicated host for 2–3 days.
+- The first profile attempt failed with exit 127 (binary not yet built). That
+  record is kept in `cfnade-96-profile-attempt0-missing-binary/`.
 
-## Coordinator evaluation
+## Deviation to note
 
-I did **not** run it here. The control bank's inputs aren't on this machine:
-the M1 receipts and outputs for rbmx2-150, the rbmx2-150__knnf chain, the
-expansion parents and the saved snapshots. The plan says not to regenerate the
-baseline. Receiving-side steps, per the plan:
+`tsvdx5-150o`'s measured projection was about 6 h. The plan's strict
+1.5× + 30 min rule gives about 9.5 h, which would have exceeded the 13:01 stop.
+I kept it running anyway, because the timing was measured and the supervisor
+still enforced the hard stop. It finished in 5.77 h.
 
-1. Verify the NPZ, content and receipt hashes and the alignment hashes against
-   `transfer-manifest.json`.
+## Coordinator evaluation (receiving side)
+
+1. Verify the NPZ, content and receipt hashes against each `transfer-manifest.json`,
+   and the alignment hashes against your bank.
 2. Reproduce the controls 0.8677119362283443, 0.8663200739003126 and
    0.866286461848646, each within 1e-9.
-3. Run the arm "latest control + bknbrx-100 {ep01, ep05≡terminal}" (two unique
-   columns), with five user folds (seed 20261116), lambda 1000 and output clip
-   [1.05, 4.95]. Keep the context interactions for the original fourteen only.
-   Report all fold deltas, including negative results.
+3. Run the predeclared arms, deduplicating by content hash and not selecting
+   epochs from fold scores:
+   - control + bknbrx-100 {ep01, ep05}
+   - control + tsvdx5-150o {terminal, ep06, ep16, ep24}
+   - control + bknbrx-50 {terminal, ep05, ep09, ep17, ep21}
+   - control + the released-bank dnn-24 bundle columns (`…asym-16p75__knn3b`,
+     `…__knn3c`, `dnn-24__asym-16p75__knn3`, `…asym-16p50`, `dnn-24__dnn-24p50`,
+     `dnn-24__dnn-16__knn3`)
+   - control + `mf-60`, `mf-60__knn3`
+   - control + `als8-8`, `als8-8__knn3`
+   - control + all of the above
+
+   Use five user folds (seed 20261116), lambda 1000, an unpenalized intercept,
+   native input clipping, output clip [1.05, 4.95], and fourteen-only context
+   interactions. Report every fold delta, including negative ones.
+4. Released-vector diagnostics (against the earlier 0.86632 control, so they are
+   selection evidence only) were: tsvdx5-150o −0.00134, bknbrx-100 −0.00078,
+   bknbrx-50 −0.00075, dnn-24 bundle −0.00052, mf-60 −0.00017, als8-8 −0.00016.
+   These overlap and won't add up. Even all together they are very unlikely to
+   reach the 10% target (≈0.8563 ProbeX-equivalent) from 0.86629. The large
+   remaining gap is in big bundles that don't fit 96 GB or 12 h on this host:
+   tsvdx5-1000/400/300 and tsvdx4-4800lm exceed physical RAM, and the
+   rbmx2-400–800 models are about 15+ h.
 
 ## Restart requirements
 
-- If bknbrx-100 is re-run, `upstream_repro.py --run-job bknbrx-100` verifies and
-  skips the existing receipt.
-- cfnade-96: run `UPSTREAM_REPRO_THREADS=8 UPSTREAM_REPRO_BLAS_THREADS=1 .venv/bin/python -u scripts/upstream_repro.py --run-job cfnade-96`
-  under `scripts/remote12h_supervisor.py`, with a deadline of at least 3 days.
-  The binary is already built. No partial cfnade-96 outputs exist, so the guard
-  won't block a run. Native training can't resume, so an interrupted run means
-  starting over.
-- Tools: `scripts/remote12h_supervisor.py` (deadline/memory/disk-bounded
-  process-group supervisor, tests in `tests/test_remote12h_supervisor.py`, 4
-  OK) and `scripts/remote12h_export.py --job NAME --kept EE ...` (receipt
-  verification, NPZ export and manifest).
-- Before this assignment, the checkout was on `research/upstream-reproduction`
-  @ db394c1, which is already on origin.
+- Every completed job resumes as verified-and-skipped through
+  `upstream_repro.py --run-job`.
+- Next cheap jobs: `mf-61__knn3` and `mf-61__asym-16`. Run them with
+  `scripts/remote12h_queue.sh CUTOFF DEADLINE mf-61__knn3 mf-61__asym-16`.
+- cfnade-96 needs a multi-day supervisor deadline. Its binary is already built.
+  Native training can't resume, so an interrupted run starts over.
+- Tools:
+  - `scripts/remote12h_supervisor.py`: process-group supervisor with deadline,
+    memory and disk limits. Tests are in `tests/test_remote12h_supervisor.py`.
+  - `scripts/remote12h_launch.sh` and `scripts/remote12h_queue.sh`.
+  - `scripts/remote12h_export.py --job NAME [--kept EE ...]`.
+  - `experiments/upstream-remote-12h/fixture_compare.py JOB`.

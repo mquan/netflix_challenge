@@ -85,3 +85,5 @@ aside (not deleted).
 - 10:23Z `als8-8__knn3` chain launched.
 - 10:29Z `als8-8` + `als8-8__knn3` **completed** (0.116 h, peak 7.9 GB; probex 0.95681 / 0.94645). Exported; fixture diagnostic near-exact (RMSE equal to 1e-9).
 - 10:29Z queue started (`scripts/remote12h_queue.sh`, tmux `r12-queue`; no launch after 12:31:05Z, hard stop 13:01:05Z; log `experiments/upstream-remote-12h/queue.log`). Order: dnn-24 residual chains reusing local receipted `dnn-24`/`dnn-24__dnn-16p50` parents (`…__asym-16p75__knn3b`, `…__knn3c`, `dnn-24__asym-16p75__knn3`, `…__asym-16p50`, `dnn-24__dnn-24p50`, `dnn-24__dnn-16__knn3`), then `mf-61__knn3`, `mf-61__asym-16`.
+- 10:35–12:59Z queue: all six dnn-24 residual chains **completed** (fresh vectors bit-identical to released where fixtures exist); `dnn-24__dnn-24p50` 88.7 min and `dnn-24__dnn-16` 42.7 min were the long ones. Last finished 12:58:54Z, before the 13:01:05Z stop. `mf-61__knn3`, `mf-61__asym-16` skipped by the 12:31Z launch cutoff (never started).
+- 13:00Z training over; no owned processes remain. Exported all 9 new receipted jobs; `transfer-index.json` lists 25 exports / 24 unique vectors. Final handoff written.

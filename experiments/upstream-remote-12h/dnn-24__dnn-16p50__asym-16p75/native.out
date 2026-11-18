@@ -1,0 +1,27 @@
+[dnn-24__dnn-16p50__asym-16p75]
+target = "0.75*dnn-24__dnn-16p50"
+AsymConfig { n_feat: 16, n_epochs: 10, seed: 42, shuffle_users: true, lr_ub: 0.0031, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_us: 0.0, reg_i: 0.007, reg_y: 0.04, reg_us: 0.0, sigma_i: 0.005, sigma_y: 0.005, init_with_user_std: false, save_ifeat: false, save_ufeat: false }
+trainx => probex
+Epoch 01 | RMSE 0.90204
+Epoch 02 | RMSE 0.89975
+Epoch 03 | RMSE 0.89844
+Epoch 04 | RMSE 0.89780
+Epoch 05 | RMSE 0.89755
+Epoch 06 | RMSE 0.89733
+Epoch 07 | RMSE 0.89718
+Epoch 08 | RMSE 0.89727
+Epoch 09 | RMSE 0.89743
+Epoch 10 | RMSE 0.89737
+probex RMSE 0.89737
+fulltrain => qual
+Epoch 01 | RMSE 3.71704
+Epoch 02 | RMSE 3.71968
+Epoch 03 | RMSE 3.72131
+Epoch 04 | RMSE 3.72410
+Epoch 05 | RMSE 3.72274
+Epoch 06 | RMSE 3.72096
+Epoch 07 | RMSE 3.72372
+Epoch 08 | RMSE 3.72307
+Epoch 09 | RMSE 3.72502
+Epoch 10 | RMSE 3.72418
+
