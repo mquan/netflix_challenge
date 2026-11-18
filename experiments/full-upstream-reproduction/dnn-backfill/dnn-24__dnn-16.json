@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "dnn-24__dnn-16",
+  "command": "cargo build --release --bin dnn && ./target/release/dnn dnn-24__dnn-16 -p pipeline-new.toml",
+  "started": "2026-11-18T21:44:30.601599+00:00",
+  "finished": "2026-11-18T22:43:24.960633+00:00",
+  "outputs": {
+    "preds_new/dnn-24__dnn-16.fulltrain.npy": "a4e463bd249101514166f860f580f41df54a275cb26c75e239fd5b7d13f2aba4",
+    "preds_new/dnn-24__dnn-16.out": "eaad20d09dacfa1d55151e31e30f92e65e1e30b3fc5a7198e080f28fedb3663f",
+    "preds_new/dnn-24__dnn-16.probex.npy": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+    "preds_new/dnn-24__dnn-16.qual.npy": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431",
+    "preds_new/dnn-24__dnn-16.trainx.npy": "822c63c64317279b75d52d719686f0becbad7a12f06b310cecc5a223ea2c1b7f"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

@@ -1,0 +1,23 @@
+{
+  "state": "verified",
+  "observed": "2026-11-18T22:51:23.392286+00:00",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_receipt_sha256": "a413ce5d4cabfc3561ba0004846724d9997d6b2d0ccc32e41e593cb910672a26",
+  "command_matches_registry": true,
+  "all_receipt_outputs_rehashed": 5,
+  "pairs": {
+    "probex": {
+      "rows": 1128164,
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-16.probex.npy",
+      "sha256": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6"
+    },
+    "qual": {
+      "rows": 2817131,
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-16.qual.npy",
+      "sha256": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431"
+    }
+  },
+  "qualifying_outcomes_all_zero": true,
+  "qualifying_labels_read": false,
+  "scope": "Complete native dependency only; chained endpoint still training and original85-bank coverage remains76. No qualifying score."
+}
