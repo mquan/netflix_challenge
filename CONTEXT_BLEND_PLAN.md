@@ -63,3 +63,7 @@ Fold1 also completed and independently replayed bitwise on 225,899 rows.
 Its fixed-half RMSE is 0.8576817970921646, versus the parent
 0.8578275582131777. Both completed folds improve; the unchanged
 full five-fold comparison is still required. Fold2 is training.
+
+Fold2 completed and independently replayed bitwise on 224,006 rows.
+Fixed-half RMSE 0.8613082334525111, parent 0.8614397078251417.
+All three completed folds improve; folds3/4 and final verification are pending.
