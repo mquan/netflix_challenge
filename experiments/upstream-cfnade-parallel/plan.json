@@ -1,0 +1,66 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_id": "caa746c11ae0070b1615d5594e8edca924a348da88ae743b8938f8a5760cd636",
+  "data_id": "c46870e9892edc2a8ad5a2550a146236e1fbfc8aee7c3f71422bf73ccbf12538",
+  "input_sha256": {
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/user_cnts.npy": "75eaf206be88ca2ada417448c1cec65e447091df057a8d2575c1ca05b50ed755",
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/item_cnts.npy": "a49452ed6f0990fcee74d469facb8d3753ef45de296c6563a4c0b4bf9b11b313",
+    "artifacts/upstream-repro/fresh/data/trainx/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/data/trainx/dates.npy": "0ddc3e91610d2672cc2a7badcd20c5d5bc62b76f4202b4d8859a69c19bd1ff1b",
+    "artifacts/upstream-repro/fresh/data/trainx/is_test.npy": "a2f23d36d5ee76e75355c2dd2297623ce8777e847992cc3fbc85c18583ba744d",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/user_cnts.npy": "a6b1a23c79a9b89012378444e1846429fa302ef7245b4313adf92ee6407f2798",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/probex/item_cnts.npy": "ec522561653d1d7c6d96495e50acbf2988c3f0d2f4a4322c7b68c5ae7feb1475",
+    "artifacts/upstream-repro/fresh/data/probex/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-repro/fresh/data/probex/dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47",
+    "artifacts/upstream-repro/fresh/data/probex/is_test.npy": "98ebe1d7679d4c920efc4005b87ea609d0ce055e06e618a4114022934a80ee63",
+    "artifacts/upstream-repro/fresh/data/fulltrain/user_idxs.npy": "2c05ede890433de83e39633b977fdaf77b1db78fee3d83e4f806b46c856c3754",
+    "artifacts/upstream-repro/fresh/data/fulltrain/user_cnts.npy": "88c48fc169e32e0d63ca3477efea95d2ba435a65855d8a7eb19618347424583d",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_idxs.npy": "e8dd3bd36995c07dccfc47a88d924dc881e9f1ecd1ed7512bbf900b204487a3c",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_cnts.npy": "25d212fab8c0fc7aded9763d068a7c7dde0328cd9f0f759c56159c6527455e97",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "artifacts/upstream-repro/fresh/data/fulltrain/ratings.npy": "760fda5b8c98576e31ff1a86f0fc1df4779dc0a0f7399ca434e651523ddab004",
+    "artifacts/upstream-repro/fresh/data/fulltrain/dates.npy": "4a16cca08c23642e7b18251d11662bb71377b102f3b78defeec2bbfda9c149e3",
+    "artifacts/upstream-repro/fresh/data/fulltrain/is_test.npy": "5146a416333deb550a90046a675e48aa19f422aa40f060ade087968c0080acef",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/user_cnts.npy": "11683c8d524038c81d307ed29431cf47b40ee51f1482da536ea1ec62dc6cd20b",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-repro/fresh/data/qual/item_cnts.npy": "03e05a436f944272cc922597de2417407d15c6e1c7e659cb9fcfe2dc06217158",
+    "artifacts/upstream-repro/fresh/data/qual/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe",
+    "artifacts/upstream-repro/fresh/data/qual/is_test.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5"
+  },
+  "canonical_reference_command": "cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-96",
+  "execution_commands": {
+    "x": [
+      "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage",
+      "x"
+    ],
+    "qual": [
+      "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage",
+      "qual"
+    ]
+  },
+  "semantics": "Each independent phase calls the same pinned fit driver with original 320/96/95 preset; no shared learning state. Phase-1 fit2 loop and generic fit have the same model initialization, epoch updates and saved predictions.",
+  "proof_sha256": "431ebc726b21f06ef346f5db4b825edafc1a33cbe15c48825cf5b8563d3ac623",
+  "runner_sha256": "355bc3d1a2a58fa9f12e2086a54fc18bb860e499212f4ef3e2887b0a2b6dd2f3",
+  "common_script_sha256": "697682c0f2ccffb8f58b2dfb49de0c5162e0df5dbfe88610849db9037ca1c64e",
+  "support_sha256": {
+    "stage.rs": "70bf09d5a9447a5a2d69ac794ce44bdca9324039633af01aab649443e7ea2a62",
+    "export_raw.rs": "b3d518f98e92ac91c8f8625329895bc1a4cd4ba56676b15edc8c8c9fa29307cd"
+  },
+  "binaries": {
+    "cfnade-stage": "2db49b1028e4da8ec21a164afff8fd3736f8a1e26e9d919c7b8adee99a3d6481",
+    "cfnade-export-raw": "0a994563532a01872b00d728bdc9824204dc760750fbdad44ab9fbb61efda95a"
+  },
+  "hidden": 320,
+  "rank": 96,
+  "epochs_per_phase": 95,
+  "qualifying_outcomes_zero": true
+}

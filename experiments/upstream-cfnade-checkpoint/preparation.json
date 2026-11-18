@@ -1,0 +1,18 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "script_sha256": "e761994efd6712686ac20fe06f65e3e1a326227a34b4c903c7d465d670a8da35",
+  "base_script_sha256": "6df549d4d1fd83bb0b4d0cb1fb48868a8905f104d6392e51b6cab2a353243531",
+  "patch_sha256": "b3eca8b1727cc7c6c294501e0af9b0b2205029de3ef95a7389d90f11e125ceea",
+  "files": {
+    "src/cfnade.rs": "11b4fee8d44e74e125ae9999d538ac7467a5402a680333b24b86c314f14434e0",
+    "src/cfnade_original.rs": "dff5625edcb84fb1c630428f17876deba3abd1ce91b1c2118df3fcc2e3951ca7",
+    "src/cfnade_kernels.rs": "f66852552752b98b753bed7ad791c2cd6ebd87afec8a7032e2de7ee5e26b83da",
+    "src/cfnade_checkpoint.rs": "c8da4f934c6c86ec029ca47fac8d565e8d1e64ce0ac2b67f1c56db13aa905894",
+    "src/lib.rs": "ca1f2c49b481fe70990f2a41b47f3eb39fdd1cea045214f4d39c2f027f866704",
+    "Cargo.toml": "c6fe51fbb1ab2f54bd7cc11a0b945efcee64d5e04d5b6632ff7f381d02aba543",
+    "src/bin/cfnade-fast-parity.rs": "ca437e13a5aa322ce8a3f7ddf01b88fc3cc2f1a44f40402e91d4767f07b83b9f",
+    "src/bin/cfnade-checkpoint-proof.rs": "4dd1af6923d4263e6b2ef3716f8b6e9a109b5cefd9c03d83b2aa3e88c0826405"
+  },
+  "scope": "Exact arithmetic, explicit same-ChaCha12 RNG stream, per-phase writer locks, identity/hash/shape checks, atomic bounded state checkpoints.",
+  "cargo_lock_sha256": "5f0fa4f44a989579cb348566ce5e5ee517f0a0bc7b88187b0e8f5cb1cbdfba2a"
+}

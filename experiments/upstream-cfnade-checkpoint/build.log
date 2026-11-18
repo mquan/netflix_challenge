@@ -1,0 +1,19 @@
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/source)
+warning: unused import: `Path`
+ --> src/bin/cfnade-checkpoint-proof.rs:4:17
+  |
+4 | use std::path::{Path,PathBuf};
+  |                 ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `main` is never used
+  --> src/bin/cfnade-fast-parity.rs:42:4
+   |
+42 | fn main(){
+   |    ^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `netflix_prize` (bin "cfnade-checkpoint-proof") generated 2 warnings (run `cargo fix --bin "cfnade-checkpoint-proof" -p netflix_prize` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 1m 17s

@@ -1,0 +1,63 @@
+{
+  "pass_all": true,
+  "preparation": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "script_sha256": "1fc1b22dcff03edefcf2b2ff9ec2aba5cbbc1a8933ffe8dfaf1137a5fff4da41",
+    "base_script_sha256": "6df549d4d1fd83bb0b4d0cb1fb48868a8905f104d6392e51b6cab2a353243531",
+    "patch_sha256": "b3eca8b1727cc7c6c294501e0af9b0b2205029de3ef95a7389d90f11e125ceea",
+    "files": {
+      "src/cfnade.rs": "11b4fee8d44e74e125ae9999d538ac7467a5402a680333b24b86c314f14434e0",
+      "src/cfnade_original.rs": "dff5625edcb84fb1c630428f17876deba3abd1ce91b1c2118df3fcc2e3951ca7",
+      "src/cfnade_kernels.rs": "f66852552752b98b753bed7ad791c2cd6ebd87afec8a7032e2de7ee5e26b83da",
+      "src/cfnade_checkpoint.rs": "498fe6397d053c746ca702f39ee18a18bf04bdc7837958c11268640210923ea9",
+      "src/lib.rs": "ca1f2c49b481fe70990f2a41b47f3eb39fdd1cea045214f4d39c2f027f866704",
+      "Cargo.toml": "c6fe51fbb1ab2f54bd7cc11a0b945efcee64d5e04d5b6632ff7f381d02aba543",
+      "src/bin/cfnade-fast-parity.rs": "ca437e13a5aa322ce8a3f7ddf01b88fc3cc2f1a44f40402e91d4767f07b83b9f",
+      "src/bin/cfnade-checkpoint-proof.rs": "f5b8dca7b836c8a824bd6d8e18583238c8f91508a69eb52c51157e753159ea89"
+    },
+    "scope": "Exact arithmetic, explicit same-ChaCha12 RNG stream, per-phase writer locks, identity/hash/shape checks, atomic bounded state checkpoints.",
+    "cargo_lock_sha256": "5f0fa4f44a989579cb348566ce5e5ee517f0a0bc7b88187b0e8f5cb1cbdfba2a"
+  },
+  "checks": [
+    {
+      "name": "parity",
+      "exit_code": 0,
+      "expected": 0,
+      "pass_check": true,
+      "log_sha256": "a5bbe62d74e6da6b70d251f19a181123dd409b1a2d2a3032c6b17a6877858b51"
+    },
+    {
+      "name": "create",
+      "exit_code": 73,
+      "expected": 73,
+      "pass_check": true,
+      "log_sha256": "c1cf727a3069a9fbe2bc3c7bb8294a1a84600f5f0a4e4e646510d0eaedc7301b"
+    },
+    {
+      "name": "resume",
+      "exit_code": 0,
+      "expected": 0,
+      "pass_check": true,
+      "log_sha256": "1e3c1dbbcc84ed566c19e312179ad026a29f6248165e4e2539d1967d4617f128"
+    },
+    {
+      "name": "identity-rejected",
+      "exit_code": 101,
+      "expected": 1,
+      "pass_check": true,
+      "log_sha256": "3d0d63067c880bf7869574d15fc3c60c45cbd404eb3890c2ba9ad6d10b62b1f0"
+    },
+    {
+      "name": "tamper-rejected",
+      "exit_code": 101,
+      "expected": 1,
+      "pass_check": true,
+      "log_sha256": "83b711af17967a0e74412894258d57c738671e0d2fca3509caadea973c351a63"
+    }
+  ],
+  "binaries": {
+    "cfnade-fast-parity": "b283cdd31fe7f62a4e5787d2687c302993b4c52a77f7534cec1a522e3418a217",
+    "cfnade-checkpoint-proof": "5151b30ac727247a8b287c941772bf537a4602a1b06cab3f8f0dc39e73866399"
+  },
+  "checkpoint_proof_directory": "artifacts/upstream-cfnade-checkpoint/checkpoint-proof-0f51293fbd2f4fbe9f2cb5329c5f4cf4"
+}

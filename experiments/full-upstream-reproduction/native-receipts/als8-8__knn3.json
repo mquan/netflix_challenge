@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "als8-8__knn3",
+  "command": "cargo build --release --bin als8-new && ./target/release/als8-new als8-8__knn3",
+  "started": "2026-11-18T17:10:48.210128+00:00",
+  "finished": "2026-11-18T17:16:36.022360+00:00",
+  "outputs": {
+    "preds_new/als8-8__knn3.out": "79fafc4088900e5ed3766d61b7903056a421bd1e146064bc843c941e1e0c92f0",
+    "preds_new/als8-8__knn3.probex.npy": "8892ecb6aa638516c2a6f9f19195dbae091a16b4382a89c3797e18c125650784",
+    "preds_new/als8-8__knn3.qual.npy": "4250f130352e5ffb1d91909daa536349d77a6dbf73151445391998c094b4b15a"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

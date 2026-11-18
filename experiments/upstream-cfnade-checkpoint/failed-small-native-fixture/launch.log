@@ -1,0 +1,11 @@
+Cloning into '/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/source'...
+done.
+HEAD is now at 49c9b36 split_1: 148 base columns, the snapshot FWLS fwls46k8; s1 quiz 0.858050
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_checkpoint.py", line 132, in <module>
+    if __name__=='__main__':verify()
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_checkpoint.py", line 118, in verify
+    execute('cfnade-checkpoint-proof',['create'],'create',dict(extra,CF_EXIT_AFTER_CHECKPOINT='3'),expect=73,cwd=scratch)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_checkpoint.py", line 113, in execute
+    if not passed:raise ValueError('Checkpoint stage failed: '+name)
+ValueError: Checkpoint stage failed: create
