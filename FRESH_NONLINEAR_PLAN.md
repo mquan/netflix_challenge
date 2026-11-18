@@ -75,3 +75,9 @@ The final receipt reports float32-rescored overall/fold scores, paired changes
 from the control, and prediction hashes. All three comparisons run to completion
 regardless of another arm's score; runtime failures stop the runner and preserve
 artifacts. Further claims require a separate production/refit audit.
+
+After completion run `.venv/bin/python scripts/verify_upstream_nonlinear.py`.
+It reloads every saved model in separate family processes, requires bitwise
+prediction replay, independently scores the final outputs with compensated
+summation, checks the exact fixed average, and reports paired user-cluster
+uncertainty conditional on the existing bank and fitted predictions.
