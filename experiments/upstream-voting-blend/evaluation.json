@@ -1,0 +1,93 @@
+{
+  "state": "complete",
+  "manifest_sha256": "d8173789aa3ff9cb6ff961b9e23c8e613f3171cef8bc0f40d17f5f78c53e970e",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8636297006259717,
+      "delta_vs_control": -1.7465040524911046e-10,
+      "fold_rmse": [
+        0.8631125191124015,
+        0.8609398932975805,
+        0.8644005563188251,
+        0.8651546200257827,
+        0.864544022094992
+      ],
+      "fold_delta": [
+        -2.282176669865521e-10,
+        -5.9039440003516575e-12,
+        -1.5405510200849903e-10,
+        -2.2871093907639306e-10,
+        -2.554336742122132e-10
+      ],
+      "prediction_sha256": "80a1b6d9d3b7ad435061f237ad724a7221657d43b7a484c4a2708d9efdf646d9",
+      "delta_vs_previous_best": 0.0014353644545568311
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8609283193634096,
+      "delta_vs_control": -0.0027013814372124356,
+      "fold_rmse": [
+        0.8600642189901677,
+        0.8583477925242128,
+        0.8619486387633544,
+        0.8624995255919833,
+        0.8617876129012327
+      ],
+      "fold_delta": [
+        -0.0030483003504514494,
+        -0.0025921007792716333,
+        -0.002451917709525797,
+        -0.002655094662510349,
+        -0.002756409449192976
+      ],
+      "prediction_sha256": "cf8a2d501cbc5cd74c3ee029999de508a6704fb1f1ea705cd0cf177081cc9681",
+      "delta_vs_previous_best": -0.0012660168080051992
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8604849991345765,
+      "delta_vs_control": -0.003144701666045524,
+      "fold_rmse": [
+        0.8595695005755923,
+        0.8578935580845951,
+        0.861554330668964,
+        0.8623160420535132,
+        0.8610976552424068
+      ],
+      "fold_delta": [
+        -0.0035430187650268286,
+        -0.0030463352188893067,
+        -0.002846225803916136,
+        -0.002838578200980435,
+        -0.003446367108018933
+      ],
+      "prediction_sha256": "de632462d6cd8365d117539d3c4f71ab7af7e02943171810d15bd71e99843fae",
+      "delta_vs_previous_best": -0.0017093370368382876
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8604038556527668,
+      "delta_vs_control": -0.0032258451478552885,
+      "fold_rmse": [
+        0.8594974065232871,
+        0.8578275582131778,
+        0.8614397078251416,
+        0.8621215332345108,
+        0.8611392093484239
+      ],
+      "fold_delta": [
+        -0.003615112817332067,
+        -0.003112335090306617,
+        -0.002960848647738601,
+        -0.0030330870199828386,
+        -0.003404813002001794
+      ],
+      "prediction_sha256": "e09d2fa590fab46c464e035ecb92c5c516ff69ff3ab40d546338358b539c7046",
+      "delta_vs_previous_best": -0.0017904805186480521
+    }
+  ],
+  "scope": "Adaptive ProbeX development experiment using freshly trained predictors and published source feature code; not an official or untouched qualifying score.",
+  "isolation": "Voting statistics and latent features fit only on trainx ratings; query rows are MaskedDataset inputs in pinned save_vfeat1. Blender ridge/scalers/budget selection exclude outer scoring users. Qualifying outcomes are zero throughout training.",
+  "parent_best_rmse": 0.8621943361714148
+}

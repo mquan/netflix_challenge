@@ -1,0 +1,60 @@
+{
+  "rows": 1128164,
+  "users": 462858,
+  "previous_rmse": 0.8621943361714147,
+  "current_rmse": 0.8604038556527669,
+  "delta_rmse": -0.00179048051864783,
+  "delta_mse": -0.003084278503919366,
+  "user_cluster_normal_95_mse_interval": [
+    -0.0032561739743863197,
+    -0.0029123830334524124
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 226746,
+      "previous_rmse": 0.8614679245790033,
+      "current_rmse": 0.8594974065232871,
+      "delta_rmse": -0.0019705180557162416
+    },
+    {
+      "fold": 1,
+      "rows": 225899,
+      "previous_rmse": 0.859469394667355,
+      "current_rmse": 0.8578275582131778,
+      "delta_rmse": -0.001641836454177148
+    },
+    {
+      "fold": 2,
+      "rows": 224006,
+      "previous_rmse": 0.8630706888803914,
+      "current_rmse": 0.8614397078251416,
+      "delta_rmse": -0.001630981055249836
+    },
+    {
+      "fold": 3,
+      "rows": 225873,
+      "previous_rmse": 0.8638361084530224,
+      "current_rmse": 0.8621215332345108,
+      "delta_rmse": -0.0017145752185115937
+    },
+    {
+      "fold": 4,
+      "rows": 225640,
+      "previous_rmse": 0.8631317685789514,
+      "current_rmse": 0.8611392093484239,
+      "delta_rmse": -0.0019925592305274353
+    }
+  ],
+  "source_sha256": {
+    "artifacts/upstream-remote-batch/fixed-half-tree-nn.f32": "1d889c391e4b1c2a042bcbe3bdc11719084fda5cfb8f572de536a997386eef56",
+    "experiments/upstream-remote-batch/evaluation.json": "47d6bdc497d15bd780bff60060e3a0727f9ea41f211cb2be13e1abca988a2d0f",
+    "experiments/upstream-remote-batch/independent-verification.json": "e6d3bb928a794cc717a4476861dfe4c96488044d0feb8a7dfef8657a4755bc45",
+    "artifacts/upstream-voting-blend/fixed-half-tree-nn.f32": "e09d2fa590fab46c464e035ecb92c5c516ff69ff3ab40d546338358b539c7046",
+    "experiments/upstream-voting-blend/evaluation.json": "3b373cc600880a9a6a307659ea354f18c556a8b917cb09685732e836b6e97594",
+    "experiments/upstream-voting-blend/independent-verification.json": "7cf2265236e46197b03805cc97bc4e4499d2364e8f06331dd64de4c81a7b067a"
+  },
+  "all_folds_improve": true,
+  "qualifying_outcomes_read": false,
+  "limitation": "Adaptive ProbeX development comparison conditional on historically selected banks and fitted predictions. No selection correction or qualifying/official Test claim."
+}
