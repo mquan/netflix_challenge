@@ -44,3 +44,17 @@ Validation before launch: targeted tests exercise zero initial correction,
 learning through the new context head, immutable input arrays, bitwise saved
 model replay, changed-recipe rejection and feature-layout rejection. These are
 synthetic execution checks, not evidence of competition quality or goal success.
+
+## Partial observation — 2026-11-18 22:07 UTC
+
+Fold0 completed all three fresh neural seeds. Saved-model replay is bitwise
+identical on 226,746 held-out rows. Independent compensated RMSE:
+new NN 0.8593575065417106, parent NN 0.8595695005755923;
+new fixed half 0.8592903561212312, parent fixed half
+0.8594974065232871. This single fold does not establish the
+complete candidate score or qualifying success. Fold1 is training; retain all
+five folds and the fixed recipe before deciding on the candidate.
+
+The partial verifier converts predictions to float64 before clipping, matching
+the established scorer. A regression test covers float32 values immediately
+outside both exact clipping limits; all three targeted context tests pass.

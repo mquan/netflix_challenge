@@ -6,6 +6,7 @@ import unittest
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import upstream_context_blend as c
+from verify_upstream_context_partial import independent_rmse
 
 
 class ContextBlendTest(unittest.TestCase):
@@ -39,6 +40,15 @@ class ContextBlendTest(unittest.TestCase):
         self.assertEqual(set(c.CONTEXT),set(range(63,68))|set(range(91,221)))
         self.assertEqual(set(c.SIGNALS),set(range(222))-set(c.CONTEXT))
         self.assertEqual(len(set(c.SIGNALS)&set(c.CONTEXT)),0)
+
+    def test_partial_scoring_clips_after_double_conversion(self):
+        # Float32 cannot represent the exact clipping limits. Both values
+        # below lie just outside them, so the exact residual magnitude is .05.
+        upper=np.nextafter(np.float32(4.95),np.float32(np.inf))
+        prediction=np.array([np.float32(1.05),upper],dtype=np.float32)
+        self.assertAlmostEqual(independent_rmse(prediction,[1.,5.]),.05,places=14)
+        with self.assertRaisesRegex(ValueError,'Malformed'):
+            independent_rmse(prediction,[1.])
 
 
 if __name__=='__main__':unittest.main()
