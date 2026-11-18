@@ -43,3 +43,12 @@ Read CFNADE_REPRODUCTION_PLAN.md. Optimizations are isolated and bitwise verifie
 - `upstream_cfnade_canonical.py` is the superseded sequential scheduler and shared validator; it was stopped while waiting, before model training. Its cancellation is recorded under `experiments/upstream-cfnade-canonical/superseded-before-training.json`. Do not restart it: the parallel scheduler imports its frozen validation helpers.
 
 Last observed native progress after the earlier checkpoint: ALS and both neighborhood sizes completed; paired qualifying coverage 69/85. Primary queue training CFNADE-12. Temporal 150-factor model reached epoch 4 in phase 1; all rounded epoch metrics match the remote source log so far. RBM40 backfill reached its fulltrain/qual phase. Four voting-tree folds complete; fifth third seed active; NN follows. Inspect live files for newer progress rather than relying on these saved observations.
+
+
+## DNN production backfill continuation (queued)
+
+`upstream_dnn_backfill.py` is running as PID 37187, with caffeinate 37188. Inspect `experiments/full-upstream-reproduction/dnn-backfill/{launch,status}.json`; do not duplicate it. It waits for the existing four-endpoint backfill's exclusive lock, checks that the previous owned wrapper group is gone, then executes the six missing DNN endpoint chains in the same isolated native tree. It seeds only completed, verified primary parents after acquiring the lock. No active wrapper's prediction directory is modified by another wrapper.
+
+The original backfill plan remains a record of its four endpoints. During the follow-on, its operational `qualifying-backfill/status.json` also points to the new owned wrapper PID so the frozen canonical CFNADE scheduler continues to count its memory. Detailed new plan/receipts live in `dnn-backfill/`. The follow-on counts both canonical CFNADE phases and final-production fitting in its memory admission/guard. The checkpointed CFNADE yields before the noncheckpointed DNN resource guard. No primary training was paused or restarted.
+
+Verified at 2026-11-18 19:03 UTC: four active fits (temporal150 epoch5/25 phase1; CFNADE12 epoch5/40 phase1; RBM40 phase2; voting NN). All five voting tree folds finished and saved-model replay passed. NN folds0/1 complete; remaining folds and final independent score still required. Production coverage69/85. Canonical CFNADE96 still waiting for the voting experiment. New full upstream suite:65 tests passed; existing4 remote-run tests were unchanged. No qualifying target result established.

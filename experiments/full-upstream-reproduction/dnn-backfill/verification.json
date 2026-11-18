@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T19:04:08.620522+00:00",
+  "command": "PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream*.py'",
+  "tests": 65,
+  "result": "pass",
+  "scope": "Full upstream Python suite including canonical-phase and production memory accounting for queued DNN follow-on."
+}
