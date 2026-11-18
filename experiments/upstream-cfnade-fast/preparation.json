@@ -1,0 +1,13 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "patch_sha256": "abf339da9a197ecd7486a6dc21752c14049860f7e568c27fa67567f7762184a5",
+  "script_sha256": "0755f30320f1420fd8c7c029ecc31b9f0cf718ff7db2698334ccbfabefbb9061",
+  "audit_parameter_arrays": 84,
+  "files": {
+    "src/cfnade.rs": "ecf3334e234a6f725353f9dc13aa4c83db07c112586142dc6dd309209280d4a1",
+    "src/cfnade_original.rs": "dff5625edcb84fb1c630428f17876deba3abd1ce91b1c2118df3fcc2e3951ca7",
+    "src/lib.rs": "42be7fdeecf79178e4ad0d149e86c81fd284212fa77ad9d7fe18b9b53e59703d",
+    "src/bin/cfnade-fast-parity.rs": "46cc048ac3cef933fec0c23dd6aca99f3cbedb578ac8deda4a6e1e07c6192933"
+  },
+  "scope": "Candidate loop-layout optimization only; preserve per-cell accumulation order. No training speed or quality claim before measurement."
+}

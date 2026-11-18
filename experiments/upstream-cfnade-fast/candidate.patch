@@ -1,0 +1,168 @@
+diff --git a/src/cfnade.rs b/src/cfnade.rs
+index 8832983..3c9e74a 100644
+--- a/src/cfnade.rs
++++ b/src/cfnade.rs
+@@ -1431,8 +1431,9 @@ impl CfNadeModel {
+             }
+ 
+             for j in 0..rank {
+-                for i in 0..top.len() {
+-                    grads.dec_proj[[j, i]] += (grad_z[j] * top[i] as f64) as f32;
++                let mut row=grads.dec_proj.row_mut(j);
++                for (g,&value) in row.iter_mut().zip(top.iter()) {
++                    *g += (grad_z[j] * value as f64) as f32;
+                 }
+             }
+ 
+@@ -1458,30 +1459,34 @@ impl CfNadeModel {
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             } else {
+-                for i in 0..hidden {
+-                    let mut s = 0.0;
+-                    for j in 0..rank {
+-                        s += self.dec_proj[[j, i]] as f64 * grad_z[j];
++                // Each output still sums j in exactly the original order.
++                for j in 0..rank {
++                    let row=self.dec_proj.row(j);
++                    for (sum,&weight) in grad_h.iter_mut().zip(row.iter()) {
++                        *sum += weight as f64 * grad_z[j];
+                     }
+-                    grad_h[i] = s * (1.0 - h[i] as f64 * h[i] as f64);
++                }
++                for i in 0..hidden {
++                    grad_h[i] *= 1.0 - h[i] as f64 * h[i] as f64;
+                     grads.enc_bias[i] += grad_h[i] as f32;
+                 }
+             }
+ 
+-            for j in 0..rank {
+-                for i in 0..hidden {
+-                    grads.enc_proj[[i, j]] += (grad_h[i] * ctx_sum[j]) as f32;
++            for i in 0..hidden {
++                let mut row=grads.enc_proj.row_mut(i);
++                for (g,&value) in row.iter_mut().zip(ctx_sum.iter()) {
++                    *g += (grad_h[i] * value) as f32;
+                 }
+             }
+ 
+             let mut grad_ctx_sum = vec![0.0; rank];
+-            for j in 0..rank {
+-                let mut s = 0.0;
+-                for i in 0..hidden {
+-                    s += self.enc_proj[[i, j]] as f64 * grad_h[i];
++            for i in 0..hidden {
++                let row=self.enc_proj.row(i);
++                for (sum,&weight) in grad_ctx_sum.iter_mut().zip(row.iter()) {
++                    *sum += weight as f64 * grad_h[i];
+                 }
+-                grad_ctx_sum[j] = s * ctx_scale as f64;
+             }
++            for value in &mut grad_ctx_sum { *value *= ctx_scale as f64; }
+ 
+             for ctx_day_index in 0..DAY_BINS {
+                 let ctx_weight =
+@@ -2282,3 +2287,93 @@ impl Regressor for CfNadeModel {
+         self.predict_with_z(guard.2.as_slice().unwrap(), u, i, day)
+     }
+ }
++
++impl CfNadeModel { pub fn audit_parameters(&self)->Vec<u32> {
++let mut out=vec![self.timestep as u32,self.swa_count as u32,self.swapped_in as u32];
++out.extend(self.a.iter().map(|v|v.to_bits()));
++out.extend(self.p.iter().map(|v|v.to_bits()));
++out.extend(self.b.iter().map(|v|v.to_bits()));
++out.extend(self.user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.swa_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_p.iter().map(|v|v.to_bits()));
++out.extend(self.swa_b.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.swa_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.swa_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.swa_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.m_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_p.iter().map(|v|v.to_bits()));
++out.extend(self.v_p.iter().map(|v|v.to_bits()));
++out.extend(self.m_b.iter().map(|v|v.to_bits()));
++out.extend(self.v_b.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_drift.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_item_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_bias_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.v_user_day_scale_bin.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_item_time_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_day_freq_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.v_ctx_target_day_scale.iter().map(|v|v.to_bits()));
++out.extend(self.m_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.v_implicit_a.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.v_dec_proj.iter().map(|v|v.to_bits()));
++out.extend(self.m_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_enc_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.v_hidden2_bias.iter().map(|v|v.to_bits()));
++out.extend(self.m_wide_w.iter().map(|v|v.to_bits()));
++out.extend(self.v_wide_w.iter().map(|v|v.to_bits()));
++let mut rng=self.rng.clone();for _ in 0..8 {out.push(rng.random::<u32>());}
++out
++}}
+diff --git a/src/lib.rs b/src/lib.rs
+index 6e19419..992b9e9 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -1562,3 +1562,5 @@ pub fn fit3_inner<M: Regressor + Sync>(
+         let _ = lf.flush();
+     }
+ }
++
++pub mod cfnade_original;
