@@ -5,3 +5,7 @@
 2026-11-18T03:50:13Z target = "rtg"
 2026-11-18T03:50:13Z TxConfig { n_feat: 150, n_epochs: 25, seed: 64, shuffle_users: true, n_time_bins: 20, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.0015, lr_u2: 1e-5, lr_ub: 0.006, lr_ubd: 0.006, lr_i: 0.0072, lr_ib: 0.0072, lr_y: 0.0012, lr_yb: 2e-6, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.0001, lr_ta: 1.5e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.04, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.007, reg_y: 0.04, reg_yd: 0.04, sigma_iqf: 0.005, sigma_u: 0.0, sigma_i: 0.005, sigma_y: 0.005, sigma_yd: 0.005, reset_u_epoch: 1024, max_neighbors: 120, lr_w: 0.0015, lr_c: 0.0015, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.2, w_factor: 1.2, w_nbr: 1.2, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: Some(OrdinalHeadConfig { th_init: [0.5, 1.25, 3.75, 5.5], th_gap: 0.001, lr_t: 0.0, reg_t: 0.0 }), save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
 2026-11-18T03:50:13Z trainx => probex
+2026-11-18T03:57:17Z Epoch 01 | RMSE 0.95597
+2026-11-18T04:04:08Z Epoch 02 | RMSE 0.93154
+2026-11-18T04:10:58Z Epoch 03 | RMSE 0.91803
+2026-11-18T04:17:46Z Epoch 04 | RMSE 0.90889
