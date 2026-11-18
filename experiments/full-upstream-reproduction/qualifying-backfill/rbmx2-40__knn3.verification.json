@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T20:03:43.368177+00:00",
+  "job": "rbmx2-40__knn3",
+  "receipt_sha256": "b999988d27a217d2a6100de486e99fb97454f52f6d63f6d6ba8432ee457a4856",
+  "outputs_verified": 3,
+  "paired_files": {
+    "probex": "artifacts/upstream-qualifying-backfill/fresh/preds_new/rbmx2-40__knn3.probex.npy",
+    "qual": "artifacts/upstream-qualifying-backfill/fresh/preds_new/rbmx2-40__knn3.qual.npy"
+  },
+  "paired_sha256": {
+    "probex": "c1d7919ca7f7226a587de5a76aed2aaf6867c321fcc031949d07581ac6b8e2fe",
+    "qual": "ecc863e2b577cdd1893d1d3a3060d2e6bb9fb108160f9e196b2188567c9a575c"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_command_matches_registry": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Completed fresh native two-phase KNN correction, all native output hashes checked. No qualifying quality or final-ensemble claim."
+}
