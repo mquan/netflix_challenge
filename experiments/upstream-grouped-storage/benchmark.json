@@ -1,0 +1,54 @@
+{
+  "parity_proof_sha256": "a58e14290f217f5316c61b13cbc33f06f8d90b13da529941f4e83ddfb3a70668",
+  "driver_sha256": "908b7ae003bffe370c880482b9d2dc92e8e6dea36dfa2c127ab5b39a3c276621",
+  "support_sha256": "5acfcd771c48f761d5bb8776f625bba054ebdc0158e5774cb35851a927d3bf81",
+  "script_sha256": "517de97928fe0e023021a150016081ab1ba2e5a0c4c1b9bd19b784b7eaff0507",
+  "executable_sha256": "83536bf6b7d13481e4c0c9f7b0c48fa495d3882e1d4245ca876e201500fe3e4c",
+  "arms": [
+    {
+      "arm": "heap",
+      "timings_seconds": {
+        "row": [
+          0.127396,
+          0.13099025,
+          0.133233083
+        ],
+        "grouped": [
+          0.223397375,
+          0.217375916,
+          0.2210005
+        ]
+      },
+      "medians_seconds": {
+        "row": 0.13099025,
+        "grouped": 0.2210005
+      },
+      "speedup": 0.5927147223648815,
+      "all_prediction_md5_equal": "b1660b343bc4f433f4555c5f75db85ab",
+      "log_sha256": "4517432a535995f0c64016ea74f359ca4649818f0adc77cce140d9ca15d09d47"
+    },
+    {
+      "arm": "mapped",
+      "timings_seconds": {
+        "row": [
+          0.273812542,
+          0.261126125,
+          0.259403667
+        ],
+        "grouped": [
+          0.218992167,
+          0.221339125,
+          0.223995291
+        ]
+      },
+      "medians_seconds": {
+        "row": 0.261126125,
+        "grouped": 0.221339125
+      },
+      "speedup": 1.1797558384673292,
+      "all_prediction_md5_equal": "b1660b343bc4f433f4555c5f75db85ab",
+      "log_sha256": "d0a4c510394961a7763c2cfefe274bc08e9b77a77ade981ebb68e75f0c4d9fe0"
+    }
+  ],
+  "scope": "Synthetic inference timing on this concurrently busy host,200000 query rows,1000 factors,20000 padded users;80MB user matrices. Three alternating-order repeats; each timed output is bitwise identical. Not full-scale training speed, memory admission, or competition quality."
+}
