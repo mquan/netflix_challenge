@@ -58,3 +58,8 @@ five folds and the fixed recipe before deciding on the candidate.
 The partial verifier converts predictions to float64 before clipping, matching
 the established scorer. A regression test covers float32 values immediately
 outside both exact clipping limits; all three targeted context tests pass.
+
+Fold1 also completed and independently replayed bitwise on 225,899 rows.
+Its fixed-half RMSE is 0.8576817970921646, versus the parent
+0.8578275582131777. Both completed folds improve; the unchanged
+full five-fold comparison is still required. Fold2 is training.
