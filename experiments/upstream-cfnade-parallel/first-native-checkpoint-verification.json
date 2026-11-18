@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-18T19:38:48.055276+00:00",
+  "records": [
+    {
+      "phase": "trainx",
+      "epoch": 1,
+      "tensors": 84,
+      "bytes": 352269808,
+      "state_sha256": "c53de74b6f9277f4271830e2746ad0870b5a6980dca1aeb78c8a1e41c17f6785",
+      "owner_sha256": "48a92adcefa28e26df035a8cad3155a6650c3a03496c48e8c6e8360c11fd5461",
+      "all_tensor_md5_verified": true
+    },
+    {
+      "phase": "fulltrain",
+      "epoch": 1,
+      "tensors": 84,
+      "bytes": 352269808,
+      "state_sha256": "d4c00921394f772f723a262468cd5b1f68ce9efb1e3286b568f9ef91d523616c",
+      "owner_sha256": "f3e094bad27bf09ffd8482e7270d5ab7a0a83a8fae8eab4c76dc77b3afbdb3b3",
+      "all_tensor_md5_verified": true
+    }
+  ],
+  "scope": "Independent read-only validation of first durable full-data native checkpoints. Files may be retired by normal two-checkpoint retention; hashes preserve this observation. Not model/goal completion; no qualifying outcomes read."
+}
