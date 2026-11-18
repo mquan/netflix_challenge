@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-18T20:35:43.328546+00:00",
+  "records": [
+    {
+      "epoch": 1,
+      "source_split": "fulltrain-to-qual",
+      "rows": 2817131,
+      "native_remote_sha256": "4f59005d3bc06a99fe6d533cda6b4f8af50e8b66ed712bbd3cac357d95262dbe",
+      "independent_local_sha256": "4f59005d3bc06a99fe6d533cda6b4f8af50e8b66ed712bbd3cac357d95262dbe",
+      "sha256_equal": true
+    },
+    {
+      "epoch": 2,
+      "source_split": "fulltrain-to-qual",
+      "rows": 2817131,
+      "native_remote_sha256": "05c38b2323c655b612a349c3240072270dc83bf9c38b5e555914fb03052c46e3",
+      "independent_local_sha256": "05c38b2323c655b612a349c3240072270dc83bf9c38b5e555914fb03052c46e3",
+      "sha256_equal": true
+    }
+  ],
+  "remote_native_receipt_sha256": "12421a92ea6495ece7347ecf8e7d794c52d52c8e1f14e7fbc5914e455708dac7",
+  "new_phase_plan_sha256": "fb49005c0a94c16a890c20a4ac4fe2082b9dc56e0559dbc36ad846272a9aa1d7",
+  "all_match": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Full native qualifying-snapshot SHA comparison against OUR earlier fresh remote native receipt; no remote qualifying payloads or public pretrained predictions fetched. Diagnostic partial phases only, not completion or a qualifying score."
+}
