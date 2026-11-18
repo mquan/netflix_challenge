@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-18T20:31:21.858531+00:00",
+  "command": "PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p 'test_upstream_extension_integration.py'",
+  "tests": 1,
+  "result": "pass",
+  "seconds": 5.588,
+  "test_sha256": "ac71cfad9c0caf1a63f5892bae93d948d734fc19b633f3775edda310f50cca0d",
+  "checks": [
+    "Real tree and neural fits with167 design columns,227 nonlinear features,228 model inputs.",
+    "Separate fitting and replay subprocesses for both families.",
+    "Zero-budget first seed skips its model while retaining the fixed seed average.",
+    "Both saved-model predictions replay bitwise.",
+    "Semantic corruption is rejected even after updating the stored prediction hash."
+  ],
+  "scope": "Small synthetic runtime integration test only. Source receipt/provenance gates have separate tests; no qualifying outcomes or production model data used and no target-score claim."
+}
