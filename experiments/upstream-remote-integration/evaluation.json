@@ -1,0 +1,125 @@
+{
+  "state": "complete",
+  "manifest_sha256": "e114d736ca058e8600ce0cd731ac5eccb4ad0cabbf2cb6a14c680e5d371dbd30",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8655052915090499,
+      "delta_vs_control": -2.2135870914041789e-10,
+      "fold_rmse": [
+        0.8649668477527481,
+        0.8629438341009129,
+        0.8664620492140654,
+        0.8668706059452674,
+        0.8662882984378608
+      ],
+      "fold_delta": [
+        -1.2589018716369083e-10,
+        -2.856058722855437e-10,
+        -3.9198044810007104e-10,
+        -2.696047829431336e-10,
+        -3.532951708962173e-11
+      ],
+      "prediction_sha256": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6",
+      "delta_vs_previous_same_family": -0.0007811701043024533,
+      "fold_delta_vs_previous_same_family": [
+        -0.0007657075981889472,
+        -0.0007970563517500917,
+        -0.0007533568491717713,
+        -0.0007625420218058121,
+        -0.000827121990086388
+      ],
+      "delta_vs_previous_best": 0.0010335631696714032
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8637856934719285,
+      "delta_vs_control": -0.001719598258480115,
+      "fold_rmse": [
+        0.8630139129495162,
+        0.8612726396996481,
+        0.8648687300384648,
+        0.8652414025730013,
+        0.8645385530331848
+      ],
+      "fold_delta": [
+        -0.0019529349291220743,
+        -0.001671194686870714,
+        -0.0015933195675811307,
+        -0.0016292036418709133,
+        -0.0017497454400055013
+      ],
+      "prediction_sha256": "b2303674b88ae7b4df5474a4cb959200b85a0ef040c57fd584b21a0551d44a4d",
+      "delta_vs_previous_same_family": -0.0008010305816164021,
+      "fold_delta_vs_previous_same_family": [
+        -0.0008202075938475994,
+        -0.0008333178186002987,
+        -0.0007427667735526722,
+        -0.0007718347603732356,
+        -0.0008367066648755639
+      ],
+      "delta_vs_previous_best": -0.0006860348674500027
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8638296280175103,
+      "delta_vs_control": -0.0016756637128982899,
+      "fold_rmse": [
+        0.8631222445872974,
+        0.8612477927317886,
+        0.8649654506562331,
+        0.8652799817919237,
+        0.8645394231671701
+      ],
+      "fold_delta": [
+        -0.0018446032913409516,
+        -0.0016960416547301405,
+        -0.0014965989498127996,
+        -0.00159062442294855,
+        -0.0017488753060201923
+      ],
+      "prediction_sha256": "f009c830d5a9a6d360e658569fa878165ebd3167b681ffd50415f6b0979d768a",
+      "delta_vs_previous_same_family": -0.0008297835035663281,
+      "fold_delta_vs_previous_same_family": [
+        -0.0008346713940652339,
+        -0.0008267326808928388,
+        -0.0007228733956246014,
+        -0.0008832774081923844,
+        -0.0008805120172935554
+      ],
+      "delta_vs_previous_best": -0.0006421003218681776
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8636584760350996,
+      "delta_vs_control": -0.0018468156953089787,
+      "fold_rmse": [
+        0.8629253577829812,
+        0.8611075014328847,
+        0.8647548091161482,
+        0.8651129044655335,
+        0.8643984482147717
+      ],
+      "fold_delta": [
+        -0.002041490095657128,
+        -0.0018363329536340567,
+        -0.0017072404898976767,
+        -0.0017577017493387581,
+        -0.0018898502584185906
+      ],
+      "prediction_sha256": "1aab8f6e75560daea0d428402114a4d94133669d4c77e24b52c6d228b3a68237",
+      "delta_vs_previous_same_family": -0.0008132523042788664,
+      "fold_delta_vs_previous_same_family": [
+        -0.0008224484154409906,
+        -0.0008276610771089654,
+        -0.0007337529353533823,
+        -0.0008309005442773687,
+        -0.0008509326698495912
+      ],
+      "delta_vs_previous_best": -0.0008132523042788664
+    }
+  ],
+  "scope": "Fresh-only exploratory ProbeX development comparison; historically selected base recipes. No downloaded prediction features or qualifying outcomes.",
+  "isolation": "Outer user labels excluded from ridge, inner stopping, scaling, nonlinear refits. Inner ridge/scaler fit inner-training users only. Final refit uses all outer-training users; no globally cross-fitted residual targets.",
+  "parent_evaluation_sha256": "4a044d5e9a541be577d966035ad63cead1036487284adc654a1f1385903da051"
+}

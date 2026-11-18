@@ -1,0 +1,42 @@
+{
+  "state": "complete_and_independently_verified",
+  "utc": "2026-11-18T04:24:51.083822+00:00",
+  "tests_passed": 43,
+  "implementation_commit": "7447d29b4da0057e9efd491b6a23c601ae3208ce",
+  "remote_training_commit": "50c9cf2",
+  "verification_sha256": {
+    "experiments/upstream-remote-integration/manifest.json": "e114d736ca058e8600ce0cd731ac5eccb4ad0cabbf2cb6a14c680e5d371dbd30",
+    "experiments/upstream-remote-integration/ridge-screen.json": "be7d177a571243b47369969752c59a5b5f36c7c1f941f3e70e9c5d4afe69c72e",
+    "experiments/upstream-remote-integration/evaluation.json": "223cfd1d33267d8765064d1227f5ba35814be40ace6a9c9fe99e51ebf9627b49",
+    "experiments/upstream-remote-integration/independent-verification.json": "8cd097ad295f69d7c4f11d993ef2db590e04a6f1a67e40d693dbaa2e28fce697",
+    "experiments/upstream-remote-integration/matched-verification.json": "86f9edbe7964c52d3f0eee07de3f317f5926344ca06c821671bfe228613e8ef6",
+    "experiments/upstream-remote-integration/tree-replay.json": "ab307d710725876fe4408fdde1aac7a5694504236a9e68dd8819de26becdf671",
+    "experiments/upstream-remote-integration/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+    "experiments/upstream-remote-integration/feature-preservation.json": "0f5549e10a133fbc82ec6eb6efffddddd25264aa175349386a84044714323042",
+    "experiments/upstream-remote-integration/tree/0.json": "d982082a466115fe9610fd06e0f43f13d82569aa257b28a788c0e3939dad864f",
+    "experiments/upstream-remote-integration/tree/1.json": "a8a0b0b9e143580670581c58a57ee75505b6b6e065c374dcdb8c06b26055dec6",
+    "experiments/upstream-remote-integration/tree/2.json": "1810fd8bca17d1b2e45b267e3981811a558bcc0c493eb2f5408e60eab64891d0",
+    "experiments/upstream-remote-integration/tree/3.json": "e84295539d18e0b0f337654dd8027390ed54776d423f0215cdb416f1ab1f1043",
+    "experiments/upstream-remote-integration/tree/4.json": "84920524083e9acdbed82aabf286e60be83dfb84b956642eb6fed1dad1b5679e",
+    "experiments/upstream-remote-integration/nn/0.json": "96ea8fe93523f14f91eeec6f4134e2dcbb92cdfd4283b4f1d3f1cf999db02775",
+    "experiments/upstream-remote-integration/nn/1.json": "8eeae205c08dcb777e94357652494444625f26af68d5e59dc224f99e8bda0c8a",
+    "experiments/upstream-remote-integration/nn/2.json": "1b706c2bf9dc069be4158ba73c4fcd31d9173fb9fd97e705a04b55a20e67c973",
+    "experiments/upstream-remote-integration/nn/3.json": "bf914abbb5de5a3066c44923252748bc0d1e1bd679980aee5f53cfc098a5676f",
+    "experiments/upstream-remote-integration/nn/4.json": "aeacf9f32eee51e4c8fc2f28583318ed34f4a636fa05636e1f83c6a1ff4461ae",
+    "experiments/upstream-remote-integration/tests.log": "a41142ff9665050b15785c355c214ae53052cc556ade5cd36791b8901c374782"
+  },
+  "predictions_npz_sha256": "2e99b93bc352754af0e82287e6b3df6e14bea6a5898bbeac96ef89c341272c34",
+  "prediction_content_sha256": {
+    "control": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6",
+    "tree": "b2303674b88ae7b4df5474a4cb959200b85a0ef040c57fd584b21a0551d44a4d",
+    "nn": "f009c830d5a9a6d360e658569fa878165ebd3167b681ffd50415f6b0979d768a",
+    "fixed-half-tree-nn": "1aab8f6e75560daea0d428402114a4d94133669d4c77e24b52c6d228b3a68237"
+  },
+  "training_seconds": {
+    "tree": 1030.6369410001207,
+    "nn": 1405.226002832409
+  },
+  "all_owned_training_and_caffeinate_processes_exited": true,
+  "source": "64 freshly trained prediction columns: prior 62 plus two unique remote bknbrx vectors. No downloaded prediction features or qualifying outcomes.",
+  "scope": "Exploratory ProbeX development; historically selected source recipes; not qualifying/Test target verification."
+}

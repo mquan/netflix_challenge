@@ -1,0 +1,89 @@
+{
+  "rows": 1128164,
+  "users": 462858,
+  "records": [
+    {
+      "arm": "control",
+      "previous_rmse": 0.8662864616133523,
+      "rmse": 0.8655052915090499,
+      "delta_rmse": -0.0007811701043024533,
+      "delta_mse": -0.0013528239444166217,
+      "user_cluster_normal_95_mse_interval": [
+        -0.001461831162746297,
+        -0.0012438167260869464
+      ],
+      "fold_delta": [
+        -0.0007657075981889472,
+        -0.0007970563517500917,
+        -0.0007533568491717713,
+        -0.0007625420218058121,
+        -0.000827121990086388
+      ],
+      "old_prediction_sha256": "7e57f67f06412c971d98bb0051384f765c383510aaed6d835145ce1c962ce69e",
+      "new_prediction_sha256": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6"
+    },
+    {
+      "arm": "tree",
+      "previous_rmse": 0.8645867240535449,
+      "rmse": 0.8637856934719285,
+      "delta_rmse": -0.0008010305816164021,
+      "delta_mse": -0.001384479162860241,
+      "user_cluster_normal_95_mse_interval": [
+        -0.0015061062975963591,
+        -0.001262852028124123
+      ],
+      "fold_delta": [
+        -0.0008202075938475994,
+        -0.0008333178186002987,
+        -0.0007427667735526722,
+        -0.0007718347603732356,
+        -0.0008367066648755639
+      ],
+      "old_prediction_sha256": "33a36c240cdf06c9ec8b7d826aa528bf0ca6217446baa1566dd9e0ca3e317383",
+      "new_prediction_sha256": "b2303674b88ae7b4df5474a4cb959200b85a0ef040c57fd584b21a0551d44a4d"
+    },
+    {
+      "arm": "nn",
+      "previous_rmse": 0.8646594115210766,
+      "rmse": 0.8638296280175103,
+      "delta_rmse": -0.0008297835035663281,
+      "delta_mse": -0.0014342716911041973,
+      "user_cluster_normal_95_mse_interval": [
+        -0.0015678988135862319,
+        -0.0013006445686221627
+      ],
+      "fold_delta": [
+        -0.0008346713940652339,
+        -0.0008267326808928388,
+        -0.0007228733956246014,
+        -0.0008832774081923844,
+        -0.0008805120172935554
+      ],
+      "old_prediction_sha256": "0a8eacb80aaf0efbc41a53f6b35e5a337d6014083f4553f610eb43e4315d9005",
+      "new_prediction_sha256": "f009c830d5a9a6d360e658569fa878165ebd3167b681ffd50415f6b0979d768a"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "previous_rmse": 0.8644717283393785,
+      "rmse": 0.8636584760350996,
+      "delta_rmse": -0.0008132523042788664,
+      "delta_mse": -0.0014054058708012906,
+      "user_cluster_normal_95_mse_interval": [
+        -0.0015287980849781374,
+        -0.0012820136566244439
+      ],
+      "fold_delta": [
+        -0.0008224484154409906,
+        -0.0008276610771089654,
+        -0.0007337529353533823,
+        -0.0008309005442773687,
+        -0.0008509326698495912
+      ],
+      "old_prediction_sha256": "42db26586ef3fa0b2af1ee7fbe73ec73404b391aa9340799659d1fa70db8eaf5",
+      "new_prediction_sha256": "1aab8f6e75560daea0d428402114a4d94133669d4c77e24b52c6d228b3a68237"
+    }
+  ],
+  "current_evaluation_sha256": "223cfd1d33267d8765064d1227f5ba35814be40ace6a9c9fe99e51ebf9627b49",
+  "parent_evaluation_sha256": "4a044d5e9a541be577d966035ad63cead1036487284adc654a1f1385903da051",
+  "method": "Row-weighted paired MSE, user-cluster normal 95% interval conditional on existing bank/fitted predictions; no historical model-selection adjustment."
+}

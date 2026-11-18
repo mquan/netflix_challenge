@@ -1,0 +1,80 @@
+test_changed_compressed_artifact_is_rejected (test_upstream_exchange.ExchangeChecks) ... ok
+test_evaluation_refuses_imported_extra_columns (test_upstream_exchange.ExchangeChecks) ... ok
+test_outer_label_poisoning_cannot_change_that_folds_predictions (test_upstream_exchange.ExchangeChecks) ... ok
+test_real_compressed_artifact_is_independently_rescored (test_upstream_exchange.ExchangeChecks) ... ok
+test_users_stay_together_and_folds_ignore_row_order (test_upstream_exchange.ExchangeChecks) ... ok
+test_real_native_vectors_backfill_and_transfer_json_has_no_nan (test_upstream_exchange.ExportBackfill) ... ok
+test_absent_reference_keeps_live_renderer_running_without_claiming_a_score (test_upstream_exchange.LiveQueueCompatibility) ... ok
+test_duplicate_execution_is_not_silently_selected (test_upstream_expansion.ExpansionCollection) ... ok
+test_local_completion_never_waits_for_or_fetches_m3 (test_upstream_expansion.ExpansionCollection) ... ok
+test_native_receipt_and_export_mismatch_is_rejected (test_upstream_expansion.ExpansionCollection) ... ok
+test_remaining_remote_outputs_can_be_trained_and_collected_on_m1 (test_upstream_expansion.ExpansionCollection) ... ok
+test_takeover_keeps_the_same_six_models (test_upstream_expansion.ExpansionCollection) ... ok
+test_two_machine_artifacts_are_verified_and_joined (test_upstream_expansion.ExpansionCollection) ... ok
+test_concurrent_ancestor_push_retries_without_merging (test_upstream_expansion.PublicationRetry) ... ok
+test_divergent_remote_history_is_not_retried_or_merged (test_upstream_expansion.PublicationRetry) ... ok
+test_added_columns_preserve_unpenalized_baseline_intercept (test_upstream_missing_screen.MissingScreenTests) ... ok
+test_ambiguous_native_output_is_rejected (test_upstream_missing_screen.MissingScreenTests) ... ok
+test_exact_producer_precedes_auxiliary_name_inference (test_upstream_missing_screen.MissingScreenTests) ... ok
+test_memory_bound_accounts_for_both_dense_user_day_arrays (test_upstream_missing_screen.MissingScreenTests) ... ok
+test_scoring_fold_labels_do_not_affect_any_subset_coefficients (test_upstream_missing_screen.MissingScreenTests) ... ok
+test_actual_backends_ignore_outer_labels_through_stopping_and_refit (test_upstream_nonlinear.NonlinearChecks) ... ok
+test_grouped_ridge_matches_direct_and_excludes_held_labels (test_upstream_nonlinear.NonlinearChecks) ... ok
+test_normalization_uses_only_its_training_rows (test_upstream_nonlinear.NonlinearChecks) ... ok
+test_preparation_refuses_changed_code_and_data (test_upstream_nonlinear.NonlinearChecks) ... ok
+test_independent_score_and_fixed_average_handle_float32_clip_edges (test_upstream_nonlinear_verifier.NonlinearVerification) ... [{'arm': 'control', 'independent_rmse': 1.536229112326378, 'delta_mse': -1.1444090906032045e-07, 'user_cluster_normal_95_mse_interval': [-1.8052716761003025e-07, -4.8354650510610624e-08], 'prediction_sha256': 'a6c3db01286b8e76340580e0904c2bcd1a6ae8850ed27996586b5ac01720018b'}, {'arm': 'tree', 'independent_rmse': 2.4088378168874374, 'delta_mse': 3.442499628067035, 'user_cluster_normal_95_mse_interval': [1.065368369775249, 5.819630886358821], 'prediction_sha256': 'a03c8c855a759b4a11f5deaedf8107fa006aeffb15eaaddc0bb949c5f540c4a4'}, {'arm': 'nn', 'independent_rmse': 1.5, 'delta_mse': -0.11000000000000024, 'user_cluster_normal_95_mse_interval': [-0.17929646455628198, -0.04070353544371849], 'prediction_sha256': '73474f7a1a59fbd4369a57aa1d5ee0fa51df7fd8c4c21ecf21e4859468fcbe59'}, {'arm': 'fixed-half-tree-nn', 'independent_rmse': 1.7358354801171445, 'delta_mse': 0.6531248140335172, 'user_cluster_normal_95_mse_interval': [-0.5419879869592114, 1.8482376150262456], 'prediction_sha256': 'd4b9859624bd755278e53ab934f939fd1ceaa50151e2496f73268ef3ea3b6d73'}]
+ok
+test_model_replay_rejects_self_consistent_but_wrong_prediction (test_upstream_nonlinear_verifier.NonlinearVerification) ... ok
+test_adapter_uses_new_paths_and_freezes_its_own_code (test_upstream_remote_integration.RemoteIntegrationChecks) ... ok
+test_augmented_ridge_matches_direct_fit_and_excludes_outer_labels (test_upstream_remote_integration.RemoteIntegrationChecks) ... ok
+test_receives_exact_vectors_and_deduplicates_terminal_epoch (test_upstream_remote_integration.RemoteIntegrationChecks) ... ok
+test_rejects_alignment_receipt_archive_and_content_changes (test_upstream_remote_integration.RemoteIntegrationChecks) ... ok
+test_cycle_is_rejected (test_upstream_repro.UpstreamReproduction) ... ok
+test_existing_unreceipted_vectors_cannot_be_skipped_as_done (test_upstream_repro.UpstreamReproduction) ... ok
+test_implicit_producer_and_explicit_parent_order (test_upstream_repro.UpstreamReproduction) ... ok
+test_modified_completed_prediction_is_rejected (test_upstream_repro.UpstreamReproduction) ... ok
+test_nonzero_qualifying_outcomes_rejected (test_upstream_repro.UpstreamReproduction) ... ok
+test_component_clip_is_explicit (test_upstream_snapshot_blend.SnapshotBlendTests) ... ok
+test_control_matches_original_and_scoring_labels_are_isolated (test_upstream_snapshot_blend.SnapshotBlendTests) ... ok
+test_metadata_aggregation_and_unseen_identity (test_upstream_snapshot_blend.SnapshotBlendTests) ... ok
+test_saved_outputs_require_receipts_and_exact_duplicates_are_marked (test_upstream_snapshot_blend.SnapshotBlendTests) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 3.000s
+
+OK
+
+test_completed (test_remote12h_supervisor.SupervisorTest) ... 1
+/Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmprh6a_xjt/resources.jsonl' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmprh6a_xjt/supervisor.log' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_deadline_kills_whole_tree_including_term_ignoring_grandchild (test_remote12h_supervisor.SupervisorTest) ... /Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmpvbcw3rms/resources.jsonl' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmpvbcw3rms/supervisor.log' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_failure_recorded (test_remote12h_supervisor.SupervisorTest) ... /Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmp6alipem2/resources.jsonl' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmp6alipem2/supervisor.log' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_past_deadline_not_launched (test_remote12h_supervisor.SupervisorTest) ... /Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmpitwh8hfm/resources.jsonl' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/Users/quan/workspace/netflix_upstream_repro/tests/test_remote12h_supervisor.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/_x/dwc33nws7dsbyxtjl7kj931m0000gn/T/tmpitwh8hfm/supervisor.log' mode='a' encoding='UTF-8'>
+  code = sup.main(args + ['--', *command])
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 6.828s
+
+OK
