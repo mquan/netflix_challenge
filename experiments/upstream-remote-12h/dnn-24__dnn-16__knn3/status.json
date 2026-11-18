@@ -1,0 +1,34 @@
+{
+  "name": "dnn-24__dnn-16__knn3",
+  "command": [
+    "env",
+    "UPSTREAM_REPRO_THREADS=8",
+    "UPSTREAM_REPRO_BLAS_THREADS=1",
+    ".venv/bin/python",
+    "-u",
+    "scripts/upstream_repro.py",
+    "--run-job",
+    "dnn-24__dnn-16__knn3"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro",
+  "pgid": 39263,
+  "started": "2026-11-18T12:13:21.924274+00:00",
+  "deadline": "2026-11-18T13:01:05+00:00",
+  "baseline": {
+    "memory_level_pct": 86,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 103.76
+  },
+  "state": "running",
+  "last_sample": {
+    "time": "2026-11-18T12:42:32.628416+00:00",
+    "group_rss_mb": 2927.6,
+    "peak_group_rss_mb": 4944.7,
+    "n_procs": 4,
+    "swap_growth_mb": 0,
+    "memory_level_pct": 86,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 103.36
+  },
+  "elapsed_h": 0.486
+}
