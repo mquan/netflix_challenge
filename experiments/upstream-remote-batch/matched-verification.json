@@ -1,0 +1,89 @@
+{
+  "rows": 1128164,
+  "users": 462858,
+  "records": [
+    {
+      "arm": "control",
+      "previous_rmse": 0.8655052915090499,
+      "rmse": 0.8637056489535874,
+      "delta_rmse": -0.0017996425554624995,
+      "delta_mse": -0.0031119615958280066,
+      "user_cluster_normal_95_mse_interval": [
+        -0.0033118864688674032,
+        -0.00291203672278861
+      ],
+      "fold_delta": [
+        -0.0017836990373575334,
+        -0.0019420427848961808,
+        -0.0019781300321396467,
+        -0.0016437629452284996,
+        -0.0016526117951647379
+      ],
+      "old_prediction_sha256": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6",
+      "new_prediction_sha256": "b96d9f97939384770720512bfd7d03e81015b2d5e2771eacd78a4c27a625384a"
+    },
+    {
+      "arm": "tree",
+      "previous_rmse": 0.8637856934719285,
+      "rmse": 0.862397589022473,
+      "delta_rmse": -0.001388104449455474,
+      "delta_mse": -0.0023961226950061907,
+      "user_cluster_normal_95_mse_interval": [
+        -0.002585814511455487,
+        -0.0022064308785568944
+      ],
+      "fold_delta": [
+        -0.0014426603625588008,
+        -0.0014979318749946957,
+        -0.0015951816882491254,
+        -0.0012554159572384371,
+        -0.0011512040050319916
+      ],
+      "old_prediction_sha256": "b2303674b88ae7b4df5474a4cb959200b85a0ef040c57fd584b21a0551d44a4d",
+      "new_prediction_sha256": "e649d6d278ca7660408da255dd41749d206b5308b447945aec809b92652a2c28"
+    },
+    {
+      "arm": "nn",
+      "previous_rmse": 0.8638296280175103,
+      "rmse": 0.8622766093880662,
+      "delta_rmse": -0.001553018629444125,
+      "delta_mse": -0.002680675143090159,
+      "user_cluster_normal_95_mse_interval": [
+        -0.002867330492606509,
+        -0.002494019793573809
+      ],
+      "fold_delta": [
+        -0.0014706806262113625,
+        -0.0017909460335588934,
+        -0.0017861439865027862,
+        -0.0013290770520181239,
+        -0.0013912699943754436
+      ],
+      "old_prediction_sha256": "f009c830d5a9a6d360e658569fa878165ebd3167b681ffd50415f6b0979d768a",
+      "new_prediction_sha256": "a2b9cbfade7b9383a83ba37dfa0e781c96f26323a2374a1985393bc2a46e15ba"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "previous_rmse": 0.8636584760350996,
+      "rmse": 0.8621943361714148,
+      "delta_rmse": -0.0014641398636847658,
+      "delta_mse": -0.0025268899012041153,
+      "user_cluster_normal_95_mse_interval": [
+        -0.002709845617931374,
+        -0.0023439341844768567
+      ],
+      "fold_delta": [
+        -0.0014574332039778426,
+        -0.0016381067655297787,
+        -0.0016841202357568141,
+        -0.0012767960125110722,
+        -0.0012666796358203891
+      ],
+      "old_prediction_sha256": "1aab8f6e75560daea0d428402114a4d94133669d4c77e24b52c6d228b3a68237",
+      "new_prediction_sha256": "1d889c391e4b1c2a042bcbe3bdc11719084fda5cfb8f572de536a997386eef56"
+    }
+  ],
+  "current_evaluation_sha256": "47d6bdc497d15bd780bff60060e3a0727f9ea41f211cb2be13e1abca988a2d0f",
+  "parent_evaluation_sha256": "223cfd1d33267d8765064d1227f5ba35814be40ace6a9c9fe99e51ebf9627b49",
+  "method": "Row-weighted paired MSE, user-cluster normal 95% interval conditional on bank/fitted predictions; not adjusted for historical recipe/model selection."
+}

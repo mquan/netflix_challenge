@@ -1,0 +1,59 @@
+{
+  "records": [
+    {
+      "arm": "control",
+      "reported_double_rmse": 0.8655052917304086,
+      "independent_float32_rmse": 0.8655052915090499,
+      "prediction_sha256": "424d425f43d306b4126c5ad24cb32c20a041b8f9f5db641e0c973fcc95ae2be6"
+    },
+    {
+      "arm": "temporal",
+      "reported_double_rmse": 0.8645096693871115,
+      "independent_float32_rmse": 0.8645096694250478,
+      "prediction_sha256": "9f445aa8f6537d078fdd32fb1e9227e2b05bb43e999b8242ca8dc81bdd38e782"
+    },
+    {
+      "arm": "neighborhood",
+      "reported_double_rmse": 0.8654334353707364,
+      "independent_float32_rmse": 0.8654334352012012,
+      "prediction_sha256": "a4d9264bea74bfbc696cfb20c4bb719a392f950314f8ee1f497f23588c749749"
+    },
+    {
+      "arm": "matrix_factorization",
+      "reported_double_rmse": 0.8652674055190973,
+      "independent_float32_rmse": 0.8652674051518536,
+      "prediction_sha256": "aa0fccc9d28493b70072ac4f963e79d6f070652d4716688f67770f583848dc4b"
+    },
+    {
+      "arm": "als",
+      "reported_double_rmse": 0.865341782685815,
+      "independent_float32_rmse": 0.8653417825171731,
+      "prediction_sha256": "22ca188286ae422aa0a414d7e6b99cd6ef6866501a109e16da2f99d8139d05ea"
+    },
+    {
+      "arm": "dnn",
+      "reported_double_rmse": 0.8650799875547994,
+      "independent_float32_rmse": 0.8650799873873986,
+      "prediction_sha256": "c9c75a31fd33d9ebeb46829142777e8eec0b418fc612926efeeee89d58610f19"
+    },
+    {
+      "arm": "main",
+      "reported_double_rmse": 0.8637056490665563,
+      "independent_float32_rmse": 0.8637056489535873,
+      "prediction_sha256": "b96d9f97939384770720512bfd7d03e81015b2d5e2771eacd78a4c27a625384a"
+    },
+    {
+      "arm": "intermediates",
+      "reported_double_rmse": 0.8654516524179212,
+      "independent_float32_rmse": 0.865451652239131,
+      "prediction_sha256": "55f43e535429fdc96317402c5d35dd13863ea9e8e6aa43c6f68b0675e29d095f"
+    },
+    {
+      "arm": "extended",
+      "reported_double_rmse": 0.8636936148019512,
+      "independent_float32_rmse": 0.8636936148740402,
+      "prediction_sha256": "5a1b03efbe8984627a5c05aab0bc3c3214c5e757973aa883686cc8718602cd90"
+    }
+  ],
+  "note": "Reported ridge screens use double predictions; stored float32 scores agree within 1e-8 RMSE."
+}

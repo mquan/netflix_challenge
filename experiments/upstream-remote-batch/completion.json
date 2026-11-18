@@ -1,0 +1,46 @@
+{
+  "state": "complete_and_independently_verified",
+  "utc": "2026-11-18T15:55:52.842432+00:00",
+  "tests_passed": 49,
+  "implementation_commit": "64aa677a18c85ab18129b4258dce46e86c7329f7",
+  "remote_training_commit": "f130172",
+  "verification_sha256": {
+    "experiments/upstream-remote-batch/manifest.json": "0664e85e292045acf0349e8865dafa2d346bbc1814695beacb6e72c2d84aa145",
+    "experiments/upstream-remote-batch/ridge-screen.json": "604b451e36c5919d5bdafcc7d4f098db9b9ca540fa9828df2d85ce426dc81dd0",
+    "experiments/upstream-remote-batch/remote-verification.json": "628e81d0d29e7428c0db325494600534bc0d66d38a673bf06790ed7d068f15b1",
+    "experiments/upstream-remote-batch/remote-fixture-audit.json": "e76a07db7f01880a468e0abd89c478161b63bf7af81651412723f0a58a6d5979",
+    "experiments/upstream-remote-batch/evaluation.json": "47d6bdc497d15bd780bff60060e3a0727f9ea41f211cb2be13e1abca988a2d0f",
+    "experiments/upstream-remote-batch/independent-verification.json": "e6d3bb928a794cc717a4476861dfe4c96488044d0feb8a7dfef8657a4755bc45",
+    "experiments/upstream-remote-batch/matched-verification.json": "62bc079489a92697959d1578961d761f33491f03019256ccd51cf495df7216d4",
+    "experiments/upstream-remote-batch/ridge-independent-verification.json": "7af97974054c555d83080899f4bc694bad3ee7fc8bdbf4548e5b41eb2fd6b9ff",
+    "experiments/upstream-remote-batch/tree-replay.json": "ab307d710725876fe4408fdde1aac7a5694504236a9e68dd8819de26becdf671",
+    "experiments/upstream-remote-batch/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+    "experiments/upstream-remote-batch/feature-preservation.json": "10f4bb6c9be5a40705866f91aed5bbf24847c7eb0de6ee1c7d96f3138e20e65c",
+    "experiments/upstream-remote-batch/tree/0.json": "8314895f03f66ba150cbaf434a0d96aeab6c93e61830d27af6946ec551d4f65d",
+    "experiments/upstream-remote-batch/tree/1.json": "5f464780e3550080c77a14d8599b4d031a17c0f8648ebaea8551eff669916029",
+    "experiments/upstream-remote-batch/tree/2.json": "b34a786e485ae157a20d401c9362bb55c2550c11a2578f612e60102d8dd04ed0",
+    "experiments/upstream-remote-batch/tree/3.json": "963844d7b11be0d2a75e33f0bc4aabb305f786c39ffc27c577c312a675debb16",
+    "experiments/upstream-remote-batch/tree/4.json": "30635dd76af1426c3db41a02d1cbdbc3d9591033c06fbda1965556af7872a6f3",
+    "experiments/upstream-remote-batch/nn/0.json": "41c533be4bf7624b2ba9b6c0de2c9bd91edf3dddb371066750e4f60e61d56c2d",
+    "experiments/upstream-remote-batch/nn/1.json": "4b32a1f5f352f18b2049eb04dfb4d70a3495ad3d868b735f5ba1ef752b564b0c",
+    "experiments/upstream-remote-batch/nn/2.json": "2cc80c6f0b2ef28b3e60db53f1d3a9820137a05fa5bdce5d67b7aa69274b2ea5",
+    "experiments/upstream-remote-batch/nn/3.json": "3546d1283f75c2fc3e4a9cae3c113a062d541ca2b1273852f18feda10d9de458",
+    "experiments/upstream-remote-batch/nn/4.json": "53aa760fbf8f7dbc873f3fff2708f2d853e1dcb35c7510eec36d1a9e3ab9c205",
+    "experiments/upstream-remote-batch/tests.log": "5c2d1b1f7f033ce1ca16436531e22fe72d10be0b371ab4bb1b966d73c8c6a794",
+    "experiments/upstream-remote-batch/strict-fixture-bit-check.json": "c16e0fcd8f148948c34b4123d474361e9d444d13c1f9e9e298a8252d3e79cc2b"
+  },
+  "predictions_npz_sha256": "01802818377e314ceb6dd2db6e2072bde68cb8016246737f4a2977a0a16efe51",
+  "prediction_content_sha256": {
+    "control": "b96d9f97939384770720512bfd7d03e81015b2d5e2771eacd78a4c27a625384a",
+    "tree": "e649d6d278ca7660408da255dd41749d206b5308b447945aec809b92652a2c28",
+    "nn": "a2b9cbfade7b9383a83ba37dfa0e781c96f26323a2374a1985393bc2a46e15ba",
+    "fixed-half-tree-nn": "1d889c391e4b1c2a042bcbe3bdc11719084fda5cfb8f572de536a997386eef56"
+  },
+  "training_seconds": {
+    "tree": 1081.5109450418968,
+    "nn": 1447.5699795002583
+  },
+  "all_owned_training_and_caffeinate_processes_exited": true,
+  "input_scope": "83 fresh prediction columns: retained 64 plus 19 predeclared remote additions; three intermediate parents tested in separate ridge arms.",
+  "evaluation_scope": "Exploratory ProbeX development, not an official/untouched qualifying result. No downloaded prediction features or qualifying outcomes used in fits."
+}
