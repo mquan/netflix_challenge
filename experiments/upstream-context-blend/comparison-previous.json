@@ -1,0 +1,27 @@
+{
+  "observed": "2026-11-18T22:29:34.780071+00:00",
+  "parent_evaluation_sha256": "3b373cc600880a9a6a307659ea354f18c556a8b917cb09685732e836b6e97594",
+  "evaluation_sha256": "2bf6ed3491048a04b22e8ced00d30881be6b5605040fe9132822fb1d65f075d7",
+  "rows": 1128164,
+  "users": 462858,
+  "parent_rmse": 0.8604038556527668,
+  "candidate_rmse": 0.860216195766495,
+  "delta_rmse": -0.00018765988627178487,
+  "fold_deltas": [
+    -0.0002070504020559305,
+    -0.00014576112101316596,
+    -0.00013147437263061335,
+    -0.0001877825952343315,
+    -0.00026568024490991604
+  ],
+  "all_five_folds_improve": true,
+  "all_five_nn_receipts_rehashed": true,
+  "parent_ridge_and_scalers_bitwise_identical": true,
+  "paired_mse_delta": -0.00032289136316653445,
+  "conditional_user_cluster_95_mse_interval": [
+    -0.00038365744044361276,
+    -0.00026212528588945614
+  ],
+  "qualifying_labels_read": false,
+  "scope": "Adaptive known-ProbeX development only. No selection correction, official Test result, or qualifying success."
+}

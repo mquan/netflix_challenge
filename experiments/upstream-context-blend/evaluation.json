@@ -1,0 +1,65 @@
+{
+  "state": "complete",
+  "manifest_sha256": "5fa58407292a923d489666bdb5707af6246da3f1357640d16632884f7ca91494",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8636297006259717,
+      "delta_vs_control": -1.7465040524911046e-10,
+      "delta_vs_previous_best": 0.0032258449732048833,
+      "fold_rmse": [
+        0.8631125191124015,
+        0.8609398932975805,
+        0.8644005563188251,
+        0.8651546200257827,
+        0.864544022094992
+      ],
+      "prediction_sha256": "80a1b6d9d3b7ad435061f237ad724a7221657d43b7a484c4a2708d9efdf646d9"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8609283193634096,
+      "delta_vs_control": -0.0027013814372124356,
+      "delta_vs_previous_best": 0.0005244637106428529,
+      "fold_rmse": [
+        0.8600642189901677,
+        0.8583477925242128,
+        0.8619486387633544,
+        0.8624995255919833,
+        0.8617876129012327
+      ],
+      "prediction_sha256": "cf8a2d501cbc5cd74c3ee029999de508a6704fb1f1ea705cd0cf177081cc9681"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8603303960132705,
+      "delta_vs_control": -0.0032993047873515202,
+      "delta_vs_previous_best": -7.345963949623169e-05,
+      "fold_rmse": [
+        0.8593575065417106,
+        0.8578157650722994,
+        0.861512367754868,
+        0.8621549222988428,
+        0.8608186356751106
+      ],
+      "prediction_sha256": "b033f4fc5db21c9314da464f5b74813e3c685da1af7c5044f9a36dbbb69ce63f"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.860216195766495,
+      "delta_vs_control": -0.0034135050341270734,
+      "delta_vs_previous_best": -0.00018765988627178487,
+      "fold_rmse": [
+        0.8592903561212312,
+        0.8576817970921646,
+        0.861308233452511,
+        0.8619337506392765,
+        0.860873529103514
+      ],
+      "prediction_sha256": "022992d6be2597a1e9510715e18749b6a552dafe9f1d266fc6111f723880a963"
+    }
+  ],
+  "parent_best_rmse": 0.8604038556527668,
+  "scope": "Adaptive known-ProbeX development only. Own fresh parent features, original user folds and ridge; one predeclared rank-16 context interaction architecture. Reuses the verified parent tree without retraining or new tree receipts.",
+  "isolation": "Voting statistics and latent features fit only on trainx ratings; query rows are MaskedDataset inputs in pinned save_vfeat1. Blender ridge/scalers/budget selection exclude outer scoring users. Qualifying outcomes are zero throughout training."
+}
