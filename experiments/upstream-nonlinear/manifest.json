@@ -1,0 +1,66 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 64,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0"
+  },
+  "code_sha256": {
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/upstream_exchange.py": "f3cc6cdda82b5d39524f16a33f74c9ae29491a38492841eafd212360035718ab",
+    "scripts/upstream_expansion.py": "bf92a8655401b297f98fbf2692cf941c89f30edcec3db5aec057c70e029d22ff",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a"
+  },
+  "source_manifests_sha256": {
+    "experiments/upstream-snapshot-blend/manifest.json": "5e2c93f45f355acb995e3c1d166321a2c11dc16e8b250b74d3b55b2a66bdb5cc",
+    "experiments/upstream-missing-screen/replay/evaluation.json": "4df14b32d589f5afd99cf3bb6429a217906e09b327043851375d9da00715a161",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-150__knnf.json": "01a7e20a5977e47162e37dc73b319d82653d15cc6e7bb7765f74a93ad905b5bc"
+  },
+  "prepared_sha256": {
+    "users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "design.npy": "fe9485f50b289d0e8d8d6628eee9662ca376e1eb6a5aa051c474c5f1a4bbc115",
+    "stats.npz": "0e7972eb3d593c07b29b3ba5e769f19fa7a241d3eeb61cea71b42dd1b57f2a9e",
+    "features.npy": "12bf9bd747661ab3860a587fcdc5d98187e2ef5e37123ebf5c47c1490286eca8",
+    "baseline.npy": "5862f0d7866898bc8a77aee8866d7e142176c68f9904b7e3fc05545ded679756"
+  },
+  "baseline_rmse": 0.8662864618486446,
+  "rows": 1128164,
+  "prediction_columns": 62,
+  "design_columns": 138,
+  "isolation": "Outer user labels excluded from ridge, inner stopping, scaling, nonlinear refits. Inner ridge/scaler fit inner-training users only. Final refit uses all outer-training users; no globally cross-fitted residual targets.",
+  "scope": "Fresh-only exploratory ProbeX development comparison; historically selected base recipes. No downloaded prediction features or qualifying outcomes.",
+  "arms": [
+    "control",
+    "tree",
+    "nn",
+    "fixed-half-tree-nn"
+  ],
+  "pretraining_revision": {
+    "previous_manifest_sha256": "500c2206f32b7a3968e5dad45904aa8fb254b80977cc6f332e9e900ed2471e5d",
+    "reason": "Add owned-worker cleanup on SIGTERM before any nonlinear training; prepared arrays and recipe unchanged."
+  }
+}
