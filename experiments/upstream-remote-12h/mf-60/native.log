@@ -1,0 +1,34 @@
+Running 'mf-60': cargo build --release --bin mf-new && ./target/release/mf-new mf-60
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 8.32s
+[mf-60]
+target = "rtg"
+MfConfig { n_feat: 60, n_epochs: 12, seed: 42, shuffle_users: true, lr_u: 0.0031, lr_i: 0.0036, lr_ub: 0.0031, lr_ib: 0.0036, reg_u: 0.03, reg_i: 0.005, sigma_u: 0.004, sigma_i: 0.005, reset_u_epoch: 10, item_feat_npy: None, ordinal_head: None, save_ifeat: false, save_ufeat: false }
+trainx => probex
+Epoch 01 | RMSE 1.01718
+Epoch 02 | RMSE 0.98959
+Epoch 03 | RMSE 0.96978
+Epoch 04 | RMSE 0.95849
+Epoch 05 | RMSE 0.94782
+Epoch 06 | RMSE 0.93869
+Epoch 07 | RMSE 0.93189
+Epoch 08 | RMSE 0.92623
+Epoch 09 | RMSE 0.92195
+Epoch 10 | RMSE 0.95569
+Epoch 11 | RMSE 0.93487
+Epoch 12 | RMSE 0.92604
+probex RMSE 0.92604
+fulltrain => qual
+Epoch 01 | RMSE 3.67394
+Epoch 02 | RMSE 3.70110
+Epoch 03 | RMSE 3.70469
+Epoch 04 | RMSE 3.71286
+Epoch 05 | RMSE 3.71047
+Epoch 06 | RMSE 3.71152
+Epoch 07 | RMSE 3.71697
+Epoch 08 | RMSE 3.71941
+Epoch 09 | RMSE 3.72456
+Epoch 10 | RMSE 3.72343
+Epoch 11 | RMSE 3.71483
+Epoch 12 | RMSE 3.72107
+

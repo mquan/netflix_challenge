@@ -120,6 +120,6 @@ def export(job, kept):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--job', required=True)
-    ap.add_argument('--kept', nargs='+', required=True, help='Kept epoch labels, e.g. 01 05')
+    ap.add_argument('--kept', nargs='*', default=[], help='Kept epoch labels, e.g. 01 05')
     a = ap.parse_args()
     export(a.job, a.kept)

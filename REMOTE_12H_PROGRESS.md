@@ -81,3 +81,5 @@ aside (not deleted).
 - 09:37Z `bknbrx-50` launched (tmux `r12-bknbrx-50`).
 - 10:14Z `bknbrx-50` **completed** (0.615 h, peak 10.2 GB, swap 0; probex 0.90037). 53 receipt hashes verified; terminal + ep05/09/17/21 exported (5 unique). Fixture diagnostic (ep05/ep17 only released): corr ≈ 0.9999, RMSE within 2e-5 (Hogwild).
 - 10:14Z `mf-60__knn3` chain launched (runs `mf-60` then `mf-60__knn3`).
+- 10:22Z `mf-60` + `mf-60__knn3` **completed** (0.131 h total, peak 3.5 GB). Exported terminal vectors (no kept epochs declared); fixture diagnostic: bit-identical to released (RMSE 0.926041 / 0.907782).
+- 10:23Z `als8-8__knn3` chain launched.

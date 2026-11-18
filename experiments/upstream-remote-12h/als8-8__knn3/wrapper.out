@@ -1,0 +1,11 @@
+{
+  "requested": "als8-8__knn3",
+  "order": [
+    "als8-8",
+    "als8-8__knn3"
+  ],
+  "commands": [
+    "cargo build --release --bin als8-new && ./target/release/als8-new als8-8",
+    "cargo build --release --bin als8-new && ./target/release/als8-new als8-8__knn3"
+  ]
+}
