@@ -1,0 +1,6 @@
+2026-11-18T09:36:59Z Running 'bknbrx-50': cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-50
+2026-11-18T09:36:59Z     Finished `release` profile [optimized] target(s) in 0.26s
+2026-11-18T09:36:59Z [bknbrx-50]
+2026-11-18T09:36:59Z target = "rtg"
+2026-11-18T09:36:59Z BknbrxConfig { n_epochs: 25, seed: 42, shuffle_users: true, parallel_mode: Hogwild, n_threads: 8, n_time_bins: 30, beta: 0.4, lr_bu: 0.003, lr_but: 0.0025, lr_alpha: 1e-5, lr_bi: 0.002, lr_bit: 5e-5, lr_cu: 0.008, lr_cut: 0.002, reg_bu: 0.03, reg_but: 0.005, reg_alpha: 50.0, reg_bi: 0.03, reg_bit: 0.1, reg_cu: 0.01, reg_cut: 0.005, max_neighbors: 50, lr_w: 0.005, lr_c: 0.005, lr_beta_u: 1e-7, reg_w: 0.002, reg_c: 0.002, reg_beta_u: 0.01, lr_w_day: 0.004, lr_c_day: 0.004, reg_w_day: 0.002, reg_c_day: 0.002, lambda1: 25.0, lambda2: 10.0 }
+2026-11-18T09:36:59Z trainx => probex
