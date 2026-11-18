@@ -1,0 +1,71 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 64,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0"
+  },
+  "code_sha256": {
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/upstream_exchange.py": "f3cc6cdda82b5d39524f16a33f74c9ae29491a38492841eafd212360035718ab",
+    "scripts/upstream_expansion.py": "bf92a8655401b297f98fbf2692cf941c89f30edcec3db5aec057c70e029d22ff",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "scripts/upstream_remote_integration.py": "7f98d1a28464c666dd3768f93d93980479b1a0297b83dd369a4d75631a1e3bd5",
+    "scripts/verify_upstream_nonlinear.py": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_manifests_sha256": {
+    "experiments/upstream-remote-12h/bknbrx-100/transfer-manifest.json": "68c6fd0f995b35d395724a68aeabd3c56ef27187add9862f485fdad8ce9c6e45",
+    "experiments/upstream-remote-12h/bknbrx-100/native-receipt.json": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+    "experiments/upstream-nonlinear/manifest.json": "fea7d2fa0d66d7553acb58c6b8cb4b388b192f4fb3a28b3f208bf44d2ee509df",
+    "experiments/upstream-nonlinear/evaluation.json": "4a044d5e9a541be577d966035ad63cead1036487284adc654a1f1385903da051",
+    "experiments/upstream-nonlinear/independent-verification.json": "4e8da38d6d063410f3b4bb576444592c59d3c2330e20ff0e70e94d491475e080"
+  },
+  "prepared_sha256": {
+    "users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "design.npy": "fda286989cedd62a4b68559800565dbc81e6584e55c3714107450a7c02340781",
+    "stats.npz": "f383a5e06fd4a7172ae68e7856220165f91d5567364684ba547357de81a31035",
+    "features.npy": "af543de65169e8f64443599a8f0a56643a01c06a6281ee0db94fba5b9db6d4a5",
+    "baseline.npy": "cfc96a3e2641a6fd3f44557f6e58489522237da1c23a1f9d673d5a001c540145"
+  },
+  "baseline_rmse": 0.8655052917304086,
+  "rows": 1128164,
+  "prediction_columns": 64,
+  "design_columns": 140,
+  "parent_nonlinear_rmse": 0.8644717283393785,
+  "remote_columns": [
+    "bknbrx-100",
+    "bknbrx-100_ep01"
+  ],
+  "isolation": "Outer user labels excluded from ridge, inner stopping, scaling, nonlinear refits. Inner ridge/scaler fit inner-training users only. Final refit uses all outer-training users; no globally cross-fitted residual targets.",
+  "scope": "Fresh-only exploratory ProbeX development comparison; historically selected base recipes. No downloaded prediction features or qualifying outcomes.",
+  "arms": [
+    "control",
+    "tree",
+    "nn",
+    "fixed-half-tree-nn"
+  ]
+}

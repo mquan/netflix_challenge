@@ -1,0 +1,37 @@
+{
+  "receiving_verification": {
+    "transfer_sha256": "68c6fd0f995b35d395724a68aeabd3c56ef27187add9862f485fdad8ce9c6e45",
+    "receipt_sha256": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+    "verified_exports": 3,
+    "unique_columns": [
+      "bknbrx-100",
+      "bknbrx-100_ep01"
+    ],
+    "duplicate_of": {
+      "bknbrx-100_ep05": "bknbrx-100"
+    },
+    "alignment_sha256": {
+      "ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+      "user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+      "item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+      "dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47"
+    },
+    "scope": "Receiver verifies NPZ/content/alignment and receipt bindings. Sender verified all native output hashes; fulltrain/qual native files remain on sender."
+  },
+  "parent_control_rmse": 0.8662864618486446,
+  "rmse": 0.8655052917304086,
+  "delta_vs_parent": -0.0007811701182359743,
+  "fold_delta": [
+    -0.0007657079150505952,
+    -0.0007970563118173679,
+    -0.0007533566438046035,
+    -0.0007625418374711534,
+    -0.0008271221701522391
+  ],
+  "controls": [
+    0.8677119362283469,
+    0.8663200739003111,
+    0.8662864618486446
+  ],
+  "scope": "Fixed fresh bknbrx terminal/ep01 addition, duplicate ep05 excluded. Global rating weights; original fourteen-only interactions unchanged."
+}
