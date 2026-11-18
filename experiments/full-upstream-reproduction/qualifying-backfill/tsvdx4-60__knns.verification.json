@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T20:09:15.790489+00:00",
+  "job": "tsvdx4-60__knns",
+  "receipt_sha256": "be353a67b2b54f1376a7e85395cae9bfa6c60f1f1387cf7b828a9552786e3705",
+  "outputs_verified": 3,
+  "paired_files": {
+    "probex": "artifacts/upstream-qualifying-backfill/fresh/preds_new/tsvdx4-60__knns.probex.npy",
+    "qual": "artifacts/upstream-qualifying-backfill/fresh/preds_new/tsvdx4-60__knns.qual.npy"
+  },
+  "paired_sha256": {
+    "probex": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+    "qual": "b3841a416458d72faee0b97c481f6a91dd7a4be324fb5eee5a8579b0c0eecdb2"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_command_matches_registry": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Completed fresh native two-phase temporal KNN correction, all native output hashes checked. No qualifying quality or final-ensemble claim."
+}

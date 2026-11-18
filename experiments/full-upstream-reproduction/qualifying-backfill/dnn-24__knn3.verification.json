@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-18T20:20:44.820974+00:00",
+  "job": "dnn-24__knn3",
+  "receipt_sha256": "f882d90aab003169d55639ad6a8af1e90c6ab72a6232eab554430ee576dd84c5",
+  "outputs_verified": 3,
+  "paired_files": {
+    "probex": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__knn3.probex.npy",
+    "qual": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__knn3.qual.npy"
+  },
+  "paired_sha256": {
+    "probex": "2e9f601f89dceb268c07c8082f6f38dcca69f670c3ef982a6e654c4f6debce56",
+    "qual": "5cf0cc49b43cfdacff60176494fa103d744b188a4ba77f4f89689d5734e06acc"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_command_matches_registry": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Completed fresh native two-phase DNN KNN correction, all native output hashes checked. No qualifying quality or final-ensemble claim."
+}
