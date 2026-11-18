@@ -1,0 +1,23 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "bknbrx-100",
+  "command": "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-100",
+  "started": "2026-11-18T03:03:00.978671+00:00",
+  "finished": "2026-11-18T03:12:04.163972+00:00",
+  "outputs": {
+    "preds_new/bknbrx-100.out": "d90944d11accfe7ff03b37756e6840e8154d1283c4e39020bf3bf4055680672d",
+    "preds_new/bknbrx-100.probex.npy": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+    "preds_new/bknbrx-100.qual.npy": "9d4cb4ee94581a9ce7fcdea7ef5703aa8a77338b87e19c3958d0715e786e83f2",
+    "preds_new/bknbrx-100_ep01.probex.npy": "ba4370e38c457aebe569759741a47a0795127f444166b2c6383e2008c43368ae",
+    "preds_new/bknbrx-100_ep01.qual.npy": "758bfa1a46c005cbc95f1101960bd13860b5b1eceaafabd9545f6be1e5b6169c",
+    "preds_new/bknbrx-100_ep02.probex.npy": "a8ab35a5a844dd9b2af63e27fda9a05ed95f1c27a562d9c43a79f952449aa4d8",
+    "preds_new/bknbrx-100_ep02.qual.npy": "9d7d92d07049159bb6c9c562c76430d35f729ceff9638bdeb8746f30d56cf4c2",
+    "preds_new/bknbrx-100_ep03.probex.npy": "3777dedc3143350f2a5302b2278e970b4ac38eaf03960525fa67e560510a6624",
+    "preds_new/bknbrx-100_ep03.qual.npy": "35051e43da10a836a9862e7498918cc58b4933897ef403b7d61588c41740fc28",
+    "preds_new/bknbrx-100_ep04.probex.npy": "6b308df114c7a25059866c2497d584a56ba0b1dc94b6f863fb63ac38e707f5bc",
+    "preds_new/bknbrx-100_ep04.qual.npy": "ca52fb25db54bb7018b7eed1f67fad31f0a29136af9164ebd75b245dc13f1153",
+    "preds_new/bknbrx-100_ep05.probex.npy": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+    "preds_new/bknbrx-100_ep05.qual.npy": "9d4cb4ee94581a9ce7fcdea7ef5703aa8a77338b87e19c3958d0715e786e83f2"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

@@ -1,0 +1,94 @@
+{
+  "job": "bknbrx-100",
+  "created": "2026-11-18T03:12:26.465348+00:00",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_commit_matches_pin": true,
+  "native_receipt": "experiments/upstream-remote-12h/bknbrx-100/native-receipt.json",
+  "native_receipt_sha256": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+  "all_receipt_output_hashes_verified": 13,
+  "native_command": "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-100",
+  "native_started": "2026-11-18T03:03:00.978671+00:00",
+  "native_finished": "2026-11-18T03:12:04.163972+00:00",
+  "outputs": [
+    {
+      "kind": "terminal",
+      "source": "preds_new/bknbrx-100.probex.npy",
+      "source_npy_sha256": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+      "receipt_bound_sha256": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-100.probex.npz",
+      "npz_sha256": "a6a30251c3bb49966fe54625251b420d6a72979db0b20778b576e0bc6583e15c",
+      "prediction_content_sha256": "0800803c8b4017e6dbbeafaba85e685e4bd9f7d64683a7c0c85e01b794eab255",
+      "owning_native_receipt_sha256": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+      "diagnostic_standalone_probex_rmse": 0.9055135055758772,
+      "min": -2.7291665077209473,
+      "max": 7.584392547607422
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-100_ep01.probex.npy",
+      "source_npy_sha256": "ba4370e38c457aebe569759741a47a0795127f444166b2c6383e2008c43368ae",
+      "receipt_bound_sha256": "ba4370e38c457aebe569759741a47a0795127f444166b2c6383e2008c43368ae",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-100_ep01.probex.npz",
+      "npz_sha256": "1c5778a2c754581f0347a8100b93124a8289f96484fd939b3e31a2de22f640e9",
+      "prediction_content_sha256": "5db9dd903b356829729517c0d2a635fc88c9643251a1b5af4eec998a906bf271",
+      "owning_native_receipt_sha256": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+      "diagnostic_standalone_probex_rmse": 0.9403720842324139,
+      "min": -2.5100409984588623,
+      "max": 7.6878509521484375
+    },
+    {
+      "kind": "kept-epoch",
+      "source": "preds_new/bknbrx-100_ep05.probex.npy",
+      "source_npy_sha256": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+      "receipt_bound_sha256": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+      "npz": "experiments/upstream-remote-12h/outputs/bknbrx-100_ep05.probex.npz",
+      "npz_sha256": "a6a30251c3bb49966fe54625251b420d6a72979db0b20778b576e0bc6583e15c",
+      "prediction_content_sha256": "0800803c8b4017e6dbbeafaba85e685e4bd9f7d64683a7c0c85e01b794eab255",
+      "owning_native_receipt_sha256": "fc8b6d62c62fd7a11e5b32517d7940bf1fccf60dbc6436645a0314b8f86e940f",
+      "diagnostic_standalone_probex_rmse": 0.9055135055758772,
+      "min": -2.7291665077209473,
+      "max": 7.584392547607422
+    }
+  ],
+  "identical_content_groups": [
+    [
+      "preds_new/bknbrx-100.probex.npy",
+      "preds_new/bknbrx-100_ep05.probex.npy"
+    ]
+  ],
+  "probex_rows": 1128164,
+  "alignment_sha256": {
+    "ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47"
+  },
+  "fresh_data_receipt": {
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "rows": 1128164,
+    "ratings_sha256": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "qualifying_outcomes_zero": true
+  },
+  "host": {
+    "platform": "macOS-27.2.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "cpu": "Apple M3 Max",
+    "ncpu": 14,
+    "physical_ram_bytes": 103079215104
+  },
+  "environment": {
+    "UPSTREAM_REPRO_THREADS": "8",
+    "UPSTREAM_REPRO_BLAS_THREADS": "1",
+    "RAYON_NUM_THREADS": "8",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "wrapper": ".venv/bin/python -u scripts/upstream_repro.py --run-job bknbrx-100",
+    "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
+  },
+  "notes": [
+    "Raw native float32 values, native ProbeX order, no export-time clipping",
+    "Standalone ProbeX RMSE is a diagnostic only, not an ensemble result",
+    "Model weights and fulltrain/qual predictions remain on the originating machine",
+    "Labels not transferred; use alignment hashes"
+  ]
+}

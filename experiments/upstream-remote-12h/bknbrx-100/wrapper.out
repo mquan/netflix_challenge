@@ -1,0 +1,10 @@
+{
+  "requested": "bknbrx-100",
+  "order": [
+    "bknbrx-100"
+  ],
+  "commands": [
+    "cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-100"
+  ]
+}
+Finished bknbrx-100

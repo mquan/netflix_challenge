@@ -1,0 +1,20 @@
+Running 'bknbrx-100': cargo build --release --bin bknbrx-new && ./target/release/bknbrx-new bknbrx-100
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 9.68s
+[bknbrx-100]
+target = "rtg"
+BknbrxConfig { n_epochs: 5, seed: 42, shuffle_users: true, parallel_mode: Hogwild, n_threads: 8, n_time_bins: 30, beta: 0.4, lr_bu: 0.003, lr_but: 0.0025, lr_alpha: 0.0, lr_bi: 0.002, lr_bit: 5e-5, lr_cu: 0.008, lr_cut: 0.002, reg_bu: 0.03, reg_but: 0.005, reg_alpha: 50.0, reg_bi: 0.03, reg_bit: 0.1, reg_cu: 0.01, reg_cut: 0.005, max_neighbors: 100, lr_w: 0.005, lr_c: 0.005, lr_beta_u: 0.0, reg_w: 0.002, reg_c: 0.002, reg_beta_u: 0.01, lr_w_day: 0.004, lr_c_day: 0.004, reg_w_day: 0.002, reg_c_day: 0.002, lambda1: 25.0, lambda2: 10.0 }
+trainx => probex
+Epoch 01 | RMSE 0.94037
+Epoch 02 | RMSE 0.92234
+Epoch 03 | RMSE 0.91390
+Epoch 04 | RMSE 0.90886
+Epoch 05 | RMSE 0.90551
+probex RMSE 0.90551
+fulltrain => qual
+Epoch 01 | RMSE 3.68415
+Epoch 02 | RMSE 3.69216
+Epoch 03 | RMSE 3.69676
+Epoch 04 | RMSE 3.70065
+Epoch 05 | RMSE 3.70350
+

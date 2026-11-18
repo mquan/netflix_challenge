@@ -1,0 +1,2 @@
+2026-11-18T03:12:43.699265+00:00 launched pid/pgid 1345: env RAYON_NUM_THREADS=8 VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 ./target/release/cfnade-new --test --hidden 320 --rank 96 --epochs 4 --swa-start 3 --eval-every 1 deadline 2026-11-18T03:32:43+00:00
+2026-11-18T03:12:44.759589+00:00 finished state=failed exit=127 leftover=[]

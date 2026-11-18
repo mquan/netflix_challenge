@@ -1,0 +1,41 @@
+{
+  "name": "cfnade-96-profile",
+  "command": [
+    "env",
+    "RAYON_NUM_THREADS=8",
+    "VECLIB_MAXIMUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "./target/release/cfnade-new",
+    "--test",
+    "--hidden",
+    "320",
+    "--rank",
+    "96",
+    "--epochs",
+    "4",
+    "--swa-start",
+    "3",
+    "--eval-every",
+    "1"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh",
+  "pgid": 1602,
+  "started": "2026-11-18T03:13:09.220536+00:00",
+  "deadline": "2026-11-18T03:33:09+00:00",
+  "baseline": {
+    "memory_level_pct": 90,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 92.01
+  },
+  "state": "interrupted-deadline",
+  "exit_code": -15,
+  "finished": "2026-11-18T03:33:09.957560+00:00",
+  "elapsed_h": 0.334,
+  "peak_group_rss_mb": 4066.4,
+  "leftover_group_members": [],
+  "final_host": {
+    "memory_level_pct": 92,
+    "swap_used_mb": 0.0,
+    "disk_free_gb": 112.04
+  }
+}
