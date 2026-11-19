@@ -1,5 +1,10 @@
 # Match the tree to the verified86-predictor neural component
 
+Completed November 18 Pacific: all five folds improve, all 15 saved trees replay
+bit-for-bit, and independent full scoring verifies **0.8600300601883686**.
+See [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md)
+for the complete result. The original design and partial observations follow.
+
 The current best, 0.8600637147575518 on adaptive known ProbeX, combines the
 original85-predictor tree with the new86-predictor context NN. With the neural
 fits complete, test the corresponding tree on those same86-predictor inputs.
@@ -35,7 +40,7 @@ This is an additional adaptive known-ProbeX comparison. Qualifying outcomes are
 not read, and no qualifying fit starts automatically from this experiment.
 A full verified development improvement would require a matching full-data
 production plan before a frozen qualifying prediction and recovered-group audit.
-The goal remains strictly below0.85725 on both recovered groups.
+The goal remains strictly below 0.85725 on both recovered groups.
 
 First-fold evidence: `verify_upstream_cf12_tree_partial.py --fold 0` replays
 all three saved trees bit-for-bit and independently scores the fixed mean on

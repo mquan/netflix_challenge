@@ -1,0 +1,39 @@
+{
+  "state": "verified_complete_comparison",
+  "rows": 1128164,
+  "users": 462858,
+  "independent_rmse": {
+    "previous": 0.8600637147575518,
+    "matching": 0.8600300601883686
+  },
+  "delta_rmse": -3.365456918325016e-05,
+  "fold_rmse_deltas": [
+    -5.2484840207478456e-05,
+    -2.8573132900722165e-05,
+    -2.527735437085621e-05,
+    -8.194697669994255e-06,
+    -5.366968953057771e-05
+  ],
+  "all_folds_improve": true,
+  "paired_delta_mse": -5.788901495056109e-05,
+  "conditional_user_cluster_95_mse_interval": [
+    -0.00010211751809712599,
+    -1.3660511803996185e-05
+  ],
+  "all_tree_and_neural_artifacts_rehashed": true,
+  "neural_vector_unchanged": true,
+  "source_sha256": {
+    "experiments/upstream-cf12-tree/manifest.json": "fc6ede9b4d1a9d0566b23ef17e6d4b9d6e0f363bcff7e1d9967fde7672170768",
+    "experiments/upstream-cf12-tree/evaluation.json": "dde668dc1d5043b7d624de264765b6fb4e0d04b38b3864e7023e361374444c9e",
+    "experiments/upstream-cf12-tree/independent-verification.json": "7b37545f92432d69fcf7f1b8ee44062087203fd1da1120ef4d56785c4a4692e3",
+    "experiments/upstream-cf12-tree/tree-replay.json": "ab307d710725876fe4408fdde1aac7a5694504236a9e68dd8819de26becdf671",
+    "experiments/upstream-cf12-context/manifest.json": "c2c6be0074f85f75beaf705365ea27c8ac3c392da39a0660e4830f5e90b2d950",
+    "experiments/upstream-cf12-context/evaluation.json": "cb48e0f7c95f46b1409f08d33daa5676c6386714c33bd42db11f57346ba7a882",
+    "experiments/upstream-cf12-context/independent-verification.json": "d55668a4fb96b2c0916e167f7dc3157bcb89a81ca61764c50f3b275e8ee2c5c4",
+    "experiments/upstream-cf12-context/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720"
+  },
+  "verifier_sha256": "9fa18284a20ee1051a5237cfb081d98693176820e93e15467ee541d235353e4c",
+  "qualifying_labels_read": false,
+  "goal_complete": false,
+  "scope": "Complete adaptive known-ProbeX development comparison. Intervals condition on selected models and this bank; no selection correction, official score or untouched Test claim."
+}

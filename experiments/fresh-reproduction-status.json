@@ -1,13 +1,13 @@
 {
-  "observed": "2026-11-19T04:57:31.040379+00:00",
-  "display_time": "November 18, 2026, 08:57 PM Pacific",
-  "best_development_rmse": 0.8600637147575518,
+  "observed": "2026-11-19T05:27:04.201295+00:00",
+  "display_time": "November 18, 2026, 09:27 PM Pacific",
+  "best_development_rmse": 0.8600300601883686,
   "qualifying_status": "pending",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "cb48e0f7c95f46b1409f08d33daa5676c6386714c33bd42db11f57346ba7a882",
-  "independent_verification_sha256": "d55668a4fb96b2c0916e167f7dc3157bcb89a81ca61764c50f3b275e8ee2c5c4",
+  "verified_development_report_sha256": "dde668dc1d5043b7d624de264765b6fb4e0d04b38b3864e7023e361374444c9e",
+  "independent_verification_sha256": "7b37545f92432d69fcf7f1b8ee44062087203fd1da1120ef4d56785c4a4692e3",
   "work": [
     {
       "work": "Paired prediction bank",
@@ -15,19 +15,19 @@
     },
     {
       "work": "Temporal150 qualifying phase",
-      "state": "21/25 epochs; first20 snapshots exactly match our earlier remote native hashes; complete paired receipt still required"
+      "state": "22/25 epochs; first20 snapshots exactly match our earlier remote native hashes; complete paired receipt still required"
     },
     {
       "work": "CFNADE96",
-      "state": "26/95 ProbeX; 25/95 qualifying"
+      "state": "28/95 ProbeX; 26/95 qualifying"
     },
     {
       "work": "CFNADE48",
-      "state": "26/95 ProbeX; 25/95 qualifying"
+      "state": "28/95 ProbeX; 27/95 qualifying"
     },
     {
       "work": "AEX128",
-      "state": "ProbeX phase20/20 complete; qualifying 10/20"
+      "state": "ProbeX phase20/20 complete; qualifying 14/20"
     },
     {
       "work": "Original source DAG",
@@ -35,11 +35,11 @@
     },
     {
       "work": "Matching86-predictor tree study",
-      "state": "Four of five folds complete; all four improve and pass bitwise replay. Final fold running; no complete-result promotion"
+      "state": "Complete: all five folds improve; all 15 saved trees replay bit-for-bit; independent fixed-mean RMSE 0.8600300602"
     },
     {
       "work": "Qualifying blend",
-      "state": "Queued after complete temporal outputs and paired-receipt verification"
+      "state": "First85 fit queued after complete temporal outputs. Matching86 production path now passes the development gate; its adapter is still to be implemented and tested."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim."

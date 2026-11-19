@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "fc6ede9b4d1a9d0566b23ef17e6d4b9d6e0f363bcff7e1d9967fde7672170768",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8633631201729799,
+      "delta_vs_previous_best": 0.0032994054154278363,
+      "fold_rmse": [
+        0.8627989798575708,
+        0.8606440769444718,
+        0.8641527792157452,
+        0.8649782646502322,
+        0.864244644393474
+      ],
+      "prediction_sha256": "6d4633d5fccff2411d7be8bf95d0d110d89456cc9c91c1fc89767511a3c3451f"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8607727186827031,
+      "delta_vs_previous_best": 0.0007090039251510527,
+      "fold_rmse": [
+        0.8598678789172308,
+        0.8582020508703171,
+        0.8618142969900895,
+        0.8624017027420726,
+        0.8615840385125638
+      ],
+      "prediction_sha256": "f39386c874e2ce54f41eb57a631eeb27b98f2ddbe02fca013451083c4dd2735a"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8600986905055018,
+      "delta_vs_previous_best": 3.4975747949750335e-05,
+      "fold_rmse": [
+        0.8593767964470871,
+        0.8575617622705558,
+        0.8611782478071934,
+        0.8618442718749529,
+        0.860538231563773
+      ],
+      "prediction_sha256": "dd8f2ef48228d3ba37eebc4dedb00fe6190f680de4196a39f1af98b98ef59d6b"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8600300601883685,
+      "delta_vs_previous_best": -3.365456918358323e-05,
+      "fold_rmse": [
+        0.8592639386651046,
+        0.8574717065320295,
+        0.8610541720231786,
+        0.8617380551405165,
+        0.8606281094246714
+      ],
+      "prediction_sha256": "e233cb67922156e7b5b5bbbc85783dcda964d640464319cbff7c58e910f8e3bc"
+    }
+  ],
+  "previous_best_rmse": 0.8600637147575521,
+  "scope": "Adaptive known-ProbeX matching-tree experiment. Original tree hyperparameters/user folds, now the same86-predictor ridge/features as the verified context NN. Reuses the actual neural OOF vector without a new neural fit or synthetic receipts. No qualifying outcomes or production changes.",
+  "isolation": "Voting statistics and latent features fit only on trainx ratings; query rows are MaskedDataset inputs in pinned save_vfeat1. Blender ridge/scalers/budget selection exclude outer scoring users. Qualifying outcomes are zero throughout training."
+}
