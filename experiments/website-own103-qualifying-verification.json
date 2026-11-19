@@ -1,0 +1,92 @@
+{
+  "state": "verified_own103_qualifying_best_publication",
+  "observed": "2026-11-19T14:08:24.008873+00:00",
+  "source_commit": "a808b91b671c99a26dbde9c6ea4f933ca85640ac",
+  "pages_commit": "541932377396d2b925a9e23fa1ad5d6369c9c704",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "d956ffda37468c5352e19014a0e969291f99200f840b848f25061af796ef8011",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "d956ffda37468c5352e19014a0e969291f99200f840b848f25061af796ef8011",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "f6a8ce8015a7f86b1dbdc54553e49c45552aac37a98bf1af4ae5f8d39757242d",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "sha256": "e44e0d536f4ef8c5a8607b18bf245eb952e4b5e984b47feb3605ae60cf8b2d74",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "3e0692bdf419207b45ed178895893da27fa0386b7b7d11427b4ea915664f0b2c",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "CF48_103_QUALIFYING_RESULT.md",
+      "status": 200,
+      "sha256": "9cfd3fbf9c479f9b6d9355fb81b2bd5c1a2333538beebd79e19ffa3b7df5146a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "9f2ac4da8dff17eee87bddfce3d54b2999798267d1834e574508c028a84a958f",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "27e09aa2a0420b0454c98388688b92c78a8ac9eb43d2feffaf839e2149908745",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-cf48-103-nn-audit/verification.json",
+      "status": 200,
+      "sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-cf48-103-production/frozen-mean-score-verification.json",
+      "status": 200,
+      "sha256": "d8d91469ae87154064eeb38d3e35ef9054e40092c50faa2e7a684e78d73750cd",
+      "local_bytes_equal": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "headline_scores_verified": true,
+  "horizontal_overflow": false,
+  "milestones": 45,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8594692563654075,
+  "best_qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8609916544142975,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8619938614020105,
+      "below_target": false
+    }
+  },
+  "qualifying_target_achieved": false,
+  "own105_training": true,
+  "plots_updated": true
+}
