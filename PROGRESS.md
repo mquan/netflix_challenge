@@ -44,8 +44,8 @@ known-ProbeX evaluation on a different population; it is not a qualifying score.
 | Fixed 91-predictor study | All six native extensions ready; nested tree fitting active; continuation depends on known-ProbeX improvement |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 fallback | All 25 epochs logged; final native output generation remains active before complete receipt publication |
-| CFNADE96 | Original 320/96/95 workers remain active locally; partial models are not production eligible |
-| CFNADE48 | Remote live-process heartbeat 06:36 UTC reports 36/35 epochs and no swap growth; deadline 14:33 UTC, return 15:03 UTC |
+| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for temporal-bank completion and physical-footprint/compressor/swap admission |
+| CFNADE48 | Remote live-process heartbeat 07:06 UTC reports 42/40 epochs and no swap growth; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
 | Primary DAG | Advanced to original temporal16 source work |
 
@@ -69,6 +69,10 @@ advance the chronological original-Probe record. See
 [PROMOTION_POLICY.md](PROMOTION_POLICY.md).
 
 Current evidence:
+
+- `experiments/upstream-memory-observation/cf96-resource-yield.json`: preserved33/31 checkpoints and measured active-paging evidence.
+- `experiments/upstream-cf96-memory-resume/launch.json`: guarded original-controller resume.
+- `experiments/upstream-cfnade96-sparse-resume/kernel-verification.json`:32 synthetic parity cases; full-data trajectory proof is still required.
 
 - [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md): complete scores, model replay, scope and continuation.
 - `experiments/upstream-first85-completion-audit/verification.json`: independent completion audit, 333 evidence bindings and explicit target miss.

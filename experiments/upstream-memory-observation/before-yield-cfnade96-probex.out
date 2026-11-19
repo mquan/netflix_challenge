@@ -1,0 +1,41 @@
+[cfnade-96 independent phase] CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }
+trainx => probex
+CF-NADE init: sampling A/P factors (2 x 5 x 17770 x 96)...
+CF-NADE init: computing item rating-bias priors...
+CF-NADE init: indexing user ratings...
+CF-NADE init: indexing probe items for implicit context...
+CF-NADE init: building per-user day-frequency bins...
+CF-NADE init: computing side-feature statistics...
+Epoch 01 | RMSE 0.92696
+Epoch 02 | RMSE 0.92074
+Epoch 03 | RMSE 0.91670
+Epoch 04 | RMSE 0.91528
+Epoch 05 | RMSE 0.91502
+Epoch 06 | RMSE 0.91258
+Epoch 07 | RMSE 0.91533
+Epoch 08 | RMSE 0.91180
+Epoch 09 | RMSE 0.91008
+Epoch 10 | RMSE 0.91106
+Epoch 11 | RMSE 0.91095
+Epoch 12 | RMSE 0.91152
+Epoch 13 | RMSE 0.90986
+Epoch 14 | RMSE 0.90923
+Epoch 15 | RMSE 0.90868
+Epoch 16 | RMSE 0.90939
+Epoch 17 | RMSE 0.90732
+Epoch 18 | RMSE 0.90859
+Epoch 19 | RMSE 0.90156
+Epoch 20 | RMSE 0.89889
+Epoch 21 | RMSE 0.89766
+Epoch 22 | RMSE 0.89702
+Epoch 23 | RMSE 0.89643
+Epoch 24 | RMSE 0.89593
+Epoch 25 | RMSE 0.89559
+Epoch 26 | RMSE 0.89530
+Epoch 27 | RMSE 0.89500
+Epoch 28 | RMSE 0.89475
+Epoch 29 | RMSE 0.89457
+Epoch 30 | RMSE 0.89453
+Epoch 31 | RMSE 0.89432
+Epoch 32 | RMSE 0.89426
+Epoch 33 | RMSE 0.89414

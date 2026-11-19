@@ -1,0 +1,72 @@
+{
+  "state": "checkpointed_cf96_workers_yielded_to_reduce_active_paging",
+  "observed": "2026-11-19T07:20:55.894662+00:00",
+  "controller": "35987 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cfnade_parallel.py",
+  "children": [
+    "41719",
+    "41720"
+  ],
+  "all_three_processes_exited": true,
+  "before": {
+    "state": "training",
+    "epochs": {
+      "x": 33,
+      "qual": 31
+    },
+    "active": {
+      "x": 41719,
+      "qual": 41720
+    },
+    "rss_bytes": {
+      "x": 467517440,
+      "qual": 291717120
+    },
+    "other_rss_bytes": 6734118912,
+    "disk_free_bytes": 107920384000,
+    "heartbeat": "2026-11-19T07:20:27.359140+00:00"
+  },
+  "preserved_checkpoints": {
+    "trainx": {
+      "epoch": 33,
+      "all84_tensors_rehashed": true,
+      "state": "artifacts/upstream-cfnade-checkpoint/parallel-checkpoints/trainx/epoch-00033/state.json",
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "prediction_sha256": "cb324a50ac3ace9c124a2ec00ee4f9dd6d6bb93e10b4c781e327bc51cba0bced",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "c46870e9892edc2a8ad5a2550a146236e1fbfc8aee7c3f71422bf73ccbf12538",
+        "items": 17770,
+        "protocol": 1,
+        "query": "probex",
+        "query_rows": 1128164,
+        "source": "caa746c11ae0070b1615d5594e8edca924a348da88ae743b8938f8a5760cd636",
+        "train": "trainx",
+        "train_rows": 99352343,
+        "users": 480189
+      }
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "all84_tensors_rehashed": true,
+      "state": "artifacts/upstream-cfnade-checkpoint/parallel-checkpoints/fulltrain/epoch-00031/state.json",
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "prediction_sha256": "45db355b8c88f3f8fbc8d92cb84e0908a878c8739c0a7902a58e73c64bdc5222",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "c46870e9892edc2a8ad5a2550a146236e1fbfc8aee7c3f71422bf73ccbf12538",
+        "items": 17770,
+        "protocol": 1,
+        "query": "qual",
+        "query_rows": 2817131,
+        "source": "caa746c11ae0070b1615d5594e8edca924a348da88ae743b8938f8a5760cd636",
+        "train": "fulltrain",
+        "train_rows": 100480507,
+        "users": 480189
+      }
+    }
+  },
+  "other_native_or_development_workers_signalled": false,
+  "goal_paused": false,
+  "goal_achieved": false,
+  "resume_policy": "Resume under admission that accounts for compressed/physical-footprint memory after the uncheckpointed temporal final-output job completes. Preserve all95 epochs and full320/96 capacities. New kernel still requires full-data trajectory proof before cutover."
+}

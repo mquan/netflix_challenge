@@ -1,0 +1,28 @@
+{
+  "observed": "2026-11-19T07:17:21.442999+00:00",
+  "elapsed_seconds": 49.877895,
+  "swap": "vm.swapusage: total = 7168.00M  used = 6739.44M  free = 428.56M  (encrypted)\n",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                 946.\nPages active:                            377379.\nPages inactive:                          358427.\nPages speculative:                        17217.\nPages throttled:                              0.\nPages wired down:                        152252.\nPages purgeable:                              0.\n\"Translation faults\":                5943517472.\nPages copy-on-write:                  195815375.\nPages zero filled:                   3132089551.\nPages reactivated:                   1159535481.\nPages purged:                          37696529.\nFile-backed pages:                       277213.\nAnonymous pages:                         475810.\nPages stored in compressor:             2475189.\nPages occupied by compressor:           1148595.\nDecompressions:                      1244205669.\nCompressions:                        1305660200.\nPageins:                              367755440.\nPageouts:                               2999242.\nSwapins:                               15208645.\nSwapouts:                              17170774.\n",
+  "deltas": {
+    "Swapins": {
+      "pages": 8133,
+      "mib_per_second": 2.547784444391649
+    },
+    "Swapouts": {
+      "pages": 50588,
+      "mib_per_second": 15.847451060234198
+    },
+    "Decompressions": {
+      "pages": 1381599,
+      "mib_per_second": 432.80664460679424
+    },
+    "Compressions": {
+      "pages": 1646379,
+      "mib_per_second": 515.7529577982391
+    },
+    "Pageins": {
+      "pages": 584516,
+      "mib_per_second": 183.10841907021137
+    }
+  }
+}

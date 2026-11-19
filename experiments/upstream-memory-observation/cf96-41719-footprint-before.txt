@@ -1,0 +1,71 @@
+Process:         cfnade-stage [41719]
+Path:            /Users/USER/*/cfnade-stage
+Load Address:    0x102d28000
+Identifier:      cfnade-stage
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  python3.10 [35987]
+Target Type:     live task
+
+Date/Time:       2026-11-18 23:20:50.389 -0800
+Launch Time:     2026-11-18 11:16:54.545 -0800
+OS Version:      macOS 15.7.7 (24G720)
+Report Version:  7
+Analysis Tool:   /usr/bin/vmmap
+
+Physical footprint:         3.7G
+Physical footprint (peak):  3.7G
+Idle exit:                  untracked
+----
+
+ReadOnly portion of Libraries: Total=846.9M resident=126.5M(15%) swapped_out_or_unallocated=720.4M(85%)
+Writable regions: Total=5.6G written=3.7G(66%) resident=416.4M(7%) swapped_out=3.3G(59%) unallocated=1.9G(34%)
+
+                                VIRTUAL RESIDENT    DIRTY  SWAPPED VOLATILE   NONVOL    EMPTY   REGION
+REGION TYPE                        SIZE     SIZE     SIZE     SIZE     SIZE     SIZE     SIZE    COUNT (non-coalesced)
+===========                     ======= ========    =====  ======= ========   ======    =====  =======
+Kernel Alloc Once                   32K       0K       0K      16K       0K       0K       0K        1
+MALLOC guard page                   96K       0K       0K       0K       0K       0K       0K        6
+MALLOC metadata                   4368K    1344K    1344K    2976K       0K       0K       0K       23
+MALLOC_LARGE                       1.8G   277.9M   277.9M     1.6G       0K       0K       0K       32         see MALLOC ZONE table below
+MALLOC_LARGE (empty)              19.6M       0K       0K    19.6M       0K       0K       0K        2         see MALLOC ZONE table below
+MALLOC_LARGE metadata               16K       0K       0K      16K       0K       0K       0K        1         see MALLOC ZONE table below
+MALLOC_LARGE_REUSABLE            222.0M       0K       0K       0K       0K       0K       0K        3         see MALLOC ZONE table below
+MALLOC_MEDIUM                      1.0G     9.8M     9.8M    89.1M       0K       0K       0K        8         see MALLOC ZONE table below
+MALLOC_MEDIUM (empty)            256.0M       0K       0K    2880K       0K       0K       0K        2         see MALLOC ZONE table below
+MALLOC_NANO                      512.0M    20.2M    20.2M    36.7M       0K       0K       0K        1         see MALLOC ZONE table below
+MALLOC_SMALL                       1.5G    46.3M    46.3M     1.4G       0K       0K       0K      197         see MALLOC ZONE table below
+MALLOC_SMALL (empty)              8192K      64K      64K      80K       0K       0K       0K        1         see MALLOC ZONE table below
+MALLOC_TINY                      165.0M    51.4M    50.6M   113.2M       0K       0K       0K      165         see MALLOC ZONE table below
+MALLOC_TINY (empty)               22.0M    7136K    7136K    13.7M       0K       0K       0K       22         see MALLOC ZONE table below
+STACK GUARD                         32K       0K       0K       0K       0K       0K       0K        2
+Stack                             12.0M      32K      32K      64K       0K       0K       0K        3
+Stack Guard                       56.0M       0K       0K       0K       0K       0K       0K        1
+VM_ALLOCATE                         64K       0K       0K       0K       0K       0K       0K        4
+VM_ALLOCATE (reserved)             384K       0K       0K       0K       0K       0K       0K        3         reserved VM address space (unallocated)
+__AUTH                             822K     107K       0K      97K       0K       0K       0K      161
+__AUTH_CONST                      12.8M    3384K       0K       0K       0K       0K       0K      295
+__DATA                            3216K     344K      32K     374K       0K       0K       0K      274
+__DATA_CONST                      10.7M    2284K       0K      48K       0K       0K       0K      296
+__DATA_DIRTY                       452K      52K      52K     143K       0K       0K       0K       88
+__FONT_DATA                        2352       0K       0K       0K       0K       0K       0K        1
+__LINKEDIT                       617.0M    1488K       0K       0K       0K       0K       0K        2
+__OBJC_RO                         61.4M    5107K       0K       0K       0K       0K       0K        1
+__OBJC_RW                         2397K     464K       0K      45K       0K       0K       0K        1
+__TEXT                           229.9M   125.1M       0K       0K       0K       0K       0K      305
+__TPRO_CONST                       128K      32K      32K      16K       0K       0K       0K        2
+page table in kernel              2586K    2586K    2586K       0K       0K       0K       0K        1
+shared memory                       32K       0K       0K      32K       0K       0K       0K        1
+unused but dirty shlib __DATA      121K      44K      44K      77K       0K       0K       0K       49
+===========                     ======= ========    =====  ======= ========   ======    =====  =======
+TOTAL                              6.6G   554.5M   415.8M     3.3G       0K       0K       0K     1954
+TOTAL, minus reserved VM space     6.6G   554.5M   415.8M     3.3G       0K       0K       0K     1954
+
+                                 VIRTUAL   RESIDENT      DIRTY    SWAPPED ALLOCATION      BYTES DIRTY+SWAP          REGION
+MALLOC ZONE                         SIZE       SIZE       SIZE       SIZE      COUNT  ALLOCATED  FRAG SIZE  % FRAG   COUNT
+===========                      =======  =========  =========  =========  =========  =========  =========  ======  ======
+MallocHelperZone_0x102e9c000        4.8G     392.4M     391.6M       3.2G     607253       3.6G      47.7M      2%     428
+DefaultMallocZone_0x102ed8000     512.0M      20.2M      20.2M      36.7M     820590      51.6M      5469K     10%       1
+===========                      =======  =========  =========  =========  =========  =========  =========  ======  ======
+TOTAL                               5.3G     412.6M     411.8M       3.3G    1427843       3.6G      53.0M      2%     429

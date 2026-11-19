@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T06:53:17.244789+00:00",
-  "display_time": "November 18, 2026, 10:53 PM Pacific",
+  "observed": "2026-11-19T07:37:31.626364+00:00",
+  "display_time": "November 18, 2026, 11:37 PM Pacific",
   "best_development_rmse": 0.8600300601883686,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -35,11 +35,11 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Both original 320/96/95 phase workers continue locally; no partial model admitted"
+      "state": "Checkpoints 33/31 preserved and all84 tensors per phase rehashed. Workers temporarily yielded after active paging grew swap by700MB in50s. Automatic original-controller resume waits for the temporal bank and footprint/compressor/swap admission"
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Remote heartbeat at 06:36 UTC: epochs 36/35, both native workers live, no swap growth. Training deadline 14:33 UTC; return by 15:03 UTC"
+      "state": "Remote live-process heartbeat at07:06UTC: epochs42/40, no swap growth. Training deadline14:33UTC; return by15:03UTC"
     },
     {
       "work": "AEX64 and AEX128",
@@ -48,6 +48,10 @@
     {
       "work": "Matching86 development",
       "state": "Best verified known-ProbeX CV remains 0.8600300602; this uses different rows from the recovered qualifying audit"
+    },
+    {
+      "work": "CFNADE96 kernel prototype",
+      "state": "Private full320/96 kernel passes24 original-source and8 live-backend parity cases through7 epochs. Small-fixture speedup6%; no full-data resume or production cutover yet"
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
