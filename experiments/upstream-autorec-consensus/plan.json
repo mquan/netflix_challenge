@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-19T20:49:30.078872+00:00",
+  "origins": [
+    "upstream-rbm50-tree-latent90-mps",
+    "upstream-rbm50-tree-autorec109-mps"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "script_sha256": "d9d04b5d894266d8ba71c46b9700b1e3416c452581870fe55ca70e1c0ad31aa9",
+  "selection": "Single post-study fixed equal mean of the two already verified own107/all90 and own109/all90 expanded-tree combinations. Both component scores were known before this declaration. No weight search or qualifying outcomes. Retain float32 rounding of each original mean, then average in float64 and store float32.",
+  "automatic_production": false,
+  "qualifying_labels_read": false
+}
