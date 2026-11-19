@@ -30,7 +30,9 @@ plus ridge). Both retain107 own raw prediction columns and the same183-column
 paired ridge. Per-seed budgets come from medians of actual originating folds.
 Both families must fit on all known labels and pass actual full saved-model
 replay before freezing the fixed50/50 mean and accessing recovered outcomes.
-The controller waits for the independently checked paired90 bank and memory.
+At declaration, the controller waited for the independently checked paired90 bank and memory.
+The bank has since passed, the full-known NN fit and actual replay are complete,
+and the CPU tree refit is active. No new qualifying outcome has been read.
 
 The small production integration check passed real fit/save/load/inference
 replay for both widths in separate fresh processes, as production uses. A
