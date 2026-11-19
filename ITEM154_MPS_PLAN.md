@@ -1,5 +1,17 @@
 # Fixed own item context extension
 
+Completed result: NN **0.8593837348929274**; the predeclared expanded-tree half
+mean is **0.8592309819864167**, improving the preceding consensus0.8592432880.
+All15 actual saved-model replays and separate stored-mean/canonical known-label
+scoring pass. The first four fold receipts remain unchanged after explicit
+recovery of the disk-guard interruption; the incomplete fifth fold remains
+archived. No model recipe, folds, seeds or stopping rule changed.
+Evidence: experiments/upstream-rbm50-tree-item154-mps/{verification,
+independent-mean-check}.json and experiments/upstream-item154-recovery/completion.json.
+This is the latest development result; its qualifying audit is still pending.
+
+The following is the original plan, retained as history:
+
 The current independently verified development best is0.8592720612630157;
 qualifying remains0.8608774626094220 /0.8618605526405846. Both qualifying
 groups must fall below0.85725. This experiment has no accuracy result yet.

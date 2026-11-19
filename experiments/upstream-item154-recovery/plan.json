@@ -1,0 +1,26 @@
+{
+  "created": "2026-11-19T20:55:19.363915+00:00",
+  "script_sha256": "2ec43fcc222c0aa79b0c3739c6eb2c1c5306faec4bae1a6cc871d50dc8cb7bac",
+  "original_manifest_sha256": "ac2cb6db6d663f498b328327ff7b743c26bdfa4b16a7d1a0b5a40192570115bd",
+  "completed_receipt_sha256": {
+    "experiments/upstream-item154-mps-context/nn/0.json": "665491f76143b9d25806764823df9b16ab1617291e5fa2e7a99a6b753237a5cd",
+    "experiments/upstream-item154-mps-context/nn/1.json": "a3ba39e48a5b812c363889b01a55d597ccb48a59233538596fbd1b914acade44",
+    "experiments/upstream-item154-mps-context/nn/2.json": "be39c54b486f5c48e8fd46f040327f766387d5a5a01dba5a810eb2f201c36bbb",
+    "experiments/upstream-item154-mps-context/nn/3.json": "ac6cb0118a339fd4631d001f235386ed7bf5b9173b8c5c76404aa059f07f2331"
+  },
+  "partial_sha256": {
+    "nn-2026.pt": "821e386f50dae24381538d7dd353c36dc329c1f99ab7b43b7c50502dc4786746",
+    "ridge.npz": "483feb82ca3a73554c11936b8dca7eb26fcd35384491e384db900d4be88a8868",
+    "nn-7.pt": "01ff50fb2ed3c0b6799dc9bf7590ae7c3414d26ffb59af74ee554599499665cc",
+    "scalers.npz": "66558311dfe607a68d3d27f01e142d29df9a856a1ca22d6008f228cbe83c2125"
+  },
+  "reason": "Actual original worker terminated when paired-bank preparation reduced disk below generic22GiB guard. Four complete folds preserved. Move incomplete fold4 to a separate archive and repeat only that fold with the exact frozen source/config/seeds/folds/stopping.",
+  "model_recipe_changed": false,
+  "resource_policy": {
+    "memory_total_bytes": 25769803776,
+    "consecutive_high_samples": 3,
+    "disk_floor_bytes": 8589934592,
+    "reason": "Inputs already fully allocated; remaining fold/model/replay outputs total far below1GiB. Preserve the original memory guard and allow8GiB disk reserve."
+  },
+  "qualifying_labels_read": false
+}

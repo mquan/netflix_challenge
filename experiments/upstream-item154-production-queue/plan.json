@@ -1,0 +1,21 @@
+{
+  "created": "2026-11-19T21:06:51.107357+00:00",
+  "development_rmse": 0.8592309819864167,
+  "epochs": [
+    7,
+    7,
+    8
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "code_sha256": {
+    "scripts/upstream_item154_production_queue.py": "44e282bdb21d43d1c9feecf9755a577e0f943861e6e90caf85daa5a7fe0bc90e",
+    "scripts/upstream_item154_stream_bank.py": "1abfae1eb1d198d693b733092c2f8db37be4ff6a2ff89721371acd5df59077df",
+    "scripts/upstream_item154_stream_production.py": "ada4356763d069397de5f8e231d8eab3e0da588c8c4711b30d8116270f1da796",
+    "scripts/verify_upstream_item154_stream_production.py": "34982058af5f0ff8371ee3e0f1e482a5eb27275e2ad3d54c89dda662fe987590"
+  },
+  "qualifying_labels_read": false,
+  "rule": "Prepare and verify streamed paired context under the shared fit lock, then fit/replay full new item154 NN with known-fold median budgets. Reuse original full tree. Freeze fixed mean before new canonical-label audit."
+}

@@ -1,0 +1,32 @@
+{
+  "state": "complete_archived_partial_seed_and_transform_comparison",
+  "records": [
+    {
+      "name": "nn-2026.pt",
+      "archived_sha256": "821e386f50dae24381538d7dd353c36dc329c1f99ab7b43b7c50502dc4786746",
+      "recovered_sha256": "821e386f50dae24381538d7dd353c36dc329c1f99ab7b43b7c50502dc4786746",
+      "all_numerical_values_bitwise_equal": true
+    },
+    {
+      "name": "nn-7.pt",
+      "archived_sha256": "01ff50fb2ed3c0b6799dc9bf7590ae7c3414d26ffb59af74ee554599499665cc",
+      "recovered_sha256": "01ff50fb2ed3c0b6799dc9bf7590ae7c3414d26ffb59af74ee554599499665cc",
+      "all_numerical_values_bitwise_equal": true
+    },
+    {
+      "name": "ridge.npz",
+      "archived_sha256": "483feb82ca3a73554c11936b8dca7eb26fcd35384491e384db900d4be88a8868",
+      "recovered_sha256": "483feb82ca3a73554c11936b8dca7eb26fcd35384491e384db900d4be88a8868",
+      "all_numerical_values_bitwise_equal": true
+    },
+    {
+      "name": "scalers.npz",
+      "archived_sha256": "66558311dfe607a68d3d27f01e142d29df9a856a1ca22d6008f228cbe83c2125",
+      "recovered_sha256": "66558311dfe607a68d3d27f01e142d29df9a856a1ca22d6008f228cbe83c2125",
+      "all_numerical_values_bitwise_equal": true
+    }
+  ],
+  "recovery_plan_sha256": "1fd85ad5a8e523f7c69c7558966c4a57391ac364fe6269ab504b4b7b07267f98",
+  "qualifying_labels_read": false,
+  "scope": "Both previously saved seed models and ridge/scalers repeat bitwise under the unchanged frozen recipe. The partial archive is preserved; original actual inference replays separately pass for all15 models."
+}

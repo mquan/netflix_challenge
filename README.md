@@ -12,22 +12,27 @@ not the complete winning ensemble.
 ## Current work: our own trained predictions
 
 As of November19,2026 Pacific, our best independently verified development RMSE
-is **0.8592720613**, the fixed half mean of our expanded107/50 tree and larger
-107/all90 GPU context NN. Both families' actual saved-model replays passed,
-all ten originating fold receipts/models were rehashed, and a separate stored
-mean and compensated score check agrees over1,128,164 known-ProbeX rows.
+is **0.8592309820**, the predeclared fixed half mean of our expanded107/50 tree
+and107/154 GPU context NN. The extra64 item components come from our freshly
+trained native factors, using an independently verified unsupervised projection.
+All original saved-model replays and separate stored-mean/full-known score
+checks pass. This improves the preceding own consensus0.8592432880; a new
+qualifying result is pending. See [ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md) and
+[AUTOREC_CONSENSUS_RESULT.md](AUTOREC_CONSENSUS_RESULT.md).
 All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
 
-**The new expanded-tree/all90 GPU NN qualifying audit still misses the10% target:**
-**0.8608774626 /0.8618605526** on the two recovered source groups. The worse group
-improves **9.5160%** over0.9525, leaving0.0046106 RMSE to the strict0.85725 target.
-The fixed50/50 choice and tree729/706/868 plus NN7/8/7 budgets came solely from
-known-ProbeX development before fitting and new qualifying outcomes. Both actual
-full-model replays, the frozen float32 mean, canonical full group counts and
-separate compensated scoring pass. These are adaptive recovered audits, not
-official/untouched Test. No qualifying outcomes enter fitting or selection.
+**The new own fixed consensus improves the qualifying audit but still misses10%:**
+**0.8608202878 /0.8618006321** on the recovered source groups. The worse group
+improves **9.5222%** over0.9525, leaving0.0045506 RMSE to the strict0.85725 target.
+The fixed equal consensus and new NN7/9/8 budgets came only from known-ProbeX
+development. Original actual full-tree/NN replays were reused, the new full NN
+replayed every query row, and the exact rounded vector was frozen before label
+access. Independent canonical complete-group compensated scoring passes.
+These are adaptive recovered audits, not official/untouched Test. The newer
+item154 development candidate has a separate known-selected full-fit queue.
+No qualifying outcomes enter fitting or selection.
 
 All three original native additions are now complete, including rank1000 with
 both20-epoch phases and separate source/storage/output checks. The whole110, own166 and larger512-unit GPU controls completed

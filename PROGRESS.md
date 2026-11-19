@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T20:44:44.463506+00:00
-best_score: 0.8592720612630157
+timestamp: 2026-11-19T21:11:34.229418+00:00
+best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,29 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New independently verified qualifying result: **0.8608202877523957 /
+0.8618006321174798**, the known-selected own fixed consensus. Both source groups
+improve the preceding0.8608775 /0.8618606; the worse group improves9.5222433%.
+The strict0.85725 target still requires0.0045506321 RMSE on the worse group.
+Actual new full NN7/9/8 replay, original full-model reuse, exact frozen rounded
+mean and separate canonical full-group compensated scoring pass. No qualifying
+outcomes selected weights or budgets. The newer item154 development best
+0.8592309820 is queued separately for its full NN7/7/8 fit and audit.
+
+
+Latest verified development best: **0.8592309819864167**, the predeclared
+expanded-tree/own107+154 half mean. All15 actual NN saved-model replays,
+unchanged first-four-fold receipts after explicit disk-guard recovery and
+separate stored-mean/full-known scoring pass. The fixed post-study own consensus
+also improved the preceding best, to0.8592432880327434. Its qualifying controller
+is live with new NN budgets7/9/8; exact streamed features avoid7.94GB of unused
+duplicate qualifying matrices. No new qualifying score is claimed. The previous
+best0.8608774626 /0.8618605526 still misses0.85725 on both groups. See
+[ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md) and
+[AUTOREC_CONSENSUS_RESULT.md](AUTOREC_CONSENSUS_RESULT.md).
+
+Earlier observations below are retained as history.
 
 Latest: the own109 autoencoder extension completed all five folds and15 actual
 saved-model replays. Its predeclared expanded-tree half mean **0.859274524524327**
