@@ -1,0 +1,85 @@
+{
+  "state": "verified_context91_miss_and_own103_publication",
+  "observed": "2026-11-19T13:05:57.638987+00:00",
+  "source_commit": "50917caf7ed88c717e634d4eb4ab06be704f14e6",
+  "pages_commit": "e8d807d4427e694ee46be715d5fd6e4c54a3eb1a",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "eddbb5cdd6713bdc3bf4797111f391045a619b19a1d9180178961916775941e8",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "eddbb5cdd6713bdc3bf4797111f391045a619b19a1d9180178961916775941e8",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "b023eb16222b60f3d3206d5eb73566f9ce8d06a6cd3a4186f1a33e428cc9132e",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "a75d1f39639de0bfbc98beec3bc8be507e4be4cbbab89bc0a3a0f5af0ec55ea9",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "CONTEXT91_QUALIFYING_RESULT.md",
+      "status": 200,
+      "sha256": "aed78228eccf88b7d541418d3f43b72c539c192e28b23f2c3b79e2825d6f20ce",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "CF48_103_CONTEXT_PLAN.md",
+      "status": 200,
+      "sha256": "3ea66645056e8a4e621aa0bfe9574c128165244c9a2d156fdab92ec359e45ed6",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "42ad5c4e75685b90bd9bfcc72c3480f2d650c071be39a9ee5a23c5980ef82c38",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "989c377240dfeaf3c312f1857f9cdbbd0ecc9f7456ff19c002769c4a3354d964",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-context91-production/frozen-mean-score-verification.json",
+      "status": 200,
+      "sha256": "4bfe0b40f176c9e5f64aab107093a86c8a3a2f4f8e72289bf272448050cb05cf",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-split3-pilot/completion-verification.json",
+      "status": 200,
+      "sha256": "3bfe3c66ae9780adb358b5dc97f87d62628135a3b9faed7501e95008a7747a3c",
+      "local_bytes_equal": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 41,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8599596977902322,
+  "best_qualifying_source0": 0.8614776640541453,
+  "best_qualifying_source1": 0.8624021195492101,
+  "latest_qualifying_source0": 0.8615005553485519,
+  "latest_qualifying_source1": 0.8624166617824088,
+  "latest_result_promoted_as_qualifying_best": false,
+  "qualifying_target_achieved": false,
+  "own103_training": true,
+  "split3_pilot_complete_and_verified": true,
+  "plots_updated": true
+}
