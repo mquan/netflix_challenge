@@ -1,0 +1,22 @@
+{
+  "state": "complete_original_holdout_projection",
+  "observed": "2026-11-19T11:03:00.388681+00:00",
+  "source_rows": 1408395,
+  "known_rows": 1128164,
+  "unique_exact_identity_mapping": true,
+  "known_labels_equal": true,
+  "map_sha256": "070d2ba44602deea17fbbcbeca50d7d831ecd1e6796d1a6fa5d1033542195dc3",
+  "input_sha256": {
+    "artifacts/upstream-repro/fresh/data/probe/user_idxs.npy": "c21020a740a2d43bbb2a293bf6f7df54c702f3e5ffe9da29818f1ba3e02f9e69",
+    "artifacts/upstream-repro/fresh/data/probe/item_idxs.npy": "90b169a6b00f0e8371f59b59d2bbcaad5b61a69094400f798a5a8de4d2a624f8",
+    "artifacts/upstream-repro/fresh/data/probe/dates.npy": "8602a26518e1ee8e69dbf24dd5f8b2580800ec5523cd00d2984f617fbe8c3639",
+    "artifacts/upstream-repro/fresh/data/probe/ratings.npy": "f1b7c7a56763dfe1aeb80de2155bf4ecb0791eb99b7a4d40ea450285ffaf083d",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/probex/dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7"
+  },
+  "pilot_script_sha256": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b",
+  "qualifying_labels_read": false,
+  "scope": "Actual known ProbeX rows are a unique exact subset of original Probe. Split3 training-disjointness still must be checked against its generated arrays before fitting."
+}

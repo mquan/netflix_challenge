@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T10:00:00+00:00
+timestamp: 2026-11-19T11:11:00.008274+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,22 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+At11:04UTC the first isolated split3 pilot completed its native data preparation:
+98,720,013 training rows and1,760,494 validation rows. All1,128,164 known ProbeX
+rows map uniquely into validation and were verified absent from generated
+training. The original s3-attn16 two-phase fit is queued behind measured memory
+admission under live controller40527. It subsequently started at11:08:33UTC as
+native PID42926. See [SPLIT3_PILOT_PLAN.md](SPLIT3_PILOT_PLAN.md).
+This is training progress, not a new score.
+
+At approximately 10:55 UTC, a fixed eight-column addition using already completed
+own native outputs improves the own93 ridge diagnostic from 0.8631793373 to
+0.8631599063, independently replayed. This does not change the best nonlinear
+development or qualifying score. A source coverage audit establishes that all
+263 public split3 raw columns have declared native recipes, outside the current
+new-split queue. See [READY_OUTPUT_COVERAGE.md](READY_OUTPUT_COVERAGE.md) for the
+completed screen, exact coverage limits, and next isolated reproduction lane.
 
 The latest tree91/contextNN86 own-training qualifying audit **misses** the target:
 
@@ -63,6 +79,7 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
 | New tree91/contextNN86 production | Complete: fresh tree and exact reused own NN replay; frozen audit0.8614776641 /0.8624021195 still misses target; separate mean/score recheck passes |
 | All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |
+| Temporal93 context follow-up | Fixed tsvdx4-60o + tsvdx4-q16tb addition prepared; independently replayed ridge0.8631793373 versus0.8633016697. Controller29784 queues after context91; diagnostic gain is not a global best or qualifying result |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 phase | Complete at08:48 UTC; all31 native NPY outputs match the original remote receipt exactly, including fulltrain residuals; all eight selected split vectors equal the recovered own pairs |
 | CFNADE96 | Checkpoints33/31 preserved and all84 tensors rehashed. Auto-resume admitted during the primary job transition, then yielded again at09:41 UTC after the next native allocation raised total owned footprint to26.9 GiB; no automatic retry remains live |
@@ -127,6 +144,16 @@ training and restarts the original primary controller afterward. Actual-process
 tests cover busy-owner preservation and idle takeover. Neither the current
 primary job nor its scheduler is stopped while this lane waits. See
 `CFNADE96_PRIMARY_LANE_PLAN.md`.
+
+The two completed temporal models are now prepared as a fixed93-predictor
+context follow-up. Its separate ridge checker recomputed grouped sufficient
+statistics and held-user predictions; compensated scoring confirms0.8631793373
+versus0.8633016697, with maximum replay error below7e-15. A230-input rank16
+context NN is queued as controller29784 after context91, preserving all optimizer,
+fold and seed rules and reusing the actual verified tree91. A train/save/reload
+check reproduces predictions exactly. No qualifying labels were read, no
+nonlinear fit has started, and no new overall score is promoted. See
+`TEMPORAL93_CONTEXT_PLAN.md` and `experiments/upstream-temporal93/`.
 
 The additional remote branch `research/remote9h-cf96-handoff` contains the
 verified CF96 checkpoint package and runbook. No remote CF96 restore proof has

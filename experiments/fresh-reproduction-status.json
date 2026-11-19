@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T10:02:49.329173+00:00",
-  "display_time": "November 19, 2026, 02:02 AM Pacific",
+  "observed": "2026-11-19T11:09:41.418569+00:00",
+  "display_time": "November 19, 2026, 03:09 AM Pacific",
   "best_development_rmse": 0.8599745622436025,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -19,7 +19,7 @@
     },
     {
       "work": "New fixed tree91/contextNN86 development best",
-      "state": "0.8599745622 on the same 1,128,164 known-ProbeX rows and 462,858 users. Fixed half mean; ten original fold receipts/models rehashed, prior full model replays verified, row identities matched and stored mean scored independently. No qualifying prediction or score yet."
+      "state": "0.8599745622 on the same 1,128,164 known-ProbeX rows and 462,858 users. Fixed half mean; ten original fold receipts/models rehashed, prior full model replays verified, row identities matched and stored mean scored independently. Its separate qualifying audit is complete and still misses the target, as shown below."
     },
     {
       "work": "Tree91/contextNN86 qualifying production",
@@ -35,7 +35,7 @@
     },
     {
       "work": "Original 1,000-factor model",
-      "state": "Both original 20-epoch phases queued in the canonical job; native training has started with 16 logical chunks and four physical workers"
+      "state": "Native PID73629 remains live; first phase epoch18 of20, known-ProbeX RMSE0.87913. Both original phases,16 logical chunks and four physical workers remain unchanged."
     },
     {
       "work": "Temporal150 local fallback",
@@ -47,11 +47,11 @@
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Remote heartbeat09:36UTC, commitc63caea: epochs70/68 of95, native PIDs95404/95402 observed live remotely, zero swap use. Training deadline14:33UTC; return15:03UTC."
+      "state": "Remote heartbeat11:06:40UTC, commite54b0c7: epochs87/84 of95, native PIDs95404/95402 observed live remotely, zero swap use. Training deadline14:33UTC; return15:03UTC. No completed95-epoch return yet."
     },
     {
       "work": "AEX64 and AEX128",
-      "state": "Both original jobs complete and AEX128 imported at a verified idle boundary. Original tsvdx4-60o has also completed; the primary DAG is running tsvdx5-60 as native PID16305."
+      "state": "Both complete. Original tsvdx4-60o and tsvdx4-q16tb also complete. Primary native PID16305 runs original tsvdx5-60,23 epochs per phase; latest observed first-phase epoch22."
     },
     {
       "work": "Matching86 development",
@@ -68,6 +68,22 @@
     {
       "work": "Paired source-column verification",
       "state": "Every production row matches declared paired native predictors, centering, interactions, intercept and130 voting features. Nine predictor columns differ from cached development vectors across four retrained source producers, as already disclosed by the parent bank; differences are quantified, not treated as exact development reproduction."
+    },
+    {
+      "work": "Fixed93 context follow-up",
+      "state": "Controller29784 waits behind the all91 context study. Both completed temporal additions retain original native receipts; ridge diagnostic0.8631793373 is independently replayed, not a nonlinear or qualifying promotion."
+    },
+    {
+      "work": "Eight completed own output additions",
+      "state": "Ten unused published new-split columns were ready; two exact paired duplicates removed. All-eight ridge diagnostic improves0.8631793373 to0.8631599063; independently replayed. Best nonlinear and qualifying scores are unchanged."
+    },
+    {
+      "work": "Full public feature coverage",
+      "state": "536 raw columns comprise122 old,263 split3 and151 new, plus83 meta predictions and220 support features. All263 split3 raw columns have declared source recipes outside the current201-job new-split queue; source availability is not completed training."
+    },
+    {
+      "work": "Original split3 attention pilot",
+      "state": "Original s3-attn16 native PID42926 started11:08:33UTC under controller40527. Native split3 data stage complete:98,720,013 train and1,760,494 validation rows. All1,128,164 known ProbeX rows map uniquely into validation and are absent from training. Both original12-epoch phases are required; no score yet."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -89,14 +105,17 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "10867    52:10   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "16305    32:14  98.5 ./target/release/tsvdx5-new",
-      "21217    06:05   0.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "27177 06:24:17   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "73629 03:26:29  94.4 ./target/release/tsvdx4p-new"
+      "10867 01:59:02   0.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py",
+      "16305 01:39:06  98.9 ./target/release/tsvdx5-new tsvdx5-60",
+      "21217 01:12:57   0.6 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
+      "27177 07:31:09   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
+      "29784    38:13   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_temporal93_context.py",
+      "40527    07:33   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_pilot.py",
+      "42926    01:08  99.0 ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
+      "73629 04:33:21  37.7 ./target/release/tsvdx4p-new tsvdx4p-1000lm"
     ],
-    "remote_commit": "c63caeaa29aac632d109b65f0fe9e1e52d1f6f4c",
-    "remote_heartbeat_sha256": "07c842c556b6f63472c5761b72386c492a2de3864785d7ebc3040a408dd30149",
+    "remote_commit": "e54b0c7ec6d434cdabc55342e02a07a03042dd78",
+    "remote_heartbeat_sha256": "f421e1498277305e3cba20cee00e037545cd9297559b98073141b1f24482fd2f",
     "neural_fold_receipts": [
       "0.json",
       "1.json",
@@ -117,12 +136,41 @@
     },
     "cf96_lane": {
       "state": "waiting_for_primary_idle_boundary",
-      "observed": "2026-11-19T10:02:48.631809+00:00",
+      "observed": "2026-11-19T11:08:09.523668+00:00",
       "primary_pid": 27177,
       "current_job": "tsvdx5-60",
       "actual_live_children": [
         "16268 27177 Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_repro.py --run-job tsvdx5-60"
       ]
+    },
+    "split3_pilot": {
+      "state": "native_running",
+      "command": [
+        "./target/release/fit",
+        "attn",
+        "s3-attn16",
+        "-p",
+        "pipeline-3.toml",
+        "--final",
+        "--preds",
+        "preds_3"
+      ],
+      "observed": "2026-11-19T11:08:33.058783+00:00"
+    },
+    "split3_startup_verification_sha256": "d8a6131756362a9f53b07e762197f7e689ffe18ba7cf73cc37631b6932dcc54b",
+    "split3_native_launch": {
+      "pid": 42926,
+      "command": [
+        "./target/release/fit",
+        "attn",
+        "s3-attn16",
+        "-p",
+        "pipeline-3.toml",
+        "--final",
+        "--preds",
+        "preds_3"
+      ],
+      "observed": "2026-11-19T11:08:33.063157+00:00"
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",

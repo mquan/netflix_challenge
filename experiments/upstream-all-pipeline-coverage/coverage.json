@@ -1,0 +1,4155 @@
+{
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "registry_sha256": "ed025ca6dc39e6138b81c76cbf22f60b609cf1304939d1aef936db76e2afbd11",
+  "source_tracked_files_sha256": {
+    ".gitignore": "66ba0bab3a40debc302e3ba6e2141a6975461f272924a423094c50062c901aca",
+    "Cargo.lock": "a5ec77a8286bc1d9b74a49165e5c2d708c33d7215a86fd0f9412adcb200192f8",
+    "Cargo.toml": "d612c6a4f5c75145265c1eefe1186971b13bf0b0099364debdd7c2fde71cd87f",
+    "NOTES.md": "320b26359dcb70582afd7fa6484eff0fed478007d343696cafa1dee79a2c240b",
+    "README.md": "896c626dcb210a1c45431bb5e8a8d47f04a60d675ecb15d11e3e1c4fc402fa53",
+    "assets/video-preview.jpg": "5180975abad7a2cb76159b3d81268701e8b033b631f96ee1a9a9b40de996d527",
+    "data/qual_ratings/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "docs/EXPERIMENTS.md": "33161cde04c3b4af1d5934707199de7062550ff12e9b0d6e39b558d91230e687",
+    "ensembles.toml": "ae7e0dc009b488b3504ce14fc18846107ce6f2bdca932bd0dd9ecff7cc7ed18e",
+    "lab-s3-params.toml": "5ab9c60aaa35bf505259aa72c642d832df9072b27ce579c7ba41c14cef1e1369",
+    "models-1.toml": "c1c0fd7cb2811e72921f86eab47aaad7ed42d491a9305fabfebf19323a9c107c",
+    "models-3.toml": "92adac62eb97b358b878aee24fd215216564ce11f6dc87da666ace9454d71155",
+    "models-new.toml": "ff14477fdb4615c6132dc37c00cba26bd2a3192cdd6104bd666424495c84ecaf",
+    "models-old.toml": "d239df14aabcb5d7c4921f3b5f1594581f5848922897dcfeef2dbcc5c5c90c67",
+    "pipeline-1.toml": "26aba232fdc045900aee373054619ba4acd7be535c3a89967028de9fc6a9b9ee",
+    "pipeline-3.toml": "67773af9f710053f83d0fc456f2a54feccf2712e529992da852fc0ba57cc154d",
+    "pipeline-new.toml": "c9b3cedc45ab237277fe410973341e45bd26633bc3f0532485e62f95c0784ee4",
+    "pipeline-old.toml": "52d25f5306389657adc07e296ad930927d29893690d89524c267eedc70916a4e",
+    "preds_new/md5/aex-128.md5": "3ce65bd94b787b5283c6bd044f4911bb16bddd0d072d4faecc84dc82175327a2",
+    "preds_new/md5/aex-16.md5": "e5f90198589247e57b766016384de15ee1145481ae435cf1acb8d547f20d39bb",
+    "preds_new/md5/aex-32.md5": "fb24fccc0ece6c08da76b9c9694b51efd8f2cbf8d2eb82a0acdec3d326e012aa",
+    "preds_new/md5/aex-64.md5": "cc61186a0e4f27fed8b126f7585e8145e38e639669c4419f882dd2a9ca932d41",
+    "preds_new/md5/als8-8.md5": "3f60ed6ba0e8aa0a73d15657dbe9fb222f49123290205f406f40f078c23e439d",
+    "preds_new/md5/als8-8__knn3.md5": "2b4d78583433b3ed7eb091e912f18d328229e088fcfdad6377e47b548a791b42",
+    "preds_new/md5/bk1-10.md5": "c92be450e0ad0c6eca797d097497734167cc506561f3a5b1d51d2040924d8e32",
+    "preds_new/md5/bk3-20__knns.md5": "6042ceb42e976688199ca7d2f86f8a40658b41ab2ddcb75d14979fcae768897e",
+    "preds_new/md5/bk3-30.md5": "2b0c8ba82a4f60dbc098652fe4411afbde6436be51f4bf2b1a6971f85c1ca45a",
+    "preds_new/md5/bknbrx-100.md5": "c314193f0b8a177210d13e9e6a73b8577bd9b6b9865d41a4821b124c796b0bb9",
+    "preds_new/md5/bknbrx-50.md5": "51cb2180537441f976a18818ccd1151b160791e018bf80416c09c4e0394a3548",
+    "preds_new/md5/cfnade-12.md5": "11d8da783dc5947082823bf5ddab1d2be2f0bf7f3dc82ce1357d78e2c897bab0",
+    "preds_new/md5/fwls1-s1.md5": "6738f575f13c744b23c3bae41aac068ccaaaff05b3f0cd958ddab35bf3b746b7",
+    "preds_new/md5/gbc1-s1.md5": "f382a80b528833687f02836a4d8bc78b296305b961d9cdd82b1ffeb6d8d48a90",
+    "preds_new/md5/gbc1-s2.md5": "69fe3c6297ffb7cb41706b831177d95360e05db9af0a40181d7a8c37427f9d4e",
+    "preds_new/md5/gbc1-s3.md5": "dcd0da9808e5d02f08dd273bd65d199b503b5bd9fd1c363d8128335e43a2465f",
+    "preds_new/md5/gbc1-s4.md5": "43088f7a965d64e9f1359a806c0393dfb4b09a58b69efe4db7b590174ccbf113",
+    "preds_new/md5/gbc1-s5.md5": "f071b498682f3b554e550f5dcfef13bc4bca7ff257f93f1451d31854735d6153",
+    "preds_new/md5/gbr1-s1.md5": "5d34da1255187d3d3e24417f0bf5bd4f2fa899bcb9ab66203a19facac0fddced",
+    "preds_new/md5/gbr1-s2.md5": "f34b8006ed989ffdc9485878764db042030f6115802e0f46fd3ff0c8ffd53ad8",
+    "preds_new/md5/gbr1-s3.md5": "16756a54891b629a8dae5b4a17331bb76d3864cf0871ab55b3eaf3d60082294e",
+    "preds_new/md5/gbr1-s4.md5": "04edfcf8113e20699e534d7fc692c1092abf1abb76c5456f585301d24df18e7f",
+    "preds_new/md5/gbr1-s5.md5": "bd39debd3fe86b181a0fc84a20d3e3a70c0c5d29f9e6e6e42ebd8ee94eaffa23",
+    "preds_new/md5/gbr1-s6.md5": "7ad05b7f9f38a46e2c510ed14f356e7a4494d879e2675d19705ae8b13d68c8e6",
+    "preds_new/md5/gbr1-s7.md5": "99219a9a4c7646695afa8972c4bc462c0840ba5e589ae190121fcf223355d60f",
+    "preds_new/md5/gbr1-s8.md5": "b8e23b9d3f089fc220d3c93598267f3635fbf0842f941eb87a9e23d8c4414515",
+    "preds_new/md5/gbr2-s1.md5": "589a7d89f03f0a5a3aaab61c63e4fda93809b662be45cafac58b41ebdedd4c84",
+    "preds_new/md5/gbr2-s2.md5": "a2b062422cfbd64fd02cefc84b4c3a13ae00aec849b712a32f4bfc9cbbb57cb6",
+    "preds_new/md5/gbr2-s3.md5": "0756e3ff474e1bfb0b57a6da895d7b8dfeacf398819c515ccc260ccbd4ca056f",
+    "preds_new/md5/gbr2-s4.md5": "74267786bcc1c6cff8568616447138d423a0efa524c94116f113e648ea752394",
+    "preds_new/md5/gbr2-s5.md5": "231cc7083232383cf2a31346de473ff8508d7094ea7c314a6876e8afa2de68d6",
+    "preds_new/md5/gbr2-s6.md5": "9dce77d6d7fb127eee6cb7f1af394b8a655609ddac12248d09eba61aea032f0e",
+    "preds_new/md5/gbr3-s1.md5": "6dfdeb09d44066b30ded7df0de6ef586f730222db4b942710690f29526b0f20a",
+    "preds_new/md5/gbr3-s2.md5": "5cbbbb8f62e597f89ac82426e9d9f37009c24d0d496eabf842987d7a401462f7",
+    "preds_new/md5/gbr3-s3.md5": "dcc8e0879103a6146a07af161db6fcf3f01ed9742a5168747012e769513e645c",
+    "preds_new/md5/mf-60.md5": "c9e5a7ef7e0ac55bd869b057712fec1f3d78ad073df8defd817d3462f8eabc8a",
+    "preds_new/md5/mf-60__knn3.md5": "1911b3af4f163c7224786cf86180f4e0c203b14263de677d001f07eb05403027",
+    "preds_new/md5/mf-61__asym-16.md5": "4944e9a980d73f7453f7932285bee454382f908649805582a86cd1049f859ea0",
+    "preds_new/md5/mf-61__knn3.md5": "cbbd87a6f0c3cc0f06534c8dbde1a5429455779bc2b383083a1b9342b2c44f54",
+    "preds_new/md5/mfrbmx-50.md5": "cd86af0615bdcdc6c4a25fae6bf150c68da4cd41ae8669a845ceb18e933c6b8f",
+    "preds_new/md5/mlpr1-s1.md5": "77abd431bda2a8782ab5645a42474c131635afec500e4308c29acb20c2d009d8",
+    "preds_new/md5/mlpr1-s10.md5": "7563c730360240615ef76a74a8f56eb14ea597de0ac017fcc7fd3bd89089089d",
+    "preds_new/md5/mlpr1-s11.md5": "887f4fdda0a45a312bf2ff1571ed4f594b52c9c0f95f61209cb429a8227c1307",
+    "preds_new/md5/mlpr1-s12.md5": "df1e71d637af04936795b086b66cc0156470a8a2e9b20ecd7d940b7622012664",
+    "preds_new/md5/mlpr1-s13.md5": "41d54a460adee2ce86f5d29908bb55c5304799c0f9a813a7aa90c764b35a1a69",
+    "preds_new/md5/mlpr1-s14.md5": "ede5e41ed1e9ef6e4ca0d23c074acb8aec6ac28c0ba3a5406031c504856a8b1b",
+    "preds_new/md5/mlpr1-s2.md5": "3f8fce3218e70940360a65cfcf16a85130faa6663eee5a8c4f3709a0f18e3cba",
+    "preds_new/md5/mlpr1-s3.md5": "cb3b767bde31aefd4e53fd98dd5f92af81cafaa66e164eede2d0588b9d38fae4",
+    "preds_new/md5/mlpr1-s4.md5": "d2ee5b47871490d61f21a4689f1e73f58479abe64b69216e43f78cc25069eca8",
+    "preds_new/md5/mlpr1-s5.md5": "4cb5a740ddb5a97aa58efc28e0c6b85f15c6a4172ab80735b39ec051c900cbab",
+    "preds_new/md5/mlpr1-s6.md5": "ccbf615e15c07f7e7bf2439e99f63776743595bb427c48d82954dbbf64197306",
+    "preds_new/md5/mlpr1-s7.md5": "0fbe35f7352525ea76f1c81bcb0b2942e4285a58a53265be3ee3c3e649b51d2c",
+    "preds_new/md5/mlpr1-s8.md5": "86880568c6d8104c172019ef7f6c5381915122405905dfdc7820385dde07625e",
+    "preds_new/md5/mlpr1-s9.md5": "1cdf0061e0083d381a732993f03e670cc4b0a7bdf9149d7d135be5c7f23ca747",
+    "preds_new/md5/rbmx2-0.md5": "7b5928d62e98b984aac84d566e9cb271663e68084b90c7f654343357b2ef66c2",
+    "preds_new/md5/rbmx2-100e.md5": "e443c7ffe60caf8b1cd3b466516cecae238ea741522030ded12b7a7a9fcb9d78",
+    "preds_new/md5/rbmx2-10__knn3.md5": "cfbb8b023df7321aab87cd4de8ad64c8959aaed56f764acdbe6ea3637ff19afe",
+    "preds_new/md5/rbmx2-10__tsvdx4-10lm-nsvd1.md5": "c206995f444aba0b9641f4edfbb03dc469e997ac55f2b789413bef4ece6882d4",
+    "preds_new/md5/rbmx2-10__tsvdx4-10lm__epochs.md5": "c2d94ebe313bb1a0617614ba1521fed33f0f981229c7b4144e84fe1a1c228d98",
+    "preds_new/md5/rbmx2-10r__knn3.md5": "03cda7331552a70249ba4e3085171dcc40d3fdf800b311b153eb79431db4b1db",
+    "preds_new/md5/rbmx2-12__asym-16__knn3.md5": "93697486ce665b1e4e54d2a3ba8d75455f9002b58e9c17693597f4ad092a1a56",
+    "preds_new/md5/rbmx2-12__asym-16__knnf.md5": "de92f0aa8f055d05be807951fbf4067e4351a86d881bf7e4b8e5876120efbde2",
+    "preds_new/md5/rbmx2-14e.md5": "44e7e2fb9920e569a0623eb93011e342dc17412d02169a8f61c307f4042ac2f2",
+    "preds_new/md5/rbmx2-150__knnf.md5": "05025c72ce618d0e656cd1719515658aef1d4c1b3f352cb544c98e94d66728db",
+    "preds_new/md5/rbmx2-150__knns.md5": "25e07993499cc4a50771e9e0fd67786a30fb73a36f77a55fbfd595c68ba72426",
+    "preds_new/md5/rbmx2-16-t.md5": "dcc50d767f60e403902cd3470396c0decffc6e1b2900848a41580de9b59a711a",
+    "preds_new/md5/rbmx2-160f.md5": "b3eefe228db61112b91ed78968739d92592aad6570097302a6bd7e5673509b4d",
+    "preds_new/md5/rbmx2-160f__epochs.md5": "50f6ade752b81a32a54244e749ac1ff4b8d45582af8964054daa9817d5206dc5",
+    "preds_new/md5/rbmx2-200__knn3.md5": "114b6055f6dfafc7c1b416949b8e3692fa9d5ed5b7c218b2cb56117ccb2049c0",
+    "preds_new/md5/rbmx2-300s.md5": "1ec8d548fca6e126a16cb9a9794035e5f9a307d871831e4349a2eba395d4b177",
+    "preds_new/md5/rbmx2-300s__knn3.md5": "6e2fd6f2e130e3bf5e5ec08f468aa7673167a6d7d76f432188e93d6e7d91f5bd",
+    "preds_new/md5/rbmx2-300s__knnf.md5": "a1d709e79647f052a66ecaa52a620ffc7b7e54b6311b80ee5b21f7b0e3134be1",
+    "preds_new/md5/rbmx2-32-t.md5": "12e50d4f12dddd9031e35465fc594be57122a3b34ecf6de2a14f19c5f19de6bb",
+    "preds_new/md5/rbmx2-350e.md5": "4c30a6078322862342aaa93e2fc6f2fa6dc42d1014fdf8dde22337bfa4a8cb29",
+    "preds_new/md5/rbmx2-350e__epochs.md5": "a8b726f4cbd79f52acfe319334be54ee7c577cdcf374c02c1db4af88d972c99a",
+    "preds_new/md5/rbmx2-400-p4.md5": "113ae17c037dadac793cc300c65342ea6f7f11dfe737f914c2391f8a9cfd9072",
+    "preds_new/md5/rbmx2-400__knnf.md5": "c8cd4703cc8192dcb1e028d30cc4c8959a3119cc74b4a0ec8b740e6e3a09c45f",
+    "preds_new/md5/rbmx2-40__knn3.md5": "911bc222c4c6142f30da6cb02198d1c984ca5b4b04670247f7cece4efcec6602",
+    "preds_new/md5/rbmx2-500.md5": "67a0f8e83db7ae4e2e5b4b194035d4ee39c4c4ce5cbd8b149ee2c4628a00f35c",
+    "preds_new/md5/rbmx2-500__knn-m.md5": "3081dfc6f93f86784f4939b4325147ade91a4f1603ecb4061718b6bb8035cb5a",
+    "preds_new/md5/rbmx2-500__knn-w.md5": "f20313ab1913a0ef191dd9564317e6a5a2a4a1a9a756c7159d4ac2f7c6656443",
+    "preds_new/md5/rbmx2-500__knnf.md5": "f4a6930b0be2aa6220186106cb70f5e50d6e7ed6704ebee6404164695ea5e27a",
+    "preds_new/md5/rbmx2-500bp.md5": "7cd3ff73cc533bfeab3a4909c2ae3f1e64a0e2217bba115040a972e5777e4e2d",
+    "preds_new/md5/rbmx2-500bp__knnf.md5": "dbfaa8b8f53aa0dc4ea861fb72928f181f9e2084fa8c44b496a603374f0ab61c",
+    "preds_new/md5/rbmx2-600.md5": "0990f40fde8edfbaba9dc1c2f304a4ddeec66d2712bc3fc0cbccfeadeac7a33c",
+    "preds_new/md5/rbmx2-60__knn3.md5": "b550e2c2cae0724fed220a72e9724c2c2a0a3e6588f71415522e5bc232ce38c0",
+    "preds_new/md5/rbmx2-800bp.md5": "920092cbad6dae9a801c2a1831d44139ab34d9954756a20c39fe01e2aa63ccbb",
+    "preds_new/md5/rbmx2-8e__knnf.md5": "ebf0da74decd2d30192f901d6f89bbe6debf7048321554857d5379d925a052ae",
+    "preds_new/md5/tsvdx4-16-t.md5": "96f6f1a4b3e4a7bebb93b28ea218a9d5e4d532936d544b4274a44590e7498568",
+    "preds_new/md5/tsvdx4-16-t__knnf.md5": "46afe6b264af872ae983bdac02cf8f8b385a2e666cd86b760fd206991e57e6b6",
+    "preds_new/md5/tsvdx4-1600lm.md5": "511b64255273889247f99e2d0b6533dcf5ac5a7ad5ea96a249a6c83202be8188",
+    "preds_new/md5/tsvdx4-160o-nsvd1.md5": "162e465e2169cc914fd14f2fa51c4675d4e7b1c61b757d2b96a598ecb0233bcb",
+    "preds_new/md5/tsvdx4-2400lm-bias.md5": "d5eaec49f371e2fb6c44b59de4649445873d2e96e936bf02cd6eb86ae92e7eb7",
+    "preds_new/md5/tsvdx4-2400lm__knns.md5": "46d73e9c33c4878343f87bb2165ff540e8f0c44d33be802418599fd144c53235",
+    "preds_new/md5/tsvdx4-400lm-mf.md5": "180f386e2455058080253507d32f33f8b0a84c882a2bd203cf80301e130a931d",
+    "preds_new/md5/tsvdx4-400lm-nsvd1.md5": "f0fa12886cd2169b2bd5756a7e83eb35cb09680235d9f0b31eead80a1b57d008",
+    "preds_new/md5/tsvdx4-400lm__epochs.md5": "0f668e4a07907adfa6d60d6a106c68f48cc091651b0f2710457043110908d280",
+    "preds_new/md5/tsvdx4-400lm__knnf.md5": "33857b775f62fa96c43c7ff45fe197b58d98e9ea81ea9a14b135297832c9476b",
+    "preds_new/md5/tsvdx4-4800lm.md5": "fe1cdaf0ee821287dae2a0dcd70f2260c8efe1411c87789de3db2e8f0af4f97d",
+    "preds_new/md5/tsvdx4-4800lm__knn-d.md5": "a62d2ad969dc5900a85af77cb8effb4854b4ddc6828aa6bfb7fc2ed03dca2670",
+    "preds_new/md5/tsvdx4-4800lm__knnf.md5": "0a912f252fc4fab96c8ea86ec9099ae286dda94073aced440c9959756bf38c79",
+    "preds_new/md5/tsvdx4-4800lm__knns.md5": "5055e8efed42db2ff201a09ad5eefbc260494bf78f305d8927c23cf575da408b",
+    "preds_new/md5/tsvdx4-60.md5": "fcb631a5212587ef262d012bc8d04182b5beaae1c8d21460d6e064a88bbbbef3",
+    "preds_new/md5/tsvdx4-60__epochs.md5": "de7706cd5f18c855c523bcd785ef464576c5123be4709da2ab624b2577acc589",
+    "preds_new/md5/tsvdx4-60__knns.md5": "afd01bcd0f4f9d26a656dff12ca143e73852e9e495f7055f8855fbf5c15862c6",
+    "preds_new/md5/tsvdx4-60o__epochs.md5": "9476bfcf978b44e52c76b67904169e449574dfdbb0bda3e1d6c15737720c5844",
+    "preds_new/md5/tsvdx4-60o__knns.md5": "816359668ed5238378c4222b23f081a1cf0cb3144487b81ec164d1a902d8373b",
+    "preds_new/md5/tsvdx4-80o-bias.md5": "0f0e8305fe85dad0aa6f44fb13d9daab144261170d3c847f8461bb2ccc7f83ca",
+    "preds_new/md5/tsvdx4-d0tb__epochs.md5": "097ae3d776957530d23da437da5dbbc86877df15389f8c90cea080ad347f418c",
+    "preds_new/md5/tsvdx4-d0tb__knn3.md5": "2e0d3aa743680237bb950078f5b5268dabf4e7c30f62baf70348c0335d330d03",
+    "preds_new/md5/tsvdx4-f1__epochs.md5": "b34cb6d01351a5b59a8d3853676f4b5084d1e4489e3c279a4189c6c911035e84",
+    "preds_new/md5/tsvdx4-h8nb.md5": "a333b4319e2887aa0284ba664f14b6c3655bb1599210dc832916f70491458358",
+    "preds_new/md5/tsvdx4-h8nb__knn3.md5": "266c78cb2a61059b82c2c246d50742f6feec7a695ff8f7b294ccf1026e48b1a4",
+    "preds_new/md5/tsvdx4-l32nb.md5": "48df0c5ce21f6fa1afbc9417a560e20fc39439fc8334a8b2c0b05f73ad11f7cb",
+    "preds_new/md5/tsvdx4-m1n.md5": "5d90e9543da2ea1aba198a8d31aebbd1f34d8b1da4d3f0bf6a28826383f4c673",
+    "preds_new/md5/tsvdx4-n8nbo__knn3.md5": "331c55670aa9513ef2828324de0f28ac7701a346cfd88e8958649aa4d1db1b2e",
+    "preds_new/md5/tsvdx4-p0tbo__knn3.md5": "aa486ac225d7a9f669600706c18e9b3d82c8fb5c478a682cadc14a57c32b9257",
+    "preds_new/md5/tsvdx4-q16tb__epochs.md5": "6a4c7ef1c1fb9ee9162367213392a4eeac2c298618ba2bbcfa8d4ccc986940ae",
+    "preds_new/md5/tsvdx4-s20fo.md5": "d4bc769bbbc98bea3eab14cd38b17a0dc074af4bc7ed6c4e21a534ef82fcf731",
+    "preds_new/md5/tsvdx4-t8cu.md5": "629efdd9ffcd8a01973d1004b7340a4e457e838f5f8e21933602c78fe0e73d92",
+    "preds_new/md5/tsvdx4p-1000lm__knnf.md5": "8b7ca70b7612b1c5a1f35ecd1b413975ed151a81393f7a94383f4bada292220d",
+    "preds_new/md5/tsvdx4p-16000lm.md5": "dd190bfd0a4091081b08063c6e221c6825a238a3570c3ec9d07bb31a4d0b4248",
+    "preds_new/md5/tsvdx4p-2000lm__knnf.md5": "34effd6cb703b9b7bb8e998f4a8156449b9a4ad01cd17c2c58b94940d335019d",
+    "preds_new/md5/tsvdx4p-4000lm__epochs.md5": "cb3793fa8cc47587f12d9eb8b3c67cebb0891c5e9d3416c1487f69fa011cfd03",
+    "preds_new/md5/tsvdx4p-6000lm__knnf.md5": "2ce8234eba9a960c216e96a37330ed673d0d7e0f81f42b0b5e2e71ccb000580e",
+    "preds_new/md5/tsvdx4p-8000lm__knnf.md5": "a20ddb2ea860dbe053f0388a23b404525b69079b0a56e659b5347e0a77fedf50",
+    "preds_new/md5/tsvdx5-1000__nlpp__knnopt.md5": "fe5bfc5a552160e889b1f4b9da8fdbe34ae1d6e567e1baa71c9ed9811da7cc4a",
+    "preds_new/md5/tsvdx5-1200lm-bias.md5": "e96e8c887f24f71c57f7afc1dd8e3f440e7b45c7a5213d7234e4e87f20e8abc9",
+    "preds_new/md5/tsvdx5-1200lm__epochs.md5": "19b0b7534d39774e131a68ed74d9b395d3db51a672984a16819b9fb9e3d6cef1",
+    "preds_new/md5/tsvdx5-120o-bias.md5": "251d4ab06ccefdb71dd946a2183bb4ee328c32f2e023e6677a60f4ef064f3009",
+    "preds_new/md5/tsvdx5-120o.md5": "99277f34d1e08e12d5ec0dcb331f2662134bda2c940ea1766a9f9de64d08f75d",
+    "preds_new/md5/tsvdx5-120o__epochs.md5": "30346adfb7f64f0659cdff27101ac85ab8f2984f956eb50dc2af6d680d4ceed2",
+    "preds_new/md5/tsvdx5-120o__knn3.md5": "cbad42cf4659b33ad175fcc85e9f71b7cb8933b9d73ad8f5e74099d80dda6f0d",
+    "preds_new/md5/tsvdx5-150-mf.md5": "73a5a401465622a27387cda41b7914d52ae9287b8983af3097bf4ecbdc34159f",
+    "preds_new/md5/tsvdx5-150__nlpp.md5": "1438334442061e5c207f32b45aeebea93959ab8120090006af02dbedef581ab9",
+    "preds_new/md5/tsvdx5-150__nlpp__knnf.md5": "c45608288d135aa15dbbc7af56b02c57f01691478f2bb8ae24430d2824152225",
+    "preds_new/md5/tsvdx5-150o-bias.md5": "6f81a76742b9bc32ea3010d4be0717ca5b26024a0f972ac3d2059311782784e4",
+    "preds_new/md5/tsvdx5-150o.md5": "18338f6c4ff7dc585e9bb3c2cd9a20a7ff1a503e5e37621fa32d762393153fe3",
+    "preds_new/md5/tsvdx5-20-mf.md5": "4e6de7d72741316015ff6fecc2910f529588ecfe1bce9d4cba876a3ada4d0fdc",
+    "preds_new/md5/tsvdx5-20.md5": "0776e5ca84584f522883737983be0622b63822c5dd5a49e61d878c9d599c4571",
+    "preds_new/md5/tsvdx5-300__epochs.md5": "926960d85c7072ea2432f0e1a3ccb2e92f830ba4cf3d791497ba3921cf14de74",
+    "preds_new/md5/tsvdx5-300__nlpp__knn-w.md5": "4a2cd43790685fab7baeab581a2c5c89d2819f2b8da6494608e1166666deff47",
+    "preds_new/md5/tsvdx5-300__nlpp__knn3.md5": "0962c9007bc35fb4d3c97920547f71148628988056faba1de27da8ca02b2e0a8",
+    "preds_new/md5/tsvdx5-40-nsvd1.md5": "2ecab2da4eeeb8755df0d6d5213d1c89e37cdbdbf2acc0899ffb2f0734c6f994",
+    "preds_new/md5/tsvdx5-400__knn3.md5": "462669a0b891fc9d540a65a4be65e012c3517595fec9cdde31e35bd68541f2f7",
+    "preds_new/md5/tsvdx5-400__nlpp__knn3.md5": "7cbec283a97f067f83b3a47a7ebb1a60e10a698ba900101b36941afaf4e9caf9",
+    "preds_new/md5/tsvdx5-60.md5": "e4ff70c9a60f8702993bbee5122352bdd2de6cb93f27a7bfbbabd99afa331de1",
+    "preds_new/md5/tsvdx6-300-v2.md5": "24aaa60e009d080991f260f87cada1f6f7dbef6223ab5c415f1bebf7a5d7e4b7",
+    "preds_new/md5/tsvdx6-300.md5": "6745116723ab16f63014b7478702e47171255d1f51c6f9a82219fb9a9f997a1a",
+    "preds_new/md5/vf000_constant.md5": "650629d4ce8155b140dc6604a17ebf7047e6131eeeb656a35bc349c0581a5f1e",
+    "preds_new/md5/vf001_user_gt3_on_date.md5": "474e81314b76562db965ae6d482f47233d1f96fe8db7d12d6864d4acd3ae0daf",
+    "preds_new/md5/vf002_log_movie_cnt.md5": "d6f29c5cf946de58851eddab82f2607c484025bd7888845630ecc5ea3e79c689",
+    "preds_new/md5/vf003_log_user_dates.md5": "f8c95fe6d3ddd61b3518e9dce32a8c1a7053103ee46e7aa43ac017af3f167916",
+    "preds_new/md5/vf004_log_user_cnt.md5": "fef9585ce5ac90c14e0220ba3a10fb2e7ab1db3d52191493712753affcfc8fad",
+    "preds_new/md5/vf005_user_std.md5": "612b6a00c57496cedc78d077607e117c6dc68fd9a88f93fd2516243842602575",
+    "preds_new/md5/vf006_movie_std.md5": "722d830bc8783a2efe4fdef47d631d1b0dcc56d268088ef92575b33fea957db2",
+    "preds_new/md5/vf007_log_user_tenure.md5": "67fde3f35dc5e52dc3efa2de4a33fe89659cc266bbb825615154b3b97d55f08a",
+    "preds_new/md5/vf008_log_user_date_cnt.md5": "f1683e8a6d780201097e1c0ef95e87d5590c323a756e1bd77a08677605cb0137",
+    "preds_new/md5/vf009_log_product.md5": "b264fd7815bb1d96bb5364364eb7158fa02ac54814aed92c737674312fefa8df",
+    "preds_new/md5/vf010_bayesian_movie_minus_user.md5": "b3cee68ff569d5faa4bc735047d3743dd5bd2cde1abcd25eb3a8ddba59964f7c",
+    "preds_new/md5/vf011_bayesian_user_mean.md5": "c9bccb2c870ca1ff5744138bbc7b9efd21449b996d524d7b036625b2e115ec36",
+    "preds_new/md5/vf012_log_avg_rater_cnt.md5": "c7f1a3932695dfa019ab18f2828800ad5b5d3ef43c8fad7432146cfa6e3c45d2",
+    "preds_new/md5/vf013_log_movie_date_std.md5": "6df6ff80255f4ad8991e32f35d236a7dfd125119b27976e78d0e23108d0a451f",
+    "preds_new/md5/vf014_user_date_bias_std.md5": "b1d317819c6b459fdae4287dfa4d455f08f65603b33ab2a1dc3b6cbcdd19798a",
+    "preds_new/md5/vf015_movie_single_day_pct.md5": "3b3807b9463fd688b40f1510ce86acda8679195e00fb592a5b14f6fd4a4cf567",
+    "preds_new/md5/vf016_user_avg_movie_pop.md5": "31117814749404b8687ef9ed4975c3f7c719a404bb61de0b85ccc547ce8da61e",
+    "preds_new/md5/vf017_log_sim_sum.md5": "422cd66f4fe17855cdfaa7b7419471210a1d02358feddc41f23af3a55b2f2d14",
+    "preds_new/md5/vf018_sim_top20_pct.md5": "6c9be3ed4b2924002d94e02844e311e1e879ef25048bbad57f1e41be586a9874",
+    "preds_new/md5/vf019_max_sim.md5": "f792b75abed4e09ff53b3cb5323b1c763aef6d33a03089f2f35eb2b81ab93c6d",
+    "preds_new/md5/vf020_svd_user_norm.md5": "d6b1df2ed5957321fd588d22f5828d70499e31e667d065f639c26067f7aabdbb",
+    "preds_new/md5/vf021_svd_movie_norm.md5": "6a57cbd9406ed45ecf02198e4d7e2fa603582876462e8a0803cd41171d669ce3",
+    "preds_new/md5/vf022_ordinal_svd_std.md5": "31c405f960e28f5ff0a447a529b70540a48cf13810a048250d910da9bf8fe23f",
+    "preds_new/md5/vf023_user_overlap.md5": "e07e2e8ae63189197909521bea41a117518ca429ef486a35fe71a7f353b781c3",
+    "preds_new/md5/vf024_sameday_corr.md5": "4a3b9fb9d24f5b929fc6ccbb5d7816b7c84df6e80fc69848083a7bd4e757ee77",
+    "preds_new/md5/vf025_has_r1_same_day.md5": "6f14d4bc03923dc3cbc6e04b7c9565bae2a9bc0025b667fa40203e7060670ec4",
+    "preds_new/md5/vf026_has_r2_same_day.md5": "249ed200cc7544b296ad1ee97048e33705748574e87f5df294607681b882ec34",
+    "preds_new/md5/vf027_has_r3_same_day.md5": "925c3786d3d1dec7d7b11139c4de70a107cfaa3b5f1f4f959b086ba95e2e6492",
+    "preds_new/md5/vf028_has_r4_same_day.md5": "30fa133a50fc61c4432ba35eed97c7d3ce7626b8c2e22337ffaa1b0005ed8e4d",
+    "preds_new/md5/vf029_has_r5_same_day.md5": "f2fcc6d46c9c3baf2feb3cfa43e961cdba75b8da13c0d39400bb446bbde46222",
+    "preds_new/md5/vf030_has_r1_other_day.md5": "8298835cda028b3cd0031645f46c47cf375b2c3be19743d19141a9453992c403",
+    "preds_new/md5/vf031_has_r2_other_day.md5": "3a2b349e359e28b5e38903753c84845213b64aaf7c32845ae647bfd3918c8fd7",
+    "preds_new/md5/vf032_has_r3_other_day.md5": "7b02d3466b23571e8c4ecfcec38959f14ed70e5b2150d1b4d8650db1d282bbd6",
+    "preds_new/md5/vf033_has_r4_other_day.md5": "1a4ade1b37b113ce8bd5579ba468c5bc8a68674ada332de3fdf176037b2e897c",
+    "preds_new/md5/vf034_has_r5_other_day.md5": "f4cf8a07a3a5b65946f83a0151d320a7bb51ef254474efebda64e62fdc8fd0e6",
+    "preds_new/md5/vf035_log_r1_same_day.md5": "c45b765cb5e1e9972f636ca99ccc1a21d41c5c0d74bf52589b337920162f01bb",
+    "preds_new/md5/vf036_log_r2_same_day.md5": "10e1bc7430a7ccb1d53a9dc1cf986a120d1ae036e5c1545005bb088dae44465c",
+    "preds_new/md5/vf037_log_r3_same_day.md5": "7da8ffbeb52c6d83e3545b711e82bb9ea667397cced16528c6a6c3a0be8445aa",
+    "preds_new/md5/vf038_log_r4_same_day.md5": "5b75937b18bd4a494be5daea54315f00e8375230d099e52fa2c1141e1d3eca22",
+    "preds_new/md5/vf039_log_r5_same_day.md5": "082aeb72eb888c7d61509d1696ed618ce7533bd8071a8eef6888a9447759cebc",
+    "preds_new/md5/vf040_log_r1_other_day.md5": "ac0cacfb08153b8b47edd1ccfd7fc9d7966ed111d2a8e526ca72dc7fa554fcd4",
+    "preds_new/md5/vf041_log_r2_other_day.md5": "aa47e320b7676ebbdd18e4ecff5dd20e52aebb9134c0ef6ad28cad814594ee34",
+    "preds_new/md5/vf042_log_r3_other_day.md5": "8945097887d1445babc50f8ddf30182b3722541862a7e7d4867a7626d8ca8430",
+    "preds_new/md5/vf043_log_r4_other_day.md5": "7a59f92aca00da91e27030712293097f92cccfbf0bcd928ecdd5fe66ce9cd911",
+    "preds_new/md5/vf044_log_r5_other_day.md5": "849fa7c55b951bda6a132de7cd77b3f60af6044ab1ea3bb7bf946d6de9bf501c",
+    "preds_new/md5/vf045_movie_log_age.md5": "04380daa1eefce584a1de7b82cc6c3f76f8817b3307729693cd59c6f1a1c34f9",
+    "preds_new/md5/vf046_user_rating_velocity.md5": "cfc28af98895bc941e7c4666878a29f6deab81b057619b51f8864a7f2f6ca7da",
+    "preds_new/md5/vf047_movie_rating_velocity.md5": "80d811c928613a48bf9eba306a58d3ccceadb7cbce640371461f1a4217d89ccb",
+    "preds_new/md5/vf048_user_date_position.md5": "34580fb3418fa90cd38e06d45deaa6c32672bff6b3804de030f2a0a8d6043032",
+    "preds_new/md5/vf049_movie_date_position.md5": "ff95419790ee062a6f6808bce2a9466e564113aaf25d97991e95e20a0ae3d926",
+    "preds_new/md5/vf050_log_day.md5": "a5f5627ca12b375e4e119a32a5bc6cfa48dec6583d404a8a809fba9a4bdb5639",
+    "preds_new/md5/vf051_day_sin7.md5": "c09c010a6b43a3fd2e929d552d1f688ea4459b65bab5188344d8127f354c2864",
+    "preds_new/md5/vf052_day_sin30.md5": "1866ffa783f0769a19bea88a97519e8bc46b20feb28018153ba9e73ff0c003ad",
+    "preds_new/md5/vf053_user_log_avg_day_gap.md5": "f1540265862afa32bc87345d9976bc7f665590a5a1c408f2802dbfc097e735f5",
+    "preds_new/md5/vf054_movie_log_distinct_dates.md5": "757b69dd2804cb67d04bf3d84da1905f7184df1e4353e8c258f9cb66b5580b7b",
+    "preds_new/md5/vf055_user_skewness.md5": "aee22a607b736dea99df6142a71b89eb68e64fbd77216fd6066959e8ffb5f182",
+    "preds_new/md5/vf056_movie_skewness.md5": "7f8e57a2c06c5c743323f8ba8b3bd22f306cd8d2d05abf694e7e458e4e28a7e0",
+    "preds_new/md5/vf057_user_kurtosis.md5": "e5aff9c8b3c793da44b8c2bae57678dcace00df24e4ab681721f1127cb7fa8bc",
+    "preds_new/md5/vf058_movie_kurtosis.md5": "6a907d3d219ff526b6a2226e2bf05f392404bd2c9b2ee7982a3a06c5d6750ccc",
+    "preds_new/md5/vf059_user_entropy.md5": "1e71b13ea64e01d4085462e3b459cb38129503a1c8431d886f5376cd0384bda4",
+    "preds_new/md5/vf060_movie_entropy.md5": "f6bf5c569c10586bb0928b844e0f054549c394265a9f01a1dd1635435358b988",
+    "preds_new/md5/vf061_user_pct_extreme.md5": "0b7b8a0c3d3e1e91d0e636cd8473fd41eea35963e8cbd05da8c2799d3366e007",
+    "preds_new/md5/vf062_movie_pct_extreme.md5": "04a9bb365917fd67d61f442475400df66d07156efc3d83c88511aac5f2bbd36f",
+    "preds_new/md5/vf063_user_mode_frac.md5": "7c6679a81483fbb30faa217f5f4429bd2c125df258ad82a055022fc6dc0856a4",
+    "preds_new/md5/vf064_movie_mode_frac.md5": "d37a30907b14223f387f90ee30e55d06691eedc4a84dd85781260631c84b3f4a",
+    "preds_new/md5/vf065_movie_avg_rater_tenure.md5": "121c53312f075512ef88730b6e310bcd7994fa7e57e58a6fe42f06ea9b653aba",
+    "preds_new/md5/vf066_user_avg_movie_date_std.md5": "bca45a87d4a5fc6fc4da10d8fda79d4743525ae54cb984a3423ab0048b013526",
+    "preds_new/md5/vf067_log_cnt_geometric.md5": "a1e2ca624defdb4888d39f5ce5059ecc3b500e2e5da1c21d2c44f789530683a3",
+    "preds_new/md5/vf068_log_cnt_harmonic.md5": "655c8a0386b242a7bae24b637ac4edeba4f9a603f2769ec0ba576ef111b60faf",
+    "preds_new/md5/vf069_user_std_x_movie_std.md5": "6f7fb65107f0aec1c9d26df917f449f31f8f8b2e135127896924aafa3b1c4ed7",
+    "preds_new/md5/vf070_movie_avg_rater_std.md5": "44e43d457cd7fe2c9d3c214d40a7b8f7ef26298b148b228b7c42f812ab4bf3d9",
+    "preds_new/md5/vf071_user_avg_movie_mean.md5": "7a875c858a3795b21a1d46d9cdef476be7d84db591c73807ec621f03b20fd941",
+    "preds_new/md5/vf072_log_user_cnt_over_movie_cnt.md5": "cc7739739c6bd9448b7f1db4b4038fdb793a489b7672f925fc3893871d44217b",
+    "preds_new/md5/vf073_user_tenure_x_log_movie_cnt.md5": "5eb7489719fa8d54adeb0df91d5fa07aa595bd36896dd9b8c2e9c9daad820b93",
+    "preds_new/md5/vf074_user_date_bias_std_x_movie_std.md5": "d6cf08092883a87d83c1d0f793cbe1ee4a9ef2cd0daff1ad4a27a131a1ddbd51",
+    "preds_new/md5/vf075_pct_r1_same_day.md5": "e69322c4372a538ed42cf9f33e08c21cdc0d7fb9dd73e8e4842a9fa667757400",
+    "preds_new/md5/vf076_pct_r2_same_day.md5": "ac456c7c41f5e505a27040d9217c01006cc334a991108a9d26060a4eabf47232",
+    "preds_new/md5/vf077_pct_r3_same_day.md5": "36342c2ee674a2718108d4d02727e2a276347447058189d33571b4bb1e4e4caa",
+    "preds_new/md5/vf078_pct_r4_same_day.md5": "5d3439127e1a23959503817cc44b41910273f8dff569f0502179c7512a69def5",
+    "preds_new/md5/vf079_pct_r5_same_day.md5": "768ef8875d526fbcfd6d7b784518face9fbd486ea403f9be9cb74eb9cce60e97",
+    "preds_new/md5/vf080_user_log_avg_batch.md5": "06df3b11c3f2982befe1bbe2265691cec4d2c5efc486249aeb0aa88bf5893116",
+    "preds_new/md5/vf081_user_multi_day_pct.md5": "9b978edb09177c6f09ea6710c6209a5515cbb2abb1ed7d5e68b428e5dadb3d49",
+    "preds_new/md5/vf082_movie_log_ratings_per_date.md5": "73d9e6034380a0dc5de85564b2148ad4cae5bf88c59a4d5c292f4117cf4f2a31",
+    "preds_new/md5/vf083_user_log_max_day_cnt.md5": "bbcbb03d9cc0f68353b615d125928f5d91620db2e191f0c55c8641ed41d66158",
+    "preds_new/md5/vf084_same_day_mean_rating.md5": "1317e876321a45c6eb54f6b8f4d4fd524badd338691c78d43b7b9b3c1cbf211b",
+    "preds_new/md5/vf085_same_day_std_rating.md5": "2117ee4f6c2eff67e6409fe5f6e04ef383c2e583f2b82f0f0bd6c99a97695fe8",
+    "preds_new/md5/vf086_user_pct_popular.md5": "6e1218c6b0a286049f181e99a2a098b0fa63d6b74721e483ee0f0aca9d6d04b0",
+    "preds_new/md5/vf087_movie_pct_heavy_raters.md5": "1aac3134a9b6d00c39d05ed3ba6896f37c07de212dc2158268bbdc1b75e11df9",
+    "preds_new/md5/vf088_user_last_date_diff.md5": "371371d87603ab2c3b79d48cabfc3744b8f70325c200642fe07b44da54b3aeed",
+    "preds_new/md5/vf089_movie_last_date_diff.md5": "7e64edeabc6ae3559a49a263e597287d2d973c3014b811f1173612e8da470273",
+    "preds_new/md5/vf090_movie_rating_slope.md5": "8dfc1f6f1b8e9024d9f797eb12c6a3742a9e5aa2cf74837e50fb68846a058aaa",
+    "preds_new/md5/vf091_user_rating_slope.md5": "4430106e4212f1e3eefb087a01d6712113894dbf01d86ccc3fa2f81d9fc7cf6c",
+    "preds_new/md5/vf092_movie_early_late_diff.md5": "e58af928b7c4d91960a707b228275627a099730a23d6c61f403032f3f05e1882",
+    "preds_new/md5/vf093_user_early_late_diff.md5": "744bb16ff01d19f2a32fe09eea208e370ae46a0a40ce60fe7a36f3a40290a759",
+    "preds_new/md5/vf094_movie_temporal_z.md5": "cc17b319642ce40844406089e21e2866b14be05d306fb751398fb0931d11179b",
+    "preds_new/md5/vf095_user_temporal_z.md5": "4c78e98b1a961e6efcdf16aafcabd2362b1f7d69a1372e2084d6a611b64b7f60",
+    "preds_new/md5/vf096_user_herfindahl.md5": "4d78e77841925f0a9a0b7c7e5a4fcfd1b017ae13a27603e766f1da99efba93fe",
+    "preds_new/md5/vf097_movie_herfindahl.md5": "de7422481c585763964ddbc52af16106a7c3a8133f72da166bb317b1e4f2eab9",
+    "preds_new/md5/vf098_user_n_distinct_ratings.md5": "66a2146985a63ab5639821ac40cf0caece6e5fed91a7d9ecedc2606c29f997a7",
+    "preds_new/md5/vf099_user_top2_concentration.md5": "b0818ab3f8b4263d3eb5b78654502e6554884a8757fa89654a2502fb182aba52",
+    "preds_new/md5/vf100_movie_top2_concentration.md5": "03375d8a7c0d4f7f31d29dc4eff43bb474cb5c37713799adaf67b669aee695a8",
+    "preds_new/md5/vf101_movie_bimodality.md5": "269edfa5b7193ab75400f25560b11077833ef538977c1632b12441e092b38601",
+    "preds_new/md5/vf102_user_bimodality.md5": "76543fb75ee8041832be2db144da5bfafc5663eb5bc927e6732e6fa9d65a664b",
+    "preds_new/md5/vf103_user_movie_mean_gap.md5": "c4e4dde54c2063721f785e2b6d96028c8fbc92fb6995103dfc78392abcc06797",
+    "preds_new/md5/vf104_user_movie_std_ratio.md5": "da9e800cef458e1d89ef0e05aff758be016876cef7be507c8ff57277dcdae737",
+    "preds_new/md5/vf105_user_movie_entropy_diff.md5": "3c18278b7942535ecf58c1276649bb008e6dedb9616b36c8857d482f29ef11de",
+    "preds_new/md5/vf106_user_pct_at_movie_mode.md5": "8c7c65ac4da93a5e90e9e0957472fc6375d7c2b14b6efb8835abfd5a50d7c4e6",
+    "preds_new/md5/vf107_movie_pct_at_user_mode.md5": "4e6b66c5c9c772389384dfe83f2dc181dcc16fbb2a992cc1b13a5e16cb579d57",
+    "preds_new/md5/vf108_user_movie_dist_overlap.md5": "62f97f3f319e73261e11d8d9f2488c382a5b7a4c3ff05c29cdb37483195b3a1c",
+    "preds_new/md5/vf109_user_movie_dist_cosine.md5": "88d5f54ad35a0d7c8c3a0c43ecf9e3db0f6eb221044a8efb2ffeaa94e3ec5aef",
+    "preds_new/md5/vf110_is_single_rating_day.md5": "a72a43392164ce8a6b93f9f7701e339bce34078f20eb07c83a042b0b17eb5459",
+    "preds_new/md5/vf111_same_day_cnt_norm.md5": "adf720a080d8ed81fa49abb85e33e234cd9eeb5eed0bf462712efd9f93153457",
+    "preds_new/md5/vf112_same_day_entropy.md5": "79d2b339a20598b1d1fcdc59f0a6fc3b94c502dc3f429f90093715921146399c",
+    "preds_new/md5/vf113_same_day_range.md5": "cafc8af15e9edbfd4005477baf4a808e7935690173c6c0382dcebafec2550264",
+    "preds_new/md5/vf114_same_day_pct_high.md5": "93769dd809e20617f6258cc74163d4710fc8a829c9f048605c98e3a1b7f92a93",
+    "preds_new/md5/vf115_same_day_pct_low.md5": "367a270bce891eaafc966388168af5fca449c27f607a8aff80b75a26c7b7df5f",
+    "preds_new/md5/vf116_is_first_date.md5": "54aa9c5775724a318275e9997ebd3139f87528c2f7decd12e8a7decd4b9d5eeb",
+    "preds_new/md5/vf117_is_last_date.md5": "049af68c280597a76d8f33323c1987957bf51289ab334d5cea03a7abcb5d7168",
+    "preds_new/md5/vf118_user_day_index_norm.md5": "dd40b5318fae8600f286d190fcc8a1dae761c7c1ff9b3d6226218e0b6e5ba9fd",
+    "preds_new/md5/vf119_log_movie_same_day_cnt.md5": "b491a90adcfb92ee8de312eee283254470d16dcd4a079c9386bf84e7a62eb62a",
+    "preds_new/md5/vf120_item_year_norm.md5": "11c0741a57e8d436c05992686cd9fd4f5cf62b14dd448e255b3c959cf6fd54b9",
+    "preds_new/md5/vf121_log_item_age_at_rating.md5": "e8edc7da71c959ba8a93c01321bebfde372dfa508ada3137014e7c77dc956fa4",
+    "preds_new/md5/vf122_is_early_adopter.md5": "7bb3dd1bb7876089acda9055ac23d30a2432459f709860014b583902f43f13e7",
+    "preds_new/md5/vf123_is_late_adopter.md5": "ad5a7e4dd580ccc10619d37a9e5b0111108834576f21c6c84536f8debebf8837",
+    "preds_new/md5/vf124_movie_maturity.md5": "59e07f16c3754bec2e7b6435455ca3e6b9a45d34c59baa3948879d26a558d4c5",
+    "preds_new/md5/vf125_user_avg_item_year.md5": "08f74954c3fed73cff0cc3e563539fc713193e21e5f2d6f7004ce4d859391ddb",
+    "preds_new/md5/vf126_user_item_year_std.md5": "67e1e0b30177d16354568184a1c1ac98d64a02dcfec8948b34802312e1918696",
+    "preds_new/md5/vf127_user_prefers_old.md5": "e892eb8c542720cbcc147578f5e43e4114c9ce3f03aafbbdb0f049202da46021",
+    "preds_new/md5/vf128_movie_avg_rater_mean.md5": "99c9c660df60c3f738206d820671798aa09d121758f9cc4ae2bfcf9af8fc8107",
+    "preds_new/md5/vf129_movie_avg_rater_entropy.md5": "0507a75fbc35546ce5a2338a132af07372909f98153bae64d218237be3162ca6",
+    "src/aex.rs": "43b7cdc698d639081253b08ca5bde9dbe9ac54b06c0bf7fbb1added2f87d6e37",
+    "src/als8.rs": "627c1dbf0f76048e76fcb43417c163123207a561f8c5e49b67df430e3b99d866",
+    "src/asym.rs": "df79a2fc337f218686cf2c41e6778a33786ce8b59f7b1aa87bfd58e6ebc5b936",
+    "src/attn.rs": "9f54348f09d0440bb196db5fb441271b04c4646607d6f07538f76c16dc3e1509",
+    "src/bin/aex-new.rs": "983403a417210b8689c06251b9c2fcb795d49e3db2ad2d2ee2a18434a9cadef2",
+    "src/bin/als8-new.rs": "3fdd3d80b3debfbdca66168036c815b54334d996aa7dcc31e9ebfb49d1ca2426",
+    "src/bin/attn.rs": "77a6cdb8b9045c64f7e984cac2bae0b4360b3cac79b7c2b4f6c5c75a3e449897",
+    "src/bin/bk-new.rs": "c06b4d63b05d568ce53bc25251f442cc1d916f42a92ca6353ce23376f49525bf",
+    "src/bin/bknbrx-new.rs": "bd9ff5a6da92199b74649686065ef142b6799ea4bcc815baf54ef40c0658ef7e",
+    "src/bin/cfnade-new.rs": "c9f9732e078574d38b02ec6686ec67306243ea6804d40f0b10960fd87292358a",
+    "src/bin/dnn.rs": "e12114e61baec7a66bb3a56cf01ea147ea92b1adb150c20a4511716fbb2e765d",
+    "src/bin/download.rs": "f6f3d9015ab4771335003d317130b01b799fe69661f47450be576b0b2b1bccdf",
+    "src/bin/fit.rs": "4912aa79b7415032cb6e00939f0bd9a42b9f30a7d0fd6ae87a75b1720822a046",
+    "src/bin/fwls-fs.rs": "04e978a12ee31f7886a8f82f40c08467d91bb2a70b6786ce7166dd5a736f4519",
+    "src/bin/fwls.rs": "762ed42aa0fff7ab310df01533aa6db9d7d2f1ece454b3c042740456d20bf0c6",
+    "src/bin/gbm.rs": "65aaf5a8e52a9e59fef40607d560a3fcfede5b1049abb988082b0fdd07946b4b",
+    "src/bin/ingest.rs": "167b3acd7f08358f92c7a02c9638cfc9e60fff47afb9efb0d721adb761c8a052",
+    "src/bin/lab-example.rs": "2854dacaf0fe3ce63c0b7920e0feecb2383b37bbb8136e80bb578ab57d460915",
+    "src/bin/lab-new.rs": "257e4d6548690ebdf53e3b449ebaf2c3a4fff463ffe28e576cea42674b762cc4",
+    "src/bin/mf-new.rs": "b79b8bb60b890e41ea3e5c40c01cd7b21eb6895c41c74b04a30a5578adbd90c7",
+    "src/bin/mfrbmx-50-new.rs": "45eb686591d4477c80ecf98a3ed6a0ccb6982dcf5810b6b9999ec7ed0ca74a92",
+    "src/bin/mlp.rs": "2365514f851ccaaacb18733ebe72791194f175608c597b859df1999139045b8a",
+    "src/bin/nbstats-new.rs": "87f3984acc8fdc06a94935fcf2cab1edc2eab371b65a68bde48deb6db8642c9c",
+    "src/bin/newsplit.rs": "e4f33338c00523c7b09c41bc12f81f409b64966122b51bb011e8291a20fb46ee",
+    "src/bin/predfeat.rs": "afffaf13d49d2ed9218bb3a62db1f608ce0cb80b27678c08319b9424ca6cf437",
+    "src/bin/preds.rs": "6cd70d4c17af5855bf22da1ab211c5fb6382ef96953aa0af8dad352cdb494342",
+    "src/bin/rbmx2-new.rs": "e549f1dd8d78091e1c784d59a4370086d5afa2f519d1a158e198cdc842a38480",
+    "src/bin/ridge.rs": "20b496b0fd2600b8ac2d32d8bf0141ff04ad94cde969589174ab69f314c52dac",
+    "src/bin/run.rs": "ffa4bf5ed5ceee0e182135944ad5a7b03126e04491b9e8ce2e6aac1c79ed6e11",
+    "src/bin/split_3.rs": "3ec0bebd89bf1f72fbdd5230f2da3cd0661b6e7b97f63e17fbb500b00f26f71c",
+    "src/bin/tsvdx4-new.rs": "f96f55745f13f70a558af7c1f19dfc262c93938046a1d64019ca2981eb381b13",
+    "src/bin/tsvdx4p-new.rs": "6489ccfaa1f9df3fe2205feff874bad7d68d2b53c281cc5303ce504986b3cfd5",
+    "src/bin/tsvdx5-new.rs": "790e34f115024a8961de63ca6e958c78158559f6ccd9d7bf1975190f61933f2b",
+    "src/bin/tsvdx6-300-new.rs": "4803d5e4ca620f70d8a8df6bdd769fab805cbecf10e3a720b075ad55a03b1f6f",
+    "src/bin/tsvdx6-300-v2-new.rs": "2b195142ac05892a7af6d163d634e7abb475381ebda02b34d738be51c6e58951",
+    "src/bin/vfeat1-new.rs": "6a839eb6b64fa0907d1a7c732e3333eda29639a48655fc80270dd07ce22a725c",
+    "src/bk1.rs": "6c7e810f276307080e874b75f2aebb44b09c911ecde2de70067094df6f4c24de",
+    "src/bk3.rs": "695e5f4f094752054794ef4a9d1ab6d3c341760edbab5d29f52e5f8601d3af0a",
+    "src/bk4.rs": "499af07efcdf663e5e1ae898344b7fb1a2a57e598b2b5536b53d9db1e1d31ab6",
+    "src/bknbrx.rs": "a21c8fd107683fe971d40e8c03e35a1bb2bf937f455de24d63698c4cf4135d94",
+    "src/blend.rs": "bf0bc8148c5c6eed26663ea3d9c37e47ed39853a268861f24ed4f69695d97681",
+    "src/cfnade.rs": "9aa69e4d1d39235ab71210f36d05b0882afc53e7d83147b95667abffc4ab3647",
+    "src/dnn.rs": "a6f02892b70e768cbea63e659ec8ad5e526ef168fa4f10c0d804a0f1835ace93",
+    "src/integ.rs": "720be78512f0793fa98cd4e13751d0bf646cf782983024c6c2ad428e439c214e",
+    "src/knn.rs": "10dce8aebb9a320cecaeae4b810fcd58e89c8aed043e77dbe823cd2e45d3e89a",
+    "src/knn3.rs": "5115529551800f45f28ba2a2b56ea4197595bef8f4176b61afddcece08b99226",
+    "src/knnf.rs": "059c4973d15be0419a0e4e71025ba0f8c1184a057019ac0091a906f6b268e93b",
+    "src/knnimp.rs": "a6ba80bca45f4c22cd4d714e5796bcfee598b25cc91c5a154f6fa8014f285166",
+    "src/knns.rs": "6c6c74d523d11ca8a93d7e6b1432a879b13fe56f6cdd95dca313bd8183f3aefa",
+    "src/lab.rs": "241e39a129248f52faf499d83e150d39c36259cf9afca5a12756c1a1bcd974f5",
+    "src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be",
+    "src/mf.rs": "1d6e85fc9c8c8a36ae75799a3aafb12cad4b90b63b05c711874c386d8669a8cd",
+    "src/mfrbmx.rs": "380845da880863acb452baea8697d94518a2fbbac3680f36f3a9b1d69ec3b7da",
+    "src/mlp.rs": "8b2f0b28178e3ecf40363e1b98f736e1fccfe39cd3ad9e375b7730cc0afa6760",
+    "src/nbstats.rs": "2e1b9e175f864639d7847eba68abd5d18043a3d4dfdcb63bfac55e3b5b94fae0",
+    "src/nlpp.rs": "c089b5abace284e30c1045c325630714a23f51ae58e7c27edcb79c9fa67c1c6c",
+    "src/old/README.md": "70dfebcb3820cdebfcd352517456944a5ce2cdc12ef0d3c0ab4fe0876e6a0956",
+    "src/old/bkbias.rs": "b1425f878dc34451aba7244b3b4ab165209f6cfb1ebbec9caaeaa97c9f2b5553",
+    "src/old/catmf.rs": "660c216f8f71d9f1e6b5fa96808911ebef4902d45ce7bba596eec74d5162cfd6",
+    "src/old/fbias.rs": "8efcbabb6c2a203ecb811a31f71d23d8eb51dfd41dd3ffae32a09572f50b9c5c",
+    "src/old/fwls_featuresA.rs": "d8ce4421eebbb38f247d95c509f24695c269c181a65a43bd1f9cc00709214ee6",
+    "src/old/fwls_featuresB.rs": "ef2de8177f91b53c187bb51202c36e20ad0c55f4cda4bee5d4300d371ec01716",
+    "src/old/fwls_featuresC.rs": "27e770b3833be65447b235ad35f3d9ba429a697b483011d3c77e9e1d16184952",
+    "src/old/fwls_featuresD.rs": "ebbaf462571b00784576111e898de156a23a066aa5494dd2ff77ad907e3c2407",
+    "src/old/fwls_featuresE.rs": "319f964c971ade917570f43c8a78fc07577b26ebd698651e2bec8212100c987d",
+    "src/old/fwls_featuresF.rs": "34b8d51c528e5af47f50a47df3d9a34c5d1777b96c6ab1ff46375401cf1e8cf4",
+    "src/old/fwls_features_claude105.rs": "5d98700b4aad2b5968f63fe69f8d406ab8f85cdf1eb715efab0e921901d81a3e",
+    "src/old/knn.rs": "7e690cf253d72b83613536a6a04c7517b19f8c5c54d5fee05d25772ed16b1dad",
+    "src/old/knn3x.rs": "9bdbf76c21317e42bef5da3001f9e3501ca4fc5a336cbb007c116be971a6e494",
+    "src/old/rbm.rs": "1b3b24fc2285a7eaf2f1002ef9d101f5f48d760b13528c3741f3dc1532543813",
+    "src/old/rbmb.rs": "db8cc23155890af497a7a1ebe8d0a5e88c4e20c9961cba87ee23e6cb2dbb605f",
+    "src/old/rbmr.rs": "8fbcc754eef27d01e4240f356378a69c2b5358812d3e66ddefd37646a7424e76",
+    "src/old/tsvd.rs": "67e6ee30e608800c48802704c8372f49625ba51fcefd0e5e0989ed1ff144d1c4",
+    "src/old/tsvdx.rs": "200cd594d947415877992d145febca2c3df2af3f2ea9a3375e0dbd12fca09b2c",
+    "src/old/tsvdx2.rs": "02f981fc55c1b6e82bd479995fc467735568f8b2bc909e55eddf129ce7ac8116",
+    "src/old/tsvdx3.rs": "3a3bc4c3f1013d33aaaf4a4687602d985ff192b81428fce89f2d36ae594b1964",
+    "src/old/tsvdxx.rs": "1436b25e0a7d45197fb556a60904a77a7533aabb92aec1789026fcaa28fcc9e5",
+    "src/pipeline.rs": "c0de30511cdf12cb6d1cd9e05460413c68264d41c4de230c978948d8eda0e7f8",
+    "src/rbmx2.rs": "1436735a4b2ef5a859f72f7e325f1009a868c77f3b050eec368cb9c32b83cfbd",
+    "src/remote.rs": "efb4bb9a0f34d1a11686a88691c3cba3f01b29c5e2c5ecde2aaeb91d14e0a52e",
+    "src/rx.rs": "5bd151642069318592f99eb98ef6de40609dd41e18117a4a9564dc4ef92a4cfc",
+    "src/tsvdx4.rs": "9992e7c7c0bb90f1cb137e86e0240d66a93e3a4c099fad1a6e9bd27e47ec5482",
+    "src/tsvdx4p.rs": "3e9efc8f0b624fb5b2024a01206de3c634bc6070a4841fdd5fac3c9ad891d3bd",
+    "src/tsvdx5.rs": "3640345741e0dccf6a493e653e0a3ed0cb6af0524d58fdb4361e3d72dac5c1eb",
+    "src/tsvdx6.rs": "71043a88ed97c9e759bd0a50613bf52e19bd867eba025b375de23d7f1517f08a",
+    "src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "src/uknn.rs": "257a0cab4c5a2b84d8949e00048b090066bb7bff805fc3838c8c43f12dbd9321",
+    "src/vfeat0.rs": "c7eccfd84ebcf8a97e8568238bc31a72a6861afaf1b4eeb1f6f271a7364a12f3",
+    "src/vfeat1.rs": "475f7a15d8ccd34a52a6e13e2d7a2a04e2250c32c80081b18b7638db34209e96",
+    "tests/helpers.rs": "460170d52316a3c3531c1942bcbdae1d5f14a06f243f75970ccab548e2599207",
+    "tests/integ_uknn_test.rs": "d4461d3d5119c6b9d66928eac1d87a3dabe6ea13b7129c5127776545bd08e82f",
+    "tests/lib_test.rs": "ab491daf376a4b1f14571d35bce148a742f7cbe2fb54ce2e25df9011dcaffe7f",
+    "tests/nbstats_test.rs": "7de8cfbef766c76bb568f1b5dc84525e6a13ab1e340e375b85268db66aa11a78",
+    "tests/regressors_test.rs": "3b5bd7c8cdc967f7307f5375ab6d5b0a3d859c8302a3cd522f30af0824dd73bb",
+    "voting-1.toml": "3f9af7e716e48594756b3e180ee105771bf64a6f6309da5af07828c8ce5068d8",
+    "voting-3.toml": "a9542a5387ca437f35cfb4ee488a348b787e5ea32d92e4248d290da39ee08d76",
+    "voting-new.toml": "f30b8b076077d5f4776d514ef7e377ce6520f4e5ff336518255f569103803560",
+    "voting-old.toml": "928dd499f8616a0d1c1da5ff5ca4f70472fb2a26f7d0f6f8cb78b9e9ee533ea6"
+  },
+  "registry_helper_sha256": "d790726636f29d5750e49bf0ea2980f4101046be03a4ddf6dcac488b0edb747c",
+  "registry_binary_sha256": "2bc594e872eeb01311d5cca5e4dce7188138e8b9eccdd791909018d9dce60c2c",
+  "auditor_sha256": "9bce4477f644cce5fc85705f2e83b702107ba245ca0524f8f0fbd9490856ec0d",
+  "public_metadata_sha256": "cd5b368a53faf5e86ae98d3fedd6ed13f07ded855a0c0f7942189a4090f6eea2",
+  "raw_features": 536,
+  "meta_features": 83,
+  "support_features": 220,
+  "sections": {
+    "old": {
+      "raw_features": 122,
+      "source_jobs": 33,
+      "exact_declared_outputs": 20,
+      "records": [
+        {
+          "name": "als8-8",
+          "declared_output": "preds_old/als8-8.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-als8-8",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "als8-8__knn-25c",
+          "declared_output": "preds_old/als8-8__knn-25c.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-als8-8__knn-25c",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "als8-8__knn-25f",
+          "declared_output": "preds_old/als8-8__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-als8-8__knn-25f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "als8-8__knn-25m",
+          "declared_output": "preds_old/als8-8__knn-25m.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-als8-8__knn-25m",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "asym-16",
+          "declared_output": "preds_old/asym-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-asym-16",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "attn-32-t",
+          "declared_output": "preds_old/attn-32-t.probe.npy",
+          "exact_declared_producers": [
+            "attn-32-t"
+          ]
+        },
+        {
+          "name": "attn-32",
+          "declared_output": "preds_old/attn-32.probe.npy",
+          "exact_declared_producers": [
+            "attn-32"
+          ]
+        },
+        {
+          "name": "attn-32__nlpp",
+          "declared_output": "preds_old/attn-32__nlpp.probe.npy",
+          "exact_declared_producers": [
+            "attn-32__nlpp"
+          ]
+        },
+        {
+          "name": "attn-32__nlpp__knn3",
+          "declared_output": "preds_old/attn-32__nlpp__knn3.probe.npy",
+          "exact_declared_producers": [
+            "attn-32__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "bk1-10_ep05",
+          "declared_output": "preds_old/bk1-10_ep05.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bk1-10",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bk1-10_ep21",
+          "declared_output": "preds_old/bk1-10_ep21.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bk1-10",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bk1-10_ep29",
+          "declared_output": "preds_old/bk1-10_ep29.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bk1-10",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bkbias__knn-20f",
+          "declared_output": "preds_old/bkbias__knn-20f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bkbias__knn-25f",
+          "declared_output": "preds_old/bkbias__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bknbr-50",
+          "declared_output": "preds_old/bknbr-50.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bknbr-50",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bknbr-50_ep01",
+          "declared_output": "preds_old/bknbr-50_ep01.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bknbr-50",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "bknbrx-50seq",
+          "declared_output": "preds_old/bknbrx-50seq.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-bknbrx-50seq",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "catmf-16",
+          "declared_output": "preds_old/catmf-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "catmf-16__knn-25s",
+          "declared_output": "preds_old/catmf-16__knn-25s.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "catmf-16__rbmg-64",
+          "declared_output": "preds_old/catmf-16__rbmg-64.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "cfnade_rmsew010_ep38",
+          "declared_output": "preds_old/cfnade_rmsew010_ep38.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "dnn-16",
+          "declared_output": "preds_old/dnn-16.probe.npy",
+          "exact_declared_producers": [
+            "dnn-16"
+          ]
+        },
+        {
+          "name": "dnn-24",
+          "declared_output": "preds_old/dnn-24.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24"
+          ]
+        },
+        {
+          "name": "dnn-24__asym-16p75",
+          "declared_output": "preds_old/dnn-24__asym-16p75.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__asym-16p75"
+          ]
+        },
+        {
+          "name": "dnn-24__asym-16p75__knn3",
+          "declared_output": "preds_old/dnn-24__asym-16p75__knn3.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__asym-16p75__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__attn-32",
+          "declared_output": "preds_old/dnn-24__attn-32.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__attn-32"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16",
+          "declared_output": "preds_old/dnn-24__dnn-16.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16__knn3",
+          "declared_output": "preds_old/dnn-24__dnn-16__knn3.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50",
+          "declared_output": "preds_old/dnn-24__dnn-16p50.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p50",
+          "declared_output": "preds_old/dnn-24__dnn-16p50__asym-16p50.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p50"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75",
+          "declared_output": "preds_old/dnn-24__dnn-16p50__asym-16p75.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+          "declared_output": "preds_old/dnn-24__dnn-16p50__asym-16p75__knn3b.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75__knn3b"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+          "declared_output": "preds_old/dnn-24__dnn-16p50__asym-16p75__knn3c.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75__knn3c"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__knn3",
+          "declared_output": "preds_old/dnn-24__dnn-16p50__knn3.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-24p50",
+          "declared_output": "preds_old/dnn-24__dnn-24p50.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-24p50"
+          ]
+        },
+        {
+          "name": "dnn-24__knn3",
+          "declared_output": "preds_old/dnn-24__knn3.probe.npy",
+          "exact_declared_producers": [
+            "dnn-24__knn3"
+          ]
+        },
+        {
+          "name": "dnn-64",
+          "declared_output": "preds_old/dnn-64.probe.npy",
+          "exact_declared_producers": [
+            "dnn-64"
+          ]
+        },
+        {
+          "name": "fbias__knn-25f",
+          "declared_output": "preds_old/fbias__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "ge14__knn3",
+          "declared_output": "preds_old/ge14__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "ge14__mfrbm-64",
+          "declared_output": "preds_old/ge14__mfrbm-64.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "ge14__rbmg-128",
+          "declared_output": "preds_old/ge14__rbmg-128.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "ge14__rbmg-64__knn-c",
+          "declared_output": "preds_old/ge14__rbmg-64__knn-c.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "knn-25w__tsvdx-16",
+          "declared_output": "preds_old/knn-25w__tsvdx-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-knn-25w__tsvdx-16",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mf-24__knn-25m",
+          "declared_output": "preds_old/mf-24__knn-25m.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mf-24__knn-25m",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mf-64u",
+          "declared_output": "preds_old/mf-64u.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mf-64u",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mf-64u__asym-16",
+          "declared_output": "preds_old/mf-64u__asym-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mf-64u__asym-16",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mf-64u__knn-25f",
+          "declared_output": "preds_old/mf-64u__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mf-64u__knn-25f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mfrbm-48",
+          "declared_output": "preds_old/mfrbm-48.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mfrbm-48",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "mfrbm-96",
+          "declared_output": "preds_old/mfrbm-96.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-mfrbm-96",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm-32",
+          "declared_output": "preds_old/rbm-32.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm-32__knn-15r",
+          "declared_output": "preds_old/rbm-32__knn-15r.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm-32__knn-25d",
+          "declared_output": "preds_old/rbm-32__knn-25d.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm-32__knn-25f",
+          "declared_output": "preds_old/rbm-32__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm-64__knn-c",
+          "declared_output": "preds_old/rbm-64__knn-c.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbm_opt_v1",
+          "declared_output": "preds_old/rbm_opt_v1.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-2048x",
+          "declared_output": "preds_old/rbmb-2048x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256",
+          "declared_output": "preds_old/rbmb-256.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256__knn-25s",
+          "declared_output": "preds_old/rbmb-256__knn-25s.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256__knn-r",
+          "declared_output": "preds_old/rbmb-256__knn-r.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256__knn3",
+          "declared_output": "preds_old/rbmb-256__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256_ep01",
+          "declared_output": "preds_old/rbmb-256_ep01.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-256_ep11",
+          "declared_output": "preds_old/rbmb-256_ep11.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-4096x",
+          "declared_output": "preds_old/rbmb-4096x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-512x__knn-25s",
+          "declared_output": "preds_old/rbmb-512x__knn-25s.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-512x__knn-r",
+          "declared_output": "preds_old/rbmb-512x__knn-r.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmb-512x__knn3",
+          "declared_output": "preds_old/rbmb-512x__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmr-2048",
+          "declared_output": "preds_old/rbmr-2048.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmr-4096",
+          "declared_output": "preds_old/rbmr-4096.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmr-512__knn3",
+          "declared_output": "preds_old/rbmr-512__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-120",
+          "declared_output": "preds_old/rbmx-120.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-16",
+          "declared_output": "preds_old/rbmx-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-160",
+          "declared_output": "preds_old/rbmx-160.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-500mf",
+          "declared_output": "preds_old/rbmx-500mf.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-500mf__knn-25f",
+          "declared_output": "preds_old/rbmx-500mf__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "rbmx-700__knn-25f",
+          "declared_output": "preds_old/rbmx-700__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-2048__als-32",
+          "declared_output": "preds_old/tsvd-2048__als-32.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-2048__knn-25c",
+          "declared_output": "preds_old/tsvd-2048__knn-25c.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-2048__knn-25f",
+          "declared_output": "preds_old/tsvd-2048__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-2048__knn-50m",
+          "declared_output": "preds_old/tsvd-2048__knn-50m.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-2048__knn-c",
+          "declared_output": "preds_old/tsvd-2048__knn-c.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvd-256",
+          "declared_output": "preds_old/tsvd-256.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx-20",
+          "declared_output": "preds_old/tsvdx-20.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx-20",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx-256",
+          "declared_output": "preds_old/tsvdx-256.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx-256",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx2-16",
+          "declared_output": "preds_old/tsvdx2-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx3-16",
+          "declared_output": "preds_old/tsvdx3-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-160-2048_ep19",
+          "declared_output": "preds_old/tsvdx4-160-2048_ep19.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-160_ep19",
+          "declared_output": "preds_old/tsvdx4-160_ep19.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-160_ep19__knn-25s",
+          "declared_output": "preds_old/tsvdx4-160_ep19__knn-25s.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-16o",
+          "declared_output": "preds_old/tsvdx4-16o.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-16o",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-180f__knn3x",
+          "declared_output": "preds_old/tsvdx4-180f__knn3x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-180f__nlpp__knn3x",
+          "declared_output": "preds_old/tsvdx4-180f__nlpp__knn3x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-180f_ep01",
+          "declared_output": "preds_old/tsvdx4-180f_ep01.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-180f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-180f_ep03",
+          "declared_output": "preds_old/tsvdx4-180f_ep03.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-180f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-180f_ep13",
+          "declared_output": "preds_old/tsvdx4-180f_ep13.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-180f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-200f__knn-25f",
+          "declared_output": "preds_old/tsvdx4-200f__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-200o",
+          "declared_output": "preds_old/tsvdx4-200o.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-200o",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-20f_ep13",
+          "declared_output": "preds_old/tsvdx4-20f_ep13.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-20f",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-40",
+          "declared_output": "preds_old/tsvdx4-40.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-40",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-512_ep19",
+          "declared_output": "preds_old/tsvdx4-512_ep19.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-64o",
+          "declared_output": "preds_old/tsvdx4-64o.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-64o",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-64o__knn3",
+          "declared_output": "preds_old/tsvdx4-64o__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-64o__knn3",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-72",
+          "declared_output": "preds_old/tsvdx4-72.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-72",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp02",
+          "declared_output": "preds_old/tsvdx4-swp02.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp02",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp03",
+          "declared_output": "preds_old/tsvdx4-swp03.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp03",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp09",
+          "declared_output": "preds_old/tsvdx4-swp09.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp09",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp14",
+          "declared_output": "preds_old/tsvdx4-swp14.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp14",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp16",
+          "declared_output": "preds_old/tsvdx4-swp16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp16",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp20",
+          "declared_output": "preds_old/tsvdx4-swp20.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp20",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp21",
+          "declared_output": "preds_old/tsvdx4-swp21.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp21",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp24",
+          "declared_output": "preds_old/tsvdx4-swp24.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp24",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4-swp27",
+          "declared_output": "preds_old/tsvdx4-swp27.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx4-swp27",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4_20260304_1536_ep11",
+          "declared_output": "preds_old/tsvdx4_20260304_1536_ep11.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx4_20260304_1536_ep17",
+          "declared_output": "preds_old/tsvdx4_20260304_1536_ep17.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-16",
+          "declared_output": "preds_old/tsvdx5-16.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx5-16",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-200",
+          "declared_output": "preds_old/tsvdx5-200.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": "s1-tsvdx5-200",
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-200__nlpp__knn3x",
+          "declared_output": "preds_old/tsvdx5-200__nlpp__knn3x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-300__nlpp__knn3",
+          "declared_output": "preds_old/tsvdx5-300__nlpp__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-400__nlpp",
+          "declared_output": "preds_old/tsvdx5-400__nlpp.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdx5-400__nlpp__knn3x",
+          "declared_output": "preds_old/tsvdx5-400__nlpp__knn3x.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdxx-2048__knn-25f",
+          "declared_output": "preds_old/tsvdxx-2048__knn-25f.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdxx-2048__knn-25s",
+          "declared_output": "preds_old/tsvdxx-2048__knn-25s.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        },
+        {
+          "name": "tsvdxx-2048__knn3",
+          "declared_output": "preds_old/tsvdxx-2048__knn3.probe.npy",
+          "exact_declared_producers": [],
+          "split1_candidate_producer": null,
+          "candidate_is_exact_reproduction_proof": false
+        }
+      ]
+    },
+    "3": {
+      "raw_features": 263,
+      "source_jobs": 225,
+      "exact_declared_outputs": 263,
+      "records": [
+        {
+          "name": "s3-als8",
+          "declared_output": "preds_3/s3-als8.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-als8"
+          ]
+        },
+        {
+          "name": "s3-als8__knn3",
+          "declared_output": "preds_3/s3-als8__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-als8__knn3"
+          ]
+        },
+        {
+          "name": "s3-als8__knn3b",
+          "declared_output": "preds_3/s3-als8__knn3b.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-als8__knn3b"
+          ]
+        },
+        {
+          "name": "s3-als8__knn3t",
+          "declared_output": "preds_3/s3-als8__knn3t.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-als8__knn3t"
+          ]
+        },
+        {
+          "name": "s3-attn16",
+          "declared_output": "preds_3/s3-attn16.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn16"
+          ]
+        },
+        {
+          "name": "s3-attn16_ep08",
+          "declared_output": "preds_3/s3-attn16_ep08.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn16"
+          ]
+        },
+        {
+          "name": "s3-attn32",
+          "declared_output": "preds_3/s3-attn32.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32"
+          ]
+        },
+        {
+          "name": "s3-attn32__kimp-r",
+          "declared_output": "preds_3/s3-attn32__kimp-r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__kimp-r"
+          ]
+        },
+        {
+          "name": "s3-attn32__kimp-rs",
+          "declared_output": "preds_3/s3-attn32__kimp-rs.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__kimp-rs"
+          ]
+        },
+        {
+          "name": "s3-attn32__nlpp",
+          "declared_output": "preds_3/s3-attn32__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__nlpp"
+          ]
+        },
+        {
+          "name": "s3-attn32__nlpp__knn-s",
+          "declared_output": "preds_3/s3-attn32__nlpp__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__nlpp__knn-s"
+          ]
+        },
+        {
+          "name": "s3-attn32__nlpp__knn-w",
+          "declared_output": "preds_3/s3-attn32__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-attn32__nlpp__knn3",
+          "declared_output": "preds_3/s3-attn32__nlpp__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "s3-attn32_ep06",
+          "declared_output": "preds_3/s3-attn32_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn32"
+          ]
+        },
+        {
+          "name": "s3-attn64",
+          "declared_output": "preds_3/s3-attn64.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn64"
+          ]
+        },
+        {
+          "name": "s3-attn64_ep05",
+          "declared_output": "preds_3/s3-attn64_ep05.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-attn64"
+          ]
+        },
+        {
+          "name": "s3-bk1-120",
+          "declared_output": "preds_3/s3-bk1-120.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120"
+          ]
+        },
+        {
+          "name": "s3-bk1-120_ep20",
+          "declared_output": "preds_3/s3-bk1-120_ep20.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120"
+          ]
+        },
+        {
+          "name": "s3-bk1-120_ep28",
+          "declared_output": "preds_3/s3-bk1-120_ep28.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb",
+          "declared_output": "preds_3/s3-bk1-120nb.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb__nlpp",
+          "declared_output": "preds_3/s3-bk1-120nb__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb__nlpp"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb__nlpp__knn-m",
+          "declared_output": "preds_3/s3-bk1-120nb__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb__nlpp__knn-w",
+          "declared_output": "preds_3/s3-bk1-120nb__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb_ep14",
+          "declared_output": "preds_3/s3-bk1-120nb_ep14.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb"
+          ]
+        },
+        {
+          "name": "s3-bk1-120nb_ep21",
+          "declared_output": "preds_3/s3-bk1-120nb_ep21.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-120nb"
+          ]
+        },
+        {
+          "name": "s3-bk1-60",
+          "declared_output": "preds_3/s3-bk1-60.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60"
+          ]
+        },
+        {
+          "name": "s3-bk1-60_ep01",
+          "declared_output": "preds_3/s3-bk1-60_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60"
+          ]
+        },
+        {
+          "name": "s3-bk1-60_ep06",
+          "declared_output": "preds_3/s3-bk1-60_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60"
+          ]
+        },
+        {
+          "name": "s3-bk1-60n",
+          "declared_output": "preds_3/s3-bk1-60n.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60n"
+          ]
+        },
+        {
+          "name": "s3-bk1-60n__knn-w",
+          "declared_output": "preds_3/s3-bk1-60n__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60n__knn-w"
+          ]
+        },
+        {
+          "name": "s3-bk1-60n_ep14",
+          "declared_output": "preds_3/s3-bk1-60n_ep14.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk1-60n"
+          ]
+        },
+        {
+          "name": "s3-bk3-20",
+          "declared_output": "preds_3/s3-bk3-20.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk3-20"
+          ]
+        },
+        {
+          "name": "s3-bk3-20__knns",
+          "declared_output": "preds_3/s3-bk3-20__knns.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk3-20__knns"
+          ]
+        },
+        {
+          "name": "s3-bk4-d50s",
+          "declared_output": "preds_3/s3-bk4-d50s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-d50s"
+          ]
+        },
+        {
+          "name": "s3-bk4-d50s_ep20",
+          "declared_output": "preds_3/s3-bk4-d50s_ep20.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-d50s"
+          ]
+        },
+        {
+          "name": "s3-bk4-d50z",
+          "declared_output": "preds_3/s3-bk4-d50z.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-d50z"
+          ]
+        },
+        {
+          "name": "s3-bk4-d50z_ep23",
+          "declared_output": "preds_3/s3-bk4-d50z_ep23.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-d50z"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x",
+          "declared_output": "preds_3/s3-bk4-e300x.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__attn32p",
+          "declared_output": "preds_3/s3-bk4-e300x__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__attn32p"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__attn32p_ep06",
+          "declared_output": "preds_3/s3-bk4-e300x__attn32p_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__attn32p"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__attn32p_ep11",
+          "declared_output": "preds_3/s3-bk4-e300x__attn32p_ep11.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__attn32p"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__dnn16p",
+          "declared_output": "preds_3/s3-bk4-e300x__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__nlpp",
+          "declared_output": "preds_3/s3-bk4-e300x__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__nlpp"
+          ]
+        },
+        {
+          "name": "s3-bk4-e300x__nlpp__knn-w",
+          "declared_output": "preds_3/s3-bk4-e300x__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e300x__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-bk4-e50s",
+          "declared_output": "preds_3/s3-bk4-e50s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-e50s"
+          ]
+        },
+        {
+          "name": "s3-bk4-f200x",
+          "declared_output": "preds_3/s3-bk4-f200x.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-f200x"
+          ]
+        },
+        {
+          "name": "s3-bk4-f200x__knn-m",
+          "declared_output": "preds_3/s3-bk4-f200x__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-f200x__knn-m"
+          ]
+        },
+        {
+          "name": "s3-bk4-f200x__nlpp",
+          "declared_output": "preds_3/s3-bk4-f200x__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-f200x__nlpp"
+          ]
+        },
+        {
+          "name": "s3-bk4-f200x__nlpp__knn-m",
+          "declared_output": "preds_3/s3-bk4-f200x__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-f200x__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-bk4-g100",
+          "declared_output": "preds_3/s3-bk4-g100.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bk4-g100"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-100w",
+          "declared_output": "preds_3/s3-bknbrx-100w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-100w"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-100w_ep01",
+          "declared_output": "preds_3/s3-bknbrx-100w_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-100w"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-200t",
+          "declared_output": "preds_3/s3-bknbrx-200t.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-200t"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-200t__knn-s",
+          "declared_output": "preds_3/s3-bknbrx-200t__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-200t__knn-s"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-30d",
+          "declared_output": "preds_3/s3-bknbrx-30d.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-30d"
+          ]
+        },
+        {
+          "name": "s3-bknbrx-30d_ep15",
+          "declared_output": "preds_3/s3-bknbrx-30d_ep15.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-bknbrx-30d"
+          ]
+        },
+        {
+          "name": "s3-dnn16",
+          "declared_output": "preds_3/s3-dnn16.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn16"
+          ]
+        },
+        {
+          "name": "s3-dnn16t",
+          "declared_output": "preds_3/s3-dnn16t.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn16t"
+          ]
+        },
+        {
+          "name": "s3-dnn24",
+          "declared_output": "preds_3/s3-dnn24.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24"
+          ]
+        },
+        {
+          "name": "s3-dnn24__knn-m",
+          "declared_output": "preds_3/s3-dnn24__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__knn-m"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp",
+          "declared_output": "preds_3/s3-dnn24__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp__kimp-n",
+          "declared_output": "preds_3/s3-dnn24__nlpp__kimp-n.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp__kimp-n"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp__kimp-r",
+          "declared_output": "preds_3/s3-dnn24__nlpp__kimp-r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp__kimp-r"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp__kimp-rs",
+          "declared_output": "preds_3/s3-dnn24__nlpp__kimp-rs.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp__kimp-rs"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp__knn-s",
+          "declared_output": "preds_3/s3-dnn24__nlpp__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp__knn-s"
+          ]
+        },
+        {
+          "name": "s3-dnn24__nlpp__knns",
+          "declared_output": "preds_3/s3-dnn24__nlpp__knns.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24__nlpp__knns"
+          ]
+        },
+        {
+          "name": "s3-dnn24_ep03",
+          "declared_output": "preds_3/s3-dnn24_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn24"
+          ]
+        },
+        {
+          "name": "s3-dnn32nm",
+          "declared_output": "preds_3/s3-dnn32nm.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn32nm"
+          ]
+        },
+        {
+          "name": "s3-dnn32nm__knn3",
+          "declared_output": "preds_3/s3-dnn32nm__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-dnn32nm__knn3"
+          ]
+        },
+        {
+          "name": "s3-integ80-pyuddf",
+          "declared_output": "preds_3/s3-integ80-pyuddf.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-integ80-pyuddf"
+          ]
+        },
+        {
+          "name": "s3-mf60",
+          "declared_output": "preds_3/s3-mf60.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mf60"
+          ]
+        },
+        {
+          "name": "s3-mf60__nlpp",
+          "declared_output": "preds_3/s3-mf60__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mf60__nlpp"
+          ]
+        },
+        {
+          "name": "s3-mf60__nlpp__knn-s",
+          "declared_output": "preds_3/s3-mf60__nlpp__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mf60__nlpp__knn-s"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-50w",
+          "declared_output": "preds_3/s3-mfrbmx-50w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-50w"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-50w_ep08",
+          "declared_output": "preds_3/s3-mfrbmx-50w_ep08.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-50w"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-50w_ep11",
+          "declared_output": "preds_3/s3-mfrbmx-50w_ep11.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-50w"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-60h",
+          "declared_output": "preds_3/s3-mfrbmx-60h.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-60h"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-60h__knn-s",
+          "declared_output": "preds_3/s3-mfrbmx-60h__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-60h__knn-s"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-60h_ep06",
+          "declared_output": "preds_3/s3-mfrbmx-60h_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-60h"
+          ]
+        },
+        {
+          "name": "s3-mfrbmx-60h_ep08",
+          "declared_output": "preds_3/s3-mfrbmx-60h_ep08.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-mfrbmx-60h"
+          ]
+        },
+        {
+          "name": "s3-nade12s",
+          "declared_output": "preds_3/s3-nade12s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nade12s"
+          ]
+        },
+        {
+          "name": "s3-nade12s__kimp-r",
+          "declared_output": "preds_3/s3-nade12s__kimp-r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nade12s__kimp-r"
+          ]
+        },
+        {
+          "name": "s3-nade12s__knn3",
+          "declared_output": "preds_3/s3-nade12s__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nade12s__knn3"
+          ]
+        },
+        {
+          "name": "s3-nade12s_ep01",
+          "declared_output": "preds_3/s3-nade12s_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nade12s"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b",
+          "declared_output": "preds_3/s3-nsvd20-b.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b__knn-m",
+          "declared_output": "preds_3/s3-nsvd20-b__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b__knn-m"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b__nlpp",
+          "declared_output": "preds_3/s3-nsvd20-b__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b__nlpp"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b__nlpp__knn-c",
+          "declared_output": "preds_3/s3-nsvd20-b__nlpp__knn-c.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b__nlpp__knn-c"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b__nlpp__knn-s",
+          "declared_output": "preds_3/s3-nsvd20-b__nlpp__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b__nlpp__knn-s"
+          ]
+        },
+        {
+          "name": "s3-nsvd20-b__nlpp__knn3",
+          "declared_output": "preds_3/s3-nsvd20-b__nlpp__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-nsvd20-b__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "s3-rbm10",
+          "declared_output": "preds_3/s3-rbm10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm10"
+          ]
+        },
+        {
+          "name": "s3-rbm100p",
+          "declared_output": "preds_3/s3-rbm100p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm100p"
+          ]
+        },
+        {
+          "name": "s3-rbm100p__knnf",
+          "declared_output": "preds_3/s3-rbm100p__knnf.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm100p__knnf"
+          ]
+        },
+        {
+          "name": "s3-rbm10__knn-s",
+          "declared_output": "preds_3/s3-rbm10__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm10__knn-s"
+          ]
+        },
+        {
+          "name": "s3-rbm10__knn-w",
+          "declared_output": "preds_3/s3-rbm10__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm10__knn-w"
+          ]
+        },
+        {
+          "name": "s3-rbm200",
+          "declared_output": "preds_3/s3-rbm200.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200"
+          ]
+        },
+        {
+          "name": "s3-rbm200__asym-16",
+          "declared_output": "preds_3/s3-rbm200__asym-16.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__asym-16"
+          ]
+        },
+        {
+          "name": "s3-rbm200__asym-16__knn3",
+          "declared_output": "preds_3/s3-rbm200__asym-16__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__asym-16__knn3"
+          ]
+        },
+        {
+          "name": "s3-rbm200__attn32p",
+          "declared_output": "preds_3/s3-rbm200__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__attn32p"
+          ]
+        },
+        {
+          "name": "s3-rbm200__attn32p_ep01",
+          "declared_output": "preds_3/s3-rbm200__attn32p_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__attn32p"
+          ]
+        },
+        {
+          "name": "s3-rbm200__dnn16p",
+          "declared_output": "preds_3/s3-rbm200__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-rbm200__dnn16p_ep02",
+          "declared_output": "preds_3/s3-rbm200__dnn16p_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-rbm200__knnfd",
+          "declared_output": "preds_3/s3-rbm200__knnfd.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__knnfd"
+          ]
+        },
+        {
+          "name": "s3-rbm200__nlpp",
+          "declared_output": "preds_3/s3-rbm200__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm200__nlpp__knn-fp",
+          "declared_output": "preds_3/s3-rbm200__nlpp__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200__nlpp__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-rbm200e",
+          "declared_output": "preds_3/s3-rbm200e.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e"
+          ]
+        },
+        {
+          "name": "s3-rbm200e__knn-fp",
+          "declared_output": "preds_3/s3-rbm200e__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-rbm200e__nlpp",
+          "declared_output": "preds_3/s3-rbm200e__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm200e__nlpp__knn-w",
+          "declared_output": "preds_3/s3-rbm200e__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-rbm200e__nlpp__uknn-rk",
+          "declared_output": "preds_3/s3-rbm200e__nlpp__uknn-rk.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e__nlpp__uknn-rk"
+          ]
+        },
+        {
+          "name": "s3-rbm200e_ep01",
+          "declared_output": "preds_3/s3-rbm200e_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e"
+          ]
+        },
+        {
+          "name": "s3-rbm200e_ep05",
+          "declared_output": "preds_3/s3-rbm200e_ep05.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e"
+          ]
+        },
+        {
+          "name": "s3-rbm200e_ep10",
+          "declared_output": "preds_3/s3-rbm200e_ep10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e"
+          ]
+        },
+        {
+          "name": "s3-rbm200e_ep17",
+          "declared_output": "preds_3/s3-rbm200e_ep17.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm200e"
+          ]
+        },
+        {
+          "name": "s3-rbm400",
+          "declared_output": "preds_3/s3-rbm400.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400"
+          ]
+        },
+        {
+          "name": "s3-rbm400__attn32p",
+          "declared_output": "preds_3/s3-rbm400__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__attn32p"
+          ]
+        },
+        {
+          "name": "s3-rbm400__attn32p_ep01",
+          "declared_output": "preds_3/s3-rbm400__attn32p_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__attn32p"
+          ]
+        },
+        {
+          "name": "s3-rbm400__attn32tp",
+          "declared_output": "preds_3/s3-rbm400__attn32tp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__attn32tp"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp",
+          "declared_output": "preds_3/s3-rbm400__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__knn-cr-g10-t20",
+          "declared_output": "preds_3/s3-rbm400__nlpp__knn-cr-g10-t20.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__knn-cr-g10-t20"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__knn-cr-g15-t10",
+          "declared_output": "preds_3/s3-rbm400__nlpp__knn-cr-g15-t10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__knn-cr-g15-t10"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__knn-cr-g25-t5",
+          "declared_output": "preds_3/s3-rbm400__nlpp__knn-cr-g25-t5.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__knn-cr-g25-t5"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__knn-cr-g35-t0",
+          "declared_output": "preds_3/s3-rbm400__nlpp__knn-cr-g35-t0.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__knn-cr-g35-t0"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__knn-w-k100",
+          "declared_output": "preds_3/s3-rbm400__nlpp__knn-w-k100.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__knn-w-k100"
+          ]
+        },
+        {
+          "name": "s3-rbm400__nlpp__uknn-rk",
+          "declared_output": "preds_3/s3-rbm400__nlpp__uknn-rk.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400__nlpp__uknn-rk"
+          ]
+        },
+        {
+          "name": "s3-rbm400p",
+          "declared_output": "preds_3/s3-rbm400p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p"
+          ]
+        },
+        {
+          "name": "s3-rbm400p__knn-fp",
+          "declared_output": "preds_3/s3-rbm400p__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-rbm400p__knn3",
+          "declared_output": "preds_3/s3-rbm400p__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p__knn3"
+          ]
+        },
+        {
+          "name": "s3-rbm400p_ep03",
+          "declared_output": "preds_3/s3-rbm400p_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p"
+          ]
+        },
+        {
+          "name": "s3-rbm400p_ep18",
+          "declared_output": "preds_3/s3-rbm400p_ep18.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p"
+          ]
+        },
+        {
+          "name": "s3-rbm400p_ep23",
+          "declared_output": "preds_3/s3-rbm400p_ep23.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400p"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf",
+          "declared_output": "preds_3/s3-rbm400pf.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf__knn-m",
+          "declared_output": "preds_3/s3-rbm400pf__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf__knn-m"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf__knn3",
+          "declared_output": "preds_3/s3-rbm400pf__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf__knn3"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf__nlpp",
+          "declared_output": "preds_3/s3-rbm400pf__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf__nlpp__knn-m",
+          "declared_output": "preds_3/s3-rbm400pf__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep01",
+          "declared_output": "preds_3/s3-rbm400pf_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep02",
+          "declared_output": "preds_3/s3-rbm400pf_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep03",
+          "declared_output": "preds_3/s3-rbm400pf_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep09",
+          "declared_output": "preds_3/s3-rbm400pf_ep09.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep10",
+          "declared_output": "preds_3/s3-rbm400pf_ep10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400pf_ep14",
+          "declared_output": "preds_3/s3-rbm400pf_ep14.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400pf"
+          ]
+        },
+        {
+          "name": "s3-rbm400r",
+          "declared_output": "preds_3/s3-rbm400r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm400r_ep06",
+          "declared_output": "preds_3/s3-rbm400r_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm400r_ep08",
+          "declared_output": "preds_3/s3-rbm400r_ep08.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm400r_ep22",
+          "declared_output": "preds_3/s3-rbm400r_ep22.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm400r_ep23",
+          "declared_output": "preds_3/s3-rbm400r_ep23.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm400r_ep24",
+          "declared_output": "preds_3/s3-rbm400r_ep24.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm400r"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10",
+          "declared_output": "preds_3/s3-rbm50b10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10__knn-m",
+          "declared_output": "preds_3/s3-rbm50b10__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10__knn-m"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10__nlpp",
+          "declared_output": "preds_3/s3-rbm50b10__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10__nlpp__knn-m",
+          "declared_output": "preds_3/s3-rbm50b10__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10__nlpp__knn-w",
+          "declared_output": "preds_3/s3-rbm50b10__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-rbm50b10_ep09",
+          "declared_output": "preds_3/s3-rbm50b10_ep09.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50b10"
+          ]
+        },
+        {
+          "name": "s3-rbm50t_ep06",
+          "declared_output": "preds_3/s3-rbm50t_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm50t"
+          ]
+        },
+        {
+          "name": "s3-rbm60r",
+          "declared_output": "preds_3/s3-rbm60r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm60r"
+          ]
+        },
+        {
+          "name": "s3-rbm60r_ep18",
+          "declared_output": "preds_3/s3-rbm60r_ep18.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm60r"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l15_ep01",
+          "declared_output": "preds_3/s3-rbm800-l15_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l15"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l15_ep02",
+          "declared_output": "preds_3/s3-rbm800-l15_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l15"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l25",
+          "declared_output": "preds_3/s3-rbm800-l25.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l25"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l25__knn-fp",
+          "declared_output": "preds_3/s3-rbm800-l25__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l25__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l25__knn-m",
+          "declared_output": "preds_3/s3-rbm800-l25__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l25__knn-m"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l25__knn-w",
+          "declared_output": "preds_3/s3-rbm800-l25__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l25__knn-w"
+          ]
+        },
+        {
+          "name": "s3-rbm800-l25__knn3",
+          "declared_output": "preds_3/s3-rbm800-l25__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800-l25__knn3"
+          ]
+        },
+        {
+          "name": "s3-rbm800p",
+          "declared_output": "preds_3/s3-rbm800p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p"
+          ]
+        },
+        {
+          "name": "s3-rbm800p__knn-fp",
+          "declared_output": "preds_3/s3-rbm800p__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-rbm800p__nlpp",
+          "declared_output": "preds_3/s3-rbm800p__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p__nlpp"
+          ]
+        },
+        {
+          "name": "s3-rbm800p__nlpp__knn-w",
+          "declared_output": "preds_3/s3-rbm800p__nlpp__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "s3-rbm800p_ep01",
+          "declared_output": "preds_3/s3-rbm800p_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p"
+          ]
+        },
+        {
+          "name": "s3-rbm800p_ep21",
+          "declared_output": "preds_3/s3-rbm800p_ep21.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-rbm800p"
+          ]
+        },
+        {
+          "name": "s3-tx100olm",
+          "declared_output": "preds_3/s3-tx100olm.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100olm"
+          ]
+        },
+        {
+          "name": "s3-tx100olm__dnn16p",
+          "declared_output": "preds_3/s3-tx100olm__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100olm__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx100olm__knn-m",
+          "declared_output": "preds_3/s3-tx100olm__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100olm__knn-m"
+          ]
+        },
+        {
+          "name": "s3-tx100r",
+          "declared_output": "preds_3/s3-tx100r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r"
+          ]
+        },
+        {
+          "name": "s3-tx100r__attn32p",
+          "declared_output": "preds_3/s3-tx100r__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx100r__attn32p__knn3",
+          "declared_output": "preds_3/s3-tx100r__attn32p__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__attn32p__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx100r__nlpp",
+          "declared_output": "preds_3/s3-tx100r__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx100r__nlpp__kasym-p100-50",
+          "declared_output": "preds_3/s3-tx100r__nlpp__kasym-p100-50.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__nlpp__kasym-p100-50"
+          ]
+        },
+        {
+          "name": "s3-tx100r__nlpp__knn-mr",
+          "declared_output": "preds_3/s3-tx100r__nlpp__knn-mr.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__nlpp__knn-mr"
+          ]
+        },
+        {
+          "name": "s3-tx100r__nlpp__knn-w-k100",
+          "declared_output": "preds_3/s3-tx100r__nlpp__knn-w-k100.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__nlpp__knn-w-k100"
+          ]
+        },
+        {
+          "name": "s3-tx100r__nlpp__knn3",
+          "declared_output": "preds_3/s3-tx100r__nlpp__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx100r_ep03",
+          "declared_output": "preds_3/s3-tx100r_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx100r"
+          ]
+        },
+        {
+          "name": "s3-tx200dr_ep02",
+          "declared_output": "preds_3/s3-tx200dr_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx200dr"
+          ]
+        },
+        {
+          "name": "s3-tx200dr_ep22",
+          "declared_output": "preds_3/s3-tx200dr_ep22.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx200dr"
+          ]
+        },
+        {
+          "name": "s3-tx200h2",
+          "declared_output": "preds_3/s3-tx200h2.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx200h2"
+          ]
+        },
+        {
+          "name": "s3-tx200h2__nlpp",
+          "declared_output": "preds_3/s3-tx200h2__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx200h2__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx200h2__nlpp__knn-m",
+          "declared_output": "preds_3/s3-tx200h2__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx200h2__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-tx20b",
+          "declared_output": "preds_3/s3-tx20b.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20b"
+          ]
+        },
+        {
+          "name": "s3-tx20b__knn3",
+          "declared_output": "preds_3/s3-tx20b__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20b__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx20d",
+          "declared_output": "preds_3/s3-tx20d.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20d"
+          ]
+        },
+        {
+          "name": "s3-tx20d__dnn16p",
+          "declared_output": "preds_3/s3-tx20d__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20d__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx20d__dnn16p_ep06",
+          "declared_output": "preds_3/s3-tx20d__dnn16p_ep06.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20d__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx20d_ep03",
+          "declared_output": "preds_3/s3-tx20d_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20d"
+          ]
+        },
+        {
+          "name": "s3-tx20f",
+          "declared_output": "preds_3/s3-tx20f.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20f"
+          ]
+        },
+        {
+          "name": "s3-tx20f_ep02",
+          "declared_output": "preds_3/s3-tx20f_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20f"
+          ]
+        },
+        {
+          "name": "s3-tx20f_ep05",
+          "declared_output": "preds_3/s3-tx20f_ep05.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20f"
+          ]
+        },
+        {
+          "name": "s3-tx20hr",
+          "declared_output": "preds_3/s3-tx20hr.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20hr"
+          ]
+        },
+        {
+          "name": "s3-tx20hr_ep04",
+          "declared_output": "preds_3/s3-tx20hr_ep04.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20hr"
+          ]
+        },
+        {
+          "name": "s3-tx20w",
+          "declared_output": "preds_3/s3-tx20w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20w"
+          ]
+        },
+        {
+          "name": "s3-tx20w__nlpp",
+          "declared_output": "preds_3/s3-tx20w__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20w__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx20w__nlpp__knn-m",
+          "declared_output": "preds_3/s3-tx20w__nlpp__knn-m.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx20w__nlpp__knn-m"
+          ]
+        },
+        {
+          "name": "s3-tx300lm",
+          "declared_output": "preds_3/s3-tx300lm.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__attn32p",
+          "declared_output": "preds_3/s3-tx300lm__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__attn32p_ep01",
+          "declared_output": "preds_3/s3-tx300lm__attn32p_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__attn32p_ep11",
+          "declared_output": "preds_3/s3-tx300lm__attn32p_ep11.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__dnn16p",
+          "declared_output": "preds_3/s3-tx300lm__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__dnn16p_ep04",
+          "declared_output": "preds_3/s3-tx300lm__dnn16p_ep04.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__nlpp",
+          "declared_output": "preds_3/s3-tx300lm__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__nlpp__knn-cr-g10-t0",
+          "declared_output": "preds_3/s3-tx300lm__nlpp__knn-cr-g10-t0.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__nlpp__knn-cr-g10-t0"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__nlpp__knn-cr-g20-t0",
+          "declared_output": "preds_3/s3-tx300lm__nlpp__knn-cr-g20-t0.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__nlpp__knn-cr-g20-t0"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__nlpp__knn-cr-g35-t0",
+          "declared_output": "preds_3/s3-tx300lm__nlpp__knn-cr-g35-t0.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__nlpp__knn-cr-g35-t0"
+          ]
+        },
+        {
+          "name": "s3-tx300lm__nlpp__knn-d",
+          "declared_output": "preds_3/s3-tx300lm__nlpp__knn-d.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm__nlpp__knn-d"
+          ]
+        },
+        {
+          "name": "s3-tx300lm_ep05",
+          "declared_output": "preds_3/s3-tx300lm_ep05.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300lm"
+          ]
+        },
+        {
+          "name": "s3-tx300r",
+          "declared_output": "preds_3/s3-tx300r.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r__knn-w",
+          "declared_output": "preds_3/s3-tx300r__knn-w.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r__knn-w"
+          ]
+        },
+        {
+          "name": "s3-tx300r__nlpp",
+          "declared_output": "preds_3/s3-tx300r__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep07",
+          "declared_output": "preds_3/s3-tx300r_ep07.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep10",
+          "declared_output": "preds_3/s3-tx300r_ep10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep11",
+          "declared_output": "preds_3/s3-tx300r_ep11.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep12",
+          "declared_output": "preds_3/s3-tx300r_ep12.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep13",
+          "declared_output": "preds_3/s3-tx300r_ep13.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep14",
+          "declared_output": "preds_3/s3-tx300r_ep14.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300r_ep22",
+          "declared_output": "preds_3/s3-tx300r_ep22.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300r"
+          ]
+        },
+        {
+          "name": "s3-tx300x5",
+          "declared_output": "preds_3/s3-tx300x5.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300x5"
+          ]
+        },
+        {
+          "name": "s3-tx300x5__nlpp",
+          "declared_output": "preds_3/s3-tx300x5__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300x5__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx300x5__nlpp__knn3",
+          "declared_output": "preds_3/s3-tx300x5__nlpp__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx300x5__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx5",
+          "declared_output": "preds_3/s3-tx5.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx5"
+          ]
+        },
+        {
+          "name": "s3-tx50n",
+          "declared_output": "preds_3/s3-tx50n.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n"
+          ]
+        },
+        {
+          "name": "s3-tx50n__attn32p",
+          "declared_output": "preds_3/s3-tx50n__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx50n__attn32p_ep01",
+          "declared_output": "preds_3/s3-tx50n__attn32p_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx50n__attn32p_ep07",
+          "declared_output": "preds_3/s3-tx50n__attn32p_ep07.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx50n__attn32p_ep12",
+          "declared_output": "preds_3/s3-tx50n__attn32p_ep12.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp",
+          "declared_output": "preds_3/s3-tx50n__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp__kasym-s50-150",
+          "declared_output": "preds_3/s3-tx50n__nlpp__kasym-s50-150.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp__kasym-s50-150"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp__knn-fp",
+          "declared_output": "preds_3/s3-tx50n__nlpp__knn-fp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp__knn-fp"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp__knn-s-g10-t0",
+          "declared_output": "preds_3/s3-tx50n__nlpp__knn-s-g10-t0.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp__knn-s-g10-t0"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp__knn-s-g50-t5",
+          "declared_output": "preds_3/s3-tx50n__nlpp__knn-s-g50-t5.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp__knn-s-g50-t5"
+          ]
+        },
+        {
+          "name": "s3-tx50n__nlpp__knn-w-k15",
+          "declared_output": "preds_3/s3-tx50n__nlpp__knn-w-k15.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx50n__nlpp__knn-w-k15"
+          ]
+        },
+        {
+          "name": "s3-tx5__nlpp",
+          "declared_output": "preds_3/s3-tx5__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx5__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx5__nlpp__knn3",
+          "declared_output": "preds_3/s3-tx5__nlpp__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx5__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx5_ep02",
+          "declared_output": "preds_3/s3-tx5_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx5"
+          ]
+        },
+        {
+          "name": "s3-tx5_ep10",
+          "declared_output": "preds_3/s3-tx5_ep10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx5"
+          ]
+        },
+        {
+          "name": "s3-tx60o",
+          "declared_output": "preds_3/s3-tx60o.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o"
+          ]
+        },
+        {
+          "name": "s3-tx60o__attn32p",
+          "declared_output": "preds_3/s3-tx60o__attn32p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx60o__attn32p_ep12",
+          "declared_output": "preds_3/s3-tx60o__attn32p_ep12.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__attn32p"
+          ]
+        },
+        {
+          "name": "s3-tx60o__dnn16p",
+          "declared_output": "preds_3/s3-tx60o__dnn16p.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx60o__dnn16p_ep04",
+          "declared_output": "preds_3/s3-tx60o__dnn16p_ep04.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__dnn16p"
+          ]
+        },
+        {
+          "name": "s3-tx60o__knn3",
+          "declared_output": "preds_3/s3-tx60o__knn3.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__knn3"
+          ]
+        },
+        {
+          "name": "s3-tx60o__nlpp",
+          "declared_output": "preds_3/s3-tx60o__nlpp.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__nlpp"
+          ]
+        },
+        {
+          "name": "s3-tx60o__nlpp__kimp-c",
+          "declared_output": "preds_3/s3-tx60o__nlpp__kimp-c.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__nlpp__kimp-c"
+          ]
+        },
+        {
+          "name": "s3-tx60o__nlpp__knn-m-k15",
+          "declared_output": "preds_3/s3-tx60o__nlpp__knn-m-k15.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__nlpp__knn-m-k15"
+          ]
+        },
+        {
+          "name": "s3-tx60o__nlpp__knn-s",
+          "declared_output": "preds_3/s3-tx60o__nlpp__knn-s.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o__nlpp__knn-s"
+          ]
+        },
+        {
+          "name": "s3-tx60o_ep02",
+          "declared_output": "preds_3/s3-tx60o_ep02.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o"
+          ]
+        },
+        {
+          "name": "s3-tx60o_ep24",
+          "declared_output": "preds_3/s3-tx60o_ep24.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-tx60o"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50",
+          "declared_output": "preds_3/s3-txnsvd50.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50_ep07",
+          "declared_output": "preds_3/s3-txnsvd50_ep07.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50_ep12",
+          "declared_output": "preds_3/s3-txnsvd50_ep12.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50_ep13",
+          "declared_output": "preds_3/s3-txnsvd50_ep13.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50y",
+          "declared_output": "preds_3/s3-txnsvd50y.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50y"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50y_ep01",
+          "declared_output": "preds_3/s3-txnsvd50y_ep01.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50y"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50y_ep03",
+          "declared_output": "preds_3/s3-txnsvd50y_ep03.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50y"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50y_ep10",
+          "declared_output": "preds_3/s3-txnsvd50y_ep10.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50y"
+          ]
+        },
+        {
+          "name": "s3-txnsvd50y_ep18",
+          "declared_output": "preds_3/s3-txnsvd50y_ep18.probe_3.npy",
+          "exact_declared_producers": [
+            "s3-txnsvd50y"
+          ]
+        }
+      ]
+    },
+    "new": {
+      "raw_features": 151,
+      "source_jobs": 201,
+      "exact_declared_outputs": 134,
+      "records": [
+        {
+          "name": "aex-128",
+          "declared_output": "preds_new/aex-128.probex.npy",
+          "exact_declared_producers": [
+            "aex-128"
+          ]
+        },
+        {
+          "name": "aex-16",
+          "declared_output": "preds_new/aex-16.probex.npy",
+          "exact_declared_producers": [
+            "aex-16"
+          ]
+        },
+        {
+          "name": "aex-32",
+          "declared_output": "preds_new/aex-32.probex.npy",
+          "exact_declared_producers": [
+            "aex-32"
+          ]
+        },
+        {
+          "name": "aex-64",
+          "declared_output": "preds_new/aex-64.probex.npy",
+          "exact_declared_producers": [
+            "aex-64"
+          ]
+        },
+        {
+          "name": "als8-8",
+          "declared_output": "preds_new/als8-8.probex.npy",
+          "exact_declared_producers": [
+            "als8-8"
+          ]
+        },
+        {
+          "name": "als8-8__knn3",
+          "declared_output": "preds_new/als8-8__knn3.probex.npy",
+          "exact_declared_producers": [
+            "als8-8__knn3"
+          ]
+        },
+        {
+          "name": "attn-32-t",
+          "declared_output": "preds_new/attn-32-t.probex.npy",
+          "exact_declared_producers": [
+            "attn-32-t"
+          ]
+        },
+        {
+          "name": "attn-32",
+          "declared_output": "preds_new/attn-32.probex.npy",
+          "exact_declared_producers": [
+            "attn-32"
+          ]
+        },
+        {
+          "name": "attn-32__nlpp",
+          "declared_output": "preds_new/attn-32__nlpp.probex.npy",
+          "exact_declared_producers": [
+            "attn-32__nlpp"
+          ]
+        },
+        {
+          "name": "attn-32__nlpp__knn3",
+          "declared_output": "preds_new/attn-32__nlpp__knn3.probex.npy",
+          "exact_declared_producers": [
+            "attn-32__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "bk1-10",
+          "declared_output": "preds_new/bk1-10.probex.npy",
+          "exact_declared_producers": [
+            "bk1-10"
+          ]
+        },
+        {
+          "name": "bk1-10_ep04",
+          "declared_output": "preds_new/bk1-10_ep04.probex.npy",
+          "exact_declared_producers": [
+            "bk1-10"
+          ]
+        },
+        {
+          "name": "bk3-20__knns",
+          "declared_output": "preds_new/bk3-20__knns.probex.npy",
+          "exact_declared_producers": [
+            "bk3-20__knns"
+          ]
+        },
+        {
+          "name": "bk3-30",
+          "declared_output": "preds_new/bk3-30.probex.npy",
+          "exact_declared_producers": [
+            "bk3-30"
+          ]
+        },
+        {
+          "name": "bknbrx-100_ep01",
+          "declared_output": "preds_new/bknbrx-100_ep01.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-100"
+          ]
+        },
+        {
+          "name": "bknbrx-100_ep05",
+          "declared_output": "preds_new/bknbrx-100_ep05.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-100"
+          ]
+        },
+        {
+          "name": "bknbrx-50_ep05",
+          "declared_output": "preds_new/bknbrx-50_ep05.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-50"
+          ]
+        },
+        {
+          "name": "bknbrx-50_ep09",
+          "declared_output": "preds_new/bknbrx-50_ep09.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-50"
+          ]
+        },
+        {
+          "name": "bknbrx-50_ep17",
+          "declared_output": "preds_new/bknbrx-50_ep17.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-50"
+          ]
+        },
+        {
+          "name": "bknbrx-50_ep21",
+          "declared_output": "preds_new/bknbrx-50_ep21.probex.npy",
+          "exact_declared_producers": [
+            "bknbrx-50"
+          ]
+        },
+        {
+          "name": "cfnade-12_ep40",
+          "declared_output": "preds_new/cfnade-12_ep40.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-12"
+          ]
+        },
+        {
+          "name": "cfnade-48_ep25",
+          "declared_output": "preds_new/cfnade-48_ep25.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-48"
+          ]
+        },
+        {
+          "name": "cfnade-48_ep95",
+          "declared_output": "preds_new/cfnade-48_ep95.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-48"
+          ]
+        },
+        {
+          "name": "cfnade-96_ep10",
+          "declared_output": "preds_new/cfnade-96_ep10.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-96"
+          ]
+        },
+        {
+          "name": "cfnade-96_ep95",
+          "declared_output": "preds_new/cfnade-96_ep95.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-96"
+          ]
+        },
+        {
+          "name": "cfnade-96r_ep95",
+          "declared_output": "preds_new/cfnade-96r_ep95.probex.npy",
+          "exact_declared_producers": [
+            "cfnade-96r"
+          ]
+        },
+        {
+          "name": "dnn-16",
+          "declared_output": "preds_new/dnn-16.probex.npy",
+          "exact_declared_producers": [
+            "dnn-16"
+          ]
+        },
+        {
+          "name": "dnn-24",
+          "declared_output": "preds_new/dnn-24.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24"
+          ]
+        },
+        {
+          "name": "dnn-24__asym-16p75",
+          "declared_output": "preds_new/dnn-24__asym-16p75.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__asym-16p75"
+          ]
+        },
+        {
+          "name": "dnn-24__asym-16p75__knn3",
+          "declared_output": "preds_new/dnn-24__asym-16p75__knn3.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__asym-16p75__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__attn-32",
+          "declared_output": "preds_new/dnn-24__attn-32.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__attn-32"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16",
+          "declared_output": "preds_new/dnn-24__dnn-16.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16__knn3",
+          "declared_output": "preds_new/dnn-24__dnn-16__knn3.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50",
+          "declared_output": "preds_new/dnn-24__dnn-16p50.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p50",
+          "declared_output": "preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p50"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75",
+          "declared_output": "preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+          "declared_output": "preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75__knn3b"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+          "declared_output": "preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__asym-16p75__knn3c"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-16p50__knn3",
+          "declared_output": "preds_new/dnn-24__dnn-16p50__knn3.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-16p50__knn3"
+          ]
+        },
+        {
+          "name": "dnn-24__dnn-24p50",
+          "declared_output": "preds_new/dnn-24__dnn-24p50.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__dnn-24p50"
+          ]
+        },
+        {
+          "name": "dnn-24__knn3",
+          "declared_output": "preds_new/dnn-24__knn3.probex.npy",
+          "exact_declared_producers": [
+            "dnn-24__knn3"
+          ]
+        },
+        {
+          "name": "dnn-64",
+          "declared_output": "preds_new/dnn-64.probex.npy",
+          "exact_declared_producers": [
+            "dnn-64"
+          ]
+        },
+        {
+          "name": "mf-60",
+          "declared_output": "preds_new/mf-60.probex.npy",
+          "exact_declared_producers": [
+            "mf-60"
+          ]
+        },
+        {
+          "name": "mf-60__knn3",
+          "declared_output": "preds_new/mf-60__knn3.probex.npy",
+          "exact_declared_producers": [
+            "mf-60__knn3"
+          ]
+        },
+        {
+          "name": "mf-61__asym-16",
+          "declared_output": "preds_new/mf-61__asym-16.probex.npy",
+          "exact_declared_producers": [
+            "mf-61__asym-16"
+          ]
+        },
+        {
+          "name": "mf-61__asym-16_ep02",
+          "declared_output": "preds_new/mf-61__asym-16_ep02.probex.npy",
+          "exact_declared_producers": [
+            "mf-61__asym-16"
+          ]
+        },
+        {
+          "name": "mf-61__asym-16_ep07",
+          "declared_output": "preds_new/mf-61__asym-16_ep07.probex.npy",
+          "exact_declared_producers": [
+            "mf-61__asym-16"
+          ]
+        },
+        {
+          "name": "mf-61__knn3",
+          "declared_output": "preds_new/mf-61__knn3.probex.npy",
+          "exact_declared_producers": [
+            "mf-61__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-0",
+          "declared_output": "preds_new/rbmx2-0.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-0"
+          ]
+        },
+        {
+          "name": "rbmx2-100e_ep02",
+          "declared_output": "preds_new/rbmx2-100e_ep02.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-100e"
+          ]
+        },
+        {
+          "name": "rbmx2-100e_ep07",
+          "declared_output": "preds_new/rbmx2-100e_ep07.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-100e"
+          ]
+        },
+        {
+          "name": "rbmx2-100e_ep15",
+          "declared_output": "preds_new/rbmx2-100e_ep15.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-100e"
+          ]
+        },
+        {
+          "name": "rbmx2-10__knn3",
+          "declared_output": "preds_new/rbmx2-10__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-10__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-10__tsvdx4-10lm-nsvd1",
+          "declared_output": "preds_new/rbmx2-10__tsvdx4-10lm-nsvd1.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "rbmx2-10r__knn3",
+          "declared_output": "preds_new/rbmx2-10r__knn3.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "rbmx2-12__asym-16__knn3",
+          "declared_output": "preds_new/rbmx2-12__asym-16__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-12__asym-16__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-12__asym-16__knnf",
+          "declared_output": "preds_new/rbmx2-12__asym-16__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-12__asym-16__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-14e",
+          "declared_output": "preds_new/rbmx2-14e.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-14e"
+          ]
+        },
+        {
+          "name": "rbmx2-150__knnf",
+          "declared_output": "preds_new/rbmx2-150__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-150__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-150__knns",
+          "declared_output": "preds_new/rbmx2-150__knns.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-150__knns"
+          ]
+        },
+        {
+          "name": "rbmx2-16-t",
+          "declared_output": "preds_new/rbmx2-16-t.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-16-t"
+          ]
+        },
+        {
+          "name": "rbmx2-160f",
+          "declared_output": "preds_new/rbmx2-160f.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-160f"
+          ]
+        },
+        {
+          "name": "rbmx2-200__knn3",
+          "declared_output": "preds_new/rbmx2-200__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-200__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-300s__knn3",
+          "declared_output": "preds_new/rbmx2-300s__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-300s__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-300s__knnf",
+          "declared_output": "preds_new/rbmx2-300s__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-300s__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-300s_ep24",
+          "declared_output": "preds_new/rbmx2-300s_ep24.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-300s"
+          ]
+        },
+        {
+          "name": "rbmx2-300s_ep38",
+          "declared_output": "preds_new/rbmx2-300s_ep38.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-300s"
+          ]
+        },
+        {
+          "name": "rbmx2-300s_ep46",
+          "declared_output": "preds_new/rbmx2-300s_ep46.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-300s"
+          ]
+        },
+        {
+          "name": "rbmx2-32-t",
+          "declared_output": "preds_new/rbmx2-32-t.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-32-t"
+          ]
+        },
+        {
+          "name": "rbmx2-350e",
+          "declared_output": "preds_new/rbmx2-350e.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-350e"
+          ]
+        },
+        {
+          "name": "rbmx2-400-p4",
+          "declared_output": "preds_new/rbmx2-400-p4.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "rbmx2-400__knnf",
+          "declared_output": "preds_new/rbmx2-400__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-400__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-40__knn3",
+          "declared_output": "preds_new/rbmx2-40__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-40__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-500",
+          "declared_output": "preds_new/rbmx2-500.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-500"
+          ]
+        },
+        {
+          "name": "rbmx2-500__knn-m",
+          "declared_output": "preds_new/rbmx2-500__knn-m.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "rbmx2-500__knn-w",
+          "declared_output": "preds_new/rbmx2-500__knn-w.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "rbmx2-500__knnf",
+          "declared_output": "preds_new/rbmx2-500__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-500__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-500bp__knnf",
+          "declared_output": "preds_new/rbmx2-500bp__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-500bp__knnf"
+          ]
+        },
+        {
+          "name": "rbmx2-500bp_ep29",
+          "declared_output": "preds_new/rbmx2-500bp_ep29.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-500bp"
+          ]
+        },
+        {
+          "name": "rbmx2-600_ep27",
+          "declared_output": "preds_new/rbmx2-600_ep27.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-600"
+          ]
+        },
+        {
+          "name": "rbmx2-60__knn3",
+          "declared_output": "preds_new/rbmx2-60__knn3.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-60__knn3"
+          ]
+        },
+        {
+          "name": "rbmx2-800bp_ep03",
+          "declared_output": "preds_new/rbmx2-800bp_ep03.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-800bp"
+          ]
+        },
+        {
+          "name": "rbmx2-800bp_ep24",
+          "declared_output": "preds_new/rbmx2-800bp_ep24.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-800bp"
+          ]
+        },
+        {
+          "name": "rbmx2-800bp_ep27",
+          "declared_output": "preds_new/rbmx2-800bp_ep27.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-800bp"
+          ]
+        },
+        {
+          "name": "rbmx2-8e__knnf",
+          "declared_output": "preds_new/rbmx2-8e__knnf.probex.npy",
+          "exact_declared_producers": [
+            "rbmx2-8e__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4-16-t",
+          "declared_output": "preds_new/tsvdx4-16-t.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-16-t"
+          ]
+        },
+        {
+          "name": "tsvdx4-16-t__knnf",
+          "declared_output": "preds_new/tsvdx4-16-t__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-16-t__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4-16-t_ep01",
+          "declared_output": "preds_new/tsvdx4-16-t_ep01.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-16-t"
+          ]
+        },
+        {
+          "name": "tsvdx4-1600lm_ep02",
+          "declared_output": "preds_new/tsvdx4-1600lm_ep02.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-1600lm"
+          ]
+        },
+        {
+          "name": "tsvdx4-160o-nsvd1",
+          "declared_output": "preds_new/tsvdx4-160o-nsvd1.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx4-2400lm-bias",
+          "declared_output": "preds_new/tsvdx4-2400lm-bias.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx4-2400lm__knns",
+          "declared_output": "preds_new/tsvdx4-2400lm__knns.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-2400lm__knns"
+          ]
+        },
+        {
+          "name": "tsvdx4-400lm-mf",
+          "declared_output": "preds_new/tsvdx4-400lm-mf.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx4-400lm-nsvd1",
+          "declared_output": "preds_new/tsvdx4-400lm-nsvd1.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx4-400lm__knnf",
+          "declared_output": "preds_new/tsvdx4-400lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-400lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm__knn-d",
+          "declared_output": "preds_new/tsvdx4-4800lm__knn-d.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm__knn-d"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm__knnf",
+          "declared_output": "preds_new/tsvdx4-4800lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm__knns",
+          "declared_output": "preds_new/tsvdx4-4800lm__knns.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm__knns"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm_ep03",
+          "declared_output": "preds_new/tsvdx4-4800lm_ep03.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm_ep13",
+          "declared_output": "preds_new/tsvdx4-4800lm_ep13.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm_ep21",
+          "declared_output": "preds_new/tsvdx4-4800lm_ep21.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm"
+          ]
+        },
+        {
+          "name": "tsvdx4-4800lm_ep24",
+          "declared_output": "preds_new/tsvdx4-4800lm_ep24.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-4800lm"
+          ]
+        },
+        {
+          "name": "tsvdx4-60",
+          "declared_output": "preds_new/tsvdx4-60.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-60"
+          ]
+        },
+        {
+          "name": "tsvdx4-60__knns",
+          "declared_output": "preds_new/tsvdx4-60__knns.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-60__knns"
+          ]
+        },
+        {
+          "name": "tsvdx4-60o__knns",
+          "declared_output": "preds_new/tsvdx4-60o__knns.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-60o__knns"
+          ]
+        },
+        {
+          "name": "tsvdx4-80o-bias",
+          "declared_output": "preds_new/tsvdx4-80o-bias.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx4-d0tb__knn3",
+          "declared_output": "preds_new/tsvdx4-d0tb__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-d0tb__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx4-h8nb",
+          "declared_output": "preds_new/tsvdx4-h8nb.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-h8nb"
+          ]
+        },
+        {
+          "name": "tsvdx4-h8nb__knn3",
+          "declared_output": "preds_new/tsvdx4-h8nb__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-h8nb__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx4-h8nb_ep01",
+          "declared_output": "preds_new/tsvdx4-h8nb_ep01.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-h8nb"
+          ]
+        },
+        {
+          "name": "tsvdx4-l32nb_ep03",
+          "declared_output": "preds_new/tsvdx4-l32nb_ep03.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-l32nb"
+          ]
+        },
+        {
+          "name": "tsvdx4-m1n",
+          "declared_output": "preds_new/tsvdx4-m1n.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-m1n"
+          ]
+        },
+        {
+          "name": "tsvdx4-n8nbo__knn3",
+          "declared_output": "preds_new/tsvdx4-n8nbo__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-n8nbo__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx4-p0tbo__knn3",
+          "declared_output": "preds_new/tsvdx4-p0tbo__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-p0tbo__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx4-s20fo_ep08",
+          "declared_output": "preds_new/tsvdx4-s20fo_ep08.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-s20fo"
+          ]
+        },
+        {
+          "name": "tsvdx4-t8cu_ep06",
+          "declared_output": "preds_new/tsvdx4-t8cu_ep06.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4-t8cu"
+          ]
+        },
+        {
+          "name": "tsvdx4p-1000lm__knnf",
+          "declared_output": "preds_new/tsvdx4p-1000lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-1000lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4p-16000lm_ep09",
+          "declared_output": "preds_new/tsvdx4p-16000lm_ep09.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-16000lm"
+          ]
+        },
+        {
+          "name": "tsvdx4p-16000lm_ep19",
+          "declared_output": "preds_new/tsvdx4p-16000lm_ep19.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-16000lm"
+          ]
+        },
+        {
+          "name": "tsvdx4p-2000lm__knnf",
+          "declared_output": "preds_new/tsvdx4p-2000lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-2000lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4p-6000lm__knnf",
+          "declared_output": "preds_new/tsvdx4p-6000lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-6000lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx4p-8000lm__knnf",
+          "declared_output": "preds_new/tsvdx4p-8000lm__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx4p-8000lm__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx5-1000",
+          "declared_output": "preds_new/tsvdx5-1000.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-1000"
+          ]
+        },
+        {
+          "name": "tsvdx5-1000__nlpp",
+          "declared_output": "preds_new/tsvdx5-1000__nlpp.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-1000__nlpp"
+          ]
+        },
+        {
+          "name": "tsvdx5-1000__nlpp__knn3",
+          "declared_output": "preds_new/tsvdx5-1000__nlpp__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-1000__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx5-1200lm-bias",
+          "declared_output": "preds_new/tsvdx5-1200lm-bias.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-120o-bias",
+          "declared_output": "preds_new/tsvdx5-120o-bias.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-120o",
+          "declared_output": "preds_new/tsvdx5-120o.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-120o"
+          ]
+        },
+        {
+          "name": "tsvdx5-120o__dnn-16p50",
+          "declared_output": "preds_new/tsvdx5-120o__dnn-16p50.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-120o__dnn-16p50"
+          ]
+        },
+        {
+          "name": "tsvdx5-120o__knn3",
+          "declared_output": "preds_new/tsvdx5-120o__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-120o__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx5-150-mf",
+          "declared_output": "preds_new/tsvdx5-150-mf.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-150__nlpp",
+          "declared_output": "preds_new/tsvdx5-150__nlpp.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150__nlpp"
+          ]
+        },
+        {
+          "name": "tsvdx5-150__nlpp__knnf",
+          "declared_output": "preds_new/tsvdx5-150__nlpp__knnf.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150__nlpp__knnf"
+          ]
+        },
+        {
+          "name": "tsvdx5-150o-bias",
+          "declared_output": "preds_new/tsvdx5-150o-bias.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-150o",
+          "declared_output": "preds_new/tsvdx5-150o.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150o"
+          ]
+        },
+        {
+          "name": "tsvdx5-150o_ep06",
+          "declared_output": "preds_new/tsvdx5-150o_ep06.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150o"
+          ]
+        },
+        {
+          "name": "tsvdx5-150o_ep16",
+          "declared_output": "preds_new/tsvdx5-150o_ep16.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150o"
+          ]
+        },
+        {
+          "name": "tsvdx5-150o_ep24",
+          "declared_output": "preds_new/tsvdx5-150o_ep24.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-150o"
+          ]
+        },
+        {
+          "name": "tsvdx5-20-mf",
+          "declared_output": "preds_new/tsvdx5-20-mf.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-20",
+          "declared_output": "preds_new/tsvdx5-20.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-20"
+          ]
+        },
+        {
+          "name": "tsvdx5-300__nlpp__knn-w",
+          "declared_output": "preds_new/tsvdx5-300__nlpp__knn-w.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-300__nlpp__knn-w"
+          ]
+        },
+        {
+          "name": "tsvdx5-300__nlpp__knn3",
+          "declared_output": "preds_new/tsvdx5-300__nlpp__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-300__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx5-40-nsvd1",
+          "declared_output": "preds_new/tsvdx5-40-nsvd1.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-400__knn3",
+          "declared_output": "preds_new/tsvdx5-400__knn3.probex.npy",
+          "exact_declared_producers": []
+        },
+        {
+          "name": "tsvdx5-400__nlpp__knn3",
+          "declared_output": "preds_new/tsvdx5-400__nlpp__knn3.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-400__nlpp__knn3"
+          ]
+        },
+        {
+          "name": "tsvdx5-60",
+          "declared_output": "preds_new/tsvdx5-60.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx5-60"
+          ]
+        },
+        {
+          "name": "tsvdx6-300-v2",
+          "declared_output": "preds_new/tsvdx6-300-v2.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx6-300-v2"
+          ]
+        },
+        {
+          "name": "tsvdx6-300",
+          "declared_output": "preds_new/tsvdx6-300.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx6-300"
+          ]
+        },
+        {
+          "name": "tsvdx6-300_ep03",
+          "declared_output": "preds_new/tsvdx6-300_ep03.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx6-300"
+          ]
+        },
+        {
+          "name": "tsvdx6-300_ep12",
+          "declared_output": "preds_new/tsvdx6-300_ep12.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx6-300"
+          ]
+        },
+        {
+          "name": "tsvdx6-300_ep20",
+          "declared_output": "preds_new/tsvdx6-300_ep20.probex.npy",
+          "exact_declared_producers": [
+            "tsvdx6-300"
+          ]
+        }
+      ]
+    }
+  },
+  "public_prediction_values_read": false,
+  "qualifying_labels_read": false,
+  "source_registry_is_training_completion_proof": false,
+  "next_lane": "Reproduce split3 native jobs in an isolated tree, with original capacities/epochs/commands and qualifying targets zero. Project source probe_3 outputs onto known ProbeX only after unique row-identity and training-disjointness verification. Fit meta learners locally.",
+  "data_preparation_rule": "Reuse verified own ingested data; do not execute ingest jobs that reference recovered qualifying ratings. Source recipe availability does not authorize label import.",
+  "scope": "Metadata and pinned-source coverage audit; no new training, prediction, or score claim."
+}

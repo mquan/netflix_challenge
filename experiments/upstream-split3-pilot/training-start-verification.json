@@ -1,0 +1,19 @@
+{
+  "observed": "2026-11-19T11:10:10.808798+00:00",
+  "actual_native_process": "R    Thu Nov 19 03:08:33 2026     ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
+  "pid": 42926,
+  "plan_sha256": "1025689e33e44361c92f5df474f3af112a6736916280e1067640f3e916088661",
+  "data_verification_sha256": "8f0f2cf62b8b543934365a1f0829770030efdf3121d3222514ef56df050e949d",
+  "native_launch_sha256": "2375a66336119a39d28edb5ffd437ee9c0da47c98a8fa869359bfb7d8b05c4eb",
+  "binary_sha256": "fe0d7996a17564fef0f3f2b4912425c938c321479cd9c7d4b6542d78a225edae",
+  "runtime_configuration_lines": [
+    "[s3-attn16]",
+    "target = \"rtg\"",
+    "AttnConfig { n_feat: 16, n_pool: 32, n_mf: 192, n_bins: 30, out_scale: 2.5, beta: 0.3, dev_beta: 0.4, n_epochs: 12, seed: 11, lr_decay: 0.9, lr_q: 0.005, lr_c: 0.005, lr_mf: 0.008, lr_bias: 0.005, lr_alpha: 2e-6, reg_q: 0.02, reg_c: 0.02, reg_mf: 0.015, reg_bias: 0.03, reg_bu_day: 0.03, reg_alpha: 50.0, sigma: 0.05, huber: 0.0, grad_clip: 1.0, emb_cap: 1.0, n_threads: 1, block_users: 32, train_frac: 1.0 }",
+    "train_3 => probe_3"
+  ],
+  "physical_footprint": "2.2G",
+  "qualifying_targets_zero": true,
+  "model_complete": false,
+  "goal_achieved": false
+}

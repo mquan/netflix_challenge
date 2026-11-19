@@ -1,0 +1,31 @@
+{
+  "state": "complete",
+  "rows": 1128164,
+  "source_rows": 1760494,
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "1025689e33e44361c92f5df474f3af112a6736916280e1067640f3e916088661",
+  "row_map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6",
+  "data_sha256": {
+    "source/data/train_3/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "source/data/train_3/user_idxs.npy": "a22147f71478e0492f4e3f1ccc40ea25000ffb588a9784379feae88117f9b3f7",
+    "source/data/train_3/item_idxs.npy": "30400596732ae9574926c01200741bcb7188f2796b487470f66c8e9b62f9f2a7",
+    "source/data/train_3/dates.npy": "44b3ad5bd5c227b06e5f00206acfef403ddc21a500c887f667d4ef6b73a9a272",
+    "source/data/train_3/iidx_to_iid.npy": "84a59bf376199baf9c1e4e35da09228e33eb36aa1b78209427a68f5396f51b14",
+    "source/data/train_3/is_test.npy": "e451ef4cae0cb9c16d90aabfe66afb7e7fda5c083eba07b1495c40d5f97c6612",
+    "source/data/train_3/uidx_to_uid.npy": "97bca1706a3c73efa04796c380acf333c8a693249ce7dabb399f185068b02332",
+    "source/data/train_3/user_cnts.npy": "061e1784df6bdcbedf78ad003b86aa743f43844d382bc992f5bd0899f950a62f",
+    "source/data/train_3/ratings.npy": "8ec7de3fb27410aabe7481676f553f2999b607cd334de6790241e35812c56f76",
+    "source/data/train_3/item_cnts.npy": "f03fa64eabb233e68020e7507c9aa757b63c9dd3b4557c71354c91b918cdb2d4",
+    "source/data/probe_3/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "source/data/probe_3/user_idxs.npy": "3fb89a3ea14ec289ae093e9a733fe4f96120cb96ae684b471d363c75c9ea239c",
+    "source/data/probe_3/item_idxs.npy": "9c7a7a20065f7ea3f801e4c4da5aa9363c2dc962bdd85cfb9b6dd9658a2a6fd7",
+    "source/data/probe_3/dates.npy": "13eecf96e5b9b3201daa620bc9f2a6b362a623af57b82750dd5f9e2c54b39394",
+    "source/data/probe_3/is_test.npy": "dc9975f34a14202c16d6fa3bd9646912a16e71284b2915251be0e536e2e5e1b2",
+    "source/data/probe_3/user_cnts.npy": "a80a3829a21d4a81f0646e73313534be71f486bde9ce4dedd24548ce54a43f47",
+    "source/data/probe_3/ratings.npy": "bcd22dde86bff8d4a5c96de9e9bc3b04d72af5f45c30d98ea92591987fc2835c",
+    "source/data/probe_3/item_cnts.npy": "0a4029d2f5f5d09f4e262e15f8e6c6b78885cdbf8d1195330cb26f956118f105"
+  },
+  "known_rows_absent_from_training": true,
+  "known_labels_match": true,
+  "qualifying_labels_read": false
+}
