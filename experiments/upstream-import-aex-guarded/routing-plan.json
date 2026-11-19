@@ -1,0 +1,12 @@
+{
+  "code_sha256": {
+    "scripts/upstream_import_aex_guarded.py": "43ddb2039da6fae5c5b57b3553913ce45a18fe9b4db8c406114e325ff9ad8f3c",
+    "scripts/upstream_import_aex.py": "5fba5b3a6526662f6779106901555c1847470122f337df825c167fcc7ad1179e",
+    "scripts/upstream_primary_handoff_aex.py": "8900ddf737f2d1481617f2d6db1b48e7afb1f1678938c5ba0e5295282587befa",
+    "scripts/upstream_primary_guarded_aex.py": "f137862f927097331f6cca5c1fff1aecd847928302af85283c0ecef51cdc6133",
+    "scripts/upstream_import_backfill.py": "d7a521170a1a585be99c1c7db5701a22182eb6810062d34ea9d8752d01f54720"
+  },
+  "predecessor_handoff_report": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-primary-handoff-aex",
+  "scheduler_command_fragment": "scripts/upstream_primary_guarded_aex.py",
+  "qualifying_labels_read": false
+}

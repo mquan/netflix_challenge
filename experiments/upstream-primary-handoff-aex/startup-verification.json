@@ -1,0 +1,19 @@
+{
+  "state": "verified_wait",
+  "observed": "2026-11-19T01:53:57.968785+00:00",
+  "launch": {
+    "pid": 6463,
+    "caffeinate_pid": 6464,
+    "script": "scripts/upstream_primary_handoff_aex.py",
+    "script_sha256": "8900ddf737f2d1481617f2d6db1b48e7afb1f1678938c5ba0e5295282587befa",
+    "observed": "2026-11-19T01:53:25.835605+00:00",
+    "qualifying_labels_read": false
+  },
+  "actual_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_primary_handoff_aex.py",
+  "queue_state": {
+    "state": "waiting_for_completed_auxiliary_import",
+    "primary_pid": 19701
+  },
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

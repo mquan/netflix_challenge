@@ -1,0 +1,18 @@
+{
+  "state": "verified_wait",
+  "observed": "2026-11-19T01:53:57.981694+00:00",
+  "launch": {
+    "pid": 6465,
+    "caffeinate_pid": 6466,
+    "script": "scripts/upstream_import_aex_guarded.py",
+    "script_sha256": "43ddb2039da6fae5c5b57b3553913ce45a18fe9b4db8c406114e325ff9ad8f3c",
+    "observed": "2026-11-19T01:53:25.867029+00:00",
+    "qualifying_labels_read": false
+  },
+  "actual_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_import_aex_guarded.py",
+  "queue_state": {
+    "state": "waiting_for_prior_import_and_handoff"
+  },
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

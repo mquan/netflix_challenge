@@ -30,3 +30,10 @@ and resumption, and wrong-PID rejection. No approval or extra laptop is needed.
 Reports: `experiments/upstream-primary-handoff/`. A published launch result proves
 only a scheduler transition; verify the actual successor process and native job.
 This work makes no new model-score or qualifying-success claim.
+
+After starting the independent original AEX128 job, the idle handoff queue was
+replaced with the AEX-aware adapter described in `AEX128_PARALLEL_PLAN.md`.
+`upstream_primary_guarded_aex.py` retains the original guard and additionally
+delegates AEX128, preventing duplicate training while its complete paired result
+is pending. No live native fit or frozen scheduler file was changed. The current
+transition evidence is in `experiments/upstream-primary-handoff-aex/`.

@@ -37,3 +37,21 @@ plans bind the new adapters and inherited implementation hashes.
 This produces one additional own source model. It does not change the existing
 85-column qualifying attempt, make partial predictions eligible, or establish
 a development or qualifying score improvement.
+
+The primary must also defer AEX128 while that isolated fit runs. The original
+idle handoff/reuse queues have therefore been superseded by
+`upstream_primary_handoff_aex.py` and `upstream_import_aex_guarded.py`. The new
+successor `upstream_primary_guarded_aex.py` adds only AEX128 to the existing
+delegated CFNADE models. Its inherited scheduler checks a completed receipt
+before applying holds, so a complete imported AEX128 remains reusable normally.
+The 16- and 64-factor autoencoders retain their original primary schedule.
+
+Only the two idle coordination processes were stopped, after verifying their
+command identities, waiting states, missing transition results and the active
+primary native child. Training processes were not signalled. The replacement
+handoff binds both adapter scripts, the inherited implementations and the
+original frozen handoff plan. Two additional tests verify the exact delegation
+set and real successor-only process-role checking; the four inherited idle
+handoff tests also pass. Current queues and supersession evidence are in
+`experiments/upstream-primary-handoff-aex/` and
+`experiments/upstream-import-aex-guarded/`.

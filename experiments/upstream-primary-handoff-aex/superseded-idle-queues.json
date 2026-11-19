@@ -1,0 +1,28 @@
+{
+  "observed": "2026-11-19T01:53:25.869217+00:00",
+  "records": [
+    {
+      "pid": 86589,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_primary_handoff.py",
+      "previous_status": {
+        "state": "waiting_for_completed_auxiliary_import",
+        "primary_pid": 19701
+      },
+      "report": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-primary-handoff",
+      "status_file": "status.json"
+    },
+    {
+      "pid": 2951,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_import_aex.py",
+      "previous_status": {
+        "state": "waiting_for_prior_import_and_handoff"
+      },
+      "report": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-import-aex",
+      "status_file": "queue-status.json"
+    }
+  ],
+  "no_training_process_signalled": true,
+  "primary_pid": 19701,
+  "active_primary_native_pid": 93922,
+  "qualifying_labels_read": false
+}
