@@ -1,17 +1,29 @@
 {
-  "observed": "2026-11-19T15:51:41.397233+00:00",
-  "display_time": "2026-11-19 15:51 UTC",
-  "best_development_rmse": 0.8594692563654075,
+  "observed": "2026-11-19T16:21:30.063098+00:00",
+  "display_time": "2026-11-19 16:21 UTC",
+  "best_development_rmse": 0.8594554093063749,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "6c20b54ad0c662ddc797b69276573d0ab056371741626d48d92b0f664ceec65b",
-  "independent_verification_sha256": "6025e5cd986879c0e454e1dcacca1412dad8099722cca60936283902949c2d32",
+  "verified_development_report_sha256": "5bca574f81d8478ebaa36c9df034507fed0da59e0220182462e011bad677d3f0",
+  "independent_verification_sha256": "807e13b8fbdc1c453f7655e10a25033e89499941ae982d05140e2b889cfc16cc",
   "work": [
     {
+      "work": "Own107 plus50 standalone qualifying refit",
+      "state": "NN-only choice and actual per-seed median budgets[14, 14, 13] frozen before new qualifying outcomes. Full-fit controller6028 queues behind the active tree fit. Paired bank separately verified. No new qualifying result."
+    },
+    {
+      "work": "Expanded RBM context tree comparison",
+      "state": "Actual five-fold tree fitting has started on the107+50 cache. Same original settings; exact replay-verified stronger NN reused with its own source schema. No result yet."
+    },
+    {
+      "work": "Next original split3 diversity batch",
+      "state": "Controller1268 queues transposed DNN, no-MF DNN and small NADE, original complete recipes, after the existing latent lane finishes. Separate completion/projection verifier2809 is waiting. No native batch model has started."
+    },
+    {
       "work": "Own107 plus50 learned RBM context",
-      "state": "Actual nested NN worker98536 is training under98487.107 raw predictors,50 exact original user supports,183 ridge columns,293 nonlinear features plus ridge. All columns checked; no new result yet. Original architecture/folds retained."
+      "state": "Complete: standalone NN0.8594554093 is the new independently checked development best, versus NN1030.8594692564. All15 saved models replay. Fixed tree91/NN mean0.8594773263 is higher. No new qualifying result yet."
     },
     {
       "work": "Published CF96 epoch10 snapshot",
@@ -23,7 +35,7 @@
     },
     {
       "work": "Own103 context development",
-      "state": "Complete: standalone NN0.8594692564 is the new comparable best; fixed tree91/NN103 mean0.8595400254 also improves. All15 neural models replay and independent scores verify."
+      "state": "Preceding verified best: standalone NN0.8594692564, now improved by own107 plus50 RBM context. All15 models replayed; its qualifying result remains the best verified audit."
     },
     {
       "work": "Own103 full-known production",
@@ -35,7 +47,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "Original RBM50 first20-epoch phase complete; all50 original user supports verified bitwise for every known/qual query row. Native92781 continues second phase, latest observed13/20. Original Tx20lat remains queued afterward. Full90 supports are not yet ready."
+      "state": "Original RBM50 complete20/20 and separately checked, including every support gather row on both query sets. Original Tx20lat is waiting for stable memory. Its40 components are not yet included."
     },
     {
       "work": "First qualifying blend",
@@ -71,7 +83,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Both native phases92864/92865 continue original320-hidden/96-rank/95-epoch training. Latest saved epochs36/34; exact33/31 checkpoint restore was verified."
+      "state": "Original native phases continue under92864/92865. Latest saved epochs37/35 of95, retaining320 hidden/96 rank and exact original checkpoint lineage."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -145,15 +157,14 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "21217 05:54:57   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
-      "70300 02:37:01   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
-      "73629 09:15:21  96.3 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "91669 01:22:50   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_early_support.py 70300",
-      "92781 01:18:24  98.8 ./target/release/fit rbm rbm50lat -p pipeline-new.toml --final --preds preds_new",
-      "92864 01:18:16 100.0 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865 01:18:16  98.9 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual",
-      "98487    04:09   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_context.py",
-      "98536    03:18 129.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_context.py --worker"
+      "3649        12:45   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py",
+      "4913        05:29 189.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py --worker",
+      "6028        00:00   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_production.py",
+      "70300     03:05:13   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
+      "73619     09:43:44   0.0 sh -c cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "73629     09:43:33  13.3 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "92864     01:46:28  98.0 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865     01:46:28  98.5 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -246,14 +257,14 @@
       "state": "complete_both_frozen_audits_verified"
     },
     "cf96_saved_epochs": {
-      "trainx": 36,
-      "fulltrain": 34
+      "trainx": 37,
+      "fulltrain": 35
     },
     "tsvdx5_60": "complete_independently_checked_23_23",
     "rbm50_context": {
-      "controller": 98487,
-      "worker": 98536,
-      "state": "nested_nn_training"
+      "state": "complete_development_improved",
+      "nn_rmse": 0.8594554093063749,
+      "all_five_saved_replays": true
     },
     "own105": {
       "state": "complete_not_improved",
@@ -275,7 +286,7 @@
     }
   },
   "latest_qualifying_verification_sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
-  "best_development_arm": "own103 standalone context NN",
+  "best_development_arm": "own107 plus50 original RBM context standalone NN",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,

@@ -12,9 +12,9 @@ not the complete winning ensemble.
 ## Current work: our own trained predictions
 
 As of November19,2026 Pacific, our best independently verified development RMSE
-is **0.8594692564**, from the standalone103-predictor context NN. All15 saved
+is **0.8594554093**, from the standalone107-predictor context NN with50 original learned RBM user features. All15 saved
 neural models replay across five nested user folds on1,128,164 known-ProbeX
-rows. The fixed half mean with tree91 also improves, to0.8595400254. All numerical
+rows. The fixed half mean with tree91 is higher at0.8594773263. All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
 
@@ -28,16 +28,17 @@ verify. The separately predeclared tree91/NN103 half mean also improves, to
 0.8610694977 /0.8620220770. These are adaptive recovered audits, not official Test.
 No qualifying outcomes entered fitting or candidate/weight selection.
 
-Own105 is now training with both verified split3 attention columns added to
-own103. The original1,000-factor and primary temporal jobs remain active.
-CFNADE48 completed95/95; CFNADE96 checkpoints33/31 remain preserved for the
-coordinated primary idle handoff. The local latent90 fallback waits for memory.
+The new107+50 tree comparison is fitting. Original RBM50 completed20/20 and
+passed separate every-row support verification; Tx20lat is waiting for stable
+memory. The1,000-factor temporal model and both CF96 phases remain active
+(latest saved epochs37/35 of95). Three original split3 recipes are queued after
+the latent lane. Own105 completed without improving the previous best.
 See [CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
-[CF48_103_CONTEXT_RESULT.md](CF48_103_CONTEXT_RESULT.md) for the verified
+[RBM50_CONTEXT_RESULT.md](RBM50_CONTEXT_RESULT.md) for the verified
 full development result. This is adaptive known-ProbeX development, not an
 official Netflix or untouched Test score. The earlier public-bank result below
 is separate from the current reproduction goal.
