@@ -20,24 +20,32 @@ Seeds remain2026,7,13. Budgets are medians of the five actual originating
 receipts for each seed. Fit a separate ridge on all known ProbeX rows for each
 family. Preserve original tree settings, context architecture, optimizer,
 training-only scaler, floating-point operations, family clipping and the fixed
-half mean of the two float32 family predictions. Fit both families afresh;
-reuse no different-schema full-fit predictions.
+half mean of the two float32 family predictions. Fit tree91 afresh. The existing
+matching86 production run has now started and will train exactly the required
+contextNN86. Reuse that own full-fit neural result only after its source, bank,
+ridge, complete model set, budgets, versions and saved-model replay all verify.
+No different-schema full-fit prediction is substituted.
 
 Use the existing exact paired bank builders `upstream_extension_bank.py`
 (tree91) and `upstream_cf12_bank.py` (NN86). Keep the original85 recovered
 bank route and all native source provenance intact. Require identical known
-and qualifying row identities across both banks. Each family receives its own
-immutable production plan, ridge file, bank binding, model receipts and saved
-model replay. Separate fit/replay processes avoid the observed OpenMP runtime
-clash. The parent plan binds both family plans before fitting; the final
-receipt binds their replayed vectors and the exact float32 mean.
+and qualifying row identities across both banks. The new tree receives its own immutable production plan, ridge file, bank
+binding, model receipts and saved-model replay. The reused NN retains its
+actual original plan, ridge, bank, model receipts and replay in the matching86
+run; its publication receipt explicitly records no fit in the new run. Separate
+fit/replay processes avoid the observed OpenMP runtime clash. The new plan
+binds all actual originating NN evidence before tree91 fitting. Replay the
+original NN again in its original interpreter configuration before accepting
+the reused vector, then freeze the exact float32 family mean.
 
-The existing matching86 queue remains intact until the replacement controller
-is implemented and its real guards pass. Supersede it only while verified idle,
-with no child or partial fit. Native uncheckpointed jobs retain priority. New
-fits require measured memory headroom and a shared fitting lock. Keep the
-all91 context experiment queued behind production; compare any later result
-against this new development best before promoting it.
+The existing matching86 production fit is active and remains intact. The new
+`scripts/upstream_tree91_context86_production.py` waits for its actual processes
+to exit, validates the complete required neural origin and then requires two
+physical-memory admission samples plus the original shared fitting lock. Native
+uncheckpointed jobs retain priority. The idle all91 context controller was
+stopped with no children before changing its queue priority; its next launch
+waits behind both production runs and binds the new0.8599745622 reference.
+No live model source, native process or existing fitting directory is changed.
 
 Freeze and replay the complete2,817,131-row mean before invoking a recovered
 label audit. Independently score both exact source groups with compensated

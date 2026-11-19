@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T08:55:00+00:00
+timestamp: 2026-11-19T09:12:00+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -50,22 +50,29 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | Fixed91 gate completed; unchanged PID88587 now waits for memory. Replacement for the stronger tree91/contextNN86 candidate is planned; no current fit overwritten |
-| Fixed 91-predictor study | Complete: both families replayed; fixed mean0.8601526901 is worse and not promoted |
-| All91 context follow-up | Fixed rank16 candidate queued as PID97839; waits for current extension/matching production and two physical-memory admission samples; no qualifying-label selection |
+| Matching86 production | Full tree refit active as PID8826 under master88587. The current run remains intact; its exact contextNN86 is required by the new combination |
+| Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
+| New tree91/contextNN86 production | Controller 10865 waits for the active matching86 run; it will verify and reuse the exact same full-fit NN86, fit tree91 with its own ridge and budgets, replay both, freeze the mean and audit |
+| All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 phase | Complete at08:48 UTC; all31 native NPY outputs match the original remote receipt exactly, including fulltrain residuals; all eight selected split vectors equal the recovered own pairs |
-| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for actual native temporal PID46684 to exit and physical-footprint/compressor/swap admission; original bank is already complete |
-| CFNADE48 | Remote live-process heartbeat 08:36 UTC (commit263dcf8) reports 58/57 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
+| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Temporal PID46684 has exited and the original bank is complete; automatic resume still requires physical-footprint/compressor/swap admission |
+| CFNADE48 | Remote live-process heartbeat 09:06 UTC (commit96b5f93) reports 64/62 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
-| Primary DAG | Original temporal60 job PID77902 live at08:37 UTC |
+| Primary DAG | Original temporal60 PID77902 has logged all20 fulltrain-phase epochs; final outputs are not yet receipted |
 
 The original-schema phase bank is now complete through the explicit recovered
 own-temporal route; all six cache files match the verified private bank exactly.
 The unchanged matching86 queue restarted at07:50 UTC and has passed the fixed91
-study gate and now waits for memory. The newer tree91/contextNN86 candidate
-will replace this queue only after a concrete controller is implemented and
-the existing queue is verified idle.
+study gate and started full tree fitting at09:02 UTC. The newer tree91/contextNN86 candidate
+now has a concrete controller. The matching86 fit started before replacement;
+it remains intact, and the new controller waits for its complete original
+contextNN86 rather than duplicating that exact neural fit. The original NN
+plan, ridge, bank, budgets, models and semantic replay must all match. New
+tree91 fitting then uses its separate 167-column ridge and 228 inputs.
+The two neural-origin gate tests reject changed recipes, budgets, model sets,
+plans and replay evidence. Both actual queue processes and launch code hashes
+were verified in `experiments/upstream-tree91-context86-production/startup-verification.json`.
 
 Temporal completion evidence is in
 `experiments/upstream-temporal-phase/completion-verification.json`, produced by
@@ -73,6 +80,10 @@ Temporal completion evidence is in
 fulltrain/qual phase, not a new full two-phase pipeline or a new score.
 
 The fixed all91 context follow-up is documented in `ALL91_CONTEXT_PLAN.md`.
+Its first idle controller 97839 was stopped only after confirming no children,
+and its launch/status/code snapshot preserved. Updated controller 10867 waits
+behind the new production queue and binds the stronger fixed-combination
+reference; no live model or native training source was changed.
 Its actual train/save/reload test reproduces predictions exactly. It retains
 all six predeclared additions, reuses the fully verified matching trees and
 starts no fit until its predecessor and physical-memory gates clear.

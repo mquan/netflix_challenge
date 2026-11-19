@@ -22,8 +22,10 @@ It uses separate NN fitting/replay subprocesses and independent compensated
 scoring of the four fixed arms. Existing source files and model caches remain
 frozen. Insufficient memory leaves the new controller waiting.
 
-The reference is the stronger of the verified matching86 fixed mean and the
-completed all91 plain fixed mean. Only a lower overall known-ProbeX RMSE is a
+The reference is the strongest of the verified matching86 fixed mean, the
+completed all91 plain fixed mean and the newly verified tree91/contextNN86
+fixed mean0.8599745622. The latter evidence and all its sources are bound into
+the new context manifest. Only a lower overall known-ProbeX RMSE is a
 candidate improvement. No minimum gain or all-fold veto is imposed. Recovered
 qualifying labels and scores do not select features, architecture or weights.
 There is no automatic production/audit in this experiment: an improved result

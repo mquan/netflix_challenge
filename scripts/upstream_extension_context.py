@@ -99,6 +99,18 @@ def prepare():
     for name in ['manifest.json','evaluation.json','independent-verification.json']:
         path=reference_root/name;sources[str(path.relative_to(u.ROOT))]=u.sha(path)
     parent_best=next(r['rmse'] for r in u.read(evaluation)['records'] if r['arm']=='fixed-half-tree-nn')
+    combined_path=u.ROOT/'experiments/upstream-tree91-context86/verification.json'
+    combined=u.read(combined_path)
+    if (combined['state']!='complete_verified_fixed_combination' or combined['qualifying_labels_read'] is not False or
+            not combined['fixed_average_bitwise_equal'] or combined['rows']!=pm['rows']):
+        raise ValueError('Complete stronger fixed-combination reference required')
+    for relative,digest in combined['source_sha256'].items():
+        if u.sha(u.ROOT/relative)!=digest:raise ValueError('Stronger development reference source changed')
+        sources[relative]=digest
+    combined_vector=u.ROOT/'artifacts/upstream-tree91-context86/fixed-half-tree-nn.f32'
+    if u.sha(combined_vector)!=combined['prediction_sha256']:raise ValueError('Stronger reference vector changed')
+    sources[str(combined_path.relative_to(u.ROOT))]=u.sha(combined_path)
+    sources[str(combined_vector.relative_to(u.ROOT))]=u.sha(combined_vector)
     for relative,digest in pm['prepared_sha256'].items():
         if u.sha(source.RUN/relative)!=digest:raise ValueError('Prepared parent changed')
     configure();RUN.mkdir();REPORT.mkdir(parents=True,exist_ok=True)
@@ -109,7 +121,8 @@ def prepare():
         source_manifests_sha256=sources,prepared_sha256={p.name:u.sha(p) for p in RUN.iterdir()},
         rows=pm['rows'],baseline_rmse=pm['baseline_rmse'],prediction_columns=91,
         design_columns=167,nonlinear_features=227,signal_indices=SIGNALS,context_indices=CONTEXT,
-        previous_best_rmse=min(reference['rmse'],parent_best),development_reference=reference,
+        previous_best_rmse=min(reference['rmse'],parent_best,combined['rmse']),development_reference=reference,
+        stronger_fixed_combination_rmse=combined['rmse'],
         reused_tree_prediction_sha256=tree['prediction_sha256'],qualifying_labels_read=False,
         arms=['control','tree','nn','fixed-half-tree-nn'],isolation=pm['isolation'],
         scope='Adaptive known-ProbeX only. Fixed rank16 context architecture on all six predeclared additions; original nested user folds, optimizer, seeds and stopping rules. Reuses verified matching91 trees. No automatic production or recovered-label audit.')
@@ -118,7 +131,7 @@ def prepare():
 
 def predecessors():
     names={'upstream_extension_run_current.py','upstream_extension_production_current.py',
-           'upstream_cf12_matching_production.py'}
+           'upstream_cf12_matching_production.py','upstream_tree91_context86_production.py'}
     rows=subprocess.check_output(['ps','-axo','pid=,command='],text=True).splitlines();found={}
     for row in rows:
         pid,command=row.strip().split(None,1)
@@ -147,7 +160,7 @@ def run():
             if good>=2:break
             previous=current;time.sleep(30)
         with (source.REPORT/'run.lock').open('a') as shared:
-            fcntl.flock(shared,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            fcntl.flock(shared,fcntl.LOCK_EX)
             prepare();u.write(REPORT/'status.json',dict(state='nested_nn_training'))
             preceding.guarded([sys.executable,str(Path(__file__)),'--worker'],REPORT/'nn.log')
             u.write(REPORT/'status.json',dict(state='saved_nn_replay'))
