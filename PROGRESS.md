@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T12:54:10.202958+00:00
-best_score: 0.8599596977902322
+timestamp: 2026-11-19T13:43:38.253668+00:00
+best_score: 0.8594692563654075
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -12,11 +12,21 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The completed own103 context iteration gives a new independently checked
+known-ProbeX development best: **standalone NN0.8594692563654075**, versus
+0.8599596977902322 previously. The fixed half mean with tree91 also improves,
+to0.8595400254184109. All15 saved NN models replay across the original five
+nested user folds. Full-known production is now running under controller74649;
+the stronger NN-only candidate is separately declared before either new
+qualifying outcome. See [CF48_103_PRODUCTION_PLAN.md](CF48_103_PRODUCTION_PLAN.md).
+The qualifying target is still unmet and the best verified worse-group audit
+remains0.8624021195492101.
+
 The new context91 qualifying audit is complete and independently rechecked:
 0.8615005553485519 /0.8624166617824088, both above0.85725 and slightly worse
 than the preceding best. Keep0.8624021195492101 as the best worse-group score.
 See [CONTEXT91_QUALIFYING_RESULT.md](CONTEXT91_QUALIFYING_RESULT.md).
-The next fixed own103 context fit is queued under controller61820; it includes
+The own103 context fit is complete; it includes
 our now-complete CF48 epoch95 and has independently replayed ridge0.8626072996.
 See [CF48_103_CONTEXT_PLAN.md](CF48_103_CONTEXT_PLAN.md).
 
