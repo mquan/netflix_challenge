@@ -1,0 +1,54 @@
+{
+  "state": "complete",
+  "observed": "2026-11-19T08:46:01.932729+00:00",
+  "pages_commit": "a1c070b4fb65a3cab47d0cc27f70acb94c42cc9d",
+  "base_url": "https://mquan.github.io/netflix_challenge/",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "e58ee0910eb0bf7a5fd5bbb4073aeaa287094615cdccb5f640f7ed4f95cb1522",
+      "bytes": 105637,
+      "matches_local": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "4699e3954864e3372151dae75c12fa6574b6376693bff79367b66179f5cfc70a",
+      "bytes": 5007,
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "bb8d2baff2c89b1deeef93d257f5247d1ddf38d9b7e77888138e994d17ca04d5",
+      "bytes": 44598,
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "51f252c4446531a0b133c46bf8c3a5b4fccf1717bbc0ad0505c92096af4aec61",
+      "bytes": 292333,
+      "matches_local": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "33426120b9a4f883c3b23dd3b09a3ad1e835613246f3dab02e0bada35f485d57",
+      "bytes": 16949,
+      "matches_local": true
+    }
+  ],
+  "browser_checks": {
+    "mobile_width": 390,
+    "desktop_width": 1440,
+    "horizontal_overflow": false,
+    "current_remote_and_queue_visible": true,
+    "milestones": 36
+  },
+  "timeline_tests_passed": 7,
+  "plots_rebuilt": true,
+  "plots_changed": false,
+  "qualifying_target_achieved": false
+}
