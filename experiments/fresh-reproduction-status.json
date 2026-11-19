@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T21:49:03.367453+00:00",
-  "display_time": "2026-11-19 21:49 UTC",
+  "observed": "2026-11-19T22:39:44.722871+00:00",
+  "display_time": "2026-11-19 22:39 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,14 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Full split3 virtual nonlinear follow-up",
+      "state": "Complete negative: NN0.8594357703, fixed expanded-tree half mean0.8592838017, above current0.8592309820. All five nested folds,15 actual saved-model replays and separate exact mean/full-known scoring pass. No qualifying refit or promotion."
+    },
+    {
+      "work": "Fixed four-column complete split3 diagnostic",
+      "state": "All three original native models and four predeclared terminal/E1 pairs verified. Ridge improves0.8625801964\u21920.8625621609 on all five folds, independent statistics/solve/full-vector replay max error5.75e-12. No new global score or qualifying refit; a future nonlinear study needs storage-conscious virtual input assembly."
+    },
     {
       "work": "Compiler cache disk-headroom recovery",
       "state": "Retired2.627GB of rebuildable .rmeta/.rlib/.o files only in inactive target roots. No open handles, no compiler processes or experiment JSON references; running binary hashes unchanged. All datasets, prediction features, model weights/checkpoints and active target roots preserved. Raw training resumed."
@@ -19,7 +27,7 @@
     },
     {
       "work": "Item-oriented raw autoencoder feasibility",
-      "state": "Bounded-memory v2 complete:123408701 parameters; all four CPU/MPS actual saved-model replays pass. MPS steps0.0779124 /0.1493196s for item batches8/32, speed ratios3.2071 /2.4939x CPU. Synthetic timing only. Original GPU-cap failure preserved. Full-data transpose/trainer implementation is next, planned after current raw50/50 for disk headroom; real-data item-oriented training is not running."
+      "state": "Implementation and isolated transpose/resume fixture complete. Full480189\u2192128\u2192480189, batch32,float32 MPS,50 epochs per phase, fixed snapshots5/10/20/30/40/50. Actual high-user-ID, corruption/leakage, six saved-query replays and atomic one-checkpoint retention pass. Controller53156 is queued behind actual completion of current raw50/50 for disk headroom; real item-oriented fitting has not started at this snapshot."
     },
     {
       "work": "Item154 full known-selected qualifying refit",
@@ -39,7 +47,7 @@
     },
     {
       "work": "Own real-data raw GPU autoencoder",
-      "state": "Both fixed snapshot20 phases and actual full saved-query replays complete. Known-only raw component0.9333162065 is not an ensemble score. Original50/50 trajectory continues. Snapshot20 encoder supplied the separately verified64-user-context study; no epoch/rank selection used these diagnostic scores."
+      "state": "Original50/50 trajectory continues: second phase epoch49 active at22:38 UTC. All earlier snapshot proofs retained. Item-oriented queue waits for actual verified50/50 completion; no accuracy stopping."
     },
     {
       "work": "Larger own166 hidden512/rank64 control",
@@ -83,7 +91,7 @@
     },
     {
       "work": "Next original split3 diversity batch",
-      "state": "Both DNN16t and DNN32nm complete original7/7 with independent source/output and every-known-projection checks. Native small NADE38916 is running its original8/8 recipe; full three-model batch not yet claimed."
+      "state": "Complete: both original DNN models7/7 and NADE12s8/8. Independent source/output and every-known-row projection checks pass for all three. Fixed terminal/E1 four-pair ridge diagnostic0.8625801964\u21920.8625621609, all five folds improve; separate complete ridge replay passes. This is not a nonlinear or qualifying promotion."
     },
     {
       "work": "Own107 plus50 learned RBM context",
@@ -147,7 +155,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Original native phases92864/92865 remain active, latest saved epochs40/38 of95. Original320-hidden/96-rank capacity and exact checkpoint lineage retained."
+      "state": "Original native phases92864/92865 confirmed live, saved epochs55/52 of95 at22:38 UTC. Original320-hidden/96-rank capacity and checkpoint lineage retained."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -205,17 +213,13 @@
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
   "qualifying_verification_sha256": "394d5a7aab36979b17dca570194859aab12c87937f13214303215cbc6ee3d309",
   "qualifying_groups": {
-    "quiz": {
+    "source0": {
       "rows": 1408789,
-      "rmse": 0.860877462609422,
-      "below_target": false,
-      "improvement_percent_over_cinematch": 9.619164030506878
+      "rmse": 0.8607516601651759
     },
-    "test": {
+    "source1": {
       "rows": 1408342,
-      "rmse": 0.8618605526405846,
-      "below_target": false,
-      "improvement_percent_over_cinematch": 9.515952478678786
+      "rmse": 0.8617378856802073
     }
   },
   "goal_achieved": false,

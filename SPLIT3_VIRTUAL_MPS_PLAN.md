@@ -38,3 +38,20 @@ scripts/upstream_rbm50_tree_split3_virtual_mps.py.
 Declaration: experiments/upstream-split3-virtual-queue/plan.json.
 Source tensor proof: experiments/upstream-split3-virtual-features/
 cache-column-verification.json.
+
+## Completed result (2026-11-19 22:32 UTC)
+
+The full study completed all five nested user folds and all15 actual saved-model
+replays. Standalone NN RMSE is **0.8594357703377205**. The predeclared fixed
+half mean with the expanded tree independently verifies **0.8592838017183226**,
+which is0.0000528197319059 above the current0.8592309819864167 best.
+The separate stored-mean checker rehashes138 source/model bindings and verifies
+the exact vector and compensated score on all1,128,164 known rows.
+
+This is a completed negative result: retain the current best and perform no
+qualifying refit. Every worker and replay reconstructed the same complete
+virtual tensor hashes; no redundant multi-gigabyte matrix cache was required.
+Evidence: experiments/upstream-split3-virtual-mps-context/{evaluation,
+independent-verification,nn-replay}.json and
+experiments/upstream-rbm50-tree-split3-virtual-mps/{verification,
+independent-mean-check}.json.

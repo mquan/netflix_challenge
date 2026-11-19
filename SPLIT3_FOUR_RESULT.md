@@ -23,3 +23,8 @@ Evidence: experiments/upstream-split3-diversity/*-verification.json and
 experiments/upstream-split3-four-screen/{plan,ridge-screen,ridge-verification}.json.
 Code: scripts/upstream_split3_four_screen.py and
 scripts/verify_upstream_split3_four_screen.py.
+
+The subsequent full nonlinear study is complete: fixed expanded-tree mean
+0.8592838017 is worse than the current0.8592309820. All15 actual neural
+replays and separate scoring pass; no qualifying promotion. See
+[SPLIT3_VIRTUAL_MPS_PLAN.md](SPLIT3_VIRTUAL_MPS_PLAN.md).
