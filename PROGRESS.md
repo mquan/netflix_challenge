@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T14:04:46.546953+00:00
+timestamp: 2026-11-19T14:54:35.946480+00:00
 best_score: 0.8594692563654075
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,15 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Local update: original tsvdx5-60 completed23/23 with all outputs independently
+checked. The primary queue yielded at a verified idle boundary; both original
+CF96 phases are now running from33/31, alongside original RBM50 latent training,
+own105 (2/5 NN folds complete) and the1,000-factor temporal model. Tx20lat is
+queued. The CF48 remote result is already incorporated in the best score below;
+no newer latent90 return is visible on GitHub at this snapshot.
+Our complete published CF96 epoch10 pair also passed source/package checks and
+an independent five-fold ridge diagnostic. See [CF96_PREFIX10_RESULT.md](CF96_PREFIX10_RESULT.md).
 
 **New verified own qualifying best:0.8609916544142975 /0.8619938614020105**,
 from the predeclared standalone full-fit NN103. Worse-group improvement is

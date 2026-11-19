@@ -1,0 +1,22 @@
+{
+  "pid": 92667,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_parallel.py"
+  ],
+  "runner_sha256": "355bc3d1a2a58fa9f12e2086a54fc18bb860e499212f4ef3e2887b0a2b6dd2f3",
+  "checkpoints": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  },
+  "observed": "2026-11-19T14:32:49.419057+00:00"
+}
