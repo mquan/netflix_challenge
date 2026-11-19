@@ -1,0 +1,19 @@
+{
+  "pid": 62289,
+  "started": "2026-11-19T23:08:19.069246+00:00",
+  "command": [
+    "./target/release/fit",
+    "attn",
+    "s3-attn64",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "D": "64",
+    "EPSAVE": "1",
+    "SEED": "7"
+  }
+}
