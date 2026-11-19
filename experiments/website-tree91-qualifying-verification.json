@@ -1,0 +1,54 @@
+{
+  "state": "complete",
+  "observed": "2026-11-19T10:10:12.883443+00:00",
+  "pages_commit": "ad6a0763052756562094ee84696c0854b0014461",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "18fb7c4882d77c77f6b34e4d10d805a957ade373ff14e6c09e5909a4e590a8be",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "7089b21e0e35e12815b9b8b5cb41b2ca8a5cf08abd18afcd8fa3af1806eea9c5",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "440e8149ec89f0c872bc0c0c1508df0c0700415cecd82615e4178f800cd238e0",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "0ccb8b9fda81f1860cd1152a82667421fa495227ed8a41a5701476977a53cc2b",
+      "matches_local": true
+    },
+    {
+      "path": "TREE91_CONTEXT86_QUALIFYING_RESULT.md",
+      "status": 200,
+      "sha256": "e9167c2d0f15a3679ac2a2c2e4a5d5cd3cb14052fce6fcf37bfede901c3772cc",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/upstream-tree91-context86-production/frozen-mean-score-verification.json",
+      "status": 200,
+      "sha256": "f30478e46dab88d15f488d60f30c23e4b268e3658861c55333bd43fe5cbb3b77",
+      "matches_local": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 39,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8599745622436025,
+  "qualifying_source0": 0.8614776640541453,
+  "qualifying_source1": 0.8624021195492101,
+  "qualifying_target_achieved": false
+}
