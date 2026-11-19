@@ -1,0 +1,33 @@
+{
+  "quiz": {
+    "rows": 1408789,
+    "rmse": 0.8615073689623161
+  },
+  "test": {
+    "rows": 1408342,
+    "rmse": 0.8624355592570154
+  },
+  "target_rmse": 0.85725,
+  "test_baseline_rmse": 0.9525,
+  "test_improvement_percent": 9.455584329972133,
+  "target_reached": false,
+  "split_names_follow_source_is_test": true,
+  "published_split_count_agreement": false,
+  "split_provenance_warning": "Source is_test=0 has 1408789 rows and is_test=1 has 1408342; these counts reverse the published Quiz/Test sizes. Names follow source; no silent inversion.",
+  "both_source_groups_below_target": false,
+  "state": "complete",
+  "source": {
+    "state": "predictions_verified_before_label_access",
+    "started_utc": "2026-11-19T09:26:26.756345+00:00",
+    "prediction_sha256": "34c013c0e6934b5218d78848ad839fec2bef310c0317b9190552c64b7c305378",
+    "model_report_sha256": "062c78d3d6820a3719555f0d6087c3453f6e7b8d6c4eb326e3d987cccf920a8b",
+    "label_source": "https://raw.githubusercontent.com/gtakacs/netflix_prize/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/data/qual_ratings/qual_ratings.csv.gz",
+    "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "purpose": "Post-freeze recovered-label audit only; no model fitting"
+  },
+  "label_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "label_git_blob_sha1": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "completed_utc": "2026-11-19T09:26:28.130585+00:00",
+  "provenance": "Community-provided recovered qualifying labels from gtakacs/netflix_prize; not live or official Netflix scoring",
+  "model_fitting_performed": false
+}

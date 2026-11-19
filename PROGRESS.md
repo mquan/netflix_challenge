@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T09:24:00+00:00
+timestamp: 2026-11-19T09:31:00+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,26 +12,33 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-The first complete own-training qualifying audit **misses** the target:
+The latest matching86 own-training qualifying audit **misses** the target:
 
 | Recovered source group | Rows | Independently verified RMSE | Required |
 | --- | ---: | ---: | ---: |
-| source0 (`is_test=0`) | 1,408,789 | **0.8619187880311255** | <0.85725 |
-| source1 (`is_test=1`) | 1,408,342 | **0.8628067765436453** | <0.85725 |
+| source0 (`is_test=0`) | 1,408,789 | **0.8615073689623157** | <0.85725 |
+| source1 (`is_test=1`) | 1,408,342 | **0.8624355592570154** | <0.85725 |
 
-The worse group improves **9.4166113865%** over the Cinematch reference 0.9525,
-short of 10%. The remaining gap is 0.0055567765 RMSE. These are adaptive
+The worse group improves **9.4555843300%** over the Cinematch reference 0.9525,
+short of 10%. The remaining gap is 0.0051855593 RMSE. These are adaptive
 community-recovered outcomes, not official or untouched Netflix Test scores.
 The published Quiz/Test sizes reverse the source labels, so source groups
 are preserved without relabeling.
 
-This result uses our freshly trained 85-predictor bank and full-known-ProbeX
+The earlier first85 result used our freshly trained 85-predictor bank and full-known-ProbeX
 blend fitting. Public source code is reused; no downloaded pretrained prediction
-features or qualifying outcomes entered fitting or selection. Both saved full
+features or qualifying outcomes entered fitting or selection. Both of its saved full
 families replay bit-for-bit, their fixed float32 mean verifies, and independent
 compensated scoring covers all 2,817,131 qualifying rows. The separate completion
 check binds 333 evidence files, 29 own source jobs and the actual development
 models behind the per-seed budgets. It explicitly records `goal_achieved=false`.
+
+The latest86 result improves both first85 group scores (0.8619187880 /
+0.8628067765). Its three trees and three context neural models replay before
+freezing; a separate checker verifies source/code bindings, model/replay hashes,
+the bitwise float32 mean and compensated group scores. See
+`FIRST86_QUALIFYING_RESULT.md`. No qualifying outcomes selected the queued
+newer tree91/contextNN86 recipe.
 
 Our best verified **development** result is now **0.8599745622436025**: a
 fixed half mean of the completed tree91 vector and the unchanged contextNN86
@@ -50,7 +57,7 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | All three full tree fits and saved-tree replay complete; neural refit PID14336 active under master88587. Its exact contextNN86 is required by the new combination |
+| Matching86 production | Complete and replayed; frozen audit0.8615073690 /0.8624355593 misses target. The exact full-fit NN86 is available for the new combination |
 | Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
 | New tree91/contextNN86 production | Controller 10865 waits for the active matching86 run; it will verify and reuse the exact same full-fit NN86, fit tree91 with its own ridge and budgets, replay both, freeze the mean and audit |
 | All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |

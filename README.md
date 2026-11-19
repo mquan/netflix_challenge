@@ -19,19 +19,19 @@ prediction features are excluded. The fixed half mean combines our completed 91-
 replay; all ten actual fold receipts and artifacts were rehashed, and independent
 scoring verifies the stored mean over five user folds on 1,128,164 known-ProbeX rows.
 
-**The first fresh-training qualifying audit misses the 10% target:**
-**0.8619187880 / 0.8628067765** on the two recovered source groups. The worse
-group improves **9.4166%** over the Cinematch reference. Both full saved families
-replay exactly, their fixed mean verifies, and independent scoring binds 333
+**The latest matching86 fresh-training qualifying audit misses the 10% target:**
+**0.8615073690 / 0.8624355593** on the two recovered source groups. The worse
+group improves **9.4556%** over the Cinematch reference. Both latest full saved families replay exactly, and a separate frozen-mean and
+compensated-score check passes. The earlier first85 completion audit binds333
 evidence files. No qualifying outcomes entered fitting or selection.
 
-The 91-predictor development study and original 1,000-factor source job are
-running. CFNADE48 continues remotely. CFNADE96 checkpoints33/31 are preserved;
-its workers temporarily yielded to reduce paging and will resume after memory
-admission. The matching86
-qualifying queue has a guarded restart after its original phase bank completes.
-See [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the complete
-result and scope. The goal remains active.
+The original 1,000-factor source job remains active. Production for the newer
+tree91/contextNN86 candidate waits for physical-memory admission; the full91
+context follow-up is queued behind it. CFNADE48 continues remotely. CFNADE96
+checkpoints33/31 are preserved and await memory admission. See
+[FIRST86_QUALIFYING_RESULT.md](FIRST86_QUALIFYING_RESULT.md) for the latest
+result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
+earlier audit. The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
 [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md) for the verified
