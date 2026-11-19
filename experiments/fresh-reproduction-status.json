@@ -1,21 +1,29 @@
 {
-  "observed": "2026-11-19T17:28:44.396549+00:00",
-  "display_time": "2026-11-19 17:28 UTC",
-  "best_development_rmse": 0.8594554093063749,
+  "observed": "2026-11-19T18:34:05.807280+00:00",
+  "display_time": "2026-11-19 18:34 UTC",
+  "best_development_rmse": 0.8593661638722666,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "5bca574f81d8478ebaa36c9df034507fed0da59e0220182462e011bad677d3f0",
-  "independent_verification_sha256": "807e13b8fbdc1c453f7655e10a25033e89499941ae982d05140e2b889cfc16cc",
+  "verified_development_report_sha256": "1bb1a73de2dcd7c0624791c34443f991c21048065741d454b5d38c5eeaf2c597",
+  "independent_verification_sha256": "d1471771f27a1837c2fab7980d09843add32f7615237ea7673718b1b80f8c21b",
   "work": [
+    {
+      "work": "Whole110 raw/all90 paired assembly",
+      "state": "Queue23659 waits for verified paired90 and whole110 development caches. Exact fixed native order, all retained/new columns checked separately; no fit or score."
+    },
+    {
+      "work": "Three complete native rating-pair batch",
+      "state": "RBM50 and Tx20 complete20/20 with separate whole-model proofs. Rank1000 has logged its final20/20 epoch and is still producing outputs; independent whole-model proof remains required. Whole110 GPU queue20237 waits for that proof."
+    },
     {
       "work": "Paired all90 context bank",
       "state": "Memory-admitted builder14278 is queued. Retain paired107+50 byte-for-byte and append the verified40 Tx components to both queries; same183-column ridge. A separate full-column checker runs after construction. No fitting or new score."
     },
     {
       "work": "Larger all90 latent context study",
-      "state": "All90 original components and333-feature cache are ready and bitwise checked. Hidden128/rank32 network has334 inputs; it waits for measured RAM and the fitting slot. Actual small fit/save/reload passed; no full-study accuracy result yet."
+      "state": "Actual MPS worker24204 is fitting the full five-fold hidden128/rank32 study with334 inputs. All90 source components and cache columns independently checked. No full-study accuracy result yet."
     },
     {
       "work": "Own107 plus50 standalone qualifying refit",
@@ -23,15 +31,15 @@
     },
     {
       "work": "Expanded RBM context tree comparison",
-      "state": "Actual worker10755 resumed from verified fold0 after the completed neural qualifying audit. Two of five tree folds are complete; third fold is fitting. Same original configuration and source schemas; no complete tree result yet."
+      "state": "Complete: all five tree folds and all15 saved-tree replays passed. Fixed half tree/NN mean0.8593661639 improves standalone NN0.8594554093. Independent scoring confirms; new qualifying refit pending."
     },
     {
       "work": "Next original split3 diversity batch",
-      "state": "Controller1268 queues transposed DNN, no-MF DNN and small NADE, original complete recipes, after the existing latent lane finishes. Separate completion/projection verifier2809 is waiting. No native batch model has started."
+      "state": "Original transposed DNN is training under21414 since18:18 UTC. No-MF DNN and small NADE are serialized behind it. Separate completion/projection watcher2809 is live."
     },
     {
       "work": "Own107 plus50 learned RBM context",
-      "state": "Complete: standalone NN0.8594554093 is the new independently checked development best, versus NN1030.8594692564. All15 saved models replay. Fixed tree91/NN mean0.8594773263 is higher. No new qualifying result yet."
+      "state": "Complete preceding standalone development best0.8594554093; all15 saved neural models replay. Its separate qualifying audit0.8609266298 /0.8619141823 remains best verified qualifying."
     },
     {
       "work": "Published CF96 epoch10 snapshot",
@@ -43,7 +51,7 @@
     },
     {
       "work": "Own103 context development",
-      "state": "Preceding verified best: standalone NN0.8594692564, now improved by own107 plus50 RBM context. All15 models replayed; its qualifying result remains the best verified audit."
+      "state": "Historical standalone NN0.8594692564, improved by the subsequent own107+50 studies. Actual saved-model replay remains verified."
     },
     {
       "work": "Own103 full-known production",
@@ -165,14 +173,14 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "3649        12:45   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py",
-      "4913        05:29 189.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py --worker",
-      "6028        00:00   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_production.py",
-      "70300     03:05:13   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
-      "73619     09:43:44   0.0 sh -c cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "73629     09:43:33  13.3 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "92864     01:46:28  98.0 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865     01:46:28  98.5 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+      "  PID  PPID  %CPU COMMAND",
+      "20237     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_whole110_mps_queue.py",
+      "21414  1268  97.5 ./target/release/fit dnn s3-dnn16t -p pipeline-3.toml --final --preds preds_3",
+      "23659     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/prepare_upstream_whole110_bank_when_admitted.py",
+      "24204 20926  58.2 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_mps_context.py --worker",
+      "73629 73619 135.8 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "92864 92667  97.7 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865 92667 196.0 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -265,8 +273,8 @@
       "state": "complete_both_frozen_audits_verified"
     },
     "cf96_saved_epochs": {
-      "trainx": 40,
-      "fulltrain": 38
+      "trainx": 42,
+      "fulltrain": 40
     },
     "tsvdx5_60": "complete_independently_checked_23_23",
     "rbm50_context": {
@@ -279,10 +287,9 @@
       "nn_rmse": 0.8594783385089899
     },
     "tx20lat": {
-      "pid": 7119,
-      "state": "original_second_phase_training",
-      "first_phase_epochs_complete": 20,
-      "second_phase_latest_completed": 3
+      "state": "complete_original_two_phase_latent_model",
+      "epochs_per_phase": 20,
+      "verification_sha256": "0ef46c184e6da19c3e49558d1afddcc354cd6c0e971a834ae0dbe9c4e8cb7c70"
     },
     "own107_rbm50_production": {
       "state": "complete_both_groups_independently_verified_miss",
@@ -291,6 +298,11 @@
     "all90_supports": {
       "state": "complete_verified_support_and_development_cache",
       "cache_manifest_sha256": "6ad2638f9d50521fa683d75daf26d80c13703070f4dbec089c43df964a121a95"
+    },
+    "observed": "2026-11-19T18:34:05.807280+00:00",
+    "rbm50_tree": {
+      "state": "complete_independently_verified",
+      "fixed_half_rmse": 0.8593661638722666
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
@@ -308,7 +320,7 @@
     }
   },
   "latest_qualifying_verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a",
-  "best_development_arm": "own107 plus50 original RBM context standalone NN",
+  "best_development_arm": "own107 plus50 original RBM context fixed half tree/NN mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,

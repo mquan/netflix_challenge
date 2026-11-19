@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "7f9bbf6256399894dc6a8c8af8ecd7db7d40f3f733f0feffe05f08ea644e58b7",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801962475576,
+      "delta_vs_previous_best": 0.003124786941182456,
+      "fold_rmse": [
+        0.8619959766765863,
+        0.8598793857564255,
+        0.8633794444492896,
+        0.8642176791394023,
+        0.8634317801789364
+      ],
+      "prediction_sha256": "10120c6973a2cff63f04c741e6ea05acc0521bc7684a310d8f8966a7c49a4421"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8601340713325017,
+      "delta_vs_previous_best": 0.0006786620261266529,
+      "fold_rmse": [
+        0.8593019396181163,
+        0.8574895433480768,
+        0.8611345514033946,
+        0.861790725863271,
+        0.8609592001420214
+      ],
+      "prediction_sha256": "edba34c965ea703b9083d2e3b529bc8d4906115cdbe9b6ae8c840ddbebb95f24"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8594554093063749,
+      "delta_vs_previous_best": -2.220446049250313e-16,
+      "fold_rmse": [
+        0.8586635532680638,
+        0.8570180221495769,
+        0.8605548076257996,
+        0.8611636930335475,
+        0.8598835161088685
+      ],
+      "prediction_sha256": "61c80a559c6d9da4b60e72775d419430999fe16ee82bc5cec29150ba3f694150"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8593661638722666,
+      "delta_vs_previous_best": -8.924543410848695e-05,
+      "fold_rmse": [
+        0.858552064338109,
+        0.8568578103262031,
+        0.8604455383393422,
+        0.8609983215314009,
+        0.859983586728146
+      ],
+      "prediction_sha256": "f9b22a9591d6fe5ae203092e3c4074197ce6476883e5a0faa09205cd9fbfb02f"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Fixed original tree hyperparameters and five nested user folds, own107 plus all50 original RBM user supports. Reuse the lower known-CV NN from the completed103/107+50 studies with actual originating model/replay bindings. No synthetic NN receipts or qualifying-based selection. NN and tree use their own exact source schemas.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

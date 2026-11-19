@@ -22,7 +22,7 @@ X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
 SCORE_MIN, SCORE_MAX = .850, .990
 START = datetime.fromisoformat("2026-09-27T08:00:00-07:00")
-END = datetime.fromisoformat("2026-11-19T18:00:00+00:00")
+END = datetime.fromisoformat("2026-11-19T20:00:00+00:00")
 
 
 def x_at(value):
@@ -120,14 +120,14 @@ for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
-    ("FRESH107 RBM50 NN", "Own training CV · 0.8594554", -18, -68, "end"),
+    ("FRESH107 RBM50 mean", "Own training CV · 0.8593662", -18, -68, "end"),
     ("FRESH107 RBM50 qualifying", "Own qualifying audit · 0.8619142", -18, -130, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
 
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
-text(X0, y_at(.85725)-18, "0.85725", "#baaaff", 22, weight="700")
+text(X0, y_at(.85725)+34, "0.85725", "#baaaff", 22, weight="700")
 text(X1, y_at(.85725)+34, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
 text(X0, 760, "Unconnected audits: gold-ringed Codex = own training; violet diamond = public bank. Recovered labels; different rows from CV.", "#a8b0c2", 19)
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
@@ -151,7 +151,7 @@ for i,row in enumerate(selected):
     text(xx,yy-20,f'{float(row[1]):.7f}',color='#f2f1ed',size=20,anchor='middle')
     text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
 text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
-text(94,1510,'Current own-training best: 0.8594554 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
+text(94,1510,'Current own-training best: 0.8593662 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
 text(94,1555,'Best own qualifying audit: 0.8609266 / 0.8619142 · 9.5103% on the worse group; 10% target missed.',size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")

@@ -2,7 +2,7 @@
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
 timestamp: 2026-11-19T18:26:00+00:00
-best_score: 0.8594554093063749
+best_score: 0.8593661638722666
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,16 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New verified development best: **0.8593661638722666**, the fixed half mean of
+own107+50 expanded tree and NN. All five tree folds, all15 saved-tree replays,
+reused actual neural replays and separate compensated scoring passed. Four
+folds improve and one worsens; lower aggregate RMSE is promoted. The new mean
+requires a full-known tree refit and a separate frozen qualifying audit.
+The larger all90 GPU neural worker24204 is now fitting.
+See [RBM50_TREE_RESULT.md](RBM50_TREE_RESULT.md).
+
+Earlier observation at18:26 UTC (superseded by the complete tree result above):
 
 New independently verified own qualifying best: **0.8609266297566702 /
 0.8619141823430468**, from the predeclared standalone own107+50 NN. Full14/14/13
