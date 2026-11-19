@@ -1,25 +1,33 @@
 {
-  "observed": "2026-11-19T20:44:44.463506+00:00",
-  "display_time": "2026-11-19 20:44 UTC",
-  "best_development_rmse": 0.8592720612630157,
+  "observed": "2026-11-19T21:10:36.889929+00:00",
+  "display_time": "2026-11-19 21:10 UTC",
+  "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
   "verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
+  "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Item154 full known-selected qualifying refit",
+      "state": "Queued with independent development0.8592309820 and median NN7/7/8 epochs. Stream the exact own64 item components, retain the original full tree and freeze the fixed half mean before a separate canonical-label audit. No new qualifying result claimed."
+    },
+    {
+      "work": "Own fixed consensus",
+      "state": "Complete full known-selected qualifying audit and independent verification: source0 0.8608202878 /source1 0.8618006321. Exact rounded mean, original actual replays, new full NN7/9/8 actual replay and canonical complete-group compensated scoring pass. Both groups improve; target still missed. Item154 is the newer development best and its full-fit controller is queued separately."
+    },
     {
       "work": "Own109 raw autoencoder nonlinear extension",
       "state": "Complete: all five folds,15 actual saved MPS model replays and separate fixed mean check pass. Mean0.8592745245 is above0.8592720613; current best retained, no qualifying refit."
     },
     {
       "work": "Own64 item-context /154-support study",
-      "state": "Fixed top32 PCA components from each of our freshly trained RBM150 and temporal-SVD400 item tables. Independent spectrum/projection and every known/qualifying gather replay pass. Five-fold398-input H128/rank32 study queued under the shared GPU lock; no accuracy claim yet."
+      "state": "Complete: NN0.8593837349, expanded-tree fixed mean0.8592309820. All15 saved-model replays and separate mean/full-known scoring pass. Recovery archived the incomplete final fold, kept the first four receipts unchanged and used the identical frozen model recipe. New development best; no new qualifying score."
     },
     {
       "work": "Own real-data raw GPU autoencoder",
-      "state": "Declared50/50 training continues. Snapshot5/10 pairs pass actual saved-model inference replay on every query row and separate source/model checks. Known-only raw component scores0.9332148095 /0.9321417324. The fixed addition ridge improves0.8625801964 to0.8625774187, but its full nonlinear mean0.8592745245 is higher than the record. No qualifying gain."
+      "state": "Declared50/50 training continues. Snapshot5/10 pairs pass actual saved-model inference replay on every query row and separate source/model checks. Known-only raw component scores0.9332148095 /0.9321417324. The fixed addition ridge improves0.8625801964 to0.8625774187, but its full nonlinear mean0.8592745245 is higher than the record. No qualifying gain. Training resumed after unused duplicate qualifying matrices were retired; actual source values and every declared snapshot model remain preserved."
     },
     {
       "work": "Larger own166 hidden512/rank64 control",
@@ -183,7 +191,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "3c3a7ed1e0a535be1b95cbea67821a3007aa50251396bded075e2365f05ae91c",
+  "qualifying_verification_sha256": "da4ae7f9b01022a1817e3c94f159546634004cd491a6e647ab063237749731b5",
   "qualifying_groups": {
     "quiz": {
       "rows": 1408789,
@@ -360,16 +368,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.860877462609422,
-      "below_target": false
+      "rmse": 0.8608202877523957
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8618605526405846,
-      "below_target": false
+      "rmse": 0.8618006321174798
     }
   },
-  "latest_qualifying_verification_sha256": "3c3a7ed1e0a535be1b95cbea67821a3007aa50251396bded075e2365f05ae91c",
+  "latest_qualifying_verification_sha256": "da4ae7f9b01022a1817e3c94f159546634004cd491a6e647ab063237749731b5",
   "best_development_arm": "own107/50 tree plus own107/all90 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -378,5 +384,15 @@
   "own103_full_refit_complete": true,
   "own103_nn_qualifying_best": false,
   "own107_rbm50_nn_qualifying_best": false,
-  "own107_latent90_mean_qualifying_best": true
+  "own107_latent90_mean_qualifying_best": true,
+  "preceding_independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
+  "development_verification_path": "experiments/upstream-rbm50-tree-item154-mps/verification.json",
+  "development_independent_check_path": "experiments/upstream-rbm50-tree-item154-mps/independent-mean-check.json",
+  "development_required_replay_paths": [
+    "experiments/upstream-rbm50-tree/tree-replay.json",
+    "experiments/upstream-item154-mps-context/nn-replay.json"
+  ],
+  "development_narrative": "The predeclared fixed half mean combines the expanded107/50 tree with our107/154 neural model, adding64 unsupervised item components from our freshly trained native factors. It improves the separately verified0.8592433 consensus. The item study recovered its interrupted final fold under the identical frozen recipe, preserving the first four fold receipts and original partial artifacts. All15 neural model replays passed. New qualifying results remain pending.",
+  "latest_qualifying_verification_path": "experiments/upstream-autorec-consensus-stream-production/independent-verification.json",
+  "qualifying_narrative": "The known-selected fixed consensus improves both preceding groups0.8608775 /0.8618606. It reuses the actual replayed full tree and all90 NN, adds a full own109 NN with known-fold median7/9/8 epochs, and preserves the exact development rounding and fixed equal means. The new full model actually replayed every query row. The final vector was frozen before canonical-label access; separate model/source checks and complete-group compensated scores agree. The newer item154 development candidate has a separate full-fit queue and no qualifying score yet."
 }

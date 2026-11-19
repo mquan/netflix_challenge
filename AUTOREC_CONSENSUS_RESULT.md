@@ -1,5 +1,23 @@
 # Own fixed consensus: development0.8592432880
 
+Completed qualifying result: **source0 0.8608202877523957 /source1
+0.8618006321174798**. Both improve the preceding verified0.8608774626 /
+0.8618605526. The worse group improves9.5222433% over0.9525; both still miss
+the strict0.85725 target, leaving0.0045506321 RMSE on the worse group.
+The actual full new NN7/9/8 saved-model replay, original full-model bindings,
+exact frozen rounded consensus and independent canonical complete-group
+compensated scores pass. Frozen prediction SHA256:
+afb6a8ea235d688db4f092fa74886b23d7af2681fe93d332d132beaa038ce0ae.
+Evidence: experiments/upstream-autorec-consensus-stream-production/
+independent-verification.json. No qualifying outcomes fitted or selected this
+recipe. These are adaptive recovered audits, not official/untouched Test.
+
+The later item154 development result0.8592309820 is better than this
+consensus's0.8592432880. It has a separately frozen full NN7/7/8 queue;
+its qualifying result remains pending.
+
+The following is the original development result and full-fit plan:
+
 The fixed equal average of the verified own107/all90 expanded-tree ensemble
 and its own109 autoencoder-augmented counterpart scores **0.8592432880327434**
 on all1,128,164 known-ProbeX rows. This improves0.8592720612630157 by

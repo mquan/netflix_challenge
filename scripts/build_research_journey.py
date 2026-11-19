@@ -15,6 +15,9 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH AutoRec consensus qualifying', '0.8618006321174798', '2026-11-19T21:09:20.189306+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Own fixed consensus: verified qualifying improvement', 'Known-development-selected fixed equal consensus of the two rounded family means. Original replayed full tree50/NN90 reused; new own109 NN7/9/8 fitted on all known labels and actually replayed on every qualifying row. Final float32 vector frozen before canonical-label access. Separate complete-group compensated scores0.8608202878 /0.8618006321 improve both preceding groups, but still miss0.85725. No qualifying outcomes in fitting/selection.', 'experiments/upstream-autorec-consensus-stream-production/independent-verification.json', 'complete frozen consensus, actual model replay and independent canonical group scoring'),
+    ('FRESH AutoRec consensus', '0.8592432880327434', '2026-11-19T20:49:30.654060+00:00', 'Fresh training', 'fresh_cv', 'codex', 'development', 'Own fixed consensus: new verified development best', 'Post-study fixed equal average of the verified own107/all90 and own109/all90 expanded-tree ensembles. Weights declared after component development scores, before this mean; no weight search or qualifying-based selection. Exact float32 mean and separate compensated score verify0.8592432880. Qualifying recipe frozen separately.', 'experiments/upstream-autorec-consensus/verification.json', 'complete source/model rehash and separate mean verification'),
+    ('FRESH107 item154 mean', '0.8592309819864167', '2026-11-19T21:02:27.793803+00:00', 'Fresh training', 'fresh_cv', 'codex', 'development', 'Own64 item context: new verified development best', 'Own107/all90 plus64 fixed unsupervised item components from our freshly trained RBM150 and temporal-SVD400 factors. All five nested folds and15 actual saved-model replays pass. Disk-guard recovery preserved the original recipe, first four receipts and incomplete fifth-fold archive. Predeclared expanded-tree half mean and separate compensated score verify0.8592309820, improving the preceding consensus0.8592432880. No qualifying score yet.', 'experiments/upstream-rbm50-tree-item154-mps/verification.json', 'complete same-recipe recovery, actual saved-model replay and separate mean verification'),
     ('FRESH109 AutoRec mean screen', '0.859274524524327', '2026-11-19T20:43:34.949782+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Own AutoRec additions: existing best retained', 'Fixed own raw autoencoder snapshots5/10 added to own107/all90. All five nested user folds and15 actual saved-model replays pass; separate fixed mean and compensated scoring agree0.8592745245, above0.8592720613. No new global record or qualifying refit. The original50/50 raw trajectory continues.', 'experiments/upstream-rbm50-tree-autorec109-mps/verification.json', 'complete held-user predictions, actual saved-model replay and separate mean verification'),
     ('FRESH110 GPU mean screen', '0.8592996370615437', '2026-11-19T19:38:19.008309+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Whole110 GPU mean: existing best retained', 'Complete whole110 neural fitting and all15 actual saved-model replays. Post-study fixed half mean with the expanded tree, declared after the neural result; no preregistration before that result is claimed. Score0.8592996371 is higher than0.8592720613. No new global record, full-known refit or qualifying audit.', 'experiments/upstream-rbm50-tree-whole110-post-study/verification.json', 'complete held-user predictions and actual saved-model replay'),
     ('FRESH166 GPU mean screen', '0.8592892332444937', '2026-11-19T19:38:21.642546+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Own166 GPU mean: existing best retained', 'Fixed all59 captured own snapshot additions, same five nested known-user folds and all15 actual saved-model MPS replays. Expanded-tree half mean0.8592892332 is higher than0.8592720613. Ridge diagnostic improvement did not carry through to this nonlinear recipe. No qualifying refit.', 'experiments/upstream-rbm50-tree-warm166-mps/verification.json', 'complete held-user predictions and actual saved-model replay'),
@@ -204,14 +207,14 @@ def qualifying_svg():
 
 def fresh_status_html():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
-    if record['best_development_rmse']!=.8592720612630157 or record['qualifying_status']!='audited_miss':
+    if record['qualifying_status']!='audited_miss':
         raise ValueError('Review the site narrative before publishing a changed result')
     candidate=EXPERIMENTS/'upstream-rbm50-tree-latent90-mps/verification.json'
     development=json.loads(candidate.read_text())
     check_path=candidate.parent/'independent-mean-check.json';checked=json.loads(check_path.read_text())
-    if (hashlib.sha256(candidate.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
+    if (hashlib.sha256(candidate.read_bytes()).hexdigest()!=record['preceding_independent_verification_sha256'] or
         development['state']!='complete_verified_fixed_combination' or not development['improves_previous'] or
-        development['rmse']!=record['best_development_rmse'] or not development['fixed_average_bitwise_equal'] or
+        development['rmse']!=.8592720612630157 or not development['fixed_average_bitwise_equal'] or
         not development['original_saved_model_replays_verified'] or
         checked['verification_sha256']!=hashlib.sha256(candidate.read_bytes()).hexdigest() or
         not checked['fixed_mean_bitwise_equal'] or abs(checked['rmse']-development['rmse'])>1e-12):
@@ -222,6 +225,26 @@ def fresh_status_html():
             [row['fold'] for row in replay['records']]!=list(range(5)) or
             not all(row['bitwise_equal'] for row in replay['records'])):
             raise ValueError('Actual saved-family replay evidence is incomplete')
+    current_path=ROOT/record['development_verification_path'];current=json.loads(current_path.read_text())
+    independent_path=ROOT/record['development_independent_check_path'];independent=json.loads(independent_path.read_text())
+    kind=current['state']
+    if kind=='complete_fixed_post_study_consensus':
+        checked_state='complete_independent_consensus_and_score';checked_flag='stored_consensus_bitwise_equal'
+    elif kind=='complete_verified_fixed_combination':
+        checked_state='complete_separate_stored_mean_and_score_check';checked_flag='fixed_mean_bitwise_equal'
+    else:raise ValueError('Unrecognized verified development combination')
+    if (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
+        current['rmse']!=record['best_development_rmse'] or current['weights']!=[.5,.5] or
+        current['rmse']>=development['rmse'] or current['qualifying_labels_read'] is not False or
+        independent['state']!=checked_state or not independent[checked_flag] or
+        independent['verification_sha256']!=record['independent_verification_sha256'] or
+        abs(independent['rmse']-current['rmse'])>1e-12):
+        raise ValueError('Current development result requires exact independent mean/score evidence')
+    for relative in record['development_required_replay_paths']:
+        path=ROOT/relative;replay=json.loads(path.read_text())
+        if (hashlib.sha256(path.read_bytes()).hexdigest()!=current['source_sha256'][relative] or
+            [r['fold'] for r in replay['records']]!=list(range(5)) or not all(r['bitwise_equal'] for r in replay['records'])):
+            raise ValueError('Current development requires all original actual saved-model replays')
     proof=EXPERIMENTS/'upstream-first85-completion-audit/verification.json'
     verified=json.loads(proof.read_text())
     if (hashlib.sha256(proof.read_bytes()).hexdigest()!=record['first85_completion_verification_sha256'] or
@@ -230,28 +253,30 @@ def fresh_status_html():
             not verified['fixed_equal_average_bitwise_verified'] or
             verified['groups']['test']['rmse']!=.8628067765436453):
         raise ValueError('The published first qualifying miss requires its actual independent proof')
-    latest=EXPERIMENTS/'upstream-rbm50-tree-latent90-production/frozen-mean-score-verification.json'
-    qualified=json.loads(latest.read_text())
-    if (hashlib.sha256(latest.read_bytes()).hexdigest()!=record['qualifying_verification_sha256'] or
-            qualified['state']!='complete_frozen_mean_and_score_verification' or
-            qualified['groups']['source1']['rmse']!=.8618605526405846 or
-            not qualified['fixed_float32_mean_bitwise_equal'] or not qualified['saved_family_replay_receipts_verified'] or qualified['label_git_blob']!='47ed4788ffba11aad029854a8e60d4dee04fc899' or
-            qualified['qualifying_labels_used_for_fitting_or_selection'] or qualified['both_groups_below_target']):
-        raise ValueError('The new own107/RBM50 qualifying best requires its exact predeclared frozen-vector evidence')
-    rows=''.join(f'<tr><td>{escape(row["work"])}</td><td>{escape(row["state"])}</td></tr>' for row in record['work'])
-    latest_path=EXPERIMENTS/'upstream-rbm50-tree-latent90-production/frozen-mean-score-verification.json'
-    latest=json.loads(latest_path.read_text())
+    latest_path=ROOT/record['latest_qualifying_verification_path'];latest=json.loads(latest_path.read_text())
+    if latest['state']=='complete_independent_frozen_consensus_and_scores':
+        mean_ok=latest['exact_rounded_consensus_bitwise_equal']
+        replay_ok=latest['actual_new_full_neural_replay_verified'] and latest['original_full_model_replays_reused_and_verified']
+    elif latest['state']=='complete_frozen_mean_and_score_verification':
+        mean_ok=latest['fixed_float32_mean_bitwise_equal'];replay_ok=latest['saved_family_replay_receipts_verified']
+    else:raise ValueError('Unrecognized independently verified qualifying result')
     if (hashlib.sha256(latest_path.read_bytes()).hexdigest()!=record['latest_qualifying_verification_sha256'] or
-            latest['groups']!=record['latest_qualifying_groups'] or latest['both_groups_below_target']):
-        raise ValueError('Review the latest qualifying audit and target narrative before publishing')
+        record['qualifying_verification_sha256']!=record['latest_qualifying_verification_sha256'] or
+        latest['groups']!=record['latest_qualifying_groups'] or not mean_ok or not replay_ok or
+        latest['label_git_blob']!='47ed4788ffba11aad029854a8e60d4dee04fc899' or
+        latest['qualifying_labels_used_for_fitting_or_selection'] or latest['both_groups_below_target'] or
+        [latest['groups'][k]['rows'] for k in ['source0','source1']]!=[1408789,1408342]):
+        raise ValueError('Exact frozen-model replay and independent canonical group evidence required')
+    worst=max(r['rmse'] for r in latest['groups'].values());improvement=100*(1-worst/.9525)
+    rows=''.join(f'<tr><td>{escape(row["work"])}</td><td>{escape(row["state"])}</td></tr>' for row in record['work'])
     return f'''<section id="fresh" aria-labelledby="fresh-title">
       <div class="section-head"><div><div class="section-num">Current work / own trained predictions</div><h2 id="fresh-title">Reproducing the result ourselves</h2></div></div>
       <p>Snapshot: <time datetime="{escape(record['observed'])}">{escape(record['display_time'])}</time>. These are recorded training states, not a live dashboard.</p>
-      <p>The verified development best improved from <strong>0.8594554 to0.8593662, then0.8592721 RMSE</strong>. The latest fixed half mean combines our expanded107/50 tree with the larger107/all90 GPU context NN. All15 actual saved neural models replay bitwise on the Apple GPU; all15 saved trees retain their actual replays. Both families' ten originating fold receipts and models were rehashed, and separate stored-mean and compensated scoring checks agree on all1,128,164 known-ProbeX rows and462,858 users. Four folds improve and one worsens; lower aggregate RMSE is promoted. The full-known NN and tree fits and actual saved-model replays are complete, preserving the exact294-input tree and334-input NN schemas. Their fixed half mean is now frozen and independently audited. <strong>The fresh-training 10% qualifying target remains unmet.</strong></p>
-      <p>The new best independently verified own-training qualifying result is the <strong>expanded tree plus all90 GPU context NN:0.8608775 on source0 and0.8618606 on source1</strong>, improving the preceding standalone NN0.8609266 /0.8619142. The fixed50/50 weights and tree729/706/868 plus NN7/8/7 budgets came only from known-ProbeX evidence before full fitting and these qualifying outcomes. Both actual saved-model inference replays passed, then the exact float32 mean was frozen before canonical-label access. Full group counts, model/scaler/source bindings and separate compensated scores verify both groups. The worse group improves <strong>9.5160%</strong> over Cinematch, leaving0.0046106 RMSE to the strict0.85725 target. No qualifying outcomes fit or select weights. Previously disclosed paired-parent source differences remain explicit. The original rank1000 model is now complete20/20 with independent proof. Whole110, own166 and the larger512-unit follow-on have now completed without lowering the existing development best. Their failed controls remain visible in the graph. The new own raw masked-denoising autoencoder has replayed snapshot5/10 pairs; its first nonlinear extension scores0.8592745, narrowly above the current record. A fixed64-component own item-context study is queued next. Raw50/50 training continues at checkpoint boundaries.</p>
+      <p>The verified own-training development best is <strong>{record['best_development_rmse']:.7f} RMSE</strong>. {escape(record['development_narrative'])} Exact stored-mean reconstruction, original saved-model replay evidence and separate compensated scoring pass on all1,128,164 known-ProbeX rows. <strong>The fresh-training10% qualifying target remains unmet.</strong></p>
+      <p>The independently verified own-training qualifying result is <strong>{latest['groups']['source0']['rmse']:.7f} on source0 and{latest['groups']['source1']['rmse']:.7f} on source1</strong>. {escape(record['qualifying_narrative'])} The worse group improves <strong>{improvement:.4f}%</strong> over Cinematch, leaving{worst-.85725:.7f} RMSE to the strict0.85725 target. No qualifying outcomes fit or select weights. Previously disclosed paired-parent source differences remain explicit. These are adaptive recovered audits, not official or untouched Test.</p>
       <div class="ledger-wrap"><table class="ledger"><thead><tr><th>Work</th><th>Recorded progress</th></tr></thead><tbody>{rows}</tbody></table></div>
       <p>Public source implementations are reused; all prediction features in this effort are trained by us. Qualifying outcomes are excluded from fitting and model selection. The final vector must be frozen and replayed before both community-recovered groups are independently scored below 0.85725. These are not official Netflix or untouched Test results.</p>
-      <p><a href="PROGRESS.md">Full progress record</a> · <a href="LATENT90_MPS_QUALIFYING_RESULT.md">Latest own-training qualifying result</a> · <a href="FIRST85_QUALIFYING_RESULT.md">First own-training qualifying result</a> · <a href="experiments/upstream-first85-completion-audit/verification.json">Independent full-model audit</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="REMOTE_RECOVERY_PROGRESS.md">Remote recovery</a> · <a href="READY_OUTPUT_COVERAGE.md">Public feature coverage</a> · <a href="SPLIT3_PILOT_PLAN.md">Original split3 pilot</a> · <a href="CONTEXT91_PRODUCTION_PLAN.md">Context91 production</a> · <a href="CONTEXT91_QUALIFYING_RESULT.md">Preceding context91 audit</a> · <a href="CF48_103_CONTEXT_RESULT.md">Own103 context result</a> · <a href="LATENT90_SUPPORT_RESULT.md">All90 original support components</a> · <a href="LATENT90_MPS_CONTROL_PLAN.md">Larger GPU neural study</a> · <a href="LATENT90_MPS_RESULT.md">Latest development result</a> · <a href="WARM59_SNAPSHOT_PLAN.md">Next59 own snapshot features</a> · <a href="WARM166_MPS_RESULT.md">Own166 GPU result</a> · <a href="MPS_AUTOREC_TRAINING_PLAN.md">Current own raw GPU model</a> · <a href="AUTOREC109_MPS_PLAN.md">Autoencoder addition result</a> · <a href="ITEM154_MPS_PLAN.md">Own item context study</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
+      <p><a href="PROGRESS.md">Full progress record</a> · <a href="AUTOREC_CONSENSUS_RESULT.md">Latest own-training qualifying result</a> · <a href="FIRST85_QUALIFYING_RESULT.md">First own-training qualifying result</a> · <a href="experiments/upstream-first85-completion-audit/verification.json">Independent full-model audit</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="REMOTE_RECOVERY_PROGRESS.md">Remote recovery</a> · <a href="READY_OUTPUT_COVERAGE.md">Public feature coverage</a> · <a href="SPLIT3_PILOT_PLAN.md">Original split3 pilot</a> · <a href="CONTEXT91_PRODUCTION_PLAN.md">Context91 production</a> · <a href="CONTEXT91_QUALIFYING_RESULT.md">Preceding context91 audit</a> · <a href="CF48_103_CONTEXT_RESULT.md">Own103 context result</a> · <a href="LATENT90_SUPPORT_RESULT.md">All90 original support components</a> · <a href="LATENT90_MPS_CONTROL_PLAN.md">Larger GPU neural study</a> · <a href="ITEM154_MPS_PLAN.md">Latest development result</a> · <a href="WARM59_SNAPSHOT_PLAN.md">Next59 own snapshot features</a> · <a href="WARM166_MPS_RESULT.md">Own166 GPU result</a> · <a href="MPS_AUTOREC_TRAINING_PLAN.md">Current own raw GPU model</a> · <a href="AUTOREC109_MPS_PLAN.md">Autoencoder addition result</a> · <a href="AUTOREC_CONSENSUS_RESULT.md">New own fixed consensus</a> · <a href="ITEM154_MPS_PLAN.md">Own item context study</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
     </section>'''
 
 
