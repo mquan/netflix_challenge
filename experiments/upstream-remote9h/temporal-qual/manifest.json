@@ -1,0 +1,54 @@
+{
+  "state": "verified_complete_own_remote_temporal_qualifying_export",
+  "observed": "2026-11-19T06:03:41.022126+00:00",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_receipt_sha256": "12421a92ea6495ece7347ecf8e7d794c52d52c8e1f14e7fbc5914e455708dac7",
+  "all63_native_outputs_rehashed": true,
+  "qual_identity_sha256": {
+    "item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe",
+    "is_test.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "user_cnts.npy": "11683c8d524038c81d307ed29431cf47b40ee51f1482da536ea1ec62dc6cd20b",
+    "ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "item_cnts.npy": "03e05a436f944272cc922597de2417407d15c6e1c7e659cb9fcfe2dc06217158"
+  },
+  "qualifying_targets_all_zero": true,
+  "qualifying_labels_read": false,
+  "records": [
+    {
+      "name": "tsvdx5-150o",
+      "rows": 2817131,
+      "source_npy_sha256": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef",
+      "npz": "tsvdx5-150o.qual.npz",
+      "npz_sha256": "f0da0c40fa58aa182fdfc61ad2a8a8007b5a6cc7c30bc0017f0843dc8fd0d215",
+      "prediction_bytes_sha256": "b872eaa710180fc76a4b8ca5a89a4e672e95f29d5e8fcc74299c3867a09c6119"
+    },
+    {
+      "name": "tsvdx5-150o_ep06",
+      "rows": 2817131,
+      "source_npy_sha256": "fbed339341476befabf151c495a9ab3b1bf65070d7eb18a4950364be4687923f",
+      "npz": "tsvdx5-150o_ep06.qual.npz",
+      "npz_sha256": "8b05d32489457941e4ca539fdd5a94365d79f421507ddf929eb87318f448a3c7",
+      "prediction_bytes_sha256": "4e55eb92225bb25ee086d5b9f688e6be66c83d151976e797bba48771437abc09"
+    },
+    {
+      "name": "tsvdx5-150o_ep16",
+      "rows": 2817131,
+      "source_npy_sha256": "7bf8b984503384d0a953073d717bdea89f1ee11318c89eb75063e447f7b14962",
+      "npz": "tsvdx5-150o_ep16.qual.npz",
+      "npz_sha256": "702c3c3096281caa1a0db52b93c30069117ac0bbf604b0f9e8c9aeb73e39313e",
+      "prediction_bytes_sha256": "f69670b08ad30425ec5f7412469fb50198ab53693bf6cfde8365254c9c3b253f"
+    },
+    {
+      "name": "tsvdx5-150o_ep24",
+      "rows": 2817131,
+      "source_npy_sha256": "afa2563a32e67137783c7d97b563467083e3788c09bf184ee42725766e0bf78b",
+      "npz": "tsvdx5-150o_ep24.qual.npz",
+      "npz_sha256": "a36bb1cf8749a981d8145b039dbc0617d7efad085acd95bbf9151e15712e0175",
+      "prediction_bytes_sha256": "8931157b3cdc2f42e01b57422e2f05dad8ba45b2f916724a29efbc73ff426785"
+    }
+  ],
+  "provenance": "Our completed original two-phase source job, recovered from its own remote native output tree. No released/pretrained prediction input."
+}
