@@ -1,0 +1,101 @@
+{
+  "state": "complete",
+  "manifest_sha256": "24933a00eecd67f788ad4328c70c107cb6a1c7a36af63fafd28c09e36e17b803",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8633016697976109,
+      "delta_vs_control": 8.360023784348414e-11,
+      "fold_rmse": [
+        0.8627318079034154,
+        0.8605862476491957,
+        0.8640782516429094,
+        0.8649489543132434,
+        0.8641661030941916
+      ],
+      "fold_delta": [
+        2.455207148699401e-10,
+        5.6045057483800065e-11,
+        2.329083592655934e-10,
+        -2.7148250314468214e-10,
+        1.561886175949212e-10
+      ],
+      "prediction_sha256": "feab1357dc7e5f02cd4fb89bf580387397e7e261cbc302540edf46e4041001fc",
+      "delta_vs_previous_best": 0.003271609609242332
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_control": -0.0026176267032247402,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "fold_delta": [
+        -0.002908962866436604,
+        -0.002438903634912948,
+        -0.002428098298235981,
+        -0.0025971883757610614,
+        -0.0027122643118417944
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430",
+      "delta_vs_previous_best": 0.0006539828224173538
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8602525702855846,
+      "delta_vs_control": -0.0030490994284261275,
+      "fold_rmse": [
+        0.8593798971621565,
+        0.8575312005183522,
+        0.8612500736961999,
+        0.86215698355158,
+        0.8609496338101675
+      ],
+      "fold_delta": [
+        -0.0033519104957382417,
+        -0.0030550470747984226,
+        -0.002828177713801172,
+        -0.002791971033145879,
+        -0.003216469127835464
+      ],
+      "prediction_sha256": "5ce0450098011d12843ada02ddff16724e67e9ed1d0416e59807b473f9a9ed21",
+      "delta_vs_previous_best": 0.0002225100972159666
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8601526901474829,
+      "delta_vs_control": -0.003148979566527821,
+      "fold_rmse": [
+        0.8592845435521078,
+        0.8575151189600438,
+        0.8611198038739516,
+        0.8619425982551999,
+        0.8609066009072299
+      ],
+      "fold_delta": [
+        -0.0034472641057868847,
+        -0.0030711286331067678,
+        -0.0029584475360494578,
+        -0.00300635632952595,
+        -0.003259502030773076
+      ],
+      "prediction_sha256": "9490e36f8df8b8abb6f981ce8b9b122f8e4e47e905425eac1b952801ff0a4ba8",
+      "delta_vs_previous_best": 0.0001226299591142732
+    }
+  ],
+  "scope": "Adaptive ProbeX source-model extension; no official or untouched Test claim.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero.",
+  "parent_best_rmse": 0.8600300601883686,
+  "development_reference": {
+    "rmse": 0.8600300601883686,
+    "report": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-cf12-tree",
+    "evaluation_sha256": "dde668dc1d5043b7d624de264765b6fb4e0d04b38b3864e7023e361374444c9e",
+    "verification_sha256": "7b37545f92432d69fcf7f1b8ee44062087203fd1da1120ef4d56785c4a4692e3",
+    "manifest_sha256": "fc6ede9b4d1a9d0566b23ef17e6d4b9d6e0f363bcff7e1d9967fde7672170768"
+  },
+  "runner_sha256": "dd1c9709870d4c8ec6ff9573e58436094264e19335570c7c59c4fb688938f6f6"
+}

@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T08:55:33.028140+00:00",
+  "script_sha256": "3813f5734d3cfdd40053ae6974878cc8536fa40376f7ea84bb25ee162bf1c30c",
+  "origins": [
+    [
+      "tree",
+      "upstream-source-extension"
+    ],
+    [
+      "nn",
+      "upstream-cf12-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Single adaptive known-ProbeX candidate after fixed91 plain mean failed. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}
