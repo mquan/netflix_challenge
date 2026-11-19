@@ -1,5 +1,24 @@
 # Continue the source DAG within the current laptop's capacity
 
+At 2026-11-19 03:37 UTC the AEX-aware handoff reached the completed
+`attn-32-t` receipt and terminated the idle predecessor. Its subsequent process
+identity check failed closed with `Predecessor PID changed identity`; no
+successor had launched. The predecessor's status acknowledged SIGTERM and its
+PID and wrapper group were absent on independent inspection. The transient
+process row that caused the identity rejection was not recorded.
+
+`scripts/upstream_primary_handoff_recover.py` recovered that specific state
+without sending signals: it required absent predecessor/children, no other
+primary scheduler, an available runner lock, unchanged frozen handoff hashes,
+the completed auxiliary import and the hash-valid attention receipt. It then
+launched the unchanged AEX-aware guarded successor, PID27177, which started
+the original AEX16 recipe. All11 parallel heap jobs remain held; AEX128 and
+CFNADE48/96/96r remain delegated. Three recovery checks cover live PID,
+actual live wrapper-group and competing-scheduler rejection. Evidence is in
+`experiments/upstream-primary-handoff-aex/{recovery,result,independent-verification}.json`.
+The AEX reuse adapter has accepted this successor and waits for the complete
+independent AEX128 job before attempting an idle-boundary import.
+
 The original scheduler remains unchanged. Its existing storage hold list misses
 the `tsvdx4p-*` heap models; the largest of these exceed this laptop's memory.
 It could also duplicate the original CFNADE-48/96/96r work already assigned to

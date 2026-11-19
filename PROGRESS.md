@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T03:22:20Z
+timestamp: 2026-11-19T03:40:06Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -26,14 +26,15 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | Work | Verified state at this update |
 | --- | --- |
 | First paired production bank | **81/85**; only four temporal columns missing |
-| Temporal150 original fulltrain/qual phase | **18/25 epochs**; requires full completion and paired receipt |
-| CFNADE-96 original phases | **23/95 ProbeX**, **22/95 qualifying** |
-| CFNADE-48 original phases | **18/95 ProbeX**, **17/95 qualifying** |
-| AEX128 original independent job | **16/20**, first phase |
-| Completed native work | CFNADE-12, attention32 and all six DNN follow-on endpoints |
+| Temporal150 original fulltrain/qual phase | **19/25 epochs**; requires full completion and paired receipt |
+| CFNADE-96 original phases | **23/95 ProbeX**, **23/95 qualifying** |
+| CFNADE-48 original phases | **19/95 ProbeX**, **19/95 qualifying** |
+| AEX128 original independent job | **19/20**, first phase |
+| Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
+| Primary DAG continuation | Guarded successor PID27177 running original AEX16; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
-| Additional development iteration | Matching86-predictor tree fitting; verified86-context NN reused unchanged |
+| Additional development iteration | Matching86-predictor tree completed fold0, fitting fold1; verified86-context NN reused unchanged |
 | Six-model extension gate | Requires improvement over current verified context best, strengthened by matching-tree result if complete; six relevant checks pass |
 
 Seven native training workers remain active. Partial native outputs are not

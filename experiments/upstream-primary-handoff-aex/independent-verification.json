@@ -1,0 +1,33 @@
+{
+  "state": "verified_guarded_successor_running",
+  "observed": "2026-11-19T03:40:03.341136+00:00",
+  "pid": 27177,
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
+  "process_state": "Ss",
+  "handoff_result_sha256": "cc6c9e7f181db7632fd9a6b1248d29bab4aa2cb04818f30174ccbd4de88181b5",
+  "recovery_sha256": "e5d2f7505e97f30dd731556b5589e7f13a5c99406850e6691b5a6f4fdcde9e10",
+  "inventory_sha256": "b2b18ae4a4984f474001eecf65138e15dcf82d788c453128c33a6455b26f00cd",
+  "all_frozen_handoff_code_hashes_unchanged": true,
+  "all_parallel_heap_jobs_held": [
+    "tsvdx4p-1000lm",
+    "tsvdx4p-1000lm__knnf",
+    "tsvdx4p-16000lm",
+    "tsvdx4p-2000lm",
+    "tsvdx4p-2000lm__knnf",
+    "tsvdx4p-4000lm",
+    "tsvdx4p-4000lm__epochs",
+    "tsvdx4p-6000lm",
+    "tsvdx4p-6000lm__knnf",
+    "tsvdx4p-8000lm",
+    "tsvdx4p-8000lm__knnf"
+  ],
+  "delegated_source_jobs": [
+    "aex-128",
+    "cfnade-48",
+    "cfnade-96",
+    "cfnade-96r"
+  ],
+  "aex_reuse_adapter_waiting_for_complete_native_job": true,
+  "current_job": "aex-16",
+  "qualifying_labels_read": false
+}

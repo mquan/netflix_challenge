@@ -1,0 +1,19 @@
+{
+  "state": "verified_absent_predecessor",
+  "original_launch": {
+    "pid": 19701,
+    "caffeinate_pid": 19702,
+    "utc": "2026-11-18T16:24:08.326011+00:00"
+  },
+  "prior_failure": {
+    "state": "incomplete_preserved",
+    "error": "ValueError('Predecessor PID changed identity')"
+  },
+  "completed_boundary_job": "attn-32-t",
+  "native_receipt_sha256": "f6cfa4efd40fb2d6402d4aa62e899be443a5f0b8fa83731ebc1709ff048bbd9a",
+  "handoff_plan_sha256": "9d5278da9e321a361dba5e7476e2c171449bedad69389cc83a55a9234f2a3c04",
+  "script_sha256": "a232f8316b3d60b88c528406254ced5d4846d03b7457029f08a4d10b958b91d9",
+  "no_process_signals_sent": true,
+  "primary_runner_lock_available": true,
+  "scope": "Recover after identity validation rejected the exiting predecessor. Absence, acknowledged TERM, no live wrapper group, unchanged source bindings and completed native receipt independently rechecked. Original frozen handoff and successor code unchanged."
+}

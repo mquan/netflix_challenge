@@ -1,0 +1,20 @@
+{
+  "state": "successor_launched",
+  "launch": {
+    "pid": 27177,
+    "caffeinate_pid": 27178,
+    "utc": "2026-11-19T03:38:32.829839+00:00",
+    "predecessor": {
+      "pid": 19701,
+      "caffeinate_pid": 19702,
+      "utc": "2026-11-18T16:24:08.326011+00:00"
+    },
+    "script": "scripts/upstream_primary_guarded_aex.py",
+    "handoff_plan_sha256": "9d5278da9e321a361dba5e7476e2c171449bedad69389cc83a55a9234f2a3c04",
+    "recovery_sha256": "e5d2f7505e97f30dd731556b5589e7f13a5c99406850e6691b5a6f4fdcde9e10"
+  },
+  "auxiliary_import_sha256": "bb4059814cad79776f20931691152affb88a51f3a0809161670926292c84375e",
+  "completed_boundary_job": "attn-32-t",
+  "recovery_sha256": "e5d2f7505e97f30dd731556b5589e7f13a5c99406850e6691b5a6f4fdcde9e10",
+  "qualifying_labels_read": false
+}
