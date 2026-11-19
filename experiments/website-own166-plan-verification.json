@@ -1,0 +1,35 @@
+{
+  "observed": "2026-11-19T19:07:45.525487+00:00",
+  "pages_commit": "c9f22be",
+  "state": "complete_live_byte_verification",
+  "files": [
+    {
+      "path": "",
+      "bytes": 127752,
+      "matches": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "bytes": 20059,
+      "matches": true
+    },
+    {
+      "path": "WARM59_SNAPSHOT_PLAN.md",
+      "bytes": 2352,
+      "matches": true
+    },
+    {
+      "path": "WARM166_MPS_PLAN.md",
+      "bytes": 2580,
+      "matches": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-tree-latent90-production/nn-replay.json",
+      "bytes": 299,
+      "matches": true
+    }
+  ],
+  "development_rmse": 0.8592720612630157,
+  "qualifying_worse_group_rmse": 0.8619141823430468,
+  "goal_achieved": false
+}

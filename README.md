@@ -30,10 +30,10 @@ verify. The separately predeclared tree91/NN103 half mean also improves, to
 0.8610694977 /0.8620220770. These are adaptive recovered audits, not official Test.
 No qualifying outcomes entered fitting or candidate/weight selection.
 
-The new tree/NN mean awaits its full-known tree refit and frozen qualifying
-audit. Both original latent models are complete20/20 and all90 support columns
+The selected mean’s full-known GPU neural fit and saved-model replay passed;
+the CPU tree refit is active before the frozen qualifying audit. Both original latent models are complete20/20 and all90 support columns
 are independently verified. The larger hidden128/rank32 GPU study is now complete;
-its selected two-family full-known refit is queued. The rank1000 model has logged its last epoch; complete output proof
+its selected two-family full-known refit is active. The rank1000 model has logged its last epoch; complete output proof
 is still required before whole110 assembly. CF96 continues toward95/95, and
 the next original split3 DNN is training.
 See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md) for the latest
