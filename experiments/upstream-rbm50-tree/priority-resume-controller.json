@@ -1,7 +1,8 @@
 {
-  "pid": 9639,
-  "observed": "2026-11-19T16:44:51.164505+00:00",
-  "script_sha256": "07f129dd0856c80bf2421315d8c1f1f14d068a0b5f95747e85dfd279a26ef3a1",
-  "previous_idle_resumer": 9074,
-  "owner_identity_excludes_mutable_scheduling_state": true
+  "state": "one_original_tree_controller_queued_after_full_nn",
+  "pid": 9504,
+  "observed": "2026-11-19T16:45:25.531928+00:00",
+  "redundant_idle_resumer_stopped": 9639,
+  "original_resumer_exited_after_launch": true,
+  "scope": "Original tree controller9504 owns its single run lock and waits on the full NN fitting lock. No duplicate model worker started."
 }
