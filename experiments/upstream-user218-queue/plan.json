@@ -1,0 +1,32 @@
+{
+  "created": "2026-11-19T21:26:49.893623+00:00",
+  "code_sha256": {
+    "scripts/upstream_user218_queue.py": "113ba92cdeace528d9d2ab8b6e4f5503b2aa8ed0f5191c1ccf7ed84613b5c36e",
+    "scripts/upstream_user218_mps_context.py": "8369b2ce80f2ec6b759406e08c59f9363bc20bca9838cad27afc887716c0c732",
+    "scripts/upstream_user218_features.py": "a41c76086ca60128b91d4710c7be1b99274545f4c345f4b55ca01f116b0e35df",
+    "scripts/upstream_rbm50_tree_user218_mps.py": "04df430749fae6cd122e63f205ac6d85dc36b1e640d6b675a1a8099ef3e44777",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4"
+  },
+  "fixed_addition": "Own epoch20 trainx autoencoder top64 user PCA; same user table for both queries",
+  "raw_prediction_columns": 107,
+  "learned_support_columns": 218,
+  "inputs": 462,
+  "hidden": 128,
+  "context_rank": 32,
+  "origins": [
+    "upstream-rbm50-tree",
+    "upstream-user218-mps-context"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "reference_development_rmse": 0.8592309819864167,
+  "qualifying_labels_read": false,
+  "resource_policy": {
+    "memory_total_bytes": 25769803776,
+    "consecutive_high_samples": 3,
+    "disk_floor_bytes": 8589934592
+  },
+  "rule": "Retain original five nested user folds, seeds, optimizer and stopping. Require verified third saved-encoder pass, independent covariance and all user rows before fitting. All15 actual NN model replays and separate stored fixed-mean score required. No automatic production or qualifying selection."
+}

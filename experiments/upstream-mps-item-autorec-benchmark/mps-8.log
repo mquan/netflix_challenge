@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/benchmark_upstream_mps_item_autorec.py", line 81, in <module>
+    worker(a.device,a.batch) if a.device else run()
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/benchmark_upstream_mps_item_autorec.py", line 39, in worker
+    for _ in range(4):step()
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/benchmark_upstream_mps_item_autorec.py", line 37, in step
+    opt.zero_grad(set_to_none=True);loss.backward();opt.step()
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+    out = func(*args, **kwargs)
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 79, in _use_grad
+    ret = func(*args, **kwargs)
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/adam.py", line 248, in step
+    adam(
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/optimizer.py", line 157, in maybe_fallback
+    return func(*args, **kwargs)
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/adam.py", line 970, in adam
+    func(
+  File "/Users/quan/workspace/netflix_upstream_repro/.venv/lib/python3.10/site-packages/torch/optim/adam.py", line 544, in _single_tensor_adam
+    denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+RuntimeError: MPS backend out of memory (MPS allocated: 3.01 GiB, other allocations: 6.62 MiB, max allowed: 3.20 GiB). Tried to allocate 236.00 MiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

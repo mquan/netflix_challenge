@@ -1,0 +1,18 @@
+{
+  "created": "2026-11-19T21:22:39.271305+00:00",
+  "config": {
+    "epoch": 20,
+    "rank": 64,
+    "users": 480189,
+    "items": 17770,
+    "hidden": 512,
+    "batch_users": 256,
+    "phase": "trainx"
+  },
+  "code_sha256": {
+    "scripts/upstream_autorec_user64.py": "decb4d0a14bcc4678ab62c4dcc21053bada05a3ccf8b4a327656097fd4d7d7f9",
+    "scripts/verify_upstream_autorec_user64.py": "7911dc11b97b59c47322ff29249dd4e8ec0665b64179fd1c247e89b9f0bf27fc"
+  },
+  "rule": "Fixed epoch20, rank64, all480189 trainx histories and learned encoder. No dropout at extraction. Two complete saved-model encoder passes must match bitwise. Center/covariance fitted without query ratings; no epoch/rank or qualifying-based search. Require separate saved-encoder inference and covariance/projection check before downstream use.",
+  "qualifying_labels_read": false
+}
