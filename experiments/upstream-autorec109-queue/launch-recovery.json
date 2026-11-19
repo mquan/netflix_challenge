@@ -1,0 +1,7 @@
+{
+  "pid": 40164,
+  "observed": "2026-11-19T20:35:13.614756+00:00",
+  "reason": "Initial launcher resolved the venv interpreter symlink to base Python, which lacked numpy; import failed before any plan/cache/model or fitting. Use absolute venv path without resolving symlink.",
+  "prior_log": "launch.log",
+  "prior_plan_absent": true
+}

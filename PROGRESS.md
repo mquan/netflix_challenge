@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T20:12:18.474211+00:00
+timestamp: 2026-11-19T20:44:44.463506+00:00
 best_score: 0.8592720612630157
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,28 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Latest: the own109 autoencoder extension completed all five folds and15 actual
+saved-model replays. Its predeclared expanded-tree half mean **0.859274524524327**
+is slightly higher than **0.8592720612630157**; separate stored-mean and canonical
+known-label scoring agree. No global promotion or qualifying refit. The next
+fixed study adds64 unsupervised item components from our freshly trained RBM150
+and temporal-SVD400 factors to own107/all90. Independent PCA and every-query-row
+checks pass; its398-input neural controller is queued under the shared GPU lock.
+See [AUTOREC109_MPS_PLAN.md](AUTOREC109_MPS_PLAN.md) and
+[ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md).
+
+Both split3 DNN16t and DNN32nm now complete original7/7 with separate completion
+proofs. Small NADE is running. CF96 is at49/95 and47/95 in the latest observed
+snapshot; raw AutoRec resumes from actual epoch boundaries between meta studies.
+The verified qualifying best remains0.8608774626 /0.8618605526, below the required
+10% improvement. Earlier observations below are retained as history.
+
+The new own raw autoencoder has completed its first declared epoch5 pair.
+Both actual saved-model query replays pass; independent binding and known-only
+single-component scoring give0.9332148095. This is not a new ensemble score or
+qualifying gain. Its fixed50/50 run continues, with the latest controller already
+working through epoch10. Source/model receipts are preserved independently.
 
 Current iteration: all three follow-on GPU controls completed without a new
 record: expanded-tree means0.8592996371 (whole110),0.8592892332 (own166) and

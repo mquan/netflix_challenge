@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "18413227bf5095107f7238a3d87ff21a10a8777a447db5151f93fac18b98be3d",
+  "plan_sha256": "fb8e2dd8b7e48054c4261bf1943fd7e9fffbfc18ad7f4de1750a031cc69c7bc3",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625774187158269,
+      "max_prediction_error": 5.002220859751105e-12,
+      "prediction_sha256": "a46162c530b11f8718ea2691608c92ae8357427d366b06610aa35affe61cdcd3"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, solves and every stored prediction replay for fixed own raw snapshot5/10 additions. No whole50-epoch completion, nonlinear or qualifying score claimed.",
+  "wrapper_sha256": "4ec6318a7b120e4daa9f0e0e1198d82375a446dd8686b12e24d640de06df151a"
+}

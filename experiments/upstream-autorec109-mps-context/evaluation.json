@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "ab3584c7392b46d787d47d8d1ba929ff8174368b183e1d394faa98f00694a5af",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625774186257037,
+      "delta_vs_previous_best": 0.0031220093193286003,
+      "fold_rmse": [
+        0.8619864410423806,
+        0.8598775713389439,
+        0.8633709878927074,
+        0.8642190037975751,
+        0.8634363491649533
+      ],
+      "prediction_sha256": "83943d574bc2bce10f20a26aab93cbeb93b4ca9687bc571fadfec162c961c742"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.001228633704410842,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8594001511750141,
+      "delta_vs_previous_best": -5.525813136098012e-05,
+      "fold_rmse": [
+        0.8585282895256687,
+        0.856811194345626,
+        0.8604625833095758,
+        0.8612283896005316,
+        0.8599762099955274
+      ],
+      "prediction_sha256": "c10488138339cd30452d4080dbbaaace814f7e7c279c9fa6c23cdd3bb39d61bc"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8593818000933197,
+      "delta_vs_previous_best": -7.360921305543666e-05,
+      "fold_rmse": [
+        0.8585021675562334,
+        0.8568244079428841,
+        0.8604248516711607,
+        0.8611195812479719,
+        0.8600440936883447
+      ],
+      "prediction_sha256": "cbb60515972d1b5257f2bd848b3699a4ca84a3d7cecf103967e49a0b38a58d9d"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Adaptive known-ProbeX only. Fixed larger rank32/hidden128 context architecture on own109 plus all90 original RBM user/Tx user/item latent context features, same five nested user folds/seeds/optimizer/stopping; separately declared float32 MPS training/inference, with device-specific dropout RNG. Reuses actual verified tree91, without synthetic fitting receipts. Adds fixed own raw autoencoder snapshots5/10; whole50 completion is not claimed. No production or qualifying audit launched.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

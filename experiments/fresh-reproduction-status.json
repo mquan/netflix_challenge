@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T20:12:18.474211+00:00",
-  "display_time": "2026-11-19 20:12 UTC",
+  "observed": "2026-11-19T20:44:44.463506+00:00",
+  "display_time": "2026-11-19 20:44 UTC",
   "best_development_rmse": 0.8592720612630157,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,16 @@
   "independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
   "work": [
     {
+      "work": "Own109 raw autoencoder nonlinear extension",
+      "state": "Complete: all five folds,15 actual saved MPS model replays and separate fixed mean check pass. Mean0.8592745245 is above0.8592720613; current best retained, no qualifying refit."
+    },
+    {
+      "work": "Own64 item-context /154-support study",
+      "state": "Fixed top32 PCA components from each of our freshly trained RBM150 and temporal-SVD400 item tables. Independent spectrum/projection and every known/qualifying gather replay pass. Five-fold398-input H128/rank32 study queued under the shared GPU lock; no accuracy claim yet."
+    },
+    {
       "work": "Own real-data raw GPU autoencoder",
-      "state": "Actual50/50 alternating-epoch training is running. Both original histories independently replayed on every one of99,352,343 /100,480,507 rows; phase query pairs absent, qualifying targets zero. First real epoch took41.5 /41.2 seconds per phase before checkpoint overhead. Fixed snapshots5/10/20/30/40/50 require actual full saved-model query replay. No model accuracy result yet."
+      "state": "Declared50/50 training continues. Snapshot5/10 pairs pass actual saved-model inference replay on every query row and separate source/model checks. Known-only raw component scores0.9332148095 /0.9321417324. The fixed addition ridge improves0.8625801964 to0.8625774187, but its full nonlinear mean0.8592745245 is higher than the record. No qualifying gain."
     },
     {
       "work": "Larger own166 hidden512/rank64 control",
@@ -31,7 +39,7 @@
     },
     {
       "work": "Whole110 raw/all90 paired assembly",
-      "state": "Queue23659 waits for verified paired90 and whole110 development caches. Exact fixed native order, all retained/new columns checked separately; no fit or score."
+      "state": "Completed and all columns checked. No fitted model consumed this paired cache; its four reconstructible matrices were independently hash-checked and retired to reclaim11.17GB. Original sources/models/receipts and the consumed development cache remain preserved."
     },
     {
       "work": "Three complete native rating-pair batch",
@@ -43,7 +51,7 @@
     },
     {
       "work": "Larger all90 latent context study",
-      "state": "Complete: all five folds and all15 saved neural models replay bitwise on the GPU. NN0.8593871254; fixed mean with the new tree0.8592720613 is the new verified global development best. A separate mean/full-row score check agrees. Full qualifying refit queued."
+      "state": "Complete: all five folds and15 actual neural model replays. Expanded-tree fixed mean0.8592720613 remains the verified development best. Its complete frozen qualifying audit scores0.8608774626 /0.8618605526."
     },
     {
       "work": "Own107 plus50 standalone qualifying refit",
@@ -51,15 +59,15 @@
     },
     {
       "work": "Expanded RBM context tree comparison",
-      "state": "Complete: all five tree folds and all15 saved-tree replays passed. Fixed half tree/NN mean0.8593661639 improves standalone NN0.8594554093. Independent scoring confirms; new qualifying refit pending."
+      "state": "Complete historical mean0.8593661639, now improved by the selected all90 GPU combination and its complete qualifying audit. All original tree/NN replay evidence remains valid."
     },
     {
       "work": "Next original split3 diversity batch",
-      "state": "Original transposed DNN completed7/7 with independent full output/known projection checks. No-MF DNN32700 started19:14; small NADE remains serialized behind it. Complete three-model batch not yet claimed."
+      "state": "Both DNN16t and DNN32nm complete original7/7 with independent source/output and every-known-projection checks. Native small NADE38916 is running its original8/8 recipe; full three-model batch not yet claimed."
     },
     {
       "work": "Own107 plus50 learned RBM context",
-      "state": "Complete preceding standalone development best0.8594554093; all15 saved neural models replay. Its separate qualifying audit0.8609266298 /0.8619141823 remains best verified qualifying."
+      "state": "Complete historical standalone development0.8594554093 and qualifying0.8609266298 /0.8619141823. Both were improved by the current expanded-tree/all90 GPU mean; original saved-model evidence remains valid."
     },
     {
       "work": "Published CF96 epoch10 snapshot",
@@ -83,7 +91,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "RBM50 complete20/20 and independently checked. Tx20lat first20 complete and all40 user/item components checked on both queries; native7119 is running second phase, latest3/20. Whole-Tx completion remains pending."
+      "state": "Both original RBM50 and Tx20 models complete20/20 with independent full-phase proofs. All90 learned supports are checked on every row and used by the current verified best."
     },
     {
       "work": "First qualifying blend",

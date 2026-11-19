@@ -1,0 +1,13 @@
+{
+  "created": "2026-11-19T20:38:23.891042+00:00",
+  "models": [
+    "rbmx2-150",
+    "tsvdx4-400lm"
+  ],
+  "rank_each": 32,
+  "script_sha256": "7351f456907fe431249dbf012611fce734f570835b112379488bea77c2cecf95",
+  "rule": "Fixed top32 centered covariance eigenvectors per own trainx item table. Canonical maximum-absolute-loading sign, scores divided by population standard deviation. Same trainx tables for both query sets. No ratings or outcome-based selection in projection.",
+  "qualifying_labels_read": false,
+  "public_numerical_features_read": false,
+  "original_public_schema_parity_claimed": false
+}

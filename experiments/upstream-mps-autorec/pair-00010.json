@@ -1,0 +1,17 @@
+{
+  "state": "complete_own_raw_snapshot_pair_with_actual_saved_model_replays",
+  "epoch": 10,
+  "pairs": {
+    "probex": "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00010/prediction.npy",
+    "qual": "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00010/prediction.npy"
+  },
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "791429a20856dbacbf253f9324f9dc760d88157984a1b263316a5fa2b877505b",
+  "receipts": {
+    "trainx": "89b2ef23c40c0bb898a9319f894690a27a9f3a50ed82ea1de96ca60e9fc049f3",
+    "fulltrain": "4e9f7ee3d7db7957b6cc8183c4a19354743aa17b4253a49d125749834e8b18d5"
+  },
+  "full50_epoch_model_complete": false,
+  "qualifying_labels_read": false,
+  "scope": "Both complete fixed snapshot query vectors, from own disjoint canonical histories. Larger fixed50-epoch trajectory continues; no qualifying score claimed."
+}

@@ -1,0 +1,37 @@
+{
+  "state": "retired_unused_reconstructible_paired_feature_matrices",
+  "observed": "2026-11-19T20:29:32.159618+00:00",
+  "manifest_sha256": "daed1d2c112ce7e034933c98c3fb77f9a9df636a61d4609e893f2c2bd2c73e92",
+  "prior_column_verification_sha256": "bf39e23a6324bd3b297dde726f5ec2df5b407aac9921bd4128ca4d5f3ebd6102",
+  "files": [
+    {
+      "path": "artifacts/upstream-whole110-bank/probex-design.npy",
+      "bytes": 1678708160,
+      "sha256": "4dfbf10f545f7e709f75f1854c2827778502a44572a22a5383c9ee52e15bd53d"
+    },
+    {
+      "path": "artifacts/upstream-whole110-bank/qual-design.npy",
+      "bytes": 4191891056,
+      "sha256": "8ed6a6bfc1a8619153fd6996274033c082fc0db3fe300ac1f9819362ff3c20fd"
+    },
+    {
+      "path": "artifacts/upstream-whole110-bank/probex-features.npy",
+      "bytes": 1516252544,
+      "sha256": "b3e030f0d4d8cabcbc9a20fdbf23af12e549701ce4c9acbd151d2ef90ee8e4ab"
+    },
+    {
+      "path": "artifacts/upstream-whole110-bank/qual-features.npy",
+      "bytes": 3786224192,
+      "sha256": "c8bc1eb7cb9885eadc836f0b73d657b81d318f7e7dfd70d3fef3f5b6e99d17d5"
+    }
+  ],
+  "no_model_source_references_in_experiment_json": true,
+  "no_open_file_handles": true,
+  "original_builder_exited": true,
+  "source_predictions_models_receipts_and_metadata_preserved": true,
+  "known_identity_hardlinks_preserved": true,
+  "reason": "Reclaim reconstructible paired110 matrices from a completed negative control before new independent fitting. No fitted model consumed this paired bank.",
+  "reconstruction": "Use upstream_whole110_bank.py and verify_upstream_whole110_bank.py in a fresh namespace with the preserved paired90 parent and all three original native pairs. Historical column verification records past availability; this cache is now retired.",
+  "reclaimed_logical_bytes": 11173075952,
+  "disk_free_bytes": 36386586624
+}
