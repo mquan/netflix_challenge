@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T11:11:00.008274+00:00
+timestamp: 2026-11-19T11:28:10.878880+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,16 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+At approximately11:27UTC, our published CF48 epoch25 snapshot pair passes
+captured-package/source/data checks. The fixed ready-eight plus snapshot25
+arm improves the own93 ridge diagnostic from0.8631793373 to0.8626981139;
+a separate five-user-fold solve and compensated score replay confirm it.
+The complete95-epoch CF48 trajectory is still running remotely; this is a
+snapshot diagnostic, not whole-job completion or a qualifying promotion.
+Own102 data is prepared and verified, and controller47665 queues its context
+model behind the running all91 fit, ahead of the stopped idle93 queue.
+See [CF48_PREFIX_102_PLAN.md](CF48_PREFIX_102_PLAN.md).
 
 At11:04UTC the first isolated split3 pilot completed its native data preparation:
 98,720,013 training rows and1,760,494 validation rows. All1,128,164 known ProbeX

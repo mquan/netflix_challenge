@@ -1,0 +1,28 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "034493dcb9f64a5bbc70885c6f4aa1d086e85056183725ed2ca5ed684a2995ad",
+  "plan_sha256": "1ea092b5a8a6ae1fbb57235fafe6d52e578c0d5ab1cbf126011f9b5cb78f81c9",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.863179337317253,
+      "max_prediction_error": 4.806377518207228e-12,
+      "prediction_sha256": "b8f136b25b3d10f5c398e65b8547baff297a4feb51848145c440758386dfe4dd"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8626981139126103,
+      "max_prediction_error": 5.767830657532613e-12,
+      "prediction_sha256": "aa93c6a7e1237b8eb04fc873be91088b0bb0b6ca092039cd25968c61e5cefdc4"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent control/all-nine known-ProbeX ridge replay. Our completed epoch25 snapshot pair is used; original95-epoch job is not claimed complete. No nonlinear or qualifying promotion.",
+  "wrapper_sha256": "797e5ccd2233f38bf4d33ceadda18540055a7fb31664084286504104ed1632e5",
+  "full95_model_complete": false
+}

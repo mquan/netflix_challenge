@@ -1,0 +1,200 @@
+{
+  "fixed_additions": [
+    "dnn-24__asym-16p75",
+    "dnn-24__dnn-16",
+    "dnn-24__dnn-16p50__asym-16p75",
+    "mf-61__asym-16",
+    "mf-61__asym-16_ep02",
+    "mf-61__asym-16_ep07",
+    "rbmx2-0",
+    "tsvdx4-l32nb_ep03",
+    "cfnade-48_ep25"
+  ],
+  "ready_unused": [
+    {
+      "name": "bknbrx-100_ep05",
+      "producer": "bknbrx-100",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+        "qual": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json",
+      "duplicate_of": "bknbrx-100"
+    },
+    {
+      "name": "cfnade-12_ep40",
+      "producer": "cfnade-12",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.qual.npy"
+      },
+      "sha256": {
+        "probex": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+        "qual": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/cfnade-12.json",
+      "duplicate_of": "cfnade-12"
+    },
+    {
+      "name": "dnn-24__asym-16p75",
+      "producer": "dnn-24__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "cbbb113fcd1a22a90f4bcadd5c66ffc07f529256d2da3a9bdcba32af21471d17",
+        "qual": "1923b00b3d04986ac05c6b745da149c443d646cf9db8869b906ad1fc62ad367f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16",
+      "producer": "dnn-24__dnn-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+        "qual": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75",
+      "producer": "dnn-24__dnn-16p50__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "2f572c19a219c3ea3beeecdadba6abd95af6510dd990f8d0d0e21c56482a861b",
+        "qual": "93affa18fa72afe1ad36fe377194e7d98c505055d69d0fed844d0a6ac5741033"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "0be51257afdd0dba2665129dfadada9402fd23aff5cf047310fc061b999349e8",
+        "qual": "62c3c9a0f698710b9905c56dfb068190362f2519de97713c38a017355fbbae3f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep02",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "c1f40ef4a1334b106e79cf73302b741bc81db81e8f201d6d2cdf8c8cd41e7858",
+        "qual": "5d5ad0c5c7b952708c4c22ef7845196f9e6ae3404062a7eab96913597c52ef5d"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep07",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.qual.npy"
+      },
+      "sha256": {
+        "probex": "f673268354cabef4a7d6e9193a8c17737089f6db82f71af78d63c5c247c8910a",
+        "qual": "63d5c0beef56aa304809345a2be3b96bb81cbf329108142418ed5bfefaa3109b"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "rbmx2-0",
+      "producer": "rbmx2-0",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.qual.npy"
+      },
+      "sha256": {
+        "probex": "3f07270880534678e1971f2dbd80b6915cb5421a12ba7da26f7e61df5319cbda",
+        "qual": "f2fa7b35d61ea54007f858aac45db193f4e189098be8a87cacbb6a81586e7ecb"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-0.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "tsvdx4-l32nb_ep03",
+      "producer": "tsvdx4-l32nb",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "bb59f79263e9469927dffa74016e68b10b0b4d22ed47f05387fb6ea18ae585aa",
+        "qual": "2424363e60f85231faf8b8cfd80a696ada152104e620d45a4c441f622c9ab6fd"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-l32nb.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "cfnade-48_ep25",
+      "producer": "cfnade-48",
+      "duplicate_of": null,
+      "paired_files": {
+        "probex": "artifacts/upstream-cfnade-sparse-rows/source/preds_preset48/cfnade-48_ep25.probex.npy",
+        "qual": "artifacts/upstream-cfnade-sparse-rows/source/preds_preset48/cfnade-48_ep25.qual.npy"
+      },
+      "sha256": {
+        "probex": "e12b59bee7cac79157a80198c56c5e630f7ff48ede6f02f4ac4dfd7e8b1938da",
+        "qual": "67093d060930f34a8a9122263e63027c51bb9b21a8df5120ff0e07abd1737465"
+      },
+      "prediction_epoch": 25,
+      "original_configured_epochs_per_phase": 95,
+      "full95_model_complete": false,
+      "scope": "Complete epoch25 prediction pair from our own ongoing95-epoch trajectory, not a completed95-epoch native job."
+    }
+  ],
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "original_cf48_epochs": 95,
+  "snapshot_epoch": 25,
+  "full95_model_complete": false,
+  "decision": "Fixed published epoch25 plus every independently verified ready-eight addition. Retain control, ready-eight, prefix-only and all-nine arms; no score-based feature subset selection.",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Known-ProbeX diagnostic. Snapshot generation completed for both phases; whole original95-epoch job is still running remotely and not claimed complete."
+}
