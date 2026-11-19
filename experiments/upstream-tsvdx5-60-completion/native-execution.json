@@ -1,0 +1,15 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "tsvdx5-60",
+  "command": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-60",
+  "started": "2026-11-19T09:30:23.887497+00:00",
+  "finished": "2026-11-19T14:32:02.636624+00:00",
+  "outputs": {
+    "preds_new/tsvdx5-60.fulltrain.npy": "3ebb5f67b87b62867095ad8cda10bf480cab5dd8643202639258897a693125c4",
+    "preds_new/tsvdx5-60.out": "590f112f60cd2d4e7f07486ae0fb25625ae2ba47cc3a186ee288fb5e6f0bb3e8",
+    "preds_new/tsvdx5-60.probex.npy": "743998c64b7b331edf40508e3c58a5a29b3e24a2863c4dacb8dd087cdadd4aad",
+    "preds_new/tsvdx5-60.qual.npy": "6fb269ed24930e76dd3cc83f36d057caf55776914ed2c9c7b5b3e6f3382268ad",
+    "preds_new/tsvdx5-60.trainx.npy": "6f4d7fff4046b45c433b36e15a547af94a4d2e53a97080ab8ca74ed066c9360e"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

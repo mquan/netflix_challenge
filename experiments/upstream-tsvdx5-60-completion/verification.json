@@ -1,0 +1,48 @@
+{
+  "state": "complete_original_temporal_native_outputs",
+  "job": "tsvdx5-60",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "command": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-60",
+  "epochs_per_phase": 23,
+  "arrays": {
+    "fulltrain": {
+      "rows": 100480507,
+      "dtype": "float32",
+      "all_finite": true
+    },
+    "probex": {
+      "rows": 1128164,
+      "dtype": "float32",
+      "all_finite": true
+    },
+    "qual": {
+      "rows": 2817131,
+      "dtype": "float32",
+      "all_finite": true
+    },
+    "trainx": {
+      "rows": 99352343,
+      "dtype": "float32",
+      "all_finite": true
+    }
+  },
+  "bindings": {
+    "artifacts/upstream-repro/fresh-receipts/tsvdx5-60.json": "e9511c45c7fa9c3ffd6e4c214f34b9267a6547ff940091f334f0e2148a9ab582",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.fulltrain.npy": "3ebb5f67b87b62867095ad8cda10bf480cab5dd8643202639258897a693125c4",
+    "artifacts/upstream-repro/fresh/data/fulltrain/ratings.npy": "760fda5b8c98576e31ff1a86f0fc1df4779dc0a0f7399ca434e651523ddab004",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.out": "590f112f60cd2d4e7f07486ae0fb25625ae2ba47cc3a186ee288fb5e6f0bb3e8",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.probex.npy": "743998c64b7b331edf40508e3c58a5a29b3e24a2863c4dacb8dd087cdadd4aad",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.qual.npy": "6fb269ed24930e76dd3cc83f36d057caf55776914ed2c9c7b5b3e6f3382268ad",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.trainx.npy": "6f4d7fff4046b45c433b36e15a547af94a4d2e53a97080ab8ca74ed066c9360e",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/src/bin/tsvdx5-new.rs": "790e34f115024a8961de63ca6e958c78158559f6ccd9d7bf1975190f61933f2b",
+    "artifacts/upstream-repro/fresh/src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "artifacts/upstream-repro/fresh/src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be"
+  },
+  "verifier_sha256": "6c2f1872e6c25db74ec594cf09ffbb5f1487bb0b387401e96b0cb8e4c9735981",
+  "model_training_performed": false,
+  "qualifying_labels_read": false,
+  "scope": "Actual original execution receipt, full23/23 log trace, every output hash and all four finite float32 vector shapes checked against native dataset rows. No saved-model inference rerun or qualifying accuracy claim."
+}

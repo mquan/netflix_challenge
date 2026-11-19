@@ -1,0 +1,28 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "a50441b1e5eebd4adc85465da65463fef6c3c7ebf87beb3bf2e5f89b74b06bef",
+  "plan_sha256": "ab9bf79e4daf1df2c0f7ebf142a232642c09128653f6ab05eaecf98a0cfd574d",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625974317905873,
+      "max_prediction_error": 5.534017688546555e-12,
+      "prediction_sha256": "0c9e434f2a7d137dda3daf87e6ecca18e075f7d04405a47622db902d16fd8b91"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625923176040773,
+      "max_prediction_error": 5.4429794005272925e-12,
+      "prediction_sha256": "63c3ae4248690c86c2f97cb6023ec717fe9001149dd08e7ebca7d9b08485581d"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and vector replay for one fixed source-published CF96 epoch10 pair. No95-epoch completion or qualifying score claimed.",
+  "wrapper_sha256": "293d72c6b11ebc35e7bce0867d3aebb73cb2171aa0e64843ea83451ec94b0aab",
+  "full95_model_complete": false
+}

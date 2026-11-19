@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T14:04:46.546953+00:00",
-  "display_time": "2026-11-19 14:04 UTC",
+  "observed": "2026-11-19T14:54:35.946480+00:00",
+  "display_time": "2026-11-19 14:54 UTC",
   "best_development_rmse": 0.8594692563654075,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,12 @@
   "independent_verification_sha256": "6025e5cd986879c0e454e1dcacca1412dad8099722cca60936283902949c2d32",
   "work": [
     {
+      "work": "Published CF96 epoch10 snapshot",
+      "state": "Both original-capacity trajectory snapshots verified against our earlier own33/31 package; full datasets/checkpoints/arithmetic parity rechecked. Ridge improves0.8625974318 to0.8625923176 with independent five-fold replay. Diagnostic only; full95-epoch training continues."
+    },
+    {
       "work": "Own105 next context iteration",
-      "state": "Worker84147 is training under controller82225 after own103 released the shared lock. Own103 retained plus both verified original split3 attention columns;181 ridge columns,241 features plus ridge. Same nested user folds and rank16/64-hidden architecture; compare against standalone NN1030.8594692564."
+      "state": "Worker84147 is training;2/5 NN folds are complete. Own103 plus both verified split3 attention columns, unchanged user folds and architecture. No new full development result yet."
     },
     {
       "work": "Own103 context development",
@@ -27,7 +31,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "Controller70300 waits for measured memory admission before serial original rbm50lat and tx20lat two-phase training. Remote handoff remains available; no return proof yet."
+      "state": "Original rbm50lat native PID92781 is training its first20-epoch phase, latest epoch5. Tx20lat is queued afterward. Exact original first-phase support extraction watcher91669 runs separately and verifies every gathered query row; both full two-phase models still run to completion."
     },
     {
       "work": "First qualifying blend",
@@ -63,7 +67,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Original33/31 states and all84 tensors per phase preserved. After an admission race with the next primary allocation, CF96 yielded again. Controller21217 now waits for a verified primary idle boundary and will hold the primary launch lock during unchanged CF96 training, then restart its original scheduler."
+      "state": "Both actual native phases are running locally under PIDs92864/92865 after the verified primary idle handoff. Restored original33/31 states with all84 tensors per phase checked. Latest saved epochs:33/31; original320-hidden/96-rank/95-epoch capacity retained."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -71,7 +75,7 @@
     },
     {
       "work": "AEX64 and AEX128",
-      "state": "Both complete, as are original tsvdx4-60o and tsvdx4-q16tb. Primary native PID16305 is in the23-epoch second phase of tsvdx5-60, most recently epoch18."
+      "state": "Both complete, together with tsvdx4-60o, tsvdx4-q16tb and now tsvdx5-60. The latter passed independent23/23 trace, every-output hash, all four vector shape/dtype and finite-value checks. Primary scheduler yielded only at the verified idle boundary for CF96."
     },
     {
       "work": "Matching86 development",
@@ -137,12 +141,14 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "16305 04:34:11  83.6 ./target/release/tsvdx5-new tsvdx5-60",
-      "21217 04:08:02   0.3 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
-      "70300    50:06   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
-      "73629 07:28:26 284.5 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "82225    14:06   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_105_context.py",
-      "84147    04:35  73.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_105_context.py --worker"
+      "21217 04:57:51   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
+      "70300 01:39:55   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
+      "73629 08:18:15 367.4 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "84147    54:24  76.4 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_105_context.py --worker",
+      "91669    25:44   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_early_support.py 70300",
+      "92781    21:18  90.2 ./target/release/fit rbm rbm50lat -p pipeline-new.toml --final --preds preds_new",
+      "92864    21:10  90.7 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865    21:10  92.6 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -233,7 +239,12 @@
     "split3_completion_verification_sha256": "3bfe3c66ae9780adb358b5dc97f87d62628135a3b9faed7501e95008a7747a3c",
     "own103_production": {
       "state": "complete_both_frozen_audits_verified"
-    }
+    },
+    "cf96_saved_epochs": {
+      "trainx": 33,
+      "fulltrain": 31
+    },
+    "tsvdx5_60": "complete_independently_checked_23_23"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

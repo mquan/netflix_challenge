@@ -1,0 +1,39 @@
+{
+  "state": "verified_complete_published_epoch10_pair",
+  "name": "cfnade-96_ep10",
+  "pairs": {
+    "probex": "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.probex.npy",
+    "qual": "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.qual.npy"
+  },
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_id": "caa746c11ae0070b1615d5594e8edca924a348da88ae743b8938f8a5760cd636",
+  "data_id": "c46870e9892edc2a8ad5a2550a146236e1fbfc8aee7c3f71422bf73ccbf12538",
+  "source_sha256": {
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/manifest.json": "00f609d3da574569242353b89ee187f7833a6053a8ca35349284a96f3a3359c9",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/origin-plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/source-verification.json": "431ebc726b21f06ef346f5db4b825edafc1a33cbe15c48825cf5b8563d3ac623",
+    "experiments/upstream-cfnade-parallel/plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "experiments/upstream-remote9h-cf96/local-preflight-verification.json": "3a1d5f07dc1fc7b028a41faffeb747b18ef88eb15be5a37536d0e498d593c035",
+    "scripts/upstream_cf96_prefix10_screen.py": "c567ec9120a93a84641c444fd02a1d37c31b3c33e2277c0c3879274a48bb6032",
+    "scripts/upstream_remote_cf96.py": "9f6c8c13dadc0cdb0fd8f5afeb6722140f4a46c8e70b0b08d664e10107ab222c",
+    "experiments/upstream-cf96-prefix10-screen/package-reverification.log": "c9d0cbca0e72d1382d4a5cf9028c590435a55d50f5a4cc53e09453856be413b7",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep10.probex.npy": "2a4bc4b2c0d7b4c67693612b2ba86a492c6f9a37ae9e69a4ec8e243973d7e796",
+    "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.probex.npy": "2a4bc4b2c0d7b4c67693612b2ba86a492c6f9a37ae9e69a4ec8e243973d7e796",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep10.qual.npy": "0ba803edefab1bf1fe4c74193274067901e2e78afee8ca1707da0bc042d6655d",
+    "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.qual.npy": "0ba803edefab1bf1fe4c74193274067901e2e78afee8ca1707da0bc042d6655d"
+  },
+  "captured_trajectory_epochs": {
+    "trainx": 33,
+    "fulltrain": 31
+  },
+  "original_capacity": {
+    "hidden": 320,
+    "rank": 96,
+    "configured_epochs_per_phase": 95
+  },
+  "prediction_epoch": 10,
+  "full95_model_complete": false,
+  "epoch10_inference_rerun": false,
+  "qualifying_labels_read": false,
+  "scope": "Both original source-published epoch10 query vectors complete. Match the independently verified own33/31 package, whose states, actual data and arithmetic parity were rechecked. Epoch10 tensors were pruned; no new epoch10 inference replay claimed. Full95-epoch native training remains pending."
+}

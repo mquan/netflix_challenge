@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625974317905873,
+      "prediction_sha256": "0c9e434f2a7d137dda3daf87e6ecca18e075f7d04405a47622db902d16fd8b91",
+      "fold_rmse": [
+        0.8620157012450524,
+        0.8599044411052236,
+        0.8634055285525107,
+        0.8642115783997942,
+        0.863453319500285
+      ]
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625923176040773,
+      "prediction_sha256": "63c3ae4248690c86c2f97cb6023ec717fe9001149dd08e7ebca7d9b08485581d",
+      "fold_rmse": [
+        0.8620104684253153,
+        0.8598899029503921,
+        0.8634022649091808,
+        0.8642265631414835,
+        0.8634357455282549
+      ]
+    }
+  ],
+  "fixed_additions": [
+    "cfnade-96_ep10"
+  ],
+  "source_sha256": {
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/manifest.json": "00f609d3da574569242353b89ee187f7833a6053a8ca35349284a96f3a3359c9",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/origin-plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/source-verification.json": "431ebc726b21f06ef346f5db4b825edafc1a33cbe15c48825cf5b8563d3ac623",
+    "experiments/upstream-cfnade-parallel/plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "experiments/upstream-remote9h-cf96/local-preflight-verification.json": "3a1d5f07dc1fc7b028a41faffeb747b18ef88eb15be5a37536d0e498d593c035",
+    "scripts/upstream_cf96_prefix10_screen.py": "c567ec9120a93a84641c444fd02a1d37c31b3c33e2277c0c3879274a48bb6032",
+    "scripts/upstream_remote_cf96.py": "9f6c8c13dadc0cdb0fd8f5afeb6722140f4a46c8e70b0b08d664e10107ab222c",
+    "experiments/upstream-cf96-prefix10-screen/package-reverification.log": "c9d0cbca0e72d1382d4a5cf9028c590435a55d50f5a4cc53e09453856be413b7",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep10.probex.npy": "2a4bc4b2c0d7b4c67693612b2ba86a492c6f9a37ae9e69a4ec8e243973d7e796",
+    "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.probex.npy": "2a4bc4b2c0d7b4c67693612b2ba86a492c6f9a37ae9e69a4ec8e243973d7e796",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep10.qual.npy": "0ba803edefab1bf1fe4c74193274067901e2e78afee8ca1707da0bc042d6655d",
+    "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.qual.npy": "0ba803edefab1bf1fe4c74193274067901e2e78afee8ca1707da0bc042d6655d",
+    "experiments/upstream-cf96-prefix10-screen/paired-receipt.json": "95bac3c13a975e36874bfcd7f523fa714db16150e014334963815b40554d346b",
+    "experiments/upstream-split3-105/manifest.json": "e12ba87acbbecfc38d8217c2561cc3ecd16e54add5179ca80e4edbf653979754",
+    "experiments/upstream-split3-105/cache-column-verification.json": "72e15de60d8d3a76fe751b3a512d01c66cdc15d46c3c1795975f621527ccf3e5",
+    "artifacts/upstream-split3-105/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-split3-105/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-split3-105/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-split3-105/design.npy": "75b31ac23d9679d40260a72c5e8561963d69bfc2c918d3556ce5b123477e062e",
+    "artifacts/upstream-split3-105/stats.npz": "cf2737e7fdb87a707879f7844972f2a3ccbffefa032e1437536fa9c5e10f53af",
+    "artifacts/upstream-split3-105/features.npy": "6d8c98b653b6e84cde4bc7f69dc925126cc3501db9e1ab4e53099d853e059f1a",
+    "artifacts/upstream-split3-105/baseline.npy": "9368ef43c965a70e7f4a751f41a52ee4766cd78d691122a32b9403358bea1096",
+    "experiments/upstream-cf96-prefix10-screen/plan.json": "ab9bf79e4daf1df2c0f7ebf142a232642c09128653f6ab05eaecf98a0cfd574d"
+  },
+  "script_sha256": "c567ec9120a93a84641c444fd02a1d37c31b3c33e2277c0c3879274a48bb6032",
+  "full95_model_complete": false,
+  "qualifying_labels_read": false,
+  "scope": "Known-ProbeX ridge diagnostic for our complete source-published CF96 epoch10 pair. No nonlinear/qualifying promotion or completed95-epoch-model claim."
+}
