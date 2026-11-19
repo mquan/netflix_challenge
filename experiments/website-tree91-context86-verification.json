@@ -1,0 +1,46 @@
+{
+  "state": "complete",
+  "observed": "2026-11-19T09:01:48.200075+00:00",
+  "pages_commit": "439222fed6917a290bd220d7c7161a892b741c31",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "1dfd70bfcf8c8ea46e830e8e06d9fd6bbafb128959adfe29866a60ff7465c57e",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "994d7197e7e823266189fb555bf101bec5dc85a06731100bebdde7aef5b14caa",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "5f30dfb8608ac3b5edaa266c6294e660694ccb217ccd57d5be69bc630841af33",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "87fd6bf7d6a7a19617cb3068461bf20b4ebdff24541e4330822ec39394a7302a",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/upstream-tree91-context86/verification.json",
+      "status": 200,
+      "sha256": "d46f9badd83793ebc13917040025b508d13bf8ab926d9f77b516b98e23f2b407",
+      "matches_local": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 37,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8599745622436025,
+  "qualifying_target_achieved": false
+}
