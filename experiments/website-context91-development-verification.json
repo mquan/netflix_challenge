@@ -1,0 +1,82 @@
+{
+  "state": "verified_published_context91_development_best",
+  "observed": "2026-11-19T12:29:05.023125+00:00",
+  "source_commit": "bb98fd070ab8af1d4b5698e3be6dc97a91a80719",
+  "pages_commit": "33690705c72977cc386ea5c577ecaeaebcc63e01",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "d30fc054e3ca97c8cb9a55406badd08a417a5b4ba5daa260c89d70aad4307226",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "d30fc054e3ca97c8cb9a55406badd08a417a5b4ba5daa260c89d70aad4307226",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "1c559cb32a6aaacebcf0c4b99d971917e5921e10d608e0ef3373352eefc6b04f",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "6a91d973e057c4949c5ee70fb1f90c714d52eaed400939a4a7fb425584f0496c",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "CONTEXT91_PRODUCTION_PLAN.md",
+      "status": 200,
+      "sha256": "caf4b2e5ba90c830cf8d73497b7f331eaef4f99de0500e596eb620988af4f91d",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "REMOTE_LATENT90_ADDON.md",
+      "status": 200,
+      "sha256": "35817eda2ecd69f029a2d4a59f8ca79d4ac03c76ffb407fd451f82744af7141a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "732e862578035ece1202cc3b2f6fdd84e39f17bf373ec93d9d6862631405bf88",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "19b11626b0465bb37b164aaca46181b4d8e9f4dd26bf31afd78c01ee33d8af38",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-tree91-context91/verification.json",
+      "status": 200,
+      "sha256": "87659b5ad04a1045bdee81133ca1487fd38c0185346ddd483720a60bb621107a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-remote-cf48-final/paired-receipt.json",
+      "status": 200,
+      "sha256": "b0fdc68ed892334194d816a4b70859313c7e205c0208630e015f7efbc03ae232",
+      "local_bytes_equal": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 40,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8599596977902322,
+  "qualifying_source0": 0.8614776640541453,
+  "qualifying_source1": 0.8624021195492101,
+  "qualifying_target_achieved": false,
+  "remote_cf48_complete95_95": true,
+  "plots_updated": true,
+  "scope": "New verified development best and actual own CF48 completion. Context91 qualifying production remains in progress; latest verified qualifying score remains unchanged."
+}

@@ -48,3 +48,7 @@ afterward. The latest checked qualifying result remains0.8614776640541453 /
 0.8624021195492101; both still miss0.85725. No new qualifying result is claimed
 until its audit completes. These are adaptive recovered labels, not official
 or untouched Netflix Test results.
+
+The audit is now complete and independently rechecked:0.8615005553485519 /
+0.8624166617824088. Both miss, and the preceding qualifying best is retained.
+See [CONTEXT91_QUALIFYING_RESULT.md](CONTEXT91_QUALIFYING_RESULT.md).

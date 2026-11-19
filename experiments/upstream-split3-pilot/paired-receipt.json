@@ -1,0 +1,77 @@
+{
+  "state": "complete",
+  "job": "s3-attn16",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "1025689e33e44361c92f5df474f3af112a6736916280e1067640f3e916088661",
+  "data_verification_sha256": "8f0f2cf62b8b543934365a1f0829770030efdf3121d3222514ef56df050e949d",
+  "started": "2026-11-19T11:08:33.058578+00:00",
+  "finished": "2026-11-19T12:41:45.755992+00:00",
+  "command": [
+    "./target/release/fit",
+    "attn",
+    "s3-attn16",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "D": "16",
+    "EPSAVE": "1",
+    "SEED": "11"
+  },
+  "binary_sha256": "fe0d7996a17564fef0f3f2b4912425c938c321479cd9c7d4b6542d78a225edae",
+  "outputs": {
+    "preds_3/s3-attn16_ep04.probe_3.npy": "8bfbdabceca65559ce7d3fba4b366f6650ba96c796ddd121b3e831bf54c37086",
+    "preds_3/s3-attn16.qual.npy": "52f7fab9a76da5a2642cdd62b84f83e1b4ae32c48a2b829e022ed0e8e0214027",
+    "preds_3/s3-attn16_ep11.probe_3.npy": "36d52824a60300874a72a1d0d29827b6a99079a7a29d3652f4ca07c47f45acf2",
+    "preds_3/s3-attn16_ep08.probe_3.npy": "ddfc986886e30f257444ead41ac3ccc3f8a093a3bb579c00ce8a18534a3a5ed3",
+    "preds_3/s3-attn16.out": "9babbf2ea194c22844c7b38d98598cf1d3276ee9a46c64caa870e6bfddde59e6",
+    "preds_3/s3-attn16_ep01.probe_3.npy": "7cf5ee09a1da977b56e3e9c0d1698269d321ffa80c47c5fbbb6f542faddfe140",
+    "preds_3/s3-attn16_ep01.qual.npy": "b1166e2e2126156338fb5006873d4bec35bb9a1ff89faa05cf35f47ab4910fe3",
+    "preds_3/s3-attn16_ep02.probe_3.npy": "fed0150e5a2bfd322290270911d05ef922a99de0e7f06986b39ba43a75c40844",
+    "preds_3/s3-attn16_ep07.qual.npy": "fd0e39275ebac40bd1d27bec391751e605e48a719285651321575f2ead294f78",
+    "preds_3/s3-attn16_ep06.qual.npy": "9bb3e9b2e693608e70320151ad47c782058e4e7009cb5896e5be0e2baae4b4e1",
+    "preds_3/s3-attn16_ep12.probe_3.npy": "c328f0e9e4164aef2f8e802c0efbc024401ad6d0cd06ecb2b3cff784e3957358",
+    "preds_3/s3-attn16_ep07.probe_3.npy": "c0639c5138ba3a7d084d04b6ed2e16eecefe14a6e29565012ad16378572def09",
+    "preds_3/s3-attn16_ep10.qual.npy": "29a5ca17287e2659c06782667aa243023c6fd8ef347cbf82e3bb2e1ea48e0412",
+    "preds_3/s3-attn16_ep11.qual.npy": "ca73e1e0cc8ae1683c3a8ce717565d2841b5d7fe5d4c0ba48f6c0b1675104f3c",
+    "preds_3/s3-attn16_ep03.qual.npy": "17336116fa5264d3eba81d0b5243e48ae22840dc6b43afd2132e6a0f05e4d902",
+    "preds_3/s3-attn16_ep02.qual.npy": "1099982dd518326f2b0dd3caff344c6fdd769df35db1770041d33d021afb8384",
+    "preds_3/s3-attn16.train_3.npy": "e216a7214932f16bd762034947228f9886f27e0ddea2bc766c1e0fe56a0b8454",
+    "preds_3/s3-attn16_ep09.qual.npy": "9b62373eeb64835058ebf580c35a1ba9cb4ce12f84b155f85f8fd5614ea5e032",
+    "preds_3/s3-attn16_ep08.qual.npy": "ce1c7f2fa0db1a80932b926393460182764a99846bd24347573aac05f154b637",
+    "preds_3/s3-attn16_ep09.probe_3.npy": "1e7c93c1043e3bbd56e0cc4c850cd91234577d318be3ea3de3e74edafb20b13b",
+    "preds_3/s3-attn16_ep10.probe_3.npy": "8c28efdb5c28fdc88b756ebd0770749b04c4d92456f1688ff37e6d2f19e2a7de",
+    "preds_3/s3-attn16_ep05.probe_3.npy": "718d8de140f0877ff4848252afd1507d63189627fa8c3e855a2ca364575e8532",
+    "preds_3/s3-attn16_ep06.probe_3.npy": "04d6a081f251466a21d92df222e329f3a8970deb48fedd77b7329770488f8c88",
+    "preds_3/s3-attn16_ep12.qual.npy": "52f7fab9a76da5a2642cdd62b84f83e1b4ae32c48a2b829e022ed0e8e0214027",
+    "preds_3/s3-attn16.fulltrain.npy": "366098e97409c93dcd03c9350a52ed1815d7e3ccc1acee09c83a7dd4e4f3deaf",
+    "preds_3/s3-attn16_ep04.qual.npy": "a2f44ae7544128b5530d544fb186722366db6e4f8acf4017e5f496f40388bf5b",
+    "preds_3/s3-attn16_ep05.qual.npy": "e8cf8595f62802778d6615e91c3605b6497d99923631f59b18cae7e12dfc0186",
+    "preds_3/s3-attn16.probe_3.npy": "c328f0e9e4164aef2f8e802c0efbc024401ad6d0cd06ecb2b3cff784e3957358",
+    "preds_3/s3-attn16_ep03.probe_3.npy": "524bb266708c3579c1202a779cf5d428b13a7e77e8829d4044850dc70f00d9bf"
+  },
+  "projected_pairs": [
+    {
+      "name": "s3-attn16",
+      "probex": "artifacts/upstream-split3-pilot/s3-attn16.probex.npy",
+      "probex_sha256": "3494486964d6f9aee0866fb43408ea46587d4c828ba8b5b1cb940fa6851b5863",
+      "qual": "artifacts/upstream-split3-pilot/source/preds_3/s3-attn16.qual.npy",
+      "qual_sha256": "52f7fab9a76da5a2642cdd62b84f83e1b4ae32c48a2b829e022ed0e8e0214027"
+    },
+    {
+      "name": "s3-attn16_ep08",
+      "probex": "artifacts/upstream-split3-pilot/s3-attn16_ep08.probex.npy",
+      "probex_sha256": "bb9e781caf822f18838992923a68428117cfecbe32519f28828104306ffae5d7",
+      "qual": "artifacts/upstream-split3-pilot/source/preds_3/s3-attn16_ep08.qual.npy",
+      "qual_sha256": "ce1c7f2fa0db1a80932b926393460182764a99846bd24347573aac05f154b637"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Original complete two-phase native split3 pilot with known-ProbeX projection. No score or target-success claim."
+}

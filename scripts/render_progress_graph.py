@@ -151,7 +151,7 @@ for i,row in enumerate(selected):
     text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
 text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
 text(94,1510,'Current own-training best: 0.8599597 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
-text(94,1555,'Own qualifying audit: 0.8614777 / 0.8624021 · 9.4591% on the worse group; 10% target missed.',size=22)
+text(94,1555,'Best own qualifying audit: 0.8614777 / 0.8624021 · 9.4591% on the worse group; 10% target missed.',size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 

@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T12:18:57.151345+00:00",
-  "display_time": "November 19, 2026, 04:18 AM Pacific",
+  "observed": "2026-11-19T12:54:10.202958+00:00",
+  "display_time": "November 19, 2026, 04:54 AM Pacific",
   "best_development_rmse": 0.8599596977902322,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -83,15 +83,19 @@
     },
     {
       "work": "Original split3 attention pilot",
-      "state": "Native PID42926 remains live. Its complete original12-epoch train_3/probe_3 phase is finished; fulltrain/qual phase is progressing. Original split3 row identities and training separation verify. No completed paired model receipt yet; qualifying targets remain zero."
+      "state": "Complete and separately verified: both original12-epoch phases,29 native outputs,24 finite query snapshots, terminal/epoch12 equality and exact known ProbeX projection. Terminal and published epoch8 pairs are ready for a future fixed addition. This is source-model completion, not a qualifying score."
     },
     {
       "work": "New context91 qualifying production",
-      "state": "Controller54968 is running. Reuses the exact own full-fit tree91 only after bank, ridge, recipe, budgets, model and replay checks. New full-known-ProbeX contextNN91 budgets20/21/19 come from its actual five-fold receipts. Fixed half mean will be frozen and replayed before recovered-group auditing; no new qualifying score yet."
+      "state": "Complete and independently rechecked:source0 0.8615005553, source1 0.8624166618. Both saved-family replays and fixed mean/canonical-label checks pass. Both miss0.85725 and are slightly worse than the preceding best; keep0.8624021195 as best worse-group score."
     },
     {
       "work": "Fixed102 context candidate",
-      "state": "Prepared and verified:102 predictors,178 ridge columns,238 features plus ridge. Original CF48 epoch25 snapshot and ready-eight improve ridge diagnostic0.8631793373 to0.8626981139, independently replayed. Controller49665 waits for the shared fitting lock and memory; no102 nonlinear score yet."
+      "state": "Prepared snapshot25 candidate preserved, but its controller was stopped while idle to prioritize own103 including completed snapshot95. No102 nonlinear fit was started."
+    },
+    {
+      "work": "Fixed103 context candidate",
+      "state": "Native NN worker62881 is training under controller61820.103 predictors,179 ridge columns,239 features plus ridge. Includes both original completed CF48 snapshots25/95. Independent ridge diagnostic0.8626072996; original rank16/64-hidden model, nested folds and stopping remain fixed. No103 nonlinear result yet."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -113,14 +117,12 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "16305 02:33:15  47.1 ./target/release/tsvdx5-new tsvdx5-60",
-      "21217 02:07:06   1.2 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
-      "27177 08:25:18   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
-      "40527 01:01:42   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_pilot.py",
-      "42926    55:17  47.5 ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
-      "49665    32:20   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_102_context.py",
-      "54968    06:59   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context91_production.py",
-      "73629 05:27:30 116.9 ./target/release/tsvdx4p-new tsvdx4p-1000lm"
+      "16305 03:23:35  98.8 ./target/release/tsvdx5-new tsvdx5-60",
+      "21217 02:57:26   0.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
+      "27177 09:15:38   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
+      "61820    19:46   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_103_context.py",
+      "62881    14:17 124.8 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_103_context.py --worker",
+      "73629 06:17:50  98.3 ./target/release/tsvdx4p-new tsvdx4p-1000lm"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -182,9 +184,11 @@
     },
     "new_development_verification_sha256": "87659b5ad04a1045bdee81133ca1487fd38c0185346ddd483720a60bb621107a",
     "context91_production": {
-      "state": "replaying",
-      "family": "tree",
-      "pid": 55618
+      "state": "audit_complete",
+      "both_groups_below_target": false,
+      "quiz_rmse": 0.8615005553485517,
+      "test_rmse": 0.8624166617824089,
+      "goal_requires_independent_review": true
     },
     "context102": {
       "state": "waiting_for_prior_fits_and_memory",
@@ -200,8 +204,25 @@
       "consecutive_good_samples": 0
     },
     "remote_final_commit": "5f38584787bff14fb5ccb505a6dbb904953a25c0",
-    "remote_final_intake_verification_sha256": "b0fdc68ed892334194d816a4b70859313c7e205c0208630e015f7efbc03ae232"
+    "remote_final_intake_verification_sha256": "b0fdc68ed892334194d816a4b70859313c7e205c0208630e015f7efbc03ae232",
+    "context103": {
+      "state": "nested_nn_training"
+    },
+    "split3_completion_verification_sha256": "3bfe3c66ae9780adb358b5dc97f87d62628135a3b9faed7501e95008a7747a3c"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
-  "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131"
+  "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
+  "latest_qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8615005553485519,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8624166617824088,
+      "below_target": false
+    }
+  },
+  "latest_qualifying_verification_sha256": "4bfe0b40f176c9e5f64aab107093a86c8a3a2f4f8e72289bf272448050cb05cf"
 }
