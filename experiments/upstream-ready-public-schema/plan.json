@@ -1,0 +1,1197 @@
+{
+  "created": "2026-11-19T10:51:02.149070+00:00",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "public_schema_sha256": "cd5b368a53faf5e86ae98d3fedd6ed13f07ded855a0c0f7942189a4090f6eea2",
+  "public_prediction_values_read": false,
+  "raw_columns": 536,
+  "legacy_raw_columns": 122,
+  "split3_raw_columns": 263,
+  "new_raw_columns": 151,
+  "meta_columns": 83,
+  "support_columns": 220,
+  "own93_new_schema_overlap": 39,
+  "coverage": [
+    {
+      "name": "aex-128",
+      "producer": "aex-128",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "aex-16",
+      "producer": "aex-16",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "aex-32",
+      "producer": "aex-32",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "aex-64",
+      "producer": "aex-64",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "als8-8",
+      "producer": "als8-8",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "als8-8__knn3",
+      "producer": "als8-8__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "attn-32-t",
+      "producer": "attn-32-t",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "attn-32",
+      "producer": "attn-32",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "attn-32__nlpp",
+      "producer": "attn-32__nlpp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "attn-32__nlpp__knn3",
+      "producer": "attn-32__nlpp__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "bk1-10",
+      "producer": "bk1-10",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "bk1-10_ep04",
+      "producer": "bk1-10",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "bk3-20__knns",
+      "producer": "bk3-20__knns",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "bk3-30",
+      "producer": "bk3-30",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "bknbrx-100_ep01",
+      "producer": "bknbrx-100",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "bknbrx-100_ep05",
+      "producer": "bknbrx-100",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+        "qual": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json",
+      "duplicate_of": "bknbrx-100"
+    },
+    {
+      "name": "bknbrx-50_ep05",
+      "producer": "bknbrx-50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "bknbrx-50_ep09",
+      "producer": "bknbrx-50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "bknbrx-50_ep17",
+      "producer": "bknbrx-50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "bknbrx-50_ep21",
+      "producer": "bknbrx-50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "cfnade-12_ep40",
+      "producer": "cfnade-12",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.qual.npy"
+      },
+      "sha256": {
+        "probex": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+        "qual": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/cfnade-12.json",
+      "duplicate_of": "cfnade-12"
+    },
+    {
+      "name": "cfnade-48_ep25",
+      "producer": "cfnade-48",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "cfnade-48_ep95",
+      "producer": "cfnade-48",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "cfnade-96_ep10",
+      "producer": "cfnade-96",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "cfnade-96_ep95",
+      "producer": "cfnade-96",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "cfnade-96r_ep95",
+      "producer": "cfnade-96r",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "dnn-16",
+      "producer": "dnn-16",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "dnn-24",
+      "producer": "dnn-24",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__asym-16p75",
+      "producer": "dnn-24__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "cbbb113fcd1a22a90f4bcadd5c66ffc07f529256d2da3a9bdcba32af21471d17",
+        "qual": "1923b00b3d04986ac05c6b745da149c443d646cf9db8869b906ad1fc62ad367f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__asym-16p75__knn3",
+      "producer": "dnn-24__asym-16p75__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__attn-32",
+      "producer": "dnn-24__attn-32",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16",
+      "producer": "dnn-24__dnn-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+        "qual": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16__knn3",
+      "producer": "dnn-24__dnn-16__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16p50",
+      "producer": "dnn-24__dnn-16p50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p50",
+      "producer": "dnn-24__dnn-16p50__asym-16p50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75",
+      "producer": "dnn-24__dnn-16p50__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "2f572c19a219c3ea3beeecdadba6abd95af6510dd990f8d0d0e21c56482a861b",
+        "qual": "93affa18fa72afe1ad36fe377194e7d98c505055d69d0fed844d0a6ac5741033"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-16p50__knn3",
+      "producer": "dnn-24__dnn-16p50__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__dnn-24p50",
+      "producer": "dnn-24__dnn-24p50",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-24__knn3",
+      "producer": "dnn-24__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "dnn-64",
+      "producer": "dnn-64",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "mf-60",
+      "producer": "mf-60",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "mf-60__knn3",
+      "producer": "mf-60__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "mf-61__asym-16",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "0be51257afdd0dba2665129dfadada9402fd23aff5cf047310fc061b999349e8",
+        "qual": "62c3c9a0f698710b9905c56dfb068190362f2519de97713c38a017355fbbae3f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep02",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "c1f40ef4a1334b106e79cf73302b741bc81db81e8f201d6d2cdf8c8cd41e7858",
+        "qual": "5d5ad0c5c7b952708c4c22ef7845196f9e6ae3404062a7eab96913597c52ef5d"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep07",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.qual.npy"
+      },
+      "sha256": {
+        "probex": "f673268354cabef4a7d6e9193a8c17737089f6db82f71af78d63c5c247c8910a",
+        "qual": "63d5c0beef56aa304809345a2be3b96bb81cbf329108142418ed5bfefaa3109b"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__knn3",
+      "producer": "mf-61__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "rbmx2-0",
+      "producer": "rbmx2-0",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.qual.npy"
+      },
+      "sha256": {
+        "probex": "3f07270880534678e1971f2dbd80b6915cb5421a12ba7da26f7e61df5319cbda",
+        "qual": "f2fa7b35d61ea54007f858aac45db193f4e189098be8a87cacbb6a81586e7ecb"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-0.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "rbmx2-100e_ep02",
+      "producer": "rbmx2-100e",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-100e_ep07",
+      "producer": "rbmx2-100e",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-100e_ep15",
+      "producer": "rbmx2-100e",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-10__knn3",
+      "producer": "rbmx2-10__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-10__tsvdx4-10lm-nsvd1",
+      "producer": "rbmx2-10__tsvdx4-10lm",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-10r__knn3",
+      "producer": null,
+      "resolution": "unresolved; do not infer a historical recipe from a similar name",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-12__asym-16__knn3",
+      "producer": "rbmx2-12__asym-16__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-12__asym-16__knnf",
+      "producer": "rbmx2-12__asym-16__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-14e",
+      "producer": "rbmx2-14e",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-150__knnf",
+      "producer": "rbmx2-150__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "rbmx2-150__knns",
+      "producer": "rbmx2-150__knns",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "rbmx2-16-t",
+      "producer": "rbmx2-16-t",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-160f",
+      "producer": "rbmx2-160f",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-200__knn3",
+      "producer": "rbmx2-200__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-300s__knn3",
+      "producer": "rbmx2-300s__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-300s__knnf",
+      "producer": "rbmx2-300s__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-300s_ep24",
+      "producer": "rbmx2-300s",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-300s_ep38",
+      "producer": "rbmx2-300s",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-300s_ep46",
+      "producer": "rbmx2-300s",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-32-t",
+      "producer": "rbmx2-32-t",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-350e",
+      "producer": "rbmx2-350e",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-400-p4",
+      "producer": "rbmx2-400",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-400__knnf",
+      "producer": "rbmx2-400__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-40__knn3",
+      "producer": "rbmx2-40__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "rbmx2-500",
+      "producer": "rbmx2-500",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-500__knn-m",
+      "producer": null,
+      "resolution": "unresolved; do not infer a historical recipe from a similar name",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-500__knn-w",
+      "producer": null,
+      "resolution": "unresolved; do not infer a historical recipe from a similar name",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-500__knnf",
+      "producer": "rbmx2-500__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-500bp__knnf",
+      "producer": "rbmx2-500bp__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-500bp_ep29",
+      "producer": "rbmx2-500bp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-600_ep27",
+      "producer": "rbmx2-600",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-60__knn3",
+      "producer": "rbmx2-60__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-800bp_ep03",
+      "producer": "rbmx2-800bp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-800bp_ep24",
+      "producer": "rbmx2-800bp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-800bp_ep27",
+      "producer": "rbmx2-800bp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "rbmx2-8e__knnf",
+      "producer": "rbmx2-8e__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-16-t",
+      "producer": "tsvdx4-16-t",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-16-t__knnf",
+      "producer": "tsvdx4-16-t__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-16-t_ep01",
+      "producer": "tsvdx4-16-t",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-1600lm_ep02",
+      "producer": "tsvdx4-1600lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-160o-nsvd1",
+      "producer": "tsvdx4-160o",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-2400lm-bias",
+      "producer": "tsvdx4-2400lm",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-2400lm__knns",
+      "producer": "tsvdx4-2400lm__knns",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-400lm-mf",
+      "producer": "tsvdx4-400lm",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx4-400lm-nsvd1",
+      "producer": "tsvdx4-400lm",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx4-400lm__knnf",
+      "producer": "tsvdx4-400lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx4-4800lm__knn-d",
+      "producer": "tsvdx4-4800lm__knn-d",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm__knnf",
+      "producer": "tsvdx4-4800lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm__knns",
+      "producer": "tsvdx4-4800lm__knns",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep03",
+      "producer": "tsvdx4-4800lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep13",
+      "producer": "tsvdx4-4800lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep21",
+      "producer": "tsvdx4-4800lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-4800lm_ep24",
+      "producer": "tsvdx4-4800lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-60",
+      "producer": "tsvdx4-60",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx4-60__knns",
+      "producer": "tsvdx4-60__knns",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx4-60o__knns",
+      "producer": "tsvdx4-60o__knns",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-80o-bias",
+      "producer": "tsvdx4-80o",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-d0tb__knn3",
+      "producer": "tsvdx4-d0tb__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-h8nb",
+      "producer": "tsvdx4-h8nb",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-h8nb__knn3",
+      "producer": "tsvdx4-h8nb__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-h8nb_ep01",
+      "producer": "tsvdx4-h8nb",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-l32nb_ep03",
+      "producer": "tsvdx4-l32nb",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "bb59f79263e9469927dffa74016e68b10b0b4d22ed47f05387fb6ea18ae585aa",
+        "qual": "2424363e60f85231faf8b8cfd80a696ada152104e620d45a4c441f622c9ab6fd"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-l32nb.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "tsvdx4-m1n",
+      "producer": "tsvdx4-m1n",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-n8nbo__knn3",
+      "producer": "tsvdx4-n8nbo__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-p0tbo__knn3",
+      "producer": "tsvdx4-p0tbo__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-s20fo_ep08",
+      "producer": "tsvdx4-s20fo",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4-t8cu_ep06",
+      "producer": "tsvdx4-t8cu",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-1000lm__knnf",
+      "producer": "tsvdx4p-1000lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-16000lm_ep09",
+      "producer": "tsvdx4p-16000lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-16000lm_ep19",
+      "producer": "tsvdx4p-16000lm",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-2000lm__knnf",
+      "producer": "tsvdx4p-2000lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-6000lm__knnf",
+      "producer": "tsvdx4p-6000lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx4p-8000lm__knnf",
+      "producer": "tsvdx4p-8000lm__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-1000",
+      "producer": "tsvdx5-1000",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-1000__nlpp",
+      "producer": "tsvdx5-1000__nlpp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-1000__nlpp__knn3",
+      "producer": "tsvdx5-1000__nlpp__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-1200lm-bias",
+      "producer": "tsvdx5-1200lm",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-120o-bias",
+      "producer": "tsvdx5-120o",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-120o",
+      "producer": "tsvdx5-120o",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-120o__dnn-16p50",
+      "producer": "tsvdx5-120o__dnn-16p50",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-120o__knn3",
+      "producer": "tsvdx5-120o__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-150-mf",
+      "producer": "tsvdx5-150",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-150__nlpp",
+      "producer": "tsvdx5-150__nlpp",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-150__nlpp__knnf",
+      "producer": "tsvdx5-150__nlpp__knnf",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-150o-bias",
+      "producer": "tsvdx5-150o",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-150o",
+      "producer": "tsvdx5-150o",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx5-150o_ep06",
+      "producer": "tsvdx5-150o",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx5-150o_ep16",
+      "producer": "tsvdx5-150o",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx5-150o_ep24",
+      "producer": "tsvdx5-150o",
+      "resolution": "declared native output",
+      "already_in_own93": true
+    },
+    {
+      "name": "tsvdx5-20-mf",
+      "producer": "tsvdx5-20",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-20",
+      "producer": "tsvdx5-20",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-300__nlpp__knn-w",
+      "producer": "tsvdx5-300__nlpp__knn-w",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-300__nlpp__knn3",
+      "producer": "tsvdx5-300__nlpp__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-40-nsvd1",
+      "producer": "tsvdx5-40",
+      "resolution": "auxiliary epoch/component suffix; verify dispatcher emission before launch",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-400__knn3",
+      "producer": null,
+      "resolution": "unresolved; do not infer a historical recipe from a similar name",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-400__nlpp__knn3",
+      "producer": "tsvdx5-400__nlpp__knn3",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx5-60",
+      "producer": "tsvdx5-60",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx6-300-v2",
+      "producer": "tsvdx6-300-v2",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx6-300",
+      "producer": "tsvdx6-300",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx6-300_ep03",
+      "producer": "tsvdx6-300",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx6-300_ep12",
+      "producer": "tsvdx6-300",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    },
+    {
+      "name": "tsvdx6-300_ep20",
+      "producer": "tsvdx6-300",
+      "resolution": "declared native output",
+      "already_in_own93": false
+    }
+  ],
+  "ready_unused": [
+    {
+      "name": "bknbrx-100_ep05",
+      "producer": "bknbrx-100",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+        "qual": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json",
+      "duplicate_of": "bknbrx-100"
+    },
+    {
+      "name": "cfnade-12_ep40",
+      "producer": "cfnade-12",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.qual.npy"
+      },
+      "sha256": {
+        "probex": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+        "qual": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/cfnade-12.json",
+      "duplicate_of": "cfnade-12"
+    },
+    {
+      "name": "dnn-24__asym-16p75",
+      "producer": "dnn-24__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "cbbb113fcd1a22a90f4bcadd5c66ffc07f529256d2da3a9bdcba32af21471d17",
+        "qual": "1923b00b3d04986ac05c6b745da149c443d646cf9db8869b906ad1fc62ad367f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16",
+      "producer": "dnn-24__dnn-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+        "qual": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75",
+      "producer": "dnn-24__dnn-16p50__asym-16p75",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.qual.npy"
+      },
+      "sha256": {
+        "probex": "2f572c19a219c3ea3beeecdadba6abd95af6510dd990f8d0d0e21c56482a861b",
+        "qual": "93affa18fa72afe1ad36fe377194e7d98c505055d69d0fed844d0a6ac5741033"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.qual.npy"
+      },
+      "sha256": {
+        "probex": "0be51257afdd0dba2665129dfadada9402fd23aff5cf047310fc061b999349e8",
+        "qual": "62c3c9a0f698710b9905c56dfb068190362f2519de97713c38a017355fbbae3f"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep02",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "c1f40ef4a1334b106e79cf73302b741bc81db81e8f201d6d2cdf8c8cd41e7858",
+        "qual": "5d5ad0c5c7b952708c4c22ef7845196f9e6ae3404062a7eab96913597c52ef5d"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "mf-61__asym-16_ep07",
+      "producer": "mf-61__asym-16",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.qual.npy"
+      },
+      "sha256": {
+        "probex": "f673268354cabef4a7d6e9193a8c17737089f6db82f71af78d63c5c247c8910a",
+        "qual": "63d5c0beef56aa304809345a2be3b96bb81cbf329108142418ed5bfefaa3109b"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "rbmx2-0",
+      "producer": "rbmx2-0",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.qual.npy"
+      },
+      "sha256": {
+        "probex": "3f07270880534678e1971f2dbd80b6915cb5421a12ba7da26f7e61df5319cbda",
+        "qual": "f2fa7b35d61ea54007f858aac45db193f4e189098be8a87cacbb6a81586e7ecb"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-0.json",
+      "duplicate_of": null
+    },
+    {
+      "name": "tsvdx4-l32nb_ep03",
+      "producer": "tsvdx4-l32nb",
+      "resolution": "declared native output",
+      "already_in_own93": false,
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "bb59f79263e9469927dffa74016e68b10b0b4d22ed47f05387fb6ea18ae585aa",
+        "qual": "2424363e60f85231faf8b8cfd80a696ada152104e620d45a4c441f622c9ab6fd"
+      },
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-l32nb.json",
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "dnn-24__asym-16p75",
+    "dnn-24__dnn-16",
+    "dnn-24__dnn-16p50__asym-16p75",
+    "mf-61__asym-16",
+    "mf-61__asym-16_ep02",
+    "mf-61__asym-16_ep07",
+    "rbmx2-0",
+    "tsvdx4-l32nb_ep03"
+  ],
+  "selection_rule": "All complete unused published new-split raw predictors, paired-value duplicates removed before scoring. No score-based subset selection.",
+  "scope": "Public schema coverage is not full-bank reproduction. Current registry covers the new split; older splits and meta learners remain separate work.",
+  "qualifying_labels_read": false,
+  "code_sha256": "0816af65915cb6f52f12b35392ccc3e0a19856d6c776b8ac0623edb543937d00"
+}

@@ -1,0 +1,26 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "b41b61bb5156aa2fda3c22d20a5420cfd5f65c35a9664baa792d55fb7c76ea79",
+  "plan_sha256": "fb5e9f95dfd61898171fa332c6ee4d5506cca37089f7ced2688354667138e433",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.863179337317253,
+      "max_prediction_error": 4.830358335539131e-12,
+      "prediction_sha256": "33e7a0452d733cfc91b62dbe9bac8e608c53a2a6e9d24df1c8b0b26fbd055e9d"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8631599062596309,
+      "max_prediction_error": 5.290878846153646e-12,
+      "prediction_sha256": "177e4594cb9b20ab681a1d43864efcb92752a436c3da61d910a886570810c825"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Known-ProbeX ridge diagnostic only; no qualifying or nonlinear promotion."
+}

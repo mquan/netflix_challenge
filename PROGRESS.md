@@ -12,6 +12,14 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+At approximately 10:55 UTC, a fixed eight-column addition using already completed
+own native outputs improves the own93 ridge diagnostic from 0.8631793373 to
+0.8631599063, independently replayed. This does not change the best nonlinear
+development or qualifying score. A source coverage audit establishes that all
+263 public split3 raw columns have declared native recipes, outside the current
+new-split queue. See [READY_OUTPUT_COVERAGE.md](READY_OUTPUT_COVERAGE.md) for the
+completed screen, exact coverage limits, and next isolated reproduction lane.
+
 The latest tree91/contextNN86 own-training qualifying audit **misses** the target:
 
 | Recovered source group | Rows | Independently verified RMSE | Required |

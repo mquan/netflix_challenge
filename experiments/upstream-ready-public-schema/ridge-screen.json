@@ -1,0 +1,84 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8631793373172532,
+      "prediction_sha256": "33e7a0452d733cfc91b62dbe9bac8e608c53a2a6e9d24df1c8b0b26fbd055e9d",
+      "fold_rmse": [
+        0.8626074705417318,
+        0.8604837849392716,
+        0.8639400384267022,
+        0.8648191480053361,
+        0.8640492228813644
+      ]
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8631599062596306,
+      "prediction_sha256": "177e4594cb9b20ab681a1d43864efcb92752a436c3da61d910a886570810c825",
+      "fold_rmse": [
+        0.8625985299361492,
+        0.8604951278841348,
+        0.8639210634304106,
+        0.8647829707583784,
+        0.8640049097842062
+      ]
+    }
+  ],
+  "source_sha256": {
+    "artifacts/upstream-temporal93/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-temporal93/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-temporal93/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-temporal93/design.npy": "b9cf4e67cf963eb7823e62ddf3a10c148af5d99f463ce6d6eaad458b734f9ee8",
+    "artifacts/upstream-temporal93/stats.npz": "550c9621a45ae34426a32043dd985d06ff6b4eb0de2d6c91ed67722166833beb",
+    "artifacts/upstream-temporal93/features.npy": "23ce9fd56d1b9433e2b9f6f976b51f63a5cf654d77908902efedc46fda6efcf0",
+    "artifacts/upstream-temporal93/baseline.npy": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5",
+    "artifacts/upstream-temporal93/control-ridge.npy": "8b5eb820923b3f8d48e0e5b0c93c951d629beca42dd00dc06bcb1307c902e9c8",
+    "artifacts/upstream-temporal93/main-ridge.npy": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5",
+    "experiments/upstream-temporal93/manifest.json": "d8f211e5c4d664c6800c9ffea8de3be5b6e08cccfe6ae43b89b8295c999a20a0",
+    "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json": "bc0286bff9016c78df59bed734fc9b64167dd6a30ee6aadee824805241f77b40",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.probex.npy": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep05.qual.npy": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c",
+    "artifacts/upstream-repro/fresh-receipts/cfnade-12.json": "373cb3f9bbccc85fc1bb93a73c1000e3d6dc74718c2bcf17d5957664f15906a4",
+    "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.probex.npy": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+    "artifacts/upstream-repro/fresh/preds_new/cfnade-12_ep40.qual.npy": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75.json": "4479f452631346967a4bd00a35960b308d841ce42fff36e3feeb440286abf643",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.probex.npy": "cbbb113fcd1a22a90f4bcadd5c66ffc07f529256d2da3a9bdcba32af21471d17",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.qual.npy": "1923b00b3d04986ac05c6b745da149c443d646cf9db8869b906ad1fc62ad367f",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16.json": "54b1a47ee39f00c248167d19c8d113ad6e2828eaa2920cdd85711ad53b7f89b2",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.probex.npy": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.qual.npy": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75.json": "fe0607dae9db1f236273ae064ad18211c2dbe8a4e5835c17b30f944fc22372ab",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy": "2f572c19a219c3ea3beeecdadba6abd95af6510dd990f8d0d0e21c56482a861b",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.qual.npy": "93affa18fa72afe1ad36fe377194e7d98c505055d69d0fed844d0a6ac5741033",
+    "artifacts/upstream-repro/fresh-receipts/mf-61__asym-16.json": "0b5e075a6b556823afa65d6c2400317c54253fc93072356fd54d6a7f543c6850",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.probex.npy": "0be51257afdd0dba2665129dfadada9402fd23aff5cf047310fc061b999349e8",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16.qual.npy": "62c3c9a0f698710b9905c56dfb068190362f2519de97713c38a017355fbbae3f",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.probex.npy": "c1f40ef4a1334b106e79cf73302b741bc81db81e8f201d6d2cdf8c8cd41e7858",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep02.qual.npy": "5d5ad0c5c7b952708c4c22ef7845196f9e6ae3404062a7eab96913597c52ef5d",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.probex.npy": "f673268354cabef4a7d6e9193a8c17737089f6db82f71af78d63c5c247c8910a",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__asym-16_ep07.qual.npy": "63d5c0beef56aa304809345a2be3b96bb81cbf329108142418ed5bfefaa3109b",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-0.json": "6365cef43873d5fee301237aef25ba834c5e876d96b843cd4e99e498c4e4a88f",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.probex.npy": "3f07270880534678e1971f2dbd80b6915cb5421a12ba7da26f7e61df5319cbda",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.qual.npy": "f2fa7b35d61ea54007f858aac45db193f4e189098be8a87cacbb6a81586e7ecb",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-l32nb.json": "89db0ccf8524e83dd50e5827f69b3d2ee5b9d4c75a8e2cc5752d3f79aac04cc0",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.probex.npy": "bb59f79263e9469927dffa74016e68b10b0b4d22ed47f05387fb6ea18ae585aa",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-l32nb_ep03.qual.npy": "2424363e60f85231faf8b8cfd80a696ada152104e620d45a4c441f622c9ab6fd",
+    "experiments/upstream-ready-public-schema/plan.json": "fb5e9f95dfd61898171fa332c6ee4d5506cca37089f7ced2688354667138e433"
+  },
+  "script_sha256": "0816af65915cb6f52f12b35392ccc3e0a19856d6c776b8ac0623edb543937d00",
+  "fixed_additions": [
+    "dnn-24__asym-16p75",
+    "dnn-24__dnn-16",
+    "dnn-24__dnn-16p50__asym-16p75",
+    "mf-61__asym-16",
+    "mf-61__asym-16_ep02",
+    "mf-61__asym-16_ep07",
+    "rbmx2-0",
+    "tsvdx4-l32nb_ep03"
+  ],
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Known-ProbeX fixed all-ready ridge diagnostic, not a nonlinear promotion or qualifying score."
+}
