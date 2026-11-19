@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "662507bd25291331b234f34ef038caf921ffc948e3d5befc6d865cd24126d262",
+  "plan_sha256": "c827611c5311d1e5dd0c05fb725ae751fe4eb9d9a6c01c89ddb6582195e124e1",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "c06c139e1d3a538c0ae7bb842b14d57f3e5d5098e0141b1d10c32b3f5ada63a9"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625621609004741,
+      "max_prediction_error": 5.74207348336131e-12,
+      "prediction_sha256": "248134a1df2bc59d50473d623d78e468ac23615e161a34cddc4494ef0e18f8f1"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed all-four complete split3 addition. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "f587afb4ea7a454d42336a4772cd171bb4f39cae25d2c5a8780c2e1733c59f0d"
+}

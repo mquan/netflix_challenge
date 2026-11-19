@@ -1,0 +1,38 @@
+{
+  "created": "2026-11-19T22:25:09.845966+00:00",
+  "code_sha256": {
+    "scripts/upstream_split3_virtual_queue.py": "3631fa02502e34d47589c4cc7e70c35fa38fcf2281b5bbc1a011ce4087d00701",
+    "scripts/upstream_split3_virtual_mps_context.py": "39311c1fdec476372142819296fca4af93acf25f64a93e902603f1be51ebf4c3",
+    "scripts/upstream_split3_virtual_features.py": "ee0e10bd1d6e2bd7bc946b327618d26562d1ff293c73cd9ba0f470aa9d53d4b9",
+    "scripts/upstream_rbm50_tree_split3_virtual_mps.py": "b4c84ecd0925b3ca46166cf05173c710014ec53f146337e4c3550c4b55c8020d",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4"
+  },
+  "fixed_addition": [
+    "s3-dnn16t",
+    "s3-dnn32nm",
+    "s3-nade12s",
+    "s3-nade12s_ep01"
+  ],
+  "virtual_tensor_inputs": true,
+  "raw_prediction_columns": 111,
+  "learned_support_columns": 154,
+  "inputs": 402,
+  "hidden": 128,
+  "context_rank": 32,
+  "origins": [
+    "upstream-rbm50-tree",
+    "upstream-split3-virtual-mps-context"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "reference_development_rmse": 0.8592309819864167,
+  "qualifying_labels_read": false,
+  "resource_policy": {
+    "memory_total_bytes": 25769803776,
+    "consecutive_high_samples": 3,
+    "disk_floor_bytes": 8589934592
+  },
+  "rule": "Retain original five nested user folds, seeds, optimizer and stopping. Require all original native phases and full known projections, independent ridge replay and exact virtual tensor fingerprints before fitting. All15 actual NN model replays and separate stored fixed-mean score required. No automatic production or qualifying selection."
+}
