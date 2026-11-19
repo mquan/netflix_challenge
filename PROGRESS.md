@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T04:14:00Z
+timestamp: 2026-11-19T04:22:41Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -28,11 +28,11 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | First paired production bank | **81/85**; only four temporal columns missing |
 | Temporal150 original fulltrain/qual phase | **20/25 epochs**; all20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
 | CFNADE-96 original phases | **25/95 ProbeX**, **24/95 qualifying** |
-| CFNADE-48 original phases | **22/95 ProbeX**, **21/95 qualifying** |
-| AEX128 original independent job | First phase **20/20 complete**; qualifying **4/20** |
-| AEX16 original primary job | First phase **20/20 complete**; qualifying **18/20** |
+| CFNADE-48 original phases | **23/95 ProbeX**, **22/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; qualifying **5/20** |
+| AEX16 original primary job | Both original20-epoch phases complete; all3 native output hashes and finite paired vectors independently verified |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
-| Primary DAG continuation | Guarded successor PID27177 running original AEX16; idle handoff recovered and independently checked |
+| Primary DAG continuation | Guarded successor PID27177 running original AEX64; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
 | Additional development iteration | Folds0/1 bitwise replay verified; fixed mean improves by **.000052485/.000028573** on their held rows; fitting fold2, no full-result promotion |
@@ -51,6 +51,13 @@ manifests validate again. The stronger gate now runs in separate `_current`
 controller/production adapters; no native worker was signalled or model
 mathematics changed. Correction evidence is in
 `experiments/upstream-extension-run/frozen-controller-restoration.json`.
+
+The website and both progress plots now include the current fresh-only result
+and revised historical promotions. Completed comparable candidates may be
+promoted on lower overall RMSE without an all-fold or fixed minimum-gain veto.
+LC6 and HR2a are promoted candidates; HR2b, N1 and H8 advance the chronological
+original-Probe record. Original decisions remain archived. See
+[PROMOTION_POLICY.md](PROMOTION_POLICY.md).
 
 Current evidence and plans:
 

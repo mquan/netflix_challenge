@@ -22,7 +22,7 @@ X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
 SCORE_MIN, SCORE_MAX = .850, .990
 START = datetime.fromisoformat("2026-09-27T08:00:00-07:00")
-END = datetime.fromisoformat("2026-11-16T18:00:00+00:00")
+END = datetime.fromisoformat("2026-11-19T18:00:00+00:00")
 
 
 def x_at(value):
@@ -93,7 +93,7 @@ for tick in (.850, .875, .900, .925, .975):
 dates = [
     ("2026-09-27", "Sep 27"), ("2026-10-07", "Oct 7"),
     ("2026-10-17", "Oct 17"), ("2026-10-27", "Oct 27"),
-    ("2026-11-06", "Nov 6"), ("2026-11-15", "Nov 15"),
+    ("2026-11-06", "Nov 6"), ("2026-11-18", "Nov 18"),
 ]
 for date, label in dates:
     x = x_at(date + "T12:00:00-07:00")
@@ -116,19 +116,38 @@ for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
+    ("FRESH86 context", "Own training CV · 0.8600637", -18, -68, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
 
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
 text(X0, y_at(.85725)-18, "0.85725", "#baaaff", 22, weight="700")
-text(X1, y_at(.85725)-18, "Netflix 10% improvement goal · Test RMSE", "#baaaff", 22, "end", "700")
+text(X1, y_at(.85725)-115, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
 text(X0, 760, "Probe CV and the recovered qualifying audit use different rows and training. Diamond: adaptive community audit, not an official Test score.", "#a8b0c2", 19)
-audit_svg = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["qualifying_svg"]()
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
-text(94, 857, "NOVEMBER BREAKTHROUGH · RECOVERED QUALIFYING AUDIT", "#70d9d0", 28, weight="700")
-text(94, 902, "619-input ridge: 0.8571903481 · 10.00626267% below 0.9525", "#f2f1ed", 27, weight="700")
-svg.append(audit_svg.replace('<svg ', '<svg x="80" y="930" width="1440" height="660" ', 1))
+text(94, 857, "REVISED PROMOTIONS · ORIGINAL-PROBE DEVELOPMENT", "#70d9d0", 28, weight="700")
+text(94, 905, "Lower overall RMSE promotes a candidate; the record line follows successive best scores.", size=23)
+text(94, 952, "Filled cyan: new record     Hollow gold: promoted against its control, not a new record", size=22)
+selected=[next(m for m in MILESTONES if m[0]==name) for name in ['R10 B5','HR2a','HR2b','LC6','N1 full','H8 full']]
+zoom_y=lambda value:1370-(value-.8664)/.0005*340
+for tick in [.8664,.8665,.8666,.8667,.8668,.8669]:
+    line(X0,zoom_y(tick),X1,zoom_y(tick),'#4b5364',1,.5)
+    text(X0-16,zoom_y(tick)+6,f'{tick:.4f}',size=19,anchor='end')
+record_points=[]
+for i,row in enumerate(selected):
+    xx=X0+65+i*(X1-X0-130)/5;yy=zoom_y(float(row[1]))
+    if row[6]=='promoted':record_points.append((xx,yy))
+if record_points:
+    svg.append('<polyline points="'+' '.join(f'{xx:.1f},{yy:.1f}' for xx,yy in record_points)+'" fill="none" stroke="#70d9d0" stroke-width="3"/>')
+for i,row in enumerate(selected):
+    xx=X0+65+i*(X1-X0-130)/5;yy=zoom_y(float(row[1]));record=row[6]=='promoted'
+    svg.append(f'<circle cx="{xx:.1f}" cy="{yy:.1f}" r="8" fill="{"#70d9d0" if record else "#10131d"}" stroke="{"#70d9d0" if record else "#f6c26b"}" stroke-width="3"/>')
+    text(xx,yy-20,f'{float(row[1]):.7f}',color='#f2f1ed',size=20,anchor='middle')
+    text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
+text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
+text(94,1510,'Current own-training best: 0.8600637 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
+text(94,1555,'Fresh qualifying score pending; the 10% target is not yet verified for our own trained predictions.',size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 
