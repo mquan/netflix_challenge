@@ -12,6 +12,12 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The new own raw autoencoder has completed its first declared epoch5 pair.
+Both actual saved-model query replays pass; independent binding and known-only
+single-component scoring give0.9332148095. This is not a new ensemble score or
+qualifying gain. Its fixed50/50 run continues, with the latest controller already
+working through epoch10. Source/model receipts are preserved independently.
+
 Current iteration: all three follow-on GPU controls completed without a new
 record: expanded-tree means0.8592996371 (whole110),0.8592892332 (own166) and
 0.8593417716 (larger512/rank64). Every saved neural fold model replayed. Their

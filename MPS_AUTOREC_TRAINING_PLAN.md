@@ -44,3 +44,11 @@ claimed before actual real-data fitting and verification complete.
 Code: scripts/upstream_mps_autorec.py, scripts/upstream_mps_autorec_data.py,
 scripts/verify_upstream_mps_autorec_data.py.
 Frozen real-data configuration: experiments/upstream-mps-autorec/plan.json.
+
+First real snapshot: epoch5 completed for both phases and actual saved-model
+inference replay passed on all1,128,164 /2,817,131 query rows. Separate source/
+model/query binding checks and compensated known-only scoring give a standalone
+component RMSE0.9332148095. This supplies no ensemble or qualifying improvement.
+The declared50/50 trajectory continues; epoch5 is not a completed50-epoch model.
+Evidence: experiments/upstream-mps-autorec/{pair-00005,
+snapshot-00005-verification}.json.

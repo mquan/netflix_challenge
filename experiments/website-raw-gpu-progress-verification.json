@@ -1,0 +1,41 @@
+{
+  "state": "complete_live_byte_verification",
+  "observed": "2026-11-19T20:15:41.291622+00:00",
+  "pages_commit": "6bcd79a",
+  "files": [
+    {
+      "path": "",
+      "bytes": 131714,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 68069,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 292948,
+      "matches": true
+    },
+    {
+      "path": "LATENT90_MPS_QUALIFYING_RESULT.md",
+      "bytes": 2100,
+      "matches": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-tree-latent90-production/frozen-mean-score-verification.json",
+      "bytes": 3794,
+      "matches": true
+    },
+    {
+      "path": "MPS_AUTOREC_TRAINING_PLAN.md",
+      "bytes": 2888,
+      "matches": true
+    }
+  ],
+  "development_rmse": 0.8592720612630157,
+  "qualifying_worse_group_rmse": 0.8618605526405846,
+  "milestones": 53,
+  "goal_achieved": false
+}
