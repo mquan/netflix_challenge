@@ -18,7 +18,7 @@ arm improves the own93 ridge diagnostic from0.8631793373 to0.8626981139;
 a separate five-user-fold solve and compensated score replay confirm it.
 The complete95-epoch CF48 trajectory is still running remotely; this is a
 snapshot diagnostic, not whole-job completion or a qualifying promotion.
-Own102 data is prepared and verified, and controller47665 queues its context
+Own102 data is prepared and verified, and controller49665 queues its context
 model behind the running all91 fit, ahead of the stopped idle93 queue.
 See [CF48_PREFIX_102_PLAN.md](CF48_PREFIX_102_PLAN.md).
 

@@ -57,12 +57,23 @@ actual verified tree91 predictions and model receipts. A train/save/reload
 test confirms the239-input model factory and exact saved-state prediction
 replay. No active model source or previous artifact was changed.
 
-Live controller47665 waits for all91 context training/replay and memory
+Live controller49665 waits for all91 context training/replay and memory
 admission. The idle pending93 controller29784 was verified to have no child
 or prepared model cache, then stopped to give this larger measured iteration
 priority. Its code and prior reports remain preserved. The queue handoff
 binds24 implementation files and the actual own102 data manifest. All91 worker
 45335 and the three native source training jobs continue unchanged.
+
+The context-specific admission gate requires two stable samples with native
+footprint below22GiB, compressor below6GiB and swap growth below32MiB per
+30seconds. The running same64-hidden/rank16 NN measured3.0GiB physical
+footprint; the new input width grows from228 to239, with a4GiB allowance.
+This separates the NN's needs from the unchanged CF96 two-phase admission
+policy. The old102 watcher47665 was stopped only while idle, with no model
+cache or child; its code and queue evidence are archived before revising this
+control policy. Both the guard rejection cases and actual model train/save/
+reload test pass. Training architecture, seeds, stopping and source inputs
+remain unchanged.
 
 Evidence: `experiments/upstream-cf48-102/{manifest,cache-column-verification}.json`
 and `experiments/upstream-cf48-102-context/queue-handoff.json`.

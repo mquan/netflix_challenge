@@ -59,8 +59,17 @@ def configure():
     base.RUN,base.REPORT,base.CONFIG=RUN,REPORT,CONFIG
     base.SIGNALS,base.CONTEXT=SIGNALS,CONTEXT
     base.model_factory,base.code_hashes,base.prepare,base.predecessors=model_factory,code_hashes,prepare,predecessors
+    base.memory.admitted=context_admitted
     base.__file__=str(Path(__file__).resolve())
     base.configure()
+
+
+def context_admitted(previous,current,footprint):
+    # The preceding identical64-hidden/rank16 NN measures3.0GiB physical
+    # footprint. Reserve a wider4GiB allowance here, separately from CF96's
+    # two native phases. Do not alter the shared helper on disk.
+    return (footprint<22*2**30 and current['compressor_bytes']<6*2**30 and
+            current['swap_used_bytes']-previous['swap_used_bytes']<32*2**20)
 
 
 def prepare():

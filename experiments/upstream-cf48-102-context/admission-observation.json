@@ -1,0 +1,35 @@
+{
+  "observed": "2026-11-19T11:34:42.004195+00:00",
+  "workers": [
+    {
+      "pid": 16305,
+      "actual_process": "R    02:04:00 ./target/release/tsvdx5-new tsvdx5-60",
+      "physical_footprint_bytes": 15676630630.4
+    },
+    {
+      "pid": 73629,
+      "actual_process": "R    04:58:18 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "physical_footprint_bytes": 4617089843.2
+    },
+    {
+      "pid": 42926,
+      "actual_process": "R    26:06 ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
+      "physical_footprint_bytes": 2362232012.8
+    },
+    {
+      "pid": 45335,
+      "actual_process": "RNs  19:28 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py --worker",
+      "physical_footprint_bytes": 3221225472.0
+    }
+  ],
+  "memory": {
+    "compressor_bytes": 14566785024,
+    "swap_used_bytes": 4768661504.0
+  },
+  "original_cf96_helper_sha256": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+  "original_cf96_helper_unchanged_on_disk": true,
+  "context_admission_implementation_sha256": "de48fe2e1196ff127ab152efb5d82713fec719fab42c70df3f1e6e42734d0408",
+  "context_memory_guard_tests_passed": true,
+  "saved_model_factory_test_passed": true,
+  "scope": "Observed physical footprints, not peak bounds. New NN allowance4GiB; sampled same-architecture predecessor footprint is evidence for this admission policy, not a claim of zero future paging."
+}

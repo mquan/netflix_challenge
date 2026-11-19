@@ -7,11 +7,18 @@ import upstream_cf48_102_context as c
 
 
 class CF48ContextTest(unittest.TestCase):
+    def test_context_memory_admission(self):
+        previous=dict(compressor_bytes=2*2**30,swap_used_bytes=100)
+        self.assertTrue(c.context_admitted(previous,previous,21*2**30))
+        self.assertFalse(c.context_admitted(previous,previous,22*2**30))
+        self.assertFalse(c.context_admitted(previous,dict(previous,compressor_bytes=7*2**30),21*2**30))
+        self.assertFalse(c.context_admitted(previous,dict(previous,swap_used_bytes=100+33*2**20),21*2**30))
+
     def test_new_signal_layout_and_actual_saved_model_replay(self):
         targets=[(c.base,['RUN','REPORT','CONFIG','SIGNALS','CONTEXT','model_factory','code_hashes','prepare','predecessors','__file__']),
                  (c.n,['RUN','REPORT','CONFIG','code_hashes','train_nn']),
                  (c.base.context,['model_factory']),(c.base.verifier,['neural_model']),
-                 (c.base.preceding,['RUN','REPORT'])]
+                 (c.base.preceding,['RUN','REPORT']),(c.base.memory,['admitted'])]
         saved=[(obj,{key:getattr(obj,key) for key in keys}) for obj,keys in targets]
         try:
             self.assertEqual(sorted(c.SIGNALS+c.CONTEXT),list(range(239)))

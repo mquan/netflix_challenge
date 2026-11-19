@@ -1,0 +1,14 @@
+{
+  "state": "waiting_for_prior_fits_and_memory",
+  "observed": "2026-11-19T11:30:30.489412+00:00",
+  "predecessors": {
+    "10867": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py",
+    "45335": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py --worker"
+  },
+  "memory": {
+    "compressor_bytes": 10285154304,
+    "swap_used_bytes": 5120983040.0
+  },
+  "owned_workers": {},
+  "consecutive_good_samples": 0
+}

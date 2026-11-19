@@ -1,7 +1,7 @@
 {
-  "observed": "2026-11-19T11:28:10.873735+00:00",
-  "actual_controller_process": "Ss   Thu Nov 19 03:23:59 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_102_context.py",
-  "pid": 47665,
+  "observed": "2026-11-19T11:31:30.607996+00:00",
+  "actual_controller_process": "Rs   Thu Nov 19 03:31:30 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_102_context.py",
+  "pid": 49665,
   "implementation_files": 24,
   "implementation_sha256": {
     "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
@@ -18,7 +18,7 @@
     "scripts/upstream_extension_run.py": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
     "scripts/upstream_cf12_context.py": "849d8dc23cedeb70b1be6ee9f23dd2ea028c53ac91c476cc6ee64824d11e5406",
     "scripts/upstream_cfnade48.py": "fddec1558a1bc16255885f9bf95a0c1ffd4d913f406ff3eec9c5f574622395e1",
-    "scripts/upstream_cf48_102_context.py": "9c4e5853e15ade217667ffe3672ec6d414b2b5ee91c76d50dca82d9cfd963e49",
+    "scripts/upstream_cf48_102_context.py": "de48fe2e1196ff127ab152efb5d82713fec719fab42c70df3f1e6e42734d0408",
     "scripts/upstream_source_extension.py": "6a0e2cd6a31f3c6d615128e604cf32fb94870796ca4048a5e4963c03d15dec8b",
     "scripts/upstream_extension_run_current.py": "dd1c9709870d4c8ec6ff9573e58436094264e19335570c7c59c4fb688938f6f6",
     "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
@@ -29,7 +29,7 @@
     "scripts/verify_upstream_ready_public_schema.py": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
     "scripts/upstream_extension_context.py": "7f3b9ffda4ca9d940685a172ac74d06d57235fd7d442234fe34799e86a4e10f6"
   },
-  "queue_handoff_sha256": "2d2079cc617a0245c96f0a31c5cbc766e9a16ad25aa3638678ccda975cf87670",
+  "queue_handoff_sha256": "8a9d3d0057733c5e94188be9c740451572b5a871384397450ce904b7dca07722",
   "data_manifest_sha256": "5c5643c3404540bde4614c66fa31628d84aaa6e4b64be74f216170a2691f1673",
   "cache_verification_sha256": "5a3e1bc9b124381879524a7624864fe8a78f3eb16365cfe674d97946ee15393b",
   "snapshot_epoch": 25,
@@ -40,5 +40,6 @@
   "nn_hidden": 64,
   "factory_train_save_reload_test_passed": true,
   "qualifying_labels_read": false,
-  "goal_achieved": false
+  "goal_achieved": false,
+  "context_admission_policy": "Wait preceding context fit and replay. Two stable samples: native footprint<22GiB, compressor<6GiB, swap growth<32MiB/30seconds. Prior same-architecture NN measured3.0GiB; new239-input width adds4.8percent vs228. Reserve4GiB. CF96 policy unchanged."
 }
