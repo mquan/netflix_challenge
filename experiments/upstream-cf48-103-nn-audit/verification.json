@@ -1,0 +1,28 @@
+{
+  "state": "complete_standalone_nn_frozen_vector_and_score_verification",
+  "observed": "2026-11-19T14:03:00.424015+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8609916544142975,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8619938614020105,
+      "below_target": false
+    }
+  },
+  "both_groups_below_target": false,
+  "prediction_sha256": "55dc80137007d68935c22dc5e1dbeb5dd3aaa3705bdbb01eb5f551a809a39edb",
+  "plan_sha256": "1c1adb768ca32583b32632208372545ded1fd5ae395af21b7af3bc47e45be948",
+  "full_fit_plan_sha256": "c4fd8d13a74b5b21fe5bd97fffcde82debf179bd7f330bdb7f8c5f51c3189028",
+  "nn_receipt_sha256": "24886ae79d2ad5c9f5d86a62eeadb8249941270aafb78a7c6ae3518d2ff1958b",
+  "nn_replay_sha256": "ea7670fa900a52908130c6b92c32f4b6b08452b2999a24f6cc5766061bc3ecb2",
+  "audit_report_sha256": "e98f9aeb64919c7bee330068b93fd42e5cc40ed80e620b072dbaba7a758a1b0e",
+  "label_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "verifier_sha256": "e9297a237e82fc2e2421c32ee88bbefac242f78b0e5e066a099666695a39f4e7",
+  "standalone_vector_matches_saved_family_bitwise": true,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Predeclared known-CV-only standalone choice; actual original NN model/scaler/output hashes and saved-inference replay receipt verified. Canonical full recovered groups independently scored with compensated summation. No inference rerun here; adaptive recovered-label audit, not official/untouched Test."
+}

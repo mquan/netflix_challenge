@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T13:43:38.253668+00:00",
-  "display_time": "2026-11-19 13:43 UTC",
+  "observed": "2026-11-19T14:04:46.546953+00:00",
+  "display_time": "2026-11-19 14:04 UTC",
   "best_development_rmse": 0.8594692563654075,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,12 +10,16 @@
   "independent_verification_sha256": "6025e5cd986879c0e454e1dcacca1412dad8099722cca60936283902949c2d32",
   "work": [
     {
+      "work": "Own105 next context iteration",
+      "state": "Worker84147 is training under controller82225 after own103 released the shared lock. Own103 retained plus both verified original split3 attention columns;181 ridge columns,241 features plus ridge. Same nested user folds and rank16/64-hidden architecture; compare against standalone NN1030.8594692564."
+    },
+    {
       "work": "Own103 context development",
       "state": "Complete: standalone NN0.8594692564 is the new comparable best; fixed tree91/NN103 mean0.8595400254 also improves. All15 neural models replay and independent scores verify."
     },
     {
       "work": "Own103 full-known production",
-      "state": "Controller74649 running: original tree91 provenance plus fresh NN103 fit. NN-only candidate predeclared at13:42:23UTC before either qualifying outcome; separate frozen-score check queued. No new qualifying result yet."
+      "state": "Complete. Fresh NN103 budgets20/22/17; actual saved-model replay passed. Fixed mean0.8610694977 /0.8620220770 independently verifies. NN-only candidate, predeclared before either qualifying result, is stronger at0.8609916544 /0.8619938614 and becomes the new qualifying best. Both remain above0.85725."
     },
     {
       "work": "Split3 extension diagnostic",
@@ -39,7 +43,7 @@
     },
     {
       "work": "Tree91/contextNN86 qualifying production",
-      "state": "Complete: source0 0.8614776641; source1 0.8624021195. Fresh tree91 plus exact own full-fit NN86 reuse with original ridge/bank/config/budget/model/replay checks. Separate mean/score verifier passes; worse group improves9.4591%, still below10%."
+      "state": "Preceding result: source0 0.8614776641; source1 0.8624021195. Fresh tree91 plus exact own full-fit NN86 reuse with original ridge/bank/config/budget/model/replay checks. Separate mean/score verifier passes; worse group improves9.4591%, still below10%."
     },
     {
       "work": "Matching86 qualifying queue",
@@ -115,31 +119,30 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "f30478e46dab88d15f488d60f30c23e4b268e3658861c55333bd43fe5cbb3b77",
+  "qualifying_verification_sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
   "qualifying_groups": {
     "quiz": {
       "rows": 1408789,
-      "rmse": 0.8614776640541453,
+      "rmse": 0.8609916544142975,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.556150755470316
+      "improvement_percent_over_cinematch": 9.607175389575072
     },
     "test": {
       "rows": 1408342,
-      "rmse": 0.8624021195492101,
+      "rmse": 0.8619938614020105,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.459095060450384
+      "improvement_percent_over_cinematch": 9.501956808187872
     }
   },
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "16305 04:13:33  97.5 ./target/release/tsvdx5-new tsvdx5-60",
-      "21217 03:47:24   1.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
-      "70300    29:28   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
-      "73629 07:07:48  87.3 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "74649    16:40   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_103_production.py",
-      "78573    04:30   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_cf48_103_when_ready.py",
-      "79297    01:45   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_103_nn_audit.py 74649"
+      "16305 04:34:11  83.6 ./target/release/tsvdx5-new tsvdx5-60",
+      "21217 04:08:02   0.3 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
+      "70300    50:06   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py",
+      "73629 07:28:26 284.5 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "82225    14:06   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_105_context.py",
+      "84147    04:35  73.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_105_context.py --worker"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -229,9 +232,7 @@
     },
     "split3_completion_verification_sha256": "3bfe3c66ae9780adb358b5dc97f87d62628135a3b9faed7501e95008a7747a3c",
     "own103_production": {
-      "state": "replaying",
-      "family": "tree",
-      "pid": 79422
+      "state": "complete_both_frozen_audits_verified"
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
@@ -239,19 +240,21 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8615005553485519,
+      "rmse": 0.8609916544142975,
       "below_target": false
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8624166617824088,
+      "rmse": 0.8619938614020105,
       "below_target": false
     }
   },
-  "latest_qualifying_verification_sha256": "4bfe0b40f176c9e5f64aab107093a86c8a3a2f4f8e72289bf272448050cb05cf",
+  "latest_qualifying_verification_sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
   "best_development_arm": "own103 standalone context NN",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,
-  "own103_nn_only_candidate_predeclared": true
+  "own103_nn_only_candidate_predeclared": true,
+  "own103_full_refit_complete": true,
+  "own103_nn_qualifying_best": true
 }

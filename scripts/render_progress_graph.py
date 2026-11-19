@@ -120,7 +120,7 @@ for ident, label, dx, dy, anchor in (
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
     ("FRESH103 NN", "Own training CV · 0.8594693", -18, -68, "end"),
-    ("FRESH91 qualifying", "Own qualifying audit · 0.8624021", -18, -130, "end"),
+    ("FRESH103 NN qualifying", "Own qualifying audit · 0.8619939", -18, -130, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
@@ -151,7 +151,7 @@ for i,row in enumerate(selected):
     text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
 text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
 text(94,1510,'Current own-training best: 0.8594693 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
-text(94,1555,'Best own qualifying audit: 0.8614777 / 0.8624021 · 9.4591% on the worse group; 10% target missed.',size=22)
+text(94,1555,'Best own qualifying audit: 0.8609917 / 0.8619939 · 9.5020% on the worse group; 10% target missed.',size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 
