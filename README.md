@@ -30,9 +30,10 @@ separate compensated scoring pass. These are adaptive recovered audits, not
 official/untouched Test. No qualifying outcomes enter fitting or selection.
 
 All three original native additions are now complete, including rank1000 with
-both20-epoch phases and separate source/storage/output checks. Whole110 GPU
-fitting is active. The fixed59 captured-snapshot ridge batch and own166/all90
-cache are independently checked; its393-input GPU model is queued. The first
+both20-epoch phases and separate source/storage/output checks. The whole110, own166 and larger512-unit GPU controls completed
+without improving the existing best. Their negative results remain in the plots.
+A new own raw masked-denoising autoencoder is training50/50 real-data epochs
+on independently checked99.35M /100.48M rating histories. The first
 split3 DNN completed7/7; the no-MF DNN and CF96 phases remain active.
 See [LATENT90_MPS_QUALIFYING_RESULT.md](LATENT90_MPS_QUALIFYING_RESULT.md) for the
 latest audit, and [WARM166_MPS_PLAN.md](WARM166_MPS_PLAN.md) for the next study.
