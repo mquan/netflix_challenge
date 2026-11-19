@@ -1,0 +1,50 @@
+{
+  "state": "duplicate_local_workers_retired_with_verified_checkpoints",
+  "observed": "2026-11-19T06:15:28.017419+00:00",
+  "remote_commit": "9bce6a17610736db730c5f46efb4307482228934",
+  "remote_proof_sha256": "3a0e36d0f31128ef8ea53fe95b30769d31080bee836b63104a4566cfe0dcb8a5",
+  "remote_resume_logs_sha256": {
+    "tmux-x.log": "523dcc2e59d79feafc164d1282f28d194ef8df7d9594b0edcffdca2b78aaff70",
+    "tmux-qual.log": "556bd03af82982cd5a0c73562d0b2e5370ebe123524867622ead65af69861576"
+  },
+  "remote_observation_scope": "Remote committed restore logs, original-package native binary hash, declared exact regenerated native hashes and process observations. Remote filesystem is not directly accessible from this laptop.",
+  "local_controller": "83999 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade48.py",
+  "local_children": [
+    "84003",
+    "84004"
+  ],
+  "local_before": {
+    "state": "training",
+    "epochs": {
+      "x": 33,
+      "qual": 32
+    },
+    "active": {
+      "x": 84003,
+      "qual": 84004
+    },
+    "rss_bytes": {
+      "x": 712163328,
+      "qual": 628326400
+    },
+    "other_rss_bytes": 10519281664,
+    "disk_free_bytes": 122913464320,
+    "heartbeat": "2026-11-19T06:15:25.606131+00:00"
+  },
+  "local_all_three_processes_exited": true,
+  "local_fallback_checkpoints": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "3f7f8767180b5bab067de2c8512fdb7efbe7a4d6e82ae8314f1b07f45e97cfa3",
+      "all84_tensors_rehashed": true,
+      "state": "artifacts/upstream-cfnade-sparse-rows/preset48-checkpoints/trainx/epoch-00033/state.json"
+    },
+    "fulltrain": {
+      "epoch": 32,
+      "state_sha256": "2b0f860de0103867d32943a497aafe239c079fe986ecaa07cd1c75cc47e13929",
+      "all84_tensors_rehashed": true,
+      "state": "artifacts/upstream-cfnade-sparse-rows/preset48-checkpoints/fulltrain/epoch-00032/state.json"
+    }
+  },
+  "qualifying_goal_achieved": false
+}

@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T05:27:04.201295+00:00",
-  "display_time": "November 18, 2026, 09:27 PM Pacific",
+  "observed": "2026-11-19T06:17:15.551947+00:00",
+  "display_time": "November 18, 2026, 10:17 PM Pacific",
   "best_development_rmse": 0.8600300601883686,
   "qualifying_status": "pending",
   "target_each_recovered_group": 0.85725,
@@ -11,35 +11,39 @@
   "work": [
     {
       "work": "Paired prediction bank",
-      "state": "81/85 columns ready; four temporal columns await the complete source phase"
+      "state": "85/85 complete and rehashed; recovered original remote temporal pairs match all eight selected native NPY hashes exactly"
     },
     {
-      "work": "Temporal150 qualifying phase",
-      "state": "22/25 epochs; first20 snapshots exactly match our earlier remote native hashes; complete paired receipt still required"
+      "work": "First qualifying blend",
+      "state": "Frozen recipe; full-known-ProbeX tree fitting active (worker 65971). Tree budgets 698/737/860; NN 25/31/25. Saved-model replay and independent qualifying audit follow"
+    },
+    {
+      "work": "Temporal150 local fallback",
+      "state": "24/25 epochs observed; continues independently. Its active output directory was not modified by recovery"
     },
     {
       "work": "CFNADE96",
-      "state": "28/95 ProbeX; 26/95 qualifying"
+      "state": "30/95 ProbeX; 29/95 qualifying; both native processes observed live"
     },
     {
-      "work": "CFNADE48",
-      "state": "28/95 ProbeX; 27/95 qualifying"
+      "work": "CFNADE48 remote continuation",
+      "state": "Both phases restored at31/30 with matching regenerated hashes in remote proof. Training deadline November19 14:33 UTC; return by15:03 UTC. Local duplicate workers retired; all84 tensors rehashed in each preserved33/32 fallback checkpoint"
     },
     {
       "work": "AEX128",
-      "state": "ProbeX phase20/20 complete; qualifying 14/20"
+      "state": "Both original20-epoch phases complete; all36 data inputs, actual binary, receipt and three native output hashes independently verified. Import waits for primary scheduler boundary"
     },
     {
       "work": "Original source DAG",
-      "state": "AEX16 complete and independently verified; aex-64 running"
+      "state": "AEX16 complete and independently verified; AEX64 original qualifying phase remains active"
     },
     {
-      "work": "Matching86-predictor tree study",
-      "state": "Complete: all five folds improve; all 15 saved trees replay bit-for-bit; independent fixed-mean RMSE 0.8600300602"
+      "work": "Matching86 development",
+      "state": "Complete: all five folds improve; all15 saved trees replay bit-for-bit; independent fixed-mean RMSE0.8600300602"
     },
     {
-      "work": "Qualifying blend",
-      "state": "First85 fit queued after complete temporal outputs. Matching86 production path now passes the development gate; its adapter is still to be implemented and tested."
+      "work": "Matching86 qualifying continuation",
+      "state": "Tested queue remains active after first frozen audit; actual matching tree and context-NN budget origins independently bound. Both families will refit on86 predictors"
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim."
