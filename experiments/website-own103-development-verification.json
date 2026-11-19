@@ -1,0 +1,76 @@
+{
+  "state": "verified_own103_development_publication",
+  "observed": "2026-11-19T13:47:05.525796+00:00",
+  "source_commit": "99287d46abc04c5e88803b33f601072bc5e9f066",
+  "pages_commit": "145ffdba384e1c97244a8e71ab19cd531bc0112c",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "5ca22f7f12e6023aebbb62ee0c6aeba528393030cf4bb98f86837fd385004f23",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "5ca22f7f12e6023aebbb62ee0c6aeba528393030cf4bb98f86837fd385004f23",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "039bf438271d957b141de452df972623e6fda93e61458c977ad1613f4ede0310",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "9fda9cf3c0941bb643bd5669b1928c5ce9d55a6cc96bab55b1095e11a947143d",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "CF48_103_CONTEXT_RESULT.md",
+      "status": 200,
+      "sha256": "3b72018df0a9304dc735c8a963fa7f408feb3e6456ff7be43d1e678666078294",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "c245a59ac0d9c503f4d31beb112b11a4947291fdc0ab1a7de54b97336e8a0342",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "476abd2943f38e224bb1d99f7ecca3cc2930b9f32abd89bdaf545dc71af5d8e6",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-cf48-103-context/independent-verification.json",
+      "status": 200,
+      "sha256": "6025e5cd986879c0e454e1dcacca1412dad8099722cca60936283902949c2d32",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-cf48-103-nn-audit/plan.json",
+      "status": 200,
+      "sha256": "1c1adb768ca32583b32632208372545ded1fd5ae395af21b7af3bc47e45be948",
+      "local_bytes_equal": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 43,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8594692563654075,
+  "fixed_tree_nn_development": 0.8595400254184109,
+  "best_qualifying_source0": 0.8614776640541453,
+  "best_qualifying_source1": 0.8624021195492101,
+  "qualifying_target_achieved": false,
+  "own103_full_refit_active": true,
+  "plots_updated": true
+}
