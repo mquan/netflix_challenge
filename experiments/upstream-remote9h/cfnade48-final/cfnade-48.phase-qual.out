@@ -1,0 +1,74 @@
+[published cfnade-48 independent phase] CfNadeConfig { n_hidden: 160, n_hidden2: 0, rank: 48, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }
+fulltrain => qual
+CF-NADE init: sampling A/P factors (2 x 5 x 17770 x 48)...
+CF-NADE init: computing item rating-bias priors...
+CF-NADE init: indexing user ratings...
+CF-NADE init: indexing probe items for implicit context...
+CF-NADE init: building per-user day-frequency bins...
+CF-NADE init: computing side-feature statistics...
+Exact CFNADE checkpoint restored: fulltrain epoch 30
+Epoch 31 | RMSE 3.74770
+Epoch 32 | RMSE 3.74649
+Epoch 33 | RMSE 3.74718
+Epoch 34 | RMSE 3.74811
+Epoch 35 | RMSE 3.74756
+Epoch 36 | RMSE 3.74654
+Epoch 37 | RMSE 3.74564
+Epoch 38 | RMSE 3.74450
+Epoch 39 | RMSE 3.74546
+Epoch 40 | RMSE 3.74436
+Epoch 41 | RMSE 3.74639
+Epoch 42 | RMSE 3.74645
+Epoch 43 | RMSE 3.74699
+Epoch 44 | RMSE 3.74789
+Epoch 45 | RMSE 3.74833
+Epoch 46 | RMSE 3.74988
+Epoch 47 | RMSE 3.75082
+Epoch 48 | RMSE 3.75077
+Epoch 49 | RMSE 3.75067
+Epoch 50 | RMSE 3.75107
+Epoch 51 | RMSE 3.75159
+Epoch 52 | RMSE 3.75202
+Epoch 53 | RMSE 3.75310
+Epoch 54 | RMSE 3.75314
+Epoch 55 | RMSE 3.75336
+Epoch 56 | RMSE 3.75387
+Epoch 57 | RMSE 3.75456
+Epoch 58 | RMSE 3.75485
+Epoch 59 | RMSE 3.75622
+Epoch 60 | RMSE 3.75705
+Epoch 61 | RMSE 3.75823
+Epoch 62 | RMSE 3.75877
+Epoch 63 | RMSE 3.75934
+Epoch 64 | RMSE 3.76034
+Epoch 65 | RMSE 3.76084
+Epoch 66 | RMSE 3.76081
+Epoch 67 | RMSE 3.76135
+Epoch 68 | RMSE 3.76135
+Epoch 69 | RMSE 3.76222
+Epoch 70 | RMSE 3.76209
+Epoch 71 | RMSE 3.76241
+Epoch 72 | RMSE 3.76253
+Epoch 73 | RMSE 3.76343
+Epoch 74 | RMSE 3.76361
+Epoch 75 | RMSE 3.76399
+Epoch 76 | RMSE 3.76465
+Epoch 77 | RMSE 3.76506
+Epoch 78 | RMSE 3.76557
+Epoch 79 | RMSE 3.76628
+Epoch 80 | RMSE 3.76683
+Epoch 81 | RMSE 3.76729
+Epoch 82 | RMSE 3.76780
+Epoch 83 | RMSE 3.76832
+Epoch 84 | RMSE 3.76851
+Epoch 85 | RMSE 3.76901
+Epoch 86 | RMSE 3.76916
+Epoch 87 | RMSE 3.77001
+Epoch 88 | RMSE 3.77066
+Epoch 89 | RMSE 3.77106
+Epoch 90 | RMSE 3.77172
+Epoch 91 | RMSE 3.77236
+Epoch 92 | RMSE 3.77282
+Epoch 93 | RMSE 3.77357
+Epoch 94 | RMSE 3.77406
+Epoch 95 | RMSE 3.77444
