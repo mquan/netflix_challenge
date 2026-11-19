@@ -1,0 +1,66 @@
+{
+  "state": "verified_own107_rbm50_development_publication",
+  "observed": "2026-11-19T16:23:42.788443+00:00",
+  "source_commit": "8b2577b",
+  "pages_commit": "db6744aa835e0087e816532ba39eb9146f3737a5",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "ee8539a7a461b48a80bd2884455ec5bae878dc92e5b9c96664abbb286e7a561a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "ee8539a7a461b48a80bd2884455ec5bae878dc92e5b9c96664abbb286e7a561a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "sha256": "2572d1c5e9a060a6e3d4dea9d670b5db421284752769174e7ff9b5207050c723",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "2890e692022041eb60f00d6ced64b77b4feeb63dc5b5163535b29dc407b1ae7d",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "be96a4ce7d43d29a1a9943829245fff298f5e4769dc05abed2b555d6adff9c09",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "224dedc553d1616cf548ca5c7f5dec015653e039065b1e8230873f54c1c9a286",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "RBM50_CONTEXT_RESULT.md",
+      "status": 200,
+      "sha256": "c80a3357ab04d58a961ac89d66d2d254bf66312d4d25969d53df90e28aa383f0",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-context/independent-verification.json",
+      "status": 200,
+      "sha256": "807e13b8fbdc1c453f7655e10a25033e89499941ae982d05140e2b889cfc16cc",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-context/nn-replay.json",
+      "status": 200,
+      "sha256": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+      "local_bytes_equal": true
+    }
+  ],
+  "milestones": 46,
+  "development_best": 0.8594554093063749,
+  "best_qualifying_unchanged": true,
+  "goal_achieved": false
+}

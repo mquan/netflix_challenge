@@ -1,0 +1,24 @@
+{
+  "state": "observed_original_tx20lat_native_running",
+  "observed": "2026-11-19T16:26:56.134646+00:00",
+  "native_launch": {
+    "state": "native_running",
+    "job": "tx20lat",
+    "pid": 7119,
+    "command": [
+      "./target/release/fit",
+      "tx",
+      "tx20lat",
+      "-p",
+      "pipeline-new.toml",
+      "--final",
+      "--preds",
+      "preds_new"
+    ],
+    "started": "2026-11-19T16:25:34.269630+00:00"
+  },
+  "process": "7119 70300 Thu Nov 19 08:25:34 2026     ./target/release/fit tx tx20lat -p pipeline-new.toml --final --preds preds_new",
+  "plan_sha256": "f14af91c1d4be18ef2bb7f940eab3eca0f33ea7a3ec95936fe5ae0f1112e380c",
+  "rbm50_complete_verification_sha256": "9b0d14261f126f9bc9d4f792cd75ab758fb8232cb460b42e82a61fc3dc2e8c01",
+  "scope": "Actual unchanged original native launch after stable memory admission. Not a completion or score claim."
+}
