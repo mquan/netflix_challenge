@@ -26,9 +26,10 @@ compensated-score check passes. The earlier first85 completion audit binds333
 evidence files. No qualifying outcomes entered fitting or selection.
 
 The original 1,000-factor source job remains active. Production for the newer
-tree91/contextNN86 candidate waits for physical-memory admission; the full91
+tree91/contextNN86 candidate is fitting its full tree family; the full91
 context follow-up is queued behind it. CFNADE48 continues remotely. CFNADE96
-checkpoints33/31 are preserved and await memory admission. See
+checkpoints33/31 are preserved after a second resource yield; coordinated
+admission must account for new primary native allocations. See
 [FIRST86_QUALIFYING_RESULT.md](FIRST86_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.

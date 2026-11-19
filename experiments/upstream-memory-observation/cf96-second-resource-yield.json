@@ -1,0 +1,45 @@
+{
+  "state": "checkpointed_cf96_yielded_after_admission_race",
+  "observed": "2026-11-19T09:41:26.999066+00:00",
+  "finished": "2026-11-19T09:41:29.060478+00:00",
+  "master_pid": 16335,
+  "worker_pids": [
+    16378,
+    16379
+  ],
+  "all_owned_processes_exited": true,
+  "checkpoints_before": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  },
+  "checkpoints_after": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  },
+  "source_id": "caa746c11ae0070b1615d5594e8edca924a348da88ae743b8938f8a5760cd636",
+  "data_id": "c46870e9892edc2a8ad5a2550a146236e1fbfc8aee7c3f71422bf73ccbf12538",
+  "original_runner_sha256": "355bc3d1a2a58fa9f12e2086a54fc18bb860e499212f4ef3e2887b0a2b6dd2f3",
+  "memory_evidence": "experiments/upstream-memory-observation/after-production-and-cf96-resume.json",
+  "memory_evidence_sha256": "78699e125c3ce8f96b6a7c63e440b4e3ae44e391b5c79dd8eaa74d0972116760",
+  "memory_after": {
+    "compressor_bytes": 15636578304,
+    "swap_used_bytes": 3624140800.0
+  },
+  "scope": "Only our checkpointed CF96 controller and its owned workers yielded. The next primary native model allocated after admission, so both CF96 workers and production had admitted against a transient smaller footprint. All84 tensors per phase and owners/source/data identities verified after cleanup. Uncheckpointed native jobs and active tree91 production untouched; no goal pause or reduced model capacity."
+}

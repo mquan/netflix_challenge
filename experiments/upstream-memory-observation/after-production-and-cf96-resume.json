@@ -1,0 +1,66 @@
+{
+  "before": {
+    "observed": "2026-11-19T09:39:28.121927+00:00",
+    "memory": {
+      "compressor_bytes": 17475633152,
+      "swap_used_bytes": 3817078784.0
+    },
+    "counters": {
+      "Decompressions": 1420161481,
+      "Compressions": 1485892128,
+      "Swapins": 17359522,
+      "Swapouts": 19259635
+    }
+  },
+  "after": {
+    "observed": "2026-11-19T09:39:38.147065+00:00",
+    "memory": {
+      "compressor_bytes": 17531748352,
+      "swap_used_bytes": 3791912960.0
+    },
+    "counters": {
+      "Decompressions": 1420239843,
+      "Compressions": 1485978821,
+      "Swapins": 17361053,
+      "Swapouts": 19259635
+    }
+  },
+  "counter_delta": {
+    "Decompressions": 78362,
+    "Compressions": 86693,
+    "Swapins": 1531,
+    "Swapouts": 0
+  },
+  "interval_seconds": 10,
+  "owned_workers": {
+    "16274": {
+      "bytes": 6882304.0,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/target/release/run -n tsvdx5-60"
+    },
+    "16305": {
+      "bytes": 14602888806.4,
+      "command": "./target/release/tsvdx5-new tsvdx5-60"
+    },
+    "16349": {
+      "bytes": 1610612736.0,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_tree91_context86_production.py --family tree"
+    },
+    "16378": {
+      "bytes": 3972844748.8,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x"
+    },
+    "16379": {
+      "bytes": 4080218931.2,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+    },
+    "73608": {
+      "bytes": 7455744.0,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/target/release/run -n tsvdx4p-1000lm"
+    },
+    "73629": {
+      "bytes": 4617089843.2,
+      "command": "./target/release/tsvdx4p-new tsvdx4p-1000lm"
+    }
+  },
+  "owned_footprint_bytes": 28897993113.600002
+}
