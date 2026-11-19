@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T09:12:00+00:00
+timestamp: 2026-11-19T09:24:00+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -50,7 +50,7 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | Full tree refit active as PID8826 under master88587. The current run remains intact; its exact contextNN86 is required by the new combination |
+| Matching86 production | All three full tree fits and saved-tree replay complete; neural refit PID14336 active under master88587. Its exact contextNN86 is required by the new combination |
 | Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
 | New tree91/contextNN86 production | Controller 10865 waits for the active matching86 run; it will verify and reuse the exact same full-fit NN86, fit tree91 with its own ridge and budgets, replay both, freeze the mean and audit |
 | All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |
@@ -73,6 +73,22 @@ tree91 fitting then uses its separate 167-column ridge and 228 inputs.
 The two neural-origin gate tests reject changed recipes, budgets, model sets,
 plans and replay evidence. Both actual queue processes and launch code hashes
 were verified in `experiments/upstream-tree91-context86-production/startup-verification.json`.
+
+The paired production bank has now passed an independent full-row column
+check against its actual declared own native pairs: original predictions,
+clipping, float32 centering, context interactions, intercept, all130 voting
+features and all six additions. Known labels and user identities match the
+original development rows. Nine base predictor columns differ from the frozen
+development realization, from four retrained source producers. This was
+already disclosed in the original parent bank's `feature_recipe`; it is now
+quantified in `experiments/upstream-extension-bank/paired-source-differences.json`.
+The checker initially assumed identical source realizations, then was corrected
+to validate the declared paired inputs while reporting those differences.
+Production bank files and model math were not changed. The development gain
+is recipe evidence; it does not imply the same score on the rebuilt bank or
+on qualifying rows. Both current full-fit families learn from that rebuilt
+known-ProbeX bank, with their original schemas and no qualifying-label fitting.
+Two regression tests cover valid retrained inputs and corrupted column math.
 
 Temporal completion evidence is in
 `experiments/upstream-temporal-phase/completion-verification.json`, produced by

@@ -55,3 +55,11 @@ outcome, residual or earlier qualifying score selects the family combination,
 feature layouts, budgets or weights. No public pretrained prediction features
 are admitted. The resulting audit remains adaptive community-recovered
 evidence, not official Netflix or untouched Test performance.
+
+The parent production bank explicitly discloses that some source models are
+our independent local retrains rather than the exact cached development
+realization. Independent full-row checks confirm the declared paired native
+column transforms while quantifying nine changed predictor columns from four
+source producers. Labels and user identities match. The0.8599745622 result
+remains development evidence for the recipe, not a measured score of this
+rebuilt production bank; the complete frozen qualifying audit is still required.
