@@ -1,0 +1,11 @@
+{
+  "state": "declared_evaluator_reference_recovery_before_score",
+  "observed": "2026-11-19T22:56:35.501641+00:00",
+  "original_queue_plan_sha256": "2bc7344f67712eac86375c1be5b8d3d48f0f20dc1589ad778c66afa5a355f902",
+  "original_script_sha256": "4541beb777ea279e33cecdb7443e6992562ebdfb95cd46d915b2af26c0c72df2",
+  "recovered_script_sha256": "0ccd9daeb4dbdc51910eafebf4bffc686afc5b2a44e45d07ce2a0c641e1ae7f8",
+  "correction": "Only two preceding-best references corrected from nonexistent item186-mps to actual item154-mps; new result namespace preserves the failed plan. All training/source/weights/folds/half weights unchanged.",
+  "original_partial_report": "experiments/upstream-rbm50-tree-item186-virtual-mps",
+  "recovered_report": "experiments/upstream-rbm50-tree-item186-virtual-mps-recovered",
+  "qualifying_labels_read": false
+}

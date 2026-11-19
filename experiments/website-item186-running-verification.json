@@ -1,0 +1,39 @@
+{
+  "state": "complete_live_site_and_plot_bytes_match",
+  "observed": "2026-11-19T22:51:15.998832+00:00",
+  "pages_commit": "40e8557c56946e91d981e59d73ff1a10009537f4",
+  "checks": [
+    {
+      "path": "index.html",
+      "sha256": "1c672e5c91f2d06ce54b2f65f374ec5b270622c12fc5be6da94a82bc5d9b6052",
+      "bytes": 142459,
+      "live_byte_identical": true
+    },
+    {
+      "path": "research_journey.html",
+      "sha256": "1c672e5c91f2d06ce54b2f65f374ec5b270622c12fc5be6da94a82bc5d9b6052",
+      "bytes": 142459,
+      "live_byte_identical": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "sha256": "a9b3eca87c34b662ef694a543032348e61d30f49b71429c68415a79297172dde",
+      "bytes": 77145,
+      "live_byte_identical": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "sha256": "a38c2c1cd65f4b8af9a2508907e00d0c449abfe0c0c00c9e27b75adcb0888956",
+      "bytes": 294890,
+      "live_byte_identical": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "sha256": "9275c4f2f90ab159d7b8a6921997466deca6342b5ad75d03f10ec95bfd24fc75",
+      "bytes": 26482,
+      "live_byte_identical": true
+    }
+  ],
+  "milestones": 60,
+  "goal_achieved": false
+}

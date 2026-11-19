@@ -1,0 +1,10 @@
+{
+  "state": "pre_fit_resource_helper_corrected",
+  "observed": "2026-11-19T22:59:53.461350+00:00",
+  "reason": "Wrong module alias for existing other_rss helper; guarded child was stopped before any fold output/model existed.",
+  "corrected_expression": "template.parent.resources.other_rss",
+  "no_model_fitting_occurred": true,
+  "full_inputs_budgets_recipe_preserved": true,
+  "original_report": "experiments/upstream-item154-tree-attempt1",
+  "original_artifacts": "artifacts/upstream-item154-tree-attempt1"
+}
