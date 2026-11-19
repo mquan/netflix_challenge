@@ -1,0 +1,38 @@
+{
+  "state": "prepared_lossless_csr_pending_independent_verification",
+  "phase": "trainx",
+  "query": "probex",
+  "ratings": 99352343,
+  "query_rows": 1128164,
+  "row_items": 17770,
+  "column_users": 480189,
+  "axis_order": [
+    "item",
+    "user"
+  ],
+  "source_sha256": {
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/data/trainx/item_cnts.npy": "a49452ed6f0990fcee74d469facb8d3753ef45de296c6563a4c0b4bf9b11b313",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5"
+  },
+  "outputs": {
+    "query-order.npy": "9bcbb7f70d6442fb2de24c61ca7e914114d4a36d506e42199eb723ce36b78db5",
+    "query-columns.npy": "0a3f368d1a736bf3785176fa2381f382ee421fc626b5463b1d737601eda40013",
+    "offsets.npy": "c35e672caac3275dbc2181d910c3e63d8cd8c297e528e879b3fd1db45afeaa1b",
+    "ratings.npy": "c4d6d554b176bba09af87441443b3a7d5fc829bab10b4ae285e7c140b435f3bd",
+    "query-offsets.npy": "d0db5f5c0772571077594818de72dddf35a76b59eef428c4cd5fd47456071501",
+    "columns.npy": "b27b8031097d6460af25eaaf0e0ba16504e13b7a15f27722898a09dec1918417"
+  },
+  "all_original_rating_tuples_checked": true,
+  "query_pairs_absent_from_training": true,
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "script_sha256": "638bd84b6f5e7a5d0b4620bf965630bbae56029b73a443f68017ccc3eecf8d84",
+  "scope": "Lossless item-oriented original rating histories only. Column IDs are uint32 canonical user indices; no16-bit truncation. Query labels are excluded from this phase history. No model fitting or accuracy result."
+}

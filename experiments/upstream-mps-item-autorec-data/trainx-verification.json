@@ -1,0 +1,17 @@
+{
+  "state": "complete_independent_lossless_csr_and_query_verification",
+  "phase": "trainx",
+  "query": "probex",
+  "rows": 99352343,
+  "query_rows": 1128164,
+  "receipt_sha256": "bb1c66a090de4b9bf5983c8b04a5d8b47416d207b1f402afd8bb17b798e4a2df",
+  "verifier_sha256": "d64c69cf125dd43bb6dbcfbdb0dd6c19a99fa53180e83670e08388e1ed2aa977",
+  "every_training_tuple_replayed": true,
+  "independently_lexicographically_sorted": true,
+  "query_pairs_absent_from_training": true,
+  "full_query_projection_checked": true,
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent complete original item-row/user-column CSR and query-map replay. No model fitting, inference replay or score claimed."
+}
