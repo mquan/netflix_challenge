@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T23:22:52.061205+00:00",
-  "display_time": "2026-11-19 23:22 UTC",
+  "observed": "2026-11-19T23:27:17.507463+00:00",
+  "display_time": "2026-11-19 23:27 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "One known-fit coefficient calibration and frozen qualifying audit",
+      "state": "Complete independent new qualifying best: source0 0.8606524657 /source1 0.8616635956, both preceding groups improve. One known-only convex coefficient32.2310% tree /67.7690% NN, same original actual replayed full own families. Exact known/full arithmetic and separate canonical group scores pass after CSV-header-only parser recovery; original frozen vector/weights preserved. Worse group9.5366304%, target still missed. Apparent calibration0.8591643 is not nested CV; CV best remains0.8592310."
+    },
     {
       "work": "Immutable raw snapshot verification lineage",
       "state": "Full original independent checks still rerun; lock-protected publication preserves the first identical successful proof and rejects any changed score/source binding. Timestamp repeats, changed evidence and three concurrent writers tested. Actual epoch5 full recheck preserves every proof byte/hash; no raw fitting, predictions, budgets or checkpoint choice changed."
@@ -231,15 +235,15 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "394d5a7aab36979b17dca570194859aab12c87937f13214303215cbc6ee3d309",
+  "qualifying_verification_sha256": "43bffae3f9aaa603fd32926b9036ae87cdde6503d73800b39ba641ef88b43f25",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8607516601651759
+      "rmse": 0.860652465694796
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8617378856802073
+      "rmse": 0.8616635956343016
     }
   },
   "goal_achieved": false,
@@ -404,14 +408,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8607516601651759
+      "rmse": 0.860652465694796
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8617378856802073
+      "rmse": 0.8616635956343016
     }
   },
-  "latest_qualifying_verification_sha256": "394d5a7aab36979b17dca570194859aab12c87937f13214303215cbc6ee3d309",
+  "latest_qualifying_verification_sha256": "43bffae3f9aaa603fd32926b9036ae87cdde6503d73800b39ba641ef88b43f25",
   "best_development_arm": "own107/50 tree plus own107/all90 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -429,7 +433,7 @@
     "experiments/upstream-item154-mps-context/nn-replay.json"
   ],
   "development_narrative": "The predeclared fixed half mean combines the expanded107/50 tree with our107/154 neural model, adding64 unsupervised item components from our freshly trained native factors. It improves the separately verified0.8592433 consensus. The item study recovered its interrupted final fold under the identical frozen recipe, preserving the first four fold receipts and original partial artifacts. All15 neural model replays passed. Its full known-selected qualifying audit is now independently complete. The later user218 neural extension scored0.8594487 and is not promoted.",
-  "latest_qualifying_verification_path": "experiments/upstream-item154-stream-production/independent-verification.json",
-  "qualifying_narrative": "The known-selected fixed tree/item154 NN half mean improves both preceding consensus groups0.8608203 /0.8618006. It reuses the original actual replayed full tree729/706/868 and fits the new398-input NN with known-fold median7/7/8 epochs. Actual saved-model reload and every qualifying-row replay pass. The exact float32 half mean was frozen before canonical-label access; separate source/model and compensated complete-group scoring agree. The own epoch20 user-context neural extension completed without improving development, so it receives no qualifying refit.",
+  "latest_qualifying_verification_path": "experiments/upstream-item154-weight-calibration/independent-verification.json",
+  "qualifying_narrative": "One convex coefficient is fitted only to known OOF predictions: tree32.2310% /item154 NN67.7690%. The apparent known-fit0.8591643 is not nested cross-validation and does not replace the0.8592310 CV best. The same actual replayed own full models are reused, with the new complete vector frozen before canonical recovered-label access. Independent coefficient refit, exact stored-vector reconstruction and complete-group compensated scoring improve both preceding fixed-half groups. No qualifying outcome fitted or selected the coefficient.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703"
 }

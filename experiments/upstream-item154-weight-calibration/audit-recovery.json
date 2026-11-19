@@ -1,0 +1,11 @@
+{
+  "state": "canonical_csv_header_parser_recovery",
+  "observed": "2026-11-19T23:23:24.858291+00:00",
+  "original_checker_sha256": "79a51814b380d9f9c04920f3f7339dfd75f3bcdaad76eb60bbf3c0d1d99fcbcd",
+  "corrected_checker_sha256": "8c73eebce3f13db6524b54f4a15ab9dda1b7e56349b14e9de31adef20625e625",
+  "already_frozen_prediction_sha256": "a1576516af8d71187eb10cb3239840bac952b76049cc94036a7d1cbd455c5520",
+  "change": "Only skip the canonical recovered CSV header, as the existing canonical audit does. Original fitting code, coefficient, source bindings and frozen vectors preserved. No prior group score was computed by the failed parser.",
+  "weights_unchanged": true,
+  "predictions_unchanged": true,
+  "qualifying_outcomes_used_for_fitting": false
+}

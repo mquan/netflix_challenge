@@ -1,0 +1,10 @@
+{
+  "created": "2026-11-19T23:20:38.888295+00:00",
+  "script_sha256": "d6987565b2ce49a464a2ae24b9a39c3c185a1c4cd0d97c2c563b81a39ea287f2",
+  "rule": "Fix the same current item154 NN and expanded tree, fit exactly one convex tree coefficient w in[0,1] by known OOF least squares: sum((tree-NN)*(rating-NN))/sum((tree-NN)^2), clipped to[0,1]. No search, qualifying outcomes or family changes. Apply the fitted coefficient to already actually replayed own full models. Freeze before the new recovered audit.",
+  "development_score_scope": "Apparent known-fit calibration score, not a new nested user-fold validation score and not a replacement for the existing0.8592309819864167 cross-validation best.",
+  "known_rows": 1128164,
+  "qualifying_rows": 2817131,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "prior_audit_scores_used_for_calibration": false
+}

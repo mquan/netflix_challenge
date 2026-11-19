@@ -1,0 +1,48 @@
+{
+  "state": "complete_independent_known_calibration_and_frozen_group_scores",
+  "observed": "2026-11-19T23:24:49.787911+00:00",
+  "weights_tree_nn": [
+    0.3223099946058576,
+    0.6776900053941424
+  ],
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.860652465694796
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8616635956343016
+    }
+  },
+  "previous_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8607516601651759
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8617378856802073
+    }
+  },
+  "both_groups_improved": true,
+  "both_groups_below_target": false,
+  "known_fit_rmse": 0.8591642749401914,
+  "known_score_is_nested_cross_validation": false,
+  "independently_refitted_coefficient": 0.3223099946058712,
+  "exact_known_and_full_stored_vectors_bitwise": true,
+  "actual_full_family_replays_reused": true,
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "prediction_sha256": "a1576516af8d71187eb10cb3239840bac952b76049cc94036a7d1cbd455c5520",
+  "bindings": {
+    "experiments/upstream-item154-weight-calibration/plan.json": "6ed49cfd54a63545b824d9c508059012b3a7abda30b960b5d3ffb64876759c2c",
+    "experiments/upstream-item154-weight-calibration/calibration.json": "d104d7d90360372817f83998a78e6074d1435c16690329a8b04bc36ec2048334",
+    "experiments/upstream-item154-weight-calibration/frozen.json": "9cbb0e375890d03b698ef2b2a8415c9d29414e62dfd483b77b6db50604018bad",
+    "artifacts/upstream-item154-weight-calibration/known-calibration.f32": "a96fa074e243352e61a97a23c7bef0cf00f96d858897b2fb12128f92ab0dfc26",
+    "artifacts/upstream-item154-weight-calibration/qualifying.f32": "a1576516af8d71187eb10cb3239840bac952b76049cc94036a7d1cbd455c5520",
+    "experiments/upstream-item154-stream-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "scripts/verify_upstream_item154_weight_calibration_recovered.py": "8c73eebce3f13db6524b54f4a15ab9dda1b7e56349b14e9de31adef20625e625"
+  },
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "One coefficient fitted to own known OOF predictions; apparent calibration score is not nested CV. Existing actual replayed own full family models reused. Frozen vector independently reconstructed before canonical recovered group audit. Adaptive audit, not official/untouched Test."
+}

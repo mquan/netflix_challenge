@@ -8,13 +8,23 @@ from datetime import datetime, timedelta
 from html import escape
 from pathlib import Path
 import runpy
+import json
 import shutil
 import subprocess
 import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MILESTONES = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))["MILESTONES"]
+JOURNEY = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))
+JOURNEY["fresh_status_html"]()  # Refuse to render unverified current score claims.
+MILESTONES = JOURNEY["MILESTONES"]
+STATUS = json.loads((ROOT / "experiments/fresh-reproduction-status.json").read_text())
+CURRENT_CV = next(row for row in MILESTONES if row[4] == "fresh_cv" and float(row[1]) == STATUS["best_development_rmse"])
+CURRENT_QUAL = next(row for row in MILESTONES if row[9] == STATUS["latest_qualifying_verification_path"])
+QUAL_GROUPS = STATUS["latest_qualifying_groups"]
+QUAL_WORST = max(row["rmse"] for row in QUAL_GROUPS.values())
+if abs(float(CURRENT_QUAL[1])-QUAL_WORST)>1e-12:
+    raise ValueError("Latest qualifying plot point differs from the verified record")
 OUT_SVG = ROOT / "assets/progress_graph.svg"
 OUT_PNG = ROOT / "assets/progress_graph.png"
 WIDTH, HEIGHT = 1600, 1600
@@ -119,9 +129,9 @@ for ident, score, date, _strategy, metric, credit, _status, _title, _note, _sour
 for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
-    ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
-    ("FRESH107 item154 mean", "Own training CV · 0.8592310", -18, -68, "end"),
-    ("FRESH107 item154 qualifying", "Own qualifying audit · 0.8617379", -18, -130, "end"),
+    ("QUAL619 ridge", "Recovered audit · 0.8571903", -600, -84, "start"),
+    (CURRENT_CV[0], f"Own training CV · {STATUS['best_development_rmse']:.7f}", -18, -68, "end"),
+    (CURRENT_QUAL[0], f"Own qualifying audit · {QUAL_WORST:.7f}", -18, -130, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
@@ -151,8 +161,8 @@ for i,row in enumerate(selected):
     text(xx,yy-20,f'{float(row[1]):.7f}',color='#f2f1ed',size=20,anchor='middle')
     text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
 text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
-text(94,1510,'Current own-training best: 0.8592310 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
-text(94,1555,'Best own qualifying audit: 0.8609266 / 0.8619142 · 9.5103% on the worse group; 10% target missed.',size=22)
+text(94,1510,f"Current own-training CV best: {STATUS['best_development_rmse']:.7f} on different known-ProbeX rows.",color='#f2f1ed',size=25,weight='700')
+text(94,1555,f"Best own qualifying audit: {QUAL_GROUPS['source0']['rmse']:.7f} / {QUAL_GROUPS['source1']['rmse']:.7f} · {100*(1-QUAL_WORST/.9525):.4f}% on the worse group; 10% target missed.",size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 
