@@ -3,9 +3,11 @@
 Both original first phases completed20 epochs:50 RBM user components and
 20 Tx user plus20 Tx item components. Original predfeat maps trainx factors
 onto both query sets. Every gathered float on all1,128,164 known and2,817,131
-qualifying rows was independently checked bitwise. The original RBM's full
-20/20 execution is separately verified; Tx's full second20-epoch phase remains
-active. Complete support availability is not whole-two-model completion.
+qualifying rows was independently checked bitwise. Both original RBM and Tx models have now completed their full20/20 execution.
+Separate completion verifiers bind the original source, data, full epoch traces
+and model outputs, and replay every support gather bitwise. Tx completed at
+18:12 UTC; its whole-model rating pair is eligible for the predeclared whole110
+batch once the rank1000 completion proof also passes.
 
 The own107 cache now contains all90 learned components,183 unchanged ridge
 columns and333 nonlinear features. Every retained293 and appended40 column
@@ -16,7 +18,10 @@ components are appended without rating clipping or centering.
 
 The predeclared hidden128/rank32 neural study has334 inputs:109 signals and
 225 context features. Its actual small fit/save/reload check passed. The full
-five-fold study waits for the existing fitting lock and measured memory.
+five-fold study now uses the separately tested float32 MPS backend and waits
+for the existing fitting lock and measured memory. The synthetic benchmark
+measured3.36x CPU speed; this is not full-data speed or accuracy evidence. See
+[LATENT90_MPS_CONTROL_PLAN.md](LATENT90_MPS_CONTROL_PLAN.md).
 Current best remains development0.8594554093 and recovered qualifying
 0.8609266298 /0.8619141823 (9.5103% on the worse group), short of0.85725.
 
@@ -24,3 +29,6 @@ Evidence: experiments/upstream-latent90-early-support/tx20lat-receipt.json,
 experiments/upstream-latent90-features/manifest.json and
 cache-column-verification.json. No downloaded numerical predictions or
 qualifying-label fitting is used.
+
+Whole-model evidence: experiments/upstream-latent90-local/tx20lat-receipt.json
+and tx20lat-completion-verification.json, alongside the existing RBM proof.

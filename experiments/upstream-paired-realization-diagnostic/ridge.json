@@ -1,0 +1,44 @@
+{
+  "state": "complete_matched_known_ridge_diagnostic",
+  "observed": "2026-11-19T18:21:01.759187+00:00",
+  "rows": 1128164,
+  "records": [
+    {
+      "realization": "cached",
+      "rmse": 0.8625801963952328,
+      "fold_rmse": [
+        0.8619959768633015,
+        0.8598793859589637,
+        0.863379444626518,
+        0.864217679389723,
+        0.8634317801005654
+      ]
+    },
+    {
+      "realization": "paired",
+      "rmse": 0.8625751215975745,
+      "fold_rmse": [
+        0.8619891112679534,
+        0.8598708985958013,
+        0.8633800437606005,
+        0.8642107700784958,
+        0.8634281098195968
+      ]
+    }
+  ],
+  "paired_minus_cached_rmse": -5.074797658211061e-06,
+  "source_sha256": {
+    "artifacts/upstream-latent90-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-rbm50-bank/probex-design.npy": "6123b54facc8b5191b913d6f293861774fe642f93acbb32f0753c4fbd7937df7",
+    "artifacts/upstream-latent90-features/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-latent90-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-latent90-features/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-rbm50-bank/labels.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-rbm50-bank/users.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "scripts/check_upstream_paired_realization.py": "a395b60260ebf2391df8cb78b7d9653f041030362f9145e14401ffba392e8b9e",
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0"
+  },
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Same known rows/user folds, raw107 ridge schema and penalty on two previously disclosed own source realizations. Diagnostic only, not a new model, neural comparison, qualifying score or promotion."
+}
