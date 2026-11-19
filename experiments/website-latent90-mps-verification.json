@@ -1,0 +1,35 @@
+{
+  "observed": "2026-11-19T18:48:37.371690+00:00",
+  "pages_commit": "c33bbdf",
+  "state": "complete_live_byte_verification",
+  "files": [
+    {
+      "path": "",
+      "bytes": 126837,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 62869,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 293631,
+      "matches": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-tree-latent90-mps/verification.json",
+      "bytes": 16802,
+      "matches": true
+    },
+    {
+      "path": "LATENT90_MPS_RESULT.md",
+      "bytes": 3000,
+      "matches": true
+    }
+  ],
+  "development_rmse": 0.8592720612630157,
+  "qualifying_worse_group_rmse": 0.8619141823430468,
+  "goal_achieved": false
+}
