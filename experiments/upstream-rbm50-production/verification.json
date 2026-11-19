@@ -1,0 +1,27 @@
+{
+  "state": "complete_standalone_nn_frozen_vector_and_score_verification",
+  "observed": "2026-11-19T16:51:59.980372+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8609266297566702,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8619141823430468,
+      "below_target": false
+    }
+  },
+  "both_groups_below_target": false,
+  "prediction_sha256": "4a9c22b0adb6068187cb8f7de6643e35f5b9df884817e54ab100116314496bea",
+  "plan_sha256": "f8e864e5dcc3c4875a55c4de668adc986ecb350d9a67c2bdc332ef8cf19207e0",
+  "nn_receipt_sha256": "7a3e24284536e3cfc93e37560af8a2561eed87c2ceaf846ea0fd942c3d026050",
+  "nn_replay_sha256": "de5cc43dc2d6e04256e0c2e41a60a21890737fc3012bb952672a2a98613f5596",
+  "audit_report_sha256": "46c482cb5a512c030d3a6112860dfa7f13234c65b62af78296ff1ada097e5ab9",
+  "label_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "verifier_sha256": "3874730e9a3bcdd36cfca1e683e9b4fad349e4fd445157e187d2830d9dafdff5",
+  "standalone_vector_matches_saved_family_bitwise": true,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Separate predeclared standalone/model/scaler/source hash and saved-inference-replay receipt check, exact frozen family identity, full canonical group counts and compensated scores. Inference was actually replayed by the full-fit worker; this checker does not repeat inference. Adaptive recovered audit, not official/untouched Test."
+}
