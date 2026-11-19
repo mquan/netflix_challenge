@@ -1,0 +1,127 @@
+{
+  "state": "completed_own_item_factor_inventory",
+  "observed": "2026-11-19T14:19:30.500251+00:00",
+  "records": [
+    {
+      "model": "tsvdx4-400lm",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "original_command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-400lm",
+      "item_factors": [
+        {
+          "phase": "trainx",
+          "path": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.ifeat.trainx.npy",
+          "shape": [
+            17770,
+            400
+          ],
+          "dtype": "float32",
+          "sha256": "bd441c87c4ef0a7e7183bb977c45e179d94d576b00099f85be4d9501b0a4aded",
+          "finite": true
+        },
+        {
+          "phase": "fulltrain",
+          "path": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.ifeat.fulltrain.npy",
+          "shape": [
+            17770,
+            400
+          ],
+          "dtype": "float32",
+          "sha256": "1474d676b5f70c583c8597c6e3c3e163f3ccac0cabca404d3ce929fec6419235",
+          "finite": true
+        }
+      ]
+    },
+    {
+      "model": "rbmx2-150",
+      "receipt_sha256": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+      "original_command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-150",
+      "item_factors": [
+        {
+          "phase": "trainx",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.ifeat.trainx.npy",
+          "shape": [
+            17770,
+            750
+          ],
+          "dtype": "float32",
+          "sha256": "2dd2ce595a9cad16a0991ebf21b992fe6e9eeca1b08a429f528815c4f5903723",
+          "finite": true
+        },
+        {
+          "phase": "fulltrain",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.ifeat.fulltrain.npy",
+          "shape": [
+            17770,
+            750
+          ],
+          "dtype": "float32",
+          "sha256": "b37cb965710cae3fde34b1c0d4cabc51c92250c9f6c3da36242b91ee6a94f65a",
+          "finite": true
+        }
+      ]
+    },
+    {
+      "model": "rbmx2-8e",
+      "receipt_sha256": "49f3533597ee7325e58eacb30ae9a363e4a41d2ead7bc3efb6fa58d1410f88f8",
+      "original_command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-8e",
+      "item_factors": [
+        {
+          "phase": "trainx",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-8e.ifeat.trainx.npy",
+          "shape": [
+            17770,
+            40
+          ],
+          "dtype": "float32",
+          "sha256": "c45e052ed02eec7a6e4a6ac9599473c744f66aa885956536f06ef3a7210178e0",
+          "finite": true
+        },
+        {
+          "phase": "fulltrain",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-8e.ifeat.fulltrain.npy",
+          "shape": [
+            17770,
+            40
+          ],
+          "dtype": "float32",
+          "sha256": "baca1cbe8a9cd0dec6a204ce3b98f999a3984fc33dad1d7d57b488815b9bf9ac",
+          "finite": true
+        }
+      ]
+    },
+    {
+      "model": "rbmx2-0",
+      "receipt_sha256": "6365cef43873d5fee301237aef25ba834c5e876d96b843cd4e99e498c4e4a88f",
+      "original_command": "cargo build --release --bin rbmx2-new && ./target/release/rbmx2-new rbmx2-0",
+      "item_factors": [
+        {
+          "phase": "trainx",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.ifeat.trainx.npy",
+          "shape": [
+            17770,
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "46ecf8a8e4a9e7b7cd5f83802332e2f57231189c0caaccb6313241f43f1e9bf7",
+          "finite": true
+        },
+        {
+          "phase": "fulltrain",
+          "path": "artifacts/upstream-repro/fresh/preds_new/rbmx2-0.ifeat.fulltrain.npy",
+          "shape": [
+            17770,
+            0
+          ],
+          "dtype": "float32",
+          "sha256": "46ecf8a8e4a9e7b7cd5f83802332e2f57231189c0caaccb6313241f43f1e9bf7",
+          "finite": true
+        }
+      ]
+    }
+  ],
+  "original_latent90_user_factors_present": false,
+  "next_action": "Continue unchanged original rbm50lat and tx20lat local queue after measured memory admission. Existing other-preset item factors remain available for future explicitly distinct experiments.",
+  "model_training_performed": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}

@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-19T14:28:56.677475+00:00",
+  "bindings": {
+    "scripts/upstream_latent90_early_support.py": "5f55d9154a8697af7a081dac1e7064493f313f65bc502ca9f1680c673f93549f",
+    "experiments/upstream-latent90-local/plan.json": "f14af91c1d4be18ef2bb7f940eab3eca0f33ea7a3ec95936fe5ae0f1112e380c",
+    "scripts/upstream_latent90_local.py": "6ac45e2d0cb5f5e10944acf2d9cb5232d5f785050bd96e693206cdd0bfd5f34a"
+  },
+  "native_owner": {
+    "pid": 70300,
+    "identity": "Thu Nov 19 05:14:40 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_local.py"
+  },
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "first_phase_epochs": 20,
+  "feature_columns": 90,
+  "rule": "Unchanged original predfeat maps trainx factors onto BOTH query sets. Require complete original20-epoch first-phase log, closed factor files and full source/data/binary bindings. Extract to a separate lat-early directory while original two-phase fitting continues. No model capacity/epochs reduced.",
+  "scope": "Complete paired support features can precede whole two-phase model completion. Do not treat them as completed native raw prediction pairs.",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}

@@ -27,6 +27,23 @@ The result must contain 50 RBM user components and 20 Tx user plus 20 Tx item
 components, each with both query vectors. Verify native receipts and independently
 reproduce each support from saved factors and actual row indices before use.
 
+The original support recipe needs the completed **first phase** only. A new
+read-only training watcher, `scripts/upstream_latent90_early_support.py`, can
+extract each family's complete support pair after its original20 epochs finish,
+while the fulltrain/qual phase continues. It checks the first-phase epoch log,
+all frozen source/data/binary bindings and closed factor shapes, runs unchanged
+`predfeat` into a separate `lat-early` directory, and independently gathers every
+support row from the saved factors with bitwise comparison. Receipts explicitly
+claim paired support completion only; both original two-phase models still run
+to completion. This does not reduce training capacity, epochs or data.
+
+An inventory of completed own native factors verifies the400-dimensional MF
+item matrix, the750-column flattened RBM item matrix, the40-column RBM item
+matrix and the empty zero-hidden-unit matrix. The original rbm50lat/tx20lat user
+factors still require their own training. These other-preset factors remain
+available for separately named experiments; they do not supply the original90
+support recipe. See `experiments/upstream-latent90-local/existing-own-factor-inventory.json`.
+
 All inputs, copied implementation files and executables are SHA256 bound in
 `experiments/upstream-latent90-local/plan.json`. Completion receipts preserve
 the actual predictions, both phases' factors, logs and support hashes. Qualifying

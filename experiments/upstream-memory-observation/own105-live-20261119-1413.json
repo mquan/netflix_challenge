@@ -1,0 +1,40 @@
+{
+  "before": {
+    "observed": "2026-11-19T14:11:49.161161+00:00",
+    "memory": {
+      "compressor_bytes": 16133062656,
+      "swap_used_bytes": 4201318973.44
+    },
+    "page_size": 16384,
+    "counts": {
+      "Swapins": 19012299,
+      "Swapouts": 21045633,
+      "Pageouts": 5357047,
+      "Compressions": 1582748679,
+      "Decompressions": 1510320136
+    }
+  },
+  "after": {
+    "observed": "2026-11-19T14:13:39.893490+00:00",
+    "memory": {
+      "compressor_bytes": 16702521344,
+      "swap_used_bytes": 3907717693.44
+    },
+    "counts": {
+      "Swapins": 19030918,
+      "Swapouts": 21045633,
+      "Pageouts": 5357396,
+      "Compressions": 1583466698,
+      "Decompressions": 1510995303
+    }
+  },
+  "seconds": 110.732329,
+  "bytes_per_second": {
+    "Swapins": 2754874.739426821,
+    "Swapouts": 0.0,
+    "Pageouts": 51638.180571457146,
+    "Compressions": 106238380.44623807,
+    "Decompressions": 99897981.26615761
+  },
+  "scope": "Live resource observation; native jobs remain untouched. No new model admitted."
+}
