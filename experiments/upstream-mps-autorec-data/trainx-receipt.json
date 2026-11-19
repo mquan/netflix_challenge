@@ -1,0 +1,34 @@
+{
+  "state": "prepared_lossless_csr_pending_independent_verification",
+  "phase": "trainx",
+  "query": "probex",
+  "ratings": 99352343,
+  "query_rows": 1128164,
+  "users": 480189,
+  "items": 17770,
+  "source_sha256": {
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/data/trainx/user_cnts.npy": "75eaf206be88ca2ada417448c1cec65e447091df057a8d2575c1ca05b50ed755",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5"
+  },
+  "outputs": {
+    "query-order.npy": "4a55f8da263dfd133b9c2d1e07d1878ab8d64ca9cd2a51c7cbb9f0cfd803ca52",
+    "offsets.npy": "a4cfb65f32254454f80ca038b5aea3515937ffde339fca9d096710580d732144",
+    "query-items.npy": "49b94d7b2abcdea062b77d45918c42f359b251a1229e556eb6c6ace60322dbfe",
+    "items.npy": "fdbc2257e0766f9b3247c7daa9271e73d92f0ba058ba66a48984cf7bd29cd384",
+    "ratings.npy": "b59e318a780661aeec2ea55a20353a827c82d3fd026f3aa4fae83daa48f5ae89",
+    "query-offsets.npy": "a15377601780ef38a9df5285ceca0132753d16a8a436f80bcbc7d9947ef9d517"
+  },
+  "all_original_rating_tuples_checked": true,
+  "query_pairs_absent_from_training": true,
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "script_sha256": "fd67c68fce2f48acea723ec8b1cfc7f959b37c1af89720112ecbb05d50f5658a",
+  "scope": "Lossless original rating histories only. Query labels are excluded from this phase history. No model fitting or accuracy result."
+}

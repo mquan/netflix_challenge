@@ -1,0 +1,17 @@
+{
+  "state": "complete_independent_lossless_csr_and_query_verification",
+  "phase": "fulltrain",
+  "query": "qual",
+  "rows": 100480507,
+  "query_rows": 2817131,
+  "receipt_sha256": "bafc7ba85aec88cc3ec4ce681723f5ffb67106c9a3fcd31c611d65c593409514",
+  "verifier_sha256": "bc4e3236be3616beb3f2677e8de20036f8c3ea8e2d2fac7f99410e71c3807bc0",
+  "every_training_tuple_replayed": true,
+  "independently_lexicographically_sorted": true,
+  "query_pairs_absent_from_training": true,
+  "full_query_projection_checked": true,
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent complete original-data CSR and query-map replay. No model fitting, inference replay or score claimed."
+}
