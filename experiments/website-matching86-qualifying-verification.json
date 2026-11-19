@@ -1,0 +1,54 @@
+{
+  "state": "complete",
+  "observed": "2026-11-19T09:37:39.270531+00:00",
+  "pages_commit": "1aa32e2d00c62f987b79fd9198b0fed8456de276",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "f9fa3fbd96c3bfa5a0c00b659a2559f0776b08d9228aaa6ec6354ab7673b96cf",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "b4dcff376b601e073a4326254fb8a4bea56615f4aa32f6d67666d8f9f7161b99",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "e44298148aada4e0caec7a6727bda478eb55ac85443e1d16229d7943098ea893",
+      "matches_local": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "f7aea6aa496a91a5be0f9aeaa0a2bb26180f861c4407e26350810a3a0700e634",
+      "matches_local": true
+    },
+    {
+      "path": "FIRST86_QUALIFYING_RESULT.md",
+      "status": 200,
+      "sha256": "bb4ae472702a4642d3bc7ec409aa352dc9213f1c3bf5759bd00a2abcb932b6dd",
+      "matches_local": true
+    },
+    {
+      "path": "experiments/upstream-cf12-matching-production/frozen-mean-score-verification.json",
+      "status": 200,
+      "sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
+      "matches_local": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "milestones": 38,
+  "timeline_tests_passed": 7,
+  "development_best": 0.8599745622436025,
+  "qualifying_source0": 0.8615073689623157,
+  "qualifying_source1": 0.8624355592570154,
+  "qualifying_target_achieved": false
+}
