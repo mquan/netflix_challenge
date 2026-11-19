@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T16:56:23.232499+00:00
+timestamp: 2026-11-19T18:26:00+00:00
 best_score: 0.8594554093063749
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -17,23 +17,36 @@ New independently verified own qualifying best: **0.8609266297566702 /
 fit, actual saved-model inference replay, frozen-vector identity and separate
 canonical group scoring passed. Worse group improves9.5103221%; both still miss
 0.85725. See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md).
-The first new tree fold is preserved; remaining folds resume after stable memory.
+The107+50 tree study has completed four of five folds; its final seed is
+fitting in fold4. Promotion requires complete saved-model replay and independent
+scoring. No partial-fold score is promoted.
 
-Latest native observation: Tx20lat is training under7119 (first phase4/20);
-CF96 saved states38/36 of95; rank1000 second phase working through12/20.
-The larger hidden128/rank32 all90 context study is queued after the remaining
-original Tx supports and existing fitting slot. No full90 or new qualifying
-result is claimed. See [LATENT90_WIDE_CONTEXT_PLAN.md](LATENT90_WIDE_CONTEXT_PLAN.md).
+Latest observation at18:26 UTC: both original latent models are complete20/20
+and independently verified, making all90 original support columns ready. The
+rank1000 second phase has logged20/20 but its process remains active; complete
+outputs and independent verification are still required. CF96 saved states are
+42/40 of95, with both native processes active. Original split3 dnn16t started
+at18:18 UTC and is training, with the other two recipes serialized behind it.
 
-New verified development best: **0.8594554093063749**, from107 own raw
-predictors plus50 original learned RBM user supports. All15 saved neural models
-replay on all five user folds; independent scoring verifies. The fixed mean
-with tree91 is higher at0.8594773263. Full-known fitting and new qualifying
-scoring are pending. The best qualifying score below is unchanged.
-See [RBM50_CONTEXT_RESULT.md](RBM50_CONTEXT_RESULT.md).
-Original RBM50 is now complete20/20 with every support gather separately
-checked; Tx20lat is waiting for stable memory. The107+50 tree comparison is
-actually fitting. Three original split3 models are queued after the latent lane.
+The larger all90 hidden128/rank32 study is queued on the tested float32 MPS
+backend behind the tree fit. A second predeclared batch adds all three complete
+native rating pairs to make110 raw columns, retaining all90 supports. Its queue
+currently waits only for rank1000's independent whole-model completion proof.
+The synthetic MPS benchmark was3.36x faster than CPU with bitwise saved-model
+replay; full-data accuracy and speed remain unmeasured.
+See [LATENT90_MPS_CONTROL_PLAN.md](LATENT90_MPS_CONTROL_PLAN.md) and
+[NEXT_WHOLE_NATIVE_BATCH.md](NEXT_WHOLE_NATIVE_BATCH.md).
+
+Current verified development best remains **0.8594554093063749**, from107 own
+raw predictors plus50 learned RBM user supports. All15 saved neural models
+replay. Its full-known refit and qualifying audit are complete as reported above.
+
+A matched known-row ridge diagnostic compares the two previously disclosed
+cached and paired source realizations:0.8625801964 versus0.8625751216, a paired
+improvement of0.0000050748. This small ridge effect does not explain the observed
+development-to-qualifying gap in this diagnostic; it does not establish neural
+parity or any new qualifying score. No qualifying labels were read.
+See experiments/upstream-paired-realization-diagnostic/ridge.json.
 
 Earlier observation:
 
