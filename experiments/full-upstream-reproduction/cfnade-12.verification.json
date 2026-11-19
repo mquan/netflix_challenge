@@ -1,0 +1,31 @@
+{
+  "state": "verified_complete_paired_native_job",
+  "observed": "2026-11-19T01:06:30.871297+00:00",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_receipt_sha256": "373cb3f9bbccc85fc1bb93a73c1000e3d6dc74718c2bcf17d5957664f15906a4",
+  "declared_source_command_verified": true,
+  "all_receipt_output_hashes_rechecked": true,
+  "all_prediction_arrays_validated": true,
+  "outputs_checked": 83,
+  "records": [
+    {
+      "split": "probex",
+      "rows": 1128164,
+      "dtype": "float32",
+      "terminal_sha256": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+      "epoch40_sha256": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+      "terminal_equals_epoch40": true
+    },
+    {
+      "split": "qual",
+      "rows": 2817131,
+      "dtype": "float32",
+      "terminal_sha256": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8",
+      "epoch40_sha256": "34c5ea819317593947b9980acde9e7b164c9804f39c45e8b4baae27702a8a9f8",
+      "terminal_equals_epoch40": true
+    }
+  ],
+  "qualifying_training_targets_all_zero": true,
+  "qualifying_outcomes_read": false,
+  "scope": "Complete original40-epoch source fit phases, eligible for subsequent known-ProbeX model development. No qualifying-score or goal-success claim."
+}
