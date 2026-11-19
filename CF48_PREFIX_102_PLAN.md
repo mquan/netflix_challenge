@@ -57,8 +57,9 @@ actual verified tree91 predictions and model receipts. A train/save/reload
 test confirms the239-input model factory and exact saved-state prediction
 replay. No active model source or previous artifact was changed.
 
-Live controller49665 waits for all91 context training/replay and memory
-admission. The idle pending93 controller29784 was verified to have no child
+Controller49665 originally waited for all91 context training/replay and
+memory admission. It was subsequently superseded while idle by own103
+controller61820 after the final95 snapshot returned. The idle pending93 controller29784 was verified to have no child
 or prepared model cache, then stopped to give this larger measured iteration
 priority. Its code and prior reports remain preserved. The queue handoff
 binds24 implementation files and the actual own102 data manifest. All91 worker

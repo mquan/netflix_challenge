@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T12:03:50.028773+00:00
+timestamp: 2026-11-19T12:54:10.202958+00:00
 best_score: 0.8599596977902322
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,12 +12,20 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The new context91 qualifying audit is complete and independently rechecked:
+0.8615005553485519 /0.8624166617824088, both above0.85725 and slightly worse
+than the preceding best. Keep0.8624021195492101 as the best worse-group score.
+See [CONTEXT91_QUALIFYING_RESULT.md](CONTEXT91_QUALIFYING_RESULT.md).
+The next fixed own103 context fit is queued under controller61820; it includes
+our now-complete CF48 epoch95 and has independently replayed ridge0.8626072996.
+See [CF48_103_CONTEXT_PLAN.md](CF48_103_CONTEXT_PLAN.md).
+
 The completed all91 context fit gives a new verified development best:
 **0.8599596977902322**, versus0.8599745622436025 on the same known-ProbeX
 rows/user folds. Actual saved-family replays, ten source fold/model bindings,
-the fixed float32 mean and compensated scoring verify. Controller54968 is
-running its qualifying production with exact full tree91 reuse and a new
-contextNN91 full-known fit. No new qualifying score yet. See
+the fixed float32 mean and compensated scoring verify. Its qualifying production with exact full tree91 reuse and a new
+contextNN91 full-known fit has completed, with the slightly worse result
+recorded above. See
 [CONTEXT91_PRODUCTION_PLAN.md](CONTEXT91_PRODUCTION_PLAN.md).
 
 At approximately11:27UTC, our published CF48 epoch25 snapshot pair passes
@@ -46,7 +54,7 @@ development or qualifying score. A source coverage audit establishes that all
 new-split queue. See [READY_OUTPUT_COVERAGE.md](READY_OUTPUT_COVERAGE.md) for the
 completed screen, exact coverage limits, and next isolated reproduction lane.
 
-The latest tree91/contextNN86 own-training qualifying audit **misses** the target:
+The best tree91/contextNN86 own-training qualifying audit **misses** the target:
 
 | Recovered source group | Rows | Independently verified RMSE | Required |
 | --- | ---: | ---: | ---: |
