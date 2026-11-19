@@ -11,12 +11,13 @@ not the complete winning ensemble.
 
 ## Current work: our own trained predictions
 
-As of November 18, 2026 Pacific, our best fully verified development RMSE is
-**0.8600300602**, using only our freshly trained prediction features and locally
+As of November 19, 2026 Pacific, our best fully verified development RMSE is
+**0.8599745622**, using only our freshly trained prediction features and locally
 fitted blending weights. Public source code is reused; downloaded pretrained
-prediction features are excluded. All 15 matching trees replay bit-for-bit; the verified context neural vector
-is reused unchanged, and independent scoring verifies the fixed tree/NN average over
-five user folds on 1,128,164 known-ProbeX rows.
+prediction features are excluded. The fixed half mean combines our completed 91-predictor tree with the verified
+86-predictor context neural vector. Both originating families passed full saved-model
+replay; all ten actual fold receipts and artifacts were rehashed, and independent
+scoring verifies the stored mean over five user folds on 1,128,164 known-ProbeX rows.
 
 **The first fresh-training qualifying audit misses the 10% target:**
 **0.8619187880 / 0.8628067765** on the two recovered source groups. The worse

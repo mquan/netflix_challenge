@@ -1,13 +1,13 @@
 {
-  "observed": "2026-11-19T08:44:24.753343+00:00",
-  "display_time": "November 19, 2026, 12:44 AM Pacific",
-  "best_development_rmse": 0.8600300601883686,
+  "observed": "2026-11-19T08:59:29.548856+00:00",
+  "display_time": "November 19, 2026, 12:59 AM Pacific",
+  "best_development_rmse": 0.8599745622436025,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "dde668dc1d5043b7d624de264765b6fb4e0d04b38b3864e7023e361374444c9e",
-  "independent_verification_sha256": "7b37545f92432d69fcf7f1b8ee44062087203fd1da1120ef4d56785c4a4692e3",
+  "verified_development_report_sha256": "d46f9badd83793ebc13917040025b508d13bf8ab926d9f77b516b98e23f2b407",
+  "independent_verification_sha256": "d46f9badd83793ebc13917040025b508d13bf8ab926d9f77b516b98e23f2b407",
   "work": [
     {
       "work": "First qualifying blend",
@@ -18,12 +18,16 @@
       "state": "Complete: both saved families replayed in isolated processes, fixed float32 mean verified, 333 evidence files bound; no qualifying-label fitting or selection"
     },
     {
+      "work": "New fixed tree91/contextNN86 development best",
+      "state": "0.8599745622 on the same 1,128,164 known-ProbeX rows and 462,858 users. Fixed half mean; ten original fold receipts/models rehashed, prior full model replays verified, row identities matched and stored mean scored independently. No qualifying prediction or score yet."
+    },
+    {
       "work": "Matching86 qualifying queue",
-      "state": "Original-schema paired bank verified. Guarded restart completed at07:50UTC; actual queue PID88587 waits for the fixed91 development gate."
+      "state": "Actual idle queue PID88587 has passed the fixed91 gate and waits for memory. A replacement production recipe for the stronger tree91/contextNN86 development result is planned; no partial fit has been overwritten."
     },
     {
       "work": "91-predictor development study",
-      "state": "All five tree folds complete and replayed; three of five neural fold receipts complete. Actual neural worker PID92842 remains live. Selection uses the stronger verified known-ProbeX reference."
+      "state": "Complete: all five tree and neural folds replay successfully. Fixed plain mean 0.8601526901 is worse than the preceding best and is not promoted."
     },
     {
       "work": "Original 1,000-factor model",
@@ -31,11 +35,11 @@
     },
     {
       "work": "Temporal150 local fallback",
-      "state": "All25 epochs logged; actual native PID46684 is still generating final outputs. Its outputs no longer block the verified recovered bank. Complete remote63-output counterpart requested before retiring this duplicate."
+      "state": "Completed naturally at08:48 UTC. All31 native NPY outputs match our original remote receipt exactly, including full training residuals. All eight selected split vectors equal the already admitted own recovered pairs."
     },
     {
       "work": "CFNADE96",
-      "state": "Own checkpoints33/31 preserved and all84 tensors per phase verified. Local workers yielded after measured paging; automatic resume waits for actual temporal completion and physical-memory admission. Verified remote add-on package ready; no remote96 restore proof returned yet."
+      "state": "Own checkpoints33/31 preserved and all84 tensors per phase verified. Local native temporal worker has finished; automatic resume still requires actual physical-memory headroom. Remote add-on package ready; no remote96 restore proof returned yet."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -47,7 +51,7 @@
     },
     {
       "work": "Matching86 development",
-      "state": "Best verified known-ProbeX CV remains 0.8600300602; this uses different rows from the recovered qualifying audit"
+      "state": "Preceding verified best 0.8600300602; now improved by the fixed tree91/contextNN86 combination on the same known-ProbeX rows."
     },
     {
       "work": "CFNADE96 kernel prototype",
@@ -55,7 +59,7 @@
     },
     {
       "work": "Fixed91 context follow-up",
-      "state": "Tested train/save/reload replay; controller PID97839 is waiting for existing extension/matching production and two physical-memory admission samples. Fixed rank16, all six additions retained; no new qualifying audit."
+      "state": "Tested train/save/reload replay; controller PID97839 waits for existing production and physical-memory admission. Fixed rank16, all six additions retained; no new qualifying audit."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -77,19 +81,26 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "46684 13:10:06 105.1 /Users/quan/workspace/netflix_upstream_repro/artifacts/full-upstream-mapped/target/release/tsvdx5-new-qual",
-      "73629 02:08:04  46.9 ./target/release/tsvdx4p-new",
-      "77902 01:51:18  85.5 ./target/release/tsvdx4-new",
-      "88587    54:08   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "92842    22:51 128.8 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "97839    01:34   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python"
+      "73629 02:23:09 388.8 ./target/release/tsvdx4p-new",
+      "77902 02:06:23  28.5 ./target/release/tsvdx4-new",
+      "88287 01:10:25   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "88587 01:09:13   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "97839    16:39   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python"
     ],
     "remote_commit": "263dcf8242f021bca58bb903560d065ca6bd2d3a",
     "remote_heartbeat_sha256": "2121fb18f862f41730832c9b30b9046e53ab60482c54dad4b337068e8f7648da",
     "neural_fold_receipts": [
       "0.json",
       "1.json",
-      "2.json"
-    ]
+      "2.json",
+      "3.json",
+      "4.json"
+    ],
+    "extension_state": {
+      "state": "development_not_improved",
+      "candidate": 0.8601526901474829,
+      "parent": 0.8600300601883686,
+      "goal_complete": false
+    }
   }
 }

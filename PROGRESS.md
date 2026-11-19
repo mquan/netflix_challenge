@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T08:43:00+00:00
-best_score: 0.8600300601883686
+timestamp: 2026-11-19T08:55:00+00:00
+best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -33,18 +33,28 @@ compensated scoring covers all 2,817,131 qualifying rows. The separate completio
 check binds 333 evidence files, 29 own source jobs and the actual development
 models behind the per-seed budgets. It explicitly records `goal_achieved=false`.
 
-Our best verified **development** result remains **0.8600300601883686**, from
-the matching86-predictor tree and unchanged context NN. That is five-fold
-known-ProbeX evaluation on a different population; it is not a qualifying score.
+Our best verified **development** result is now **0.8599745622436025**: a
+fixed half mean of the completed tree91 vector and the unchanged contextNN86
+vector, improving the previous0.8600300601883686. It uses the same1,128,164
+known-ProbeX rows and462,858 users. All ten actual originating fold receipts
+and models were rehashed, prior full saved-model replays verified, row/fold
+identities matched and the stored float32 mean scored independently. This is
+adaptive development evidence on different rows from the qualifying audit.
+
+The full fixed91 plain-tree/plain-NN study also completed and replayed both
+families. Its0.8601526901474831 mean did not improve the preceding best and is
+not promoted. The new heterogeneous-family production recipe is documented in
+`TREE91_CONTEXT86_PRODUCTION_PLAN.md`; it preserves separate91/86 feature and
+ridge layouts, actual per-seed budgets and the fixed half mean.
 
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | Original-schema bank verified; recovered queue PID88587 waits for the fixed91 development gate |
-| Fixed 91-predictor study | All five tree folds complete and replayed; neural worker PID92842 live, three fold receipts complete at08:41 UTC; continuation depends on known-ProbeX improvement |
+| Matching86 production | Fixed91 gate completed; unchanged PID88587 now waits for memory. Replacement for the stronger tree91/contextNN86 candidate is planned; no current fit overwritten |
+| Fixed 91-predictor study | Complete: both families replayed; fixed mean0.8601526901 is worse and not promoted |
 | All91 context follow-up | Fixed rank16 candidate queued as PID97839; waits for current extension/matching production and two physical-memory admission samples; no qualifying-label selection |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
-| Local temporal150 fallback | All 25 epochs logged; final native output generation remains active before complete receipt publication |
+| Local temporal150 phase | Complete at08:48 UTC; all31 native NPY outputs match the original remote receipt exactly, including fulltrain residuals; all eight selected split vectors equal the recovered own pairs |
 | CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for actual native temporal PID46684 to exit and physical-footprint/compressor/swap admission; original bank is already complete |
 | CFNADE48 | Remote live-process heartbeat 08:36 UTC (commit263dcf8) reports 58/57 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
@@ -52,8 +62,15 @@ known-ProbeX evaluation on a different population; it is not a qualifying score.
 
 The original-schema phase bank is now complete through the explicit recovered
 own-temporal route; all six cache files match the verified private bank exactly.
-The unchanged matching86 queue restarted at07:50 UTC and waits for the fixed91
-study, preserving its priority and stronger-development-result gate.
+The unchanged matching86 queue restarted at07:50 UTC and has passed the fixed91
+study gate and now waits for memory. The newer tree91/contextNN86 candidate
+will replace this queue only after a concrete controller is implemented and
+the existing queue is verified idle.
+
+Temporal completion evidence is in
+`experiments/upstream-temporal-phase/completion-verification.json`, produced by
+`scripts/verify_upstream_temporal_completion.py`. This is a completed original
+fulltrain/qual phase, not a new full two-phase pipeline or a new score.
 
 The fixed all91 context follow-up is documented in `ALL91_CONTEXT_PLAN.md`.
 Its actual train/save/reload test reproduces predictions exactly. It retains
@@ -67,7 +84,12 @@ remote temporal job. `scripts/verify_remote_temporal_archive.py` is ready to
 independently verify that return against the original receipt and local input
 identities in an isolated directory. Its tests reject archive traversal, links,
 duplicates and incomplete payloads. It does not control any live job; the local
-duplicate remains running until a complete counterpart is actually verified.
+independent phase subsequently completed naturally at08:48 UTC. Its separate
+completion verifier confirms all31 native NPY hashes match the original remote
+receipt, including full training residuals; the eight selected vectors match
+the already admitted own recovered pairs. The full63-output remote archive
+remains useful for the complete original pipeline provenance and training
+outputs, but is no longer needed to retire that local process.
 
 The first separate completion checker encountered an OpenMP runtime clash when
 loading LightGBM and PyTorch together. Its replacement replays each family in

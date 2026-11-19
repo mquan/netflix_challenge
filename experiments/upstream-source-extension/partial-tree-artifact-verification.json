@@ -1,0 +1,60 @@
+{
+  "state": "partial_tree_artifacts_verified",
+  "observed": "2026-11-19T08:02:08.462132+00:00",
+  "records": [
+    {
+      "fold": 0,
+      "rows": 226746,
+      "rmse": 0.8598228447914581,
+      "chosen_iterations": [
+        873,
+        677,
+        801
+      ],
+      "receipt_sha256": "880fce0309b5f2258c689fd2b81370e4e2358f41160299f8e90ff90a1323dd00",
+      "saved_artifacts_rehashed": 5
+    },
+    {
+      "fold": 1,
+      "rows": 225899,
+      "rmse": 0.8581473439582377,
+      "chosen_iterations": [
+        910,
+        717,
+        1026
+      ],
+      "receipt_sha256": "cf974999a3319203a1515635543d609faa5e128060f9e8dcde151a3802409494",
+      "saved_artifacts_rehashed": 5
+    },
+    {
+      "fold": 2,
+      "rows": 224006,
+      "rmse": 0.8616501531117651,
+      "chosen_iterations": [
+        782,
+        824,
+        855
+      ],
+      "receipt_sha256": "2a7b1e792e1de618214044a236b98958ea4c1dba0a9a9c07dc30f07a365f19a4",
+      "saved_artifacts_rehashed": 5
+    },
+    {
+      "fold": 3,
+      "rows": 225873,
+      "rmse": 0.8623517662089648,
+      "chosen_iterations": [
+        842,
+        754,
+        924
+      ],
+      "receipt_sha256": "f2fc89208e009eb4d314704da4efd51ea41ea06cd1b9a25c10a2fd51df1b6fa5",
+      "saved_artifacts_rehashed": 5
+    }
+  ],
+  "completed_folds": 4,
+  "required_folds": 5,
+  "neural_and_full_independent_replay_still_required": true,
+  "promotion_eligible": false,
+  "goal_achieved": false,
+  "qualifying_labels_read": false
+}
