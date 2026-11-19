@@ -1,0 +1,31 @@
+{
+  "created": "2026-11-19T20:30:31.246534+00:00",
+  "ready_unused": [
+    {
+      "name": "mps-autorec_ep05",
+      "duplicate_of": null,
+      "paired_files": {
+        "probex": "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00005/prediction.npy",
+        "qual": "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00005/prediction.npy"
+      }
+    },
+    {
+      "name": "mps-autorec_ep10",
+      "duplicate_of": null,
+      "paired_files": {
+        "probex": "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00010/prediction.npy",
+        "qual": "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00010/prediction.npy"
+      }
+    }
+  ],
+  "fixed_additions": [
+    "mps-autorec_ep05",
+    "mps-autorec_ep10"
+  ],
+  "weights_selected_from_qualifying": false,
+  "rule": "Fixed control/all-two first declared raw snapshots5/10, independent of their individual scores. Original known user folds and ridge penalty1000. No subset or qualifying-based selection.",
+  "complete_snapshot_pairs_required": true,
+  "full50_model_completion_claimed": false,
+  "qualifying_labels_read": false,
+  "script_sha256": "df4ab46fc4b11c13a0aa74d221d4524a57d5c521da421df52c759b460cd554ca"
+}

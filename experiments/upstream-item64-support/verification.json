@@ -1,0 +1,32 @@
+{
+  "state": "complete_independent_item_projection_and_all_query_rows",
+  "receipt_sha256": "cca546e413fb1ac4d3b58b6fba5f94f1f5e54887507a332d4af11b3587a662e3",
+  "verifier_sha256": "52c07d042435861eacc855b276f5b60c5537d05e384d75322cf49a220d328759",
+  "bindings": {
+    "experiments/upstream-latent90-local/existing-own-factor-inventory.json": "2f2228b54f5a877fd1a18d30bf5464d565d62aad86bdfa0ebbe817c853bf0d41",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-150.json": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.ifeat.trainx.npy": "2dd2ce595a9cad16a0991ebf21b992fe6e9eeca1b08a429f528815c4f5903723",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.ifeat.trainx.npy": "bd441c87c4ef0a7e7183bb977c45e179d94d576b00099f85be4d9501b0a4aded",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "scripts/upstream_item64_support.py": "7351f456907fe431249dbf012611fce734f570835b112379488bea77c2cecf95",
+    "experiments/upstream-item64-support/plan.json": "6195f435e23a271abfbec29e28089fb0d211dd0488f5d52f678b0cf01506f351",
+    "artifacts/upstream-item64-support/tsvdx4-400lm-projection.npz": "71741f45aeb4c2c61d32a010816a1ed46f79ca2d9d08c348fd1f2d3dee12eec7",
+    "artifacts/upstream-item64-support/rbmx2-150-projection.npz": "f8a8edda869f554487754f54acb0e348e02a82543b27eb987ec81ce50eb23875",
+    "artifacts/upstream-item64-support/item64.npy": "e097f3be9067d7df168614600b18f8ea026557211ad701830f393016c4f8802a",
+    "artifacts/upstream-item64-support/probex.npy": "12e8c581afacd758423889e6fb70ff0570317c0884456f2deafcf46ea8deea37",
+    "artifacts/upstream-item64-support/qual.npy": "b8111664b1286485acb6cf81e18ce9d3b31550cbca0d8b582940869d6e7aaf94"
+  },
+  "rows": {
+    "probex": 1128164,
+    "qual": 2817131
+  },
+  "support_columns": 64,
+  "max_eigenpair_residual": 3.3306690738754696e-16,
+  "independent_top_spectrum_checked": true,
+  "all_projected_items_and_query_rows_replayed_bitwise": true,
+  "qualifying_labels_read": false,
+  "public_numerical_features_read": false,
+  "scope": "Independent unsupervised projection and full gather check. No nonlinear fitting, ensemble accuracy, qualifying score or public schema parity claim."
+}
