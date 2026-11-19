@@ -1,0 +1,23 @@
+{
+  "state": "complete_isolated_item_oriented_fixture",
+  "code_sha256": {
+    "scripts/test_upstream_mps_item_autorec.py": "9d9d1f8ee6370156b0eb7e6e778b45acf1427e31693b03febdbab6600100678b",
+    "scripts/upstream_mps_item_autorec.py": "96c54c04de633664c1168223dbf77d3d2694c1ece772a59bccfc805560eba518",
+    "scripts/upstream_mps_item_autorec_data.py": "638bd84b6f5e7a5d0b4620bf965630bbae56029b73a443f68017ccc3eecf8d84",
+    "scripts/verify_upstream_mps_item_autorec_data.py": "d64c69cf125dd43bb6dbcfbdb0dd6c19a99fa53180e83670e08388e1ed2aa977"
+  },
+  "row_items": 4,
+  "column_users": 70005,
+  "high_user_ids_uint32_preserved": true,
+  "independent_original_tuple_replay": true,
+  "independent_wrong_column_rejected": true,
+  "query_leakage_rejected": true,
+  "fresh_process_optimizer_rng_resumes": 4,
+  "actual_saved_snapshot_query_replays": 6,
+  "independent_original_query_gather_bitwise": true,
+  "one_checkpoint_per_phase_and_all_snapshots_preserved": true,
+  "fsync_and_atomic_pointer_path_exercised": true,
+  "qualifying_labels_read": false,
+  "real_data_training_performed": false,
+  "scope": "Isolated tiny fixture only; no real-data trained predictor,50-epoch completion or accuracy claim."
+}

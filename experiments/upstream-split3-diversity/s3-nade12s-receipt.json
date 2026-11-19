@@ -1,0 +1,68 @@
+{
+  "state": "complete_pending_independent_verification",
+  "job": "s3-nade12s",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "6f94a4e2c19b24cda70184d709905aefac24fb6f785ca498b42fcca9a3b016fc",
+  "started": "2026-11-19T20:29:54.982061+00:00",
+  "finished": "2026-11-19T22:06:35.529988+00:00",
+  "command": [
+    "./target/release/fit",
+    "nade",
+    "s3-nade12s",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "EPOCHS": "8",
+    "EPSAVE": "1",
+    "H": "40",
+    "RANK": "12",
+    "SAVETR": "1"
+  },
+  "epochs_per_phase": 8,
+  "both_full_epoch_traces": true,
+  "outputs": {
+    "preds_3/s3-nade12s_ep05.probe_3.npy": "ecba41bfd2f694287035ca6e9a09d86f40563214863c16afeddee4fe3da1aa50",
+    "preds_3/s3-nade12s_ep07.qual.npy": "260d11b26bbbcfa7561b2c45fd26f5ad84823d7d4bc8546fb5b652338d40d897",
+    "preds_3/s3-nade12s_ep06.qual.npy": "f150b7fe26b52883fdced05d42c592147183b85638fb1b406d3cae57f348c2cb",
+    "preds_3/s3-nade12s.probe_3.npy": "38bce80271cd89f9681ad69fe72b891271deb9551ea79987ec9ec34165076217",
+    "preds_3/s3-nade12s_ep03.probe_3.npy": "4a4c7c5c632dcb1720c7f7a160e3522f78edc96bad096625e0274433a2a0c6f4",
+    "preds_3/s3-nade12s.train_3.npy": "a58b7f4835888e5baeb3e5915d70c3bb7e5f3858abae2a7cf4f440abd07868af",
+    "preds_3/s3-nade12s_ep01.qual.npy": "706361618322657707c853f16fbccbb10332868a25e73a5ee24236152794849c",
+    "preds_3/s3-nade12s_ep06.probe_3.npy": "d5554dbcca67be30e782b8c0f3edd8f380b63a5a18e76b8b26eced1bdaaf6071",
+    "preds_3/s3-nade12s_ep01.probe_3.npy": "2c3f8f1a913aa852ae96d1362372fa302b5fe93999f6370e007b5ae2d00a0f0f",
+    "preds_3/s3-nade12s_ep08.probe_3.npy": "38bce80271cd89f9681ad69fe72b891271deb9551ea79987ec9ec34165076217",
+    "preds_3/s3-nade12s.fulltrain.npy": "5106b15d73280bcb40a09b1f2d62cc5dd639343892a9124a483c75ef752edac6",
+    "preds_3/s3-nade12s_ep04.qual.npy": "df5c07713cccf356fe5bef820fc5907cab7493d1b5425c08f8e410490c344567",
+    "preds_3/s3-nade12s_ep05.qual.npy": "b17d439f957fdae4ad3f243a589ae0e013ac1d4a2d0718cdfdaee459e3f500c6",
+    "preds_3/s3-nade12s_ep04.probe_3.npy": "82c896c480d9ccabce3b9576885f3e1141a4d85b9a5ba6759dce239476aa290c",
+    "preds_3/s3-nade12s.qual.npy": "ff97af532f93b270b424e911db0f315eb06e21a840924a49c42d42493cf2315a",
+    "preds_3/s3-nade12s_ep07.probe_3.npy": "fdeccc632b1e2c6ecbce491b80a1a55a7cdce5082f53567a9d4626beefc15e62",
+    "preds_3/s3-nade12s_ep03.qual.npy": "a18594923a67098f3f0dc2d2b3c947d98af570f207c8da4adcb194029328d040",
+    "preds_3/s3-nade12s_ep02.qual.npy": "7fce3217aecae910553739c2bac7f084d4cd372534ede161b22128570891f74f",
+    "preds_3/s3-nade12s_ep08.qual.npy": "ff97af532f93b270b424e911db0f315eb06e21a840924a49c42d42493cf2315a",
+    "preds_3/s3-nade12s.out": "9b201e8fddc22b082cb421ffcb8989cfb737fcde9e72eb1880f0df8e2a590e45",
+    "preds_3/s3-nade12s_ep02.probe_3.npy": "a020aab1289f3325ddf4a01c129626597458db155660ddd6058e43c84a0491aa"
+  },
+  "projected_pairs": [
+    {
+      "name": "s3-nade12s",
+      "probex": "artifacts/upstream-split3-diversity/s3-nade12s.probex.npy",
+      "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-nade12s.qual.npy",
+      "probex_sha256": "8cf675f7ed878afe2950ab96e5a757e1afd924bea62d101230e92061db0cd761",
+      "qual_sha256": "ff97af532f93b270b424e911db0f315eb06e21a840924a49c42d42493cf2315a"
+    },
+    {
+      "name": "s3-nade12s_ep01",
+      "probex": "artifacts/upstream-split3-diversity/s3-nade12s_ep01.probex.npy",
+      "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-nade12s_ep01.qual.npy",
+      "probex_sha256": "aa846969fd4a16404e8750fa3b4dde34ba62d4c98e56e6b42c0a3e20bf23e730",
+      "qual_sha256": "706361618322657707c853f16fbccbb10332868a25e73a5ee24236152794849c"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}
