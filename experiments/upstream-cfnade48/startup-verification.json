@@ -1,0 +1,60 @@
+{
+  "observed": "2026-11-19T00:20:42.201960+00:00",
+  "plan_sha256": "5ab90a8a660d84ba4c1c05d1b270d05f02256640d2f87b015785b787ba52ccf0",
+  "live_native_commands": {
+    "x": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-stage x",
+    "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-stage qual"
+  },
+  "owners": {
+    "x": {
+      "owner_sha256": "3782cdea85a82e020272f5f31787e71b7e596559cb455b6a07541a4dc1fb3535",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 160, n_hidden2: 0, rank: 48, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "55ce479fc16447a826d013288b2ccb3e1eec39a07d7783f3d860a3f6e33e1fe0",
+        "items": 17770,
+        "protocol": 1,
+        "query": "probex",
+        "query_rows": 1128164,
+        "source": "e14530b5ade496efb3980a64f98442d35c9a606960add79149ce67b057677d94",
+        "train": "trainx",
+        "train_rows": 99352343,
+        "users": 480189
+      }
+    },
+    "qual": {
+      "owner_sha256": "5888beed8d22350199750e66fa6e8ff33cf629ccfaea50296da208ea291a06af",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 160, n_hidden2: 0, rank: 48, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "55ce479fc16447a826d013288b2ccb3e1eec39a07d7783f3d860a3f6e33e1fe0",
+        "items": 17770,
+        "protocol": 1,
+        "query": "qual",
+        "query_rows": 2817131,
+        "source": "e14530b5ade496efb3980a64f98442d35c9a606960add79149ce67b057677d94",
+        "train": "fulltrain",
+        "train_rows": 100480507,
+        "users": 480189
+      }
+    }
+  },
+  "resource_observation": {
+    "state": "training",
+    "epochs": {
+      "x": 0,
+      "qual": 0
+    },
+    "active": {
+      "x": 84003,
+      "qual": 84004
+    },
+    "rss_bytes": {
+      "x": 900169728,
+      "qual": 910491648
+    },
+    "other_rss_bytes": 11216257024,
+    "disk_free_bytes": 143448428544,
+    "heartbeat": "2026-11-19T00:20:41.885849+00:00"
+  },
+  "system_memory_pressure_level": 1,
+  "scope": "Actual native public CF48 training startup, source/config/data identities verified. No epoch95 completion, qualifying score or goal-success claim."
+}
