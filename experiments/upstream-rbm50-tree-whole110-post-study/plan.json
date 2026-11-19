@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T19:38:18.366681+00:00",
+  "script_sha256": "4c00445798bc98d38d1cc9e9a69aa37ab2d1ca91e1eb4c7c75e272c3d49b3a4f",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-whole110-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Post-study known-only comparison after the whole110 neural study and actual saved-model replays completed. The half weights are fixed before computing this mean; no preregistration before neural results is claimed. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}

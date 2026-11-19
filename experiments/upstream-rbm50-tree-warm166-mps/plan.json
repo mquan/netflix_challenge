@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T19:38:21.029898+00:00",
+  "script_sha256": "8b531d38d2ed4211f5d881f52f98eb231b1ba67025be60338710efeb40c96dbc",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-warm166-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Single fixed candidate declared while the own166 MPS NN study was still fitting. Evaluation waits for its complete five-fold result and actual replay. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}
