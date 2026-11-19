@@ -1,0 +1,54 @@
+{
+  "state": "verified_waiting_without_primary_interruption",
+  "observed": "2026-11-19T09:59:56.150169+00:00",
+  "controller": {
+    "pid": 21217,
+    "ppid": 1,
+    "pgid": 21217,
+    "state": "Ss",
+    "started": "Thu Nov 19 01:56:44 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177"
+  },
+  "primary_owner": {
+    "pid": 27177,
+    "ppid": 1,
+    "pgid": 27177,
+    "state": "Ss",
+    "started": "Wed Nov 18 19:38:32 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  },
+  "native_owner": {
+    "pid": 16305,
+    "ppid": 16283,
+    "pgid": 16268,
+    "state": "R",
+    "started": "Thu Nov 19 01:30:35 2026",
+    "command": "./target/release/tsvdx5-new tsvdx5-60"
+  },
+  "script_sha256": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+  "tests_passed": 2,
+  "actual_status": {
+    "state": "waiting_for_primary_idle_boundary",
+    "observed": "2026-11-19T09:59:55.670247+00:00",
+    "primary_pid": 27177,
+    "current_job": "tsvdx5-60",
+    "actual_live_children": [
+      "16268 27177 Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_repro.py --run-job tsvdx5-60"
+    ]
+  },
+  "checkpoint_states": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  },
+  "no_model_code_changed": true,
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

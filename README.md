@@ -19,17 +19,17 @@ prediction features are excluded. The fixed half mean combines our completed 91-
 replay; all ten actual fold receipts and artifacts were rehashed, and independent
 scoring verifies the stored mean over five user folds on 1,128,164 known-ProbeX rows.
 
-**The latest matching86 fresh-training qualifying audit misses the 10% target:**
-**0.8615073690 / 0.8624355593** on the two recovered source groups. The worse
-group improves **9.4556%** over the Cinematch reference. Both latest full saved families replay exactly, and a separate frozen-mean and
+**The latest tree91/contextNN86 fresh-training qualifying audit misses the 10% target:**
+**0.8614776641 / 0.8624021195** on the two recovered source groups. The worse
+group improves **9.4591%** over the Cinematch reference. Both latest full saved families replay exactly, and a separate frozen-mean and
 compensated-score check passes. The earlier first85 completion audit binds333
 evidence files. No qualifying outcomes entered fitting or selection.
 
-The original 1,000-factor source job remains active. Production for the newer
-tree91/contextNN86 candidate waits for physical-memory admission; the full91
+The original 1,000-factor source job remains active. The tree91/contextNN86 production fit and frozen audit are complete; the full91
 context follow-up is queued behind it. CFNADE48 continues remotely. CFNADE96
-checkpoints33/31 are preserved and await memory admission. See
-[FIRST86_QUALIFYING_RESULT.md](FIRST86_QUALIFYING_RESULT.md) for the latest
+checkpoints33/31 are preserved after a second resource yield; coordinated
+admission must account for new primary native allocations. See
+[TREE91_CONTEXT86_QUALIFYING_RESULT.md](TREE91_CONTEXT86_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.
 

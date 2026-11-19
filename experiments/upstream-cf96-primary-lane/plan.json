@@ -1,0 +1,27 @@
+{
+  "created": "2026-11-19T09:56:46.239147+00:00",
+  "script_sha256": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+  "primary_owner": {
+    "pid": 27177,
+    "ppid": 1,
+    "pgid": 27177,
+    "state": "Ss",
+    "started": "Wed Nov 18 19:38:32 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  },
+  "primary_script_sha256": "f137862f927097331f6cca5c1fff1aecd847928302af85283c0ecef51cdc6133",
+  "cf96_runner_sha256": "355bc3d1a2a58fa9f12e2086a54fc18bb860e499212f4ef3e2887b0a2b6dd2f3",
+  "initial_checkpoints": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  },
+  "rule": "Wait for an actual completed primary native job receipt and no live direct child; stop only that idle scheduler. Keep it absent through CF96 admission/training, then restart its unchanged source. Never stop an uncheckpointed native child."
+}

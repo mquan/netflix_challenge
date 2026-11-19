@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T09:34:35.525148+00:00",
-  "display_time": "November 19, 2026, 01:34 AM Pacific",
+  "observed": "2026-11-19T10:02:49.329173+00:00",
+  "display_time": "November 19, 2026, 02:02 AM Pacific",
   "best_development_rmse": 0.8599745622436025,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -15,7 +15,7 @@
     },
     {
       "work": "Independent completion audit",
-      "state": "First85 full333-binding audit remains complete. Latest86 has both saved-family replays plus a separate frozen-mean and score verification, with exact group counts and canonical recovered-label blob."
+      "state": "First85 full333-binding audit remains complete. Both later qualifying fits have actual saved-family replays plus separate mean/score checks. Latest tree91/contextNN86 check verifies408 source inputs and28 code files, the exact mean, canonical label blob and group counts."
     },
     {
       "work": "New fixed tree91/contextNN86 development best",
@@ -23,7 +23,7 @@
     },
     {
       "work": "Tree91/contextNN86 qualifying production",
-      "state": "Controller10865 waits for physical-memory admission. It will fit tree91 with a separate167-column ridge, then reuse the now-complete exact full-fit contextNN86 after bank/config/budget/model/replay verification."
+      "state": "Complete: source0 0.8614776641; source1 0.8624021195. Fresh tree91 plus exact own full-fit NN86 reuse with original ridge/bank/config/budget/model/replay checks. Separate mean/score verifier passes; worse group improves9.4591%, still below10%."
     },
     {
       "work": "Matching86 qualifying queue",
@@ -43,15 +43,15 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Own checkpoints33/31 preserved and all84 tensors per phase verified. Local native temporal worker has finished; automatic resume still requires actual physical-memory headroom. Remote add-on package ready; no remote96 restore proof returned yet."
+      "state": "Original33/31 states and all84 tensors per phase preserved. After an admission race with the next primary allocation, CF96 yielded again. Controller21217 now waits for a verified primary idle boundary and will hold the primary launch lock during unchanged CF96 training, then restart its original scheduler."
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Remote heartbeat09:06UTC, commit96b5f93: epochs64/62 of95, native PIDs95404/95402 observed live remotely, zero swap use. Training deadline14:33UTC; return15:03UTC."
+      "state": "Remote heartbeat09:36UTC, commitc63caea: epochs70/68 of95, native PIDs95404/95402 observed live remotely, zero swap use. Training deadline14:33UTC; return15:03UTC."
     },
     {
       "work": "AEX64 and AEX128",
-      "state": "Both original jobs complete; AEX128 imported at a verified idle boundary. The primary DAG is now running original temporal60 (local native PID77902)."
+      "state": "Both original jobs complete and AEX128 imported at a verified idle boundary. Original tsvdx4-60o has also completed; the primary DAG is running tsvdx5-60 as native PID16305."
     },
     {
       "work": "Matching86 development",
@@ -63,7 +63,7 @@
     },
     {
       "work": "Fixed91 context follow-up",
-      "state": "Controller10867 waits behind new production controller10865 and physical-memory admission. Rank16 and all six additions stay fixed; its reference now includes0.8599745622."
+      "state": "Controller10867 waits for physical memory. Both prior production runs are complete; rank16 and all six additions remain fixed, and the known-ProbeX reference includes0.8599745622."
     },
     {
       "work": "Paired source-column verification",
@@ -71,31 +71,32 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
+  "qualifying_verification_sha256": "f30478e46dab88d15f488d60f30c23e4b268e3658861c55333bd43fe5cbb3b77",
   "qualifying_groups": {
     "quiz": {
       "rows": 1408789,
-      "rmse": 0.8615073689623157,
+      "rmse": 0.8614776640541453,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.553032129940608
+      "improvement_percent_over_cinematch": 9.556150755470316
     },
     "test": {
       "rows": 1408342,
-      "rmse": 0.8624355592570154,
+      "rmse": 0.8624021195492101,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.455584329972133
+      "improvement_percent_over_cinematch": 9.459095060450384
     }
   },
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "10865    25:33   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "10867    25:33   0.7 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
-      "73629 02:59:52  90.5 ./target/release/tsvdx4p-new",
-      "88287 01:47:08   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python"
+      "10867    52:10   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "16305    32:14  98.5 ./target/release/tsvdx5-new",
+      "21217    06:05   0.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "27177 06:24:17   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "73629 03:26:29  94.4 ./target/release/tsvdx4p-new"
     ],
-    "remote_commit": "96b5f9342caf81cc98c9421f4e1534381ea38605",
-    "remote_heartbeat_sha256": "08ed1900bf043fd85a1f19193d964936c33fa14816a51ae1d77f243104591244",
+    "remote_commit": "c63caeaa29aac632d109b65f0fe9e1e52d1f6f4c",
+    "remote_heartbeat_sha256": "07c842c556b6f63472c5761b72386c492a2de3864785d7ebc3040a408dd30149",
     "neural_fold_receipts": [
       "0.json",
       "1.json",
@@ -111,8 +112,19 @@
       "matching86_audit": "complete_miss"
     },
     "new_production_queue": {
-      "state": "production_running"
+      "state": "production_audit_complete",
+      "goal_requires_independent_review": true
+    },
+    "cf96_lane": {
+      "state": "waiting_for_primary_idle_boundary",
+      "observed": "2026-11-19T10:02:48.631809+00:00",
+      "primary_pid": 27177,
+      "current_job": "tsvdx5-60",
+      "actual_live_children": [
+        "16268 27177 Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_repro.py --run-job tsvdx5-60"
+      ]
     }
   },
-  "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67"
+  "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
+  "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131"
 }

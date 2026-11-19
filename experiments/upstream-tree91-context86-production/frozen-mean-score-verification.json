@@ -1,0 +1,44 @@
+{
+  "state": "complete_frozen_mean_and_score_verification",
+  "observed": "2026-11-19T09:56:46.408790+00:00",
+  "adapter": "upstream_tree91_context86_production",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8614776640541453,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8624021195492101,
+      "below_target": false
+    }
+  },
+  "fixed_float32_mean_bitwise_equal": true,
+  "saved_family_replay_receipts_verified": true,
+  "source_inputs_verified": 408,
+  "code_files_verified": 28,
+  "prediction_sha256": "4d86f33ebe17810d0b6f94aec158240e75f7c848a856b1d439308dbd45fb2a19",
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "bindings": {
+    "experiments/upstream-tree91-context86-production/plan.json": "7925b9ee4b7123dd59d6d22e9ebb5d2fb010d8b9728d04327bd56bcee6f385ae",
+    "artifacts/upstream-tree91-context86-production/tree/tree-2026.txt": "5c4b652518f3e78e29a32cc8da66f816e4c2644a423b3232a4c3cbc4302f52bf",
+    "artifacts/upstream-tree91-context86-production/tree/tree-7.txt": "b6c3a9d519ad0696d42a9c78f01813f5f10e4edc3a1777f7eead169fb0433c97",
+    "artifacts/upstream-tree91-context86-production/tree/qualifying.f32": "117e6f372d2d4f093816a61a808a1142fe78e70dcdb6462d5e7aa66c84cf6b87",
+    "artifacts/upstream-tree91-context86-production/tree/tree-13.txt": "208c60728d46accff082b3117bf9ef1820bdae5efd44dfca26f156e289b900ec",
+    "experiments/upstream-tree91-context86-production/tree.json": "2e93d956746161d84f6cf7a73b84e5c9f6dc1f6c86da721ad8c95208bd9773e5",
+    "experiments/upstream-tree91-context86-production/tree-replay.json": "2449503dd451e65b15260c3c1045f0ada6781ffe579a64b99035e51f064641f3",
+    "artifacts/upstream-tree91-context86-production/nn/qualifying.f32": "5d6d024805c934b03b35f812aa03148c0f65f695a77149db163dad1efa34b917",
+    "experiments/upstream-tree91-context86-production/nn.json": "d4224a065da09a4a326169cfa25046a3270855aad1ed3029a32d748801fe3dc6",
+    "experiments/upstream-tree91-context86-production/nn-replay.json": "9778549a595cbd912c7a5ac642920b9145a91977106e7ed782cd8b52d14400b9",
+    "scripts/verify_upstream_frozen_mean.py": "f6d8d6ff610917be62977679de4989c8c63dd70f3d8e25eb39c1d694f85bfa18",
+    "experiments/upstream-tree91-context86-production/report.json": "43fed2a2d366c42f759aa7fe8eb721e51c20a69882c1d1fb34985a52c13d3a13",
+    "experiments/upstream-tree91-context86-production/qualifying-final.f32": "4d86f33ebe17810d0b6f94aec158240e75f7c848a856b1d439308dbd45fb2a19",
+    "experiments/upstream-tree91-context86-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "experiments/upstream-tree91-context86-production/recovered-audit/report.json": "7c04830230c044e4ed8dd9f9790f8276f268af81edf43cf78635458447615193"
+  },
+  "both_groups_below_target": false,
+  "model_fitting_performed": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Separate frozen-mean and compensated-score recheck. Actual saved-family replay receipts and model hashes verified; this check does not rerun model inference. Adaptive community-recovered groups, not official or untouched Netflix Test."
+}

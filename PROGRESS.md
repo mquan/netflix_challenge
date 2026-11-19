@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T09:31:00+00:00
+timestamp: 2026-11-19T10:00:00+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,15 +12,15 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-The latest matching86 own-training qualifying audit **misses** the target:
+The latest tree91/contextNN86 own-training qualifying audit **misses** the target:
 
 | Recovered source group | Rows | Independently verified RMSE | Required |
 | --- | ---: | ---: | ---: |
-| source0 (`is_test=0`) | 1,408,789 | **0.8615073689623157** | <0.85725 |
-| source1 (`is_test=1`) | 1,408,342 | **0.8624355592570154** | <0.85725 |
+| source0 (`is_test=0`) | 1,408,789 | **0.8614776640541453** | <0.85725 |
+| source1 (`is_test=1`) | 1,408,342 | **0.8624021195492101** | <0.85725 |
 
-The worse group improves **9.4555843300%** over the Cinematch reference 0.9525,
-short of 10%. The remaining gap is 0.0051855593 RMSE. These are adaptive
+The worse group improves **9.4590950605%** over the Cinematch reference 0.9525,
+short of 10%. The remaining gap is 0.0051521195 RMSE. These are adaptive
 community-recovered outcomes, not official or untouched Netflix Test scores.
 The published Quiz/Test sizes reverse the source labels, so source groups
 are preserved without relabeling.
@@ -33,12 +33,14 @@ compensated scoring covers all 2,817,131 qualifying rows. The separate completio
 check binds 333 evidence files, 29 own source jobs and the actual development
 models behind the per-seed budgets. It explicitly records `goal_achieved=false`.
 
-The latest86 result improves both first85 group scores (0.8619187880 /
+The preceding matching86 result improved both first85 group scores (0.8619187880 /
 0.8628067765). Its three trees and three context neural models replay before
 freezing; a separate checker verifies source/code bindings, model/replay hashes,
 the bitwise float32 mean and compensated group scores. See
-`FIRST86_QUALIFYING_RESULT.md`. No qualifying outcomes selected the queued
-newer tree91/contextNN86 recipe.
+`FIRST86_QUALIFYING_RESULT.md`. No qualifying outcomes selected the newer tree91/contextNN86 recipe. Its
+production is now complete with a fresh tree91 and explicitly reused, replayed
+own full-fit NN86. A separate frozen-mean/score check verifies408 source inputs
+and28 code files; see `TREE91_CONTEXT86_QUALIFYING_RESULT.md`.
 
 Our best verified **development** result is now **0.8599745622436025**: a
 fixed half mean of the completed tree91 vector and the unchanged contextNN86
@@ -59,14 +61,14 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
 | Matching86 production | Complete and replayed; frozen audit0.8615073690 /0.8624355593 misses target. The exact full-fit NN86 is available for the new combination |
 | Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
-| New tree91/contextNN86 production | Controller 10865 waits for the active matching86 run; it will verify and reuse the exact same full-fit NN86, fit tree91 with its own ridge and budgets, replay both, freeze the mean and audit |
+| New tree91/contextNN86 production | Complete: fresh tree and exact reused own NN replay; frozen audit0.8614776641 /0.8624021195 still misses target; separate mean/score recheck passes |
 | All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 phase | Complete at08:48 UTC; all31 native NPY outputs match the original remote receipt exactly, including fulltrain residuals; all eight selected split vectors equal the recovered own pairs |
-| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Temporal PID46684 has exited and the original bank is complete; automatic resume still requires physical-footprint/compressor/swap admission |
-| CFNADE48 | Remote live-process heartbeat 09:06 UTC (commit96b5f93) reports 64/62 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
+| CFNADE96 | Checkpoints33/31 preserved and all84 tensors rehashed. Auto-resume admitted during the primary job transition, then yielded again at09:41 UTC after the next native allocation raised total owned footprint to26.9 GiB; no automatic retry remains live |
+| CFNADE48 | Remote live-process heartbeat 09:36 UTC (commitc63caea) reports 70/68 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
-| Primary DAG | Original temporal60 PID77902 has logged all20 fulltrain-phase epochs; final outputs are not yet receipted |
+| Primary DAG | Original tsvdx4-60o completed; primary DAG advanced to tsvdx5-60, native PID16305, which remains active |
 
 The original-schema phase bank is now complete through the explicit recovered
 own-temporal route; all six cache files match the verified private bank exactly.
@@ -110,6 +112,21 @@ reference; no live model or native training source was changed.
 Its actual train/save/reload test reproduces predictions exactly. It retains
 all six predeclared additions, reuses the fully verified matching trees and
 starts no fit until its predecessor and physical-memory gates clear.
+
+A second CF96 admission exposed a scheduler race: both CF96 workers and new
+production admitted while the next primary native job was still loading. Its
+later allocation raised owned physical footprint to26.9 GiB and compressor use
+to16.3 GiB. At09:41 UTC only the checkpointed CF96 controller16335 and its owned
+workers16378/16379 were yielded through the original cleanup path. All84 tensors
+and exact state/source/data identities remain unchanged at33/31. The active
+uncheckpointed native jobs and tree91 fit were untouched. Evidence is in
+`experiments/upstream-memory-observation/cf96-second-resource-yield.json`.
+The old one-shot waiter has exited. Controller21217 now waits for a verified
+primary-job idle boundary, then takes over its launch lock for unchanged CF96
+training and restarts the original primary controller afterward. Actual-process
+tests cover busy-owner preservation and idle takeover. Neither the current
+primary job nor its scheduler is stopped while this lane waits. See
+`CFNADE96_PRIMARY_LANE_PLAN.md`.
 
 The additional remote branch `research/remote9h-cf96-handoff` contains the
 verified CF96 checkpoint package and runbook. No remote CF96 restore proof has
