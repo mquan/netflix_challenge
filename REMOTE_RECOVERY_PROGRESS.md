@@ -1,5 +1,23 @@
 # Remote recovery and qualifying production
 
+## Completed first audit, 06:49 UTC
+
+The first own-training qualifying blend scores **0.8619187880 / 0.8628067765**
+on the two recovered source groups. Both miss 0.85725; the worse group improves
+9.4166% over the Cinematch reference. The goal remains active. Both full saved
+families replay exactly in isolated processes, the fixed float32 mean verifies,
+and the separate completed audit binds 333 evidence files. See
+[FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md).
+
+The first separate checker aborted on conflicting LightGBM/PyTorch OpenMP
+runtimes. Its replacement uses one read-only child process per family and has
+completed both full replays and compensated scoring; three targeted tests pass.
+No production fitting artifacts changed. The fixed 91-predictor study and
+original 1,000-factor source job are now active. The matching86 queue has a
+guarded one-time recovery after its original phase bank becomes complete.
+
+The earlier observations below are retained as the recovery history.
+
 Observed November19, 2026, approximately06:16UTC. The fresh-only qualifying
 target remains unverified. Development best remains0.8600300601883686.
 
@@ -58,3 +76,21 @@ Evidence lives in `experiments/upstream-remote-temporal-pair/`,
 `experiments/upstream-phase-production/`,
 `experiments/upstream-remote9h/run/` and
 `experiments/upstream-cfnade48/remote-migration-verification.json`.
+
+## Separate completion audit queued at06:27UTC
+
+`scripts/verify_upstream_first85_completion.py --watch` is running asPID71583.
+Before launch, its real provenance check rehashed275 native outputs from29
+own source jobs, including12 own auxiliary imports. Its separate budget check
+verified66 development receipt/model files and independently recomputed both
+families' per-seed medians. Two targeted tests reject substituted fixed means,
+incorrect group populations and equality at the strict target boundary.
+
+The watcher verifies the actual producer process while waiting. After the
+original producer finishes its frozen audit, this separate process will check
+all plan/source bindings, replay both saved full families without writing their
+receipts, recompute the fixed float32 family average, require the exact pinned
+recovered-label Git blob, and independently score both original source groups.
+It then rehashes its bound evidence. Its result is written under
+`experiments/upstream-first85-completion-audit/`; no goal-success claim is made
+until that result and the final model evidence pass.
