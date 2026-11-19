@@ -1,0 +1,28 @@
+{
+  "ready_unused": [
+    {
+      "name": "cfnade-96_ep10",
+      "paired_files": {
+        "probex": "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.probex.npy",
+        "qual": "artifacts/upstream-cf96-prefix10-screen/cfnade-96_ep10.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "tsvdx5-60",
+      "paired_files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx5-60.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "cfnade-96_ep10",
+    "tsvdx5-60"
+  ],
+  "rule": "Append both independently verified public-schema columns together. Fixed control/all-two arms, original user folds and ridge penalty; no snapshot/subset search or qualifying outcomes.",
+  "cf96_full95_model_complete": false,
+  "tsvdx5_60_full23_23_model_complete": true,
+  "qualifying_labels_read": false
+}
