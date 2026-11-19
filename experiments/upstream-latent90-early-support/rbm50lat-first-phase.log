@@ -1,0 +1,28 @@
+[rbm50lat]
+target = "rtg"
+RxConfig { hidden_type: Bernoulli, visible_type: Softmax, temperature: 1.0, n_hidden: 50, n_epochs: 20, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.02, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: true, save_ufeat: true, n_factors: None, n_freq_bins: 8, lr_bif: 0.0, wd_bif: 0.01 }
+trainx => probex
+Epoch 01 | RMSE 0.96006
+Epoch 02 | RMSE 0.94555
+Epoch 03 | RMSE 0.93811
+Epoch 04 | RMSE 0.93324
+Epoch 05 | RMSE 0.92954
+Epoch 06 | RMSE 0.92706
+Epoch 07 | RMSE 0.92438
+Epoch 08 | RMSE 0.92207
+Epoch 09 | RMSE 0.92016
+Epoch 10 | RMSE 0.91845
+Epoch 11 | RMSE 0.91678
+Epoch 12 | RMSE 0.91554
+Epoch 13 | RMSE 0.91416
+Epoch 14 | RMSE 0.91305
+Epoch 15 | RMSE 0.91195
+Epoch 16 | RMSE 0.91120
+Epoch 17 | RMSE 0.91043
+Epoch 18 | RMSE 0.90953
+Epoch 19 | RMSE 0.90888
+Epoch 20 | RMSE 0.90820
+probex RMSE 0.90820
+Saved W matrix to preds_new/rbm50lat.ifeat.trainx.npy
+Saved expected hidden units to preds_new/rbm50lat.ufeat.trainx.npy
+fulltrain => qual

@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "c1c4782e9347283a0ceb2f069b2cbb3d0ee1f5808b16eb82e06cdfa4fe714028",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625974318022814,
+      "delta_vs_previous_best": 0.0031281754368741588,
+      "fold_rmse": [
+        0.8620157011502635,
+        0.8599044409792428,
+        0.863405528852549,
+        0.8642115785065666,
+        0.8634533193745721
+      ],
+      "prediction_sha256": "8a8887afaeebd23f13a48343f61e3638e433b39181ff893c19c9c652d12fdeba"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.0012147866453786627,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.85947833850899,
+      "delta_vs_previous_best": 9.08214358275039e-06,
+      "fold_rmse": [
+        0.8585950564652921,
+        0.8570010063162354,
+        0.8605261693141041,
+        0.8613332727301669,
+        0.859942239859088
+      ],
+      "prediction_sha256": "c214f9dabd4c03f60eeffe7a1f379018e7df64e90465d275126dffc9a63f6e2b"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8595509427264156,
+      "delta_vs_previous_best": 8.168636100835958e-05,
+      "fold_rmse": [
+        0.8586788190585567,
+        0.857056911320235,
+        0.8605433716452442,
+        0.8613209918923226,
+        0.8601604400048943
+      ],
+      "prediction_sha256": "fa14d14304a0976238aee31b1d6e491b25c54de8d554ca0f0ed60d01b6085983"
+    }
+  ],
+  "previous_best_rmse": 0.8594692563654073,
+  "scope": "Adaptive known-ProbeX only. Fixed original rank16 context architecture retaining own103 plus both original split3 attention columns, same five nested user folds/seeds/optimizer/stopping. Reuses actual verified tree91, without synthetic fitting receipts. No production or qualifying audit launched.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

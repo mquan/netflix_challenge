@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T14:54:35.946480+00:00
+timestamp: 2026-11-19T15:51:41.397233+00:00
 best_score: 0.8594692563654075
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,14 +12,16 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-Local update: original tsvdx5-60 completed23/23 with all outputs independently
-checked. The primary queue yielded at a verified idle boundary; both original
-CF96 phases are now running from33/31, alongside original RBM50 latent training,
-own105 (2/5 NN folds complete) and the1,000-factor temporal model. Tx20lat is
-queued. The CF48 remote result is already incorporated in the best score below;
-no newer latent90 return is visible on GitHub at this snapshot.
-Our complete published CF96 epoch10 pair also passed source/package checks and
-an independent five-fold ridge diagnostic. See [CF96_PREFIX10_RESULT.md](CF96_PREFIX10_RESULT.md).
+Local update: own105 completed all five folds and all15 model replays. Its
+NN0.8594783385 is slightly worse than NN103, so it is not promoted. The next
+actual worker98536 is training on107 own predictors plus all50 exact learned
+RBM user supports. Every support query row and every appended cache column was
+checked bitwise. See [RBM50_CONTEXT_PLAN.md](RBM50_CONTEXT_PLAN.md) and
+[SPLIT3_105_CONTEXT_RESULT.md](SPLIT3_105_CONTEXT_RESULT.md).
+Original RBM50 continues its second20-epoch phase; Tx20lat remains queued.
+Both CF96 phases continue from verified original checkpoints, with latest saved
+epochs36/34, alongside the original1,000-factor temporal model. Original
+23/23 temporal60 is complete. The returned CF48 result is already incorporated.
 
 **New verified own qualifying best:0.8609916544142975 /0.8619938614020105**,
 from the predeclared standalone full-fit NN103. Worse-group improvement is
@@ -28,8 +30,7 @@ saved-model replay, canonical labels, full group coverage and independent
 compensated scores verify. The fixed tree91/NN103 mean also improves, to
 0.8610694976822610 /0.8620220770129196. See
 [CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md).
-Own105 worker84147 is now training after own103 completed; it adds both verified
-split3 attention columns without changing the nested user folds or model capacity.
+Own105 is complete without improvement; the raw107 plus50-support study is now training.
 
 Earlier checkpoints below retain their original observations.
 
