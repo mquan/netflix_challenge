@@ -1,0 +1,114 @@
+{
+  "created": "2026-11-19T23:36:30.760932+00:00",
+  "source_sha256": {
+    "experiments/upstream-source-extension/manifest.json": "24933a00eecd67f788ad4328c70c107cb6a1c7a36af63fafd28c09e36e17b803",
+    "experiments/upstream-extension-context/manifest.json": "0206ceb64d9a25f07fab610425acdfdfcd6c1254f4cd87b09824082db5cffb34",
+    "experiments/upstream-context-blend/manifest.json": "5fa58407292a923d489666bdb5707af6246da3f1357640d16632884f7ca91494",
+    "experiments/upstream-voting-blend/manifest.json": "d8173789aa3ff9cb6ff961b9e23c8e613f3171cef8bc0f40d17f5f78c53e970e",
+    "scripts/upstream_exact_cache_links.py": "8ab3553422e0348294900667a9907762c3dd84b797b86af8c84bf9c462818465"
+  },
+  "planned": [
+    {
+      "canonical": "artifacts/upstream-source-extension/design.npy",
+      "target": "artifacts/upstream-extension-context/design.npy",
+      "sha256": "79924c222108355d9b86bf6d7c12a94b02f90df7a5df804e37cbd10d76761100",
+      "canonical_before": {
+        "device": 16777233,
+        "inode": 55356747,
+        "size": 1507227232,
+        "mtime_ns": 1795069426853200500,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      },
+      "target_before": {
+        "device": 16777233,
+        "inode": 55426954,
+        "size": 1507227232,
+        "mtime_ns": 1795086908424166206,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      }
+    },
+    {
+      "canonical": "artifacts/upstream-source-extension/features.npy",
+      "target": "artifacts/upstream-extension-context/features.npy",
+      "sha256": "d637341074e911651eea3819c09a30a48d5253c8c1c9f3c19b89f91a41eaf9a1",
+      "canonical_before": {
+        "device": 16777233,
+        "inode": 55356748,
+        "size": 1024373040,
+        "mtime_ns": 1795069427835672077,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      },
+      "target_before": {
+        "device": 16777233,
+        "inode": 55426964,
+        "size": 1024373040,
+        "mtime_ns": 1795086909875905195,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      }
+    },
+    {
+      "canonical": "artifacts/upstream-context-blend/design.npy",
+      "target": "artifacts/upstream-voting-blend/design.npy",
+      "sha256": "4d231cb3e751b7236a91a4dfa541e210ce879ec2b422503572cf4c85b8a34848",
+      "canonical_before": {
+        "device": 16777233,
+        "inode": 55247453,
+        "size": 1453075360,
+        "mtime_ns": 1795038928777351786,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      },
+      "target_before": {
+        "device": 16777233,
+        "inode": 55162292,
+        "size": 1453075360,
+        "mtime_ns": 1795020350038789723,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      }
+    },
+    {
+      "canonical": "artifacts/upstream-context-blend/features.npy",
+      "target": "artifacts/upstream-voting-blend/features.npy",
+      "sha256": "3c4bf8fea667e8b6cecedd715c16f96d2dab86ebae83931c54ae870385527b42",
+      "canonical_before": {
+        "device": 16777233,
+        "inode": 55247457,
+        "size": 997297104,
+        "mtime_ns": 1795038929466213000,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      },
+      "target_before": {
+        "device": 16777233,
+        "inode": 55162293,
+        "size": 997297104,
+        "mtime_ns": 1795020350345415875,
+        "mode": 33188,
+        "uid": 501,
+        "gid": 20,
+        "links": 1
+      }
+    }
+  ],
+  "rule": "Require two equal immutable manifest hashes and a complete independent byte comparison. Exclude every open candidate. Atomically replace only the redundant target inode with a hardlink to its existing exact byte-identical canonical file. Keep all filenames, bytes, permissions, owners, shapes, prediction/model/input values and original manifest hashes. Never touch distinct caches or model/checkpoint/data files.",
+  "qualifying_labels_read": false
+}

@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T23:27:17.507463+00:00",
-  "display_time": "2026-11-19 23:27 UTC",
+  "observed": "2026-11-19T23:44:50.599477+00:00",
+  "display_time": "2026-11-19 23:44 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Exact inactive cache storage sharing",
+      "state": "Complete producer and independent full-byte/path/header/manifest checks on four exact duplicate cache pairs. All original paths, values, permissions and owners retained using hardlinks; no distinct data/models/predictions/caches removed. Observed net free-space increase4.9816GB, allowing more original-budget training/snapshot retention."
+    },
     {
       "work": "One known-fit coefficient calibration and frozen qualifying audit",
       "state": "Complete independent new qualifying best: source0 0.8606524657 /source1 0.8616635956, both preceding groups improve. One known-only convex coefficient32.2310% tree /67.7690% NN, same original actual replayed full own families. Exact known/full arithmetic and separate canonical group scores pass after CSV-header-only parser recovery; original frozen vector/weights preserved. Worse group9.5366304%, target still missed. Apparent calibration0.8591643 is not nested CV; CV best remains0.8592310."
@@ -23,7 +27,7 @@
     },
     {
       "work": "Full154-context matching tree comparison",
-      "state": "Actual CPU tree worker60801 continues unchanged under replacement supervisor62158. Verified parent-only supervision handoff released the GPU epoch lock without signaling/restarting the fitting worker or changing numerical inputs/threads/RNG/budgets. Original24GiB combined-RSS/8GiB disk guards, all15 actual saved-tree replays and independent scoring remain. Raw MPS epoch3 now runs concurrently."
+      "state": "Same actual CPU worker60801 under supervisor62158. First original user fold complete: three actual saved tree models with760/1069/680 rounds. Remaining folds continue with original nested budgets. Raw MPS fitting overlaps under unchanged guards. The larger pending NN test waits for peak headroom; no new overall tree or qualifying score claimed."
     },
     {
       "work": "Fixed rank1000 item32 /186-context neural comparison",
@@ -31,7 +35,7 @@
     },
     {
       "work": "Fixed item-oriented epoch5/10 virtual nonlinear comparison",
-      "state": "Controller63754 freshly declared before the first paired epoch5 diagnostic, with every numerical study setting identical. Original pending declaration preserved; only verifier publication amended to retain stable successful proof bytes. Epoch5 pair checked and actually rechecked bitwise unchanged, standalone component RMSE1.0064540238 is not an ensemble gain. Fixed study waits for10; raw50/50 continues, separate watcher63850 checks paired snapshots."
+      "state": "Same original coordinator63754 intentionally held at its verified idle boundary by controller68129. Pair10 awaits actual completion; raw50/50 and native fits continue. Full-size NN peak must wait for all actual CPU tree fitting/replay/supervision to finish and two readings reserving16GiB under the original24GiB total guard. No model/data/fold/seed/stopping/checkpoint/weight changes; all original actual replay/score requirements retained."
     },
     {
       "work": "Full split3 virtual nonlinear follow-up",
@@ -51,7 +55,7 @@
     },
     {
       "work": "Item-oriented raw autoencoder feasibility",
-      "state": "Real full-width training started22:46 UTC after both complete transposed histories independently passed every original tuple/query-exclusion check. Original480189\u2192128\u2192480189, batch32,float32 MPS,50 epochs per phase and all fixed snapshots retained. No accuracy result yet."
+      "state": "Real full-data50/50 trajectory continues, currently fulltrain epoch10. Epoch5 pair and actual saved-model query replays independently verified; standalone component1.0064540238 is not a global ensemble score. Immutable successful verification bytes preserve later lineage. Full actual histories, original architecture/budgets and all fixed snapshots retained."
     },
     {
       "work": "Item154 full known-selected qualifying refit",

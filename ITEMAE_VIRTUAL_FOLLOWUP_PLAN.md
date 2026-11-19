@@ -44,3 +44,9 @@ archived and freshly issued with a verifier-publication-only amendment. All
 numerical study fields are independently confirmed identical. Repeated full
 checks now preserve successful proof bytes instead of rewriting timestamps.
 See [ITEMAE_IMMUTABLE_VERIFICATION.md](ITEMAE_IMMUTABLE_VERIFICATION.md).
+
+The same original coordinator is now held at its idle boundary by a peak-memory
+admission controller until CPU tree fitting/replay finishes and safe full-size
+headroom is measured twice. Raw GPU and native training continue. No neural
+configuration, source selection or fitting budget changes. See
+[ITEMAE_NEURAL_ADMISSION.md](ITEMAE_NEURAL_ADMISSION.md).
