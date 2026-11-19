@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T08:55:00+00:00
+timestamp: 2026-11-19T09:31:00+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,26 +12,33 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-The first complete own-training qualifying audit **misses** the target:
+The latest matching86 own-training qualifying audit **misses** the target:
 
 | Recovered source group | Rows | Independently verified RMSE | Required |
 | --- | ---: | ---: | ---: |
-| source0 (`is_test=0`) | 1,408,789 | **0.8619187880311255** | <0.85725 |
-| source1 (`is_test=1`) | 1,408,342 | **0.8628067765436453** | <0.85725 |
+| source0 (`is_test=0`) | 1,408,789 | **0.8615073689623157** | <0.85725 |
+| source1 (`is_test=1`) | 1,408,342 | **0.8624355592570154** | <0.85725 |
 
-The worse group improves **9.4166113865%** over the Cinematch reference 0.9525,
-short of 10%. The remaining gap is 0.0055567765 RMSE. These are adaptive
+The worse group improves **9.4555843300%** over the Cinematch reference 0.9525,
+short of 10%. The remaining gap is 0.0051855593 RMSE. These are adaptive
 community-recovered outcomes, not official or untouched Netflix Test scores.
 The published Quiz/Test sizes reverse the source labels, so source groups
 are preserved without relabeling.
 
-This result uses our freshly trained 85-predictor bank and full-known-ProbeX
+The earlier first85 result used our freshly trained 85-predictor bank and full-known-ProbeX
 blend fitting. Public source code is reused; no downloaded pretrained prediction
-features or qualifying outcomes entered fitting or selection. Both saved full
+features or qualifying outcomes entered fitting or selection. Both of its saved full
 families replay bit-for-bit, their fixed float32 mean verifies, and independent
 compensated scoring covers all 2,817,131 qualifying rows. The separate completion
 check binds 333 evidence files, 29 own source jobs and the actual development
 models behind the per-seed budgets. It explicitly records `goal_achieved=false`.
+
+The latest86 result improves both first85 group scores (0.8619187880 /
+0.8628067765). Its three trees and three context neural models replay before
+freezing; a separate checker verifies source/code bindings, model/replay hashes,
+the bitwise float32 mean and compensated group scores. See
+`FIRST86_QUALIFYING_RESULT.md`. No qualifying outcomes selected the queued
+newer tree91/contextNN86 recipe.
 
 Our best verified **development** result is now **0.8599745622436025**: a
 fixed half mean of the completed tree91 vector and the unchanged contextNN86
@@ -50,22 +57,45 @@ ridge layouts, actual per-seed budgets and the fixed half mean.
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | Fixed91 gate completed; unchanged PID88587 now waits for memory. Replacement for the stronger tree91/contextNN86 candidate is planned; no current fit overwritten |
-| Fixed 91-predictor study | Complete: both families replayed; fixed mean0.8601526901 is worse and not promoted |
-| All91 context follow-up | Fixed rank16 candidate queued as PID97839; waits for current extension/matching production and two physical-memory admission samples; no qualifying-label selection |
+| Matching86 production | Complete and replayed; frozen audit0.8615073690 /0.8624355593 misses target. The exact full-fit NN86 is available for the new combination |
+| Fixed 91-predictor study | Complete: both families replayed; fixed mean 0.8601526901 is worse and not promoted |
+| New tree91/contextNN86 production | Controller 10865 waits for the active matching86 run; it will verify and reuse the exact same full-fit NN86, fit tree91 with its own ridge and budgets, replay both, freeze the mean and audit |
+| All91 context follow-up | Controller 10867 waits behind both production runs and two physical-memory admission samples; it now binds the stronger 0.8599745622 development reference |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 phase | Complete at08:48 UTC; all31 native NPY outputs match the original remote receipt exactly, including fulltrain residuals; all eight selected split vectors equal the recovered own pairs |
-| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for actual native temporal PID46684 to exit and physical-footprint/compressor/swap admission; original bank is already complete |
-| CFNADE48 | Remote live-process heartbeat 08:36 UTC (commit263dcf8) reports 58/57 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
+| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Temporal PID46684 has exited and the original bank is complete; automatic resume still requires physical-footprint/compressor/swap admission |
+| CFNADE48 | Remote live-process heartbeat 09:06 UTC (commit96b5f93) reports 64/62 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
-| Primary DAG | Original temporal60 job PID77902 live at08:37 UTC |
+| Primary DAG | Original temporal60 PID77902 has logged all20 fulltrain-phase epochs; final outputs are not yet receipted |
 
 The original-schema phase bank is now complete through the explicit recovered
 own-temporal route; all six cache files match the verified private bank exactly.
 The unchanged matching86 queue restarted at07:50 UTC and has passed the fixed91
-study gate and now waits for memory. The newer tree91/contextNN86 candidate
-will replace this queue only after a concrete controller is implemented and
-the existing queue is verified idle.
+study gate and started full tree fitting at09:02 UTC. The newer tree91/contextNN86 candidate
+now has a concrete controller. The matching86 fit started before replacement;
+it remains intact, and the new controller waits for its complete original
+contextNN86 rather than duplicating that exact neural fit. The original NN
+plan, ridge, bank, budgets, models and semantic replay must all match. New
+tree91 fitting then uses its separate 167-column ridge and 228 inputs.
+The two neural-origin gate tests reject changed recipes, budgets, model sets,
+plans and replay evidence. Both actual queue processes and launch code hashes
+were verified in `experiments/upstream-tree91-context86-production/startup-verification.json`.
+
+The paired production bank has now passed an independent full-row column
+check against its actual declared own native pairs: original predictions,
+clipping, float32 centering, context interactions, intercept, all130 voting
+features and all six additions. Known labels and user identities match the
+original development rows. Nine base predictor columns differ from the frozen
+development realization, from four retrained source producers. This was
+already disclosed in the original parent bank's `feature_recipe`; it is now
+quantified in `experiments/upstream-extension-bank/paired-source-differences.json`.
+The checker initially assumed identical source realizations, then was corrected
+to validate the declared paired inputs while reporting those differences.
+Production bank files and model math were not changed. The development gain
+is recipe evidence; it does not imply the same score on the rebuilt bank or
+on qualifying rows. Both current full-fit families learn from that rebuilt
+known-ProbeX bank, with their original schemas and no qualifying-label fitting.
+Two regression tests cover valid retrained inputs and corrupted column math.
 
 Temporal completion evidence is in
 `experiments/upstream-temporal-phase/completion-verification.json`, produced by
@@ -73,6 +103,10 @@ Temporal completion evidence is in
 fulltrain/qual phase, not a new full two-phase pipeline or a new score.
 
 The fixed all91 context follow-up is documented in `ALL91_CONTEXT_PLAN.md`.
+Its first idle controller 97839 was stopped only after confirming no children,
+and its launch/status/code snapshot preserved. Updated controller 10867 waits
+behind the new production queue and binds the stronger fixed-combination
+reference; no live model or native training source was changed.
 Its actual train/save/reload test reproduces predictions exactly. It retains
 all six predeclared additions, reuses the fully verified matching trees and
 starts no fit until its predecessor and physical-memory gates clear.

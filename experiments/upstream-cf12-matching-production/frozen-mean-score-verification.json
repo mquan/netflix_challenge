@@ -1,0 +1,48 @@
+{
+  "state": "complete_frozen_mean_and_score_verification",
+  "observed": "2026-11-19T09:32:32.418194+00:00",
+  "adapter": "upstream_cf12_matching_production",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8615073689623157,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8624355592570154,
+      "below_target": false
+    }
+  },
+  "fixed_float32_mean_bitwise_equal": true,
+  "saved_family_replay_receipts_verified": true,
+  "source_inputs_verified": 309,
+  "code_files_verified": 24,
+  "prediction_sha256": "34c013c0e6934b5218d78848ad839fec2bef310c0317b9190552c64b7c305378",
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "bindings": {
+    "experiments/upstream-cf12-matching-production/plan.json": "c2b31d12f126bee738b261a6ed8d2b20bb793e23cf6c64abc112ea514674c1ce",
+    "artifacts/upstream-cf12-matching-production/tree/tree-2026.txt": "732273f9caeece2939fd85590184d35b2a7f8fb08f775e1b3aab70d48190a5f3",
+    "artifacts/upstream-cf12-matching-production/tree/tree-7.txt": "a44d4b625ca3ba5c76ef29d650d92acb14c747c07d88aab75e8a34aba38ae368",
+    "artifacts/upstream-cf12-matching-production/tree/qualifying.f32": "e62be8be949531206c73c676fe0864ddfc303e55509c56ed2ca5faf1b59e5c7c",
+    "artifacts/upstream-cf12-matching-production/tree/tree-13.txt": "7cd934209ad5c4e229f3b5abba014b4670e527c9162bb069cdfa2a227dbdef69",
+    "experiments/upstream-cf12-matching-production/tree.json": "2bd6bd004e8650dcb2f7feb757719531efddcfc8691535ec5a4c65d72a523bae",
+    "experiments/upstream-cf12-matching-production/tree-replay.json": "40bc4408c295f8e1f0ed5d4551f03029a7b63582079bdf0c4beece4eac34b380",
+    "artifacts/upstream-cf12-matching-production/nn/scaler.npz": "5e9ae7238cb960200b23b1e1242303bf22c53c3e867fcc1e766de7c3eee8b48d",
+    "artifacts/upstream-cf12-matching-production/nn/nn-13.pt": "3a8717f9a88db8fb08605b489565a2d6cf620b7718a2c459afcd7238c97ccfcf",
+    "artifacts/upstream-cf12-matching-production/nn/nn-2026.pt": "796135880348250dc36c3fccc8b5c9025b72be200708e17e64a540f1be46e86e",
+    "artifacts/upstream-cf12-matching-production/nn/qualifying.f32": "5d6d024805c934b03b35f812aa03148c0f65f695a77149db163dad1efa34b917",
+    "artifacts/upstream-cf12-matching-production/nn/nn-7.pt": "eadc1c5ce6dbdf3d9845ea3a1f95def8f70f75c0f169713bc8e40f043a043cd5",
+    "experiments/upstream-cf12-matching-production/nn.json": "eb9c550249d3e0b7acdf739075e922dfb99ed006d78b7a8312a2e4c39d1f5103",
+    "experiments/upstream-cf12-matching-production/nn-replay.json": "a6f6d09a0ed82cace40360f56f5662b5a34b1dc9bb3b222f128a63fed55dc006",
+    "scripts/verify_upstream_frozen_mean.py": "f6d8d6ff610917be62977679de4989c8c63dd70f3d8e25eb39c1d694f85bfa18",
+    "experiments/upstream-cf12-matching-production/report.json": "062c78d3d6820a3719555f0d6087c3453f6e7b8d6c4eb326e3d987cccf920a8b",
+    "experiments/upstream-cf12-matching-production/qualifying-final.f32": "34c013c0e6934b5218d78848ad839fec2bef310c0317b9190552c64b7c305378",
+    "experiments/upstream-cf12-matching-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "experiments/upstream-cf12-matching-production/recovered-audit/report.json": "882ad6ba936afe88f11b899453ba4f6f9461e619ab63508f3f8d5ee78363c9a4"
+  },
+  "both_groups_below_target": false,
+  "model_fitting_performed": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Separate frozen-mean and compensated-score recheck. Actual saved-family replay receipts and model hashes verified; this check does not rerun model inference. Adaptive community-recovered groups, not official or untouched Netflix Test."
+}
