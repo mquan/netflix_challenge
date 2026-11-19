@@ -1,0 +1,23 @@
+{
+  "state": "verified_waiting_matching86_production",
+  "observed": "2026-11-19T05:38:08.046235+00:00",
+  "launch": {
+    "pid": 58248,
+    "caffeinate_pid": 58249,
+    "script": "scripts/upstream_cf12_matching_production.py",
+    "script_sha256": "3d0e17c9825872aac2dd25aafdcc87db5e279add54014c3576b82166c366f868",
+    "predecessor_pid": 12326,
+    "utc": "2026-11-19T05:37:01.970036+00:00",
+    "qualifying_labels_read": false
+  },
+  "actual_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf12_matching_production.py",
+  "queue_state": "waiting_for_first_frozen_audit",
+  "verified_development_rmse": 0.8600300601883686,
+  "no_production_plan_or_cache_created": true,
+  "all_ten_actual_budget_receipts_bound_in_independent_comparison": true,
+  "comparison_sha256": "b54dcc6a996acdcce84596388dd4979fa32d9470a065ffec29717fa0657819be",
+  "native_workers_live": 7,
+  "first85_attempt_unchanged": true,
+  "qualifying_labels_read": false,
+  "tests": "Two checks passed: real tree/NN fits+replay with zero-budget seeds and retagged prediction corruption rejection; separate actual budget-origin manifest/artifact corruption rejection."
+}

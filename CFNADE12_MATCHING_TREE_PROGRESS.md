@@ -42,8 +42,8 @@ Evidence under `experiments/upstream-cf12-tree/`:
 
 The complete development gate in
 [CFNADE12_MATCHING_PRODUCTION_PLAN.md](CFNADE12_MATCHING_PRODUCTION_PLAN.md)
-now passes. That production adapter is still to be implemented and tested;
-this report does not claim it has run. The existing first85 production queue
+now passes. The production adapter has been implemented, tested and queued;
+its final fits have not started. The existing first85 production queue
 still waits for the temporal model's complete25-epoch paired outputs. AEX64
 has completed its first20-epoch phase and started the qualifying phase.
 

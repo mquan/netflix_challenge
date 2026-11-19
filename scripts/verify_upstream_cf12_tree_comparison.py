@@ -25,12 +25,16 @@ def verify():
     for record in [replay,nn_replay]:
         if [r['fold'] for r in record['records']]!=list(range(5)) or not all(r['bitwise_equal'] for r in record['records']):
             raise ValueError('All five saved-model replays required')
+    model_sources={}
     for family,run,report in [('tree',e.RUN,e.REPORT),('nn',old.RUN,old.REPORT)]:
         for fold in range(5):
-            receipt=u.read(report/family/(str(fold)+'.json'))
+            path=report/family/(str(fold)+'.json');receipt=u.read(path)
             if receipt['manifest_sha256']!=u.sha(report/'manifest.json'):raise ValueError('Fold manifest changed')
+            model_sources[str(path.relative_to(u.ROOT))]=u.sha(path)
             for name,digest in receipt['outputs'].items():
-                if u.sha(run/family/str(fold)/name)!=digest:raise ValueError('Saved model changed')
+                model=run/family/str(fold)/name
+                if u.sha(model)!=digest:raise ValueError('Saved model changed')
+                model_sources[str(model.relative_to(u.ROOT))]=digest
     y=np.load(e.RUN/'labels.npy');users=np.load(e.RUN/'users.npy');folds=np.load(e.RUN/'groups.npy')//2
     scores={name:independent_rmse(p,y) for name,p in predictions.items()}
     for name,proof in proofs.items():
@@ -45,6 +49,7 @@ def verify():
     sources={str(p.relative_to(u.ROOT)):u.sha(p) for p in [e.REPORT/'manifest.json',e.REPORT/'evaluation.json',
         e.REPORT/'independent-verification.json',e.REPORT/'tree-replay.json',old.REPORT/'manifest.json',
         old.REPORT/'evaluation.json',old.REPORT/'independent-verification.json',old.REPORT/'nn-replay.json']}
+    sources.update(model_sources)
     result=dict(state='verified_complete_comparison',rows=len(y),users=clusters,independent_rmse=scores,
         delta_rmse=scores['matching']-scores['previous'],fold_rmse_deltas=changes,all_folds_improve=all(v<0 for v in changes),
         paired_delta_mse=delta,conditional_user_cluster_95_mse_interval=[delta-1.96*se,delta+1.96*se],

@@ -2,10 +2,11 @@
 
 The complete development gate passed November 18 Pacific at
 **0.8600300601883686**, with all five folds, replay and independent scoring
-verified. Implementation and testing of the separate production adapter remain
-the next required work; it has not launched.
+verified. The separate adapter is now implemented, tested and queued, waiting
+for the unchanged first85 frozen audit. No final-production plan, cache or fit
+has been created yet.
 
-This is a conditional plan, not a launched production run. The matching-tree
+This is the production plan; final fitting has not launched. The matching-tree
 study must finish all five folds, replay all saved trees bit-for-bit, verify the
 unchanged reused neural vector and fixed average, and independently score the
 complete result. Its aggregate RMSE must be strictly below the current verified
@@ -20,8 +21,8 @@ on both recovered groups makes further production work unnecessary.
 
 If the complete matching-tree candidate improves, use a separate production
 adapter, report and artifact directory, preserving the existing frozen files.
-The intended adapter is `scripts/upstream_cf12_matching_production.py`; it does
-not exist or run yet. Both production families use the exact paired86-predictor
+The adapter is `scripts/upstream_cf12_matching_production.py`, queued as
+PID58248. Both production families use the exact paired86-predictor
 bank built by `upstream_cf12_bank.py`:162 ridge columns,222 nonlinear features
 and the full-known-training ridge input as feature223.
 
@@ -58,3 +59,23 @@ with a frozen prediction vector, model replay, own-training provenance and
 independent full-row scoring. A development improvement or successful process
 does not complete the goal, and recovered groups are not official or untouched
 Netflix Test evidence.
+
+The adapter reuses the unchanged first-audit/shared-lock/memory-admission
+controller in its own interpreter. Its production preparation binds both actual
+originating manifests, all ten actual fold receipts and every model artifact;
+the independent full comparison now binds those receipts and artifacts too.
+The original paired86 bank's description concerns the preceding85-tree/86-NN
+consumer. The new production plan explicitly records read-only bank reuse for
+both new86-predictor fits; the first85 tree output is not reused here.
+
+Two checks passed before queue launch: actual learned tree/context-NN fits and
+bitwise replay at223 inputs, including zero-budget seeds and rejection of a
+retagged corrupted neural prediction; and rejection of wrong originating
+manifests or changed budget-source artifacts. Test-only small budgets/leaf
+limits do not change real production parameters.
+
+The preceding queue PID12326 was verified suspended and idle with no children,
+production plan or cache before termination and resumption for exit. No native
+worker was signalled. Its launch/state are archived under
+`experiments/upstream-cf12-matching-production/predecessor-*`; the transition,
+actual new launch and live-startup verification are recorded alongside them.

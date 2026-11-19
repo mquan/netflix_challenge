@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T05:27:04Z
+timestamp: 2026-11-19T05:51:19Z
 best_score: 0.8600300601883686
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -35,7 +35,7 @@ qualifying or untouched Test score.
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX64; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
-| Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
+| Measured improvement's qualifying path | Matching86-tree/86-NN adapter tested and queued as PID58248 after the first frozen audit |
 | Additional development iteration | Complete matching86 tree; all five folds/replays/full score verified. New best **.8600300602** |
 | Six-model extension gate | Separate current controller/production adapter require improvement over verified best; six relevant checks pass; original frozen controller restored exactly |
 
@@ -43,8 +43,8 @@ Seven native training workers remain active. Partial native outputs are not
 production eligible. The source-data watcher now waits outside the shared
 fitting lock; no native training worker was interrupted by that scheduler fix.
 The completed matching-tree study establishes the new development best. Its
-separate qualifying-production adapter still needs implementation and testing;
-the existing queues remain unchanged.
+separate qualifying-production adapter is implemented, tested and queued;
+no production plan or cache has been created. The first85 attempt is unchanged.
 
 The partial tree replay detected that the earlier controller gate edit also
 changed a file hashed by frozen development experiments. The exact original
@@ -64,7 +64,7 @@ original-Probe record. Original decisions remain archived. See
 Current evidence and plans:
 
 - [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md): new complete best, replay, fold comparison and limitations.
-- [CFNADE12_MATCHING_PRODUCTION_PLAN.md](CFNADE12_MATCHING_PRODUCTION_PLAN.md): new86-tree/86-NN production path; the development gate now passes.
+- [CFNADE12_MATCHING_PRODUCTION_PLAN.md](CFNADE12_MATCHING_PRODUCTION_PLAN.md): new86-tree/86-NN production path; tested and queued with actual budget origins.
 
 - [CFNADE12_CONTEXT_PROGRESS.md](CFNADE12_CONTEXT_PROGRESS.md): full five-fold result, replay and independent comparison.
 - [CFNADE12_CONTEXT_PRODUCTION_PLAN.md](CFNADE12_CONTEXT_PRODUCTION_PLAN.md): matching paired inputs, explicit tree reuse, neural refit and freeze-before-audit path.

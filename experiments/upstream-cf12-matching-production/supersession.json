@@ -1,0 +1,14 @@
+{
+  "old_pid": 12326,
+  "old_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf12_production.py",
+  "old_state": {
+    "state": "waiting_for_first_frozen_audit",
+    "first_gate": "waiting"
+  },
+  "old_queue_verified_without_children": true,
+  "old_production_plan_and_artifacts_absent": true,
+  "native_training_processes_signalled": false,
+  "new_script_sha256": "3d0e17c9825872aac2dd25aafdcc87db5e279add54014c3576b82166c366f868",
+  "verified_development_rmse": 0.8600300601883686,
+  "utc": "2026-11-19T05:37:01.964112+00:00"
+}
