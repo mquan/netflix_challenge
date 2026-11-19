@@ -1,0 +1,1368 @@
+{
+  "state": "verified_partial_training",
+  "observed": "2026-11-19T00:40:48.703190+00:00",
+  "plan_sha256": "5ab90a8a660d84ba4c1c05d1b270d05f02256640d2f87b015785b787ba52ccf0",
+  "all_frozen_plan_bindings_rehashed": true,
+  "records": [
+    {
+      "phase": "x",
+      "epoch": 2,
+      "manifest_sha256": "b2bfab5feb8c9aa38e24aee03cdb1ea3229ae91f8b78a25ccdb5cf3e9793fc99",
+      "manifest_md5": "8fc4f4fc7642327bd18d11844ab082df",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 160, n_hidden2: 0, rank: 48, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "55ce479fc16447a826d013288b2ccb3e1eec39a07d7783f3d860a3f6e33e1fe0",
+        "items": 17770,
+        "protocol": 1,
+        "query": "probex",
+        "query_rows": 1128164,
+        "source": "e14530b5ade496efb3980a64f98442d35c9a606960add79149ce67b057677d94",
+        "train": "trainx",
+        "train_rows": 99352343,
+        "users": 480189
+      },
+      "tensors": {
+        "a.npy": {
+          "md5": "445a4457b51f80f6eb6f7c2262876822",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "b.npy": {
+          "md5": "b069ba28f789c7146241cbf508c87d82",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dec_proj.npy": {
+          "md5": "383668efc3bfcbbe30dbe444495685c0",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "enc_bias.npy": {
+          "md5": "7f621bc9d616827e32a3ac887c0a1222",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "enc_proj.npy": {
+          "md5": "626dd985f72f823198531ba9af22c7b6",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_a.npy": {
+          "md5": "769f12afa0e90bef8bf4c90257ce2b0b",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_b.npy": {
+          "md5": "d85ae1195336f3919d8cf2aa9063a718",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "m_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "m_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "m_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "m_dec_proj.npy": {
+          "md5": "f82dcf4dbbfdeebf532d48ccebf6e44a",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_enc_bias.npy": {
+          "md5": "f0a7e6fee87bd1c3177778a5f2d7e36c",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_enc_proj.npy": {
+          "md5": "2f689d20dc07f736bde9089ce3176d37",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_p.npy": {
+          "md5": "d7acfad83752afab6088a776d0bf8bae",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_user_bias.npy": {
+          "md5": "bb260838ab4fd6af3e3920523aeadf2f",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "m_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_drift.npy": {
+          "md5": "75ea07b6f5d3c0e201114cf323a8cfb6",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "p.npy": {
+          "md5": "3faca2800094c54c288a8665c56e18f2",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_a.npy": {
+          "md5": "7db5aac9207cec4f64817af553612676",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_b.npy": {
+          "md5": "a7891b812bb1e0e3007d7ddb9d42aa8a",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "swa_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "swa_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "swa_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "swa_dec_proj.npy": {
+          "md5": "892b377e5a25c9e84af76536cf1732b4",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_enc_bias.npy": {
+          "md5": "d79524940c4647dd589aded4fe43f997",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_enc_proj.npy": {
+          "md5": "1ca7695a4578b754ab950e97d01178fd",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_p.npy": {
+          "md5": "c2b947c2b2597eeef37b75fb664d8cdd",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_bias.npy": {
+          "md5": "c06d0a943c7ad4e89fba38028b0ae730",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_drift.npy": {
+          "md5": "c06d0a943c7ad4e89fba38028b0ae730",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "user_bias.npy": {
+          "md5": "3b690904eb4a45eb3c116d9f6ebe147b",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_drift.npy": {
+          "md5": "f3ce58442e88c71616f8e846d65cd1aa",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_a.npy": {
+          "md5": "92b5f5878a3fec6f40cad35e4cddf043",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_b.npy": {
+          "md5": "e7694c4c24eb2088b5f549a8852efe68",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "v_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "v_dec_proj.npy": {
+          "md5": "4e648004aa886e80b1e7775e57cb60ae",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_enc_bias.npy": {
+          "md5": "dffc35ed5573a8d816ae578e3b42fdb8",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_enc_proj.npy": {
+          "md5": "494b1fab287d9f765ad39137aa5fa20f",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_p.npy": {
+          "md5": "cbc935b0cd06249c34b4b7a035f22386",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_user_bias.npy": {
+          "md5": "944ee8da30af83eeeb13d0649ba2f1e0",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "v_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_drift.npy": {
+          "md5": "cc60019d4f81a89ac6b8ab2dce50c654",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        }
+      },
+      "timestep": 120048,
+      "rng_word_pos": "79018676",
+      "snapshot_sha256": "fbf6549c9f777099f98b0b1d88901f000464c88e320c16cd1722d3f9b5609ceb",
+      "snapshot_rows": 1128164
+    },
+    {
+      "phase": "qual",
+      "epoch": 2,
+      "manifest_sha256": "fd86ef32afa082cd8a7a4a1a2244f4cec081ae1e57a2f7a950714702bd2c9ed1",
+      "manifest_md5": "abe40cc1f83156ba044c6311ba682543",
+      "identity": {
+        "config": "CfNadeConfig { n_hidden: 160, n_hidden2: 0, rank: 48, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+        "data": "55ce479fc16447a826d013288b2ccb3e1eec39a07d7783f3d860a3f6e33e1fe0",
+        "items": 17770,
+        "protocol": 1,
+        "query": "qual",
+        "query_rows": 2817131,
+        "source": "e14530b5ade496efb3980a64f98442d35c9a606960add79149ce67b057677d94",
+        "train": "fulltrain",
+        "train_rows": 100480507,
+        "users": 480189
+      },
+      "tensors": {
+        "a.npy": {
+          "md5": "a97c847e2102771a6420e1c81b3c6f6c",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "b.npy": {
+          "md5": "48f8fc1a6591f35e9ba85b00af16a77b",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dec_proj.npy": {
+          "md5": "8360e7a6ee6394094bcd854ef6f6a3a7",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "enc_bias.npy": {
+          "md5": "b62866f80808d65357adcaf32b2ed638",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "enc_proj.npy": {
+          "md5": "cf82197b2608c51aa0d863101cf0f252",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_a.npy": {
+          "md5": "7096ea0fa1d456afa98a8342ffdb06fc",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_b.npy": {
+          "md5": "24a1b84322bcc8f6ffe0924b74918f58",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "m_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "m_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "m_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "m_dec_proj.npy": {
+          "md5": "6162f2a9aea0209523699649e4840f22",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_enc_bias.npy": {
+          "md5": "288854ebaa652783689dc2f4c9a47645",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_enc_proj.npy": {
+          "md5": "b957bfd14d891f4dfb8a3e0688162115",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "m_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_p.npy": {
+          "md5": "df3932c87cde054c45e43d1d4d8e9482",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "m_user_bias.npy": {
+          "md5": "f3b6be8dba234bd7396cd83018124b77",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "m_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_drift.npy": {
+          "md5": "04a970e278b74a1dbc23a4a130e058e1",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "m_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "p.npy": {
+          "md5": "404ef06263ab83ddf4102b8da835c938",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_a.npy": {
+          "md5": "7db5aac9207cec4f64817af553612676",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_b.npy": {
+          "md5": "1bf917172cdfeb45e8acdd6515cd4317",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "swa_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "swa_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "swa_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "swa_dec_proj.npy": {
+          "md5": "892b377e5a25c9e84af76536cf1732b4",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_enc_bias.npy": {
+          "md5": "d79524940c4647dd589aded4fe43f997",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_enc_proj.npy": {
+          "md5": "1ca7695a4578b754ab950e97d01178fd",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "swa_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_p.npy": {
+          "md5": "c2b947c2b2597eeef37b75fb664d8cdd",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_bias.npy": {
+          "md5": "c06d0a943c7ad4e89fba38028b0ae730",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_drift.npy": {
+          "md5": "c06d0a943c7ad4e89fba38028b0ae730",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "swa_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "user_bias.npy": {
+          "md5": "3511f430c9a2dda46256b0953638c7e6",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_drift.npy": {
+          "md5": "9b7d879ed93d47f76b1be9c3f13f2668",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_a.npy": {
+          "md5": "e0a3c2e48a0077028dd54702f2c5419f",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_b.npy": {
+          "md5": "b48cbb2acf7bb93f0e42556a17388d34",
+          "shape": [
+            5,
+            17770
+          ],
+          "dtype": "float32"
+        },
+        "v_ctx_target_day_scale.npy": {
+          "md5": "41b61d6bb9503c1049c498b24e1092e6",
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v_day_bias.npy": {
+          "md5": "da6995b8ecc851df393478919c289497",
+          "shape": [
+            5,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v_day_freq_bias.npy": {
+          "md5": "cb154d58fd4c3d9260d42e0588db55af",
+          "shape": [
+            5,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "v_dec_proj.npy": {
+          "md5": "7191d1539f89d94a7892fe89e26f6799",
+          "shape": [
+            48,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_enc_bias.npy": {
+          "md5": "4a1ab5fb83e0395a86e4ea3a2cfc08f4",
+          "shape": [
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_enc_proj.npy": {
+          "md5": "a4de1affa9124513f0cc2b16d66904b2",
+          "shape": [
+            160,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_hidden2_bias.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_hidden2_proj.npy": {
+          "md5": "25e8cd85cff010fc3758c7a5f60237ce",
+          "shape": [
+            0,
+            160
+          ],
+          "dtype": "float32"
+        },
+        "v_implicit_a.npy": {
+          "md5": "96a156e2160026bdca1bb584dde39f9a",
+          "shape": [
+            0,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_item_time_bias.npy": {
+          "md5": "9aa56d8651b0d13b75023fc688c6a23b",
+          "shape": [
+            5,
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_p.npy": {
+          "md5": "d10fe129b6b9a0abfbac102e26917e8f",
+          "shape": [
+            5,
+            17770,
+            48
+          ],
+          "dtype": "float32"
+        },
+        "v_user_bias.npy": {
+          "md5": "234669ef6f5c82cfa561eadf66044a9e",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "v_user_day_bias_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_day_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_drift.npy": {
+          "md5": "e0eecfef5e7c6a2e30cc7ef50b91e437",
+          "shape": [
+            5,
+            480189
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale_bin.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_user_item_scale_drift.npy": {
+          "md5": "10d3f2284ea0b7d2df910439ce6c2a39",
+          "shape": [
+            0
+          ],
+          "dtype": "float32"
+        },
+        "v_wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        },
+        "wide_w.npy": {
+          "md5": "36dec00eb237818893739e122d1b6350",
+          "shape": [
+            5,
+            7
+          ],
+          "dtype": "float32"
+        }
+      },
+      "timestep": 120048,
+      "rng_word_pos": "79651178",
+      "snapshot_sha256": "5db827899961f0245b32b8096186aa28c3f6d0aec22750e6f269cb00cf6b8159",
+      "snapshot_rows": 2817131
+    }
+  ],
+  "live_native_pids": {
+    "x": 84003,
+    "qual": 84004
+  },
+  "qualifying_labels_read": false,
+  "production_eligible": false,
+  "goal_complete": false,
+  "scope": "Early native checkpoint integrity only; source95-epoch paired completion still required. Rolling native checkpoints may later be replaced by normal retention."
+}
