@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T18:26:00+00:00
+timestamp: 2026-11-19T19:06:17.667549+00:00
 best_score: 0.8592720612630157
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,24 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Current work: the selected full-known GPU NN completed7/8/7 and passed actual
+saved-model inference replay on all2,817,131 qualifying rows. Full tree worker
+30398 is fitting729/706/868; its first seed completed at19:03 UTC. The fixed
+mean is not frozen or scored until tree fitting and replay pass.
+
+The next fixed batch adds all59 unused completed snapshot pairs from our
+immutable CF48/96 packages. It is queued behind the existing refit, followed by
+an own166/all90 MPS study with393 inputs. The small real fit/save/load/replay
+check passed; all full-row diagnostic and model results remain pending. These
+additional own snapshot features extend the released raw selection, and do not
+claim CF96 full95 completion. See [WARM59_SNAPSHOT_PLAN.md](WARM59_SNAPSHOT_PLAN.md)
+and [WARM166_MPS_PLAN.md](WARM166_MPS_PLAN.md).
+
+The paired all90 bank is now built and independently checked on both full
+queries. Native CF96 saved epochs44/42 of95; split3 transposed DNN is in its
+second phase; rank1000's full-output completion proof remains pending. Current
+qualifying best remains0.8609266298 /0.8619141823, below neither strict target.
 
 New verified development best: **0.8592720612630157**, the predeclared fixed
 half mean of the expanded107/50 tree and larger107/all90 GPU NN. Both families'
