@@ -1,0 +1,25 @@
+{
+  "state": "verified",
+  "observed": "2026-11-19T01:32:26.986426+00:00",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "native_receipt_sha256": "e3f397927c7fb16e845897601d37f6e027cb28fc13035f3b0b7b8fb7bcc9dd15",
+  "command_matches_registry": true,
+  "all_receipt_outputs_rehashed": 3,
+  "pairs": {
+    "probex": {
+      "rows": 1128164,
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-24p50.probex.npy",
+      "sha256": "d9e6d63c45c5420aa6d4f334019e070af107fb3446ce8f7de55aa735803cd65e"
+    },
+    "qual": {
+      "rows": 2817131,
+      "path": "artifacts/upstream-qualifying-backfill/fresh/preds_new/dnn-24__dnn-24p50.qual.npy",
+      "sha256": "6923989b2f7d7bbd237f999852842b25b6539f3840f3a904d7257f4766499aad"
+    }
+  },
+  "qualifying_outcomes_all_zero": true,
+  "qualifying_labels_read": false,
+  "scope": "Complete native chained endpoint, both original source phases and all declared outputs. No qualifying quality score.",
+  "all_prediction_arrays_finite": true,
+  "prediction_arrays_checked": 2
+}

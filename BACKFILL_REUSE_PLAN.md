@@ -35,3 +35,10 @@ files, transactional link failure and idempotent lineage-preserving reuse.
 No real training process was suspended by these tests. The new controller
 uses its own `experiments/upstream-import-backfill` lock/status/plan/result.
 It is not a training job and does not establish qualifying quality.
+
+All six DNN follow-on endpoints have now completed. Their independent paired
+verification records and every native receipt output hash have been rechecked
+in `experiments/full-upstream-reproduction/dnn-backfill/completion-verification.json`.
+The import controller has passed its auxiliary preflight and is waiting for a
+completed primary job boundary after `attn-32`. No active native fit has been
+suspended or had its prediction-directory scan changed.
