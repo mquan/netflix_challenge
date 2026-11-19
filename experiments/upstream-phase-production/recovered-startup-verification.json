@@ -1,0 +1,39 @@
+{
+  "state": "verified_frozen_first85_fitting_active",
+  "observed": "2026-11-19T06:18:30.189897+00:00",
+  "worker_observed": "65971 65289 03:17 115.4 3256960 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_recovered_temporal_production.py --family tree",
+  "plan_sha256": "a148fd26b1f7bf9d3d0af583f636c7e089ba6efd7564d03445c62ae3859e5d34",
+  "bank_manifest_sha256": "07f5edf0f8fab8463815cb2606781a0b9661bf0b212c3a34fc17b56a469f7acd",
+  "bank_columns": 85,
+  "both_complete_temporal_phases_bound": true,
+  "all_source_and_bank_hashes_rechecked": true,
+  "iterations": {
+    "tree": [
+      698,
+      737,
+      860
+    ],
+    "nn": [
+      25,
+      31,
+      25
+    ]
+  },
+  "qualifying_labels_read": false,
+  "qualifying_goal_achieved": false,
+  "tests": {
+    "command": "env PYTHONPATH=scripts .venv/bin/python -m unittest discover -s tests -p test_upstream_recovered_temporal.py",
+    "passed": 3
+  },
+  "code_sha256": {
+    "scripts/upstream_recovered_temporal_bank.py": "3d7f699bcb49bbc67517a1060c5980f76987ac05d70e3819377f33eeecc1ad50",
+    "scripts/upstream_production_bank.py": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+    "scripts/upstream_remote_temporal_pair.py": "6fc5752f9910e853ca9d0f8d3f2e7dd3198ba0c67f6d7708b511d7562f4b1251",
+    "scripts/upstream_temporal_phase.py": "7b8dc526746cb7792e141cc18e9a8502fe77f5960c29603ecbce8ad751031ed1",
+    "scripts/upstream_production.py": "7d40f21627834b1a2cadab1140a2f4b847e128c4f312184bdd0494de38632d5f",
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/verify_upstream_nonlinear.py": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556",
+    "scripts/upstream_recovered_temporal_production.py": "556175bec6ac4c9a5ed9f87ac91c0e7f0cea56caebc4c1dd19912d2c768d973c"
+  }
+}

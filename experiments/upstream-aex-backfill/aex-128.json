@@ -1,0 +1,13 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "aex-128",
+  "command": "cargo build --release --bin aex-new && ./target/release/aex-new aex-128",
+  "started": "2026-11-19T01:42:47.615044+00:00",
+  "finished": "2026-11-19T05:59:16.642389+00:00",
+  "outputs": {
+    "preds_new/aex-128.out": "2c93ad929aabca8da4187b512b2a11c37ec28b80efde73072425d0b7b77d1e6e",
+    "preds_new/aex-128.probex.npy": "66053b293018aa960ae726db565ce18ea0c93d6d1b6304f20cc0137b8b2dc7a0",
+    "preds_new/aex-128.qual.npy": "2563dbe5bf088a0071380b6006406fec050887ef6f9279577b00e59e99bf965f"
+  },
+  "provenance": "Fresh execution of pinned upstream source; no released prediction inputs"
+}

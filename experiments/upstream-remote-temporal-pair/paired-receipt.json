@@ -1,0 +1,62 @@
+{
+  "state": "complete",
+  "job": "tsvdx5-150o",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "original_native_receipt_sha256": "12421a92ea6495ece7347ecf8e7d794c52d52c8e1f14e7fbc5914e455708dac7",
+  "transfer_commit": "9bce6a17610736db730c5f46efb4307482228934",
+  "script_sha256": "6fc5752f9910e853ca9d0f8d3f2e7dd3198ba0c67f6d7708b511d7562f4b1251",
+  "pairs": {
+    "tsvdx5-150o": {
+      "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.probex.npy",
+      "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.qual.npy"
+    },
+    "tsvdx5-150o_ep06": {
+      "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.probex.npy",
+      "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.qual.npy"
+    },
+    "tsvdx5-150o_ep16": {
+      "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.probex.npy",
+      "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.qual.npy"
+    },
+    "tsvdx5-150o_ep24": {
+      "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.probex.npy",
+      "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.qual.npy"
+    }
+  },
+  "outputs": {
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.probex.npy": "e1b513c9534f339cae0b22ee0a8db76e30516a5242ea72d39dfab20b827b19ae",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.qual.npy": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.probex.npy": "e25212cee6242dd7342f91ca4a48ac70c718b439ceee497c69d0805ea9d74996",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.qual.npy": "fbed339341476befabf151c495a9ab3b1bf65070d7eb18a4950364be4687923f",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.probex.npy": "a7b1efe92966d3ddfc514fb778b53caaa2fc3c6611c5dfee59f0148987a9f062",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.qual.npy": "7bf8b984503384d0a953073d717bdea89f1ee11318c89eb75063e447f7b14962",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.probex.npy": "10477f853fe53ceacc5d56c7569b815de810fea1bd27b74c80d38200f891de59",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.qual.npy": "afa2563a32e67137783c7d97b563467083e3788c09bf184ee42725766e0bf78b"
+  },
+  "source_sha256": {
+    "experiments/upstream-remote-12h/tsvdx5-150o/transfer-manifest.json": "7cfc404302407257f21f67b4e8fa6b043f6c799ae88cfde25107ddb9f749d1c5",
+    "experiments/upstream-remote-12h/tsvdx5-150o/native-receipt.json": "12421a92ea6495ece7347ecf8e7d794c52d52c8e1f14e7fbc5914e455708dac7",
+    "experiments/upstream-remote-12h/outputs/tsvdx5-150o.probex.npz": "09dcc55e8981f200a3f60a98e47272e16c24d1df2659fecc07e7c3b787391460",
+    "experiments/upstream-remote-12h/outputs/tsvdx5-150o_ep06.probex.npz": "5734b7670657dad1bda4579a5ad82663820442f578406448a8ebdf92acdaee03",
+    "experiments/upstream-remote-12h/outputs/tsvdx5-150o_ep16.probex.npz": "e7193ca8c537bafeda279da3c63956ad9a1c1e5911a4568e9a219bfab6ce3229",
+    "experiments/upstream-remote-12h/outputs/tsvdx5-150o_ep24.probex.npz": "8752fe9cb0a1bfdf17ec139d4a09ffaa6b248ae9fe5937cc1dfe1f8d3feb070c",
+    "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep20.qual.npy": "519d95c59824c6aa4875de1604d703fd551f8d5524f09432eb0f3e661c45870c",
+    "scripts/upstream_remote_temporal_pair.py": "6fc5752f9910e853ca9d0f8d3f2e7dd3198ba0c67f6d7708b511d7562f4b1251",
+    "artifacts/upstream-remote-temporal-pair/transfer-manifest.json": "a42a2047d0f8835e04f758251e9254b1320483ef828e36d6335d587ded130022",
+    "artifacts/upstream-remote-temporal-pair/native-receipt.json": "12421a92ea6495ece7347ecf8e7d794c52d52c8e1f14e7fbc5914e455708dac7",
+    "artifacts/upstream-repro/fresh/data/qual/item_years.npy": "148578d72d9d6a3bb6261d041718c0d596a2d26c54a8abcead96e1ea15cb638f",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe",
+    "artifacts/upstream-repro/fresh/data/qual/is_test.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "artifacts/upstream-repro/fresh/data/qual/user_cnts.npy": "11683c8d524038c81d307ed29431cf47b40ee51f1482da536ea1ec62dc6cd20b",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "artifacts/upstream-repro/fresh/data/qual/item_cnts.npy": "03e05a436f944272cc922597de2417407d15c6e1c7e659cb9fcfe2dc06217158"
+  },
+  "epochs_per_phase": 25,
+  "both_original_phases_complete": true,
+  "qualifying_outcomes_zero": true,
+  "qualifying_labels_read": false,
+  "all_eight_reconstructed_npy_hashes_match_original_native_receipt": true,
+  "scope": "Own completed original remote two-phase source job. Four pairs independently reconstructed to their original native NPY SHA256, using independently reproduced native headers. No current local phase output directory or active native prediction tree modified."
+}
