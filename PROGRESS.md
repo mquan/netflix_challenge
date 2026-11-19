@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T13:43:38.253668+00:00
+timestamp: 2026-11-19T14:04:46.546953+00:00
 best_score: 0.8594692563654075
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,18 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+**New verified own qualifying best:0.8609916544142975 /0.8619938614020105**,
+from the predeclared standalone full-fit NN103. Worse-group improvement is
+9.5019568%; both still miss0.85725. Full model/scaler/source bindings, actual
+saved-model replay, canonical labels, full group coverage and independent
+compensated scores verify. The fixed tree91/NN103 mean also improves, to
+0.8610694976822610 /0.8620220770129196. See
+[CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md).
+Own105 worker84147 is now training after own103 completed; it adds both verified
+split3 attention columns without changing the nested user folds or model capacity.
+
+Earlier checkpoints below retain their original observations.
 
 The completed own103 context iteration gives a new independently checked
 known-ProbeX development best: **standalone NN0.8594692563654075**, versus

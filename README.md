@@ -11,30 +11,33 @@ not the complete winning ensemble.
 
 ## Current work: our own trained predictions
 
-As of November 19, 2026 Pacific, our best fully verified development RMSE is
-**0.8599745622**, using only our freshly trained prediction features and locally
-fitted blending weights. Public source code is reused; downloaded pretrained
-prediction features are excluded. The fixed half mean combines our completed 91-predictor tree with the verified
-86-predictor context neural vector. Both originating families passed full saved-model
-replay; all ten actual fold receipts and artifacts were rehashed, and independent
-scoring verifies the stored mean over five user folds on 1,128,164 known-ProbeX rows.
+As of November19,2026 Pacific, our best independently verified development RMSE
+is **0.8594692564**, from the standalone103-predictor context NN. All15 saved
+neural models replay across five nested user folds on1,128,164 known-ProbeX
+rows. The fixed half mean with tree91 also improves, to0.8595400254. All numerical
+prediction features are freshly trained by us; public source code is reused,
+and downloaded pretrained prediction features are excluded.
 
-**The latest tree91/contextNN86 fresh-training qualifying audit misses the 10% target:**
-**0.8614776641 / 0.8624021195** on the two recovered source groups. The worse
-group improves **9.4591%** over the Cinematch reference. Both latest full saved families replay exactly, and a separate frozen-mean and
-compensated-score check passes. The earlier first85 completion audit binds333
-evidence files. No qualifying outcomes entered fitting or selection.
+**The new standalone NN103 qualifying audit still misses the10% target:**
+**0.8609916544 /0.8619938614** on the two recovered source groups. The worse group
+improves **9.5020%** over0.9525, leaving0.0047439 RMSE to the strict0.85725 target.
+This candidate was selected from known-ProbeX development and recorded before
+either new qualifying outcome. Actual full-fit saved-model replay, exact frozen
+vector, canonical labels, full group counts and independent compensated scoring
+verify. The separately predeclared tree91/NN103 half mean also improves, to
+0.8610694977 /0.8620220770. These are adaptive recovered audits, not official Test.
+No qualifying outcomes entered fitting or candidate/weight selection.
 
-The original 1,000-factor source job remains active. The tree91/contextNN86 production fit and frozen audit are complete; the full91
-context follow-up is queued behind it. CFNADE48 continues remotely. CFNADE96
-checkpoints33/31 are preserved after a second resource yield; coordinated
-admission must account for new primary native allocations. See
-[TREE91_CONTEXT86_QUALIFYING_RESULT.md](TREE91_CONTEXT86_QUALIFYING_RESULT.md) for the latest
+Own105 is now training with both verified split3 attention columns added to
+own103. The original1,000-factor and primary temporal jobs remain active.
+CFNADE48 completed95/95; CFNADE96 checkpoints33/31 remain preserved for the
+coordinated primary idle handoff. The local latent90 fallback waits for memory.
+See [CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
-[CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md) for the verified
+[CF48_103_CONTEXT_RESULT.md](CF48_103_CONTEXT_RESULT.md) for the verified
 full development result. This is adaptive known-ProbeX development, not an
 official Netflix or untouched Test score. The earlier public-bank result below
 is separate from the current reproduction goal.
