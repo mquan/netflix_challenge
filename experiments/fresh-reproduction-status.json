@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T07:37:31.626364+00:00",
-  "display_time": "November 18, 2026, 11:37 PM Pacific",
+  "observed": "2026-11-19T08:44:24.753343+00:00",
+  "display_time": "November 19, 2026, 12:44 AM Pacific",
   "best_development_rmse": 0.8600300601883686,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -19,11 +19,11 @@
     },
     {
       "work": "Matching86 qualifying queue",
-      "state": "One guarded restart waits for its original phase bank; earlier queue exited on an incomplete-bank guard after the accelerated first audit. Original source and fitting recipe preserved"
+      "state": "Original-schema paired bank verified. Guarded restart completed at07:50UTC; actual queue PID88587 waits for the fixed91 development gate."
     },
     {
       "work": "91-predictor development study",
-      "state": "All six fixed native extensions ready; nested tree fitting is active under the stronger known-ProbeX development gate"
+      "state": "All five tree folds complete and replayed; three of five neural fold receipts complete. Actual neural worker PID92842 remains live. Selection uses the stronger verified known-ProbeX reference."
     },
     {
       "work": "Original 1,000-factor model",
@@ -31,19 +31,19 @@
     },
     {
       "work": "Temporal150 local fallback",
-      "state": "25/25 epochs logged; native final-output generation remains active. Its complete receipt is still required by the original phase bank"
+      "state": "All25 epochs logged; actual native PID46684 is still generating final outputs. Its outputs no longer block the verified recovered bank. Complete remote63-output counterpart requested before retiring this duplicate."
     },
     {
       "work": "CFNADE96",
-      "state": "Checkpoints 33/31 preserved and all84 tensors per phase rehashed. Workers temporarily yielded after active paging grew swap by700MB in50s. Automatic original-controller resume waits for the temporal bank and footprint/compressor/swap admission"
+      "state": "Own checkpoints33/31 preserved and all84 tensors per phase verified. Local workers yielded after measured paging; automatic resume waits for actual temporal completion and physical-memory admission. Verified remote add-on package ready; no remote96 restore proof returned yet."
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Remote live-process heartbeat at07:06UTC: epochs42/40, no swap growth. Training deadline14:33UTC; return by15:03UTC"
+      "state": "Remote heartbeat08:36UTC, commit263dcf8: epochs58/57 of95, native PIDs95404/95402 observed live remotely, zero swap use. Existing training deadline14:33UTC; return15:03UTC."
     },
     {
       "work": "AEX64 and AEX128",
-      "state": "Both original jobs completed. AEX128 imported at a verified idle boundary; the primary DAG has advanced to temporal16"
+      "state": "Both original jobs complete; AEX128 imported at a verified idle boundary. The primary DAG is now running original temporal60 (local native PID77902)."
     },
     {
       "work": "Matching86 development",
@@ -52,6 +52,10 @@
     {
       "work": "CFNADE96 kernel prototype",
       "state": "Private full320/96 kernel passes24 original-source and8 live-backend parity cases through7 epochs. Small-fixture speedup6%; no full-data resume or production cutover yet"
+    },
+    {
+      "work": "Fixed91 context follow-up",
+      "state": "Tested train/save/reload replay; controller PID97839 is waiting for existing extension/matching production and two physical-memory admission samples. Fixed rank16, all six additions retained; no new qualifying audit."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -70,5 +74,22 @@
       "improvement_percent_over_cinematch": 9.416611386493923
     }
   },
-  "goal_achieved": false
+  "goal_achieved": false,
+  "runtime_observation": {
+    "local_processes": [
+      "46684 13:10:06 105.1 /Users/quan/workspace/netflix_upstream_repro/artifacts/full-upstream-mapped/target/release/tsvdx5-new-qual",
+      "73629 02:08:04  46.9 ./target/release/tsvdx4p-new",
+      "77902 01:51:18  85.5 ./target/release/tsvdx4-new",
+      "88587    54:08   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "92842    22:51 128.8 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+      "97839    01:34   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python"
+    ],
+    "remote_commit": "263dcf8242f021bca58bb903560d065ca6bd2d3a",
+    "remote_heartbeat_sha256": "2121fb18f862f41730832c9b30b9046e53ab60482c54dad4b337068e8f7648da",
+    "neural_fold_receipts": [
+      "0.json",
+      "1.json",
+      "2.json"
+    ]
+  }
 }
