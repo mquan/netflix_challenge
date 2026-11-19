@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T02:31:08Z
+timestamp: 2026-11-19T02:40:06Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -28,8 +28,8 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | First paired production bank | **81/85**; only four temporal columns missing |
 | Temporal150 original fulltrain/qual phase | **16/25 epochs**; requires full completion and paired receipt |
 | CFNADE-96 original phases | **21/95 ProbeX**, **20/95 qualifying** |
-| CFNADE-48 original phases | **13/95 ProbeX**, **12/95 qualifying** |
-| AEX128 original independent job | **7/20**, first phase |
+| CFNADE-48 original phases | **14/95 ProbeX**, **13/95 qualifying** |
+| AEX128 original independent job | **9/20**, first phase |
 | Completed native work | CFNADE-12, attention32 and all six DNN follow-on endpoints |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
@@ -45,6 +45,8 @@ Current evidence and plans:
 - [PRODUCTION_BANK_PLAN.md](PRODUCTION_BANK_PLAN.md): the paired81/85 inventory and pending temporal receipt.
 - `experiments/upstream-cf12-production/queue-status.json`: current qualifying queue state.
 - `experiments/upstream-source-extension/status.json`: native-source readiness and fitting-lock state.
+- `experiments/upstream-import-backfill/independent-verification.json`: all15 imported and19 retained native receipts/output hashes verified.
+- `experiments/upstream-temporal-phase/through-epoch16-native-hash-comparison.json`: first16 local qualifying snapshots match our own earlier remote native training hashes exactly; full25-epoch completion is still required.
 
 ## Historical public-bank result (2026-11-16)
 
