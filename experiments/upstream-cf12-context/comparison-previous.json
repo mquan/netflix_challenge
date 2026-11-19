@@ -1,0 +1,78 @@
+{
+  "state": "verified_complete_development_improvement",
+  "observed": "2026-11-19T02:05:54.173388+00:00",
+  "rows": 1128164,
+  "users": 462858,
+  "rmse": {
+    "previous": 0.860216195766495,
+    "new": 0.8600637147575518
+  },
+  "delta_rmse": -0.00015248100894316163,
+  "paired_delta_mse": -0.00026231001642125024,
+  "user_cluster_normal_95_mse_interval": [
+    -0.00031982216343756604,
+    -0.00020479786940493444
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 226746,
+      "previous_rmse": 0.8592903561212312,
+      "new_rmse": 0.8593164235053121,
+      "delta_rmse": 2.6067384080952216e-05
+    },
+    {
+      "fold": 1,
+      "rows": 225899,
+      "previous_rmse": 0.8576817970921646,
+      "new_rmse": 0.8575002796649305,
+      "delta_rmse": -0.00018151742723415687
+    },
+    {
+      "fold": 2,
+      "rows": 224006,
+      "previous_rmse": 0.8613082334525111,
+      "new_rmse": 0.8610794493775495,
+      "delta_rmse": -0.00022878407496151887
+    },
+    {
+      "fold": 3,
+      "rows": 225873,
+      "previous_rmse": 0.8619337506392766,
+      "new_rmse": 0.8617462498381866,
+      "delta_rmse": -0.00018750080108997924
+    },
+    {
+      "fold": 4,
+      "rows": 225640,
+      "previous_rmse": 0.860873529103514,
+      "new_rmse": 0.8606817791142021,
+      "delta_rmse": -0.000191749989311929
+    }
+  ],
+  "median_neural_production_budgets": [
+    19,
+    20,
+    20
+  ],
+  "all_saved_neural_models_replay_bitwise": true,
+  "source_sha256": {
+    "experiments/upstream-context-blend/manifest.json": "5fa58407292a923d489666bdb5707af6246da3f1357640d16632884f7ca91494",
+    "experiments/upstream-context-blend/evaluation.json": "2bf6ed3491048a04b22e8ced00d30881be6b5605040fe9132822fb1d65f075d7",
+    "experiments/upstream-context-blend/independent-verification.json": "7b3d42039bf11206931434486e2fc63aed358960b55b684f7f7270b5c44145a8",
+    "experiments/upstream-cf12-context/manifest.json": "c2c6be0074f85f75beaf705365ea27c8ac3c392da39a0660e4830f5e90b2d950",
+    "experiments/upstream-cf12-context/evaluation.json": "cb48e0f7c95f46b1409f08d33daa5676c6386714c33bd42db11f57346ba7a882",
+    "experiments/upstream-cf12-context/independent-verification.json": "d55668a4fb96b2c0916e167f7dc3157bcb89a81ca61764c50f3b275e8ee2c5c4",
+    "experiments/upstream-cf12-context/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+    "artifacts/upstream-context-blend/fixed-half-tree-nn.f32": "022992d6be2597a1e9510715e18749b6a552dafe9f1d266fc6111f723880a963",
+    "artifacts/upstream-cf12-context/fixed-half-tree-nn.f32": "3842ce122aaa9017f6fa8901511a931a1960445f8c083d2adb6a3c84e10133c0",
+    "experiments/upstream-cf12-context/nn/0.json": "470a1ab78dcee317cfdfea2875b9603cacc2f78eeebb3b0e52616abfda779f18",
+    "experiments/upstream-cf12-context/nn/1.json": "51a68f7bad609e87ed4e1e3c28ac137bf06dd623dbdfe8d77f927c916483ef13",
+    "experiments/upstream-cf12-context/nn/2.json": "85cc88f94c32f581ec7c37e29f7e6f7140bc128de9cfb55e7b01718240570746",
+    "experiments/upstream-cf12-context/nn/3.json": "0c50333ffb060b849531e6fc96c374d08aa53b3e898cf8de6ed162d9c30ea158",
+    "experiments/upstream-cf12-context/nn/4.json": "d819573c4a38f5451a22a419a99a3534a0cb5442c71d21140f9d5bfd09db4570"
+  },
+  "qualifying_labels_read": false,
+  "goal_complete": false,
+  "scope": "All five adaptive known-ProbeX folds. Four improve, one worsens. Unchanged original85-predictor tree and new86-predictor context NN. Conditional cluster interval, no selection correction or official/untouched Test claim. Production integration and both recovered-group target checks remain required."
+}

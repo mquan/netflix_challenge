@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "c2c6be0074f85f75beaf705365ea27c8ac3c392da39a0660e4830f5e90b2d950",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8633631201729799,
+      "delta_vs_previous_best": 0.0031469244064848967,
+      "fold_rmse": [
+        0.8627989798575708,
+        0.8606440769444718,
+        0.8641527792157452,
+        0.8649782646502322,
+        0.864244644393474
+      ],
+      "prediction_sha256": "6d4633d5fccff2411d7be8bf95d0d110d89456cc9c91c1fc89767511a3c3451f"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8609283193634096,
+      "delta_vs_previous_best": 0.0007121235969146378,
+      "fold_rmse": [
+        0.8600642189901677,
+        0.8583477925242128,
+        0.8619486387633544,
+        0.8624995255919833,
+        0.8617876129012327
+      ],
+      "prediction_sha256": "cf8a2d501cbc5cd74c3ee029999de508a6704fb1f1ea705cd0cf177081cc9681"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8600986905055018,
+      "delta_vs_previous_best": -0.00011750526099318925,
+      "fold_rmse": [
+        0.8593767964470871,
+        0.8575617622705558,
+        0.8611782478071934,
+        0.8618442718749529,
+        0.860538231563773
+      ],
+      "prediction_sha256": "dd8f2ef48228d3ba37eebc4dedb00fe6190f680de4196a39f1af98b98ef59d6b"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8600637147575521,
+      "delta_vs_previous_best": -0.0001524810089429396,
+      "fold_rmse": [
+        0.8593164235053121,
+        0.8575002796649305,
+        0.8610794493775497,
+        0.8617462498381866,
+        0.860681779114202
+      ],
+      "prediction_sha256": "3842ce122aaa9017f6fa8901511a931a1960445f8c083d2adb6a3c84e10133c0"
+    }
+  ],
+  "previous_best_rmse": 0.860216195766495,
+  "scope": "Adaptive known-ProbeX development. Complete own CFNADE12 added to context NN; original85-predictor tree reused unchanged. New NN ridge/scalers/budgets exclude scoring users. No production fitter or qualifying audit launched.",
+  "isolation": "Voting statistics and latent features fit only on trainx ratings; query rows are MaskedDataset inputs in pinned save_vfeat1. Blender ridge/scalers/budget selection exclude outer scoring users. Qualifying outcomes are zero throughout training."
+}
