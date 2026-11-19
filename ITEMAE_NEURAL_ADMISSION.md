@@ -30,3 +30,7 @@ Evidence: experiments/upstream-itemae-neural-admission/plan.json and
 experiments/upstream-itemae-neural-admission-fixture/verification.json.
 Implementation: scripts/upstream_itemae_neural_admission.py.
 No new ensemble, qualifying or official Test result is claimed.
+
+At23:47 UTC, both actual epoch5/10 pairs are ready and independently verified.
+The same pending test remains held for the live CPU tree and its required
+peak reserve. Raw training continues at11; no checkpoint or capacity changes.
