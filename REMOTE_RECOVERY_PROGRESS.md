@@ -58,3 +58,21 @@ Evidence lives in `experiments/upstream-remote-temporal-pair/`,
 `experiments/upstream-phase-production/`,
 `experiments/upstream-remote9h/run/` and
 `experiments/upstream-cfnade48/remote-migration-verification.json`.
+
+## Separate completion audit queued at06:27UTC
+
+`scripts/verify_upstream_first85_completion.py --watch` is running asPID71583.
+Before launch, its real provenance check rehashed275 native outputs from29
+own source jobs, including12 own auxiliary imports. Its separate budget check
+verified66 development receipt/model files and independently recomputed both
+families' per-seed medians. Two targeted tests reject substituted fixed means,
+incorrect group populations and equality at the strict target boundary.
+
+The watcher verifies the actual producer process while waiting. After the
+original producer finishes its frozen audit, this separate process will check
+all plan/source bindings, replay both saved full families without writing their
+receipts, recompute the fixed float32 family average, require the exact pinned
+recovered-label Git blob, and independently score both original source groups.
+It then rehashes its bound evidence. Its result is written under
+`experiments/upstream-first85-completion-audit/`; no goal-success claim is made
+until that result and the final model evidence pass.
