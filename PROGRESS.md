@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T04:57:31Z
-best_score: 0.8600637147575518
+timestamp: 2026-11-19T05:27:04Z
+best_score: 0.8600300601883686
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
 qualifying_target_per_recovered_group: 0.85725
@@ -17,32 +17,34 @@ both community-recovered qualifying groups** using only our freshly trained
 predictions/features and locally fitted blending weights. Public source code is
 reused; downloaded pretrained prediction features are excluded.
 
-The verified development best is **0.8600637147575518**, improved from
-0.8602161957664950 by adding our completed CFNADE-12 predictor to the context NN.
-Four of five folds improve. All 15 saved neural models replay bit-for-bit, and
-the fixed tree/NN average and full score pass independent checks. This is
-adaptive known-ProbeX development, not a qualifying or untouched Test score.
+The verified development best is **0.8600300601883686**, improved from
+0.8600637147575518 by fitting the matching86-predictor tree. All five folds
+improve and all 15 saved trees replay bit-for-bit. The preceding verified
+context NN vector is reused unchanged. Independent full-row scoring and direct
+paired comparison pass. This is adaptive known-ProbeX development, not a
+qualifying or untouched Test score.
 
 | Work | Verified state at this update |
 | --- | --- |
 | First paired production bank | **81/85**; only four temporal columns missing |
-| Temporal150 original fulltrain/qual phase | **21/25 epochs**; first20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
-| CFNADE-96 original phases | **26/95 ProbeX**, **25/95 qualifying** |
-| CFNADE-48 original phases | **26/95 ProbeX**, **25/95 qualifying** |
-| AEX128 original independent job | First phase **20/20 complete**; qualifying **10/20** |
+| Temporal150 original fulltrain/qual phase | **22/25 epochs**; first20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
+| CFNADE-96 original phases | **28/95 ProbeX**, **26/95 qualifying** |
+| CFNADE-48 original phases | **28/95 ProbeX**, **27/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; qualifying **14/20** |
 | AEX16 original primary job | Both original20-epoch phases complete; all3 native output hashes and finite paired vectors independently verified |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX64; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
-| Additional development iteration | Folds0/1/2/3 bitwise replay verified; all four fixed means improve; final fold4 running, no full-result promotion |
+| Additional development iteration | Complete matching86 tree; all five folds/replays/full score verified. New best **.8600300602** |
 | Six-model extension gate | Separate current controller/production adapter require improvement over verified best; six relevant checks pass; original frozen controller restored exactly |
 
 Seven native training workers remain active. Partial native outputs are not
 production eligible. The source-data watcher now waits outside the shared
 fitting lock; no native training worker was interrupted by that scheduler fix.
-The additional tree study runs at lower priority with its own memory guard and
-does not change the existing best candidate or qualifying queues.
+The completed matching-tree study establishes the new development best. Its
+separate qualifying-production adapter still needs implementation and testing;
+the existing queues remain unchanged.
 
 The partial tree replay detected that the earlier controller gate edit also
 changed a file hashed by frozen development experiments. The exact original
@@ -61,13 +63,16 @@ original-Probe record. Original decisions remain archived. See
 
 Current evidence and plans:
 
+- [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md): new complete best, replay, fold comparison and limitations.
+- [CFNADE12_MATCHING_PRODUCTION_PLAN.md](CFNADE12_MATCHING_PRODUCTION_PLAN.md): new86-tree/86-NN production path; the development gate now passes.
+
 - [CFNADE12_CONTEXT_PROGRESS.md](CFNADE12_CONTEXT_PROGRESS.md): full five-fold result, replay and independent comparison.
 - [CFNADE12_CONTEXT_PRODUCTION_PLAN.md](CFNADE12_CONTEXT_PRODUCTION_PLAN.md): matching paired inputs, explicit tree reuse, neural refit and freeze-before-audit path.
 - [CFNADE12_MATCHING_TREE_PLAN.md](CFNADE12_MATCHING_TREE_PLAN.md): test the corresponding86-predictor tree with the already verified neural component.
 - [PRODUCTION_BANK_PLAN.md](PRODUCTION_BANK_PLAN.md): the paired81/85 inventory and pending temporal receipt.
 - `experiments/upstream-cf12-production/queue-status.json`: current qualifying queue state.
 - `experiments/upstream-source-extension/status.json`: native-source readiness and fitting-lock state.
-- `experiments/upstream-import-backfill/independent-verification.json`: all15 imported and19 retained native receipts/output hashes verified.
+- `experiments/upstream-import-backfill/independent-verification.json`: all 15 imported and19 retained native receipts/output hashes verified.
 - `experiments/upstream-temporal-phase/through-epoch20-native-hash-comparison.json`: first20 local qualifying snapshots match our own earlier remote native training hashes exactly, with finite values and correct row counts/dtype; full25-epoch completion is still required.
 
 ## Historical public-bank result (2026-11-16)

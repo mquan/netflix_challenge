@@ -1,5 +1,10 @@
 # Qualifying path for a verified matching86-tree/context-NN improvement
 
+The complete development gate passed November 18 Pacific at
+**0.8600300601883686**, with all five folds, replay and independent scoring
+verified. Implementation and testing of the separate production adapter remain
+the next required work; it has not launched.
+
 This is a conditional plan, not a launched production run. The matching-tree
 study must finish all five folds, replay all saved trees bit-for-bit, verify the
 unchanged reused neural vector and fixed average, and independently score the
@@ -48,7 +53,7 @@ resource guards and first-audit target-pass gate. If the older production path
 has already begun, preserve it and serialize the new path rather than replacing
 an active fit.
 
-Completion remains strict RMSE below0.85725 on both community-recovered groups,
+Completion remains strict RMSE below 0.85725 on both community-recovered groups,
 with a frozen prediction vector, model replay, own-training provenance and
 independent full-row scoring. A development improvement or successful process
 does not complete the goal, and recovered groups are not official or untouched

@@ -14,6 +14,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH86 matched', '0.8600300601883686', '2026-11-19T05:26:23.094064+00:00', 'Fresh training', 'fresh_cv', 'codex', 'development', 'Own trained predictors: matching tree + context NN', 'Complete five-user-fold known-ProbeX result: all five folds improve over 0.8600637148. All 15 new trees replay bit-for-bit; the preceding verified NN vector is unchanged. Independent full-row scoring verifies 0.8600300602. Own trained predictions only; qualifying score pending. Separate evaluation population from the historical original-Probe series.', 'experiments/upstream-cf12-tree/independent-verification.json', 'independent complete comparison recorded'),
     ("FRESH86 context", ".8600637147575518", "2026-11-19T02:08:38+00:00", "Fresh training", "fresh_cv", "codex", "development", "Own trained predictors + context NN", "Our best fully verified fresh-training development result. Five user folds over 1,128,164 known-ProbeX rows; 15 neural models replay bit-for-bit and independent scoring verifies the fixed tree/NN average. Public source code is reused, with no downloaded pretrained prediction features. Adaptive development; qualifying evaluation is pending. This population differs from the earlier original-Probe/public-bank series.", "experiments/upstream-cf12-context/independent-verification.json", "verified result recorded"),
     ("C0", ".98256528", "2026-09-27T08:45:41-07:00", "Biases", "single", "codex", "promoted", "User and movie bias", "The first project model proved ingestion and probe isolation, but it missed most user–movie interaction.", "RESULTS.md", "commit upper bound"),
     ("C1", ".93491601", "2026-09-27T08:45:41-07:00", "Time", "single", "codex", "promoted", "Temporal effects model", "Day effects, frequency and drift delivered the largest early jump.", "RESULTS.md", "commit upper bound"),
@@ -183,16 +184,16 @@ def qualifying_svg():
 
 def fresh_status_html():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
-    if record['best_development_rmse']!=.8600637147575518 or record['qualifying_status']!='pending':
+    if record['best_development_rmse']!=.8600300601883686 or record['qualifying_status']!='pending':
         raise ValueError('Review the site narrative before publishing a changed result')
     rows=''.join(f'<tr><td>{escape(row["work"])}</td><td>{escape(row["state"])}</td></tr>' for row in record['work'])
     return f'''<section id="fresh" aria-labelledby="fresh-title">
       <div class="section-head"><div><div class="section-num">Current work / own trained predictions</div><h2 id="fresh-title">Reproducing the result ourselves</h2></div></div>
       <p>Snapshot: <time datetime="{escape(record['observed'])}">{escape(record['display_time'])}</time>. These are recorded training states, not a live dashboard.</p>
-      <p>The verified full development best improved from <strong>0.8602162 to 0.8600637 RMSE</strong> after adding our completed CFNADE12 predictor to the context neural blend. All 15 saved neural models replay bit-for-bit. This uses five user folds on 1,128,164 known-ProbeX rows and is adaptive development evidence. <strong>The fresh-training 10% qualifying target is not yet verified.</strong></p>
+      <p>The verified full development best improved from <strong>0.8600637 to 0.8600301 RMSE</strong> by fitting the matching86-predictor tree. All five folds improve and all 15 saved trees replay bit-for-bit; the preceding verified context NN is reused unchanged. This uses five user folds on 1,128,164 known-ProbeX rows and is adaptive development evidence. <strong>The fresh-training 10% qualifying target is not yet verified.</strong></p>
       <div class="ledger-wrap"><table class="ledger"><thead><tr><th>Work</th><th>Recorded progress</th></tr></thead><tbody>{rows}</tbody></table></div>
       <p>Public source implementations are reused; all prediction features in this effort are trained by us. Qualifying outcomes are excluded from fitting and model selection. The final vector must be frozen and replayed before both community-recovered groups are independently scored below 0.85725. These are not official Netflix or untouched Test results.</p>
-      <p><a href="PROGRESS.md">Full progress record</a> · <a href="CFNADE12_CONTEXT_PROGRESS.md">Verified development result</a> · <a href="CFNADE12_MATCHING_TREE_PLAN.md">Current tree study</a> · <a href="experiments/upstream-temporal-phase/through-epoch20-native-hash-comparison.json">20 temporal snapshots reproduced exactly</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
+      <p><a href="PROGRESS.md">Full progress record</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="CFNADE12_MATCHING_TREE_PLAN.md">Current tree study</a> · <a href="experiments/upstream-temporal-phase/through-epoch20-native-hash-comparison.json">20 temporal snapshots reproduced exactly</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
     </section>'''
 
 

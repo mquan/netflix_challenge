@@ -12,21 +12,21 @@ not the complete winning ensemble.
 ## Current work: our own trained predictions
 
 As of November 18, 2026 Pacific, our best fully verified development RMSE is
-**0.8600637148**, using only our freshly trained prediction features and locally
+**0.8600300602**, using only our freshly trained prediction features and locally
 fitted blending weights. Public source code is reused; downloaded pretrained
-prediction features are excluded. All 15 context neural models replay
-bit-for-bit, and independent scoring verifies the fixed tree/NN average over
+prediction features are excluded. All 15 matching trees replay bit-for-bit; the verified context neural vector
+is reused unchanged, and independent scoring verifies the fixed tree/NN average over
 five user folds on 1,128,164 known-ProbeX rows.
 
 **The fresh-training 10% qualifying target is not yet verified.** The paired
 bank has 81/85 columns, pending completion of the original temporal model.
 Its first 20 qualifying snapshots exactly match our earlier remote native
 training hashes. AEX16 and both attention32 variants are complete; AEX64,
-AEX128, CFNADE48/96 and the matching-tree study are running. The first two
-completed tree folds improve and pass replay, with three folds remaining.
+AEX128, CFNADE48/96 and the additional model phases are running. The matching-tree study is complete:
+all five folds improve and pass replay.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
-[CFNADE12_CONTEXT_PROGRESS.md](CFNADE12_CONTEXT_PROGRESS.md) for the verified
+[CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md) for the verified
 full development result. This is adaptive known-ProbeX development, not an
 official Netflix or untouched Test score. The earlier public-bank result below
 is separate from the current reproduction goal.
