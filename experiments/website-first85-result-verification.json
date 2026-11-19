@@ -1,0 +1,54 @@
+{
+  "state": "verified_live_first85_result_and_plots",
+  "observed": "2026-11-19T07:02:07.975093+00:00",
+  "pages_commit": "e9bade80967ac6bbac5a3ff79797e7c1405f4ea1",
+  "source_commit": "f89fc17",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 104774,
+      "sha256": "9815ba6d94adbf3278cd2518a860ac76f15315eeee27c2054a13667d1d6ec0b8",
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 44598,
+      "sha256": "bb8d2baff2c89b1deeef93d257f5247d1ddf38d9b7e77888138e994d17ca04d5",
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 292333,
+      "sha256": "51f252c4446531a0b133c46bf8c3a5b4fccf1717bbc0ad0505c92096af4aec61",
+      "matches_committed_source": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "bytes": 3260,
+      "sha256": "e9144ae4073567aa285ad7e6b098b0778598207d2cbd1921a99af6590eddccfb",
+      "matches_committed_source": true
+    },
+    {
+      "path": "FIRST85_QUALIFYING_RESULT.md",
+      "bytes": 2823,
+      "sha256": "9358c5b8ab0c10c3cacefb719271d1991a40b11a199ee33a705defac52da80b3",
+      "matches_committed_source": true
+    },
+    {
+      "path": "experiments/upstream-first85-completion-audit/verification.json",
+      "bytes": 53746,
+      "sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
+      "matches_committed_source": true
+    }
+  ],
+  "browser_checks": {
+    "desktop_width": 1440,
+    "mobile_width": 390,
+    "horizontal_overflow": false,
+    "console_messages": 0,
+    "own_qualifying_marker": "gold square",
+    "own_qualifying_marker_selects_correct_row": true,
+    "milestones": 36
+  },
+  "goal_achieved": false
+}

@@ -1,0 +1,23 @@
+{
+  "state": "verified_kernel_only",
+  "preparation_sha256": "941ce64ad25e4893f1a6a7241fa60fe98cb437f59175708d58933779c997edeb",
+  "source_id": "7394568a36e058f6b26b16274a9e62fca545535acbe9e266ebebdc134605df93",
+  "description": "CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }",
+  "checks": [
+    {
+      "binary": "cfnade-fast-parity",
+      "sha256": "926f5ab1fdcbc11b9f93459d74962826a09bf379f47fd291a5a1e6e26bdfee11",
+      "log_sha256": "4a54ffff023b38b8e48b3e98ba32ea444d9da81687d8f3a3a91eeff7bc1bb474"
+    },
+    {
+      "binary": "cfnade96-baseline-parity",
+      "sha256": "397613268b6527c81242630c1b9434bc6dd11401514ebe7b981d07ae40ae5267",
+      "log_sha256": "93043ede9c5e2ab4ed6584730213ec8cf285f12d7c2cd0c197a23d6c79842812"
+    }
+  ],
+  "stage_binary_sha256": "c738b4189accbf5b8135113c0b2c5840340075f63aa5b54da88ed322d4de1f89",
+  "checkpoint_migration_performed": false,
+  "full_data_resume_parity_established": false,
+  "production_eligible": false,
+  "scope": "Original-source24-case parity plus8 actual-live-backend320/96 cases, initialization and7 epochs; all84 state arrays/RNG and direct/grouped predictions. Full-data warm-resume/next-epoch equality is still required."
+}
