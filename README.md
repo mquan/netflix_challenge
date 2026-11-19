@@ -25,7 +25,9 @@ replay exactly, their fixed mean verifies, and independent scoring binds 333
 evidence files. No qualifying outcomes entered fitting or selection.
 
 The 91-predictor development study and original 1,000-factor source job are
-running. CFNADE48 continues remotely and CFNADE96 locally. The matching86
+running. CFNADE48 continues remotely. CFNADE96 checkpoints33/31 are preserved;
+its workers temporarily yielded to reduce paging and will resume after memory
+admission. The matching86
 qualifying queue has a guarded restart after its original phase bank completes.
 See [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the complete
 result and scope. The goal remains active.
