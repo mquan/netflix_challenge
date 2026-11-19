@@ -1,16 +1,55 @@
 ---
-status: qualifying-target-verified
-branch: main
-timestamp: 2026-11-16
-best_score: 0.864533752805203
-score_metric: five-fold held-out-user probe blend RMSE
-qualifying_source1_rmse: 0.8571903480630092
-qualifying_metric: adaptive community recovered-label audit, not official Netflix scoring
+status: fresh-only-reproduction-active
+branch: research/full-upstream-reproduction
+timestamp: 2026-11-19T02:31:08Z
+best_score: 0.8600637147575518
+score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
+qualifying_status: pending
+qualifying_target_per_recovered_group: 0.85725
 ---
 
 # Netflix Prize progress checkpoint
 
-## Qualifying target verified (2026-11-16)
+## Current fresh-only reproduction (2026-11-19 UTC)
+
+The active goal is **not yet verified**: independently score below **0.85725 on
+both community-recovered qualifying groups** using only our freshly trained
+predictions/features and locally fitted blending weights. Public source code is
+reused; downloaded pretrained prediction features are excluded.
+
+The verified development best is **0.8600637147575518**, improved from
+0.8602161957664950 by adding our completed CFNADE-12 predictor to the context NN.
+Four of five folds improve. All 15 saved neural models replay bit-for-bit, and
+the fixed tree/NN average and full score pass independent checks. This is
+adaptive known-ProbeX development, not a qualifying or untouched Test score.
+
+| Work | Verified state at this update |
+| --- | --- |
+| First paired production bank | **81/85**; only four temporal columns missing |
+| Temporal150 original fulltrain/qual phase | **16/25 epochs**; requires full completion and paired receipt |
+| CFNADE-96 original phases | **21/95 ProbeX**, **20/95 qualifying** |
+| CFNADE-48 original phases | **13/95 ProbeX**, **12/95 qualifying** |
+| AEX128 original independent job | **7/20**, first phase |
+| Completed native work | CFNADE-12, attention32 and all six DNN follow-on endpoints |
+| Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
+| Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
+
+Seven native training workers remain active. Partial native outputs are not
+production eligible. The source-data watcher now waits outside the shared
+fitting lock; no native training worker was interrupted by that scheduler fix.
+
+Current evidence and plans:
+
+- [CFNADE12_CONTEXT_PROGRESS.md](CFNADE12_CONTEXT_PROGRESS.md): full five-fold result, replay and independent comparison.
+- [CFNADE12_CONTEXT_PRODUCTION_PLAN.md](CFNADE12_CONTEXT_PRODUCTION_PLAN.md): matching paired inputs, explicit tree reuse, neural refit and freeze-before-audit path.
+- [PRODUCTION_BANK_PLAN.md](PRODUCTION_BANK_PLAN.md): the paired81/85 inventory and pending temporal receipt.
+- `experiments/upstream-cf12-production/queue-status.json`: current qualifying queue state.
+- `experiments/upstream-source-extension/status.json`: native-source readiness and fitting-lock state.
+
+## Historical public-bank result (2026-11-16)
+
+The scores below use public pretrained-bank inputs. They do not satisfy the
+active fresh-only reproduction goal above.
 
 The entire-original-Probe best is now **0.864533752805203**, using the 466-base
 local/public NN2 ensemble. Separately, the frozen 619-input contextual ridge

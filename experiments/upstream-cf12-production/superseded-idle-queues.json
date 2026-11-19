@@ -1,0 +1,34 @@
+{
+  "observed": "2026-11-19T02:29:21.526210+00:00",
+  "records": [
+    {
+      "pid": 43505,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_source_extension.py --watch",
+      "previous_status": {
+        "state": "waiting_for_complete_source_jobs",
+        "ready": {
+          "cfnade-12": true,
+          "attn-32": true,
+          "attn-32-t": false,
+          "aex-16": false,
+          "aex-64": false,
+          "aex-128": false
+        },
+        "parent_ready": true
+      },
+      "status_file": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-source-extension/status.json"
+    },
+    {
+      "pid": 70908,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context_production.py",
+      "previous_status": {
+        "state": "waiting_for_first_frozen_audit",
+        "first_gate": "waiting"
+      },
+      "status_file": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-context-production/queue-status.json"
+    }
+  ],
+  "no_training_process_signalled": true,
+  "shared_fitting_lock_verified_released": true,
+  "qualifying_labels_read": false
+}

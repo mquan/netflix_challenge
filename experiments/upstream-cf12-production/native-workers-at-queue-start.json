@@ -1,0 +1,41 @@
+{
+  "observed": "2026-11-19T02:33:29.569613+00:00",
+  "workers": [
+    {
+      "pid": 4263,
+      "state": "RN",
+      "command": "./target/release/aex-new aex-128"
+    },
+    {
+      "pid": 10840,
+      "state": "R",
+      "command": "./target/release/attn attn-32-t -p pipeline-new.toml"
+    },
+    {
+      "pid": 41719,
+      "state": "Rs",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x"
+    },
+    {
+      "pid": 41720,
+      "state": "Rs",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+    },
+    {
+      "pid": 46684,
+      "state": "Rs",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/full-upstream-mapped/target/release/tsvdx5-new-qual"
+    },
+    {
+      "pid": 84003,
+      "state": "RNs",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-stage x"
+    },
+    {
+      "pid": 84004,
+      "state": "RNs",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-stage qual"
+    }
+  ],
+  "no_training_process_signalled": true
+}

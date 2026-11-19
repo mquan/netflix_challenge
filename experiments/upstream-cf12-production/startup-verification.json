@@ -1,0 +1,47 @@
+{
+  "state": "verified_wait",
+  "observed": "2026-11-19T02:33:29.533818+00:00",
+  "launch": {
+    "pid": 12326,
+    "caffeinate_pid": 12327,
+    "script": "scripts/upstream_cf12_production.py",
+    "script_sha256": "109bc249561a56b918160100561cd1ac82e74aba47757ede0eeac981a1abd416",
+    "observed": "2026-11-19T02:29:21.524986+00:00",
+    "qualifying_labels_read": false
+  },
+  "actual_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf12_production.py",
+  "queue_state": {
+    "state": "waiting_for_first_frozen_audit",
+    "first_gate": "waiting"
+  },
+  "code_sha256": {
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/upstream_exchange.py": "f3cc6cdda82b5d39524f16a33f74c9ae29491a38492841eafd212360035718ab",
+    "scripts/upstream_expansion.py": "bf92a8655401b297f98fbf2692cf941c89f30edcec3db5aec057c70e029d22ff",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "scripts/upstream_remote_integration.py": "7f98d1a28464c666dd3768f93d93980479b1a0297b83dd369a4d75631a1e3bd5",
+    "scripts/verify_upstream_nonlinear.py": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556",
+    "scripts/upstream_remote_batch.py": "f526ddac75dfe46a6874d41cbcd61be62268d096bea28f4ba8f6edc7f603b672",
+    "scripts/upstream_voting_blend.py": "85052140cab0d3f65bf1c814e3c442bcace57a84072f81761bbb5d5d971e8674",
+    "scripts/upstream_full_reproduce.py": "436f181b5b73c228c67abf5a945140eb37ef95472d42ecc451f1f60cbe7a7a80",
+    "scripts/upstream_context_blend.py": "d38fb66cf557d438f57c61cb8342f8206c926e0d7b383b2b449f6b1f5b5c52b0",
+    "scripts/upstream_extension_run.py": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
+    "scripts/upstream_cf12_context.py": "849d8dc23cedeb70b1be6ee9f23dd2ea028c53ac91c476cc6ee64824d11e5406",
+    "scripts/upstream_cfnade48.py": "fddec1558a1bc16255885f9bf95a0c1ffd4d913f406ff3eec9c5f574622395e1",
+    "scripts/upstream_cf12_bank.py": "0624fd889da4b73075a2fe93227c512b2d271a90e1d3605bbe1e6ddd02a9f07b",
+    "scripts/upstream_phase_bank.py": "ab1942f04e994fc7700d4af023f26788ef936e17371c4bad301a9b6e54134603",
+    "scripts/upstream_production_bank.py": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+    "scripts/upstream_extension_bank.py": "9f300724d4a402da9f7a74693b031dbf2b6c5be91b4a62a0f396c72ad5e114ab",
+    "scripts/upstream_production.py": "7d40f21627834b1a2cadab1140a2f4b847e128c4f312184bdd0494de38632d5f",
+    "scripts/upstream_cf12_production.py": "109bc249561a56b918160100561cd1ac82e74aba47757ede0eeac981a1abd416",
+    "scripts/upstream_context_production.py": "14ce87cb6c152becf60d24e9ef4fa0b0033a6c948f92df8efbda63a9f3c30a1e",
+    "scripts/upstream_phase_production.py": "5a0cb3d9b1e73c0bbbe2df00171d3e1a571940bb824c0c449334b62d0e73fcce",
+    "scripts/upstream_source_extension_watch.py": "ba9a671538a82279c329715c0cda657c223bef2a5d44b39ffb4c393c307d6794"
+  },
+  "development_rmse": 0.8600637147575521,
+  "production_plan_created": false,
+  "production_models_created": false,
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

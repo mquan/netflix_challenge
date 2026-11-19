@@ -1,0 +1,29 @@
+{
+  "state": "verified_wait_without_fitting_lock",
+  "observed": "2026-11-19T02:33:29.534865+00:00",
+  "launch": {
+    "pid": 12324,
+    "caffeinate_pid": 12325,
+    "script": "scripts/upstream_source_extension_watch.py",
+    "script_sha256": "ba9a671538a82279c329715c0cda657c223bef2a5d44b39ffb4c393c307d6794",
+    "observed": "2026-11-19T02:29:21.513633+00:00",
+    "qualifying_labels_read": false
+  },
+  "actual_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_source_extension_watch.py",
+  "source_status": {
+    "state": "waiting_for_complete_source_jobs",
+    "ready": {
+      "cfnade-12": true,
+      "attn-32": true,
+      "attn-32-t": false,
+      "aex-16": false,
+      "aex-64": false,
+      "aex-128": false
+    },
+    "parent_ready": true,
+    "fitting_lock_held": false
+  },
+  "shared_fitting_lock_available": true,
+  "original_preparation_script_sha256": "6a0e2cd6a31f3c6d615128e604cf32fb94870796ca4048a5e4963c03d15dec8b",
+  "qualifying_labels_read": false
+}
