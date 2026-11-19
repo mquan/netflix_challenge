@@ -1,0 +1,69 @@
+{
+  "updated": "2026-11-19T04:21:40.853682+00:00",
+  "policy": "Promote completed comparable development candidates on lower overall RMSE versus their documented control; no all-fold or fixed minimum-gain veto. An overall record must additionally beat earlier comparable scores.",
+  "records": [
+    {
+      "id": "R10 B5",
+      "rmse": 0.8668212,
+      "old_status": "screen",
+      "new_status": "promoted",
+      "new_overall_record": true,
+      "historical_source": "ROUND10.md",
+      "historical_source_sha256": "0abe575ba639e100e2cf9e26ee04dcfc752a7da7ef79a884f059cfed068a2054",
+      "decision": "Completed mean RMSE 0.8668212 improves the documented R9 control despite two worse folds. Accepted retrospectively under the revised overall-score policy; original rejection preserved in the source report."
+    },
+    {
+      "id": "HR2a",
+      "rmse": 0.8668444070534381,
+      "old_status": "screen",
+      "new_status": "promoted_candidate",
+      "new_overall_record": false,
+      "historical_source": "experiments/journey-history/HR2a-blend.status.json",
+      "historical_source_sha256": "eb99e0d22d9ac94a04b16ce9179eb4d5645e3dd575b1a5d0913e3ddbeb1f5b2c",
+      "decision": "Completed mean improves R9. Promoted retrospectively as a candidate; above the earlier B5 score, so it does not advance the chronological record."
+    },
+    {
+      "id": "HR2b",
+      "rmse": 0.8668187324114364,
+      "old_status": "screen",
+      "new_status": "promoted",
+      "new_overall_record": true,
+      "historical_source": "experiments/journey-history/HR2b-blend.status.json",
+      "historical_source_sha256": "40ea72629cd8869c35bbd502384062bad85d9853988145dad242c55f1df7754a",
+      "decision": "Completed mean RMSE 0.8668187324 improves R9 and the preceding recorded B5 score. Promoted retrospectively; two worse folds no longer veto the aggregate gain."
+    },
+    {
+      "id": "LC6",
+      "rmse": 0.8668264382456018,
+      "old_status": "screen",
+      "new_status": "promoted_candidate",
+      "new_overall_record": false,
+      "historical_source": "experiments/journey-history/LC6-final-verification.json",
+      "historical_source_sha256": "ffa9051c791d6d922bb257323f3d616ea23ce5050fa1d71645c7663033e3dbe0",
+      "decision": "Independent full-Probe verification gives 0.8668264382, better than its R9 control. Promoted retrospectively as a candidate; HR2b had already recorded 0.8668187324, so this is not a new overall record."
+    },
+    {
+      "id": "N1 full",
+      "rmse": 0.8667006276575644,
+      "old_status": "screen",
+      "new_status": "promoted",
+      "new_overall_record": true,
+      "historical_source": "experiments/journey-history/N1-full-independent-verification-20261031.json",
+      "historical_source_sha256": "32bcf12dcb274bf307d9bc3b403765c24861810e394092b4f0f1fceb5c1fbad9",
+      "decision": "Independent full-Probe scoring verifies 0.8667006277. Promoted retrospectively on lower aggregate RMSE; the single worse fold remains a diagnostic."
+    },
+    {
+      "id": "H8 full",
+      "rmse": 0.8664848394547376,
+      "old_status": "screen",
+      "new_status": "promoted",
+      "new_overall_record": true,
+      "historical_source": "experiments/journey-history/H8-full-independent-comparison-20261031.json",
+      "historical_source_sha256": "54616790e30d5d1b7d35f629259c73e97bccc5ee83628c407184c25df235dd4e",
+      "decision": "Independent matched full-Probe comparison verifies 0.8664848395 and all folds improve. Promoted retrospectively; the former 0.0003 minimum-gain gate no longer vetoes the lower score."
+    }
+  ],
+  "historical_records_modified": false,
+  "qualifying_scores_used": false,
+  "limitation": "Retrospective development selection using existing evidence; no independent Test claim or change to the fresh-only qualifying objective."
+}

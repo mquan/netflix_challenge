@@ -9,6 +9,32 @@ This project targets the **original Netflix Prize dataset and split**, not the
 later PRML 2019 classroom contest. It implements selected BellKor-style models,
 not the complete winning ensemble.
 
+## Current work: our own trained predictions
+
+As of November 18, 2026 Pacific, our best fully verified development RMSE is
+**0.8600637148**, using only our freshly trained prediction features and locally
+fitted blending weights. Public source code is reused; downloaded pretrained
+prediction features are excluded. All 15 context neural models replay
+bit-for-bit, and independent scoring verifies the fixed tree/NN average over
+five user folds on 1,128,164 known-ProbeX rows.
+
+**The fresh-training 10% qualifying target is not yet verified.** The paired
+bank has 81/85 columns, pending completion of the original temporal model.
+Its first 20 qualifying snapshots exactly match our earlier remote native
+training hashes. AEX16 and both attention32 variants are complete; AEX64,
+AEX128, CFNADE48/96 and the matching-tree study are running. The first two
+completed tree folds improve and pass replay, with three folds remaining.
+
+See [PROGRESS.md](PROGRESS.md) for the recorded status and
+[CFNADE12_CONTEXT_PROGRESS.md](CFNADE12_CONTEXT_PROGRESS.md) for the verified
+full development result. This is adaptive known-ProbeX development, not an
+official Netflix or untouched Test score. The earlier public-bank result below
+is separate from the current reproduction goal.
+
+The historical plots now apply the [revised promotion policy](PROMOTION_POLICY.md):
+completed candidates can be promoted on lower overall RMSE, with chronological
+records distinguished from improvements against an individual control.
+
 ## Progress at a glance
 
 [![Netflix Prize progress: early Probe models, blend CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
@@ -17,7 +43,7 @@ The image covers September–November on a continuous RMSE scale, with faded
 unpromoted screens and a separate recovered qualifying audit. Click it for the
 interactive graphs and experiment evidence.
 
-## The 10% target reached
+## Earlier public-bank result: 10% target crossed
 
 The target-crossing solution is a **619-input contextual ridge blend**.
 Its frozen predictions score **0.85719 RMSE** on recovered source1, below
