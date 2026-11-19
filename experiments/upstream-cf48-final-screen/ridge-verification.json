@@ -1,0 +1,28 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "1a18d556ad6025a8507605545eb67f32990c53a366be53fdeec5c15e9d10830b",
+  "plan_sha256": "04279f3ba924ebd531e01b06cc262ef8eec388f788957ca950e29b9719015205",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8626981139126103,
+      "max_prediction_error": 5.766054300693213e-12,
+      "prediction_sha256": "e30f85c483eb7e503c0623b89707e70b1c880b4f87003df80cee57d7a04d945e"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.862607299629172,
+      "max_prediction_error": 5.5431215173484816e-12,
+      "prediction_sha256": "75dfcb34acdfe2c055609257e461acb8610949262977449f157e6b91659a4b10"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent control/all-one known-ProbeX ridge replay using our completed original95-epoch CF48 terminal pair. No nonlinear or qualifying result.",
+  "wrapper_sha256": "529469f070858fbe35e6bf43f8aaa0748bbde44f3f472318365fd88303c06739",
+  "full95_model_complete": true
+}
