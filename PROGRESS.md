@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T08:39:00+00:00
+timestamp: 2026-11-19T08:43:00+00:00
 best_score: 0.8600300601883686
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -41,7 +41,8 @@ known-ProbeX evaluation on a different population; it is not a qualifying score.
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
 | Matching86 production | Original-schema bank verified; recovered queue PID88587 waits for the fixed91 development gate |
-| Fixed 91-predictor study | All five tree folds complete and replayed; neural worker PID92842 live, two fold receipts complete at08:38 UTC; continuation depends on known-ProbeX improvement |
+| Fixed 91-predictor study | All five tree folds complete and replayed; neural worker PID92842 live, three fold receipts complete at08:41 UTC; continuation depends on known-ProbeX improvement |
+| All91 context follow-up | Fixed rank16 candidate queued as PID97839; waits for current extension/matching production and two physical-memory admission samples; no qualifying-label selection |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 fallback | All 25 epochs logged; final native output generation remains active before complete receipt publication |
 | CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for actual native temporal PID46684 to exit and physical-footprint/compressor/swap admission; original bank is already complete |
@@ -53,6 +54,11 @@ The original-schema phase bank is now complete through the explicit recovered
 own-temporal route; all six cache files match the verified private bank exactly.
 The unchanged matching86 queue restarted at07:50 UTC and waits for the fixed91
 study, preserving its priority and stronger-development-result gate.
+
+The fixed all91 context follow-up is documented in `ALL91_CONTEXT_PLAN.md`.
+Its actual train/save/reload test reproduces predictions exactly. It retains
+all six predeclared additions, reuses the fully verified matching trees and
+starts no fit until its predecessor and physical-memory gates clear.
 
 The additional remote branch `research/remote9h-cf96-handoff` contains the
 verified CF96 checkpoint package and runbook. No remote CF96 restore proof has
