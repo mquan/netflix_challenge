@@ -1,0 +1,16 @@
+{
+  "state": "complete_cache_columns",
+  "manifest_sha256": "8bc8ed06cd02509940a3cfdf83b60fc47253dc15d80f4ff024f8965165286ca4",
+  "screen_sha256": "9c10cbfa4df78aee45a6c681a704d014ab616f9d83d4743a369dc203eda1401d",
+  "source_ridge_verification_sha256": "73d599c51be608e3f35642c829df93c56a199e61e3f8558ab85ac8cd7deb1392",
+  "verifier_sha256": "b25ed92e44812efaa448f57a9b8370407ca4dcfa8183a60c303f3fa1280c069a",
+  "rows": 1128164,
+  "prediction_columns": 107,
+  "support_columns": 50,
+  "outer_users_disjoint": true,
+  "all_retained_and_new_columns_checked": true,
+  "independent_ridge_proof_reused": true,
+  "original_support_floats_preserved_bitwise": true,
+  "qualifying_labels_read": false,
+  "scope": "All nonlinear context columns checked against exact retained/learned source values. Ridge, labels, users and folds remain byte-identical to own107. Earlier all-row native-factor gather proof and independent ridge replay retained; no new ridge solve or qualifying audit claimed."
+}
