@@ -1,0 +1,20 @@
+{
+  "state": "original_frozen_code_restored",
+  "original_controller_sha256": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
+  "archive_sha256": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
+  "original_hash_matches_archive": true,
+  "context_manifest_validated": true,
+  "matching_tree_manifest_validated": true,
+  "successor": {
+    "pid": 29068,
+    "caffeinate_pid": 29069,
+    "utc": "2026-11-19T03:42:55.409598+00:00",
+    "script": "scripts/upstream_extension_run_current.py",
+    "script_sha256": "dd1c9709870d4c8ec6ff9573e58436094264e19335570c7c59c4fb688938f6f6",
+    "predecessor_pid": 23210
+  },
+  "production_adapter_sha256": "93af38b4af6fa6bb39b48b2f0650dbf4ff53feaa471aa19546c80363e3441481",
+  "previous_idle_controller_stopped_without_children": true,
+  "no_native_training_process_signalled": true,
+  "limitation": "The earlier controller edit temporarily broke frozen code-hash validation. Restored exact original bytes; model mathematics and completed outputs were unchanged. Current-best gate now lives in separate controller and production adapter, leaving frozen files untouched."
+}

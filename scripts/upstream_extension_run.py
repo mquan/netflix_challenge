@@ -3,7 +3,6 @@
 import argparse
 import datetime as dt
 import fcntl
-import math
 import os
 from pathlib import Path
 import signal
@@ -17,36 +16,6 @@ from upstream_full_reproduce import group_rss,stop
 u,n=experiment.u,experiment.n
 REPORT=u.ROOT/'experiments/upstream-extension-run'
 FIRST=u.ROOT/'experiments/upstream-phase-production'
-
-
-def development_reference(reports=None, prepared=None):
-    """Use independently verified known-label results, never qualifying scores."""
-    reports=reports or [u.ROOT/'experiments/upstream-cf12-context',u.ROOT/'experiments/upstream-cf12-tree']
-    prepared=prepared or experiment.RUN
-    references=[]
-    for root in reports:
-        proof_path=root/'independent-verification.json'
-        if not proof_path.exists():continue
-        evaluation=root/'evaluation.json';manifest=root/'manifest.json';proof=u.read(proof_path)
-        if proof.get('state')!='complete' or not proof.get('fixed_average_bitwise_equal') or proof['evaluation_sha256']!=u.sha(evaluation):
-            raise ValueError('Development reference verification changed')
-        data=u.read(manifest);arm='fixed-half-tree-nn'
-        if data.get('qualifying_labels_read') is not False:
-            raise ValueError('Development reference must exclude qualifying labels')
-        for name in ['labels.npy','users.npy','groups.npy']:
-            if data['prepared_sha256'][name]!=u.sha(prepared/name):
-                raise ValueError('Development reference row identity differs: '+name)
-        row=next(r for r in u.read(evaluation)['records'] if r['arm']==arm)
-        checked=next(r for r in proof['records'] if r['arm']==arm)
-        vector=root.parent.parent/'artifacts'/root.name/(arm+'.f32')
-        if (not math.isfinite(row['rmse']) or not math.isfinite(checked['independent_rmse']) or
-                row['prediction_sha256']!=checked['prediction_sha256'] or u.sha(vector)!=checked['prediction_sha256'] or
-                abs(row['rmse']-checked['independent_rmse'])>1e-12):
-            raise ValueError('Development reference score binding changed')
-        references.append(dict(rmse=checked['independent_rmse'],report=str(root),
-            evaluation_sha256=u.sha(evaluation),verification_sha256=u.sha(proof_path),manifest_sha256=u.sha(manifest)))
-    if not references:raise ValueError('Verified current development reference required')
-    return min(references,key=lambda r:r['rmse'])
 
 
 def first_gate(root=FIRST):
@@ -109,21 +78,18 @@ def run():
             u.write(REPORT/'status.json',dict(state='waiting_for_development_lock'))
             fcntl.flock(data_lock,fcntl.LOCK_EX)
             experiment.configure();n.verify_prepared()
-            reference=development_reference()
             u.write(REPORT/'plan.json',dict(script_sha256=u.sha(Path(__file__)),new_predictions=experiment.NEW,
-                development_reference=reference,
                 manifest_sha256=u.sha(experiment.REPORT/'manifest.json'),
                 source_rule='Fixed all-six fresh native extension. Known-ProbeX user folds select budgets and continuation. Qualifying residuals/scores do not choose predictors, hyperparameters or weights; the prior frozen audit only checks whether the goal already passed.',
-                production_gate='Fixed equal tree/NN development average must improve the strongest completed independently verified CF12 context/matching-tree average on identical known rows.'))
+                production_gate='Fixed equal tree/NN development average must improve the preceding verified fixed equal average.'))
             for family in ['tree','nn']:
                 u.write(REPORT/'status.json',dict(state='nested_fitting',family=family))
                 guarded([sys.executable,str(Path(experiment.__file__)),'--worker',family],REPORT/(family+'.log'))
                 guarded([sys.executable,str(Path(__file__)),'--verify-family',family],REPORT/(family+'-replay.log'))
             result=n.summarize()
-            # A concurrently completed matching-tree study may strengthen the
-            # reference during fitting. Recheck before allowing production.
-            reference=development_reference();parent=reference['rmse']
-            result.update(parent_best_rmse=parent,development_reference=reference,runner_sha256=u.sha(Path(__file__)))
+            previous=u.read(experiment.parent.REPORT/'evaluation.json')
+            parent=next(r['rmse'] for r in previous['records'] if r['arm']=='fixed-half-tree-nn')
+            result.update(parent_best_rmse=parent,runner_sha256=u.sha(Path(__file__)))
             for row in result['records']:row['delta_vs_previous_best']=row['rmse']-parent
             u.write(experiment.REPORT/'evaluation.json',result);verifier.score()
             candidate=next(r['rmse'] for r in result['records'] if r['arm']=='fixed-half-tree-nn')

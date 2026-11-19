@@ -3,8 +3,8 @@ import tempfile
 import unittest
 import numpy as np
 import upstream_extension_bank as bank
-import upstream_extension_run as run
-import upstream_extension_production as production
+import upstream_extension_run_current as run
+import upstream_extension_production_current as production
 
 
 class ExtensionRunChecks(unittest.TestCase):
@@ -86,7 +86,8 @@ class ExtensionRunChecks(unittest.TestCase):
     def test_core_and_extension_are_bound_in_production_hashes(self):
         hashes=production.code_hashes()
         for name in ['scripts/upstream_production.py','scripts/upstream_extension_bank.py',
-                     'scripts/upstream_extension_production.py','scripts/upstream_source_extension.py']:
+                     'scripts/upstream_extension_production.py','scripts/upstream_source_extension.py',
+                     'scripts/upstream_extension_run_current.py','scripts/upstream_extension_production_current.py']:
             self.assertIn(name,hashes)
 
 

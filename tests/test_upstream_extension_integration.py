@@ -14,12 +14,12 @@ import upstream_repro as u
 CHILD = '''
 import sys
 from pathlib import Path
-import upstream_extension_production as adapter
+import upstream_extension_production_current as adapter
 adapter.configure()
 root=Path(sys.argv[1]);family=sys.argv[2]
 core=adapter.core
-core.RUN=root/'models';core.REPORT=root/'report';adapter.bank.RUN=root/'bank'
-plan=adapter.u.read(core.REPORT/'plan.json')
+core.RUN=root/'models';core.REPORT=root/'report';core.bank.RUN=root/'bank'
+plan=core.u.read(core.REPORT/'plan.json')
 core.n.CONFIG=plan['config']
 core.verify=lambda:plan
 core.worker(family,replay_only=sys.argv[3]=='replay')

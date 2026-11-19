@@ -36,3 +36,10 @@ not read, and no qualifying fit starts automatically from this experiment.
 A full verified development improvement would require a matching full-data
 production plan before a frozen qualifying prediction and recovered-group audit.
 The goal remains strictly below0.85725 on both recovered groups.
+
+First-fold evidence: `verify_upstream_cf12_tree_partial.py --fold 0` replays
+all three saved trees bit-for-bit and independently scores the fixed mean on
+226,746 held rows. The mean is0.8592639386651046 versus0.8593164235053121 for
+the preceding best on those same rows, a change of-0.0000524848402075.
+This is partial evidence only; fold1 is running and no promotion is allowed
+before all five folds and final replay/scoring complete.

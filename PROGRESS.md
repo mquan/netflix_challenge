@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T03:40:06Z
+timestamp: 2026-11-19T03:43:48Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -28,20 +28,28 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | First paired production bank | **81/85**; only four temporal columns missing |
 | Temporal150 original fulltrain/qual phase | **19/25 epochs**; requires full completion and paired receipt |
 | CFNADE-96 original phases | **23/95 ProbeX**, **23/95 qualifying** |
-| CFNADE-48 original phases | **19/95 ProbeX**, **19/95 qualifying** |
-| AEX128 original independent job | **19/20**, first phase |
+| CFNADE-48 original phases | **20/95 ProbeX**, **19/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; original qualifying phase started |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX16; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
-| Additional development iteration | Matching86-predictor tree completed fold0, fitting fold1; verified86-context NN reused unchanged |
-| Six-model extension gate | Requires improvement over current verified context best, strengthened by matching-tree result if complete; six relevant checks pass |
+| Additional development iteration | Fold0 replay verified: fixed mean **.859263939** vs prior **.859316424** on same held rows; fitting fold1, no full-result promotion |
+| Six-model extension gate | Separate current controller/production adapter require improvement over verified best; six relevant checks pass; original frozen controller restored exactly |
 
 Seven native training workers remain active. Partial native outputs are not
 production eligible. The source-data watcher now waits outside the shared
 fitting lock; no native training worker was interrupted by that scheduler fix.
 The additional tree study runs at lower priority with its own memory guard and
 does not change the existing best candidate or qualifying queues.
+
+The partial tree replay detected that the earlier controller gate edit also
+changed a file hashed by frozen development experiments. The exact original
+file has been restored and both complete-context and active matching-tree
+manifests validate again. The stronger gate now runs in separate `_current`
+controller/production adapters; no native worker was signalled or model
+mathematics changed. Correction evidence is in
+`experiments/upstream-extension-run/frozen-controller-restoration.json`.
 
 Current evidence and plans:
 
