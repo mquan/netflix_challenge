@@ -27,7 +27,7 @@ The isolated overlay fixture verifies clipping/centering, every retained block,
 signal/context partition, and the actual model forward shape. It makes no
 real-data or accuracy claim.
 
-Controller56863 is waiting for actual epoch5/10 pairs; full model queue53156
+Controller63754 is waiting for actual epoch5/10 pairs; full model queue53156
 handles real-data construction, independent tuple replay and raw fitting.
 Shared GPU epoch locking and the24GiB total-memory/8GiB disk guards remain.
 Original code and artifacts are preserved. If any check fails, preserve partial
@@ -38,3 +38,9 @@ experiments/upstream-itemae-virtual-fixture/verification.json. Code:
 scripts/upstream_itemae_{pair2_screen,virtual_features,virtual_mps_context,
 virtual_queue}.py, scripts/verify_upstream_itemae_pair2_screen.py and
 scripts/upstream_rbm50_tree_itemae_virtual_mps.py.
+
+Before the first paired epoch5 diagnostic existed, the pending declaration was
+archived and freshly issued with a verifier-publication-only amendment. All
+numerical study fields are independently confirmed identical. Repeated full
+checks now preserve successful proof bytes instead of rewriting timestamps.
+See [ITEMAE_IMMUTABLE_VERIFICATION.md](ITEMAE_IMMUTABLE_VERIFICATION.md).

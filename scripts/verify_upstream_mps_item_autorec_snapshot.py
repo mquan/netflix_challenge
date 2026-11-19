@@ -1,12 +1,28 @@
 #!/usr/bin/env python3
 """Check fixed raw snapshot lineage and actual replay evidence; score known rows only."""
 import argparse
+import fcntl
 import math
 from pathlib import Path
 import numpy as np
 import upstream_mps_item_autorec as model
 
 u=model.u
+
+def store_verified_once(path,result):
+    # All checks above run on every invocation. Serialize the publication step,
+    # keep the first successful timestamp, and reject every substantive change.
+    with path.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        if path.exists():
+            previous=u.read(path)
+            if ({k:v for k,v in previous.items() if k!='observed'}!=
+                {k:v for k,v in result.items() if k!='observed'}):
+                raise ValueError('Existing verification evidence differs; preserve it for investigation')
+            return True
+        u.write(path,result)
+        return False
+
 
 def verify(epoch):
     import torch
@@ -43,7 +59,8 @@ def verify(epoch):
         independently_verified_csr_histories_bound=True,declared_full_budget_complete=pair['declared_full_budget_complete'],
         qualifying_labels_read=False,qualifying_accuracy_claimed=False,
         scope='Separate model/config/source/query hashes and actual saved-query replay evidence check, plus compensated known-only single-component score. This checker does not rerun inference or claim nonlinear/global/qualifying improvement. Original declared50/50 training continues.')
-    u.write(model.REPORT/f'snapshot-{epoch:05}-verification.json',result);print(dict(epoch=epoch,known_component_rmse=rmse,counts=counts),flush=True)
+    preserved=store_verified_once(model.REPORT/f'snapshot-{epoch:05}-verification.json',result)
+    print(dict(epoch=epoch,known_component_rmse=rmse,counts=counts,existing_report_preserved=preserved),flush=True)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--epoch',type=int,required=True);verify(p.parse_args().epoch)

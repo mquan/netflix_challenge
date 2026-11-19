@@ -1,0 +1,14 @@
+{
+  "state": "verifier_publication_amendment_before_first_paired_score",
+  "observed": "2026-11-19T23:15:18.836221+00:00",
+  "original_verifier_sha256": "3d754551c86bfa79cd3d1850f39633dece47a7069c3eeeade6981e07dd094618",
+  "amended_verifier_sha256": "c0fe52457a8c66590f5f4b925ea9461dfd1112f1d52b6c0e8ae109f1cb7908d4",
+  "original_pending_declaration": "experiments/upstream-itemae-virtual-queue-before-immutable-proof/plan.json",
+  "change": "Full original independent checks still run every invocation. Lock-protected write-once publication preserves first successful observed timestamp and rejects any changed evidence. Prevent later checks invalidating fitted-model source bindings.",
+  "snapshot_pair5_existed": false,
+  "neural_fit_started": false,
+  "raw_fitting_implementation_changed": false,
+  "raw_data_or_model_recipe_changed": false,
+  "checkpoint_selection_or_mean_weights_changed": false,
+  "qualifying_labels_read": false
+}

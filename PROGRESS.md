@@ -12,6 +12,16 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The real item-oriented epoch5 pair is complete and independently checked:
+standalone known component RMSE1.0064540238. This is not an ensemble gain;
+original50/50 training continues. Repeated actual checks now preserve the exact
+proof bytes, preventing timestamp-only mutations from breaking fitted-model
+lineage. Three concurrent-writer and changed-evidence rejection fixtures pass.
+The pending fixed5/10 NN study was freshly declared before this paired score,
+with identical numerical settings and only the publication verifier amended.
+Controller63754 waits for10; watcher63850 independently checks fixed pairs.
+See [ITEMAE_IMMUTABLE_VERIFICATION.md](ITEMAE_IMMUTABLE_VERIFICATION.md).
+
 The first next3 native has actually started: attention64 PID62289,
 train_3→probe_3 at23:08:19 UTC. Its live source configuration confirms the
 original64-feature/32-pool/192-factor capacity, seed7,12 epochs and full
