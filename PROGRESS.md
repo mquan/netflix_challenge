@@ -2,7 +2,7 @@
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
 timestamp: 2026-11-19T18:26:00+00:00
-best_score: 0.8593661638722666
+best_score: 0.8592720612630157
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,16 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New verified development best: **0.8592720612630157**, the predeclared fixed
+half mean of the expanded107/50 tree and larger107/all90 GPU NN. Both families'
+actual saved-model replays pass; all ten originating fold receipts/models are
+rehashed. Separate stored-mean/full-row compensated scoring agrees. Production
+controller27526 is queued behind independently checked paired90 features and
+measured memory, preserving the exact294/334 family feature widths.
+See [LATENT90_MPS_RESULT.md](LATENT90_MPS_RESULT.md).
+
+Earlier observation (superseded by the complete GPU combination above):
 
 New verified development best: **0.8593661638722666**, the fixed half mean of
 own107+50 expanded tree and NN. All five tree folds, all15 saved-tree replays,

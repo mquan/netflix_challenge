@@ -1,14 +1,18 @@
 {
-  "observed": "2026-11-19T18:34:05.807280+00:00",
-  "display_time": "2026-11-19 18:34 UTC",
-  "best_development_rmse": 0.8593661638722666,
+  "observed": "2026-11-19T18:45:51.310744+00:00",
+  "display_time": "2026-11-19 18:45 UTC",
+  "best_development_rmse": 0.8592720612630157,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "1bb1a73de2dcd7c0624791c34443f991c21048065741d454b5d38c5eeaf2c597",
-  "independent_verification_sha256": "d1471771f27a1837c2fab7980d09843add32f7615237ea7673718b1b80f8c21b",
+  "verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
+  "independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
   "work": [
+    {
+      "work": "Selected expanded-tree/all90 MPS qualifying refit",
+      "state": "Controller27526 is queued behind independently checked paired90 features and measured memory. Tree294 inputs and NN334 inputs preserve originating schemas. Actual full-family replay, frozen fixed half mean and separate canonical qualifying score checks are required. No new qualifying score."
+    },
     {
       "work": "Whole110 raw/all90 paired assembly",
       "state": "Queue23659 waits for verified paired90 and whole110 development caches. Exact fixed native order, all retained/new columns checked separately; no fit or score."
@@ -23,7 +27,7 @@
     },
     {
       "work": "Larger all90 latent context study",
-      "state": "Actual MPS worker24204 is fitting the full five-fold hidden128/rank32 study with334 inputs. All90 source components and cache columns independently checked. No full-study accuracy result yet."
+      "state": "Complete: all five folds and all15 saved neural models replay bitwise on the GPU. NN0.8593871254; fixed mean with the new tree0.8592720613 is the new verified global development best. A separate mean/full-row score check agrees. Full qualifying refit queued."
     },
     {
       "work": "Own107 plus50 standalone qualifying refit",
@@ -175,12 +179,12 @@
     "local_processes": [
       "  PID  PPID  %CPU COMMAND",
       "20237     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_whole110_mps_queue.py",
-      "21414  1268  97.5 ./target/release/fit dnn s3-dnn16t -p pipeline-3.toml --final --preds preds_3",
+      "21414  1268 375.6 ./target/release/fit dnn s3-dnn16t -p pipeline-3.toml --final --preds preds_3",
       "23659     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/prepare_upstream_whole110_bank_when_admitted.py",
-      "24204 20926  58.2 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_latent90_mps_context.py --worker",
-      "73629 73619 135.8 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
-      "92864 92667  97.7 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865 92667 196.0 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+      "27526     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree_latent90_production.py",
+      "73629 73619 138.9 ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+      "92864 92667  93.7 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865 92667  90.6 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
     "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
@@ -299,10 +303,15 @@
       "state": "complete_verified_support_and_development_cache",
       "cache_manifest_sha256": "6ad2638f9d50521fa683d75daf26d80c13703070f4dbec089c43df964a121a95"
     },
-    "observed": "2026-11-19T18:34:05.807280+00:00",
+    "observed": "2026-11-19T18:45:51.310744+00:00",
     "rbm50_tree": {
       "state": "complete_independently_verified",
       "fixed_half_rmse": 0.8593661638722666
+    },
+    "all90_mps_context": {
+      "state": "complete_all_saved_models_replayed",
+      "nn_rmse": 0.8593871253711179,
+      "selected_fixed_mean_rmse": 0.8592720612630157
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
@@ -320,7 +329,7 @@
     }
   },
   "latest_qualifying_verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a",
-  "best_development_arm": "own107 plus50 original RBM context fixed half tree/NN mean",
+  "best_development_arm": "own107/50 tree plus own107/all90 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,
