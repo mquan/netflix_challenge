@@ -93,7 +93,7 @@ def guarded(command,log_path):
         high=0
         try:
             while child.poll() is None:
-                own=template.group_rss(child.pid);other=resources.other_rss({child.pid});free=__import__('shutil').disk_usage(u.ROOT).free
+                own=template.group_rss(child.pid);other=template.parent.resources.other_rss({child.pid});free=__import__('shutil').disk_usage(u.ROOT).free
                 high=high+1 if own+other>24*2**30 else 0
                 u.write(REPORT/'worker-status.json',dict(pid=child.pid,rss_bytes=own,other_rss_bytes=other,disk_free_bytes=free,observed=dt.datetime.now(dt.timezone.utc).isoformat()))
                 if high>=3 or free<8*2**30:raise RuntimeError('Item154 tree resource guard; outputs preserved')

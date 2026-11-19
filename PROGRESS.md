@@ -18,7 +18,7 @@ replays and separate exact mean/full-known scoring pass. Evaluator-only
 reference recovery preserved the original failed plan and all model artifacts;
 no qualifying refit. See [ITEM186_VIRTUAL_PLAN.md](ITEM186_VIRTUAL_PLAN.md).
 
-Next, controller60069 trains the unchanged tree recipe on all154 contexts
+Next, controller60506 trains the unchanged tree recipe on all154 contexts
 already used by the current best neural partner. The current tree used only50.
 All original input matrices are shared by hardlink. Keep full nested budgets,
 actual saved-tree replay requirements and fixed half mean before comparison.

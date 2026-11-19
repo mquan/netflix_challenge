@@ -20,8 +20,15 @@ automatic qualifying production. Keep the full24GiB total-memory guard and an
 8GiB disk reserve, appropriate to shared input matrices rather than the older
 duplicate-cache allocation. Partial failures are preserved.
 
-Controller60069 is queued at a shared epoch boundary. The item-oriented raw
+Controller60506 is queued at a shared epoch boundary. The item-oriented raw
 model retains its original50/50 budgets and fixed epoch5/10 follow-up.
 Evidence: experiments/upstream-item154-tree/plan.json.
 Implementation: scripts/upstream_item154_tree.py, reusing the unchanged
 nested tree fitter and independent score/model replay verifier.
+
+The first controller attempt stopped before any fitted fold or model existed
+because its resource monitor called other_rss through the wrong module alias.
+The complete initial report/input-hardlink tree and original controller source
+are archived under upstream-item154-tree-attempt1. A live helper call verified
+the corrected existing helper before a fresh declaration/start. Training inputs,
+all numerical hyperparameters, capacities and budgets are unchanged.
