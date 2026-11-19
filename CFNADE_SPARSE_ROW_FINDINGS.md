@@ -33,3 +33,8 @@ Reproduce with `scripts/upstream_cfnade_sparse_rows.py`, followed by
 samples are in `experiments/upstream-cfnade-sparse-rows`. Candidate scripts and
 source/proof bindings are frozen; further changes need a new experiment.
 No qualifying outcomes or downloaded prediction/model weights were used.
+
+Subsequent use: the exact backend is now prepared for an additional original
+CFNADE48 preset, after capacity-specific parity checks. Existing CFNADE96
+workers stay on their current backend; no checkpoint handover is performed.
+See CFNADE48_TRAINING_PLAN.md for the new model's independent resource guard.
