@@ -12,6 +12,18 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The full item-oriented raw model started actual training at22:46 UTC after
+both full transposed histories passed independent replay of every original
+training tuple and query exclusion. The fixed epoch5/10 follow-up remains armed.
+
+A separate fixed32-component item projection from our complete original20/20
+rank1000 temporal model passed independent covariance/eigenspectrum/eigenpair
+checks and all17770 item projections bitwise. Controller58294 is queued for
+the current best recipe plus these32 contexts, with unchanged H128/r32 and
+nested user folds, actual saved-model replays and separate fixed-mean scoring.
+See [ITEM186_VIRTUAL_PLAN.md](ITEM186_VIRTUAL_PLAN.md). No new development or
+qualifying improvement is claimed while this comparison is pending.
+
 The full split3 nonlinear follow-up is complete: NN0.8594357703 and fixed
 expanded-tree mean0.8592838017. All15 actual saved-model replays and a separate
 exact mean/full-known score check pass. This is worse than0.8592309820, so the

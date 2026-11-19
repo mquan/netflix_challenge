@@ -1,0 +1,68 @@
+{
+  "created": "2026-11-19T22:47:53.317971+00:00",
+  "code_sha256": {
+    "scripts/upstream_item186_virtual_queue.py": "a0d7cdb01647555dbba6bae91174bca18b2523019e1af98b0122af9e57b69b40",
+    "scripts/upstream_item186_virtual_mps_context.py": "f60cb58f17fac7e827d850cd16488b3f55b4a2723d7b401b48cf1a6c3739289f",
+    "scripts/upstream_item186_virtual_features.py": "b1e1b1dc5825ffb23b82f59a1c04031504262e866a65925bd9438040dd3775e2",
+    "scripts/upstream_rbm50_tree_item186_virtual_mps.py": "4541beb777ea279e33cecdb7443e6992562ebdfb95cd46d915b2af26c0c72df2",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4",
+    "scripts/upstream_rank1000_item32.py": "66f544e29f9648e6e8bc44f02bd2a7193c98f0f97933a4fa148a0a45f6abbe7d",
+    "scripts/verify_upstream_rank1000_item32.py": "e9d95d71be27345791a7501d8e188103605a7a7d423c2d22a1e1b2740e7e85c1"
+  },
+  "fixed_addition": [
+    "own-rank1000.item-pca00",
+    "own-rank1000.item-pca01",
+    "own-rank1000.item-pca02",
+    "own-rank1000.item-pca03",
+    "own-rank1000.item-pca04",
+    "own-rank1000.item-pca05",
+    "own-rank1000.item-pca06",
+    "own-rank1000.item-pca07",
+    "own-rank1000.item-pca08",
+    "own-rank1000.item-pca09",
+    "own-rank1000.item-pca10",
+    "own-rank1000.item-pca11",
+    "own-rank1000.item-pca12",
+    "own-rank1000.item-pca13",
+    "own-rank1000.item-pca14",
+    "own-rank1000.item-pca15",
+    "own-rank1000.item-pca16",
+    "own-rank1000.item-pca17",
+    "own-rank1000.item-pca18",
+    "own-rank1000.item-pca19",
+    "own-rank1000.item-pca20",
+    "own-rank1000.item-pca21",
+    "own-rank1000.item-pca22",
+    "own-rank1000.item-pca23",
+    "own-rank1000.item-pca24",
+    "own-rank1000.item-pca25",
+    "own-rank1000.item-pca26",
+    "own-rank1000.item-pca27",
+    "own-rank1000.item-pca28",
+    "own-rank1000.item-pca29",
+    "own-rank1000.item-pca30",
+    "own-rank1000.item-pca31"
+  ],
+  "virtual_tensor_inputs": true,
+  "raw_prediction_columns": 107,
+  "learned_support_columns": 186,
+  "inputs": 430,
+  "hidden": 128,
+  "context_rank": 32,
+  "origins": [
+    "upstream-rbm50-tree",
+    "upstream-item186-virtual-mps-context"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "reference_development_rmse": 0.8592309819864167,
+  "qualifying_labels_read": false,
+  "resource_policy": {
+    "memory_total_bytes": 25769803776,
+    "consecutive_high_samples": 3,
+    "disk_floor_bytes": 8589934592
+  },
+  "rule": "Retain original five nested user folds, seeds, optimizer and stopping. Require original20/20 rank1000 source lineage, independent PCA replay, unchanged parent ridge proof and exact virtual tensor fingerprints before fitting. All15 actual NN model replays and separate stored fixed-mean score required. No automatic production or qualifying selection."
+}

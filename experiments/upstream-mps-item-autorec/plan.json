@@ -1,0 +1,78 @@
+{
+  "state": "own_raw_model_recipe_fixed_before_fitting",
+  "created": "2026-11-19T22:46:32.366746+00:00",
+  "config": {
+    "rows": 17770,
+    "columns": 480189,
+    "hidden": 128,
+    "epochs_per_phase": 50,
+    "batch_rows": 32,
+    "example_axis": "item",
+    "input_axis": "user",
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "input_drop_probability": 0.5,
+    "center": 3.6,
+    "seed": 2026,
+    "snapshot_epochs": [
+      5,
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "backend": "torch_mps_float32",
+    "prediction_clip": [
+      1.0,
+      5.0
+    ],
+    "loss": "MSE on observed training ratings hidden from corrupted input",
+    "optimizer": "AdamW"
+  },
+  "code_sha256": {
+    "scripts/upstream_mps_item_autorec.py": "96c54c04de633664c1168223dbf77d3d2694c1ece772a59bccfc805560eba518",
+    "scripts/upstream_mps_item_autorec_data.py": "638bd84b6f5e7a5d0b4620bf965630bbae56029b73a443f68017ccc3eecf8d84",
+    "scripts/verify_upstream_mps_item_autorec_data.py": "d64c69cf125dd43bb6dbcfbdb0dd6c19a99fa53180e83670e08388e1ed2aa977"
+  },
+  "source_sha256": {
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/data/trainx/item_cnts.npy": "a49452ed6f0990fcee74d469facb8d3753ef45de296c6563a4c0b4bf9b11b313",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/qual/ratings.npy": "6d5ec41057491f008b2b11c56173981089f94301da26dfbebc467582e92067b5",
+    "artifacts/upstream-mps-item-autorec-data/trainx/query-order.npy": "9bcbb7f70d6442fb2de24c61ca7e914114d4a36d506e42199eb723ce36b78db5",
+    "artifacts/upstream-mps-item-autorec-data/trainx/query-columns.npy": "0a3f368d1a736bf3785176fa2381f382ee421fc626b5463b1d737601eda40013",
+    "artifacts/upstream-mps-item-autorec-data/trainx/offsets.npy": "c35e672caac3275dbc2181d910c3e63d8cd8c297e528e879b3fd1db45afeaa1b",
+    "artifacts/upstream-mps-item-autorec-data/trainx/ratings.npy": "c4d6d554b176bba09af87441443b3a7d5fc829bab10b4ae285e7c140b435f3bd",
+    "artifacts/upstream-mps-item-autorec-data/trainx/query-offsets.npy": "d0db5f5c0772571077594818de72dddf35a76b59eef428c4cd5fd47456071501",
+    "artifacts/upstream-mps-item-autorec-data/trainx/columns.npy": "b27b8031097d6460af25eaaf0e0ba16504e13b7a15f27722898a09dec1918417",
+    "experiments/upstream-mps-item-autorec-data/trainx-receipt.json": "bb1c66a090de4b9bf5983c8b04a5d8b47416d207b1f402afd8bb17b798e4a2df",
+    "experiments/upstream-mps-item-autorec-data/trainx-verification.json": "7e915b3adb7e79f45193e26840c0150bd49e6f9d464fa1d8ae1f90c27214847c",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_idxs.npy": "e8dd3bd36995c07dccfc47a88d924dc881e9f1ecd1ed7512bbf900b204487a3c",
+    "artifacts/upstream-repro/fresh/data/fulltrain/user_idxs.npy": "2c05ede890433de83e39633b977fdaf77b1db78fee3d83e4f806b46c856c3754",
+    "artifacts/upstream-repro/fresh/data/fulltrain/ratings.npy": "760fda5b8c98576e31ff1a86f0fc1df4779dc0a0f7399ca434e651523ddab004",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_cnts.npy": "25d212fab8c0fc7aded9763d068a7c7dde0328cd9f0f759c56159c6527455e97",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/query-order.npy": "9f56cafd2e4259368d6bb2d4b7bd3097efc2e672b2375ec88f11a874a5c90df6",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/query-columns.npy": "e2c062039f0d84f955227cabe61667c090ba89c5becc6bc9b84bdd737b7777d8",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/offsets.npy": "41de83a054efddabda368ab6c187c1440c9df4302783c4af1766fb7433e7e75b",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/ratings.npy": "235f41135dc16783b3a7f8e9ef86604e71406e142355c0cc660a1fcf47c9e170",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/query-offsets.npy": "22550ca69680a06aa6fec53f7d309fd86ceba173323264e8c878878088c50855",
+    "artifacts/upstream-mps-item-autorec-data/fulltrain/columns.npy": "2e282f0d2e0345bca0acafa120896a662c3afce8f5298499119d8fe31d1e722b",
+    "experiments/upstream-mps-item-autorec-data/fulltrain-receipt.json": "3bc44f8edb28f2e5176cf482c45ad749293eaade51e4caea4ab98a5befc7c6c0",
+    "experiments/upstream-mps-item-autorec-data/fulltrain-verification.json": "58a99ce6758c9ee778af127004535ef679281ac14979255bea2826462def3caf"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0"
+  },
+  "qualifying_labels_read": false,
+  "known_probe_labels_used_for_stopping_or_configuration": false,
+  "rule": "Both original history phases run50 full epochs, alternating at durable epoch boundaries. Fixed snapshots5/10/20/30/40/50; no accuracy-based stopping or epoch selection. Actual saved-model query replay required for every snapshot.",
+  "checkpoint_retention": "One optimizer/RNG checkpoint per phase after atomic durable pointer update; all declared snapshot model weights and query vectors retained. Historical optimizer hashes are log evidence, not a claim that pruned files remain available.",
+  "scope": "Additional own item-oriented masked-denoising predictor, all480189 user columns and17770 item rows. No public numerical prediction input or original native-recipe parity claim. Original CPU95-epoch jobs are unchanged."
+}
