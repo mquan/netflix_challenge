@@ -15,7 +15,10 @@ checkpoint until the new pointer is durable; keep all snapshot model weights.
 Prepare lossless transposed histories and independently check every original
 tuple and query exclusion before fitting. Start after the current raw50/50
 trajectory completes to preserve disk headroom. Data/trainer implementation
-remains the next action; **real-data item-oriented training is not running**.
+and the isolated transpose/resume fixture are complete; the real50/50 run is
+queued behind actual completion of the current raw model. **Real-data
+item-oriented training is not running yet.** See
+[ITEM_AUTOREC_TRAINING_PLAN.md](ITEM_AUTOREC_TRAINING_PLAN.md).
 
 The following describes the benchmark protocol:
 

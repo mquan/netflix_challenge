@@ -1,0 +1,52 @@
+{
+  "created": "2026-11-19T22:05:51.525590+00:00",
+  "config": {
+    "rows": 17770,
+    "columns": 480189,
+    "hidden": 128,
+    "epochs_per_phase": 50,
+    "batch_rows": 32,
+    "example_axis": "item",
+    "input_axis": "user",
+    "lr": 0.0005,
+    "weight_decay": 0.0001,
+    "input_drop_probability": 0.5,
+    "center": 3.6,
+    "seed": 2026,
+    "snapshot_epochs": [
+      5,
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "backend": "torch_mps_float32",
+    "prediction_clip": [
+      1.0,
+      5.0
+    ],
+    "loss": "MSE on observed training ratings hidden from corrupted input",
+    "optimizer": "AdamW"
+  },
+  "code_sha256": {
+    "scripts/upstream_mps_item_autorec_queue.py": "905c60dae73ef544dab2c5178dff35296d063fc48f122a4db28200ba6e75e0f8",
+    "scripts/upstream_mps_item_autorec.py": "96c54c04de633664c1168223dbf77d3d2694c1ece772a59bccfc805560eba518",
+    "scripts/upstream_mps_item_autorec_data.py": "638bd84b6f5e7a5d0b4620bf965630bbae56029b73a443f68017ccc3eecf8d84",
+    "scripts/verify_upstream_mps_item_autorec_data.py": "d64c69cf125dd43bb6dbcfbdb0dd6c19a99fa53180e83670e08388e1ed2aa977",
+    "scripts/verify_upstream_mps_item_autorec_snapshot.py": "3d754551c86bfa79cd3d1850f39633dece47a7069c3eeeade6981e07dd094618"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0"
+  },
+  "benchmark_verification_sha256": "67a30ddbd9f81b7bebd9634f3134f53441defc6c12c411c800e7237a024a61df",
+  "fixture_verification_sha256": "f99b58709b77fc2cb4a0a767b19a356e75d7c1e69d120eb5e5d19b29e5b3ac1c",
+  "prerequisite": "Actual preceding raw50/50 completion and all original saved snapshot replay/model bindings. Serialize to preserve disk headroom.",
+  "rule": "Losslessly transpose both complete canonical training histories. Separately replay every tuple and query exclusion. Fit own480189\u2192128\u2192480189 item-oriented raw model, batch32,50 epochs/phase, fixed snapshots5/10/20/30/40/50. One durable atomic optimizer/RNG checkpoint per phase; preserve every snapshot weight/query vector. Actual saved-model full query inference replay required.",
+  "numerical_public_features_read": false,
+  "qualifying_labels_read": false,
+  "known_query_labels_used_for_stopping_or_configuration": false,
+  "model_capacity_or_data_subsampling": false,
+  "original_native_recipe_parity_claimed": false
+}

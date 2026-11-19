@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T21:33:55.306209+00:00
+timestamp: 2026-11-19T22:39:44.722871+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,32 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The full split3 nonlinear follow-up is complete: NN0.8594357703 and fixed
+expanded-tree mean0.8592838017. All15 actual saved-model replays and a separate
+exact mean/full-known score check pass. This is worse than0.8592309820, so the
+current best remains unchanged and no qualifying refit is started. The complete
+virtual tensor reconstruction avoids redundant disk matrices without reducing
+model capacity or training budgets. See
+[SPLIT3_VIRTUAL_MPS_PLAN.md](SPLIT3_VIRTUAL_MPS_PLAN.md).
+
+The new item-oriented raw predictor is implemented, tested and queued:
+all480189 user columns,128 hidden units, batch32,float32 MPS,50 full epochs per
+phase, with fixed snapshots and actual saved-query replay. The fixture preserves
+user IDs above65535, independently rejects corrupted/leaked inputs, resumes
+fresh processes and exercises durable one-checkpoint retention. Controller53156
+waits for actual completion of the current raw50/50 model before real data
+preparation/fitting. No real item-oriented training or accuracy is claimed yet.
+See [ITEM_AUTOREC_TRAINING_PLAN.md](ITEM_AUTOREC_TRAINING_PLAN.md).
+
+All three original split3 native models are now independently complete:
+DNN16t/DNN32nm7/7 and NADE12s8/8. Their four fixed terminal/E1 columns improve
+ridge0.8625801964→0.8625621609; all five folds improve and separate complete
+solve/replay passes. This is a diagnostic, not a new global or qualifying score.
+See [SPLIT3_FOUR_RESULT.md](SPLIT3_FOUR_RESULT.md). Verified records remain
+CV0.8592309820 and qualifying0.8607516602 /0.8617378857, still below10% gain.
+
+Earlier observations below are retained as history.
 
 Latest independently verified qualifying result: **0.8607516601651759 /
 0.8617378856802073**, from the known-selected tree/item154 NN half mean. Both
