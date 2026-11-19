@@ -1,0 +1,25 @@
+{
+  "state": "yield_checkpointed_meta_tree_to_predeclared_full_nn",
+  "observed": "2026-11-19T16:41:16.882976+00:00",
+  "owners": {
+    "3649": "Ss   Thu Nov 19 08:07:08 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py",
+    "6028": "Ss   Thu Nov 19 08:19:53 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_production.py"
+  },
+  "worker_identity": "RNs  Thu Nov 19 08:14:24 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm50_tree.py --worker",
+  "completed_fold0_outputs": {
+    "tree-2026.txt": "7347a21b1dbc919947cc4dbbc9c996016fdb9e1d115d3abf4aafc7979f6d19c1",
+    "prediction.f32": "68a06098f20178aac3ea2b9750db66e302c0abb41c9878992cf8c01233dc79fd",
+    "tree-7.txt": "a8eba75b75f27302687a9f23c60a869819d5f7cd03c9f31742ab72007bcf8e6d",
+    "ridge.npz": "93b0876b6d1cee3f09883bfee63a402e6ee1924755d629837710ec23376355eb",
+    "tree-13.txt": "fbf07eaa69169d4d98b7b58ca68e00fa44d186efc50475446a5ae74d2115ee67"
+  },
+  "original_script_sha256": "1230a125bb26fb3f31f29a487a0452a1bc24cb683649f124d99ae7d419912b87",
+  "partial_fold_archive": "artifacts/upstream-rbm50-tree-fold1-before-full-nn-priority",
+  "native_jobs_to_leave_running": [
+    73629,
+    7119,
+    92864,
+    92865
+  ],
+  "scope": "Preserve completed fold0 and archive only incomplete fold1; actual original worker supports per-fold verified resume. Native jobs and all frozen numerical protocols unchanged."
+}

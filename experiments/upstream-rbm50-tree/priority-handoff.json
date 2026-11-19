@@ -1,0 +1,18 @@
+{
+  "state": "checkpoint_preserved_incomplete_fold_archived",
+  "observed": "2026-11-19T16:41:20.069346+00:00",
+  "resumer_pid": 9074,
+  "completed_folds_preserved": [
+    0
+  ],
+  "partial_archive": "artifacts/upstream-rbm50-tree-fold1-before-full-nn-priority",
+  "archived_outputs": {
+    "ridge.npz": "e2f801d972f29f9b98e28769791b8481d314d1f13347ab5be1bca46566eec907"
+  },
+  "native_processes": [
+    "R    Wed Nov 18 22:36:20 2026     ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+    "S    Thu Nov 19 08:25:34 2026     ./target/release/fit tx tx20lat -p pipeline-new.toml --final --preds preds_new",
+    "Rs   Thu Nov 19 06:33:25 2026     /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+    "Rs   Thu Nov 19 06:33:25 2026     /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+  ]
+}
