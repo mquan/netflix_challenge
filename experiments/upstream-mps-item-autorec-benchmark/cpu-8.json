@@ -1,0 +1,19 @@
+{
+  "state": "complete_synthetic_throughput_and_saved_model_replay",
+  "device": "cpu",
+  "batch_items": 8,
+  "output_users": 480189,
+  "hidden": 128,
+  "parameters": 123408701,
+  "warmup_steps": 4,
+  "measured_steps": 12,
+  "seconds": 2.9809962920844555,
+  "seconds_per_step": 0.24841635767370462,
+  "synthetic_observed_density": 0.0116620747247438,
+  "last_loss": 1.5142791271209717,
+  "saved_model_replay_bitwise": true,
+  "actual_full_data_accuracy_evidence": false,
+  "public_prediction_values_read": false,
+  "qualifying_labels_read": false,
+  "scope": "Synthetic dense full-user-width item-oriented masked denoising forward/backward/AdamW benchmark. No dataset preparation, original native recipe parity, full-data timing, trained predictor or qualifying score claimed."
+}

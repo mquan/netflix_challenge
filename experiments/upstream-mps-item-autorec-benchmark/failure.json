@@ -1,0 +1,12 @@
+{
+  "state": "terminal_bounded_mps_allocation_failure",
+  "device": "mps",
+  "batch_items": 8,
+  "mps_memory_fraction": 0.15,
+  "log_sha256": "afa415b6fb426b0181ced44187889f1c45f2dc95472b6b6482417df8d4c030f9",
+  "actual_error": "AdamW allocation at3.01GiB allocated with3.20GiB cap; another236MiB request failed.",
+  "cpu8_and32_saved_model_replays_complete": true,
+  "full_data_training_performed": false,
+  "qualifying_labels_read": false,
+  "continuation": "Separate v2 namespace keeps numerical recipe and raises only bounded memory fraction to.30."
+}

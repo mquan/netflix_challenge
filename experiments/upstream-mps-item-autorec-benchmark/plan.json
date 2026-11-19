@@ -1,0 +1,16 @@
+{
+  "width": 480189,
+  "hidden": 128,
+  "batches": [
+    8,
+    32
+  ],
+  "devices": [
+    "cpu",
+    "mps"
+  ],
+  "warmup_steps": 4,
+  "measured_steps": 12,
+  "qualifying_labels_read": false,
+  "rule": "Synthetic throughput and actual saved-model replay only. No full-data speed/accuracy or actual-training claim."
+}

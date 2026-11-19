@@ -1,0 +1,28 @@
+{
+  "state": "complete_independent_raw_snapshot_bindings_and_known_score",
+  "observed": "2026-11-19T21:24:42.034267+00:00",
+  "epoch": 20,
+  "known_component_rmse": 0.9333162064644199,
+  "counts": {
+    "probex": 1128164,
+    "qual": 2817131
+  },
+  "bindings": {
+    "experiments/upstream-mps-autorec/pair-00020.json": "1f2eca8eda7baec016800e9449d2e39a95d89810a354f458a911c98ce524587f",
+    "experiments/upstream-mps-autorec/trainx-snapshot-00020.json": "e1e312334443c55b0957c28639d56072d86847166aea5beaa49548b6174535fd",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00020/model.pt": "a62c9176959cf1a20b06ef4f24bca59a119e1ad4527f730f59f85d0c60833de8",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00020/prediction.npy": "af266f85b557a041daddc5c7c508349fac22ee68a7dd39d57fb3caa7f202a135",
+    "experiments/upstream-mps-autorec/fulltrain-snapshot-00020.json": "b44f44621c18692a9a734cc920b6c4ac95a495fbc4ddf45a0946696ad98e9123",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00020/model.pt": "8c8b59498c9d05ffb7c13c0422f8b0844e2870694d2fe2733670a67f06a15670",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00020/prediction.npy": "8af872a8191f0146e6f5589d5de72c52be04a86542effb0b0db49e91280e91f5",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "scripts/verify_upstream_mps_autorec_snapshot.py": "3e80c415180305a02bfaa1ceb347fd7f007a7c9aada65a680cc59a9cd5678b89",
+    "experiments/upstream-mps-autorec/plan.json": "791429a20856dbacbf253f9324f9dc760d88157984a1b263316a5fa2b877505b"
+  },
+  "actual_original_saved_query_replay_evidence_verified": true,
+  "independently_verified_csr_histories_bound": true,
+  "full50_epoch_model_complete": false,
+  "qualifying_labels_read": false,
+  "qualifying_accuracy_claimed": false,
+  "scope": "Separate model/config/source/query hashes and actual saved-query replay evidence check, plus compensated known-only single-component score. This checker does not rerun inference or claim nonlinear/global/qualifying improvement. Original declared50/50 training continues."
+}

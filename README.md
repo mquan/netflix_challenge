@@ -16,23 +16,22 @@ is **0.8592309820**, the predeclared fixed half mean of our expanded107/50 tree
 and107/154 GPU context NN. The extra64 item components come from our freshly
 trained native factors, using an independently verified unsupervised projection.
 All original saved-model replays and separate stored-mean/full-known score
-checks pass. This improves the preceding own consensus0.8592432880; a new
-qualifying result is pending. See [ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md) and
+checks pass. This improves the preceding own consensus0.8592432880; its full qualifying result is now independently verified. See [ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md) and
 [AUTOREC_CONSENSUS_RESULT.md](AUTOREC_CONSENSUS_RESULT.md).
 All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
 
-**The new own fixed consensus improves the qualifying audit but still misses10%:**
-**0.8608202878 /0.8618006321** on the recovered source groups. The worse group
-improves **9.5222%** over0.9525, leaving0.0045506 RMSE to the strict0.85725 target.
-The fixed equal consensus and new NN7/9/8 budgets came only from known-ProbeX
-development. Original actual full-tree/NN replays were reused, the new full NN
-replayed every query row, and the exact rounded vector was frozen before label
-access. Independent canonical complete-group compensated scoring passes.
-These are adaptive recovered audits, not official/untouched Test. The newer
-item154 development candidate has a separate known-selected full-fit queue.
-No qualifying outcomes enter fitting or selection.
+**The new own item-context ensemble improves the qualifying audit but still misses10%:**
+**0.8607516602 /0.8617378857** on the recovered source groups. The worse group
+improves **9.5288%** over0.9525, leaving0.0044879 RMSE to the strict0.85725 target.
+The fixed tree/NN half mean and new NN7/7/8 budgets came only from known-ProbeX
+development. The original actual full-tree replay was reused, the new full NN
+replayed every query row, and the exact vector was frozen before label access.
+Independent canonical complete-group compensated scoring passes. These are
+adaptive recovered audits, not official/untouched Test. The new epoch20 user
+context extension is fitting separately; no qualifying outcomes enter fitting
+or selection. See [ITEM154_QUALIFYING_RESULT.md](ITEM154_QUALIFYING_RESULT.md).
 
 All three original native additions are now complete, including rank1000 with
 both20-epoch phases and separate source/storage/output checks. The whole110, own166 and larger512-unit GPU controls completed

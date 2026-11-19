@@ -1,0 +1,19 @@
+{
+  "state": "complete_synthetic_benchmark_report_bindings",
+  "script_sha256": "324ea9e7c93eaba9589770005be4a2e034d834306282e60cf395ed81ad15494e",
+  "report_sha256": {
+    "plan.json": "aef7c072d361a973bf35f885a8355316caf4f17ea0bb69bafef7e968dca545bf",
+    "cpu-8.json": "ecfe12ef9657d21b8ba9bd9f8e270777f465acb0950f14195ec24d47772d5aa0",
+    "comparison.json": "808468eee92b1fb60b49319338beea2fbc210549c3090d19efdff26f5eb960ed",
+    "mps-32.json": "ff206e6feec079d0f321d61d45a3eecc88a77ecb91a8f6414090e60df84f8f29",
+    "cpu-32.json": "99c501ba487e043bd6ece278bf7819bb3a3e01ccfa02c347f705a56c622044fd",
+    "mps-8.json": "d0c680f5d8cc2b10713d98eacbd218498b2c0b04b29889343652de83e1c8c296"
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0"
+  },
+  "all_four_actual_saved_model_replay_reports_verified": true,
+  "real_data_training_or_accuracy_claimed": false,
+  "scope": "Rechecked actual benchmark report bindings, full model dimensions, timed step counts and saved-model replay evidence. This checker does not rerun inference; temporary synthetic weights were intentionally not retained."
+}

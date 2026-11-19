@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "72b1ad5ca13cf6f1b1da2b47d79778d0957f20d67f607850d34d4b6ccaadcc56",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801962475576,
+      "delta_vs_previous_best": 0.003124786941182456,
+      "fold_rmse": [
+        0.8619959766765863,
+        0.8598793857564255,
+        0.8633794444492896,
+        0.8642176791394023,
+        0.8634317801789364
+      ],
+      "prediction_sha256": "10120c6973a2cff63f04c741e6ea05acc0521bc7684a310d8f8966a7c49a4421"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.001228633704410842,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8596726463010601,
+      "delta_vs_previous_best": 0.00021723699468501056,
+      "fold_rmse": [
+        0.8589604779640384,
+        0.8571433225697918,
+        0.8606286504768639,
+        0.8615268706793892,
+        0.8601086505655948
+      ],
+      "prediction_sha256": "d6826740a907706d657a7c64477ae622bf90485cc4b79cc81f903a584296c9e6"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8595562199954613,
+      "delta_vs_previous_best": 0.00010081068908618374,
+      "fold_rmse": [
+        0.8587712576546223,
+        0.8570606904975205,
+        0.860546491106941,
+        0.8613073013715505,
+        0.8601009230644849
+      ],
+      "prediction_sha256": "5f2c8acdb3d3aa24236fbcffc05340c75e3e75a3bd4bf5747dffbd33b1dcbb9a"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Adaptive known-ProbeX only. Fixed larger rank32/hidden128 context architecture on own107 plus all90 original RBM/Tx context features plus64 fixed own PCA item context features and64 fixed own epoch20 encoder user features, same five nested user folds/seeds/optimizer/stopping; separately declared float32 MPS training/inference, with device-specific dropout RNG. Reuses actual verified tree91, without synthetic fitting receipts. No production or qualifying audit launched.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}
