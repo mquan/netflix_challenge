@@ -12,6 +12,13 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+At11:04UTC the first isolated split3 pilot completed its native data preparation:
+98,720,013 training rows and1,760,494 validation rows. All1,128,164 known ProbeX
+rows map uniquely into validation and were verified absent from generated
+training. The original s3-attn16 two-phase fit is queued behind measured memory
+admission under live controller40527. See [SPLIT3_PILOT_PLAN.md](SPLIT3_PILOT_PLAN.md).
+This is training progress, not a new score.
+
 At approximately 10:55 UTC, a fixed eight-column addition using already completed
 own native outputs improves the own93 ridge diagnostic from 0.8631793373 to
 0.8631599063, independently replayed. This does not change the best nonlinear

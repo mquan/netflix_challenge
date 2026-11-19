@@ -1,0 +1,14 @@
+{
+  "state": "waiting_for_memory_and_primary_idle",
+  "stage": "split3_data_preparation",
+  "observed": "2026-11-19T11:01:49.497076+00:00",
+  "primary_processes": {
+    "27177": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  },
+  "memory": {
+    "compressor_bytes": 2425454592,
+    "swap_used_bytes": 2862151106.56
+  },
+  "owned_workers": {},
+  "good_samples": 0
+}

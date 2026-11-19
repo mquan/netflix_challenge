@@ -1,0 +1,46 @@
+{
+  "observed": "2026-11-19T11:05:09.045677+00:00",
+  "actual_controller_process": "Ss   Thu Nov 19 03:02:08 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_pilot.py",
+  "pid": 40527,
+  "plan_sha256": "1025689e33e44361c92f5df474f3af112a6736916280e1067640f3e916088661",
+  "data_verification_sha256": "8f0f2cf62b8b543934365a1f0829770030efdf3121d3222514ef56df050e949d",
+  "original_holdout_projection_sha256": "356b6cccb68fb5c9b0a1f33284f3444e9fa96f0a2384a8f8b77c94af05de1e9a",
+  "projection_tests": 4,
+  "source_rows": 1760494,
+  "known_rows": 1128164,
+  "all_known_rows_absent_from_generated_training": true,
+  "observed_status": {
+    "state": "waiting_for_memory_and_primary_idle",
+    "stage": "original_attention_two_phase_fit",
+    "observed": "2026-11-19T11:05:02.467027+00:00",
+    "primary_processes": {
+      "27177": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+    },
+    "memory": {
+      "compressor_bytes": 10636427264,
+      "swap_used_bytes": 2845373890.56
+    },
+    "owned_workers": {
+      "16274": {
+        "bytes": 6882304.0,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/target/release/run -n tsvdx5-60"
+      },
+      "16305": {
+        "bytes": 14602888806.4,
+        "command": "./target/release/tsvdx5-new tsvdx5-60"
+      },
+      "73608": {
+        "bytes": 7455744.0,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/target/release/run -n tsvdx4p-1000lm"
+      },
+      "73629": {
+        "bytes": 5690831667.2,
+        "command": "./target/release/tsvdx4p-new tsvdx4p-1000lm"
+      }
+    },
+    "good_samples": 0,
+    "original_temporal_identity_unchanged": true
+  },
+  "qualifying_labels_read": false,
+  "goal_achieved": false
+}
