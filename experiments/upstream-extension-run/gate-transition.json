@@ -1,0 +1,17 @@
+{
+  "old_pid": 52803,
+  "old_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_extension_run.py",
+  "old_script_sha256": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
+  "old_state": "waiting_for_first_audit_and_fresh_models",
+  "no_active_child": true,
+  "no_development_preparation": true,
+  "no_native_training_process_signalled": true,
+  "successor": {
+    "pid": 23210,
+    "caffeinate_pid": 23211,
+    "utc": "2026-11-19T03:22:04.843480+00:00",
+    "script_sha256": "a35401d23073a6f62e0eca6789abafc059d36e82a15527c30673c5672399f248",
+    "predecessor_pid": 52803
+  },
+  "tests": "5 extension-run checks passed; live current reference independently bound and row-identical against verified CF12 context cache"
+}

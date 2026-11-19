@@ -8,6 +8,35 @@ import upstream_extension_production as production
 
 
 class ExtensionRunChecks(unittest.TestCase):
+    def test_current_best_reference_rejects_stale_score_or_different_rows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base=Path(tmp);prepared=base/'prepared';prepared.mkdir()
+            for name in ['labels.npy','users.npy','groups.npy']:
+                np.save(prepared/name,np.array([1,2,3]))
+            roots=[]
+            for name,score in [('context',.86006),('tree',.86002)]:
+                root=base/'experiments'/name;root.mkdir(parents=True);roots.append(root)
+                vector=base/'artifacts'/name/'fixed-half-tree-nn.f32';vector.parent.mkdir(parents=True)
+                np.array([3.,3.5,4.],dtype='<f4').tofile(vector)
+                row=dict(arm='fixed-half-tree-nn',rmse=score,prediction_sha256=run.u.sha(vector))
+                run.u.write(root/'evaluation.json',dict(records=[row]))
+                run.u.write(root/'manifest.json',dict(qualifying_labels_read=False,
+                    prepared_sha256={p.name:run.u.sha(p) for p in prepared.iterdir()}))
+                run.u.write(root/'independent-verification.json',dict(state='complete',fixed_average_bitwise_equal=True,
+                    evaluation_sha256=run.u.sha(root/'evaluation.json'),records=[dict(arm=row['arm'],
+                        independent_rmse=score,prediction_sha256=row['prediction_sha256'])]))
+            # A candidate better than the old .86040 baseline but worse than
+            # today's .86002 reference must not pass production admission.
+            reference=run.development_reference(roots,prepared)
+            self.assertEqual(reference['rmse'],.86002)
+            self.assertFalse(.8601<reference['rmse'])
+            self.assertTrue(.8600<reference['rmse'])
+            np.save(prepared/'users.npy',np.array([3,2,1]))
+            with self.assertRaisesRegex(ValueError,'row identity'):run.development_reference(roots,prepared)
+            np.save(prepared/'users.npy',np.array([1,2,3]))
+            row['rmse']=.85;run.u.write(roots[1]/'evaluation.json',dict(records=[row]))
+            with self.assertRaisesRegex(ValueError,'verification changed'):run.development_reference(roots,prepared)
+
     def test_schema_preserves_parent_columns_and_intercept(self):
         design=np.array([[2.,5.,1.]])
         features=np.array([[.25,-.5]],dtype=np.float32)
