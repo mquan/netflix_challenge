@@ -12,6 +12,13 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The first next3 native has actually started: attention64 PID62289,
+train_3→probe_3 at23:08:19 UTC. Its live source configuration confirms the
+original64-feature/32-pool/192-factor capacity, seed7,12 epochs and full
+training fraction1.0. Tree worker60801 and raw MPS training continue; raw
+trainx epoch3 is durable. Remaining original RBM200/temporal100r jobs stay
+serialized. No new source/ensemble accuracy or qualifying gain is claimed.
+
 The CPU tree fit and raw MPS training now overlap. A verified supervision
 handoff kept the exact live LightGBM worker60801 running, released the shared
 GPU epoch lock and resumed raw trainx epoch3. All numerical inputs, RNG states,

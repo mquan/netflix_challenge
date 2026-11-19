@@ -36,3 +36,9 @@ No capacity, data or epoch budget is reduced to fit the queue.
 Evidence: experiments/upstream-split3-next3/{plan,preflight-verification}.json.
 Code: scripts/upstream_split3_next3.py and
 scripts/verify_upstream_split3_next3.py. No new blend/qualifying result is claimed.
+
+Actual start23:08:19 UTC: native62289 is fitting s3-attn64 train_3→probe_3.
+Its logged configuration independently confirms64 features,32 pooled features,
+192 matrix factors,12 epochs, seed7 and full train_frac1.0. No capacity/data
+subsampling or original recipe override. Both phases are not complete yet.
+Evidence: experiments/upstream-split3-next3/actual-start-verification.json.

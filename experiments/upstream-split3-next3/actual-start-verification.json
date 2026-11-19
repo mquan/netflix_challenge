@@ -1,0 +1,14 @@
+{
+  "state": "actual_original_attention64_first_phase_confirmed_live",
+  "observed": "2026-11-19T23:10:12.712767+00:00",
+  "pid": 62289,
+  "identity": "Thu Nov 19 15:08:19 2026     ./target/release/fit attn s3-attn64 -p pipeline-3.toml --final --preds preds_3",
+  "launch_sha256": "82a7a0591afa52d7f78e55a138d78a28b4970796055ed1ebd06f8fac497a4198",
+  "actual_native_config": "AttnConfig { n_feat: 64, n_pool: 32, n_mf: 192, n_bins: 30, out_scale: 2.5, beta: 0.3, dev_beta: 0.4, n_epochs: 12, seed: 7, lr_decay: 0.9, lr_q: 0.005, lr_c: 0.005, lr_mf: 0.008, lr_bias: 0.005, lr_alpha: 2e-6, reg_q: 0.02, reg_c: 0.02, reg_mf: 0.015, reg_bias: 0.03, reg_bu_day: 0.03, reg_alpha: 50.0, sigma: 0.05, huber: 0.0, grad_clip: 1.0, emb_cap: 1.0, n_threads: 1, block_users: 32, train_frac: 1.0 }",
+  "first_phase": "train_3 => probe_3",
+  "original_full_data_fraction_confirmed": true,
+  "original_capacity_and12_epoch_default_confirmed": true,
+  "both_phases_complete": false,
+  "qualifying_labels_read": false,
+  "accuracy_claimed": false
+}
