@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "904f87acd321b038c42aec27ebccdb11b275bb4dc5ff3f563a607732ac2b7281",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8626072995702148,
+      "delta_vs_previous_best": 0.002647601779982578,
+      "fold_rmse": [
+        0.8620298224705023,
+        0.8599074300914933,
+        0.8634193766611161,
+        0.8642125845188773,
+        0.8634707057527913
+      ],
+      "prediction_sha256": "16921c787cb7657aea0376427085981a3b4cfcdb8684d5d53de6cafa712890fc"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.000724345220553757,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8594692563654075,
+      "delta_vs_previous_best": -0.0004904414248246836,
+      "fold_rmse": [
+        0.8586114651707,
+        0.8569328900096221,
+        0.8604901220242179,
+        0.861266018298225,
+        0.860051583412758
+      ],
+      "prediction_sha256": "1785eb26f3deb9c415a20b9c8ced31e5cb02c314a015af59e12f047903f63da8"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8595400254184109,
+      "delta_vs_previous_best": -0.00041967237182127803,
+      "fold_rmse": [
+        0.8587132028827106,
+        0.8570338024286583,
+        0.8604966072560436,
+        0.8612614839743815,
+        0.8602005442173541
+      ],
+      "prediction_sha256": "c25f524d9c8e312e64d2d4db4a2467e7ea8768dfa85b56274ccf9516e41d7b96"
+    }
+  ],
+  "previous_best_rmse": 0.8599596977902322,
+  "scope": "Adaptive known-ProbeX only. Fixed original rank16 context architecture plus ready-eight and both own CF48 epoch25/95 additions, same five nested user folds/seeds/optimizer/stopping. Reuses actual verified tree91, without synthetic fitting receipts. No production or qualifying audit launched.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}
