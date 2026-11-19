@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T22:39:44.722871+00:00",
-  "display_time": "2026-11-19 22:39 UTC",
+  "observed": "2026-11-19T22:43:14.024546+00:00",
+  "display_time": "2026-11-19 22:43 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Fixed item-oriented epoch5/10 virtual nonlinear comparison",
+      "state": "Controller56863 confirmed live, waiting for both actual item-oriented raw snapshot pairs. Both checkpoints and fixed expanded-tree half mean declared before new scores. Own109/item154,400 NN inputs,H128/r32, unchanged five user folds/seeds/stopping. Require independent histories/paired snapshot checks, every virtual column/hash, all15 actual saved-model replays and separate mean/score. No qualifying selection or automatic production."
+    },
     {
       "work": "Full split3 virtual nonlinear follow-up",
       "state": "Complete negative: NN0.8594357703, fixed expanded-tree half mean0.8592838017, above current0.8592309820. All five nested folds,15 actual saved-model replays and separate exact mean/full-known scoring pass. No qualifying refit or promotion."
@@ -27,7 +31,7 @@
     },
     {
       "work": "Item-oriented raw autoencoder feasibility",
-      "state": "Implementation and isolated transpose/resume fixture complete. Full480189\u2192128\u2192480189, batch32,float32 MPS,50 epochs per phase, fixed snapshots5/10/20/30/40/50. Actual high-user-ID, corruption/leakage, six saved-query replays and atomic one-checkpoint retention pass. Controller53156 is queued behind actual completion of current raw50/50 for disk headroom; real item-oriented fitting has not started at this snapshot."
+      "state": "Implemented and fixture-verified. Controller53156 transitions after actual preceding50/50 source verification to complete transposed-history preparation/checks and original full480189\u2192128\u2192480189,50/50 training. No new accuracy claim."
     },
     {
       "work": "Item154 full known-selected qualifying refit",
@@ -47,7 +51,7 @@
     },
     {
       "work": "Own real-data raw GPU autoencoder",
-      "state": "Original50/50 trajectory continues: second phase epoch49 active at22:38 UTC. All earlier snapshot proofs retained. Item-oriented queue waits for actual verified50/50 completion; no accuracy stopping."
+      "state": "Complete both original50-epoch phases at22:42 UTC. All six fixed snapshot pairs and actual saved-model query replays retained; this is raw source-model completion, not a new ensemble/qualifying score."
     },
     {
       "work": "Larger own166 hidden512/rank64 control",
