@@ -11,7 +11,29 @@ prediction features.
 for verified return. Do not start a new nine-hour clock.** Return partial exact
 checkpoints if the original95-epoch phases do not finish within that window.
 
-## Download and verify
+## First: return the completed temporal training outputs
+
+The coordinator is still generating its duplicate model's training residuals.
+The remote laptop already has the complete original63-output job. Return those
+outputs first so the coordinator can retire that duplicate only after verifying
+its full completed counterpart, freeing memory for further training.
+
+```sh
+~/workspace/netflix_upstream_repro/.venv/bin/python scripts/upstream_remote_temporal_archive.py \
+  --native-tree ~/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh \
+  --output artifacts/upstream-remote9h-temporal-complete
+```
+
+This checks the exact original receipt, all63 native hashes, complete vector
+shapes, source pin and zero qualifying targets. It includes only model outputs
+and provenance, not raw datasets. Upload `temporal-native-complete.tar.gz` to a
+new draft release asset, and immediately commit/push `transfer.json`, archive
+tag/asset names and the native receipt to `research/remote9h-cf96-handoff`.
+Do not put the large archive directly into Git. Preserve CFNADE48 and all old
+native files. If these outputs are absent or changed, report it and continue
+with the checkpoint lane below. Do not retrain the temporal model.
+
+## Download and verify CFNADE96
 
 Use a new worktree for this branch, or read its files without changing the
 checkout used by active CFNADE48 supervisors. Keep its package and output
