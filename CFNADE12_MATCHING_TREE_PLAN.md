@@ -43,3 +43,9 @@ all three saved trees bit-for-bit and independently scores the fixed mean on
 the preceding best on those same rows, a change of-0.0000524848402075.
 This is partial evidence only; fold1 is running and no promotion is allowed
 before all five folds and final replay/scoring complete.
+
+The second completed fold (fold1) also passes all three saved-tree replays
+bit-for-bit. Its fixed mean is0.8574717065320298 versus0.8575002796649305 on
+the same225,899 held rows, a change of-0.0000285731329007. Both first folds
+improve; three folds remain. The two partial reports are independent evidence
+for their own rows, not a complete development score or qualifying result.

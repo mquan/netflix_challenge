@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T03:43:48Z
+timestamp: 2026-11-19T04:03:30Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -27,14 +27,15 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | --- | --- |
 | First paired production bank | **81/85**; only four temporal columns missing |
 | Temporal150 original fulltrain/qual phase | **19/25 epochs**; requires full completion and paired receipt |
-| CFNADE-96 original phases | **23/95 ProbeX**, **23/95 qualifying** |
-| CFNADE-48 original phases | **20/95 ProbeX**, **19/95 qualifying** |
-| AEX128 original independent job | First phase **20/20 complete**; original qualifying phase started |
+| CFNADE-96 original phases | **24/95 ProbeX**, **23/95 qualifying** |
+| CFNADE-48 original phases | **21/95 ProbeX**, **20/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; qualifying **2/20** |
+| AEX16 original primary job | First phase **20/20 complete**; qualifying at least **6/20** |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX16; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
-| Additional development iteration | Fold0 replay verified: fixed mean **.859263939** vs prior **.859316424** on same held rows; fitting fold1, no full-result promotion |
+| Additional development iteration | Folds0/1 bitwise replay verified; fixed mean improves by **.000052485/.000028573** on their held rows; fitting fold2, no full-result promotion |
 | Six-model extension gate | Separate current controller/production adapter require improvement over verified best; six relevant checks pass; original frozen controller restored exactly |
 
 Seven native training workers remain active. Partial native outputs are not
