@@ -32,3 +32,8 @@ The complete initial report/input-hardlink tree and original controller source
 are archived under upstream-item154-tree-attempt1. A live helper call verified
 the corrected existing helper before a fresh declaration/start. Training inputs,
 all numerical hyperparameters, capacities and budgets are unchanged.
+
+The subsequent verified supervision handoff retains the same actual tree
+worker60801, while releasing its parent-only GPU epoch lock so the raw MPS
+model can run concurrently. All original fitting/replay/score requirements
+remain. See [TREE_GPU_CONCURRENCY.md](TREE_GPU_CONCURRENCY.md).

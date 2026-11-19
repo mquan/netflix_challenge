@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-19T23:07:38.232038+00:00",
+  "controller_pid": 60506,
+  "controller_identity": "Ss   Thu Nov 19 14:59:53 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_item154_tree.py",
+  "unchanged_worker_pid": 60801,
+  "worker_identity": "RNs  Thu Nov 19 15:01:11 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_item154_tree.py --worker",
+  "source_sha256": {
+    "scripts/upstream_item154_tree_supervisor.py": "1f20f439beb715bc416b80775dba18dc5a9bea08d02caa54824fa001d20c5818",
+    "experiments/upstream-item154-tree/manifest.json": "173c0dc03b66f5e196279fbfc037369c52f35a016012be249d1f203675ba31f5",
+    "experiments/upstream-item154-tree/plan.json": "9a525cea18de76f24fc3aea81c64cb2f9ad00a77c76a152f9d86e38ce9e7232d"
+  },
+  "rule": "Replace only idle Python parent supervision. Keep the exact running CPU worker and all original numerical inputs/configuration/models/folds/budgets. The replacement holds the model run lock, not the GPU epoch lock. Monitor the original24GiB total RSS/8GiB disk guards; require all five actual receipts, actual saved-tree replay and independent scoring before success.",
+  "public_prediction_values_read": false,
+  "qualifying_labels_read": false,
+  "worker_signal_sent": false
+}

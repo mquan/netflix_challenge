@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T22:58:59.080776+00:00
+timestamp: 2026-11-19T23:08:59.101964+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,23 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The CPU tree fit and raw MPS training now overlap. A verified supervision
+handoff kept the exact live LightGBM worker60801 running, released the shared
+GPU epoch lock and resumed raw trainx epoch3. All numerical inputs, RNG states,
+thread counts, capacities and budgets are unchanged. The replacement keeps
+original model/run ownership,24GiB total-RSS/8GiB disk guards, actual saved-tree
+replays and independent score requirements. See
+[TREE_GPU_CONCURRENCY.md](TREE_GPU_CONCURRENCY.md).
+
+Next native lane prepared and armed: exact original split3 attention64, RBM200
+and temporal100r, with12/12,25/25 and22/22 phases. Five fixed published pairs,
+exact source-registry commands and attention defaults are preflight-verified.
+Controller61826 and separate completion watcher61827 wait for measured memory/
+disk admission; no new native fitting or score is claimed yet. See
+[SPLIT3_NEXT3_PLAN.md](SPLIT3_NEXT3_PLAN.md).
+
+Earlier observations below are retained as history.
 
 The rank1000 item186 study is complete and negative: NN0.8595016854, fixed
 expanded-tree half mean0.8593522338, above0.8592309820. All15 actual model
