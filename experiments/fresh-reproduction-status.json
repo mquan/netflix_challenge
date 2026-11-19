@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T16:54:57.918725+00:00",
-  "display_time": "2026-11-19 16:54 UTC",
+  "observed": "2026-11-19T17:28:44.396549+00:00",
+  "display_time": "2026-11-19 17:28 UTC",
   "best_development_rmse": 0.8594554093063749,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,12 @@
   "independent_verification_sha256": "807e13b8fbdc1c453f7655e10a25033e89499941ae982d05140e2b889cfc16cc",
   "work": [
     {
+      "work": "Paired all90 context bank",
+      "state": "Memory-admitted builder14278 is queued. Retain paired107+50 byte-for-byte and append the verified40 Tx components to both queries; same183-column ridge. A separate full-column checker runs after construction. No fitting or new score."
+    },
+    {
       "work": "Larger all90 latent context study",
-      "state": "Queued behind actual Tx40 support completion and the fitting slot. Original107 predictors plus90 exact learned components; hidden128/rank32,334 inputs. Actual small fit/save/reload bitwise test passed. No full90 cache or new accuracy result yet."
+      "state": "All90 original components and333-feature cache are ready and bitwise checked. Hidden128/rank32 network has334 inputs; it waits for measured RAM and the fitting slot. Actual small fit/save/reload passed; no full-study accuracy result yet."
     },
     {
       "work": "Own107 plus50 standalone qualifying refit",
@@ -19,7 +23,7 @@
     },
     {
       "work": "Expanded RBM context tree comparison",
-      "state": "First complete fold checkpoint preserved (0.8593019 versus preceding matching tree0.8598228). Original controller9504 resumes remaining folds after the neural audit and stable memory; incomplete fold1 was archived. No full tree result yet."
+      "state": "Actual worker10755 resumed from verified fold0 after the completed neural qualifying audit. Two of five tree folds are complete; third fold is fitting. Same original configuration and source schemas; no complete tree result yet."
     },
     {
       "work": "Next original split3 diversity batch",
@@ -51,7 +55,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "Original RBM50 complete20/20 and separately checked. Tx20lat native7119 is active in its first20-epoch phase, latest completed epoch11. Its40 supports are not yet ready."
+      "state": "RBM50 complete20/20 and independently checked. Tx20lat first20 complete and all40 user/item components checked on both queries; native7119 is running second phase, latest3/20. Whole-Tx completion remains pending."
     },
     {
       "work": "First qualifying blend",
@@ -79,7 +83,7 @@
     },
     {
       "work": "Original 1,000-factor model",
-      "state": "Native73629 remains active. First20-epoch phase complete; second phase latest completed13/20. Full rank1000 and logical partitioning retained."
+      "state": "Native73629 active: first20 complete, second phase latest16/20. Original rank1000 and logical partitioning retained. Full native completion remains pending."
     },
     {
       "work": "Temporal150 local fallback",
@@ -87,7 +91,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Both original native phases remain active under92864/92865. Latest saved epochs39/36 of95; unchanged320-hidden/96-rank capacity and verified restore lineage."
+      "state": "Original native phases92864/92865 remain active, latest saved epochs40/38 of95. Original320-hidden/96-rank capacity and exact checkpoint lineage retained."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -261,8 +265,8 @@
       "state": "complete_both_frozen_audits_verified"
     },
     "cf96_saved_epochs": {
-      "trainx": 39,
-      "fulltrain": 36
+      "trainx": 40,
+      "fulltrain": 38
     },
     "tsvdx5_60": "complete_independently_checked_23_23",
     "rbm50_context": {
@@ -276,12 +280,17 @@
     },
     "tx20lat": {
       "pid": 7119,
-      "state": "original_first_phase_training",
-      "latest_completed_epoch": 4
+      "state": "original_second_phase_training",
+      "first_phase_epochs_complete": 20,
+      "second_phase_latest_completed": 3
     },
     "own107_rbm50_production": {
       "state": "complete_both_groups_independently_verified_miss",
       "verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a"
+    },
+    "all90_supports": {
+      "state": "complete_verified_support_and_development_cache",
+      "cache_manifest_sha256": "6ad2638f9d50521fa683d75daf26d80c13703070f4dbec089c43df964a121a95"
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
