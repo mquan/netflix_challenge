@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T11:28:10.878880+00:00
-best_score: 0.8599745622436025
+timestamp: 2026-11-19T12:03:50.028773+00:00
+best_score: 0.8599596977902322
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,14 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The completed all91 context fit gives a new verified development best:
+**0.8599596977902322**, versus0.8599745622436025 on the same known-ProbeX
+rows/user folds. Actual saved-family replays, ten source fold/model bindings,
+the fixed float32 mean and compensated scoring verify. Controller54968 is
+running its qualifying production with exact full tree91 reuse and a new
+contextNN91 full-known fit. No new qualifying score yet. See
+[CONTEXT91_PRODUCTION_PLAN.md](CONTEXT91_PRODUCTION_PLAN.md).
 
 At approximately11:27UTC, our published CF48 epoch25 snapshot pair passes
 captured-package/source/data checks. The fixed ready-eight plus snapshot25

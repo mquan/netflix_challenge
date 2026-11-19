@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "0206ceb64d9a25f07fab610425acdfdfcd6c1254f4cd87b09824082db5cffb34",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8633016697976109,
+      "delta_vs_previous_best": 0.003327107554008446,
+      "fold_rmse": [
+        0.8627318079034154,
+        0.8605862476491957,
+        0.8640782516429094,
+        0.8649489543132434,
+        0.8641661030941916
+      ],
+      "prediction_sha256": "feab1357dc7e5f02cd4fb89bf580387397e7e261cbc302540edf46e4041001fc"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.000709480767183468,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8600443942229535,
+      "delta_vs_previous_best": 6.983197935106489e-05,
+      "fold_rmse": [
+        0.8592815849329611,
+        0.8574371107029811,
+        0.8610810826376608,
+        0.8619277754235027,
+        0.8604996100518488
+      ],
+      "prediction_sha256": "a6fd2d5a5d458366bef3a7d968919faf159076a7a8c6756ea12c7995fc404c5a"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8599596977902322,
+      "delta_vs_previous_best": -1.4864453370289077e-05,
+      "fold_rmse": [
+        0.8591652509635339,
+        0.8573597151505473,
+        0.8609589646039475,
+        0.8617550347234764,
+        0.8605648154796673
+      ],
+      "prediction_sha256": "6ab43524b9ba051b0b40795cc5da0f757d3590ce6e2a42335c528a26c313c2c9"
+    }
+  ],
+  "previous_best_rmse": 0.8599745622436025,
+  "scope": "Adaptive known-ProbeX only. Fixed rank16 context architecture on all six predeclared additions; original nested user folds, optimizer, seeds and stopping rules. Reuses verified matching91 trees. No automatic production or recovered-label audit.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

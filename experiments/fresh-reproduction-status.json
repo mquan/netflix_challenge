@@ -1,13 +1,13 @@
 {
-  "observed": "2026-11-19T11:09:41.418569+00:00",
-  "display_time": "November 19, 2026, 03:09 AM Pacific",
-  "best_development_rmse": 0.8599745622436025,
+  "observed": "2026-11-19T12:18:57.151345+00:00",
+  "display_time": "November 19, 2026, 04:18 AM Pacific",
+  "best_development_rmse": 0.8599596977902322,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "d46f9badd83793ebc13917040025b508d13bf8ab926d9f77b516b98e23f2b407",
-  "independent_verification_sha256": "d46f9badd83793ebc13917040025b508d13bf8ab926d9f77b516b98e23f2b407",
+  "verified_development_report_sha256": "0a38f1690a32bfd0c79430f2548fbda39c1e21de1877fb8a1b9722f045173013",
+  "independent_verification_sha256": "87659b5ad04a1045bdee81133ca1487fd38c0185346ddd483720a60bb621107a",
   "work": [
     {
       "work": "First qualifying blend",
@@ -18,8 +18,8 @@
       "state": "First85 full333-binding audit remains complete. Both later qualifying fits have actual saved-family replays plus separate mean/score checks. Latest tree91/contextNN86 check verifies408 source inputs and28 code files, the exact mean, canonical label blob and group counts."
     },
     {
-      "work": "New fixed tree91/contextNN86 development best",
-      "state": "0.8599745622 on the same 1,128,164 known-ProbeX rows and 462,858 users. Fixed half mean; ten original fold receipts/models rehashed, prior full model replays verified, row identities matched and stored mean scored independently. Its separate qualifying audit is complete and still misses the target, as shown below."
+      "work": "Preceding tree91/contextNN86 development best",
+      "state": "Previous verified best0.8599745622, now improved by the completed contextNN91 fixed mean. Its distinct qualifying audit remains the latest independently checked qualifying result below."
     },
     {
       "work": "Tree91/contextNN86 qualifying production",
@@ -35,7 +35,7 @@
     },
     {
       "work": "Original 1,000-factor model",
-      "state": "Native PID73629 remains live; first phase epoch18 of20, known-ProbeX RMSE0.87913. Both original phases,16 logical chunks and four physical workers remain unchanged."
+      "state": "Native PID73629 remains live. First original20-epoch phase complete, known-ProbeX RMSE0.87766; second original phase remains required. Rank1000,16 logical chunks and four physical workers are unchanged."
     },
     {
       "work": "Temporal150 local fallback",
@@ -47,7 +47,7 @@
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Remote heartbeat11:06:40UTC, commite54b0c7: epochs87/84 of95, native PIDs95404/95402 observed live remotely, zero swap use. Training deadline14:33UTC; return15:03UTC. No completed95-epoch return yet."
+      "state": "Complete95/95. Final vectors returned in commit5f38584. Coordinator verified own package/source/data/config/restore lineage, query identities, native logs, finite float32 values and exact native terminal/epoch95 SHA256 reconstruction. Sender verified all84 final tensors and95 snapshots per phase; those full tensors were not transferred. No qualifying score from this base model is claimed."
     },
     {
       "work": "AEX64 and AEX128",
@@ -63,7 +63,7 @@
     },
     {
       "work": "Fixed91 context follow-up",
-      "state": "Controller10867 waits for physical memory. Both prior production runs are complete; rank16 and all six additions remain fixed, and the known-ProbeX reference includes0.8599745622."
+      "state": "Complete: contextNN91 RMSE0.8600443942; fixed mean with tree91 gives new verified development best0.8599596978. All five saved NN folds replay. Ten actual source-family fold receipts/models are rehashed, row/fold identities match and compensated scoring verifies the mean."
     },
     {
       "work": "Paired source-column verification",
@@ -71,7 +71,7 @@
     },
     {
       "work": "Fixed93 context follow-up",
-      "state": "Controller29784 waits behind the all91 context study. Both completed temporal additions retain original native receipts; ridge diagnostic0.8631793373 is independently replayed, not a nonlinear or qualifying promotion."
+      "state": "The pending controller was stopped while idle, with no child/model cache, to prioritize the fixed102-predictor context candidate. Original93 code and reports remain preserved."
     },
     {
       "work": "Eight completed own output additions",
@@ -83,7 +83,15 @@
     },
     {
       "work": "Original split3 attention pilot",
-      "state": "Original s3-attn16 native PID42926 started11:08:33UTC under controller40527. Native split3 data stage complete:98,720,013 train and1,760,494 validation rows. All1,128,164 known ProbeX rows map uniquely into validation and are absent from training. Both original12-epoch phases are required; no score yet."
+      "state": "Native PID42926 remains live. Its complete original12-epoch train_3/probe_3 phase is finished; fulltrain/qual phase is progressing. Original split3 row identities and training separation verify. No completed paired model receipt yet; qualifying targets remain zero."
+    },
+    {
+      "work": "New context91 qualifying production",
+      "state": "Controller54968 is running. Reuses the exact own full-fit tree91 only after bank, ridge, recipe, budgets, model and replay checks. New full-known-ProbeX contextNN91 budgets20/21/19 come from its actual five-fold receipts. Fixed half mean will be frozen and replayed before recovered-group auditing; no new qualifying score yet."
+    },
+    {
+      "work": "Fixed102 context candidate",
+      "state": "Prepared and verified:102 predictors,178 ridge columns,238 features plus ridge. Original CF48 epoch25 snapshot and ready-eight improve ridge diagnostic0.8631793373 to0.8626981139, independently replayed. Controller49665 waits for the shared fitting lock and memory; no102 nonlinear score yet."
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -105,17 +113,17 @@
   "goal_achieved": false,
   "runtime_observation": {
     "local_processes": [
-      "10867 01:59:02   0.1 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py",
-      "16305 01:39:06  98.9 ./target/release/tsvdx5-new tsvdx5-60",
-      "21217 01:12:57   0.6 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
-      "27177 07:31:09   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
-      "29784    38:13   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_temporal93_context.py",
-      "40527    07:33   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_pilot.py",
-      "42926    01:08  99.0 ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
-      "73629 04:33:21  37.7 ./target/release/tsvdx4p-new tsvdx4p-1000lm"
+      "16305 02:33:15  47.1 ./target/release/tsvdx5-new tsvdx5-60",
+      "21217 02:07:06   1.2 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177",
+      "27177 08:25:18   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py",
+      "40527 01:01:42   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_pilot.py",
+      "42926    55:17  47.5 ./target/release/fit attn s3-attn16 -p pipeline-3.toml --final --preds preds_3",
+      "49665    32:20   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf48_102_context.py",
+      "54968    06:59   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_context91_production.py",
+      "73629 05:27:30 116.9 ./target/release/tsvdx4p-new tsvdx4p-1000lm"
     ],
-    "remote_commit": "e54b0c7ec6d434cdabc55342e02a07a03042dd78",
-    "remote_heartbeat_sha256": "f421e1498277305e3cba20cee00e037545cd9297559b98073141b1f24482fd2f",
+    "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
+    "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
     "neural_fold_receipts": [
       "0.json",
       "1.json",
@@ -171,7 +179,28 @@
         "preds_3"
       ],
       "observed": "2026-11-19T11:08:33.063157+00:00"
-    }
+    },
+    "new_development_verification_sha256": "87659b5ad04a1045bdee81133ca1487fd38c0185346ddd483720a60bb621107a",
+    "context91_production": {
+      "state": "replaying",
+      "family": "tree",
+      "pid": 55618
+    },
+    "context102": {
+      "state": "waiting_for_prior_fits_and_memory",
+      "observed": "2026-11-19T12:03:29.639590+00:00",
+      "predecessors": {
+        "55837": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_tree91_context86_production.py --family tree --replay"
+      },
+      "memory": {
+        "compressor_bytes": 12036341760,
+        "swap_used_bytes": 4795861565.44
+      },
+      "owned_workers": {},
+      "consecutive_good_samples": 0
+    },
+    "remote_final_commit": "5f38584787bff14fb5ccb505a6dbb904953a25c0",
+    "remote_final_intake_verification_sha256": "b0fdc68ed892334194d816a4b70859313c7e205c0208630e015f7efbc03ae232"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131"

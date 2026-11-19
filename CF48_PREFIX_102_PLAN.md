@@ -17,7 +17,7 @@ transfer. The local vectors match the exact SHA256s in that captured own package
 The frozen source, input arrays, binaries, configuration and package manifest
 were reverified before using these values. They are our predictions, not public
 prediction values. Snapshot25 is a complete generated output for both query
-splits; **the whole95-epoch job is still running remotely**. Its capacity,
+splits; **the whole95-epoch job was still running remotely when this diagnostic was frozen**. Its capacity,
 optimizer, schedule and total epoch count are unchanged. No complete95-epoch
 job receipt or terminal prediction is fabricated here.
 
@@ -84,3 +84,8 @@ paired own inputs with their exact family layouts; its vector must be frozen
 and replayed before the recovered-group audit. No recovered outcomes select
 features, stopping budgets or weights. These audits are adaptive recovered
 labels, not official or untouched Test results.
+
+The remote job has since completed95/95. Its final pair passed coordinator
+transport/native-SHA and provenance checks; see
+`experiments/upstream-remote-cf48-final/paired-receipt.json`. The earlier
+snapshot experiment's frozen completion flags remain historical statements.

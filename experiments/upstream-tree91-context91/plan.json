@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T11:55:06.300648+00:00",
+  "script_sha256": "cfc4637228510c2789d45be258bd904a2b837e77b11c2f9c10a77bd337b713a0",
+  "origins": [
+    [
+      "tree",
+      "upstream-source-extension"
+    ],
+    [
+      "nn",
+      "upstream-extension-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Single adaptive known-ProbeX candidate after the all91 context fit and saved-model replay completed. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}
