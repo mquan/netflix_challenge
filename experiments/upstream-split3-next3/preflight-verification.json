@@ -1,0 +1,26 @@
+{
+  "state": "complete_next3_original_recipe_preflight",
+  "observed": "2026-11-19T23:04:49.531119+00:00",
+  "plan_sha256": "f63408e9bcbdefc66a811b88fc3637fa355defce10f9abd61b2db38f11cdac40",
+  "exact_original_registry_commands": true,
+  "published_columns": [
+    "s3-attn64",
+    "s3-attn64_ep05",
+    "s3-rbm200",
+    "s3-tx100r",
+    "s3-tx100r_ep03"
+  ],
+  "all_five_are_exact_declared_public_schema_outputs": true,
+  "original_attention_default12_verified_in_pinned_source": true,
+  "expected_epochs_per_phase": {
+    "s3-attn64": 12,
+    "s3-rbm200": 25,
+    "s3-tx100r": 22
+  },
+  "actual_environment_preserves_original_parameters_and_threads": true,
+  "preceding_tree_controller_confirmed_live": true,
+  "verifier_sha256": "6e01d2d4b9f99e78a74b0b2edf2de64bf86c3249c21d9bd3db87986cb9ff9e7c",
+  "native_training_started": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}
