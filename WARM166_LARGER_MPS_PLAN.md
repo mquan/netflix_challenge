@@ -33,3 +33,10 @@ by us, including the explicitly additional captured earlier snapshot pairs.
 Code: scripts/upstream_warm166_h512_mps_context.py.
 Integration evidence:
 experiments/upstream-warm166-h512-mps-context/integration-check.json.
+
+Completed: all five folds and15 actual saved-model replays passed. The larger
+neural model scores0.8596061246; its expanded-tree half mean0.8593417716 is
+higher than0.8592720613. It establishes no new record or qualifying refit.
+Evidence: experiments/upstream-warm166-h512-mps-context/{evaluation,
+independent-verification,nn-replay}.json and
+experiments/upstream-rbm50-tree-warm166-h512-mps/verification.json.

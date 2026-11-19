@@ -28,3 +28,10 @@ qualifying outcomes enter this feasibility check.
 
 Code: scripts/benchmark_upstream_mps_autorec.py.
 Launch: experiments/upstream-mps-autorec-benchmark/launch.json.
+
+Update: the synchronized synthetic benchmark completed at4.39x/4.46x CPU
+throughput for64/256-user batches, with all saved-model replays bitwise. Both
+real histories then passed independent every-row verification, and the fixed
+50/50 own recipe is now fitting. Actual first-epoch training times were41.5 /
+41.2 seconds, excluding checkpoint/inference overhead. These timings are not
+validation accuracy. See [MPS_AUTOREC_TRAINING_PLAN.md](MPS_AUTOREC_TRAINING_PLAN.md).

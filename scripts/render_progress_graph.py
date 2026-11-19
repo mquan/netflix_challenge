@@ -4,7 +4,7 @@
 The SVG is portable; on macOS, sips also writes the PNG embedded in README.
 """
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from html import escape
 from pathlib import Path
 import runpy
@@ -22,7 +22,7 @@ X0, X1 = 125, 1505
 Y0, Y1 = 255, 670
 SCORE_MIN, SCORE_MAX = .850, .990
 START = datetime.fromisoformat("2026-09-27T08:00:00-07:00")
-END = datetime.fromisoformat("2026-11-19T20:00:00+00:00")
+END = max(datetime.fromisoformat("2026-11-19T20:00:00+00:00"), max(datetime.fromisoformat(row[2]) for row in MILESTONES) + timedelta(minutes=30))
 
 
 def x_at(value):

@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T19:49:02.146703+00:00",
+  "script_sha256": "486fc1f4292171bef99f209399068376c84e7746710ba229a46496df2b381b62",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-warm166-h512-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Fixed larger-model candidate declared before its fitting and complete results. Evaluation waits for complete five-fold fitting and actual replay. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}

@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T19:29:22.232957+00:00
+timestamp: 2026-11-19T20:12:18.474211+00:00
 best_score: 0.8592720612630157
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,18 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Current iteration: all three follow-on GPU controls completed without a new
+record: expanded-tree means0.8592996371 (whole110),0.8592892332 (own166) and
+0.8593417716 (larger512/rank64). Every saved neural fold model replayed. Their
+negative outcomes are retained in the plots; current best stays0.8592720613.
+
+The additional own raw autoencoder is now training its fixed50/50 phases on the
+independently verified99.35M /100.48M rating histories. Both first epochs
+checkpointed, taking41.5 /41.2 seconds of actual training. Fixed snapshots need
+complete real-query saved-model replay before any source-bank use. No new raw
+model accuracy is claimed. Source, data, optimizer/RNG resume and fixture
+inference checks passed. See [MPS_AUTOREC_TRAINING_PLAN.md](MPS_AUTOREC_TRAINING_PLAN.md).
 
 New independently verified own qualifying best: **0.8608774626094220 /
 0.8618605526405846**, from the selected expanded-tree/all90 GPU NN fixed mean.
