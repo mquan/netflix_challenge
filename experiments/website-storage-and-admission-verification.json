@@ -1,0 +1,63 @@
+{
+  "state": "complete_live_site_and_all_plot_bytes_match",
+  "observed": "2026-11-19T23:50:55.948286+00:00",
+  "pages_commit": "d92bbddd5ce5551e8f7a4c89c1ba21f383d0292b",
+  "checks": [
+    {
+      "path": "index.html",
+      "sha256": "e163f2c5e52ae527a3f1956f283757e9cefb5029c89ae62a3d790ad428eff1ad",
+      "bytes": 147104,
+      "live_byte_identical": true
+    },
+    {
+      "path": "research_journey.html",
+      "sha256": "e163f2c5e52ae527a3f1956f283757e9cefb5029c89ae62a3d790ad428eff1ad",
+      "bytes": 147104,
+      "live_byte_identical": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "sha256": "ba4cb086fb49e850b05436c4377305ec1ef3fdd2e35225e683715e4cb909efb8",
+      "bytes": 79791,
+      "live_byte_identical": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "sha256": "6c41037eb513bbe9ef7965c061cb7c66578db68ed9b951b0044a7c0f083ea675",
+      "bytes": 295485,
+      "live_byte_identical": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "sha256": "8b6fa0423725a6181dd6afed6528ce692cc570324dbe191eaba52c428f85474d",
+      "bytes": 28782,
+      "live_byte_identical": true
+    },
+    {
+      "path": "assets/qualifying_progress.svg",
+      "sha256": "8336fe644198c66af79e82bbcc13f4437600af027e0c14500cdbae5a842efd4d",
+      "bytes": 6500,
+      "live_byte_identical": true
+    }
+  ],
+  "milestones": 62,
+  "timeline_tests_passed": 7,
+  "qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.860652465694796
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8616635956343016
+    }
+  },
+  "best_development_rmse": 0.8592309819864167,
+  "storage_original_paths_and_values_independently_preserved": true,
+  "neural_capacity_and_budgets_unchanged": true,
+  "goal_achieved": false,
+  "mobile_width": 390,
+  "mobile_scroll_width": 390,
+  "console_errors": 0,
+  "live_score_and_admission_text_present": true
+}
