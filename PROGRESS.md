@@ -20,14 +20,19 @@ virtual tensor reconstruction avoids redundant disk matrices without reducing
 model capacity or training budgets. See
 [SPLIT3_VIRTUAL_MPS_PLAN.md](SPLIT3_VIRTUAL_MPS_PLAN.md).
 
-The new item-oriented raw predictor is implemented, tested and queued:
-all480189 user columns,128 hidden units, batch32,float32 MPS,50 full epochs per
-phase, with fixed snapshots and actual saved-query replay. The fixture preserves
-user IDs above65535, independently rejects corrupted/leaked inputs, resumes
-fresh processes and exercises durable one-checkpoint retention. Controller53156
-waits for actual completion of the current raw50/50 model before real data
-preparation/fitting. No real item-oriented training or accuracy is claimed yet.
-See [ITEM_AUTOREC_TRAINING_PLAN.md](ITEM_AUTOREC_TRAINING_PLAN.md).
+The original user-oriented raw AutoRec completed both50-epoch phases at22:42
+UTC, with all six paired snapshots and actual saved-model query replays.
+The item-oriented raw queue now verifies that complete source evidence before
+constructing and independently checking both full transposed histories. Its
+original full480189→128→480189,50/50 recipe remains unchanged.
+
+A second controller56863 is armed for the fixed epoch5/10 item-oriented neural
+comparison, declared before those predictions/scores exist. It adds both raw
+pairs to own107/item154, uses virtual exact inputs and the unchanged H128/r32
+recipe, then requires all15 actual model replays and separate fixed-mean scoring.
+See [ITEMAE_VIRTUAL_FOLLOWUP_PLAN.md](ITEMAE_VIRTUAL_FOLLOWUP_PLAN.md) and
+[ITEM_AUTOREC_TRAINING_PLAN.md](ITEM_AUTOREC_TRAINING_PLAN.md). No new item-oriented
+training score or qualifying result is claimed.
 
 All three original split3 native models are now independently complete:
 DNN16t/DNN32nm7/7 and NADE12s8/8. Their four fixed terminal/E1 columns improve

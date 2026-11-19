@@ -1,0 +1,43 @@
+{
+  "created": "2026-11-19T22:42:31.845519+00:00",
+  "code_sha256": {
+    "scripts/upstream_itemae_virtual_queue.py": "729398bf9e1626f7a66e36f1c7eb724e23b1f3e4ca588d1e51db3b702d723a18",
+    "scripts/upstream_itemae_virtual_mps_context.py": "2f89d3fd5cc70d4eb6570d1269e1275e9bd9a3af3d37921e755c5677ad1d2b11",
+    "scripts/upstream_itemae_virtual_features.py": "ff1aa72d7f8d978cedbdaed6c814f979eb6fbe8c9993a18baa75c5dd2aa52ddf",
+    "scripts/upstream_rbm50_tree_itemae_virtual_mps.py": "f2091c7596229b9adcdf337252028ba68a28a98b8ce46e0681630fc3e0615f06",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4",
+    "scripts/upstream_itemae_pair2_screen.py": "db7aab1c1eec77561a6a94b6fa044a6354210b09730a840882f568b434d6ef6c",
+    "scripts/verify_upstream_itemae_pair2_screen.py": "61f901a6ca86c65231c7d05357ffa50ecf52b2bd2b7aaaba114422bc7077695b",
+    "scripts/verify_upstream_mps_item_autorec_snapshot.py": "3d754551c86bfa79cd3d1850f39633dece47a7069c3eeeade6981e07dd094618"
+  },
+  "fixed_addition": [
+    "itemae_epoch5",
+    "itemae_epoch10"
+  ],
+  "virtual_tensor_inputs": true,
+  "raw_snapshot_epochs": [
+    5,
+    10
+  ],
+  "raw_prediction_columns": 109,
+  "learned_support_columns": 154,
+  "inputs": 400,
+  "hidden": 128,
+  "context_rank": 32,
+  "origins": [
+    "upstream-rbm50-tree",
+    "upstream-itemae-virtual-mps-context"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "reference_development_rmse": 0.8592309819864167,
+  "qualifying_labels_read": false,
+  "resource_policy": {
+    "memory_total_bytes": 25769803776,
+    "consecutive_high_samples": 3,
+    "disk_floor_bytes": 8589934592
+  },
+  "rule": "Retain original five nested user folds, seeds, optimizer and stopping. Require both actual item-oriented epoch5/10 pairs, independent complete history/query checks and ridge replay and exact virtual tensor fingerprints before fitting. All15 actual NN model replays and separate stored fixed-mean score required. No automatic production or qualifying selection."
+}
