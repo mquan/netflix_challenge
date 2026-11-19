@@ -121,7 +121,7 @@ for ident, label, dx, dy, anchor in (
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
     ("FRESH107 all90 GPU mean", "Own training CV · 0.8592721", -18, -68, "end"),
-    ("FRESH107 RBM50 qualifying", "Own qualifying audit · 0.8619142", -18, -130, "end"),
+    ("FRESH107 all90 mean qualifying", "Own qualifying audit · 0.8618606", -18, -130, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")

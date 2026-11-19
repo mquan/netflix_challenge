@@ -1,0 +1,18 @@
+{
+  "state": "complete",
+  "manifest_sha256": "daed1d2c112ce7e034933c98c3fb77f9a9df636a61d4609e893f2c2bd2c73e92",
+  "verifier_sha256": "892a04308c942ddf10c3eb977e9756105af50b7e02de19b85d15cae35b3bef55",
+  "counts": {
+    "probex": 1128164,
+    "qual": 2817131
+  },
+  "prediction_columns": 110,
+  "learned_support_columns": 90,
+  "all_retained_columns_checked": true,
+  "all_three_raw_transforms_checked": true,
+  "added_known_columns_bitwise_match_development": true,
+  "known_identities_byte_identical": true,
+  "retained_parent_realization_may_differ_from_development": true,
+  "qualifying_labels_read": false,
+  "scope": "All retained and new columns checked on both queries, with independent whole-model proofs bound. No fitting, model replay, score or promotion."
+}

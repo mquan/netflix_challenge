@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "e7ef2933a7fcb55342d138e2c8d29fd431ad155f95a6f399c92083cf50b49a6c",
+  "plan_sha256": "12d1653b10862cf9589f4f209033910e692e837272aca29b7236dfdbdc69d458",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952329,
+      "max_prediction_error": 5.289990667733946e-12,
+      "prediction_sha256": "1e67bfced63207eca5510bcc80c2dac3f00ee077299d08c641570cf278b512c7"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.862491942587002,
+      "max_prediction_error": 5.7625015870144125e-12,
+      "prediction_sha256": "2bc92d86f3ac4310907742031ab5f573a0524151f8883c57ae6afde3ede19afa"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and full stored-vector replay for all59 completed captured snapshot pairs. No full95 CF96 completion, nonlinear or qualifying score claimed.",
+  "wrapper_sha256": "af1a6711b848c448376fbd39850fc510cb3acf21bac285d2588686ec7520c343"
+}
