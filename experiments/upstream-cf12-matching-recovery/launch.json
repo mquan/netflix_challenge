@@ -1,0 +1,11 @@
+{
+  "pid": 75236,
+  "caffeinate_pid": 75237,
+  "observed": "2026-11-19T06:41:02.066630+00:00",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "scripts/upstream_cf12_matching_recovery.py"
+  ],
+  "policy": "One guarded restart after original bank verified complete; unchanged matching source and no overwritten fitting artifacts"
+}

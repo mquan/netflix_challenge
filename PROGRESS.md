@@ -1,10 +1,10 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T06:17:15.551947+00:00
+timestamp: 2026-11-19T06:53:17.244789+00:00
 best_score: 0.8600300601883686
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
-qualifying_status: pending
+qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
 ---
 
@@ -12,64 +12,72 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-The goal remains **unverified**: RMSE below **0.85725 on both community-recovered
-qualifying groups**, using only our freshly trained predictions and locally
-fitted blend weights. Public source code is reused; pretrained public prediction
-features and qualifying outcomes are excluded from fitting and selection.
+The first complete own-training qualifying audit **misses** the target:
 
-Our best verified development result remains **0.8600300601883686**, from the
-matching86-predictor tree and unchanged verified context NN. All five folds
-improve over .8600637148; all15 trees replay exactly. This is adaptive
-known-ProbeX development, not a qualifying or untouched Test score.
+| Recovered source group | Rows | Independently verified RMSE | Required |
+| --- | ---: | ---: | ---: |
+| source0 (`is_test=0`) | 1,408,789 | **0.8619187880311255** | <0.85725 |
+| source1 (`is_test=1`) | 1,408,342 | **0.8628067765436453** | <0.85725 |
 
-**The missing temporal outputs have returned from our own remote laptop.**
-All eight selected ProbeX/qualifying vectors reconstruct to their original
-native NPY SHA256 hashes, and qualifying row identities match. The recovered
-**85/85 bank is complete**. Its first full-known-ProbeX tree fitting worker
-**65971** was observed live; the recipe is frozen before qualifying
-labels. The original tree budgets are698/737/860 and NN budgets25/31/25.
-Saved-family replay, fixed equal averaging, prediction freeze and independent
-compensated-summation scoring of both recovered groups must still pass.
+The worse group improves **9.4166113865%** over the Cinematch reference 0.9525,
+short of 10%. The remaining gap is 0.0055567765 RMSE. These are adaptive
+community-recovered outcomes, not official or untouched Netflix Test scores.
+The published Quiz/Test sizes reverse the source labels, so source groups
+are preserved without relabeling.
 
-| Work | Verified state at this update |
+This result uses our freshly trained 85-predictor bank and full-known-ProbeX
+blend fitting. Public source code is reused; no downloaded pretrained prediction
+features or qualifying outcomes entered fitting or selection. Both saved full
+families replay bit-for-bit, their fixed float32 mean verifies, and independent
+compensated scoring covers all 2,817,131 qualifying rows. The separate completion
+check binds 333 evidence files, 29 own source jobs and the actual development
+models behind the per-seed budgets. It explicitly records `goal_achieved=false`.
+
+Our best verified **development** result remains **0.8600300601883686**, from
+the matching86-predictor tree and unchanged context NN. That is five-fold
+known-ProbeX evaluation on a different population; it is not a qualifying score.
+
+| Work | Verified state |
 | --- | --- |
-| Recovered temporal source job | Original25 epochs complete in both phases; four pairs reproduce eight original native hashes |
-| Private paired85 bank | Complete; all source/cache hashes rechecked; no live native prediction tree modified |
-| First qualifying fit | Frozen plan; tree full-known-ProbeX fitting active; NN and audit follow |
-| Local temporal fallback | 24/25 logged; original job continues independently |
-| CFNADE96 | 30/95 ProbeX; 29/95 qualifying; both native workers observed live |
-| CFNADE48 | Remote exact resume from31/30 reported and checked against our package; deadline14:33UTC; return15:03UTC |
-| Local CFNADE48 fallback | Duplicate workers exited; checkpoints33/32 preserved with all84 tensors per phase independently rehashed |
-| AEX128 | Both20-epoch phases complete; inputs, binary, receipt and all3 outputs independently rehashed; import waits for idle boundary |
-| AEX64 | Original native qualifying phase active under guarded primary scheduler |
-| Matching86 production | Tested queuePID58248 waits for first frozen audit; actual tree/NN budget origins bound |
-| Six-model extension | Fresh source preparation continues; stronger development gate remains in separate current adapters |
+| First paired 85 qualifying fit | Complete; both source groups miss the target |
+| Matching86 production | Guarded recovery waits for the original phase bank, then restarts the unchanged queue once; no partial fit overwritten |
+| Fixed 91-predictor study | All six native extensions ready; nested tree fitting active; continuation depends on known-ProbeX improvement |
+| Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
+| Local temporal150 fallback | All 25 epochs logged; final native output generation remains active before complete receipt publication |
+| CFNADE96 | Original 320/96/95 workers remain active locally; partial models are not production eligible |
+| CFNADE48 | Remote live-process heartbeat 06:36 UTC reports 36/35 epochs and no swap growth; deadline 14:33 UTC, return 15:03 UTC |
+| AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
+| Primary DAG | Advanced to original temporal16 source work |
 
-The original phase-bank watcher remains available for the local fallback;
-its incomplete receipt has not been fabricated. Only the verified idle first85
-controller was replaced, before any plan or fit cache existed. The replacement
-uses the unchanged numerical production runner and a private recovered-input
-bank. The adapter writes the actual remote-native lineage before either plan
-or report is frozen. Existing matching86 and extension controllers retain their
-original gates and output paths.
+The accelerated recovered-bank audit finished before the independent local
+phase bank was ready. The original matching queue correctly exited at its
+incomplete-bank guard. A separate recovery controller now verifies the original
+bank watcher is live, waits for its complete manifest, rehashes the bank and
+starts the unchanged queue once. A targeted actual-process test rejects a live
+predecessor, changed controller code and an existing fit. The fixed 91 study
+retains its fitting lock and priority policy.
 
-The website and plots preserve the verified development result and revised
-historical promotions. LC6 and HR2a are promoted candidates; HR2b, N1 and H8
-advance the chronological original-Probe record. No all-fold or fixed
-minimum-gain veto is imposed; original decisions remain archived. See
+The first separate completion checker encountered an OpenMP runtime clash when
+loading LightGBM and PyTorch together. Its replacement replays each family in
+an isolated process; all three tests and the full completion audit pass. No
+production fitting artifact changed during that correction.
+
+The website and plots show the new own-training qualifying audit separately
+from historical public-bank results and known-ProbeX development. Historical
+promotion revisions remain: LC6/HR2a are promoted candidates, while HR2b/N1/H8
+advance the chronological original-Probe record. See
 [PROMOTION_POLICY.md](PROMOTION_POLICY.md).
 
 Current evidence:
 
-- [REMOTE_RECOVERY_PROGRESS.md](REMOTE_RECOVERY_PROGRESS.md): remote intake, exact resume, first qualifying fitting and limits.
-- [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md): complete development best and comparison.
-- [CFNADE12_MATCHING_PRODUCTION_PLAN.md](CFNADE12_MATCHING_PRODUCTION_PLAN.md): tested matching86 queue.
-- `experiments/upstream-remote-temporal-pair/paired-receipt.json`: eight original native hashes and immutable transfer commit.
-- `experiments/upstream-recovered-temporal-bank/manifest.json`: complete85-column paired input lineage/cache hashes.
-- `experiments/upstream-phase-production/plan.json`: frozen full-known-ProbeX refitting recipe.
-- `experiments/upstream-phase-production/remote-intake-handoff.json`: verified idle controller replacement.
-- `experiments/upstream-cfnade48/remote-migration-verification.json`: remote proof bindings and locally rehashed fallback checkpoints.
-- `experiments/upstream-aex-backfill/independent-completion-verification.json`: completed own native AEX128 proof.
+- [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md): complete scores, model replay, scope and continuation.
+- `experiments/upstream-first85-completion-audit/verification.json`: independent completion audit, 333 evidence bindings and explicit target miss.
+- `experiments/upstream-phase-production/recovered-audit/report.json`: original frozen-vector audit and immutable recovered-label provenance.
+- `experiments/upstream-phase-production/independent-qualifying-verification.json`: independent compensated scoring.
+- `experiments/upstream-phase-production/report.json`: model report frozen before label access.
+- [REMOTE_RECOVERY_PROGRESS.md](REMOTE_RECOVERY_PROGRESS.md): recovery, migration and runtime correction.
+- `experiments/upstream-cf12-matching-recovery/plan.json`: one-time dependency recovery.
+- [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md): verified development best.
 
 ## Historical public-bank result (2026-11-16)
 

@@ -104,7 +104,10 @@ for date, label in dates:
 for ident, score, date, _strategy, metric, credit, _status, _title, _note, _source, _basis in MILESTONES:
     if _status == "screen":
         svg.append('<g opacity=".4">')
-    if metric == "qualifying":
+    if metric == "fresh_qualifying":
+        x, y = x_at(date), y_at(float(score))
+        svg.append(f'<rect x="{x-7}" y="{y-7}" width="14" height="14" fill="#f6c26b"/>')
+    elif metric == "qualifying":
         x, y = x_at(date), y_at(float(score))
         svg.append(f'<path d="M{x} {y-10} L{x+10} {y} L{x} {y+10} L{x-10} {y} Z" fill="#baaaff"/>')
     else:
@@ -117,6 +120,7 @@ for ident, label, dx, dy, anchor in (
     ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -18, 28, "end"),
     ("FRESH86 matched", "Own training CV · 0.8600301", -18, -68, "end"),
+    ("FRESH85 qualifying", "Own qualifying audit · 0.8628068", -18, -130, "end"),
 ):
     row = next(m for m in MILESTONES if m[0] == ident)
     text(x_at(row[2]) + dx, y_at(float(row[1])) + dy, label, "#f2f1ed", 20, anchor, "700")
@@ -124,7 +128,7 @@ for ident, label, dx, dy, anchor in (
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
 text(X0, y_at(.85725)-18, "0.85725", "#baaaff", 22, weight="700")
 text(X1, y_at(.85725)-115, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
-text(X0, 760, "Probe CV and the recovered qualifying audit use different rows and training. Diamond: adaptive community audit, not an official Test score.", "#a8b0c2", 19)
+text(X0, 760, "Unconnected audits: gold square = own training; violet diamond = public bank. Recovered labels; Probe CV uses different rows.", "#a8b0c2", 19)
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
 text(94, 857, "REVISED PROMOTIONS · ORIGINAL-PROBE DEVELOPMENT", "#70d9d0", 28, weight="700")
 text(94, 905, "Lower overall RMSE promotes a candidate; the record line follows successive best scores.", size=23)
@@ -147,7 +151,7 @@ for i,row in enumerate(selected):
     text(xx,1410,row[0],color='#f2f1ed',size=21,anchor='middle',weight='700')
 text(94,1460,'Recorded experiment order · shared original-Probe rows · historical reports and original decisions preserved',size=21)
 text(94,1510,'Current own-training best: 0.8600301 on different known-ProbeX rows.',color='#f2f1ed',size=25,weight='700')
-text(94,1555,'Fresh qualifying score pending; the 10% target is not yet verified for our own trained predictions.',size=22)
+text(94,1555,'Own qualifying audit: 0.8619188 / 0.8628068 · 9.4166% on the worse group; 10% target missed.',size=22)
 svg.append("</svg>")
 OUT_SVG.write_text("\n".join(svg) + "\n")
 

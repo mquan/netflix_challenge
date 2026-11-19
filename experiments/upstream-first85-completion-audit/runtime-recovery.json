@@ -1,0 +1,12 @@
+{
+  "state": "isolated_replay_runtime_recovery",
+  "observed": "2026-11-19T06:44:34.949931+00:00",
+  "original_checker_pid": 71583,
+  "original_checker_absent": true,
+  "old_source_commit": "47d419e",
+  "old_source_sha256": "0c00fcbd17a82e8c968c02486054edbaf67da06b1ed7b15587cf02e1dbd1534a",
+  "new_source_sha256": "4cc9adfa6529e1f74425ae5731ba98b045fcf0cb7b48ccb55ec09b87eb523e71",
+  "reason": "Original independent checker loaded LightGBM and PyTorch into one process; native OpenMP aborted. New checker launches a separate read-only replay process for each family.",
+  "no_model_fitting_outputs_changed": true,
+  "tests_passed": 3
+}

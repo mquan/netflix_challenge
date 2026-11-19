@@ -1,0 +1,31 @@
+{
+  "pid": 71583,
+  "caffeinate_pid": 71584,
+  "observed": "2026-11-19T06:27:50.572326+00:00",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "scripts/verify_upstream_first85_completion.py",
+    "--watch"
+  ],
+  "source_proof": {
+    "own_native_jobs": 29,
+    "native_outputs_rehashed": 275,
+    "own_auxiliary_imports": 12
+  },
+  "budget_proof": {
+    "bound_actual_development_files": 66,
+    "tree_medians": [
+      698,
+      737,
+      860
+    ],
+    "nn_medians": [
+      25,
+      31,
+      25
+    ]
+  },
+  "tests_passed": 2,
+  "goal_achieved": false
+}

@@ -1,8 +1,8 @@
 {
-  "observed": "2026-11-19T06:17:15.551947+00:00",
-  "display_time": "November 18, 2026, 10:17 PM Pacific",
+  "observed": "2026-11-19T06:53:17.244789+00:00",
+  "display_time": "November 18, 2026, 10:53 PM Pacific",
   "best_development_rmse": 0.8600300601883686,
-  "qualifying_status": "pending",
+  "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
@@ -10,41 +10,61 @@
   "independent_verification_sha256": "7b37545f92432d69fcf7f1b8ee44062087203fd1da1120ef4d56785c4a4692e3",
   "work": [
     {
-      "work": "Paired prediction bank",
-      "state": "85/85 complete and rehashed; recovered original remote temporal pairs match all eight selected native NPY hashes exactly"
+      "work": "First qualifying blend",
+      "state": "Complete: source0 0.8619187880; source1 0.8628067765. Both miss 0.85725. Worse group improves 9.4166% over Cinematch"
     },
     {
-      "work": "First qualifying blend",
-      "state": "Frozen recipe; full-known-ProbeX tree fitting active (worker 65971). Tree budgets 698/737/860; NN 25/31/25. Saved-model replay and independent qualifying audit follow"
+      "work": "Independent completion audit",
+      "state": "Complete: both saved families replayed in isolated processes, fixed float32 mean verified, 333 evidence files bound; no qualifying-label fitting or selection"
+    },
+    {
+      "work": "Matching86 qualifying queue",
+      "state": "One guarded restart waits for its original phase bank; earlier queue exited on an incomplete-bank guard after the accelerated first audit. Original source and fitting recipe preserved"
+    },
+    {
+      "work": "91-predictor development study",
+      "state": "All six fixed native extensions ready; nested tree fitting is active under the stronger known-ProbeX development gate"
+    },
+    {
+      "work": "Original 1,000-factor model",
+      "state": "Both original 20-epoch phases queued in the canonical job; native training has started with 16 logical chunks and four physical workers"
     },
     {
       "work": "Temporal150 local fallback",
-      "state": "24/25 epochs observed; continues independently. Its active output directory was not modified by recovery"
+      "state": "25/25 epochs logged; native final-output generation remains active. Its complete receipt is still required by the original phase bank"
     },
     {
       "work": "CFNADE96",
-      "state": "30/95 ProbeX; 29/95 qualifying; both native processes observed live"
+      "state": "Both original 320/96/95 phase workers continue locally; no partial model admitted"
     },
     {
       "work": "CFNADE48 remote continuation",
-      "state": "Both phases restored at31/30 with matching regenerated hashes in remote proof. Training deadline November19 14:33 UTC; return by15:03 UTC. Local duplicate workers retired; all84 tensors rehashed in each preserved33/32 fallback checkpoint"
+      "state": "Remote heartbeat at 06:36 UTC: epochs 36/35, both native workers live, no swap growth. Training deadline 14:33 UTC; return by 15:03 UTC"
     },
     {
-      "work": "AEX128",
-      "state": "Both original20-epoch phases complete; all36 data inputs, actual binary, receipt and three native output hashes independently verified. Import waits for primary scheduler boundary"
-    },
-    {
-      "work": "Original source DAG",
-      "state": "AEX16 complete and independently verified; AEX64 original qualifying phase remains active"
+      "work": "AEX64 and AEX128",
+      "state": "Both original jobs completed. AEX128 imported at a verified idle boundary; the primary DAG has advanced to temporal16"
     },
     {
       "work": "Matching86 development",
-      "state": "Complete: all five folds improve; all15 saved trees replay bit-for-bit; independent fixed-mean RMSE0.8600300602"
-    },
-    {
-      "work": "Matching86 qualifying continuation",
-      "state": "Tested queue remains active after first frozen audit; actual matching tree and context-NN budget origins independently bound. Both families will refit on86 predictors"
+      "state": "Best verified known-ProbeX CV remains 0.8600300602; this uses different rows from the recovered qualifying audit"
     }
   ],
-  "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim."
+  "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
+  "qualifying_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
+  "qualifying_groups": {
+    "quiz": {
+      "rows": 1408789,
+      "rmse": 0.8619187880311255,
+      "below_target": false,
+      "improvement_percent_over_cinematch": 9.50983852691596
+    },
+    "test": {
+      "rows": 1408342,
+      "rmse": 0.8628067765436453,
+      "below_target": false,
+      "improvement_percent_over_cinematch": 9.416611386493923
+    }
+  },
+  "goal_achieved": false
 }

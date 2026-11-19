@@ -1,0 +1,19 @@
+{
+  "groups": {
+    "quiz": {
+      "rows": 1408789,
+      "rmse": 0.8619187880311255,
+      "below_target": false
+    },
+    "test": {
+      "rows": 1408342,
+      "rmse": 0.8628067765436453,
+      "below_target": false
+    }
+  },
+  "prediction_sha256": "b93a84fed0078a7ccb9d71e26dd06d56773999c0e602a0d6e1fb698a35d60c54",
+  "audit_report_sha256": "1e644e3cc6dce0452de2abd93b90f74f13cac4d02ffaaae16fc890d8fbff90cb",
+  "both_groups_below_target": false,
+  "model_fitting_performed": false,
+  "limitation": "Community-recovered outcomes, adaptive local audit; not official Netflix scoring."
+}

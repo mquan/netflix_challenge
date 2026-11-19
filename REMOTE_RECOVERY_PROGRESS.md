@@ -1,5 +1,23 @@
 # Remote recovery and qualifying production
 
+## Completed first audit, 06:49 UTC
+
+The first own-training qualifying blend scores **0.8619187880 / 0.8628067765**
+on the two recovered source groups. Both miss 0.85725; the worse group improves
+9.4166% over the Cinematch reference. The goal remains active. Both full saved
+families replay exactly in isolated processes, the fixed float32 mean verifies,
+and the separate completed audit binds 333 evidence files. See
+[FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md).
+
+The first separate checker aborted on conflicting LightGBM/PyTorch OpenMP
+runtimes. Its replacement uses one read-only child process per family and has
+completed both full replays and compensated scoring; three targeted tests pass.
+No production fitting artifacts changed. The fixed 91-predictor study and
+original 1,000-factor source job are now active. The matching86 queue has a
+guarded one-time recovery after its original phase bank becomes complete.
+
+The earlier observations below are retained as the recovery history.
+
 Observed November19, 2026, approximately06:16UTC. The fresh-only qualifying
 target remains unverified. Development best remains0.8600300601883686.
 

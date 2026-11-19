@@ -8,6 +8,7 @@ import hashlib
 import math
 from pathlib import Path
 import subprocess
+import sys
 import time
 import numpy as np
 import upstream_recovered_temporal_production as adapter
@@ -114,6 +115,26 @@ def budget_evidence(plan):
     return bound
 
 
+def replay_family(family):
+    # LightGBM and PyTorch ship different OpenMP runtimes on this host. Each
+    # replay must own a separate process, as in the numerical production runner.
+    adapter.configure();plan=adapter.core.verify();root=adapter.REPORT;cache=adapter.RUN/family
+    receipt=u.read(root/(family+'.json'));bound={}
+    if receipt['plan_sha256']!=u.sha(root/'plan.json'):raise ValueError('Saved-family plan differs')
+    for name,digest in receipt['outputs'].items():
+        if u.sha(cache/name)!=digest:raise ValueError('Saved-family artifact changed before replay')
+        bound[name]=digest
+    saved=np.fromfile(cache/'qualifying.f32',dtype='<f4')
+    if saved.shape!=(ROWS,):raise ValueError('Independent replay needs complete qualifying coverage')
+    actual=adapter.core.infer(family,plan,cache)
+    if actual.tobytes()!=saved.tobytes():raise ValueError('Independent saved-model inference differs')
+    result=dict(state='complete',family=family,rows=ROWS,bitwise_equal=True,
+        plan_sha256=u.sha(root/'plan.json'),family_receipt_sha256=u.sha(root/(family+'.json')),
+        prediction_sha256=u.sha(cache/'qualifying.f32'),saved_outputs=bound,
+        verifier_sha256=u.sha(Path(__file__)),model_fitting_performed=False)
+    u.write(REPORT/(family+'-replay.json'),result);return result
+
+
 def verify():
     adapter.configure();root=adapter.REPORT;run=adapter.RUN
     # No qualifying labels are read until the frozen plan, full bank, source
@@ -148,8 +169,14 @@ def verify():
         for path in [receipt_path,replay_path]:bound[path]=u.sha(path)
         values=np.fromfile(run/family/'qualifying.f32',dtype='<f4')
         if values.shape!=(ROWS,):raise ValueError('Full qualifying family coverage required')
-        actual=adapter.core.infer(family,plan,run/family)
-        if actual.tobytes()!=values.tobytes():raise ValueError('Independent saved-model inference differs')
+        subprocess.run([sys.executable,str(Path(__file__)),'--family',family],cwd=u.ROOT,check=True)
+        own_path=REPORT/(family+'-replay.json');own=u.read(own_path)
+        if (own['state']!='complete' or not own['bitwise_equal'] or own['family']!=family or own['rows']!=ROWS or
+                own['plan_sha256']!=plan_sha or own['family_receipt_sha256']!=u.sha(receipt_path) or
+                own['prediction_sha256']!=u.sha(run/family/'qualifying.f32') or
+                own['verifier_sha256']!=u.sha(Path(__file__)) or own['saved_outputs']!=receipt['outputs']):
+            raise ValueError('Isolated independent replay proof differs')
+        bound[own_path]=u.sha(own_path)
         family_vectors[family]=values
         u.write(REPORT/'status.json',dict(state='saved_family_verified',family=family,observed=dt.datetime.now(dt.timezone.utc).isoformat()))
     final_path=root/'qualifying-final.f32';final=np.fromfile(final_path,dtype='<f4');digest=u.sha(final_path)
@@ -202,7 +229,8 @@ def main(watch=False):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--watch',action='store_true');args=parser.parse_args()
-    try:print(main(args.watch))
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--watch',action='store_true')
+    parser.add_argument('--family',choices=['tree','nn']);args=parser.parse_args()
+    try:print(replay_family(args.family) if args.family else main(args.watch))
     except Exception as error:
         u.write(REPORT/'status.json',dict(state='incomplete_preserved',error=repr(error)));raise

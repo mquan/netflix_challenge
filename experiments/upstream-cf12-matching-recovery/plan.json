@@ -1,0 +1,14 @@
+{
+  "previous_launch": {
+    "pid": 58248,
+    "caffeinate_pid": 58249,
+    "script": "scripts/upstream_cf12_matching_production.py",
+    "script_sha256": "3d0e17c9825872aac2dd25aafdcc87db5e279add54014c3576b82166c366f868",
+    "predecessor_pid": 12326,
+    "utc": "2026-11-19T05:37:01.970036+00:00",
+    "qualifying_labels_read": false
+  },
+  "original_script_sha256": "3d0e17c9825872aac2dd25aafdcc87db5e279add54014c3576b82166c366f868",
+  "failure": "First recovered-bank audit completed before the independent local phase-bank dependency. Original queue exited on its explicit incomplete-bank guard.",
+  "policy": "Wait for original phase-bank manifest, verify every bound file, then restart the unchanged queue once. No fitting artifacts overwritten; no native process controlled."
+}

@@ -1,31 +1,15 @@
 {
-  "pid": 71583,
-  "caffeinate_pid": 71584,
-  "observed": "2026-11-19T06:27:50.572326+00:00",
+  "pid": 76413,
+  "caffeinate_pid": 76414,
+  "observed": "2026-11-19T06:44:34.956974+00:00",
   "command": [
     "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
     "-u",
-    "scripts/verify_upstream_first85_completion.py",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_first85_completion.py",
     "--watch"
   ],
-  "source_proof": {
-    "own_native_jobs": 29,
-    "native_outputs_rehashed": 275,
-    "own_auxiliary_imports": 12
-  },
-  "budget_proof": {
-    "bound_actual_development_files": 66,
-    "tree_medians": [
-      698,
-      737,
-      860
-    ],
-    "nn_medians": [
-      25,
-      31,
-      25
-    ]
-  },
-  "tests_passed": 2,
+  "script_sha256": "4cc9adfa6529e1f74425ae5731ba98b045fcf0cb7b48ccb55ec09b87eb523e71",
+  "independent_family_processes": true,
+  "tests_passed": 3,
   "goal_achieved": false
 }

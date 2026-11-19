@@ -18,12 +18,17 @@ prediction features are excluded. All 15 matching trees replay bit-for-bit; the 
 is reused unchanged, and independent scoring verifies the fixed tree/NN average over
 five user folds on 1,128,164 known-ProbeX rows.
 
-**The fresh-training 10% qualifying target is not yet verified.** The paired
-bank has 81/85 columns, pending completion of the original temporal model.
-Its first 20 qualifying snapshots exactly match our earlier remote native
-training hashes. AEX16 and both attention32 variants are complete; AEX64,
-AEX128, CFNADE48/96 and the additional model phases are running. The matching-tree study is complete:
-all five folds improve and pass replay.
+**The first fresh-training qualifying audit misses the 10% target:**
+**0.8619187880 / 0.8628067765** on the two recovered source groups. The worse
+group improves **9.4166%** over the Cinematch reference. Both full saved families
+replay exactly, their fixed mean verifies, and independent scoring binds 333
+evidence files. No qualifying outcomes entered fitting or selection.
+
+The 91-predictor development study and original 1,000-factor source job are
+running. CFNADE48 continues remotely and CFNADE96 locally. The matching86
+qualifying queue has a guarded restart after its original phase bank completes.
+See [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the complete
+result and scope. The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
 [CFNADE12_MATCHING_TREE_PROGRESS.md](CFNADE12_MATCHING_TREE_PROGRESS.md) for the verified
@@ -37,10 +42,10 @@ records distinguished from improvements against an individual control.
 
 ## Progress at a glance
 
-[![Netflix Prize progress: early Probe models, blend CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
+[![Netflix Prize progress: Probe development, own-training qualifying miss and historical public-bank qualifying result](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
 
 The image covers September–November on a continuous RMSE scale, with faded
-unpromoted screens and a separate recovered qualifying audit. Click it for the
+unpromoted screens and separate own-training/public-bank qualifying audits. Click it for the
 interactive graphs and experiment evidence.
 
 ## Earlier public-bank result: 10% target crossed

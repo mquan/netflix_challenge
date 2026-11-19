@@ -2,6 +2,7 @@
 """Build the self-contained research journey from documented milestones and run events."""
 import base64
 import datetime as dt
+import hashlib
 import json
 from html import escape
 import pathlib
@@ -14,6 +15,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH85 qualifying', '0.8628067765436453', '2026-11-19T06:49:44.709186+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Our 85-predictor bank: first qualifying audit', 'Both independent saved-family replays and the fixed float32 mean pass. Source0 scores 0.8619187880 on 1,408,789 rows; source1 scores 0.8628067765 on 1,408,342 rows. Both miss 0.85725; the worse group improves 9.4166% over the Cinematch reference. No downloaded pretrained features or qualifying-label fitting/selection. Community-recovered audit, not official or untouched Test. Different population from known-ProbeX CV.', 'experiments/upstream-first85-completion-audit/verification.json', 'independent full-model replay and compensated scoring'),
     ('FRESH86 matched', '0.8600300601883686', '2026-11-19T05:26:23.094064+00:00', 'Fresh training', 'fresh_cv', 'codex', 'development', 'Own trained predictors: matching tree + context NN', 'Complete five-user-fold known-ProbeX result: all five folds improve over 0.8600637148. All 15 new trees replay bit-for-bit; the preceding verified NN vector is unchanged. Independent full-row scoring verifies 0.8600300602. Own trained predictions only; qualifying score pending. Separate evaluation population from the historical original-Probe series.', 'experiments/upstream-cf12-tree/independent-verification.json', 'independent complete comparison recorded'),
     ("FRESH86 context", ".8600637147575518", "2026-11-19T02:08:38+00:00", "Fresh training", "fresh_cv", "codex", "development", "Own trained predictors + context NN", "Our best fully verified fresh-training development result. Five user folds over 1,128,164 known-ProbeX rows; 15 neural models replay bit-for-bit and independent scoring verifies the fixed tree/NN average. Public source code is reused, with no downloaded pretrained prediction features. Adaptive development; qualifying evaluation is pending. This population differs from the earlier original-Probe/public-bank series.", "experiments/upstream-cf12-context/independent-verification.json", "verified result recorded"),
     ("C0", ".98256528", "2026-09-27T08:45:41-07:00", "Biases", "single", "codex", "promoted", "User and movie bias", "The first project model proved ingestion and probe isolation, but it missed most user–movie interaction.", "RESULTS.md", "commit upper bound"),
@@ -184,16 +186,25 @@ def qualifying_svg():
 
 def fresh_status_html():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
-    if record['best_development_rmse']!=.8600300601883686 or record['qualifying_status']!='pending':
+    if record['best_development_rmse']!=.8600300601883686 or record['qualifying_status']!='audited_miss':
         raise ValueError('Review the site narrative before publishing a changed result')
+    proof=EXPERIMENTS/'upstream-first85-completion-audit/verification.json'
+    verified=json.loads(proof.read_text())
+    if (hashlib.sha256(proof.read_bytes()).hexdigest()!=record['qualifying_verification_sha256'] or
+            verified['state']!='complete_independent_completion_audit' or verified['goal_achieved'] or
+            not verified['all_saved_models_independently_replayed'] or
+            not verified['fixed_equal_average_bitwise_verified'] or
+            verified['groups']['test']['rmse']!=.8628067765436453):
+        raise ValueError('The published first qualifying miss requires its actual independent proof')
     rows=''.join(f'<tr><td>{escape(row["work"])}</td><td>{escape(row["state"])}</td></tr>' for row in record['work'])
     return f'''<section id="fresh" aria-labelledby="fresh-title">
       <div class="section-head"><div><div class="section-num">Current work / own trained predictions</div><h2 id="fresh-title">Reproducing the result ourselves</h2></div></div>
       <p>Snapshot: <time datetime="{escape(record['observed'])}">{escape(record['display_time'])}</time>. These are recorded training states, not a live dashboard.</p>
       <p>The verified full development best improved from <strong>0.8600637 to 0.8600301 RMSE</strong> by fitting the matching86-predictor tree. All five folds improve and all 15 saved trees replay bit-for-bit; the preceding verified context NN is reused unchanged. This uses five user folds on 1,128,164 known-ProbeX rows and is adaptive development evidence. <strong>The fresh-training 10% qualifying target is not yet verified.</strong></p>
+      <p>The first qualifying blend from our own 85 trained predictors scores <strong>0.8619188 on source0 and 0.8628068 on source1</strong>. Both independently replayed families and the fixed mean verify; both groups miss 0.85725. The worse group improves <strong>9.4166%</strong> over the Cinematch reference. Qualifying outcomes did not fit or select weights. The 91-predictor development study, original 1,000-factor model and remaining source models continue.</p>
       <div class="ledger-wrap"><table class="ledger"><thead><tr><th>Work</th><th>Recorded progress</th></tr></thead><tbody>{rows}</tbody></table></div>
       <p>Public source implementations are reused; all prediction features in this effort are trained by us. Qualifying outcomes are excluded from fitting and model selection. The final vector must be frozen and replayed before both community-recovered groups are independently scored below 0.85725. These are not official Netflix or untouched Test results.</p>
-      <p><a href="PROGRESS.md">Full progress record</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="REMOTE_RECOVERY_PROGRESS.md">Remote recovery and qualifying fit</a> · <a href="experiments/upstream-remote-temporal-pair/paired-receipt.json">Eight original temporal hashes verified</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
+      <p><a href="PROGRESS.md">Full progress record</a> · <a href="FIRST85_QUALIFYING_RESULT.md">First own-training qualifying result</a> · <a href="experiments/upstream-first85-completion-audit/verification.json">Independent full-model audit</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="REMOTE_RECOVERY_PROGRESS.md">Remote recovery</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
     </section>'''
 
 
