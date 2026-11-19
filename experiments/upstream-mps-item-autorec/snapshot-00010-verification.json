@@ -1,0 +1,28 @@
+{
+  "state": "complete_independent_raw_snapshot_bindings_and_known_score",
+  "observed": "2026-11-19T23:45:57.194585+00:00",
+  "epoch": 10,
+  "known_component_rmse": 0.9952028585822777,
+  "counts": {
+    "probex": 1128164,
+    "qual": 2817131
+  },
+  "bindings": {
+    "experiments/upstream-mps-item-autorec/pair-00010.json": "24c0d1339c95a4980822e6b62b63a2ad9ff94b1b621931d007a17e2e69be4edf",
+    "experiments/upstream-mps-item-autorec/trainx-snapshot-00010.json": "70482d6e935a4e878fe9dce4af8dfe5cfc6280025584ff1b07b285a97b4a9dbb",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00010/model.pt": "fa05c41760f919227fd56e7bca065c5f325a597bc5a789c3b5eabb2910f5d7a3",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00010/prediction.npy": "5f8d542ad7b7923a46a32210a3c88c7f0bca4f110b809ee493839c142133edf0",
+    "experiments/upstream-mps-item-autorec/fulltrain-snapshot-00010.json": "b41a5362c74687082802f2b164b28d2b027ca46ef2f3bff83394b2ff0d6bef89",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00010/model.pt": "ace57727fdf05e3a3097a32fd3d76f2ce72f2cc025dfd2d4605ff2e95356e35a",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00010/prediction.npy": "9f10be23128bf7479bbb97fa3a9c0b13d9da0f37af7b04d7d11353732df53e43",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "scripts/verify_upstream_mps_item_autorec_snapshot.py": "c0fe52457a8c66590f5f4b925ea9461dfd1112f1d52b6c0e8ae109f1cb7908d4",
+    "experiments/upstream-mps-item-autorec/plan.json": "53a95fc2e8d49cabb4d2991b97d816b0a7c6b950079491bcee78ad2c7df4016a"
+  },
+  "actual_original_saved_query_replay_evidence_verified": true,
+  "independently_verified_csr_histories_bound": true,
+  "declared_full_budget_complete": false,
+  "qualifying_labels_read": false,
+  "qualifying_accuracy_claimed": false,
+  "scope": "Separate model/config/source/query hashes and actual saved-query replay evidence check, plus compensated known-only single-component score. This checker does not rerun inference or claim nonlinear/global/qualifying improvement. Original declared50/50 training continues."
+}

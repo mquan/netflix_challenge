@@ -12,6 +12,12 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The actual item-oriented epoch10 pair and saved-model query replays are now
+complete and independently checked. Standalone known component RMSE0.9952028586,
+versus1.0064540238 at5; neither is a global ensemble score. Both fixed5/10
+feature pairs are ready, while their unchanged neural test waits for full
+peak-memory admission. Raw50/50 fitting continues at epoch11.
+
 Storage headroom increased by an observed4.98GB after four inactive cache
 pairs passed complete independent byte comparison. Duplicate physical storage
 now uses hardlinks; every original path/value/permission/owner and manifest
