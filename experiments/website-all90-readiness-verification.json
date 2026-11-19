@@ -1,0 +1,36 @@
+{
+  "state": "verified_all90_readiness_publication",
+  "observed": "2026-11-19T17:38:45.931530+00:00",
+  "pages_commit": "cd08ec5",
+  "source_commit": "6635b85",
+  "checks": [
+    {
+      "path": "index.html",
+      "sha256": "77eac8b88aa201ff7b3c50eff939d0141b0a3551eeec4b0d44cc17cad6bec7f2",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "sha256": "77eac8b88aa201ff7b3c50eff939d0141b0a3551eeec4b0d44cc17cad6bec7f2",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "sha256": "e8a97cc0d1ec1793f1dac4ee8e011d1821859a18ea6ea3303231323642b7d7f3",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "LATENT90_SUPPORT_RESULT.md",
+      "sha256": "0cd7a623e393fade2c14ea6e007b0bf7d8d94e5afa3e7d82ddb6fedfce9a82e3",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-latent90-features/cache-column-verification.json",
+      "sha256": "d8b707eaec03166d4e940b06e38be8511df2a774e87d0dcd922450226eb6d22d",
+      "local_bytes_equal": true
+    }
+  ],
+  "all90_supports_and_development_cache_verified": true,
+  "new_full90_score_claimed": false,
+  "goal_achieved": false
+}
