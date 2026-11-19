@@ -1,0 +1,17 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "aex-128",
+  "original_command": "cargo build --release --bin aex-new && ./target/release/aex-new aex-128",
+  "native_source_modified": false,
+  "isolated_tree": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-aex-backfill/fresh",
+  "driver_sha256": "983403a417210b8689c06251b9c2fcb795d49e3db2ad2d2ee2a18434a9cadef2",
+  "code_sha256": {
+    "scripts/upstream_aex_backfill.py": "03e5ecaccd599536dbe7af24a6bc588d9ac6565347fa6089813a2c1becffa019",
+    "scripts/upstream_qualifying_backfill.py": "9bc3b01af9f67f81059af973ef1993eeb1136c3fc55bfe8e6880c3582c5b5cc8",
+    "scripts/upstream_cfnade48.py": "fddec1558a1bc16255885f9bf95a0c1ffd4d913f406ff3eec9c5f574622395e1",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a"
+  },
+  "preparation_plan_sha256": "ba6c384ee8198ad0b766fe88ffca46f6fd902a89e03d9d178d26bfb4c11ae4bf",
+  "qualifying_labels_read": false,
+  "scope": "Additional own complete original128-factor,20-epoch AEX job, both native phases. No smaller recipe or public predictions."
+}
