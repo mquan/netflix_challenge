@@ -28,6 +28,15 @@ projection. A separate completion checker must recheck those bindings and
 projection before the fixed all-ready batch enters nested blending. This queue
 is training preparation, not completed features or a new score.
 
-Current best remains NN103 development0.8594692564 and recovered qualifying
+At declaration the best was NN103 development0.8594692564 and recovered qualifying
 0.8609916544 /0.8619938614. Both groups must fall below0.85725; no success is
 claimed. The107-predictor plus50-RBM-context study is running independently.
+
+Observed2026-11-19 19:14 UTC: s3-dnn16t completed both7-epoch phases and
+passed the separate checker:19 native outputs,16 full finite query vectors,
+complete known projection and original training-disjointness/data bindings.
+Original s3-dnn32nm started at19:14:15 UTC; s3-nade12s remains serialized
+behind it. This is one of three complete models, not a completed batch or
+new blend/qualifying score. Evidence: experiments/upstream-split3-diversity/
+s3-dnn16t-{receipt,verification}.json. Current verified development best is
+0.8592720613; best qualifying remains0.8609266298 /0.8619141823.

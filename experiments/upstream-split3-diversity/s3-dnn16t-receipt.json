@@ -1,0 +1,59 @@
+{
+  "state": "complete_pending_independent_verification",
+  "job": "s3-dnn16t",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "6f94a4e2c19b24cda70184d709905aefac24fb6f785ca498b42fcca9a3b016fc",
+  "started": "2026-11-19T18:18:38.679355+00:00",
+  "finished": "2026-11-19T19:13:31.843596+00:00",
+  "command": [
+    "./target/release/fit",
+    "dnn",
+    "s3-dnn16t",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "D": "16",
+    "EPOCHS": "7",
+    "EPSAVE": "1",
+    "NMF": "192",
+    "TRANSPOSE": "1"
+  },
+  "epochs_per_phase": 7,
+  "both_full_epoch_traces": true,
+  "outputs": {
+    "preds_3/s3-dnn16t_ep03.probe_3.npy": "580354802061453034ef0a86b73ba01b8dde2df3470d64ad429f23feee6eb039",
+    "preds_3/s3-dnn16t_ep06.qual.npy": "e2fb2bc53bb6c5a574ab8b19e45cbc7312dc70c512c756436248dc300e67f61c",
+    "preds_3/s3-dnn16t_ep07.qual.npy": "cba57629ef46c1b33bce23083fac2d8f1d595d2ac5b24ea27a87ad09bb7cd90a",
+    "preds_3/s3-dnn16t.out": "e09bb3b56f018b2f695a5aebdb4252c37d3182d3da50edd088b3518300f2e5fd",
+    "preds_3/s3-dnn16t.train_3.npy": "a3ac5d5b731f33547b51d7f251f01900bc69c0b94740d3329b00c40a720a65c1",
+    "preds_3/s3-dnn16t_ep06.probe_3.npy": "850b34c63c4fd1fc9bec6713040c750e0e13e167b78579be41768efd0e6a964b",
+    "preds_3/s3-dnn16t_ep05.probe_3.npy": "eea03f3e60ff568f590dacb9e54b2ffa3d8b9075cf9622a43079c4e1574fdd00",
+    "preds_3/s3-dnn16t.probe_3.npy": "372a6afa2128c622e5d82ee8b7e2f9d1fff5582e5f480a79886b40b6458c99a4",
+    "preds_3/s3-dnn16t.qual.npy": "cba57629ef46c1b33bce23083fac2d8f1d595d2ac5b24ea27a87ad09bb7cd90a",
+    "preds_3/s3-dnn16t_ep01.qual.npy": "0043e45a5201b5303613eaf3ca59fcc1b2ba866dc9116d3ff9af96486cecb506",
+    "preds_3/s3-dnn16t_ep07.probe_3.npy": "372a6afa2128c622e5d82ee8b7e2f9d1fff5582e5f480a79886b40b6458c99a4",
+    "preds_3/s3-dnn16t_ep05.qual.npy": "a75eb002aff3149de3de776a466de1e84cc3b8e9d2da9c76abb99bbe2a77b064",
+    "preds_3/s3-dnn16t_ep04.qual.npy": "a8469e176f143db1e3f3a6142e2aa7980cf5711071830afab3cef4ab7bf22729",
+    "preds_3/s3-dnn16t.fulltrain.npy": "d52bb129a09de28061ffa28edea801ffc7596a39851ab9456170d9a38a000b44",
+    "preds_3/s3-dnn16t_ep02.probe_3.npy": "6adb84a0ff1635a6153cd60eca89ca2ee0169f75164f54d8ddc0b77bb1d5cbb4",
+    "preds_3/s3-dnn16t_ep02.qual.npy": "3d9c30b9203ce20f749c4e350b7824117b16c1cff37abc7794870cf24d93185a",
+    "preds_3/s3-dnn16t_ep03.qual.npy": "cd65a7ac660fdc2104b1a7e793e5a5dc275c4f07f4284c68bc0da009ed25d52c",
+    "preds_3/s3-dnn16t_ep01.probe_3.npy": "a7f329343240174dd5a2b9b41aa31b8da2fffebc9345d3f43318615c3a04aa8d",
+    "preds_3/s3-dnn16t_ep04.probe_3.npy": "9dadb7fc209fd600151220f0d02878cc342b3a034f75f1e84a3d6aa2ec9160bb"
+  },
+  "projected_pairs": [
+    {
+      "name": "s3-dnn16t",
+      "probex": "artifacts/upstream-split3-diversity/s3-dnn16t.probex.npy",
+      "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn16t.qual.npy",
+      "probex_sha256": "2b02722395583ff3dc25ff86b406ae7bb9860a015447122726daffa597a44852",
+      "qual_sha256": "cba57629ef46c1b33bce23083fac2d8f1d595d2ac5b24ea27a87ad09bb7cd90a"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}

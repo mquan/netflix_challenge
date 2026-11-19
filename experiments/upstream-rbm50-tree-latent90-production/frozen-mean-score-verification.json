@@ -1,0 +1,48 @@
+{
+  "state": "complete_frozen_mean_and_score_verification",
+  "observed": "2026-11-19T19:21:58.833120+00:00",
+  "adapter": "upstream_rbm50_tree_latent90_production",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.860877462609422,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8618605526405846,
+      "below_target": false
+    }
+  },
+  "fixed_float32_mean_bitwise_equal": true,
+  "saved_family_replay_receipts_verified": true,
+  "source_inputs_verified": 876,
+  "code_files_verified": 50,
+  "prediction_sha256": "41ce516f07d2d9483cc1c92424fb22db9cda10ecc09a24f0a7f8d194173ae040",
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "bindings": {
+    "experiments/upstream-rbm50-tree-latent90-production/plan.json": "13a8338f50fee05dc3e70afabdc1022cffc31c3230cc940421a38530801314c0",
+    "artifacts/upstream-rbm50-tree-latent90-production/tree/tree-2026.txt": "2ef1730074eb6e4a01ddf155a6855663bb14e638e74a9f809632e4baa60adbda",
+    "artifacts/upstream-rbm50-tree-latent90-production/tree/tree-7.txt": "96cbc2d70f188a4e1ff9e9a07779d0c395651727d69cad88fcd4c17a774ad666",
+    "artifacts/upstream-rbm50-tree-latent90-production/tree/qualifying.f32": "b519db460dbbb360ada7da1803f0dba776de307d7e0218a7e3f9d1d7bfc8823c",
+    "artifacts/upstream-rbm50-tree-latent90-production/tree/tree-13.txt": "4e1dfe4d53eb791869b6adaf692eb55baf857ce6c460d798626375c6cd75b0a9",
+    "experiments/upstream-rbm50-tree-latent90-production/tree.json": "1c4dfae44d16de51123231387f354ec07f3881f2dd9e0808c95546eede3496b9",
+    "experiments/upstream-rbm50-tree-latent90-production/tree-replay.json": "c242242db64244a4137f965b3d28e014e541f10dc26ba5c9fb462760624e29af",
+    "artifacts/upstream-rbm50-tree-latent90-production/nn/scaler.npz": "8875dcee631b7ecb345b2f40171adb39fa0c5d05d331ec1c6eaa31b6f1cff52e",
+    "artifacts/upstream-rbm50-tree-latent90-production/nn/nn-13.pt": "05c7fd45612db34c0e9ac89f58171c55b835fb989823751648fb22e54267d7f3",
+    "artifacts/upstream-rbm50-tree-latent90-production/nn/nn-2026.pt": "f0118a946e9a4bf1215a1b148c5a5741bb196c2b820895686fb20270c2a5017d",
+    "artifacts/upstream-rbm50-tree-latent90-production/nn/qualifying.f32": "5bcaa2c7584ae6e7e4c7fb9a6406137005a101f2d1595d635c201ce2fd2483f3",
+    "artifacts/upstream-rbm50-tree-latent90-production/nn/nn-7.pt": "f1a081d3a23771ee8824254040226751c614570254818b052504ca0a2d5d2d21",
+    "experiments/upstream-rbm50-tree-latent90-production/nn.json": "6f07cd7f5b84bfbe2b081917843d0574aafa6796d048d1da09d95d11eed85f51",
+    "experiments/upstream-rbm50-tree-latent90-production/nn-replay.json": "23e928a170f5f7ecee6a23f5ff1a4fadba1be055a8c95721ec282f9003f51e61",
+    "scripts/verify_upstream_frozen_mean.py": "f6d8d6ff610917be62977679de4989c8c63dd70f3d8e25eb39c1d694f85bfa18",
+    "experiments/upstream-rbm50-tree-latent90-production/report.json": "464695252645bf70dc54cd10f353f9f1aaba1a55d2bc5b543cbdc10877750edc",
+    "experiments/upstream-rbm50-tree-latent90-production/qualifying-final.f32": "41ce516f07d2d9483cc1c92424fb22db9cda10ecc09a24f0a7f8d194173ae040",
+    "experiments/upstream-rbm50-tree-latent90-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "experiments/upstream-rbm50-tree-latent90-production/recovered-audit/report.json": "5e67802004cc2e97b1d3522f9f97849b7f46c9976e7087518d8eb04937549c60"
+  },
+  "both_groups_below_target": false,
+  "model_fitting_performed": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Separate frozen-mean and compensated-score recheck. Actual saved-family replay receipts and model hashes verified; this check does not rerun model inference. Adaptive community-recovered groups, not official or untouched Netflix Test."
+}

@@ -1,0 +1,51 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "tsvdx4p-1000lm",
+  "command": "cargo build --release --bin tsvdx4p-new && ./target/release/tsvdx4p-new tsvdx4p-1000lm",
+  "proof_sha256": "82c68694bc3bb84dda66089c44a9fba7b81e0779db9811585f69b506519997aa",
+  "storage": {
+    "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+    "generated": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d",
+      "src/tsvdx4p.rs": "b4e69ada685f64ed57fa3b9199524c95f8537f8a5cc011efa5190985212807e6",
+      "src/tsvdx4p_original.rs": "704a2e81e6baa969cf8a50e8e53583b5cb73891bfd51d698dabe305b9a3cb0c2",
+      "src/lib.rs": "00064c4f5cd1d70ccc79d8d43ec50d0cea2ccd5cf6429fdd69076f115191744d",
+      "src/bin/tsvdx4p-storage-parity.rs": "83273b4b7257e012393a12443239fd024d7fc4b7b8e660af3ed14898de231f0d",
+      "Cargo.toml": "d9fa51dd2d57db00c4fb0532a672d9209d9430e5b0b0353d8f71a45fdf7d9087",
+      "data/qual_ratings/qual_ratings.csv.gz": "b54d30be5426366c38db447f4f7b169c23eba6450c9e06c3bfcbb6e4f30411cc"
+    },
+    "patch_sha256": "67476c2cd63121b81ce51849005bd20bbed0c0e8246e574a0d50e9736f45d555",
+    "inherited_serial_source": {
+      "src/tx.rs": "c737b301db9aa0eb29592ff2a5aecc2cfdce19d40db231b5cbb27391fb0a87a2",
+      "src/tx_original.rs": "0ab684e80832a81dbcbf4648d5521f7afdea1d12eae550949538060c2d414a1e",
+      "src/tx_storage.rs": "a6ebb81b0c831d78edbeb76a92a524bfd7f8c4d54c3fdcc8d445d9a19a0e623d"
+    },
+    "serial_prepare_sha256": "155416feec6a290f005d5b9fb043dc53a2f4a32095fa063ceeaefdf8e441a3fb",
+    "serial_proof_sha256": "56997530516d29c7c6e3f0a7c1507e568e579df3bcf1ac4445aac77071dd5b7b",
+    "support_sha256": "16d6d37d8470fe18f3d546fcaeda19fd93c17c0eb45a08b4906303b08790cf65",
+    "script_sha256": "909c043f8f33305fdd9fb9be40eb5821103115c2ff0473e3c8169456894f9bc8",
+    "scope": "Storage candidate only. Published low_memory=true, factors/epochs and logical chunk configurations preserved in parity cases. No full-data training or resource-feasibility claim."
+  },
+  "script_sha256": "e823fd46160359d9f320c9060055189cd3c3b3576568a6160e19b4589f8d196f",
+  "binary_sha256": "e42c1b736e692c2fe35f84eff91b4da36e1c1e8f09e77e768c5c95caa40d7f55",
+  "started": "2026-11-19T06:36:09.413609+00:00",
+  "finished": "2026-11-19T19:21:35.969631+00:00",
+  "peak_rss_bytes": 10901635072,
+  "factors": 1000,
+  "epochs_per_phase": 20,
+  "logical_chunks": 16,
+  "physical_workers": 4,
+  "qualifying_outcomes_zero": true,
+  "outputs": {
+    "preds_new/tsvdx4p-1000lm.fulltrain.npy": "535e72132cc01db7f2b0e3a3b155f19d2cf31b2639d0de104b90fc6516bc0957",
+    "preds_new/tsvdx4p-1000lm.ifeat.fulltrain.npy": "5d7a302a8cddeb5f12c42f73d8583ce69e656a5c4810f65f82c43dbce1920285",
+    "preds_new/tsvdx4p-1000lm.ifeat.trainx.npy": "8548bdb25d2b85d93edbdb7f2a36d225e063cbe8ea80527d1ca857613f92364a",
+    "preds_new/tsvdx4p-1000lm.out": "be7c49b116043387e287d896a053a042df54cd36a4641a8a6a285433e0ad8fc3",
+    "preds_new/tsvdx4p-1000lm.probex.npy": "ae95526338d09397825b637dcb1492f34002ca541fa910506940eea58fa1fd9d",
+    "preds_new/tsvdx4p-1000lm.qual.npy": "dc83bef35d37f4a428cf59a5a7069db88fd043013c856e9dd479cc37427e2c9b",
+    "preds_new/tsvdx4p-1000lm.trainx.npy": "5012687d93d80f64de7ecdbdc4203f3ee4c032e09be56e57fb9a12c5dc87889a"
+  },
+  "provenance": "Original published 1000-factor parallel preset, both20-epoch phases, original16 logical chunks; mapped user matrices disclosed and numerically verified. Public low_memory remains true; no daily buffers, rank reduction, pretrained prediction inputs or qualifying outcome fitting."
+}

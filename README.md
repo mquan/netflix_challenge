@@ -20,25 +20,23 @@ All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
 
-**The new standalone own107+50 NN qualifying audit still misses the10% target:**
-**0.8609266298 /0.8619141823** on the two recovered source groups. The worse group
-improves **9.5103%** over0.9525, leaving0.0046642 RMSE to the strict0.85725 target.
-This candidate was selected from known-ProbeX development and recorded before
-either new qualifying outcome. Actual full-fit saved-model replay, exact frozen
-vector, canonical labels, full group counts and independent compensated scoring
-verify. The separately predeclared tree91/NN103 half mean also improves, to
-0.8610694977 /0.8620220770. These are adaptive recovered audits, not official Test.
-No qualifying outcomes entered fitting or candidate/weight selection.
+**The new expanded-tree/all90 GPU NN qualifying audit still misses the10% target:**
+**0.8608774626 /0.8618605526** on the two recovered source groups. The worse group
+improves **9.5160%** over0.9525, leaving0.0046106 RMSE to the strict0.85725 target.
+The fixed50/50 choice and tree729/706/868 plus NN7/8/7 budgets came solely from
+known-ProbeX development before fitting and new qualifying outcomes. Both actual
+full-model replays, the frozen float32 mean, canonical full group counts and
+separate compensated scoring pass. These are adaptive recovered audits, not
+official/untouched Test. No qualifying outcomes enter fitting or selection.
 
-The selected mean’s full-known GPU neural fit and saved-model replay passed;
-the CPU tree refit is active before the frozen qualifying audit. Both original latent models are complete20/20 and all90 support columns
-are independently verified. The larger hidden128/rank32 GPU study is now complete;
-its selected two-family full-known refit is active. The rank1000 model has logged its last epoch; complete output proof
-is still required before whole110 assembly. CF96 continues toward95/95, and
-the next original split3 DNN is training.
-See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md) for the latest
-result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
-earlier audit. The goal remains active.
+All three original native additions are now complete, including rank1000 with
+both20-epoch phases and separate source/storage/output checks. Whole110 GPU
+fitting is active. The fixed59 captured-snapshot ridge batch and own166/all90
+cache are independently checked; its393-input GPU model is queued. The first
+split3 DNN completed7/7; the no-MF DNN and CF96 phases remain active.
+See [LATENT90_MPS_QUALIFYING_RESULT.md](LATENT90_MPS_QUALIFYING_RESULT.md) for the
+latest audit, and [WARM166_MPS_PLAN.md](WARM166_MPS_PLAN.md) for the next study.
+The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
 [LATENT90_MPS_RESULT.md](LATENT90_MPS_RESULT.md) for the verified

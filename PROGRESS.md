@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T19:06:17.667549+00:00
+timestamp: 2026-11-19T19:29:22.232957+00:00
 best_score: 0.8592720612630157
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -12,23 +12,23 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
-Current work: the selected full-known GPU NN completed7/8/7 and passed actual
-saved-model inference replay on all2,817,131 qualifying rows. Full tree worker
-30398 is fitting729/706/868; its first seed completed at19:03 UTC. The fixed
-mean is not frozen or scored until tree fitting and replay pass.
+New independently verified own qualifying best: **0.8608774626094220 /
+0.8618605526405846**, from the selected expanded-tree/all90 GPU NN fixed mean.
+Both actual full-family inference replays, exact float32 mean, canonical counts
+and separate compensated scoring pass. The worse group improves9.5159525%;
+both miss0.85725, with0.0046105526 still needed on the worse group.
+See [LATENT90_MPS_QUALIFYING_RESULT.md](LATENT90_MPS_QUALIFYING_RESULT.md).
 
-The next fixed batch adds all59 unused completed snapshot pairs from our
-immutable CF48/96 packages. It is queued behind the existing refit, followed by
-an own166/all90 MPS study with393 inputs. The small real fit/save/load/replay
-check passed; all full-row diagnostic and model results remain pending. These
-additional own snapshot features extend the released raw selection, and do not
-claim CF96 full95 completion. See [WARM59_SNAPSHOT_PLAN.md](WARM59_SNAPSHOT_PLAN.md)
-and [WARM166_MPS_PLAN.md](WARM166_MPS_PLAN.md).
+All original rank1000 outputs now have a separate20/20 completion proof. Its
+three-native-column batch improves ridge0.8625801964 to0.8625390603, and the
+whole110 GPU study is fitting. The fixed59 captured-snapshot batch separately
+improves ridge to0.8624919426, all five folds improve and independent replay
+passes. Own166/all90 cache columns are checked; its393-input GPU controller is
+queued behind whole110. These ridge/cache milestones are not new nonlinear
+or qualifying scores. Original split3 DNN16t completed7/7 and its separate
+projection check passed; DNN32nm is training. Both CF96 phases continue.
 
-The paired all90 bank is now built and independently checked on both full
-queries. Native CF96 saved epochs44/42 of95; split3 transposed DNN is in its
-second phase; rank1000's full-output completion proof remains pending. Current
-qualifying best remains0.8609266298 /0.8619141823, below neither strict target.
+Earlier observations below are retained as history:
 
 New verified development best: **0.8592720612630157**, the predeclared fixed
 half mean of the expanded107/50 tree and larger107/all90 GPU NN. Both families'

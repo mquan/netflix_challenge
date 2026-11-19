@@ -1,0 +1,35 @@
+{
+  "ready_unused": [
+    {
+      "name": "rbm50lat",
+      "paired_files": {
+        "probex": "artifacts/upstream-latent90-local/source/preds_new/rbm50lat.probex.npy",
+        "qual": "artifacts/upstream-latent90-local/source/preds_new/rbm50lat.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "tx20lat",
+      "paired_files": {
+        "probex": "artifacts/upstream-latent90-local/source/preds_new/tx20lat.probex.npy",
+        "qual": "artifacts/upstream-latent90-local/source/preds_new/tx20lat.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "tsvdx4p-1000lm",
+      "paired_files": {
+        "probex": "artifacts/upstream-parallel-mapped/source/preds_new/tsvdx4p-1000lm.probex.npy",
+        "qual": "artifacts/upstream-parallel-mapped/source/preds_new/tsvdx4p-1000lm.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "rbm50lat",
+    "tx20lat",
+    "tsvdx4p-1000lm"
+  ],
+  "rule": "Fixed control/all-three addition from complete original20/20 native runs. Original user folds and ridge penalty. Native side outputs extend the released raw-column schema; no subset search or qualifying outcomes.",
+  "qualifying_labels_read": false
+}

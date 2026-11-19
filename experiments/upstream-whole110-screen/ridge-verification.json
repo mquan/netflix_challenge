@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "f08675b25809de77f8ae3287b2d349b5f78f6a0dff478a9f9a002ad44a0fce46",
+  "plan_sha256": "36d62e745cdb84c479314c01eb158781f4b24d3da1d42a6af496cd7253abb034",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952329,
+      "max_prediction_error": 5.289990667733946e-12,
+      "prediction_sha256": "1e67bfced63207eca5510bcc80c2dac3f00ee077299d08c641570cf278b512c7"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625390602644643,
+      "max_prediction_error": 5.6736837450444e-12,
+      "prediction_sha256": "f99e6a5567e44633d0c2133620551f94403e1ad49f3dbb8fe8389564dcc082c3"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed all-three complete native addition. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "0212edca9695355e311789fcf52e5c94e5960c20f0bb099763fce93b4b6bd5b8"
+}
