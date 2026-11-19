@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T16:36:30.054869+00:00",
-  "display_time": "2026-11-19 16:36 UTC",
+  "observed": "2026-11-19T16:54:57.918725+00:00",
+  "display_time": "2026-11-19 16:54 UTC",
   "best_development_rmse": 0.8594554093063749,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -15,11 +15,11 @@
     },
     {
       "work": "Own107 plus50 standalone qualifying refit",
-      "state": "NN-only choice and actual per-seed median budgets[14, 14, 13] frozen before new qualifying outcomes. Full-fit controller6028 queues behind the active tree fit. Paired bank separately verified. No new qualifying result."
+      "state": "Complete: actual full-known three-seed NN budgets14/14/13, saved-model inference replay and separate frozen-vector/canonical-score checks pass. New own qualifying best0.8609266298 /0.8619141823;9.5103% on worse group, target still missed."
     },
     {
       "work": "Expanded RBM context tree comparison",
-      "state": "Actual five-fold tree fitting has started on the107+50 cache. Same original settings; exact replay-verified stronger NN reused with its own source schema. No result yet."
+      "state": "First complete fold checkpoint preserved (0.8593019 versus preceding matching tree0.8598228). Original controller9504 resumes remaining folds after the neural audit and stable memory; incomplete fold1 was archived. No full tree result yet."
     },
     {
       "work": "Next original split3 diversity batch",
@@ -43,7 +43,7 @@
     },
     {
       "work": "Own103 full-known production",
-      "state": "Complete. Fresh NN103 budgets20/22/17; actual saved-model replay passed. Fixed mean0.8610694977 /0.8620220770 independently verifies. NN-only candidate, predeclared before either qualifying result, is stronger at0.8609916544 /0.8619938614 and becomes the new qualifying best. Both remain above0.85725."
+      "state": "Preceding qualifying best0.8609916544 /0.8619938614, now improved by the complete own107+50 standalone NN audit. Original20/22/17 saved-model replay and separate frozen-vector check remain valid historical evidence."
     },
     {
       "work": "Split3 extension diagnostic",
@@ -51,7 +51,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "Original RBM50 complete20/20 with separate every-row support checks. Original Tx20lat native7119 is training its first20-epoch phase, latest completed epoch4. Its remaining40 supports are not ready; full90 completion is not claimed."
+      "state": "Original RBM50 complete20/20 and separately checked. Tx20lat native7119 is active in its first20-epoch phase, latest completed epoch11. Its40 supports are not yet ready."
     },
     {
       "work": "First qualifying blend",
@@ -79,7 +79,7 @@
     },
     {
       "work": "Original 1,000-factor model",
-      "state": "Native73629 remains active. First20-epoch phase complete; second phase is working through epoch12/20. Original rank1000, logical partitioning and both full20-epoch budgets retained. No whole-model completion yet."
+      "state": "Native73629 remains active. First20-epoch phase complete; second phase latest completed13/20. Full rank1000 and logical partitioning retained."
     },
     {
       "work": "Temporal150 local fallback",
@@ -87,7 +87,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Both original native phases remain active under92864/92865. Latest saved epochs38/36 of95; unchanged320-hidden/96-rank capacity and verified checkpoint restore lineage."
+      "state": "Both original native phases remain active under92864/92865. Latest saved epochs39/36 of95; unchanged320-hidden/96-rank capacity and verified restore lineage."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -143,19 +143,19 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
+  "qualifying_verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a",
   "qualifying_groups": {
     "quiz": {
       "rows": 1408789,
-      "rmse": 0.8609916544142975,
+      "rmse": 0.8609266297566702,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.607175389575072
+      "improvement_percent_over_cinematch": 9.614002125283971
     },
     "test": {
       "rows": 1408342,
-      "rmse": 0.8619938614020105,
+      "rmse": 0.8619141823430468,
       "below_target": false,
-      "improvement_percent_over_cinematch": 9.501956808187872
+      "improvement_percent_over_cinematch": 9.510322063722121
     }
   },
   "goal_achieved": false,
@@ -261,7 +261,7 @@
       "state": "complete_both_frozen_audits_verified"
     },
     "cf96_saved_epochs": {
-      "trainx": 38,
+      "trainx": 39,
       "fulltrain": 36
     },
     "tsvdx5_60": "complete_independently_checked_23_23",
@@ -278,6 +278,10 @@
       "pid": 7119,
       "state": "original_first_phase_training",
       "latest_completed_epoch": 4
+    },
+    "own107_rbm50_production": {
+      "state": "complete_both_groups_independently_verified_miss",
+      "verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a"
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
@@ -285,21 +289,22 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8609916544142975,
+      "rmse": 0.8609266297566702,
       "below_target": false
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8619938614020105,
+      "rmse": 0.8619141823430468,
       "below_target": false
     }
   },
-  "latest_qualifying_verification_sha256": "68d56bbba200c6cc4095409bac172b3ed7e130c64a67d1f0f8afe285440c8d78",
+  "latest_qualifying_verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a",
   "best_development_arm": "own107 plus50 original RBM context standalone NN",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,
   "own103_nn_only_candidate_predeclared": true,
   "own103_full_refit_complete": true,
-  "own103_nn_qualifying_best": true
+  "own103_nn_qualifying_best": false,
+  "own107_rbm50_nn_qualifying_best": true
 }

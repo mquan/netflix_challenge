@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T16:36:30.054869+00:00
+timestamp: 2026-11-19T16:56:23.232499+00:00
 best_score: 0.8594554093063749
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,13 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New independently verified own qualifying best: **0.8609266297566702 /
+0.8619141823430468**, from the predeclared standalone own107+50 NN. Full14/14/13
+fit, actual saved-model inference replay, frozen-vector identity and separate
+canonical group scoring passed. Worse group improves9.5103221%; both still miss
+0.85725. See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md).
+The first new tree fold is preserved; remaining folds resume after stable memory.
 
 Latest native observation: Tx20lat is training under7119 (first phase4/20);
 CF96 saved states38/36 of95; rank1000 second phase working through12/20.

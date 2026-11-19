@@ -18,9 +18,9 @@ rows. The fixed half mean with tree91 is higher at0.8594773263. All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
 
-**The new standalone NN103 qualifying audit still misses the10% target:**
-**0.8609916544 /0.8619938614** on the two recovered source groups. The worse group
-improves **9.5020%** over0.9525, leaving0.0047439 RMSE to the strict0.85725 target.
+**The new standalone own107+50 NN qualifying audit still misses the10% target:**
+**0.8609266298 /0.8619141823** on the two recovered source groups. The worse group
+improves **9.5103%** over0.9525, leaving0.0046642 RMSE to the strict0.85725 target.
 This candidate was selected from known-ProbeX development and recorded before
 either new qualifying outcome. Actual full-fit saved-model replay, exact frozen
 vector, canonical labels, full group counts and independent compensated scoring
@@ -28,11 +28,11 @@ verify. The separately predeclared tree91/NN103 half mean also improves, to
 0.8610694977 /0.8620220770. These are adaptive recovered audits, not official Test.
 No qualifying outcomes entered fitting or candidate/weight selection.
 
-The new107+50 tree comparison is fitting. Original RBM50 completed20/20 and
+The new107+50 tree comparison has one complete fold and is resuming after stable memory. Original RBM50 completed20/20 and
 passed separate every-row support verification; Tx20lat is now training. The1,000-factor temporal model and both CF96 phases remain active
-(latest saved epochs38/36 of95). Three original split3 recipes are queued after
+(latest saved epochs39/36 of95). Three original split3 recipes are queued after
 the latent lane. Own105 completed without improving the previous best.
-See [CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md) for the latest
+See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.
 
