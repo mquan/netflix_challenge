@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T04:03:30Z
+timestamp: 2026-11-19T04:14:00Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -26,11 +26,11 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | Work | Verified state at this update |
 | --- | --- |
 | First paired production bank | **81/85**; only four temporal columns missing |
-| Temporal150 original fulltrain/qual phase | **19/25 epochs**; requires full completion and paired receipt |
-| CFNADE-96 original phases | **24/95 ProbeX**, **23/95 qualifying** |
-| CFNADE-48 original phases | **21/95 ProbeX**, **20/95 qualifying** |
-| AEX128 original independent job | First phase **20/20 complete**; qualifying **2/20** |
-| AEX16 original primary job | First phase **20/20 complete**; qualifying at least **6/20** |
+| Temporal150 original fulltrain/qual phase | **20/25 epochs**; all20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
+| CFNADE-96 original phases | **25/95 ProbeX**, **24/95 qualifying** |
+| CFNADE-48 original phases | **22/95 ProbeX**, **21/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; qualifying **4/20** |
+| AEX16 original primary job | First phase **20/20 complete**; qualifying **18/20** |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX16; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
@@ -61,7 +61,7 @@ Current evidence and plans:
 - `experiments/upstream-cf12-production/queue-status.json`: current qualifying queue state.
 - `experiments/upstream-source-extension/status.json`: native-source readiness and fitting-lock state.
 - `experiments/upstream-import-backfill/independent-verification.json`: all15 imported and19 retained native receipts/output hashes verified.
-- `experiments/upstream-temporal-phase/through-epoch16-native-hash-comparison.json`: first16 local qualifying snapshots match our own earlier remote native training hashes exactly; full25-epoch completion is still required.
+- `experiments/upstream-temporal-phase/through-epoch20-native-hash-comparison.json`: first20 local qualifying snapshots match our own earlier remote native training hashes exactly, with finite values and correct row counts/dtype; full25-epoch completion is still required.
 
 ## Historical public-bank result (2026-11-16)
 
