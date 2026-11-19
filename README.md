@@ -12,10 +12,10 @@ not the complete winning ensemble.
 ## Current work: our own trained predictions
 
 As of November19,2026 Pacific, our best independently verified development RMSE
-is **0.8593661639**, the fixed half mean of our expanded tree and context NN
-on107 own raw predictors plus50 original learned RBM user supports. All15 saved
-trees replay, alongside the reused15 neural model replays, across five nested
-user folds on1,128,164 known-ProbeX rows. Independent scoring confirms the gain.
+is **0.8592720613**, the fixed half mean of our expanded107/50 tree and larger
+107/all90 GPU context NN. Both families' actual saved-model replays passed,
+all ten originating fold receipts/models were rehashed, and a separate stored
+mean and compensated score check agrees over1,128,164 known-ProbeX rows.
 All numerical
 prediction features are freshly trained by us; public source code is reused,
 and downloaded pretrained prediction features are excluded.
@@ -32,8 +32,8 @@ No qualifying outcomes entered fitting or candidate/weight selection.
 
 The new tree/NN mean awaits its full-known tree refit and frozen qualifying
 audit. Both original latent models are complete20/20 and all90 support columns
-are independently verified. A larger hidden128/rank32 neural study is fitting
-on the GPU. The rank1000 model has logged its last epoch; complete output proof
+are independently verified. The larger hidden128/rank32 GPU study is now complete;
+its selected two-family full-known refit is queued. The rank1000 model has logged its last epoch; complete output proof
 is still required before whole110 assembly. CF96 continues toward95/95, and
 the next original split3 DNN is training.
 See [RBM50_QUALIFYING_RESULT.md](RBM50_QUALIFYING_RESULT.md) for the latest
@@ -41,7 +41,7 @@ result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
 earlier audit. The goal remains active.
 
 See [PROGRESS.md](PROGRESS.md) for the recorded status and
-[RBM50_TREE_RESULT.md](RBM50_TREE_RESULT.md) for the verified
+[LATENT90_MPS_RESULT.md](LATENT90_MPS_RESULT.md) for the verified
 full development result. This is adaptive known-ProbeX development, not an
 official Netflix or untouched Test score. The earlier public-bank result below
 is separate from the current reproduction goal.

@@ -1,0 +1,23 @@
+{
+  "created": "2026-11-19T18:45:03.880783+00:00",
+  "development_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
+  "development_rmse": 0.8592720612630157,
+  "iterations": {
+    "tree": [
+      729,
+      706,
+      868
+    ],
+    "nn": [
+      7,
+      8,
+      7
+    ]
+  },
+  "weights": {
+    "tree": 0.5,
+    "nn": 0.5
+  },
+  "qualifying_labels_read": false,
+  "rule": "Both family fits and actual replays, fixed half mean, freeze, recovered audit and separate frozen-mean scoring."
+}

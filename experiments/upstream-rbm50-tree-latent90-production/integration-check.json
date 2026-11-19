@@ -1,0 +1,14 @@
+{
+  "state": "complete_small_heterogeneous_family_fit_and_replay_check",
+  "fixture_rows": 32,
+  "feature_widths": {
+    "tree": 294,
+    "nn": 334
+  },
+  "epochs_or_rounds_per_seed": 1,
+  "actual_saved_models_replayed_both_families": true,
+  "nn_backend": "torch_mps_float32",
+  "separate_fresh_family_processes": true,
+  "production_accuracy_evidence": false,
+  "limitation": "Combined single-process fixture hit duplicate OpenMP runtime initialization; real controller and successful check isolate family fitting/replay in separate fresh processes."
+}
