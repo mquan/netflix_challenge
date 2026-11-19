@@ -1,17 +1,29 @@
 {
-  "observed": "2026-11-19T21:10:36.889929+00:00",
-  "display_time": "2026-11-19 21:10 UTC",
+  "observed": "2026-11-19T21:49:03.367453+00:00",
+  "display_time": "2026-11-19 21:49 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
+  "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
     {
+      "work": "Compiler cache disk-headroom recovery",
+      "state": "Retired2.627GB of rebuildable .rmeta/.rlib/.o files only in inactive target roots. No open handles, no compiler processes or experiment JSON references; running binary hashes unchanged. All datasets, prediction features, model weights/checkpoints and active target roots preserved. Raw training resumed."
+    },
+    {
+      "work": "Own epoch20 user64 /218-support study",
+      "state": "Complete negative study: NN0.8596726463, fixed expanded-tree mean0.8594486747, above0.8592309820. All five folds,15 actual saved-model replays and separate exact mean/compensated scoring pass. Third saved-encoder pass, independent history/covariance and every-user context checks remain valid; no qualifying refit."
+    },
+    {
+      "work": "Item-oriented raw autoencoder feasibility",
+      "state": "Bounded-memory v2 complete:123408701 parameters; all four CPU/MPS actual saved-model replays pass. MPS steps0.0779124 /0.1493196s for item batches8/32, speed ratios3.2071 /2.4939x CPU. Synthetic timing only. Original GPU-cap failure preserved. Full-data transpose/trainer implementation is next, planned after current raw50/50 for disk headroom; real-data item-oriented training is not running."
+    },
+    {
       "work": "Item154 full known-selected qualifying refit",
-      "state": "Queued with independent development0.8592309820 and median NN7/7/8 epochs. Stream the exact own64 item components, retain the original full tree and freeze the fixed half mean before a separate canonical-label audit. No new qualifying result claimed."
+      "state": "Complete: actual new full NN7/7/8 replay, original full tree reuse, exact frozen half mean and separate canonical complete-group compensated scores0.8607516602 /0.8617378857 pass. Both preceding groups improve; worse-group9.5288309%, target still missed."
     },
     {
       "work": "Own fixed consensus",
@@ -23,11 +35,11 @@
     },
     {
       "work": "Own64 item-context /154-support study",
-      "state": "Complete: NN0.8593837349, expanded-tree fixed mean0.8592309820. All15 saved-model replays and separate mean/full-known scoring pass. Recovery archived the incomplete final fold, kept the first four receipts unchanged and used the identical frozen model recipe. New development best; no new qualifying score."
+      "state": "Complete: NN0.8593837349, expanded-tree fixed mean0.8592309820. All15 saved-model replays and separate mean/full-known scoring pass. Recovery archived the incomplete final fold, kept the first four receipts unchanged and used the identical frozen model recipe. New development best; no new qualifying score. Full qualifying audit now independently verified0.8607516602 /0.8617378857."
     },
     {
       "work": "Own real-data raw GPU autoencoder",
-      "state": "Declared50/50 training continues. Snapshot5/10 pairs pass actual saved-model inference replay on every query row and separate source/model checks. Known-only raw component scores0.9332148095 /0.9321417324. The fixed addition ridge improves0.8625801964 to0.8625774187, but its full nonlinear mean0.8592745245 is higher than the record. No qualifying gain. Training resumed after unused duplicate qualifying matrices were retired; actual source values and every declared snapshot model remain preserved."
+      "state": "Both fixed snapshot20 phases and actual full saved-query replays complete. Known-only raw component0.9333162065 is not an ensemble score. Original50/50 trajectory continues. Snapshot20 encoder supplied the separately verified64-user-context study; no epoch/rank selection used these diagnostic scores."
     },
     {
       "work": "Larger own166 hidden512/rank64 control",
@@ -191,7 +203,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "da4ae7f9b01022a1817e3c94f159546634004cd491a6e647ab063237749731b5",
+  "qualifying_verification_sha256": "394d5a7aab36979b17dca570194859aab12c87937f13214303215cbc6ee3d309",
   "qualifying_groups": {
     "quiz": {
       "rows": 1408789,
@@ -368,14 +380,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8608202877523957
+      "rmse": 0.8607516601651759
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8618006321174798
+      "rmse": 0.8617378856802073
     }
   },
-  "latest_qualifying_verification_sha256": "da4ae7f9b01022a1817e3c94f159546634004cd491a6e647ab063237749731b5",
+  "latest_qualifying_verification_sha256": "394d5a7aab36979b17dca570194859aab12c87937f13214303215cbc6ee3d309",
   "best_development_arm": "own107/50 tree plus own107/all90 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -392,7 +404,8 @@
     "experiments/upstream-rbm50-tree/tree-replay.json",
     "experiments/upstream-item154-mps-context/nn-replay.json"
   ],
-  "development_narrative": "The predeclared fixed half mean combines the expanded107/50 tree with our107/154 neural model, adding64 unsupervised item components from our freshly trained native factors. It improves the separately verified0.8592433 consensus. The item study recovered its interrupted final fold under the identical frozen recipe, preserving the first four fold receipts and original partial artifacts. All15 neural model replays passed. New qualifying results remain pending.",
-  "latest_qualifying_verification_path": "experiments/upstream-autorec-consensus-stream-production/independent-verification.json",
-  "qualifying_narrative": "The known-selected fixed consensus improves both preceding groups0.8608775 /0.8618606. It reuses the actual replayed full tree and all90 NN, adds a full own109 NN with known-fold median7/9/8 epochs, and preserves the exact development rounding and fixed equal means. The new full model actually replayed every query row. The final vector was frozen before canonical-label access; separate model/source checks and complete-group compensated scores agree. The newer item154 development candidate has a separate full-fit queue and no qualifying score yet."
+  "development_narrative": "The predeclared fixed half mean combines the expanded107/50 tree with our107/154 neural model, adding64 unsupervised item components from our freshly trained native factors. It improves the separately verified0.8592433 consensus. The item study recovered its interrupted final fold under the identical frozen recipe, preserving the first four fold receipts and original partial artifacts. All15 neural model replays passed. Its full known-selected qualifying audit is now independently complete. The later user218 neural extension scored0.8594487 and is not promoted.",
+  "latest_qualifying_verification_path": "experiments/upstream-item154-stream-production/independent-verification.json",
+  "qualifying_narrative": "The known-selected fixed tree/item154 NN half mean improves both preceding consensus groups0.8608203 /0.8618006. It reuses the original actual replayed full tree729/706/868 and fits the new398-input NN with known-fold median7/7/8 epochs. Actual saved-model reload and every qualifying-row replay pass. The exact float32 half mean was frozen before canonical-label access; separate source/model and compensated complete-group scoring agree. The own epoch20 user-context neural extension completed without improving development, so it receives no qualifying refit.",
+  "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703"
 }

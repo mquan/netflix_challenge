@@ -1,5 +1,15 @@
 # Own epoch20 user context: fixed nonlinear study
 
+Completed negative result: NN **0.8596726463010601**; the predeclared expanded
+tree/NN half mean is **0.8594486747386042**, higher than0.8592309819864167.
+All five folds,15 actual saved-model replays and separate stored-mean/canonical
+known-label scoring pass. The original independently verified user projection
+is retained, but this recipe is not promoted and receives no qualifying refit.
+Evidence: experiments/upstream-rbm50-tree-user218-mps/{verification,
+independent-mean-check}.json.
+
+The following is the original plan, retained as history:
+
 The verified development best is0.8592309819864167. The completed item154
 qualifying audit independently scores0.8607516601651759 /0.8617378856802073:
 9.5288309% improvement on the worse group, still missing the strict0.85725

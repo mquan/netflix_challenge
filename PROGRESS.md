@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T21:11:34.229418+00:00
+timestamp: 2026-11-19T21:33:55.306209+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,25 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Latest independently verified qualifying result: **0.8607516601651759 /
+0.8617378856802073**, from the known-selected tree/item154 NN half mean. Both
+preceding consensus groups improve. Worse-group improvement **9.5288309%**;
+remaining strict-target gap0.0044878857 RMSE. Actual new NN7/7/8 full replay,
+original full-tree replay reuse, frozen vector and separate canonical full-group
+compensated scoring pass. Development best remains0.8592309820.
+See [ITEM154_QUALIFYING_RESULT.md](ITEM154_QUALIFYING_RESULT.md).
+
+The raw epoch20 pair is complete; original50/50 training continues. A separately
+verified64-component user table from its fixed trainx encoder matches on all
+480189 rows, including a third actual saved-encoder pass and independent CSR/
+covariance checks. The462-input user218 NN study is fitting. A separate synthetic
+full-user-width raw-model benchmark is queued after its original bounded GPU
+allocation failure; no real-data training or accuracy is claimed for that model.
+See [USER218_MPS_PLAN.md](USER218_MPS_PLAN.md) and
+[ITEM_AUTOREC_FEASIBILITY.md](ITEM_AUTOREC_FEASIBILITY.md).
+
+Earlier observations below are retained as history.
 
 New independently verified qualifying result: **0.8608202877523957 /
 0.8618006321174798**, the known-selected own fixed consensus. Both source groups
