@@ -1,0 +1,85 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 64,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000,
+    "architecture": "context-weighted-residual-cf12-v1",
+    "context_rank": 16
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0"
+  },
+  "code_sha256": {
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/upstream_exchange.py": "f3cc6cdda82b5d39524f16a33f74c9ae29491a38492841eafd212360035718ab",
+    "scripts/upstream_expansion.py": "bf92a8655401b297f98fbf2692cf941c89f30edcec3db5aec057c70e029d22ff",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "scripts/upstream_remote_integration.py": "7f98d1a28464c666dd3768f93d93980479b1a0297b83dd369a4d75631a1e3bd5",
+    "scripts/verify_upstream_nonlinear.py": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556",
+    "scripts/upstream_remote_batch.py": "f526ddac75dfe46a6874d41cbcd61be62268d096bea28f4ba8f6edc7f603b672",
+    "scripts/upstream_voting_blend.py": "85052140cab0d3f65bf1c814e3c442bcace57a84072f81761bbb5d5d971e8674",
+    "scripts/upstream_full_reproduce.py": "436f181b5b73c228c67abf5a945140eb37ef95472d42ecc451f1f60cbe7a7a80",
+    "scripts/upstream_context_blend.py": "d38fb66cf557d438f57c61cb8342f8206c926e0d7b383b2b449f6b1f5b5c52b0",
+    "scripts/upstream_extension_run.py": "a566e5729c786ebec97413367e95be2364562c1acb30904340e84542627316c3",
+    "scripts/upstream_cf12_context.py": "849d8dc23cedeb70b1be6ee9f23dd2ea028c53ac91c476cc6ee64824d11e5406",
+    "scripts/upstream_cfnade48.py": "fddec1558a1bc16255885f9bf95a0c1ffd4d913f406ff3eec9c5f574622395e1",
+    "scripts/upstream_cf12_tree.py": "87d58f2156486feee24d54dc9dd1d2e86081869c1b5bf2ff53100d4954f1327e"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_manifests_sha256": {
+    "experiments/upstream-cf12-context/manifest.json": "c2c6be0074f85f75beaf705365ea27c8ac3c392da39a0660e4830f5e90b2d950",
+    "experiments/upstream-cf12-context/evaluation.json": "cb48e0f7c95f46b1409f08d33daa5676c6386714c33bd42db11f57346ba7a882",
+    "experiments/upstream-cf12-context/independent-verification.json": "d55668a4fb96b2c0916e167f7dc3157bcb89a81ca61764c50f3b275e8ee2c5c4",
+    "experiments/upstream-cf12-context/nn-replay.json": "0099c57a8f5b794fe220909848be3c010ac32a41e9bf827464b9b43f0be4a720",
+    "experiments/upstream-cf12-context/nn/0.json": "470a1ab78dcee317cfdfea2875b9603cacc2f78eeebb3b0e52616abfda779f18",
+    "experiments/upstream-cf12-context/nn/1.json": "51a68f7bad609e87ed4e1e3c28ac137bf06dd623dbdfe8d77f927c916483ef13",
+    "experiments/upstream-cf12-context/nn/2.json": "85cc88f94c32f581ec7c37e29f7e6f7140bc128de9cfb55e7b01718240570746",
+    "experiments/upstream-cf12-context/nn/3.json": "0c50333ffb060b849531e6fc96c374d08aa53b3e898cf8de6ed162d9c30ea158",
+    "experiments/upstream-cf12-context/nn/4.json": "d819573c4a38f5451a22a419a99a3534a0cb5442c71d21140f9d5bfd09db4570"
+  },
+  "prepared_sha256": {
+    "users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "nn.f32": "dd8f2ef48228d3ba37eebc4dedb00fe6190f680de4196a39f1af98b98ef59d6b",
+    "labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "design.npy": "d74634fd4bb9d53399f3dfaa73e87db5ac8a213a9105d87a5a40d9432cdb8216",
+    "stats.npz": "8a3491b5c50326f3ca10adf70e6bfd9f13b1f8a3999164382b4a833576142eb3",
+    "features.npy": "9813e7b31388592b4a40fca2fe7623cbad8af358616f74239b38db7399288532",
+    "baseline.npy": "d49df4626145750eb717718cabbd266739afbb7635b64220a06ecfb678e8a7ae"
+  },
+  "rows": 1128164,
+  "prediction_columns": 86,
+  "design_columns": 162,
+  "nonlinear_features": 222,
+  "baseline_rmse": 0.8633631202444498,
+  "previous_best_rmse": 0.8600637147575521,
+  "reused_nn_prediction_sha256": "dd8f2ef48228d3ba37eebc4dedb00fe6190f680de4196a39f1af98b98ef59d6b",
+  "arms": [
+    "control",
+    "tree",
+    "nn",
+    "fixed-half-tree-nn"
+  ],
+  "qualifying_labels_read": false,
+  "isolation": "Voting statistics and latent features fit only on trainx ratings; query rows are MaskedDataset inputs in pinned save_vfeat1. Blender ridge/scalers/budget selection exclude outer scoring users. Qualifying outcomes are zero throughout training.",
+  "scope": "Adaptive known-ProbeX matching-tree experiment. Original tree hyperparameters/user folds, now the same86-predictor ridge/features as the verified context NN. Reuses the actual neural OOF vector without a new neural fit or synthetic receipts. No qualifying outcomes or production changes."
+}
