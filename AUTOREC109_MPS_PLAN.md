@@ -1,5 +1,14 @@
 # Fixed own autoencoder additions to the nonlinear ensemble
 
+Completed result: NN **0.8594001511750141**; the predeclared fixed half mean
+with the expanded tree is **0.859274524524327**, higher than the existing
+0.8592720612630157 record by0.0000024632613113. All five folds and15 actual
+saved-model replays passed. The separate canonical known-label/stored-mean
+checker rehashed135 source/model files and confirmed the exact score. No
+global promotion or qualifying refit. Evidence:
+experiments/upstream-rbm50-tree-autorec109-mps/{verification,
+independent-mean-check}.json.
+
 Our verified development record remains **0.8592720612630157**. Its frozen
 qualifying audit remains **0.8608774626094220 / 0.8618605526405846**; the target
 below0.85725 on both recovered groups is still unmet.
