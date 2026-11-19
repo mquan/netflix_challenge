@@ -1,0 +1,70 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3",
+      "fold_rmse": [
+        0.8619959768633015,
+        0.8598793859589637,
+        0.863379444626518,
+        0.8642176793897229,
+        0.8634317801005654
+      ]
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625774187158269,
+      "prediction_sha256": "a46162c530b11f8718ea2691608c92ae8357427d366b06610aa35affe61cdcd3",
+      "fold_rmse": [
+        0.8619864411481807,
+        0.8598775717802268,
+        0.8633709878323873,
+        0.8642190036621862,
+        0.8634363492645292
+      ]
+    }
+  ],
+  "fixed_additions": [
+    "mps-autorec_ep05",
+    "mps-autorec_ep10"
+  ],
+  "source_sha256": {
+    "experiments/upstream-mps-autorec/pair-00005.json": "54c80cd20447d4f5761b466b575235c63560638fc61b4645fe6a3b5f94580d70",
+    "experiments/upstream-mps-autorec/trainx-snapshot-00005.json": "be63126e8a0feb443ca59d9bd0649065a52c0a936bc47adfc4f9cb7067be4f3c",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00005/model.pt": "69c1fe8ca6cdb10093e27c4521c6ba3c508c1e45863f942841f8c8a114562a56",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00005/prediction.npy": "1ac471925222aabce98bd477bf7bf7c27c2e87809606e61ccfb37b13bef2406a",
+    "experiments/upstream-mps-autorec/fulltrain-snapshot-00005.json": "b7f131481ff0c9ee6ba0d36326ff184b1a19fc3fc1c015392147f9f99b07572c",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00005/model.pt": "77b3163085440fc5df2375fe1862849eba3451a45731cbab467ea991a47f4cde",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00005/prediction.npy": "d8fa93379934974b195f9cc0f1c0c9c5a11a34456b7bab29543771d4009f8b46",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "scripts/verify_upstream_mps_autorec_snapshot.py": "3e80c415180305a02bfaa1ceb347fd7f007a7c9aada65a680cc59a9cd5678b89",
+    "experiments/upstream-mps-autorec/plan.json": "791429a20856dbacbf253f9324f9dc760d88157984a1b263316a5fa2b877505b",
+    "experiments/upstream-mps-autorec/snapshot-00005-verification.json": "d690f7d6fe3b3727d501c134806d674f0abf7eeed453395d6ac363656f96c715",
+    "experiments/upstream-mps-autorec/pair-00010.json": "0f39fabc2ee5eaa5551ad02a8cbaf4b9cce76f3dfaacebb8c07327f3596d51b3",
+    "experiments/upstream-mps-autorec/trainx-snapshot-00010.json": "89b2ef23c40c0bb898a9319f894690a27a9f3a50ed82ea1de96ca60e9fc049f3",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00010/model.pt": "da44204f1837ddbfc1028edee8dab3b9f5697e46228edf2fa7cae92e77ae0655",
+    "artifacts/upstream-mps-autorec/trainx/snapshots/epoch-00010/prediction.npy": "10640e5a59584ad8979620675c43cde829af72339d5c0bd279d46612361fba73",
+    "experiments/upstream-mps-autorec/fulltrain-snapshot-00010.json": "4e9f7ee3d7db7957b6cc8183c4a19354743aa17b4253a49d125749834e8b18d5",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00010/model.pt": "0aa181bb44bb262b9b90a1d237fe35def7aecac780abed95b73352fd3f6b284f",
+    "artifacts/upstream-mps-autorec/fulltrain/snapshots/epoch-00010/prediction.npy": "d9c5d94d664725a46799d334932436497327ecf20a7fce037b167d707ab14686",
+    "experiments/upstream-mps-autorec/snapshot-00010-verification.json": "6ce867f15269f6415d1b9c0ac105be9975ca3c96e286992743555487021d1e13",
+    "scripts/upstream_autorec_pair2_screen.py": "df4ab46fc4b11c13a0aa74d221d4524a57d5c521da421df52c759b460cd554ca",
+    "experiments/upstream-autorec-pair2-screen/plan.json": "fb8e2dd8b7e48054c4261bf1943fd7e9fffbfc18ad7f4de1750a031cc69c7bc3",
+    "experiments/upstream-latent90-features/manifest.json": "6ad2638f9d50521fa683d75daf26d80c13703070f4dbec089c43df964a121a95",
+    "experiments/upstream-latent90-features/cache-column-verification.json": "d8b707eaec03166d4e940b06e38be8511df2a774e87d0dcd922450226eb6d22d",
+    "scripts/verify_upstream_autorec_pair2_screen.py": "4ec6318a7b120e4daa9f0e0e1198d82375a446dd8686b12e24d640de06df151a",
+    "artifacts/upstream-latent90-features/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-latent90-features/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-latent90-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-latent90-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-latent90-features/stats.npz": "8c7f2ace3d12c8e66c2bc7a34050b65d7e7370eab8729735e18118a5fb5a6847",
+    "artifacts/upstream-latent90-features/features.npy": "a078472c00a091f19792d64f42fb327359ebb11fc9d34f3c2447de478daaf23d",
+    "artifacts/upstream-latent90-features/baseline.npy": "c06c139e1d3a538c0ae7bb842b14d57f3e5d5098e0141b1d10c32b3f5ada63a9"
+  },
+  "script_sha256": "df4ab46fc4b11c13a0aa74d221d4524a57d5c521da421df52c759b460cd554ca",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Fixed own raw snapshot pair addition to own107. Full original50/50 trajectory continues. Known-only ridge diagnostic, not nonlinear or qualifying promotion."
+}

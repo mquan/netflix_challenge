@@ -1,0 +1,30 @@
+{
+  "created": "2026-11-19T20:35:13.693261+00:00",
+  "code_sha256": {
+    "scripts/upstream_autorec109_queue.py": "f1f2152c106175f90cf0a6e96d4fcf74db02913e6bad7df1abec778b0cc0ea5f",
+    "scripts/upstream_autorec109.py": "cee6fceb6e0e310629602d519b2d2fdd2506bf9fc5a5d90a77a588a3db1ef881",
+    "scripts/upstream_autorec109_mps_context.py": "b9e8c7678a795d946ad14f3dd573c3ac49b55eb4d57ad434f51ab00e4321d1b0",
+    "scripts/upstream_rbm50_tree_autorec109_mps.py": "c618ab62b02f541341c5e8a126b42443c5a781e677e28eecc97ccc08c7856981"
+  },
+  "additions": [
+    "mps-autorec_ep05",
+    "mps-autorec_ep10"
+  ],
+  "raw_prediction_columns": 109,
+  "learned_support_columns": 90,
+  "neural_inputs": 336,
+  "hidden": 128,
+  "context_rank": 32,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "mean_origins": [
+    "upstream-rbm50-tree",
+    "upstream-autorec109-mps-context"
+  ],
+  "rule": "Keep original five nested user folds/seeds/optimizer/stopping. All15 actual NN models must replay. Compare separately declared fixed half mean to verified current best .8592720612630157; no weight search or qualifying-based selection.",
+  "raw_full50_completion_claimed": false,
+  "qualifying_labels_read": false,
+  "automatic_production": false
+}
