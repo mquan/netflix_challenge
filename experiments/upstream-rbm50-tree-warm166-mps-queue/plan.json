@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T19:04:20.080154+00:00",
+  "script_sha256": "8b531d38d2ed4211f5d881f52f98eb231b1ba67025be60338710efeb40c96dbc",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-warm166-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "qualifying_labels_read": false,
+  "rule": "Fixed mean declared before full own166 MPS result. Require complete actual saved-model replays and all originating fold artifact hashes; no weight search."
+}
