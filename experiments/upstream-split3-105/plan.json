@@ -1,0 +1,27 @@
+{
+  "ready_unused": [
+    {
+      "name": "s3-attn16",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-pilot/s3-attn16.probex.npy",
+        "qual": "artifacts/upstream-split3-pilot/source/preds_3/s3-attn16.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-attn16_ep08",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-pilot/s3-attn16_ep08.probex.npy",
+        "qual": "artifacts/upstream-split3-pilot/source/preds_3/s3-attn16_ep08.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "s3-attn16",
+    "s3-attn16_ep08"
+  ],
+  "rule": "Append both source-published split3 attention columns together to own103. Fixed control/all-two arms, unchanged five user folds and ridge penalty. No qualifying outcomes or feature-subset search.",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}
