@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T23:08:59.101964+00:00
+timestamp: 2026-11-19T23:27:17.507463+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,31 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New independently verified qualifying best: **0.860652465694796 /
+0.8616635956343016**, with the same original own full tree/item154 neural
+models and one convex coefficient fitted only to known OOF predictions.
+Both preceding groups improve; worse-group gain **9.5366304%**, remaining
+strict-target gap **0.0044135956**. Exact frozen-vector reconstruction,
+independent coefficient fit and complete-group compensated scoring pass.
+
+The coefficient is32.2310% tree /67.7690% neural. Its apparent known-fit
+0.8591642749 is **not nested CV**, so the independently verified CV best
+remains0.8592309820. The audit's CSV-header-only parser recovery preserved the
+original coefficient and already frozen vector. No qualifying outcome fitted
+or selected weights. See [ITEM154_WEIGHT_CALIBRATION_RESULT.md](ITEM154_WEIGHT_CALIBRATION_RESULT.md).
+
+Earlier observations below are retained as history.
+
+The real item-oriented epoch5 pair is complete and independently checked:
+standalone known component RMSE1.0064540238. This is not an ensemble gain;
+original50/50 training continues. Repeated actual checks now preserve the exact
+proof bytes, preventing timestamp-only mutations from breaking fitted-model
+lineage. Three concurrent-writer and changed-evidence rejection fixtures pass.
+The pending fixed5/10 NN study was freshly declared before this paired score,
+with identical numerical settings and only the publication verifier amended.
+Controller63754 waits for10; watcher63850 independently checks fixed pairs.
+See [ITEMAE_IMMUTABLE_VERIFICATION.md](ITEMAE_IMMUTABLE_VERIFICATION.md).
 
 The first next3 native has actually started: attention64 PID62289,
 train_3→probe_3 at23:08:19 UTC. Its live source configuration confirms the
