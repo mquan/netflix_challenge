@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T04:22:41Z
+timestamp: 2026-11-19T04:57:31Z
 best_score: 0.8600637147575518
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: pending
@@ -26,16 +26,16 @@ adaptive known-ProbeX development, not a qualifying or untouched Test score.
 | Work | Verified state at this update |
 | --- | --- |
 | First paired production bank | **81/85**; only four temporal columns missing |
-| Temporal150 original fulltrain/qual phase | **20/25 epochs**; all20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
-| CFNADE-96 original phases | **25/95 ProbeX**, **24/95 qualifying** |
-| CFNADE-48 original phases | **23/95 ProbeX**, **22/95 qualifying** |
-| AEX128 original independent job | First phase **20/20 complete**; qualifying **5/20** |
+| Temporal150 original fulltrain/qual phase | **21/25 epochs**; first20 snapshots match our earlier remote native hashes exactly; complete paired receipt still required |
+| CFNADE-96 original phases | **26/95 ProbeX**, **25/95 qualifying** |
+| CFNADE-48 original phases | **26/95 ProbeX**, **25/95 qualifying** |
+| AEX128 original independent job | First phase **20/20 complete**; qualifying **10/20** |
 | AEX16 original primary job | Both original20-epoch phases complete; all3 native output hashes and finite paired vectors independently verified |
 | Completed native work | CFNADE-12, attention32, transposed attention32 and all six DNN follow-on endpoints |
 | Primary DAG continuation | Guarded successor PID27177 running original AEX64; idle handoff recovered and independently checked |
 | Artifact reuse | **15** completed own auxiliary jobs imported into the primary tree at an idle boundary |
 | Measured improvement's qualifying path | Matching85-tree/86-NN adapter tested and queued after the first frozen audit |
-| Additional development iteration | Folds0/1 bitwise replay verified; fixed mean improves by **.000052485/.000028573** on their held rows; fitting fold2, no full-result promotion |
+| Additional development iteration | Folds0/1/2/3 bitwise replay verified; all four fixed means improve; final fold4 running, no full-result promotion |
 | Six-model extension gate | Separate current controller/production adapter require improvement over verified best; six relevant checks pass; original frozen controller restored exactly |
 
 Seven native training workers remain active. Partial native outputs are not

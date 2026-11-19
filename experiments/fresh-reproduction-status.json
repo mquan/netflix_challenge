@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T04:17:53.211993+00:00",
-  "display_time": "November 18, 2026, 08:17 PM Pacific",
+  "observed": "2026-11-19T04:57:31.040379+00:00",
+  "display_time": "November 18, 2026, 08:57 PM Pacific",
   "best_development_rmse": 0.8600637147575518,
   "qualifying_status": "pending",
   "target_each_recovered_group": 0.85725,
@@ -15,19 +15,19 @@
     },
     {
       "work": "Temporal150 qualifying phase",
-      "state": "20/25 epochs; all 20 completed snapshots exactly match our earlier remote native hashes"
+      "state": "21/25 epochs; first20 snapshots exactly match our earlier remote native hashes; complete paired receipt still required"
     },
     {
       "work": "CFNADE96",
-      "state": "25/95 ProbeX; 24/95 qualifying"
+      "state": "26/95 ProbeX; 25/95 qualifying"
     },
     {
       "work": "CFNADE48",
-      "state": "23/95 ProbeX; 22/95 qualifying"
+      "state": "26/95 ProbeX; 25/95 qualifying"
     },
     {
       "work": "AEX128",
-      "state": "ProbeX phase 20/20 complete; qualifying 4/20"
+      "state": "ProbeX phase20/20 complete; qualifying 10/20"
     },
     {
       "work": "Original source DAG",
@@ -35,7 +35,7 @@
     },
     {
       "work": "Matching86-predictor tree study",
-      "state": "Two of five folds complete; both improve and pass bitwise replay. Fold three running; no complete-result promotion"
+      "state": "Four of five folds complete; all four improve and pass bitwise replay. Final fold running; no complete-result promotion"
     },
     {
       "work": "Qualifying blend",
