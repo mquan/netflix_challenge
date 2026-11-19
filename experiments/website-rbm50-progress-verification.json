@@ -1,0 +1,53 @@
+{
+  "state": "verified_rbm50_training_progress_publication",
+  "observed": "2026-11-19T15:54:45.650657+00:00",
+  "source_commit": "d36da5f",
+  "pages_commit": "ed6af91696188f1512344c084355b2b5dabf8aaa",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "153e2a8912ceba152f5d40ae8414e758c70641a78609f24721c4a0ebddb98fc1",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "153e2a8912ceba152f5d40ae8414e758c70641a78609f24721c4a0ebddb98fc1",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "30ff0d38d50158ee1ffa22a90e4bddf22e4962d722643fa6a16d0017917b23d1",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "RBM50_CONTEXT_PLAN.md",
+      "status": 200,
+      "sha256": "5e394a930bbc30a09a719a0494881d5fcdab918b8bf8eba855396599d201c7aa",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "SPLIT3_105_CONTEXT_RESULT.md",
+      "status": 200,
+      "sha256": "daf72068129c736b4ebb35b0e7f098a5651d2416ed29eff7b8fd25e7b4ca1b80",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "9f2ac4da8dff17eee87bddfce3d54b2999798267d1834e574508c028a84a958f",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "27e09aa2a0420b0454c98388688b92c78a8ac9eb43d2feffaf839e2149908745",
+      "local_bytes_equal": true
+    }
+  ],
+  "best_qualifying_unchanged": true,
+  "qualifying_target_achieved": false,
+  "plots_match_verified_own103_scores": true
+}
