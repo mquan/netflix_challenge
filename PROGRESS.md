@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T06:53:17.244789+00:00
+timestamp: 2026-11-19T08:43:00+00:00
 best_score: 0.8600300601883686
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -40,22 +40,34 @@ known-ProbeX evaluation on a different population; it is not a qualifying score.
 | Work | Verified state |
 | --- | --- |
 | First paired 85 qualifying fit | Complete; both source groups miss the target |
-| Matching86 production | Guarded recovery waits for the original phase bank, then restarts the unchanged queue once; no partial fit overwritten |
-| Fixed 91-predictor study | All six native extensions ready; nested tree fitting active; continuation depends on known-ProbeX improvement |
+| Matching86 production | Original-schema bank verified; recovered queue PID88587 waits for the fixed91 development gate |
+| Fixed 91-predictor study | All five tree folds complete and replayed; neural worker PID92842 live, three fold receipts complete at08:41 UTC; continuation depends on known-ProbeX improvement |
+| All91 context follow-up | Fixed rank16 candidate queued as PID97839; waits for current extension/matching production and two physical-memory admission samples; no qualifying-label selection |
 | Original1,000-factor model | Native canonical 20-epoch job started with 16 logical chunks/four physical workers; no reduced capacity |
 | Local temporal150 fallback | All 25 epochs logged; final native output generation remains active before complete receipt publication |
-| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for temporal-bank completion and physical-footprint/compressor/swap admission |
-| CFNADE48 | Remote live-process heartbeat 07:06 UTC reports 42/40 epochs and no swap growth; deadline 14:33 UTC, return 15:03 UTC |
+| CFNADE96 | Checkpoints33/31 preserved; both workers yielded after measured paging. Automatic resume waits for actual native temporal PID46684 to exit and physical-footprint/compressor/swap admission; original bank is already complete |
+| CFNADE48 | Remote live-process heartbeat 08:36 UTC (commit263dcf8) reports 58/57 epochs and zero swap use; deadline 14:33 UTC, return 15:03 UTC |
 | AEX64/AEX128 | Completed; own AEX128 safely imported at an idle scheduler boundary |
-| Primary DAG | Advanced to original temporal16 source work |
+| Primary DAG | Original temporal60 job PID77902 live at08:37 UTC |
 
-The accelerated recovered-bank audit finished before the independent local
-phase bank was ready. The original matching queue correctly exited at its
-incomplete-bank guard. A separate recovery controller now verifies the original
-bank watcher is live, waits for its complete manifest, rehashes the bank and
-starts the unchanged queue once. A targeted actual-process test rejects a live
-predecessor, changed controller code and an existing fit. The fixed 91 study
-retains its fitting lock and priority policy.
+The original-schema phase bank is now complete through the explicit recovered
+own-temporal route; all six cache files match the verified private bank exactly.
+The unchanged matching86 queue restarted at07:50 UTC and waits for the fixed91
+study, preserving its priority and stronger-development-result gate.
+
+The fixed all91 context follow-up is documented in `ALL91_CONTEXT_PLAN.md`.
+Its actual train/save/reload test reproduces predictions exactly. It retains
+all six predeclared additions, reuses the fully verified matching trees and
+starts no fit until its predecessor and physical-memory gates clear.
+
+The additional remote branch `research/remote9h-cf96-handoff` contains the
+verified CF96 checkpoint package and runbook. No remote CF96 restore proof has
+returned yet. The runbook first requests all63 outputs of our already completed
+remote temporal job. `scripts/verify_remote_temporal_archive.py` is ready to
+independently verify that return against the original receipt and local input
+identities in an isolated directory. Its tests reject archive traversal, links,
+duplicates and incomplete payloads. It does not control any live job; the local
+duplicate remains running until a complete counterpart is actually verified.
 
 The first separate completion checker encountered an OpenMP runtime clash when
 loading LightGBM and PyTorch together. Its replacement replays each family in
