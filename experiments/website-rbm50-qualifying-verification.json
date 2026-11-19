@@ -1,0 +1,77 @@
+{
+  "state": "verified_own107_rbm50_qualifying_publication",
+  "observed": "2026-11-19T16:59:38.245530+00:00",
+  "source_commit": "0288f3b",
+  "pages_commit": "157b6264002c194c49a80fc35497499ecce9b980",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "5fef263233db8f89e1b2a1953949a16deaa7a27ea38c609292c7198043f0fd5f",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "5fef263233db8f89e1b2a1953949a16deaa7a27ea38c609292c7198043f0fd5f",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "README.md",
+      "status": 200,
+      "sha256": "9791623dee6189308a037db308c06a796f421232317d5baabcbdb77469edf162",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "dddcb61914ed3b79e25955ef50320f7a672428968d46ebd068061e899eeca1c3",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "301e13fe4ac4ac313482194eabca7e8c789ea2ae82b0bdd5a4314b76ae3da16d",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "1b7089e65fda860e6568384428f9ea4a1ff4de0ecfd986928fce26f580bfc58e",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "9df37e392187a3d2691e75d675510c18f7e1faf944d8d3eb2fe3be339c014c59",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "RBM50_QUALIFYING_RESULT.md",
+      "status": 200,
+      "sha256": "e076d0b4ad60b7a7d0720e9b3708f476c4d6146fabbceea6f559a886e0d8a27b",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-production/verification.json",
+      "status": 200,
+      "sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a",
+      "local_bytes_equal": true
+    }
+  ],
+  "milestones": 47,
+  "own_qualifying_logos": 7,
+  "viewport_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "target_label_below_line": true,
+  "development_best": 0.8594554093063749,
+  "qualifying_groups": {
+    "source0": 0.8609266297566702,
+    "source1": 0.8619141823430468
+  },
+  "worse_group_improvement_percent": 9.510322063722121,
+  "goal_achieved": false
+}
