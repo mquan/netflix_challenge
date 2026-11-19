@@ -1,0 +1,53 @@
+{
+  "commit": "d0252ecb660c4e94a649b736f7d7113d8d0bbc8c",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 102623,
+      "sha256": "19a06c91e3015e62fc9ff8f764c99f2e97a818d0cb8775d08b6c31eae73dcaf7",
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 44352,
+      "sha256": "607d9af8a15ec81b2a2d28e8c541c307044991863e8a78ff6533c80f9f01f180",
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 283268,
+      "sha256": "c361a5820c21a648b094880beb3d36c4b52c7a3af3146fd50b89d455aada3a83",
+      "matches_committed_source": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "bytes": 2616,
+      "sha256": "99f4e029e95706088fa127ad1486dcdd19b082d8da194568990789006a2bc7a5",
+      "matches_committed_source": true
+    },
+    {
+      "path": "REMOTE_RECOVERY_PROGRESS.md",
+      "bytes": 3771,
+      "sha256": "16e1379e8308781fc0d9423ad9e17ff0be83769f0c4d0645efcad5fbffd58e14",
+      "matches_committed_source": true
+    },
+    {
+      "path": "experiments/upstream-remote-temporal-pair/paired-receipt.json",
+      "bytes": 5267,
+      "sha256": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+      "matches_committed_source": true
+    }
+  ],
+  "state": "verified_live_deployment",
+  "observed": "2026-11-19T06:21:23.805552+00:00",
+  "production_source_commit": "5a418a8",
+  "github_pages_build": "built",
+  "browser_checks": {
+    "desktop_width": 1440,
+    "mobile_width": 390,
+    "horizontal_overflow": false,
+    "console_messages": 0,
+    "scope": "Updated progress section and local page render; deployment bytes independently matched afterward"
+  },
+  "plots": "SVG and PNG regenerated from the same verified milestones; no new score invented"
+}
