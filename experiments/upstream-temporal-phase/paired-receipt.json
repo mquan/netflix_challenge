@@ -1,0 +1,38 @@
+{
+  "state": "complete",
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "job": "tsvdx5-150o",
+  "epochs_qual": 25,
+  "plan_sha256": "fb49005c0a94c16a890c20a4ac4fe2082b9dc56e0559dbc36ad846272a9aa1d7",
+  "pairs": {
+    "tsvdx5-150o": {
+      "probex": "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o.probex.npy",
+      "qual": "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o.qual.npy"
+    },
+    "tsvdx5-150o_ep06": {
+      "probex": "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep06.probex.npy",
+      "qual": "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep06.qual.npy"
+    },
+    "tsvdx5-150o_ep16": {
+      "probex": "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep16.probex.npy",
+      "qual": "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep16.qual.npy"
+    },
+    "tsvdx5-150o_ep24": {
+      "probex": "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep24.probex.npy",
+      "qual": "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep24.qual.npy"
+    }
+  },
+  "outputs": {
+    "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o.probex.npy": "9b898de018aaf4b676443c3fd4e661827737a66512058e52b15176e4029ba24f",
+    "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o.qual.npy": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef",
+    "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep06.probex.npy": "517629a4badd888ab5efae7adfe5cdf5a63fd16e3d9fecd1eff2e18eaa3865c5",
+    "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep06.qual.npy": "fbed339341476befabf151c495a9ab3b1bf65070d7eb18a4950364be4687923f",
+    "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep16.probex.npy": "584bc2947f816c0f6713653f4928afea9992f7c0c60f04905703471bd38152e6",
+    "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep16.qual.npy": "7bf8b984503384d0a953073d717bdea89f1ee11318c89eb75063e447f7b14962",
+    "artifacts/full-upstream-mapped/independent-qual/paired/tsvdx5-150o_ep24.probex.npy": "44e3ae2de5ff3f2b95efdc0907c118493d0b65c45c35aa7b2a0a924fa7bab384",
+    "artifacts/full-upstream-mapped/source/preds_independent_qual/tsvdx5-150o_ep24.qual.npy": "afa2563a32e67137783c7d97b563467083e3788c09bf184ee42725766e0bf78b"
+  },
+  "qualifying_outcomes_zero": true,
+  "finished": "2026-11-19T08:48:12.622052+00:00",
+  "provenance": "ProbeX columns are OUR complete fresh remote source phase. The new fulltrain/qual phase calls exactly the pinned fit function used by fit2 phase2, with identical source-extracted config and original 25 epochs. Source math/storage parity proof disclosed. Not a second complete original pipeline job."
+}
