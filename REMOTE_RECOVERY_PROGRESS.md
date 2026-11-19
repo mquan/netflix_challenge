@@ -1,5 +1,28 @@
 # Remote recovery and qualifying production
 
+## Original-schema dependency resolved, 07:50 UTC
+
+The original phase-bank cache is now complete using our already completed
+remote temporal source job. The unchanged assembly function ran with an
+explicit compatible receipt provider. All six resulting cache files match the
+previously verified recovered85 bank byte-for-byte. Metadata was staged and
+published atomically only after that comparison passed. The original idle
+bank watcher was held during assembly and then retired; no native training
+process was signalled and no local completion receipt was fabricated.
+
+A fresh process importing the unmodified phase-bank module verified the cache
+and all source bindings. The original matching86 queue restarted as PID88587
+and now waits for the active91-predictor development lock. Its source hash and
+model configuration remain unchanged. The existing91-predictor production
+path can consume the same verified original-schema cache when its development
+gate passes. Evidence is in
+`experiments/upstream-phase-bank-recovered-route/verification.json` and
+`experiments/upstream-cf12-matching-recovery/launch-child.json`.
+
+CFNADE96 memory admission now checks the local native temporal process exit
+explicitly, independently of which completed source job supplied the bank.
+Its preserved33/31 checkpoints and all memory gates remain unchanged.
+
 ## Completed first audit, 06:49 UTC
 
 The first own-training qualifying blend scores **0.8619187880 / 0.8628067765**

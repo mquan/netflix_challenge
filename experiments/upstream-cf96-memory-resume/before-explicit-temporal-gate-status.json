@@ -1,0 +1,24 @@
+{
+  "state": "waiting_for_temporal_bank_and_memory",
+  "observed": "2026-11-19T07:48:28.586314+00:00",
+  "original_phase_bank_ready": false,
+  "memory": {
+    "compressor_bytes": 18691194880,
+    "swap_used_bytes": 4449170882.56
+  },
+  "owned_footprint_bytes": 0,
+  "owned_workers": {},
+  "consecutive_good_samples": 0,
+  "preserved_checkpoints": {
+    "trainx": {
+      "epoch": 33,
+      "state_sha256": "76995ddac6ab70ce7ef0f2158171711831266a7ed14741d2e846f81c5ec9ec9a",
+      "all84_tensors_verified": true
+    },
+    "fulltrain": {
+      "epoch": 31,
+      "state_sha256": "b26542f41a55a9823b39fa9c254e41d7e85d6ddda16cbffd286cb56da6950cb3",
+      "all84_tensors_verified": true
+    }
+  }
+}

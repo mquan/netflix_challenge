@@ -1,0 +1,1606 @@
+{
+  "state": "complete",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "columns": [
+    {
+      "name": "tsvdx4-60",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.qual.npy"
+      },
+      "sha256": {
+        "probex": "1db4f350bf783d3890e6c760a5646d836ab0ee7ff66180e215987a34aef9c70f",
+        "qual": "2db0bf0be468461cf6e7cafdc5a8ca262765b73f29d56be7d9a602ce3f5c86ff"
+      }
+    },
+    {
+      "name": "tsvdx4-60__knns",
+      "clip": true,
+      "producer": "tsvdx4-60__knns",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60__knns.json",
+      "receipt_sha256": "eff7742ea9272c9aa94fc1bd9c26552a3752630db10ce5b09654cf052cb1fd28",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.qual.npy"
+      },
+      "sha256": {
+        "probex": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+        "qual": "b3841a416458d72faee0b97c481f6a91dd7a4be324fb5eee5a8579b0c0eecdb2"
+      }
+    },
+    {
+      "name": "rbmx2-40",
+      "clip": true,
+      "producer": "rbmx2-40",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-40.json",
+      "receipt_sha256": "4f543976bdd79416004e80a4abb12bc34b85e34e3436b803fe67894f3edb7ec9",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-40.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-40.qual.npy"
+      },
+      "sha256": {
+        "probex": "4396204578b110b584943b4d9d9960e7762b35d74c1bddee84ae5e09190fe97a",
+        "qual": "b414e9e1b50128357442dc7ada649dcb33610dc0e0983fd4eedc9ee2cc771127"
+      }
+    },
+    {
+      "name": "rbmx2-40__knn3",
+      "clip": true,
+      "producer": "rbmx2-40__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-40__knn3.json",
+      "receipt_sha256": "b35c70fbd4b3bb95615be997e24d1cab71a904ef3554c7648147549dee6f0ecb",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "c1d7919ca7f7226a587de5a76aed2aaf6867c321fcc031949d07581ac6b8e2fe",
+        "qual": "ecc863e2b577cdd1893d1d3a3060d2e6bb9fb108160f9e196b2188567c9a575c"
+      }
+    },
+    {
+      "name": "dnn-24",
+      "clip": true,
+      "producer": "dnn-24",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24.json",
+      "receipt_sha256": "871f96c30ab3af6950cf68b6efaa2f5c6b7f365c7f5c37842e6b88860c8f26b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24.qual.npy"
+      },
+      "sha256": {
+        "probex": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+        "qual": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c"
+      }
+    },
+    {
+      "name": "dnn-24__knn3",
+      "clip": true,
+      "producer": "dnn-24__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__knn3.json",
+      "receipt_sha256": "fd3a07ed03d400d09e4b1662d1f7004ef853d3975da1059e8d84919e51746928",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "2e9f601f89dceb268c07c8082f6f38dcca69f670c3ef982a6e654c4f6debce56",
+        "qual": "5cf0cc49b43cfdacff60176494fa103d744b188a4ba77f4f89689d5734e06acc"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16p50",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50.json",
+      "receipt_sha256": "5d447fb1c3c7f6a7be1be661aaa40e7d8916e6afbaa76de56ff4beaede963161",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.qual.npy"
+      },
+      "sha256": {
+        "probex": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+        "qual": "2b7ed37dd516a291aeee125d382b663fcfbae926783fe495f72c44e79fe7a7b3"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16p50__knn3",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__knn3.json",
+      "receipt_sha256": "90c28e60716f83c3842875929a7e68b6d964681244b71956cc402ccc4782cb4f",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "4f9a92baf0710375f7f0e98f7743db9cd8f1175aa4576cb80bc7c01e7d052713",
+        "qual": "e0f6ec33cc20791ffadda22e32ce76e4d11c89877dd38e5a36fef30ebc699634"
+      }
+    },
+    {
+      "name": "dnn-64",
+      "clip": true,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64.qual.npy"
+      },
+      "sha256": {
+        "probex": "53c40fb140e1fee83b7e1222d20be9f05897044355ce13435f1bfd908093936c",
+        "qual": "0f271fc10cdcb0f75f7b024b7cf44bd9d44b565991c4658ac6bbfa3c9c422e26"
+      }
+    },
+    {
+      "name": "dnn-24__attn-32",
+      "clip": true,
+      "producer": "dnn-24__attn-32",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__attn-32.json",
+      "receipt_sha256": "f932946d60b4d11527d7d8100f2a27cb02943c693d686763e2250072cd3c6f78",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__attn-32.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__attn-32.qual.npy"
+      },
+      "sha256": {
+        "probex": "9551c7f9e86e8535f245d1c9299e5655baa7f64ed80d147a9251ff6ab968a17a",
+        "qual": "f5d2a9a3b5f0e75a32848833f8c1cd855dd303f5b067004d323b46e5fb93ede6"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.qual.npy"
+      },
+      "sha256": {
+        "probex": "28a7831bd1fc4a90079918b44c8f7e5dfd170bde049ec4620e2a444fbac3a344",
+        "qual": "0759f0af577e8386d51dd1e6eacb9e57a8f5d33b41fa4d3d4265887b2981a0bd"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm__knnf",
+      "clip": true,
+      "producer": "tsvdx4-400lm__knnf",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm__knnf.json",
+      "receipt_sha256": "a46a688ad30397f8c07f75765f548f1da5c13691aef5892d610c678dc0043d7b",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm__knnf.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm__knnf.qual.npy"
+      },
+      "sha256": {
+        "probex": "a3bf900a1e835479b720d4aa6b39407311cdfad4704917497501e4b5fe0bb78c",
+        "qual": "93a8a5b611583712108ed633332efc7236596bd60d7928f4e2ae6e5a38daa228"
+      }
+    },
+    {
+      "name": "rbmx2-150",
+      "clip": true,
+      "producer": "rbmx2-150",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-150.json",
+      "receipt_sha256": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.qual.npy"
+      },
+      "sha256": {
+        "probex": "aa4e90ac650241ab3e04eae4fdf11479582de3287f5c0128bbc6653a983368df",
+        "qual": "433b39e97f0fdc9cc2430db7f7f61432746a0a1fb5ff5ecf57c9ca1e5fc54af6"
+      }
+    },
+    {
+      "name": "rbmx2-150__knns",
+      "clip": true,
+      "producer": "rbmx2-150__knns",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-150__knns.json",
+      "receipt_sha256": "cff0be4691050256c007d22c875f6fcc873314837b7cd7d9fe8f3f1a87168c2a",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knns.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knns.qual.npy"
+      },
+      "sha256": {
+        "probex": "73d2bf2a525d0fe23fc2d737ceb395fae33ff43494e11491a71d85079156bd16",
+        "qual": "b029f6922f30b4a7a82a677fb345714161a274e6e8f74fab647fa53d3b517ce3"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep01",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep01.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep01.qual.npy"
+      },
+      "sha256": {
+        "probex": "7884596fc2bb8f003236fb585388feb347bfc324e371c231110188090688c32e",
+        "qual": "a5f7eecef63893efb6015500ae64e1a291d983bd2634bba89335ba83ed0a1c8f"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep02",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "cfaec3de41a99d9b05a9999b2273189b7d31d7703a43a3dee068ce278c4b1f54",
+        "qual": "4876920bb1df1687a36332ff918f162b3a7b22a33748f699e114d7eabe6e8714"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep03",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "6bc62e6ef3961a1b3dc2037a6eac278a471ac3b955913ffde539adc141694414",
+        "qual": "ddaed7a8ea2887963b0a4c2f8cad61a7b1e56b1ce468c5f668f0ac23cbcc765f"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep04",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep04.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep04.qual.npy"
+      },
+      "sha256": {
+        "probex": "822e79108eb3fb6dd326407a61504c27521efb7df72014248b25816baf82aaff",
+        "qual": "59796c2330b53294bdd78840c8cd67fa28d48faa4fd41a5b2adddd6674e26d67"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep05",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "732f91db29652f0b6c1b73b87b2d6eea1a61c1efb7e4c037d3d0f1be58d58db8",
+        "qual": "1059194440ff36e999418526e03f01da59c05729934fcd8c9ce234d395fadb02"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep06",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep06.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep06.qual.npy"
+      },
+      "sha256": {
+        "probex": "971cd8fa51c8fa9288788913a22f7a6186b8187036d17c8f24039a9ccd682de8",
+        "qual": "47a9f45095a01ceb7065ebb22f4e1d1282f8e7286f3956f30842fc12ade68042"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep07",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep07.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep07.qual.npy"
+      },
+      "sha256": {
+        "probex": "c89fc8cf6cd8beff53989cda25ce6e666dfed6655fc9c3e2e2c6417fa666fad9",
+        "qual": "361f0eb582cec7ec839987a30a681545a23b6627c5115826ad213a884bbd9166"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep08",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep08.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep08.qual.npy"
+      },
+      "sha256": {
+        "probex": "3038c9713b40aadff98447765f5332a6177d8b4804c0b98b6888ea30e7725afe",
+        "qual": "0f2b6abf0c366a8872341738474401fcabe0e4f923287c1adfcc1f580fe01e37"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep09",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep09.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep09.qual.npy"
+      },
+      "sha256": {
+        "probex": "a599a634b6fb1b5419824e635b542efa0e08af838db726334c65873ee90acf22",
+        "qual": "9a36bf746e7b221a4b1a69ed264fb2fc360567113ebf6196f588dc5c6d9a46a7"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep10",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep10.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep10.qual.npy"
+      },
+      "sha256": {
+        "probex": "14fe1fcd827c5b397a19c7d0001a704118f0a8e58d0aeee2e85391f17c81a148",
+        "qual": "99c7e59b7bd33fb55c0a3a38ab098369b05c62cbba6a3b70222ab31970329e2d"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep11",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep11.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep11.qual.npy"
+      },
+      "sha256": {
+        "probex": "fb3e93808868c5aec58c931826d3e05e5bd125b115d4a9dd8eeb8ce9470caa52",
+        "qual": "005b05b049496a841621fcac6664b866932180c95431d2a16c468b1b6d5970fa"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep12",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep12.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep12.qual.npy"
+      },
+      "sha256": {
+        "probex": "34d8f267825e730bf51e4d895f552a506ccc0eba7888f75dfaeddf8183ee6069",
+        "qual": "5a76de490fba9c8a6cf28b0bc3eedc954cb577a7ed9fe1b21ad045d3fa5a19bd"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep13",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep13.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep13.qual.npy"
+      },
+      "sha256": {
+        "probex": "cdaa3f2720ad7988929206bee54159d068a6dca8d0914492c2117b2646fed129",
+        "qual": "b6c76c0269eba6e2190e66e53218b54b5caf671951ff91d31b03652cbaefaf5d"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep14",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep14.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep14.qual.npy"
+      },
+      "sha256": {
+        "probex": "d65a11034cac1bba9ec6345ce84837fa97a071591bb506fbf9418d334863b712",
+        "qual": "fe0100a455cf5bb37bd68ff8b73ba308608a83d952afbb27d0181773695e7f54"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep15",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep15.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep15.qual.npy"
+      },
+      "sha256": {
+        "probex": "ba8f2d0c9c568511608f37070e872cff8204f21586947956612674fdc53660ab",
+        "qual": "eaa4650446e9eabe3696f16f5b4c83ea139ac38aa8f1efc6036140e3c31d1cf1"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep16",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep16.qual.npy"
+      },
+      "sha256": {
+        "probex": "87ad8087a54557161aa46131f577d6502127e797a51672ac7f931197cd66feaf",
+        "qual": "efc65f6f1a2581c66fb545be04fda2387c6bb2adbb2c931549023261f0535f57"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep17",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep17.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep17.qual.npy"
+      },
+      "sha256": {
+        "probex": "9f91e1f3fd47fb03e0358b533c31b5fc1cc0eaffdaf35d5cc2711f72b80ff712",
+        "qual": "98821de7f3783c6386df2568f7b761ca9455af6250fd5c6358d8772479a23d4b"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep18",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep18.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep18.qual.npy"
+      },
+      "sha256": {
+        "probex": "0c03ad361f7a694f2f30b82525b2642993dee12035230cae276cd2bb59f7d03b",
+        "qual": "18023a65558edae0c818c584a306c7cf674cee58f71bd8cdb00b5ad13291fb86"
+      }
+    },
+    {
+      "name": "tsvdx4-60_ep19",
+      "clip": true,
+      "producer": "tsvdx4-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json",
+      "receipt_sha256": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep19.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep19.qual.npy"
+      },
+      "sha256": {
+        "probex": "38e441c81ec640bec007675d28f41939d6e6ffe503566a8584a5eb1affda9e9f",
+        "qual": "373c6f7b7a2cffb7d6e835b7105700cb6826cdb6418c4bc37819505d3c893c28"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep01",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep01.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep01.qual.npy"
+      },
+      "sha256": {
+        "probex": "053fd3846aa5af994d096d77151d63bcd422219534f888f15a3f7fd65c95733b",
+        "qual": "0bb438b756dc5f18dd9aaa2a278c375f9574fd81d23ec6ad717f318a70afaae7"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep02",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "52431520517cebdaf85d77a5d81a6e109e35ae0256e9eeeedec2f6621be78d4b",
+        "qual": "077115eb43a424ad39032ffb1934e143cd56ad978245189077af73e41dbf936e"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep03",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "05dcbbad9af189f12fc426bc73049b2523b5526a3d036db12aa453408ffc64a1",
+        "qual": "2b1c96b1e2d736e7cc36a8ae4a6aa1928790e1f4f0552ed58d4ddf5a73e9a809"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep04",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep04.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep04.qual.npy"
+      },
+      "sha256": {
+        "probex": "1aa29b93789090f467d00939f60bbd6067ad03de0d8e8a973fa831759e0df049",
+        "qual": "c7b7ddad930ab141d290c85f6c33602bf2448442c5dd3a23da9f99f118bc45dc"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep05",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "1325cfdf82d91813ab168c5a7a897253535ce9c7b6cb75f151e13a4eb21b7d41",
+        "qual": "a965d88077d83dc2df74cc78ae8d3c75a5bf266204c209e98a0aff6ac09c8291"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep06",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep06.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep06.qual.npy"
+      },
+      "sha256": {
+        "probex": "c945d3901ff51aab76199b99e3fb05e58ea89b8faba0f3bb84d4f3e90d0acdbd",
+        "qual": "a6ad649e1ab196920302f79c7847dcc4d3734f50af10b3b024e02599332be7b6"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep07",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep07.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep07.qual.npy"
+      },
+      "sha256": {
+        "probex": "c70fd4cdcc20bb4dbc278f6894b893abe625b32e52f3e083adb48498ada43c31",
+        "qual": "c12e14216fc7183e83d9708456eff57563633f5b7734207982427ec1c2dd0cf5"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep08",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep08.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep08.qual.npy"
+      },
+      "sha256": {
+        "probex": "8666fc4ea10c8e758da3b45d8ee75aab6eeead263d8718bf20481cd339dd458c",
+        "qual": "72d73103025c68710abd5389708d3d49ffe160b1d9d7a34bfc6ccd2fe50a98a6"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep09",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep09.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep09.qual.npy"
+      },
+      "sha256": {
+        "probex": "e2bbe74a8bca06d8c7cf081d1c9b139de27c8a66c040bd58df892d2f44037e0a",
+        "qual": "c5a649f648d2bfc0ba1336986cac3012469c75540405d1bac06545a2a1030a53"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep10",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep10.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep10.qual.npy"
+      },
+      "sha256": {
+        "probex": "8b97522855f98aebd25075489649f21da020b856522668ab0043d45f8042257d",
+        "qual": "799d53491021c0112b41c267afb5b2f8365ed03fccfc76ee9927c8983258c901"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep11",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep11.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep11.qual.npy"
+      },
+      "sha256": {
+        "probex": "3149cf93705af12a678f72d258349c1eef1a8749cd056f90fb49652e90b2a206",
+        "qual": "f7f93e9f29578ec2de0f5b9241e263eaa7b202e5252813d8940e061a3d82238a"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep12",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep12.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep12.qual.npy"
+      },
+      "sha256": {
+        "probex": "4f642e490087bf5bd24557a08310803803694610d9bf8f5a85c4bcdcd5d989e3",
+        "qual": "b235b4c757cb0eadbdbc91a6b4747e9ef01d22525e6b682e628725cd2ae7fcf3"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep13",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep13.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep13.qual.npy"
+      },
+      "sha256": {
+        "probex": "56a993c44f3de4d34e3b99816c6cbf7610a1625869d67542df4cbae128e08868",
+        "qual": "14383c366185ac41718ed1f36e78ebea231d24a718a4e4a6863fb02fa67b63ea"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep14",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep14.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep14.qual.npy"
+      },
+      "sha256": {
+        "probex": "581acb5626ef20456524cf8467970866013f9e2e700fb81c35d2b38edf1d200e",
+        "qual": "193d3b7311ad7f3184181ade3e79e03bdeca57be08f6a6fb171ccd28f43c1577"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep15",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep15.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep15.qual.npy"
+      },
+      "sha256": {
+        "probex": "89265f9a02d6fc77c9b23a2b10b9c86634fc315c8c1c47357767ad9105e5a36e",
+        "qual": "56ff08c7d6c5c03c9e40d5da4e660351910de0c170fa240477bd835ecbcb5674"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep16",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep16.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep16.qual.npy"
+      },
+      "sha256": {
+        "probex": "1580f37fec98c1491d23fff8f85543d2ee20afb26bb3a5e4067bee8c21d1a718",
+        "qual": "8a2ccef3925918424356933830229ddcdc333d734714a843df9dedd19bcd77a8"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep17",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep17.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep17.qual.npy"
+      },
+      "sha256": {
+        "probex": "d3e6f0f7f4afbbcdeb7888c9d39d16b6b1b5c2472d4266b210cd3499bcccac35",
+        "qual": "bfb1da96a7a16ad0beeb9f4154ee81971d63fc46a1062497d34b493b11bf71c5"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep18",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep18.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep18.qual.npy"
+      },
+      "sha256": {
+        "probex": "1f54b8b2690d611b89d8b8b6fe3365a0c6a69d0ece6788ff6ed09002df765945",
+        "qual": "d3e415cf043add51bd17d9bca3ae01c03bc4005f7ac4f278d9dc57f9dda9adba"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm_ep19",
+      "clip": true,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep19.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep19.qual.npy"
+      },
+      "sha256": {
+        "probex": "9211d4fa0d641ab361d784a82b61879fa42c773156d33db566a4507e645dff36",
+        "qual": "2135d770f2086392032340f3fad41bca6a67d500c573889a9f5a13fe5dbb4248"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm-bias",
+      "clip": false,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-bias.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-bias.qual.npy"
+      },
+      "sha256": {
+        "probex": "21a615c70b1ff237d2edfa998f7afa127afe26ec4f7571097d8f14e9cea24981",
+        "qual": "b48705b5041e06816894400d14fa3945a29189ccfc90aa730391021ccb56486b"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm-mf",
+      "clip": false,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-mf.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-mf.qual.npy"
+      },
+      "sha256": {
+        "probex": "da5ee8036279da22cfae19f0434362048062547a69e8a7271c3723dc50f9a9d1",
+        "qual": "b128835196ef78dbe5edf9e9e5fc8a649babeae2c0a5c12258476f562e543d1a"
+      }
+    },
+    {
+      "name": "tsvdx4-400lm-nsvd1",
+      "clip": false,
+      "producer": "tsvdx4-400lm",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json",
+      "receipt_sha256": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-nsvd1.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-nsvd1.qual.npy"
+      },
+      "sha256": {
+        "probex": "072f7b0665c204d53ae738b57faedfd45e566d0398eae3780db5b5c626f98412",
+        "qual": "3a7363790325cf333166288ed9688ef87d119a75b837e96e2ddcd0b38dbfa9ea"
+      }
+    },
+    {
+      "name": "dnn-64_ep01",
+      "clip": true,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep01.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep01.qual.npy"
+      },
+      "sha256": {
+        "probex": "ac409ba1a7e86c2f7db7d44f7de49f5f8763360cc658c9f7f442f95542604467",
+        "qual": "f6429841a34eec88f2add98563b23e0f3a77032bd27951d5ea0e6ac1d12c8aff"
+      }
+    },
+    {
+      "name": "dnn-64_ep02",
+      "clip": true,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep02.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep02.qual.npy"
+      },
+      "sha256": {
+        "probex": "f1870bc91d34a76f6826d413384f765a252b5676402e56ecedef858ce64446b2",
+        "qual": "ad10c6dbbccc991593fc3f256516ddc714952635b8691ac7d1cb91f9a2b79b89"
+      }
+    },
+    {
+      "name": "dnn-64_ep03",
+      "clip": true,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep03.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep03.qual.npy"
+      },
+      "sha256": {
+        "probex": "0a1c5bbbdb41b90024f0a03baf860eb8a98455867863d4d4b1bbbceba5b1e7e4",
+        "qual": "9a2761eb0971423b3cec5e391e56d13f33c6736c1398926ed90f9db34ca848c7"
+      }
+    },
+    {
+      "name": "dnn-64_ep04",
+      "clip": true,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep04.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep04.qual.npy"
+      },
+      "sha256": {
+        "probex": "90e7758ce4a382f0e0859f82690471072913971e099c429d99e3ff5b76932e87",
+        "qual": "11be6ecce8b89e76b730408fde3cb77226226dd3cf410bb83143352c43454015"
+      }
+    },
+    {
+      "name": "dnn-64-base",
+      "clip": false,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64-base.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64-base.qual.npy"
+      },
+      "sha256": {
+        "probex": "c8c6c5b4d251dfcfd6d328db49348f5e2e2278ba840931b68e2f429bcdc4cb15",
+        "qual": "d84f3ef2de9f464abd54d205b567a25581cf83ae49366e7ab70a9c16dcc374d2"
+      }
+    },
+    {
+      "name": "dnn-64-net",
+      "clip": false,
+      "producer": "dnn-64",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-64.json",
+      "receipt_sha256": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-64-net.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-64-net.qual.npy"
+      },
+      "sha256": {
+        "probex": "1bbd075433e9d94151bbb817970c87181a06e84f56b7ed3d52da096b827288b0",
+        "qual": "0329907d4d99224f0563d202c704755e00bab86113ffdbb30241b6e076da7058"
+      }
+    },
+    {
+      "name": "rbmx2-150__knnf",
+      "clip": true,
+      "producer": "rbmx2-150__knnf",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/rbmx2-150__knnf.json",
+      "receipt_sha256": "01a7e20a5977e47162e37dc73b319d82653d15cc6e7bb7765f74a93ad905b5bc",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knnf.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knnf.qual.npy"
+      },
+      "sha256": {
+        "probex": "b2cfdf4629a2055a9469e4bd160611d32dd7061bbbfcba670d21c8fbdcd6b37c",
+        "qual": "2b82b1b0a8fdf672eabe5172f330bac845ac8b002173a1be199fb11897c36247"
+      }
+    },
+    {
+      "name": "bknbrx-100",
+      "clip": true,
+      "producer": "bknbrx-100",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json",
+      "receipt_sha256": "bc0286bff9016c78df59bed734fc9b64167dd6a30ee6aadee824805241f77b40",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100.qual.npy"
+      },
+      "sha256": {
+        "probex": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+        "qual": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c"
+      }
+    },
+    {
+      "name": "bknbrx-100_ep01",
+      "clip": true,
+      "producer": "bknbrx-100",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json",
+      "receipt_sha256": "bc0286bff9016c78df59bed734fc9b64167dd6a30ee6aadee824805241f77b40",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep01.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep01.qual.npy"
+      },
+      "sha256": {
+        "probex": "21415bfbcc1d723b5aba2a080d44c53eb110beab28885c9ed35f2933b30e5d43",
+        "qual": "e23fe03bb1439250a258cbe7de68f7bd6f56f560bee53624edee4690d7fe5b08"
+      }
+    },
+    {
+      "name": "als8-8",
+      "clip": true,
+      "producer": "als8-8",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/als8-8.json",
+      "receipt_sha256": "a02d51b7d50ba7bf7b6db077579e5c5f264804239a50d5fe49a9b885ebad9d68",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/als8-8.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/als8-8.qual.npy"
+      },
+      "sha256": {
+        "probex": "1d2a24670e53e073a9affb9ff7fc7846e111dff4f738a8ce12c78981e9ca7ec2",
+        "qual": "f75e11b2488ff6d4c3e7ee0f8a2af4efe83b35ac30768fe885e76561548eb51d"
+      }
+    },
+    {
+      "name": "als8-8__knn3",
+      "clip": true,
+      "producer": "als8-8__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/als8-8__knn3.json",
+      "receipt_sha256": "bd7b3568deffbb36c94f9c873a68daa03c1f63b3c7a95eeb7d4bdce162d23da1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "8892ecb6aa638516c2a6f9f19195dbae091a16b4382a89c3797e18c125650784",
+        "qual": "4250f130352e5ffb1d91909daa536349d77a6dbf73151445391998c094b4b15a"
+      }
+    },
+    {
+      "name": "bknbrx-50",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json",
+      "receipt_sha256": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50.qual.npy"
+      },
+      "sha256": {
+        "probex": "55824288a8d0db64d34b95a81d4d0616a011502b5767a9178125d2d3cd2b9db8",
+        "qual": "975c1afe023ef914a8a04bab150848abeea8a658739e846a2bdab948f15f1cad"
+      }
+    },
+    {
+      "name": "bknbrx-50_ep05",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json",
+      "receipt_sha256": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep05.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep05.qual.npy"
+      },
+      "sha256": {
+        "probex": "15385caf162c082ceaa8966109da16a968b75b7597bb79a4d1ecc992fbac7398",
+        "qual": "cf01a9c1be691f664fe9871e93ed58906556db0e61e4518a2bc6c7f7feab989b"
+      }
+    },
+    {
+      "name": "bknbrx-50_ep09",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json",
+      "receipt_sha256": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep09.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep09.qual.npy"
+      },
+      "sha256": {
+        "probex": "a0950ee3ec7993acd2ea507946cd390d03adae8fe95747f7900eafbfe93634bf",
+        "qual": "7cabd92ee955ecbfb56f19fdb5e266ae88834d8613b4d9f8189722a27933e384"
+      }
+    },
+    {
+      "name": "bknbrx-50_ep17",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json",
+      "receipt_sha256": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep17.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep17.qual.npy"
+      },
+      "sha256": {
+        "probex": "60a305c54ab1739992319d60c7b8bc11d673684d4aa01037c4007fc21a323131",
+        "qual": "511c5498e6467b7692ec273b36c80d59bb3d19ae4be3a96602618ae380ce017d"
+      }
+    },
+    {
+      "name": "bknbrx-50_ep21",
+      "clip": true,
+      "producer": "bknbrx-50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json",
+      "receipt_sha256": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep21.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep21.qual.npy"
+      },
+      "sha256": {
+        "probex": "36d0c0c843828ea34bb755f4c152738e812685ea0e7f877a1b5aec7feb6411ee",
+        "qual": "e9a06c3b00d1252c9e3e69a82d62242467cbfe49ed45408651b13f18d9adc1d3"
+      }
+    },
+    {
+      "name": "dnn-24__asym-16p75__knn3",
+      "clip": true,
+      "producer": "dnn-24__asym-16p75__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75__knn3.json",
+      "receipt_sha256": "ea5b1199d936a6ddc980cec599dc0fc30c2778488def8065739ab6c6df560755",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "131f02f1b72675dd8d6c64caaa976fb40243826fc4eb14b1e613141cfc147038",
+        "qual": "916286b93d2306a0c037c19691b43488e8101ae69b7e14579c70e1bca33a64b2"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16__knn3",
+      "clip": true,
+      "producer": "dnn-24__dnn-16__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16__knn3.json",
+      "receipt_sha256": "098404f2896dd46f9fce89c0c04485f9c7737be9e7408625c61b5f30126a5b3e",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "c3ca50b75475f72335b24f67d8a0906064cfc844732455a58d17ae0a2b1e09d1",
+        "qual": "62537e01fece53662c3775bd1fdab90ec16b47823d1676f3c645ee522a217320"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p50",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p50.json",
+      "receipt_sha256": "62bf8869e3fbe5e6810322eb5946ffe4164c8977ad511489eddd631fc71db35d",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.qual.npy"
+      },
+      "sha256": {
+        "probex": "1c129b73cee09715dbe59c6f480d31877aad456b7b4a432bd0a1046a214d0c2b",
+        "qual": "96f91b355c23c4818943141c835e681c918743363dfdcc47115da90576bd8d6f"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75__knn3b.json",
+      "receipt_sha256": "c63347ec3577a842672daf23fedbb91cea2117f94df9624c084475e73a3fc29a",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.qual.npy"
+      },
+      "sha256": {
+        "probex": "210b8a00a9c14fbeb2e5f824376188aac13e35d53097b10b000a057bfbe4781e",
+        "qual": "9a97668a5b9c052b9bd93b305622996731168237306f76b0a76b3cd700dc114c"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "clip": true,
+      "producer": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75__knn3c.json",
+      "receipt_sha256": "649004ca06b53c6dfb842141dc26bb61bdfa4a471afe5ed25dd43d9404743d40",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.qual.npy"
+      },
+      "sha256": {
+        "probex": "a2457efd645b7e6d978ba2b35a43f648d7be2a6c60a3765ff37fae20efb3fb53",
+        "qual": "4632669077cc2cc64048f96ba1f420c39653f84dab18a16e9fbe976e72282351"
+      }
+    },
+    {
+      "name": "dnn-24__dnn-24p50",
+      "clip": true,
+      "producer": "dnn-24__dnn-24p50",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-24p50.json",
+      "receipt_sha256": "24ba55ff3a91807c98c5acc46068770519eb8bf74b12bb8d123692d039b6fb54",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.qual.npy"
+      },
+      "sha256": {
+        "probex": "d9e6d63c45c5420aa6d4f334019e070af107fb3446ce8f7de55aa735803cd65e",
+        "qual": "6923989b2f7d7bbd237f999852842b25b6539f3840f3a904d7257f4766499aad"
+      }
+    },
+    {
+      "name": "mf-60",
+      "clip": true,
+      "producer": "mf-60",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-60.json",
+      "receipt_sha256": "d35336be4cec74efa52ec93a3493c8e4c24cad9742f8e5476c578f5ee18b7cfb",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-60.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-60.qual.npy"
+      },
+      "sha256": {
+        "probex": "996c1e716e4385bd8ae0a5175384449f8f03fe5e0ee602321b841bc2e5f7d0db",
+        "qual": "d32a7a3f880764e4bdf81760fb5017f06351772eef2d0983c11ca1a9edd7ff0e"
+      }
+    },
+    {
+      "name": "mf-60__knn3",
+      "clip": true,
+      "producer": "mf-60__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-60__knn3.json",
+      "receipt_sha256": "fc310f6165d2e674fbb857721195530f54980ed4dbf26b095c5d81068012b4b9",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "379f506a793531cc678601cdf0eb84ced26f7d3275b4190dd2b73160c2bb844d",
+        "qual": "1767e740d3bac6af2bf848e159d0b6a45481cb31ebce469b15d5ae083f4928f7"
+      }
+    },
+    {
+      "name": "tsvdx5-150o",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "kind": "our-independent-source-phases",
+      "receipt": "experiments/upstream-remote-temporal-pair/paired-receipt.json",
+      "receipt_sha256": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+      "files": {
+        "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.probex.npy",
+        "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.qual.npy"
+      },
+      "sha256": {
+        "probex": "e1b513c9534f339cae0b22ee0a8db76e30516a5242ea72d39dfab20b827b19ae",
+        "qual": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef"
+      }
+    },
+    {
+      "name": "tsvdx5-150o_ep06",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "kind": "our-independent-source-phases",
+      "receipt": "experiments/upstream-remote-temporal-pair/paired-receipt.json",
+      "receipt_sha256": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+      "files": {
+        "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.probex.npy",
+        "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.qual.npy"
+      },
+      "sha256": {
+        "probex": "e25212cee6242dd7342f91ca4a48ac70c718b439ceee497c69d0805ea9d74996",
+        "qual": "fbed339341476befabf151c495a9ab3b1bf65070d7eb18a4950364be4687923f"
+      }
+    },
+    {
+      "name": "tsvdx5-150o_ep16",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "kind": "our-independent-source-phases",
+      "receipt": "experiments/upstream-remote-temporal-pair/paired-receipt.json",
+      "receipt_sha256": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+      "files": {
+        "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.probex.npy",
+        "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.qual.npy"
+      },
+      "sha256": {
+        "probex": "a7b1efe92966d3ddfc514fb778b53caaa2fc3c6611c5dfee59f0148987a9f062",
+        "qual": "7bf8b984503384d0a953073d717bdea89f1ee11318c89eb75063e447f7b14962"
+      }
+    },
+    {
+      "name": "tsvdx5-150o_ep24",
+      "clip": true,
+      "producer": "tsvdx5-150o",
+      "kind": "our-independent-source-phases",
+      "receipt": "experiments/upstream-remote-temporal-pair/paired-receipt.json",
+      "receipt_sha256": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+      "files": {
+        "probex": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.probex.npy",
+        "qual": "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.qual.npy"
+      },
+      "sha256": {
+        "probex": "10477f853fe53ceacc5d56c7569b815de810fea1bd27b74c80d38200f891de59",
+        "qual": "afa2563a32e67137783c7d97b563467083e3788c09bf184ee42725766e0bf78b"
+      }
+    },
+    {
+      "name": "mf-61",
+      "clip": true,
+      "producer": "mf-61",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61.json",
+      "receipt_sha256": "bad6c008c32e78035b8d1e42adaddd618755ebc4c5cc0d363c27ed4123e1d668",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61.qual.npy"
+      },
+      "sha256": {
+        "probex": "4952e8149f5a1fda8988c2fc2bbfd512316541a3c6a1173b330797508b4c1000",
+        "qual": "817023aba4599c1f33adfac2abd6e2430ddf8bed5cfbfe3332a6ab55b8ddf504"
+      }
+    },
+    {
+      "name": "mf-61__knn3",
+      "clip": true,
+      "producer": "mf-61__knn3",
+      "kind": "native",
+      "receipt": "artifacts/upstream-repro/fresh-receipts/mf-61__knn3.json",
+      "receipt_sha256": "4bad38c956bcdbd1f5a4dc833cc760f371d0164f06c787b21f7324d4b4b63dd2",
+      "files": {
+        "probex": "artifacts/upstream-repro/fresh/preds_new/mf-61__knn3.probex.npy",
+        "qual": "artifacts/upstream-repro/fresh/preds_new/mf-61__knn3.qual.npy"
+      },
+      "sha256": {
+        "probex": "2f1f720910059f1a8dc9464afd30dcc3bcb7410802928805693c806c7126b7d0",
+        "qual": "1804e04226be3ea3c368a723ba3b9693b5e71ced40ac54418985446a4f8fe59f"
+      }
+    }
+  ],
+  "code_sha256": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+  "source_sha256": {
+    "artifacts/upstream-repro/fresh-receipts/vfeat1.json": "fdb27e400d60c9d4b375180a71ebab8ee0cb724a97d4828e02fb9aecddd5da5d",
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/dates.npy": "0ddc3e91610d2672cc2a7badcd20c5d5bc62b76f4202b4d8859a69c19bd1ff1b",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/probex/dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47",
+    "artifacts/upstream-repro/fresh/data/fulltrain/user_idxs.npy": "2c05ede890433de83e39633b977fdaf77b1db78fee3d83e4f806b46c856c3754",
+    "artifacts/upstream-repro/fresh/data/fulltrain/item_idxs.npy": "e8dd3bd36995c07dccfc47a88d924dc881e9f1ecd1ed7512bbf900b204487a3c",
+    "artifacts/upstream-repro/fresh/data/fulltrain/dates.npy": "4a16cca08c23642e7b18251d11662bb71377b102f3b78defeec2bbfda9c149e3",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-60.json": "2bf26a8e1a2ff8cd8a3b208c5f0f549640c25771fbb6d3a99b6eca166b8f421d",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.probex.npy": "1db4f350bf783d3890e6c760a5646d836ab0ee7ff66180e215987a34aef9c70f",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.qual.npy": "2db0bf0be468461cf6e7cafdc5a8ca262765b73f29d56be7d9a602ce3f5c86ff",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-60__knns.json": "eff7742ea9272c9aa94fc1bd9c26552a3752630db10ce5b09654cf052cb1fd28",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.probex.npy": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.qual.npy": "b3841a416458d72faee0b97c481f6a91dd7a4be324fb5eee5a8579b0c0eecdb2",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-40.json": "4f543976bdd79416004e80a4abb12bc34b85e34e3436b803fe67894f3edb7ec9",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-40.probex.npy": "4396204578b110b584943b4d9d9960e7762b35d74c1bddee84ae5e09190fe97a",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-40.qual.npy": "b414e9e1b50128357442dc7ada649dcb33610dc0e0983fd4eedc9ee2cc771127",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-40__knn3.json": "b35c70fbd4b3bb95615be997e24d1cab71a904ef3554c7648147549dee6f0ecb",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.probex.npy": "c1d7919ca7f7226a587de5a76aed2aaf6867c321fcc031949d07581ac6b8e2fe",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.qual.npy": "ecc863e2b577cdd1893d1d3a3060d2e6bb9fb108160f9e196b2188567c9a575c",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24.json": "871f96c30ab3af6950cf68b6efaa2f5c6b7f365c7f5c37842e6b88860c8f26b1",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24.probex.npy": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24.qual.npy": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__knn3.json": "fd3a07ed03d400d09e4b1662d1f7004ef853d3975da1059e8d84919e51746928",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.probex.npy": "2e9f601f89dceb268c07c8082f6f38dcca69f670c3ef982a6e654c4f6debce56",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.qual.npy": "5cf0cc49b43cfdacff60176494fa103d744b188a4ba77f4f89689d5734e06acc",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50.json": "5d447fb1c3c7f6a7be1be661aaa40e7d8916e6afbaa76de56ff4beaede963161",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.probex.npy": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.qual.npy": "2b7ed37dd516a291aeee125d382b663fcfbae926783fe495f72c44e79fe7a7b3",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__knn3.json": "90c28e60716f83c3842875929a7e68b6d964681244b71956cc402ccc4782cb4f",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.probex.npy": "4f9a92baf0710375f7f0e98f7743db9cd8f1175aa4576cb80bc7c01e7d052713",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.qual.npy": "e0f6ec33cc20791ffadda22e32ce76e4d11c89877dd38e5a36fef30ebc699634",
+    "artifacts/upstream-repro/fresh-receipts/dnn-64.json": "3b0ef4409c858ecf530cb06c5428f0b1fd7e24838b355db35aa55e4e30d70d3e",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64.probex.npy": "53c40fb140e1fee83b7e1222d20be9f05897044355ce13435f1bfd908093936c",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64.qual.npy": "0f271fc10cdcb0f75f7b024b7cf44bd9d44b565991c4658ac6bbfa3c9c422e26",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__attn-32.json": "f932946d60b4d11527d7d8100f2a27cb02943c693d686763e2250072cd3c6f78",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__attn-32.probex.npy": "9551c7f9e86e8535f245d1c9299e5655baa7f64ed80d147a9251ff6ab968a17a",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__attn-32.qual.npy": "f5d2a9a3b5f0e75a32848833f8c1cd855dd303f5b067004d323b46e5fb93ede6",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm.json": "72f856320e1a7a7a65790279f735a737dfd14ce9bb0842d1863cab8400dec675",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.probex.npy": "28a7831bd1fc4a90079918b44c8f7e5dfd170bde049ec4620e2a444fbac3a344",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm.qual.npy": "0759f0af577e8386d51dd1e6eacb9e57a8f5d33b41fa4d3d4265887b2981a0bd",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-400lm__knnf.json": "a46a688ad30397f8c07f75765f548f1da5c13691aef5892d610c678dc0043d7b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm__knnf.probex.npy": "a3bf900a1e835479b720d4aa6b39407311cdfad4704917497501e4b5fe0bb78c",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm__knnf.qual.npy": "93a8a5b611583712108ed633332efc7236596bd60d7928f4e2ae6e5a38daa228",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-150.json": "910d5e29c06042bfafa109abe0f38ad437253190015a1e93abf77c4a2c5dfaea",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.probex.npy": "aa4e90ac650241ab3e04eae4fdf11479582de3287f5c0128bbc6653a983368df",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150.qual.npy": "433b39e97f0fdc9cc2430db7f7f61432746a0a1fb5ff5ecf57c9ca1e5fc54af6",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-150__knns.json": "cff0be4691050256c007d22c875f6fcc873314837b7cd7d9fe8f3f1a87168c2a",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knns.probex.npy": "73d2bf2a525d0fe23fc2d737ceb395fae33ff43494e11491a71d85079156bd16",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knns.qual.npy": "b029f6922f30b4a7a82a677fb345714161a274e6e8f74fab647fa53d3b517ce3",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep01.probex.npy": "7884596fc2bb8f003236fb585388feb347bfc324e371c231110188090688c32e",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep01.qual.npy": "a5f7eecef63893efb6015500ae64e1a291d983bd2634bba89335ba83ed0a1c8f",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep02.probex.npy": "cfaec3de41a99d9b05a9999b2273189b7d31d7703a43a3dee068ce278c4b1f54",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep02.qual.npy": "4876920bb1df1687a36332ff918f162b3a7b22a33748f699e114d7eabe6e8714",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep03.probex.npy": "6bc62e6ef3961a1b3dc2037a6eac278a471ac3b955913ffde539adc141694414",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep03.qual.npy": "ddaed7a8ea2887963b0a4c2f8cad61a7b1e56b1ce468c5f668f0ac23cbcc765f",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep04.probex.npy": "822e79108eb3fb6dd326407a61504c27521efb7df72014248b25816baf82aaff",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep04.qual.npy": "59796c2330b53294bdd78840c8cd67fa28d48faa4fd41a5b2adddd6674e26d67",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep05.probex.npy": "732f91db29652f0b6c1b73b87b2d6eea1a61c1efb7e4c037d3d0f1be58d58db8",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep05.qual.npy": "1059194440ff36e999418526e03f01da59c05729934fcd8c9ce234d395fadb02",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep06.probex.npy": "971cd8fa51c8fa9288788913a22f7a6186b8187036d17c8f24039a9ccd682de8",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep06.qual.npy": "47a9f45095a01ceb7065ebb22f4e1d1282f8e7286f3956f30842fc12ade68042",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep07.probex.npy": "c89fc8cf6cd8beff53989cda25ce6e666dfed6655fc9c3e2e2c6417fa666fad9",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep07.qual.npy": "361f0eb582cec7ec839987a30a681545a23b6627c5115826ad213a884bbd9166",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep08.probex.npy": "3038c9713b40aadff98447765f5332a6177d8b4804c0b98b6888ea30e7725afe",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep08.qual.npy": "0f2b6abf0c366a8872341738474401fcabe0e4f923287c1adfcc1f580fe01e37",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep09.probex.npy": "a599a634b6fb1b5419824e635b542efa0e08af838db726334c65873ee90acf22",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep09.qual.npy": "9a36bf746e7b221a4b1a69ed264fb2fc360567113ebf6196f588dc5c6d9a46a7",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep10.probex.npy": "14fe1fcd827c5b397a19c7d0001a704118f0a8e58d0aeee2e85391f17c81a148",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep10.qual.npy": "99c7e59b7bd33fb55c0a3a38ab098369b05c62cbba6a3b70222ab31970329e2d",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep11.probex.npy": "fb3e93808868c5aec58c931826d3e05e5bd125b115d4a9dd8eeb8ce9470caa52",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep11.qual.npy": "005b05b049496a841621fcac6664b866932180c95431d2a16c468b1b6d5970fa",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep12.probex.npy": "34d8f267825e730bf51e4d895f552a506ccc0eba7888f75dfaeddf8183ee6069",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep12.qual.npy": "5a76de490fba9c8a6cf28b0bc3eedc954cb577a7ed9fe1b21ad045d3fa5a19bd",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep13.probex.npy": "cdaa3f2720ad7988929206bee54159d068a6dca8d0914492c2117b2646fed129",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep13.qual.npy": "b6c76c0269eba6e2190e66e53218b54b5caf671951ff91d31b03652cbaefaf5d",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep14.probex.npy": "d65a11034cac1bba9ec6345ce84837fa97a071591bb506fbf9418d334863b712",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep14.qual.npy": "fe0100a455cf5bb37bd68ff8b73ba308608a83d952afbb27d0181773695e7f54",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep15.probex.npy": "ba8f2d0c9c568511608f37070e872cff8204f21586947956612674fdc53660ab",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep15.qual.npy": "eaa4650446e9eabe3696f16f5b4c83ea139ac38aa8f1efc6036140e3c31d1cf1",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep16.probex.npy": "87ad8087a54557161aa46131f577d6502127e797a51672ac7f931197cd66feaf",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep16.qual.npy": "efc65f6f1a2581c66fb545be04fda2387c6bb2adbb2c931549023261f0535f57",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep17.probex.npy": "9f91e1f3fd47fb03e0358b533c31b5fc1cc0eaffdaf35d5cc2711f72b80ff712",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep17.qual.npy": "98821de7f3783c6386df2568f7b761ca9455af6250fd5c6358d8772479a23d4b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep18.probex.npy": "0c03ad361f7a694f2f30b82525b2642993dee12035230cae276cd2bb59f7d03b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep18.qual.npy": "18023a65558edae0c818c584a306c7cf674cee58f71bd8cdb00b5ad13291fb86",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep19.probex.npy": "38e441c81ec640bec007675d28f41939d6e6ffe503566a8584a5eb1affda9e9f",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60_ep19.qual.npy": "373c6f7b7a2cffb7d6e835b7105700cb6826cdb6418c4bc37819505d3c893c28",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep01.probex.npy": "053fd3846aa5af994d096d77151d63bcd422219534f888f15a3f7fd65c95733b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep01.qual.npy": "0bb438b756dc5f18dd9aaa2a278c375f9574fd81d23ec6ad717f318a70afaae7",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep02.probex.npy": "52431520517cebdaf85d77a5d81a6e109e35ae0256e9eeeedec2f6621be78d4b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep02.qual.npy": "077115eb43a424ad39032ffb1934e143cd56ad978245189077af73e41dbf936e",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep03.probex.npy": "05dcbbad9af189f12fc426bc73049b2523b5526a3d036db12aa453408ffc64a1",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep03.qual.npy": "2b1c96b1e2d736e7cc36a8ae4a6aa1928790e1f4f0552ed58d4ddf5a73e9a809",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep04.probex.npy": "1aa29b93789090f467d00939f60bbd6067ad03de0d8e8a973fa831759e0df049",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep04.qual.npy": "c7b7ddad930ab141d290c85f6c33602bf2448442c5dd3a23da9f99f118bc45dc",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep05.probex.npy": "1325cfdf82d91813ab168c5a7a897253535ce9c7b6cb75f151e13a4eb21b7d41",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep05.qual.npy": "a965d88077d83dc2df74cc78ae8d3c75a5bf266204c209e98a0aff6ac09c8291",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep06.probex.npy": "c945d3901ff51aab76199b99e3fb05e58ea89b8faba0f3bb84d4f3e90d0acdbd",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep06.qual.npy": "a6ad649e1ab196920302f79c7847dcc4d3734f50af10b3b024e02599332be7b6",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep07.probex.npy": "c70fd4cdcc20bb4dbc278f6894b893abe625b32e52f3e083adb48498ada43c31",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep07.qual.npy": "c12e14216fc7183e83d9708456eff57563633f5b7734207982427ec1c2dd0cf5",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep08.probex.npy": "8666fc4ea10c8e758da3b45d8ee75aab6eeead263d8718bf20481cd339dd458c",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep08.qual.npy": "72d73103025c68710abd5389708d3d49ffe160b1d9d7a34bfc6ccd2fe50a98a6",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep09.probex.npy": "e2bbe74a8bca06d8c7cf081d1c9b139de27c8a66c040bd58df892d2f44037e0a",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep09.qual.npy": "c5a649f648d2bfc0ba1336986cac3012469c75540405d1bac06545a2a1030a53",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep10.probex.npy": "8b97522855f98aebd25075489649f21da020b856522668ab0043d45f8042257d",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep10.qual.npy": "799d53491021c0112b41c267afb5b2f8365ed03fccfc76ee9927c8983258c901",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep11.probex.npy": "3149cf93705af12a678f72d258349c1eef1a8749cd056f90fb49652e90b2a206",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep11.qual.npy": "f7f93e9f29578ec2de0f5b9241e263eaa7b202e5252813d8940e061a3d82238a",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep12.probex.npy": "4f642e490087bf5bd24557a08310803803694610d9bf8f5a85c4bcdcd5d989e3",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep12.qual.npy": "b235b4c757cb0eadbdbc91a6b4747e9ef01d22525e6b682e628725cd2ae7fcf3",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep13.probex.npy": "56a993c44f3de4d34e3b99816c6cbf7610a1625869d67542df4cbae128e08868",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep13.qual.npy": "14383c366185ac41718ed1f36e78ebea231d24a718a4e4a6863fb02fa67b63ea",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep14.probex.npy": "581acb5626ef20456524cf8467970866013f9e2e700fb81c35d2b38edf1d200e",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep14.qual.npy": "193d3b7311ad7f3184181ade3e79e03bdeca57be08f6a6fb171ccd28f43c1577",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep15.probex.npy": "89265f9a02d6fc77c9b23a2b10b9c86634fc315c8c1c47357767ad9105e5a36e",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep15.qual.npy": "56ff08c7d6c5c03c9e40d5da4e660351910de0c170fa240477bd835ecbcb5674",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep16.probex.npy": "1580f37fec98c1491d23fff8f85543d2ee20afb26bb3a5e4067bee8c21d1a718",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep16.qual.npy": "8a2ccef3925918424356933830229ddcdc333d734714a843df9dedd19bcd77a8",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep17.probex.npy": "d3e6f0f7f4afbbcdeb7888c9d39d16b6b1b5c2472d4266b210cd3499bcccac35",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep17.qual.npy": "bfb1da96a7a16ad0beeb9f4154ee81971d63fc46a1062497d34b493b11bf71c5",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep18.probex.npy": "1f54b8b2690d611b89d8b8b6fe3365a0c6a69d0ece6788ff6ed09002df765945",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep18.qual.npy": "d3e415cf043add51bd17d9bca3ae01c03bc4005f7ac4f278d9dc57f9dda9adba",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep19.probex.npy": "9211d4fa0d641ab361d784a82b61879fa42c773156d33db566a4507e645dff36",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm_ep19.qual.npy": "2135d770f2086392032340f3fad41bca6a67d500c573889a9f5a13fe5dbb4248",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-bias.probex.npy": "21a615c70b1ff237d2edfa998f7afa127afe26ec4f7571097d8f14e9cea24981",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-bias.qual.npy": "b48705b5041e06816894400d14fa3945a29189ccfc90aa730391021ccb56486b",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-mf.probex.npy": "da5ee8036279da22cfae19f0434362048062547a69e8a7271c3723dc50f9a9d1",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-mf.qual.npy": "b128835196ef78dbe5edf9e9e5fc8a649babeae2c0a5c12258476f562e543d1a",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-nsvd1.probex.npy": "072f7b0665c204d53ae738b57faedfd45e566d0398eae3780db5b5c626f98412",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-400lm-nsvd1.qual.npy": "3a7363790325cf333166288ed9688ef87d119a75b837e96e2ddcd0b38dbfa9ea",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep01.probex.npy": "ac409ba1a7e86c2f7db7d44f7de49f5f8763360cc658c9f7f442f95542604467",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep01.qual.npy": "f6429841a34eec88f2add98563b23e0f3a77032bd27951d5ea0e6ac1d12c8aff",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep02.probex.npy": "f1870bc91d34a76f6826d413384f765a252b5676402e56ecedef858ce64446b2",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep02.qual.npy": "ad10c6dbbccc991593fc3f256516ddc714952635b8691ac7d1cb91f9a2b79b89",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep03.probex.npy": "0a1c5bbbdb41b90024f0a03baf860eb8a98455867863d4d4b1bbbceba5b1e7e4",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep03.qual.npy": "9a2761eb0971423b3cec5e391e56d13f33c6736c1398926ed90f9db34ca848c7",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep04.probex.npy": "90e7758ce4a382f0e0859f82690471072913971e099c429d99e3ff5b76932e87",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64_ep04.qual.npy": "11be6ecce8b89e76b730408fde3cb77226226dd3cf410bb83143352c43454015",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64-base.probex.npy": "c8c6c5b4d251dfcfd6d328db49348f5e2e2278ba840931b68e2f429bcdc4cb15",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64-base.qual.npy": "d84f3ef2de9f464abd54d205b567a25581cf83ae49366e7ab70a9c16dcc374d2",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64-net.probex.npy": "1bbd075433e9d94151bbb817970c87181a06e84f56b7ed3d52da096b827288b0",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-64-net.qual.npy": "0329907d4d99224f0563d202c704755e00bab86113ffdbb30241b6e076da7058",
+    "artifacts/upstream-repro/fresh-receipts/rbmx2-150__knnf.json": "01a7e20a5977e47162e37dc73b319d82653d15cc6e7bb7765f74a93ad905b5bc",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knnf.probex.npy": "b2cfdf4629a2055a9469e4bd160611d32dd7061bbbfcba670d21c8fbdcd6b37c",
+    "artifacts/upstream-repro/fresh/preds_new/rbmx2-150__knnf.qual.npy": "2b82b1b0a8fdf672eabe5172f330bac845ac8b002173a1be199fb11897c36247",
+    "artifacts/upstream-repro/fresh-receipts/bknbrx-100.json": "bc0286bff9016c78df59bed734fc9b64167dd6a30ee6aadee824805241f77b40",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100.probex.npy": "31850506c2045e512e58d6b6823b72e2608fb2cd2612dccb3272d58cc37946b5",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100.qual.npy": "07c33d521eaba41a30a4194cecd8cf777e6ffefac1af2126f1d0e8927a50743c",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep01.probex.npy": "21415bfbcc1d723b5aba2a080d44c53eb110beab28885c9ed35f2933b30e5d43",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-100_ep01.qual.npy": "e23fe03bb1439250a258cbe7de68f7bd6f56f560bee53624edee4690d7fe5b08",
+    "artifacts/upstream-repro/fresh-receipts/als8-8.json": "a02d51b7d50ba7bf7b6db077579e5c5f264804239a50d5fe49a9b885ebad9d68",
+    "artifacts/upstream-repro/fresh/preds_new/als8-8.probex.npy": "1d2a24670e53e073a9affb9ff7fc7846e111dff4f738a8ce12c78981e9ca7ec2",
+    "artifacts/upstream-repro/fresh/preds_new/als8-8.qual.npy": "f75e11b2488ff6d4c3e7ee0f8a2af4efe83b35ac30768fe885e76561548eb51d",
+    "artifacts/upstream-repro/fresh-receipts/als8-8__knn3.json": "bd7b3568deffbb36c94f9c873a68daa03c1f63b3c7a95eeb7d4bdce162d23da1",
+    "artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.probex.npy": "8892ecb6aa638516c2a6f9f19195dbae091a16b4382a89c3797e18c125650784",
+    "artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.qual.npy": "4250f130352e5ffb1d91909daa536349d77a6dbf73151445391998c094b4b15a",
+    "artifacts/upstream-repro/fresh-receipts/bknbrx-50.json": "c21de926505f23fff9baee2ecde60ccfbef4852beec346334f9f062f8633c1b1",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50.probex.npy": "55824288a8d0db64d34b95a81d4d0616a011502b5767a9178125d2d3cd2b9db8",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50.qual.npy": "975c1afe023ef914a8a04bab150848abeea8a658739e846a2bdab948f15f1cad",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep05.probex.npy": "15385caf162c082ceaa8966109da16a968b75b7597bb79a4d1ecc992fbac7398",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep05.qual.npy": "cf01a9c1be691f664fe9871e93ed58906556db0e61e4518a2bc6c7f7feab989b",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep09.probex.npy": "a0950ee3ec7993acd2ea507946cd390d03adae8fe95747f7900eafbfe93634bf",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep09.qual.npy": "7cabd92ee955ecbfb56f19fdb5e266ae88834d8613b4d9f8189722a27933e384",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep17.probex.npy": "60a305c54ab1739992319d60c7b8bc11d673684d4aa01037c4007fc21a323131",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep17.qual.npy": "511c5498e6467b7692ec273b36c80d59bb3d19ae4be3a96602618ae380ce017d",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep21.probex.npy": "36d0c0c843828ea34bb755f4c152738e812685ea0e7f877a1b5aec7feb6411ee",
+    "artifacts/upstream-repro/fresh/preds_new/bknbrx-50_ep21.qual.npy": "e9a06c3b00d1252c9e3e69a82d62242467cbfe49ed45408651b13f18d9adc1d3",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__asym-16p75__knn3.json": "ea5b1199d936a6ddc980cec599dc0fc30c2778488def8065739ab6c6df560755",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.probex.npy": "131f02f1b72675dd8d6c64caaa976fb40243826fc4eb14b1e613141cfc147038",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.qual.npy": "916286b93d2306a0c037c19691b43488e8101ae69b7e14579c70e1bca33a64b2",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16__knn3.json": "098404f2896dd46f9fce89c0c04485f9c7737be9e7408625c61b5f30126a5b3e",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.probex.npy": "c3ca50b75475f72335b24f67d8a0906064cfc844732455a58d17ae0a2b1e09d1",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.qual.npy": "62537e01fece53662c3775bd1fdab90ec16b47823d1676f3c645ee522a217320",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p50.json": "62bf8869e3fbe5e6810322eb5946ffe4164c8977ad511489eddd631fc71db35d",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy": "1c129b73cee09715dbe59c6f480d31877aad456b7b4a432bd0a1046a214d0c2b",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.qual.npy": "96f91b355c23c4818943141c835e681c918743363dfdcc47115da90576bd8d6f",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75__knn3b.json": "c63347ec3577a842672daf23fedbb91cea2117f94df9624c084475e73a3fc29a",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.probex.npy": "210b8a00a9c14fbeb2e5f824376188aac13e35d53097b10b000a057bfbe4781e",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.qual.npy": "9a97668a5b9c052b9bd93b305622996731168237306f76b0a76b3cd700dc114c",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-16p50__asym-16p75__knn3c.json": "649004ca06b53c6dfb842141dc26bb61bdfa4a471afe5ed25dd43d9404743d40",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.probex.npy": "a2457efd645b7e6d978ba2b35a43f648d7be2a6c60a3765ff37fae20efb3fb53",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.qual.npy": "4632669077cc2cc64048f96ba1f420c39653f84dab18a16e9fbe976e72282351",
+    "artifacts/upstream-repro/fresh-receipts/dnn-24__dnn-24p50.json": "24ba55ff3a91807c98c5acc46068770519eb8bf74b12bb8d123692d039b6fb54",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.probex.npy": "d9e6d63c45c5420aa6d4f334019e070af107fb3446ce8f7de55aa735803cd65e",
+    "artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.qual.npy": "6923989b2f7d7bbd237f999852842b25b6539f3840f3a904d7257f4766499aad",
+    "artifacts/upstream-repro/fresh-receipts/mf-60.json": "d35336be4cec74efa52ec93a3493c8e4c24cad9742f8e5476c578f5ee18b7cfb",
+    "artifacts/upstream-repro/fresh/preds_new/mf-60.probex.npy": "996c1e716e4385bd8ae0a5175384449f8f03fe5e0ee602321b841bc2e5f7d0db",
+    "artifacts/upstream-repro/fresh/preds_new/mf-60.qual.npy": "d32a7a3f880764e4bdf81760fb5017f06351772eef2d0983c11ca1a9edd7ff0e",
+    "artifacts/upstream-repro/fresh-receipts/mf-60__knn3.json": "fc310f6165d2e674fbb857721195530f54980ed4dbf26b095c5d81068012b4b9",
+    "artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.probex.npy": "379f506a793531cc678601cdf0eb84ced26f7d3275b4190dd2b73160c2bb844d",
+    "artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.qual.npy": "1767e740d3bac6af2bf848e159d0b6a45481cb31ebce469b15d5ae083f4928f7",
+    "experiments/upstream-remote-temporal-pair/paired-receipt.json": "5fbc7b7f323287f8873f9cce8e6b7f747c28f8dcc81092f17293523ab64ff7a1",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.probex.npy": "e1b513c9534f339cae0b22ee0a8db76e30516a5242ea72d39dfab20b827b19ae",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o.qual.npy": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.probex.npy": "e25212cee6242dd7342f91ca4a48ac70c718b439ceee497c69d0805ea9d74996",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep06.qual.npy": "fbed339341476befabf151c495a9ab3b1bf65070d7eb18a4950364be4687923f",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.probex.npy": "a7b1efe92966d3ddfc514fb778b53caaa2fc3c6611c5dfee59f0148987a9f062",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep16.qual.npy": "7bf8b984503384d0a953073d717bdea89f1ee11318c89eb75063e447f7b14962",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.probex.npy": "10477f853fe53ceacc5d56c7569b815de810fea1bd27b74c80d38200f891de59",
+    "artifacts/upstream-remote-temporal-pair/tsvdx5-150o_ep24.qual.npy": "afa2563a32e67137783c7d97b563467083e3788c09bf184ee42725766e0bf78b",
+    "artifacts/upstream-repro/fresh-receipts/mf-61.json": "bad6c008c32e78035b8d1e42adaddd618755ebc4c5cc0d363c27ed4123e1d668",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61.probex.npy": "4952e8149f5a1fda8988c2fc2bbfd512316541a3c6a1173b330797508b4c1000",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61.qual.npy": "817023aba4599c1f33adfac2abd6e2430ddf8bed5cfbfe3332a6ab55b8ddf504",
+    "artifacts/upstream-repro/fresh-receipts/mf-61__knn3.json": "4bad38c956bcdbd1f5a4dc833cc760f371d0164f06c787b21f7324d4b4b63dd2",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__knn3.probex.npy": "2f1f720910059f1a8dc9464afd30dcc3bcb7410802928805693c806c7126b7d0",
+    "artifacts/upstream-repro/fresh/preds_new/mf-61__knn3.qual.npy": "1804e04226be3ea3c368a723ba3b9693b5e71ced40ac54418985446a4f8fe59f",
+    "scripts/upstream_phase_bank.py": "ab1942f04e994fc7700d4af023f26788ef936e17371c4bad301a9b6e54134603",
+    "scripts/upstream_production_bank.py": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+    "scripts/upstream_remote_temporal_pair.py": "6fc5752f9910e853ca9d0f8d3f2e7dd3198ba0c67f6d7708b511d7562f4b1251",
+    "scripts/upstream_phase_bank_recovered_route.py": "6fed9b5d69d24caab918d0183147b8241e75f117ffbea0463b304f6203b25031"
+  },
+  "files": {
+    "users.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "labels.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "probex-design.npy": "a44137926e06863b3dfefb58a34ea821d0de51db854cc1e9db8a5f720ed24d81",
+    "qual-design.npy": "030ee567b4a0f0532d4bdacf8da1df9f5b1069152b3d2633843bab017f8c5e66",
+    "qual-features.npy": "a7ea6035ac46dfb42eb3e8524e5fa6c262bd2450fa2270574f1e219932f0eb23",
+    "probex-features.npy": "b5caba72c7754baf8f0b652d2dffa47ed0fa85e6063d871a56b34c6e4e4a088d"
+  },
+  "qualifying_labels_read": false,
+  "qualifying_rows": 2817131,
+  "rows": 1128164,
+  "feature_recipe": "Same 85-column/221-feature schema as voting experiment, rebuilt with paired fresh local ProbeX and qual outputs. Retrained Hogwild predictors may differ from remote development vectors; all final weights must be fitted to this rebuilt ProbeX bank.",
+  "adapter_sha256": "ab1942f04e994fc7700d4af023f26788ef936e17371c4bad301a9b6e54134603",
+  "core_sha256": "5c61f48c865e388752fd0976c738d4d81943e0e12f5e6bce1ceb08dc40a2449f",
+  "temporal_provenance": "Our completed original remote two-phase temporal source job; all eight selected native prediction hashes independently reconstructed exactly. Original25 epochs/150 factors; no downloaded pretrained prediction features. The currently running independent local temporal phase is not represented as completed.",
+  "dependency_route": "Unchanged original phase-bank assembly; completed own remote native receipt provider. The independent local native job remains active and is not reported complete.",
+  "dependency_adapter_sha256": "6fed9b5d69d24caab918d0183147b8241e75f117ffbea0463b304f6203b25031",
+  "all_six_cache_files_identical_to_verified_recovered_bank": true,
+  "original_remote_transfer_commit": "9bce6a17610736db730c5f46efb4307482228934"
+}

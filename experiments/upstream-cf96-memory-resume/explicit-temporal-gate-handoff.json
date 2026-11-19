@@ -1,0 +1,9 @@
+{
+  "observed": "2026-11-19T07:48:33.226489+00:00",
+  "previous_pid": 84865,
+  "previous_process": "84865 Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf96_memory_resume.py",
+  "stopped_process": "84865 Ts   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf96_memory_resume.py",
+  "no_children": true,
+  "old_waiter_exited": true,
+  "reason": "Recovered original bank can be completed independently of the local duplicate; enforce the native temporal process exit explicitly for memory admission."
+}

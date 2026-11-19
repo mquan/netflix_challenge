@@ -1,0 +1,11 @@
+{
+  "pid": 84865,
+  "caffeinate_pid": 84866,
+  "observed": "2026-11-19T07:26:53.990536+00:00",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "scripts/upstream_cf96_memory_resume.py"
+  ],
+  "policy": "One original CF96 restart after original temporal bank complete and two actual memory-admission samples; compressed/physical-footprint memory counted"
+}

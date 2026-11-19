@@ -1,0 +1,21 @@
+{
+  "state": "complete",
+  "observed": "2026-11-19T07:50:01.262191+00:00",
+  "original_watcher": "Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_phase_bank.py --watch",
+  "held_watcher": "Ts   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_phase_bank.py --watch",
+  "old_watcher_exited": true,
+  "original_bank_manifest_sha256": "daa4d26b47d5e86276d5c487fcc0acd812551913b173182ddba0d3d1f78472dc",
+  "reference_manifest_sha256": "07f5edf0f8fab8463815cb2606781a0b9661bf0b212c3a34fc17b56a469f7acd",
+  "cache_files": {
+    "users.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "labels.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "probex-design.npy": "a44137926e06863b3dfefb58a34ea821d0de51db854cc1e9db8a5f720ed24d81",
+    "qual-design.npy": "030ee567b4a0f0532d4bdacf8da1df9f5b1069152b3d2633843bab017f8c5e66",
+    "qual-features.npy": "a7ea6035ac46dfb42eb3e8524e5fa6c262bd2450fa2270574f1e219932f0eb23",
+    "probex-features.npy": "b5caba72c7754baf8f0b652d2dffa47ed0fa85e6063d871a56b34c6e4e4a088d"
+  },
+  "all_six_cache_files_bitwise_identical": true,
+  "native_processes_signalled": false,
+  "fake_local_completion_receipt_created": false,
+  "qualifying_labels_read": false
+}

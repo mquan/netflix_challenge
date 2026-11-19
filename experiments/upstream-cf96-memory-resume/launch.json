@@ -1,11 +1,12 @@
 {
-  "pid": 84865,
-  "caffeinate_pid": 84866,
-  "observed": "2026-11-19T07:26:53.990536+00:00",
+  "pid": 88287,
+  "caffeinate_pid": 88288,
+  "observed": "2026-11-19T07:49:04.058694+00:00",
   "command": [
     "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
     "-u",
-    "scripts/upstream_cf96_memory_resume.py"
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_memory_resume.py"
   ],
-  "policy": "One original CF96 restart after original temporal bank complete and two actual memory-admission samples; compressed/physical-footprint memory counted"
+  "script_sha256": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+  "policy": "Original native temporal process must exit, paired bank must be complete, and two actual memory admission samples must pass before one original CF96 controller restart"
 }

@@ -77,10 +77,13 @@ def run():
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);states=preflight();previous=memory();good=0
         while True:
             ready=(u.ROOT/'experiments/upstream-phase-bank/manifest.json').exists()
-            current=memory();owned=footprints() if ready else {};total=sum(v['bytes'] for v in owned.values())
-            good=good+1 if ready and admitted(previous,current,total) else 0
+            temporal_live=live(46684,'tsvdx5-new-qual')
+            current=memory();owned=footprints() if ready and not temporal_live else {};total=sum(v['bytes'] for v in owned.values())
+            good=good+1 if ready and not temporal_live and admitted(previous,current,total) else 0
             u.write(REPORT/'status.json',dict(state='waiting_for_temporal_bank_and_memory',observed=dt.datetime.now(dt.timezone.utc).isoformat(),
-                original_phase_bank_ready=ready,memory=current,owned_footprint_bytes=total,owned_workers=owned,
+                original_phase_bank_ready=ready,native_temporal_process_live=temporal_live,
+                owned_footprints_measured=ready and not temporal_live,
+                memory=current,owned_footprint_bytes=total,owned_workers=owned,
                 consecutive_good_samples=good,preserved_checkpoints=states))
             if good>=2:break
             if not ready and not live(46595,'scripts/upstream_phase_bank.py --watch'):
