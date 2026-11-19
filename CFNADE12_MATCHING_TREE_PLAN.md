@@ -54,3 +54,9 @@ The third completed fold (fold2) passes all three saved-tree replays bit-for-bit
 Its fixed mean is0.8610541720231787 versus0.8610794493775495 on the same224,006
 held rows, a change of-0.0000252773543709. All three completed folds improve;
 two folds remain. This does not change the full verified development best.
+
+The fourth completed fold (fold3) passes all three saved-tree replays bit-for-bit.
+Its fixed mean is0.8617380551405166 versus0.8617462498381866 on the same225,873
+held rows, a change of-0.0000081946976700. All four completed folds improve;
+the final fold is running. Full-result promotion still requires that fold,
+complete replay and independent full scoring.
