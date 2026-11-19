@@ -1,0 +1,79 @@
+{
+  "state": "verified_published_progress_snapshot",
+  "observed": "2026-11-19T11:12:16.910210+00:00",
+  "source_commit": "b197eb4355e92ba0c83a768a0af5e616215f0aba",
+  "pages_commit": "a505f083bfdf9485b2f1d8a4e5746b7bdce52f25",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "d8964162f4ac73b4387ad35f8282009d4e8428b69c8fef8cc9ad615eb7059b75",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "sha256": "d8964162f4ac73b4387ad35f8282009d4e8428b69c8fef8cc9ad615eb7059b75",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "sha256": "25ff6a1bdc4325264f87a1993cca1707efbb1d59978cc534d9d70c12a5c61d8a",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "PROGRESS.md",
+      "status": 200,
+      "sha256": "8517a092b803df8edffb3d58011bc1b1e6270fa50fedab21272cdb076eb078ae",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "READY_OUTPUT_COVERAGE.md",
+      "status": 200,
+      "sha256": "081f9ff02c6210f35a48f586b42845584e5475dcace8d11a44bff2f0f1bed6b2",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "SPLIT3_PILOT_PLAN.md",
+      "status": 200,
+      "sha256": "b82a45af2c36f438252705e362f5efc41fd1a2cd7b17179d5c519eb62d73e9bc",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "sha256": "440e8149ec89f0c872bc0c0c1508df0c0700415cecd82615e4178f800cd238e0",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "sha256": "0ccb8b9fda81f1860cd1152a82667421fa495227ed8a41a5701476977a53cc2b",
+      "local_bytes_equal": true
+    },
+    {
+      "path": "experiments/upstream-split3-pilot/training-start-verification.json",
+      "status": 200,
+      "sha256": "a58b2d17e07308014aece8d72dbbbebc171f871192b491060546ed1edbef87f2",
+      "local_bytes_equal": true
+    }
+  ],
+  "browser_widths": [
+    390,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "latest_qualifying_score_visible": true,
+  "pilot_and_remote_progress_visible": true,
+  "milestones": 39,
+  "timeline_tests_passed": 7,
+  "projection_tests_passed": 4,
+  "development_best": 0.8599745622436025,
+  "qualifying_source0": 0.8614776640541453,
+  "qualifying_source1": 0.8624021195492101,
+  "qualifying_target_achieved": false,
+  "plots_regenerated": true,
+  "plot_bytes_unchanged": true,
+  "scope": "New source coverage and actual pilot progress only. Score plots retain the verified existing results; no new qualifying or nonlinear promotion."
+}
