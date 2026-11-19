@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T15:51:41.397233+00:00
-best_score: 0.8594692563654075
+timestamp: 2026-11-19T16:21:30.063098+00:00
+best_score: 0.8594554093063749
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,18 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+New verified development best: **0.8594554093063749**, from107 own raw
+predictors plus50 original learned RBM user supports. All15 saved neural models
+replay on all five user folds; independent scoring verifies. The fixed mean
+with tree91 is higher at0.8594773263. Full-known fitting and new qualifying
+scoring are pending. The best qualifying score below is unchanged.
+See [RBM50_CONTEXT_RESULT.md](RBM50_CONTEXT_RESULT.md).
+Original RBM50 is now complete20/20 with every support gather separately
+checked; Tx20lat is waiting for stable memory. The107+50 tree comparison is
+actually fitting. Three original split3 models are queued after the latent lane.
+
+Earlier observation:
 
 Local update: own105 completed all five folds and all15 model replays. Its
 NN0.8594783385 is slightly worse than NN103, so it is not promoted. The next
