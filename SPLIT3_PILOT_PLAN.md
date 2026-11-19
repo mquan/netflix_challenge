@@ -49,6 +49,12 @@ for memory admission for the attention fit; the data stage is complete, while
 model training is not yet claimed to have started. See `data-verification.json`
 and `startup-verification.json` for the observed evidence.
 
+At11:08:33UTC, native PID42926 started the original two-phase attention fit.
+Its actual command is recorded in `model-launch.json`, and its initial log
+confirms the original16/192/12/seed11 configuration. The prior waiting snapshot
+remains historical evidence, not the current model state. No completion or score
+is claimed before the full native receipt and separate verification exist.
+
 On successful completion, retain every native output and the complete actual
 two-phase receipt. Check all declared outputs, finite float32 query vectors,
 terminal/epoch12 equality, and project the fixed terminal and published epoch8

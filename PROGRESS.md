@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T10:35:47.456514+00:00
+timestamp: 2026-11-19T11:11:00.008274+00:00
 best_score: 0.8599745622436025
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -16,7 +16,8 @@ At11:04UTC the first isolated split3 pilot completed its native data preparation
 98,720,013 training rows and1,760,494 validation rows. All1,128,164 known ProbeX
 rows map uniquely into validation and were verified absent from generated
 training. The original s3-attn16 two-phase fit is queued behind measured memory
-admission under live controller40527. See [SPLIT3_PILOT_PLAN.md](SPLIT3_PILOT_PLAN.md).
+admission under live controller40527. It subsequently started at11:08:33UTC as
+native PID42926. See [SPLIT3_PILOT_PLAN.md](SPLIT3_PILOT_PLAN.md).
 This is training progress, not a new score.
 
 At approximately 10:55 UTC, a fixed eight-column addition using already completed
