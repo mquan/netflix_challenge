@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T22:54:52.900183+00:00",
+  "script_sha256": "4541beb777ea279e33cecdb7443e6992562ebdfb95cd46d915b2af26c0c72df2",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-item186-virtual-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Fixed known-only comparison declared in upstream-item186-virtual-queue/plan.json before this neural study started. Actual saved-model replays are required before evaluation. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}

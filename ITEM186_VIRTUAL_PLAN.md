@@ -38,3 +38,20 @@ experiments/upstream-item186-virtual-fixture/verification.json. Source:
 scripts/upstream_rank1000_item32.py, scripts/verify_upstream_rank1000_item32.py,
 scripts/upstream_item186_virtual_{features,mps_context,queue}.py and
 scripts/upstream_rbm50_tree_item186_virtual_mps.py.
+
+## Completed negative result
+
+All five folds and all15 actual saved neural-model replays passed. Standalone
+NN RMSE0.8595016853589673; fixed expanded-tree half mean **0.8593522338040437**,
+worse than0.8592309819864167. A separate exact stored-mean and compensated
+full-known score check passes. No qualifying refit or promotion.
+
+The first evaluator stopped on a nonexistent preceding-best path introduced
+while copying the comparison script. Original code/plan/log and all fitted
+artifacts are preserved. A separate recovery script corrects only the two
+references to the actual item154 preceding best and writes a distinct recovered
+result namespace. No training, features, weights or folds changed. The recovery
+declaration preceded evaluation and binds both scripts and the original plan.
+Evidence: experiments/upstream-item186-virtual-queue/evaluator-recovery.json and
+experiments/upstream-rbm50-tree-item186-virtual-mps-recovered/
+{verification,independent-mean-check}.json.

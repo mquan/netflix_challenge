@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T22:39:44.722871+00:00
+timestamp: 2026-11-19T22:58:59.080776+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,20 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The rank1000 item186 study is complete and negative: NN0.8595016854, fixed
+expanded-tree half mean0.8593522338, above0.8592309820. All15 actual model
+replays and separate exact mean/full-known scoring pass. Evaluator-only
+reference recovery preserved the original failed plan and all model artifacts;
+no qualifying refit. See [ITEM186_VIRTUAL_PLAN.md](ITEM186_VIRTUAL_PLAN.md).
+
+Next, controller60069 trains the unchanged tree recipe on all154 contexts
+already used by the current best neural partner. The current tree used only50.
+All original input matrices are shared by hardlink. Keep full nested budgets,
+actual saved-tree replay requirements and fixed half mean before comparison.
+See [ITEM154_TREE_PLAN.md](ITEM154_TREE_PLAN.md).
+
+Earlier observations below are retained as history.
 
 The full item-oriented raw model started actual training at22:46 UTC after
 both full transposed histories passed independent replay of every original
