@@ -1,0 +1,10 @@
+{
+  "created": "2026-11-19T23:15:19.223073+00:00",
+  "observed": "2026-11-19T23:43:06.217809+00:00",
+  "queue_pid": 63754,
+  "queue_identity": "Thu Nov 19 15:15:19 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_itemae_virtual_queue.py",
+  "original_queue_plan_sha256": "89db93b5cf97ac2edfadfbab6328b895427e889f302b29ec339a93ed62d1bb91",
+  "script_sha256": "904cd5cfa4f172f443af5657702bc68257ecb7cf71a870b3f4ec9de76b98b482",
+  "rule": "Extra admission only: hold the still-idle fixed5/10 neural coordinator until all actual CPU tree fitting/replay/supervision processes finish, two stable samples show other jobs below8GiB RSS and compressor below5GiB, and paired10 is ready. Reserve16GiB for the observed full-size neural peak under the existing24GiB total guard. Raw GPU/native fitting continues. No numerical model/input/fold/seed/stopping/checkpoint/weight change.",
+  "qualifying_labels_read": false
+}

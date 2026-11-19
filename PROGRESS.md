@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T23:27:17.507463+00:00
+timestamp: 2026-11-19T23:44:50.599477+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,23 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Storage headroom increased by an observed4.98GB after four inactive cache
+pairs passed complete independent byte comparison. Duplicate physical storage
+now uses hardlinks; every original path/value/permission/owner and manifest
+hash remains, independently rechecked. No distinct feature cache, dataset,
+prediction, model or checkpoint was removed. See
+[EXACT_CACHE_STORAGE_RESULT.md](EXACT_CACHE_STORAGE_RESULT.md).
+
+The full-context tree completed its first original fold and all three actual
+models; remaining folds continue. Raw item-oriented training has reached
+fulltrain epoch10. The pending fixed5/10 neural test is held at its idle
+boundary until the CPU tree fit/replay completes and two readings reserve
+16GiB for the measured full neural peak. Its numerical recipe and budgets
+are unchanged. Existing native/raw fits continue. See
+[ITEMAE_NEURAL_ADMISSION.md](ITEMAE_NEURAL_ADMISSION.md).
+
+Earlier observations below are retained as history.
 
 New independently verified qualifying best: **0.860652465694796 /
 0.8616635956343016**, with the same original own full tree/item154 neural

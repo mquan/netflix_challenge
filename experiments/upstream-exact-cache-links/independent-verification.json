@@ -1,0 +1,60 @@
+{
+  "state": "complete_independent_exact_cache_path_and_content_verification",
+  "observed": "2026-11-19T23:37:52.246117+00:00",
+  "receipt_sha256": "31411572aed3158b69f797f33816a10f9be01507b53310c1e85445b4e7553d5b",
+  "verifier_sha256": "c27751c6fffdda17bc5c460b3cf8ea8730409cec381469ea4a40df8fa1d04141",
+  "records": [
+    {
+      "canonical": "artifacts/upstream-source-extension/design.npy",
+      "target": "artifacts/upstream-extension-context/design.npy",
+      "sha256": "79924c222108355d9b86bf6d7c12a94b02f90df7a5df804e37cbd10d76761100",
+      "shape": [
+        1128164,
+        167
+      ],
+      "dtype": "float64",
+      "both_original_paths_and_hashes_verified": true,
+      "shared_storage_inode_verified": true
+    },
+    {
+      "canonical": "artifacts/upstream-source-extension/features.npy",
+      "target": "artifacts/upstream-extension-context/features.npy",
+      "sha256": "d637341074e911651eea3819c09a30a48d5253c8c1c9f3c19b89f91a41eaf9a1",
+      "shape": [
+        1128164,
+        227
+      ],
+      "dtype": "float32",
+      "both_original_paths_and_hashes_verified": true,
+      "shared_storage_inode_verified": true
+    },
+    {
+      "canonical": "artifacts/upstream-context-blend/design.npy",
+      "target": "artifacts/upstream-voting-blend/design.npy",
+      "sha256": "4d231cb3e751b7236a91a4dfa541e210ce879ec2b422503572cf4c85b8a34848",
+      "shape": [
+        1128164,
+        161
+      ],
+      "dtype": "float64",
+      "both_original_paths_and_hashes_verified": true,
+      "shared_storage_inode_verified": true
+    },
+    {
+      "canonical": "artifacts/upstream-context-blend/features.npy",
+      "target": "artifacts/upstream-voting-blend/features.npy",
+      "sha256": "3c4bf8fea667e8b6cecedd715c16f96d2dab86ebae83931c54ae870385527b42",
+      "shape": [
+        1128164,
+        221
+      ],
+      "dtype": "float32",
+      "both_original_paths_and_hashes_verified": true,
+      "shared_storage_inode_verified": true
+    }
+  ],
+  "all_original_manifest_hashes_unchanged": true,
+  "all_cache_values_and_paths_preserved": true,
+  "qualifying_labels_read": false,
+  "accuracy_claimed": false
+}
