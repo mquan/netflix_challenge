@@ -1,0 +1,35 @@
+{
+  "observed": "2026-11-19T18:36:56.078293+00:00",
+  "pages_commit": "149bfdb",
+  "state": "complete_live_byte_verification",
+  "files": [
+    {
+      "path": "",
+      "bytes": 125262,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 61614,
+      "matches": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 294200,
+      "matches": true
+    },
+    {
+      "path": "experiments/upstream-rbm50-tree/independent-verification.json",
+      "bytes": 1794,
+      "matches": true
+    },
+    {
+      "path": "RBM50_TREE_RESULT.md",
+      "bytes": 2142,
+      "matches": true
+    }
+  ],
+  "development_rmse": 0.8593661638722666,
+  "qualifying_worse_group_rmse": 0.8619141823430468,
+  "goal_achieved": false
+}

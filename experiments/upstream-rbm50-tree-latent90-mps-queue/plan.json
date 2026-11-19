@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-19T18:36:55.095465+00:00",
+  "script_sha256": "54b869c657d0471c1e83c1958b42b05c36b62f88146598ee3b434a2eefabd87d",
+  "origins": [
+    [
+      "tree",
+      "upstream-rbm50-tree"
+    ],
+    [
+      "nn",
+      "upstream-latent90-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "qualifying_labels_read": false,
+  "rule": "Fixed mean declared before full all90 MPS result. Require complete actual saved-model replays and all originating fold artifact hashes; no weight search."
+}
