@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-19T16:21:30.063098+00:00",
-  "display_time": "2026-11-19 16:21 UTC",
+  "observed": "2026-11-19T16:36:30.054869+00:00",
+  "display_time": "2026-11-19 16:36 UTC",
   "best_development_rmse": 0.8594554093063749,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "5bca574f81d8478ebaa36c9df034507fed0da59e0220182462e011bad677d3f0",
   "independent_verification_sha256": "807e13b8fbdc1c453f7655e10a25033e89499941ae982d05140e2b889cfc16cc",
   "work": [
+    {
+      "work": "Larger all90 latent context study",
+      "state": "Queued behind actual Tx40 support completion and the fitting slot. Original107 predictors plus90 exact learned components; hidden128/rank32,334 inputs. Actual small fit/save/reload bitwise test passed. No full90 cache or new accuracy result yet."
+    },
     {
       "work": "Own107 plus50 standalone qualifying refit",
       "state": "NN-only choice and actual per-seed median budgets[14, 14, 13] frozen before new qualifying outcomes. Full-fit controller6028 queues behind the active tree fit. Paired bank separately verified. No new qualifying result."
@@ -47,7 +51,7 @@
     },
     {
       "work": "Local latent90 fallback",
-      "state": "Original RBM50 complete20/20 and separately checked, including every support gather row on both query sets. Original Tx20lat is waiting for stable memory. Its40 components are not yet included."
+      "state": "Original RBM50 complete20/20 with separate every-row support checks. Original Tx20lat native7119 is training its first20-epoch phase, latest completed epoch4. Its remaining40 supports are not ready; full90 completion is not claimed."
     },
     {
       "work": "First qualifying blend",
@@ -75,7 +79,7 @@
     },
     {
       "work": "Original 1,000-factor model",
-      "state": "Native PID73629 remains live. Known-phase outputs exist, and an actual process sample confirms active fit_epoch work. Original rank1000 and20 epochs in both phases retained; full completion remains pending."
+      "state": "Native73629 remains active. First20-epoch phase complete; second phase is working through epoch12/20. Original rank1000, logical partitioning and both full20-epoch budgets retained. No whole-model completion yet."
     },
     {
       "work": "Temporal150 local fallback",
@@ -83,7 +87,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Original native phases continue under92864/92865. Latest saved epochs37/35 of95, retaining320 hidden/96 rank and exact original checkpoint lineage."
+      "state": "Both original native phases remain active under92864/92865. Latest saved epochs38/36 of95; unchanged320-hidden/96-rank capacity and verified checkpoint restore lineage."
     },
     {
       "work": "CFNADE48 remote continuation",
@@ -257,8 +261,8 @@
       "state": "complete_both_frozen_audits_verified"
     },
     "cf96_saved_epochs": {
-      "trainx": 37,
-      "fulltrain": 35
+      "trainx": 38,
+      "fulltrain": 36
     },
     "tsvdx5_60": "complete_independently_checked_23_23",
     "rbm50_context": {
@@ -269,6 +273,11 @@
     "own105": {
       "state": "complete_not_improved",
       "nn_rmse": 0.8594783385089899
+    },
+    "tx20lat": {
+      "pid": 7119,
+      "state": "original_first_phase_training",
+      "latest_completed_epoch": 4
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",

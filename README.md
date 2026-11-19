@@ -29,9 +29,8 @@ verify. The separately predeclared tree91/NN103 half mean also improves, to
 No qualifying outcomes entered fitting or candidate/weight selection.
 
 The new107+50 tree comparison is fitting. Original RBM50 completed20/20 and
-passed separate every-row support verification; Tx20lat is waiting for stable
-memory. The1,000-factor temporal model and both CF96 phases remain active
-(latest saved epochs37/35 of95). Three original split3 recipes are queued after
+passed separate every-row support verification; Tx20lat is now training. The1,000-factor temporal model and both CF96 phases remain active
+(latest saved epochs38/36 of95). Three original split3 recipes are queued after
 the latent lane. Own105 completed without improving the previous best.
 See [CF48_103_QUALIFYING_RESULT.md](CF48_103_QUALIFYING_RESULT.md) for the latest
 result and [FIRST85_QUALIFYING_RESULT.md](FIRST85_QUALIFYING_RESULT.md) for the
