@@ -1,0 +1,29 @@
+{
+  "state": "complete_independent_grouped_ridge_replay",
+  "observed": "2026-11-19T10:26:03.626355+00:00",
+  "verifier_sha256": "29a7e6f6538d30948962deccf7fe6c2bfd0310cc1846afbf8f7741ccb53f2b21",
+  "manifest_sha256": "d8f211e5c4d664c6800c9ffea8de3be5b6e08cccfe6ae43b89b8295c999a20a0",
+  "screen_sha256": "dc096ecad25bfda48c62995e73b056868c38d75bb9fa048c081298121729d1d8",
+  "rows": 1128164,
+  "users": 462858,
+  "recomputed_group_stats": true,
+  "outer_users_disjoint": true,
+  "records": [
+    {
+      "arm": "control",
+      "independent_rmse": 0.8633016697140106,
+      "max_prediction_replay_error": 6.217248937900877e-15,
+      "prediction_sha256": "8b5eb820923b3f8d48e0e5b0c93c951d629beca42dd00dc06bcb1307c902e9c8"
+    },
+    {
+      "arm": "main",
+      "independent_rmse": 0.863179337317253,
+      "max_prediction_replay_error": 6.661338147750939e-15,
+      "prediction_sha256": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5"
+    }
+  ],
+  "replay_absolute_tolerance": 1e-10,
+  "qualifying_labels_read": false,
+  "nonlinear_fitting_performed": false,
+  "scope": "Separate sufficient-statistic recomputation, held-user ridge solve/prediction replay and compensated scoring. Only known-ProbeX labels. Diagnostic improvement is not a nonlinear or qualifying promotion."
+}

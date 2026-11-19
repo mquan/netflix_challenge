@@ -1,0 +1,88 @@
+{
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 64,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000
+  },
+  "versions": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "lightgbm": "4.7.0"
+  },
+  "code_sha256": {
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_snapshot_blend.py": "08d2dd4f0ba4e7cf550b4d99609cdf564c592a843fdb7298bb6568e200edb82e",
+    "scripts/upstream_exchange.py": "f3cc6cdda82b5d39524f16a33f74c9ae29491a38492841eafd212360035718ab",
+    "scripts/upstream_expansion.py": "bf92a8655401b297f98fbf2692cf941c89f30edcec3db5aec057c70e029d22ff",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "scripts/upstream_remote_integration.py": "7f98d1a28464c666dd3768f93d93980479b1a0297b83dd369a4d75631a1e3bd5",
+    "scripts/verify_upstream_nonlinear.py": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556",
+    "scripts/upstream_remote_batch.py": "f526ddac75dfe46a6874d41cbcd61be62268d096bea28f4ba8f6edc7f603b672",
+    "scripts/upstream_voting_blend.py": "85052140cab0d3f65bf1c814e3c442bcace57a84072f81761bbb5d5d971e8674",
+    "scripts/upstream_full_reproduce.py": "436f181b5b73c228c67abf5a945140eb37ef95472d42ecc451f1f60cbe7a7a80",
+    "scripts/upstream_source_extension.py": "6a0e2cd6a31f3c6d615128e604cf32fb94870796ca4048a5e4963c03d15dec8b",
+    "scripts/upstream_temporal93.py": "7a794e648784914f92b42bde8abc5bc19d537c2371c7ed785ff5a6790f6cfcf0"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_manifests_sha256": {
+    "experiments/upstream-source-extension/manifest.json": "24933a00eecd67f788ad4328c70c107cb6a1c7a36af63fafd28c09e36e17b803",
+    "experiments/upstream-source-extension/independent-verification.json": "3ca17c92609023d654d9fd15be62ca06fb90442e63824b692e9da3128a0d27bf",
+    "experiments/upstream-source-extension/evaluation.json": "1c097f0f44de14d819158454700a8bc133310f275558a976136851c8b9acbd6a",
+    "experiments/upstream-temporal93/plan.json": "a5673dd399cfa0b35a11a469ca45c962496a41202efe32236d65145dc1c288ce",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-60o.json": "2def841c6276393e9d96e96028ace2ea253669cd30feed36c95aa27608112f01",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60o.probex.npy": "d96075f5013d041fb84ded4c71e3c6f2ac5056df2d953480c1fe752142f7f95a",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-60o.qual.npy": "92a95c3243ea88a4ba19334695dcbfdef7b1c3057bc865d76bc5e2d5780e3589",
+    "artifacts/upstream-repro/fresh-receipts/tsvdx4-q16tb.json": "46b5430571887a705e4c1308524e59dcc2ad813760c0efbf6f9984b89ed0798f",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-q16tb.probex.npy": "1e39d8128b217faeb3fc12c5d01b2f3eb7409247aed3c92b36ee18c2de4b91d9",
+    "artifacts/upstream-repro/fresh/preds_new/tsvdx4-q16tb.qual.npy": "5ac2f53494abd6399bdd0b271a54c4e8516c493fb96f77ed4023204e38f76597",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "experiments/upstream-temporal93/ridge-screen.json": "dc096ecad25bfda48c62995e73b056868c38d75bb9fa048c081298121729d1d8"
+  },
+  "prepared_sha256": {
+    "users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "design.npy": "b9cf4e67cf963eb7823e62ddf3a10c148af5d99f463ce6d6eaad458b734f9ee8",
+    "stats.npz": "550c9621a45ae34426a32043dd985d06ff6b4eb0de2d6c91ed67722166833beb",
+    "features.npy": "23ce9fd56d1b9433e2b9f6f976b51f63a5cf654d77908902efedc46fda6efcf0",
+    "baseline.npy": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5",
+    "control-ridge.npy": "8b5eb820923b3f8d48e0e5b0c93c951d629beca42dd00dc06bcb1307c902e9c8",
+    "main-ridge.npy": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5"
+  },
+  "rows": 1128164,
+  "prediction_columns": 93,
+  "design_columns": 169,
+  "nonlinear_features": 229,
+  "baseline_rmse": 0.863179337317253,
+  "parent_baseline_rmse": 0.8633016697140107,
+  "new_native_predictions": [
+    "tsvdx4-60o",
+    "tsvdx4-q16tb"
+  ],
+  "qualifying_labels_read": false,
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero.",
+  "scope": "Adaptive own-training known-ProbeX development. Both original temporal models are complete for both native phases; original capacity/source/epochs preserved. Cached parent source realization is retained for development; no production bank or recovered-label audit is created.",
+  "arms": [
+    "control",
+    "tree",
+    "nn",
+    "fixed-half-tree-nn"
+  ]
+}

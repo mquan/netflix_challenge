@@ -1,0 +1,27 @@
+{
+  "state": "verified_queued_after_context91",
+  "observed": "2026-11-19T10:33:25.454430+00:00",
+  "pid": 29784,
+  "actual_command": "Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_temporal93_context.py",
+  "script_sha256": "da1616754180370630d1bb2d9ac88b5d9cc03ce6a0c1f95a63781bd3cc59fcae",
+  "data_manifest_sha256": "d8f211e5c4d664c6800c9ffea8de3be5b6e08cccfe6ae43b89b8295c999a20a0",
+  "ridge_verification_sha256": "54cde3a5e71c8a5c6be5a0407fe7d27606fc2309b86f8c904a608e2d936dd459",
+  "current_status": {
+    "state": "waiting_for_prior_fits_and_memory",
+    "observed": "2026-11-19T10:32:59.242641+00:00",
+    "predecessors": {
+      "10867": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_extension_context.py"
+    },
+    "memory": {
+      "compressor_bytes": 1620656128,
+      "swap_used_bytes": 2870539714.56
+    },
+    "owned_workers": {},
+    "consecutive_good_samples": 0
+  },
+  "predictors": 93,
+  "features_plus_ridge": 230,
+  "train_save_reload_test_passed": true,
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

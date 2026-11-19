@@ -1,0 +1,31 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8633016697140107,
+      "fold_rmse": [
+        0.8627318076578947,
+        0.8605862475931506,
+        0.864078251410001,
+        0.8649489545847258,
+        0.864166102938003
+      ],
+      "prediction_sha256": "8b5eb820923b3f8d48e0e5b0c93c951d629beca42dd00dc06bcb1307c902e9c8"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.863179337317253,
+      "fold_rmse": [
+        0.8626074705417319,
+        0.8604837849392716,
+        0.8639400384267024,
+        0.8648191480053361,
+        0.8640492228813644
+      ],
+      "prediction_sha256": "8b6953a51d5fb767f8da87cd7377660a72221508691f5bd720feab74cd0cbff5"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "scope": "Fixed all-two temporal addition on known-ProbeX only. Same five user folds; diagnostic ridge comparison, not a global nonlinear best or qualifying result."
+}

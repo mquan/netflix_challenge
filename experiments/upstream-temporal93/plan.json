@@ -1,0 +1,33 @@
+{
+  "created": "2026-11-19T10:16:30.528396+00:00",
+  "script_sha256": "7a794e648784914f92b42bde8abc5bc19d537c2371c7ed785ff5a6790f6cfcf0",
+  "fixed_additions": [
+    "tsvdx4-60o",
+    "tsvdx4-q16tb"
+  ],
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 64,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000
+  },
+  "parent_manifest_sha256": "24933a00eecd67f788ad4328c70c107cb6a1c7a36af63fafd28c09e36e17b803",
+  "rule": "Append both completed original temporal models together. No feature subset/weight selection on qualifying outcomes. Known-ProbeX five-user-fold ridge control and all-two arm only. Ridge diagnostics are not a nonlinear or qualifying promotion.",
+  "nonlinear_fitting_started": false,
+  "qualifying_labels_read": false
+}
