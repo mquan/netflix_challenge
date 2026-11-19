@@ -1,0 +1,23 @@
+{
+  "code_sha256": {
+    "scripts/upstream_primary_handoff.py": "43b9264778744a078930a7e57e4c9be8d77c70fd51fe3d08f95835c609da5594",
+    "scripts/upstream_primary_guarded.py": "3f35f73808942ec865dca422f0c3ad27ca0d4699e6e5b00de4a69e8910db33c5",
+    "scripts/upstream_import_backfill.py": "d7a521170a1a585be99c1c7db5701a22182eb6810062d34ea9d8752d01f54720",
+    "scripts/upstream_full_reproduce.py": "436f181b5b73c228c67abf5a945140eb37ef95472d42ecc451f1f60cbe7a7a80"
+  },
+  "original_launch": {
+    "pid": 19701,
+    "caffeinate_pid": 19702,
+    "utc": "2026-11-18T16:24:08.326011+00:00"
+  },
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "storage_holds": "Every tsvdx4p-* native heap job; existing large serial models remain held.",
+  "delegated_source_jobs": [
+    "cfnade-48",
+    "cfnade-96",
+    "cfnade-96r"
+  ],
+  "model_policy": "Original ranks, epochs and source recipes unchanged. Separate native workers and mapped backends remain responsible for held models.",
+  "safety": "Wait for completed own auxiliary import and a hash-verified completed primary job. Stop only the idle scheduler with no live child/wrapper group. Resume it in finally; wait for its exit and exclusive scheduler lock before launching successor.",
+  "qualifying_labels_read": false
+}

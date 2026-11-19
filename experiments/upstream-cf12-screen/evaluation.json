@@ -1,0 +1,42 @@
+{
+  "state": "diagnostic_complete",
+  "observed": "2026-11-19T00:32:36.937638+00:00",
+  "records": [
+    {
+      "arm": "control",
+      "independent_rmse": 0.863629700625972,
+      "fold_rmse": [
+        0.8631125191124015,
+        0.8609398932975805,
+        0.8644005563188251,
+        0.8651546200257827,
+        0.864544022094992
+      ],
+      "prediction_sha256": "80a1b6d9d3b7ad435061f237ad724a7221657d43b7a484c4a2708d9efdf646d9"
+    },
+    {
+      "arm": "cfnade12",
+      "independent_rmse": 0.8633631201729802,
+      "fold_rmse": [
+        0.8627989798575708,
+        0.8606440769444718,
+        0.8641527792157452,
+        0.8649782646502322,
+        0.864244644393474
+      ],
+      "prediction_sha256": "6d4633d5fccff2411d7be8bf95d0d110d89456cc9c91c1fc89767511a3c3451f"
+    }
+  ],
+  "delta_rmse": -0.00026658045299177147,
+  "single_model_rmse": 0.9118353607808662,
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "parent_manifest_sha256": "d8173789aa3ff9cb6ff961b9e23c8e613f3171cef8bc0f40d17f5f78c53e970e",
+  "parent_prepared_inputs_verified": true,
+  "probex_native_sha256": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+  "epoch40_native_sha256": "976e8d2226ab0f8715d315173351c016c4d510e567b4225e90901f1880c224b4",
+  "completed_phase_log_sha256": "1ea385d91fd941cbc0538d0853455e6cdd1f89eb78f25d02668aabcdc9812e92",
+  "algebra_sha256": "f526ddac75dfe46a6874d41cbcd61be62268d096bea28f4ba8f6edc7f603b672",
+  "qualifying_labels_read": false,
+  "complete_paired_native_receipt_available": false,
+  "scope": "Known-ProbeX diagnostic of a completed40-epoch source phase. Original five user folds/penalty; no qualifying outputs or outcomes read. No production eligibility or qualifying score; the complete paired native receipt remains required. Fixed six-model extension remains unchanged."
+}

@@ -1,0 +1,55 @@
+Running 'cfnade-12': cargo build --release --bin cfnade-new && ./target/release/cfnade-new cfnade-12
+   Compiling netflix_prize v1.0.0 (/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh)
+    Finished `release` profile [optimized] target(s) in 9.34s
+[cfnade-12]
+target = "rtg"
+CfNadeConfig { n_hidden: 40, n_hidden2: 0, rank: 12, n_epochs: 40, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }
+trainx => probex
+CF-NADE init: sampling A/P factors (2 x 5 x 17770 x 12)...
+CF-NADE init: computing item rating-bias priors...
+CF-NADE init: indexing user ratings...
+CF-NADE init: indexing probe items for implicit context...
+CF-NADE init: building per-user day-frequency bins...
+CF-NADE init: computing side-feature statistics...
+Epoch 01 | RMSE 0.94444
+Epoch 02 | RMSE 0.93500
+Epoch 03 | RMSE 0.92976
+Epoch 04 | RMSE 0.92709
+Epoch 05 | RMSE 0.92319
+Epoch 06 | RMSE 0.92240
+Epoch 07 | RMSE 0.92163
+Epoch 08 | RMSE 0.91942
+Epoch 09 | RMSE 0.92084
+Epoch 10 | RMSE 0.91971
+Epoch 11 | RMSE 0.91957
+Epoch 12 | RMSE 0.91880
+Epoch 13 | RMSE 0.91814
+Epoch 14 | RMSE 0.91745
+Epoch 15 | RMSE 0.91785
+Epoch 16 | RMSE 0.91861
+Epoch 17 | RMSE 0.91830
+Epoch 18 | RMSE 0.91789
+Epoch 19 | RMSE 0.91579
+Epoch 20 | RMSE 0.91465
+Epoch 21 | RMSE 0.91418
+Epoch 22 | RMSE 0.91379
+Epoch 23 | RMSE 0.91359
+Epoch 24 | RMSE 0.91336
+Epoch 25 | RMSE 0.91319
+Epoch 26 | RMSE 0.91305
+Epoch 27 | RMSE 0.91299
+Epoch 28 | RMSE 0.91283
+Epoch 29 | RMSE 0.91266
+Epoch 30 | RMSE 0.91257
+Epoch 31 | RMSE 0.91246
+Epoch 32 | RMSE 0.91233
+Epoch 33 | RMSE 0.91226
+Epoch 34 | RMSE 0.91218
+Epoch 35 | RMSE 0.91210
+Epoch 36 | RMSE 0.91207
+Epoch 37 | RMSE 0.91202
+Epoch 38 | RMSE 0.91195
+Epoch 39 | RMSE 0.91189
+Epoch 40 | RMSE 0.91184
+probex RMSE 0.91184
+fulltrain => qual
