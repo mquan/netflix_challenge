@@ -1,0 +1,19 @@
+{
+  "state": "complete_synthetic_execution_benchmark",
+  "observed": "2026-11-19T18:05:31.891318+00:00",
+  "backend": "mps",
+  "rows": 32768,
+  "width": 337,
+  "inference_rows": 65536,
+  "epochs": 6,
+  "hidden": 128,
+  "context_rank": 32,
+  "batch": 8192,
+  "fit_seconds": 0.4709491250105202,
+  "repeated_inference_bitwise": true,
+  "saved_model_replay_bitwise": true,
+  "actual_accuracy_evidence": false,
+  "source_script_sha256": "776a7d5536a6c4e7cada8b713e3bdbf66be3d3e1a36533e4a89bb2fb08bb49c7",
+  "mps_driver_allocated_bytes": 1118437376,
+  "mps_recommended_max_bytes": 22906503168
+}

@@ -1,0 +1,24 @@
+{
+  "state": "mps_backend_admitted_for_new_unfitted_recipe",
+  "observed": "2026-11-19T18:08:45.090818+00:00",
+  "cpu_seconds": 1.5818850419018418,
+  "mps_seconds": 0.4709491250105202,
+  "synthetic_fit_speedup": 3.358929782206316,
+  "training_rows": 32768,
+  "inference_rows": 65536,
+  "feature_width": 337,
+  "hidden": 128,
+  "context_rank": 32,
+  "epochs": 6,
+  "saved_model_replay_bitwise": true,
+  "repeated_inference_bitwise": true,
+  "actual_accuracy_evidence": false,
+  "cpu_report_sha256": "bda7ec88ec6d171945e52b5d3d2b564c0dd3c5545cba4e808e9415b7ecf857f5",
+  "mps_report_sha256": "eac5de07f7e5c2fb4817248fbd0ad5e0113ecf5955759f89a647674463e597e5",
+  "code_sha256": {
+    "scripts/upstream_mps_context.py": "809c2d640c54b3db6fb7c13b799ff6e56c21b814728fa2c61194e8def300e713",
+    "scripts/upstream_whole110_mps_context.py": "776a7d5536a6c4e7cada8b713e3bdbf66be3d3e1a36533e4a89bb2fb08bb49c7",
+    "scripts/benchmark_upstream_mps_context.py": "8c98c0375b36abb0e6d8da7fde827e703cdbb3555df32c5755acef667c786f3a"
+  },
+  "scope": "Small synthetic throughput and execution-replay evidence only. MPS uses float32 and device-specific seeded dropout; not a claim of matching CPU-trained weights or full-data speed/accuracy. Original native and active meta fits are unchanged."
+}
