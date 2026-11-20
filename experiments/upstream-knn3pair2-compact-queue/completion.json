@@ -1,0 +1,22 @@
+{
+  "state": "complete_exact_compact_knn3_study_and_both_fixed_means",
+  "observed": "2026-11-20T04:53:39.778082+00:00",
+  "results": [
+    {
+      "tree": "upstream-rbm50-tree",
+      "rmse": 0.8593260079989471,
+      "independent_mean_sha256": "37e68fdad522b5e4f88f394cbf3aefcf3d9e82a209700725fb25b4cda3847f8e"
+    },
+    {
+      "tree": "upstream-item154-tree",
+      "rmse": 0.859293141998,
+      "independent_mean_sha256": "4167cc11e29760fbcb2da8b83c36e015e2031e9fcfac6a278c2b24e483bd96b1"
+    }
+  ],
+  "current_verified_reference": 0.8592012938198756,
+  "improves_current_reference": false,
+  "original_full_model_and_budget_preserved": true,
+  "qualifying_labels_read": false,
+  "automatic_production_started": false,
+  "goal_complete": false
+}

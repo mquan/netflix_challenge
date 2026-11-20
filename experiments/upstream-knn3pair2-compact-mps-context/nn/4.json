@@ -1,0 +1,22 @@
+{
+  "family": "nn",
+  "fold": 4,
+  "chosen_iterations": [
+    6,
+    6,
+    6
+  ],
+  "rows": 225640,
+  "rmse": 0.8600185653812082,
+  "baseline_rmse": 0.8634348128513661,
+  "seconds": 61.4416620421689,
+  "manifest_sha256": "982391b188c89416f463007e602afda058a89aef0fe7adca6e34b84dcb6ee683",
+  "outputs": {
+    "nn-13.pt": "7cb960527d55ca343ff95768bd31384badbb175dda69e1c467d86e14e802ddd8",
+    "nn-2026.pt": "70f05a6b94f1e75ef3762c0cc1f336dfcef6442e0408109cf57a8bae9a4ad0b7",
+    "prediction.f32": "e7cc337162934ed0717fd2fcb7037f07bebb10a306e3363555593aae9e5f3f07",
+    "ridge.npz": "90908f2397aea4b8ee5d8c966ab2ad1dfb4f764b313189c63b47260d9dd91a3c",
+    "nn-7.pt": "c3462495f74ce1a6efda2837ef00b2b740def34717fddf95168291798a1595b1",
+    "scalers.npz": "6a85edd38a349b3691a592942d5461f291fd8d1135fd202f75e0e4814dd107df"
+  }
+}

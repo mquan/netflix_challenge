@@ -1,0 +1,25 @@
+{
+  "observed": "2026-11-20T04:47:19.221330+00:00",
+  "original_idle_pid": 23052,
+  "original_process_identity": "23052 Thu Nov 19 20:04:03 2026     Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_knn3pair2_opportunistic_queue.py",
+  "original_status": {
+    "state": "waiting_for_original_full_neural_headroom_without_gpu_lock",
+    "observed": "2026-11-20T04:47:17.382607+00:00",
+    "other_rss_bytes": 11617550336,
+    "memory": {
+      "compressor_bytes": 3672211456,
+      "swap_used_bytes": 4692314685.44
+    },
+    "good_samples": 0,
+    "gpu_slot_owned": false
+  },
+  "original_children_at_idle_boundary": [],
+  "original_model_fold_artifacts_absent": true,
+  "first_declaration_sha256": "678f3a5cbcac4026c707ef2a56f25397e7c6010769de4973c8041ea76ea948a2",
+  "full_real_input_scaler_parity_sha256": "643d8c2ed1dbd905d19995a9facb31a4d48d82dafd5a2fa78c5f6ba230ac35b0",
+  "same_complete_model_configuration": true,
+  "same_original_rows_columns_folds_seeds_optimizer_stopping": true,
+  "execution_change": "Exact cached complete matrices and float32/scaler buffer lifetimes; unchanged reference inference scaling. New enforced own10GiB guard beneath unchanged24GiB total/8GiB disk guard. No numerical worker interrupted, no reduced model/data or qualifying-outcome selection.",
+  "tests_passed": 29,
+  "qualifying_labels_read": false
+}

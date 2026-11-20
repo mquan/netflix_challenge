@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T04:09:16.986935+00:00",
-  "display_time": "Nov 19, 2026 20:09 PST",
+  "observed": "2026-11-20T05:05:48.290228+00:00",
+  "display_time": "Nov 19, 2026 20:58 PST",
   "best_development_rmse": 0.8592012938198756,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,12 @@
   "independent_verification_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
   "work": [
     {
+      "work": "Complete eight-column split3 combination",
+      "state": "Full-row fixed ridge diagnostic complete: matched control0.8625801964, all-eight0.8625466289. Independent replay and full405-feature/406-input assembly/scaler parity pipeline started, PID30253. Own115 plus all154 learned context, H128/r32, original five nested folds/three seeds/stopping; both existing tree means predeclared. No qualifying labels or automatic production."
+    },
+    {
       "work": "Fixed complete KNN3-pair neural follow-up",
-      "state": "Full original CPU preparation is independently complete: two complete source proofs, full five-fold ridge replay (control0.8625801964 /main0.8625666623), every virtual column and complete tensor fingerprints. Original400-input H128/r32 neural study and both fixed tree means remain pending. Only the idle pre-fit coordinator18031 was replaced by23052 to avoid holding the GPU lock during unrelated headroom waits; original declaration/all eight source files/full16GiB neural reserve/24GiB guard/data/folds/seeds/optimizer/stopping unchanged. All21 tests pass. Raw full50-epoch training continues while the neural candidate waits without the GPU lock."
+      "state": "Complete negative after full exact compact-buffer execution: NN0.8594597171, tree50 mean0.8593260080, tree154 mean0.8592931420; all exceed current0.8592012938 best. Full five user folds,15 actual saved-model replays with original reference normalization and both separate stored-mean/canonical scoring checks pass. Real1,128,164x400 input/scaler operators match bitwise; original full H128/r32,data/folds/seeds/optimizer/stopping unchanged. No qualifying fit/promotion. Raw50-epoch trajectory resumed; memory execution is reusable."
     },
     {
       "work": "Six-family known-only convex calibration",
@@ -19,7 +23,7 @@
     },
     {
       "work": "15-hour remote original-producer assignment",
-      "state": "Remote laptop checked in at03:44:19Z on M3 Max/96GiB; fixed training deadline17:44:19Z /return18:44:19Z. Original source/data bootstrap completed03:48:11Z with the same frozen plan and exact known row-map SHA. First BLAS linker failure is preserved; fresh r2 root uses the original Accelerate linkage outside the audited source tree, without changing helper/model/source parameters. Remote commit aae58a4 observed. Complete native producers/numerical returns have not yet been observed."
+      "state": "Actual remote heartbeat04:47:07Z confirms native PID46195 DNN24: first original8-epoch phase complete, qualifying phase at2/8. Same original command/environment/frozen plan and source/data bootstrap. No complete producer/array return yet. Attention32 and exponential RBM200 remain next. Fixed17:44:19Z training /18:44:19Z return deadlines; remote commit f551174 observed."
     },
     {
       "work": "10.4GB inactive cache CoW storage recovery",
@@ -335,7 +339,30 @@
       "observed": "2026-11-20T04:09:14.176762+00:00"
     },
     "remote_observation": "experiments/upstream-remote15h-observation/bootstrap/observation.json",
-    "disk_free_bytes": 29955895296
+    "disk_free_bytes": 29955895296,
+    "knn3_compact_completion": {
+      "state": "complete_exact_compact_knn3_study_and_both_fixed_means",
+      "observed": "2026-11-20T04:53:39.778082+00:00",
+      "results": [
+        {
+          "tree": "upstream-rbm50-tree",
+          "rmse": 0.8593260079989471,
+          "independent_mean_sha256": "37e68fdad522b5e4f88f394cbf3aefcf3d9e82a209700725fb25b4cda3847f8e"
+        },
+        {
+          "tree": "upstream-item154-tree",
+          "rmse": 0.859293141998,
+          "independent_mean_sha256": "4167cc11e29760fbcb2da8b83c36e015e2031e9fcfac6a278c2b24e483bd96b1"
+        }
+      ],
+      "current_verified_reference": 0.8592012938198756,
+      "improves_current_reference": false,
+      "original_full_model_and_budget_preserved": true,
+      "qualifying_labels_read": false,
+      "automatic_production_started": false,
+      "goal_complete": false
+    },
+    "remote_hour1_observation": "experiments/upstream-remote15h-observation/hour1/observation.json"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
