@@ -1,0 +1,27 @@
+{
+  "state": "complete_expanded_architecture_partition_and_reference_embedding_preflight",
+  "observed": "2026-11-20T07:51:15.241896+00:00",
+  "nn_inputs": 522,
+  "signals": 169,
+  "context_inputs": 353,
+  "rows": 257,
+  "actual_source_rows_used": true,
+  "original_architecture_recovered_exactly_with_added_connections_zero": true,
+  "maximum_prediction_difference": 0.0,
+  "old_final_layers_randomized_to_avoid_trivial_zero_output": true,
+  "frozen_config_checks": [
+    "H128",
+    "rank32",
+    "max40",
+    "patience4",
+    "seeds2026/7/13",
+    "batch8192"
+  ],
+  "review": "Independent read-only model/verifier review found no concrete blocker; exclusive compressed-inclusive resource supervisor added before launch.",
+  "source_sha256": {
+    "scripts/upstream_own167_context218_mps.py": "c38687904efc7dc0066fa84d410948cb4476e3c1bbeff09c434f39abc79a451f",
+    "scripts/verify_upstream_own167_context218_mps.py": "d32d4ed5e1932a3a17a5e160d611986e6eb60620c107bc6e2fd1ca8ac36e4efb",
+    "scripts/upstream_own167_context218_queue.py": "ab728700be78002fcd32fb6a062e1c1ecb423c253d00c2ec1a905201d3239a6d"
+  },
+  "qualifying_labels_read": false
+}

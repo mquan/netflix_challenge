@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-20T07:51:15.311254+00:00",
+  "source_sha256": {
+    "scripts/upstream_own167_context218_queue.py": "ab728700be78002fcd32fb6a062e1c1ecb423c253d00c2ec1a905201d3239a6d",
+    "scripts/upstream_own167_context218_mps.py": "c38687904efc7dc0066fa84d410948cb4476e3c1bbeff09c434f39abc79a451f",
+    "scripts/verify_upstream_own167_context218_mps.py": "d32d4ed5e1932a3a17a5e160d611986e6eb60620c107bc6e2fd1ca8ac36e4efb",
+    "scripts/upstream_own167_context218_normalization_queue.py": "9ad082dce749121feb7ae9d8611c55ea4d46e6f78b6fd26af1168bd062e600b8"
+  },
+  "rule": "Exclusive original GPU lock. Reserve11GiB full numerical worker footprint before admission. Own14GiB,total24GiB sustained RSS and compressed-inclusive footprint;16GiB disk floor,swap growth128MiB. All data,H128/rank32,5folds,3seeds,max40/patience4 unchanged. No automatic restart or qualifying access.",
+  "phases": [
+    "prepare_frozen_sources",
+    "complete_nested_fitting",
+    "independent_original_statistics_and_saved_pipeline_replay"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "state": "complete_all_split3_holdout_labels_have_disjoint_canonical_known_origin",
+  "holdout_rows": 1760494,
+  "canonical_benchmark_rows": 1128164,
+  "additional_known_rows": 632330,
+  "complete_benchmark_projection_and_labels_recomputed": true,
+  "all_additional_keys_dates_targets_match_canonical_trainx_exactly_once": true,
+  "all_qualifying_user_item_keys_disjoint": true,
+  "qualifying_ratings_file_opened": false,
+  "qualifying_labels_read": false,
+  "source_sha256": {
+    "scripts/upstream_split3_holdout_origin_audit.py": "b70646dc73f22726ac5ef7270a4aff7551b5e34028af6b1a4e9f471cb412b6ee",
+    "scripts/upstream_split3_pilot.py": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b",
+    "artifacts/upstream-split3-next3/source/data/probe_3/user_idxs.npy": "3fb89a3ea14ec289ae093e9a733fe4f96120cb96ae684b471d363c75c9ea239c",
+    "artifacts/upstream-split3-next3/source/data/probe_3/item_idxs.npy": "9c7a7a20065f7ea3f801e4c4da5aa9363c2dc962bdd85cfb9b6dd9658a2a6fd7",
+    "artifacts/upstream-split3-next3/source/data/probe_3/dates.npy": "13eecf96e5b9b3201daa620bc9f2a6b362a623af57b82750dd5f9e2c54b39394",
+    "artifacts/upstream-split3-next3/source/data/probe_3/ratings.npy": "bcd22dde86bff8d4a5c96de9e9bc3b04d72af5f45c30d98ea92591987fc2835c",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/probex/item_idxs.npy": "b6e42d9de67ede3b121e49df81968d1a30bd9913b18a3dc599fedf2e2bf2a856",
+    "artifacts/upstream-repro/fresh/data/probex/dates.npy": "c9555bb419b28094811a16ef8f05821f38eed307f998b8da89708b9f1f9d4f47",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "artifacts/upstream-repro/fresh/data/trainx/user_idxs.npy": "7161f75eeea69912a6c19833b6ee4e7313193d9cbbba5f7fa52b33db7f1d5bb6",
+    "artifacts/upstream-repro/fresh/data/trainx/item_idxs.npy": "1590a2a2f8f5784ddb15a147637e29bfaddc8fadaf6ef72c33d409260a65e554",
+    "artifacts/upstream-repro/fresh/data/trainx/dates.npy": "0ddc3e91610d2672cc2a7badcd20c5d5bc62b76f4202b4d8859a69c19bd1ff1b",
+    "artifacts/upstream-repro/fresh/data/trainx/ratings.npy": "65c05ddaa31e4dedc3d90f4bcd5873052c9393265b23c5ff02e7bda0e4292b61",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "artifacts/upstream-repro/fresh/data/qual/item_idxs.npy": "0321af642ef926c8a107f399dfc5e7bdcee72db6c98692e7151332ca0701c11a",
+    "artifacts/upstream-repro/fresh/data/qual/dates.npy": "48a195a7c3ef778dadcadde9c95544fe57e6a3e26697f98d0aaf86b538caebbe"
+  },
+  "models_fitted": 0,
+  "scope": "Origin/eligibility audit only, no accuracy claim. Future use must exclude canonical held users from all augmented meta-training labels; compare only matching evaluation populations."
+}
