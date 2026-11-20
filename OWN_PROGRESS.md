@@ -2,11 +2,12 @@
 
 Updated November20 UTC /November20 Pacific,2026.
 
-Best independently verified known-ProbeX development CV: **0.8591267885072646**.
-The fixed75% equal six-NN pool /25% tree154 improves prior0.8592012938198756.
-Every weightedfloat32 prediction and complete canonical known score was
-independently checked, bound to35 original fold receipts,90 actual NN models,
-15 actual tree models and their saved-model replays.
+Best independently verified known-ProbeX development CV: **0.8589474951024617**.
+The predeclared own330 NN/tree154 half improves previous0.8591267885072646
+by0.0001792934. All15 new neural models, original eligible preprocessing
+and held predictions replayed bitwise, with complete original tree-model
+replays retained. A separate check reconstructs every final float32 average
+and the full canonical score. [Complete result](OWN330_NEURAL_RESULT.md).
 
 Established six-family recovered qualifying benchmark:
 
@@ -28,14 +29,14 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
-The complete own330 neural study is now fitting all five folds/three seeds:
+The complete own330 neural study passed all five folds/three seeds:
 406ridge/556features/557NN inputs, with every retained/new bit admitted.
-Own176 finished all15 actual saved-model replays; its fixed tree half
-**0.8591336855** narrowly misses the existing **0.8591267885** global best.
-Own330 retains its full16GiB reservation under24GiB total. Only the childless, dependency-wait
-1600-factor supervisor is parked to give it priority; no native model is
-interrupted. Both original95-epoch CF trajectories are running. No complete
-own330 neural result or new qualifying score yet.
+Its fixed tree154 half **0.8589474951** is the new development best;
+qualifying scores remain unchanged. Own176's fixed half0.8591336855 had
+narrowly missed the previous0.8591267885 best. Both full studies retain all
+original inputs, architecture and epoch budgets. Both original95-epoch CF
+trajectories are still running. The childless native supervisor was restored
+after own330 completed; no native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
 All149 unused completed local native pairs now passed a complete own330
@@ -44,7 +45,8 @@ ridge evaluation and independent replay. Same canonical rows/folds:
 406-column design retains every own181 input bit; every group statistic,
 eligible solve and actual stored prediction matches. Bounded file reads
 kept the diagnostic within its1.5GiB worker guard while temporal training
-continued. No own330 neural/qualifying fit or global promotion.
+continued. That initial ridge admission made no neural/global promotion;
+the complete neural result above is now separately verified.
 [Complete result](OWN330_NATIVE149_RIDGE_RESULT.md).
 
 The separate own181 diagnostic adds all fifteen recent own pairs, including
@@ -56,7 +58,7 @@ Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
 The isolated1600-factor preparation now binds439 source/data files and
 proves both full training/query populations disjoint. Its reviewed idle
-supervisor is parked for own330 priority, then resumes its22GiB admission.
+supervisor was parked for own330 priority and has now resumed its22GiB admission.
 It will build
 an isolated exact executable because the existing shared binary failed
 its build-receipt hash check. No high-capacity build or fit has begun.
