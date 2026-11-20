@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_paired_queue.py": "9309159abe17867b315dcaab3d1bd298416065ed14b6f7b76d286b55fabfcafc",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "OWN391_PAIRED_NEURAL_PLAN.md": "9d074485095c47efa6117f73e233b1a9eca730bd4940636418fc771ee9b1c028",
+    "scripts/upstream_own391_paired_data.py": "e56b975f7ad4d7ade232721b1a63f00f0ba1d93acac769804e74865bb89c5348",
+    "scripts/verify_upstream_own391_paired_data.py": "a0a50b8388792001d91081b42e635b74d07045d6dd78d79a0f4ab8bc74aaaff4",
+    "scripts/upstream_exact391_scaler.py": "fc6d7493a28c77a31dad66eb521e1c1a55c391da8762feaf54338907eed6487b",
+    "scripts/upstream_own391_paired_mps.py": "2c42698a810d837f51073fbcbe37ade056fcee90af199a15e44114bcd412785d",
+    "scripts/verify_upstream_own391_paired_mps.py": "16e9ee8c2bd1396f79cb15d2bbbd1b8eb256f2ac9109e684dcb2b55fee9cf5b6",
+    "scripts/verify_upstream_own391_paired_canonical.py": "2c42339100ee7541b98007bcf259f3069c399245310196746ad808ef6e9aa73b",
+    "scripts/upstream_own391_fold_bag_queue.py": "adaf651d7c425c382468c23c1986a2008c20350638be9ebfe42059f2cb18846e",
+    "OWN391_FOLD_BAG_PLAN.md": "580d5a259924cbb09d7da0ca3b75ad7a8e25a637f4835f67d7f3ccc17b380b63",
+    "experiments/upstream-own391-paired-h128-queue/plan.json": "78c7546ff71c395bd0638b3a583e2fabebb76a0dd2ef7ea302d31123fbc27e9d",
+    "scripts/upstream_own391_fold_bag.py": "9e1a009ad33df6c0924e2c5d27e9e40b55ad1bcdcbc0a7a80280935c243ec039",
+    "scripts/verify_upstream_own391_fold_bag.py": "6d6a47cc1a1f2f8e9da124251513b973be934a29c96dc0a62e19772a1b2c7532"
+  },
+  "created": "2026-11-20T18:42:03.794196+00:00",
+  "rule": "Wait complete391H128 actual-model/statistic/canonical verification. Only a fixed-half known score strictly below its declared original352 reference permits inference. Negative known result completes eligibility check without any Q prediction. Positive: original5fold/3seedslots, including originalzero budgets;618inputs, matchedBrawqueries, stream8192rows, one complete11MiBbag. No fit or qualifying labels. Reserve16GiB before nonblockingGPU;16worker/24research/5compress/128MiBswapgrowth/18.75disk. Sameactualchild RAM preserved onguard/monitorloss, noautomaticretry. Fullindependentoperator/model/seed/fold/bag replay before release."
+}

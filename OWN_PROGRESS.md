@@ -135,6 +135,22 @@ own330 production; its successor has now acquired both lanes for the exact1600 r
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
+Original1600 has now completed its original known phase2/2 at raw
+RMSE0.93507 and entered fulltrain-to-qualifying training. This raw score
+does not advance the benchmark; both original phases still must finish
+before independent output admission or any known-only calibration.
+
+The separate reviewed paired391 H128 qualifying-bag queue is live, waiting
+for all known fits, actual-model/statistic replays and the separate canonical
+score. It runs only if the predeclared fixed-half known score strictly beats
+its declared own352 reference. Otherwise it completes eligibility checking
+without qualifying predictions. An eligible run reuses every original fold,
+seed budget (including zero-iteration slots), scaler and ridge without
+refitting. It streams one11MiB five-fold bag; a separate implementation must
+replay every original query operator, normalization, actual model, seed,
+clipped fold and final bag bit. No qualifying labels or score in this study.
+[Frozen inference-only plan](OWN391_FOLD_BAG_PLAN.md).
+
 The separate original1200 preflight now accounts for every58 numeric output
 of the unchanged1,200-factor/100-neighbor/23+23-epoch preset:48 ordinary/epoch
 query arrays,8 component-query arrays and2 complete training arrays. Their
