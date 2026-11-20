@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-20T00:12:18.135603+00:00
+timestamp: 2026-11-20T01:19:57.133133+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,8 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+A fixed21-coefficient quadratic calibration of the five complete own families is independently negative: recovered groups **0.8605784947 / 0.8615935718**, slightly worse than the convex best. Independent direct SVD, exact vectors and complete-group scoring pass after a report-serialization-only checker recovery. Apparent known-fit0.8590477906 is not nested CV. Best CV and qualifying records stay unchanged. See [full result](OWN5_QUADRATIC_RESULT.md).
 
 At2026-11-20 01:03 UTC the unchanged full154-context tree completed its third user fold and started the fourth. All artifacts in the new fold receipt match their recorded hashes. Three of five folds and nine saved tree models are now complete; all15 actual saved-model replays and full independent scoring remain required. No global score or promotion is inferred from a partial fold.
 

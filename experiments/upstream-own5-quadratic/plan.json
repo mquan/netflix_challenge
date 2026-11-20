@@ -1,0 +1,43 @@
+{
+  "created": "2026-11-20T01:13:26.759133+00:00",
+  "families": [
+    [
+      "tree50",
+      "tree",
+      "upstream-rbm50-tree",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn50",
+      "nn",
+      "upstream-rbm50-context",
+      "upstream-rbm50-production"
+    ],
+    [
+      "nn90",
+      "nn",
+      "upstream-latent90-mps-context",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn109",
+      "nn",
+      "upstream-autorec109-mps-context",
+      "upstream-autorec-consensus-stream-production"
+    ],
+    [
+      "nn154",
+      "nn",
+      "upstream-item154-mps-context",
+      "upstream-item154-stream-production"
+    ]
+  ],
+  "penalty": 1000.0,
+  "rule": "One fixed degree-two residual ridge,21 coefficients including an unpenalized intercept. Five coordinates: first four family predictions minus NN154, then NN154 minus3.6. Linear coordinates followed by upper-triangle products in lexicographic order. Center and population-scale20 columns on complete known rows. Fixed ridge1000 on20 standardized coefficients, no tuning. Offset is the preceding frozen known-only convex five-family prediction. Clip1.05/4.95 and storefloat32. Freeze before recovered-label access.",
+  "known_score_is_nested_cross_validation": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "code_sha256": {
+    "scripts/upstream_own5_quadratic.py": "71ad30e251e9bb764e69d914290fda007ddf184586f8748ad072ddb864cc138b",
+    "scripts/verify_upstream_own5_quadratic.py": "0f9be4b448863bd05830e158fb952a2d02d60354d173c35222f4a5e6bedabdf2"
+  }
+}

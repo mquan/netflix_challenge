@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T01:03:58.745622+00:00",
-  "display_time": "2026-11-20 01:03 UTC",
+  "observed": "2026-11-20T01:19:57.133133+00:00",
+  "display_time": "2026-11-20 01:19 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Fixed quadratic five-family calibration",
+      "state": "Complete negative: canonical source0 0.8605784947 /source1 0.8615935718, both slightly worse than the convex blend. Fixed21 coefficients/ridge1000, known-only fitting; independent full direct SVD rank21, exact known/full vectors and complete group scores pass after report-integer serialization recovery. Apparent known-fit0.8590477906 is not nested CV. Best CV and qualifying records unchanged."
+    },
     {
       "work": "Five-family own calibration",
       "state": "Complete independent verification: source0 0.8605716962 /source1 0.8615832225. All five actual development/full saved-family replays bound; independent simplex solve, exact vectors and canonical group scoring pass. Known-only fitted weights; apparent known-fit is not nested CV. Target remains unmet."

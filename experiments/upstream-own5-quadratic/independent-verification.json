@@ -1,0 +1,46 @@
+{
+  "state": "complete_independent_fixed_quadratic_fit_and_frozen_group_scores",
+  "observed": "2026-11-20T01:18:38.009163+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605784947444063
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8615935718033368
+    }
+  },
+  "previous_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605716961956835
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.861583222505447
+    }
+  },
+  "both_groups_improved": false,
+  "both_groups_below_target": false,
+  "known_fit_rmse": 0.859047790559703,
+  "known_score_is_nested_cross_validation": false,
+  "independent_direct_svd_rank": 21,
+  "independent_coefficient_max_error": 2.0426368929626904e-16,
+  "exact_known_and_full_stored_vectors_bitwise": true,
+  "original_own_family_source_bindings_reverified": true,
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "prediction_sha256": "1f685d7010de5ccd24e4cfd80d391fc8d449e9a3299ca65882156d6312e4ddd8",
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "bindings": {
+    "experiments/upstream-own5-quadratic/plan.json": "ca4df244d7cf26691ac3975edea9698c13aaa2dbb682d25254862a5cba1e01d7",
+    "experiments/upstream-own5-quadratic/calibration.json": "f76ab4dc81eb3f5d36151a22897b62110e4b4c25466b8a66a599662127565bda",
+    "experiments/upstream-own5-quadratic/frozen.json": "3800afded93507c60db361a4af8ec45e295434668066ef4bb63dea76af3a09fa",
+    "artifacts/upstream-own5-quadratic/known-fit.f32": "02d9c74d1b2cd93817bdf7bddb537a222fa139d3497252a7798fbad3d0261703",
+    "artifacts/upstream-own5-quadratic/qualifying.f32": "1f685d7010de5ccd24e4cfd80d391fc8d449e9a3299ca65882156d6312e4ddd8",
+    "experiments/upstream-item154-stream-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "experiments/upstream-own5-quadratic/verification-recovery.json": "f3bb4fcc1dc0d5af38542226b94b879f449a07582f8634e795ce9f7de00f68b4",
+    "scripts/verify_upstream_own5_quadratic_recovered.py": "a18927b85524a23d3722d573122f51eee865f34ee6614b696a9cd613101074d2"
+  },
+  "scope": "Fixed21-coefficient quadratic residual ridge of five complete own families; no tuning. Separate full direct SVD solution, exact vector reconstruction and compensated complete-group scoring. Apparent known fit is not nested CV; recovered audit is adaptive, not official/untouched Test."
+}

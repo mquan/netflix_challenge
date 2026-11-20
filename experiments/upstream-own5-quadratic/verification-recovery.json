@@ -1,0 +1,16 @@
+{
+  "state": "serialization_only_independent_verifier_recovery_declared",
+  "observed": "2026-11-20T01:16:54.943488+00:00",
+  "failed_checker": "scripts/verify_upstream_own5_quadratic.py",
+  "error": "TypeError: Object of type int32 is not JSON serializable",
+  "failure_stage": "Final independent report JSON serialization of the direct SVD rank; no successful proof was written.",
+  "correction": "Convert rank to the equivalent built-in int solely for report serialization. Also bind this recovery declaration and recovered checker. Original numerical fitting, standardization, coefficients, frozen predictions, independent SVD, exact vector checks and canonical group calculations unchanged.",
+  "source_sha256": {
+    "scripts/verify_upstream_own5_quadratic.py": "0f9be4b448863bd05830e158fb952a2d02d60354d173c35222f4a5e6bedabdf2",
+    "scripts/verify_upstream_own5_quadratic_recovered.py": "a18927b85524a23d3722d573122f51eee865f34ee6614b696a9cd613101074d2",
+    "experiments/upstream-own5-quadratic/plan.json": "ca4df244d7cf26691ac3975edea9698c13aaa2dbb682d25254862a5cba1e01d7",
+    "experiments/upstream-own5-quadratic/calibration.json": "f76ab4dc81eb3f5d36151a22897b62110e4b4c25466b8a66a599662127565bda",
+    "experiments/upstream-own5-quadratic/frozen.json": "3800afded93507c60db361a4af8ec45e295434668066ef4bb63dea76af3a09fa"
+  },
+  "qualifying_outcomes_used_for_fitting_or_selection": false
+}
