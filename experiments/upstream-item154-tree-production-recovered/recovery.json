@@ -1,0 +1,17 @@
+{
+  "state": "selection_receipt_schema_recovery_before_any_full_fit",
+  "observed": "2026-11-20T02:20:32.546729+00:00",
+  "original_failure": "KeyError('rmse')",
+  "actual_receipt_field": "independent_rmse",
+  "correction": "Read the existing independent_rmse field. Original numerical models, known-CV selection threshold, fixed half mean, feature banks, three seeds and median actual fold budgets are unchanged. Use new artifact/report/checker namespaces and an explicit initial idle hold for the existing stronger12GiB admission policy. No qualifying outcome changes any choice.",
+  "source_sha256": {
+    "scripts/upstream_item154_tree_production.py": "1d1b6d86336561c104abbb1b75150add0c42b175310cec403714f085d12b5bcc",
+    "scripts/verify_upstream_item154_tree_production.py": "e29c4af62d7b5fd8e537deb4abf2e5b02095073bb115031b8515a3be0f56c909",
+    "scripts/test_item154_tree_stream_fixture.py": "b2e7f8a431499a04afbfc2b235969cb7afd6758f51930555bce77322a7c3518a",
+    "experiments/upstream-item154-tree-production/declaration.json": "a75536b158a3b027bd0cb77c7e553b1468ab24343c46724c3188c06092fa7e01",
+    "experiments/upstream-item154-tree-production/failure.json": "cab593d93befdfab9c63c186917273c990ba13bf6fed6bfa96333b8821c2dd6d",
+    "experiments/upstream-item154-tree-production-admission/released.json": "bacee483dc9f348657199826d047c18c2f5adfd6b2d8e72ffad83ce52c5864ed"
+  },
+  "original_full_fit_started": false,
+  "qualifying_labels_used_for_fitting_or_selection": false
+}
