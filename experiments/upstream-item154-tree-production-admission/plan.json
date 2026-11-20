@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-20T01:46:59.588599+00:00",
+  "queue_pid": 92897,
+  "queue_identity": "Thu Nov 19 17:44:17 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_item154_tree_production.py",
+  "original_declaration_sha256": "a75536b158a3b027bd0cb77c7e553b1468ab24343c46724c3188c06092fa7e01",
+  "script_sha256": "fe7e31b2c576e05915622d00b234f5c72c20b9ae9da7dbb139bc312114678aaf",
+  "observed_development_peak_evidence": {
+    "pid": 60801,
+    "rss_bytes": 9443442688,
+    "other_rss_bytes": 4904239104,
+    "disk_free_bytes": 24027017216,
+    "observed": "2026-11-19T23:07:35.557572+00:00"
+  },
+  "rule": "Extra admission only, before any full fit. Hold the same idle production coordinator. After complete original development/replay, release a nonselected result to validate and end without fitting; otherwise require original tree worker/supervisor gone and two stable samples of all other own jobs below12GiB RSS,compressor below5GiB and disk above10GiB. Reserve12GiB for full-known tree peak under unchanged24GiB total guard. Count raw GPU jobs too. No numerical code,models,inputs,budgets,seeds or weights changed.",
+  "qualifying_labels_read": false
+}
