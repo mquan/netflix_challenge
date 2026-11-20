@@ -1,0 +1,33 @@
+{
+  "observed": "2026-11-20T10:10:24.519450+00:00",
+  "release_tag": "remote15h-own-20261120",
+  "asset_name": "s3-mfrbmx-60h-export.tar.gz",
+  "archive_sha256": "76909a9757c237e2102a432bd56728370d9ad9334ba5076bd469cb0e3251f2a0",
+  "archive_bytes": 40225184,
+  "uploaded": true,
+  "draft_release": true,
+  "records": [
+    {
+      "column": "s3-mfrbmx-60h",
+      "file": "s3-mfrbmx-60h.npz",
+      "sha256": "ed80bc5202051108ae14dc5364a21e27895c196a8b0063c319deaee0876fd657",
+      "native_probe_sha256": "d6b61d14c899769fed1414f407946221d98ca4fab6e4a9a77165c1c2812cbc69",
+      "native_qual_sha256": "02f3ae4cb93048477e0b3344bd808e91df2abcc3444e2604e7c685cae55fb67a"
+    },
+    {
+      "column": "s3-mfrbmx-60h_ep06",
+      "file": "s3-mfrbmx-60h_ep06.npz",
+      "sha256": "0c67afbf99f8ea1103813c7f76756ce2fac93197cebbd4473141cd7ae0738e73",
+      "native_probe_sha256": "c528659323fe8e5afc410c0b49b1c89f0710e41c8bc77473e677d47d1bb62bdf",
+      "native_qual_sha256": "49527c4c1abd98bc22b61cb329e21511be6268e8bb5d47baa7e0219eee7cee77"
+    },
+    {
+      "column": "s3-mfrbmx-60h_ep08",
+      "file": "s3-mfrbmx-60h_ep08.npz",
+      "sha256": "134b650deae4c0a120359c0c368c5c0871aa920cafce5ed1d14a8b4ae1af5441",
+      "native_probe_sha256": "c57a5547ad6675b1a54a6df564b2277b96e3ddb86a1c392d6eeb2030f40d59ef",
+      "native_qual_sha256": "93d099a8b09b0648fae1112d1c624d3170b779bc74afd0d3b6fff4897d3e3323"
+    }
+  ],
+  "prediction_arrays_in_git": false
+}
