@@ -1,0 +1,68 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3",
+      "fold_rmse": [
+        0.8619959768633015,
+        0.8598793859589637,
+        0.863379444626518,
+        0.8642176793897229,
+        0.8634317801005654
+      ]
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625148884916176,
+      "prediction_sha256": "d4e795eb9e3ff18fbdab6c9e0a2298c559211efce159965d0e4e5e485596de9c",
+      "fold_rmse": [
+        0.8619076044664769,
+        0.8597979417151987,
+        0.8633157796966902,
+        0.8641773344448196,
+        0.8633790557028838
+      ]
+    }
+  ],
+  "fixed_additions": [
+    "cfnade-96_ep20",
+    "cfnade-96_ep30"
+  ],
+  "source_sha256": {
+    "scripts/upstream_cf96_prefix2030_source.py": "f73c41780e70bd8d74b21a12d02f81dc723e24d8e9d8c5927972cd5a5b1b7e51",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/manifest.json": "00f609d3da574569242353b89ee187f7833a6053a8ca35349284a96f3a3359c9",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/origin-plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "artifacts/remote9h-cf96-transfer/cfnade96-package/source-verification.json": "431ebc726b21f06ef346f5db4b825edafc1a33cbe15c48825cf5b8563d3ac623",
+    "experiments/upstream-cfnade-parallel/plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "experiments/upstream-remote9h-cf96/local-preflight-verification.json": "3a1d5f07dc1fc7b028a41faffeb747b18ef88eb15be5a37536d0e498d593c035",
+    "scripts/upstream_remote_cf96.py": "9f6c8c13dadc0cdb0fd8f5afeb6722140f4a46c8e70b0b08d664e10107ab222c",
+    "experiments/upstream-cf96-prefix2030-source/plan.json": "8a91fa0a1cfd1de3bac09794a8cc6f8c62bc262c3e054c2b595a52d6d93df9e2",
+    "experiments/upstream-cf96-prefix2030-source/package-reverification.log": "45623328a7b40760dafec282e6d5306af418e843e436ffe08c6a6483b688a307",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep20.probex.npy": "2295c4905f9e484a2bc21484f33d8aad9eb62a0e21c8ee375ec0b0e87d157d17",
+    "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep20.probex.npy": "2295c4905f9e484a2bc21484f33d8aad9eb62a0e21c8ee375ec0b0e87d157d17",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep20.qual.npy": "02f8c0682b85a5baa9eda411f80f9b2d8d349ef64553b7f15d077de5e192074c",
+    "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep20.qual.npy": "02f8c0682b85a5baa9eda411f80f9b2d8d349ef64553b7f15d077de5e192074c",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep30.probex.npy": "75a8952334943a80d81b06040d39638e925f1a4ff59e39d106ef8ae28600d0c7",
+    "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep30.probex.npy": "75a8952334943a80d81b06040d39638e925f1a4ff59e39d106ef8ae28600d0c7",
+    "artifacts/upstream-cfnade-checkpoint/source/preds_new/cfnade-96_ep30.qual.npy": "7773dc1402108b8f37a0f421a1a7d02a5395b2b94b43b6d0ab6dd0d302a33ef8",
+    "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep30.qual.npy": "7773dc1402108b8f37a0f421a1a7d02a5395b2b94b43b6d0ab6dd0d302a33ef8",
+    "experiments/upstream-cf96-prefix2030-source/paired-receipt.json": "9e3db22a36190eae165f91d582cb4e61f8222b4c56edd852a66612ee1c500d57",
+    "experiments/upstream-item154-features/cache-column-verification.json": "2fe917a9cacba26850ff5b77e401adda67a375b322ec28ba7edf6f69e9f8d565",
+    "experiments/upstream-item154-features/manifest.json": "cc13a1aa93c018493db217427d68258a5c202d69c98dae711b4e6deb7108b76b",
+    "scripts/upstream_cf96_prefix2030_screen.py": "90a7606d004207898ffc23b903594d558807bb93e1fa90b015a7e0d1ce65ca5b",
+    "artifacts/upstream-item154-features/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-item154-features/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-item154-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-item154-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-item154-features/stats.npz": "8c7f2ace3d12c8e66c2bc7a34050b65d7e7370eab8729735e18118a5fb5a6847",
+    "artifacts/upstream-item154-features/features.npy": "7a7388ce051ea7b8d39b4eeafabddd4726e63cdc7ed3de8b533e4c2117a1bbf6",
+    "artifacts/upstream-item154-features/baseline.npy": "c06c139e1d3a538c0ae7bb842b14d57f3e5d5098e0141b1d10c32b3f5ada63a9",
+    "experiments/upstream-cf96-prefix2030-screen/plan.json": "34df75fedc8bbbc4e23a22fbfb99515afb6bf00f98335d16235de0e7a6793919"
+  },
+  "script_sha256": "90a7606d004207898ffc23b903594d558807bb93e1fa90b015a7e0d1ce65ca5b",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Known-ProbeX diagnostic on fixed ownCF96 epoch20/30 side outputs; original95/95 training incomplete and continuing. No nonlinear or qualifying promotion."
+}

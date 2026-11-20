@@ -1,0 +1,40 @@
+{
+  "state": "complete_real_data_bitwise_input_and_scaler_parity",
+  "observed": "2026-11-20T05:24:03.972753+00:00",
+  "plan_sha256": "78e8a120d0d4f3bec1b659e4ce17ed9e5f0217fbf0bc46a7b0fee00ebe7b71d8",
+  "cache_verification_sha256": "73cb301cdf50dfc11e570fc967ca85854cae633f442e18350b47825f5d5239da",
+  "records": [
+    {
+      "partition": "inner",
+      "outer_fold": 0,
+      "eligible_rows": 721484,
+      "scored_rows": 1128164,
+      "columns": 400,
+      "scaler_sha256": "e4ca75474881cf902157115285d50e9e94b70b26118885cce6b7d6bc626ab054",
+      "original_normalized_sha256": "31d5e287aee8f748a1ee7ec052358ade2c9f3a1dfaed2ed442741246fc8da3b3",
+      "compact_normalized_sha256": "31d5e287aee8f748a1ee7ec052358ade2c9f3a1dfaed2ed442741246fc8da3b3",
+      "original_complete_statistics_bitwise_equal": true,
+      "every_actual_normalized_float32_bit_equal": true,
+      "seconds": 22.540657166857272
+    },
+    {
+      "partition": "full",
+      "outer_fold": 0,
+      "eligible_rows": 901418,
+      "scored_rows": 1128164,
+      "columns": 400,
+      "scaler_sha256": "13d18edab3a93dd42fb87a2819534433b0c12550fc0ee5a2ead666b9ec9f7838",
+      "original_normalized_sha256": "d1eb15e2a4ed2d6ec1eae49d64f18c493026a972793aafec4c3ecfdb0071e98d",
+      "compact_normalized_sha256": "d1eb15e2a4ed2d6ec1eae49d64f18c493026a972793aafec4c3ecfdb0071e98d",
+      "original_complete_statistics_bitwise_equal": true,
+      "every_actual_normalized_float32_bit_equal": true,
+      "seconds": 26.42154062516056
+    }
+  ],
+  "rows": 1128164,
+  "columns": 400,
+  "models_fitted": 0,
+  "original_model_or_budget_changed": false,
+  "qualifying_labels_read": false,
+  "scope": "Exact transformation proof on all real rows, original complete outer-fold0 inner/full fit sets and all400 input columns. This is not a reduced training study, a model score, a full model-trajectory parity claim, or a qualifying audit."
+}

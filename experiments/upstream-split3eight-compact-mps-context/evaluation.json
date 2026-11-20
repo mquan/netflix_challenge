@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "4a4b644d2089106c9498686d28fcffd8a171a1605b537f21541060f49017e3b6",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625466287573739,
+      "delta_vs_previous_best": 0.0030912194509987723,
+      "fold_rmse": [
+        0.8619615515288185,
+        0.8598385341002406,
+        0.8633590055600436,
+        0.8641709194734155,
+        0.8634065201851288
+      ],
+      "prediction_sha256": "fe9270449a1d1d2ecdab3ade0a4bbc8a54a987af0114307df80e260920646391"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.001228633704410842,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.859435891263448,
+      "delta_vs_previous_best": -1.9518042927102464e-05,
+      "fold_rmse": [
+        0.8584141960123732,
+        0.8570119742795492,
+        0.8603017847985776,
+        0.8613854246133021,
+        0.8600712105563395
+      ],
+      "prediction_sha256": "680ce48533d207ee731ceb402120cdee62ce9337210fd458d9ba8b6b28dfa855"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8593800873971684,
+      "delta_vs_previous_best": -7.532190920667148e-05,
+      "fold_rmse": [
+        0.8584077678943305,
+        0.8569778686844014,
+        0.8602124273958127,
+        0.8611990442830979,
+        0.8601084513922421
+      ],
+      "prediction_sha256": "2a6301b916248c43c8d9c50d199b2edb13250abaa2f4bf7b5947465cfe5881ec"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Adaptive known-ProbeX only. Fixed larger rank32/hidden128 context architecture on own107 plus all90 original RBM/Tx context features plus64 fixed own PCA item context features, same five nested user folds/seeds/optimizer/stopping; separately declared float32 MPS training/inference, with device-specific dropout RNG. Reuses actual verified tree91, without synthetic fitting receipts. All eight fixed original split3 additions use exact in-RAM source tensors with full fingerprints. No production or qualifying audit launched. Exact compact-buffer execution: no numerical recipe, data, capacity, seed or stopping change.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

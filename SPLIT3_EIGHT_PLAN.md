@@ -50,3 +50,14 @@ every normalized bit of all1,128,164x406 inputs agree. Proof SHA256:
 The original complete neural queue is now admitted to scheduling after
 preparing its full recipe; fitting waits for the current raw epoch boundary.
 This proves operator parity, not a score or a full trajectory comparison.
+
+## Complete negative result
+
+Completed2026-11-20T05:18:11Z. All five complete nested user folds and
+15 actual saved-model replays pass, using original reference normalization.
+NN0.8594358912634479; tree50 half mean0.8592734659633272; tree154 half
+mean0.8592426521393607. Both separate exact mean and compensated canonical
+score checks pass. Both exceed the current0.8592012938198756 best.
+No qualifying refit or promotion. All source/model/data/capacity/stopping
+requirements remain unchanged; original failed supervisor and recovery
+evidence are retained. Slot released and raw50/50 trajectory resumed.
