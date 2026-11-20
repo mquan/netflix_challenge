@@ -1,0 +1,29 @@
+{
+  "state": "complete_verified_idle_primary_handoff_to_existing_original1600_queue",
+  "observed": "2026-11-20T17:05:33.054564+00:00",
+  "retired_scheduler": {
+    "pid": 12394,
+    "ppid": 1,
+    "pgid": 12394,
+    "state": "Ss",
+    "started": "Fri Nov 20 08:57:51 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  },
+  "completed_native_job": "tsvdx4-16-t",
+  "complete_native_receipt_sha256": "9fc96d1971a3cfa6fab64285aaf502bf6e355a712dcd775a1976568993e1f5ed",
+  "no_live_child_at_stop": true,
+  "original_high_capacity_owner": {
+    "pid": 61480,
+    "ppid": 1,
+    "pgid": 61480,
+    "state": "Ss",
+    "started": "Fri Nov 20 05:21:26 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_successor.py"
+  },
+  "all_native_outputs_and_states_preserved": true,
+  "original_primary_restart_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  ]
+}

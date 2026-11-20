@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T16:12:53.098040+00:00",
-  "display_time": "2026-11-20 05:42 PST",
+  "observed": "2026-11-20T17:12:04.505943+00:00",
+  "display_time": "2026-11-20 17:12 UTC",
   "best_development_rmse": 0.8589160570135321,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,13 @@
   "independent_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "work": [
     {
+      "work": "Matched paired391 neural follow-up queued after original1600",
+      "state": "Both full pairedB467/617 input streams, ten-group statistics, eligible ridge solves and held bits independently match. B352/B391 ridge changes only0.8618576840 to0.8618508817. Reviewed618-input H128rank32/5fold/3seed/max40pat4/batch8192 arm is queued behind original1600; H512 is a separate source-ready control. Exact bounded fit scalers and independent full-column verifier preserve original full eligible statistics. No new neural/qualifying result yet.",
+      "evidence": "experiments/upstream-own391-paired-h128-queue/plan.json"
+    },
+    {
       "work": "Complete13 current qualifying primary and context-weighted follow-up",
-      "state": "All8191-support known-only primary, both frozen studies and separate canonical group checks pass. Primary0.8603920746/0.8613737959 is only a small gain. Five-model contextual follow-up passes full independent replay but scores0.8603967792/0.8613960266 and is retained as a negative result. Larger404-signal/5657-coefficient FWLS completes allfive models; qualifying inference/replay/audit remain.",
+      "state": "All8191-support known-only primary, both frozen studies and separate canonical group checks pass. Primary0.8603920746/0.8613737959 is only a small gain. Five-model contextual follow-up passes full independent replay but scores0.8603967792/0.8613960266 and is retained as a negative result. Larger404-signal/5657-coefficient FWLS also completes allfit/replay/audit phases and misses at0.8613295003/0.8623423168; all negative results remain.",
       "evidence": "experiments/upstream-complete13-calibration/independent-canonical-verification.json"
     },
     {
@@ -41,18 +46,23 @@
     },
     {
       "work": "Original CFNADE96 trajectories",
-      "state": "Original full95/95 budgets unchanged. Development training completed95/95; qualifying remains live at92/95, observed2026-11-20T16:12:35.704249+00:00. No restart or shortening.",
-      "evidence": "experiments/upstream-cf96-disk-resume/status.json"
+      "state": "Both original95/95 training phases, raw SGD export and the original canonical finalizer are complete. All original optimizer/RNG/source/data/95epoch budgets remain unchanged. No qualifying score/promotion is claimed from this completion.",
+      "evidence": "experiments/upstream-cf96-disk-resume/recovery-completion.json"
     },
     {
       "work": "Original high-capacity1600-factor recipe",
-      "state": "Childless old supervisor29800 retired through cleanup, without native interruption. Successor61480 now waits memory before acquiring both lanes nonblocking. Original1600 factors/2epochs eachphase retained; no build or fit yet.",
+      "state": "Original CF95/95 and finalizer complete. Restored scheduler finished its original4/4 tsvdx4-16-t job, then was retired only at a verified receipted childless boundary. Original1600 source-pinned isolated binary build/admission complete; nativePID15854 is now training its original2epochs perphase with1600factors. Original22GiB/24GiB/disk guards remain. No completed high-capacity score claimed.",
       "evidence": "experiments/upstream-high-capacity-successor/queue-plan.json"
     },
     {
       "work": "Exact voting preservation",
       "state": "All original915456880 voting bytes and130feature hashes remain in complete lossless archive. Idle RAM owner released after full matched-model replay; no own features discarded.",
       "evidence": "experiments/upstream-split3-voting-archive/release-verification.json"
+    },
+    {
+      "work": "Verified completion-boundary primary handoff",
+      "state": "The restored scheduler was stopped only after its original native job and receipt completed, with no live child rechecked while frozen. All native outputs/states preserved; existing original1600 queue retained. No model was interrupted or restarted.",
+      "evidence": "experiments/upstream-high-capacity-primary-handoff/completion.json"
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
@@ -69,29 +79,12 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T14:42:46.177577+00:00",
-    "cf_epochs": {
-      "x": 93,
-      "qual": 88
-    },
-    "cf_active": {
-      "x": 40924,
-      "qual": 46859
-    },
-    "own330_development_complete_verified": true,
-    "own330_full_refit_complete_verified": true,
-    "own330_qualifying_audit_complete_verified": true,
-    "own352_ridge_complete_verified": true,
-    "own352_neural_started": true,
-    "high_capacity_successor": 61480,
-    "high_capacity_state": "waiting_memory_before_nonblocking_both_lanes",
-    "original_voting_all_bytes_archived": true,
-    "free_disk_bytes": 22243090432,
-    "own352_neural_complete_verified": true,
-    "own352_original_guard_preserved_all_models": true,
-    "own352_bounded_verification_complete": true,
-    "own352_fold_bag_production_started": false,
-    "remote_native_query_admission_complete": true
+    "observed": "2026-11-20T17:12:04.505943+00:00",
+    "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
+    "original1600_state": "original1600_full_two_phase_native_running",
+    "original1600_owner": 61480,
+    "paired391_h128": "queued_waiting_original1600_priority",
+    "original1600_native_pid": 15854
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
@@ -123,7 +116,7 @@
   ],
   "development_narrative": "Complete own352579-input fivefold/three-seed H128rank32 study retains all15 original actual models and full eligible scalers/statistics/normalized inputs. Bounded verification changes only allocation and matches every original saved statistic/model/prediction. Separate canonical fixed-half score0.8589160570135321 improves preceding own3300.8589474951024617. This is adaptive known development CV on different rows from qualifying, not official or untouched Test. Current qualifying primary is complete13 at0.8603920746/0.8613737959; strict target0.85725 remains unmet.",
   "latest_qualifying_verification_path": "experiments/upstream-complete13-calibration/independent-canonical-verification.json",
-  "qualifying_narrative": "The predeclared complete13-family known-only simplex scores0.8603920746/0.8613737959, only0.0000105/0.0000143 better than own330. All8191 simplex supports, original ridge10 control equations, every frozen vector and separate canonical scores pass; all original source and actual saved-model expectations are rehashed. Both studies froze/preverified before either new recovered audit. Apparent known-fit0.8587382063 is not nested CV. Target0.85725 remains unmet; worse-group gap0.0041237959. All numerical predictors and weights are ours. Original A/B input realization caveat retained. Smaller context FWLS completes0.8603967792/0.8613960266 and misses the primary; its conditional meta-crossfit0.8588517253 is not fully nested end-to-end CV. Full404-signal/5657-coefficient FWLS has completed allfive fits and is generating its qualifying bag after complete independent input replay. Adaptive recovered groups, not official or untouched Test.",
+  "qualifying_narrative": "The predeclared complete13-family known-only simplex scores0.8603920746/0.8613737959, only0.0000105/0.0000143 better than own330. All8191 simplex supports, original ridge10 control equations, every frozen vector and separate canonical scores pass; all original source and actual saved-model expectations are rehashed. Both studies froze/preverified before either new recovered audit. Apparent known-fit0.8587382063 is not nested CV. Target0.85725 remains unmet; worse-group gap0.0041237959. All numerical predictors and weights are ours. Original A/B input realization caveat retained. Smaller context FWLS completes0.8603967792/0.8613960266 and misses the primary; its conditional meta-crossfit0.8588517253 is not fully nested end-to-end CV. Full404-signal/5657-coefficient FWLS completes its full independent replay and canonical audit at0.8613295003/0.8623423168, worsening both groups; conditional metaCV0.8602208791 is not fully nested end-to-end CV. Matched pairedB391 input/ridge admission passes with a tiny known gain; original-budget H128 neural follow-up is queued behind original1600 capacity work. Adaptive recovered groups, not official or untouched Test.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
   "latest_completed_qualifying_audit_path": "experiments/upstream-complete13-calibration/independent-recovered-audit.json",
   "qualifying_benchmark_rule": "Predeclared complete13 known-only simplex is the primary before outcomes. Both canonical groups improve preceding own330; all8191 supports, original fitted source/model files and every frozen vector independently verify. No qualifying outcomes fit or select weights.",

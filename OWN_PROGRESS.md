@@ -107,10 +107,13 @@ The complete own330 neural study passed all five folds/three seeds:
 Its fixed tree154 half **0.8589474951** is the preceding development best;
 the full qualifying result is now separately verified above. Own176's fixed half0.8591336855 had
 narrowly missed the previous0.8591267885 best. Both full studies retain all
-original inputs, architecture and epoch budgets. Original CF96 development
-training has reached95/95; qualifying training remains live at91/95.
+original inputs, architecture and epoch budgets. Both original CF96
+training phases now complete95/95, with raw export and the original finalizer
+complete. Original1600 source-pinned build/admission is complete and its
+native training is running after a verified completion-boundary handoff
+from the restored childless legacy scheduler; no native fit was interrupted.
 The childless native supervisor later exited through cleanup for full
-own330 production; its successor now waits memory before taking both lanes.
+own330 production; its successor has now acquired both lanes for the exact1600 recipe.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
@@ -133,10 +136,10 @@ Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
 The isolated1600-factor preparation now binds439 source/data files and
 proves both full training/query populations disjoint. Its reviewed childless supervisor was retired through cleanup; the
-successor waits its full22GiB reservation before nonblocking lane acquisition.
-It will build
-an isolated exact executable because the existing shared binary failed
-its build-receipt hash check. No high-capacity build or fit has begun.
+successor admitted its full22GiB reservation and acquired both lanes.
+An isolated exact executable now passes its source/build/data admission;
+the earlier shared-binary receipt mismatch was preserved. The original
+1600-factor/2epoch-perphase native run is active; no score is claimed yet.
 [Guarded execution](HIGH_CAPACITY_ORIGINAL_EXECUTION.md).
 
 New own176 input/ridge admission is complete. All ten recent own scalar

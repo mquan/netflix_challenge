@@ -45,9 +45,11 @@ substantive work is context-dependent stacking. The completed13-family
 fit independently replays, but its recovered0.8603967792/0.8613960266
 worsens both groups and remains a negative result. Its conditional
 meta-crossfit0.8588517253 is not fully nested end-to-end CV. The larger
-404-distinct-signal/5657-coefficient study has completed all five fits and
-is generating qualifying predictions after independent admission of all413 entries.
-CF96 qualifying training remains live at92/95; high-capacity work is queued.
+404-distinct-signal/5657-coefficient study also passes its complete replay,
+but scores0.8613295003/0.8623423168 and remains a negative result.
+CF96 now completes95/95 in both phases plus raw export/original finalization.
+The original1600-factor model is training; matched paired391 neural work
+is queued behind it. [Full-bank result](OWN404_FWLS_RESULT.md).
 
 [Separate canonical scores](experiments/upstream-complete13-calibration/independent-canonical-verification.json) ·
 [Independent coefficient and full-vector checks](experiments/upstream-complete13-calibration/independent-preaudit-verification.json) ·
