@@ -1,0 +1,24 @@
+{
+  "state": "releasing_shared_epoch_slot",
+  "observed": "2026-11-20T03:57:09.349804+00:00",
+  "reason": "original_native_producer_ended_without_both_proofs",
+  "raw_durable_state": {
+    "trainx": {
+      "pointer_sha256": "bc0855dbcd189cc570bb1911eb901a9040d5720d56b54f7d48b7c0b178cb4674",
+      "epoch": 27,
+      "checkpoint": "epoch-00027.pt",
+      "declared_checkpoint_sha256": "ea026aa8bf43bc9a2601c789985841469b376dfee56152054d9178f80f076c7d"
+    },
+    "fulltrain": {
+      "pointer_sha256": "640051125f6cae1e1f288d5a86e04719b0d88ec34e8bf42fed201b3f15be35d7",
+      "epoch": 26,
+      "checkpoint": "epoch-00026.pt",
+      "declared_checkpoint_sha256": "cc491e6c9b3c92a94b7e9d93a81a70754677b1e924e8428a53a159ae3a286105"
+    }
+  },
+  "raw_checkpoint_pointers_and_source_unchanged": true,
+  "raw_full_fifty_epoch_budget_unchanged": true,
+  "native_proof_sha256": {
+    "s3-dnn32nm__knn3-verification.json": "705d61f728d76f1f900cee111c82981992a9e9524d59122cfff63223e0d3a363"
+  }
+}

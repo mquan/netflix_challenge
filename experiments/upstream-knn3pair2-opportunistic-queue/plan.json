@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-20T04:04:04.067540+00:00",
+  "script_sha256": "c7b395fad702fd6d6f338d356e0b874a12762a132080a671df506fa5345919cb",
+  "original_declaration_sha256": "678f3a5cbcac4026c707ef2a56f25397e7c6010769de4973c8041ea76ea948a2",
+  "recovery_sha256": "251730884c48127266ba40b993bd65aca09e7d26256e877c549bfebf04921b42",
+  "original_code_sha256": {
+    "scripts/upstream_knn3pair2_virtual_queue.py": "c98aa4865aabb63c1693cc31425d4f4b1c190f600dfe56ce3fe5eaa021ef2a4e",
+    "scripts/upstream_knn3pair2_virtual_mps_context.py": "86ab6a4e1ab9e460075b3eb6d40814f1688a4d9d578b3a064448327386a414a6",
+    "scripts/upstream_knn3pair2_virtual_features.py": "4e34d7eaed166fe59c1362fae3496adb4bbb1ea15f5864b2a66e2788178a5dcb",
+    "scripts/upstream_knn3pair2_screen.py": "88931327e6623b893298fa04a8116f469c220689d99eedab25dfa5aec43fd132",
+    "scripts/verify_upstream_knn3pair2_screen.py": "e66e33d9e051407c7435327407a7be3eb56330cc255f372727017eefd3e29a38",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4",
+    "scripts/upstream_rbm50_tree_knn3pair2_virtual_mps.py": "db8a033c0620e4ec116f96fd7feefa29b255c621714c7036a90cf4d759848ebb",
+    "scripts/upstream_item154_tree_knn3pair2_virtual_mps.py": "87bccf39765307ce0381c719f37b4f11960e4ad9f8d9b3032c876b50919519a2"
+  },
+  "scheduling": "CPU preparation without GPU lock. Stable original full-neural headroom before attempting GPU lock; immediate recheck after nonblocking acquisition. Release failed acquisition/recheck. Original 16GiB reserve and 24GiB RSS/8GiB disk guard retained.",
+  "numerical_recipe_or_data_or_budget_changed": false,
+  "qualifying_labels_read": false
+}

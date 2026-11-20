@@ -1,0 +1,43 @@
+{
+  "state": "complete_original_chain_pending_independent_verification",
+  "job": "s3-nade12s__knn3",
+  "parent": "s3-nade12s",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "f6576019ee61af1795c9b29d9897f849b4e349d5934e251fb03922755e68e5bb",
+  "started": "2026-11-20T03:51:27.603142+00:00",
+  "finished": "2026-11-20T03:56:57.818872+00:00",
+  "command": [
+    "./target/release/fit",
+    "chain",
+    "s3-nade12s__knn3",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "full_native_phase_build_counts": [
+    [
+      17770,
+      413623
+    ],
+    [
+      17770,
+      412106
+    ]
+  ],
+  "outputs": {
+    "preds_3/s3-nade12s__knn3.probe_3.npy": "e1ace169869e1acdd11498e0006911120e2020535307c0a4228cdaaa0f64dcf5",
+    "preds_3/s3-nade12s__knn3.qual.npy": "2d1efda20f155f15ff37765ef37b8fe606fb8ca73ba326bcbceeae9af8629678",
+    "preds_3/s3-nade12s__knn3.out": "ae0794b238ac5d60f1df17ee3fe91526b290925040276a524a5181b8c5669b1d"
+  },
+  "projected_pair": {
+    "name": "s3-nade12s__knn3",
+    "probex": "artifacts/upstream-split3-knn3-chains/s3-nade12s__knn3.probex.npy",
+    "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-nade12s__knn3.qual.npy",
+    "probex_sha256": "f3ce61445bee08762dc92a6c5528fd83af2c56b7d8f47245170d773f55e32416",
+    "qual_sha256": "2d1efda20f155f15ff37765ef37b8fe606fb8ca73ba326bcbceeae9af8629678"
+  },
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}
