@@ -1,0 +1,14 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own352_temporal_queue.py": "a749ae8af5030527ded49827d7c04e868ba511281b090e614f49030a538700c1",
+    "scripts/upstream_own352_temporal_mps.py": "e305903037ca0da81c56d67fb27acffe0b0d872032af6f240419250c52066d86",
+    "scripts/verify_upstream_own352_temporal_mps.py": "67851bad87e53696430e04ec099232e8c19b99f74ffe54798e83f11c6f047875",
+    "experiments/upstream-own352-temporal-data/manifest.json": "6b180ecc94c0578980586732ef396842e1d1cb0afe6528dd6626d21d3b238e70",
+    "experiments/upstream-own352-temporal-data/independent-verification.json": "8519e6ec4f1a701e65f62c4fbefa2380484692ed713b33d171777dfb04e4874e",
+    "scripts/upstream_own352_temporal_data.py": "1f37612eb6dd7826b16b7230f392bf63dad3e7fa69cf1a96bc84b9077c851c9f",
+    "scripts/verify_upstream_own352_temporal_data.py": "1e102a0911acabd006d701ed6815d1e5b48051b21a44ecbbfb6fcba61d5454de",
+    "OWN352_TEMPORAL_PLAN.md": "71cd32c7d77cbfdc22c53a6b191ba81aabf799cd511856fa5b22846b0a784021"
+  },
+  "created": "2026-11-20T13:55:11.900137+00:00",
+  "rule": "Full original579 inputs, H128/rank32, all5userfolds/3seeds, max40patience4/batch8192/AdamW and original inner/full eligible statistics. Reserve16GiB before nonblocking GPU lock; 16GiB worker,24GiB total physical/RSS,128MiB swap growth,18.75GiB disk floor. Independent full preprocessing/model replay before release. Preserve actual child RAM on guard or monitor loss; no automatic retries."
+}

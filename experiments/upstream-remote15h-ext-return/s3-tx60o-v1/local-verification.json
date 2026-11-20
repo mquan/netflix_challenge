@@ -1,0 +1,92 @@
+{
+  "state": "complete_local_compact_remote15h_extension_return_check",
+  "observed": "2026-11-20T13:56:49.754374+00:00",
+  "job": "s3-tx60o",
+  "remote_commit": "3b4d8067ecf2ee5d1949b0d58df668ebee3f0076",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "rows": [
+    {
+      "name": "s3-tx60o",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-tx60o_ep02",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep02.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep02.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-tx60o_ep24",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep24.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep24.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy": "4f368e191a0faf7773604a629659062426b9872b948cc4e6b4123e453d934650",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o.probex.npy": "7ba7025124355b46488b1cc2b1997ea05a7572f4f0bfe0fbf794ad0b98a488b3",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o.qual.npy": "55d3e0d257f950197981796e663c43a12b50add78b4260b5400221a06ea521fa",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep02.probex.npy": "89e77f252bafc32fe9dfe375d54bfd8f04597e59519d6416e0311be1c430daef",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep02.qual.npy": "3cb53e64dfc56d2030b07cded1c341ace4f2d65e4f59767f9695e6bbad933c15",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep24.probex.npy": "4b9643dbe3da6bc83bef9b1d23f3f40f24e0cd78ca748dea5ca5a3ad4d182f0b",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/s3-tx60o_ep24.qual.npy": "5abd26c1ecc356c6fe1eaf63adbeb2652203bad689ebcbe87406607a3613f53d",
+    "artifacts/remote15h-ext-return/s3-tx60o-export.tar.gz": "cb3d43a44685584fd27c8b45a58fbd802cb368aaa23a52a6af62a8fa6611f7a9",
+    "scripts/verify_upstream_remote15h_extension_return.py": "b7adb941a2d89754e621759a38367814e07ff2fbb0f096950f6bb845bf934daf",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o-receipt.json": "7cf163b95f4adbb49ef23be320fb514f8abd9a19b4234eaa0d1e6f81bb80b907",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o_ep02.npz": "f389d97fd80d5ef9e0db8b56720e154669890139cf40af0d30e38a4753125039",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o.npz": "4efdbddb8d30baa295fb68c8bcbe260f9b81b0c42ade82041871948f7e85b9a0",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o-launch.json": "4305d48148d834ec8bee9d1259e30608be3bd6df2e836eafe557981abfe6cd0a",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o.log": "3c8abce16d2a28c35db7f34a8d3fc6ca289e4aa76201b106a62ab5732591887d",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/s3-tx60o_ep24.npz": "8c48b6e2ba804ca24f6b36748ef58a575ef629f67fb94a30964d2f6e63d5f859",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/verification.json": "8f529f778c05dbeda6a8d52a30f7efbc1b93871a16f5ea1f0640c2efe65ca9de",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "artifacts/remote15h-ext-return/s3-tx60o-v1/export/s3-tx60o/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/s3-tx60o-receipt.json": "7cf163b95f4adbb49ef23be320fb514f8abd9a19b4234eaa0d1e6f81bb80b907",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/transfer.json": "b52d0464ac33160c15862ddee2e91695bc24ab93215e4694ca806fae7cad50b6",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/s3-tx60o-launch.json": "4305d48148d834ec8bee9d1259e30608be3bd6df2e836eafe557981abfe6cd0a",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/s3-tx60o.log": "3c8abce16d2a28c35db7f34a8d3fc6ca289e4aa76201b106a62ab5732591887d",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/verification.json": "8f529f778c05dbeda6a8d52a30f7efbc1b93871a16f5ea1f0640c2efe65ca9de",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "experiments/upstream-remote15h-ext-return/s3-tx60o-v1/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "ignored_archive_appledouble_metadata": [
+    "._s3-tx60o",
+    "s3-tx60o/._preparation.json",
+    "s3-tx60o/._split3.log",
+    "s3-tx60o/._plan.json",
+    "s3-tx60o/._s3-tx60o-receipt.json",
+    "s3-tx60o/._s3-tx60o_ep02.npz",
+    "s3-tx60o/._s3-tx60o.npz",
+    "s3-tx60o/._s3-tx60o-launch.json",
+    "s3-tx60o/._s3-tx60o.log",
+    "s3-tx60o/._s3-tx60o_ep24.npz",
+    "s3-tx60o/._verification.json",
+    "s3-tx60o/._upstream_remote15h_ext.py",
+    "s3-tx60o/._build.log"
+  ],
+  "prior_import_failure_paths": [],
+  "original_full_epochs_each": 25,
+  "original_recipe_trace_and_immutable_export_verified": true,
+  "local_full_known_map_and_training_disjointness_recomputed": true,
+  "native_qualifying_npy_bytes_reconstructed_exactly": true,
+  "native_npy_header_template": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy",
+  "native_full_probe_projection_recomputed_by_separate_remote_export": true,
+  "native_full_probe_vectors_present_locally": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Locally verified original plan/helper/source-export lineage, both full epoch traces, canonical datasets/map/disjointness and complete lossless paired vectors. Remote separate exporter rehashed original binaries/source/data/native outputs and projected every known row; native full-probe vectors remain on remote pending full-output transfer. No new local full-probe inference replay or ensemble/qualifying score claimed."
+}
