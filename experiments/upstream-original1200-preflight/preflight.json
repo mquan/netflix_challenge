@@ -1,0 +1,393 @@
+{
+  "state": "complete_original1200_exact_preset_and58_output_preflight_no_training",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_sha256": {
+    "ORIGINAL1200_EXECUTION_PLAN.md": "2faa8a919cf073e8f507be8b091f8de3dbfe4be3c8fa0a3ab5c9afabc6fac549",
+    "scripts/upstream_original1200_preflight.py": "3263435084e31b9099579700820362f2d2840823c2291418995d571ff88da399",
+    "artifacts/upstream-repro/registry.json": "1f6d235dcee23e9ded06fa300e6e72b14a40de0cb63d814e9042bb0013ecb416"
+  },
+  "original_git_blob_sha256": {
+    "src/bin/tsvdx5-new.rs": "790e34f115024a8961de63ca6e958c78158559f6ccd9d7bf1975190f61933f2b",
+    "src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be"
+  },
+  "original_registry_job": {
+    "command": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1200lm",
+    "inputs": [
+      "src/bin/tsvdx5-new.rs"
+    ],
+    "inputs_from": [
+      "ingest",
+      "newsplit"
+    ],
+    "outputs": [
+      "preds_new/tsvdx5-1200lm.probex.npy",
+      "preds_new/tsvdx5-1200lm.qual.npy",
+      "preds_new/tsvdx5-1200lm.out"
+    ]
+  },
+  "factors": 1200,
+  "neighbors": 100,
+  "epochs_each_phase": 23,
+  "expected_outputs": [
+    {
+      "name": "tsvdx5-1200lm.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep01.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep02.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep03.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep04.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep05.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep06.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep07.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep08.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep09.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep10.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep11.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep12.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep13.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep14.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep15.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep16.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep17.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep18.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep19.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep20.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep21.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep22.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep23.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-bias.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-mf.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-nsvd1.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-nbr.probex.npy",
+      "rows": 1128164,
+      "payload_bytes": 4512656,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep01.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep02.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep03.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep04.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep05.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep06.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep07.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep08.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep09.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep10.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep11.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep12.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep13.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep14.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep15.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep16.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep17.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep18.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep19.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep20.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep21.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep22.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm_ep23.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-bias.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-mf.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-nsvd1.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm-nbr.qual.npy",
+      "rows": 2817131,
+      "payload_bytes": 11268524,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm.trainx.npy",
+      "rows": 99352343,
+      "payload_bytes": 397409372,
+      "dtype": "float32"
+    },
+    {
+      "name": "tsvdx5-1200lm.fulltrain.npy",
+      "rows": 100480507,
+      "payload_bytes": 401922028,
+      "dtype": "float32"
+    }
+  ],
+  "total_numeric_payload_bytes": 1241204440,
+  "output_reserve_bytes": 1342177280,
+  "continuous_disk_floor_bytes": 20132659200,
+  "observed_free_bytes": 21236854784,
+  "free_after_reserving_outputs_bytes": 19894677504,
+  "output_reserve_alone_admitted": false,
+  "compiler_reserve_not_included": true,
+  "training_launched": false,
+  "training_queued": false,
+  "qualifying_labels_read": false,
+  "full_data_binary_and_memory_admission_still_required": true
+}

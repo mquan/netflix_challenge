@@ -72,3 +72,16 @@ SHA256 and metadata remain in
 `experiments/upstream-retire-downloaded-public-latents/verification.json`.
 This is intentional downloaded-cache discard, not lossless archival.
 All earlier exact archives and own inputs/models/checkpoints remain intact.
+
+A further authorized transaction removed190 index-matched downloaded public
+ProbeX prediction inodes, including every hardlink alias in four explicit
+retired-public directories:857,428,960 logical bytes. Actual free space rose
+by0.799GiB, to about20.58GiB. Complete pre-deletion SHA256, original-index
+MD5/size, metadata and alias-removal journals remain in
+`experiments/upstream-retire-reference-hardlinks/verification.json`.
+Two dataset arrays were outside the allowlist and were preserved. Current
+own391/delta/CF95/1600 source-closure inodes were excluded; no own input,
+model, checkpoint, source or earlier lossless archive was changed. A
+separate verifier checks every declared retired alias is absent, catalog
+consistency and all protected proof hashes. It cannot rehash deleted bytes
+and does not claim to do so. This is intentional public-cache discard.

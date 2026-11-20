@@ -109,13 +109,48 @@ the full qualifying result is now separately verified above. Own176's fixed half
 narrowly missed the previous0.8591267885 best. Both full studies retain all
 original inputs, architecture and epoch budgets. Both original CF96
 training phases now complete95/95, with raw export and the original finalizer
-complete. Original1600 source-pinned build/admission is complete and its
+complete. All196 original prediction files independently pass admission:
+98 pairs reduce to96 exact distinct paired inputs, without fitting or
+qualifying-label reads. [Complete CF96 bank](CF96_COMPLETE_BANK_RESULT.md).
+The remote original22/22 TX50n compact pair also passes local independent
+admission; neither addition has yet been incorporated into a new score.
+The separate complete-CF delta queue will compare every96 distinct CF pair
+and TX50n against all391 existing scalar inputs on both queries, retain
+every exact novel pair, and run the same fixed-lambda1000 known ridge
+diagnostic with full independent replay. It entered source admission, then
+the compressor-above5GiB guard suspended only its own actual worker in RAM.
+No fit began; recovery must adopt that exact worker after the larger native
+job releases memory, preserving the original3GiB/5GiB limits and avoiding
+a restart. The reviewed recovery monitor is live and waits for independent
+original1600 completion, then three stable admission observations before
+continuing the same worker and running full independent replay. The active
+original1600 and queued391 neural work keep their
+recipes and lanes. No new qualifying audit is
+part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
+Original1600 source-pinned build/admission is complete and its
 native training is running after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
 The childless native supervisor later exited through cleanup for full
 own330 production; its successor has now acquired both lanes for the exact1600 recipe.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
+
+The separate original1200 preflight now accounts for every58 numeric output
+of the unchanged1,200-factor/100-neighbor/23+23-epoch preset:48 ordinary/epoch
+query arrays,8 component-query arrays and2 complete training arrays. Their
+payload alone is1.156GiB; output storage must be reserved above the native
+18.75GiB disk floor before building or launching. Authorized retirement of
+190 downloaded public prediction inode groups recovered0.799GiB; dataset
+arrays, current own inputs/models/checkpoints and earlier exact archives
+were preserved. The reviewed original1200 execution queue is now live,
+waiting for independently completed1600 and paired391H128 before separate
+source/data preparation, isolated build, memory/compute-lane admission,
+full23+23 native execution and independent58-output verification. It has
+not started preparation, build or training. Its disk guards reserve the
+full1.25GiB output allowance through preparation/build and preserve the
+original18.75GiB continuous floor during native writes.
+[Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md) ·
+[Frozen execution queue](experiments/upstream-original1200-queue/plan.json).
 
 All149 unused completed local native pairs now passed a complete own330
 ridge evaluation and independent replay. Same canonical rows/folds:
