@@ -1,0 +1,18 @@
+{
+  "state": "complete_all_original330_ridge_inputs_statistics_solves_and_prediction_bits",
+  "manifest_sha256": "51b976deb972697ae19ea274aa249baef108d47649264b1c564086f2f8d8f3d3",
+  "verifier_sha256": "953c87baf0de7083aab4dc486a97c51d29709fe02a2931d471645b24bdcbe699",
+  "rows": 1128164,
+  "raw_predictions": 330,
+  "design_columns": 406,
+  "all_original181_control_bits_preserved": true,
+  "all149_added_payloads_replayed": true,
+  "all_group_statistics_and_eligible_user_solves_match": true,
+  "all_actual_float32_predictions_match": true,
+  "ridge_rmse": 0.8619710828137934,
+  "original181_ridge_rmse": 0.8622279136776032,
+  "actual_prediction_sha256": "48189da1eabe7ab2d5e23455d11ab4764c4e1cd59c525040f29aacfcd407842c",
+  "qualifying_labels_read": false,
+  "neural_models_fitted": 0,
+  "scope": "Complete bounded transport and original full ridge replay. No neural feature/scaler/model admission, global-best promotion or qualifying performance claim."
+}
