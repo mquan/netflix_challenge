@@ -1,0 +1,42 @@
+{
+  "created": "2026-11-20T00:43:47.349822+00:00",
+  "families": [
+    [
+      "tree50",
+      "tree",
+      "upstream-rbm50-tree",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn50",
+      "nn",
+      "upstream-rbm50-context",
+      "upstream-rbm50-production"
+    ],
+    [
+      "nn90",
+      "nn",
+      "upstream-latent90-mps-context",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn109",
+      "nn",
+      "upstream-autorec109-mps-context",
+      "upstream-autorec-consensus-stream-production"
+    ],
+    [
+      "nn154",
+      "nn",
+      "upstream-item154-mps-context",
+      "upstream-item154-stream-production"
+    ]
+  ],
+  "eligibility": "All four fully produced neural branches of the current own107 lineage (50/90/item154 context and own109 raw extension), plus its actually replayed full tree50. Fixed complete list, not chosen using recovered group scores.",
+  "rule": "One nonnegative sum-one least-squares calibration on complete own known OOF vectors. SLSQP convex quadratic fit with analytic Jacobian, uniform initialization,ftol1e-14,maxiter1000. No coefficient/family/hyperparameter search using qualifying outcomes. Sequential float64 multiply/add in declared family order, then one float32 store. Freeze before recovered audit.",
+  "known_score_is_nested_cross_validation": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "qualifying_label_payload_read": false,
+  "source_families_fitted_again": false,
+  "script_sha256": "bf36e591b01fc71f1f8e2d4fd2fed04b55b29e8d2ca3ec7ffdb315f5a96d01a3"
+}
