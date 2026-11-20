@@ -28,6 +28,16 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
+New own176 input/ridge admission is complete. All ten recent own scalar
+predictors add nonduplicate canonical inputs to the original own166/all90
+bank. Its ridge diagnostic improves **0.8624919426 to0.8622734678**; every
+original/new input bit, full group statistic and actual stored ridge
+prediction independently matches. This is not a neural/global promotion.
+The full five-fold,three-seed403-input H128/rank32 study is queued after
+the temporal job and interrupted comparison complete, with a14GiB worker
+reservation and24GiB total guard. No neural fit or qualifying refit yet.
+[Complete diagnostic and next study](OWN176_RECENT10_RIDGE_RESULT.md).
+
 The own167/context218 study is complete and negative: NN **0.8598066347**,
 fixed half with tree154 **0.8594786621**. All five folds,15 actual saved
 models, both eligible scalers and ridge statistics were independently
