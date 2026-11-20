@@ -12,13 +12,20 @@
   "python": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
   "source_tree": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh",
   "data_root": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/data",
-  "native_tree": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend/source"
+  "native_tree": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source",
+  "exports": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/exports/<job>",
+  "archives": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/archives/<job>"
  },
  "disk": {
   "total_bytes": 994662584320,
   "free_bytes": 15685832704,
   "free_gib": 14.61,
-  "note": "Below 20 GiB prepare floor and 32 GiB admission floor at arrival; preparation blocked until owner frees space"
+  "note": "Below 20 GiB prepare floor and 32 GiB admission floor at arrival; preparation blocked until owner frees space",
+  "remediation": {
+   "observed": "2026-11-20T23:45:16+00:00",
+   "action": "owner-approved docker image prune -a + docker builder prune (unused images/build cache only)",
+   "free_gib_after": 189.6
+  }
  },
  "swap": "total = 2048.00M  used = 391.38M  free = 1656.62M  (encrypted)",
  "live_processes": {
@@ -37,5 +44,17 @@
   "s3-rbm400pf",
   "s3-tx300r",
   "s3-rbm800p"
+ ],
+ "preparation_attempts": [
+  {
+   "tree": "artifacts/upstream-remote-weekend/source",
+   "state": "failed_link_cblas_preserved_untouched",
+   "reason": "helper environment() drops RUSTFLAGS so -framework Accelerate is lost; cargo build of fit failed with undefined _cblas_sdot/_cblas_sgemm"
+  },
+  {
+   "tree": "artifacts/upstream-remote-weekend-r2/source",
+   "state": "prepare: complete",
+   "fix": ".cargo/config.toml (rustflags link Accelerate) in the tree parent, outside the hash-verified source; same fix as remote15h-r2"
+  }
  ]
 }
