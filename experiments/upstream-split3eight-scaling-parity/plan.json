@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-20T05:06:16.241473+00:00",
+  "bindings": {
+    "scripts/upstream_split3eight_scaling_parity.py": "470030ae8a93b28441d2218f040b2d586a7028133bf626487bd8066b162f9ace",
+    "scripts/upstream_exact_neural_scaling.py": "557d5b2afc31d6be2073288a753ee7120360486d4fda6c804c3c06985e5d867e",
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "experiments/upstream-split3eight-virtual-features/cache-column-verification.json": "56cb5f205d09cb42d4582f3c290f24cf553007fb84780b6e58443fa45d93581f",
+    "experiments/upstream-split3eight-virtual-features/manifest.json": "41871ac7ebd1f6c13d6f95690033dbd1c9297b0d7dcb623d8a767f9e56eadcbb",
+    "artifacts/upstream-split3eight-virtual-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-split3eight-virtual-features/baseline.npy": "b1994fbd27b5e3cfda313667ccd9feb7f1f7282f78101b146be4ea85357509ea"
+  },
+  "rows": 1128164,
+  "ridge_columns": 191,
+  "neural_input_columns": 406,
+  "rule": "Every actual known row and every original virtual column. Exact float32 baseline assembly, original complete ordered inner/full eligible scaler sets of outer fold0, original reference statistics and every real-row normalized value checked bitwise. Array transformations only: no model fitting, architecture change, row subsampling or qualifying-label access.",
+  "models_fitted": 0,
+  "original_model_or_budget_changed": false,
+  "qualifying_labels_read": false
+}
