@@ -5,6 +5,7 @@ The SVG is portable; on macOS, sips also writes the PNG embedded in README.
 """
 
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from html import escape
 from pathlib import Path
 import runpy
@@ -16,11 +17,15 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 JOURNEY = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))
-JOURNEY["fresh_status_html"]()  # Refuse to render unverified current score claims.
+JOURNEY["validate_fresh_status"]()  # Refuse to render unverified current score claims.
 MILESTONES = JOURNEY["MILESTONES"]
 STATUS = json.loads((ROOT / "experiments/fresh-reproduction-status.json").read_text())
 CURRENT_CV = next(row for row in MILESTONES if row[4] == "fresh_cv" and float(row[1]) == STATUS["best_development_rmse"])
 CURRENT_QUAL = next(row for row in MILESTONES if row[9] == STATUS["latest_qualifying_verification_path"])
+SELECTION = JOURNEY["overview_selection"](MILESTONES, STATUS)
+PLOT_MILESTONES = [row for row in MILESTONES
+    if datetime.fromisoformat(row[2]).astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat() not in SELECTION['days']
+    or row[0] in SELECTION['ids']]
 QUAL_GROUPS = STATUS["latest_qualifying_groups"]
 QUAL_WORST = max(row["rmse"] for row in QUAL_GROUPS.values())
 if abs(float(CURRENT_QUAL[1])-QUAL_WORST)>1e-12:
@@ -103,7 +108,7 @@ for tick in (.850, .875, .900, .925, .975):
 dates = [
     ("2026-09-27", "Sep 27"), ("2026-10-07", "Oct 7"),
     ("2026-10-17", "Oct 17"), ("2026-10-27", "Oct 27"),
-    ("2026-11-06", "Nov 6"), ("2026-11-18", "Nov 18"),
+    ("2026-11-06", "Nov 6"), ("2026-11-19", "Nov 19"),
 ]
 for date, label in dates:
     x = x_at(date + "T12:00:00-07:00")
@@ -111,12 +116,11 @@ for date, label in dates:
     line(x, Y0, x, Y1, "#4b5364", 1, .2)
     text(x, 710, label, "#a8b0c2", 21, "middle")
 
-for ident, score, date, _strategy, metric, credit, _status, _title, _note, _source, _basis in MILESTONES:
+for ident, score, date, _strategy, metric, credit, _status, _title, _note, _source, _basis in PLOT_MILESTONES:
     if _status == "screen":
         svg.append('<g opacity=".4">')
     if metric == "fresh_qualifying":
         x, y = x_at(date), y_at(float(score))
-        svg.append(f'<circle cx="{x}" cy="{y}" r="15" fill="#181d29" stroke="#f6c26b" stroke-width="2"/>')
         icon("codex", x, y, 21)
     elif metric == "qualifying":
         x, y = x_at(date), y_at(float(score))
@@ -128,7 +132,7 @@ for ident, score, date, _strategy, metric, credit, _status, _title, _note, _sour
 
 for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
-    ("PUB466 NN2", "Probe CV · 0.8645338", -18, -15, "end"),
+    ("H8 full", "Original-Probe CV · 0.8666488", -18, -15, "end"),
     ("QUAL619 ridge", "Recovered audit · 0.8571903", -600, -84, "start"),
     (CURRENT_CV[0], f"Own training CV · {STATUS['best_development_rmse']:.7f}", -18, -68, "end"),
     (CURRENT_QUAL[0], f"Own qualifying audit · {QUAL_WORST:.7f}", -18, -130, "end"),
@@ -139,7 +143,7 @@ for ident, label, dx, dy, anchor in (
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
 text(X0, y_at(.85725)+34, "0.85725", "#baaaff", 22, weight="700")
 text(X1, y_at(.85725)+34, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
-text(X0, 760, "Unconnected audits: gold-ringed Codex = own training; violet diamond = public bank. Recovered labels; different rows from CV.", "#a8b0c2", 19)
+text(X0, 760, "Unconnected audits: Codex logo = own training; violet diamond = public bank. Recovered labels; different rows from CV.", "#a8b0c2", 19)
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
 text(94, 857, "REVISED PROMOTIONS · ORIGINAL-PROBE DEVELOPMENT", "#70d9d0", 28, weight="700")
 text(94, 905, "Lower overall RMSE promotes a candidate; the record line follows successive best scores.", size=23)

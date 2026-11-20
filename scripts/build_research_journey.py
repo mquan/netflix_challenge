@@ -7,6 +7,7 @@ import json
 from html import escape
 import pathlib
 import re
+from zoneinfo import ZoneInfo
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -217,7 +218,7 @@ def qualifying_svg():
     return "\n".join(parts)
 
 
-def fresh_status_html():
+def validate_fresh_status():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
     if record['qualifying_status']!='audited_miss':
         raise ValueError('Review the site narrative before publishing a changed result')
@@ -310,17 +311,21 @@ def fresh_status_html():
         latest['qualifying_labels_used_for_fitting_or_selection'] or latest['both_groups_below_target'] or
         [latest['groups'][k]['rows'] for k in ['source0','source1']]!=[1408789,1408342]):
         raise ValueError('Exact frozen-model replay and independent canonical group evidence required')
-    worst=max(r['rmse'] for r in latest['groups'].values());improvement=100*(1-worst/.9525)
-    rows=''.join(f'<tr><td>{escape(row["work"])}</td><td>{escape(row["state"])}</td></tr>' for row in record['work'])
-    return f'''<section id="fresh" aria-labelledby="fresh-title">
-      <div class="section-head"><div><div class="section-num">Current work / own trained predictions</div><h2 id="fresh-title">Reproducing the result ourselves</h2></div></div>
-      <p>Snapshot: <time datetime="{escape(record['observed'])}">{escape(record['display_time'])}</time>. These are recorded training states, not a live dashboard.</p>
-      <p>The verified own-training development best is <strong>{record['best_development_rmse']:.7f} RMSE</strong>. {escape(record['development_narrative'])} Exact stored-mean reconstruction, original saved-model replay evidence and separate compensated scoring pass on all1,128,164 known-ProbeX rows. <strong>The fresh-training10% qualifying target remains unmet.</strong></p>
-      <p>The independently verified own-training qualifying result is <strong>{latest['groups']['source0']['rmse']:.7f} on source0 and{latest['groups']['source1']['rmse']:.7f} on source1</strong>. {escape(record['qualifying_narrative'])} The worse group improves <strong>{improvement:.4f}%</strong> over Cinematch, leaving{worst-.85725:.7f} RMSE to the strict0.85725 target. No qualifying outcomes fit or select weights. Previously disclosed paired-parent source differences remain explicit. These are adaptive recovered audits, not official or untouched Test.</p>
-      <div class="ledger-wrap"><table class="ledger"><thead><tr><th>Work</th><th>Recorded progress</th></tr></thead><tbody>{rows}</tbody></table></div>
-      <p>Public source implementations are reused; all prediction features in this effort are trained by us. Qualifying outcomes are excluded from fitting and model selection. The final vector must be frozen and replayed before both community-recovered groups are independently scored below 0.85725. These are not official Netflix or untouched Test results.</p>
-      <p><a href="PROGRESS.md">Full progress record</a> · <a href="OWN6_CALIBRATION_RESULT.md">Best own-training qualifying result</a> · <a href="OWN5_CALIBRATION_RESULT.md">Preceding five-family result</a> · <a href="OWN5_QUADRATIC_RESULT.md">Negative quadratic calibration</a> · <a href="ITEM154_QUALIFYING_RESULT.md">Preceding fixed-half result</a> · <a href="FIRST85_QUALIFYING_RESULT.md">First own-training qualifying result</a> · <a href="experiments/upstream-first85-completion-audit/verification.json">Independent full-model audit</a> · <a href="CFNADE12_MATCHING_TREE_PROGRESS.md">Verified development result</a> · <a href="REMOTE_RECOVERY_PROGRESS.md">Remote recovery</a> · <a href="READY_OUTPUT_COVERAGE.md">Public feature coverage</a> · <a href="SPLIT3_PILOT_PLAN.md">Original split3 pilot</a> · <a href="CONTEXT91_PRODUCTION_PLAN.md">Context91 production</a> · <a href="CONTEXT91_QUALIFYING_RESULT.md">Preceding context91 audit</a> · <a href="CF48_103_CONTEXT_RESULT.md">Own103 context result</a> · <a href="LATENT90_SUPPORT_RESULT.md">All90 original support components</a> · <a href="LATENT90_MPS_CONTROL_PLAN.md">Larger GPU neural study</a> · <a href="ITEM154_MPS_PLAN.md">Latest development result</a> · <a href="WARM59_SNAPSHOT_PLAN.md">Next59 own snapshot features</a> · <a href="WARM166_MPS_RESULT.md">Own166 GPU result</a> · <a href="MPS_AUTOREC_TRAINING_PLAN.md">Current own raw GPU model</a> · <a href="AUTOREC109_MPS_PLAN.md">Autoencoder addition result</a> · <a href="AUTOREC_CONSENSUS_RESULT.md">New own fixed consensus</a> · <a href="ITEM154_MPS_PLAN.md">Own item context study</a> · <a href="USER218_MPS_PLAN.md">Own epoch20 user context study</a> · <a href="ITEM_AUTOREC_FEASIBILITY.md">Next raw model feasibility</a> · <a href="ITEM_AUTOREC_TRAINING_PLAN.md">Queued full raw training recipe</a> · <a href="SPLIT3_FOUR_RESULT.md">Completed split3 native batch</a> · <a href="SPLIT3_VIRTUAL_MPS_PLAN.md">Completed split3 neural study</a> · <a href="ITEMAE_VIRTUAL_FOLLOWUP_PLAN.md">Next fixed item-oriented comparison</a> · <a href="ITEM186_VIRTUAL_PLAN.md">Rank1000 item context result</a> · <a href="ITEM154_TREE_RESULT.md">Latest full154 tree result</a> · <a href="OWN6_CALIBRATION_RESULT.md">Six-family qualifying best</a> · <a href="ITEM154_TREE_PLAN.md">Full154-context tree comparison</a> · <a href="ITEM154_TREE_PRODUCTION_PLAN.md">Conditional full tree production</a> · <a href="TREE_GPU_CONCURRENCY.md">CPU/GPU concurrency</a> · <a href="SPLIT3_NEXT3_PLAN.md">Next original native producers</a> · <a href="ITEMAE_IMMUTABLE_VERIFICATION.md">Immutable snapshot proof checks</a> · <a href="EXACT_CACHE_STORAGE_RESULT.md">Exact cache storage sharing</a> · <a href="COW_CACHE_STORAGE_RESULT.md">10.4GB cache storage recovery</a> · <a href="REMOTE_15H_HANDOFF.md">15-hour remote assignment</a> · <a href="ITEMAE_NEURAL_ADMISSION.md">Full-size neural admission</a> · <a href="ATTENTION2_VIRTUAL_PLAN.md">Original attention pair study</a> · <a href="SPLIT3_KNN3_CHAIN_PLAN.md">Original residual KNN3 chains</a> · <a href="KNN3PAIR2_VIRTUAL_PLAN.md">Full KNN3-pair neural follow-up</a> · <a href="experiments/fresh-reproduction-status.json">Snapshot evidence</a></p>
-    </section>'''
+    return record
+
+
+def overview_selection(milestones, record):
+    """Keep complete evidence in the ledger and representative points on busy days."""
+    ids = {'H8 full', 'QUAL619 ridge'}
+    days = {'2026-10-31', '2026-11-15'}
+    for key in ['development_verification_path', 'latest_qualifying_verification_path']:
+        matches = [row for row in milestones if row[9] == record[key]]
+        if len(matches) != 1:
+            raise ValueError('One exact evidence-bound overview milestone required: ' + key)
+        row = matches[0]
+        ids.add(row[0])
+        days.add(dt.datetime.fromisoformat(row[2]).astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat())
+    return dict(ids=sorted(ids), days=sorted(days))
 
 
 def main():
@@ -337,13 +342,17 @@ def main():
         raise ValueError("Main journey must descend; document screens separately")
     if any(before["score"] <= after["score"] for before, after in zip(COMPETITION, COMPETITION[1:])):
         raise ValueError("Selected competition leaderboard milestones must descend")
-    payload = dict(milestones=items, runs=[run_curve(*run) for run in RUNS], competition=COMPETITION)
+    record = validate_fresh_status()
+    payload = dict(milestones=items, runs=[run_curve(*run) for run in RUNS], competition=COMPETITION,
+                   overview=overview_selection(MILESTONES, record))
     template = (ROOT / "research_journey.template.html").read_text()
     marker = "__JOURNEY_DATA__"
     if template.count(marker) != 1:
         raise ValueError("Expected one data insertion marker")
     output = template.replace(marker, json.dumps(payload, separators=(",", ":")))
-    output = output.replace('__FRESH_REPRODUCTION__',fresh_status_html())
+    # The public overview omits the operational dashboard; provenance is still
+    # validated above and the complete status remains in the linked records.
+    output = output.replace('__FRESH_REPRODUCTION__','')
     output = output.replace("__QUALIFYING_GRAPH__", qualifying_svg())
     (ROOT / "assets/qualifying_progress.svg").write_text(qualifying_svg() + "\n")
     for name, filename, color in (("claude", "claude-code.svg", "#D97757"), ("codex", "codex.svg", "#b6a5ff")):
