@@ -60,8 +60,9 @@ temporal100r waits its original disk/memory guard. The item-oriented autoencoder
 all64 final user-context columns and every query gather are independently
 verified. Remote DNN24 has completed8/8 and returned two verified own
 prediction pairs. Remote attention32 completed12/12 and its two own pairs
-were imported and verified. The latest remote heartbeat at07:12UTC reports
-exponential RBM200 at20/25 in its first phase. The original deadline remains.
+were imported and verified. The latest published remote heartbeat at08:12UTC
+reports exponential RBM200 first phase complete25/25 and second phase10/25.
+No completed RBM return yet. The original deadline remains.
 
 [Own qualifying result](OWN6_CALIBRATION_RESULT.md) ·
 [Exact state/storage recovery](CF96_DISK_RECOVERY.md) ·
