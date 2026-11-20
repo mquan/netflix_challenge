@@ -1,0 +1,14 @@
+{
+  "error": "RuntimeError('Original neural resource/watchdog guard; preserve exact child RAM')",
+  "child": {
+    "pid": 94311,
+    "ppid": 84225,
+    "pgid": 94311,
+    "state": "Rs",
+    "started": "Fri Nov 20 12:38:08 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_paired_mps.py --variant h512 --worker"
+  },
+  "actual_child_RAM_preserved": true,
+  "no_automatic_retry": true,
+  "observed": "2026-11-20T20:41:06.093962+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "variant": "h512",
+  "created": "2026-11-20T20:20:12.471736+00:00",
+  "source_sha256": {
+    "scripts/upstream_own391_paired_queue.py": "9309159abe17867b315dcaab3d1bd298416065ed14b6f7b76d286b55fabfcafc",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "OWN391_PAIRED_NEURAL_PLAN.md": "9d074485095c47efa6117f73e233b1a9eca730bd4940636418fc771ee9b1c028",
+    "scripts/upstream_own391_paired_data.py": "e56b975f7ad4d7ade232721b1a63f00f0ba1d93acac769804e74865bb89c5348",
+    "scripts/verify_upstream_own391_paired_data.py": "a0a50b8388792001d91081b42e635b74d07045d6dd78d79a0f4ab8bc74aaaff4",
+    "scripts/upstream_exact391_scaler.py": "fc6d7493a28c77a31dad66eb521e1c1a55c391da8762feaf54338907eed6487b",
+    "scripts/upstream_own391_paired_mps.py": "2c42698a810d837f51073fbcbe37ade056fcee90af199a15e44114bcd412785d",
+    "scripts/verify_upstream_own391_paired_mps.py": "16e9ee8c2bd1396f79cb15d2bbbd1b8eb256f2ac9109e684dcb2b55fee9cf5b6",
+    "scripts/verify_upstream_own391_paired_canonical.py": "2c42339100ee7541b98007bcf259f3069c399245310196746ad808ef6e9aa73b"
+  },
+  "original1600_owner": null,
+  "rule": "Both neural arms wait original1600 completion to preserve its queue priority. Same391 pairedB raw/all90 learned contexts,618inputs,5userfolds/3seeds/max40pat4/batch8192/originalAdamW. H128 primary,H512 declared control. Reserve16GiB before nonblockingGPUlock;16GiB worker,24GiB research physical/RSS,5GiB compressor,128MiB swapgrowth,18.75GiB disk. Full actual eligible scalers/models/predictions and separate canonical score required. Actual child RAM preserved on guard/owner loss; no retries or numerical recipe changes. No qualifying model inference or outcome read."
+}

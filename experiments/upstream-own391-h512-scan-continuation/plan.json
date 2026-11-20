@@ -1,0 +1,85 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_paired_queue.py": "9309159abe17867b315dcaab3d1bd298416065ed14b6f7b76d286b55fabfcafc",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "OWN391_PAIRED_NEURAL_PLAN.md": "9d074485095c47efa6117f73e233b1a9eca730bd4940636418fc771ee9b1c028",
+    "scripts/upstream_own391_paired_data.py": "e56b975f7ad4d7ade232721b1a63f00f0ba1d93acac769804e74865bb89c5348",
+    "scripts/verify_upstream_own391_paired_data.py": "a0a50b8388792001d91081b42e635b74d07045d6dd78d79a0f4ab8bc74aaaff4",
+    "scripts/upstream_exact391_scaler.py": "fc6d7493a28c77a31dad66eb521e1c1a55c391da8762feaf54338907eed6487b",
+    "scripts/upstream_own391_paired_mps.py": "2c42698a810d837f51073fbcbe37ade056fcee90af199a15e44114bcd412785d",
+    "scripts/verify_upstream_own391_paired_mps.py": "16e9ee8c2bd1396f79cb15d2bbbd1b8eb256f2ac9109e684dcb2b55fee9cf5b6",
+    "scripts/verify_upstream_own391_paired_canonical.py": "2c42339100ee7541b98007bcf259f3069c399245310196746ad808ef6e9aa73b",
+    "scripts/upstream_own391_h512_scan_continuation.py": "318af7afb715d838ada062328f66dcc7bfda8e82b5a29286d852724cefe30327",
+    "OWN391_H512_SCAN_CONTINUATION.md": "da49d0b7762e3e0bd9820752920fb68409499a78d0ce72f5b0875bc0e82422b4",
+    "experiments/upstream-own391-paired-h512-queue/plan.json": "0d8fe81ac412b0c1f11e6c1da029d439e5b43f5d7687eeddb63cb70196b1b527",
+    "experiments/upstream-own391-paired-h512-queue/failure.json": "035d543247f155849a506a07afb04f31cb8a124c2cd17d8bb1e4674686f42289",
+    "experiments/upstream-own391-paired-h512-queue/monitor.json": "f550d41f4f5479ad3801b39a3f235f7f10699534577705e2719710467b27b167",
+    "experiments/upstream-high-capacity-successor/completion.json": "f170a4d716cc999b10e4d5e0b13a3c77040c373e1e171b9deaecb79031f28a4a",
+    "experiments/upstream-paused-readonly-scan-fixture/verification.json": "1e911337952de747455256d8bc35597ee904181431b3a5f43e599fb773f109a1",
+    "experiments/upstream-paused-readonly-scan-fixture/scan.log": "3b069194dd7198315c6e6dde29b379ae08e62244a148f5fe56943ac116b5305b",
+    "experiments/upstream-paused-readonly-scan-fixture/worker-source.txt": "ab5ba458077a6a53b5f7acf40fc2a3e27ffdf7e199f8edc947e56050668b2e9d",
+    "experiments/upstream-readonly-cache-trim-second-pass/verification.json": "c8fe041dc64b00452608c09381ede4879807692901980598658c7cf1d51dd81d",
+    "experiments/upstream-original1200-queue/failure.json": "63adfb3d8ddffa8871d22dc7424b10d80965b6487d66117684c639edb0636a65",
+    "experiments/upstream-own391-cpu-tree-deferred-recovery/failure.json": "4860fb16e542e6ad4faeec65b69e278ca8fa7669e7860bc32ad2e8ea312013e8",
+    "experiments/upstream-complete-cf-delta-serialized-recovery/failure.json": "d7b3c83de9adf25fafb20f29d3ad6d842d336a49bb414d5118d444d5a514c0f6",
+    "experiments/upstream-own391-h512-readonly-recovery/plan.json": "fa256e250f2ea996a469badf66c3ae7a9122fd4db2a28efbbbb075493a712cb3",
+    "experiments/upstream-own391-h512-readonly-recovery/failure.json": "b21091ec29e97581a93eaaa8bd6ea92ae988758f400c96dc42674bdb186c2170",
+    "experiments/upstream-own391-h512-readonly-recovery/monitor.json": "d7835305f840acd1449e32ae5b91c9bc7462f9f7e4ed8f50597deb36d31fcab4",
+    "experiments/upstream-own391-h512-readonly-recovery/diagnostic-ownership.json": "2586b555487ef8a0198c6958d93403f024fe3be0d4b2caaaaec2f5f9c6c985b0",
+    "scripts/upstream_own391_h512_readonly_recovery.py": "540eaed99860eb8f18fff9c223b02758066768cb06879ff264da0653f161a616",
+    "OWN391_H512_READONLY_RECOVERY.md": "006c3755dfe2dcce816b1baba4804b578db9e38467c4ae67edae0e4e2bea80ec"
+  },
+  "leaks_sha256": "8662a6f6751ea460009d36073a6d2a90954a0513f6eb5ce1097f977dd62ef149",
+  "original_child": {
+    "pid": 94311,
+    "ppid": 84225,
+    "pgid": 94311,
+    "state": "Rs",
+    "started": "Fri Nov 20 12:38:08 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_paired_mps.py --variant h512 --worker"
+  },
+  "adopted_diagnostic": {
+    "pid": 230,
+    "ppid": 99922,
+    "pgid": 230,
+    "state": "Ss",
+    "started": "Fri Nov 20 12:49:28 2026",
+    "command": "/usr/bin/leaks --noContent --nostacks --quiet 94311"
+  },
+  "diagnostic_cap_GiB": 10,
+  "stopped_peers": [
+    {
+      "pid": 94817,
+      "ppid": 39744,
+      "pgid": 94817,
+      "state": "Rs",
+      "started": "Fri Nov 20 12:38:53 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200.py build"
+    },
+    {
+      "pid": 95816,
+      "ppid": 66781,
+      "pgid": 95816,
+      "state": "Rs",
+      "started": "Fri Nov 20 12:39:19 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_worker.py"
+    },
+    {
+      "pid": 35985,
+      "ppid": 30519,
+      "pgid": 35985,
+      "state": "Rs",
+      "started": "Fri Nov 20 10:15:29 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit"
+    }
+  ],
+  "baseline": {
+    "compressor_bytes": 2354610176,
+    "swap_used_bytes": 2666004480.0
+  },
+  "created": "2026-11-20T20:55:18.382053+00:00",
+  "rule": "Resume SAME stopped H512 process only, retaining tensors/optimizer/RNG and all original numerical sources. CF intake remains stopped. Serialize GPU+primary lanes, continue SAME standard readonly scanner after its1GiB helperguard; explicit10GiB helper reservation within unchanged24GiB total and16GiB target; no diagnostic restart; private fixture proof retained, then three stable ORIGINAL comp<5GiB observations, account already allocated RAM toward original16GiB reservation, nonblocking original GPU lane then recheck. Original own16/research24/comp5/swapgrowth128MiB/disk18.75 unchanged. Baseline is last recorded original preguard observation, not reset at admission. Full actual model/scaler/input replay then separate canonical verifier. Original failure/plan never overwritten. Supplemental original queue completion only after full proof for existing dependent waiters. No new fitting worker or automatic retry."
+}

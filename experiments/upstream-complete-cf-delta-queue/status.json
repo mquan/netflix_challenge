@@ -1,0 +1,41 @@
+{
+  "state": "admit",
+  "pid": 35985,
+  "workers": {
+    "11422": {
+      "bytes": 25690112.0,
+      "rss_bytes": 24526848,
+      "command": ".venv/bin/python -u scripts/upstream_own391_paired_queue.py --variant h128 --original1600-owner 61480"
+    },
+    "15854": {
+      "bytes": 13743895347.2,
+      "rss_bytes": 10253418496,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/target/release/tsvdx4-new tsvdx4-1600lm"
+    },
+    "15857": {
+      "bytes": 23802675.2,
+      "rss_bytes": 17006592,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_watchdog.py"
+    },
+    "30519": {
+      "bytes": 25899827.2,
+      "rss_bytes": 42336256,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_queue.py"
+    },
+    "35985": {
+      "bytes": 173853900.8,
+      "rss_bytes": 10240000,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit"
+    },
+    "61480": {
+      "bytes": 26738688.0,
+      "rss_bytes": 30965760,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_successor.py"
+    }
+  },
+  "memory": {
+    "compressor_bytes": 5304172544,
+    "swap_used_bytes": 2682718781.44
+  },
+  "observed": "2026-11-20T18:15:35.237755+00:00"
+}

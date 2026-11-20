@@ -2,13 +2,15 @@
 
 Updated November20 UTC /November20 Pacific,2026.
 
-Best independently verified known-ProbeX development CV: **0.8589160570135321**.
-The complete own352 temporal NN/tree154 half improves preceding0.8589474951
-by0.0000314381. All15 actual579-input models and complete original eligible
-statistics/scalers/normalized inputs/predictions replay, with a separate
-canonical arithmetic and score check. The compressor-guard recovery changed
-only verification allocation; every model and fitting budget remained intact.
-[Complete neural result](OWN352_NEURAL_RESULT.md).
+Best independently verified known-ProbeX development CV: **0.8589133967520619**.
+The complete matched paired391 H128 NN/tree154 half improves preceding
+own3520.8589160570135321 by only0.0000026602614702. All15 actual618-input
+models and complete original eligible statistics/scalers/normalized inputs/
+predictions independently replay, with a separate canonical arithmetic and
+score check. The original stopped worker continued without restart or
+numerical/guard change. The neural provider matches pairedB on both queries;
+the tree154 control retains its historical A/B realization caveat.
+[Complete matched391 result](OWN391_PAIRED_NEURAL_RESULT.md).
 
 Current independently verified recovered qualifying benchmark:
 
@@ -79,10 +81,10 @@ on both query populations. Complete467/617 operators, all group statistics,
 eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
 changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
 neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
-original40pat4 neural worker completed two folds before its resource guard
-paused it in RAM. Exact-process recovery has now resumed that same worker
-under the original admission and continuous limits. H512 is a separate
-declared source-ready control, not a running job.
+original40pat4 neural study is now independently complete, with a negligible
+new fixed-half development best. The predeclared H512 control has resumed its same paused worker under
+serialized primary/GPU ownership and unchanged scientific limits, with no
+completed score yet. [H512 recovery](OWN391_H512_SCAN_CONTINUATION.md).
 [Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
 The full temporal100r trajectory now supplies22 independently verified
@@ -121,10 +123,14 @@ every exact novel pair, and run the same fixed-lambda1000 known ridge
 diagnostic with full independent replay. It entered source admission, then
 the compressor-above5GiB guard suspended only its own actual worker in RAM.
 No fit began. After original1600 completed, recovery continued the same
-intake, but its guard stopped it again. It remains paused while the neural
-study has priority; no intake restart or new score is claimed. Both original
-failure receipts and source expectations remain. No new qualifying audit is
-part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
+intake, but its guard stopped it again. Its original declaration remains;
+complete novelty is unfinished. After H128 proof, a serialized continuation briefly resumed the intake,
+but its unchanged guard stopped it again during remaining diagnostic memory
+pressure. The same worker is preserved. Further continuation will wait for
+serialized headroom after H512; no intake restart or new score is claimed.
+Original failures, source expectations and original3/24/5GiB guards remain.
+[Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md) ·
+[Serialized exact continuation](OWN_CF_SERIALIZED_RECOVERY.md).
 Original1600 source-pinned build/admission and full native execution are
 complete after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
@@ -140,16 +146,9 @@ two distinct paired snapshots: terminal exactly aliases epoch2 on both
 queries. Complete canonical single-model known ProbeX error0.9349703049
 does not advance the benchmark; it is not blend CV. The qualifying-phase
 native diagnostics use zero sentinels and are not recovered qualifying
-scores. Matched391 H128 completed two folds before its guard paused the
-actual worker in RAM. After a read-only cache release evicted2.088GiB from
-33 immutable matrix inodes, the revised supervisor admitted and resumed
-that exact worker under the ORIGINAL compressor-below5GiB rule. All
-continuous resource limits and original numerical sources remain unchanged.
-Its fold2 epoch log is advancing; compressor occupancy fell after continuation
-and swap usage is unchanged. CF95/TX50n intake stays paused. No complete
-new neural score is available yet.
-[Original-admission continuation](OWN391_ORIGINAL_ADMISSION_RECOVERY.md) ·
-[Earlier conservative recovery](OWN391_EXACT_NEURAL_RECOVERY.md).
+scores. Matched391 H128 is now independently complete after exact-process
+continuation under its original guards. The separate H512 control has resumed its same original worker under
+serialized recovery; other scientific groups remain paused.
 [Complete original1600 result](ORIGINAL1600_RESULT.md).
 
 The separate reviewed paired391 H128 qualifying-bag queue is live, waiting
@@ -174,11 +173,13 @@ fit. The actual process is preserved; the original native job continued during t
 Private read-cache-control tests pass byte/metadata/prior-policy restoration,
 but a controlled33-inode real-input trial still exceeded the compressor
 limit. All prior settings were restored and the same declaration is again
-preserved in RAM, with no fit or numerical recipe change. A reviewed deferred
-controller now waits for independent1600 and primary391H128 completion before
-continuing it. It takes no GPU lane and, after both priorities finish,
-protects CPU fitting through independent replay with the primary lane. The
-original model budgets and all resource limits remain unchanged.
+preserved in RAM, with no fit or numerical recipe change. After both1600
+and primary391H128 completed independently, the reviewed deferred controller
+continued that same declaration, which completed. The original full CPU fit
+then started, and its guard preserved the actual fit group and binary-input
+producer in RAM during overlap. No complete tree fold exists yet. Further
+continuation will serialize against the other large jobs; all original
+model budgets and resource limits remain unchanged.
 [CPU tree plan](OWN391_CPU_TREE_PLAN.md) ·
 [Actual guard and recovery evidence](OWN391_CPU_TREE_RECOVERY.md).
 
@@ -189,11 +190,14 @@ payload alone is1.156GiB; output storage must be reserved above the native
 18.75GiB disk floor before building or launching. Authorized retirement of
 190 downloaded public prediction inode groups recovered0.799GiB; dataset
 arrays, current own inputs/models/checkpoints and earlier exact archives
-were preserved. The reviewed original1200 execution queue is now live,
-waiting for independently completed1600 and paired391H128 before separate
-source/data preparation, isolated build, memory/compute-lane admission,
-full23+23 native execution and independent58-output verification. It has
-not started preparation, build or training. Its disk guards reserve the
+were preserved. After independently completed1600 and paired391H128, separate exact
+original1200 source/data preparation completed. Isolated compilation began
+but its guard preserved the actual build group94817 in RAM during overlap.
+That exact build will continue after serialized memory admission.
+Full23+23 native training and independent58-output verification remain.
+Unused completed1600 build intermediates were losslessly archived and fully
+verified before removal, recovering209MiB without changing its executable
+or numerical outputs. [Archive proof](BUILD_CACHE_ARCHIVE_RESULT.md). Its disk guards reserve the
 full1.25GiB output allowance through preparation/build and preserve the
 original18.75GiB continuous floor during native writes.
 [Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md) ·

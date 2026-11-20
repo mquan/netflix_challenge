@@ -1,0 +1,115 @@
+{
+  "state": "complete_independent_matched_B391_actual_neural_models_full_eligible_statistics_and_predictions",
+  "variant": "h128",
+  "manifest_sha256": "1ead2dd3b12c366c7d22c0a82b98e9357fa0fe25372f52f889eef313b6470c3d",
+  "verifier_sha256": "16e9ee8c2bd1396f79cb15d2bbbd1b8eb256f2ac9109e684dcb2b55fee9cf5b6",
+  "records": [
+    {
+      "fold": 0,
+      "rows": 226746,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-own391-paired-h128-mps/nn/0.json",
+      "receipt_sha256": "121aafc8b66f1c8409fc3492cd3cef6f6826bc5f805a664e124d23401ac85bcb",
+      "outputs": {
+        "nn-13.pt": "1bd1663ee0cfbeb345a0305a434c9ce063731e222fde95da7b372dadb44cb0b1",
+        "nn-2026.pt": "5e8fc0cda153143c546d9a9163dc26f516937101c8d336dd2004943a5d8d0ba0",
+        "prediction.f32": "ee0b10c045ace0c2073667e015957a3ebc28d5052f94077c41536ca950942941",
+        "ridge.npz": "5e7973dd617a83722b21daa9a70e9ae09855ce027c501527b2f624196df08f4a",
+        "nn-7.pt": "f532a7031943393886492ca7da081a398edb51584ff7a231f32dcae509a485d6",
+        "scalers.npz": "6ee7d89edc9ab5b11f7e97d488132261b1cd4d94056b68a8b41d5f6088973706"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8581950971839715
+    },
+    {
+      "fold": 1,
+      "rows": 225899,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-own391-paired-h128-mps/nn/1.json",
+      "receipt_sha256": "0730fd190fca646f9d28d50c9e648700d1e7411b7e4510074952ff3cefd67530",
+      "outputs": {
+        "nn-13.pt": "ac2b36ca8ef715707e80e06cdc05b99902033794cd6d28b25322f03526a5383c",
+        "nn-2026.pt": "5707598e600b2c3d18c2a92be6904af17bb3b482f4b32441ad1509d901a4897e",
+        "prediction.f32": "38da566286031f8b435a589ff18bad256bad6bf100697708d82bf596d538f087",
+        "ridge.npz": "8d8435cc86b849190d1364019ba5a27ce24c339b0786edc82c69a2ebf15c1977",
+        "nn-7.pt": "048db67751336de94bda1495823288fddf9a599278a402e5fedbbbd97cae7047",
+        "scalers.npz": "424ccb4e3963735f4a99866b5e97ffac6e0bd5ebb233ed28b2e67bc67e938a41"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8564952159844351
+    },
+    {
+      "fold": 2,
+      "rows": 224006,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-own391-paired-h128-mps/nn/2.json",
+      "receipt_sha256": "242f62d6515c91e481cd5d1a84d2d2694a728a6c92013f706ba19c1e0dbec883",
+      "outputs": {
+        "nn-13.pt": "31b00ea37b7b731dc49cb1f4d129f6af483d755f34e9b6a6cc9263f8bcac25b3",
+        "nn-2026.pt": "541aa5da221226112dd5429b33aa095c6acc3c86cf6dff3ea23edf4f1b7f9c9b",
+        "prediction.f32": "3efa4ea80e8f46b218497557781b7b00d15d3d980b07af1165f0bcfaef958226",
+        "ridge.npz": "cfe440ac49a380edda5f71a207222060b180866f905322edfa92b7075b3146ac",
+        "nn-7.pt": "2848ce5bd9d999f3125e67b6d09d0988c1f7c0e418a113305c55123ea97bc562",
+        "scalers.npz": "f398a676b03667e66ddded4473f1ec27b8c6c620a5acd568defaa8e8a618c05c"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.859988812402443
+    },
+    {
+      "fold": 3,
+      "rows": 225873,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-own391-paired-h128-mps/nn/3.json",
+      "receipt_sha256": "7dc0520d82ce129558d2f04e953289ed7c1c5835c3de75703a7cba22417f86e3",
+      "outputs": {
+        "nn-13.pt": "d19113b5b04e2fb11db137d9035e9897b459a855b33cf95279ad863c2ad8a1a3",
+        "nn-2026.pt": "441657ff49e0d8c91f9ca8b879a0152344eceb78a0610256f77caf6927f5278f",
+        "prediction.f32": "f6f8aca814aa644b0f7311f92da7be422b423899b0bfceae18e3bb84eda88d0e",
+        "ridge.npz": "3426ddfe665766498e272c8d24c56e933b960985aff57a955ebe7fcfde35e7b4",
+        "nn-7.pt": "e289bc80f29a9a62a5652e15c33806e8ad8ace032a1b42cab67ab401ea1c78ff",
+        "scalers.npz": "18da0ea4970a4ca8aea8a00ce0e5c9274b88910e5084175da7d0e22cd5416723"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8610596034083208
+    },
+    {
+      "fold": 4,
+      "rows": 225640,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-own391-paired-h128-mps/nn/4.json",
+      "receipt_sha256": "bba672608c5b7b12ae6cf8a97d63eb29fcaccf24917f3c2f4a07fad5c335f9d7",
+      "outputs": {
+        "nn-13.pt": "a298dd252c73e5772aaf24a634c80ade727c5a3b36ec148a934bcb1d485004ad",
+        "nn-2026.pt": "baaf27db1d83f5c75fcc4eb0f6b4f056345b6e2e6c744354d637a6c97f7af391",
+        "prediction.f32": "31047791784a8ea2e6f03fa710fe3423e4ee453d418865d2279ce91fdaad3069",
+        "ridge.npz": "2310f57919716a197848f91b582c5e0f52f106d1e792e5b3358a653736c3f883",
+        "nn-7.pt": "65e675fa08d75a731976d0bd2cef71786e56ccfa00f4b83e4af9bdcb5ae8b18b",
+        "scalers.npz": "7806257c525f19c91dd2712f4e8cc9141ae27eb9deebed8127bfce48496f87d3"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8595326314051694
+    }
+  ],
+  "complete_original_statistics_bitwise_equal": true,
+  "all_original_models_preserved_without_refitting": true,
+  "matched_B_known_and_qualifying": true,
+  "nn_rmse": 0.8590533486413229,
+  "fixed_half_tree154_rmse": 0.8589133967520619,
+  "nn_sha256": "99142a5c1ddff915d65fe3483a197d7ff7807834ed5fb202b20886d5faeefe39",
+  "fixed_half_sha256": "de1a063610bda4185c67892ec869492b5dc142454e2032fd9a79525afc46767a",
+  "declared_global_reference_rmse": 0.8589160570135321,
+  "fixed_half_below_declared_global_reference": true,
+  "qualifying_labels_read": false,
+  "production_started": false,
+  "goal_complete": false
+}

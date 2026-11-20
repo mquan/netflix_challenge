@@ -1,0 +1,36 @@
+{
+  "state": "complete_same_standard_readonly_scanner_full_summary_target_still_stopped",
+  "target": {
+    "pid": 94311,
+    "ppid": 84225,
+    "pgid": 94311,
+    "state": "Rs",
+    "started": "Fri Nov 20 12:38:08 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_paired_mps.py --variant h512 --worker"
+  },
+  "same_actual_diagnostic": {
+    "pid": 230,
+    "ppid": 99922,
+    "pgid": 230,
+    "state": "Ss",
+    "started": "Fri Nov 20 12:49:28 2026",
+    "command": "/usr/bin/leaks --noContent --nostacks --quiet 94311"
+  },
+  "exit_status_available": false,
+  "log_path": "experiments/upstream-own391-h512-readonly-recovery/diagnostic.log",
+  "log_sha256": "462311ec28c2b107bfe3dd424f3a491583da1b52f3efac8cad7d1cdaaf796983",
+  "leaks_sha256": "8662a6f6751ea460009d36073a6d2a90954a0513f6eb5ce1097f977dd62ef149",
+  "fixture_sha256": "1e911337952de747455256d8bc35597ee904181431b3a5f43e599fb773f109a1",
+  "before": {
+    "compressor_bytes": 7651622912,
+    "swap_used_bytes": 2657615872.0
+  },
+  "after": {
+    "compressor_bytes": 4530929664,
+    "swap_used_bytes": 2657615872.0
+  },
+  "target_still_stopped": true,
+  "real_numerical_bytes_compared": false,
+  "model_state_dumped": false,
+  "original_worker_continued": false
+}
