@@ -1,0 +1,15 @@
+{
+  "state": "handoff_verified_not_remote_training_started",
+  "observed": "2026-11-20T03:18:53.003993+00:00",
+  "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+  "helper_sha256": "39a663117230166a7c732c08d4458103913e3760e80366583ef68ad3d05907ff",
+  "coordinator_source_files_rehashed": 115,
+  "coordinator_canonical_arrays_rehashed": 44,
+  "coordinator_generated_split_arrays_rehashed": 18,
+  "original_recipe_comparison": "all_three_exactly_match_pinned_registry",
+  "tests": "5 tests passed: exact recipes, environment isolation, full ordered two-phase traces, malformed vectors, tampered files",
+  "review": "No unresolved findings. Isolated new namespace; original ongoing model scripts unchanged. Only own model outputs exported; linked datasets excluded from return.",
+  "native_remote_fits_run": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}
