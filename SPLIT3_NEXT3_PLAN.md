@@ -42,3 +42,11 @@ Its logged configuration independently confirms64 features,32 pooled features,
 192 matrix factors,12 epochs, seed7 and full train_frac1.0. No capacity/data
 subsampling or original recipe override. Both phases are not complete yet.
 Evidence: experiments/upstream-split3-next3/actual-start-verification.json.
+
+At2026-11-20 00:26 UTC, attention64 completed both12-epoch phases and passed
+the separate source/data/output/full-known projection check:29 outputs and
+26 complete finite native query vectors. Both fixed published pairs are ready.
+Original RBM200 started00:27:23 UTC, native73823, with the original200-hidden,
+Softmax-visible/Bernoulli-hidden,25-epoch,batch500,LR0.025 configuration. Its
+25/25 phases and temporal100r22/22 still require completion and independent
+checks. No new global ensemble or qualifying score is claimed.
