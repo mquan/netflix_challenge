@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "d93e86d0403cc8b244bef541f61f1c3bf6a38361e825df7339a5e5be48b51b1d",
+  "plan_sha256": "271deefb7e8c2fc884c99238596f9467750037327334328ce2db49bacdce84af",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625783033865757,
+      "max_prediction_error": 5.0750514901665156e-12,
+      "prediction_sha256": "bf5ecdfaaf803c63a29a7fa90073e99ec70d125c0269271b4800ff34c270c2f6"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed complete original attention64 terminal/epoch5 addition. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "cac5691fea0163b7709a5c849071cdaa91a7aedeb3d00606e3a8bb4e4d7c3a62"
+}

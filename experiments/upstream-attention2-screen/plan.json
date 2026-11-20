@@ -1,0 +1,26 @@
+{
+  "ready_unused": [
+    {
+      "name": "s3-attn64",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-next3/s3-attn64.probex.npy",
+        "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-attn64_ep05",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-next3/s3-attn64_ep05.probex.npy",
+        "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64_ep05.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "s3-attn64",
+    "s3-attn64_ep05"
+  ],
+  "rule": "Fixed control and both predeclared original attention64 terminal/epoch5 pairs after complete12/12 source fitting. Original user folds and ridge penalty. Native side outputs extend the released raw-column schema; no subset search or qualifying outcomes.",
+  "qualifying_labels_read": false
+}
