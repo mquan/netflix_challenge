@@ -1,0 +1,29 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_cpu_tree_queue.py": "b82eacc138386d9db9070d4ba44676af149cfb42e95f03af3ba013b6d5a3a05f",
+    "OWN391_CPU_TREE_PLAN.md": "214345033509a2c9f75d69a8cede1dab0dfae73106361136b03b85f6d749a997",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "scripts/upstream_tree_pipe.py": "e95078bd837a7bbfba9a51df7231c3879adbe14638c246ebac32da68584c4b77",
+    "scripts/upstream_own391_tree_source.py": "3108d291ff560a701e7b15d302b7bef2dfb52cc01f993533ff11b8bbd6b9a2b4",
+    "scripts/upstream_own391_tree_worker.py": "14eaa3f0f0e44171aec0ce9ae93fa412d846878decfbbe28959cc859472d0af3",
+    "scripts/verify_upstream_own391_cpu_tree.py": "d395b4301aee00a1ca2d1c4129ef003f9092d9763dbc08037788f847bc6309fc",
+    "scripts/upstream_own391_cpu_tree_deferred_recovery.py": "22f47bc892ed578c3e22f6a04140c84749bd1b60e63519d3543568b49aea9cd5",
+    "experiments/upstream-own391-cpu-tree-recovery/failure.json": "0c2bda44ec0c35023c97588d2a632424e2b29fc1504471d01c7a75f70b484396",
+    "experiments/upstream-own391-cpu-tree-recovery/plan.json": "21c7a9acf2e4458d6ee8c8bc4fd5b77bd04fda128eca7ff3ed05d4e5c7a9751a",
+    "experiments/upstream-own391-cpu-tree-recovery/monitor.json": "64ecfc6cf4041b60726804b51ee3cf2de5f7876dd03933fae99d72d2df29469e",
+    "experiments/upstream-own391-cpu-tree-recovery/cache-policy-restoration.json": "15b62762ee2bf5953bad165e3e6900a99cf8fd437c41d2a43caeaaf6cd407d5a"
+  },
+  "original_child": {
+    "pid": 55920,
+    "ppid": 55606,
+    "pgid": 55920,
+    "state": "Rs",
+    "started": "Fri Nov 20 11:01:50 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_source.py declare"
+  },
+  "created": "2026-11-20T19:34:46.837686+00:00",
+  "rule": "Real-input cache trial didnotavoidcompressorguard; all33priorpoliciesrestored. No morecachepolicychanges. Wait independently complete original1600 and primary391H128, thenoriginal8GiB/3stablecomp<3 admission. Continue SAME declarationinRAM, no restart. Fullunchanged CPUtreebudgets/actualmodel/operator/canonicalscores replay. Keep8group/24research/5compress/128swap/18.75disk. Scheduling supplement: only AFTER both priority prerequisites complete, acquireprimarylane nonblockingly aftermemory admission andretainthroughfullindependentreplay, preventing22GiBnative1200 fromstartingbetweenCPUfit/replayRAM phases. NoGPUlock/peer signals/automaticretries."
+}

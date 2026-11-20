@@ -23,14 +23,27 @@ constants and Apple's kernel implementation were inspected. This fixture
 has not changed any real research input's cache policy and does not prove
 reduced memory pressure.
 
-The next recovery must adopt the exact stopped declaration rather than
-restart a fit. Keep the original tree recipe and8GiB/24GiB/5GiB/128MiB/disk
-guards unchanged. A separately reviewed read-only I/O policy may suppress
-cache pollution while preserving every actual source hash, numeric value,
-file path and model recipe. If used, restrict it to explicit bound immutable
-cache matrices, record inode/prior state, and restore that state on completion,
-error or monitor loss. Do not apply it to model parameters or introduce
-qualifying-label reads. Resume actual work only after normal admission.
+The subsequent controlled real-input trial did not stay within the compressor
+limit. It temporarily applied the policy to33 distinct cache-matrix inodes
+(44 inherited paths include aliases), resumed the same declaration process,
+and suspended it again when the original guard fired. No study manifest or
+tree fit was created. The controller restored all33 exact prior settings and
+checked every inode's original metadata. A separate receipt-coverage check
+confirms all33 recorded restorations and current metadata; that check does
+not reassert kernel flags or claim an independent byte rehash. The trial is
+retained as an unsuccessful mitigation at the required resource limits.
+
+The reviewed deferred controller now waits for BOTH independently complete
+original1600 and primary paired391H128 before resuming the exact same stopped
+declaration. It makes no further cache-policy changes. Original8GiB/24GiB/
+5GiB/128MiB/disk limits and every numerical recipe remain. After both priority
+jobs finish, it acquires the primary lane nonblockingly only after memory
+admission, through fitting and independent replay. This explicit scheduling
+supplement prevents the22GiB original1200 job from starting in a temporary
+RAM gap between those phases. It takes no GPU lane and interrupts no peer.
+The initial concurrent queue's no-primary-lock rule remains historical;
+only deferred post-prerequisite scheduling differs. No fitting or qualifying
+outcome read has begun in this study.
 
 The current fixed NN partner's labels, users and groups were also independently
 compared with the new391 data: all three complete file hashes are identical.
@@ -39,4 +52,7 @@ compared with the new391 data: all three complete file hashes are identical.
 [Actual guard event](experiments/upstream-own391-cpu-tree-queue/failure.json) ·
 [Exact partner identity](experiments/upstream-own391-cpu-tree-pairing-check.json) ·
 [Private cache-policy fixture](experiments/upstream-uncached-hash-fixture/verification.json) ·
+[Real-input guard event](experiments/upstream-own391-cpu-tree-recovery/failure.json) ·
+[Prior-policy restoration](experiments/upstream-own391-cpu-tree-recovery/cache-policy-restoration.json) ·
+[Deferred controller](experiments/upstream-own391-cpu-tree-deferred-recovery/plan.json) ·
 [Apple kernel cache-control implementation](https://github.com/apple-oss-distributions/xnu/blob/main/bsd/kern/kern_descrip.c).

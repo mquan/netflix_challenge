@@ -159,9 +159,14 @@ and a fixed own352 NN partner whose label/user/group hashes exactly match.
 Its first declaration was suspended by the unchanged compressor guard while
 hashing a large inherited legacy cache, before any feature matrix or tree
 fit. The actual process is preserved; the original native job continues.
-Private read-cache-control roundtrip tests preserve bytes/metadata/prior
-policy, but no real input policy or model recipe has been changed. Exact
-process recovery and controlled I/O mitigation remain next work.
+Private read-cache-control tests pass byte/metadata/prior-policy restoration,
+but a controlled33-inode real-input trial still exceeded the compressor
+limit. All prior settings were restored and the same declaration is again
+preserved in RAM, with no fit or numerical recipe change. A reviewed deferred
+controller now waits for independent1600 and primary391H128 completion before
+continuing it. It takes no GPU lane and, after both priorities finish,
+protects CPU fitting through independent replay with the primary lane. The
+original model budgets and all resource limits remain unchanged.
 [CPU tree plan](OWN391_CPU_TREE_PLAN.md) ·
 [Actual guard and recovery evidence](OWN391_CPU_TREE_RECOVERY.md).
 
