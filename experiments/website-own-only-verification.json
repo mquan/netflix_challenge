@@ -1,0 +1,56 @@
+{
+  "state": "verified_live_own_training_only_site",
+  "observed": "2026-11-20T06:22:58.330414+00:00",
+  "pages_commit": "79ebe2d565593dbbe9fed68767a3e97f1558f0b7",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "16ade6c3110c46ec5026ec42925a354ac6b3099220dc01bf0c3117180b674381",
+      "bytes": 118360,
+      "matches_committed_source": true
+    },
+    {
+      "path": "research_journey.html",
+      "sha256": "16ade6c3110c46ec5026ec42925a354ac6b3099220dc01bf0c3117180b674381",
+      "bytes": 118360,
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "sha256": "4e09da59f77dd8dffe98cb582b5570fbc3828e4da47f4d6cd4cb6624f7eda8f7",
+      "bytes": 40275,
+      "matches_committed_source": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "sha256": "2f42d50bea2fa79ab7b660bc111cd07bfe6190a20fddbb179514e955cdf5dee9",
+      "bytes": 286759,
+      "matches_committed_source": true
+    },
+    {
+      "path": "OWN_PROGRESS.md",
+      "sha256": "6acb628cccdfd53b0430be39dab50d6070b1103fa22ef7a243d378684f0d8b6f",
+      "bytes": 1886,
+      "matches_committed_source": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "sha256": "1e19724f563cd5b43c941f02230824807b7628e125858a423213a8e26f9a3781",
+      "bytes": 39124,
+      "matches_committed_source": true
+    }
+  ],
+  "own_milestones": 68,
+  "public_bank_milestones": 0,
+  "retired_paths_verified_absent_from_pages_tree": [
+    "BREAKTHROUGH.md",
+    "PUBLIC_BANK.md",
+    "QUALIFYING_PROGRESS.md",
+    "PROGRESS.md",
+    "assets/qualifying_progress.svg"
+  ],
+  "retired_http_check": "Initial direct missing-path probe returned503; no404 claim. Active own-only content and six live artifacts verified byte-for-byte.",
+  "best_development_rmse": 0.8591267885072646,
+  "best_worse_recovered_qualifying_rmse": 0.8615662023089099,
+  "goal_complete": false
+}

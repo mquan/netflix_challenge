@@ -1,0 +1,542 @@
+{
+  "state": "complete_readonly_full_known_feature_realization_comparison",
+  "observed": "2026-11-20T06:18:51.569188+00:00",
+  "records": [
+    {
+      "kind": "ridge",
+      "development": "artifacts/upstream-item154-features/design.npy",
+      "paired_production_known": "artifacts/upstream-item154-stream-bank/probex-design.npy",
+      "shape": [
+        1128164,
+        183
+      ],
+      "different_columns": [
+        {
+          "column": 2,
+          "changed_rows": 1128064,
+          "rmse_delta": 0.026399050982433645,
+          "max_abs_delta": 0.4347662925720215
+        },
+        {
+          "column": 3,
+          "changed_rows": 1128052,
+          "rmse_delta": 0.02454555354742613,
+          "max_abs_delta": 1.240511417388916
+        },
+        {
+          "column": 69,
+          "changed_rows": 1128064,
+          "rmse_delta": 0.009792847454573223,
+          "max_abs_delta": 0.129768660555041
+        },
+        {
+          "column": 70,
+          "changed_rows": 1128052,
+          "rmse_delta": 0.009407952121798794,
+          "max_abs_delta": 0.47290500229570687
+        },
+        {
+          "column": 83,
+          "changed_rows": 1128064,
+          "rmse_delta": 0.003828709121136379,
+          "max_abs_delta": 0.14301473122723396
+        },
+        {
+          "column": 84,
+          "changed_rows": 1128052,
+          "rmse_delta": 0.0038757360052899073,
+          "max_abs_delta": 0.7346882419893298
+        },
+        {
+          "column": 97,
+          "changed_rows": 1128051,
+          "rmse_delta": 0.00555289217783092,
+          "max_abs_delta": 0.08767786900202433
+        },
+        {
+          "column": 98,
+          "changed_rows": 1128039,
+          "rmse_delta": 0.005143186490682151,
+          "max_abs_delta": 0.28655813741683955
+        },
+        {
+          "column": 111,
+          "changed_rows": 1061021,
+          "rmse_delta": 0.008989300448256963,
+          "max_abs_delta": 0.27496449973583215
+        },
+        {
+          "column": 112,
+          "changed_rows": 1061010,
+          "rmse_delta": 0.008179159203241316,
+          "max_abs_delta": 0.41517002787449087
+        },
+        {
+          "column": 125,
+          "changed_rows": 1128063,
+          "rmse_delta": 0.008093921354811547,
+          "max_abs_delta": 0.1614131474670778
+        },
+        {
+          "column": 126,
+          "changed_rows": 1128051,
+          "rmse_delta": 0.007499695132744996,
+          "max_abs_delta": 0.2825200388079785
+        },
+        {
+          "column": 137,
+          "changed_rows": 1127969,
+          "rmse_delta": 0.008557518323470516,
+          "max_abs_delta": 0.12309837341308594
+        },
+        {
+          "column": 138,
+          "changed_rows": 1128029,
+          "rmse_delta": 0.017573308133470897,
+          "max_abs_delta": 0.29953598976135254
+        },
+        {
+          "column": 141,
+          "changed_rows": 1127955,
+          "rmse_delta": 0.01202199596538649,
+          "max_abs_delta": 0.5906658172607422
+        },
+        {
+          "column": 142,
+          "changed_rows": 1128001,
+          "rmse_delta": 0.010427222036907751,
+          "max_abs_delta": 0.38039278984069824
+        },
+        {
+          "column": 143,
+          "changed_rows": 1127979,
+          "rmse_delta": 0.006859963386667745,
+          "max_abs_delta": 0.2011570930480957
+        },
+        {
+          "column": 144,
+          "changed_rows": 1127963,
+          "rmse_delta": 0.00977963341931114,
+          "max_abs_delta": 0.35857248306274414
+        },
+        {
+          "column": 145,
+          "changed_rows": 1127953,
+          "rmse_delta": 0.008013102838358705,
+          "max_abs_delta": 0.29822206497192383
+        }
+      ]
+    },
+    {
+      "kind": "nonlinear",
+      "development": "artifacts/upstream-item154-features/features.npy",
+      "paired_production_known": "artifacts/upstream-item154-stream-bank/probex-features.npy",
+      "shape": [
+        1128164,
+        397
+      ],
+      "different_columns": [
+        {
+          "column": 0,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438553019198,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 1,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 2,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438485673204,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 3,
+          "changed_rows": 1128073,
+          "rmse_delta": 0.025530059677254698,
+          "max_abs_delta": 0.4231381416320801
+        },
+        {
+          "column": 4,
+          "changed_rows": 1128082,
+          "rmse_delta": 0.023678501474540415,
+          "max_abs_delta": 1.2187533378601074
+        },
+        {
+          "column": 5,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438478269534,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 6,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438484499154,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 7,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438476405252,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 8,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438488529584,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 9,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480291727,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 10,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438484131288,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 11,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 12,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438476988328,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 13,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438487591792,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 14,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438482831187,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 15,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438478433929,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 16,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438479613268,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 17,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480874891,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 18,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 19,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 20,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 21,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 22,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 23,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 24,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 25,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480468708,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 26,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 27,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 28,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 29,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 30,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 31,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 32,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 33,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 34,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438476819294,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 35,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438479316207,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 36,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480729471,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 37,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 38,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 39,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 40,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 41,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 42,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 43,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 44,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 45,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 46,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438479512138,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 47,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 48,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 49,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 50,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 51,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 52,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480888563,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 56,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438455827032,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 57,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438481312385,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 58,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480617917,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 59,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438480552507,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 62,
+          "changed_rows": 1127726,
+          "rmse_delta": 0.0008810438479027034,
+          "max_abs_delta": 0.021758079528808594
+        },
+        {
+          "column": 68,
+          "changed_rows": 1127969,
+          "rmse_delta": 0.008557518327560626,
+          "max_abs_delta": 0.12309825420379639
+        },
+        {
+          "column": 69,
+          "changed_rows": 1128029,
+          "rmse_delta": 0.017573308135224487,
+          "max_abs_delta": 0.29953598976135254
+        },
+        {
+          "column": 72,
+          "changed_rows": 1127955,
+          "rmse_delta": 0.012021995964507433,
+          "max_abs_delta": 0.5906658172607422
+        },
+        {
+          "column": 73,
+          "changed_rows": 1128001,
+          "rmse_delta": 0.010427222026195865,
+          "max_abs_delta": 0.38039278984069824
+        },
+        {
+          "column": 74,
+          "changed_rows": 1127979,
+          "rmse_delta": 0.006859963390400166,
+          "max_abs_delta": 0.2011570930480957
+        },
+        {
+          "column": 75,
+          "changed_rows": 1127963,
+          "rmse_delta": 0.009779633423837765,
+          "max_abs_delta": 0.35857248306274414
+        },
+        {
+          "column": 76,
+          "changed_rows": 1127953,
+          "rmse_delta": 0.008013102832519445,
+          "max_abs_delta": 0.29822206497192383
+        }
+      ]
+    }
+  ],
+  "known_labels_read": false,
+  "qualifying_labels_read": false,
+  "models_fitted": 0,
+  "scope": "Every original known-row ridge/nonlinear feature compared to the paired production-known realization. Source differences are measured without outcome-based fitting or selection; no score claimed.",
+  "input_sha256": {
+    "artifacts/upstream-item154-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-item154-stream-bank/probex-design.npy": "6123b54facc8b5191b913d6f293861774fe642f93acbb32f0753c4fbd7937df7",
+    "artifacts/upstream-item154-features/features.npy": "7a7388ce051ea7b8d39b4eeafabddd4726e63cdc7ed3de8b533e4c2117a1bbf6",
+    "artifacts/upstream-item154-stream-bank/probex-features.npy": "34b498962e15d10dfcb8c9971b3b010bef8b780bfb0da7a2ef15384d86413c98"
+  }
+}
