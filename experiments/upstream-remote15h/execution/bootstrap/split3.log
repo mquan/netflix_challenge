@@ -1,0 +1,10 @@
+Seed 42, K 2 -> data/train_3, data/probe_3
+Phase 1/5: Load probe & train
+  probe: 1408395, train: 99072112
+Phase 2/5: Order train ratings of probe users, newest day first
+Phase 3/5: Draw candidates from each user's last 2 train days
+  candidates: 8839124, moved: 352099 (25.00% of probe)
+Phase 4/5: Build train_3 & probe_3
+  same-day coverage: probe|train 0.3700, probe|train_3 0.3700, probe_3|train_3 0.4960
+Phase 5/5: Save
+Done. train_3: 98720013 ratings, probe_3: 1760494 ratings
