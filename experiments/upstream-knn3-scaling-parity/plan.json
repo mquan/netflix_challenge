@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-20T04:34:40.354653+00:00",
+  "bindings": {
+    "scripts/upstream_knn3_scaling_parity.py": "84546601fe18f295e3c64fbe9d4556af4e03cffec2d78dd1d4e4a8db3f41e26f",
+    "scripts/upstream_exact_neural_scaling.py": "557d5b2afc31d6be2073288a753ee7120360486d4fda6c804c3c06985e5d867e",
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "experiments/upstream-knn3pair2-virtual-features/cache-column-verification.json": "be2ff7e38815ee8a02e63b102015e9b014a9d76f83031c365db4abe9f3e3ace9",
+    "experiments/upstream-knn3pair2-virtual-features/manifest.json": "8b4e8ffc8790776dd344cde130bb4ef730255ff0aaafdac4e8feb153605fd581",
+    "artifacts/upstream-knn3pair2-virtual-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-knn3pair2-virtual-features/baseline.npy": "898b572d9271d473c50ed363131c309a3c49a3ac3606f3c14545c05b948c0165"
+  },
+  "rows": 1128164,
+  "ridge_columns": 185,
+  "neural_input_columns": 400,
+  "rule": "Every actual known row and every original virtual column. Exact float32 baseline assembly, original complete ordered inner/full eligible scaler sets of outer fold0, original reference statistics and every real-row normalized value checked bitwise. Array transformations only: no model fitting, architecture change, row subsampling or qualifying-label access.",
+  "models_fitted": 0,
+  "original_model_or_budget_changed": false,
+  "qualifying_labels_read": false
+}
