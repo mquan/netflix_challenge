@@ -1,0 +1,12 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own330_full_refit_queue.py": "c1cafc760014e80b01d3c84f7d195493851988efe61ce962a170670875f2d9af",
+    "scripts/upstream_own330_full_refit.py": "839ff3d3b00696568b7e3ba64fc74c368a583ffc14ea04b94bc0cb4b152c8f9b",
+    "scripts/verify_upstream_own330_full_refit.py": "63a146eb2d7b968002f4bc5cce46c869730474f6e29f02b669e1adcb30970f62",
+    "experiments/upstream-own330-production-inputs/declaration.json": "857fa15df0df08930d4328eccb0f4f34a18c206a2cfdb1d3cd8fd9e048eb2f03",
+    "experiments/upstream-own330-production-inputs/independent-verification.json": "f15faa458eac0dc506593de29c95c70e5924c415bc5d8df02023f1c19fd9d7e3",
+    "experiments/upstream-own330-production-inputs/original-budget-verification.json": "a1a808dd0a2f804c2663ad2f3cac99d5a450f32241c6d6ce1709f96e4b5149ed"
+  },
+  "created": "2026-11-20T13:21:26.968487+00:00",
+  "rule": "Full original557 inputs, three seeds and independently bound median7/7/8 budgets. Reserve16GiB before nonblocking GPU lock; 16GiB worker,24GiB total physical/RSS,128MiB swap growth,18.75GiB disk floor. Independent full preprocessing/model replay before release. Preserve actual child RAM on guard or monitor loss; no automatic retries."
+}

@@ -9,34 +9,52 @@ and held predictions replayed bitwise, with complete original tree-model
 replays retained. A separate check reconstructs every final float32 average
 and the full canonical score. [Complete result](OWN330_NEURAL_RESULT.md).
 
-Established six-family recovered qualifying benchmark:
+Current independently verified recovered qualifying benchmark:
 
-- source0: **0.8605620601761576**,1,408,789 rows.
-- source1: **0.8615662023089099**,1,408,342 rows.
+- source0: **0.8604025394318833**,1,408,789 rows.
+- source1: **0.8613881328035494**,1,408,342 rows.
 
-These are our own freshly trained predictors and known-only fitted weights.
+The predeclared own6-plus-own330 seven-family known-only blend improves
+both previous own6 scores0.8605620602/0.8615662023. All three full557-input
+models, original7/7/8 budgets, complete known statistics/scaler/normalized
+bits and both full query replays verify. Both candidates were frozen before
+outcomes; independent127-support coefficients, every arithmetic bit and
+separate canonical scores pass. Fixed-half control trades off groups.
+Apparent known-fit0.8587992076 is not nested CV.
+[Complete qualifying result](OWN330_QUALIFYING_RESULT.md).
+
 The strict target is below **0.85725 on BOTH groups**; it is still unmet.
-Development CV and recovered qualifying audits use different rows. Audits
-are adaptive community evaluation, not official or untouched Test results.
+The worse-group gap is0.0041381328. Development and recovered qualifying
+use different rows. Audits are adaptive community evaluation, not official
+or untouched Test. No downloaded pretrained numerical features or
+qualifying outcomes enter fitting or candidate selection.
+
+The full temporal100r trajectory now supplies22 independently verified
+snapshot pairs after one exact complete-pair alias. Adding all22 to own330
+improves the same-row ridge0.8619710828 to0.8618611087, with all five folds
+improving. Every original/new operator, group statistic, eligible solve and
+stored prediction independently matches. No neural or qualifying gain
+follows from that diagnostic; full579-input neural fitting is next.
+[Complete ridge result](OWN352_TEMPORAL_RIDGE_RESULT.md).
 
 The full NN-pool audit is complete. All five new three-seed refits passed
 independent serialized-pipeline replays. All three candidates were frozen
 before outcomes, then independently reconstructed; the known-only
 seven-family fit passed all127 simplex supports. Primary own7 scores
 **0.8605628330 /0.8615658884** essentially tie with a slight group tradeoff.
-The equal pool and fixed25%tree/75%pool worsen both groups. No meaningful
-qualifying gain; keep the established six-family benchmark and all negative
-records. Apparent known-fit0.8590445175 is not nested CV.
+The equal pool and fixed25%tree/75%pool worsen both groups. No meaningful qualifying gain at that audit; the later own330 result above
+now advances the benchmark. All negative records remain. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
 The complete own330 neural study passed all five folds/three seeds:
 406ridge/556features/557NN inputs, with every retained/new bit admitted.
 Its fixed tree154 half **0.8589474951** is the new development best;
-qualifying scores remain unchanged. Own176's fixed half0.8591336855 had
+the full qualifying result is now separately verified above. Own176's fixed half0.8591336855 had
 narrowly missed the previous0.8591267885 best. Both full studies retain all
 original inputs, architecture and epoch budgets. Both original95-epoch CF
-trajectories are still running. The childless native supervisor was restored
-after own330 completed; no native model was interrupted.
+trajectories are still running. The childless native supervisor later exited through cleanup for full
+own330 production; its successor now waits memory before taking both lanes.
+No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
 All149 unused completed local native pairs now passed a complete own330
@@ -57,8 +75,8 @@ No own181 neural fit or qualifying promotion. [Result](OWN181_RECENT15_RIDGE_RES
 Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
 The isolated1600-factor preparation now binds439 source/data files and
-proves both full training/query populations disjoint. Its reviewed idle
-supervisor was parked for own330 priority and has now resumed its22GiB admission.
+proves both full training/query populations disjoint. Its reviewed childless supervisor was retired through cleanup; the
+successor waits its full22GiB reservation before nonblocking lane acquisition.
 It will build
 an isolated exact executable because the existing shared binary failed
 its build-receipt hash check. No high-capacity build or fit has begun.
@@ -148,6 +166,6 @@ do not contain the full1,760,494-row Probe3 vectors; keep them out of the
 expanded-population bank until the original full vectors return. Eight
 claimed remote extension producers retain the original training deadline.
 
-[Own qualifying result](OWN6_CALIBRATION_RESULT.md) ·
+[Own qualifying result](OWN330_QUALIFYING_RESULT.md) ·
 [Exact state/storage recovery](CF96_DISK_RECOVERY.md) ·
-[Current development verification](experiments/upstream-native-nn-pool6-tree31/independent-verification.json).
+[Current development verification](experiments/upstream-own330-mps/independent-canonical-verification.json).

@@ -18,10 +18,13 @@ and independently scored the entire canonical vector. Both constituent
 families have complete saved-model replays. This is our new adaptive
 known-development best, not an official or untouched Test result.
 
-The qualifying benchmark remains0.8605620601761576 /0.8615662023089099.
-No own330 qualifying refit or audit has run yet. The goal remains strictly
-below0.85725 on both complete recovered groups. Production assembly and
-full known-only refitting must precede any frozen qualifying audit.
+Full own330 qualifying refitting and both frozen audits are now complete.
+The predeclared seven-family known-only blend improves both recovered groups
+to **0.8604025394318833 /0.8613881328035494**. The fixed-half control trades
+off groups at0.8606104179151184/0.8615599700738508. All actual full models,
+original preprocessing, independent127-support weights, frozen arithmetic
+and separate canonical scores verify. Target0.85725 remains unmet.
+[Complete qualifying result](OWN330_QUALIFYING_RESULT.md).
 
 [Complete model/preprocessing proof](experiments/upstream-own330-mps/independent-verification.json) ·
 [Separate canonical arithmetic and score](experiments/upstream-own330-mps/independent-canonical-verification.json).

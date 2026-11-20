@@ -45,3 +45,13 @@ Both recovered groups must still score strictly below0.85725.
 
 Preparation: [execution-plan.json](experiments/upstream-high-capacity-original/execution-plan.json).
 Failed shared-binary admission: [record](experiments/upstream-high-capacity-original/shared-binary-admission-failure.json).
+
+The original childless supervisor29800 was subsequently retired through its
+existing cleanup handler, releasing the idle GPU lock for full own330
+production. No high-capacity build or native model existed. Successor61480
+uses a separate queue evidence namespace, waits for complete independent
+own330 production replay, then admits22GiB before acquiring both compute
+lanes nonblocking. Full own330 replay is now complete; CF memory keeps the
+original1600-factor recipe waiting. No model budget or source changed.
+[Handoff](experiments/upstream-high-capacity-idle-handoff.json) ·
+[Successor declaration](experiments/upstream-high-capacity-successor/queue-plan.json).

@@ -1,0 +1,97 @@
+{
+  "state": "complete_independent_own330_calibration_and_frozen_group_scores",
+  "observed": "2026-11-20T13:41:41.235187+00:00",
+  "primary": "own7-own330-known-calibration",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8604025394318833
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613881328035494
+    }
+  },
+  "results": [
+    {
+      "candidate": "fixed-half-own330-tree154",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8606104179151184
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8615599700738508
+        }
+      },
+      "both_groups_below_target": false
+    },
+    {
+      "candidate": "own7-own330-known-calibration",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8604025394318833
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613881328035494
+        }
+      },
+      "both_groups_below_target": false
+    }
+  ],
+  "previous_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605620601761576
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8615662023089099
+    }
+  },
+  "both_groups_improved": true,
+  "both_groups_below_target": false,
+  "weights": [
+    7.048236101586908e-18,
+    0.09024463243948234,
+    1.6265205175097837e-18,
+    0.0018650601809622536,
+    0.19839743243257546,
+    0.20729191046582782,
+    0.5022009644811521
+  ],
+  "independent_simplex_weights": [
+    0.0,
+    0.09024463104103982,
+    0.0,
+    0.0018650586445311636,
+    0.19839743538855248,
+    0.20729191034815575,
+    0.5022009645777208
+  ],
+  "simplex_supports_examined": 127,
+  "independently_solved_full_simplex": true,
+  "exact_known_and_full_stored_vectors_bitwise": true,
+  "all_original_development_and_full_family_replays_verified": true,
+  "actual_new_full_models_reopened": 3,
+  "complete_known_statistics_scaler_normalized_bits_replayed": true,
+  "known_fit_rmse": 0.8587992075536328,
+  "known_score_is_nested_cross_validation": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "prediction_sha256": "4e8c5d0c0c683a97aa112786330e5678cfb2cbc6ac12cde6e047aef4b49e4728",
+  "bindings": {
+    "scripts/verify_upstream_own330_qualifying_canonical.py": "db35d802a5b650d4ac0866af83eb2cbcbf4445d9d0e43cee591ffcf014eb8abb",
+    "experiments/upstream-own330-assembly/independent-recovered-audit.json": "4b689f69cc4f90e6874b00b4ba62314df3b71353035b6fb13f8781638af1a833",
+    "experiments/upstream-own330-assembly/independent-preaudit-verification.json": "22d4a3bba7d01dac7174f92d6ee770a80d027b9b7b08d89c76384a1f048ecc9c",
+    "experiments/upstream-own330-assembly/frozen.json": "9bc015fe99d59253398edaf46123e29b76b602533d228ca5cd9b0e561f7ec485",
+    "experiments/upstream-own330-assembly/calibration.json": "338c1652d806080a6c1717bbeaa33ca6348cb572e615fef0d8ce9a98e0ec5ad3",
+    "experiments/upstream-own330-assembly/plan.json": "e0761725ae9e27d2609b204777a08e7403968c6b0ea57c8e4bc9ff2b2ab1d824",
+    "experiments/upstream-item154-stream-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "experiments/upstream-own6-tight-calibration/independent-verification.json": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86"
+  },
+  "limitation": "Adaptive community-recovered qualifying groups, not official or untouched Test. Original A development and paired B production remain distinct."
+}

@@ -1,0 +1,14 @@
+{
+  "state": "retired_only_original_childless_idle_supervisor_and_launched_waiting_successor",
+  "original": {
+    "pid": 29800,
+    "ppid": 94094,
+    "pgid": 29800,
+    "state": "Ss",
+    "started": "Fri Nov 20 03:27:13 2026",
+    "command": ".venv/bin/python -u scripts/upstream_high_capacity_original_queue.py"
+  },
+  "successor_pid": 61480,
+  "observed": "2026-11-20T13:21:26.894764+00:00",
+  "no_native_model_interrupted": true
+}
