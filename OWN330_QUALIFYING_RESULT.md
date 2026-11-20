@@ -4,7 +4,9 @@ The predeclared seven-family known-only blend scores
 **0.8604025394318833 /0.8613881328035494** on the two complete recovered
 groups. Previous own6 scores were0.8605620601761576/0.8615662023089099.
 Both improve, by0.0001595207 and0.0001780695 respectively. This is our
-current independently verified qualifying benchmark. The strict0.85725
+preceding independently verified qualifying benchmark. The later
+[complete13 comparison](OWN13_QUALIFYING_RESULT.md) improves both slightly
+to0.8603920746/0.8613737959. The strict0.85725
 target remains unmet; the worse group is still0.0041381328 above it.
 
 All three full-known own330 models retain557 inputs and original seeds

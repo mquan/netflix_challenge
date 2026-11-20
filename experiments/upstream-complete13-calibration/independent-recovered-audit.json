@@ -1,0 +1,46 @@
+{
+  "state": "complete_independent_two_frozen_complete13_candidate_recovered_audit",
+  "observed": "2026-11-20T16:00:15.582674+00:00",
+  "primary": "complete13-simplex",
+  "results": [
+    {
+      "candidate": "complete13-simplex",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603920746128144,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613737959073772,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "efacc69f5d970d125f88e264418c603030b2ec4c1065b67556157bf0e4bef3ff"
+    },
+    {
+      "candidate": "complete13-ridge10",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603876739127854,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613839925824824,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "be80ff661f87f20986126e6d4f124bd71ea22f7983685acfef6feb51cd815480"
+    }
+  ],
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "preaudit_verification_sha256": "c98c4f360cc4cdbf4d37dd24f887aa970fbe282235a4ffb33f4bb26a82b63b87",
+  "freeze_sha256": "87b5bfd2aed1fad681d07b862f0938ecaff19bccdd01d4885f94755528d471c0",
+  "qualifying_outcomes_used_for_fitting_or_selection": false,
+  "limitation": "Adaptive community-recovered groups, not official or untouched Test. Development A and production B remain distinct."
+}
