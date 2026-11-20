@@ -1,11 +1,11 @@
 {
-  "observed": "2026-11-20T15:12:51.279518+00:00",
-  "elapsed_hours": 11.48,
-  "training_hours_left": 2.52,
+  "observed": "2026-11-20T16:12:53.586410+00:00",
+  "elapsed_hours": 12.48,
+  "training_hours_left": 1.52,
   "native_process": "1168 ./target/release/fit tx s3-tx50n -p pipeline-3.toml --final --preds preds_3",
-  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 85%",
+  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 86%",
   "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
-  "disk_free_gib": 29.7,
+  "disk_free_gib": 29.4,
   "jobs": {
     "s3-dnn24": {
       "launch": {
@@ -270,12 +270,12 @@
         "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
         "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
       },
-      "completed_epoch_lines": 21,
-      "last_epoch": 21,
-      "phase": "train_3->probe_3",
+      "completed_epoch_lines": 36,
+      "last_epoch": 14,
+      "phase": "fulltrain->qual",
       "log_tail": [
-        "Epoch 20 | RMSE 0.88044",
-        "Epoch 21 | RMSE 0.88079"
+        "Epoch 13 | RMSE 3.73717",
+        "Epoch 14 | RMSE 3.73949"
       ],
       "receipt": false,
       "incomplete": false,
