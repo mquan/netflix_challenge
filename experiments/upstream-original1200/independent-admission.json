@@ -1,0 +1,16 @@
+{
+  "state": "complete_original1200_isolated_source_data_build_and_full_output_admission",
+  "preparation_sha256": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+  "build_sha256": "6bd3eb3c53d5d2f968cc4400d0aa76a43d9bb5cf3baa20bf5a6fc915d1db9c0a",
+  "verifier_sha256": "ae8c8c4bd9786dcf40a117f3a24c3e6a3a79b05a82f256171340b37a313a3ff0",
+  "binary_sha256": "d5a4a62dba375622ecb831f45f657b157c3528eed493018efe93d4940419f168",
+  "native_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new",
+    "tsvdx5-1200lm"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/source",
+  "factors": 1200,
+  "neighbors": 100,
+  "epochs_each": 23,
+  "qualifying_labels_read": false
+}

@@ -27,11 +27,12 @@ be promoted or plotted as such. No qualifying outcomes were read here.
 The memory/compute lanes were released normally after full independent
 verification. Matched391 H128 is now fully independently verified at
 fixed-half development0.8589133967520619, only0.0000026603 better than its
-preceding best. The H512 control has resumed its exact paused worker under
-serialized recovery. Original1200 preparation completed; its build group
-and the newly declared CPU-tree fit group are preserved in RAM after guards.
-CF95/TX50n intake is also paused. Original numerical recipes and scientific
-resource limits remain unchanged.
+preceding best. The H512 control is now independently complete and worse at
+fixed-half0.8590481464872496. Original1200 exact compilation and independent
+admission completed; native16010 is running its unchanged23+23 phases,
+with the first trainx epoch complete. The CPU-tree fit and CF95/TX50n intake
+remain preserved in RAM. Original numerical recipes and scientific limits
+remain unchanged.
 
 The benchmark remains0.8603920746 /0.8613737959 on the two recovered groups.
 The below0.85725 target on both groups remains unmet.

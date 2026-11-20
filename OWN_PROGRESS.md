@@ -82,9 +82,10 @@ eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
 changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
 neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
 original40pat4 neural study is now independently complete, with a negligible
-new fixed-half development best. The predeclared H512 control has resumed its same paused worker under
-serialized primary/GPU ownership and unchanged scientific limits, with no
-completed score yet. [H512 recovery](OWN391_H512_SCAN_CONTINUATION.md).
+new fixed-half development best. The predeclared H512 control is independently complete and worse:
+NN0.859315326191788 / fixed-half0.8590481464872496. All15 models and
+full preprocessing/prediction/canonical checks pass; retain H128 using
+known results only. [H512 negative result](OWN391_H512_CONTROL_RESULT.md).
 [Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
 The full temporal100r trajectory now supplies22 independently verified
@@ -126,8 +127,8 @@ No fit began. After original1600 completed, recovery continued the same
 intake, but its guard stopped it again. Its original declaration remains;
 complete novelty is unfinished. After H128 proof, a serialized continuation briefly resumed the intake,
 but its unchanged guard stopped it again during remaining diagnostic memory
-pressure. The same worker is preserved. Further continuation will wait for
-serialized headroom after H512; no intake restart or new score is claimed.
+pressure. The same worker is preserved. Further continuation waits stable measured headroom during original1200;
+no intake restart or new score is claimed.
 Original failures, source expectations and original3/24/5GiB guards remain.
 [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md) ·
 [Serialized exact continuation](OWN_CF_SERIALIZED_RECOVERY.md).
@@ -147,20 +148,27 @@ queries. Complete canonical single-model known ProbeX error0.9349703049
 does not advance the benchmark; it is not blend CV. The qualifying-phase
 native diagnostics use zero sentinels and are not recovered qualifying
 scores. Matched391 H128 is now independently complete after exact-process
-continuation under its original guards. The separate H512 control has resumed its same original worker under
-serialized recovery; other scientific groups remain paused.
+continuation under its original guards. The separate H512 control is fully verified and worse; other scientific
+groups remain paused while original1200 runs.
 [Complete original1600 result](ORIGINAL1600_RESULT.md).
 
-The separate reviewed paired391 H128 qualifying-bag queue is live, waiting
-for all known fits, actual-model/statistic replays and the separate canonical
-score. It runs only if the predeclared fixed-half known score strictly beats
-its declared own352 reference. Otherwise it completes eligibility checking
-without qualifying predictions. An eligible run reuses every original fold,
-seed budget (including zero-iteration slots), scaler and ridge without
-refitting. It streams one11MiB five-fold bag; a separate implementation must
-replay every original query operator, normalization, actual model, seed,
-clipped fold and final bag bit. No qualifying labels or score in this study.
-[Frozen inference-only plan](OWN391_FOLD_BAG_PLAN.md).
+The paired391 H128 qualifying bag is independently complete. Every original
+five-fold/three-seed model slot, scaler, ridge and query operator replays,
+including all normalization, seed, clipped-fold and final bag bits. No
+model was refitted and no qualifying labels were read by that study.
+[Frozen inference-only plan](OWN391_FOLD_BAG_PLAN.md) ·
+[Full independent bag replay](experiments/upstream-own391-fold-bag/independent-verification.json).
+
+The new own14 comparison adds that bag to all13 previous own families.
+Its original known-only simplex and ridge10 coefficients are complete;
+all three known and three qualifying candidate vectors are frozen.
+The independent all16383-support/15-equation/six-vector preaudit resumed
+its original process21221 after three stable original admission samples
+following a compressor guard. No new recovered audit has run. The same
+worker continues with unchanged inputs, coefficients,
+math and resource guards. Apparent known fitting error is not nested CV.
+[Original complete comparison plan](OWN14_MATCHED391_CALIBRATION_PLAN.md) ·
+[Exact preaudit continuation](OWN14_PREAUDIT_CONTINUATION.md).
 
 A separate full-budget CPU tree follow-up now has reviewed code, bounded
 binary feature transport, four transport tests and explicit Torch/LightGBM
@@ -193,11 +201,16 @@ arrays, current own inputs/models/checkpoints and earlier exact archives
 were preserved. After independently completed1600 and paired391H128, separate exact
 original1200 source/data preparation completed. Isolated compilation began
 but its guard preserved the actual build group94817 in RAM during overlap.
-That exact build will continue after serialized memory admission.
-Full23+23 native training and independent58-output verification remain.
+The same original build subsequently completed under exact recovery, and
+independent source/data/binary admission passed. Native16010 is now running
+the unchanged23+23 phases; its first trainx epoch completed at0.95079. This
+early single-model diagnostic is not a qualifying or blend result. Full
+training and separate independent58-output verification remain.
 Unused completed1600 build intermediates were losslessly archived and fully
 verified before removal, recovering209MiB without changing its executable
-or numerical outputs. [Archive proof](BUILD_CACHE_ARCHIVE_RESULT.md). Its disk guards reserve the
+or numerical outputs. Admitted1200 unused build intermediates were also
+fully archived before removal, recovering another~210MiB without changing
+the running binary or scientific inputs. [Archive proof](BUILD_CACHE_ARCHIVE_RESULT.md). Its disk guards reserve the
 full1.25GiB output allowance through preparation/build and preserve the
 original18.75GiB continuous floor during native writes.
 [Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md) ·

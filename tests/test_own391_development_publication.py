@@ -26,6 +26,24 @@ class Matched391Publication(unittest.TestCase):
     def test_all_original_pipelines_and_canonical_score_pass(self):
         self.validate(*self.values())
 
+    def negative_control(self):
+        path=journey.EXPERIMENTS/'upstream-own391-paired-h512-mps/independent-canonical-verification.json'
+        model_path=path.parent/'independent-verification.json';current=json.loads(path.read_text())
+        sha=hashlib.sha256(path.read_bytes()).hexdigest()
+        record=dict(independent_verification_sha256=sha,verified_development_report_sha256=sha,
+            best_development_rmse=current['fixed_half_tree154_rmse'])
+        return record,path,current,model_path,json.loads(model_path.read_text())
+
+    def test_complete_worse_control_can_be_recorded_without_promotion(self):
+        journey.validate_own391_development(*self.negative_control(),require_improvement=False)
+
+    def test_worse_control_cannot_be_promoted_as_development_best(self):
+        with self.assertRaises(ValueError):journey.validate_own391_development(*self.negative_control())
+
+    def test_negative_control_still_requires_full_model_replay(self):
+        record,path,current,model_path,model=self.negative_control();model['records'][0]['all_normalized_input_bits_equal']=False
+        with self.assertRaises(ValueError):journey.validate_own391_development(record,path,current,model_path,model,require_improvement=False)
+
     def test_unmatched_qualifying_input_claim_rejected(self):
         record,current,model=self.values();current['neural_inputs_matched_B_on_both_queries']=False
         with self.assertRaises(ValueError):self.validate(record,current,model)

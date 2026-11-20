@@ -1,0 +1,28 @@
+{
+  "source_commit": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/toolchain/cargo/bin/cargo",
+    "build",
+    "--release",
+    "--locked",
+    "--features",
+    "blas",
+    "--bin",
+    "tsvdx5-new"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/source",
+  "preparation_sha256": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+  "builder_sha256": "e00ff58214c5d36655187dfd0b377c608b0c96664eab50174ed72866d2f8d552",
+  "cargo": "cargo 1.100.0 (3acc79c0c 2026-11-05)",
+  "environment": {
+    "CARGO_TARGET_DIR": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target",
+    "CARGO_BUILD_JOBS": "1",
+    "RUSTFLAGS": "-C link-arg=-framework -C link-arg=Accelerate"
+  },
+  "binary_path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new",
+  "binaries": {
+    "tsvdx5-new": "d5a4a62dba375622ecb831f45f657b157c3528eed493018efe93d4940419f168"
+  },
+  "original_source_and_complete_data_unchanged": true,
+  "training_launched": false
+}

@@ -16,6 +16,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH paired391 H512 control', '0.8590481464872496', '2026-11-20T21:22:36.756866+00:00', 'Fresh training', 'fresh_cv', 'codex', 'audit', 'Wider matched391 control is fully verified and worse', 'Original618 inputs/5held-user-folds/3seeds/max40pat4 H512rank32 control completes all15 actual models, full eligible preprocessing/normalized input and held prediction replay. Separate canonical NN0.8593153262/fixed-half0.8590481465 both miss H1280.8590533486/0.8589133968. Same paused worker continued without restart or numerical/guard changes. Historical tree154 A/B caveat retained. No H512 qualifying inference; H128 remains selected using known results only.', 'experiments/upstream-own391-paired-h512-mps/independent-canonical-verification.json', 'all15 actual models, original full preprocessing/prediction bits and separate canonical control score'),
     ('FRESH paired391 H128 tree154 half', '0.8589133967520619', '2026-11-20T20:36:27.360415+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Matched391 neural study verifies a negligible development gain', 'All618 inputs,393 signals/225 contexts and original five-user-fold/three-seed H128rank32/max40pat4 recipe retained. All15 actual models, complete eligible scalers/normalized inputs and held predictions independently replay; separate canonical half0.8589133968 improves own352 by only0.0000026603. NN alone0.8590533486 is slightly worse. Original paused worker continued without restart or guard changes. Neural provider matches pairedB on both queries; historical tree154 A/B realization caveat retained. No new qualifying score; target remains unmet.', 'experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json', 'all15 actual models, complete original preprocessing/prediction bits and separate compensated canonical scores'),
     ('FRESH paired391 ridge diagnostic', '0.8618508817095664', '2026-11-20T16:46:03.380540+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Matched paired inputs pass; added scalar ridge gain is tiny', 'Both complete matchedB input streams retain the original330parent bits plus22temporal and all39 new eligible native/TX predictors. All467design/617nonlinear operators, ten-group statistics, eligible lambda1000 solves and stored held predictions independently replay. Known pairedB352/B391 ridge0.8618576840 to0.8618508817 gains only0.0000068. This is a data/ridge diagnostic, not a neural or qualifying promotion. Original-budget618-input H128 neural follow-up is queued behind original1600 coverage.', 'experiments/upstream-own391-paired-data/independent-verification.json', 'every complete matched paired input/statistic/eligible solve/stored prediction and canonical known score'),
     ('FRESH full404 context FWLS qualifying', '0.8623423167927773', '2026-11-20T16:26:31.810223+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Full-bank feature-weighted stacking is a negative result', 'All413 source entries retained before exact paired aliases yield404 signals and5657coefficients. Original14contextgates/lambda30/unpenalizedbias,5held-user models and uniform clippedQbag. Independent all interaction/system/coefficient/prediction bits replay; frozen scores0.8613295003/0.8623423168 worsen both groups. Conditional metaCV0.8602208791 is not fully nested end-to-end CV. No parameter revised or promotion made.', 'experiments/upstream-full-fwls/independent-recovered-audit.json', 'complete original source inventory, all five actual models and every canonical frozen qualifying prediction'),
@@ -290,7 +291,7 @@ def validate_own352_development(record,current_path,current,model_path,model):
 
 
 
-def validate_own391_development(record,current_path,current,model_path,model):
+def validate_own391_development(record,current_path,current,model_path,model,require_improvement=True):
     """Require complete matched391 original fits and separate canonical proof."""
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
     variant=current['variant']
@@ -313,7 +314,9 @@ def validate_own391_development(record,current_path,current,model_path,model):
         not current['neural_inputs_matched_B_on_both_queries'] or current['qualifying_labels_read'] is not False or
         current['goal_complete'] is not False or
         current['tree_control_retains_historical_A_B_realization_caveat'] is not True or
-        current['actual_models_rehashed']!=sum(r['actual_models_reopened'] for r in records) or not current['improves_previous'] or
+        current['actual_models_rehashed']!=sum(r['actual_models_reopened'] for r in records) or
+        current['improves_previous']!=(current['fixed_half_tree154_rmse']<current['declared_global_reference_rmse']) or
+        (require_improvement and not current['improves_previous']) or
         current['source_sha256']!=manifest['source_sha256'] or
         model['state']!='complete_independent_matched_B391_actual_neural_models_full_eligible_statistics_and_predictions' or
         model['variant']!=variant or manifest['variant']!=variant or
@@ -335,7 +338,7 @@ def validate_own391_development(record,current_path,current,model_path,model):
         cfg['nn_hidden']!={'h128':128,'h512':512}[variant] or cfg['context_rank']!=32 or
         cfg['seeds']!=[2026,7,13] or cfg['nn_epochs']!=40 or cfg['nn_patience']!=4 or cfg['nn_batch']!=8192 or
         manifest['declared_global_reference_rmse']!=reference['rmse'] or current['declared_global_reference_rmse']!=reference['rmse'] or
-        current['fixed_half_tree154_rmse']>=reference['rmse'] or
+        (require_improvement and current['fixed_half_tree154_rmse']>=reference['rmse']) or
         manifest['source_sha256'][str(reference_path.relative_to(ROOT))]!=digest(reference_path) or
         manifest['input_manifest_sha256']!=digest(data_path) or
         manifest['source_sha256'][str(data_proof_path.relative_to(ROOT))]!=digest(data_proof_path) or
@@ -505,6 +508,16 @@ def validate_fresh_status():
     current_path=ROOT/record['development_verification_path'];current=json.loads(current_path.read_text())
     independent_path=ROOT/record['development_independent_check_path'];independent=json.loads(independent_path.read_text())
     kind=current['state']
+    control_path=EXPERIMENTS/'upstream-own391-paired-h512-mps/independent-canonical-verification.json'
+    control_rows=[r for r in MILESTONES if r[9]==str(control_path.relative_to(ROOT))]
+    if control_rows:
+        control=json.loads(control_path.read_text());model_path=control_path.parent/'independent-verification.json'
+        proof_sha=hashlib.sha256(control_path.read_bytes()).hexdigest()
+        if len(control_rows)!=1 or float(control_rows[0][1])!=control['fixed_half_tree154_rmse'] or control_rows[0][6]!='audit':
+            raise ValueError('Negative H512 milestone must retain its independently verified score and control status')
+        subject=dict(independent_verification_sha256=proof_sha,verified_development_report_sha256=proof_sha,
+            best_development_rmse=control['fixed_half_tree154_rmse'])
+        validate_own391_development(subject,control_path,control,model_path,json.loads(model_path.read_text()),require_improvement=False)
     expected_weights=[.5,.5]
     own330=kind=='complete_separate_original330_tree_half_arithmetic_and_full_canonical_score'
     own352=kind=='complete_separate_bounded_original352_tree_half_arithmetic_and_full_canonical_score'
