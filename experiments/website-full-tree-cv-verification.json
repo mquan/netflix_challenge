@@ -1,0 +1,63 @@
+{
+  "state": "complete_live_byte_verification",
+  "observed": "2026-11-20T02:35:52.438682+00:00",
+  "research_commit": "72b63ae",
+  "pages_commit": "b6b4edace5900eca59b23d4230792e901866cd4c",
+  "url": "https://mquan.github.io/netflix_challenge/",
+  "paths": [
+    {
+      "path": "index.html",
+      "sha256": "6d30b53d0dbb5ef9ef1a88eeba9e3b3b19d31281972ce6ba704657b52f26cfdb",
+      "exact": true
+    },
+    {
+      "path": "research_journey.html",
+      "sha256": "6d30b53d0dbb5ef9ef1a88eeba9e3b3b19d31281972ce6ba704657b52f26cfdb",
+      "exact": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "sha256": "08bcd5a3d12d6e190032926679a44b7c9c1c81a76b12c3e1570dc7328ab2987d",
+      "exact": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "sha256": "e529ce19101ff6234a2532399838b9125a00ee23e856a2404042e7696a02e1ea",
+      "exact": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "sha256": "70c9f519fa1d6c1324a951b45807f10f29c392a43747567d9391b8910cab8c6c",
+      "exact": true
+    },
+    {
+      "path": "assets/qualifying_progress.svg",
+      "sha256": "8336fe644198c66af79e82bbcc13f4437600af027e0c14500cdbae5a842efd4d",
+      "exact": true
+    },
+    {
+      "path": "ITEM154_TREE_RESULT.md",
+      "sha256": "87d017c79da8c023696cdaf93207e32a158183ea0dd4e0024c0b1857436c7fb2",
+      "exact": true
+    },
+    {
+      "path": "experiments/upstream-item154-tree-item154-mps/verification.json",
+      "sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
+      "exact": true
+    },
+    {
+      "path": "experiments/upstream-item154-tree-item154-mps/independent-mean-check.json",
+      "sha256": "f09d1a6b471363eee4719dd0defe3a4b19e7b609bafa68f17bfcea8cd75017a6",
+      "exact": true
+    }
+  ],
+  "live_browser": {
+    "http_status": 200,
+    "viewport_width": 390,
+    "document_scroll_width": 390,
+    "new_cv_score_present": true,
+    "qualifying_best_present": true,
+    "negative_neural_study_present": true,
+    "console_errors": []
+  }
+}
