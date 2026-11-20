@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T23:06:13.526186+00:00",
-  "display_time": "2026-11-20 23:06 UTC",
+  "observed": "2026-11-20T23:27:29.986013+00:00",
+  "display_time": "2026-11-20 23:27 UTC",
   "best_development_rmse": 0.8589133967520619,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,11 @@
   "verified_development_report_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "independent_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "work": [
+    {
+      "work": "Full trajectory H128 and qualifying bag: reviewed waiting queues",
+      "state": "Neural owner56323 waits independently complete input/ridge proof, then runs original H128rank32/all5held-user-folds/3seeds/max40pat4/batch8192 and full scaler/model/canonical replay. Bag owner58980 waits that full proof, then reuses every original pipeline with no refits or new-known-record gate, verifying every qualifying operator/normalized/seed/fold/final bit separately. Dynamic widths preserve every admitted scalar and all225 contexts. Fourteen new invariant tests pass; full-run memory and scores remain unmeasured. No new score.",
+      "evidence": "experiments/upstream-complete-trajectory-neural-queue/plan.json"
+    },
     {
       "work": "Full trajectory inputs/ridge: reviewed waiting queue",
       "state": "Owner50842 waits full independently verified original1200 and complete CF95/TX50n intake. It will examine all391+128 scalar pairs, both complete queries, exact paired aliases only, every expanded operator/group statistic/eligible lambda1000 solve and held prediction, with a separate full replay and unchanged original391 control bits. New internal guards preserve actual RAM. Neural/bag/15-family calibration implementations remain pending. No new score.",
@@ -40,8 +45,8 @@
       "evidence": "experiments/upstream-complete-cf-delta-native-deferred/plan.json"
     },
     {
-      "work": "Original1200 full23+23 native training active: two epochs complete",
-      "state": "Same preserved compiler group completed; pinned original build and independent source/data/binary admission pass. Native16010 runs original1200factors/100neighbors/23epochs each phase, under owner8122 and original22GiB own/24GiB research/128MiB swap-growth/18.75GiB disk continuous gates. First two trainx epochs log0.95079/0.92846; early single-model diagnostic is not a blend or qualifying result. All58 numeric outputs and independent verification remain. Unused admitted build cache losslessly archived before deletion; executable and numerical inputs intact.",
+      "work": "Original1200 full23+23 native training active: three epochs complete",
+      "state": "Same preserved compiler group completed; pinned original build and independent source/data/binary admission pass. Native16010 runs original1200factors/100neighbors/23epochs each phase, under owner8122 and original22GiB own/24GiB research/128MiB swap-growth/18.75GiB disk continuous gates. First three trainx epochs log0.95079/0.92846/0.91667; early single-model diagnostic is not a blend or qualifying result. All58 numeric outputs and independent verification remain. Unused admitted build cache losslessly archived before deletion; executable and numerical inputs intact.",
       "evidence": "experiments/upstream-original1200-exact-build-recovery/first-native-baseline.json"
     },
     {
@@ -119,7 +124,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T23:06:13.526186+00:00",
+    "observed": "2026-11-20T23:27:29.986013+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -135,7 +140,7 @@
     "tx50n": "independently_admitted_original22_22",
     "cf_delta": "same_intake_paused_after_serialized_guard",
     "cf_delta_recovery_owner": 30570,
-    "original1200": "original_native23_plus23_active_two_epochs_complete",
+    "original1200": "original_native23_plus23_active_three_epochs_complete",
     "original1200_owner": 8122,
     "original1600_complete_verification_sha256": "f9447449aa00ee9c146bd0cc25c8d98225b586b9e36905d4aa092c3754d89b96",
     "neural_exact_recovery_owner": null,
@@ -145,14 +150,19 @@
     "original1200_native_pid": 16010,
     "original1200_epoch_trace": [
       1,
-      2
+      2,
+      3
     ],
     "paired391_qualifying_bag": "complete_independent_all_query_streams_and_original_models",
     "own14": "same_preaudit21221_paused_wait_full_native_completion",
     "own14_recovery_owner": 30569,
     "complete_trajectory_data": "reviewed_queue_waiting_full_original1200_and_CF_proofs",
     "complete_trajectory_data_owner": 50842,
-    "remote_weekend": "handoff_pushed_waiting_remote_arrival_checkpoint"
+    "remote_weekend": "handoff_pushed_waiting_remote_arrival_checkpoint",
+    "complete_trajectory_neural": "reviewed_queue_waiting_full_input_ridge_proof",
+    "complete_trajectory_neural_owner": 56323,
+    "complete_trajectory_bag": "reviewed_queue_waiting_full_actual_neural_models_and_canonical_proof",
+    "complete_trajectory_bag_owner": 58980
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

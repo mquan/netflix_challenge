@@ -205,7 +205,7 @@ original1200 source/data preparation completed. Isolated compilation began
 but its guard preserved the actual build group94817 in RAM during overlap.
 The same original build subsequently completed under exact recovery, and
 independent source/data/binary admission passed. Native16010 is now running
-the unchanged23+23 phases; its first two trainx epochs completed at0.95079/0.92846. This
+the unchanged23+23 phases; its first three trainx epochs completed at0.95079/0.92846/0.91667. This
 early single-model diagnostic is not a qualifying or blend result. Full
 training and separate independent58-output verification remain.
 Unused completed1600 build intermediates were losslessly archived and fully
@@ -363,3 +363,17 @@ temporal300 and bipolarRBM800, serially on the confirmed M3Max/96GiB until
 Monday08:00Pacific. Every epoch/native output is required; transfer after
 each producer. No remote arrival or new result has been observed yet.
 [Weekend instructions](REMOTE_WEEKEND_HANDOFF.md).
+
+The complete-trajectory neural and original-fold qualifying-bag stages now
+pass separate prelaunch review. Waiting owners56323/58980 form the next
+dependency chain. H128/rank32 retains every novel column/all225 contexts,
+all5folds/3seeds/max40pat4/batch8192 and original AdamW. The width-generalized
+scaler matches original618 and independent746-column fixture statistics;
+the zero-addition model initializes bit-identically to established H128.
+The bag preserves zero-budget slots and original float32 seed division/
+float64 accumulation, with a separate full query/model/stream replay.
+Fourteen combined invariant checks pass; no full-fit memory/score or new
+qualifying result is claimed. The known-only15-family calibration and
+separate recovered audit implementation remain pending.
+[Neural execution](OWN_COMPLETE_TRAJECTORY_NEURAL_EXECUTION.md) ·
+[Qualifying bag](OWN_COMPLETE_TRAJECTORY_FOLD_BAG_PLAN.md).
