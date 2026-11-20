@@ -1,3 +1,5 @@
+> Historical execution snapshot. Superseded by [current own330 execution](OWN330_FULL_REFIT_EXECUTION.md) and [verified qualifying result](OWN330_QUALIFYING_RESULT.md). Current development best:0.8589474951; recovered groups:0.8604025394/0.8613881328. The target remains unmet.
+
 # Execution toward an independently trained ten-percent result
 
 The goal remains strictly below0.85725 on BOTH recovered qualifying groups,

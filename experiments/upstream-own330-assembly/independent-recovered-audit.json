@@ -1,0 +1,46 @@
+{
+  "state": "complete_independent_two_frozen_own330_candidate_recovered_audit",
+  "observed": "2026-11-20T13:36:00.280234+00:00",
+  "primary": "own7-own330-known-calibration",
+  "results": [
+    {
+      "candidate": "fixed-half-own330-tree154",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8606104179151184,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8615599700738508,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "83de197f6c56b867cdc720ef49a5482cebf7ae912c557fa4b0bd0e7d645f0d04"
+    },
+    {
+      "candidate": "own7-own330-known-calibration",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8604025394318833,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613881328035494,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "4e8c5d0c0c683a97aa112786330e5678cfb2cbc6ac12cde6e047aef4b49e4728"
+    }
+  ],
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "preaudit_verification_sha256": "22d4a3bba7d01dac7174f92d6ee770a80d027b9b7b08d89c76384a1f048ecc9c",
+  "freeze_sha256": "9bc015fe99d59253398edaf46123e29b76b602533d228ca5cd9b0e561f7ec485",
+  "qualifying_outcomes_used_for_fitting_or_selection": false,
+  "limitation": "Adaptive community-recovered groups, not official or untouched Test. Original development A and paired production B remain distinct."
+}

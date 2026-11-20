@@ -16,6 +16,9 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH330 own7 qualifying', '0.8613881328035494', '2026-11-20T13:41:41.235187+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'promoted', 'Own330 seven-family blend improves both recovered groups', 'All three full557-input models, original7/7/8 budgets, complete ridge/scaler/normalized bits and both full-query saved-model replays pass. Exactly two candidates frozen before outcomes. Independent127-support known-only weights and every frozen vector bit verify. Separate canonical scores0.8604025394/0.8613881328 improve own6 on both groups. Apparent known-fit0.8587992 is not nested CV; target remains unmet. Adaptive recovered audit, not official or untouched Test.', 'experiments/upstream-own330-assembly/independent-canonical-verification.json', 'full original saved-model/preprocessing replay, all127 simplex supports and separate complete frozen-group scores'),
+    ('FRESH330 fixed-half qualifying', '0.8615599700738508', '2026-11-20T13:41:41.235187+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Development-selected fixed half trades off recovered groups', 'Original full own330 and tree154 pipelines independently replay. Predeclared frozen half scores0.8606104179/0.8615599701; source0 worsens against own6 and source1 improves slightly. Primary known-only seven-family calibration improves both; no outcome-driven coefficient revision.', 'experiments/upstream-own330-assembly/independent-recovered-audit.json', 'predeclared frozen control and separate complete canonical score'),
+    ('FRESH352 temporal22 ridge diagnostic', '0.8618611086522293', '2026-11-20T13:42:35.002116+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Complete temporal trajectory improves every known ridge fold', 'All22 original temporal100r snapshot pairs retained after one exact complete-pair alias. Original own330 bits retained in428design/578nonlinear columns. Full canonical input/statistic/solve/prediction replay verifies0.8618611087 versus0.8619710828 on the same userfolds. Ridge diagnostic only; full579-input neural follow-up remains pending.', 'experiments/upstream-own352-temporal-data/independent-verification.json', 'every original/new input bit, all group statistics, eligible solves and actual stored ridge predictions'),
     ('FRESH330 full neural tree154 half', '0.8589474951024617', '2026-11-20T12:59:58.878245+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Own330 full neural/tree half becomes the verified development best', 'All330 own scalar predictors/all90 learned contexts retained. Complete557-input H128rank32 fivefold/three-seed40pat4 fitting,15 actual saved models, every original eligible scaler/statistic/normalized input and held prediction replay. NN0.859109418608456; fixed tree154 half0.8589474951024617 improves prior0.8591267885072646. Separate final arithmetic reconstructs every float32 bit and full compensated canonical score. Adaptive known CV; no qualifying score or refit claimed,10% target still unmet.', 'experiments/upstream-own330-mps/independent-canonical-verification.json', 'all15 actual models/full original eligible preprocessing plus separate exact final-average/canonical scoring'),
     ('FRESH176 full neural fixed-half screen', '0.8591336855012253', '2026-11-20T12:44:30.094177+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Recent-ten full neural study narrowly misses global best', 'All five userfolds/three seeds,15 actual models, both full eligible scalers, original group statistics and every held prediction bit replay. NN0.8592799295700446 improves NN166/154 controls. Fixed tree154 half0.8591336855012253 exceeds global0.8591267885072646 by0.000006897. No global or qualifying promotion; full557-input own330 fitting now active.', 'experiments/upstream-own176-recent10-mps/independent-verification.json', 'all actual saved models and complete eligible-statistic/scaler/prediction replay'),
     ('FRESH_SPLIT3 expanded-known fixed-half diagnostic', '0.8622259939637812', '2026-11-20T12:44:30.094177+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Extra known training labels help the matched bank, which remains below best quality', 'Identical canonical1128164-row evaluation and held users. Both arms retain full73raw/130voting inputs and H128rank32/5fold/3seed40pat4. NN0.8727302875 control versus0.8722568222 expanded; fixed tree halves0.8624405419 versus0.8622259940. All ten complete pipelines/30 actual models and both original scalers replayed. More632330 legitimate labels help, but both miss global; no qualifying refit.', 'experiments/upstream-split3-matched-resume/independent-verification.json', 'all complete actual ten-fold saved models, original eligible preprocessing and canonical prediction bits'),
@@ -226,6 +229,67 @@ def validate_own330_development(record,current_path,current,model_path,model):
     if digest(path)!=current['prediction_sha256']:raise ValueError('Actual canonical fixed-half vector changed')
 
 
+def validate_own330_qualifying(latest_path, latest):
+    """Require original full models, known-only simplex and both frozen checks."""
+    digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+    for key, expected in latest['bindings'].items():
+        if digest(ROOT/key)!=expected:
+            raise ValueError('Own330 canonical qualifying binding changed')
+    report=latest_path.parent
+    cal=json.loads((report/'calibration.json').read_text())
+    freeze=json.loads((report/'frozen.json').read_text())
+    pre=json.loads((report/'independent-preaudit-verification.json').read_text())
+    audit=json.loads((report/'independent-recovered-audit.json').read_text())
+    primary='own7-own330-known-calibration'
+    weights=latest['weights']
+    if (latest['primary']!=primary or audit['primary']!=primary or
+        cal['family_ids']!=['tree50','nn50','nn90','nn109','nn154','tree154','nn330'] or
+        len(cal['families'])!=7 or len(weights)!=7 or min(weights)<0 or abs(sum(weights)-1)>1e-12 or
+        weights!=cal['weights'] or weights!=pre['weights'] or
+        max(abs(a-b) for a,b in zip(weights,latest['independent_simplex_weights']))>1e-5 or
+        not latest['independently_solved_full_simplex'] or latest['simplex_supports_examined']!=127 or
+        pre['simplex_supports_examined']!=127 or pre['qualifying_labels_read'] is not False or
+        pre['state']!='complete_independent_own330_127_support_and_all_frozen_arithmetic_before_audit' or
+        pre['freeze_sha256']!=digest(report/'frozen.json') or
+        pre['calibration_sha256']!=digest(report/'calibration.json') or
+        pre['source_sha256']!=cal['source_sha256'] or
+        audit['preaudit_verification_sha256']!=digest(report/'independent-preaudit-verification.json') or
+        audit['freeze_sha256']!=digest(report/'frozen.json') or
+        audit['qualifying_outcomes_used_for_fitting_or_selection'] or
+        freeze['plan_sha256']!=digest(report/'plan.json') or
+        freeze['calibration_sha256']!=digest(report/'calibration.json') or
+        freeze['qualifying_labels_read'] is not False or cal['qualifying_labels_read'] is not False or
+        latest['known_score_is_nested_cross_validation'] is not False or
+        cal['known_score_is_nested_cross_validation'] is not False or
+        latest['prediction_sha256']!=freeze['predictions'][primary] or not latest['both_groups_improved']):
+        raise ValueError('Original own330 known-only coefficient/freeze/audit chain required')
+    if set(freeze['predictions'])!={'known-fit','fixed-half-own330-tree154',primary}:
+        raise ValueError('All original own330 frozen known and qualifying vectors required')
+    for name, expected in freeze['predictions'].items():
+        if digest(ROOT/'artifacts/upstream-own330-assembly'/(name+'.f32'))!=expected:
+            raise ValueError('Actual frozen own330 candidate changed')
+    for key, expected in cal['source_sha256'].items():
+        if key.endswith('.py') and digest(ROOT/key)!=expected:
+            raise ValueError('Original own330 fitted implementation changed')
+    path=EXPERIMENTS/'upstream-own330-full-refit/independent-verification.json'
+    full=json.loads(path.read_text())
+    if (digest(path)!=cal['source_sha256'][str(path.relative_to(ROOT))] or
+        full['state']!='complete_original_own330_full_known_preprocessing_and_both_actual_model_queries' or
+        not full['complete_known_statistics_scaler_normalized_bits_replayed'] or
+        full['qualifying_labels_read'] is not False or full['full_iterations']!=[7,7,8] or
+        [r['query'] for r in full['records']]!=['probex','qual'] or
+        [r['rows'] for r in full['records']]!=[1128164,2817131] or
+        not all(r['actual_models_reopened']==3 and r['all_prediction_bits_equal'] for r in full['records']) or
+        latest['actual_new_full_models_reopened']!=3 or
+        not latest['complete_known_statistics_scaler_normalized_bits_replayed']):
+        raise ValueError('All three actual original full own330 models and preprocessing replays required')
+    for name, expected in full['outputs'].items():
+        if digest(ROOT/'artifacts/upstream-own330-full-refit'/name)!=expected:
+            raise ValueError('Actual full own330 saved pipeline changed')
+    return (latest['exact_known_and_full_stored_vectors_bitwise'] and pre['all_stored_candidate_arithmetic_bitwise'],
+            latest['all_original_development_and_full_family_replays_verified'])
+
+
 def validate_fresh_status():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
     if record['qualifying_status']!='audited_miss':
@@ -295,6 +359,8 @@ def validate_fresh_status():
     if latest['state']=='complete_independent_frozen_consensus_and_scores':
         mean_ok=latest['exact_rounded_consensus_bitwise_equal']
         replay_ok=latest['actual_new_full_neural_replay_verified'] and latest['original_full_model_replays_reused_and_verified']
+    elif latest['state']=='complete_independent_own330_calibration_and_frozen_group_scores':
+        mean_ok,replay_ok=validate_own330_qualifying(latest_path,latest)
     elif latest['state'] in {'complete_independent_own5_calibration_and_frozen_group_scores', 'complete_independent_own6_calibration_and_frozen_group_scores'}:
         family_count=6 if latest['state']=='complete_independent_own6_calibration_and_frozen_group_scores' else 5
         cal_path=latest_path.parent/'calibration.json';freeze_path=latest_path.parent/'frozen.json'
