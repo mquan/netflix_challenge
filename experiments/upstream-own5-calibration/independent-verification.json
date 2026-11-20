@@ -1,0 +1,58 @@
+{
+  "state": "complete_independent_own5_calibration_and_frozen_group_scores",
+  "observed": "2026-11-20T00:46:23.233602+00:00",
+  "weights": [
+    0.21279301470457512,
+    0.17391877544543763,
+    0.1471917051866134,
+    0.14528654380552247,
+    0.3208099608578514
+  ],
+  "independent_simplex_weights": [
+    0.21279299613638653,
+    0.1739188065103518,
+    0.14719173126974608,
+    0.14528657222653013,
+    0.3208098938569854
+  ],
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605716961956835
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.861583222505447
+    }
+  },
+  "previous_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.860652465694796
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8616635956343016
+    }
+  },
+  "both_groups_improved": true,
+  "both_groups_below_target": false,
+  "known_fit_rmse": 0.8590715586282985,
+  "known_score_is_nested_cross_validation": false,
+  "exact_known_and_full_stored_vectors_bitwise": true,
+  "all_original_development_and_full_family_replays_verified": true,
+  "independently_solved_full_simplex": true,
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "prediction_sha256": "f6dd55b967e06b018861ef29d2a27db10ee387f0366b4053db75ac419803770d",
+  "bindings": {
+    "experiments/upstream-own5-calibration/plan.json": "b49cd4f94e37362f255925318f0e5b14232edf4a0262c9d98ba824882f5a4bef",
+    "experiments/upstream-own5-calibration/calibration.json": "8fcdcea756084effbabb8925677bd250086ea4ca9ae193cba12fb56271e82d43",
+    "experiments/upstream-own5-calibration/frozen.json": "a44fb00828aa5c90cbd5cc037a23436ea9cd5bd51ab202fe1b318dd34c4a3424",
+    "artifacts/upstream-own5-calibration/known-fit.f32": "4c5102b745ade8107bae15ffb59d8a716767446d5ca05e10e543a9d4163355e3",
+    "artifacts/upstream-own5-calibration/qualifying.f32": "f6dd55b967e06b018861ef29d2a27db10ee387f0366b4053db75ac419803770d",
+    "experiments/upstream-item154-stream-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+    "scripts/verify_upstream_own5_calibration.py": "fd3b97002eca0eb99d9fd7ce2a662162406f4ddd5c3ae71ba8630bfb0bf208db"
+  },
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Five fully replayed own families, one known-only convex coefficient fit. Independent active-set solution and compensated statistics, exact frozen vectors, full canonical recovered groups. Apparent calibration is not nested CV; adaptive audit is not official/untouched Test."
+}

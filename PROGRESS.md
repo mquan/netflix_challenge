@@ -12,6 +12,8 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+The latest independently verified five-family own blend improves both recovered qualifying groups to **0.8605716962 / 0.8615832225**. All five weights are fitted only on known OOF predictions and the full vector was frozen before audit. Apparent known-fit0.8590716 is not nested CV; the CV best remains0.8592309820. The10% target remains unmet. See [result and complete evidence](OWN5_CALIBRATION_RESULT.md).
+
 Original attention64 is now independently complete12/12:29 native outputs,
 26 finite native query vectors, unchanged source/data and all known-row
 projection checks pass. Its terminal/epoch5 pairs are ready for the queued

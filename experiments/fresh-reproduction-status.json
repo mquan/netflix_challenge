@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T00:29:16.113325+00:00",
-  "display_time": "2026-11-20 00:29 UTC",
+  "observed": "2026-11-20T00:48:12.012732+00:00",
+  "display_time": "2026-11-20 00:48 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "independent_verification_sha256": "3f2aa4c180168aef1fb303ebbef49d5cdc71897340927ff410e417dd7b774816",
   "work": [
+    {
+      "work": "Five-family own calibration",
+      "state": "Complete independent verification: source0 0.8605716962 /source1 0.8615832225. All five actual development/full saved-family replays bound; independent simplex solve, exact vectors and canonical group scoring pass. Known-only fitted weights; apparent known-fit is not nested CV. Target remains unmet."
+    },
     {
       "work": "Fixed original attention64 pair neural study",
       "state": "Controller70361 queued: original terminal/epoch5 pairs only after verified12/12 source completion. Own109/item154,400 neural inputs,H128/r32; unchanged folds/seeds/optimizer/stopping. Exact virtual tensors, independent ridge replay, all15 actual saved-model replays and both predeclared tree50/tree154 half means required. Full-size admission waits for prior studies; no weight search, qualifying selection or automatic production."
@@ -247,15 +251,15 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "43bffae3f9aaa603fd32926b9036ae87cdde6503d73800b39ba641ef88b43f25",
+  "qualifying_verification_sha256": "52550a1d330d48c4f58ded7bf2f089e586c23fca498d34145737fec485a18172",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.860652465694796
+      "rmse": 0.8605716961956835
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8616635956343016
+      "rmse": 0.861583222505447
     }
   },
   "goal_achieved": false,
@@ -420,14 +424,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.860652465694796
+      "rmse": 0.8605716961956835
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8616635956343016
+      "rmse": 0.861583222505447
     }
   },
-  "latest_qualifying_verification_sha256": "43bffae3f9aaa603fd32926b9036ae87cdde6503d73800b39ba641ef88b43f25",
+  "latest_qualifying_verification_sha256": "52550a1d330d48c4f58ded7bf2f089e586c23fca498d34145737fec485a18172",
   "best_development_arm": "own107/50 tree plus own107/all90 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -445,7 +449,7 @@
     "experiments/upstream-item154-mps-context/nn-replay.json"
   ],
   "development_narrative": "The predeclared fixed half mean combines the expanded107/50 tree with our107/154 neural model, adding64 unsupervised item components from our freshly trained native factors. It improves the separately verified0.8592433 consensus. The item study recovered its interrupted final fold under the identical frozen recipe, preserving the first four fold receipts and original partial artifacts. All15 neural model replays passed. Its full known-selected qualifying audit is now independently complete. The later user218 neural extension scored0.8594487 and is not promoted.",
-  "latest_qualifying_verification_path": "experiments/upstream-item154-weight-calibration/independent-verification.json",
-  "qualifying_narrative": "One convex coefficient is fitted only to known OOF predictions: tree32.2310% /item154 NN67.7690%. The apparent known-fit0.8591643 is not nested cross-validation and does not replace the0.8592310 CV best. The same actual replayed own full models are reused, with the new complete vector frozen before canonical recovered-label access. Independent coefficient refit, exact stored-vector reconstruction and complete-group compensated scoring improve both preceding fixed-half groups. No qualifying outcome fitted or selected the coefficient.",
+  "latest_qualifying_verification_path": "experiments/upstream-own5-calibration/independent-verification.json",
+  "qualifying_narrative": "A nonnegative sum-one blend combines our actual replayed tree50 and four neural branches (50/90/109/154). Its five weights are fitted only on complete known OOF vectors, and the full qualifying vector was frozen before the recovered audit. Independent active-set optimization, compensated statistics and exact known/full vector reconstruction pass. Apparent known-fit0.8590716 is not nested CV; the CV best remains0.8592310. Both preceding qualifying groups improve. No recovered outcome fitted or selected the coefficients.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703"
 }
