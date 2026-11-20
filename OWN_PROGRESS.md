@@ -63,13 +63,26 @@ admits all413 declared entries: original352 scalars, all45 native pairs,
 all three completed TX60o pairs and13 nonlinear components. It separately
 replays both full input streams and the complete exact-pair alias partition.
 There are404 distinct signals and5657 interaction/bias coefficients. It is
-now finished all five held-user fits with the published lambda30 and is
-generating qualifying predictions. Complete system/model/prediction
-replay and canonical audit follow. The four-GiB worker and24GiB research
-memory guards remain; no large interaction cache or Gram files are written.
-No score improvement is claimed for this work yet.
+finished all five held-user fits with the published lambda30. Full
+independent system/model/prediction replay passes, but conditional meta-CV
+0.8602208791 and recovered0.8613295003/0.8623423168 miss the primary.
+This negative result is retained; no coefficients or parameters changed
+after audit. The four-GiB worker and24GiB research guards held throughout;
+no large interaction cache or Gram files were written.
+[Complete negative result](OWN404_FWLS_RESULT.md).
 [All native snapshots](REMOTE15H_ALL_NATIVE_SNAPSHOTS_PLAN.md) ·
 [Full own-bank feature-weighted stacking](OWN_FULL_FEATURE_WEIGHTED_STACKING_PLAN.md).
+
+The matched paired B391 follow-up independently admits every original
+330 parent bit,22 temporal inputs and all39 new distinct native/TX pairs
+on both query populations. Complete467/617 operators, all group statistics,
+eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
+changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
+neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
+original40pat4 neural queue now waits for original1600 completion so that
+missing large-base-model coverage retains priority. H512 is a separate
+declared source-ready control, not a running job.
+[Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
 The full temporal100r trajectory now supplies22 independently verified
 snapshot pairs after one exact complete-pair alias. Adding all22 to own330

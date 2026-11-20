@@ -1,0 +1,23 @@
+{
+  "state": "complete_independent_frozen_full_own_bank_fwls_canonical_recovered_audit",
+  "observed": "2026-11-20T16:26:31.810223+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8613295003350263,
+      "below_target": false
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8623423167927773,
+      "below_target": false
+    }
+  },
+  "both_groups_below_target": false,
+  "preaudit_verification_sha256": "e8cf30f25ce9dfddb1ea8b5066026305c9c735fdcc1d1532cd8c63bcd230058a",
+  "freeze_sha256": "c8e4e1472c57b68040ac1a244e7c46b116bdc2248882c64cd6eaf5643b9f5f98",
+  "prediction_sha256": "d69abd41e9e204d6a0b04f1dc04059e5b54498370783bab5ccdda985225b24f0",
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "qualifying_outcomes_used_for_fitting_or_selection": false,
+  "limitation": "Adaptive community-recovered groups, not official or untouched Test. Original A/B input realization caveat retained."
+}
