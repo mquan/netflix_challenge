@@ -1,0 +1,14 @@
+{
+  "error": "RuntimeError('Neural study resource/watchdog guard; preserve exact worker RAM')",
+  "original_child_RAM_preserved": true,
+  "child": {
+    "pid": 75222,
+    "ppid": 71603,
+    "pgid": 75222,
+    "state": "Rs",
+    "started": "Fri Nov 20 06:05:24 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own352_temporal_mps.py"
+  },
+  "observed": "2026-11-20T14:06:32.228462+00:00",
+  "no_automatic_restart": true
+}
