@@ -1,0 +1,25 @@
+{
+  "state": "original_slsqp_freeze_fails_strict_independent_coefficient_check_before_any_qualifying_label_access",
+  "observed": "2026-11-20T03:22:45.628354+00:00",
+  "original_weights": [
+    3.462406473678066e-18,
+    0.1970334069833602,
+    0.13956309291818017,
+    0.1347938629957756,
+    0.286712519730219,
+    0.24189711737246508
+  ],
+  "direct_kkt_weights_from_original_known_statistics": [
+    0.0,
+    0.1970320883381158,
+    0.13950334582426482,
+    0.13485331035595818,
+    0.28671354093374124,
+    0.24189771454791997
+  ],
+  "max_weight_difference": 5.9747093915346605e-05,
+  "known_quadratic_objective_gap": 2.931984516285624e-12,
+  "failure": "Original ftol1e-14 SLSQP convergence is weaker than required weight error1e-5 for this flat correlated simplex. Preserve original scripts, plan, freeze, and failed checker; no recovered outcome was reached.",
+  "original_freeze_sha256": "aa1480943d94ec6f906b3836d2181e89eb2bbd81e65731e992979786ff91ef5d",
+  "qualifying_labels_read": false
+}
