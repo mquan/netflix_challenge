@@ -1,8 +1,8 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-20T01:48:49.024705+00:00
-best_score: 0.8592309819864167
+timestamp: 2026-11-20T02:25:47.364926+00:00
+best_score: 0.8592012938198756
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,10 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The complete original item154 tree/NN half mean is independently verified at **0.8592012938198756**, improving0.8592309819864167. All five original folds,15 actual saved-tree replays, original neural replay lineage, exact stored mean and separate canonical complete-known scoring pass. The qualifying best remains0.8605716962 /0.8615832225; the10% goal is still unmet. See [full result](ITEM154_TREE_RESULT.md).
+
+The first conditional production coordinator ended before any full fit on a receipt-field mismatch. Its original source/declaration/failure are preserved. Recovered coordinator3709 and12GiB guardian3711 preserve the numerical model, known-only selection rule and actual median budgets760/968/880; the actual selection preflight and stream-inference fixtures pass. Full fitting/replay/frozen qualifying audit remain pending. Original fixed itemAE5/10 coordinator63754 has also been released by its unchanged peak gate and is preparing its virtual feature study.
 
 At2026-11-20 01:41 UTC the original full154-context tree completed its fourth user fold; all12 saved trees and the new receipt's artifact hashes are preserved. The fifth/final fold is fitting. No global promotion is inferred from these partial results.
 

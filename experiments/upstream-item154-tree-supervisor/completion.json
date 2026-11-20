@@ -1,0 +1,63 @@
+{
+  "state": "complete_original_tree_fit_actual_replay_and_independent_scoring",
+  "observed": "2026-11-20T02:18:06.703183+00:00",
+  "evaluation_sha256": "49dcf0f4ff7e51366ad14f6230a093e41cb2a434fa8478688e3a715178d91403",
+  "verification_sha256": "bccd09cd6899785fc7e08deff45f083b840125bf1e274f8e5783d9d15ce39abb",
+  "replay_sha256": "ab307d710725876fe4408fdde1aac7a5694504236a9e68dd8819de26becdf671",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801962475576,
+      "delta_vs_previous_best": 0.003349214261140876,
+      "fold_rmse": [
+        0.8619959766765863,
+        0.8598793857564255,
+        0.8633794444492896,
+        0.8642176791394023,
+        0.8634317801789364
+      ],
+      "prediction_sha256": "10120c6973a2cff63f04c741e6ea05acc0521bc7684a310d8f8966a7c49a4421"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8600069538395595,
+      "delta_vs_previous_best": 0.0007759718531428206,
+      "fold_rmse": [
+        0.8592093651867461,
+        0.85724542898617,
+        0.8610246560558991,
+        0.8616933888937868,
+        0.8608671440739226
+      ],
+      "prediction_sha256": "e7bfc403155631c8762811b4a78aa280b7ec315c31d4dd0b49d83c579e379085"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8593837348929274,
+      "delta_vs_previous_best": 0.0001527529065107336,
+      "fold_rmse": [
+        0.858585247886432,
+        0.856758839015409,
+        0.8603288518502288,
+        0.8612796771356552,
+        0.8599706758077719
+      ],
+      "prediction_sha256": "04d153881845697fa2018f7a26ff1abcf82cc5e655e6458cd59118b245512599"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8592012938198756,
+      "delta_vs_previous_best": -2.9688166541030903e-05,
+      "fold_rmse": [
+        0.8584422294608934,
+        0.8565241798443072,
+        0.8601442418567569,
+        0.8610102680683098,
+        0.8598900954245112
+      ],
+      "prediction_sha256": "631ebeaf77c9d40e8be2ded51e43b019e7f269cf11ca5f7b7a8b33d73d72e917"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}

@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-20T02:23:01.295559+00:00",
+  "script_sha256": "c392d93711332328aba2caaa07f9452ce4af1e91e4b6ad65765b2ae8f6b26d89",
+  "origins": [
+    [
+      "tree",
+      "upstream-item154-tree"
+    ],
+    [
+      "nn",
+      "upstream-item154-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Fixed known-only comparison declared in upstream-item154-tree/plan.json before the original matching-tree study started. Actual saved-model replays are required before evaluation. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "Separate known-only conditional production declaration already exists. Full fit remains gated on complete known-CV improvement and resource admission, then actual replay/freeze before recovered audit."
+}

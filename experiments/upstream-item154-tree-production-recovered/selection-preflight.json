@@ -1,0 +1,25 @@
+{
+  "state": "complete_actual_independent_receipt_schema_and_known_selection_preflight",
+  "observed": "2026-11-20T02:20:36.122147+00:00",
+  "development": {
+    "arm": "fixed-half-tree-nn",
+    "rmse": 0.8592012938198756,
+    "delta_vs_previous_best": -2.9688166541030903e-05,
+    "fold_rmse": [
+      0.8584422294608934,
+      0.8565241798443072,
+      0.8601442418567569,
+      0.8610102680683098,
+      0.8598900954245112
+    ],
+    "prediction_sha256": "631ebeaf77c9d40e8be2ded51e43b019e7f269cf11ca5f7b7a8b33d73d72e917"
+  },
+  "independent_receipt_field": "independent_rmse",
+  "original_reference_rmse": 0.8592309819864167,
+  "full_fit_performed": false,
+  "source_sha256": {
+    "experiments/upstream-item154-tree/evaluation.json": "49dcf0f4ff7e51366ad14f6230a093e41cb2a434fa8478688e3a715178d91403",
+    "experiments/upstream-item154-tree/independent-verification.json": "bccd09cd6899785fc7e08deff45f083b840125bf1e274f8e5783d9d15ce39abb",
+    "experiments/upstream-item154-tree-supervisor/completion.json": "a06f5bb718ca954288cf36ddc6280be46d7a6da0974498112aeb55a6aaa8dbc0"
+  }
+}
