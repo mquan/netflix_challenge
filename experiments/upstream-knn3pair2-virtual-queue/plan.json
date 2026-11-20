@@ -1,0 +1,40 @@
+{
+  "created": "2026-11-20T03:39:30.839834+00:00",
+  "code_sha256": {
+    "scripts/upstream_knn3pair2_virtual_queue.py": "c98aa4865aabb63c1693cc31425d4f4b1c190f600dfe56ce3fe5eaa021ef2a4e",
+    "scripts/upstream_knn3pair2_virtual_mps_context.py": "86ab6a4e1ab9e460075b3eb6d40814f1688a4d9d578b3a064448327386a414a6",
+    "scripts/upstream_knn3pair2_virtual_features.py": "4e34d7eaed166fe59c1362fae3496adb4bbb1ea15f5864b2a66e2788178a5dcb",
+    "scripts/upstream_knn3pair2_screen.py": "88931327e6623b893298fa04a8116f469c220689d99eedab25dfa5aec43fd132",
+    "scripts/verify_upstream_knn3pair2_screen.py": "e66e33d9e051407c7435327407a7be3eb56330cc255f372727017eefd3e29a38",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4",
+    "scripts/upstream_rbm50_tree_knn3pair2_virtual_mps.py": "db8a033c0620e4ec116f96fd7feefa29b255c621714c7036a90cf4d759848ebb",
+    "scripts/upstream_item154_tree_knn3pair2_virtual_mps.py": "87bccf39765307ce0381c719f37b4f11960e4ad9f8d9b3032c876b50919519a2"
+  },
+  "fixed_addition": [
+    "s3-dnn32nm__knn3",
+    "s3-nade12s__knn3"
+  ],
+  "original_source_phases": "Both complete original non-iterative native KNN3 builds per chain; no epoch count",
+  "raw_prediction_columns": 109,
+  "learned_support_columns": 154,
+  "inputs": 400,
+  "hidden": 128,
+  "context_rank": 32,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "predeclared_tree_partners": [
+    "upstream-rbm50-tree",
+    "upstream-item154-tree"
+  ],
+  "reference_development_rmse": 0.8592012938198756,
+  "qualifying_labels_read": false,
+  "rule": "Both original KNN3 terminal pairs only after verified complete native two-phase neighbor builds and original configuration/parent lineage. Preserve own107/item154 and all original five nested user folds/seeds/optimizer/stopping. Require separate ridge replay, full virtual tensor hashes, all15 actual saved NN replays and separate fixed-half mean checks with each of the two declared actual tree families. No raw subset, weight search, qualifying outcome or automatic production.",
+  "resource_policy": {
+    "total_rss_limit_bytes": 25769803776,
+    "disk_floor_bytes": 8589934592,
+    "peak_neural_reserve_bytes": 17179869184,
+    "wait_for_actual_cpu_tree_and_prior_full_neural_study": true
+  }
+}
