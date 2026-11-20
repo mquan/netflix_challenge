@@ -12,26 +12,30 @@ not the complete winning ensemble.
 ## Current work: our own trained predictions
 
 As of November19,2026 Pacific, our best independently verified development RMSE
-is **0.8592309820**, the predeclared fixed half mean of our expanded107/50 tree
-and107/154 GPU context NN. The extra64 item components come from our freshly
-trained native factors, using an independently verified unsupervised projection.
-All original saved-model replays and separate stored-mean/full-known score
-checks pass. This improves the preceding own consensus0.8592432880; its full qualifying result is now independently verified. See [ITEM154_MPS_PLAN.md](ITEM154_MPS_PLAN.md) and
-[AUTOREC_CONSENSUS_RESULT.md](AUTOREC_CONSENSUS_RESULT.md).
-All numerical
-prediction features are freshly trained by us; public source code is reused,
-and downloaded pretrained prediction features are excluded.
+is **0.8592012938**, the predeclared fixed half mean of our full item154-context
+tree and unchanged item154 neural model. All five user folds, actual saved-model
+replays and separate exact mean/canonical known scoring pass. See
+[the full development result](ITEM154_TREE_RESULT.md).
 
-**The new own item-context ensemble improves the qualifying audit but still misses10%:**
-**0.8607516602 /0.8617378857** on the recovered source groups. The worse group
-improves **9.5288%** over0.9525, leaving0.0044879 RMSE to the strict0.85725 target.
-The fixed tree/NN half mean and new NN7/7/8 budgets came only from known-ProbeX
-development. The original actual full-tree replay was reused, the new full NN
-replayed every query row, and the exact vector was frozen before label access.
-Independent canonical complete-group compensated scoring passes. These are
-adaptive recovered audits, not official/untouched Test. The new epoch20 user
-context extension is fitting separately; no qualifying outcomes enter fitting
-or selection. See [ITEM154_QUALIFYING_RESULT.md](ITEM154_QUALIFYING_RESULT.md).
+Our new independently verified own-training qualifying best is
+**0.8605620602 /0.8615662023**, a **9.5469%** gain on the worse recovered group.
+The strict10% target of below **0.85725 on both groups remains unmet**.
+One nonnegative sum-one fit combines six eligible own model families using
+known OOF predictions only; its complete qualifying vector was frozen before
+the audit. Independent simplex optimization, original actual saved-family
+replays, exact vectors and compensated canonical complete-group scoring pass.
+The apparent known-fit0.8590482 is not nested CV. See
+[the six-family result and evidence](OWN6_CALIBRATION_RESULT.md).
+
+All numerical prediction features are freshly trained by us; public source
+code is reused, and downloaded pretrained numerical features are excluded.
+These are adaptive community-recovered audits, not official or untouched Test.
+The attention-pair neural study is fitting, native CFNADE96 and Bernoulli RBM200
+continue, and a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
+new original-source prediction pairs. [Verified cache storage sharing](COW_CACHE_STORAGE_RESULT.md)
+reclaimed10.4GB without removing logical research files.
+
+The following notes describe earlier completed stages.
 
 All three original native additions are now complete, including rank1000 with
 both20-epoch phases and separate source/storage/output checks. The whole110, own166 and larger512-unit GPU controls completed
