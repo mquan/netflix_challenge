@@ -39,3 +39,9 @@ Code: scripts/upstream_attention2_{screen,virtual_features,virtual_mps_context,
 virtual_queue}.py, scripts/verify_upstream_attention2_screen.py,
 scripts/upstream_rbm50_tree_attention2_virtual_mps.py and
 scripts/upstream_item154_tree_attention2_virtual_mps.py.
+
+## Completed result (2026-11-20 UTC)
+
+All five original nested user folds and all15 actual saved-neural-model replays are complete. The neural model scores **0.8594307511458493**. Both predeclared fixed half means are independently complete: **0.8593032269462371** with tree50 and **0.8592708192436762** with tree154. Both are above the declared0.8592309819864167 reference and current independently verified0.8592012938198756 best. Complete stored-mean reconstruction and canonical compensated scoring pass. No qualifying fit or promotion follows this negative development result.
+
+Original raw/data/capacity/fold/seed/stopping budgets are unchanged. The shared neural slot was released, allowing raw item-autoencoder fulltrain epoch24 to resume. Original KNN3 chains retain their full memory/disk admission policy. Evidence: experiments/upstream-attention2-virtual-queue/completion.json; experiments/upstream-attention2-virtual-mps-context/nn-replay.json; experiments/upstream-item154-tree-attention2-virtual-mps/independent-mean-check.json; experiments/upstream-rbm50-tree-attention2-virtual-mps/independent-mean-check.json.

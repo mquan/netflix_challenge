@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T03:28:53.912106+00:00",
-  "display_time": "Nov 19, 2026 19:28 PST",
+  "observed": "2026-11-20T03:35:12.150292+00:00",
+  "display_time": "Nov 19, 2026 19:35 PST",
   "best_development_rmse": 0.8592012938198756,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -35,7 +35,7 @@
     },
     {
       "work": "Fixed original attention64 pair neural study",
-      "state": "Actual full-size neural worker14525 started after original memory/disk admission. Both own original attention64 terminal/epoch5 features are source-verified after complete12/12 native training. The complete ridge addition and independent replay pass; nested neural training is active. Original five user folds, seeds,H128/r32,400 inputs, optimizer/stopping and both predeclared tree50/tree154 half means retained. All15 actual saved-NN replays and exact mean checks still required; no qualifying refit or score claimed."
+      "state": "Complete negative with all five nested user folds and15 actual saved-NN replays: NN0.8594307511; original tree50 half mean0.8593032269 and tree154 half mean0.8592708192 both exceed declared/current references. Both separate exact mean/canonical score checks pass. No qualifying fit/promotion or budget change. Slot released; raw item-autoencoder fulltrain epoch24 resumed."
     },
     {
       "work": "Exact published residual KNN3 chains",
@@ -315,7 +315,36 @@
       "disk_free_bytes": 29639630848,
       "observed": "2026-11-20T03:28:04.142715+00:00"
     },
-    "disk_free_bytes": 29639622656
+    "disk_free_bytes": 29639622656,
+    "attention_completion": {
+      "state": "complete_original_attention_pair_neural_study_and_both_declared_tree_means",
+      "observed": "2026-11-20T03:33:58.329154+00:00",
+      "results": [
+        {
+          "tree": "upstream-rbm50-tree",
+          "rmse": 0.8593032269462371,
+          "independent_mean_sha256": "142f9ef05ffa25d662e970203a3296bde0f7a5d8538d11b77a9aa427d7863a08"
+        },
+        {
+          "tree": "upstream-item154-tree",
+          "rmse": 0.8592708192436762,
+          "independent_mean_sha256": "e40ce59f1f427ca408f581fec21d6b8634415a4d00bea211474b7ae679206b97"
+        }
+      ],
+      "reference_at_declaration": 0.8592309819864167,
+      "current_verified_reference_at_summary": 0.8592012938198756,
+      "improves_current_reference": false,
+      "automatic_production_started": false,
+      "qualifying_labels_read": false,
+      "goal_complete": false
+    },
+    "raw_item_autoencoder": {
+      "state": "fitting_complete_declared_raw_epoch",
+      "phase": "fulltrain",
+      "epoch": 24,
+      "pid": 16651,
+      "observed": "2026-11-20T03:33:58.814869+00:00"
+    }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
