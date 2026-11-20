@@ -1,0 +1,22 @@
+{
+  "observed": "2026-11-20T04:04:03.656123+00:00",
+  "original_pid": 18031,
+  "original_process_identity": "18031 Thu Nov 19 19:39:30 2026     Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_knn3pair2_virtual_queue.py",
+  "original_status": {
+    "state": "waiting_for_complete_full_size_neural_headroom",
+    "other_jobs_rss_bytes": 14057291776,
+    "memory": {
+      "compressor_bytes": 771899392,
+      "swap_used_bytes": 4977527357.44
+    },
+    "good_samples": 0,
+    "observed": "2026-11-20T04:03:52.782651+00:00"
+  },
+  "original_declaration_sha256": "678f3a5cbcac4026c707ef2a56f25397e7c6010769de4973c8041ea76ea948a2",
+  "original_source_files_unchanged": true,
+  "original_children_at_idle_boundary": [],
+  "all_original_model_and_preparation_artifact_roots_absent": true,
+  "policy": "Replace only the stopped idle pre-fit coordinator. Original declaration/model/data/fold/seed/optimizer/stopping/16GiB reserve/24GiB guard unchanged. CPU preparation without GPU slot; stable original headroom and nonblocking GPU-slot recheck before actual fitting. Allows complete raw epochs to progress while meta fitting waits.",
+  "original_numeric_fitting_started": false,
+  "qualifying_labels_read": false
+}

@@ -31,11 +31,13 @@ All numerical prediction features are freshly trained by us; public source
 code is reused, and downloaded pretrained numerical features are excluded.
 These are adaptive community-recovered audits, not official or untouched Test.
 The attention-pair neural study completed without improving development. Native
-CFNADE96 and Bernoulli RBM200 continue; the first original KNN3 chain is fitting.
-The full raw item-autoencoder trajectory waits at durable27/26 checkpoints while
-its shared GPU slot is reserved for native KNN3 memory admission. A
-[fixed full KNN3-pair neural comparison](KNN3PAIR2_VIRTUAL_PLAN.md) is queued; a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
-new original-source prediction pairs. [Verified cache storage sharing](COW_CACHE_STORAGE_RESULT.md)
+CFNADE96 and Bernoulli RBM200 continue. Both original KNN3 chains are now
+independently complete; their [fixed full neural comparison](KNN3PAIR2_VIRTUAL_PLAN.md)
+has finished CPU preparation and waits for unchanged full-size headroom without
+holding the GPU slot. The complete raw item-autoencoder trajectory progresses
+in the meantime. The remote laptop's original-source/split bootstrap is verified;
+its [15-hour assignment](REMOTE_15H_HANDOFF.md) targets nine new original-source
+prediction pairs, with numerical returns still pending. [Verified cache storage sharing](COW_CACHE_STORAGE_RESULT.md)
 reclaimed10.4GB without removing logical research files.
 
 The following notes describe earlier completed stages.

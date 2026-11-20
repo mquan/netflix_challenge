@@ -182,3 +182,9 @@ The coordinator checks that recipes exactly match the pinned registry; tests
 reject inherited model knobs, missing/reordered/shortened two-phase traces,
 wrong vector shapes/dtypes/nonfinite values, and changed file hashes. These
 checks validate the handoff helper; full native fits execute on the remote.
+
+## Observed remote execution: November20 UTC
+
+Read-only observation at remote commit aae58a416ecd3ccc38c27ec584f3aa5b71387829 confirms arrival03:44:19Z on the M3 Max/96GiB machine, training deadline17:44:19Z and return deadline18:44:19Z. Bootstrap completed03:48:11Z and its original source pin, frozen plan identity, and exact known row-map SHA match this coordinator. Native training completion or numerical arrays have not yet been returned at this observation. Evidence is preserved under experiments/upstream-remote15h-observation/bootstrap/.
+
+The first bootstrap failed BLAS linkage because the helper's sanitized environment omits the original Accelerate RUSTFLAGS. The remote preserved the failed root/logs and used a fresh owned upstream-remote15h-r2 root, with the same Accelerate linker arguments in its parent .cargo/config.toml. The115 audited original code/config files, frozen plan, helper and model knobs remain unchanged. This is a recorded build-environment repair, not a source/model/data change. Do not edit a running frozen helper or repeat preparation over the failed root.

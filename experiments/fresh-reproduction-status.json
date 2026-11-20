@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T03:46:25.159728+00:00",
-  "display_time": "Nov 19, 2026 19:46 PST",
+  "observed": "2026-11-20T04:09:16.986935+00:00",
+  "display_time": "Nov 19, 2026 20:09 PST",
   "best_development_rmse": 0.8592012938198756,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -11,7 +11,7 @@
   "work": [
     {
       "work": "Fixed complete KNN3-pair neural follow-up",
-      "state": "Coordinator18031 live, waiting for both independent full original KNN3 source proofs. Both original terminal predictions added to complete own107/item154;185 ridge columns,399 nonlinear columns plus ridge, unchanged H128/r32 and original five nested user folds/seeds/optimizer/stopping. All15 actual saved-NN replays, complete virtual tensor hashes and both predeclared tree50/tree154 half means required. No reduced fit, coefficient search, qualifying selection or automatic production. Four targeted fixtures and12 existing checks pass."
+      "state": "Full original CPU preparation is independently complete: two complete source proofs, full five-fold ridge replay (control0.8625801964 /main0.8625666623), every virtual column and complete tensor fingerprints. Original400-input H128/r32 neural study and both fixed tree means remain pending. Only the idle pre-fit coordinator18031 was replaced by23052 to avoid holding the GPU lock during unrelated headroom waits; original declaration/all eight source files/full16GiB neural reserve/24GiB guard/data/folds/seeds/optimizer/stopping unchanged. All21 tests pass. Raw full50-epoch training continues while the neural candidate waits without the GPU lock."
     },
     {
       "work": "Six-family known-only convex calibration",
@@ -19,7 +19,7 @@
     },
     {
       "work": "15-hour remote original-producer assignment",
-      "state": "Executable handoff pushed on research/remote15h-handoff at9d44449: original DNN24 8/8, attention32 12/12, exponential RBM200 25/25. Nine published paired columns targeted; serial full-budget execution, canonical44-array/original split hashes, isolated source/build, deadline and immediate verified returns per producer. Remote execution has not yet been observed."
+      "state": "Remote laptop checked in at03:44:19Z on M3 Max/96GiB; fixed training deadline17:44:19Z /return18:44:19Z. Original source/data bootstrap completed03:48:11Z with the same frozen plan and exact known row-map SHA. First BLAS linker failure is preserved; fresh r2 root uses the original Accelerate linkage outside the audited source tree, without changing helper/model/source parameters. Remote commit aae58a4 observed. Complete native producers/numerical returns have not yet been observed."
     },
     {
       "work": "10.4GB inactive cache CoW storage recovery",
@@ -43,7 +43,7 @@
     },
     {
       "work": "Exact published residual KNN3 chains",
-      "state": "First original native chain is actually running: PID18610 s3-dnn32nm__knn3, complete train_3/probe_3 phase constructing per-item weights over17770 items with original default configuration and four Rayon threads. s3-nade12s__knn3 remains next. Both complete native phases and independent source/output/known-projection checks remain required. The raw GPU slot is reserved at durable27/26 epoch pointers to meet the unchanged native memory gate; its full50-epoch budget/source/checkpoints remain intact."
+      "state": "Both original native chains are complete and independently verified: DNN32nm /NADE12s KNN3, full two-phase neighbor construction, original defaults/complete parents, every native query and exact known projection. Each proof binds469 source/binary/base/data/output files. Both terminal paired columns are available for the fixed full neural comparison. This is source-model completion, not a qualifying score."
     },
     {
       "work": "Exact inactive cache storage sharing",
@@ -288,70 +288,54 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T03:46:25.159728+00:00",
+    "observed": "2026-11-20T04:09:16.986935+00:00",
     "native_processes": [
-      "18610        01:05 ./target/release/fit chain s3-dnn32nm__knn3 -p pipeline-3.toml --final --preds preds_3",
-      "73823     03:19:02 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
-      "92864     13:13:00 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865     13:13:00 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+      "73823     03:41:54 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
+      "92864     13:35:52 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865     13:35:52 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "cf96": {
       "state": "training",
       "epochs": {
-        "x": 69,
-        "qual": 66
+        "x": 70,
+        "qual": 67
       },
       "active": {
         "x": 92864,
         "qual": 92865
       },
       "rss_bytes": {
-        "x": 2138423296,
-        "qual": 2370453504
+        "x": 1822769152,
+        "qual": 1846853632
       },
       "other_rss_bytes": 0,
-      "disk_free_bytes": 29527638016,
-      "heartbeat": "2026-11-20T03:46:19.991029+00:00"
+      "disk_free_bytes": 29970669568,
+      "heartbeat": "2026-11-20T04:08:51.688441+00:00"
     },
-    "knn3": {
-      "state": "original_native_knn3_chain_running",
-      "job": "s3-dnn32nm__knn3",
-      "pid": 18610,
-      "started": "2026-11-20T03:45:20.803145+00:00"
+    "knn3_sources": {
+      "state": "both_original_knn3_chains_independently_verified",
+      "observed": "2026-11-20T03:57:29.981332+00:00"
     },
-    "raw_gpu_slot": {
-      "state": "reserving_raw_epoch_slot_for_original_cpu_knn3",
-      "observed": "2026-11-20T03:46:22.612457+00:00",
-      "native_workers": {
-        "18610": "./target/release/fit chain s3-dnn32nm__knn3 -p pipeline-3.toml --final --preds preds_3"
+    "knn3_neural_queue": {
+      "state": "waiting_for_original_full_neural_headroom_without_gpu_lock",
+      "observed": "2026-11-20T04:09:07.325121+00:00",
+      "other_rss_bytes": 13220691968,
+      "memory": {
+        "compressor_bytes": 2829467648,
+        "swap_used_bytes": 4960750141.44
       },
-      "original_producers": {
-        "71695": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_knn3_chains.py"
-      },
-      "seconds_since_last_native": 0.0001349169760942459,
-      "raw_durable_state": {
-        "trainx": {
-          "pointer_sha256": "bc0855dbcd189cc570bb1911eb901a9040d5720d56b54f7d48b7c0b178cb4674",
-          "epoch": 27,
-          "checkpoint": "epoch-00027.pt",
-          "declared_checkpoint_sha256": "ea026aa8bf43bc9a2601c789985841469b376dfee56152054d9178f80f076c7d"
-        },
-        "fulltrain": {
-          "pointer_sha256": "640051125f6cae1e1f288d5a86e04719b0d88ec34e8bf42fed201b3f15be35d7",
-          "epoch": 26,
-          "checkpoint": "epoch-00026.pt",
-          "declared_checkpoint_sha256": "cc491e6c9b3c92a94b7e9d93a81a70754677b1e924e8428a53a159ae3a286105"
-        }
-      },
-      "release_reason": null
+      "good_samples": 0,
+      "gpu_slot_owned": false
     },
     "raw_model": {
-      "state": "waiting_for_shared_epoch_slot",
+      "state": "fitting_complete_declared_raw_epoch",
       "phase": "fulltrain",
-      "epoch": 27,
-      "observed": "2026-11-20T03:44:23.658676+00:00"
+      "epoch": 29,
+      "pid": 23526,
+      "observed": "2026-11-20T04:09:14.176762+00:00"
     },
-    "disk_free_bytes": 29527629824
+    "remote_observation": "experiments/upstream-remote15h-observation/bootstrap/observation.json",
+    "disk_free_bytes": 29955895296
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

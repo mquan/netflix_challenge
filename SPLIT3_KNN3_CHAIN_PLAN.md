@@ -42,3 +42,9 @@ score.
 Evidence: experiments/upstream-split3-knn3-chains/{plan,
 preflight-verification}.json. Code: scripts/upstream_split3_knn3_chains.py and
 scripts/verify_upstream_split3_knn3_chains.py.
+
+## Complete original source results (November20 UTC)
+
+Both original two-phase source chains are complete and independently verified. The DNN32nm chain builds397,670 /396,169 weights across all17,770 items in its two phases; NADE12s builds413,623 /412,106. Every original source/binary/base/data/output binding is checked, every native query is finite with the complete expected shape, and every known projection matches exactly. Both qualifying target arrays remain zero; these are source completion results, not qualifying RMSE claims. Each independent report binds469 original lineage files.
+
+The shared raw-GPU slot reservation ended after the native coordinator exited with no live native child; the final independent source proof followed20 seconds later. Recorded raw checkpoint pointers/source remained unchanged during the reservation, and the original50-epoch trajectory resumed normally. The fixed full KNN3-pair neural study is prepared under KNN3PAIR2_VIRTUAL_PLAN.md. Complete evidence: experiments/upstream-split3-knn3-chains/{s3-dnn32nm__knn3,s3-nade12s__knn3}-verification.json and verification-status.json; experiments/upstream-knn3-source-slot/released.json.

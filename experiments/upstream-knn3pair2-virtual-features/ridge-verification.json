@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "6dfdbdeab13923bdcfeb0fb69fb0d38f1902f3e07c9cb6682734e6c0dda5d59b",
+  "plan_sha256": "759fcfee0a29e6a07736214d1048942acbed832a7497cb4708699ece67b23844",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.862566662323351,
+      "max_prediction_error": 5.4143356464919634e-12,
+      "prediction_sha256": "898b572d9271d473c50ed363131c309a3c49a3ac3606f3c14545c05b948c0165"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed complete original KNN3 terminal addition. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "e66e33d9e051407c7435327407a7be3eb56330cc255f372727017eefd3e29a38"
+}

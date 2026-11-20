@@ -1,0 +1,43 @@
+{
+  "state": "complete_original_chain_pending_independent_verification",
+  "job": "s3-dnn32nm__knn3",
+  "parent": "s3-dnn32nm",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "f6576019ee61af1795c9b29d9897f849b4e349d5934e251fb03922755e68e5bb",
+  "started": "2026-11-20T03:45:20.803145+00:00",
+  "finished": "2026-11-20T03:50:47.260109+00:00",
+  "command": [
+    "./target/release/fit",
+    "chain",
+    "s3-dnn32nm__knn3",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "full_native_phase_build_counts": [
+    [
+      17770,
+      397670
+    ],
+    [
+      17770,
+      396169
+    ]
+  ],
+  "outputs": {
+    "preds_3/s3-dnn32nm__knn3.probe_3.npy": "7953a701f2ad31582933d3c930446e2005cf672eb0153b4af7030f02835e04e7",
+    "preds_3/s3-dnn32nm__knn3.out": "10b680810bf13efe46ffd8cac051e8c841d53455f3a2b7edbc9953fb1f0d0e24",
+    "preds_3/s3-dnn32nm__knn3.qual.npy": "3ecf7f63339e2bf57c7169b70b0c529bf5179bc297c136fe25150bd8aeaddb0a"
+  },
+  "projected_pair": {
+    "name": "s3-dnn32nm__knn3",
+    "probex": "artifacts/upstream-split3-knn3-chains/s3-dnn32nm__knn3.probex.npy",
+    "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-dnn32nm__knn3.qual.npy",
+    "probex_sha256": "9bb8d31f5054d8cf28a58b1fc429550cb463f82a0a45e02d001b0d112e696e79",
+    "qual_sha256": "3ecf7f63339e2bf57c7169b70b0c529bf5179bc297c136fe25150bd8aeaddb0a"
+  },
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}

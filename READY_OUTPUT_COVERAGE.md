@@ -1,15 +1,29 @@
 # Completed-output iteration and public-bank coverage
 
-Current snapshot (2026-11-19 23:08 UTC): verified own development best
-**0.8592309819864167**, recovered qualifying **0.8607516601651759 /
-0.8617378856802073**, still missing the strict0.85725 target. The split3
-attention16 pilot and subsequent DNN16t/DNN32nm/NADE12s full original models
-are complete and independently verified. Exact original attention64, RBM200
-and temporal100r are now prepared/queued, with a separate completion watcher
-and five fixed published output pairs. See [SPLIT3_NEXT3_PLAN.md](SPLIT3_NEXT3_PLAN.md).
-These are own-training completion and queue states, not complete public-bank
-reproduction or additional qualifying gains. Earlier observations below are
-retained as history.
+Current snapshot (2026-11-20 04:04 UTC): verified own development best
+**0.8592012938198756**, recovered qualifying **0.8605620601761576 /
+0.8615662023089099**, still missing the strict0.85725 target. The split3
+attention16, DNN16t/DNN32nm/NADE12s, attention64 and both original residual
+KNN3 chain producers are complete and independently verified. The latest
+attention-pair NN study was negative after all five folds and15 actual saved
+model replays. Both newly verified KNN3 terminal pairs are now eligible for
+their fixed full-size comparison; no score is inferred from source completion.
+Original RBM200 finished its first25-epoch phase and is fitting the fulltrain
+phase; temporal100r remains next. The remote15h bootstrap independently
+reports the same original split/map on the M3 Max/96GiB machine; its three
+original producers and numerical returns are not yet complete at this snapshot.
+
+The coverage gap is substantial: the pinned public schema has536 raw and83
+meta predictions, with separate220 support features. The primary new-split
+inventory records37 completed imported native jobs out of201; separately
+verified split3 producers are tracked in their own roots and are not counted
+there. Source availability and a published column name are not evidence of
+completed own training. Continue original native producers and complete
+published side outputs rather than treating small blend-weight changes as
+full-bank reproduction. Negative individual feature studies remain preserved;
+their source vectors remain available to later complete-bank assembly.
+
+Earlier observations below are retained as history.
 
 Observed November 19, 2026, approximately 10:55 UTC. Goal remains active:
 both recovered qualifying groups must score strictly below 0.85725 using

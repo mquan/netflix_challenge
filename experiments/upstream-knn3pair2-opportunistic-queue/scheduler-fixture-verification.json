@@ -1,0 +1,16 @@
+{
+  "state": "complete_original_headroom_and_gpu_lock_lifetime_fixtures",
+  "observed": "2026-11-20T04:05:46.343417+00:00",
+  "script_sha256": "c7b395fad702fd6d6f338d356e0b874a12762a132080a671df506fa5345919cb",
+  "tests_passed": 21,
+  "new_scheduler_cases": 5,
+  "original_sixteen_gib_neural_reserve_retained": true,
+  "checks": [
+    "original memory/disk/predecessor/compressor/swap boundaries",
+    "failed headroom recheck releases actual GPU file lock",
+    "successful admission retains exclusive actual file lock",
+    "busy actual file lock returns without blocking",
+    "exceptional recheck releases actual file lock"
+  ],
+  "numerical_recipe_or_budget_changed": false
+}

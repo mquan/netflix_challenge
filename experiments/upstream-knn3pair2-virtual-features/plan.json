@@ -1,0 +1,26 @@
+{
+  "ready_unused": [
+    {
+      "name": "s3-dnn32nm__knn3",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-knn3-chains/s3-dnn32nm__knn3.probex.npy",
+        "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-dnn32nm__knn3.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-nade12s__knn3",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-knn3-chains/s3-nade12s__knn3.probex.npy",
+        "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-nade12s__knn3.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "s3-dnn32nm__knn3",
+    "s3-nade12s__knn3"
+  ],
+  "rule": "Fixed control and both predeclared original KNN3 terminal pairs after both complete original native neighbor builds for each chain. Original user folds and ridge penalty. Native side outputs extend the released raw-column schema; no subset search or qualifying outcomes.",
+  "qualifying_labels_read": false
+}
