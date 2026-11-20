@@ -1,0 +1,41 @@
+{
+ "arrival_utc": "2026-11-20T23:37:25+00:00",
+ "hardware": {
+  "cpu": "Apple M3 Max",
+  "memsize_bytes": 103079215104,
+  "ncpu": 14,
+  "os": "27.2.1",
+  "power": "Now drawing from 'AC Power'"
+ },
+ "paths": {
+  "execution_worktree": "/Users/quan/workspace/netflix_remote_weekend",
+  "python": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+  "source_tree": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh",
+  "data_root": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/data",
+  "native_tree": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend/source"
+ },
+ "disk": {
+  "total_bytes": 994662584320,
+  "free_bytes": 15685832704,
+  "free_gib": 14.61,
+  "note": "Below 20 GiB prepare floor and 32 GiB admission floor at arrival; preparation blocked until owner frees space"
+ },
+ "swap": "total = 2048.00M  used = 391.38M  free = 1656.62M  (encrypted)",
+ "live_processes": {
+  "netflix_research_jobs": "none found (no tmux server; no fit/split_3/python research processes)",
+  "other_notable": [
+   "Docker com.docker.sailor ~134% CPU, ~7 GB RSS",
+   "macOS StorageManagement extensions active"
+  ]
+ },
+ "prior_assignment_state": "no ~/workspace/netflix_remote_weekend and no research/remote-weekend-execution branch existed; fresh start",
+ "owner_availability_until_utc": "2026-11-23T16:00:00Z",
+ "training_deadline_utc": "2026-11-23T14:00:00Z",
+ "return_deadline_utc": "2026-11-23T16:00:00Z",
+ "deadline_source": "owner-confirmed Monday Nov 23 08:00 Pacific availability per handoff",
+ "serial_order": [
+  "s3-rbm400pf",
+  "s3-tx300r",
+  "s3-rbm800p"
+ ]
+}
