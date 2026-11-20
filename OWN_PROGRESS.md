@@ -109,7 +109,12 @@ the full qualifying result is now separately verified above. Own176's fixed half
 narrowly missed the previous0.8591267885 best. Both full studies retain all
 original inputs, architecture and epoch budgets. Both original CF96
 training phases now complete95/95, with raw export and the original finalizer
-complete. Original1600 source-pinned build/admission is complete and its
+complete. All196 original prediction files independently pass admission:
+98 pairs reduce to96 exact distinct paired inputs, without fitting or
+qualifying-label reads. [Complete CF96 bank](CF96_COMPLETE_BANK_RESULT.md).
+The remote original22/22 TX50n compact pair also passes local independent
+admission; neither addition has yet been incorporated into a new score.
+Original1600 source-pinned build/admission is complete and its
 native training is running after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
 The childless native supervisor later exited through cleanup for full
