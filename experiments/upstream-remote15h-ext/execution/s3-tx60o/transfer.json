@@ -1,0 +1,33 @@
+{
+  "observed": "2026-11-20T13:47:16.194314+00:00",
+  "release_tag": "remote15h-own-20261120",
+  "asset_name": "s3-tx60o-export.tar.gz",
+  "archive_sha256": "cb3d43a44685584fd27c8b45a58fbd802cb368aaa23a52a6af62a8fa6611f7a9",
+  "archive_bytes": 40006710,
+  "uploaded": true,
+  "draft_release": true,
+  "records": [
+    {
+      "column": "s3-tx60o",
+      "file": "s3-tx60o.npz",
+      "sha256": "4efdbddb8d30baa295fb68c8bcbe260f9b81b0c42ade82041871948f7e85b9a0",
+      "native_probe_sha256": "63af24999092ec15a623aea5bdf35913f2b3125784123b1583297323ef597a14",
+      "native_qual_sha256": "55d3e0d257f950197981796e663c43a12b50add78b4260b5400221a06ea521fa"
+    },
+    {
+      "column": "s3-tx60o_ep02",
+      "file": "s3-tx60o_ep02.npz",
+      "sha256": "f389d97fd80d5ef9e0db8b56720e154669890139cf40af0d30e38a4753125039",
+      "native_probe_sha256": "8ff1d281a346db1fe2a07faeeec6e47869b16dad5208c0df9a1474c62b669011",
+      "native_qual_sha256": "3cb53e64dfc56d2030b07cded1c341ace4f2d65e4f59767f9695e6bbad933c15"
+    },
+    {
+      "column": "s3-tx60o_ep24",
+      "file": "s3-tx60o_ep24.npz",
+      "sha256": "8c48b6e2ba804ca24f6b36748ef58a575ef629f67fb94a30964d2f6e63d5f859",
+      "native_probe_sha256": "d24d476a33efeafc25b15374827897eecb5b9b51a7054be0fb2ecc76e461cdfb",
+      "native_qual_sha256": "5abd26c1ecc356c6fe1eaf63adbeb2652203bad689ebcbe87406607a3613f53d"
+    }
+  ],
+  "prediction_arrays_in_git": false
+}

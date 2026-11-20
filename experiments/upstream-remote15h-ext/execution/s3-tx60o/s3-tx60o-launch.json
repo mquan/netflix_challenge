@@ -1,0 +1,27 @@
+{
+  "job": "s3-tx60o",
+  "pid": 85126,
+  "started": "2026-11-20T10:10:27.973213+00:00",
+  "deadline": "2026-11-20T17:44:19+00:00",
+  "command": [
+    "./target/release/fit",
+    "tx",
+    "s3-tx60o",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "25",
+    "EPSAVE": "1",
+    "F": "60",
+    "NBR": "100",
+    "ORD": "1"
+  },
+  "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+  "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
+}
