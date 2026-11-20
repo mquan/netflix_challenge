@@ -1,0 +1,30 @@
+{
+  "state": "observed_remote15h_preparation_and_matching_coordinator_schema",
+  "observed": "2026-11-20T03:53:35.046205+00:00",
+  "remote_commit": "aae58a416ecd3ccc38c27ec584f3aa5b71387829",
+  "remote_branch": "research/remote15h-handoff",
+  "source_plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+  "preparation_matches_original_pin_and_known_row_map": true,
+  "arrival_utc": "2026-11-20T03:44:19Z",
+  "training_deadline_utc": "2026-11-20T17:44:19Z",
+  "return_deadline_utc": "2026-11-20T18:44:19Z",
+  "hardware": {
+    "cpu": "Apple M3 Max",
+    "logical_cpus": 14,
+    "memory_bytes": 103079215104,
+    "power": "AC, charging 84%"
+  },
+  "bindings": {
+    "start.json": "7eedca332236a7d59a55ef181b8cbb46b0aff1cbd87ecb87f41aa465b0c2d5d7",
+    "progress.json": "c158733e2b29e0856a02e3362420b2db71d40fb5bb6f5ee07c5602784802f101",
+    "driver.sh": "f390f4b039985977ecec36a79a678349de59ad9f10ea8cbfc4e8a96504781aed",
+    "bootstrap/preparation.json": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c",
+    "bootstrap/build.log": "8f1c05536758bf1cc3921a7f9da47a2b83f60f030e8adf4feb8ba5adc0822e4b",
+    "bootstrap/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "bootstrap-attempt1/README.md": "11615162ecc232ac6f73cbf916d44745a038fd2c64553fa80319ff04fbebf323",
+    "bootstrap-attempt1/cargo-config-used-for-r2.toml": "f3fe728b5fed4110cae8feaa33b0ffa3dd1a591a57bb39d3f636d6985665b31e"
+  },
+  "remote_actual_native_training_not_yet_observed": true,
+  "returned_complete_producers": 0,
+  "scope": "Read-only Git evidence: remote helper reports complete original source/data/split validation. Coordinator independently matches plan identity, source pin and exact known map, but has not yet received native producer outputs or independently inspected the remote processes. First BLAS link failure and original-source-preserving fresh-root Accelerate config are retained."
+}

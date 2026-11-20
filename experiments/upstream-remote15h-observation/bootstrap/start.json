@@ -1,0 +1,32 @@
+{
+  "state": "arrived",
+  "arrival_utc": "2026-11-20T03:44:19Z",
+  "training_deadline_utc": "2026-11-20T17:44:19Z",
+  "return_deadline_utc": "2026-11-20T18:44:19Z",
+  "hardware": {
+    "cpu": "Apple M3 Max",
+    "logical_cpus": 14,
+    "memory_bytes": 103079215104,
+    "power": "AC, charging 84%"
+  },
+  "disk_free_bytes_workspace": 49245282304,
+  "paths": {
+    "worktree": "/Users/quan/workspace/netflix_remote15h",
+    "python": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "source_tree": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh",
+    "data_root": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/data",
+    "native_tree": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h/source"
+  },
+  "live_jobs_observed": "No native fit/training processes running; no tmux server. Top CPU: Docker sailor, WindowServer, Spotlight indexers, Chrome.",
+  "top_processes": [
+    "33482 129.0 8385072 02-06:45:28 /Applications/Docker.app/Contents/MacOS/com.docker.sailor",
+    "37968  59.0  22912       00:32 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
+    "37898  52.7  24368       00:32 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
+    "38573  44.4 480448       00:02 /opt/homebrew/opt/git/libexec/git-core/git",
+    " 1094  41.1 189344 02-07:28:50 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer",
+    "38292  30.5  22592       00:31 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
+    "37817  27.7  24336       01:11 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared",
+    "  582  23.7  97360 02-07:29:16 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds"
+  ],
+  "handoff_commit": "9d444494c12171886a4f383524dd79e64691bc33"
+}

@@ -1,0 +1,27 @@
+{
+  "observed": "2026-11-20T03:47:05.389297+00:00",
+  "elapsed_hours": 0.05,
+  "training_hours_left": 13.95,
+  "native_process": "",
+  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 86%",
+  "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
+  "disk_free_gib": 46.3,
+  "jobs": {
+    "s3-dnn24": {
+      "receipt": false,
+      "incomplete": false,
+      "exported": false
+    },
+    "s3-attn32": {
+      "receipt": false,
+      "incomplete": false,
+      "exported": false
+    },
+    "s3-rbm200e": {
+      "receipt": false,
+      "incomplete": false,
+      "exported": false
+    }
+  },
+  "next_action": "driver continues serially: run-job -> export -> upload -> push"
+}

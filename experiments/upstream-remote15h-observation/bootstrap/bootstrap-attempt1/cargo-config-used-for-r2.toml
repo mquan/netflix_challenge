@@ -1,0 +1,5 @@
+# Same BLAS linkage as the earlier upstream repro build (scripts/upstream_repro.py:62):
+# the helper's scrubbed environment drops RUSTFLAGS, so supply it via cargo config
+# outside the hash-verified source tree.
+[build]
+rustflags = ["-C", "link-arg=-framework", "-C", "link-arg=Accelerate"]
