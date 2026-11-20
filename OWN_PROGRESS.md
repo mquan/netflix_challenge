@@ -38,8 +38,10 @@ seven-family fit passes all127 simplex supports and complete arithmetic.
 The apparent known calibration0.8587651555 is not nested CV.
 
 The separate complete13-family known-only simplex/ridge comparison is
-running. Both studies must freeze and independently preverify before either
-new recovered audit. A reviewed queue then runs the declared context-weighted
+frozen and independently verified: all8191 simplex supports, the full14-
+dimensional ridge equations and every stored vector pass. Both studies
+completed preaudit before either new recovered audit; audits are now live.
+A reviewed queue then runs the declared context-weighted
 FWLS study: all13 own component families,14 distinct original context gates,
 lambda30, unpenalized intercept and five held-user models. Original public
 source/configuration is checked against immutable pinned Git blobs; only
@@ -48,6 +50,21 @@ stacking method, not another constant-weight search. No gain is claimed
 until complete independent replay and audit.
 [Frozen comparison declaration](ALL_COMPLETE13_CALIBRATION_PLAN.md) ·
 [Context-weighted stacking declaration](OWN13_FEATURE_WEIGHTED_STACKING_PLAN.md).
+
+All48 returned native snapshot pairs from the original DNN24/attention32/
+RBM200e producers now pass independent full known-row projection and paired
+alias replay. There are45 distinct pairs,36 beyond the earlier nine compact
+returns; no score selected a snapshot. The guarded larger FWLS study now
+admits all413 declared entries: original352 scalars, all45 native pairs,
+all three completed TX60o pairs and13 nonlinear components. It separately
+replays both full input streams and the complete exact-pair alias partition
+before fitting every distinct signal×14 original context gates with the
+published lambda30. Five held-user models, complete system/model/prediction
+replay and canonical audit follow. The four-GiB worker and24GiB research
+memory guards remain; no large interaction cache or Gram files are written.
+No score improvement is claimed for this work yet.
+[All native snapshots](REMOTE15H_ALL_NATIVE_SNAPSHOTS_PLAN.md) ·
+[Full own-bank feature-weighted stacking](OWN_FULL_FEATURE_WEIGHTED_STACKING_PLAN.md).
 
 The full temporal100r trajectory now supplies22 independently verified
 snapshot pairs after one exact complete-pair alias. Adding all22 to own330

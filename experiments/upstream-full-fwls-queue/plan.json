@@ -1,0 +1,16 @@
+{
+  "source_sha256": {
+    "scripts/upstream_full_fwls_queue.py": "4d22574e2042b1bca31fea4062d3a9f5d89055e72b8d86cceb581acfe5f3aa3e",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "OWN_FULL_FEATURE_WEIGHTED_STACKING_PLAN.md": "d698b0c1f80c4512043d68d443545c6f84afcfe70eb895dc0af63b0b44962d58",
+    "scripts/upstream_full_fwls_inputs.py": "580a9fa2619869a581a6d673aa602f4ebb7997e657baa238177df512ea188ce7",
+    "scripts/verify_upstream_full_fwls_inputs.py": "86c3ef8f6ace65b5caf0223997eb9d30afd10e337a84ff6da23171b53b87c7c3",
+    "scripts/upstream_full_fwls.py": "9f693b7b1ccc800b9677d2561379004f5a6a5fd49a61baf0d58896cff048161d",
+    "scripts/verify_upstream_full_fwls.py": "0e9bc0005a6f462efa7ca748ddfc9415e25aae659d72e5737edda23efc2d831c"
+  },
+  "created": "2026-11-20T15:54:35.499809+00:00",
+  "existing_preaudit_verifier": 94061,
+  "rule": "Wait exact existing complete13 preaudit. All413 source entries, complete paired aliases, all distinct signals\u00d714 original gates,lambda30,five userfolds. Separate full data/fit/replay/audit. FourGiB worker reserve/cap,24GiB research physical/RSS,5GiB compressor,128MiB swap growth,18.75GiB disk. CPU-only; no lane lock. Source/guard/watchdog failure suspends actual child RAM; no automatic retry or shrinking."
+}
