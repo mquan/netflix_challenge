@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-20T07:15:55.623843+00:00",
+  "declaration_sha256": "247502a5adfbdb60026fa85a0a87ccce92297e21f30bd402128e3aa4be09c961",
+  "primary": "own7-known-calibration",
+  "controls": [
+    "equal-six-nn",
+    "fixed-tree25-pool75"
+  ],
+  "rule": "Fixed equal six NN full outputs; fixed25%tree154/75%pool. One own7 nonnegative sum-one known-OOF least-squares fit, uniform start,ftol1e-17,maxiter1000. No recovered outcomes in fitting/stopping/selection. Freeze all three before any audit; all127 simplex supports independently checked before recovered labels.",
+  "known_calibration_is_nested_cv": false,
+  "qualifying_labels_read": false,
+  "input_realization": "Full refits use verified paired production B; development and calibration OOF vectors belong to recorded original A recipes. No matched B-trained CV claim.",
+  "script_sha256": "772cca266275dde54b18931c787c30da368820d3843baca090411efdfe006224",
+  "verifier_sha256": "9c99798ba5c6014dcd60794cc1209f18c6c2ab8569431bb34e010f2a5c39e9b7"
+}

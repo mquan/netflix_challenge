@@ -1,0 +1,122 @@
+{
+  "state": "complete_isolated_tree_input_realization_sensitivity",
+  "records": [
+    {
+      "fold": 0,
+      "realization": "A",
+      "rows": 226746,
+      "original_bitwise_replay": true
+    },
+    {
+      "fold": 0,
+      "realization": "B",
+      "rows": 226746,
+      "original_bitwise_replay": false
+    },
+    {
+      "fold": 1,
+      "realization": "A",
+      "rows": 225899,
+      "original_bitwise_replay": true
+    },
+    {
+      "fold": 1,
+      "realization": "B",
+      "rows": 225899,
+      "original_bitwise_replay": false
+    },
+    {
+      "fold": 2,
+      "realization": "A",
+      "rows": 224006,
+      "original_bitwise_replay": true
+    },
+    {
+      "fold": 2,
+      "realization": "B",
+      "rows": 224006,
+      "original_bitwise_replay": false
+    },
+    {
+      "fold": 3,
+      "realization": "A",
+      "rows": 225873,
+      "original_bitwise_replay": true
+    },
+    {
+      "fold": 3,
+      "realization": "B",
+      "rows": 225873,
+      "original_bitwise_replay": false
+    },
+    {
+      "fold": 4,
+      "realization": "A",
+      "rows": 225640,
+      "original_bitwise_replay": true
+    },
+    {
+      "fold": 4,
+      "realization": "B",
+      "rows": 225640,
+      "original_bitwise_replay": false
+    }
+  ],
+  "scores": [
+    {
+      "realization": "A",
+      "rmse": 0.8600069538395594,
+      "prediction_sha256": "e7bfc403155631c8762811b4a78aa280b7ec315c31d4dd0b49d83c579e379085"
+    },
+    {
+      "realization": "B",
+      "rmse": 0.8600074580158965,
+      "prediction_sha256": "cbb20badf812ee07eabaaab2af6154cc913df00a56cc395818f903bebf47161d"
+    }
+  ],
+  "source_sha256": {
+    "scripts/upstream_item154_tree_realization_sensitivity.py": "8adee3b7d602e46dc0a9738611bce21dc5fb23e51e2598b77cf28386e023b5d3",
+    "experiments/upstream-item154-tree/manifest.json": "173c0dc03b66f5e196279fbfc037369c52f35a016012be249d1f203675ba31f5",
+    "artifacts/upstream-item154-tree/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-item154-tree/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "experiments/upstream-item154-tree/tree/0.json": "80115a1e6127e84d3f66fedaf453baf4092410b7c34c4497f59d4a5150b29ba0",
+    "artifacts/upstream-item154-tree/tree/0/tree-2026.txt": "1eda54ef709d5badf97f821dfa7b7de36b251b3d1a500f4de694bec5eea4f042",
+    "artifacts/upstream-item154-tree/tree/0/prediction.f32": "3cbe47a609e1ecdb6bfe590cace6384789ab8b115be6acf556a6829597590ce3",
+    "artifacts/upstream-item154-tree/tree/0/tree-7.txt": "b9ae540c79ce0031812403f07e131fccdca7fb00d8ca39b6258e15298994b6fd",
+    "artifacts/upstream-item154-tree/tree/0/ridge.npz": "93b0876b6d1cee3f09883bfee63a402e6ee1924755d629837710ec23376355eb",
+    "artifacts/upstream-item154-tree/tree/0/tree-13.txt": "d90ed674a4912f982a6be4210bf586b898ce4bf88e51c67a8f77d17c24169817",
+    "artifacts/upstream-item154-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-item154-features/features.npy": "7a7388ce051ea7b8d39b4eeafabddd4726e63cdc7ed3de8b533e4c2117a1bbf6",
+    "artifacts/upstream-item154-stream-bank/probex-design.npy": "6123b54facc8b5191b913d6f293861774fe642f93acbb32f0753c4fbd7937df7",
+    "artifacts/upstream-item154-stream-bank/probex-features.npy": "34b498962e15d10dfcb8c9971b3b010bef8b780bfb0da7a2ef15384d86413c98",
+    "experiments/upstream-item154-tree/tree/1.json": "c97235ac62e3878dc096a3985dcc297083cd699d6de70104a24872de26159cce",
+    "artifacts/upstream-item154-tree/tree/1/tree-2026.txt": "cfa5aa681d51857bdaf18f5d4c488dc2e012c1bbb7b08649753649d6ce6acd43",
+    "artifacts/upstream-item154-tree/tree/1/prediction.f32": "79c2c71a20ec0c43d8d51952da1530e32e192b70d15e7c802ecc18ed6edb9a40",
+    "artifacts/upstream-item154-tree/tree/1/tree-7.txt": "00e9efcae78781d69b87c2eb8b8794f73eb88faa1519f1a1af97b490f1338f59",
+    "artifacts/upstream-item154-tree/tree/1/ridge.npz": "e2f801d972f29f9b98e28769791b8481d314d1f13347ab5be1bca46566eec907",
+    "artifacts/upstream-item154-tree/tree/1/tree-13.txt": "cbc96a539d9669b63cd254b2b6cf74a0bb2e27a97a566eabdaf7bb3b2401d367",
+    "experiments/upstream-item154-tree/tree/2.json": "e39bf8e802d44934a5325ce2a6632f0498980af1111f24cbbbaa65204359eb24",
+    "artifacts/upstream-item154-tree/tree/2/tree-2026.txt": "6de9e2a7b03f67336e185a7f89f3deb4141cf6fcd8dc70cc25f8d57a512259b6",
+    "artifacts/upstream-item154-tree/tree/2/prediction.f32": "9048242733e3fe5a1d7b0b9d55d006afbc5d1411eea73eaaaa6013a75bff9d6a",
+    "artifacts/upstream-item154-tree/tree/2/tree-7.txt": "ea361fb31610eb3cefd8b59eb4fd3733c6f852033e54b36e9b51602d5fc696ad",
+    "artifacts/upstream-item154-tree/tree/2/ridge.npz": "6b919a8826e4f597360a0af0e83a76a7e1431e955e39489633c9da1492099502",
+    "artifacts/upstream-item154-tree/tree/2/tree-13.txt": "95729ca4c5e66884f5f76b9cee83cbfd38216ae030b7f80435f9401b3794fe71",
+    "experiments/upstream-item154-tree/tree/3.json": "848475299c64fcf1c8f1470d81c95a93b2703f97683f9b17b4b821fbf06ab953",
+    "artifacts/upstream-item154-tree/tree/3/tree-2026.txt": "9b3ca4137c5159e53e6a11b8c2aebedc8bb171257bf4de78f9bb4f4b8a013e35",
+    "artifacts/upstream-item154-tree/tree/3/prediction.f32": "110eb85d707c2385244a8a20e7b5f9432f89afc57fde90f99a5ae5b445a4fbbf",
+    "artifacts/upstream-item154-tree/tree/3/tree-7.txt": "03687a5094ccf8c91ae1472cdbac2f6edb2672f32858b73bc4a12f10a56f1713",
+    "artifacts/upstream-item154-tree/tree/3/ridge.npz": "98fef421f311adbdbec388c7ed15a93b7699ce62d7f3139c46c7391151dc44b5",
+    "artifacts/upstream-item154-tree/tree/3/tree-13.txt": "c13dc7459bc2cdf2e78b188452e1a8009c780b7fc49a88c16da81d60db77645a",
+    "experiments/upstream-item154-tree/tree/4.json": "afe1448412e668bb62a47b9be435173fea66e86d10fd152ebdd9454ff091c1b0",
+    "artifacts/upstream-item154-tree/tree/4/tree-2026.txt": "e7ead4950de5ebd2d125f889d80afbac75c3af4971ba994a5138ddbdd5372a71",
+    "artifacts/upstream-item154-tree/tree/4/prediction.f32": "2095ac474e17eb8defd123b8315ba63635ea0e47f39536201612884481c6bb12",
+    "artifacts/upstream-item154-tree/tree/4/tree-7.txt": "26bf84bf9d5622f5cd4c7e0a0c95f0dd884168a26f2a0c70e066e19364e81b60",
+    "artifacts/upstream-item154-tree/tree/4/ridge.npz": "483feb82ca3a73554c11936b8dca7eb26fcd35384491e384db900d4be88a8868",
+    "artifacts/upstream-item154-tree/tree/4/tree-13.txt": "939760482eb40c72988b1a54d3e20d5ff1d99e5f136003038467995735b70761"
+  },
+  "prediction_delta_rms": 0.0026922685234381676,
+  "all_five_original_folds_bitwise": true,
+  "models_fitted": 0,
+  "qualifying_labels_read": false,
+  "scope": "Frozen-model input sensitivity, not a newly fitted CV result. Original combined Torch/LightGBM attempt preserved with its OpenMP failure."
+}

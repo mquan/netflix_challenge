@@ -1,0 +1,16 @@
+{
+  "state": "review_findings_fixed_before_assembly_execution",
+  "observed": "2026-11-20T07:13:54.672331+00:00",
+  "fixes": [
+    "Require completed final independent admission queue and revalidate original executor/worker/declaration hashes",
+    "Require each original-bank gate full-plan digest to match actual admitted plan",
+    "Revalidate plan/calibration hashes immediately before outcome access"
+  ],
+  "negative_tests": [
+    "Modified frozen plan rejected before predictions/outcomes",
+    "Modified frozen calibration rejected before predictions/outcomes"
+  ],
+  "review_sha256": "3ca0293adb0b154c384965aaabc3f75db1bc64db3843616fc7899c73314b9892",
+  "verifier_sha256": "9c99798ba5c6014dcd60794cc1209f18c6c2ab8569431bb34e010f2a5c39e9b7",
+  "qualifying_labels_read": false
+}

@@ -1,0 +1,14 @@
+{
+  "created": "2026-11-20T07:04:14.678460+00:00",
+  "source_sha256": {
+    "scripts/upstream_nn_pool6_assembly_queue.py": "a3e423bf7a3c99bd66a2d1fb8a3300b7a0b43621f7b7d16361f1ee20b37097f0",
+    "scripts/upstream_nn_pool6_assembly.py": "772cca266275dde54b18931c787c30da368820d3843baca090411efdfe006224",
+    "scripts/verify_upstream_nn_pool6_assembly.py": "9c99798ba5c6014dcd60794cc1209f18c6c2ab8569431bb34e010f2a5c39e9b7"
+  },
+  "stages": [
+    "freeze_three_candidates",
+    "independent127_support_and_arithmetic_check",
+    "frozen_recovered_audit"
+  ],
+  "qualifying_outcomes_used_for_fitting_or_selection": false
+}

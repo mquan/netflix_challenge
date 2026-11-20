@@ -1,0 +1,15 @@
+{
+  "state": "complete_three_predeclared_own_candidates_frozen_before_audit",
+  "observed": "2026-11-20T07:22:22.910292+00:00",
+  "plan_sha256": "72e7881f3a483d9393ba508de35697effb27f308faaa75ebebc98002731d45a1",
+  "calibration_sha256": "962257696c6e0e69d1eec6f6b31e0aa9ef9ef8a2506363125831cb3fd097c52c",
+  "predictions": {
+    "equal-six-nn": "80832da4b16dc10ca97141e681a09ad4b63e9ff76f2c2c37357e55693d260ae3",
+    "fixed-tree25-pool75": "48f76fdcf18e33208ef655ba8f7c4ba80904e3377f5886e4df0e73775f6270c9",
+    "own7-known-calibration": "c25916597934aabf68e9a5520c7665ec5c9473cc49866f6aaeb6a528138500b6",
+    "known-fit": "f24fd7cb7da2204f1c6fb94bff6ef90e38ca1aa4fedfa9ed37738523326814fd"
+  },
+  "qualifying_labels_read": false,
+  "known_calibration_is_nested_cv": false,
+  "independent_coefficient_and_arithmetic_verification_remaining": true
+}

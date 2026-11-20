@@ -1,0 +1,32 @@
+{
+  "state": "complete_independent_serialized_pipeline_and_original_lineage_admission",
+  "observed": "2026-11-20T07:09:13.725064+00:00",
+  "development": "upstream-attention2-virtual-mps-context",
+  "records": [
+    {
+      "query": "probex",
+      "rows": 1128164,
+      "bitwise_equal": true,
+      "prediction_sha256": "c65e350e22ee3856174472f24da9caa52fc9d0609cf815720d545a760a3b3d6b"
+    },
+    {
+      "query": "qual",
+      "rows": 2817131,
+      "bitwise_equal": true,
+      "prediction_sha256": "6a365783b492ce466411b07bce6f7999210d9c7281f19f8ab0dfe130518b326f"
+    }
+  ],
+  "bindings": {
+    "scripts/verify_upstream_nn_pool6_full_refit.py": "1fbe83f3fa24bd5a5c2d11d79572825b12979b2148a1c5fa485fa17ab23b7746",
+    "experiments/upstream-nn-pool6-full-refit/upstream-attention2-virtual-mps-context/plan.json": "05c94186b4211efd077eece0257686c3257c36ab58551cdc5d4e03b6846dcf4f",
+    "experiments/upstream-nn-pool6-full-refit/upstream-attention2-virtual-mps-context/verification.json": "615a7a419a00283b6967e7cdb37e01207395d234c25d86fa21a7828f5ac3cc74",
+    "experiments/upstream-native-nn-pool6-production/declaration.json": "247502a5adfbdb60026fa85a0a87ccce92297e21f30bd402128e3aa4be09c961",
+    "experiments/upstream-attention2-virtual-mps-context/manifest.json": "6b43653205cf601adb3ef758d903a5a0239f8cf723abc9d6071c7ac331fe3703"
+  },
+  "original_expected_implementation_hashes_verified_without_overwrite": true,
+  "production_B_manifest_files_and_known_row_identities_verified": true,
+  "actual_saved_ridge_scaler_and_all_models_reopened": true,
+  "qualifying_labels_read": false,
+  "original_declared_budgets_verified": true,
+  "no_new_cv_score_claimed": true
+}
