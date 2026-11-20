@@ -78,7 +78,9 @@ def main():
         raise ValueError('Independent complete canonical native row map differs')
     if u.sha(root/'probex-row-map.npy') != base['row_map_sha256']:
         raise ValueError('Original full native row map hash differs')
-    original.assert_disjoint(np.sort(original.keys(*known[:3])), original.arrays(split/'train_3'))
+    # The exact canonical map proves known is a subset of this full holdout.
+    # Check every native holdout identity, including all632,330 extra rows.
+    original.assert_disjoint(np.sort(original.keys(*source[:3])), original.arrays(split/'train_3'))
     if np.any(np.load(u.FRESH/'data/qual/ratings.npy', mmap_mode='r')):
         raise ValueError('Qualifying fitting targets must remain zero')
     queries = []
@@ -109,6 +111,7 @@ def main():
         observed=dt.datetime.now(dt.timezone.utc).isoformat(), transport_verification_sha256=u.sha(proof_path),
         manifest_sha256=u.sha(manifest_path), queries=queries, previous_compact_pairs_replayed=compared,
         complete_local_known_map_and_training_disjointness_recomputed=True,
+        complete_native_holdout_absent_from_training=True,native_holdout_rows=1760494,
         original_source_data_and_native_receipt_hashes_verified=True, source_sha256=bindings,
         qualifying_labels_read=False, models_fitted=0, qualifying_score_claimed=False,
         scope='Original fresh own remote producers only. All96 full native query vectors and nine earlier compact projections checked locally. Larger matched holdout studies and new feature batches require separate declarations; current own352 inputs unchanged.'))
