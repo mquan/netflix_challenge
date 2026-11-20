@@ -1,11 +1,11 @@
 {
-  "observed": "2026-11-20T07:12:34.429535+00:00",
-  "elapsed_hours": 3.47,
-  "training_hours_left": 10.53,
+  "observed": "2026-11-20T08:12:36.455066+00:00",
+  "elapsed_hours": 4.47,
+  "training_hours_left": 9.53,
   "native_process": "62999 ./target/release/fit rbm s3-rbm200e -p pipeline-3.toml --final --preds preds_3",
   "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 86%",
   "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
-  "disk_free_gib": 39.5,
+  "disk_free_gib": 38.9,
   "jobs": {
     "s3-dnn24": {
       "launch": {
@@ -114,12 +114,12 @@
         "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
         "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
       },
-      "completed_epoch_lines": 20,
-      "last_epoch": 20,
-      "phase": "train_3->probe_3",
+      "completed_epoch_lines": 35,
+      "last_epoch": 10,
+      "phase": "fulltrain->qual",
       "log_tail": [
-        "Epoch 19 | RMSE 0.90689",
-        "Epoch 20 | RMSE 0.90624"
+        "Epoch 09 | RMSE 3.71113",
+        "Epoch 10 | RMSE 3.70680"
       ],
       "receipt": false,
       "incomplete": false,
