@@ -127,11 +127,12 @@ No fit began. After original1600 completed, recovery continued the same
 intake, but its guard stopped it again. Its original declaration remains;
 complete novelty is unfinished. After H128 proof, a serialized continuation briefly resumed the intake,
 but its unchanged guard stopped it again during remaining diagnostic memory
-pressure. The same worker is preserved. Further continuation waits stable measured headroom during original1200;
-no intake restart or new score is claimed.
+pressure. The same worker is preserved. Reviewed waiting owner30570 defers the same intake until full original1200
+and own14 independent completion, then requires the original primary lane
+and stable resource admission. No intake restart or new score is claimed.
 Original failures, source expectations and original3/24/5GiB guards remain.
 [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md) ·
-[Serialized exact continuation](OWN_CF_SERIALIZED_RECOVERY.md).
+[Deferred exact continuation](OWN_CF_NATIVE_DEFERRED.md).
 Original1600 source-pinned build/admission and full native execution are
 complete after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
@@ -163,12 +164,13 @@ The new own14 comparison adds that bag to all13 previous own families.
 Its original known-only simplex and ridge10 coefficients are complete;
 all three known and three qualifying candidate vectors are frozen.
 The independent all16383-support/15-equation/six-vector preaudit resumed
-its original process21221 after three stable original admission samples
-following a compressor guard. No new recovered audit has run. The same
-worker continues with unchanged inputs, coefficients,
+its original process21221, progressed, then its unchanged compressor guard
+preserved it again. Reviewed waiting owner30569 now defers that SAME worker
+until original1200 full23+23/58-output independent completion. No new
+recovered audit has run. Retain unchanged inputs, coefficients,
 math and resource guards. Apparent known fitting error is not nested CV.
 [Original complete comparison plan](OWN14_MATCHED391_CALIBRATION_PLAN.md) ·
-[Exact preaudit continuation](OWN14_PREAUDIT_CONTINUATION.md).
+[Exact deferred preaudit](OWN14_NATIVE_DEFERRED.md).
 
 A separate full-budget CPU tree follow-up now has reviewed code, bounded
 binary feature transport, four transport tests and explicit Torch/LightGBM
@@ -338,3 +340,12 @@ verify, all96 full query vectors are retained, and allnine earlier compact
 known/qualifying pairs replay exactly. Complete1,760,494-row native holdout
 training disjointness is separately checked. No new ensemble score follows
 from transport. [Native admission](experiments/upstream-remote15h-native-stream/independent-verification.json).
+
+The next full neural iteration is now predeclared: retain every paired B391
+input/context bit and append all genuinely novel complete CF95/TX50n and
+original1600/1200 snapshot/component pairs. No epoch/error-based selection;
+complete both-query clipped aliases only. Full original H128/rank32, all
+five folds/three seeds/max40pat4, full numerical replay and qualifying bag,
+then a known-only15-family simplex with all32767 support checks before
+recovered outcomes. Implementation/review remain; no new result claimed.
+[Full trajectory model plan](OWN_COMPLETE_TRAJECTORY_NEURAL_PLAN.md).
