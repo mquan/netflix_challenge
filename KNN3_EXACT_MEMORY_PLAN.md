@@ -56,3 +56,9 @@ experiments/upstream-knn3pair2-compact-mps-context/manifest.json.
 Twenty-nine tests pass. At launch no global model score or qualifying gain is
 claimed; all five folds, all15 actual saved-model replays and separate complete
 stored-mean/canonical-score checks are still required.
+
+## Completed full study
+
+At2026-11-20 04:53:39Z the full five-fold study, all15 actual saved-model replays (using the original reference normalization), both fixed half means and their separate complete canonical scoring checks finished. NN RMSE is0.8594597170573484. The tree50 mean is0.8593260079989471; the stronger tree154 mean is **0.859293141998**, above the current **0.8592012938198756** best. This is a negative known-development result; no qualifying production or score promotion follows it. The original full data/capacity/folds/seeds/optimizer/stopping are preserved. Raw50-epoch training resumed at its next normal epoch boundary.
+
+The bounded-memory execution, full real transform parity and all actual held-row saved-model replays have succeeded. The reusable numerical operators are not an accuracy improvement by themselves. Evidence: experiments/upstream-knn3pair2-compact-queue/completion.json; experiments/upstream-knn3pair2-compact-mps-context/nn-replay.json; experiments/upstream-item154-tree-knn3pair2-compact-mps/independent-mean-check.json; experiments/upstream-rbm50-tree-knn3pair2-compact-mps/independent-mean-check.json.

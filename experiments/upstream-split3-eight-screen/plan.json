@@ -1,0 +1,80 @@
+{
+  "ready_unused": [
+    {
+      "name": "s3-dnn16t",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-diversity/s3-dnn16t.probex.npy",
+        "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn16t.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-dnn32nm",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-diversity/s3-dnn32nm.probex.npy",
+        "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-nade12s",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-diversity/s3-nade12s.probex.npy",
+        "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-nade12s.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-nade12s_ep01",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-diversity/s3-nade12s_ep01.probex.npy",
+        "qual": "artifacts/upstream-split3-diversity/source/preds_3/s3-nade12s_ep01.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-attn64",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-next3/s3-attn64.probex.npy",
+        "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-attn64_ep05",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-next3/s3-attn64_ep05.probex.npy",
+        "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64_ep05.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-dnn32nm__knn3",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-knn3-chains/s3-dnn32nm__knn3.probex.npy",
+        "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-dnn32nm__knn3.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-nade12s__knn3",
+      "paired_files": {
+        "probex": "artifacts/upstream-split3-knn3-chains/s3-nade12s__knn3.probex.npy",
+        "qual": "artifacts/upstream-split3-knn3-chains/source/preds_3/s3-nade12s__knn3.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "s3-dnn16t",
+    "s3-dnn32nm",
+    "s3-nade12s",
+    "s3-nade12s_ep01",
+    "s3-attn64",
+    "s3-attn64_ep05",
+    "s3-dnn32nm__knn3",
+    "s3-nade12s__knn3"
+  ],
+  "rule": "Fixed control and ALL eight completed unused original split3 predictions: four DNN/NADE, two attention64 and two KNN3. Existing attn16 pair is already in own107 and is not duplicated. Full original user folds and ridge penalty. No subset search, qualifying outcomes, data reduction or model budget change.",
+  "qualifying_labels_read": false
+}

@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "982391b188c89416f463007e602afda058a89aef0fe7adca6e34b84dcb6ee683",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625666623544834,
+      "delta_vs_previous_best": 0.003111253048108331,
+      "fold_rmse": [
+        0.8619620669691633,
+        0.8598563366840786,
+        0.8633803692078984,
+        0.8642031551155019,
+        0.863434813130504
+      ],
+      "prediction_sha256": "32656d3d460ba2076090f813f0f0bf05a44c7ccd74b31690c7257d1f95ef51e8"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.001228633704410842,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8594597170573485,
+      "delta_vs_previous_best": 4.307750973375768e-06,
+      "fold_rmse": [
+        0.8586782726569574,
+        0.8570089646704325,
+        0.8603570858052936,
+        0.8612406505448558,
+        0.8600185653812082
+      ],
+      "prediction_sha256": "9dc5ec6e8a239972029d2fbeddedcc26a59f6d405089ed816e0a038e6bc9bfde"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8594323797663306,
+      "delta_vs_previous_best": -2.302954004451685e-05,
+      "fold_rmse": [
+        0.858631669172551,
+        0.8570061674730184,
+        0.8602560963217825,
+        0.8611617663710851,
+        0.8601108835411951
+      ],
+      "prediction_sha256": "386e7120c8b77deb90166f28d0a9f57eb19ca9ac765fc1dccc4107ddff59868d"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Adaptive known-ProbeX only. Fixed larger rank32/hidden128 context architecture on own107 plus all90 original RBM/Tx context features plus64 fixed own PCA item context features, same five nested user folds/seeds/optimizer/stopping; separately declared float32 MPS training/inference, with device-specific dropout RNG. Reuses actual verified tree91, without synthetic fitting receipts. Both fixed original KNN3 terminal additions use exact in-RAM source tensors with full fingerprints. No production or qualifying audit launched. Exact compact-buffer execution: no numerical recipe, data, capacity, seed or stopping change.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}
