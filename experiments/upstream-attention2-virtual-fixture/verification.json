@@ -1,0 +1,22 @@
+{
+  "state": "complete_original_attention_pair_virtual_fixture",
+  "all_retained_columns_bitwise": true,
+  "two_independent_clipped_centered_insertions_bitwise": true,
+  "signal_context_disjoint_complete": true,
+  "actual_forward_shape": [
+    2,
+    1
+  ],
+  "both_declared_tree_families_and_real_preceding_best_paths_checked": true,
+  "actual_pending_predecessors_detected": true,
+  "code_sha256": {
+    "scripts/upstream_attention2_screen.py": "32c2e76e069142e033439ec7e9db57c5bae119b366027e28283773d52668654f",
+    "scripts/verify_upstream_attention2_screen.py": "cac5691fea0163b7709a5c849071cdaa91a7aedeb3d00606e3a8bb4e4d7c3a62",
+    "scripts/upstream_attention2_virtual_features.py": "23b9620b288cb1be227e2706d69b4c3b9b1954ce79eac45b207962a32cfbfa6d",
+    "scripts/upstream_attention2_virtual_mps_context.py": "565a0322b3bf5b1367611fa1beec3606eb8870f78ee0a58f13d9fb0f05dd9759",
+    "scripts/upstream_attention2_virtual_queue.py": "e6707e7fac15a10a3bf5331be17cdcbeef323fa8b008eb288f5998961f3d6e7a",
+    "scripts/upstream_rbm50_tree_attention2_virtual_mps.py": "3a9da8c278ecde7e94c02106abb5df8da1361cae03c3b71aaad7655c5dcf23e1",
+    "scripts/upstream_item154_tree_attention2_virtual_mps.py": "b90d2823f297623c78ff93f4c07c8255ec842b97dd6151218037edd5e6fce4e6"
+  },
+  "real_training_or_accuracy_claimed": false
+}

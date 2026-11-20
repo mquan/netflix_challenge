@@ -1,0 +1,40 @@
+{
+  "created": "2026-11-19T23:58:45.972885+00:00",
+  "code_sha256": {
+    "scripts/upstream_attention2_virtual_queue.py": "e6707e7fac15a10a3bf5331be17cdcbeef323fa8b008eb288f5998961f3d6e7a",
+    "scripts/upstream_attention2_virtual_mps_context.py": "565a0322b3bf5b1367611fa1beec3606eb8870f78ee0a58f13d9fb0f05dd9759",
+    "scripts/upstream_attention2_virtual_features.py": "23b9620b288cb1be227e2706d69b4c3b9b1954ce79eac45b207962a32cfbfa6d",
+    "scripts/upstream_attention2_screen.py": "32c2e76e069142e033439ec7e9db57c5bae119b366027e28283773d52668654f",
+    "scripts/verify_upstream_attention2_screen.py": "cac5691fea0163b7709a5c849071cdaa91a7aedeb3d00606e3a8bb4e4d7c3a62",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4",
+    "scripts/upstream_rbm50_tree_attention2_virtual_mps.py": "3a9da8c278ecde7e94c02106abb5df8da1361cae03c3b71aaad7655c5dcf23e1",
+    "scripts/upstream_item154_tree_attention2_virtual_mps.py": "b90d2823f297623c78ff93f4c07c8255ec842b97dd6151218037edd5e6fce4e6"
+  },
+  "fixed_addition": [
+    "s3-attn64",
+    "s3-attn64_ep05"
+  ],
+  "original_source_epochs_per_phase": 12,
+  "raw_prediction_columns": 109,
+  "learned_support_columns": 154,
+  "inputs": 400,
+  "hidden": 128,
+  "context_rank": 32,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "predeclared_tree_partners": [
+    "upstream-rbm50-tree",
+    "upstream-item154-tree"
+  ],
+  "reference_development_rmse": 0.8592309819864167,
+  "qualifying_labels_read": false,
+  "rule": "Both original attention64 terminal/epoch5 pairs only after verified12/12 native completion. Preserve own107/item154 and all original five nested user folds/seeds/optimizer/stopping. Require separate ridge replay, full virtual tensor hashes, all15 actual saved NN replays and separate fixed-half mean checks with each of the two declared actual tree families. No raw subset, weight search, qualifying outcome or automatic production.",
+  "resource_policy": {
+    "total_rss_limit_bytes": 25769803776,
+    "disk_floor_bytes": 8589934592,
+    "peak_neural_reserve_bytes": 17179869184,
+    "wait_for_actual_cpu_tree_and_prior_full_neural_study": true
+  }
+}
