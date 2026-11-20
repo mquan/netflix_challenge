@@ -1,0 +1,49 @@
+[cfnade-96 independent phase] CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }
+fulltrain => qual
+CF-NADE init: sampling A/P factors (2 x 5 x 17770 x 96)...
+CF-NADE init: computing item rating-bias priors...
+CF-NADE init: indexing user ratings...
+CF-NADE init: indexing probe items for implicit context...
+CF-NADE init: building per-user day-frequency bins...
+CF-NADE init: computing side-feature statistics...
+Exact CFNADE checkpoint restored: fulltrain epoch 31
+Epoch 32 | RMSE 3.75059
+Epoch 33 | RMSE 3.75149
+Epoch 34 | RMSE 3.75172
+Epoch 35 | RMSE 3.75226
+Epoch 36 | RMSE 3.75138
+Epoch 37 | RMSE 3.75076
+Epoch 38 | RMSE 3.75042
+Epoch 39 | RMSE 3.74945
+Epoch 40 | RMSE 3.75213
+Epoch 41 | RMSE 3.75130
+Epoch 42 | RMSE 3.75248
+Epoch 43 | RMSE 3.75237
+Epoch 44 | RMSE 3.75227
+Epoch 45 | RMSE 3.75268
+Epoch 46 | RMSE 3.75319
+Epoch 47 | RMSE 3.75327
+Epoch 48 | RMSE 3.75308
+Epoch 49 | RMSE 3.75276
+Epoch 50 | RMSE 3.75387
+Epoch 51 | RMSE 3.75447
+Epoch 52 | RMSE 3.75499
+Epoch 53 | RMSE 3.75504
+Epoch 54 | RMSE 3.75544
+Epoch 55 | RMSE 3.75567
+Epoch 56 | RMSE 3.75559
+Epoch 57 | RMSE 3.75546
+Epoch 58 | RMSE 3.75598
+Epoch 59 | RMSE 3.75661
+Epoch 60 | RMSE 3.75658
+Epoch 61 | RMSE 3.75741
+Epoch 62 | RMSE 3.75752
+Epoch 63 | RMSE 3.75802
+Epoch 64 | RMSE 3.75810
+Epoch 65 | RMSE 3.75853
+Epoch 66 | RMSE 3.75944
+Epoch 67 | RMSE 3.76007
+Epoch 68 | RMSE 3.75877
+Epoch 69 | RMSE 3.75969
+Epoch 70 | RMSE 3.76057
+Epoch 71 | RMSE 3.76122

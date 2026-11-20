@@ -1,0 +1,50 @@
+[cfnade-96 independent phase] CfNadeConfig { n_hidden: 320, n_hidden2: 0, rank: 96, n_epochs: 95, seed: 42, shuffle_users: true, batch_size: 8, lr: 0.0006, first_layer_lr_mult: 1.4, n_milestones: 2, milestones: [64, 72, 0, 0], lr_gamma: 0.9, weight_decay: 0.008, ordinal_lambda: 1.0, rmse_weight: 0.1, ctx_norm_alpha: 0.5, swa_start: 18, use_ctx_target_day_scale: false, use_implicit_probe_ctx: false, use_user_bias: true, use_user_drift: true, use_user_item_scale: false, use_user_item_scale_bin: false, use_user_day_bias_bin: false, use_user_day_scale_bin: false, use_day_bias: false, use_item_time_bias: false, use_day_freq_bias: false, use_side_features: false, beta1: 0.9, beta2: 0.999, epsilon: 1e-8 }
+trainx => probex
+CF-NADE init: sampling A/P factors (2 x 5 x 17770 x 96)...
+CF-NADE init: computing item rating-bias priors...
+CF-NADE init: indexing user ratings...
+CF-NADE init: indexing probe items for implicit context...
+CF-NADE init: building per-user day-frequency bins...
+CF-NADE init: computing side-feature statistics...
+Exact CFNADE checkpoint restored: trainx epoch 33
+Epoch 34 | RMSE 0.89403
+Epoch 35 | RMSE 0.89401
+Epoch 36 | RMSE 0.89403
+Epoch 37 | RMSE 0.89399
+Epoch 38 | RMSE 0.89396
+Epoch 39 | RMSE 0.89392
+Epoch 40 | RMSE 0.89389
+Epoch 41 | RMSE 0.89393
+Epoch 42 | RMSE 0.89390
+Epoch 43 | RMSE 0.89387
+Epoch 44 | RMSE 0.89383
+Epoch 45 | RMSE 0.89383
+Epoch 46 | RMSE 0.89386
+Epoch 47 | RMSE 0.89383
+Epoch 48 | RMSE 0.89381
+Epoch 49 | RMSE 0.89380
+Epoch 50 | RMSE 0.89378
+Epoch 51 | RMSE 0.89377
+Epoch 52 | RMSE 0.89371
+Epoch 53 | RMSE 0.89367
+Epoch 54 | RMSE 0.89365
+Epoch 55 | RMSE 0.89363
+Epoch 56 | RMSE 0.89362
+Epoch 57 | RMSE 0.89357
+Epoch 58 | RMSE 0.89355
+Epoch 59 | RMSE 0.89356
+Epoch 60 | RMSE 0.89357
+Epoch 61 | RMSE 0.89356
+Epoch 62 | RMSE 0.89359
+Epoch 63 | RMSE 0.89359
+Epoch 64 | RMSE 0.89359
+Epoch 65 | RMSE 0.89357
+Epoch 66 | RMSE 0.89357
+Epoch 67 | RMSE 0.89356
+Epoch 68 | RMSE 0.89355
+Epoch 69 | RMSE 0.89354
+Epoch 70 | RMSE 0.89353
+Epoch 71 | RMSE 0.89351
+Epoch 72 | RMSE 0.89348
+Epoch 73 | RMSE 0.89347
+Epoch 74 | RMSE 0.89344
