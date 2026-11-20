@@ -2,9 +2,18 @@
 import unittest
 from unittest.mock import patch
 import upstream_own391_neural_exact_recovery as r
+import upstream_own391_neural_original_admission as revised
 
 
 class Admission(unittest.TestCase):
+    def test_revised_admission_keeps_original_five_GiB_cap(self):
+        g=2**30;baseline=dict(swap_used_bytes=2666004480)
+        workers={'71312':dict(bytes=11*g,rss_bytes=7*g)}
+        with patch.object(revised.original.shutil,'disk_usage',return_value=type('D',(),{'free':21*g})()):
+            self.assertTrue(revised.admission(workers,dict(baseline,compressor_bytes=4.99*g),baseline,71312))
+            self.assertFalse(revised.admission(workers,dict(baseline,compressor_bytes=5*g),baseline,71312))
+            self.assertFalse(revised.admission({'71312':dict(bytes=17*g,rss_bytes=7*g)},dict(baseline,compressor_bytes=g),baseline,71312))
+
     def test_original_caps_and_preserved_reservation(self):
         g=2**30;baseline=dict(swap_used_bytes=2666004480)
         current=dict(baseline,compressor_bytes=2*g)
