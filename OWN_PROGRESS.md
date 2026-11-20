@@ -117,9 +117,12 @@ admission; neither addition has yet been incorporated into a new score.
 The separate complete-CF delta queue will compare every96 distinct CF pair
 and TX50n against all391 existing scalar inputs on both queries, retain
 every exact novel pair, and run the same fixed-lambda1000 known ridge
-diagnostic with full independent replay. It currently waits for its3GiB
-headroom and compressor-below5GiB checks; the active original1600 and queued
-391 neural work keep their recipes and lanes. No new qualifying audit is
+diagnostic with full independent replay. It entered source admission, then
+the compressor-above5GiB guard suspended only its own actual worker in RAM.
+No fit began; recovery must adopt that exact worker after the larger native
+job releases memory, preserving the original3GiB/5GiB limits and avoiding
+a restart. The active original1600 and queued391 neural work keep their
+recipes and lanes. No new qualifying audit is
 part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
 Original1600 source-pinned build/admission is complete and its
 native training is running after a verified completion-boundary handoff
@@ -128,6 +131,16 @@ The childless native supervisor later exited through cleanup for full
 own330 production; its successor has now acquired both lanes for the exact1600 recipe.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
+
+The separate original1200 preflight now accounts for every58 numeric output
+of the unchanged1,200-factor/100-neighbor/23+23-epoch preset:48 ordinary/epoch
+query arrays,8 component-query arrays and2 complete training arrays. Their
+payload alone is1.156GiB; output storage must be reserved above the native
+18.75GiB disk floor before building or launching. Authorized retirement of
+190 downloaded public prediction inode groups recovered0.799GiB; dataset
+arrays, current own inputs/models/checkpoints and earlier exact archives
+were preserved. This is source/output preparation only; original1200 is
+not yet queued or trained. [Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md).
 
 All149 unused completed local native pairs now passed a complete own330
 ridge evaluation and independent replay. Same canonical rows/folds:

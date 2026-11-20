@@ -1,0 +1,22 @@
+{
+  "created": "2026-11-20T18:14:24.284150+00:00",
+  "source_sha256": {
+    "experiments/upstream-own391-paired-data/manifest.json": "b62ab10101b5e785f7d854dbddb379879283c101c87c4c3c3ac3846d6c13637c",
+    "experiments/upstream-own391-paired-h128-queue/plan.json": "78c7546ff71c395bd0638b3a583e2fabebb76a0dd2ef7ea302d31123fbc27e9d",
+    "experiments/upstream-complete-cf-delta-queue/plan.json": "894647cefd6081d766328250b96af894b535d57f4454a6c2e596e72b39a33761",
+    "experiments/upstream-cf96-complete-bank/manifest.json": "be259a6f49f1b6d2fa2dca505988a9dc343fa7af1e467aa2c8c8a9a66a3c47c3",
+    "experiments/upstream-high-capacity-original/execution-plan.json": "7fb99eaff889317a1275bd1aa62c83fd1154b20f2f70e98bc5759fcd753925a1",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_retire_reference_hardlinks.py": "c25510c5c49eae291eacdb34401dcbad4896b99cc32c29d0fca7287547fcc430",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_reference_retirement.py": "68213b8f95d052e2c43a16ebc1fd3c47030f095a9201843bbe1ada350469aacc",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-source-audit-index-20261115.toml": "8714114b33345a63f5b254348015a5ff04427c9c901ffead120e6d4bc46e15e8",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-remaining-public-hardlink-inventory.json": "91af5c1718067120c9477e47d2ec3a8c9744e177591e2f23c593e7d5f211b81f"
+  },
+  "allowed_directories": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/reference/preds_new",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/columns",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-probe-blenders/source/preds_new",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-probe-blenders-expanded/source/preds_new"
+  ],
+  "authorization": "User explicitly authorized cleanup and removal of downloaded public-bank results; they are not our own effort.",
+  "policy": "Only complete known-ProbeX public float32 arrays with original download-index MD5/size. Every hardlink must be inventoried and be an untracked/unflagged/closed regular file in four exact public directories. Exclude every inode bound by current own391/delta/CF95/1600 source closures. Recheck all aliases and bytes before unlink. Keep pre-deletion SHA/metadata journal. Never remove source, archives, own outputs/models/checkpoints or change any process. Intentional public-cache discard, not lossless archival."
+}
