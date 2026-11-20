@@ -1,0 +1,22 @@
+{
+  "created": "2026-11-20T12:05:46.995006+00:00",
+  "authorization": "Prior explicit user request for storage cleanup and removal of public-bank results because they are not our own effort.",
+  "source_sha256": {
+    "experiments/upstream-own330-neural-inputs/manifest.json": "9def9aa3ead28e8f31f02629800153e7860be1c7e145fe149d52360affc142d0",
+    "experiments/upstream-own330-native149-data/manifest.json": "51b976deb972697ae19ea274aa249baef108d47649264b1c564086f2f8d8f3d3",
+    "experiments/upstream-own6-tight-calibration/calibration.json": "8a53bf0955820f0bd02960b6e37a2b9f75bdfa71f8ed93c3aa35d2042e0a3398",
+    "experiments/upstream-nn-pool6-assembly/calibration.json": "962257696c6e0e69d1eec6f6b31e0aa9ef9ef8a2506363125831cb3fd097c52c",
+    "experiments/upstream-split3-full-raw-bank/manifest.json": "336ac497c963c2cb53747a2c948dbcd2f9d25e91595de71defc4884e8fc8a75a",
+    "experiments/upstream-split3-matched-mps/manifest.json": "209692702bef14dd123e9b9a3d957aae86f74656ef42bdedf9842eb4f7233e2d",
+    "experiments/upstream-split3-voting-stream/plan.json": "4c914cc28075705f240278007000a09c47974500545f69f44632fce226f58c23",
+    "experiments/upstream-high-capacity-original/execution-plan.json": "7fb99eaff889317a1275bd1aa62c83fd1154b20f2f70e98bc5759fcd753925a1"
+  },
+  "index_sha256": "8714114b33345a63f5b254348015a5ff04427c9c901ffead120e6d4bc46e15e8",
+  "script_sha256": "d1fe0ec65f0830c8c77a7511739f2649683bc8b57ef5cd12daf814d60cf9bf3b",
+  "roots": [
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/support",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/split3-support",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/qual/preds_new/lat"
+  ],
+  "policy": "Discard only closed, untracked, unflagged single-link public latent vectors whose full bytes match original downloaded-source index MD5/size and exact shape. Preserve every own bound input and all earlier lossless archives. Keep complete pre-deletion SHA/metadata catalog. Original CF state stays paused; temporal must already have complete22/22 proof. Downloaded cache discard is intentional, not lossless archival."
+}

@@ -1,5 +1,17 @@
 # Original temporal memory recovery
 
+Update: original temporal100r completed22/22, with all49 outputs and exact
+known projection independently verified. The v2 serial monitor ended on
+its18.75GiB disk floor after native fitting finished and immediately before
+the independent proof was written. No completed training was restarted.
+After270 exact index-verified downloaded public latent vectors were retired
+under the existing cleanup authorization, a supplemental handoff rehashed
+the complete temporal proof and all168 CF checkpoint arrays, then resumed
+the same CF X process/controller and released the waiting matched recovery.
+The older suspension records below remain as incident history.
+
+Current proof: `experiments/upstream-tx100-verified-handoff/completion.json`.
+
 The original temporal100r job passed its20GiB disk admission check and
 started normally. Its8GiB memory reservation underestimated the complete
 model: the measured footprint reached15.9GiB. Together with the neural
@@ -26,7 +38,7 @@ prediction caches, free disk recovered to about20.9GiB. Earlier lossless
 archives remain intact. The same temporal native PID87902 and its original
 controller resumed with SIGCONT. No model, operator, seed, data, factor,
 per-day term or epoch budget was changed; no temporal training restarted.
-Its full22/22 original execution now runs without concurrent active models.
+Its full22/22 original execution then continued without concurrent active models.
 
 The separate serial monitor requires total research RSS and compressed-
 inclusive footprint at most24GiB, swap growth at most128MiB and free disk

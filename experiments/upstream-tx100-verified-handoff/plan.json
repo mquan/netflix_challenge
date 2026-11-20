@@ -1,0 +1,56 @@
+{
+  "created": "2026-11-20T12:09:12.192472+00:00",
+  "original_processes": {
+    "cf_owner": {
+      "pid": 40876,
+      "ppid": 1,
+      "pgid": 40876,
+      "state": "Ts",
+      "started": "Thu Nov 19 21:31:11 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf96_disk_resume.py"
+    },
+    "cf_x": {
+      "pid": 40924,
+      "ppid": 40876,
+      "pgid": 40924,
+      "state": "Ts",
+      "started": "Thu Nov 19 21:31:25 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x"
+    },
+    "tx_owner": {
+      "pid": 61826,
+      "ppid": 1,
+      "pgid": 61826,
+      "state": "Ts",
+      "started": "Thu Nov 19 15:04:49 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_next3.py"
+    },
+    "tx": {
+      "pid": 87902,
+      "ppid": 61826,
+      "pgid": 61826,
+      "state": "T",
+      "started": "Fri Nov 20 01:17:15 2026",
+      "command": "./target/release/fit tx s3-tx100r -p pipeline-3.toml --final --preds preds_3"
+    }
+  },
+  "temporal_verification_sha256": "912e65cf8d22fd246421296799e4931fa49a95637670b1ead8cf4c4d5c63cea0",
+  "checkpoints": {
+    "x": {
+      "epoch": 86,
+      "tensors": 84,
+      "state_sha256": "12973aaadc7684f5bf1f6847b61e79b7a5523eadc46413be656fe3f4f600758c",
+      "all_original_tensors_rehashed_and_finite": true
+    },
+    "qual": {
+      "epoch": 81,
+      "tensors": 84,
+      "state_sha256": "1105675a9d3117d37360213ca700ec7c4f6019e1f1dd5027e336fa9ba6e5aad4",
+      "all_original_tensors_rehashed_and_finite": true
+    }
+  },
+  "previous_post_fit_suspension_sha256": "71c9e15bf0ce93cc37472cb63f6fc7c9298295844565af1334d1ce346811d4bf",
+  "disk_retirement_sha256": "e1c959d6d3d33501f2550199b6812bc600d10347f2dc4ca6a8e02784f11c3624",
+  "script_sha256": "81ca2a01868901147df29251f7591f7a9dcddd1dadb0d33c64ba56d99d40687d",
+  "rule": "Original TX is terminal and full22/22 independently verified; no restart. Prior serial guard ended on its disk floor immediately before the verifier completed. Source/output closure and all CF checkpoint tensors rechecked. SIGCONT only the same original CF X native and owner; publish canonical completion for unchanged downstream queues. Original full95/95 budget, checkpoint state and source remain unchanged."
+}

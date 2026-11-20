@@ -28,6 +28,15 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
+The complete own330 neural inputs are now independently admitted:
+406ridge/556features/557NN inputs, with every retained/new bit matching.
+Its full five-fold/three-seed study is queued after the verified own176
+result, reserving16GiB under24GiB total. Only the childless, dependency-wait
+1600-factor supervisor is parked to give it priority; no native model is
+interrupted. Both original95-epoch CF trajectories and the matched missing
+fold recovery are currently running. No own330 neural fit or new score yet.
+[Full neural execution](OWN330_NEURAL_EXECUTION.md).
+
 All149 unused completed local native pairs now passed a complete own330
 ridge evaluation and independent replay. Same canonical rows/folds:
 **0.8622279137 to0.8619710828**, with all five folds improving. The full
@@ -68,7 +77,7 @@ reconstructed. No qualifying refit follows this result. The original
 supervisor's post-fit zombie-process accounting failure is preserved;
 a separate replay supervisor verified the completed fits without retraining.
 
-The matched comparison using the original full split3 holdout is interrupted.
+The matched comparison using the original full split3 holdout has resumed.
 Its1,760,494 legitimate known rows include632,330 additional ratings, all
 verified against original known data and excluded from native training.
 Both arms evaluate the same1,128,164 canonical rows and exclude every held
@@ -79,9 +88,9 @@ five-fold/three-seed H128/rank32 recipe. Five control and two expanded folds
 completed before a resource guard stopped its neural worker. Three expanded
 folds and all final independent model replays remain. No complete new score.
 [Matched study](SPLIT3_FULL_HOLDOUT_PLAN.md).
-The guarded recovery is queued behind complete original temporal22/22
-verification. It preserves all seven completed pipelines and fits only the
-three genuinely missing expanded folds in a separate namespace.
+The guarded recovery is now fitting the three genuinely missing expanded
+folds after complete temporal22/22 verification. It preserves all seven
+completed pipelines and will independently replay all ten in full.
 [Recovery plan](SPLIT3_MATCHED_RESUME_PLAN.md).
 
 Both original voting-generation phases completed. All130 full-holdout
@@ -92,18 +101,25 @@ features; any production must capture all130 corresponding qualifying
 features rather than substitute the earlier table.
 [Feature admission](SPLIT3_FEATURE_ADMISSION.md).
 
-Native CFNADE96 is paused at independently verified86/81 checkpoints;
-its original X process remains in RAM and its budget stays95/95. Temporal100r
-now runs alone in the same original native process at full22/22. Its measured
+Native CFNADE96 resumed from independently verified86/81 checkpoints;
+its same original X process/controller are running, and qualifying resumes
+its complete81 checkpoint with the unchanged95/95 budget. Temporal100r
+completed22/22; all49 outputs and the original source/data/query projection
+passed independent verification. Its measured
 15.9GiB footprint exceeded the8GiB admission estimate and caused the matched
 study interruption and CF qualifying disk-guard stop. Separate identity-checked
 memory and monitor-loss guards preserve native state and serialize recovery.
 The first serial guard suspended the same TX process when the own181 CPU
 diagnostic overlapped it. That diagnostic has completed. A separate v2
-monitor now continues the same original process with unchanged24GiB total,
+monitor continued the same original process with unchanged24GiB total,
 128MiB swap-growth and18.75GiB disk limits; its own monitor-loss watchdog
 and signal handling preserve the original native state on interruption.
-Free disk recovered to about20.9GiB after authorized retired-public cleanup.
+After fitting finished, the v2 monitor reached its disk floor just before
+verification completed. A separately verified handoff rechecked the complete
+native proof, all168 CF checkpoint arrays and recovered disk reserve before
+resuming CF and releasing the waiting neural recovery. No temporal restart.
+Free disk recovered to about20.4GiB after retiring270 additional exact
+downloaded public latent caches under the existing cleanup authorization.
 [Resource recovery](TX100_MEMORY_RECOVERY.md).
 
 Original split3 RBM200 completed25/25 and passed

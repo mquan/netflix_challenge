@@ -1,0 +1,13 @@
+{
+  "created": "2026-11-20T11:56:38.217482+00:00",
+  "source_sha256": {
+    "scripts/upstream_own330_neural_inputs_queue.py": "8ae763f469689f2062530977c0f698baa1458234e9243cbb67bd434fb7fc6035",
+    "scripts/upstream_own330_neural_inputs.py": "5951071c788323e78b459339ec4390eef85484f4caf9b199e976418904109560",
+    "scripts/verify_upstream_own330_neural_inputs.py": "0f349fbefcfff7462b89c2990e4a33da440a2f6ade2382ab1cb3ed25a483cbf8",
+    "scripts/upstream_unused_native_pairs.py": "9df6a47eb736ae65c7823df911d341bf76b05914d6e1dd09a0b469b9cf731863",
+    "OWN330_NEURAL_PLAN.md": "e1fc5373eb12bdfa371d2d15dec29158b43d57f97ad37d52c57682c76aa31943",
+    "experiments/upstream-unused-native-pairs/verification.json": "3730e718d45bd70b3d65590409ddb8a8921508ad86996ebfdcbfdbca883c920d",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4"
+  },
+  "rule": "Full own330406design/556nonlinear operators, all canonical rows and fixed164 additions. Bounded regular NPY row reads avoid multiGiB mapped resident pages. Reserve1.5GiB;24GiB total RSS/physical,1.5GiB child cap,128MiB swap-growth,18.75GiB disk floor. Two stable admission samples with compressor<5GiB. Full independent retained/new input bit replay; no fitting. No neural or qualifying fitting; no automatic retry. Guard suspends only this dedicated CPU child group, preserving RAM."
+}

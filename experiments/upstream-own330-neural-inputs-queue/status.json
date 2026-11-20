@@ -1,0 +1,86 @@
+{
+  "state": "independent-complete-replay",
+  "pid": 42005,
+  "workers": {
+    "8405": {
+      "bytes": 24222105.6,
+      "rss_bytes": 13729792,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own176_recent10_queue.py"
+    },
+    "21217": {
+      "bytes": 34288435.2,
+      "rss_bytes": 819200,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cf96_primary_lane.py --primary-pid 27177"
+    },
+    "21913": {
+      "bytes": 35651584.0,
+      "rss_bytes": 20021248,
+      "command": ".venv/bin/python -u scripts/upstream_tx100_serial_memory_recovery_v2.py"
+    },
+    "22192": {
+      "bytes": 23592960.0,
+      "rss_bytes": 16793600,
+      "command": ".venv/bin/python -u scripts/upstream_tx100_serial_memory_failsafe_v2.py 21913"
+    },
+    "29800": {
+      "bytes": 27892121.6,
+      "rss_bytes": 10944512,
+      "command": ".venv/bin/python -u scripts/upstream_high_capacity_original_queue.py"
+    },
+    "40876": {
+      "bytes": 38692454.4,
+      "rss_bytes": 8060928,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf96_disk_resume.py"
+    },
+    "40924": {
+      "bytes": 3972844748.8,
+      "rss_bytes": 1818624,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x"
+    },
+    "41448": {
+      "bytes": 24431820.8,
+      "rss_bytes": 19464192,
+      "command": ".venv/bin/python -u scripts/upstream_own330_neural_inputs_queue.py"
+    },
+    "61826": {
+      "bytes": 35441868.8,
+      "rss_bytes": 5455872,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_next3.py"
+    },
+    "61827": {
+      "bytes": 59559116.8,
+      "rss_bytes": 10911744,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/verify_upstream_split3_next3.py --watch"
+    },
+    "70233": {
+      "bytes": 942984396.8,
+      "rss_bytes": 13598720,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_voting_stream.py"
+    },
+    "70290": {
+      "bytes": 9159680.0,
+      "rss_bytes": 4866048,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -c from multiprocessing.resource_tracker import main;main(5)"
+    },
+    "87902": {
+      "bytes": 17931488460.8,
+      "rss_bytes": 4097376256,
+      "command": "./target/release/fit tx s3-tx100r -p pipeline-3.toml --final --preds preds_3"
+    },
+    "92667": {
+      "bytes": 32610713.6,
+      "rss_bytes": 3899392,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_parallel.py"
+    },
+    "98873": {
+      "bytes": 25375539.2,
+      "rss_bytes": 18841600,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_matched_resume_queue.py"
+    }
+  },
+  "memory": {
+    "compressor_bytes": 14336507904,
+    "swap_used_bytes": 6499472506.88
+  },
+  "observed": "2026-11-20T11:58:35.601856+00:00"
+}

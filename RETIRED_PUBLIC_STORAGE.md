@@ -61,3 +61,14 @@ Restore checks the archive and decoded original SHA256 before replacing its
 historical path. The verified archive remains available after restoration.
 Do not remove these archives unless intentionally discarding the retired
 public caches; they are the retained original bytes.
+
+After temporal100r completed22/22, its final output write reached the disk
+reserve again. A separate authorized cleanup discarded270 additional
+downloaded latent vectors:2,054,118,600 logical bytes, recovering free space
+from about18.49GiB to20.40GiB. Every vector's full MD5 and size matched the
+original public-source index. Only closed, untracked, unflagged single-link
+files outside all protected own inputs were eligible. Full pre-deletion
+SHA256 and metadata remain in
+`experiments/upstream-retire-downloaded-public-latents/verification.json`.
+This is intentional downloaded-cache discard, not lossless archival.
+All earlier exact archives and own inputs/models/checkpoints remain intact.

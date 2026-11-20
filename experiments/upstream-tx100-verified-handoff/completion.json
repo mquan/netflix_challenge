@@ -1,0 +1,22 @@
+{
+  "state": "complete_original_TX22_22_then_resumed_same_CF_native_and_owner",
+  "observed": "2026-11-20T12:09:12.204136+00:00",
+  "temporal_verification_sha256": "912e65cf8d22fd246421296799e4931fa49a95637670b1ead8cf4c4d5c63cea0",
+  "checkpoints": {
+    "x": {
+      "epoch": 86,
+      "tensors": 84,
+      "state_sha256": "12973aaadc7684f5bf1f6847b61e79b7a5523eadc46413be656fe3f4f600758c",
+      "all_original_tensors_rehashed_and_finite": true
+    },
+    "qual": {
+      "epoch": 81,
+      "tensors": 84,
+      "state_sha256": "1105675a9d3117d37360213ca700ec7c4f6019e1f1dd5027e336fa9ba6e5aad4",
+      "all_original_tensors_rehashed_and_finite": true
+    }
+  },
+  "qualifying_labels_read": false,
+  "completed_native_restarted": false,
+  "supplemental_handoff_plan_sha256": "ea4b1f21a26e5a6a4a9641e99dd8d66f80254c9aca81f285ba3ad3de12c7bf3b"
+}
