@@ -42,3 +42,11 @@ retains the shared epoch lock and original24GiB total/8GiB disk guard.
 Actual supervised worker31828 is observed live with resource telemetry.
 After both complete original-statistic/every-input-bit checks succeed, the
 original declared compact neural queue continues under its original guards.
+
+The recovered unchanged full reference worker completed successfully at
+2026-11-20T05:10:07Z: complete original inner/full eligible statistics and
+every normalized bit of all1,128,164x406 inputs agree. Proof SHA256:
+9df3a311cf1ad1aa3b3dabefcb39be72a2aa01f9689089bea4936b0a1afba168.
+The original complete neural queue is now admitted to scheduling after
+preparing its full recipe; fitting waits for the current raw epoch boundary.
+This proves operator parity, not a score or a full trajectory comparison.
