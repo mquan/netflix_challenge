@@ -1,0 +1,12 @@
+{
+  "created": "2026-11-20T11:27:14.032698+00:00",
+  "source_sha256": {
+    "scripts/upstream_high_capacity_original_queue.py": "4310707fb72024e8106cf808c7d699fb0fbc36f6a1646c9a661d32f9b6c6368a",
+    "scripts/upstream_high_capacity_watchdog.py": "cf2715308e8d644fc6ab20ff4a2234f018817aaf916429fdac277069bca59337",
+    "scripts/verify_upstream_high_capacity_original.py": "4ddeb2df878d823b7fc62249507c9fc6d2663c47caf6a4721a0bf82786d04c6c",
+    "scripts/build_upstream_high_capacity_original.py": "5954a5b75e6900c642c32dc52dfce3cd189e045616da7ef4d1908b25b5b01a3a",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "experiments/upstream-high-capacity-original/execution-plan.json": "7fb99eaff889317a1275bd1aa62c83fd1154b20f2f70e98bc5759fcd753925a1"
+  },
+  "rule": "Exact original1600-factor2/2 preset. Wait complete own176 and prior matched/temporal gates before shared GPU/native lane acquisition. Reserve22GiB,24GiB total RSS/physical footprint,22GiB native limit,128MiB swap-growth,18.75GiB disk floor. Original4 Rayon/1 BLAS threads. Independent original source/build/input admission before fitting; independent complete output proof afterward. Guard/interruption suspends the original native process group in RAM; no automatic restarts or recipe changes."
+}

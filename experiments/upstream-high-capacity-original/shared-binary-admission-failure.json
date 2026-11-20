@@ -1,0 +1,7 @@
+{
+  "state": "rejected_unmatched_existing_shared_native_binary_before_training",
+  "shared_binary_sha256": "e1a417927c0c9044613d2cf6e69cb81f7dafd8c850f431af1531b25a97c6a97c",
+  "original_build_receipt_sha256": "74fdc2edee7b93c68dd3cac0a9afbfea2f929a8743922ac6cf7f8b5ecf548e4c",
+  "original_receipt_binary_sha256": "34283fcdeb540be2325c7b7375750a015fb32381150b16c378c975e65002ba40",
+  "reason": "Actual existing shared binary hash differs from original build receipt. No high-capacity model was launched. Future guarded queue must build isolated exact pinned source and pass separate matching build/source/data admission."
+}

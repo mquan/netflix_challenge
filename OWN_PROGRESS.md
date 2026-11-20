@@ -35,6 +35,12 @@ replay gives **0.8622279137**, versus own176 **0.8622734678** and original166
 No own181 neural fit or qualifying promotion. [Result](OWN181_RECENT15_RIDGE_RESULT.md).
 Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
+The isolated1600-factor preparation now binds439 source/data files and
+proves both full training/query populations disjoint. Its reviewed queue
+is live waiting complete own176 and measured22GiB headroom. It will build
+an isolated exact executable because the existing shared binary failed
+its build-receipt hash check. No high-capacity build or fit has begun.
+[Guarded execution](HIGH_CAPACITY_ORIGINAL_EXECUTION.md).
 
 New own176 input/ridge admission is complete. All ten recent own scalar
 predictors add nonduplicate canonical inputs to the original own166/all90

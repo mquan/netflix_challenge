@@ -1,5 +1,5 @@
 {
-  "observed": "2026-11-20T11:15:05.868204+00:00",
+  "observed": "2026-11-20T11:27:33.746935+00:00",
   "display_time": "2026-11-20 03:15 PST",
   "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
@@ -15,9 +15,9 @@
       "evidence": "experiments/upstream-own181-recent15-data/independent-verification.json"
     },
     {
-      "work": "Missing original high-capacity factor coverage",
-      "state": "Original1600-factor2/2 and1200-factor23/23 presets have no fresh local receipts/declared outputs. Exact recipes/source and persistent-array lower bounds audited; selected arrays alone10.49GiB or10.22GiB including dense neighbors, excluding datasets and histories. Prepared plan only: no high-capacity process launched or reserved. Preserve original presets; require complete guarded execution admission before launch.",
-      "evidence": "experiments/upstream-high-capacity-original/coverage-audit.json"
+      "work": "Original1600-factor complete source/data preparation and guarded queue",
+      "state": "Isolated pinned source and all original dataset arrays bound across439 files. Every99352343 trainx identity scanned against1128164 ProbeX queries, and100480507 fulltrain identities against2817131 qualifying queries; zero overlaps. Qualifying fitting targets/CSV zero. Existing shared binary rejected for unmatched build-receipt hash. Reviewed guarded queue now live waiting complete own176, then shared GPU/native and primary DAG lanes and22GiB reservation under24GiB total. It must compile isolated exact source, pass separate build/data admission, fit original1600-factor2/2 recipe and independently verify every full native query. No high-capacity build/training or score promotion yet.1200-factor execution remains later.",
+      "evidence": "experiments/upstream-high-capacity-original/execution-plan.json"
     },
     {
       "work": "Same temporal native: successor serial resource monitor",
