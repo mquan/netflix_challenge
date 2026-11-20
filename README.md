@@ -30,8 +30,8 @@ The apparent known-fit0.8590482 is not nested CV. See
 All numerical prediction features are freshly trained by us; public source
 code is reused, and downloaded pretrained numerical features are excluded.
 These are adaptive community-recovered audits, not official or untouched Test.
-The attention-pair neural study is fitting, native CFNADE96 and Bernoulli RBM200
-continue, and a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
+The attention-pair neural study completed without improving development. Native
+CFNADE96, Bernoulli RBM200, and the raw item-autoencoder continue; a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
 new original-source prediction pairs. [Verified cache storage sharing](COW_CACHE_STORAGE_RESULT.md)
 reclaimed10.4GB without removing logical research files.
 
