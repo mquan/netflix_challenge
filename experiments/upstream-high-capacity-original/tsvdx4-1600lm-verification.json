@@ -1,0 +1,34 @@
+{
+  "state": "complete_original1600_both_full_phases_and_all_native_query_vectors",
+  "job": "tsvdx4-1600lm",
+  "epochs_per_phase": 2,
+  "factors": 1600,
+  "admission": {
+    "state": "complete_original1600_source_data_and_matching_compiled_binary_admission",
+    "preparation_sha256": "7fb99eaff889317a1275bd1aa62c83fd1154b20f2f70e98bc5759fcd753925a1",
+    "original_build_receipt_sha256": "00383cedf14720364e317a9aab966a0ee5e13cb595d78efd5e68a89ea0920d96",
+    "verifier_sha256": "4ddeb2df878d823b7fc62249507c9fc6d2663c47caf6a4721a0bf82786d04c6c",
+    "binary_sha256": "dffe41b65147052d07b1ccb3ebec5b93d16c0c6155d9450b440e9964f0f696d1",
+    "native_command": [
+      "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/target/release/tsvdx4-new",
+      "tsvdx4-1600lm"
+    ],
+    "cwd": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/source",
+    "qualifying_targets_zero": true,
+    "qualifying_labels_read": false,
+    "scope": "Full bound inputs independently rehashed; source pin/config and matching original build receipt checked. All original identity-scan receipts bound to unchanged complete arrays. No fitting or score."
+  },
+  "original_run_sha256": "832417df39324e2e98750183efbe6fb48385eeb869642ceb2d607c234e355931",
+  "complete_epoch_log_sha256": "7097076929c613738e174b92726c4bb67aa404fc672ef2f6fa624e33c51f5cfb",
+  "outputs": {
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm.probex.npy": "1d1ca0e53a12c93a86a1388399ba640f2e87a772869a89359ed24f612d7bdb4c",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm.qual.npy": "6656ef520de0a3abefb811bd00883a267a1e4d5ac4657b5e40d3650af42e4deb",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep01.probex.npy": "de46bac3238410ca11e0e574936ee66fbe67fe54dfa5235e63959dee0642adc6",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep01.qual.npy": "896b18c8c2c47c65d269b7c39960168fb967bd8d4bd89647567bf429eacbe47b",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep02.probex.npy": "1d1ca0e53a12c93a86a1388399ba640f2e87a772869a89359ed24f612d7bdb4c",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep02.qual.npy": "6656ef520de0a3abefb811bd00883a267a1e4d5ac4657b5e40d3650af42e4deb",
+    "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm.out": "7097076929c613738e174b92726c4bb67aa404fc672ef2f6fa624e33c51f5cfb"
+  },
+  "qualifying_labels_read": false,
+  "scope": "Fresh original source training, complete canonical/full qualifying vectors; no blend fitting, qualifying audit or score promotion."
+}

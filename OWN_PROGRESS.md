@@ -79,8 +79,9 @@ on both query populations. Complete467/617 operators, all group statistics,
 eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
 changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
 neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
-original40pat4 neural queue now waits for original1600 completion so that
-missing large-base-model coverage retains priority. H512 is a separate
+original40pat4 neural worker completed two folds before its resource guard
+paused it in RAM. Exact-process recovery now waits for stable memory
+admission under the unchanged limits. H512 is a separate
 declared source-ready control, not a running job.
 [Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
@@ -119,26 +120,34 @@ and TX50n against all391 existing scalar inputs on both queries, retain
 every exact novel pair, and run the same fixed-lambda1000 known ridge
 diagnostic with full independent replay. It entered source admission, then
 the compressor-above5GiB guard suspended only its own actual worker in RAM.
-No fit began; recovery must adopt that exact worker after the larger native
-job releases memory, preserving the original3GiB/5GiB limits and avoiding
-a restart. The reviewed recovery monitor is live and waits for independent
-original1600 completion, then three stable admission observations before
-continuing the same worker and running full independent replay. The active
-original1600 and queued391 neural work keep their
-recipes and lanes. No new qualifying audit is
+No fit began. After original1600 completed, recovery continued the same
+intake, but its guard stopped it again. It remains paused while the neural
+study has priority; no intake restart or new score is claimed. Both original
+failure receipts and source expectations remain. No new qualifying audit is
 part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
-Original1600 source-pinned build/admission is complete and its
-native training is running after a verified completion-boundary handoff
+Original1600 source-pinned build/admission and full native execution are
+complete after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
 The childless native supervisor later exited through cleanup for full
-own330 production; its successor has now acquired both lanes for the exact1600 recipe.
+own330 production; its successor subsequently acquired both lanes for the
+exact1600 recipe and released them normally after independent completion.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
-Original1600 has now completed its original known phase2/2 at raw
-RMSE0.93507 and entered fulltrain-to-qualifying training. This raw score
-does not advance the benchmark; both original phases still must finish
-before independent output admission or any known-only calibration.
+Original1600 now passes independent verification of BOTH original2-epoch
+phases and all six query vectors/native log. Rehashing all outputs finds
+two distinct paired snapshots: terminal exactly aliases epoch2 on both
+queries. Complete canonical single-model known ProbeX error0.9349703049
+does not advance the benchmark; it is not blend CV. The qualifying-phase
+native diagnostics use zero sentinels and are not recovered qualifying
+scores. Matched391 H128 completed two folds before its guard paused the
+actual worker in RAM. Its new exact-process supervisor is live, waiting for
+three stable compressor-below4.5GiB admission samples under the unchanged
+resource limits. CF95/TX50n intake is also paused. A read-only cache release
+evicted2.088GiB from33 immutable matrix inodes but has not established safe
+compressor headroom. No learning job is currently running.
+[Exact continuation plan](OWN391_EXACT_NEURAL_RECOVERY.md).
+[Complete original1600 result](ORIGINAL1600_RESULT.md).
 
 The separate reviewed paired391 H128 qualifying-bag queue is live, waiting
 for all known fits, actual-model/statistic replays and the separate canonical
@@ -209,7 +218,8 @@ proves both full training/query populations disjoint. Its reviewed childless sup
 successor admitted its full22GiB reservation and acquired both lanes.
 An isolated exact executable now passes its source/build/data admission;
 the earlier shared-binary receipt mismatch was preserved. The original
-1600-factor/2epoch-perphase native run is active; no score is claimed yet.
+1600-factor/2epoch-perphase native run is independently complete; its raw
+known ProbeX diagnostic is not a new blend or qualifying score.
 [Guarded execution](HIGH_CAPACITY_ORIGINAL_EXECUTION.md).
 
 New own176 input/ridge admission is complete. All ten recent own scalar
@@ -260,8 +270,8 @@ features rather than substitute the earlier table.
 [Feature admission](SPLIT3_FEATURE_ADMISSION.md).
 
 Native CFNADE96 resumed from independently verified86/81 checkpoints;
-its same original X process/controller are running, and qualifying resumes
-its complete81 checkpoint with the unchanged95/95 budget. Temporal100r
+its same original X and qualifying processes subsequently completed both
+original95/95 budgets and independent full-output verification. Temporal100r
 completed22/22; all49 outputs and the original source/data/query projection
 passed independent verification. Its measured
 15.9GiB footprint exceeded the8GiB admission estimate and caused the matched
