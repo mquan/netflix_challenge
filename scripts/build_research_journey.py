@@ -337,7 +337,7 @@ def validate_fresh_status():
 
 def overview_selection(milestones, record):
     """Keep complete evidence in the ledger and representative points on busy days."""
-    ids = {'H8 full', 'QUAL619 ridge'}
+    ids = {'H8 full', 'PUB466 NN2'}
     days = {'2026-10-31', '2026-11-15'}
     for key in ['development_verification_path', 'latest_qualifying_verification_path']:
         matches = [row for row in milestones if row[9] == record[key]]

@@ -61,7 +61,7 @@ COLOR = {"claude": "#D97757", "codex": "#BAAAFF"}
 svg = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">',
     '<title id="title">Can AI win the $1M Netflix Challenge</title>',
-    '<desc id="desc">Early single-model Probe scores, blend CV through November, and a separate recovered qualifying audit diamond on a continuous scale.</desc>',
+    '<desc id="desc">Early single-model Probe scores, blend CV through November, and own-trained qualifying results on a continuous scale.</desc>',
     '<rect width="1600" height="800" fill="#10131d"/>',
     '<rect x="92" y="232" width="1435" height="460" rx="16" fill="#181d29"/>',
     '<text x="94" y="70" fill="#f2f1ed" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700">Can AI win the $1M Netflix Challenge</text>',
@@ -133,7 +133,7 @@ for ident, score, date, _strategy, metric, credit, _status, _title, _note, _sour
 for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
     ("H8 full", "Original-Probe CV · 0.8666488", -18, -15, "end"),
-    ("QUAL619 ridge", "Recovered audit · 0.8571903", -600, -84, "start"),
+    ("PUB466 NN2", "Public-bank Probe CV · 0.8645338", -600, -84, "start"),
     (CURRENT_CV[0], f"Own training CV · {STATUS['best_development_rmse']:.7f}", -18, -68, "end"),
     (CURRENT_QUAL[0], f"Own qualifying audit · {QUAL_WORST:.7f}", -18, -130, "end"),
 ):
@@ -143,7 +143,7 @@ for ident, label, dx, dy, anchor in (
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
 text(X0, y_at(.85725)+34, "0.85725", "#baaaff", 22, weight="700")
 text(X1, y_at(.85725)+34, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
-text(X0, 760, "Unconnected audits: Codex logo = own training; violet diamond = public bank. Recovered labels; different rows from CV.", "#a8b0c2", 19)
+text(X0, 760, "Own qualifying audit uses the Codex logo. Different rows from CV; public-bank audits remain in the ledger.", "#a8b0c2", 19)
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
 text(94, 857, "REVISED PROMOTIONS · ORIGINAL-PROBE DEVELOPMENT", "#70d9d0", 28, weight="700")
 text(94, 905, "Lower overall RMSE promotes a candidate; the record line follows successive best scores.", size=23)

@@ -15,11 +15,18 @@ class OverviewSelectionTests(unittest.TestCase):
         record = json.loads((ROOT / 'experiments/fresh-reproduction-status.json').read_text())
         before = copy.deepcopy(journey.MILESTONES)
         selection = journey.overview_selection(journey.MILESTONES, record)
-        expected = {'H8 full', 'QUAL619 ridge'}
+        expected = {'H8 full', 'PUB466 NN2'}
         for key in ['development_verification_path', 'latest_qualifying_verification_path']:
             expected.add(next(row[0] for row in journey.MILESTONES if row[9] == record[key]))
         self.assertEqual(set(selection['ids']), expected)
         self.assertEqual(journey.MILESTONES, before)
+
+    def test_public_development_representative_preserves_qualifying_ledger(self):
+        record = json.loads((ROOT / 'experiments/fresh-reproduction-status.json').read_text())
+        selected = journey.overview_selection(journey.MILESTONES, record)
+        self.assertIn('PUB466 NN2', selected['ids'])
+        self.assertNotIn('QUAL619 ridge', selected['ids'])
+        self.assertEqual(sum(row[0] == 'QUAL619 ridge' for row in journey.MILESTONES), 1)
 
     def test_future_best_updates_id_and_pacific_date(self):
         def row(name, timestamp, path):
