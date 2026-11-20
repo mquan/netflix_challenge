@@ -1,0 +1,14 @@
+{
+  "error": "RuntimeError('Own14 original resource guard; actual child RAM preserved')",
+  "child": {
+    "pid": 16404,
+    "ppid": 16135,
+    "pgid": 16404,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:39:22 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_calibration.py known"
+  },
+  "actual_child_RAM_preserved": true,
+  "no_automatic_retry": true,
+  "observed": "2026-11-20T21:41:28.143857+00:00"
+}
