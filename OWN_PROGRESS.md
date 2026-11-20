@@ -80,8 +80,8 @@ eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
 changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
 neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
 original40pat4 neural worker completed two folds before its resource guard
-paused it in RAM. Exact-process recovery now waits for stable memory
-admission under the unchanged limits. H512 is a separate
+paused it in RAM. Exact-process recovery has now resumed that same worker
+under the original admission and continuous limits. H512 is a separate
 declared source-ready control, not a running job.
 [Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
@@ -141,12 +141,15 @@ queries. Complete canonical single-model known ProbeX error0.9349703049
 does not advance the benchmark; it is not blend CV. The qualifying-phase
 native diagnostics use zero sentinels and are not recovered qualifying
 scores. Matched391 H128 completed two folds before its guard paused the
-actual worker in RAM. Its new exact-process supervisor is live, waiting for
-three stable compressor-below4.5GiB admission samples under the unchanged
-resource limits. CF95/TX50n intake is also paused. A read-only cache release
-evicted2.088GiB from33 immutable matrix inodes but has not established safe
-compressor headroom. No learning job is currently running.
-[Exact continuation plan](OWN391_EXACT_NEURAL_RECOVERY.md).
+actual worker in RAM. After a read-only cache release evicted2.088GiB from
+33 immutable matrix inodes, the revised supervisor admitted and resumed
+that exact worker under the ORIGINAL compressor-below5GiB rule. All
+continuous resource limits and original numerical sources remain unchanged.
+Its fold2 epoch log is advancing; compressor occupancy fell after continuation
+and swap usage is unchanged. CF95/TX50n intake stays paused. No complete
+new neural score is available yet.
+[Original-admission continuation](OWN391_ORIGINAL_ADMISSION_RECOVERY.md) ·
+[Earlier conservative recovery](OWN391_EXACT_NEURAL_RECOVERY.md).
 [Complete original1600 result](ORIGINAL1600_RESULT.md).
 
 The separate reviewed paired391 H128 qualifying-bag queue is live, waiting
@@ -167,7 +170,7 @@ max2000pat75/three-seed/five-user-fold recipe, full held-user exclusions
 and a fixed own352 NN partner whose label/user/group hashes exactly match.
 Its first declaration was suspended by the unchanged compressor guard while
 hashing a large inherited legacy cache, before any feature matrix or tree
-fit. The actual process is preserved; the original native job continues.
+fit. The actual process is preserved; the original native job continued during that earlier guard event.
 Private read-cache-control tests pass byte/metadata/prior-policy restoration,
 but a controlled33-inode real-input trial still exceeded the compressor
 limit. All prior settings were restored and the same declaration is again

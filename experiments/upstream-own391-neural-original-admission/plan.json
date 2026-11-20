@@ -1,0 +1,41 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_paired_queue.py": "9309159abe17867b315dcaab3d1bd298416065ed14b6f7b76d286b55fabfcafc",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "OWN391_PAIRED_NEURAL_PLAN.md": "9d074485095c47efa6117f73e233b1a9eca730bd4940636418fc771ee9b1c028",
+    "scripts/upstream_own391_paired_data.py": "e56b975f7ad4d7ade232721b1a63f00f0ba1d93acac769804e74865bb89c5348",
+    "scripts/verify_upstream_own391_paired_data.py": "a0a50b8388792001d91081b42e635b74d07045d6dd78d79a0f4ab8bc74aaaff4",
+    "scripts/upstream_exact391_scaler.py": "fc6d7493a28c77a31dad66eb521e1c1a55c391da8762feaf54338907eed6487b",
+    "scripts/upstream_own391_paired_mps.py": "2c42698a810d837f51073fbcbe37ade056fcee90af199a15e44114bcd412785d",
+    "scripts/verify_upstream_own391_paired_mps.py": "16e9ee8c2bd1396f79cb15d2bbbd1b8eb256f2ac9109e684dcb2b55fee9cf5b6",
+    "scripts/verify_upstream_own391_paired_canonical.py": "2c42339100ee7541b98007bcf259f3069c399245310196746ad808ef6e9aa73b",
+    "scripts/upstream_own391_neural_original_admission.py": "f040f149f5244c7335815f6c6f59e9a730787e502c7abdf1113ed61bef87f602",
+    "OWN391_ORIGINAL_ADMISSION_RECOVERY.md": "48b126b70051d4432450f273e276da232c2880618eddf9c51a813ffa6efd4c80",
+    "experiments/upstream-own391-neural-exact-recovery/plan.json": "cf16f83e1731c68bf992a017cc595bf1de3a09e6fc00445781ff1a2aa40c25a5",
+    "experiments/upstream-own391-neural-exact-recovery/failure.json": "038a994ae1b2a0938c9be00c4363d3b8e0c9483cf4e852f4c86835d4a3b3e69a",
+    "experiments/upstream-own391-neural-exact-recovery/monitor.json": "6ed1df1b5f0d2f6c84bbb24b9969b895e9d4a4c0c35610e9848b4e95d62c0989",
+    "scripts/upstream_own391_neural_exact_recovery.py": "c5f10a99669529b3c328d7cda75828dc47312a6ab586fb1932fc9739c79923c6",
+    "OWN391_EXACT_NEURAL_RECOVERY.md": "d288e23b755d0de294c572ae18af4a1b4aade53f27003b68ba4dd18bca892cf6",
+    "experiments/upstream-own391-paired-h128-queue/plan.json": "78c7546ff71c395bd0638b3a583e2fabebb76a0dd2ef7ea302d31123fbc27e9d",
+    "experiments/upstream-own391-paired-h128-queue/failure.json": "9cff683debd1fe180db56edb1ed985c8a3217cfcd523abada5ff3e465cd5f2e6",
+    "experiments/upstream-own391-paired-h128-queue/monitor.json": "cb714007134d21346c281a060634e8a8efb1f0cdf3901ce6d00fc3fd8cc803ec",
+    "experiments/upstream-high-capacity-successor/completion.json": "f170a4d716cc999b10e4d5e0b13a3c77040c373e1e171b9deaecb79031f28a4a"
+  },
+  "original_child": {
+    "pid": 71312,
+    "ppid": 11422,
+    "pgid": 71312,
+    "state": "Rs",
+    "started": "Fri Nov 20 11:44:44 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_paired_mps.py --variant h128 --worker"
+  },
+  "baseline": {
+    "compressor_bytes": 2096070656,
+    "swap_used_bytes": 2666004480.0
+  },
+  "created": "2026-11-20T20:16:52.239398+00:00",
+  "rule": "Resume SAME stopped H128 process only, retaining tensors/optimizer/RNG and all original numerical sources. CF intake remains stopped. Three stable ORIGINAL comp<5GiB observations; retire only former waiting monitor, preserving its extra-conservative plan/failure, account already allocated RAM toward original16GiB reservation, nonblocking original GPU lane then recheck. Original own16/research24/comp5/swapgrowth128MiB/disk18.75 unchanged. Baseline is last recorded original preguard observation, not reset at admission. Full actual model/scaler/input replay then separate canonical verifier. Original failure/plan never overwritten. Supplemental original queue completion only after full proof for existing dependent waiters. No new fitting worker or automatic retry."
+}

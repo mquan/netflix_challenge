@@ -1,4 +1,4 @@
-# Original1600 producer complete; downstream workers preserved in RAM
+# Original1600 producer complete; exact neural continuation active
 
 The original `tsvdx4-1600lm` producer completed all2 epochs in BOTH canonical
 training phases, using its original1,600 factors, source-preset low-memory
@@ -26,10 +26,11 @@ be promoted or plotted as such. No qualifying outcomes were read here.
 
 The memory/compute lanes were released normally after full independent
 verification. Matched391 H128 completed two folds before its resource guard
-paused the actual worker in RAM. Its exact-process recovery supervisor is
-live and waiting for stable original memory admission. CF95/TX50n intake
-also paused under its guard and remains stopped during neural recovery.
-No learning job is currently running. Full-budget1200 and CPU tree work retain
+paused the actual worker in RAM. The separate reviewed original-admission
+recovery has now continued that same worker under the original resource
+limits; its epoch log is advancing without an increase in swap usage.
+CF95/TX50n intake remains stopped during neural recovery. Full-budget1200
+and CPU tree work retain
 their declared prerequisite, memory and verification gates.
 
 The benchmark remains0.8603920746 /0.8613737959 on the two recovered groups.
