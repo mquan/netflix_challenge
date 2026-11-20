@@ -30,6 +30,25 @@ use different rows. Audits are adaptive community evaluation, not official
 or untouched Test. No downloaded pretrained numerical features or
 qualifying outcomes enter fitting or candidate selection.
 
+The own352 qualifying fold bag is now complete: all15 original saved models,
+all qualifying inputs and each of five fold vectors independently replay,
+and the uniform bag matches every stored bit. No new recovered score has
+been read. Its two declared constant-weight candidates are frozen; the
+seven-family fit passes all127 simplex supports and complete arithmetic.
+The apparent known calibration0.8587651555 is not nested CV.
+
+The separate complete13-family known-only simplex/ridge comparison is
+running. Both studies must freeze and independently preverify before either
+new recovered audit. A reviewed queue then runs the declared context-weighted
+FWLS study: all13 own component families,14 distinct original context gates,
+lambda30, unpenalized intercept and five held-user models. Original public
+source/configuration is checked against immutable pinned Git blobs; only
+our own fresh numerical features and weights are used. This is a new
+stacking method, not another constant-weight search. No gain is claimed
+until complete independent replay and audit.
+[Frozen comparison declaration](ALL_COMPLETE13_CALIBRATION_PLAN.md) ·
+[Context-weighted stacking declaration](OWN13_FEATURE_WEIGHTED_STACKING_PLAN.md).
+
 The full temporal100r trajectory now supplies22 independently verified
 snapshot pairs after one exact complete-pair alias. Adding all22 to own330
 improves the same-row ridge0.8619710828 to0.8618611087, with all five folds
@@ -49,11 +68,12 @@ now advances the benchmark. All negative records remain. Apparent known-fit0.859
 
 The complete own330 neural study passed all five folds/three seeds:
 406ridge/556features/557NN inputs, with every retained/new bit admitted.
-Its fixed tree154 half **0.8589474951** is the new development best;
+Its fixed tree154 half **0.8589474951** is the preceding development best;
 the full qualifying result is now separately verified above. Own176's fixed half0.8591336855 had
 narrowly missed the previous0.8591267885 best. Both full studies retain all
-original inputs, architecture and epoch budgets. Both original95-epoch CF
-trajectories are still running. The childless native supervisor later exited through cleanup for full
+original inputs, architecture and epoch budgets. Original CF96 development
+training has reached95/95; qualifying training remains live at91/95.
+The childless native supervisor later exited through cleanup for full
 own330 production; its successor now waits memory before taking both lanes.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).

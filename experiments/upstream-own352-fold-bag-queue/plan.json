@@ -1,0 +1,13 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own352_fold_bag_queue.py": "410e41a7e402647b5e765985710a8d42ed6547f24682a2ec844bdf8e1d229411",
+    "scripts/upstream_own352_fold_bag.py": "a3e4b8d6e78868717d2b3bc6c97691e8db38e3e83c34228040f741c73ef6e9f2",
+    "scripts/verify_upstream_own352_fold_bag.py": "ef9682c9bdbf366fc6907881745945b00698210a518db393522e9771d1a47d6c",
+    "experiments/upstream-own352-bounded-replay/independent-verification.json": "f24efaeee33f70cce1f7c0ffaef52ddf52291dce2361b81f46ecd3cccf5543b0",
+    "experiments/upstream-own352-bounded-replay/independent-canonical-verification.json": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
+    "experiments/upstream-own352-temporal-mps/manifest.json": "6e7233456121ad8505c20c60266f10772ede11bada881a41a110cac73008ac73",
+    "OWN352_FOLD_BAG_PRODUCTION_PLAN.md": "ae030fd9d0c5935789b0f66b2d2f6a911b3df85be564705e019cc8cdbe40ee03"
+  },
+  "created": "2026-11-20T15:04:49.854530+00:00",
+  "rule": "All15 original579-input fold models,5userfolds/3seeds, actualselectedbudgets and originalscalers/ridge. No new fitting. Stream all2,817,131 qualifying rows, retainall428/578 operators, equal5foldbag after original3seed corrections. Reserve16GiB before nonblocking GPU lock; 16GiB worker,24GiB total physical/RSS,128MiB swap growth,18.75GiB disk floor. Independent full preprocessing/model replay before release. Preserve actual child RAM on guard or monitor loss; no automatic retries."
+}
