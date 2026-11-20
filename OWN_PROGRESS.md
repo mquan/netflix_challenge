@@ -8,7 +8,7 @@ Every weightedfloat32 prediction and complete canonical known score was
 independently checked, bound to35 original fold receipts,90 actual NN models,
 15 actual tree models and their saved-model replays.
 
-Best independently verified recovered qualifying scores:
+Established six-family recovered qualifying benchmark:
 
 - source0: **0.8605620601761576**,1,408,789 rows.
 - source1: **0.8615662023089099**,1,408,342 rows.
@@ -18,18 +18,32 @@ The strict target is below **0.85725 on BOTH groups**; it is still unmet.
 Development CV and recovered qualifying audits use different rows. Audits
 are adaptive community evaluation, not official or untouched Test results.
 
-Next: full known-selected NN-pool refits, streaming qualifying inference,
-actual saved-model replays, then freeze the fixed-ratio and known-only
-seven-family calibrated vectors before the next recovered-label audit.
-[Production plan](NNPOOL6_PRODUCTION_PLAN.md).
+The full NN-pool audit is complete. All five new three-seed refits passed
+independent serialized-pipeline replays. All three candidates were frozen
+before outcomes, then independently reconstructed; the known-only
+seven-family fit passed all127 simplex supports. Primary own7 scores
+**0.8605628330 /0.8615658884** essentially tie with a slight group tradeoff.
+The equal pool and fixed25%tree/75%pool worsen both groups. No meaningful
+qualifying gain; keep the established six-family benchmark and all negative
+records. Apparent known-fit0.8590445175 is not nested CV.
+[Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
+
+Next: the already-declared own167/context218 model. All1,128,164 input rows,
+every243-column ridge/521-column nonlinear value and original group
+statistics were independently replayed. All522-input original normalization
+statistics and normalized float32 bits match on complete inner/full
+eligible populations. Actual five-fold, three-seed fitting remains.
+[Next study](OWN167_CONTEXT218_PLAN.md).
 
 Native CFNADE96 continues from fully verified74/70 checkpoints toward
-its unchanged95/95 budget. Original split3 RBM200 is at25+16 of25+25,
-with temporal100r next. The item-oriented autoencoder has completed50/50;
+its unchanged95/95 budget. Original split3 RBM200 completed25/25 and passed
+separate source/binary/data/output and complete known-projection checks;
+temporal100r waits its memory guard. The item-oriented autoencoder completed50/50;
 all64 final user-context columns and every query gather are independently
 verified. Remote DNN24 has completed8/8 and returned two verified own
-prediction pairs. Remote attention32 was observed at12+6 of12+12;
-exponential RBM200 remains next in the frozen15-hour assignment.
+prediction pairs. Remote attention32 completed12/12 and its two own pairs
+were imported and verified. The latest remote heartbeat at07:12UTC reports
+exponential RBM200 at20/25 in its first phase. The original deadline remains.
 
 [Own qualifying result](OWN6_CALIBRATION_RESULT.md) ·
 [Exact state/storage recovery](CF96_DISK_RECOVERY.md) ·

@@ -1,0 +1,63 @@
+{
+  "state": "complete_independent_frozen_three_candidate_recovered_audit",
+  "observed": "2026-11-20T07:29:36.418872+00:00",
+  "primary": "own7-known-calibration",
+  "results": [
+    {
+      "candidate": "equal-six-nn",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8607645056260933,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8617966292621777,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "80832da4b16dc10ca97141e681a09ad4b63e9ff76f2c2c37357e55693d260ae3"
+    },
+    {
+      "candidate": "fixed-tree25-pool75",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.860663917245755,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8616658311435437,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "48f76fdcf18e33208ef655ba8f7c4ba80904e3377f5886e4df0e73775f6270c9"
+    },
+    {
+      "candidate": "own7-known-calibration",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8605628329798913,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8615658883962303,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "c25916597934aabf68e9a5520c7665ec5c9473cc49866f6aaeb6a528138500b6"
+    }
+  ],
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "preaudit_verification_sha256": "5bb4fd06da9a0a7371c5f1d6b9c17ae11bcc5584a6c57cd7119808d65852ca2d",
+  "freeze_sha256": "d182ca4fd9b01de32f6a8439f2dc6b6316f238fa6c1947ac421f83a152500d68",
+  "qualifying_outcomes_used_for_fitting_or_selection": false,
+  "limitation": "Adaptive community-recovered groups; no official or untouched Test score. Original A development and paired B production recipes remain distinct."
+}

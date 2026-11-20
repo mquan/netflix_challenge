@@ -56,8 +56,9 @@ qualifying audit is authorized by an initial completion receipt alone.
 Both admission gates passed. At07:22:22 UTC the assembly froze the equal
 six-NN pool, the fixed25%tree154/75%pool candidate and one known-only
 seven-family calibration. Independent verification across all127 simplex supports
-and exact candidate arithmetic. Only then can the separate recovered audit
-run. The primary candidate is the known7 calibration; the two fixed candidates
+and exact candidate arithmetic passed before the separate recovered audit.
+The completed audit found no meaningful qualifying gain; see
+`NNPOOL6_QUALIFYING_RESULT.md`. The primary candidate is the known7 calibration; the two fixed candidates
 are predeclared controls, without selecting coefficients from their audits.
 Immediately before outcome access, the audit rechecks the original plan,
 calibration, frozen vector and preaudit proof hashes. Negative tests reject
