@@ -1,0 +1,15 @@
+{
+  "columns": [
+    "s3-dnn24",
+    "s3-dnn24_ep03",
+    "s3-attn32",
+    "s3-attn32_ep06",
+    "s3-rbm200e",
+    "s3-rbm200e_ep01",
+    "s3-rbm200e_ep05",
+    "s3-rbm200e_ep10",
+    "s3-rbm200e_ep17",
+    "s3-rbm200"
+  ],
+  "rule": "All newly complete remoteDNN24 two/attention32 two/exponentialRBM200 five plus localRBM200 terminal, selected by completed own producer coverage. Verify all pairs, no subset/weight search, no fitting or qualifying outcomes. Remote full-probe files remain remote; separate exporter provenance is explicit."
+}

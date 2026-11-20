@@ -1,6 +1,6 @@
 # Our own Netflix training progress
 
-Updated November20 UTC /November19 Pacific,2026.
+Updated November20 UTC /November20 Pacific,2026.
 
 Best independently verified known-ProbeX development CV: **0.8591267885072646**.
 The fixed75% equal six-NN pool /25% tree154 improves prior0.8592012938198756.
@@ -46,6 +46,10 @@ five-fold/three-seed H128/rank32 recipe. Five control and two expanded folds
 completed before a resource guard stopped its neural worker. Three expanded
 folds and all final independent model replays remain. No complete new score.
 [Matched study](SPLIT3_FULL_HOLDOUT_PLAN.md).
+The guarded recovery is queued behind complete original temporal22/22
+verification. It preserves all seven completed pipelines and fits only the
+three genuinely missing expanded folds in a separate namespace.
+[Recovery plan](SPLIT3_MATCHED_RESUME_PLAN.md).
 
 Both original voting-generation phases completed. All130 full-holdout
 feature payloads are retained in verified RAM.129/130 qualifying feature
@@ -68,11 +72,17 @@ Original split3 RBM200 completed25/25 and passed
 separate source/binary/data/output and complete known-projection checks.
 The item-oriented autoencoder completed50/50;
 all64 final user-context columns and every query gather are independently
-verified. Remote DNN24 has completed8/8 and returned two verified own
-prediction pairs. Remote attention32 completed12/12 and its two own pairs
-were imported and verified. The latest published remote heartbeat at09:12UTC
-reports exponential RBM200 first phase complete25/25 and second phase22/25.
-No completed RBM return yet. The original deadline remains.
+verified. Remote DNN24 completed8/8 and attention32 completed12/12; both
+returned two verified own pairs. Remote exponential RBM200 is now complete
+25/25, with five own pairs imported and locally verified against the frozen
+plan/helper, both full epoch traces, canonical known map/training disjointness,
+complete finite vectors and exact original native qualifying NPY bytes.
+All ten recent own pairs, including local RBM200, passed separate complete
+lineage/finite/exact-duplicate checks. Raw known scores are diagnostics;
+no new ensemble or qualifying score is claimed. The remote compact returns
+do not contain the full1,760,494-row Probe3 vectors; keep them out of the
+expanded-population bank until the original full vectors return. Eight
+claimed remote extension producers retain the original training deadline.
 
 [Own qualifying result](OWN6_CALIBRATION_RESULT.md) ·
 [Exact state/storage recovery](CF96_DISK_RECOVERY.md) ·

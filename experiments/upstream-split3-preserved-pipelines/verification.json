@@ -1,0 +1,131 @@
+{
+  "state": "complete_actual_seven_preserved_pipeline_files_and_models_reopened",
+  "original_manifest_sha256": "209692702bef14dd123e9b9a3d957aae86f74656ef42bdedf9842eb4f7233e2d",
+  "verifier_sha256": "2f2e58f06a93b8c8639b2eedf30caf40d187fad58fd0fa0115ad29ce5ebc6aac",
+  "records": [
+    {
+      "arm": "control",
+      "fold": 0,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "5bfd358f24199d3eba6f19426681025b57d3459361dd9e224856395705324dd0",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/control/0",
+      "outputs": {
+        "nn-13.pt": "faacbe55198985eddc3624529d7fc7813d446be166f9659a7060a1d6e5f26a0e",
+        "nn-2026.pt": "d79975469747a352e3c400a636c876c8edeaabbc17857c0c15c0691e40a77274",
+        "prediction.f32": "bea0eb26ad3e4e705c15a77691be34e2bbeb1ada52984097e0cf488872040093",
+        "ridge.npz": "7d0edfcaf0e92ff63caa0294316c725d902dfcf7482c6114ff33bce43769e15d",
+        "nn-7.pt": "e5956f554bcb19dd9aca02896561cca2eaad32261caf87cc3cfd17855bb24a1f",
+        "scalers.npz": "f280b5629ad7810ef5f74f972a4a272e26ae327bbd92bc8112e4c74f3f4024e7"
+      },
+      "held_rows": 226746,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "control",
+      "fold": 1,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "7c7cf171c7a18385b13554cf0122ec3f837c5fe1874626c50dc0a7cd33e4614c",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/control/1",
+      "outputs": {
+        "nn-13.pt": "30e247026fd1a9833048cb406eb8f9a6aee776d85153c685bed5f9ff2e370945",
+        "nn-2026.pt": "6e0612bf301b57b983e33b77d69fd2180ba9144b5b6174d93f8ff8d4dcfd6c66",
+        "prediction.f32": "5939daa18f0600910df283f930d01c5f557ad6fd15495a0a456acd8aac474ac8",
+        "ridge.npz": "a4f1b13af1664f813f16cd25e7a873d294f05906daa90fb164c9fa6e7399dfac",
+        "nn-7.pt": "7fcfd0269c2660621eb71b99da7ccecd542e699baa33ecee070d3841e0575828",
+        "scalers.npz": "ace4b6e5f5fbef32ed43c144ac64c10960aa1242e459f4ea85e0c8d1b006be12"
+      },
+      "held_rows": 225899,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "control",
+      "fold": 2,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "5609688b33f91a54dedd0c1f44d59279d28560645c671aa40dfea29ab48d81d5",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/control/2",
+      "outputs": {
+        "nn-13.pt": "8f6a8758e8af10780bca4fc34cd675ac6fb41b8e58f8ba4f587ac20ef73ac21f",
+        "nn-2026.pt": "d628931932d1e3bfab265b32993279a7fcc0de9747d6f243a71751cafed1520c",
+        "prediction.f32": "bb80f0f305a66674b69f096147299ae9705cf72d8a4601e638d47c6a278ae74d",
+        "ridge.npz": "d444e730c360d3483045bf8df4c338e1d035adf8fdd497674fabde38562e4934",
+        "nn-7.pt": "d76cf9a9f7ee475dee182076254c476ab8855539190ba67e6668a83d5c9332da",
+        "scalers.npz": "d38f0dde08d8343843c5c13ef4524b90359843490f1ff7f143d97e7451e0d4c8"
+      },
+      "held_rows": 224006,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "control",
+      "fold": 3,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "cea06622dbcebde47197a6ab7dcbf7bf74e3eb028cb76893b4a08321756d6bcd",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/control/3",
+      "outputs": {
+        "nn-13.pt": "919c9cf967e6a59d546f18b700e4c7cc146280d3ae5a874df726e64c7b4207f8",
+        "nn-2026.pt": "af01c0319b577499c0939e31c7fa3dff098e3263ff4e39056f24ecbbc19fa964",
+        "prediction.f32": "52014c3809947d779f9051c24f94f6d043715c5e400104be404ebd8b2bcef359",
+        "ridge.npz": "8717f88cd77cfcb7a51db772195294d109748d49e04ba6b5865c86262082dd37",
+        "nn-7.pt": "e7973242db4aafb393435f75019f3aba7b2b7f3839a3dcbeeeb90d7a62fdcf98",
+        "scalers.npz": "55e9358570b3d4a8714159993d1746af5d591ea50bf3734d998f26897e8308f0"
+      },
+      "held_rows": 225873,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "control",
+      "fold": 4,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "384714701e90ad7506126c2a407648a0934e10068b58d45f04977715a84b3f4b",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/control/4",
+      "outputs": {
+        "nn-13.pt": "ae5f2d8fe693d7b5ea09aea198ed161de41091e2e3a22825ed94ab25bbec7176",
+        "nn-2026.pt": "3b5e54c2fde59bff28b89574b66f62bf0f2f8212f73b126a0e2ea7dd0a5f00fe",
+        "prediction.f32": "4c9289a5d7265c9734a35f37733816fd7bb228a2736b32a2cba75abb53bbf17c",
+        "ridge.npz": "15b1e6a2762d43b1c2e396dc48d55d894cff0da310e3b12d11314d966f0ede3a",
+        "nn-7.pt": "ac4094649764a80bad067b73f35520cca9483c64a2d008f388da6d15728f1bcc",
+        "scalers.npz": "7111d5899316eb39baad63975aa3a8720a9ba06e2b6975090caec36c393f74f5"
+      },
+      "held_rows": 225640,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "expanded",
+      "fold": 0,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "2ee5b9a2ed360b75ec4dd65120ea1fcdac657b5089136175a6a5848a9295f614",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/expanded/0",
+      "outputs": {
+        "nn-13.pt": "bfbbbcdde97aad4ac559ae0ee2065d8641002032444cdb204547609010c18be6",
+        "nn-2026.pt": "867ac12250422c1356d645a1e04310e7bd4815300c1be2a544ab591330becde0",
+        "prediction.f32": "5ded7a24e5e4f2f1ce85f8dc652532663451298d62de5452286e63177581b84c",
+        "ridge.npz": "cb0c30307cc58d8fe9e5678380642a5b8edfd82e6f4cbfa0dc645367a8145150",
+        "nn-7.pt": "38518f59d4a6e469754ecfe099df7ada529ee1ac662052cd9c4baf8a9e32760c",
+        "scalers.npz": "08f4db06e2b888f15d4e711a510a8f4bd8f22a9ce71362996f9bfac0d80b9cf7"
+      },
+      "held_rows": 226746,
+      "all_actual_tensors_finite": true
+    },
+    {
+      "arm": "expanded",
+      "fold": 1,
+      "actual_saved_models_reopened": 3,
+      "receipt_sha256": "6004bc3313767fa14263f11180454992b4d1d8edd98bc71140af2f4a43d86dd6",
+      "pipeline_root": "artifacts/upstream-split3-matched-mps/expanded/1",
+      "outputs": {
+        "nn-13.pt": "d5ba6467c7da17833952580d8e8f38bea9a0f9efe85ef7c4de5d44ef10f14f43",
+        "nn-2026.pt": "5bb13282487450737d1d1c323a5bf7832b8bcd78da38322558f082615a06000a",
+        "prediction.f32": "6b4db497699c0e51e017ac524c15796ae19fe03f704af157c94b5b5a8c21b677",
+        "ridge.npz": "07179afbceadf9f55cd7fadf7927657897cdf65a1b47b600a8941aa35cfa7165",
+        "nn-7.pt": "7b2447bed2bea1f12683904a1622f4840c9d2f48ac6c9ed299eab686b6d3c80b",
+        "scalers.npz": "62c2a0c4b36e8289ac9b8e9838f60b386cb9bcc55887f4f3ea2e73b875f0e84c"
+      },
+      "held_rows": 225899,
+      "all_actual_tensors_finite": true
+    }
+  ],
+  "actual_saved_models_reopened": 21,
+  "interrupted_fold_completed_seed_models": 0,
+  "all_original_outputs_unchanged": true,
+  "scope": "Actual complete saved model/config/tensor/preprocessing/vector existence and hashes only. No forward inference or eligible scaler-statistic replay yet; those remain mandatory after the three missing fits. No completed comparison or promotion.",
+  "qualifying_labels_read": false
+}

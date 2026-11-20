@@ -1,0 +1,29 @@
+{
+  "job": "s3-rbm200e",
+  "pid": 62999,
+  "started": "2026-11-20T05:56:15.463516+00:00",
+  "deadline": "2026-11-20T17:44:19+00:00",
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm200e",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EA": "0",
+    "EB": "1",
+    "EPOCHS": "25",
+    "EPSAVE": "1",
+    "H": "200",
+    "HT": "e",
+    "LR": "0.02"
+  },
+  "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+  "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
+}

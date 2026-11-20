@@ -1,0 +1,59 @@
+[s3-rbm200e]
+target = "rtg"
+RxConfig { hidden_type: TruncExp(0.0, 1.0), visible_type: Softmax, temperature: 1.0, n_hidden: 200, n_epochs: 25, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.02, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: true, save_ufeat: false, n_factors: None, n_freq_bins: 8, lr_bif: 0.0, wd_bif: 0.01 }
+train_3 => probe_3
+Epoch 01 | RMSE 0.97530
+Epoch 02 | RMSE 0.95645
+Epoch 03 | RMSE 0.94680
+Epoch 04 | RMSE 0.93996
+Epoch 05 | RMSE 0.93521
+Epoch 06 | RMSE 0.93057
+Epoch 07 | RMSE 0.92689
+Epoch 08 | RMSE 0.92396
+Epoch 09 | RMSE 0.92118
+Epoch 10 | RMSE 0.91873
+Epoch 11 | RMSE 0.91672
+Epoch 12 | RMSE 0.91500
+Epoch 13 | RMSE 0.91344
+Epoch 14 | RMSE 0.91221
+Epoch 15 | RMSE 0.91077
+Epoch 16 | RMSE 0.90974
+Epoch 17 | RMSE 0.90884
+Epoch 18 | RMSE 0.90785
+Epoch 19 | RMSE 0.90689
+Epoch 20 | RMSE 0.90624
+Epoch 21 | RMSE 0.90532
+Epoch 22 | RMSE 0.90490
+Epoch 23 | RMSE 0.90431
+Epoch 24 | RMSE 0.90367
+Epoch 25 | RMSE 0.90313
+probe_3 RMSE 0.90313
+Saved W matrix to preds_3/s3-rbm200e.ifeat.train_3.npy
+fulltrain => qual
+Epoch 01 | RMSE 3.67548
+Epoch 02 | RMSE 3.68709
+Epoch 03 | RMSE 3.69544
+Epoch 04 | RMSE 3.70066
+Epoch 05 | RMSE 3.70037
+Epoch 06 | RMSE 3.70935
+Epoch 07 | RMSE 3.70498
+Epoch 08 | RMSE 3.71080
+Epoch 09 | RMSE 3.71113
+Epoch 10 | RMSE 3.70680
+Epoch 11 | RMSE 3.70699
+Epoch 12 | RMSE 3.70981
+Epoch 13 | RMSE 3.71096
+Epoch 14 | RMSE 3.71400
+Epoch 15 | RMSE 3.71278
+Epoch 16 | RMSE 3.71865
+Epoch 17 | RMSE 3.71441
+Epoch 18 | RMSE 3.71340
+Epoch 19 | RMSE 3.71693
+Epoch 20 | RMSE 3.71663
+Epoch 21 | RMSE 3.71589
+Epoch 22 | RMSE 3.71708
+Epoch 23 | RMSE 3.71866
+Epoch 24 | RMSE 3.71724
+Epoch 25 | RMSE 3.71892
+Saved W matrix to preds_3/s3-rbm200e.ifeat.fulltrain.npy
+
