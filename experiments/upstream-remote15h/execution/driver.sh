@@ -5,9 +5,9 @@
 set -euo pipefail
 W=~/workspace/netflix_remote15h
 PY=~/workspace/netflix_upstream_repro/.venv/bin/python
-TREE=$W/artifacts/upstream-remote15h/source
-EXP=$W/artifacts/upstream-remote15h/exports
-ARC=$W/artifacts/upstream-remote15h/archives
+TREE=$W/artifacts/upstream-remote15h-r2/source
+EXP=$W/artifacts/upstream-remote15h-r2/exports
+ARC=$W/artifacts/upstream-remote15h-r2/archives
 EXE=$W/experiments/upstream-remote15h/execution
 DEADLINE=2026-11-20T17:44:19Z
 TAG=remote15h-own-20261120

@@ -9,7 +9,7 @@ while true; do
 import json, re, shutil, subprocess, datetime as dt
 from pathlib import Path
 W = Path.home() / 'workspace/netflix_remote15h'
-R = W / 'artifacts/upstream-remote15h'
+R = W / 'artifacts/upstream-remote15h-r2'
 now = dt.datetime.now(dt.timezone.utc)
 deadline = dt.datetime(2026, 11, 20, 17, 44, 19, tzinfo=dt.timezone.utc)
 arrival = dt.datetime(2026, 11, 20, 3, 44, 19, tzinfo=dt.timezone.utc)
