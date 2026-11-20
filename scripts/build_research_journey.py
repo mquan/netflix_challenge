@@ -16,6 +16,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH352 full neural tree154 half', '0.8589160570135321', '2026-11-20T14:27:42.659125+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Complete temporal addition improves the verified development best', 'All579 inputs,354signals/225contexts and original five-user-fold/three-seed H128rank32/max40pat4 recipe retained. All15 actual models completed. Compressor guard stopped only the original independent verifier; exact bounded full-column/ordered-row statistics matched every actual scaler and all normalized/prediction bits. Separate canonical half0.8589160570 improves0.8589474951; NN0.8590361083. No own352 qualifying score; allfold qualifying bag declared before outcomes.', 'experiments/upstream-own352-bounded-replay/independent-canonical-verification.json', 'all original actual15 models, exact full eligible statistics/normalized inputs and separate canonical arithmetic'),
     ('FRESH330 own7 qualifying', '0.8613881328035494', '2026-11-20T13:41:41.235187+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'promoted', 'Own330 seven-family blend improves both recovered groups', 'All three full557-input models, original7/7/8 budgets, complete ridge/scaler/normalized bits and both full-query saved-model replays pass. Exactly two candidates frozen before outcomes. Independent127-support known-only weights and every frozen vector bit verify. Separate canonical scores0.8604025394/0.8613881328 improve own6 on both groups. Apparent known-fit0.8587992 is not nested CV; target remains unmet. Adaptive recovered audit, not official or untouched Test.', 'experiments/upstream-own330-assembly/independent-canonical-verification.json', 'full original saved-model/preprocessing replay, all127 simplex supports and separate complete frozen-group scores'),
     ('FRESH330 fixed-half qualifying', '0.8615599700738508', '2026-11-20T13:41:41.235187+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Development-selected fixed half trades off recovered groups', 'Original full own330 and tree154 pipelines independently replay. Predeclared frozen half scores0.8606104179/0.8615599701; source0 worsens against own6 and source1 improves slightly. Primary known-only seven-family calibration improves both; no outcome-driven coefficient revision.', 'experiments/upstream-own330-assembly/independent-recovered-audit.json', 'predeclared frozen control and separate complete canonical score'),
     ('FRESH352 temporal22 ridge diagnostic', '0.8618611086522293', '2026-11-20T13:42:35.002116+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Complete temporal trajectory improves every known ridge fold', 'All22 original temporal100r snapshot pairs retained after one exact complete-pair alias. Original own330 bits retained in428design/578nonlinear columns. Full canonical input/statistic/solve/prediction replay verifies0.8618611087 versus0.8619710828 on the same userfolds. Ridge diagnostic only; full579-input neural follow-up remains pending.', 'experiments/upstream-own352-temporal-data/independent-verification.json', 'every original/new input bit, all group statistics, eligible solves and actual stored ridge predictions'),
@@ -229,6 +230,58 @@ def validate_own330_development(record,current_path,current,model_path,model):
     if digest(path)!=current['prediction_sha256']:raise ValueError('Actual canonical fixed-half vector changed')
 
 
+def validate_own352_development(record,current_path,current,model_path,model):
+    """Require the full579-input pipelines and separate final arithmetic proof."""
+    digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest_path=EXPERIMENTS/'upstream-own352-temporal-mps/manifest.json'
+    manifest=json.loads(manifest_path.read_text())
+    records=model['records']
+    if (digest(current_path)!=record['independent_verification_sha256'] or
+        current['rmse']!=record['best_development_rmse'] or current['rows']!=1128164 or
+        not current['all15_actual_saved_models_rehashed'] or not current['every_fixed_average_float32_bit_equal'] or
+        current['qualifying_labels_read'] is not False or not current['improves_previous'] or
+        current['complete_model_preprocessing_verification_sha256']!=digest(model_path) or
+        current['verifier_sha256']!=digest(ROOT/'scripts/verify_upstream_own352_temporal_canonical.py') or
+        model['state']!='complete_actual_own352_bounded_original_statistics_scalers_and_saved_model_replays' or
+        model['verifier_sha256']!=digest(ROOT/'scripts/verify_upstream_own352_bounded_scalers.py') or
+        model['manifest_sha256']!=digest(manifest_path) or current['manifest_sha256']!=digest(manifest_path) or
+        model['fixed_half_tree154_rmse']!=current['rmse'] or model['fixed_half_sha256']!=current['prediction_sha256'] or
+        [r['fold'] for r in records]!=list(range(5)) or sum(r['actual_models_reopened'] for r in records)!=15 or
+        not all(r['actual_saved_pipeline_bitwise_equal'] and r['both_original_eligible_scalers_recomputed'] and
+                r['all_original_normalized_input_bits_equal'] for r in records) or
+        manifest['nn_inputs']!=579 or manifest['raw_predictions']!=352 or manifest['context_columns']!=90 or
+        manifest['fixed_tree_weight']!=.5 or manifest['config']['nn_hidden']!=128 or manifest['config']['context_rank']!=32 or
+        manifest['config']['seeds']!=[2026,7,13] or manifest['config']['nn_epochs']!=40 or manifest['config']['nn_batch']!=8192):
+        raise ValueError('Own352 publication requires all15 actual579-input models and separate exact canonical scoring')
+    for relative,expected in manifest['code_sha256'].items():
+        if digest(ROOT/relative)!=expected:raise ValueError('Original full own352 numerical source changed')
+    for r in records:
+        receipt=ROOT/r['receipt_path']
+        if digest(receipt)!=r['receipt_sha256']:raise ValueError('Actual original own352 fold receipt changed')
+        for name,expected in r['outputs'].items():
+            path=ROOT/'artifacts/upstream-own352-temporal-mps/nn'/str(r['fold'])/name
+            if digest(path)!=expected:raise ValueError('Actual original model/scaler/vector changed')
+    path=ROOT/'artifacts/upstream-own352-temporal-mps/fixed-half-tree154.f32'
+    if digest(path)!=current['prediction_sha256']:raise ValueError('Actual canonical fixed-half vector changed')
+
+    recovery_path=EXPERIMENTS/'upstream-own352-bounded-replay/plan.json'
+    recovery=json.loads(recovery_path.read_text())
+    if (model['recovery_plan_sha256']!=digest(recovery_path) or
+        current['source_sha256'][str(recovery_path.relative_to(ROOT))]!=digest(recovery_path) or
+        model['bounded_scaler_sha256']!=digest(ROOT/'scripts/upstream_exact_streamed_scaler.py') or
+        not model['complete_original_statistics_bitwise_equal'] or not model['all_original_models_preserved_without_refitting'] or
+        not recovery['all15_original_fits_rehashed'] or recovery['original_model_fitting_restarted'] or
+        not all(r['actual_models_reopened']==3 for r in records) or sum(r['rows'] for r in records)!=1128164 or
+        manifest['config']['nn_patience']!=4 or manifest['design_columns']!=428 or manifest['nonlinear_columns']!=578 or
+        len(manifest['signal_indices'])!=354 or len(manifest['context_indices'])!=225 or
+        sorted(manifest['signal_indices']+manifest['context_indices'])!=list(range(579))):
+        raise ValueError('Own352 requires original complete statistics, all actual models and explicit bounded-replay provenance')
+    for key,expected in recovery['source_sha256'].items():
+        if key.endswith('.py') and digest(ROOT/key)!=expected:
+            raise ValueError('Original bounded replay implementation changed')
+
+
+
 def validate_own330_qualifying(latest_path, latest):
     """Require original full models, known-only simplex and both frozen checks."""
     digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
@@ -315,8 +368,12 @@ def validate_fresh_status():
     kind=current['state']
     expected_weights=[.5,.5]
     own330=kind=='complete_separate_original330_tree_half_arithmetic_and_full_canonical_score'
+    own352=kind=='complete_separate_bounded_original352_tree_half_arithmetic_and_full_canonical_score'
+    specialized=own330 or own352
     if own330:
         validate_own330_development(record,current_path,current,independent_path,independent)
+    elif own352:
+        validate_own352_development(record,current_path,current,independent_path,independent)
     elif kind=='complete_fixed_post_study_consensus':
         checked_state='complete_independent_consensus_and_score';checked_flag='stored_consensus_bitwise_equal'
     elif kind=='complete_verified_fixed_combination':
@@ -335,7 +392,7 @@ def validate_fresh_status():
             independent['verifier_sha256']!=hashlib.sha256(verifier.read_bytes()).hexdigest()):
             raise ValueError('Fixed weighted pool requires original actual source/model replay and canonical arithmetic evidence')
     else:raise ValueError('Unrecognized verified development combination')
-    if not own330 and (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
+    if not specialized and (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
         current['rmse']!=record['best_development_rmse'] or current['weights']!=expected_weights or
         current['rmse']>=development['rmse'] or current['qualifying_labels_read'] is not False or
         independent['state']!=checked_state or not independent[checked_flag] or

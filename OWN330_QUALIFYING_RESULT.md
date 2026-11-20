@@ -22,8 +22,8 @@ scorer verifies both complete groups. No recovered outcome revises inputs,
 training budgets or coefficients.
 
 The apparent known calibration score0.8587992076 is not nested CV. Our
-independently verified development best remains0.8589474951 on different
-rows. Paired production realization B and original development A remain
+development best at that audit was0.8589474951 on different rows. The
+later [complete own352 study](OWN352_NEURAL_RESULT.md) improves it to0.8589160570. Paired production realization B and original development A remain
 explicitly distinct. These are adaptive community-recovered audits, not
 official or untouched Test results. All numerical predictors are our own
 fresh training; public numerical prediction features and weights are absent.

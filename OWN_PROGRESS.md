@@ -2,12 +2,13 @@
 
 Updated November20 UTC /November20 Pacific,2026.
 
-Best independently verified known-ProbeX development CV: **0.8589474951024617**.
-The predeclared own330 NN/tree154 half improves previous0.8591267885072646
-by0.0001792934. All15 new neural models, original eligible preprocessing
-and held predictions replayed bitwise, with complete original tree-model
-replays retained. A separate check reconstructs every final float32 average
-and the full canonical score. [Complete result](OWN330_NEURAL_RESULT.md).
+Best independently verified known-ProbeX development CV: **0.8589160570135321**.
+The complete own352 temporal NN/tree154 half improves preceding0.8589474951
+by0.0000314381. All15 actual579-input models and complete original eligible
+statistics/scalers/normalized inputs/predictions replay, with a separate
+canonical arithmetic and score check. The compressor-guard recovery changed
+only verification allocation; every model and fitting budget remained intact.
+[Complete neural result](OWN352_NEURAL_RESULT.md).
 
 Current independently verified recovered qualifying benchmark:
 
@@ -34,7 +35,7 @@ snapshot pairs after one exact complete-pair alias. Adding all22 to own330
 improves the same-row ridge0.8619710828 to0.8618611087, with all five folds
 improving. Every original/new operator, group statistic, eligible solve and
 stored prediction independently matches. No neural or qualifying gain
-follows from that diagnostic; full579-input neural fitting is next.
+follows from that diagnostic; the full579-input neural result is now independently verified above.
 [Complete ridge result](OWN352_TEMPORAL_RIDGE_RESULT.md).
 
 The full NN-pool audit is complete. All five new three-seed refits passed
@@ -168,4 +169,13 @@ claimed remote extension producers retain the original training deadline.
 
 [Own qualifying result](OWN330_QUALIFYING_RESULT.md) ·
 [Exact state/storage recovery](CF96_DISK_RECOVERY.md) ·
-[Current development verification](experiments/upstream-own330-mps/independent-canonical-verification.json).
+[Current development verification](experiments/upstream-own352-bounded-replay/independent-canonical-verification.json).
+
+The remote TX60o extension completed both25-epoch phases; all three compact
+own prediction pairs passed original recipe/data/map/native-header checks.
+The full native archive of the first three remote producers is also now
+locally admitted: both compressed-part hashes and all125 plaintext members
+verify, all96 full query vectors are retained, and allnine earlier compact
+known/qualifying pairs replay exactly. Complete1,760,494-row native holdout
+training disjointness is separately checked. No new ensemble score follows
+from transport. [Native admission](experiments/upstream-remote15h-native-stream/independent-verification.json).

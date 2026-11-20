@@ -16,7 +16,8 @@ held-user prediction bit.
 This is a ridge diagnostic. It establishes neither a neural improvement nor
 a qualifying score. The declared next study retains all579 neural inputs,
 H128/rank32, five user folds, three seeds and original40/patience4 budgets.
-The independent own330 development best remains0.8589474951.
+At this diagnostic the development best was own330 at0.8589474951. The
+later [complete neural study](OWN352_NEURAL_RESULT.md) improves it to0.8589160570.
 
 [Full temporal admission](experiments/upstream-tx100r-snapshot-admission/independent-verification.json) ·
 [Complete own352 replay](experiments/upstream-own352-temporal-data/independent-verification.json).

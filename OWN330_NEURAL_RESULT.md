@@ -1,3 +1,5 @@
+> Superseded as development best by [own352 at0.8589160570](OWN352_NEURAL_RESULT.md). This report records the preceding own330 study.
+
 # Own330 becomes the independently verified development best
 
 The complete557-input study passed all five user folds and three seeds.

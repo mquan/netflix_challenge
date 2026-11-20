@@ -1,32 +1,42 @@
 {
-  "observed": "2026-11-20T13:42:35.002116+00:00",
+  "observed": "2026-11-20T14:39:11.562837+00:00",
   "display_time": "2026-11-20 05:42 PST",
-  "best_development_rmse": 0.8589474951024617,
+  "best_development_rmse": 0.8589160570135321,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "928701b8b7cf258c0d76de67f5d698796b8c1665613cc4ba97ad88e577223af1",
-  "independent_verification_sha256": "928701b8b7cf258c0d76de67f5d698796b8c1665613cc4ba97ad88e577223af1",
+  "verified_development_report_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
+  "independent_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "work": [
+    {
+      "work": "Complete own352 neural study: new verified development best",
+      "state": "All five original579-input/three-seed fits completed. Original verifier compressor guard preserved all15 models. Separate bounded full-statistic/scaler reconstruction matches every actual saved value and normalized input; all15 actual saved models and every held prediction replay. Separate canonical half0.8589160570135321 improves0.8589474951024617. NN0.8590361082610746. No own352 qualifying score; all15-fold-model qualifying bag now declared before outcomes.",
+      "evidence": "experiments/upstream-own352-bounded-replay/independent-canonical-verification.json"
+    },
+    {
+      "work": "Complete own remote native outputs now locally admitted",
+      "state": "Both complete archive parts and all125 plaintext member hashes verified by stream. All96 native query vectors retained, source/data/full1.76m holdout training disjointness and allnine previous compact known/qualifying pairs independently replay. No score/promotion; supports later complete holdout studies.",
+      "evidence": "experiments/upstream-remote15h-native-stream/independent-verification.json"
+    },
     {
       "work": "Own330 seven-family blend: independently verified qualifying best",
       "state": "Complete original full refits, all127 simplex supports, frozen-vector arithmetic and two separately compensated canonical recovered audits. Primary improves both groups to0.8604025394/0.8613881328; goal still missed.",
       "evidence": "experiments/upstream-own330-assembly/independent-canonical-verification.json"
     },
     {
-      "work": "Own330 complete development best",
+      "work": "Own330 preceding development best",
       "state": "All15 actual models and complete original eligible preprocessing replay; separate fixed-half/canonical known score0.8589474951. Different population from qualifying.",
       "evidence": "experiments/upstream-own330-mps/independent-canonical-verification.json"
     },
     {
       "work": "Own352 complete temporal ridge diagnostic",
-      "state": "All22 original temporal100r pairs admitted without epoch selection; one exact terminal/epoch alias. Original own330 inputs retained. Full428/578 operators/statistics/5solves/storedbits replay. Ridge0.8618611087 improves0.8619710828 on allfivefolds; complete579-input neural follow-up declared but not fitted.",
+      "state": "Complete all22 temporal pair addition and full428/578 operator/statistic/solve/prediction replay. Ridge0.8618611087 improvesallfive folds; complete579-input neural follow-up now independently verified above.",
       "evidence": "experiments/upstream-own352-temporal-data/independent-verification.json"
     },
     {
       "work": "Original CFNADE96 trajectories",
-      "state": "Same original native processes continue full95/95 budgets, observed X90/Q85. No restart or shortening.",
+      "state": "Same original native processes continue full95/95 budgets, observed X93/Q88 at2026-11-20T14:42:46.177577+00:00. No restart or shortening.",
       "evidence": "experiments/upstream-cf96-disk-resume/status.json"
     },
     {
@@ -54,10 +64,10 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T13:42:31.338243+00:00",
+    "observed": "2026-11-20T14:42:46.177577+00:00",
     "cf_epochs": {
-      "x": 90,
-      "qual": 85
+      "x": 93,
+      "qual": 88
     },
     "cf_active": {
       "x": 40924,
@@ -67,11 +77,16 @@
     "own330_full_refit_complete_verified": true,
     "own330_qualifying_audit_complete_verified": true,
     "own352_ridge_complete_verified": true,
-    "own352_neural_started": false,
+    "own352_neural_started": true,
     "high_capacity_successor": 61480,
     "high_capacity_state": "waiting_memory_before_nonblocking_both_lanes",
     "original_voting_all_bytes_archived": true,
-    "free_disk_bytes": 23347773440
+    "free_disk_bytes": 22243090432,
+    "own352_neural_complete_verified": true,
+    "own352_original_guard_preserved_all_models": true,
+    "own352_bounded_verification_complete": true,
+    "own352_fold_bag_production_started": false,
+    "remote_native_query_admission_complete": true
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
@@ -86,7 +101,7 @@
     }
   },
   "latest_qualifying_verification_sha256": "1d86eceea919b07468f6bfda989135f8697107fbcee25eac36fb29980a7a0165",
-  "best_development_arm": "fixed_half_own330_nn_and_tree154",
+  "best_development_arm": "fixed_half_own352_temporal_nn_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,
@@ -96,14 +111,14 @@
   "own107_rbm50_nn_qualifying_best": false,
   "own107_latent90_mean_qualifying_best": false,
   "preceding_independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
-  "development_verification_path": "experiments/upstream-own330-mps/independent-canonical-verification.json",
-  "development_independent_check_path": "experiments/upstream-own330-mps/independent-verification.json",
+  "development_verification_path": "experiments/upstream-own352-bounded-replay/independent-canonical-verification.json",
+  "development_independent_check_path": "experiments/upstream-own352-bounded-replay/independent-verification.json",
   "development_required_replay_paths": [
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "Complete own330557-input fivefold/three-seed H128rank32 study and all15 actual saved models, original eligible scalers/statistics and every canonical prediction bit replayed. Separately rehashed all original model sources and reproduced every fixed-half/tree154 float32 bit and full compensated canonical score0.8589474951024617. Better than prior0.8591267885072646; adaptive known CV, not official or untouched Test. No own330 qualifying fit or score yet; both recovered groups must still be below0.85725.",
   "latest_qualifying_verification_path": "experiments/upstream-own330-assembly/independent-canonical-verification.json",
-  "qualifying_narrative": "Three original own330 full-known refits retain all557 inputs and known-selected7/7/8 epochs. Independent full ridge/scaler/normalized-input and actual-model replays cover both complete query populations. Exactly two candidates were declared and frozen before recovered outcomes. All127 supports independently verify seven-family known-OOF weights; every frozen arithmetic bit and separate full canonical group score agrees. Primary0.8604025394/0.8613881328 improves both preceding own6 groups. Apparent known-fit0.8587992076 is not nested CV; development best remains0.8589474951. Fixed-half control trades off groups and is not the benchmark. Target0.85725 remains unmet. Adaptive recovered audit, not official or untouched Test.",
+  "qualifying_narrative": "Three original own330 full-known refits retain all557 inputs and known-selected7/7/8 epochs. Independent full ridge/scaler/normalized-input and actual-model replays cover both complete query populations. Exactly two candidates were declared and frozen before recovered outcomes. All127 supports independently verify seven-family known-OOF weights; every frozen arithmetic bit and separate full canonical group score agrees. Primary0.8604025394/0.8613881328 improves both preceding own6 groups. Apparent known-fit0.8587992076 is not nested CV; at that audit development best was0.8589474951; the later complete own352 study improves it to0.8589160570. Fixed-half control trades off groups and is not the benchmark. Target0.85725 remains unmet. Adaptive recovered audit, not official or untouched Test.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
   "latest_completed_qualifying_audit_path": "experiments/upstream-own330-assembly/independent-recovered-audit.json",
   "qualifying_benchmark_rule": "Predeclared own6-plus-own330 known-only simplex improves both complete recovered groups; independently verified as current benchmark. No qualifying outcomes fit or select weights.",

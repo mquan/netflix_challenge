@@ -24,5 +24,5 @@ waits memory before nonblocking acquisition of both compute lanes.
 Original CF trajectories continue. No high-capacity native fit has started.
 
 The strict0.85725 target remains unmet. Next complete own352 temporal ridge
-replay improves every fold; its579-input neural follow-up is declared and
-pending. No recovered outcome selected the22 snapshot addition.
+replay improves every fold; its full579-input neural follow-up is now independently verified at
+0.8589160570. [Complete result](OWN352_NEURAL_RESULT.md). No recovered outcome selected the22 snapshot addition.
