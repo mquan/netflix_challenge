@@ -1,0 +1,25 @@
+{
+  "state": "original_native_knn3_chain_started_after_durable_raw_epoch_boundary",
+  "observed": "2026-11-20T03:46:25.159728+00:00",
+  "pid": 18610,
+  "actual_command": "./target/release/fit chain s3-dnn32nm__knn3 -p pipeline-3.toml --final --preds preds_3",
+  "native_launch_sha256": "a0bb9b2e8a68261fe0432f30cbead8a9d145941327377da3392f5167a1be92ce",
+  "held_state_sha256": "925b39edc305f528f98eee0ffc80c5f6889ffd81aedfa3c965c9bec42203beba",
+  "raw_durable_state": {
+    "trainx": {
+      "pointer_sha256": "bc0855dbcd189cc570bb1911eb901a9040d5720d56b54f7d48b7c0b178cb4674",
+      "epoch": 27,
+      "checkpoint": "epoch-00027.pt",
+      "declared_checkpoint_sha256": "ea026aa8bf43bc9a2601c789985841469b376dfee56152054d9178f80f076c7d"
+    },
+    "fulltrain": {
+      "pointer_sha256": "640051125f6cae1e1f288d5a86e04719b0d88ec34e8bf42fed201b3f15be35d7",
+      "epoch": 26,
+      "checkpoint": "epoch-00026.pt",
+      "declared_checkpoint_sha256": "cc491e6c9b3c92a94b7e9d93a81a70754677b1e924e8428a53a159ae3a286105"
+    }
+  },
+  "original_native_memory_gate_passed": true,
+  "source_native_completion_claimed": false,
+  "qualifying_labels_read": false
+}

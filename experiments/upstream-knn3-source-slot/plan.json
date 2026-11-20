@@ -1,0 +1,14 @@
+{
+  "created": "2026-11-20T03:43:08.485783+00:00",
+  "script_sha256": "c0e1fb62f5c1453e651e8ed76cc458d082513e11b18fdf349a377a1cd0848ef4",
+  "raw_source_sha256": "96c54c04de633664c1168223dbf77d3d2694c1ece772a59bccfc805560eba518",
+  "native_plan_sha256": "f6576019ee61af1795c9b29d9897f849b4e349d5934e251fb03922755e68e5bb",
+  "jobs": [
+    "s3-dnn32nm__knn3",
+    "s3-nade12s__knn3"
+  ],
+  "actual_native_producers": {
+    "71695": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_knn3_chains.py"
+  },
+  "policy": "Acquire the shared GPU lock only at a complete existing raw-epoch boundary. Keep all raw parameters/checkpoints/optimizer/RNG/budgets unchanged. Hold its next epoch while both CPU-only original KNN3 producers use their unchanged native admission/configuration. Release after both independent native proofs, ended producer, or twenty minutes without a native admission. No native/worker kill or source edit."
+}
