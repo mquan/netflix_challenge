@@ -1,0 +1,28 @@
+{
+  "created": "2026-11-20T17:04:00.438668+00:00",
+  "primary_owner": {
+    "pid": 12394,
+    "ppid": 1,
+    "pgid": 12394,
+    "state": "Ss",
+    "started": "Fri Nov 20 08:57:51 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_primary_guarded_aex.py"
+  },
+  "high_capacity_owner": {
+    "pid": 61480,
+    "ppid": 1,
+    "pgid": 61480,
+    "state": "Ss",
+    "started": "Fri Nov 20 05:21:26 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_successor.py"
+  },
+  "source_sha256": {
+    "scripts/upstream_high_capacity_primary_handoff.py": "97af38d0640059a8940f57484451f4e1c3322d90e73a0e97598d9f43d8fb69df",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "scripts/upstream_full_reproduce.py": "436f181b5b73c228c67abf5a945140eb37ef95472d42ecc451f1f60cbe7a7a80",
+    "scripts/upstream_primary_guarded_aex.py": "f137862f927097331f6cca5c1fff1aecd847928302af85283c0ecef51cdc6133",
+    "experiments/upstream-cf96-primary-lane/restored-primary.json": "1960cdeadf9541f12866477399b0ecf4e9d6e4ef9746489ae3d869a12fea5f39",
+    "experiments/upstream-cf96-disk-resume/recovery-completion.json": "d4d8106f5ceb86706516736cb45d4cfec15bf9eac54c9a4a44ebefb492690504"
+  },
+  "rule": "Original CF95/95 and canonical finalizer complete. Restored primary reclaimed the lane. Let any native child finish; retire ONLY exact scheduler at a complete receipted idle boundary, rechecked while scheduler frozen. Existing stop-only-if-idle sends cleanup SIGTERM/CONT solely to childless scheduler. Preserve all numerical recipes/data/outputs. Reviewed1600 queue keeps its original22GiB/24GiB/disk/lane guards. Do not restart or interrupt native training. Original scheduler command retained for later safe continuation after higher-priority work."
+}

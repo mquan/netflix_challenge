@@ -63,13 +63,26 @@ admits all413 declared entries: original352 scalars, all45 native pairs,
 all three completed TX60o pairs and13 nonlinear components. It separately
 replays both full input streams and the complete exact-pair alias partition.
 There are404 distinct signals and5657 interaction/bias coefficients. It is
-now finished all five held-user fits with the published lambda30 and is
-generating qualifying predictions. Complete system/model/prediction
-replay and canonical audit follow. The four-GiB worker and24GiB research
-memory guards remain; no large interaction cache or Gram files are written.
-No score improvement is claimed for this work yet.
+finished all five held-user fits with the published lambda30. Full
+independent system/model/prediction replay passes, but conditional meta-CV
+0.8602208791 and recovered0.8613295003/0.8623423168 miss the primary.
+This negative result is retained; no coefficients or parameters changed
+after audit. The four-GiB worker and24GiB research guards held throughout;
+no large interaction cache or Gram files were written.
+[Complete negative result](OWN404_FWLS_RESULT.md).
 [All native snapshots](REMOTE15H_ALL_NATIVE_SNAPSHOTS_PLAN.md) ·
 [Full own-bank feature-weighted stacking](OWN_FULL_FEATURE_WEIGHTED_STACKING_PLAN.md).
+
+The matched paired B391 follow-up independently admits every original
+330 parent bit,22 temporal inputs and all39 new distinct native/TX pairs
+on both query populations. Complete467/617 operators, all group statistics,
+eligible ridge solves and held prediction bits pass. Known B352/B391 ridge
+changes only0.8618576840 to0.8618508817. This tiny diagnostic gain is not a
+neural or qualifying claim. The reviewed H128/rank32 three-seed/fivefold
+original40pat4 neural queue now waits for original1600 completion so that
+missing large-base-model coverage retains priority. H512 is a separate
+declared source-ready control, not a running job.
+[Matched input result](OWN391_PAIRED_DATA_RESULT.md).
 
 The full temporal100r trajectory now supplies22 independently verified
 snapshot pairs after one exact complete-pair alias. Adding all22 to own330
@@ -94,10 +107,13 @@ The complete own330 neural study passed all five folds/three seeds:
 Its fixed tree154 half **0.8589474951** is the preceding development best;
 the full qualifying result is now separately verified above. Own176's fixed half0.8591336855 had
 narrowly missed the previous0.8591267885 best. Both full studies retain all
-original inputs, architecture and epoch budgets. Original CF96 development
-training has reached95/95; qualifying training remains live at91/95.
+original inputs, architecture and epoch budgets. Both original CF96
+training phases now complete95/95, with raw export and the original finalizer
+complete. Original1600 source-pinned build/admission is complete and its
+native training is running after a verified completion-boundary handoff
+from the restored childless legacy scheduler; no native fit was interrupted.
 The childless native supervisor later exited through cleanup for full
-own330 production; its successor now waits memory before taking both lanes.
+own330 production; its successor has now acquired both lanes for the exact1600 recipe.
 No native model was interrupted.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
@@ -120,10 +136,10 @@ Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
 The isolated1600-factor preparation now binds439 source/data files and
 proves both full training/query populations disjoint. Its reviewed childless supervisor was retired through cleanup; the
-successor waits its full22GiB reservation before nonblocking lane acquisition.
-It will build
-an isolated exact executable because the existing shared binary failed
-its build-receipt hash check. No high-capacity build or fit has begun.
+successor admitted its full22GiB reservation and acquired both lanes.
+An isolated exact executable now passes its source/build/data admission;
+the earlier shared-binary receipt mismatch was preserved. The original
+1600-factor/2epoch-perphase native run is active; no score is claimed yet.
 [Guarded execution](HIGH_CAPACITY_ORIGINAL_EXECUTION.md).
 
 New own176 input/ridge admission is complete. All ten recent own scalar

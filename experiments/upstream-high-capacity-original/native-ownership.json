@@ -1,0 +1,27 @@
+{
+  "monitor": {
+    "pid": 61480,
+    "ppid": 1,
+    "pgid": 61480,
+    "state": "Ss",
+    "started": "Fri Nov 20 05:21:26 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_successor.py"
+  },
+  "native": {
+    "pid": 15854,
+    "ppid": 61480,
+    "pgid": 15854,
+    "state": "Ss",
+    "started": "Fri Nov 20 09:07:47 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/target/release/tsvdx4-new tsvdx4-1600lm"
+  },
+  "original_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/target/release/tsvdx4-new",
+    "tsvdx4-1600lm"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

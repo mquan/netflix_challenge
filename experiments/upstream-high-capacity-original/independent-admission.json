@@ -1,0 +1,15 @@
+{
+  "state": "complete_original1600_source_data_and_matching_compiled_binary_admission",
+  "preparation_sha256": "7fb99eaff889317a1275bd1aa62c83fd1154b20f2f70e98bc5759fcd753925a1",
+  "original_build_receipt_sha256": "00383cedf14720364e317a9aab966a0ee5e13cb595d78efd5e68a89ea0920d96",
+  "verifier_sha256": "4ddeb2df878d823b7fc62249507c9fc6d2663c47caf6a4721a0bf82786d04c6c",
+  "binary_sha256": "dffe41b65147052d07b1ccb3ebec5b93d16c0c6155d9450b440e9964f0f696d1",
+  "native_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/target/release/tsvdx4-new",
+    "tsvdx4-1600lm"
+  ],
+  "cwd": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/source",
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "scope": "Full bound inputs independently rehashed; source pin/config and matching original build receipt checked. All original identity-scan receipts bound to unchanged complete arrays. No fitting or score."
+}
