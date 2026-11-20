@@ -1,0 +1,13 @@
+{
+  "observed": "2026-11-20T10:20:54.322432+00:00",
+  "reviewer": "independent read-only refit_checkpoint_review agent",
+  "findings": [
+    {
+      "severity": "P2",
+      "issue": "Acquiring GPU lock before unfinished GPU dependency can deadlock order-independent launches",
+      "resolution": "Dependency wait now precedes lock acquisition; readiness/headroom rechecked after lock. Regression confirms no lock acquisition or fit before dependency completes."
+    }
+  ],
+  "remaining_fidelity_or_safety_blockers": [],
+  "scope": "Full176raw/90context403input study, original masks/budgets, complete actual data/ridge replay and native normalized-statistic/model verifier"
+}

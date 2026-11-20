@@ -110,8 +110,11 @@ dates = [
     ("2026-10-17", "Oct 17"), ("2026-10-27", "Oct 27"),
     ("2026-11-06", "Nov 6"), ("2026-11-19", "Nov 19"),
 ]
+end_local = END.astimezone(ZoneInfo('America/Los_Angeles'))
+if end_local.date().isoformat() > dates[-1][0]:
+    dates[-1] = (END.isoformat(), f"{end_local:%b} {end_local.day}")
 for date, label in dates:
-    x = x_at(date + "T12:00:00-07:00")
+    x = x_at(date if "T" in date else date + "T12:00:00-07:00")
     x = min(x, X1 - 8)
     line(x, Y0, x, Y1, "#4b5364", 1, .2)
     text(x, 710, label, "#a8b0c2", 21, "middle")
