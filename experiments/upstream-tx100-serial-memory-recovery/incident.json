@@ -1,0 +1,18 @@
+{
+  "observed": "2026-11-20T09:35:58.513041+00:00",
+  "root_cause": "Original temporal8GiB admission reserve underestimated its measured15.9GiB footprint; no continuous original TX allocation guard prevented overlap with neural7.4GiB and CF7.5GiB. Research footprint reached31.9057GiB on32GiB hardware, leaving no system headroom; swap growth consumed disk reserve.",
+  "observed_research_footprint_gib": 31.905669021606442,
+  "failed_status_path": "experiments/upstream-split3-matched-queue/status.json",
+  "failed_worker": 74924,
+  "completed_control_folds": 5,
+  "completed_expanded_folds": 2,
+  "interrupted_fold_files": [
+    "ridge.npz",
+    "scalers.npz"
+  ],
+  "native_qual_exit": "Original CF supervisor disk/resource guard stopped phase at81; complete checkpoint retained, not an observation timeout.",
+  "preserved_original_cf_x_pid": 40924,
+  "preserved_original_tx_pid": 87902,
+  "free_disk_gib": 20.91315460205078,
+  "qualifying_labels_read": false
+}

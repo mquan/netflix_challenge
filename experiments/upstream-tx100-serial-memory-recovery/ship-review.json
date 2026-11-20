@@ -1,0 +1,7 @@
+{
+  "review": "Independent read-only refit_checkpoint_review agent",
+  "finding": "P2: original live monitor default SIGTERM bypasses its exception suspension path",
+  "resolution": "Preserved frozen primary source; attached independently identity-checked monitor-loss fail-safe PID96146. Regression verifies matching originals suspended and reused PIDs ignored.",
+  "other_findings": [],
+  "review_scope": "Original checkpoint/identity preservation, paused native RAM trajectory, downloaded-cache deletion boundaries. No source/model capacity change."
+}
