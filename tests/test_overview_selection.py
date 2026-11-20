@@ -15,17 +15,17 @@ class OverviewSelectionTests(unittest.TestCase):
         record = json.loads((ROOT / 'experiments/fresh-reproduction-status.json').read_text())
         before = copy.deepcopy(journey.MILESTONES)
         selection = journey.overview_selection(journey.MILESTONES, record)
-        expected = {'H8 full', 'PUB466 NN2'}
+        expected = {'H8 full'}
         for key in ['development_verification_path', 'latest_qualifying_verification_path']:
             expected.add(next(row[0] for row in journey.MILESTONES if row[9] == record[key]))
         self.assertEqual(set(selection['ids']), expected)
         self.assertEqual(journey.MILESTONES, before)
 
-    def test_public_development_representative_preserves_qualifying_ledger(self):
-        record = json.loads((ROOT / 'experiments/fresh-reproduction-status.json').read_text())
-        selected = journey.overview_selection(journey.MILESTONES, record)
-        self.assertIn('PUB466 NN2', selected['ids'])
-        self.assertNotIn('QUAL619 ridge', selected['ids'])
+    def test_public_bank_results_are_excluded_from_published_data(self):
+        published = journey.own_training_milestones(journey.MILESTONES)
+        self.assertFalse(any(row[3] == 'Public bank' or row[4] == 'qualifying' for row in published))
+        self.assertFalse({'PUB466 NN2', 'QUAL619 ridge'} & {row[0] for row in published})
+        self.assertEqual(len(published), len(journey.MILESTONES) - 6)
         self.assertEqual(sum(row[0] == 'QUAL619 ridge' for row in journey.MILESTONES), 1)
 
     def test_future_best_updates_id_and_pacific_date(self):
@@ -36,7 +36,7 @@ class OverviewSelectionTests(unittest.TestCase):
         selected = journey.overview_selection(rows, dict(development_verification_path='known', latest_qualifying_verification_path='qual'))
         self.assertIn('new CV', selected['ids'])
         self.assertIn('new qualifying', selected['ids'])
-        self.assertEqual(set(selected['days']), {'2026-10-31', '2026-11-15', '2026-11-20', '2026-11-21'})
+        self.assertEqual(set(selected['days']), {'2026-10-31', '2026-11-20', '2026-11-21'})
 
     def test_missing_or_ambiguous_evidence_fails_closed(self):
         record = dict(development_verification_path='missing', latest_qualifying_verification_path='qual')

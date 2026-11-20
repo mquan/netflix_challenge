@@ -1,5 +1,5 @@
 {
-  "observed": "2026-11-20T05:49:08.712118+00:00",
+  "observed": "2026-11-20T06:10:22.388958+00:00",
   "display_time": "Nov 19, 2026 20:58 PST",
   "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
@@ -19,7 +19,7 @@
     },
     {
       "work": "CF96 exact74/70 full-state disk recovery",
-      "state": "Original16GiB disk guard stopped both native handles after a new cache allocation. Separate supervisor40876 reverified all84 Adam/SWA/RNG tensors per phase and restored unchanged native40924/40925 at74/70. Same full320/96/95 recipe and original memory/disk continuous guards; actual other research RSS now counted. Original idle finalizer92667 paused with no child until full95/95 markers. Both native handles confirmed live, source not complete. No restart fromzero or model/data/budget cut."
+      "state": "Original16GiB disk guard stopped both native handles after a new cache allocation. Separate supervisor40876 reverified all84 Adam/SWA/RNG tensors per phase and restored unchanged native40924/40925 at74/70. Same full320/96/95 recipe and original memory/disk continuous guards; actual other research RSS now counted. Original idle finalizer92667 paused with no child until full95/95 markers. Both native handles confirmed live, source not complete. No restart fromzero or model/data/budget cut. Subsequent checkpoint75/71 confirms both restored trajectories advanced; exact source handles40924/40925 remain live."
     },
     {
       "work": "Additional3.2GB exact inactive prediction/compiler storage sharing",
@@ -31,7 +31,7 @@
     },
     {
       "work": "Final item-autoencoder user-context extraction",
-      "state": "Queued PID33860 behind independent full50/50 source completion. Fixed top32 PCA contexts from ALL480189 trainx encoder user columns and decoder user rows; same trainx table for known/full query sets. Independent spectrum/eigenpair/every-user/query replay required. No score or final source completion claimed. Original raw trajectory unchanged."
+      "state": "Complete actual50/50 raw source and independent full source snapshot verification. Both fixed32-column PCA projections from ALL480189 trainx encoder/decoder user factors are independently verified: complete covariance/top spectrum,orthogonality/signs/scales,every user projection and all known/full query gathers. Same trainx user table for both query sets; no qualifying labels.64 support columns ready, no ensemble gain claimed."
     },
     {
       "work": "Complete eight-column split3 combination",
@@ -47,7 +47,7 @@
     },
     {
       "work": "15-hour remote original-producer assignment",
-      "state": "Remote commit ba2b361: original DNN24 complete8/8, two original terminal/ep03 pairs downloaded and locally verified. Exact frozen plan/helper/env, full traces, canonical data/split/map/disjointness and finitef32 payloads pass; full native qualifying NPY bytes reconstruct exactly from original native header. Native full-probe projection was independently checked by separate remote exporter; full native probe files remain remote pending full-output transfer. AppleDouble/archive and NPY-header-only import recoveries preserved. Attention32/RBM200e remain next in original plan; fixed deadlines unchanged. No qualifying score or new model trained from these columns yet."
+      "state": "Remote commit ba2b361: original DNN24 complete8/8, two original terminal/ep03 pairs downloaded and locally verified. Exact frozen plan/helper/env, full traces, canonical data/split/map/disjointness and finitef32 payloads pass; full native qualifying NPY bytes reconstruct exactly from original native header. Native full-probe projection was independently checked by separate remote exporter; full native probe files remain remote pending full-output transfer. AppleDouble/archive and NPY-header-only import recoveries preserved. Attention32/RBM200e remain next in original plan; fixed deadlines unchanged. No qualifying score or new model trained from these columns yet. Latest remote05:47 heartbeat0e6134d confirms actual attention32 PID60045 at12+6 of12+12, no complete attention return at that observation."
     },
     {
       "work": "10.4GB inactive cache CoW storage recovery",
@@ -493,6 +493,12 @@
       "local_verification_path": "experiments/upstream-remote15h-return/s3-dnn24-v3/local-verification.json",
       "verified_pairs": 2,
       "qualifying_labels_read": false
+    },
+    "itemae50_user64_complete": {
+      "raw_completion": "experiments/upstream-mps-item-autorec/completion.json",
+      "support_verification": "experiments/upstream-itemae50-user64-support/verification.json",
+      "support_verification_sha256": "730eff423e5c6635e879a68012037c07281670e3621314831dff454935507f61",
+      "accuracy_claimed": false
     }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",

@@ -18,7 +18,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 JOURNEY = runpy.run_path(str(ROOT / "scripts/build_research_journey.py"))
 JOURNEY["validate_fresh_status"]()  # Refuse to render unverified current score claims.
-MILESTONES = JOURNEY["MILESTONES"]
+MILESTONES = JOURNEY["own_training_milestones"](JOURNEY["MILESTONES"])
 STATUS = json.loads((ROOT / "experiments/fresh-reproduction-status.json").read_text())
 CURRENT_CV = next(row for row in MILESTONES if row[4] == "fresh_cv" and float(row[1]) == STATUS["best_development_rmse"])
 CURRENT_QUAL = next(row for row in MILESTONES if row[9] == STATUS["latest_qualifying_verification_path"])
@@ -133,7 +133,6 @@ for ident, score, date, _strategy, metric, credit, _status, _title, _note, _sour
 for ident, label, dx, dy, anchor in (
     ("B1", "B1 · 0.89369", 18, -12, "start"),
     ("H8 full", "Original-Probe CV · 0.8666488", -18, -15, "end"),
-    ("PUB466 NN2", "Public-bank Probe CV · 0.8645338", -600, -84, "start"),
     (CURRENT_CV[0], f"Own training CV · {STATUS['best_development_rmse']:.7f}", -18, -68, "end"),
     (CURRENT_QUAL[0], f"Own qualifying audit · {QUAL_WORST:.7f}", -18, -130, "end"),
 ):
@@ -143,7 +142,7 @@ for ident, label, dx, dy, anchor in (
 line(X0, y_at(.85725), X1, y_at(.85725), "#baaaff", 2)
 text(X0, y_at(.85725)+34, "0.85725", "#baaaff", 22, weight="700")
 text(X1, y_at(.85725)+34, "Historical Netflix Test target · 0.85725", "#baaaff", 22, "end", "700")
-text(X0, 760, "Own qualifying audit uses the Codex logo. Different rows from CV; public-bank audits remain in the ledger.", "#a8b0c2", 19)
+text(X0, 760, "Own qualifying audits use the Codex logo. Recovered labels; different rows from development CV.", "#a8b0c2", 19)
 svg.append('<rect x="0" y="800" width="1600" height="800" fill="#10131d"/>')
 text(94, 857, "REVISED PROMOTIONS · ORIGINAL-PROBE DEVELOPMENT", "#70d9d0", 28, weight="700")
 text(94, 905, "Lower overall RMSE promotes a candidate; the record line follows successive best scores.", size=23)
