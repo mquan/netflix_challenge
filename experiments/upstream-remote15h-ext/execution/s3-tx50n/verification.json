@@ -1,0 +1,32 @@
+{
+  "state": "verified_complete_original_remote15h_producer",
+  "observed": "2026-11-20T16:53:31.772575+00:00",
+  "job": "s3-tx50n",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "records": [
+    {
+      "column": "s3-tx50n",
+      "file": "s3-tx50n.npz",
+      "sha256": "ed6046409f165a78ac9b74d4fb4bd538882f5467add42e62304a1f182f3296b8",
+      "native_probe_sha256": "bedd14c0c916d41068e4e76aefe345362862c718b7e7245001addfaa126aab14",
+      "native_qual_sha256": "531ea5b9ce41944f432a0610ca053585318ae74dcd380abea4ffd27dc2d540d9"
+    }
+  ],
+  "source_data_binary_rehashed": true,
+  "both_full_original_epoch_traces": true,
+  "independent_known_projection": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "files_sha256": {
+    "preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "s3-tx50n-launch.json": "f93cb656a0cd3ccb85f02ce8a0faac8b2b7a39c0e228d8f260f937fa93a32a35",
+    "split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "s3-tx50n.npz": "ed6046409f165a78ac9b74d4fb4bd538882f5467add42e62304a1f182f3296b8",
+    "plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "s3-tx50n-receipt.json": "82969da04eacffb41af1ad13c8f43ca46fb2975f5d4cf9a4280f0c51f7b2dd5d",
+    "s3-tx50n.log": "d9ccad1b7b6d0cade6cedaadd20ba0a639a60a1820c5a6233bf3a175cdbb1aec",
+    "upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "scope": "Own numerical training outputs only. No blend or goal-success claim."
+}

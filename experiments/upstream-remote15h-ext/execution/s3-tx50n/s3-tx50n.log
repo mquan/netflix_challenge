@@ -1,0 +1,53 @@
+[s3-tx50n]
+target = "rtg"
+TxConfig { n_feat: 50, n_epochs: 22, seed: 42, shuffle_users: true, n_time_bins: 32, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.00125, lr_u2: 7e-6, lr_ub: 0.0031, lr_ubd: 0.003, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_yb: 2.5e-5, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.000225, lr_ta: 2.25e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.0504, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.00735, reg_y: 0.04, reg_yd: 0.02667, sigma_iqf: 0.005, sigma_u: 0.0015, sigma_i: 0.005, sigma_y: 0.00333, sigma_yd: 0.009, reset_u_epoch: 1024, max_neighbors: 100, lr_w: 0.0015, lr_c: 0.0015, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.0, w_factor: 1.0, w_nbr: 1.0, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: None, save_ifeat: true, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
+train_3 => probe_3
+Epoch 01 | RMSE 0.94129
+Epoch 02 | RMSE 0.91988
+Epoch 03 | RMSE 0.90878
+Epoch 04 | RMSE 0.90189
+Epoch 05 | RMSE 0.89676
+Epoch 06 | RMSE 0.89277
+Epoch 07 | RMSE 0.88950
+Epoch 08 | RMSE 0.88709
+Epoch 09 | RMSE 0.88522
+Epoch 10 | RMSE 0.88347
+Epoch 11 | RMSE 0.88217
+Epoch 12 | RMSE 0.88118
+Epoch 13 | RMSE 0.88048
+Epoch 14 | RMSE 0.87989
+Epoch 15 | RMSE 0.87975
+Epoch 16 | RMSE 0.87950
+Epoch 17 | RMSE 0.87963
+Epoch 18 | RMSE 0.87975
+Epoch 19 | RMSE 0.88001
+Epoch 20 | RMSE 0.88044
+Epoch 21 | RMSE 0.88079
+Epoch 22 | RMSE 0.88137
+probe_3 RMSE 0.88137
+Saved item factors to preds_3/s3-tx50n.ifeat.train_3.npy
+fulltrain => qual
+Epoch 01 | RMSE 3.70846
+Epoch 02 | RMSE 3.70717
+Epoch 03 | RMSE 3.72443
+Epoch 04 | RMSE 3.72286
+Epoch 05 | RMSE 3.72457
+Epoch 06 | RMSE 3.72208
+Epoch 07 | RMSE 3.73015
+Epoch 08 | RMSE 3.73024
+Epoch 09 | RMSE 3.72929
+Epoch 10 | RMSE 3.73206
+Epoch 11 | RMSE 3.73388
+Epoch 12 | RMSE 3.73712
+Epoch 13 | RMSE 3.73717
+Epoch 14 | RMSE 3.73949
+Epoch 15 | RMSE 3.73983
+Epoch 16 | RMSE 3.74066
+Epoch 17 | RMSE 3.74143
+Epoch 18 | RMSE 3.74197
+Epoch 19 | RMSE 3.74250
+Epoch 20 | RMSE 3.74514
+Epoch 21 | RMSE 3.74518
+Epoch 22 | RMSE 3.74450
+Saved item factors to preds_3/s3-tx50n.ifeat.fulltrain.npy
+
