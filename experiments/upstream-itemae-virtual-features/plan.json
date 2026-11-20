@@ -1,0 +1,26 @@
+{
+  "ready_unused": [
+    {
+      "name": "itemae_epoch5",
+      "paired_files": {
+        "probex": "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00005/prediction.npy",
+        "qual": "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00005/prediction.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "itemae_epoch10",
+      "paired_files": {
+        "probex": "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00010/prediction.npy",
+        "qual": "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00010/prediction.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "itemae_epoch5",
+    "itemae_epoch10"
+  ],
+  "rule": "Fixed control and both predeclared epoch5/10 item-oriented raw snapshots. Both full50-epoch trajectories continue independently. Original user folds and ridge penalty. Native side outputs extend the released raw-column schema; no subset search or qualifying outcomes.",
+  "qualifying_labels_read": false
+}

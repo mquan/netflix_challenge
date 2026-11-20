@@ -50,3 +50,7 @@ admission controller until CPU tree fitting/replay finishes and safe full-size
 headroom is measured twice. Raw GPU and native training continue. No neural
 configuration, source selection or fitting budget changes. See
 [ITEMAE_NEURAL_ADMISSION.md](ITEMAE_NEURAL_ADMISSION.md).
+
+## Complete result: fixed epoch5/10 study is negative
+
+At2026-11-20 02:27 UTC all five original user folds and15 actual saved-neural-model replays completed. The neural arm scores0.8594477768; the predeclared fixed mean with the original tree50 scores **0.8593159372374096**, worse than its declared0.8592309820 reference and the now-current0.8592012938 record. Separate exact mean reconstruction and canonical complete-known scoring pass. Original5/10 snapshot choices, full architecture, seeds, folds, stopping and numerical code stay unchanged. No qualifying refit or promotion. Evidence: experiments/upstream-itemae-virtual-mps-context/{manifest,evaluation,nn-replay,independent-verification}.json and experiments/upstream-rbm50-tree-itemae-virtual-mps/{plan,verification,independent-mean-check}.json.

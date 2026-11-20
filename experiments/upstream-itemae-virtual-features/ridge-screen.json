@@ -1,0 +1,71 @@
+{
+  "state": "complete",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3",
+      "fold_rmse": [
+        0.8619959768633015,
+        0.8598793859589637,
+        0.863379444626518,
+        0.8642176793897229,
+        0.8634317801005654
+      ]
+    },
+    {
+      "arm": "main",
+      "rmse": 0.862585873521797,
+      "prediction_sha256": "1a5a5ec6dc31973412541f2ef8e90331dc3a437c939d8de2c8e5717d8967026e",
+      "fold_rmse": [
+        0.8619987214488735,
+        0.8598801613820224,
+        0.8633775886961698,
+        0.8642160368031089,
+        0.8634600980399137
+      ]
+    }
+  ],
+  "fixed_additions": [
+    "itemae_epoch5",
+    "itemae_epoch10"
+  ],
+  "source_sha256": {
+    "experiments/upstream-mps-item-autorec/pair-00005.json": "51def281cb596e8dbf83c3e64ad4d235d057c665ffa0f2eb6dc2154b67f0d704",
+    "experiments/upstream-mps-item-autorec/trainx-snapshot-00005.json": "8201e9e6fcc26a2b613c40ca1e8ad982bf9bede4a1851c45336a88c0f093f602",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00005/model.pt": "9a2c151a5acad5080963311fd09cc1dcddf3c8d4641b9cb66ac2ebd150e65834",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00005/prediction.npy": "5a937c13cbd2551007f11f0c0ed920f2f2333b3f3a3dd8d2e55fd85b6966528f",
+    "experiments/upstream-mps-item-autorec/fulltrain-snapshot-00005.json": "ae0cdb27df41c300343ae88b84aa7af6b555c9ec875e0af31968f5494ac4f581",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00005/model.pt": "077980d6daf9b16c21e81a532b406b091f2fa6f20d1e65cc498c7fae0387e826",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00005/prediction.npy": "2248c2852cbbe29264792d4ffbf72538c4ad46a271dacb2c9bd623a84ad047e9",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "scripts/verify_upstream_mps_item_autorec_snapshot.py": "c0fe52457a8c66590f5f4b925ea9461dfd1112f1d52b6c0e8ae109f1cb7908d4",
+    "experiments/upstream-mps-item-autorec/plan.json": "53a95fc2e8d49cabb4d2991b97d816b0a7c6b950079491bcee78ad2c7df4016a",
+    "experiments/upstream-mps-item-autorec/snapshot-00005-verification.json": "bca4b1b35c6f4852d9632a782512081aa4d753331ee866a114738ef9e4fe8376",
+    "experiments/upstream-mps-item-autorec/pair-00010.json": "24c0d1339c95a4980822e6b62b63a2ad9ff94b1b621931d007a17e2e69be4edf",
+    "experiments/upstream-mps-item-autorec/trainx-snapshot-00010.json": "70482d6e935a4e878fe9dce4af8dfe5cfc6280025584ff1b07b285a97b4a9dbb",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00010/model.pt": "fa05c41760f919227fd56e7bca065c5f325a597bc5a789c3b5eabb2910f5d7a3",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00010/prediction.npy": "5f8d542ad7b7923a46a32210a3c88c7f0bca4f110b809ee493839c142133edf0",
+    "experiments/upstream-mps-item-autorec/fulltrain-snapshot-00010.json": "b41a5362c74687082802f2b164b28d2b027ca46ef2f3bff83394b2ff0d6bef89",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00010/model.pt": "ace57727fdf05e3a3097a32fd3d76f2ce72f2cc025dfd2d4605ff2e95356e35a",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00010/prediction.npy": "9f10be23128bf7479bbb97fa3a9c0b13d9da0f37af7b04d7d11353732df53e43",
+    "experiments/upstream-mps-item-autorec/snapshot-00010-verification.json": "88fe3f9695259071659eb3776fda26dd0ccb98659875bcf13f49f34cb3131f79",
+    "experiments/upstream-mps-item-autorec-data/trainx-verification.json": "7e915b3adb7e79f45193e26840c0150bd49e6f9d464fa1d8ae1f90c27214847c",
+    "experiments/upstream-mps-item-autorec-data/fulltrain-verification.json": "58a99ce6758c9ee778af127004535ef679281ac14979255bea2826462def3caf",
+    "experiments/upstream-item154-features/cache-column-verification.json": "2fe917a9cacba26850ff5b77e401adda67a375b322ec28ba7edf6f69e9f8d565",
+    "experiments/upstream-item154-features/manifest.json": "cc13a1aa93c018493db217427d68258a5c202d69c98dae711b4e6deb7108b76b",
+    "scripts/upstream_itemae_pair2_screen.py": "db7aab1c1eec77561a6a94b6fa044a6354210b09730a840882f568b434d6ef6c",
+    "artifacts/upstream-item154-features/users.npy": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70",
+    "artifacts/upstream-item154-features/labels.npy": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885",
+    "artifacts/upstream-item154-features/groups.npy": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5",
+    "artifacts/upstream-item154-features/design.npy": "036ea41002bf20e691242ea7d114afb9701224c21e1fc6ab8ca3b91a454b18f3",
+    "artifacts/upstream-item154-features/stats.npz": "8c7f2ace3d12c8e66c2bc7a34050b65d7e7370eab8729735e18118a5fb5a6847",
+    "artifacts/upstream-item154-features/features.npy": "7a7388ce051ea7b8d39b4eeafabddd4726e63cdc7ed3de8b533e4c2117a1bbf6",
+    "artifacts/upstream-item154-features/baseline.npy": "c06c139e1d3a538c0ae7bb842b14d57f3e5d5098e0141b1d10c32b3f5ada63a9",
+    "experiments/upstream-itemae-pair2-screen/plan.json": "e6cf877ad4043015a720f5583336cb6442af7adacdd573e9cdc5407edf67c2e2"
+  },
+  "script_sha256": "db7aab1c1eec77561a6a94b6fa044a6354210b09730a840882f568b434d6ef6c",
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Known-ProbeX diagnostic on two predeclared own item-oriented raw snapshots, trained from complete original histories. No nonlinear or qualifying promotion."
+}

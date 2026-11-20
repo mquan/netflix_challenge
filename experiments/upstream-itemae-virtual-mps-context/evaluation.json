@@ -1,0 +1,61 @@
+{
+  "state": "complete",
+  "manifest_sha256": "3fff8b695bad17c6077091b69510952815465482235ec2fe38f064e0d1ad6e53",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625858734243688,
+      "delta_vs_previous_best": 0.00313046411799367,
+      "fold_rmse": [
+        0.8619987211296233,
+        0.8598801614101093,
+        0.8633775885877313,
+        0.8642160368030876,
+        0.8634600979532142
+      ],
+      "prediction_sha256": "6d237741675a3ee045121de8f4ce2f241e79808fe17a02ca15e734f5f07f6684"
+    },
+    {
+      "arm": "tree",
+      "rmse": 0.8606840430107859,
+      "delta_vs_previous_best": 0.001228633704410842,
+      "fold_rmse": [
+        0.8598228447914581,
+        0.8581473439582377,
+        0.8616501531117651,
+        0.8623517662089648,
+        0.8614538386261612
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "rmse": 0.8594477768065126,
+      "delta_vs_previous_best": -7.632499862464392e-06,
+      "fold_rmse": [
+        0.8586197780781399,
+        0.8570122036899998,
+        0.860342120466335,
+        0.8612511045973078,
+        0.8600187444367334
+      ],
+      "prediction_sha256": "8bb7635c39f772d0cf3b979501a3bdf51421c20cc8172b630453fd0b10e341cd"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.859422407178791,
+      "delta_vs_previous_best": -3.300212758405863e-05,
+      "fold_rmse": [
+        0.8585709661993984,
+        0.8570092697568708,
+        0.860253355514344,
+        0.8611709091029877,
+        0.8601124186420421
+      ],
+      "prediction_sha256": "9d185bab13ed349b8511fb48ae1b877ff52a8091bc2c2be491bd302fb11233d1"
+    }
+  ],
+  "previous_best_rmse": 0.8594554093063751,
+  "scope": "Adaptive known-ProbeX only. Fixed larger rank32/hidden128 context architecture on own107 plus all90 original RBM/Tx context features plus64 fixed own PCA item context features, same five nested user folds/seeds/optimizer/stopping; separately declared float32 MPS training/inference, with device-specific dropout RNG. Reuses actual verified tree91, without synthetic fitting receipts. Both predeclared item-oriented epoch5/10 additions use exact in-RAM source tensors with full fingerprints. No production or qualifying audit launched.",
+  "isolation": "Only verified freshly trained native predictions and known ProbeX labels. Original nested user folds/configuration preserved. Qualifying outcomes remain zero."
+}

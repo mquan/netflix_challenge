@@ -1,0 +1,50 @@
+{
+  "state": "complete",
+  "evaluation_sha256": "44a0ed8b425a1d852d870aeb801f7e028f4ef09b9d8b3dc084c6269745650981",
+  "verifier_sha256": "8046454982aa77435ebb2f905e1c5a8a6987d91f96ac90381216f94ddae26556",
+  "fixed_average_bitwise_equal": true,
+  "scored_users": 462858,
+  "records": [
+    {
+      "arm": "control",
+      "independent_rmse": 0.8625858734243687,
+      "delta_mse": -1.680807808976785e-10,
+      "user_cluster_normal_95_mse_interval": [
+        -4.5915693364565164e-10,
+        1.2299537185029466e-10
+      ],
+      "prediction_sha256": "6d237741675a3ee045121de8f4ce2f241e79808fe17a02ca15e734f5f07f6684"
+    },
+    {
+      "arm": "tree",
+      "independent_rmse": 0.8606840430107862,
+      "delta_mse": -0.003277367305969007,
+      "user_cluster_normal_95_mse_interval": [
+        -0.00352804793081972,
+        -0.0030266866811182935
+      ],
+      "prediction_sha256": "d2ffc6add624dbbc474167709c2cab9d8d2b087f660e9b2f4813cff1d7e45430"
+    },
+    {
+      "arm": "nn",
+      "independent_rmse": 0.8594477768065124,
+      "delta_mse": -0.005403908141704939,
+      "user_cluster_normal_95_mse_interval": [
+        -0.005696426952381054,
+        -0.005111389331028824
+      ],
+      "prediction_sha256": "8bb7635c39f772d0cf3b979501a3bdf51421c20cc8172b630453fd0b10e341cd"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "independent_rmse": 0.8594224071787911,
+      "delta_mse": -0.00544751523837385,
+      "user_cluster_normal_95_mse_interval": [
+        -0.005690291158224366,
+        -0.005204739318523334
+      ],
+      "prediction_sha256": "9d185bab13ed349b8511fb48ae1b877ff52a8091bc2c2be491bd302fb11233d1"
+    }
+  ],
+  "limitation": "Intervals condition on this historically selected bank and fixed fitted predictions; no selection correction or official Test claim."
+}
