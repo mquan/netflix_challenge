@@ -1,0 +1,47 @@
+{
+  "observed": "2026-11-20T09:28:34.800509+00:00",
+  "release_tag": "remote15h-own-20261120",
+  "asset_name": "s3-rbm200e-export.tar.gz",
+  "archive_sha256": "8c12bf2e67419a0fe801fbabe664c90205b1b86ee88a47cac18dd1bd16709dd8",
+  "archive_bytes": 66646136,
+  "uploaded": true,
+  "draft_release": true,
+  "records": [
+    {
+      "column": "s3-rbm200e",
+      "file": "s3-rbm200e.npz",
+      "sha256": "af223c7dc1be1c626be496d7d4a0e22aec7d5fd1848ead7e85851a1fa1ee4fe0",
+      "native_probe_sha256": "7c03679a3b72b940f17d86c3fffdcd94ee317d16dba421a098dc9c1f67c562c4",
+      "native_qual_sha256": "27c6b7d4c29e0530ba77acd26f168338ee25cc7ce5b8a19e45264a3817083750"
+    },
+    {
+      "column": "s3-rbm200e_ep01",
+      "file": "s3-rbm200e_ep01.npz",
+      "sha256": "937ac0003eb400d97b83587c67a4a8b5b44e81be095ea3f4cda837b95eb3a89c",
+      "native_probe_sha256": "e3e300216265bd87832c8692353f364a1030eec9423f8d0ad4124b2f3b5e34ce",
+      "native_qual_sha256": "06fa36b7a3043a04419011451190d7a9e5fea5aaa28530e1e6035d73c8555af5"
+    },
+    {
+      "column": "s3-rbm200e_ep05",
+      "file": "s3-rbm200e_ep05.npz",
+      "sha256": "646f651859e51d2874642370eda320a543d1ed435e5c3dcb35d0ebbf1cfa886c",
+      "native_probe_sha256": "2a62f9967521f9c480c410b66a73cf9b63b398c968cdefc780fd2e781acea35d",
+      "native_qual_sha256": "48a23d6a6d277a374e91790cb08070ec2a032b5decaf6e4b79c65d982c5a22dd"
+    },
+    {
+      "column": "s3-rbm200e_ep10",
+      "file": "s3-rbm200e_ep10.npz",
+      "sha256": "ea9e8407435293ea0c555fc0851a9a3686eec594583e97bfbcde3384c3e617bb",
+      "native_probe_sha256": "1e6605ffb1f44ffa2e7c648ce1302ac9fd707607b35ba1ae65ba54495f47bbc6",
+      "native_qual_sha256": "0b2d49b3600c052557b2d200d0ba96b71aa3d2d0c766bd93689c5a13798c5e71"
+    },
+    {
+      "column": "s3-rbm200e_ep17",
+      "file": "s3-rbm200e_ep17.npz",
+      "sha256": "65caa61f7eaf9a07c4c44781c4043ae4ee58183dea7bec4f405882ebc1cd0068",
+      "native_probe_sha256": "dd4f0a33b9846fdf5ad863bf5716fc6a52b1f44480722327565b9e7f94fae913",
+      "native_qual_sha256": "3ed88d78ff804246883d5bc739d716b6fc9d497a53f7db227e26e71ae793522e"
+    }
+  ],
+  "prediction_arrays_in_git": false
+}
