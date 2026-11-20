@@ -1,0 +1,5 @@
+import hashlib,sys
+buf=bytearray(b'fixture!'*(2**20))
+print(hashlib.sha256(buf).hexdigest(),flush=True)
+sys.stdin.readline()
+print(hashlib.sha256(buf).hexdigest(),flush=True)

@@ -25,13 +25,13 @@ zero fitting targets. They are NOT recovered qualifying scores and must not
 be promoted or plotted as such. No qualifying outcomes were read here.
 
 The memory/compute lanes were released normally after full independent
-verification. Matched391 H128 completed two folds before its resource guard
-paused the actual worker in RAM. The separate reviewed original-admission
-recovery has now continued that same worker under the original resource
-limits; its epoch log is advancing without an increase in swap usage.
-CF95/TX50n intake remains stopped during neural recovery. Full-budget1200
-and CPU tree work retain
-their declared prerequisite, memory and verification gates.
+verification. Matched391 H128 is now fully independently verified at
+fixed-half development0.8589133967520619, only0.0000026603 better than its
+preceding best. The H512 control has resumed its exact paused worker under
+serialized recovery. Original1200 preparation completed; its build group
+and the newly declared CPU-tree fit group are preserved in RAM after guards.
+CF95/TX50n intake is also paused. Original numerical recipes and scientific
+resource limits remain unchanged.
 
 The benchmark remains0.8603920746 /0.8613737959 on the two recovered groups.
 The below0.85725 target on both groups remains unmet.
