@@ -1,5 +1,5 @@
 {
-  "observed": "2026-11-20T09:04:11.492586+00:00",
+  "observed": "2026-11-20T09:39:42.414347+00:00",
   "display_time": "Nov 19, 2026 23:29 PST",
   "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
@@ -11,7 +11,7 @@
   "work": [
     {
       "work": "Complete original split3 matched training-population comparison",
-      "state": "Launched full original-budget supervisor. Complete known-origin and native-training disjointness verified for1760494 holdout rows; all10arm/fold exclusions preserve canonical held users. Both arms use73 own raw columns plus130 original native voting features, five outer folds/three seeds/H128/r32. Score same1128164 canonical rows. Full260-frame feature generation complete;129/130 old own qualifying payloads match, ordinal-SVD differs. No qualifying reuse: production must capture all130 corresponding new features. No new score yet."
+      "state": "Interrupted by actual resource guard:5control and2expanded folds complete,3expanded plus independent saved-model replays pending. Temporal original8GiB reservation underestimated its15.9GiB measured footprint; overlapping research reached31.9057GiB on32GiB hardware,swap consumed disk reserve. Original native temporal PID87902 now resumes alone under24GiB/swap/disk monitoring plus independent monitor-loss fail-safe. CF X86 state preserved paused in RAM, Q81 complete checkpoint retained; all168 arrays rehashed. No completed comparison/promotion or qualifying refit."
     },
     {
       "work": "Full own NNpool and predeclared own7 qualifying audit",
@@ -23,7 +23,7 @@
     },
     {
       "work": "Original split3 RBM200 full25/25 completion",
-      "state": "Complete separate original two-phase proof07:24UTC: both full epoch traces,57 native outputs,52 finite query vectors, complete known projection, original source/binary/data bindings and qualifyingtargets0. One terminal own projected pair ready. Source temporal100r waits original memory guard; no new score claimed."
+      "state": "Complete separate original two-phase proof07:24UTC: both full epoch traces,57 native outputs,52 finite query vectors, complete known projection, original source/binary/data bindings and qualifyingtargets0. One terminal own projected pair ready. Source temporal100r is running alone in original process under measured memory/disk and monitor-loss guards; CF/native NN overlap is suspended after resource failure; no new score claimed."
     },
     {
       "work": "Fixed75% NN-pool /25% tree: new verified development best",
@@ -35,7 +35,7 @@
     },
     {
       "work": "CF96 exact74/70 full-state disk recovery",
-      "state": "Original16GiB disk guard stopped both native handles after a new cache allocation. Separate supervisor40876 reverified all84 Adam/SWA/RNG tensors per phase and restored unchanged native40924/40925 at74/70. Same full320/96/95 recipe and original memory/disk continuous guards; actual other research RSS now counted. Original idle finalizer92667 paused with no child until full95/95 markers. Both native handles confirmed live, source not complete. No restart fromzero or model/data/budget cut. Subsequent checkpoint75/71 confirms both restored trajectories advanced; exact source handles40924/40925 remain live."
+      "state": "Original trajectories advanced to86/81. Native temporal memory growth caused swap/disk pressure; original CF supervisor guard stopped Q81. X86 native and original CF owner are now SIGSTOP with in-memory state preserved while original temporal completes alone. Both complete84-array checkpoints independently rehashed. Same original95/95/source/data/optimizer/seed; no restart fromzero or completed source claim. TX serial monitor resumes original CF owners after independently verified full22/22 temporal execution."
     },
     {
       "work": "Additional3.2GB exact inactive prediction/compiler storage sharing",
@@ -63,7 +63,7 @@
     },
     {
       "work": "15-hour remote original-producer assignment",
-      "state": "DNN24 complete8/8 and attention32 complete12/12; both compact own returns imported and locally verified using frozen plan/helper/native-header lineage, full known map/training disjointness and complete finite paired vectors. Full native probe vectors remain remote pending full-output transfer; separate remote exporter checked full known projection. Latest published dba24a0 at08:12UTC reports exponential RBM200 firstphase25/25 complete and secondphase10/25; no completed RBM return; fixed training deadline17:44UTC unchanged. Eight claimed nonneural extension producers follow serially; do not duplicate locally."
+      "state": "DNN24 complete8/8 and attention32 complete12/12; both compact own returns imported and locally verified using frozen plan/helper/native-header lineage, full known map/training disjointness and complete finite paired vectors. Full native probe vectors remain remote pending full-output transfer; separate remote exporter checked full known projection. Latest published fb5df31 at09:12UTC reports exponential RBM200 firstphase25/25 complete and secondphase22/25; no completed RBM return; fixed training deadline17:44UTC unchanged. Eight claimed nonneural extension producers follow serially; do not duplicate locally."
     },
     {
       "work": "10.4GB inactive cache CoW storage recovery",
@@ -332,190 +332,10 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T04:09:16.986935+00:00",
-    "native_processes": [
-      "73823     03:41:54 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
-      "92864     13:35:52 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865     13:35:52 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
-    ],
-    "cf96": {
-      "state": "training",
-      "epochs": {
-        "x": 70,
-        "qual": 67
-      },
-      "active": {
-        "x": 92864,
-        "qual": 92865
-      },
-      "rss_bytes": {
-        "x": 1822769152,
-        "qual": 1846853632
-      },
-      "other_rss_bytes": 0,
-      "disk_free_bytes": 29970669568,
-      "heartbeat": "2026-11-20T04:08:51.688441+00:00"
-    },
-    "knn3_sources": {
-      "state": "both_original_knn3_chains_independently_verified",
-      "observed": "2026-11-20T03:57:29.981332+00:00"
-    },
-    "knn3_neural_queue": {
-      "state": "waiting_for_original_full_neural_headroom_without_gpu_lock",
-      "observed": "2026-11-20T04:09:07.325121+00:00",
-      "other_rss_bytes": 13220691968,
-      "memory": {
-        "compressor_bytes": 2829467648,
-        "swap_used_bytes": 4960750141.44
-      },
-      "good_samples": 0,
-      "gpu_slot_owned": false
-    },
-    "raw_model": {
-      "state": "fitting_complete_declared_raw_epoch",
-      "phase": "fulltrain",
-      "epoch": 29,
-      "pid": 23526,
-      "observed": "2026-11-20T04:09:14.176762+00:00"
-    },
-    "remote_observation": "experiments/upstream-remote15h-observation/bootstrap/observation.json",
-    "disk_free_bytes": 29955895296,
-    "knn3_compact_completion": {
-      "state": "complete_exact_compact_knn3_study_and_both_fixed_means",
-      "observed": "2026-11-20T04:53:39.778082+00:00",
-      "results": [
-        {
-          "tree": "upstream-rbm50-tree",
-          "rmse": 0.8593260079989471,
-          "independent_mean_sha256": "37e68fdad522b5e4f88f394cbf3aefcf3d9e82a209700725fb25b4cda3847f8e"
-        },
-        {
-          "tree": "upstream-item154-tree",
-          "rmse": 0.859293141998,
-          "independent_mean_sha256": "4167cc11e29760fbcb2da8b83c36e015e2031e9fcfac6a278c2b24e483bd96b1"
-        }
-      ],
-      "current_verified_reference": 0.8592012938198756,
-      "improves_current_reference": false,
-      "original_full_model_and_budget_preserved": true,
-      "qualifying_labels_read": false,
-      "automatic_production_started": false,
-      "goal_complete": false
-    },
-    "remote_hour1_observation": "experiments/upstream-remote15h-observation/hour1/observation.json",
-    "split3eight_completion": {
-      "state": "complete_exact_compact_split3eight_study_and_both_fixed_means",
-      "observed": "2026-11-20T05:18:11.108948+00:00",
-      "results": [
-        {
-          "tree": "upstream-rbm50-tree",
-          "rmse": 0.8592734659633272,
-          "independent_mean_sha256": "76fe48961d0a3f8199d7e216f4d8c704456d134baccaa925a51cb129c70e2cc5"
-        },
-        {
-          "tree": "upstream-item154-tree",
-          "rmse": 0.8592426521393607,
-          "independent_mean_sha256": "8c5e6b78535a061ca250e2ae340f9aef2ec969683066ffc447c5b1c51e6ba28f"
-        }
-      ],
-      "current_verified_reference": 0.8592012938198756,
-      "improves_current_reference": false,
-      "original_full_model_and_budget_preserved": true,
-      "qualifying_labels_read": false,
-      "automatic_production_started": false,
-      "goal_complete": false
-    },
-    "cf96_prefix2030_completion": {
-      "state": "complete_exact_compact_cf96_prefix2030_study_and_both_fixed_means",
-      "observed": "2026-11-20T05:31:43.008812+00:00",
-      "results": [
-        {
-          "tree": "upstream-rbm50-tree",
-          "rmse": 0.8592876736892515,
-          "independent_mean_sha256": "a0c348c18cbc2b4e39b5f5b6c9c700eaf577ef97bcad77e43e548a9207570b07"
-        },
-        {
-          "tree": "upstream-item154-tree",
-          "rmse": 0.8592548691507627,
-          "independent_mean_sha256": "e7c172f7a1cbfd152f4f023bcc471e602f6cdf3c0239e57106d7307a844ad1c0"
-        }
-      ],
-      "current_verified_reference": 0.8592012938198756,
-      "improves_current_reference": false,
-      "original_full_model_and_budget_preserved": true,
-      "qualifying_labels_read": false,
-      "automatic_production_started": false,
-      "goal_complete": false
-    },
-    "nn_pool6_canonical": {
-      "state": "complete_independent_canonical_fixed_six_native_nn_pool",
-      "observed": "2026-11-20T05:36:26.559042+00:00",
-      "verification_sha256": "dfa3e84f73df84a64df51a3ed141b542196d2d871c734a9a2a8c603efe4ed83f",
-      "verifier_sha256": "fb92cfee1e9ca0be545153557b8b518fb769f62fccabce54df11ff9cdf51efcc",
-      "records": [
-        {
-          "arm": "nn-pool",
-          "rmse": 0.8592546775639587,
-          "prediction_sha256": "15ed544893432855df7fd0184bf9f22c224cd30a4d8ec21cf812ca9d765989ba"
-        },
-        {
-          "arm": "fixed-half-tree-pool",
-          "rmse": 0.8592096046036612,
-          "prediction_sha256": "e9b5df34dc48c5c4235b05b87e531dbb7b7358ab9754608afb9da144e9368959"
-        }
-      ],
-      "matched_nn_control_rmse": 0.8593837348929272,
-      "matched_nn_improves": true,
-      "matched_nn_fold_results": [
-        {
-          "fold": 0,
-          "control_nn_rmse": 0.8585852478864321,
-          "pooled_nn_rmse": 0.8583847420129309
-        },
-        {
-          "fold": 1,
-          "control_nn_rmse": 0.8567588390154091,
-          "pooled_nn_rmse": 0.8568001131999183
-        },
-        {
-          "fold": 2,
-          "control_nn_rmse": 0.8603288518502287,
-          "pooled_nn_rmse": 0.8601422444913075
-        },
-        {
-          "fold": 3,
-          "control_nn_rmse": 0.8612796771356552,
-          "pooled_nn_rmse": 0.861114813088045
-        },
-        {
-          "fold": 4,
-          "control_nn_rmse": 0.8599706758077719,
-          "pooled_nn_rmse": 0.8598364432129384
-        }
-      ],
-      "all_five_matched_nn_folds_improve": false,
-      "global_development_best_improved": false,
-      "every_pooled_float32_bit_recomputed_with_compensated_sum": true,
-      "all_original_source_models_and_complete_replay_receipts_rehashed": true,
-      "canonical_float64_reclip_before_scoring": true,
-      "original_unreclipped_scores_preserved": true,
-      "rows": 1128164,
-      "qualifying_labels_read": false,
-      "qualifying_score_claimed": false,
-      "goal_complete": false
-    },
-    "remote_dnn24_return": {
-      "remote_commit": "ba2b361",
-      "local_verification_path": "experiments/upstream-remote15h-return/s3-dnn24-v3/local-verification.json",
-      "verified_pairs": 2,
-      "qualifying_labels_read": false
-    },
-    "itemae50_user64_complete": {
-      "raw_completion": "experiments/upstream-mps-item-autorec/completion.json",
-      "support_verification": "experiments/upstream-itemae50-user64-support/verification.json",
-      "support_verification_sha256": "730eff423e5c6635e879a68012037c07281670e3621314831dff454935507f61",
-      "accuracy_claimed": false
-    }
+    "temporal": "Same original87902 running alone under resource monitor95094 and monitor-loss fail-safe96146; full22/22 incomplete",
+    "cfnade": "Original CF X40924 and supervisor40876 paused in RAM; verified86/81 full checkpoints; source95/95 incomplete",
+    "matched": "Original neural worker terminal from guard;5control+2expanded fits retained,3expanded and complete replay pending",
+    "mf60": "Exact original source prepared; no numerical fit launched"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

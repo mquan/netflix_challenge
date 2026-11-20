@@ -1,0 +1,31 @@
+{
+  "primary": {
+    "pid": 95094,
+    "ppid": 1,
+    "pgid": 95094,
+    "state": "Ss",
+    "started": "Fri Nov 20 01:33:38 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_tx100_serial_memory_recovery.py"
+  },
+  "originals": {
+    "tx": {
+      "pid": 87902,
+      "ppid": 61826,
+      "pgid": 61826,
+      "state": "T",
+      "started": "Fri Nov 20 01:17:15 2026",
+      "command": "./target/release/fit tx s3-tx100r -p pipeline-3.toml --final --preds preds_3"
+    },
+    "tx_owner": {
+      "pid": 61826,
+      "ppid": 1,
+      "pgid": 61826,
+      "state": "Ts",
+      "started": "Thu Nov 19 15:04:49 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_next3.py"
+    }
+  },
+  "primary_plan_sha256": "7ef72a3fca82fa5d3f3b9430173bc1dc42ee7b0ba46cb6b1aef67fbc519076a1",
+  "script_sha256": "5400b2c831e480267482872bd2ccbc913a617ca9cd207b4f71abcd5377b65a6e",
+  "rule": "Independent monitor-loss protection. If original guard disappears or PID identity changes without its complete original22/22 proof, SIGSTOP only matching original native and controller. Own SIGTERM/interrupt also suspends them through exception handler. No model restart, state loss or unrelated signal."
+}

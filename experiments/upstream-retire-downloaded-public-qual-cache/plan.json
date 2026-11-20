@@ -1,0 +1,18 @@
+{
+  "created": "2026-11-20T09:28:35.863605+00:00",
+  "source_sha256": {
+    "experiments/upstream-split3-matched-mps/manifest.json": "209692702bef14dd123e9b9a3d957aae86f74656ef42bdedf9842eb4f7233e2d",
+    "experiments/upstream-split3-full-raw-bank/manifest.json": "336ac497c963c2cb53747a2c948dbcd2f9d25e91595de71defc4884e8fc8a75a",
+    "experiments/upstream-own6-tight-calibration/calibration.json": "8a53bf0955820f0bd02960b6e37a2b9f75bdfa71f8ed93c3aa35d2042e0a3398",
+    "experiments/upstream-nn-pool6-assembly/calibration.json": "962257696c6e0e69d1eec6f6b31e0aa9ef9ef8a2506363125831cb3fd097c52c",
+    "experiments/upstream-split3-voting-stream/plan.json": "4c914cc28075705f240278007000a09c47974500545f69f44632fce226f58c23",
+    "scripts/upstream_retire_downloaded_public_qual_cache.py": "d45be45a2993fd35b4f943eca7233393428ccca0062745e8041a978c6ce5b5a8"
+  },
+  "authorization": "User explicitly requested storage cleanup and agreed to removing public-bank results because they are not our own effort. This discards only remaining downloaded public qualifying prediction caches, not earlier verified archives or own numerical values.",
+  "roots": [
+    "/Users/quan/workspace/netflix_prize/artifacts/public-qual/preds_3",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-qual/preds_old"
+  ],
+  "target_free_gib": 20.25,
+  "policy": "Only closed untracked unflagged single-link regular *.qual.npy vectors of2817131float32 rows in two explicit retired-public directories; exclude all own bound inputs. All original native writer processes and owners paused while recovering disk reserve. Full pre-deletion SHA/metadata catalog retained. Downloaded numerical caches intentionally discarded without archive; existing exact archives, data, source and all own models/checkpoints/fits untouched."
+}

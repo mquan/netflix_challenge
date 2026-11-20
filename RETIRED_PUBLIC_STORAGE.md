@@ -25,6 +25,22 @@ includes that public vector shape and uses the same exact-byte checks.
 It stops at20.5GiB free space or when all eligible files are processed;
 it does not lower any training resource guard.
 
+That v2 archive is now complete:539 files,637,861,376 logical bytes saved.
+A separate pass reopened and fully decoded all539 archives successfully.
+It exhausted its eligible files at about20.17GiB free space, enough for
+the original temporal admission guard, without reaching the20.5GiB target.
+
+Subsequent temporal memory growth caused swap to consume the disk reserve.
+Under the user's earlier authorization to remove downloaded public-bank
+results, two separate transactions intentionally discarded the remaining
+362 eligible untracked downloaded public qualifying prediction caches,
+4,079,252,024 logical bytes. They retained pre-deletion SHA/metadata catalogs
+and did not remove any earlier archives, source, canonical data or own
+numerical values. These intentionally discarded caches are not lossless
+archives and cannot be restored through the commands below. All original
+native writers and their owners were paused while disk headroom recovered.
+[Native memory recovery](TX100_MEMORY_RECOVERY.md).
+
 Actual transaction evidence:
 
 - `experiments/upstream-retired-public-stats-archive/verification.json`

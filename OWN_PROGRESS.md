@@ -35,14 +35,16 @@ reconstructed. No qualifying refit follows this result. The original
 supervisor's post-fit zombie-process accounting failure is preserved;
 a separate replay supervisor verified the completed fits without retraining.
 
-Now running: a matched comparison using the original full split3 holdout.
+The matched comparison using the original full split3 holdout is interrupted.
 Its1,760,494 legitimate known rows include632,330 additional ratings, all
 verified against original known data and excluded from native training.
 Both arms evaluate the same1,128,164 canonical rows and exclude every held
 user's additional labels. Control fits only canonical training rows;
 primary fits all eligible holdout rows. Both retain all73 distinct own
 native prediction columns,130 original voting features and the same full
-five-fold/three-seed H128/rank32 recipe. No new score yet.
+five-fold/three-seed H128/rank32 recipe. Five control and two expanded folds
+completed before a resource guard stopped its neural worker. Three expanded
+folds and all final independent model replays remain. No complete new score.
 [Matched study](SPLIT3_FULL_HOLDOUT_PLAN.md).
 
 Both original voting-generation phases completed. All130 full-holdout
@@ -53,15 +55,23 @@ features; any production must capture all130 corresponding qualifying
 features rather than substitute the earlier table.
 [Feature admission](SPLIT3_FEATURE_ADMISSION.md).
 
-Native CFNADE96 continues from fully verified74/70 checkpoints toward
-its unchanged95/95 budget. Original split3 RBM200 completed25/25 and passed
-separate source/binary/data/output and complete known-projection checks;
-temporal100r waits its original disk/memory guard. The item-oriented autoencoder completed50/50;
+Native CFNADE96 is paused at independently verified86/81 checkpoints;
+its original X process remains in RAM and its budget stays95/95. Temporal100r
+now runs alone in the same original native process at full22/22. Its measured
+15.9GiB footprint exceeded the8GiB admission estimate and caused the matched
+study interruption and CF qualifying disk-guard stop. Separate identity-checked
+memory and monitor-loss guards preserve native state and serialize recovery.
+Free disk recovered to about20.9GiB after authorized retired-public cleanup.
+[Resource recovery](TX100_MEMORY_RECOVERY.md).
+
+Original split3 RBM200 completed25/25 and passed
+separate source/binary/data/output and complete known-projection checks.
+The item-oriented autoencoder completed50/50;
 all64 final user-context columns and every query gather are independently
 verified. Remote DNN24 has completed8/8 and returned two verified own
 prediction pairs. Remote attention32 completed12/12 and its two own pairs
-were imported and verified. The latest published remote heartbeat at08:12UTC
-reports exponential RBM200 first phase complete25/25 and second phase10/25.
+were imported and verified. The latest published remote heartbeat at09:12UTC
+reports exponential RBM200 first phase complete25/25 and second phase22/25.
 No completed RBM return yet. The original deadline remains.
 
 [Own qualifying result](OWN6_CALIBRATION_RESULT.md) ·
