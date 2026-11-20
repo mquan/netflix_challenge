@@ -1,0 +1,72 @@
+{
+  "state": "prepared_original_recipe_coverage_gap_not_launched",
+  "observed": "2026-11-20T11:14:05.889487+00:00",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "jobs": [
+    {
+      "name": "tsvdx4-1600lm",
+      "original_registry_job": {
+        "command": "cargo build --release --bin tsvdx4-new && ./target/release/tsvdx4-new tsvdx4-1600lm",
+        "inputs": [
+          "src/bin/tsvdx4-new.rs"
+        ],
+        "inputs_from": [
+          "ingest",
+          "newsplit"
+        ],
+        "outputs": [
+          "preds_new/tsvdx4-1600lm.probex.npy",
+          "preds_new/tsvdx4-1600lm.qual.npy",
+          "preds_new/tsvdx4-1600lm.out",
+          "preds_new/tsvdx4-1600lm_ep02.probex.npy",
+          "preds_new/tsvdx4-1600lm_ep02.qual.npy"
+        ]
+      },
+      "epochs_per_phase": 2,
+      "factors": 1600,
+      "original_low_memory_preset": true,
+      "n_users": 480189,
+      "n_items": 17770,
+      "latent_array_lower_bound_bytes": 11266732800,
+      "dense_neighbor_arrays_bytes": 0,
+      "prior_receipt_present": false,
+      "prior_declared_outputs_present": false
+    },
+    {
+      "name": "tsvdx5-1200lm",
+      "original_registry_job": {
+        "command": "cargo build --release --bin tsvdx5-new && ./target/release/tsvdx5-new tsvdx5-1200lm",
+        "inputs": [
+          "src/bin/tsvdx5-new.rs"
+        ],
+        "inputs_from": [
+          "ingest",
+          "newsplit"
+        ],
+        "outputs": [
+          "preds_new/tsvdx5-1200lm.probex.npy",
+          "preds_new/tsvdx5-1200lm.qual.npy",
+          "preds_new/tsvdx5-1200lm.out"
+        ]
+      },
+      "epochs_per_phase": 23,
+      "factors": 1200,
+      "original_low_memory_preset": true,
+      "n_users": 480189,
+      "n_items": 17770,
+      "latent_array_lower_bound_bytes": 8450049600,
+      "dense_neighbor_arrays_bytes": 2526183200,
+      "prior_receipt_present": false,
+      "prior_declared_outputs_present": false
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-repro/registry.json": "1f6d235dcee23e9ded06fa300e6e72b14a40de0cb63d814e9042bb0013ecb416",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "artifacts/upstream-repro/fresh/src/bin/tsvdx4-new.rs": "f96f55745f13f70a558af7c1f19dfc262c93938046a1d64019ca2981eb381b13",
+    "artifacts/upstream-repro/fresh/src/bin/tsvdx5-new.rs": "790e34f115024a8961de63ca6e958c78158559f6ccd9d7bf1975190f61933f2b",
+    "artifacts/upstream-repro/fresh/src/tx.rs": "79517d63791e98089cfbafbb3a3353fe9c6802966d75e24542afde1bd45e2c5f",
+    "artifacts/upstream-repro/fresh-data-receipt.json": "bc56be22b4fea7977f75892420f46fa827fcda5467ab57733b857074d7edae44"
+  },
+  "warning": "Memory arithmetic counts selected persistent arrays only, not a safe peak-memory admission estimate. No model is running or reserved by this audit. Existing large-job deferral remains in force until complete guarded execution admission."
+}

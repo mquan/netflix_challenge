@@ -1,0 +1,92 @@
+{
+  "state": "complete_local_compact_remote15h_extension_return_check",
+  "observed": "2026-11-20T10:49:53.008582+00:00",
+  "job": "s3-mfrbmx-60h",
+  "remote_commit": "f8d56f22a73dff49f31d82e9649e86e93286bf51",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "rows": [
+    {
+      "name": "s3-mfrbmx-60h",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-mfrbmx-60h_ep06",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep06.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep06.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-mfrbmx-60h_ep08",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep08.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep08.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy": "4f368e191a0faf7773604a629659062426b9872b948cc4e6b4123e453d934650",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h.probex.npy": "574e6047f10f73610b6ffb911844cffb8d8de876d0c0baebb9b617aa874a2fea",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h.qual.npy": "02f3ae4cb93048477e0b3344bd808e91df2abcc3444e2604e7c685cae55fb67a",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep06.probex.npy": "6d33e42a6fb4d1dd15ac57bda0b8528c7f9fdad0af6b2a40160df8c68843d897",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep06.qual.npy": "49527c4c1abd98bc22b61cb329e21511be6268e8bb5d47baa7e0219eee7cee77",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep08.probex.npy": "d1423dacf52d58917074602e038cfa61ba60ce4e336ca13dc3c66a5dfdae6ad2",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h_ep08.qual.npy": "93d099a8b09b0648fae1112d1c624d3170b779bc74afd0d3b6fff4897d3e3323",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-export.tar.gz": "76909a9757c237e2102a432bd56728370d9ad9334ba5076bd469cb0e3251f2a0",
+    "scripts/verify_upstream_remote15h_extension_return.py": "b7adb941a2d89754e621759a38367814e07ff2fbb0f096950f6bb845bf934daf",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h_ep06.npz": "0c67afbf99f8ea1103813c7f76756ce2fac93197cebbd4473141cd7ae0738e73",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h-receipt.json": "738cb0448de6366d4a6098476a27fecee8bc72b47cb2b0a543a9645e2a180859",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h.log": "95639c12724140b168c0963ed96b2264777161c1ee9d7b10734d1be1696db6c3",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h-launch.json": "81e7a26488ea0b6a760bd23361c117ccf63f29a9f34a3e388a4639b451ff1b03",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/verification.json": "9c5801746e9738f0ab812753ecfc9a02f0175903afd8981b65620bbcf6b33840",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h_ep08.npz": "134b650deae4c0a120359c0c368c5c0871aa920cafce5ed1d14a8b4ae1af5441",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/s3-mfrbmx-60h.npz": "ed80bc5202051108ae14dc5364a21e27895c196a8b0063c319deaee0876fd657",
+    "artifacts/remote15h-ext-return/s3-mfrbmx-60h-v1/export/s3-mfrbmx-60h/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h-receipt.json": "738cb0448de6366d4a6098476a27fecee8bc72b47cb2b0a543a9645e2a180859",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h.log": "95639c12724140b168c0963ed96b2264777161c1ee9d7b10734d1be1696db6c3",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/transfer.json": "d978a0697ec91875313d5c23cae7643425a5755c6ea46871850e4488cef03b5b",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/s3-mfrbmx-60h-launch.json": "81e7a26488ea0b6a760bd23361c117ccf63f29a9f34a3e388a4639b451ff1b03",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/verification.json": "9c5801746e9738f0ab812753ecfc9a02f0175903afd8981b65620bbcf6b33840",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "experiments/upstream-remote15h-ext-return/s3-mfrbmx-60h-v1/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "ignored_archive_appledouble_metadata": [
+    "._s3-mfrbmx-60h",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h_ep06.npz",
+    "s3-mfrbmx-60h/._preparation.json",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h-receipt.json",
+    "s3-mfrbmx-60h/._split3.log",
+    "s3-mfrbmx-60h/._plan.json",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h.log",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h-launch.json",
+    "s3-mfrbmx-60h/._verification.json",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h_ep08.npz",
+    "s3-mfrbmx-60h/._upstream_remote15h_ext.py",
+    "s3-mfrbmx-60h/._s3-mfrbmx-60h.npz",
+    "s3-mfrbmx-60h/._build.log"
+  ],
+  "prior_import_failure_paths": [],
+  "original_full_epochs_each": 12,
+  "original_recipe_trace_and_immutable_export_verified": true,
+  "local_full_known_map_and_training_disjointness_recomputed": true,
+  "native_qualifying_npy_bytes_reconstructed_exactly": true,
+  "native_npy_header_template": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy",
+  "native_full_probe_projection_recomputed_by_separate_remote_export": true,
+  "native_full_probe_vectors_present_locally": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Locally verified original plan/helper/source-export lineage, both full epoch traces, canonical datasets/map/disjointness and complete lossless paired vectors. Remote separate exporter rehashed original binaries/source/data/native outputs and projected every known row; native full-probe vectors remain on remote pending full-output transfer. No new local full-probe inference replay or ensemble/qualifying score claimed."
+}

@@ -1,0 +1,31 @@
+[s3-bknbrx-100w]
+target = "rtg"
+BknbrxConfig { n_epochs: 12, seed: 42, shuffle_users: true, parallel_mode: Hogwild, n_threads: 8, n_time_bins: 30, beta: 0.4, lr_bu: 0.003, lr_but: 0.0025, lr_alpha: 1e-5, lr_bi: 0.002, lr_bit: 5e-5, lr_cu: 0.008, lr_cut: 0.002, reg_bu: 0.03, reg_but: 0.005, reg_alpha: 50.0, reg_bi: 0.03, reg_bit: 0.1, reg_cu: 0.01, reg_cut: 0.005, max_neighbors: 100, lr_w: 0.003, lr_c: 0.003, lr_beta_u: 1e-6, reg_w: 0.004, reg_c: 0.004, reg_beta_u: 0.01, lr_w_day: 0.004, lr_c_day: 0.004, reg_w_day: 0.002, reg_c_day: 0.002, lambda1: 25.0, lambda2: 10.0 }
+train_3 => probe_3
+Epoch 01 | RMSE 0.94595
+Epoch 02 | RMSE 0.92718
+Epoch 03 | RMSE 0.91824
+Epoch 04 | RMSE 0.91283
+Epoch 05 | RMSE 0.90932
+Epoch 06 | RMSE 0.90687
+Epoch 07 | RMSE 0.90499
+Epoch 08 | RMSE 0.90370
+Epoch 09 | RMSE 0.90265
+Epoch 10 | RMSE 0.90190
+Epoch 11 | RMSE 0.90125
+Epoch 12 | RMSE 0.90083
+probe_3 RMSE 0.90083
+fulltrain => qual
+Epoch 01 | RMSE 3.68020
+Epoch 02 | RMSE 3.69077
+Epoch 03 | RMSE 3.69632
+Epoch 04 | RMSE 3.70030
+Epoch 05 | RMSE 3.70360
+Epoch 06 | RMSE 3.70579
+Epoch 07 | RMSE 3.70822
+Epoch 08 | RMSE 3.70935
+Epoch 09 | RMSE 3.71042
+Epoch 10 | RMSE 3.71182
+Epoch 11 | RMSE 3.71308
+Epoch 12 | RMSE 3.71401
+

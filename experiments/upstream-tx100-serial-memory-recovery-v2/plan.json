@@ -1,0 +1,68 @@
+{
+  "created": "2026-11-20T11:12:47.793232+00:00",
+  "original_processes": {
+    "cf_owner": {
+      "pid": 40876,
+      "ppid": 1,
+      "pgid": 40876,
+      "state": "Ts",
+      "started": "Thu Nov 19 21:31:11 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_cf96_disk_resume.py"
+    },
+    "cf_x": {
+      "pid": 40924,
+      "ppid": 40876,
+      "pgid": 40924,
+      "state": "Ts",
+      "started": "Thu Nov 19 21:31:25 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x"
+    },
+    "tx_owner": {
+      "pid": 61826,
+      "ppid": 1,
+      "pgid": 61826,
+      "state": "Ts",
+      "started": "Thu Nov 19 15:04:49 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_next3.py"
+    },
+    "tx": {
+      "pid": 87902,
+      "ppid": 61826,
+      "pgid": 61826,
+      "state": "T",
+      "started": "Fri Nov 20 01:17:15 2026",
+      "command": "./target/release/fit tx s3-tx100r -p pipeline-3.toml --final --preds preds_3"
+    }
+  },
+  "original_verifier": {
+    "pid": 61827,
+    "ppid": 1,
+    "pgid": 61827,
+    "state": "Ss",
+    "started": "Thu Nov 19 15:04:49 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/verify_upstream_split3_next3.py --watch"
+  },
+  "source_sha256": {
+    "scripts/upstream_tx100_serial_memory_recovery.py": "6ea4254a77cf23ea0a109e5952f2b602082ddb0707a687d6e95e43f86023a61e",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "experiments/upstream-cfnade-parallel/plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19",
+    "experiments/upstream-retire-downloaded-public-qual-cache-v2/verification.json": "48e87d81a2550405103f4263db66aa59e32d13234d0922a38023846c964360c2",
+    "experiments/upstream-split3-next3/plan.json": "f63408e9bcbdefc66a811b88fc3637fa355defce10f9abd61b2db38f11cdac40",
+    "experiments/upstream-split3-matched-queue/failure.json": "c065be687f059cceb352ffe241bcc13b63a06ffad6333bf34e0828dc707d331f"
+  },
+  "checkpoints": {
+    "x": {
+      "epoch": 86,
+      "arrays": 84,
+      "state_sha256": "12973aaadc7684f5bf1f6847b61e79b7a5523eadc46413be656fe3f4f600758c",
+      "all_complete_saved_tensors_rehashed_and_finite": true
+    },
+    "qual": {
+      "epoch": 81,
+      "arrays": 84,
+      "state_sha256": "1105675a9d3117d37360213ca700ec7c4f6019e1f1dd5027e336fa9ba6e5aad4",
+      "all_complete_saved_tensors_rehashed_and_finite": true
+    }
+  },
+  "rule": "Same in-memory original TX100 process resumes by SIGCONT, no model/data/operator/epoch changes or restart. Original CF X native and CF supervisor remain SIGSTOP, Q complete81 checkpoint retained. TX runs alone; immediate measured24GiB total RSS/physical,128MiB swap-growth,18.75GiB disk guard suspends only original TX and its owner in place. Full22/22 native proof required before CF original owners resume. Matched5control+2expanded folds/partial preprocessing preserved, no promotion."
+}

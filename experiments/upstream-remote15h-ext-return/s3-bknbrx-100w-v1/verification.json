@@ -1,0 +1,40 @@
+{
+  "state": "verified_complete_original_remote15h_producer",
+  "observed": "2026-11-20T09:55:57.289738+00:00",
+  "job": "s3-bknbrx-100w",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "records": [
+    {
+      "column": "s3-bknbrx-100w",
+      "file": "s3-bknbrx-100w.npz",
+      "sha256": "2c30379545b87a993f95aa903808bb9efabbfe317046f22e148e5fcfa7b86d9e",
+      "native_probe_sha256": "251f2028123936b815af7bf44dac70bc42ec0c8531033f42df913183b7d64514",
+      "native_qual_sha256": "79bfb4b9a4650e8495200980c3861206fa39e8a87fe8adc4aaebdd7e97575bbf"
+    },
+    {
+      "column": "s3-bknbrx-100w_ep01",
+      "file": "s3-bknbrx-100w_ep01.npz",
+      "sha256": "838904f82abe4b5fc6a00f6f820af069a1419e5110b820986d38162930c78998",
+      "native_probe_sha256": "b03142537a3a13b26ff911a1b0930d783c7e364f0f075c0784fb3e080da5dd42",
+      "native_qual_sha256": "d42f5ac253ef6c1705e950550fe39a8cf1298dcb19fc7e0084e2696a2de86e67"
+    }
+  ],
+  "source_data_binary_rehashed": true,
+  "both_full_original_epoch_traces": true,
+  "independent_known_projection": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "files_sha256": {
+    "preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "s3-bknbrx-100w-receipt.json": "3ed05d6f87eb7c7ffca6bbf8748be5d4839b00ea8eff6050a98ac71a5704c07f",
+    "s3-bknbrx-100w.npz": "2c30379545b87a993f95aa903808bb9efabbfe317046f22e148e5fcfa7b86d9e",
+    "s3-bknbrx-100w_ep01.npz": "838904f82abe4b5fc6a00f6f820af069a1419e5110b820986d38162930c78998",
+    "s3-bknbrx-100w.log": "bb6a322905ea842bf2621e55e4f8059d9a9a5cab25dd42ffafe5952814927cb6",
+    "s3-bknbrx-100w-launch.json": "41aef5f4bb38dedb676785928234428f1256d33c408e0792ae7688f2c3a0285f",
+    "upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "scope": "Own numerical training outputs only. No blend or goal-success claim."
+}

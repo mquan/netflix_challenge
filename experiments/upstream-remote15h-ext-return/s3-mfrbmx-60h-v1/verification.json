@@ -1,0 +1,48 @@
+{
+  "state": "verified_complete_original_remote15h_producer",
+  "observed": "2026-11-20T10:10:19.680552+00:00",
+  "job": "s3-mfrbmx-60h",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "records": [
+    {
+      "column": "s3-mfrbmx-60h",
+      "file": "s3-mfrbmx-60h.npz",
+      "sha256": "ed80bc5202051108ae14dc5364a21e27895c196a8b0063c319deaee0876fd657",
+      "native_probe_sha256": "d6b61d14c899769fed1414f407946221d98ca4fab6e4a9a77165c1c2812cbc69",
+      "native_qual_sha256": "02f3ae4cb93048477e0b3344bd808e91df2abcc3444e2604e7c685cae55fb67a"
+    },
+    {
+      "column": "s3-mfrbmx-60h_ep06",
+      "file": "s3-mfrbmx-60h_ep06.npz",
+      "sha256": "0c67afbf99f8ea1103813c7f76756ce2fac93197cebbd4473141cd7ae0738e73",
+      "native_probe_sha256": "c528659323fe8e5afc410c0b49b1c89f0710e41c8bc77473e677d47d1bb62bdf",
+      "native_qual_sha256": "49527c4c1abd98bc22b61cb329e21511be6268e8bb5d47baa7e0219eee7cee77"
+    },
+    {
+      "column": "s3-mfrbmx-60h_ep08",
+      "file": "s3-mfrbmx-60h_ep08.npz",
+      "sha256": "134b650deae4c0a120359c0c368c5c0871aa920cafce5ed1d14a8b4ae1af5441",
+      "native_probe_sha256": "c57a5547ad6675b1a54a6df564b2277b96e3ddb86a1c392d6eeb2030f40d59ef",
+      "native_qual_sha256": "93d099a8b09b0648fae1112d1c624d3170b779bc74afd0d3b6fff4897d3e3323"
+    }
+  ],
+  "source_data_binary_rehashed": true,
+  "both_full_original_epoch_traces": true,
+  "independent_known_projection": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "files_sha256": {
+    "s3-mfrbmx-60h_ep06.npz": "0c67afbf99f8ea1103813c7f76756ce2fac93197cebbd4473141cd7ae0738e73",
+    "preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "s3-mfrbmx-60h-receipt.json": "738cb0448de6366d4a6098476a27fecee8bc72b47cb2b0a543a9645e2a180859",
+    "split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "s3-mfrbmx-60h.log": "95639c12724140b168c0963ed96b2264777161c1ee9d7b10734d1be1696db6c3",
+    "s3-mfrbmx-60h-launch.json": "81e7a26488ea0b6a760bd23361c117ccf63f29a9f34a3e388a4639b451ff1b03",
+    "s3-mfrbmx-60h_ep08.npz": "134b650deae4c0a120359c0c368c5c0871aa920cafce5ed1d14a8b4ae1af5441",
+    "upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "s3-mfrbmx-60h.npz": "ed80bc5202051108ae14dc5364a21e27895c196a8b0063c319deaee0876fd657",
+    "build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "scope": "Own numerical training outputs only. No blend or goal-success claim."
+}

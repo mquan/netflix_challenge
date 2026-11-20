@@ -1,0 +1,31 @@
+{
+  "primary": {
+    "pid": 21913,
+    "ppid": 94094,
+    "pgid": 21913,
+    "state": "Ss",
+    "started": "Fri Nov 20 03:12:36 2026",
+    "command": ".venv/bin/python -u scripts/upstream_tx100_serial_memory_recovery_v2.py"
+  },
+  "originals": {
+    "tx": {
+      "pid": 87902,
+      "ppid": 61826,
+      "pgid": 61826,
+      "state": "T",
+      "started": "Fri Nov 20 01:17:15 2026",
+      "command": "./target/release/fit tx s3-tx100r -p pipeline-3.toml --final --preds preds_3"
+    },
+    "tx_owner": {
+      "pid": 61826,
+      "ppid": 1,
+      "pgid": 61826,
+      "state": "Ts",
+      "started": "Thu Nov 19 15:04:49 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_next3.py"
+    }
+  },
+  "primary_plan_sha256": "eeae1f46211a0eec888603e999f98f4539d3576985d94bd29b4ae465980a33e6",
+  "script_sha256": "13cab2fcc42a031918e648a4e4eb9c1b567680d3f2ce18f6c1654ba71b167a1d",
+  "rule": "Independent monitor-loss protection. If original guard disappears or PID identity changes without its complete original22/22 proof, SIGSTOP only matching original native and controller. Own SIGTERM/interrupt also suspends them through exception handler. No model restart, state loss or unrelated signal."
+}

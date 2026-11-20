@@ -1,0 +1,80 @@
+{
+  "state": "complete_local_compact_remote15h_extension_return_check",
+  "observed": "2026-11-20T10:49:51.053512+00:00",
+  "job": "s3-bknbrx-100w",
+  "remote_commit": "f8d56f22a73dff49f31d82e9649e86e93286bf51",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "rows": [
+    {
+      "name": "s3-bknbrx-100w",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-bknbrx-100w_ep01",
+      "paired_files": {
+        "probex": "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w_ep01.probex.npy",
+        "qual": "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w_ep01.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy": "4f368e191a0faf7773604a629659062426b9872b948cc4e6b4123e453d934650",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w.probex.npy": "09598c0e458f13a747f5c122b83129680641217ba980f2f2639e9c9fdcc5e4c2",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w.qual.npy": "79bfb4b9a4650e8495200980c3861206fa39e8a87fe8adc4aaebdd7e97575bbf",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w_ep01.probex.npy": "b7672f8224c417e84980475a7c2088f8a6531f928dbc63f262176bc409cf8aee",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w_ep01.qual.npy": "d42f5ac253ef6c1705e950550fe39a8cf1298dcb19fc7e0084e2696a2de86e67",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-export.tar.gz": "daec6eb3e997bb5d99570a0cefaed87e0d9da8a04ec184370fb929f5c9814234",
+    "scripts/verify_upstream_remote15h_extension_return.py": "b7adb941a2d89754e621759a38367814e07ff2fbb0f096950f6bb845bf934daf",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/s3-bknbrx-100w-receipt.json": "3ed05d6f87eb7c7ffca6bbf8748be5d4839b00ea8eff6050a98ac71a5704c07f",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/s3-bknbrx-100w.npz": "2c30379545b87a993f95aa903808bb9efabbfe317046f22e148e5fcfa7b86d9e",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/s3-bknbrx-100w_ep01.npz": "838904f82abe4b5fc6a00f6f820af069a1419e5110b820986d38162930c78998",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/s3-bknbrx-100w.log": "bb6a322905ea842bf2621e55e4f8059d9a9a5cab25dd42ffafe5952814927cb6",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/verification.json": "bcfb7353bfd6fbe7f28def6a562b08bddf5c815e85664875894d19d1f150b36b",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/s3-bknbrx-100w-launch.json": "41aef5f4bb38dedb676785928234428f1256d33c408e0792ae7688f2c3a0285f",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "artifacts/remote15h-ext-return/s3-bknbrx-100w-v1/export/s3-bknbrx-100w/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/preparation.json": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/plan.json": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w-receipt.json": "3ed05d6f87eb7c7ffca6bbf8748be5d4839b00ea8eff6050a98ac71a5704c07f",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/transfer.json": "58c96c668d8a477a3d7356bdd13770a7a9c66530feee088bb5e415db10d338ed",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w.log": "bb6a322905ea842bf2621e55e4f8059d9a9a5cab25dd42ffafe5952814927cb6",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/verification.json": "bcfb7353bfd6fbe7f28def6a562b08bddf5c815e85664875894d19d1f150b36b",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/s3-bknbrx-100w-launch.json": "41aef5f4bb38dedb676785928234428f1256d33c408e0792ae7688f2c3a0285f",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/upstream_remote15h_ext.py": "af6b7597ab81d0180322ef1f6fed6857b0ff3345d91469fab5fb8e4f0098f93a",
+    "experiments/upstream-remote15h-ext-return/s3-bknbrx-100w-v1/build.log": "ce177e4e593c6b0b81a42edf4c07e63a806416ea679bee84a305d56d4059f9ad"
+  },
+  "ignored_archive_appledouble_metadata": [
+    "._s3-bknbrx-100w",
+    "s3-bknbrx-100w/._preparation.json",
+    "s3-bknbrx-100w/._split3.log",
+    "s3-bknbrx-100w/._plan.json",
+    "s3-bknbrx-100w/._s3-bknbrx-100w-receipt.json",
+    "s3-bknbrx-100w/._s3-bknbrx-100w.npz",
+    "s3-bknbrx-100w/._s3-bknbrx-100w_ep01.npz",
+    "s3-bknbrx-100w/._s3-bknbrx-100w.log",
+    "s3-bknbrx-100w/._verification.json",
+    "s3-bknbrx-100w/._s3-bknbrx-100w-launch.json",
+    "s3-bknbrx-100w/._upstream_remote15h_ext.py",
+    "s3-bknbrx-100w/._build.log"
+  ],
+  "prior_import_failure_paths": [],
+  "original_full_epochs_each": 12,
+  "original_recipe_trace_and_immutable_export_verified": true,
+  "local_full_known_map_and_training_disjointness_recomputed": true,
+  "native_qualifying_npy_bytes_reconstructed_exactly": true,
+  "native_npy_header_template": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy",
+  "native_full_probe_projection_recomputed_by_separate_remote_export": true,
+  "native_full_probe_vectors_present_locally": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Locally verified original plan/helper/source-export lineage, both full epoch traces, canonical datasets/map/disjointness and complete lossless paired vectors. Remote separate exporter rehashed original binaries/source/data/native outputs and projected every known row; native full-probe vectors remain on remote pending full-output transfer. No new local full-probe inference replay or ensemble/qualifying score claimed."
+}

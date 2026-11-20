@@ -1,0 +1,22 @@
+{
+  "state": "complete_all_own181_retained_added_operator_bits_original_statistics_and_ridge_replay",
+  "manifest_sha256": "13b151666b021829b13f72f19c28e1ffe8b6341eadc0ac2068fa9541b192d81d",
+  "verifier_sha256": "dd3b7ff7022ee3eda04c0631833949a34fa2632d2a0635ba644ebcf2a3abd520",
+  "rows": 1128164,
+  "raw_predictions": 181,
+  "context_columns": 90,
+  "design_columns": 257,
+  "nonlinear_columns": 407,
+  "all_original_and_new_input_values_bitwise_equal": true,
+  "all_original_user_partitions_retained": true,
+  "all_group_statistics_bitwise_equal": true,
+  "all_actual_ridge_prediction_bits_equal": true,
+  "ridge_rmse": 0.8622279136776032,
+  "preceding_original_ridge_rmse": 0.862491942587002,
+  "preceding_original_ridge_dtype": "float64",
+  "ridge_improves_original": true,
+  "actual_ridge_prediction_sha256": "2119b96b6cb5cc13a209096ee2a8f66b95bd7ec049a7d433739a0fb92b2ed5c8",
+  "qualifying_labels_read": false,
+  "neural_models_fitted": 0,
+  "scope": "Full canonical own181 input/ridge admission only. Complete neural fitting, original eligible408-input scaler proof and saved-model replay still mandatory; no development-best promotion or qualifying score."
+}

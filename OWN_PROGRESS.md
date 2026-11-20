@@ -28,6 +28,14 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
+The separate own181 diagnostic adds all fifteen recent own pairs, including
+new verified BKNBRX100w and MFRBMX60h returns. Full input/statistic/ridge
+replay gives **0.8622279137**, versus own176 **0.8622734678** and original166
+**0.8624919426**. The last five add only0.0000455541 ridge improvement.
+No own181 neural fit or qualifying promotion. [Result](OWN181_RECENT15_RIDGE_RESULT.md).
+Missing original1,200/1,600-factor coverage is now audited; memory lower
+bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
+
 New own176 input/ridge admission is complete. All ten recent own scalar
 predictors add nonduplicate canonical inputs to the original own166/all90
 bank. Its ridge diagnostic improves **0.8624919426 to0.8622734678**; every
@@ -75,6 +83,11 @@ now runs alone in the same original native process at full22/22. Its measured
 15.9GiB footprint exceeded the8GiB admission estimate and caused the matched
 study interruption and CF qualifying disk-guard stop. Separate identity-checked
 memory and monitor-loss guards preserve native state and serialize recovery.
+The first serial guard suspended the same TX process when the own181 CPU
+diagnostic overlapped it. That diagnostic has completed. A separate v2
+monitor now continues the same original process with unchanged24GiB total,
+128MiB swap-growth and18.75GiB disk limits; its own monitor-loss watchdog
+and signal handling preserve the original native state on interruption.
 Free disk recovered to about20.9GiB after authorized retired-public cleanup.
 [Resource recovery](TX100_MEMORY_RECOVERY.md).
 

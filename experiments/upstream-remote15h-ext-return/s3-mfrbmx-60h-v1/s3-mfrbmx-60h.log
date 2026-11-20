@@ -1,0 +1,31 @@
+[s3-mfrbmx-60h]
+target = "rtg"
+MfRbmxConfig { mf: MfConfig { n_feat: 60, n_epochs: 12, seed: 42, lr_u: 0.005, lr_i: 0.03, lr_ub: 0.006, lr_ib: 0.03, reg_u: 0.07, reg_i: 0.004, sigma_u: 0.004, sigma_i: 0.005, reset_u_epoch: 1024 }, rbm: RbmGvConfig { n_hidden: 100, n_epochs: 12, seed: 42, gibbs3_after_epoch: 1024, lr_w: 6e-5, lr_c: 0.005, reg_w: 0.004, reg_c: 0.0, sigma_w: 0.02, sigma_v: 0.8, v_shift: 0.0, v_scale: 1.0, sample_visible: true }, w_mf: 0.5, w_rbm: 1.0 }
+train_3 => probe_3
+Epoch 01 | RMSE 0.94989
+Epoch 02 | RMSE 0.92524
+Epoch 03 | RMSE 0.91769
+Epoch 04 | RMSE 0.91353
+Epoch 05 | RMSE 0.91128
+Epoch 06 | RMSE 0.91045
+Epoch 07 | RMSE 0.91098
+Epoch 08 | RMSE 0.91337
+Epoch 09 | RMSE 0.91915
+Epoch 10 | RMSE 0.92640
+Epoch 11 | RMSE 0.93355
+Epoch 12 | RMSE 0.94455
+probe_3 RMSE 0.94455
+fulltrain => qual
+Epoch 01 | RMSE 3.67599
+Epoch 02 | RMSE 3.69841
+Epoch 03 | RMSE 3.69775
+Epoch 04 | RMSE 3.69792
+Epoch 05 | RMSE 3.70289
+Epoch 06 | RMSE 3.70223
+Epoch 07 | RMSE 3.70733
+Epoch 08 | RMSE 3.71119
+Epoch 09 | RMSE 3.71158
+Epoch 10 | RMSE 3.72334
+Epoch 11 | RMSE 3.73023
+Epoch 12 | RMSE 3.74489
+
