@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T11:27:33.746935+00:00",
-  "display_time": "2026-11-20 03:15 PST",
+  "observed": "2026-11-20T11:47:32.052557+00:00",
+  "display_time": "2026-11-20 03:47 PST",
   "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,11 @@
   "verified_development_report_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
   "independent_verification_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
   "work": [
+    {
+      "work": "Own330 all149 unused native predictors: complete ridge and independent replay",
+      "state": "247 complete original native pairs audited:93 original181 canonical matches and5 full-pair aliases removed,149 fixed additions. Full406-column ridge retains every own181 input bit. Independent bounded/sequential readers reproduce all1128164-row operators, all original groups/statistics, eligible solves and every held float32 prediction. Ridge improves0.8622279136776032 to0.8619710828137934; allfive folds improve.1.5GiB child/24GiB total guard completed while original temporal kept running. No own330 neural or qualifying fit; no global promotion. Full556-feature/557-input neural admission/fits/replays still required.",
+      "evidence": "experiments/upstream-own330-native149-data/independent-verification.json"
+    },
     {
       "work": "Own181: all fifteen recent own predictions, complete ridge diagnostic",
       "state": "Full canonical operators, original user groups, all sufficient statistics and actual held ridge prediction bits independently replayed. Ridge0.8622279136776032 versus own1760.8622734677900217 and original1660.862491942587002. Only0.0000455541 incremental gain over own176; not a neural/global or qualifying promotion. Zero own181 neural fits. Fifteen own pairs include locally verified original BKNBRX100w and MFRBMX60h returns. Expanded Probe3 rows still absent from compact returns.",

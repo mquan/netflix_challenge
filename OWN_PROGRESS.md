@@ -28,6 +28,15 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
+All149 unused completed local native pairs now passed a complete own330
+ridge evaluation and independent replay. Same canonical rows/folds:
+**0.8622279137 to0.8619710828**, with all five folds improving. The full
+406-column design retains every own181 input bit; every group statistic,
+eligible solve and actual stored prediction matches. Bounded file reads
+kept the diagnostic within its1.5GiB worker guard while temporal training
+continued. No own330 neural/qualifying fit or global promotion.
+[Complete result](OWN330_NATIVE149_RIDGE_RESULT.md).
+
 The separate own181 diagnostic adds all fifteen recent own pairs, including
 new verified BKNBRX100w and MFRBMX60h returns. Full input/statistic/ridge
 replay gives **0.8622279137**, versus own176 **0.8622734678** and original166

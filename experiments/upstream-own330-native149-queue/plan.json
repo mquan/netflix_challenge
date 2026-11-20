@@ -1,0 +1,13 @@
+{
+  "created": "2026-11-20T11:43:15.010468+00:00",
+  "source_sha256": {
+    "scripts/upstream_own330_native149_queue.py": "063edbf99f7137fa442c570ea95aeaaf3c6514b5be46cb8f7e94dc51ded81cbe",
+    "scripts/upstream_own330_native149_data.py": "8075586bdd97331dfe5859fbb2d7183d52a8e95421dd2b37c32939bdc9f6389c",
+    "scripts/verify_upstream_own330_native149_data.py": "953c87baf0de7083aab4dc486a97c51d29709fe02a2931d471645b24bdcbe699",
+    "scripts/upstream_unused_native_pairs.py": "9df6a47eb736ae65c7823df911d341bf76b05914d6e1dd09a0b469b9cf731863",
+    "OWN330_NATIVE149_PLAN.md": "0acdab847597e57010a629e6c2c3c49e2bea92bcb0e0cc09eab322b306f20ba7",
+    "experiments/upstream-unused-native-pairs/verification.json": "3730e718d45bd70b3d65590409ddb8a8921508ad86996ebfdcbfdbca883c920d",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4"
+  },
+  "rule": "Full own181 ridge/all149 unused native predictors, all canonical rows/original five user folds. Bounded regular NPY row reads avoid multiGiB mapped resident pages. Reserve1.5GiB;24GiB total RSS/physical,1.5GiB child cap,128MiB swap-growth,18.75GiB disk floor. Two stable admission samples with compressor<5GiB. Fixed ridge1000/unpenalized intercept. Full independent operators/statistics/actual prediction-bit replay. No neural or qualifying fitting; no automatic retry. Guard suspends only this dedicated CPU child group, preserving RAM."
+}
