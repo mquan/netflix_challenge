@@ -1,11 +1,11 @@
 {
-  "observed": "2026-11-20T09:12:38.648898+00:00",
-  "elapsed_hours": 5.47,
-  "training_hours_left": 8.53,
-  "native_process": "62999 ./target/release/fit rbm s3-rbm200e -p pipeline-3.toml --final --preds preds_3",
-  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 86%",
+  "observed": "2026-11-20T10:12:40.900626+00:00",
+  "elapsed_hours": 6.47,
+  "training_hours_left": 7.53,
+  "native_process": "85126 ./target/release/fit tx s3-tx60o -p pipeline-3.toml --final --preds preds_3",
+  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 87%",
   "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
-  "disk_free_gib": 38.7,
+  "disk_free_gib": 34.7,
   "jobs": {
     "s3-dnn24": {
       "launch": {
@@ -114,28 +114,130 @@
         "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
         "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
       },
-      "completed_epoch_lines": 47,
-      "last_epoch": 22,
+      "completed_epoch_lines": 50,
+      "last_epoch": 25,
       "phase": "fulltrain->qual",
       "log_tail": [
-        "Epoch 21 | RMSE 3.71589",
-        "Epoch 22 | RMSE 3.71708"
+        "Saved W matrix to preds_3/s3-rbm200e.ifeat.fulltrain.npy",
+        ""
       ],
-      "receipt": false,
+      "receipt": true,
       "incomplete": false,
-      "exported": false
+      "exported": true
     },
     "s3-bknbrx-100w": {
-      "receipt": false,
+      "launch": {
+        "job": "s3-bknbrx-100w",
+        "pid": 81277,
+        "started": "2026-11-20T09:30:01.923679+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "misc",
+          "s3-bknbrx-100w",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "EPOCHS": "12",
+          "EPSAVE": "1",
+          "LR_BETA": "1e-6",
+          "LR_W": "0.003",
+          "NBR": "100",
+          "REG_W": "0.004"
+        },
+        "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+        "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
+      },
+      "completed_epoch_lines": 24,
+      "last_epoch": 12,
+      "phase": "fulltrain->qual",
+      "log_tail": [
+        "Epoch 12 | RMSE 3.71401",
+        ""
+      ],
+      "receipt": true,
       "incomplete": false,
-      "exported": false
+      "exported": true
     },
     "s3-mfrbmx-60h": {
-      "receipt": false,
+      "launch": {
+        "job": "s3-mfrbmx-60h",
+        "pid": 83405,
+        "started": "2026-11-20T09:56:04.725897+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "misc",
+          "s3-mfrbmx-60h",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "EPOCHS": "12",
+          "EPSAVE": "1",
+          "F": "60",
+          "H": "100"
+        },
+        "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+        "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
+      },
+      "completed_epoch_lines": 24,
+      "last_epoch": 12,
+      "phase": "fulltrain->qual",
+      "log_tail": [
+        "Epoch 12 | RMSE 3.74489",
+        ""
+      ],
+      "receipt": true,
       "incomplete": false,
-      "exported": false
+      "exported": true
     },
     "s3-tx60o": {
+      "launch": {
+        "job": "s3-tx60o",
+        "pid": 85126,
+        "started": "2026-11-20T10:10:27.973213+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "tx",
+          "s3-tx60o",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "EPOCHS": "25",
+          "EPSAVE": "1",
+          "F": "60",
+          "NBR": "100",
+          "ORD": "1"
+        },
+        "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+        "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
+      },
+      "completed_epoch_lines": 0,
+      "last_epoch": null,
+      "phase": "train_3->probe_3",
+      "log_tail": [
+        "TxConfig { n_feat: 60, n_epochs: 25, seed: 42, shuffle_users: true, n_time_bins: 32, beta: 0.3, n_freq_bins: 16, lr_u: 0.003, lr_ud: 0.00125, lr_u2: 7e-6, lr_ub: 0.0031, lr_ubd: 0.003, lr_i: 0.0036, lr_ib: 0.0036, lr_y: 0.0005, lr_yb: 2.5e-5, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.000225, lr_ta: 2.25e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.0504, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.00735, reg_y: 0.04, reg_yd: 0.02667, sigma_iqf: 0.005, sigma_u: 0.0015, sigma_i: 0.005, sigma_y: 0.00333, sigma_yd: 0.009, reset_u_epoch: 1024, max_neighbors: 100, lr_w: 0.0015, lr_c: 0.0015, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0, lr_c_day: 0.0, reg_w_day: 0.0, reg_c_day: 0.0, w_bias: 1.0, w_factor: 1.0, w_nbr: 1.0, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: Some(OrdinalHeadConfig { th_init: [0.5, 1.25, 3.75, 5.5], th_gap: 0.001, lr_t: 0.0, reg_t: 0.0 }), save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }",
+        "train_3 => probe_3"
+      ],
       "receipt": false,
       "incomplete": false,
       "exported": false
