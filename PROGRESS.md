@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-20T02:32:45.737587+00:00
+timestamp: 2026-11-20T03:28:01.064658+00:00
 best_score: 0.8592012938198756
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -10,13 +10,17 @@ qualifying_target_per_recovered_group: 0.85725
 
 # Netflix Prize progress checkpoint
 
-## Current fresh-only reproduction (2026-11-19 UTC)
+## Current fresh-only reproduction (2026-11-20 UTC)
 
-The fixed item-autoencoder5/10 neural follow-up is independently complete and negative: NN0.8594477768, original tree50 half mean **0.8593159372**. All five folds,15 actual saved-model replays and separate exact mean/canonical scoring pass. No qualifying refit. The new full-known tree production fit has actually started under recovered controller3709/worker4854 with the original760/968/880 median budgets; new tree replay, fixed frozen mean and recovered audit remain pending.
+The six-family known-only convex calibration is independently verified at **0.8605620602 /0.8615662023**, improving both previous recovered groups. All original development/full saved-family replays, independently compensated active-set simplex solution, exact known/full vectors, pre-audit freeze and complete canonical group scoring pass. The worse-group gain is **9.5469%**; the strict0.85725 target remains unmet. Apparent known-fit0.8590482079 is not nested CV. The initial optimizer precision failure occurred before label access; a separate ftol-only correction preserves the families/objective and all failed evidence. See [full result](OWN6_CALIBRATION_RESULT.md).
 
-The complete original item154 tree/NN half mean is independently verified at **0.8592012938198756**, improving0.8592309819864167. All five original folds,15 actual saved-tree replays, original neural replay lineage, exact stored mean and separate canonical complete-known scoring pass. The qualifying best remains0.8605716962 /0.8615832225; the10% goal is still unmet. See [full result](ITEM154_TREE_RESULT.md).
+The independently verified development best remains **0.8592012938198756**, the original tree154/NN154 fixed half mean. All five original folds,15 actual saved-tree replays, original neural replay lineage, exact stored mean and separate complete-known scoring pass. The completed full fixed-half qualifying audit0.8607366969 /0.8617189999 improves its matched prior half mean but stays above the calibrated best. Original full budgets760/968/880 and unchanged full NN154/ridge are retained. See [full tree result](ITEM154_TREE_RESULT.md).
 
-The first conditional production coordinator ended before any full fit on a receipt-field mismatch. Its original source/declaration/failure are preserved. Recovered coordinator3709 and12GiB guardian3711 preserve the numerical model, known-only selection rule and actual median budgets760/968/880; the actual selection preflight and stream-inference fixtures pass. Full fitting/replay/frozen qualifying audit remain pending. Original fixed itemAE5/10 coordinator63754 has also been released by its unchanged peak gate and is preparing its virtual feature study.
+Original attention-pair neural worker14525 is now fitting after admission; full ridge replay and complete virtual inputs passed. Original five nested user folds, seeds,H128/r32,400 inputs, optimizer/stopping and both declared tree partners remain fixed. Native Bernoulli RBM200 is at22/25 in its first phase; native CFNADE96 is at68/65 of95 in the two phases. Queued KNN3 chains retain complete original parent/source/budget checks. These are observed progress snapshots, not completed producers or score claims.
+
+The [15-hour remote assignment](REMOTE_15H_HANDOFF.md) is pushed on research/remote15h-handoff at9d44449: original DNN24, attention32, exponential RBM200, targeting nine new published paired predictions without duplicating local jobs. Execution has not yet been observed. [Exact inactive cache CoW sharing](COW_CACHE_STORAGE_RESULT.md) independently reclaimed10.4GB while preserving all logical paths/bytes and clearing the next native disk threshold.
+
+## Earlier checkpoints (historical)
 
 At2026-11-20 01:41 UTC the original full154-context tree completed its fourth user fold; all12 saved trees and the new receipt's artifact hashes are preserved. The fifth/final fold is fitting. No global promotion is inferred from these partial results.
 

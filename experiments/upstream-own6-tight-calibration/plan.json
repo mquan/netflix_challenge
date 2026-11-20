@@ -1,0 +1,51 @@
+{
+  "created": "2026-11-20T03:25:06.437739+00:00",
+  "families": [
+    [
+      "tree50",
+      "tree",
+      "upstream-rbm50-tree",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn50",
+      "nn",
+      "upstream-rbm50-context",
+      "upstream-rbm50-production"
+    ],
+    [
+      "nn90",
+      "nn",
+      "upstream-latent90-mps-context",
+      "upstream-rbm50-tree-latent90-production"
+    ],
+    [
+      "nn109",
+      "nn",
+      "upstream-autorec109-mps-context",
+      "upstream-autorec-consensus-stream-production"
+    ],
+    [
+      "nn154",
+      "nn",
+      "upstream-item154-mps-context",
+      "upstream-item154-stream-production"
+    ],
+    [
+      "tree154",
+      "tree",
+      "upstream-item154-tree",
+      "upstream-item154-tree-production-recovered"
+    ]
+  ],
+  "eligibility": "All five previously eligible own families plus the newly completed actual tree154 production producer. Tree154 earned eligibility through its improved known nested-CV fixed-half result; include it without selecting or rejecting any family using recovered outcomes. All six families retain actual saved-model replay evidence.",
+  "rule": "One nonnegative sum-one least-squares calibration on complete own known OOF vectors. SLSQP convex quadratic fit with analytic Jacobian, uniform initialization,ftol1e-17,maxiter1000. No coefficient/family/hyperparameter search using qualifying outcomes. Sequential float64 multiply/add in declared family order, then one float32 store. Freeze before recovered audit.",
+  "known_score_is_nested_cross_validation": false,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "qualifying_label_payload_read": false,
+  "source_families_fitted_again": false,
+  "numerical_recovery": "The first six-family SLSQP freeze failed its independent known-only coefficient accuracy check before any recovered label access. Preserve all prior evidence. Same six families, objective, uniform start, optimizer and iteration cap; only tighten ftol from1e-14 to1e-17. No qualifying outcome informed this precision correction.",
+  "original_frozen_plan_sha256": "fc076a1724aa543d44f9cfc4a22b440baca9af3b44050daab9897e28517002c5",
+  "original_optimizer_diagnostic_sha256": "989b64a48c012ecfa4190f42b17622bec7c39f4e8f8a2572a56556d747ac5061",
+  "script_sha256": "cb72bbf4a22abd615472274a1d993b7b195c440983f91d234a2e82b748a17228"
+}

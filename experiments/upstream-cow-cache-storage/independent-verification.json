@@ -1,0 +1,89 @@
+{
+  "state": "complete_independent_cow_logical_file_verification",
+  "observed": "2026-11-20T03:25:47.968930+00:00",
+  "records": [
+    {
+      "source": "artifacts/upstream-phase-bank/qual-design.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/qual-design.npy",
+      "sha256": "030ee567b4a0f0532d4bdacf8da1df9f5b1069152b3d2633843bab017f8c5e66",
+      "logical_bytes": 3628464856,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        2817131,
+        161
+      ]
+    },
+    {
+      "source": "artifacts/upstream-phase-bank/qual-features.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/qual-features.npy",
+      "sha256": "a7ea6035ac46dfb42eb3e8524e5fa6c262bd2450fa2270574f1e219932f0eb23",
+      "logical_bytes": 2490343932,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        2817131,
+        221
+      ]
+    },
+    {
+      "source": "artifacts/upstream-phase-bank/probex-design.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/probex-design.npy",
+      "sha256": "a44137926e06863b3dfefb58a34ea821d0de51db854cc1e9db8a5f720ed24d81",
+      "logical_bytes": 1453075360,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        1128164,
+        161
+      ]
+    },
+    {
+      "source": "artifacts/upstream-remote-batch-pretraining-audit-format/design.npy",
+      "target": "artifacts/upstream-remote-batch/design.npy",
+      "sha256": "b93f7cda31c5900df952524e732db6681b57506d57c3f5575ba73e42adddbff7",
+      "logical_bytes": 1435024736,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        1128164,
+        159
+      ]
+    },
+    {
+      "source": "artifacts/upstream-phase-bank/probex-features.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/probex-features.npy",
+      "sha256": "b5caba72c7754baf8f0b652d2dffa47ed0fa85e6063d871a56b34c6e4e4a088d",
+      "logical_bytes": 997297104,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        1128164,
+        221
+      ]
+    },
+    {
+      "source": "artifacts/upstream-remote-batch-pretraining-audit-format/features.npy",
+      "target": "artifacts/upstream-remote-batch/features.npy",
+      "sha256": "7d667cdac0a8019bbbd2bf388fd1b15aae54eb8eec59eee8dd26f88012b71f88",
+      "logical_bytes": 401626512,
+      "independent_full_cmp_equal": true,
+      "metadata_preserved": true,
+      "separate_inodes_and_links": true,
+      "numpy_shape": [
+        1128164,
+        89
+      ]
+    }
+  ],
+  "shared_duplicate_bytes": 10405832500,
+  "execution_sha256": "83f2fd2bb4e220159789d121f0d9e3a6403cb3d6147013b4daa4cc150307be33",
+  "plan_sha256": "a321045c69f8d75b3fbad73dbdd847c97c75ca007beff392d94c6a558dfe3afc",
+  "verifier_sha256": "6100920a9322573413f1d3097eacaeb803623b541f7616748d99b69d257b8662",
+  "scope": "All original logical files retain exact complete hashes and metadata; separate cmp reads every pair, and NumPy mmaps both retained paths. The original fixture separately proves CoW write isolation."
+}

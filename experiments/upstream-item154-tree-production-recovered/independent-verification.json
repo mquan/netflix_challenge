@@ -1,0 +1,42 @@
+{
+  "state": "complete_independent_frozen_tree154_mean_and_scores",
+  "observed": "2026-11-20T03:03:55.662803+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8607366969471811
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8617189998770529
+    }
+  },
+  "both_groups_below_target": false,
+  "fixed_float32_mean_bitwise_equal": true,
+  "actual_new_tree_and_original_full_nn_replays_verified": true,
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "prediction_sha256": "617f6bccbae2c3790b1ebdbf381f70db6f97477201427b3349532958685fabee",
+  "bindings": {
+    "artifacts/upstream-item154-tree-production-recovered/tree/tree-2026.txt": "37b257aa31cb2db7465b98030f3b2801421557e933d1e26afc8d64a2a103a80c",
+    "artifacts/upstream-item154-tree-production-recovered/tree/tree-7.txt": "e0f0b52bab0b08dd6b4d61d7c1e935621d758872832d93952897eb7963ed7ef7",
+    "artifacts/upstream-item154-tree-production-recovered/tree/qualifying.f32": "5e726eaaeb119683d94461526df7fb55f27d46185c64795ac8211cb395292cb5",
+    "artifacts/upstream-item154-tree-production-recovered/tree/tree-13.txt": "558a8343236f0d54a673cb7371df225b3e412874ed1196b610405f4e79cc6fcd",
+    "experiments/upstream-item154-tree-production-recovered/plan.json": "e94f10413f4c8880ccd544dcf9230cfc7c8249b9374669065a89ccc2db77bcea",
+    "experiments/upstream-item154-tree-production-recovered/tree.json": "159533a1df8a77e53463b1efba5cb0380f0ff30df995343b0981ebe8e7130387",
+    "experiments/upstream-item154-tree-production-recovered/tree-replay.json": "1dbe075c7f3fbbd60eea0738f9dc95064c9d98adb48af86a7a9447fc2cc7a598",
+    "artifacts/upstream-item154-stream-production/nn/scaler.npz": "a88006a632a58965956e88eb9592163654ca6ba12fc416397d8a339c25bdf3b8",
+    "artifacts/upstream-item154-stream-production/nn/nn-13.pt": "905c424a23366e72eb03918606a8ba5641d15b37c84955b0cd5c8ed9a7e74f1d",
+    "artifacts/upstream-item154-stream-production/nn/nn-2026.pt": "edf6ba0a84eaf4c002f47596f56875ac2843f43c562c836fc89a354c8617ebf6",
+    "artifacts/upstream-item154-stream-production/nn/qualifying.f32": "2b7d8086d654ca6bca02cd893df7393ea6808f69b1799b8f65fc68117814a4b7",
+    "artifacts/upstream-item154-stream-production/nn/nn-7.pt": "db5a56b99d330198fc96d34574c9c9915844c24c78fdadc4c236cab95978f21d",
+    "experiments/upstream-item154-stream-production/plan.json": "04a87fddedd225e52a07e65729e993e5fb993e101f6adb87ac3979d816939e2e",
+    "experiments/upstream-item154-stream-production/nn.json": "4fa708c07b348d5845dfa8b4aa08b46a52f17e857730b3f7339538ba405611be",
+    "experiments/upstream-item154-stream-production/nn-replay.json": "a9b584868d0d4e4ad5b8c2828f3fcabd63b37f813c95331dd5840298a39aa006",
+    "scripts/verify_upstream_item154_tree_production_recovered.py": "c03fe6ed171774c263ddfc49d67999aa4d55547d76cb167be700cb1e0f1ae79c",
+    "experiments/upstream-item154-tree-production-recovered/report.json": "27571796fd5e401260d841feae55bdebd3196aca8717775a210f77c0c068c435",
+    "experiments/upstream-item154-tree-production-recovered/qualifying-final.f32": "617f6bccbae2c3790b1ebdbf381f70db6f97477201427b3349532958685fabee",
+    "experiments/upstream-item154-stream-production/recovered-audit/qual_ratings.csv.gz": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5"
+  },
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "scope": "Complete known-CV-selected full tree154 and unchanged actually replayed full NN154. Separate exact stored mean and compensated complete canonical groups. Adaptive recovered audit, not official/untouched Test."
+}

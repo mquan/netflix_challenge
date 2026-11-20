@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T02:32:45.737587+00:00",
-  "display_time": "2026-11-20 02:32 UTC",
+  "observed": "2026-11-20T03:28:53.912106+00:00",
+  "display_time": "Nov 19, 2026 19:28 PST",
   "best_development_rmse": 0.8592012938198756,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,8 +10,20 @@
   "independent_verification_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
   "work": [
     {
+      "work": "Six-family known-only convex calibration",
+      "state": "Complete independent new own qualifying best: source0 0.8605620602 /source1 0.8615662023. All six original development/full saved-family replays bound; independent compensated active-set simplex solve and exact known/full vectors pass. Both previous groups improve. Apparent known-fit0.8590482079 is not nested CV. Initial optimizer precision failure is preserved; separate ftol1e-17 run changes numerical convergence only, before recovered label access. Strict10% target remains unmet."
+    },
+    {
+      "work": "15-hour remote original-producer assignment",
+      "state": "Executable handoff pushed on research/remote15h-handoff at9d44449: original DNN24 8/8, attention32 12/12, exponential RBM200 25/25. Nine published paired columns targeted; serial full-budget execution, canonical44-array/original split hashes, isolated source/build, deadline and immediate verified returns per producer. Remote execution has not yet been observed."
+    },
+    {
+      "work": "10.4GB inactive cache CoW storage recovery",
+      "state": "Complete and independently verified: six exact duplicate pairs share10,405,832,500 logical bytes through APFS copy-on-write. Actual free-space gain10,404,577,280 bytes, approximately18.0 to27.7GiB. Original complete bytes, all paths, permissions/owners/mtime retained; separate inodes and future write isolation proven. No datasets, models, predictions, checkpoints or active files removed. Clears the next native20GiB admission requirement."
+    },
+    {
       "work": "Conditional full tree154 production follow-up",
-      "state": "Actual full-known tree fit is running: recovered controller3709/worker4854, original398-input LightGBM recipe and actual per-seed median budgets760/968/880. Unchanged verified full NN154/ridge will be reused. Corrected independent_rmse schema passes actual known-selection preflight; original failed scheduler source/evidence preserved. Extra12GiB admission passed and original24GiB RSS/8GiB disk guards remain. Actual tree replay and frozen half mean/audit still required; no new qualifying score."
+      "state": "Complete and independently verified: actual full tree154 three-seed fit, all actual saved-tree replays, unchanged actually replayed full NN154/ridge, exact frozen half mean and complete canonical group scores0.8607366969 /0.8617189999. Improves matched prior fixed-half control, not the five-family qualifying best. Original receipt-field-only recovery and failed declaration preserved. Target remains unmet."
     },
     {
       "work": "Fixed quadratic five-family calibration",
@@ -23,7 +35,7 @@
     },
     {
       "work": "Fixed original attention64 pair neural study",
-      "state": "Controller70361 queued: original terminal/epoch5 pairs only after verified12/12 source completion. Own109/item154,400 neural inputs,H128/r32; unchanged folds/seeds/optimizer/stopping. Exact virtual tensors, independent ridge replay, all15 actual saved-model replays and both predeclared tree50/tree154 half means required. Full-size admission waits for prior studies; no weight search, qualifying selection or automatic production."
+      "state": "Actual full-size neural worker14525 started after original memory/disk admission. Both own original attention64 terminal/epoch5 features are source-verified after complete12/12 native training. The complete ridge addition and independent replay pass; nested neural training is active. Original five user folds, seeds,H128/r32,400 inputs, optimizer/stopping and both predeclared tree50/tree154 half means retained. All15 actual saved-NN replays and exact mean checks still required; no qualifying refit or score claimed."
     },
     {
       "work": "Exact published residual KNN3 chains",
@@ -259,187 +271,65 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "52550a1d330d48c4f58ded7bf2f089e586c23fca498d34145737fec485a18172",
+  "qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8605716961956835
+      "rmse": 0.8605620601761576
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.861583222505447
+      "rmse": 0.8615662023089099
     }
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "local_processes": [
-      "  PID  PPID  %CPU COMMAND",
-      "32700  1268  98.3 ./target/release/fit dnn s3-dnn32nm -p pipeline-3.toml --final --preds preds_3",
-      "33936     1   0.0 /usr/bin/caffeinate -i -w 92667",
-      "37019     1   0.0 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_mps_autorec.py",
-      "92864 92667  97.3 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865 92667  98.8 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+    "observed": "2026-11-20T03:28:06.597180+00:00",
+    "native_processes": [
+      "73823     03:00:43 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
+      "92864     12:54:41 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865     12:54:41 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
-    "remote_commit": "6b68640e89b99c696999c5b043fd9626d9e53abb",
-    "remote_heartbeat_sha256": "01b4ba24a3f45d7bbdaf3c8d1fc4b73eaa94f98fc55d22b4e78b9364a4e7704b",
-    "neural_fold_receipts": [
-      "0.json",
-      "1.json",
-      "2.json",
-      "3.json",
-      "4.json"
-    ],
-    "extension_state": {
-      "state": "development_not_improved",
-      "candidate": 0.8601526901474829,
-      "parent": 0.8600300601883686,
-      "goal_complete": false,
-      "matching86_audit": "complete_miss"
-    },
-    "new_production_queue": {
-      "state": "production_audit_complete",
-      "goal_requires_independent_review": true
-    },
-    "cf96_lane": {
-      "state": "waiting_for_primary_idle_boundary",
-      "observed": "2026-11-19T11:08:09.523668+00:00",
-      "primary_pid": 27177,
-      "current_job": "tsvdx5-60",
-      "actual_live_children": [
-        "16268 27177 Ss   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_repro.py --run-job tsvdx5-60"
-      ]
-    },
-    "split3_pilot": {
-      "state": "native_running",
-      "command": [
-        "./target/release/fit",
-        "attn",
-        "s3-attn16",
-        "-p",
-        "pipeline-3.toml",
-        "--final",
-        "--preds",
-        "preds_3"
-      ],
-      "observed": "2026-11-19T11:08:33.058783+00:00"
-    },
-    "split3_startup_verification_sha256": "d8a6131756362a9f53b07e762197f7e689ffe18ba7cf73cc37631b6932dcc54b",
-    "split3_native_launch": {
-      "pid": 42926,
-      "command": [
-        "./target/release/fit",
-        "attn",
-        "s3-attn16",
-        "-p",
-        "pipeline-3.toml",
-        "--final",
-        "--preds",
-        "preds_3"
-      ],
-      "observed": "2026-11-19T11:08:33.063157+00:00"
-    },
-    "new_development_verification_sha256": "87659b5ad04a1045bdee81133ca1487fd38c0185346ddd483720a60bb621107a",
-    "context91_production": {
-      "state": "audit_complete",
-      "both_groups_below_target": false,
-      "quiz_rmse": 0.8615005553485517,
-      "test_rmse": 0.8624166617824089,
-      "goal_requires_independent_review": true
-    },
-    "context102": {
-      "state": "waiting_for_prior_fits_and_memory",
-      "observed": "2026-11-19T12:03:29.639590+00:00",
-      "predecessors": {
-        "55837": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_tree91_context86_production.py --family tree --replay"
+    "cf96": {
+      "state": "training",
+      "epochs": {
+        "x": 68,
+        "qual": 65
       },
-      "memory": {
-        "compressor_bytes": 12036341760,
-        "swap_used_bytes": 4795861565.44
+      "active": {
+        "x": 92864,
+        "qual": 92865
       },
-      "owned_workers": {},
-      "consecutive_good_samples": 0
+      "rss_bytes": {
+        "x": 738213888,
+        "qual": 643186688
+      },
+      "other_rss_bytes": 0,
+      "disk_free_bytes": 29639720960,
+      "heartbeat": "2026-11-20T03:27:48.649818+00:00"
     },
-    "remote_final_commit": "5f38584787bff14fb5ccb505a6dbb904953a25c0",
-    "remote_final_intake_verification_sha256": "b0fdc68ed892334194d816a4b70859313c7e205c0208630e015f7efbc03ae232",
-    "context103": {
-      "state": "development_complete",
-      "nn_rmse": 0.8594692563654075,
-      "fixed_half_rmse": 0.8595400254184109
+    "attention_worker": {
+      "pid": 14525,
+      "rss_bytes": 5326766080,
+      "other_rss_bytes": 2633072640,
+      "disk_free_bytes": 29639630848,
+      "observed": "2026-11-20T03:28:04.142715+00:00"
     },
-    "split3_completion_verification_sha256": "3bfe3c66ae9780adb358b5dc97f87d62628135a3b9faed7501e95008a7747a3c",
-    "own103_production": {
-      "state": "complete_both_frozen_audits_verified"
-    },
-    "cf96_saved_epochs": {
-      "x": 48,
-      "qual": 45
-    },
-    "tsvdx5_60": "complete_independently_checked_23_23",
-    "rbm50_context": {
-      "state": "complete_development_improved",
-      "nn_rmse": 0.8594554093063749,
-      "all_five_saved_replays": true
-    },
-    "own105": {
-      "state": "complete_not_improved",
-      "nn_rmse": 0.8594783385089899
-    },
-    "tx20lat": {
-      "state": "complete_original_two_phase_latent_model",
-      "epochs_per_phase": 20,
-      "verification_sha256": "0ef46c184e6da19c3e49558d1afddcc354cd6c0e971a834ae0dbe9c4e8cb7c70"
-    },
-    "own107_rbm50_production": {
-      "state": "complete_both_groups_independently_verified_miss",
-      "verification_sha256": "4f50d8c70c4daa89b45ac2db0119a38ddff9e0ed30f948fc117254db06b5559a"
-    },
-    "all90_supports": {
-      "state": "complete_verified_support_and_development_cache",
-      "cache_manifest_sha256": "6ad2638f9d50521fa683d75daf26d80c13703070f4dbec089c43df964a121a95"
-    },
-    "observed": "2026-11-19T20:12:18.474211+00:00",
-    "rbm50_tree": {
-      "state": "complete_independently_verified",
-      "fixed_half_rmse": 0.8593661638722666
-    },
-    "all90_mps_context": {
-      "state": "complete_all_saved_models_replayed",
-      "nn_rmse": 0.8593871253711179,
-      "selected_fixed_mean_rmse": 0.8592720612630157
-    },
-    "selected_qualifying_refit": {
-      "state": "complete_both_replays_and_frozen_mean_score_verification",
-      "verification_sha256": "3c3a7ed1e0a535be1b95cbea67821a3007aa50251396bded075e2365f05ae91c"
-    },
-    "rank1000": {
-      "state": "complete_original_two_phase_rank1000",
-      "verification_sha256": "5a909a5ad05c19ddf1e1f1d241ec26881c2a8bbce76744ad0de91a878e2e27f5"
-    },
-    "own166_context": {
-      "state": "verified_cache_model_queued",
-      "features_plus_ridge": 393
-    },
-    "own_raw_autorec": {
-      "state": "fitting_complete_declared_raw_epoch",
-      "phase": "fulltrain",
-      "epoch": 3,
-      "pid": 37262,
-      "observed": "2026-11-19T20:12:03.126565+00:00"
-    }
+    "disk_free_bytes": 29639622656
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8605716961956835
+      "rmse": 0.8605620601761576
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.861583222505447
+      "rmse": 0.8615662023089099
     }
   },
-  "latest_qualifying_verification_sha256": "52550a1d330d48c4f58ded7bf2f089e586c23fca498d34145737fec485a18172",
+  "latest_qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
   "best_development_arm": "own107/item154 tree plus unchanged own107/item154 MPS NN fixed half mean",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -456,8 +346,8 @@
     "experiments/upstream-item154-tree/tree-replay.json",
     "experiments/upstream-item154-mps-context/nn-replay.json"
   ],
-  "development_narrative": "The original predeclared half mean of the full154-context tree and unchanged item154 neural partner improves0.8592309820 by0.0000296882. All five original tree folds and15 actual saved-tree replays pass; the same actual neural model/replay lineage is retained. Both family row/fold identities, every rounded mean value and complete canonical known scoring are separately checked. Its qualifying fit is still pending under the separately declared original fixed-mean production rule; a receipt-field-only selection recovery preserves the first scheduler failure and all numerical fitting.",
-  "latest_qualifying_verification_path": "experiments/upstream-own5-calibration/independent-verification.json",
-  "qualifying_narrative": "A nonnegative sum-one blend combines our actual replayed tree50 and four neural branches (50/90/109/154). Its five weights are fitted only on complete known OOF vectors, and the full qualifying vector was frozen before the recovered audit. Independent active-set optimization, compensated statistics and exact known/full vector reconstruction pass. Apparent known-fit0.8590716 is not nested CV; the CV best is now0.8592013. Both preceding qualifying groups improve. No recovered outcome fitted or selected the coefficients.",
+  "development_narrative": "The predeclared half mean of the full154-context tree and unchanged item154 neural partner improves0.8592309820 by0.0000296882. All five original tree folds and15 actual saved-tree replays pass; original neural replay lineage is retained. Family/fold identities, every rounded mean value and complete canonical known scoring are separately checked. Its completed full fixed-half qualifying audit improves the matched prior half mean but remains above the overall calibrated qualifying best. Original full tree budgets760/968/880 and all numerical fitting rules are preserved.",
+  "latest_qualifying_verification_path": "experiments/upstream-own6-tight-calibration/independent-verification.json",
+  "qualifying_narrative": "The newly completed full tree154 joins all five preceding eligible own families in one nonnegative sum-one blend fitted only on complete known OOF vectors. Independent compensated statistics and all63 nonempty simplex supports verify its weights; actual originating development/full saved-family replays, exact known/full vectors and both canonical complete-group scores pass. Apparent known-fit0.8590482 is not nested CV; CV best remains0.8592013. The initial solver tolerance failed a coefficient precision check before any label access; a separate stricter-tolerance run preserves the same families/objective and all original evidence. The qualifying vector was frozen before auditing; both preceding groups improve. No recovered outcome fitted or selected the coefficients.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703"
 }
