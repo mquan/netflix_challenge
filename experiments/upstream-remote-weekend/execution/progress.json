@@ -1,0 +1,66 @@
+{
+ "observed": "2026-11-20T23:45:23+00:00",
+ "training_hours_left": 62.24,
+ "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-03:31:24  39:14.14  26208 Ss   /sbin/launchd",
+ "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 82%",
+ "swap": "total = 2048.00M  used = 375.38M  free = 1672.62M  (encrypted)",
+ "disk_free_gib": 190.0,
+ "jobs": {
+  "s3-rbm400pf": {
+   "status": {
+    "state": "waiting_original_full_capacity",
+    "good_samples": 0,
+    "workers": {
+     "73974": {
+      "bytes": 1867776.0,
+      "rss_bytes": 2899968,
+      "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/driver.sh"
+     },
+     "73975": {
+      "bytes": 1179648.0,
+      "rss_bytes": 1179648,
+      "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/driver.log"
+     },
+     "73979": {
+      "bytes": 93847552.0,
+      "rss_bytes": 105365504,
+      "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
+     }
+    },
+    "memory": {
+     "compressor_bytes": 11144200192,
+     "swap_used_bytes": 393614458.88
+    },
+    "observed": "2026-11-20T23:45:23.076606+00:00"
+   },
+   "receipt": false,
+   "incomplete": false,
+   "failure": false,
+   "guard-sample": false,
+   "watchdog-recovery": false,
+   "exported": false,
+   "archived": false,
+   "uploaded": false
+  },
+  "s3-tx300r": {
+   "receipt": false,
+   "incomplete": false,
+   "failure": false,
+   "guard-sample": false,
+   "watchdog-recovery": false,
+   "exported": false,
+   "archived": false,
+   "uploaded": false
+  },
+  "s3-rbm800p": {
+   "receipt": false,
+   "incomplete": false,
+   "failure": false,
+   "guard-sample": false,
+   "watchdog-recovery": false,
+   "exported": false,
+   "archived": false,
+   "uploaded": false
+  }
+ }
+}
