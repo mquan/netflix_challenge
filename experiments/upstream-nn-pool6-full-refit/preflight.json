@@ -1,0 +1,23 @@
+{
+  "state": "complete_all_five_original_append_and_scaling_smoke_checks",
+  "observed": "2026-11-20T06:49:17.225174+00:00",
+  "families": [
+    "upstream-split3-virtual-mps-context",
+    "upstream-attention2-virtual-mps-context",
+    "upstream-knn3pair2-compact-mps-context",
+    "upstream-split3eight-compact-mps-context",
+    "upstream-cf96-prefix2030-compact-mps-context"
+  ],
+  "rows_each": 513,
+  "widths": [
+    402,
+    400,
+    400,
+    406,
+    400
+  ],
+  "raw_appends_bitwise_equal_original": true,
+  "in_place_scaling_bitwise_equal_original": true,
+  "worker_sha256": "6fa8b86d135a3e9c794cb1d59e775cd63a10069c18ec851da07721c542f6984b",
+  "scope": "Actual first513 rows per source; full source/shape/lineage checks and actual model/query replay remain execution gates. No accuracy claim."
+}

@@ -1,0 +1,24 @@
+{
+  "state": "complete_full_native_append_nn_and_both_query_replays",
+  "plan_sha256": "05c94186b4211efd077eece0257686c3257c36ab58551cdc5d4e03b6846dcf4f",
+  "observed": "2026-11-20T06:55:24.869443+00:00",
+  "development": "upstream-attention2-virtual-mps-context",
+  "outputs": {
+    "scaler.npz": "431423f3bd5c230bdf8d122361a9d9e5697873e3bbe90f6629b99ad5b2b9b21d",
+    "nn-13.pt": "8fbbb32915fdfbef45a63f39024a7ce4c0f7fe6cb7801545e079f1d26e83615e",
+    "nn-2026.pt": "aeaae339bbf233c209fffc2c906ac02f5afe4eff21ad75b7c2e013f97196280c",
+    "qual.f32": "6a365783b492ce466411b07bce6f7999210d9c7281f19f8ab0dfe130518b326f",
+    "probex.f32": "c65e350e22ee3856174472f24da9caa52fc9d0609cf815720d545a760a3b3d6b",
+    "nn-7.pt": "71c1c72ece941c694962aedcc18b9021bd2bb80ca62ff256d9831d02e2a4d0bb",
+    "ridge.npy": "9d50bdceedf9a2eec1a0acaafe5721156f65b6768dd40f627facdafddc819bc0"
+  },
+  "actual_models_reopened_for_each_query": true,
+  "complete_known_and_qualifying_bitwise_replay": true,
+  "qualifying_labels_read": false,
+  "full_iterations": [
+    6,
+    6,
+    7
+  ],
+  "no_new_cv_score_claimed": true
+}
