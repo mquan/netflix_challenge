@@ -21,8 +21,8 @@ when Torch and LightGBM loaded conflicting OpenMP runtimes. Preserve that
 failed entry point as historical evidence; run tree inference separately.
 
 All five new full neural refits completed their initial worker-level query
-replays at 07:04:44 UTC. Independent serialized-pipeline admission is now
-executing serially. The refits used the already
+replays at 07:04:44 UTC. All five independent serialized-pipeline admissions
+completed at07:15:53 UTC. The refits used the already
 declared architectures, seeds and median epoch budgets. They fit the
 existing paired production-known B bank and matching qualifying B bank,
 with the original own native additions. The original A-development score
@@ -53,10 +53,9 @@ currently unchanged. Initial worker
 receipts alone are insufficient for admission. No model promotion or
 qualifying audit is authorized by an initial completion receipt alone.
 
-The frozen assembly queue waits for both completed admission gates, then
-assembles the equal six-NN pool, the fixed 25% tree154 / 75% pool candidate,
-and one known-only seven-family calibration. All vectors and coefficients
-are frozen before independent verification across all127 simplex supports
+Both admission gates passed. At07:22:22 UTC the assembly froze the equal
+six-NN pool, the fixed25%tree154/75%pool candidate and one known-only
+seven-family calibration. Independent verification across all127 simplex supports
 and exact candidate arithmetic. Only then can the separate recovered audit
 run. The primary candidate is the known7 calibration; the two fixed candidates
 are predeclared controls, without selecting coefficients from their audits.
