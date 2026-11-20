@@ -1,0 +1,25 @@
+{
+  "created": "2026-11-20T12:37:22.099562+00:00",
+  "source_sha256": {
+    "scripts/upstream_split3_voting_archive.py": "1ccd5e0f9c5449019effb0a12677a7c1c18bae2f2bda3c1ad7029a76c29fce84",
+    "experiments/upstream-split3-voting-stream/verification.json": "80238751a1c6d6b56810e32a540fc8847e3160f6eec5d12fb35cd405842253a9",
+    "experiments/upstream-split3-voting-stream/plan.json": "4c914cc28075705f240278007000a09c47974500545f69f44632fce226f58c23",
+    "experiments/upstream-split3-matched-resume/independent-verification.json": "ff7a92b3d941c733d7fc79fd277811f5b65321fb62cc04ebf8022b0cda6c1371",
+    "SPLIT3_VOTING_ARCHIVE_PLAN.md": "135612f552e9c62a6b96c87fe644156a72f6b55a923d88a5e4a2a861edda8a5f"
+  },
+  "original_owner": {
+    "pid": 70233,
+    "ppid": 1,
+    "pgid": 70233,
+    "state": "Ss",
+    "started": "Fri Nov 20 00:47:25 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_split3_voting_stream.py"
+  },
+  "shape": [
+    130,
+    1760494
+  ],
+  "dtype": "<f4",
+  "original_payload_sha256": "77e47e5c5636b909fc45e103ca5c9bf2fa312c75d41aac9c31c987c2f227bb63",
+  "rule": "All original bytes, no recomputation or precision/feature/row reduction. Ten13-feature lossless parts. Full original/per-feature hashes, every independently decoded byte and completed matched pipelines required before explicit release. Existing fitted source/proofs unchanged."
+}

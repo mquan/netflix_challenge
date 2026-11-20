@@ -1,0 +1,22 @@
+{
+  "state": "complete_preserved_original_matched_study_and_all_actual_replays",
+  "observed": "2026-11-20T12:23:14.371415+00:00",
+  "verification_sha256": "ff7a92b3d941c733d7fc79fd277811f5b65321fb62cc04ebf8022b0cda6c1371",
+  "arms": [
+    {
+      "arm": "control",
+      "canonical_rmse": 0.8727302874706305,
+      "fixed_tree_half_rmse": 0.8624405419017913,
+      "canonical_sha256": "7a17ce80fc654e2f82239111d63d16b9b7111e0da2ad1f987b3ce990016bf2ac",
+      "fixed_half_sha256": "6d6173ccd394aae23737c74f7018e0966199cad63a2a45eb6edd441bb61025f7"
+    },
+    {
+      "arm": "expanded",
+      "canonical_rmse": 0.8722568222466668,
+      "fixed_tree_half_rmse": 0.8622259939637812,
+      "canonical_sha256": "489221bb09b8f5f636b2e8afe0eda08a6f874ca93b6083258b2beb014f8c3860",
+      "fixed_half_sha256": "d7ed8ac2e444d1a3542787b25e061caa26a9ce130b2dcdd01313c55161e2a331"
+    }
+  ],
+  "qualifying_labels_read": false
+}
