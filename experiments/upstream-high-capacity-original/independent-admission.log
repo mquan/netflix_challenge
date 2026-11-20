@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_high_capacity_original.py", line 105, in <module>
+    result = verify_complete(name) if args.complete else admit(name)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_high_capacity_original.py", line 35, in admit
+    raise ValueError('Exact source-pinned compiled binary lacks matching original build receipt')
+ValueError: Exact source-pinned compiled binary lacks matching original build receipt

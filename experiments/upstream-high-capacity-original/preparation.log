@@ -1,0 +1,9 @@
+Cloning into '/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-high-capacity-original/source'...
+done.
+HEAD is now at 49c9b36 split_1: 148 base columns, the snapshot FWLS fwls46k8; s1 quiz 0.858050
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_original.py", line 126, in <module>
+    print(prepare()['state'], flush=True)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_high_capacity_original.py", line 105, in prepare
+    raise ValueError('Unexpected existing isolated numerical output')
+ValueError: Unexpected existing isolated numerical output
