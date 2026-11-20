@@ -40,3 +40,10 @@ intentionally not transferred.
 
 **Gotcha for future macOS handoffs:** the helper's `environment()` drops `RUSTFLAGS`, so the Accelerate link flags
 must come from a `.cargo/config.toml` in the native tree's parent directory.
+
+## Local cleanup (2026-11-20, at the user's request; disk nearly full)
+
+Deleted local copies only after checking each against the release asset by name and byte size:
+`artifacts/native-archives/` (4 parts), and the per-job `exports/` and `archives/` under both native roots.
+All of them are recoverable from draft release `remote15h-own-20261120`. The native roots (preds_3, logs, receipts,
+binaries) and the bootstrap attempt-1 root are kept.
