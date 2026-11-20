@@ -28,13 +28,14 @@ qualifying gain; keep the established six-family benchmark and all negative
 records. Apparent known-fit0.8590445175 is not nested CV.
 [Complete audit](NNPOOL6_QUALIFYING_RESULT.md).
 
-The complete own330 neural inputs are now independently admitted:
-406ridge/556features/557NN inputs, with every retained/new bit matching.
-Its full five-fold/three-seed study is queued after the verified own176
-result, reserving16GiB under24GiB total. Only the childless, dependency-wait
+The complete own330 neural study is now fitting all five folds/three seeds:
+406ridge/556features/557NN inputs, with every retained/new bit admitted.
+Own176 finished all15 actual saved-model replays; its fixed tree half
+**0.8591336855** narrowly misses the existing **0.8591267885** global best.
+Own330 retains its full16GiB reservation under24GiB total. Only the childless, dependency-wait
 1600-factor supervisor is parked to give it priority; no native model is
-interrupted. Both original95-epoch CF trajectories and the matched missing
-fold recovery are currently running. No own330 neural fit or new score yet.
+interrupted. Both original95-epoch CF trajectories are running. No complete
+own330 neural result or new qualifying score yet.
 [Full neural execution](OWN330_NEURAL_EXECUTION.md).
 
 All149 unused completed local native pairs now passed a complete own330
@@ -54,8 +55,9 @@ No own181 neural fit or qualifying promotion. [Result](OWN181_RECENT15_RIDGE_RES
 Missing original1,200/1,600-factor coverage is now audited; memory lower
 bounds are not safe launch estimates. [Next capacity work](HIGH_CAPACITY_ORIGINAL_PLAN.md).
 The isolated1600-factor preparation now binds439 source/data files and
-proves both full training/query populations disjoint. Its reviewed queue
-is live waiting complete own176 and measured22GiB headroom. It will build
+proves both full training/query populations disjoint. Its reviewed idle
+supervisor is parked for own330 priority, then resumes its22GiB admission.
+It will build
 an isolated exact executable because the existing shared binary failed
 its build-receipt hash check. No high-capacity build or fit has begun.
 [Guarded execution](HIGH_CAPACITY_ORIGINAL_EXECUTION.md).
@@ -65,9 +67,10 @@ predictors add nonduplicate canonical inputs to the original own166/all90
 bank. Its ridge diagnostic improves **0.8624919426 to0.8622734678**; every
 original/new input bit, full group statistic and actual stored ridge
 prediction independently matches. This is not a neural/global promotion.
-The full five-fold,three-seed403-input H128/rank32 study is queued after
-the temporal job and interrupted comparison complete, with a14GiB worker
-reservation and24GiB total guard. No neural fit or qualifying refit yet.
+The full five-fold,three-seed403-input H128/rank32 study has completed,
+including all15 saved models and full original preprocessing replays.
+NN0.8592799296; fixed tree154 half0.8591336855. No global promotion or
+qualifying refit. [Complete neural result](OWN176_RECENT10_NEURAL_RESULT.md).
 [Complete diagnostic and next study](OWN176_RECENT10_RIDGE_RESULT.md).
 
 The own167/context218 study is complete and negative: NN **0.8598066347**,
@@ -77,7 +80,7 @@ reconstructed. No qualifying refit follows this result. The original
 supervisor's post-fit zombie-process accounting failure is preserved;
 a separate replay supervisor verified the completed fits without retraining.
 
-The matched comparison using the original full split3 holdout has resumed.
+The matched comparison using the original full split3 holdout is complete.
 Its1,760,494 legitimate known rows include632,330 additional ratings, all
 verified against original known data and excluded from native training.
 Both arms evaluate the same1,128,164 canonical rows and exclude every held
@@ -85,16 +88,21 @@ user's additional labels. Control fits only canonical training rows;
 primary fits all eligible holdout rows. Both retain all73 distinct own
 native prediction columns,130 original voting features and the same full
 five-fold/three-seed H128/rank32 recipe. Five control and two expanded folds
-completed before a resource guard stopped its neural worker. Three expanded
-folds and all final independent model replays remain. No complete new score.
+completed before a resource guard stopped its neural worker. Recovery fitted
+only the three missing expanded folds; all ten pipelines and30 actual saved
+models passed independent replay. Expanded NN0.8722568222 improves matched
+control0.8727302875; fixed tree halves0.8622259940 vs0.8624405419. Both miss
+the global best, so no qualifying refit. [Result](SPLIT3_MATCHED_RESULT.md).
 [Matched study](SPLIT3_FULL_HOLDOUT_PLAN.md).
-The guarded recovery is now fitting the three genuinely missing expanded
-folds after complete temporal22/22 verification. It preserves all seven
-completed pipelines and will independently replay all ten in full.
+The guarded recovery completed after temporal22/22 verification, preserving
+all seven original pipelines and independently replaying all ten in full.
 [Recovery plan](SPLIT3_MATCHED_RESUME_PLAN.md).
 
 Both original voting-generation phases completed. All130 full-holdout
-feature payloads are retained in verified RAM.129/130 qualifying feature
+feature payloads are preserved in a full-byte-verified lossless archive.
+The idle RAM owner released after completed study replay, freeing0.878GiB
+so own330 could retain its full16GiB reservation. [Exact preservation](SPLIT3_VOTING_ARCHIVE_RESULT.md).
+129/130 qualifying feature
 payloads match our earlier own outputs; ordinal-SVD differs. That exact
 parity failure is preserved. Development uses the new complete holdout
 features; any production must capture all130 corresponding qualifying

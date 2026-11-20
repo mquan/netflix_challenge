@@ -1,14 +1,14 @@
-# Own330 full neural study is admitted and queued
+# Own330 full neural study is fitting
 
 Both complete input passes have finished. The independent sequential reader
 reproduces every bit of the406-column ridge design and556 nonlinear
 features. All original392 nonlinear columns and90 learned contexts remain;
 all164 fixed scalar additions have their original float32 transforms.
 The model receives557 inputs, partitioned into332 signals and225 contexts.
-No own330 neural model has been fitted yet.
+Full five-fold/three-seed fitting is now running; no complete score yet.
 
-The reviewed queue waits for the complete, independently replayed own176
-study before acquiring the GPU lane. It then reserves16GiB, with matching
+The reviewed queue required the complete, independently replayed own176
+study before acquiring the GPU lane. It reserves16GiB, with matching
 worker cap,24GiB total RSS/physical-footprint accounting, stable swap and
 18.75GiB disk reserve. It runs the unchanged H128/rank32, five-fold,
 three-seed2026/7/13, max40/patience4, batch8192 AdamW recipe. Both full
@@ -33,8 +33,15 @@ downloaded public latent vectors were intentionally retired under the
 user's existing cleanup authorization, recovering2,054,118,600 logical
 bytes. Earlier exact archives and all own inputs/models were retained.
 The same CF X native and controller resumed; qualifying continues from its
-complete81 checkpoint, with the original95/95 budget. The matched study's
-three missing expanded folds are running under their existing guard.
+complete81 checkpoint, with the original95/95 budget. The matched study
+completed all ten pipeline replays. Own176 also completed all15 saved-model
+replays; its fixed half0.8591336855 misses the0.8591267885 global best.
+
+The completed matched study's exact915,456,880 voting bytes were preserved
+in337,122,577 bytes of independently decoded lossless archives before its
+idle RAM owner released. This freed the0.878GiB that blocked the full16GiB
+reservation, letting own330 start without model or training-budget cuts.
+[Archive proof](SPLIT3_VOTING_ARCHIVE_RESULT.md).
 
 No new global or qualifying score is claimed. The target remains below
 0.85725 on both complete recovered groups.

@@ -1,0 +1,21 @@
+{
+  "arm": "expanded",
+  "fold": 2,
+  "canonical_rows": 224006,
+  "chosen_iterations": [
+    13,
+    13,
+    13
+  ],
+  "manifest_sha256": "209692702bef14dd123e9b9a3d957aae86f74656ef42bdedf9842eb4f7233e2d",
+  "recovery_manifest_sha256": "05c327f2caa020cf171f95b88ccab0c5618b2a3518081e3a3298517c12c0d32b",
+  "outputs": {
+    "nn-13.pt": "fc208ea8ef077d5070fb3c7cd4da51a0ab2d4f2e616d4e8c988d27a99904ae23",
+    "nn-2026.pt": "51314ada97621b6226b8b376605c17d1032c8b867298baa3316a72ee1eece936",
+    "prediction.f32": "23cb8e81ef0af6d9dd3a64065b8882024edb29deaffb50980f6fa7456293fd7f",
+    "ridge.npz": "dc1734545709a3d63969894edb1528c960395d3ecaca3175bac5226e63e953e0",
+    "nn-7.pt": "930357044477ae3f1c0135cf3ffb0ed248cd7fcc6738abb5a5d2dfade07676ab",
+    "scalers.npz": "ce8edaa7c2ee6569d15d2ff9ef3f47cf205a7109884961d07b4a91dff297add5"
+  },
+  "rmse": 0.8737518967266696
+}
