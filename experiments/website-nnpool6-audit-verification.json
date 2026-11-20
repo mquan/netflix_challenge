@@ -1,0 +1,71 @@
+{
+  "state": "complete_live_own_only_audit_and_plots_byte_verification",
+  "observed": "2026-11-20T07:42:42.442370+00:00",
+  "source_commit": "44ea47d5c115af77899d7a242247c012406a1a76",
+  "pages_commit": "675b56aeee818c679ee0b9418bc85aae0df8f529",
+  "pages_build_status": "built",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "exact": true,
+      "sha256": "a02ba99e3ea1392bf41463c1e7b33f2a83a19ef72bf46ae35164ec32d3f9ab29"
+    },
+    {
+      "path": "research_journey.html",
+      "status": 200,
+      "exact": true,
+      "sha256": "a02ba99e3ea1392bf41463c1e7b33f2a83a19ef72bf46ae35164ec32d3f9ab29"
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "status": 200,
+      "exact": true,
+      "sha256": "d9c313b0d3394338fc2c64c31f88e197968899cc75ed67c823dd40fd21e3dcab"
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "status": 200,
+      "exact": true,
+      "sha256": "ea1a517f2e8cfd2829e3e42f816171de9578135fcdeb3782d4bda501fafeebf7"
+    },
+    {
+      "path": "OWN_PROGRESS.md",
+      "status": 200,
+      "exact": true,
+      "sha256": "be78a120c7f12ce65d0e5548c1d87fb6c57564cc237b409618e22bfda0d88b68"
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "status": 200,
+      "exact": true,
+      "sha256": "6fe137a9c81c45ec06ae8a76285ac1e34cffb72cdea58a3eb3cba8aed2859b0b"
+    },
+    {
+      "path": "NNPOOL6_QUALIFYING_RESULT.md",
+      "status": 200,
+      "exact": true,
+      "sha256": "a727a0630b7f6481e7c8011ce2c30aecfa4e577930b357e850361a44a8e43804"
+    },
+    {
+      "path": "experiments/upstream-nn-pool6-assembly/independent-recovered-audit.json",
+      "status": 200,
+      "exact": true,
+      "sha256": "14697632815a6d609dd29a730b33b0fac972ebf39415b232995e5456423f88d7"
+    }
+  ],
+  "own_training_milestones": 71,
+  "public_bank_milestones": 0,
+  "qualifying_benchmark_retained": "own6; new own7 is an essentially tied group tradeoff",
+  "retired_paths_verified_absent_from_pages_git_tree": [
+    "BREAKTHROUGH.md",
+    "PUBLIC_BANK.md",
+    "QUALIFYING_PROGRESS.md",
+    "PROGRESS.md",
+    "assets/qualifying_progress.svg"
+  ],
+  "targeted_unit_tests_passed": 20,
+  "generated_javascript_syntax_checked": true,
+  "plot_png_visually_inspected": true,
+  "model_goal_achieved": false
+}
