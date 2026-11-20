@@ -1,0 +1,31 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_cpu_tree_queue.py": "b82eacc138386d9db9070d4ba44676af149cfb42e95f03af3ba013b6d5a3a05f",
+    "OWN391_CPU_TREE_PLAN.md": "214345033509a2c9f75d69a8cede1dab0dfae73106361136b03b85f6d749a997",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "scripts/upstream_tree_pipe.py": "e95078bd837a7bbfba9a51df7231c3879adbe14638c246ebac32da68584c4b77",
+    "scripts/upstream_own391_tree_source.py": "3108d291ff560a701e7b15d302b7bef2dfb52cc01f993533ff11b8bbd6b9a2b4",
+    "scripts/upstream_own391_tree_worker.py": "14eaa3f0f0e44171aec0ce9ae93fa412d846878decfbbe28959cc859472d0af3",
+    "scripts/verify_upstream_own391_cpu_tree.py": "d395b4301aee00a1ca2d1c4129ef003f9092d9763dbc08037788f847bc6309fc",
+    "scripts/upstream_own391_cpu_tree_recovery.py": "e30661a2d3e7c7a86c3e85d5978ee3b55bf472ec49af1b43841f269e19e43471",
+    "scripts/upstream_read_cache_policy.py": "8909fea4a5d17986df587cc0c2cdc46502ac9c96cb9296ee5e73f4e50f28db6a",
+    "experiments/upstream-own391-cpu-tree-queue/plan.json": "bddc04f797dec314962a045721aaa240e7382a4c013cdd6adb59541ce2f7f971",
+    "experiments/upstream-own391-cpu-tree-queue/failure.json": "6abfb3e7d322011d95590380743f2af5ec9c612e47b9084c2c8da4099c2f7547",
+    "experiments/upstream-own391-cpu-tree-queue/monitor.json": "2af34a41fc2a209a0c5f70c40b581657257f4ef1afd9842b20da6714879a83fe",
+    "experiments/upstream-uncached-hash-fixture/verification.json": "240272eae704547140cf877b0c72c915e7efb20b0ba3e5ff2fa21850138926f8",
+    "experiments/upstream-own391-cpu-tree-pairing-check.json": "040fed7cf71711186f4c85ed65df036280234eff0dfa2ed8e85c42361ee6092a"
+  },
+  "original_child": {
+    "pid": 55920,
+    "ppid": 55606,
+    "pgid": 55920,
+    "state": "Rs",
+    "started": "Fri Nov 20 11:01:50 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_source.py declare"
+  },
+  "created": "2026-11-20T19:25:05.772944+00:00",
+  "rule": "Adopt SAME stopped prefit declaration; no restart or numerical-source/budget changes. Temporarily setF_GLOBAL_NOCACHE only on explicit bound immutable large feature/design matrices, preservepriorstates/inodes, journalandrestore oncompletion/error/ownerloss. Readonly policy setup hasbounded descriptors/buffers andnoMLallocation; resumeonlyafteroriginal8GiB reservation,3stablecomp<3GiB,24research/5compress/128swap/18.75disk. Full CPUfit andindependentactualsavedmodel/canonical replay unchanged. All peerprocesses leftalone."
+}

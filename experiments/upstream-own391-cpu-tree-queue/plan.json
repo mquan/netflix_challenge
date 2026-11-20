@@ -1,0 +1,17 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own391_cpu_tree_queue.py": "b82eacc138386d9db9070d4ba44676af149cfb42e95f03af3ba013b6d5a3a05f",
+    "OWN391_CPU_TREE_PLAN.md": "214345033509a2c9f75d69a8cede1dab0dfae73106361136b03b85f6d749a997",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "scripts/upstream_tree_pipe.py": "e95078bd837a7bbfba9a51df7231c3879adbe14638c246ebac32da68584c4b77",
+    "scripts/upstream_own391_tree_source.py": "3108d291ff560a701e7b15d302b7bef2dfb52cc01f993533ff11b8bbd6b9a2b4",
+    "scripts/upstream_own391_tree_worker.py": "14eaa3f0f0e44171aec0ce9ae93fa412d846878decfbbe28959cc859472d0af3",
+    "scripts/verify_upstream_own391_cpu_tree.py": "d395b4301aee00a1ca2d1c4129ef003f9092d9763dbc08037788f847bc6309fc"
+  },
+  "created": "2026-11-20T19:01:04.567635+00:00",
+  "cpu_only": true,
+  "rule": "All617features/618treeinputs,original31leaf/min1000/max2000pat75/3seeds/5nesteduserfolds/2threads. SeparateTorch source andLightGBM processes via bounded binarypipe; oneRAMmatrix,nofeaturediskcache. Reserve8GiB,capcompleteworkerPGID8GiB/research24GiB/compressor5GiB/swapgrowth128MiB/disk18.75GiB. Stablecomp<3GiB admission; noGPU/primarylane/nopeer signals. PreserveactualgroupRAM,noautomaticretry. Allactualsavedtrees/independentoperatorstream/heldprediction/canonicalscores required. Noqualifyingpredictions oroutcomes."
+}

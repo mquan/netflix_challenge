@@ -1,0 +1,57 @@
+{
+  "state": "complete_rehashed_original1600_native_outputs_canonical_known_probe_and_paired_alias_observation",
+  "verification_sha256": "f9447449aa00ee9c146bd0cc25c8d98225b586b9e36905d4aa092c3754d89b96",
+  "completion_sha256": "f170a4d716cc999b10e4d5e0b13a3c77040c373e1e171b9deaecb79031f28a4a",
+  "rows": [
+    {
+      "name": "tsvdx4-1600lm_ep01",
+      "paired_files": {
+        "probex": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep01.probex.npy",
+        "qual": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep01.qual.npy"
+      },
+      "clipped_pair_sha256": [
+        "e4324946be22621c08dd8e6f21bf8a8af592648377a438f94632b4b2241fc5f0",
+        "994daa188d83345c1eaa30dfacbe2a9ca6c881c775a1920df970e16d696747cc"
+      ],
+      "canonical_known_probe_rmse": 0.9579539511159023
+    },
+    {
+      "name": "tsvdx4-1600lm_ep02",
+      "paired_files": {
+        "probex": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep02.probex.npy",
+        "qual": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm_ep02.qual.npy"
+      },
+      "clipped_pair_sha256": [
+        "2d22d861dbb812cb535e70258b667dec9c732d6debb04c3e0f206aa449920eca",
+        "0979e7eb7f2e2ade81154d53d29f23b596614312345f417639b76d1f272b4538"
+      ],
+      "canonical_known_probe_rmse": 0.9349703048535166
+    },
+    {
+      "name": "tsvdx4-1600lm",
+      "paired_files": {
+        "probex": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm.probex.npy",
+        "qual": "artifacts/upstream-high-capacity-original/source/preds_new/tsvdx4-1600lm.qual.npy"
+      },
+      "clipped_pair_sha256": [
+        "2d22d861dbb812cb535e70258b667dec9c732d6debb04c3e0f206aa449920eca",
+        "0979e7eb7f2e2ade81154d53d29f23b596614312345f417639b76d1f272b4538"
+      ],
+      "canonical_known_probe_rmse": 0.9349703048535166
+    }
+  ],
+  "distinct_pairs": 2,
+  "aliases": [
+    {
+      "name": "tsvdx4-1600lm",
+      "alias_of": "tsvdx4-1600lm_ep02"
+    }
+  ],
+  "known_labels_sha256": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+  "all_native_output_hashes_rechecked": true,
+  "models_fitted": 0,
+  "qualifying_outcomes_read": false,
+  "known_probe_is_not_nested_blend_CV": true,
+  "no_qualifying_or_global_score_promotion": true,
+  "raw_terminal_epoch2_file_hashes_equal_on_both_queries": true
+}
