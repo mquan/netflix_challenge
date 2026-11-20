@@ -1,5 +1,5 @@
 {
-  "observed": "2026-11-20T07:29:36.418872+00:00",
+  "observed": "2026-11-20T09:04:11.492586+00:00",
   "display_time": "Nov 19, 2026 23:29 PST",
   "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
@@ -10,12 +10,16 @@
   "independent_verification_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
   "work": [
     {
+      "work": "Complete original split3 matched training-population comparison",
+      "state": "Launched full original-budget supervisor. Complete known-origin and native-training disjointness verified for1760494 holdout rows; all10arm/fold exclusions preserve canonical held users. Both arms use73 own raw columns plus130 original native voting features, five outer folds/three seeds/H128/r32. Score same1128164 canonical rows. Full260-frame feature generation complete;129/130 old own qualifying payloads match, ordinal-SVD differs. No qualifying reuse: production must capture all130 corresponding new features. No new score yet."
+    },
+    {
       "work": "Full own NNpool and predeclared own7 qualifying audit",
       "state": "Complete all five new three-seed refits, both full serialized-pipeline replays per family and original-bank provenance gates. All3 vectors frozen before outcomes; independent127-support solution/exact arithmetic pass. EqualNN pool0.8607645056/0.8617966293; fixed25%tree/75%pool0.8606639172/0.8616658311; primary own7 0.8605628330/0.8615658884, essentially tied with slight group tradeoff. No meaningful qualifying gain; six-family benchmark retained. Apparent known-fit0.8590445175 is not nested CV. CV best0.8591267885 remains valid on original A recipe."
     },
     {
       "work": "Own167/context218 next-study inputs and complete normalization parity",
-      "state": "All1,128,164 source rows independently reconstructed bitwise,243 ridge/521 nonlinear columns and all ten original group statistics match. Actual522-input inner721484/full901418 eligible matrices for outerfold0 retain every selected row/order: original full percentile/mean/std bits and every normalizedf32 value match. Compressed-inclusive resource guard passed. No NN fit yet; original full five-fold/three-seed study remains next."
+      "state": "Complete negative original full five-fold/three-seed study: NN0.8598066347299015, tree154 half0.8594786621236125. All15 actual models and original eligible scaler/ridge statistics independently replayed. Original post-fit supervisor failure preserved, separate recovery completed without retraining. No qualifying fit; development best remains0.8591267885072646."
     },
     {
       "work": "Original split3 RBM200 full25/25 completion",

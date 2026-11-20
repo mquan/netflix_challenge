@@ -1,0 +1,6 @@
+{
+  "holdout_rows": 1760494,
+  "canonical_benchmark_rows": 1128164,
+  "additional_known_rows": 632330,
+  "rule": "Recompute every canonical benchmark projection and label. Scan all canonical trainx rows for every additional holdout identity/date/label; require exactly one match. Exclude all qualifying user/item keys without loading any qualifying ratings. No fitting or prediction-score selection."
+}

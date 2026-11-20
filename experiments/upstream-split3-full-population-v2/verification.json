@@ -1,0 +1,28 @@
+{
+  "state": "complete_original_known_origin_and_all_split3_training_disjointness",
+  "native_training_rows": 98720013,
+  "full_holdout_rows": 1760494,
+  "canonical_rows": 1128164,
+  "additional_known_rows": 632330,
+  "all_original_native_training_identities_disjoint": true,
+  "original_frozen_canonical_input_hashes_verified": true,
+  "qualifying_labels_read": false,
+  "source_sha256": {
+    "scripts/verify_upstream_split3_full_population_v2.py": "bff5d562d561c567dd206853724c27e9bde82d29f17cdf829f272132f0f51b92",
+    "scripts/upstream_split3_pilot.py": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b",
+    "experiments/upstream-split3-holdout-origin-audit/verification.json": "9e928458f0f81821eb895a72cbafcb2bdaed09fa71fca5a6353a52b22abab339",
+    "experiments/upstream-remote15h/plan.json": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+    "experiments/upstream-item154-stream-bank/manifest.json": "af07914ea991f45f5313a5ab892a30d05e5f1fdf22c79482070b8de817a6eada",
+    "experiments/upstream-item154-stream-bank/column-verification.json": "11206c55a3bea21d72a26916328932a41f5993b6e0cad8c64cc9ba3af9b40f50",
+    "SPLIT3_FULL_HOLDOUT_PLAN.md": "cdb6e894d0d5b02559bb305019a3920850729eb83a7b76b40dc426d02cb41d0f",
+    "artifacts/upstream-split3-next3/source/data/train_3/user_idxs.npy": "a22147f71478e0492f4e3f1ccc40ea25000ffb588a9784379feae88117f9b3f7",
+    "artifacts/upstream-split3-next3/source/data/train_3/item_idxs.npy": "30400596732ae9574926c01200741bcb7188f2796b487470f66c8e9b62f9f2a7",
+    "artifacts/upstream-split3-next3/source/data/train_3/dates.npy": "44b3ad5bd5c227b06e5f00206acfef403ddc21a500c887f667d4ef6b73a9a272",
+    "artifacts/upstream-split3-next3/source/data/train_3/ratings.npy": "8ec7de3fb27410aabe7481676f553f2999b607cd334de6790241e35812c56f76",
+    "artifacts/upstream-split3-next3/source/data/probe_3/user_idxs.npy": "3fb89a3ea14ec289ae093e9a733fe4f96120cb96ae684b471d363c75c9ea239c",
+    "artifacts/upstream-split3-next3/source/data/probe_3/item_idxs.npy": "9c7a7a20065f7ea3f801e4c4da5aa9363c2dc962bdd85cfb9b6dd9658a2a6fd7",
+    "artifacts/upstream-split3-next3/source/data/probe_3/dates.npy": "13eecf96e5b9b3201daa620bc9f2a6b362a623af57b82750dd5f9e2c54b39394",
+    "artifacts/upstream-split3-next3/source/data/probe_3/ratings.npy": "bcd22dde86bff8d4a5c96de9e9bc3b04d72af5f45c30d98ea92591987fc2835c"
+  },
+  "models_fitted": 0
+}

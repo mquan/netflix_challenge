@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-20T08:53:20.916736+00:00",
+  "script_sha256": "435f19fca4f4d69d17a7a0915b95b64ab594157864f98353de5f126616d4c2cb",
+  "candidates": [
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union-tree-s1.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union466-full-tree-s1.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/ensemble-tree-s1.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/weighted/bank.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/A2h537-bank.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/MT8-537-bank.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/late539-bank.stats.npz",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/early539-bank.stats.npz"
+  ],
+  "rule": "Only untracked, closed, unflagged single-link retired public-bank Gram/rhs/count caches. Preserve every original byte via checksum-verified zstd archive before retiring uncompressed cache. No data arrays, model weights, own study inputs, native checkpoints or source code. Exact metadata and restoration command retained. Cleanup temporary peak bounded by original size+1MiB above native16GiB floor+0.75GiB checkpoint writes+1GiB transaction margin. This is a bounded space-reducing transaction, not new model-cache admission."
+}

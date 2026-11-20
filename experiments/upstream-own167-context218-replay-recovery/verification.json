@@ -1,0 +1,41 @@
+{
+  "state": "complete_original_full_fits_and_strengthened_replay_admission",
+  "observed": "2026-11-20T08:06:33.769245+00:00",
+  "original_manifest_sha256": "4ca21c9113379c3df119b8b0c5648d4e579fbed05241a8fddef94ec1ab2a5b0b",
+  "independent_verification_sha256": "a9a79682f3082d06147e6345a843e5ff15fff3857b71db11245b8316cd590a4e",
+  "all_five_folds_exact_three_seed_budget_and_checkpoint_inventory_verified": true,
+  "source_derived_global_reference_verified": true,
+  "records": [
+    {
+      "arm": "nn",
+      "rmse": 0.8598066347299015,
+      "fold_rmse": [
+        0.8588540685650732,
+        0.8573783263903781,
+        0.8607193927014369,
+        0.8615531838405052,
+        0.8605339373307973
+      ],
+      "prediction_sha256": "d4f13bbc395077d61a968b3df4e1856ffaae54917cb77e76d8c7998a0f7f2d3d"
+    },
+    {
+      "arm": "fixed-half-tree-nn",
+      "rmse": 0.8594786621236125,
+      "fold_rmse": [
+        0.8585949347947117,
+        0.8568975673850584,
+        0.8604228223352395,
+        0.8612203481670677,
+        0.8602629951877955
+      ],
+      "prediction_sha256": "6fd5f3d53001b570364f0018938970fe4501c4e4aa0e5f8cfac374f77666ef6a"
+    }
+  ],
+  "control_scores": {
+    "nn154": 0.8593837348929272,
+    "nn166": 0.8594144160641403,
+    "tree154": 0.8600069538395594
+  },
+  "qualifying_labels_read": false,
+  "model_fitting_repeated": false
+}

@@ -1,0 +1,75 @@
+{
+  "created": "2026-11-20T08:03:26.729992+00:00",
+  "original_manifest_sha256": "4ca21c9113379c3df119b8b0c5648d4e579fbed05241a8fddef94ec1ab2a5b0b",
+  "source_sha256": {
+    "scripts/upstream_own167_context218_replay_recovery.py": "fa6404b5e3bcc4f26b437bc87b4b38c115d1d91d62f269780aa8870880de1e70",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/verify_upstream_own167_context218_mps.py": "d32d4ed5e1932a3a17a5e160d611986e6eb60620c107bc6e2fd1ca8ac36e4efb"
+  },
+  "completed_fit_bindings": {
+    "experiments/upstream-own167-context218-mps/manifest.json": "4ca21c9113379c3df119b8b0c5648d4e579fbed05241a8fddef94ec1ab2a5b0b",
+    "experiments/upstream-own167-context218-mps/nn/0.json": "e6b2dbc92e79f3addfd1659a8bcf210d21c748427cfa24a68d0b1e778a558395",
+    "artifacts/upstream-own167-context218-mps/nn/0/nn-13.pt": "214ba628d680794d5cf32d3c08884513860ece7d9b5e4a0129a1eb5f4c0db9a2",
+    "artifacts/upstream-own167-context218-mps/nn/0/nn-2026.pt": "a1f212d2dc760cb6f690796f082964638179c3fdbb1e0b088084f96652391309",
+    "artifacts/upstream-own167-context218-mps/nn/0/prediction.f32": "9329c9589fbab294e2967db25ad1834253837de32eb45d62e08c182b8ac878c0",
+    "artifacts/upstream-own167-context218-mps/nn/0/ridge.npz": "40e2a25549ab6214290055a477dc7cbbd5c89f554956d65e140d16b18e79d861",
+    "artifacts/upstream-own167-context218-mps/nn/0/nn-7.pt": "2da722fcbab36de1990e269a0276abd5b3bcff6cb9238cc3fdf41ce136b21c92",
+    "artifacts/upstream-own167-context218-mps/nn/0/scalers.npz": "6c819c09ee89ae42d6be4c61796a72023b34b617b46961c30e98561fdb17b3d3",
+    "experiments/upstream-own167-context218-mps/nn/1.json": "950e5f30989fe04a4729b96a1391705ebebe190dc9031704f741e92f11b1db30",
+    "artifacts/upstream-own167-context218-mps/nn/1/nn-13.pt": "941fd0f226529bc89d32f27f3e9fff09ba5f92d9c126ce5370a7db6b22773bf0",
+    "artifacts/upstream-own167-context218-mps/nn/1/nn-2026.pt": "372eafbc7af56836457e43bc5a7975453920ee58e21ef5f50b8f0312217dc806",
+    "artifacts/upstream-own167-context218-mps/nn/1/prediction.f32": "50085918650788e7f33c505c6636bcc9c3e8973fb714e689d965c62eadb5cc15",
+    "artifacts/upstream-own167-context218-mps/nn/1/ridge.npz": "3b538a031a812cc85f4041c7bf6105d21bea2ae59855afe5dfadafb5a9c6c2c4",
+    "artifacts/upstream-own167-context218-mps/nn/1/nn-7.pt": "87921e89198eb5bb581fcb6a72df25f1c65c06c5e587ad1f988fe712af30fbda",
+    "artifacts/upstream-own167-context218-mps/nn/1/scalers.npz": "abac4c7f15417bfdc3019cbab77782fae2112bc56ca832df2363916c9e902cae",
+    "experiments/upstream-own167-context218-mps/nn/2.json": "dd2bc4d225079f632d2db2a520a75b0f0f2e6fa352bf21d0ebffffbca208951e",
+    "artifacts/upstream-own167-context218-mps/nn/2/nn-13.pt": "d95f5500b52867cef19a78cc08ca0ded34ce42665bea4ec022a262b39719d2a4",
+    "artifacts/upstream-own167-context218-mps/nn/2/nn-2026.pt": "8998a58c8e00213a596aea43246a0ec11c009c7c793233ba5c2b1fe02c9c6d26",
+    "artifacts/upstream-own167-context218-mps/nn/2/prediction.f32": "2bd6481b0975aead8e4ca1ddf541057e3419db59a8485f90777b45ce30eb4dba",
+    "artifacts/upstream-own167-context218-mps/nn/2/ridge.npz": "594c6a42ff5bc9ae412e09889bd6d4ef235b33a072ab3f265bbb8dde5a18fe99",
+    "artifacts/upstream-own167-context218-mps/nn/2/nn-7.pt": "82660d89ac6ee81cbfa43b12d16fa137171815e350eb1ab6b47e96251c58b135",
+    "artifacts/upstream-own167-context218-mps/nn/2/scalers.npz": "c6e56a7449842cd1865cf9030c7419410f4b4f0b160b67f6bc3de9ff53112467",
+    "experiments/upstream-own167-context218-mps/nn/3.json": "3f8684ef1c9c18dda2de333684ae3de66933a419febb18c4d4e4cfe7662265f3",
+    "artifacts/upstream-own167-context218-mps/nn/3/nn-13.pt": "69ef6bd9bb31156505c1c267dba296367057d15cceb703a2267faa1c281496b5",
+    "artifacts/upstream-own167-context218-mps/nn/3/nn-2026.pt": "b7cc570f8c01b5f957099106330f74927b98d4e6e885247e5514ee11c3ff1fb4",
+    "artifacts/upstream-own167-context218-mps/nn/3/prediction.f32": "c9d37d31412ad7f058de2e3ddc5cfbe430ce0556a8eeb10b54a74d077206d9f0",
+    "artifacts/upstream-own167-context218-mps/nn/3/ridge.npz": "8c875bd8e630be2bb6e1a424e1fba6f9a2305f0cb2ebeb323e8ca0e5ae0c9b3c",
+    "artifacts/upstream-own167-context218-mps/nn/3/nn-7.pt": "c62d69600aaf223cc5fde721a499ad51686088ed01b6fc6d04cdbbd261f49c19",
+    "artifacts/upstream-own167-context218-mps/nn/3/scalers.npz": "517c4f32e8bbb1d603cd1f43ddcc15efca9df7e6f2df5c3b9862a211696f9627",
+    "experiments/upstream-own167-context218-mps/nn/4.json": "47fea22cd1ca757383f24e68e3c665ed4db41cc65a8d5d76c80d35c14c1d0233",
+    "artifacts/upstream-own167-context218-mps/nn/4/nn-13.pt": "d19a4cbe108fd60a37911245630e0130f56dbf1163a56f02bd6c04bc8ecb8f53",
+    "artifacts/upstream-own167-context218-mps/nn/4/nn-2026.pt": "541af603033b63635348fc0a32cad183cd2db5f5a0df6774b687859110788c6e",
+    "artifacts/upstream-own167-context218-mps/nn/4/prediction.f32": "ccda96b3e863a851f9b6ba38fcafe58bcf845a548f1c7c2851325ab8cb7a6fcf",
+    "artifacts/upstream-own167-context218-mps/nn/4/ridge.npz": "89ee3e9e3603e445e79fd8d95e5908e98de3511284e72bd8bf8597f1d70e7ee7",
+    "artifacts/upstream-own167-context218-mps/nn/4/nn-7.pt": "404a256aacf11963b5e420eb9eb4ee411dc6d73bc0c8f88a6a9edb0f8d970308",
+    "artifacts/upstream-own167-context218-mps/nn/4/scalers.npz": "3ebc73b70a801c5901ac609ae1d32d9f70c175afdb9c5e22a7d55847392b6f1c"
+  },
+  "actual_three_seed_budgets": [
+    [
+      4,
+      5,
+      5
+    ],
+    [
+      3,
+      5,
+      4
+    ],
+    [
+      6,
+      3,
+      5
+    ],
+    [
+      4,
+      4,
+      4
+    ],
+    [
+      4,
+      4,
+      5
+    ]
+  ],
+  "rule": "All five fits complete before original guard process-exit scan failure. Preserve failure and original fitting. Revalidate source-derived comparison and exact three-seed inventory; run unchanged independent verifier only. Corrected scanner includes relative/lowRSS peers and ignores exited/zombie handles. No numerical training change."
+}

@@ -1,0 +1,16 @@
+Found three **P2** issues; no P1 identified.
+
+1. **P2 — Replay does not require exactly three seed budgets.**
+   [verify_upstream_own167_context218_mps.py:77](/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own167_context218_mps.py:77) uses `zip(seeds, chosen_iterations)` without validating length or integer budgets within `0..40`. A truncated receipt silently omits seeds; matching predictions can pass and produce `all_actual_saved_models_reopened=True`. Require exactly three valid counts and the corresponding checkpoint inventory. Zero selected epochs must remain valid.
+
+2. **P2 — The study manifest can change during fitting and receive valid fold receipts.**
+   [upstream_own167_context218_mps.py:175](/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own167_context218_mps.py:175) freezes source/prepared files but excludes the study’s own manifest. Each fold then hashes the current manifest at [line 184](/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own167_context218_mps.py:184). For example, changing `preceding_global_development_rmse` during the first fold lets every receipt bind the modified manifest; the verifier trusts that scalar without comparing it with the bound global-reference report. This can yield an incorrect improvement claim. Capture the manifest digest at worker entry, enforce it throughout, and validate derived comparison fields against their sources.
+
+3. **P2 — Resource accounting misses relative-path workers and heavily compressed peers.**
+   The queue calls `resource.footprints()` at [upstream_own167_context218_queue.py:54](/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own167_context218_queue.py:54). Its [dependency filter](/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own167_context218_normalization_queue.py:26) includes Python peers only when their command contains the absolute repository path **and** RSS exceeds 64 MiB. Thus `python scripts/upstream_…py` is omitted regardless of memory use, and compressed peers below the RSS cutoff are omitted despite potentially large footprints. Both admission and sustained totals can undercount. Identify research processes independently of absolute command spelling and current RSS.
+
+The inspected implementation otherwise preserves the exact feature insertion and disjoint indices, H128/r32, five nested user folds, three configured seeds, and fresh max40/patience4 select/refit. Ridge and scaler masks exclude held users. Replay actually loads saved checkpoints and scalers, recomputes eligible ridge coefficients/statistics, and compares held predictions bitwise. I accepted the separately proved normalization parity.
+
+Only source and relevant dependencies were read. No qualifying outcomes, training, file changes, agents, or process-control actions were used.
+
+**Recommendation:** Leave the active study running unchanged. Address these proof/guard gaps in a separately reviewed follow-up before treating its completion certificate as sufficient for promotion.

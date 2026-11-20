@@ -1,0 +1,45 @@
+{
+  "jobs": [
+    [
+      "upstream-split3-pilot",
+      "s3-attn16",
+      "completion-verification.json"
+    ],
+    [
+      "upstream-split3-diversity",
+      "s3-dnn16t",
+      "s3-dnn16t-verification.json"
+    ],
+    [
+      "upstream-split3-diversity",
+      "s3-dnn32nm",
+      "s3-dnn32nm-verification.json"
+    ],
+    [
+      "upstream-split3-diversity",
+      "s3-nade12s",
+      "s3-nade12s-verification.json"
+    ],
+    [
+      "upstream-split3-next3",
+      "s3-attn64",
+      "s3-attn64-verification.json"
+    ],
+    [
+      "upstream-split3-next3",
+      "s3-rbm200",
+      "s3-rbm200-verification.json"
+    ],
+    [
+      "upstream-split3-knn3-chains",
+      "s3-dnn32nm__knn3",
+      "s3-dnn32nm__knn3-verification.json"
+    ],
+    [
+      "upstream-split3-knn3-chains",
+      "s3-nade12s__knn3",
+      "s3-nade12s__knn3-verification.json"
+    ]
+  ],
+  "rule": "Every locally complete original native pair and captured original snapshot, full1760494-row probe3 and2817131-row qualifying. Fixed producer order, terminal first then epoch names; remove only exact full-pair duplicates. No outcome-based feature subset or fitting. Compact remote returns excluded until native full probe vectors available."
+}
