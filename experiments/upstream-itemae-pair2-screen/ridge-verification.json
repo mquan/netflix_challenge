@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "cc0d19d9ca90dfe1bcebd33bf482ffcb2feedf72487a79a9dabcefd9ac97d725",
+  "plan_sha256": "e6cf877ad4043015a720f5583336cb6442af7adacdd573e9cdc5407edf67c2e2",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.862585873521797,
+      "max_prediction_error": 5.059064278611913e-12,
+      "prediction_sha256": "1a5a5ec6dc31973412541f2ef8e90331dc3a437c939d8de2c8e5717d8967026e"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed epoch5/10 item-oriented raw addition. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "61f901a6ca86c65231c7d05357ffa50ecf52b2bd2b7aaaba114422bc7077695b"
+}

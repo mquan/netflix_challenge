@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-20T02:25:47.364926+00:00
+timestamp: 2026-11-20T02:32:45.737587+00:00
 best_score: 0.8592012938198756
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,8 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+The fixed item-autoencoder5/10 neural follow-up is independently complete and negative: NN0.8594477768, original tree50 half mean **0.8593159372**. All five folds,15 actual saved-model replays and separate exact mean/canonical scoring pass. No qualifying refit. The new full-known tree production fit has actually started under recovered controller3709/worker4854 with the original760/968/880 median budgets; new tree replay, fixed frozen mean and recovered audit remain pending.
 
 The complete original item154 tree/NN half mean is independently verified at **0.8592012938198756**, improving0.8592309819864167. All five original folds,15 actual saved-tree replays, original neural replay lineage, exact stored mean and separate canonical complete-known scoring pass. The qualifying best remains0.8605716962 /0.8615832225; the10% goal is still unmet. See [full result](ITEM154_TREE_RESULT.md).
 
