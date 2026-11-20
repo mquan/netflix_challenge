@@ -1,0 +1,46 @@
+{
+  "state": "complete_independent_two_frozen_own352_foldbag_candidate_recovered_audit",
+  "observed": "2026-11-20T15:55:58.486581+00:00",
+  "primary": "own7-own352-foldbag-known-calibration",
+  "results": [
+    {
+      "candidate": "fixed-half-own352-foldbag-tree154",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8606564518321369,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8616038796640847,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "0bbf03047d6bfbf15ec54a91e8c98bdba5e60b5d432f5f14defd3ff4ebdb91e9"
+    },
+    {
+      "candidate": "own7-own352-foldbag-known-calibration",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8604024388892993,
+          "below_target": false
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613852653620429,
+          "below_target": false
+        }
+      },
+      "both_groups_below_target": false,
+      "prediction_sha256": "784fe45247f5ec6559fbb5188cc8a5aa2cb21edbcbee97811048259df564a12b"
+    }
+  ],
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "preaudit_verification_sha256": "789903b5fcc28b03e99a7f34144eebe87a2e700b6cb9754fd9feb8df9a8c19d2",
+  "freeze_sha256": "b4c83dec49e6e8fa96bbe8fe47c48b15f717f396a7bc37cc87878fe4edd125c8",
+  "qualifying_outcomes_used_for_fitting_or_selection": false,
+  "limitation": "Adaptive community-recovered groups, not official or untouched Test. Original development A and paired production B remain distinct."
+}

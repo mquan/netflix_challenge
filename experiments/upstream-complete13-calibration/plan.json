@@ -1,0 +1,15 @@
+{
+  "created": "2026-11-20T15:30:01.071249+00:00",
+  "candidates": [
+    "complete13-simplex",
+    "complete13-ridge10"
+  ],
+  "primary": "complete13-simplex",
+  "declaration_sha256": "6972bd38a6e5abe27ba51dc7c17cde79a290eb787100ede155cd8c5d5e8c85b3",
+  "script_sha256": "1cd9755a452f32b42aaab4f3c2e86c03a6e4c9a61818a19e3780c48c955333ad",
+  "verifier_sha256": "9df16daa6579fb7dbe6794e838ff253c97d9f4f830997246730bbaab8dc3ab06",
+  "rule": "All13 declared completed families; one exact base alias. Complete known OOF only. Primary simplex uniform SLSQP ftol1e-17/maxiter1000; control signed ridge lambda10 with unpenalized intercept. Independently solve8191 supports and full14dim normal equations. Both studies freeze/preverify before any new recovered audit.",
+  "ridge_lambda": 10.0,
+  "known_score_is_nested_cross_validation": false,
+  "qualifying_labels_read": false
+}

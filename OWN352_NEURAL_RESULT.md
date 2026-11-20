@@ -25,8 +25,10 @@ arithmetic reconstructs each fixed-half float32 value and the full canonical
 score. All original memory, compressor, swap and disk limits remain.
 
 This is adaptive known-development CV, not official or untouched Test.
-Qualifying remains0.8604025394/0.8613881328 and the strict0.85725 target
-remains unmet. [Declared next qualifying fold bag](OWN352_FOLD_BAG_PRODUCTION_PLAN.md).
+The later own352 fold-bag qualifying primary scores0.8604024389/0.8613852654;
+the [complete13 comparison](OWN13_QUALIFYING_RESULT.md) improves both slightly
+to0.8603920746/0.8613737959. The strict0.85725 target remains unmet.
+[Original frozen qualifying fold-bag declaration](OWN352_FOLD_BAG_PRODUCTION_PLAN.md).
 
 [Complete actual pipeline replay](experiments/upstream-own352-bounded-replay/independent-verification.json) ·
 [Separate canonical score](experiments/upstream-own352-bounded-replay/independent-canonical-verification.json) ·
