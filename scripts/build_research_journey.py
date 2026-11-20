@@ -16,6 +16,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH330 full neural tree154 half', '0.8589474951024617', '2026-11-20T12:59:58.878245+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Own330 full neural/tree half becomes the verified development best', 'All330 own scalar predictors/all90 learned contexts retained. Complete557-input H128rank32 fivefold/three-seed40pat4 fitting,15 actual saved models, every original eligible scaler/statistic/normalized input and held prediction replay. NN0.859109418608456; fixed tree154 half0.8589474951024617 improves prior0.8591267885072646. Separate final arithmetic reconstructs every float32 bit and full compensated canonical score. Adaptive known CV; no qualifying score or refit claimed,10% target still unmet.', 'experiments/upstream-own330-mps/independent-canonical-verification.json', 'all15 actual models/full original eligible preprocessing plus separate exact final-average/canonical scoring'),
     ('FRESH176 full neural fixed-half screen', '0.8591336855012253', '2026-11-20T12:44:30.094177+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Recent-ten full neural study narrowly misses global best', 'All five userfolds/three seeds,15 actual models, both full eligible scalers, original group statistics and every held prediction bit replay. NN0.8592799295700446 improves NN166/154 controls. Fixed tree154 half0.8591336855012253 exceeds global0.8591267885072646 by0.000006897. No global or qualifying promotion; full557-input own330 fitting now active.', 'experiments/upstream-own176-recent10-mps/independent-verification.json', 'all actual saved models and complete eligible-statistic/scaler/prediction replay'),
     ('FRESH_SPLIT3 expanded-known fixed-half diagnostic', '0.8622259939637812', '2026-11-20T12:44:30.094177+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Extra known training labels help the matched bank, which remains below best quality', 'Identical canonical1128164-row evaluation and held users. Both arms retain full73raw/130voting inputs and H128rank32/5fold/3seed40pat4. NN0.8727302875 control versus0.8722568222 expanded; fixed tree halves0.8624405419 versus0.8622259940. All ten complete pipelines/30 actual models and both original scalers replayed. More632330 legitimate labels help, but both miss global; no qualifying refit.', 'experiments/upstream-split3-matched-resume/independent-verification.json', 'all complete actual ten-fold saved models, original eligible preprocessing and canonical prediction bits'),
     ('FRESH330 unused149 ridge diagnostic', '0.8619710828137934', '2026-11-20T11:47:32.052557+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'All149 unused own predictors improve every ridge fold', '247 completed native pairs audited;93 existing canonical matches and5 exact pair aliases removed. All149 fixed additions improve same-row own181 ridge0.8622279136776032 to0.8619710828137934, with allfive folds improving. Full406-column operators retain every control bit; separate bounded/sequential readers replay all group statistics, eligible solves and stored predictions. Diagnostic only, not a neural/global or qualifying promotion. All556 features/557 inputs still require complete neural admission and fitting.', 'experiments/upstream-own330-native149-data/independent-verification.json', 'all original/new operator bits, full eligible-user ridge statistics and actual prediction replay; no neural or qualifying model'),
@@ -190,6 +191,41 @@ def run_curve(name, label, metric, step_key, description, credit):
                 source=f"experiments/{name}.events.jsonl")
 
 
+def validate_own330_development(record,current_path,current,model_path,model):
+    """Require the full557-input pipelines and separate final arithmetic proof."""
+    digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest_path=EXPERIMENTS/'upstream-own330-mps/manifest.json'
+    manifest=json.loads(manifest_path.read_text())
+    records=model['records']
+    if (digest(current_path)!=record['independent_verification_sha256'] or
+        current['rmse']!=record['best_development_rmse'] or current['rows']!=1128164 or
+        not current['all15_actual_saved_models_rehashed'] or not current['every_fixed_average_float32_bit_equal'] or
+        current['qualifying_labels_read'] is not False or not current['improves_previous'] or
+        current['complete_model_preprocessing_verification_sha256']!=digest(model_path) or
+        current['verifier_sha256']!=digest(ROOT/'scripts/verify_upstream_own330_canonical.py') or
+        model['state']!='complete_actual_own330_all_fits_original_statistics_scalers_and_saved_model_replays' or
+        model['verifier_sha256']!=digest(ROOT/'scripts/verify_upstream_own330_mps.py') or
+        model['manifest_sha256']!=digest(manifest_path) or current['manifest_sha256']!=digest(manifest_path) or
+        model['fixed_half_tree154_rmse']!=current['rmse'] or model['fixed_half_sha256']!=current['prediction_sha256'] or
+        [r['fold'] for r in records]!=list(range(5)) or sum(r['actual_models_reopened'] for r in records)!=15 or
+        not all(r['actual_saved_pipeline_bitwise_equal'] and r['both_original_eligible_scalers_recomputed'] and
+                r['all_original_normalized_input_bits_equal'] for r in records) or
+        manifest['nn_inputs']!=557 or manifest['raw_predictions']!=330 or manifest['context_columns']!=90 or
+        manifest['fixed_tree_weight']!=.5 or manifest['config']['nn_hidden']!=128 or manifest['config']['context_rank']!=32 or
+        manifest['config']['seeds']!=[2026,7,13] or manifest['config']['nn_epochs']!=40 or manifest['config']['nn_batch']!=8192):
+        raise ValueError('Own330 publication requires all15 actual557-input models and separate exact canonical scoring')
+    for relative,expected in manifest['code_sha256'].items():
+        if digest(ROOT/relative)!=expected:raise ValueError('Original full own330 numerical source changed')
+    for r in records:
+        receipt=ROOT/r['receipt_path']
+        if digest(receipt)!=r['receipt_sha256']:raise ValueError('Actual original own330 fold receipt changed')
+        for name,expected in r['outputs'].items():
+            path=ROOT/'artifacts/upstream-own330-mps/nn'/str(r['fold'])/name
+            if digest(path)!=expected:raise ValueError('Actual original model/scaler/vector changed')
+    path=ROOT/'artifacts/upstream-own330-mps/fixed-half-tree154.f32'
+    if digest(path)!=current['prediction_sha256']:raise ValueError('Actual canonical fixed-half vector changed')
+
+
 def validate_fresh_status():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
     if record['qualifying_status']!='audited_miss':
@@ -214,7 +250,10 @@ def validate_fresh_status():
     independent_path=ROOT/record['development_independent_check_path'];independent=json.loads(independent_path.read_text())
     kind=current['state']
     expected_weights=[.5,.5]
-    if kind=='complete_fixed_post_study_consensus':
+    own330=kind=='complete_separate_original330_tree_half_arithmetic_and_full_canonical_score'
+    if own330:
+        validate_own330_development(record,current_path,current,independent_path,independent)
+    elif kind=='complete_fixed_post_study_consensus':
         checked_state='complete_independent_consensus_and_score';checked_flag='stored_consensus_bitwise_equal'
     elif kind=='complete_verified_fixed_combination':
         checked_state='complete_separate_stored_mean_and_score_check';checked_flag='fixed_mean_bitwise_equal'
@@ -232,7 +271,7 @@ def validate_fresh_status():
             independent['verifier_sha256']!=hashlib.sha256(verifier.read_bytes()).hexdigest()):
             raise ValueError('Fixed weighted pool requires original actual source/model replay and canonical arithmetic evidence')
     else:raise ValueError('Unrecognized verified development combination')
-    if (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
+    if not own330 and (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
         current['rmse']!=record['best_development_rmse'] or current['weights']!=expected_weights or
         current['rmse']>=development['rmse'] or current['qualifying_labels_read'] is not False or
         independent['state']!=checked_state or not independent[checked_flag] or

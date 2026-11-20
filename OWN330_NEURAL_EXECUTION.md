@@ -1,11 +1,13 @@
-# Own330 full neural study is fitting
+# Own330 full neural study completed
 
 Both complete input passes have finished. The independent sequential reader
 reproduces every bit of the406-column ridge design and556 nonlinear
 features. All original392 nonlinear columns and90 learned contexts remain;
 all164 fixed scalar additions have their original float32 transforms.
 The model receives557 inputs, partitioned into332 signals and225 contexts.
-Full five-fold/three-seed fitting is now running; no complete score yet.
+All five folds and15 actual saved-model/preprocessing replays completed.
+Fixed tree154 half **0.8589474951024617** is the new verified development
+best. [Result](OWN330_NEURAL_RESULT.md). Qualifying is pending.
 
 The reviewed queue required the complete, independently replayed own176
 study before acquiring the GPU lane. It reserves16GiB, with matching
@@ -19,7 +21,7 @@ floor is the strongest of the existing global score, own176 NN and own176
 fixed half with tree154. The own330 NN and its one fixed tree154 half must
 be assessed against that stronger reference, not just an older checkpoint.
 
-The1,600-factor queue's idle, childless supervisor is parked while waiting
+The1,600-factor queue's idle, childless supervisor was parked while waiting
 on own176 so it cannot claim the GPU lane ahead of this study. Its identity
 and incomplete dependency are checked before and after SIGSTOP. No native
 model was interrupted. Every normal/error release restores that same

@@ -1,0 +1,58 @@
+{
+  "observed": "2026-11-20T12:59:58.878245+00:00",
+  "display_time": "2026-11-20 04:59 PST",
+  "best_development_rmse": 0.8589474951024617,
+  "qualifying_status": "audited_miss",
+  "target_each_recovered_group": 0.85725,
+  "qualifying_labels_used_in_fitting": false,
+  "downloaded_pretrained_features": false,
+  "verified_development_report_sha256": "928701b8b7cf258c0d76de67f5d698796b8c1665613cc4ba97ad88e577223af1",
+  "independent_verification_sha256": "928701b8b7cf258c0d76de67f5d698796b8c1665613cc4ba97ad88e577223af1",
+  "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
+  "qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
+  "qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605620601761576
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8615662023089099
+    }
+  },
+  "goal_achieved": false,
+  "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
+  "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
+  "latest_qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605620601761576
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8615662023089099
+    }
+  },
+  "latest_qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
+  "best_development_arm": "fixed_half_own330_nn_and_tree154",
+  "own103_development_complete": true,
+  "own103_fixed_mean_rmse": 0.8595400254184109,
+  "own103_full_refit_controller": 74649,
+  "own103_nn_only_candidate_predeclared": true,
+  "own103_full_refit_complete": true,
+  "own103_nn_qualifying_best": false,
+  "own107_rbm50_nn_qualifying_best": false,
+  "own107_latent90_mean_qualifying_best": true,
+  "preceding_independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
+  "development_verification_path": "experiments/upstream-own330-mps/independent-canonical-verification.json",
+  "development_independent_check_path": "experiments/upstream-own330-mps/independent-verification.json",
+  "development_required_replay_paths": [
+    "experiments/upstream-item154-tree/tree-replay.json"
+  ],
+  "development_narrative": "Complete own330557-input fivefold/three-seed H128rank32 study and all15 actual saved models, original eligible scalers/statistics and every canonical prediction bit replayed. Separately rehashed all original model sources and reproduced every fixed-half/tree154 float32 bit and full compensated canonical score0.8589474951024617. Better than prior0.8591267885072646; adaptive known CV, not official or untouched Test. No own330 qualifying fit or score yet; both recovered groups must still be below0.85725.",
+  "latest_qualifying_verification_path": "experiments/upstream-own6-tight-calibration/independent-verification.json",
+  "qualifying_narrative": "The newly completed full tree154 joins all five preceding eligible own families in one nonnegative sum-one blend fitted only on complete known OOF vectors. Independent compensated statistics and all63 nonempty simplex supports verify its weights; actual originating development/full saved-family replays, exact known/full vectors and both canonical complete-group scores pass. Apparent known-fit0.8590482 is not nested CV; CV best remains0.8592013. The initial solver tolerance failed a coefficient precision check before any label access; a separate stricter-tolerance run preserves the same families/objective and all original evidence. The qualifying vector was frozen before auditing; both preceding groups improve. No recovered outcome fitted or selected the coefficients.",
+  "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
+  "latest_completed_qualifying_audit_path": "experiments/upstream-nn-pool6-assembly/independent-recovered-audit.json",
+  "qualifying_benchmark_rule": "Retain established six-family benchmark; latest predeclared own7 audit essentially ties and does not improve both groups."
+}

@@ -25,9 +25,9 @@ original1,600 factors,2 epochs per phase, all original rows and released
 low-memory preset, with4 Rayon and1 BLAS threads. The two-epoch budget is
 the original recipe, not a shortened trial.
 
-The reviewed queue's idle supervisor is now parked for the full own330
-neural study's priority; it will resume its original reservation/build gates
-after that study releases. No native model was interrupted. No high-capacity
+The reviewed queue's idle supervisor was parked for the full own330
+neural study's priority; it has now resumed its original reservation/build
+gates after that study completed. No native model was interrupted. No high-capacity
 compilation or model training has begun. Its three regression tests cover
 the real dependency gate, reservation rejection and reused-PID protection.
 
