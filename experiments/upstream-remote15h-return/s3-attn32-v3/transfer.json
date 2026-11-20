@@ -1,0 +1,26 @@
+{
+  "observed": "2026-11-20T05:56:12.281473+00:00",
+  "release_tag": "remote15h-own-20261120",
+  "asset_name": "s3-attn32-export.tar.gz",
+  "archive_sha256": "8193f1366705e81ceef52b94a22ad0d371acd1d886c40ce4c79b1ae787c151a4",
+  "archive_bytes": 26735250,
+  "uploaded": true,
+  "draft_release": true,
+  "records": [
+    {
+      "column": "s3-attn32",
+      "file": "s3-attn32.npz",
+      "sha256": "d351b2c17fde7b0dd77c61f89b0d946a1a40b8f16aefd6c6df85eccd766d76ae",
+      "native_probe_sha256": "9c024388df0c7d6765cb7cacecb30dcfcc77ad9c380bd742c729331e09a3c2b6",
+      "native_qual_sha256": "1a0268a5d3c531041d1a3a01d25c92ad0c9d78f89a353c1ece800f5a9c634963"
+    },
+    {
+      "column": "s3-attn32_ep06",
+      "file": "s3-attn32_ep06.npz",
+      "sha256": "d6ee1d3620b824d32505765147f1c5a400789d395a369346dbe66757aeeca81c",
+      "native_probe_sha256": "518f54b6adc9cbdca19df1ed307db3ec278d97b0e373e7183c9a4ca0fd58ffcb",
+      "native_qual_sha256": "612c4a6b53a1856763dfffbc2b7a31a865e8fda15a974e943838922be00433cd"
+    }
+  ],
+  "prediction_arrays_in_git": false
+}

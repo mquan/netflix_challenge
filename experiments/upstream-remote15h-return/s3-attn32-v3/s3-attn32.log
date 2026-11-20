@@ -1,0 +1,31 @@
+[s3-attn32]
+target = "rtg"
+AttnConfig { n_feat: 32, n_pool: 32, n_mf: 192, n_bins: 30, out_scale: 2.5, beta: 0.3, dev_beta: 0.4, n_epochs: 12, seed: 42, lr_decay: 0.9, lr_q: 0.005, lr_c: 0.005, lr_mf: 0.008, lr_bias: 0.005, lr_alpha: 2e-6, reg_q: 0.02, reg_c: 0.02, reg_mf: 0.015, reg_bias: 0.03, reg_bu_day: 0.03, reg_alpha: 50.0, sigma: 0.05, huber: 0.0, grad_clip: 1.0, emb_cap: 1.0, n_threads: 1, block_users: 32, train_frac: 1.0 }
+train_3 => probe_3
+Epoch 01 | RMSE 0.95855
+Epoch 02 | RMSE 0.94456
+Epoch 03 | RMSE 0.93531
+Epoch 04 | RMSE 0.92881
+Epoch 05 | RMSE 0.92399
+Epoch 06 | RMSE 0.92007
+Epoch 07 | RMSE 0.91710
+Epoch 08 | RMSE 0.91478
+Epoch 09 | RMSE 0.91292
+Epoch 10 | RMSE 0.91120
+Epoch 11 | RMSE 0.90979
+Epoch 12 | RMSE 0.90871
+probe_3 RMSE 0.90871
+fulltrain => qual
+Epoch 01 | RMSE 3.69643
+Epoch 02 | RMSE 3.70512
+Epoch 03 | RMSE 3.70825
+Epoch 04 | RMSE 3.71189
+Epoch 05 | RMSE 3.71415
+Epoch 06 | RMSE 3.71367
+Epoch 07 | RMSE 3.71676
+Epoch 08 | RMSE 3.71850
+Epoch 09 | RMSE 3.72129
+Epoch 10 | RMSE 3.72113
+Epoch 11 | RMSE 3.72272
+Epoch 12 | RMSE 3.72525
+
