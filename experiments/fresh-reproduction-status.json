@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T03:35:12.150292+00:00",
-  "display_time": "Nov 19, 2026 19:35 PST",
+  "observed": "2026-11-20T03:46:25.159728+00:00",
+  "display_time": "Nov 19, 2026 19:46 PST",
   "best_development_rmse": 0.8592012938198756,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,10 @@
   "verified_development_report_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
   "independent_verification_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
   "work": [
+    {
+      "work": "Fixed complete KNN3-pair neural follow-up",
+      "state": "Coordinator18031 live, waiting for both independent full original KNN3 source proofs. Both original terminal predictions added to complete own107/item154;185 ridge columns,399 nonlinear columns plus ridge, unchanged H128/r32 and original five nested user folds/seeds/optimizer/stopping. All15 actual saved-NN replays, complete virtual tensor hashes and both predeclared tree50/tree154 half means required. No reduced fit, coefficient search, qualifying selection or automatic production. Four targeted fixtures and12 existing checks pass."
+    },
     {
       "work": "Six-family known-only convex calibration",
       "state": "Complete independent new own qualifying best: source0 0.8605620602 /source1 0.8615662023. All six original development/full saved-family replays bound; independent compensated active-set simplex solve and exact known/full vectors pass. Both previous groups improve. Apparent known-fit0.8590482079 is not nested CV. Initial optimizer precision failure is preserved; separate ftol1e-17 run changes numerical convergence only, before recovered label access. Strict10% target remains unmet."
@@ -39,7 +43,7 @@
     },
     {
       "work": "Exact published residual KNN3 chains",
-      "state": "Controllers71695/71696 live and queued after current full studies. Exact DNN32nm/NADE12s KNN3 recipes, original full neighbor/data/default parameters and both source phases. Eight own complete parent vectors fully finite/source-bound and hardlinked; no base retraining. Separate source/output/phase/projection checker armed. No native chain fitting or ensemble score claimed yet."
+      "state": "First original native chain is actually running: PID18610 s3-dnn32nm__knn3, complete train_3/probe_3 phase constructing per-item weights over17770 items with original default configuration and four Rayon threads. s3-nade12s__knn3 remains next. Both complete native phases and independent source/output/known-projection checks remain required. The raw GPU slot is reserved at durable27/26 epoch pointers to meet the unchanged native memory gate; its full50-epoch budget/source/checkpoints remain intact."
     },
     {
       "work": "Exact inactive cache storage sharing",
@@ -284,67 +288,70 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-20T03:28:06.597180+00:00",
+    "observed": "2026-11-20T03:46:25.159728+00:00",
     "native_processes": [
-      "73823     03:00:43 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
-      "92864     12:54:41 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
-      "92865     12:54:41 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
+      "18610        01:05 ./target/release/fit chain s3-dnn32nm__knn3 -p pipeline-3.toml --final --preds preds_3",
+      "73823     03:19:02 ./target/release/fit rbm s3-rbm200 -p pipeline-3.toml --final --preds preds_3",
+      "92864     13:13:00 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage x",
+      "92865     13:13:00 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage qual"
     ],
     "cf96": {
       "state": "training",
       "epochs": {
-        "x": 68,
-        "qual": 65
+        "x": 69,
+        "qual": 66
       },
       "active": {
         "x": 92864,
         "qual": 92865
       },
       "rss_bytes": {
-        "x": 738213888,
-        "qual": 643186688
+        "x": 2138423296,
+        "qual": 2370453504
       },
       "other_rss_bytes": 0,
-      "disk_free_bytes": 29639720960,
-      "heartbeat": "2026-11-20T03:27:48.649818+00:00"
+      "disk_free_bytes": 29527638016,
+      "heartbeat": "2026-11-20T03:46:19.991029+00:00"
     },
-    "attention_worker": {
-      "pid": 14525,
-      "rss_bytes": 5326766080,
-      "other_rss_bytes": 2633072640,
-      "disk_free_bytes": 29639630848,
-      "observed": "2026-11-20T03:28:04.142715+00:00"
+    "knn3": {
+      "state": "original_native_knn3_chain_running",
+      "job": "s3-dnn32nm__knn3",
+      "pid": 18610,
+      "started": "2026-11-20T03:45:20.803145+00:00"
     },
-    "disk_free_bytes": 29639622656,
-    "attention_completion": {
-      "state": "complete_original_attention_pair_neural_study_and_both_declared_tree_means",
-      "observed": "2026-11-20T03:33:58.329154+00:00",
-      "results": [
-        {
-          "tree": "upstream-rbm50-tree",
-          "rmse": 0.8593032269462371,
-          "independent_mean_sha256": "142f9ef05ffa25d662e970203a3296bde0f7a5d8538d11b77a9aa427d7863a08"
+    "raw_gpu_slot": {
+      "state": "reserving_raw_epoch_slot_for_original_cpu_knn3",
+      "observed": "2026-11-20T03:46:22.612457+00:00",
+      "native_workers": {
+        "18610": "./target/release/fit chain s3-dnn32nm__knn3 -p pipeline-3.toml --final --preds preds_3"
+      },
+      "original_producers": {
+        "71695": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u scripts/upstream_split3_knn3_chains.py"
+      },
+      "seconds_since_last_native": 0.0001349169760942459,
+      "raw_durable_state": {
+        "trainx": {
+          "pointer_sha256": "bc0855dbcd189cc570bb1911eb901a9040d5720d56b54f7d48b7c0b178cb4674",
+          "epoch": 27,
+          "checkpoint": "epoch-00027.pt",
+          "declared_checkpoint_sha256": "ea026aa8bf43bc9a2601c789985841469b376dfee56152054d9178f80f076c7d"
         },
-        {
-          "tree": "upstream-item154-tree",
-          "rmse": 0.8592708192436762,
-          "independent_mean_sha256": "e40ce59f1f427ca408f581fec21d6b8634415a4d00bea211474b7ae679206b97"
+        "fulltrain": {
+          "pointer_sha256": "640051125f6cae1e1f288d5a86e04719b0d88ec34e8bf42fed201b3f15be35d7",
+          "epoch": 26,
+          "checkpoint": "epoch-00026.pt",
+          "declared_checkpoint_sha256": "cc491e6c9b3c92a94b7e9d93a81a70754677b1e924e8428a53a159ae3a286105"
         }
-      ],
-      "reference_at_declaration": 0.8592309819864167,
-      "current_verified_reference_at_summary": 0.8592012938198756,
-      "improves_current_reference": false,
-      "automatic_production_started": false,
-      "qualifying_labels_read": false,
-      "goal_complete": false
+      },
+      "release_reason": null
     },
-    "raw_item_autoencoder": {
-      "state": "fitting_complete_declared_raw_epoch",
+    "raw_model": {
+      "state": "waiting_for_shared_epoch_slot",
       "phase": "fulltrain",
-      "epoch": 24,
-      "pid": 16651,
-      "observed": "2026-11-20T03:33:58.814869+00:00"
-    }
+      "epoch": 27,
+      "observed": "2026-11-20T03:44:23.658676+00:00"
+    },
+    "disk_free_bytes": 29527629824
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

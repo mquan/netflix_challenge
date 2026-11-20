@@ -31,7 +31,10 @@ All numerical prediction features are freshly trained by us; public source
 code is reused, and downloaded pretrained numerical features are excluded.
 These are adaptive community-recovered audits, not official or untouched Test.
 The attention-pair neural study completed without improving development. Native
-CFNADE96, Bernoulli RBM200, and the raw item-autoencoder continue; a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
+CFNADE96 and Bernoulli RBM200 continue; the first original KNN3 chain is fitting.
+The full raw item-autoencoder trajectory waits at durable27/26 checkpoints while
+its shared GPU slot is reserved for native KNN3 memory admission. A
+[fixed full KNN3-pair neural comparison](KNN3PAIR2_VIRTUAL_PLAN.md) is queued; a [15-hour remote assignment](REMOTE_15H_HANDOFF.md) targets nine
 new original-source prediction pairs. [Verified cache storage sharing](COW_CACHE_STORAGE_RESULT.md)
 reclaimed10.4GB without removing logical research files.
 
