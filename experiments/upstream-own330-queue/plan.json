@@ -1,0 +1,30 @@
+{
+  "created": "2026-11-20T12:12:00.271097+00:00",
+  "source_sha256": {
+    "scripts/upstream_own330_queue.py": "45ac73b6c102ab6d81c4ced615d47144affbfaccbd0d7e5cbae311f74db04e90",
+    "scripts/upstream_own330_mps.py": "dc14e0660874171ba3c15c357e02bd2ef207c98f439e9fd4724d19a2bdaaf223",
+    "scripts/verify_upstream_own330_mps.py": "3cb393932449168f0e143680b40d460721b6f57db3a122203bbbff214a1aef58",
+    "scripts/upstream_own330_watchdog.py": "b525b5dfb356cb1a155b75edad5668fda5e6534cb94568fe512626594317e8dc",
+    "scripts/upstream_own330_neural_inputs.py": "5951071c788323e78b459339ec4390eef85484f4caf9b199e976418904109560",
+    "scripts/verify_upstream_own330_neural_inputs.py": "0f349fbefcfff7462b89c2990e4a33da440a2f6ade2382ab1cb3ed25a483cbf8",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "OWN330_NEURAL_PLAN.md": "e1fc5373eb12bdfa371d2d15dec29158b43d57f97ad37d52c57682c76aa31943"
+  },
+  "monitor": {
+    "pid": 47627,
+    "ppid": 94094,
+    "pgid": 47627,
+    "state": "Ss",
+    "started": "Fri Nov 20 04:11:59 2026",
+    "command": ".venv/bin/python -u scripts/upstream_own330_queue.py"
+  },
+  "parked_highcap": {
+    "pid": 29800,
+    "ppid": 94094,
+    "pgid": 29800,
+    "state": "Ss",
+    "started": "Fri Nov 20 03:27:13 2026",
+    "command": ".venv/bin/python -u scripts/upstream_high_capacity_original_queue.py"
+  },
+  "rule": "Complete330raw/all90contexts,406ridge/556features/557NNinputs. OriginalH128/rank32,5folds/3seeds,40pat4,batch8192,AdamW and exact full eligible statistics. Wait completed own176 before GPU acquisition; reserve16GiB matching child cap,24GiB total RSS/physical,stable swap,18.75GiB disk floor. Independent actual model/statistic/scaler/input replays mandatory. Idle native queue may be parked only before own176 completion, never an active model. All release/error paths restore that same owner; monitor-loss watchdog preserves exact worker RAM. No automatic training restart, feature cut, mixture grid or qualifying refit."
+}

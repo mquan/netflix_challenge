@@ -1,0 +1,20 @@
+{
+  "state": "complete_all_original330_design_and_nonlinear_input_bits_replayed",
+  "manifest_sha256": "9def9aa3ead28e8f31f02629800153e7860be1c7e145fe149d52360affc142d0",
+  "verifier_sha256": "0f349fbefcfff7462b89c2990e4a33da440a2f6ade2382ab1cb3ed25a483cbf8",
+  "rows": 1128164,
+  "raw_predictions": 330,
+  "context_columns": 90,
+  "design_columns": 406,
+  "nonlinear_columns": 556,
+  "nn_inputs": 557,
+  "all_original392_nonlinear_columns_preserved": true,
+  "all164_scalar_transforms_bitwise_equal": true,
+  "complete_virtual_c_order_sha256": [
+    "f2ea1d824d88e15962f6f27da3f2a2afba24e395704bc4abb5a13af4f9fa9016",
+    "d6d250ea5fe6618917a4c1ef82cb7474c92c548fcfac432381c5c8737bcd5a03"
+  ],
+  "qualifying_labels_read": false,
+  "neural_models_fitted": 0,
+  "scope": "Independent complete input operators only. Full original eligible557-input scalers, fivefold/three-seed fitting and all actual saved-model replays remain required."
+}
