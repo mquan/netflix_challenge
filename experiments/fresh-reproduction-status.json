@@ -1,14 +1,18 @@
 {
-  "observed": "2026-11-20T05:45:59.117364+00:00",
+  "observed": "2026-11-20T05:49:08.712118+00:00",
   "display_time": "Nov 19, 2026 20:58 PST",
-  "best_development_rmse": 0.8592012938198756,
+  "best_development_rmse": 0.8591267885072646,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
   "qualifying_labels_used_in_fitting": false,
   "downloaded_pretrained_features": false,
-  "verified_development_report_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
-  "independent_verification_sha256": "ff36d9544259cc0a016558dfc0a45788892c6b1b29689f02f2a78569deee7f5e",
+  "verified_development_report_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
+  "independent_verification_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
   "work": [
+    {
+      "work": "Fixed75% NN-pool /25% tree: new verified development best",
+      "state": "Complete independent0.8591267885072646, improves prior0.8592012938198756. One separately declared fixed ratio after matched NN improvement, no weight grid/optimization or qualifying access. Full original sixNN/tree models and all35 fold/replay receipts bound; exact weightedfloat32 vector and canonical compensated score agree. Full streaming NN-pool refits/calibration next; qualifying best unchanged."
+    },
     {
       "work": "Fixed six native-neural pool: matched NN-family promotion",
       "state": "Complete independent canonical matched NN improvement0.8593837349 to0.8592546776, four of five folds. All35 originating fold/model receipts/replays bound; every six-way pooled f32 bit and canonical score verified. Tree154 half mean0.8592096046 remains above global0.8592012938. Full NN-pool refits and seven-family known-only calibration planned; no new qualifying score or global best claimed."
@@ -504,7 +508,7 @@
     }
   },
   "latest_qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
-  "best_development_arm": "own107/item154 tree plus unchanged own107/item154 MPS NN fixed half mean",
+  "best_development_arm": "fixed25percent-tree154-75percent-native-nn-pool6",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
   "own103_full_refit_controller": 74649,
@@ -514,13 +518,18 @@
   "own107_rbm50_nn_qualifying_best": false,
   "own107_latent90_mean_qualifying_best": true,
   "preceding_independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
-  "development_verification_path": "experiments/upstream-item154-tree-item154-mps/verification.json",
-  "development_independent_check_path": "experiments/upstream-item154-tree-item154-mps/independent-mean-check.json",
+  "development_verification_path": "experiments/upstream-native-nn-pool6-tree31/verification.json",
+  "development_independent_check_path": "experiments/upstream-native-nn-pool6-tree31/independent-verification.json",
   "development_required_replay_paths": [
-    "experiments/upstream-item154-tree/tree-replay.json",
-    "experiments/upstream-item154-mps-context/nn-replay.json"
+    "experiments/upstream-item154-mps-context/nn-replay.json",
+    "experiments/upstream-split3-virtual-mps-context/nn-replay.json",
+    "experiments/upstream-attention2-virtual-mps-context/nn-replay.json",
+    "experiments/upstream-knn3pair2-compact-mps-context/nn-replay.json",
+    "experiments/upstream-split3eight-compact-mps-context/nn-replay.json",
+    "experiments/upstream-cf96-prefix2030-compact-mps-context/nn-replay.json",
+    "experiments/upstream-item154-tree/tree-replay.json"
   ],
-  "development_narrative": "The predeclared half mean of the full154-context tree and unchanged item154 neural partner improves0.8592309820 by0.0000296882. All five original tree folds and15 actual saved-tree replays pass; original neural replay lineage is retained. Family/fold identities, every rounded mean value and complete canonical known scoring are separately checked. Its completed full fixed-half qualifying audit improves the matched prior half mean but remains above the overall calibrated qualifying best. Original full tree budgets760/968/880 and all numerical fitting rules are preserved.",
+  "development_narrative": "Independent new adaptive known-fold best0.8591267885072646: separately fixed25% tree154 /75% equal six-native-NN pool. All35 actual origin fold/model receipts,90 saved NN/15 tree models and original replays bound; independent exact weightedf32 vector and complete canonical known score. PureNN pool also improves matched control. No new qualifying result yet; fullNN pool refits and seven-family known-only calibration declared.",
   "latest_qualifying_verification_path": "experiments/upstream-own6-tight-calibration/independent-verification.json",
   "qualifying_narrative": "The newly completed full tree154 joins all five preceding eligible own families in one nonnegative sum-one blend fitted only on complete known OOF vectors. Independent compensated statistics and all63 nonempty simplex supports verify its weights; actual originating development/full saved-family replays, exact known/full vectors and both canonical complete-group scores pass. Apparent known-fit0.8590482 is not nested CV; CV best remains0.8592013. The initial solver tolerance failed a coefficient precision check before any label access; a separate stricter-tolerance run preserves the same families/objective and all original evidence. The qualifying vector was frozen before auditing; both preceding groups improve. No recovered outcome fitted or selected the coefficients.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703"

@@ -16,6 +16,7 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH native NN pool6 tree31', '0.8591267885072646', '2026-11-20T05:47:47.086792+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Fixed75% native NN pool /25% tree: independently improved development best', 'One separately declared fixed3:1 pool-to-tree follow-up after matched NN-family improvement; no weight grid/coefficient optimization or qualifying outcomes. All six original complete neural studies and existing tree154 retain35 actual source fold receipts,90 saved NN and15 saved tree models plus actual replays. Every weightedfloat32 bit and complete canonical known score independently agree.0.8591267885 improves prior0.8592012938. Adaptive known-CV result; full refits/streaming qualifying production remain pending and no new qualifying score is claimed.', 'experiments/upstream-native-nn-pool6-tree31/verification.json', 'all actual original models/replays, separately fixed weights and independent every-bit canonical full-known scoring'),
     ('FRESH109 CF96 prefix20/30 mean screen', '0.8592548691507627', '2026-11-20T05:31:43.008812+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Own original CF96 epoch20/30: complete negative neural study', 'Own full33/31 source package,84 state arrays per phase,original data/native arithmetic parity and both20/30 native query pairs reverified. Original95/95 source model remains incomplete. Full400-input H128/r32 neural study: all five nested user folds,15 actual saved models and both independent exact mean/canonical scores pass. NN0.8594077567, tree50 mean0.8592876737, tree154 mean0.8592548692; both means exceed current0.8592012938 best. No qualifying refit.', 'experiments/upstream-item154-tree-cf96-prefix2030-compact-mps/verification.json', 'own package source proof,full data/operator parity,actual saved models and separate exact mean scoring'),
     ('FRESH native NN pool6', '0.8592546775639587', '2026-11-20T05:36:26.559042+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Six fixed native-neural variants improve matched NN; global CV best retained', 'Equal pool of all six completed native-append own107/item154 MPS NNs improves matched NN0.8593837349 to0.8592546776,with four of five folds lower. Original35 source fold receipts and90 actual saved NN models plus15 tree models/replays bound. Independent compensated six-way arithmetic,every float32 vector bit and canonical known scores pass. Fixed tree154 half mean0.8592096046 does not beat global0.8592012938. NN-family promotion only; full-refit/seven-family known-only calibration plan frozen before new qualifying outcomes. Initial unclipped score reports preserved; conventional float64 clipping correction changes no vector or decision.', 'experiments/upstream-native-nn-pool6/independent-canonical-verification.json', 'all original full model/replay evidence and independent complete-vector compensated canonical scoring'),
 
@@ -247,13 +248,27 @@ def validate_fresh_status():
     current_path=ROOT/record['development_verification_path'];current=json.loads(current_path.read_text())
     independent_path=ROOT/record['development_independent_check_path'];independent=json.loads(independent_path.read_text())
     kind=current['state']
+    expected_weights=[.5,.5]
     if kind=='complete_fixed_post_study_consensus':
         checked_state='complete_independent_consensus_and_score';checked_flag='stored_consensus_bitwise_equal'
     elif kind=='complete_verified_fixed_combination':
         checked_state='complete_separate_stored_mean_and_score_check';checked_flag='fixed_mean_bitwise_equal'
+    elif kind=='complete_fixed_tree25_pool75_development':
+        checked_state='complete_separate_fixed_tree25_pool75_and_canonical_score';checked_flag='every_weighted_float32_bit_equal'
+        expected_weights=dict(tree=.25,nn_pool=.75)
+        pool_relative='experiments/upstream-native-nn-pool6/independent-canonical-verification.json'
+        pool_path=ROOT/pool_relative;pool=json.loads(pool_path.read_text())
+        verifier=ROOT/'scripts/verify_upstream_native_nn_pool6_tree31.py'
+        if (not current['actual_origin_model_and_replay_proofs_bound'] or
+            hashlib.sha256(pool_path.read_bytes()).hexdigest()!=current['source_sha256'][pool_relative] or
+            pool['state']!='complete_independent_canonical_fixed_six_native_nn_pool' or
+            not pool['all_original_source_models_and_complete_replay_receipts_rehashed'] or
+            not pool['every_pooled_float32_bit_recomputed_with_compensated_sum'] or
+            independent['verifier_sha256']!=hashlib.sha256(verifier.read_bytes()).hexdigest()):
+            raise ValueError('Fixed weighted pool requires original actual source/model replay and canonical arithmetic evidence')
     else:raise ValueError('Unrecognized verified development combination')
     if (hashlib.sha256(current_path.read_bytes()).hexdigest()!=record['independent_verification_sha256'] or
-        current['rmse']!=record['best_development_rmse'] or current['weights']!=[.5,.5] or
+        current['rmse']!=record['best_development_rmse'] or current['weights']!=expected_weights or
         current['rmse']>=development['rmse'] or current['qualifying_labels_read'] is not False or
         independent['state']!=checked_state or not independent[checked_flag] or
         independent['verification_sha256']!=record['independent_verification_sha256'] or

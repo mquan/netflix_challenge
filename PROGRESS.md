@@ -2,7 +2,7 @@
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
 timestamp: 2026-11-20T03:28:01.064658+00:00
-best_score: 0.8592012938198756
+best_score: 0.8591267885072646
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
 qualifying_target_per_recovered_group: 0.85725
@@ -11,6 +11,8 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-20 UTC)
+
+**New independent development best0.8591267885072646:** one separately declared fixed75% equal native-NN pool /25% tree154 improves prior0.8592012938198756. All35 originating fold/model/replay receipts,90 actual NN and15 tree models remain bound; independent weighted-vector bits and canonical full-known scoring agree. Adaptive known-CV only. Full NN-pool refits and fixed/known-only calibrated qualifying vectors remain next; best qualifying0.8605620602 /0.8615662023 is unchanged.
 
 The fixed all-six native-neural pool improves its matched NN control0.8593837349 to0.8592546776 (four of five folds), independently checked with exact compensated vector arithmetic and original saved-model/replay bindings. Its tree154 half mean0.8592096046 does not beat global0.8592012938. Full NN-pool production and a known-only seven-family calibration are planned; no new qualifying score yet. Individual all-eight and CF96prefix20/30 studies are negative. Native CF96 exact74/70 continuation is active after disk-guard recovery; all84 tensors per phase verified, no source/model/budget cut. An additional3.2GB of inactive duplicates is independently verified as losslessly shared. Remote DNN24 completed8/8 and returned two own pairs; frozen recipe/helper,full traces,canonical local data/map/disjointness and complete lossless payloads are locally verified. Native qualifying NPY bytes reconstruct exactly. Full native probe remains remote; its independent projection evidence is bound. See [production plan](NNPOOL6_PRODUCTION_PLAN.md) and [exact recovery](CF96_DISK_RECOVERY.md).
 

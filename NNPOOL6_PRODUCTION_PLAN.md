@@ -1,5 +1,13 @@
 # Six native-neural variants: matched-family production follow-up
 
+Update2026-11-20T05:47:47Z: the separately fixed75% NN-pool /25%
+tree154 follow-up is independently complete at0.8591267885072646,
+improving prior global0.8592012938198756. Preserve the original equal
+half screen below as historical evidence. Add this exact fixed3:1 full
+vector to the production freeze BEFORE any new recovered-label audit;
+NN-pool-only and seven-family calibrated vectors are also frozen first.
+No new coefficient search or qualifying-based choice is authorized.
+
 The fixed equal pool of all six eligible native-append own107/item154 MPS
 neural variants improves its matched original NN control: approximately
 0.8592546776 versus0.8593837349 known nested-user-fold RMSE. Four of five

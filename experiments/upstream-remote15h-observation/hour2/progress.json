@@ -1,0 +1,94 @@
+{
+  "observed": "2026-11-20T05:47:09.532896+00:00",
+  "elapsed_hours": 2.05,
+  "training_hours_left": 11.95,
+  "native_process": "60045 ./target/release/fit attn s3-attn32 -p pipeline-3.toml --final --preds preds_3",
+  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 86%",
+  "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
+  "disk_free_gib": 40.1,
+  "jobs": {
+    "s3-dnn24": {
+      "launch": {
+        "job": "s3-dnn24",
+        "pid": 46195,
+        "started": "2026-11-20T03:48:16.382046+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "dnn",
+          "s3-dnn24",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "D": "24",
+          "DECAY": "0.87",
+          "EPOCHS": "8",
+          "EPSAVE": "1",
+          "H1": "96",
+          "H2": "64",
+          "NMF": "256",
+          "SEED": "43"
+        },
+        "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+        "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
+      },
+      "completed_epoch_lines": 16,
+      "last_epoch": 8,
+      "phase": "fulltrain->qual",
+      "log_tail": [
+        "Epoch 08 | RMSE 3.74849",
+        ""
+      ],
+      "receipt": true,
+      "incomplete": false,
+      "exported": true
+    },
+    "s3-attn32": {
+      "launch": {
+        "job": "s3-attn32",
+        "pid": 60045,
+        "started": "2026-11-20T05:21:42.288005+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "attn",
+          "s3-attn32",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "EPSAVE": "1"
+        },
+        "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+        "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
+      },
+      "completed_epoch_lines": 18,
+      "last_epoch": 6,
+      "phase": "fulltrain->qual",
+      "log_tail": [
+        "Epoch 05 | RMSE 3.71415",
+        "Epoch 06 | RMSE 3.71367"
+      ],
+      "receipt": false,
+      "incomplete": false,
+      "exported": false
+    },
+    "s3-rbm200e": {
+      "receipt": false,
+      "incomplete": false,
+      "exported": false
+    }
+  },
+  "next_action": "driver continues serially: run-job -> export -> upload -> push"
+}

@@ -1,0 +1,26 @@
+{
+  "observed": "2026-11-20T05:21:38.883325+00:00",
+  "release_tag": "remote15h-own-20261120",
+  "asset_name": "s3-dnn24-export.tar.gz",
+  "archive_sha256": "9d51366da510c9c8cc582be701a010ccf136b1377e4002adddafab89e364be90",
+  "archive_bytes": 26850792,
+  "uploaded": true,
+  "draft_release": true,
+  "records": [
+    {
+      "column": "s3-dnn24",
+      "file": "s3-dnn24.npz",
+      "sha256": "debb38243e8916ff17470125d0b202c9160107463deb1db78346ea9c31976d94",
+      "native_probe_sha256": "3063bf3ea5ef35fe67221bb3d7a8a5de9cb4398c37dc1dd4aded20a21c9dad06",
+      "native_qual_sha256": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c"
+    },
+    {
+      "column": "s3-dnn24_ep03",
+      "file": "s3-dnn24_ep03.npz",
+      "sha256": "f209536e124214e2ab0fe887ac0be35b302c6f55bfb79c89e80353a50ce2bfc2",
+      "native_probe_sha256": "1eb6f87c1042e4c2801d03a4a78d747be49594f6ad801c14fa4dfac5b584bf7e",
+      "native_qual_sha256": "261f9c14e1aca77416ad5971767af62b99e9f106b724e505c4b84e2f214bb76f"
+    }
+  ],
+  "prediction_arrays_in_git": false
+}

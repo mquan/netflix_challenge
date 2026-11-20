@@ -1,0 +1,11 @@
+{
+  "created": "2026-11-20T05:47:40.199482+00:00",
+  "weights": {
+    "tree": 0.25,
+    "nn_pool": 0.75
+  },
+  "script_sha256": "1b68fb6dffa5dc6975f7fcd5e4dfdfef04b194b50deebbea604b945f7a247d39",
+  "rationale": "The independently verified equal six-NN pool improves its matched NN control, but its original half-tree mean misses the global best. Declare ONE fixed3:1 pool-to-tree follow-up to give the improved neural family more weight. No coefficient optimization/grid/subset search or qualifying outcome access. Adaptive known-CV iteration, not untouched Test.",
+  "qualifying_labels_read": false,
+  "production_started": false
+}
