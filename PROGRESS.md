@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-20T01:19:57.133133+00:00
+timestamp: 2026-11-20T01:48:49.024705+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,10 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+At2026-11-20 01:41 UTC the original full154-context tree completed its fourth user fold; all12 saved trees and the new receipt's artifact hashes are preserved. The fifth/final fold is fitting. No global promotion is inferred from these partial results.
+
+A separate [conditional full-tree production follow-up](ITEM154_TREE_PRODUCTION_PLAN.md) is ready. Coordinator92897 is held before fitting by guardian93319, which reserves12GiB for the full-known tree peak under the unchanged24GiB guard. Only a complete independently improved known-CV half mean can trigger a full fit. Existing full NN154/ridge are reused; actual new tree replay, frozen half mean and separate canonical scoring are required. Actual saved-tree streaming and admission-boundary fixtures pass. No current model/source/input/budget changes.
 
 A fixed21-coefficient quadratic calibration of the five complete own families is independently negative: recovered groups **0.8605784947 / 0.8615935718**, slightly worse than the convex best. Independent direct SVD, exact vectors and complete-group scoring pass after a report-serialization-only checker recovery. Apparent known-fit0.8590477906 is not nested CV. Best CV and qualifying records stay unchanged. See [full result](OWN5_QUADRATIC_RESULT.md).
 
