@@ -1,11 +1,11 @@
 {
-  "observed": "2026-11-20T13:12:47.103279+00:00",
-  "elapsed_hours": 9.47,
-  "training_hours_left": 4.53,
-  "native_process": "85126 ./target/release/fit tx s3-tx60o -p pipeline-3.toml --final --preds preds_3",
+  "observed": "2026-11-20T14:12:49.184248+00:00",
+  "elapsed_hours": 10.48,
+  "training_hours_left": 3.52,
+  "native_process": "1168 ./target/release/fit tx s3-tx50n -p pipeline-3.toml --final --preds preds_3",
   "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 85%",
   "swap": "total = 0.00M  used = 0.00M  free = 0.00M  (encrypted)",
-  "disk_free_gib": 33.2,
+  "disk_free_gib": 29.8,
   "jobs": {
     "s3-dnn24": {
       "launch": {
@@ -231,18 +231,52 @@
         "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
         "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
       },
-      "completed_epoch_lines": 42,
-      "last_epoch": 17,
+      "completed_epoch_lines": 50,
+      "last_epoch": 25,
       "phase": "fulltrain->qual",
       "log_tail": [
-        "Epoch 16 | RMSE 3.75094",
-        "Epoch 17 | RMSE 3.74836"
+        "Epoch 25 | RMSE 3.75317",
+        ""
       ],
-      "receipt": false,
+      "receipt": true,
       "incomplete": false,
-      "exported": false
+      "exported": true
     },
     "s3-tx50n": {
+      "launch": {
+        "job": "s3-tx50n",
+        "pid": 1168,
+        "started": "2026-11-20T13:47:19.546054+00:00",
+        "deadline": "2026-11-20T17:44:19+00:00",
+        "command": [
+          "./target/release/fit",
+          "tx",
+          "s3-tx50n",
+          "-p",
+          "pipeline-3.toml",
+          "--final",
+          "--preds",
+          "preds_3"
+        ],
+        "environment": {
+          "RAYON_NUM_THREADS": "4",
+          "OPENBLAS_NUM_THREADS": "4",
+          "EPOCHS": "22",
+          "EPSAVE": "1",
+          "F": "50",
+          "IFEAT": "1",
+          "NBR": "100"
+        },
+        "plan_sha256": "e487df8874efd1280b09bade0c0a2091e3d6d647e0486d59440f7e5a5b106a48",
+        "preparation_sha256": "3e49bdf1852f701ba70070003ead1da0ef3e2fdcf9c1ecf2b86cce41a3953e2d"
+      },
+      "completed_epoch_lines": 6,
+      "last_epoch": 6,
+      "phase": "train_3->probe_3",
+      "log_tail": [
+        "Epoch 05 | RMSE 0.89676",
+        "Epoch 06 | RMSE 0.89277"
+      ],
       "receipt": false,
       "incomplete": false,
       "exported": false
