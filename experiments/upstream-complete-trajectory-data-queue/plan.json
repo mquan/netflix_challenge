@@ -1,0 +1,50 @@
+{
+  "source_sha256": {
+    "scripts/upstream_complete_trajectory_data_queue.py": "b9f2d6e2e775434f583f78e8e7460d28cdd806e0e0de0cc7bf1421a6b8a778b0",
+    "scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "OWN_COMPLETE_TRAJECTORY_NEURAL_PLAN.md": "154b5b71f9aa275eb41dc457d650422d43a1b33ff51a97f05b3f71ab25a50b9d",
+    "OWN_COMPLETE_TRAJECTORY_DATA_EXECUTION.md": "55521b37f87355c602cdc76e6d459d1b5c0e0a85d224fbe416854f78282f6d95",
+    "scripts/upstream_complete_trajectory_data.py": "59637437c038b9859ac391c7cd392920365ac10e29edc6e68d452e75298e9caf",
+    "scripts/verify_upstream_complete_trajectory_data.py": "1ecca0029db22eb3fb13b1b123a904a4a7f571c347080f36a8ffb7b31cb9758a",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0"
+  },
+  "created": "2026-11-20T23:04:43.810286+00:00",
+  "phases": {
+    "admit": [
+      "upstream_complete_trajectory_data.py",
+      "admit"
+    ],
+    "independent_admission": [
+      "verify_upstream_complete_trajectory_data.py",
+      "admit"
+    ],
+    "fit": [
+      "upstream_complete_trajectory_data.py",
+      "fit"
+    ],
+    "independent_fit": [
+      "verify_upstream_complete_trajectory_data.py",
+      "fit"
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-original1200-exact-build-recovery/completion.json",
+      "complete_original1200_full23_23_and_independent58_output_verification",
+      "proof_sha256",
+      "upstream-original1200/independent-verification.json",
+      "complete_independent_original1200_both23_phases_and_all58_numeric_outputs"
+    ],
+    [
+      "upstream-complete-cf-delta-native-deferred/completion.json",
+      "complete_same_intake_adoption_novelty_fixed_ridge_and_independent_replay",
+      "proof_sha256",
+      "upstream-complete-cf-delta/independent-verification.json",
+      "complete_independent_expanded_CF95_TX50n_known_ridge_and_canonical_scores"
+    ]
+  ],
+  "rule": "Wait full original1200 and complete CF95/TX50n independent completion, then primary lane, three stable original3GiB/24GiBphysicalRSS/comp5(admit4.5)/swapgrowth128MiB/disk18.75+64MiBoutput admission. First scientific admission establishes baseline once, never reset afterwards. All391+128 candidates, complete both-query aliases only, full467+N/617+N operators/statistics/fixedridge1000/independentreplays. No GPU lane, labels or score-based input selection. Watchdog-before-bootstrap and explicit live-owner gate prevent unowned model execution; actual RAM preserved on guards/owner loss. No retries or reduced recipes."
+}

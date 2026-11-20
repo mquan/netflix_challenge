@@ -205,7 +205,7 @@ original1200 source/data preparation completed. Isolated compilation began
 but its guard preserved the actual build group94817 in RAM during overlap.
 The same original build subsequently completed under exact recovery, and
 independent source/data/binary admission passed. Native16010 is now running
-the unchanged23+23 phases; its first trainx epoch completed at0.95079. This
+the unchanged23+23 phases; its first two trainx epochs completed at0.95079/0.92846. This
 early single-model diagnostic is not a qualifying or blend result. Full
 training and separate independent58-output verification remain.
 Unused completed1600 build intermediates were losslessly archived and fully
@@ -349,3 +349,17 @@ five folds/three seeds/max40pat4, full numerical replay and qualifying bag,
 then a known-only15-family simplex with all32767 support checks before
 recovered outcomes. Implementation/review remain; no new result claimed.
 [Full trajectory model plan](OWN_COMPLETE_TRAJECTORY_NEURAL_PLAN.md).
+
+The full trajectory input/ridge implementation and separate verifier now
+pass review and eight operator/resource checks. Waiting owner50842 requires
+full original1200 and complete CF95/TX50n proofs before acquiring primary
+resources. It keeps all519 original/candidate scalar streams before complete
+paired alias checks and verifies all expanded operators, original-width391
+control, full group systems/solves and every held prediction. No neural or
+qualifying score is claimed. [Guarded data execution](OWN_COMPLETE_TRAJECTORY_DATA_EXECUTION.md).
+
+The weekend handoff is pushed at8afae5a: full original factorizedRBM400,
+temporal300 and bipolarRBM800, serially on the confirmed M3Max/96GiB until
+Monday08:00Pacific. Every epoch/native output is required; transfer after
+each producer. No remote arrival or new result has been observed yet.
+[Weekend instructions](REMOTE_WEEKEND_HANDOFF.md).

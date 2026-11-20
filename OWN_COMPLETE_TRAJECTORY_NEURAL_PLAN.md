@@ -85,6 +85,8 @@ Reserve complete numeric outputs/checkpoints above the disk floor before
 admission; expand storage losslessly if needed, without deleting models,
 raw inputs or changing the recipe. No additional laptop is assumed.
 
-This file is a predeclared execution plan. Expanded admission/model/bag/
-blend implementations and their independent verifiers still need to be
-completed and reviewed before launch; no result is claimed by this plan.
+This file is a predeclared execution plan. Each admission/model/bag/blend
+stage and its independent verifier must be completed and reviewed before
+that stage launches. Input/ridge admission can complete while later-stage
+implementation continues; it does not establish a neural or qualifying
+result. No result is claimed by this plan.
