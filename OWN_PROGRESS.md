@@ -114,6 +114,13 @@ complete. All196 original prediction files independently pass admission:
 qualifying-label reads. [Complete CF96 bank](CF96_COMPLETE_BANK_RESULT.md).
 The remote original22/22 TX50n compact pair also passes local independent
 admission; neither addition has yet been incorporated into a new score.
+The separate complete-CF delta queue will compare every96 distinct CF pair
+and TX50n against all391 existing scalar inputs on both queries, retain
+every exact novel pair, and run the same fixed-lambda1000 known ridge
+diagnostic with full independent replay. It currently waits for its3GiB
+headroom and compressor-below5GiB checks; the active original1600 and queued
+391 neural work keep their recipes and lanes. No new qualifying audit is
+part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
 Original1600 source-pinned build/admission is complete and its
 native training is running after a verified completion-boundary handoff
 from the restored childless legacy scheduler; no native fit was interrupted.
