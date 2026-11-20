@@ -1,7 +1,7 @@
 ---
 status: fresh-only-reproduction-active
 branch: research/full-upstream-reproduction
-timestamp: 2026-11-19T23:44:50.599477+00:00
+timestamp: 2026-11-20T00:12:18.135603+00:00
 best_score: 0.8592309819864167
 score_metric: adaptive five-fold known-ProbeX RMSE using own freshly trained predictors
 qualifying_status: audited_miss
@@ -11,6 +11,27 @@ qualifying_target_per_recovered_group: 0.85725
 # Netflix Prize progress checkpoint
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
+
+Two original-source follow-ons are now executable and queued. Controller70361
+will add the complete original attention64 terminal/epoch5 pair to the current
+NN recipe, require all15 actual replays, and independently compare both
+predeclared actual tree partners. It waits for native12/12 and prior full-size
+studies; no qualifying selection or automatic refit. See
+[ATTENTION2_VIRTUAL_PLAN.md](ATTENTION2_VIRTUAL_PLAN.md).
+
+Controllers71695/71696 will reproduce and independently check the exact
+published DNN32nm→KNN3 and NADE12s→KNN3 chains. All eight completed own parent
+terminal vectors are finite/source-bound and staged by hardlink. Full original
+neighbor construction, both phases and every known projection are required;
+no base retraining or data/model subsampling. They wait for measured native
+headroom and prior neural studies. See
+[SPLIT3_KNN3_CHAIN_PLAN.md](SPLIT3_KNN3_CHAIN_PLAN.md).
+
+Attention64 completed first12-epoch phase and is fitting fulltrain; raw MPS
+training has reached17, and the second full-context tree fold continues.
+These are actual training/pipeline states, not additional global scores.
+
+Earlier observations below are retained as history.
 
 The actual item-oriented epoch10 pair and saved-model query replays are now
 complete and independently checked. Standalone known component RMSE0.9952028586,
