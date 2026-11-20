@@ -205,7 +205,7 @@ original1200 source/data preparation completed. Isolated compilation began
 but its guard preserved the actual build group94817 in RAM during overlap.
 The same original build subsequently completed under exact recovery, and
 independent source/data/binary admission passed. Native16010 is now running
-the unchanged23+23 phases; its first three trainx epochs completed at0.95079/0.92846/0.91667. This
+the unchanged23+23 phases; its first four trainx epochs completed at0.95079/0.92846/0.91667/0.90925. This
 early single-model diagnostic is not a qualifying or blend result. Full
 training and separate independent58-output verification remain.
 Unused completed1600 build intermediates were losslessly archived and fully
@@ -373,7 +373,17 @@ the zero-addition model initializes bit-identically to established H128.
 The bag preserves zero-budget slots and original float32 seed division/
 float64 accumulation, with a separate full query/model/stream replay.
 Fourteen combined invariant checks pass; no full-fit memory/score or new
-qualifying result is claimed. The known-only15-family calibration and
-separate recovered audit implementation remain pending.
+qualifying result is claimed. The separately declared15-family calibration and recovered-audit queue
+is now implemented and reviewed below.
 [Neural execution](OWN_COMPLETE_TRAJECTORY_NEURAL_EXECUTION.md) ·
 [Qualifying bag](OWN_COMPLETE_TRAJECTORY_FOLD_BAG_PLAN.md).
+
+Final waiting owner68008 now implements known-only15-family calibration,
+all six-vector freezing, independent all32767-support/16-equation/arithmetic
+preaudit, three fixed recovered audits and separate canonical scoring. It
+retains all14 existing families plus the new verified full-trajectory NN.
+Equivalent simplex optima are validated by objective/KKT rather than
+requiring identical coefficients for duplicate predictors. Six new checks
+pass, including alias-provenance and one-bit vector corruption rejection.
+No new known fit or recovered score has run; the target remains unmet.
+[Complete final assembly plan](OWN15_COMPLETE_TRAJECTORY_CALIBRATION_PLAN.md).
