@@ -1,0 +1,130 @@
+{
+  "state": "complete_exact_inactive_cache_cow_sharing",
+  "observed": "2026-11-20T03:24:41.403163+00:00",
+  "plan_sha256": "a321045c69f8d75b3fbad73dbdd847c97c75ca007beff392d94c6a558dfe3afc",
+  "records": [
+    {
+      "index": 0,
+      "source": "artifacts/upstream-phase-bank/qual-design.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/qual-design.npy",
+      "logical_bytes": 3628464856,
+      "sha256": "030ee567b4a0f0532d4bdacf8da1df9f5b1069152b3d2633843bab017f8c5e66",
+      "original_target_inode": 55354984,
+      "source_inode": 55374635,
+      "cloned_target_inode": 55610993,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        2817131,
+        161
+      ],
+      "observed": "2026-11-20T03:24:16.867506+00:00"
+    },
+    {
+      "index": 1,
+      "source": "artifacts/upstream-phase-bank/qual-features.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/qual-features.npy",
+      "logical_bytes": 2490343932,
+      "sha256": "a7ea6035ac46dfb42eb3e8524e5fa6c262bd2450fa2270574f1e219932f0eb23",
+      "original_target_inode": 55354985,
+      "source_inode": 55374636,
+      "cloned_target_inode": 55611005,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        2817131,
+        221
+      ],
+      "observed": "2026-11-20T03:24:25.757572+00:00"
+    },
+    {
+      "index": 2,
+      "source": "artifacts/upstream-phase-bank/probex-design.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/probex-design.npy",
+      "logical_bytes": 1453075360,
+      "sha256": "a44137926e06863b3dfefb58a34ea821d0de51db854cc1e9db8a5f720ed24d81",
+      "original_target_inode": 55354959,
+      "source_inode": 55374599,
+      "cloned_target_inode": 55611039,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        1128164,
+        161
+      ],
+      "observed": "2026-11-20T03:24:30.973587+00:00"
+    },
+    {
+      "index": 3,
+      "source": "artifacts/upstream-remote-batch-pretraining-audit-format/design.npy",
+      "target": "artifacts/upstream-remote-batch/design.npy",
+      "logical_bytes": 1435024736,
+      "sha256": "b93f7cda31c5900df952524e732db6681b57506d57c3f5575ba73e42adddbff7",
+      "original_target_inode": 55139493,
+      "source_inode": 55138831,
+      "cloned_target_inode": 55611050,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        1128164,
+        159
+      ],
+      "observed": "2026-11-20T03:24:36.097570+00:00"
+    },
+    {
+      "index": 4,
+      "source": "artifacts/upstream-phase-bank/probex-features.npy",
+      "target": "artifacts/upstream-recovered-temporal-bank/probex-features.npy",
+      "logical_bytes": 997297104,
+      "sha256": "b5caba72c7754baf8f0b652d2dffa47ed0fa85e6063d871a56b34c6e4e4a088d",
+      "original_target_inode": 55354960,
+      "source_inode": 55374600,
+      "cloned_target_inode": 55611060,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        1128164,
+        221
+      ],
+      "observed": "2026-11-20T03:24:39.762481+00:00"
+    },
+    {
+      "index": 5,
+      "source": "artifacts/upstream-remote-batch-pretraining-audit-format/features.npy",
+      "target": "artifacts/upstream-remote-batch/features.npy",
+      "logical_bytes": 401626512,
+      "sha256": "7d667cdac0a8019bbbd2bf388fd1b15aae54eb8eec59eee8dd26f88012b71f88",
+      "original_target_inode": 55139495,
+      "source_inode": 55138832,
+      "cloned_target_inode": 55611067,
+      "metadata_preserved": true,
+      "separate_inodes_and_single_links": true,
+      "complete_before_and_after_hashes_verified": true,
+      "full_byte_comparison": true,
+      "numpy_mmap_shape": [
+        1128164,
+        89
+      ],
+      "observed": "2026-11-20T03:24:41.402787+00:00"
+    }
+  ],
+  "logical_duplicate_bytes_shared": 10405832500,
+  "disk_free_before_bytes": 19288215552,
+  "disk_free_after_bytes": 29692792832,
+  "observed_free_space_change_bytes": 10404577280,
+  "concurrent_native_writes_may_affect_free_space_delta": true,
+  "datasets_models_checkpoints_and_active_files_changed": false,
+  "logical_paths_retained": true,
+  "complete_numerical_bytes_preserved": true,
+  "future_writes_independent_by_verified_cow_fixture": true
+}
