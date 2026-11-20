@@ -1,0 +1,74 @@
+{
+  "state": "complete_pending_independent_verification",
+  "job": "s3-attn64",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "plan_sha256": "f63408e9bcbdefc66a811b88fc3637fa355defce10f9abd61b2db38f11cdac40",
+  "started": "2026-11-19T23:08:19.069246+00:00",
+  "finished": "2026-11-20T00:26:42.649464+00:00",
+  "command": [
+    "./target/release/fit",
+    "attn",
+    "s3-attn64",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "D": "64",
+    "EPSAVE": "1",
+    "SEED": "7"
+  },
+  "epochs_per_phase": 12,
+  "both_full_epoch_traces": true,
+  "outputs": {
+    "preds_3/s3-attn64_ep12.qual.npy": "9fd45df8c65cc720a68a096f38ccf5442282d5887b707e751a6599a6bd683d8b",
+    "preds_3/s3-attn64_ep06.probe_3.npy": "448e474bba7f261392f684dc6549de4c57bbd6b37d1268a96a9639f2338a4716",
+    "preds_3/s3-attn64_ep05.qual.npy": "11deba63f31bea8d17cbd96d20dac68bb6396ef721e3a2fae34f88cceeabebd1",
+    "preds_3/s3-attn64_ep04.qual.npy": "ecc42d797c273b661384a0bdb8f84dc4fdcfbdf4d8df5ebeba59a09a00e5badd",
+    "preds_3/s3-attn64.fulltrain.npy": "e80fbed530cdcf0b78eaa0a6915bee1a9c6c06dc8cb0a778d6daed0e51545c4e",
+    "preds_3/s3-attn64.probe_3.npy": "087e82e2734e59f6bb998eeac37b71ee9c00b1477cc056a0caef03131b11c992",
+    "preds_3/s3-attn64_ep03.probe_3.npy": "56aa4b6dcab7fac2d8427e7b8ac35b045313de4375ee5573191312b920b4271f",
+    "preds_3/s3-attn64.out": "90fd59495791a27da1ed0778accf7aa287e92bd8b79f95f5ccc90158c8658e91",
+    "preds_3/s3-attn64_ep02.qual.npy": "0c94648d5e0f0c4d230d030b37cea22d746087589cad24a312f1b77b6deed193",
+    "preds_3/s3-attn64_ep03.qual.npy": "f5790fc353efcf933dad4286718b8a57e820ac0dd316d2d5a8b4735d728c4d99",
+    "preds_3/s3-attn64_ep09.probe_3.npy": "9be2b49b86df0db7b2d8383b7568d051930da52243b546306f1ae677acf7b41b",
+    "preds_3/s3-attn64_ep08.qual.npy": "3d0855b69c93be369ead871216e48aa406130b85169669eecc1d4fd93dfc64ac",
+    "preds_3/s3-attn64_ep09.qual.npy": "570f314fac64ae3bf83cb92aec8b3b7de1e5055c27d617b65b2d489eccebee99",
+    "preds_3/s3-attn64.train_3.npy": "788ef2b60a8cd623db5b65a59d24f5029261934e49449492328b6d323773585f",
+    "preds_3/s3-attn64_ep10.probe_3.npy": "f50076c8d5d3e9235364444278d997cc9ce29487b222770250a0cd00f8e8ea3b",
+    "preds_3/s3-attn64_ep05.probe_3.npy": "432b4f668afd629ffca35934a7da67414e1961ac339de90eda8324ccb0a7fd4a",
+    "preds_3/s3-attn64_ep02.probe_3.npy": "033d38c4722b99eceefb577da3ec1e92e7f84f8ab6a454f052d36f77111bfc2f",
+    "preds_3/s3-attn64_ep06.qual.npy": "ca1de9b759f4a67456eca7d6f86ac6324ccefaad7008880ecbe78fe898ce6f31",
+    "preds_3/s3-attn64_ep07.qual.npy": "3b6c5efab54f7d3df438dfb3515f7c9988d1d16b6769cfadfe38dc692862d401",
+    "preds_3/s3-attn64_ep12.probe_3.npy": "087e82e2734e59f6bb998eeac37b71ee9c00b1477cc056a0caef03131b11c992",
+    "preds_3/s3-attn64_ep11.qual.npy": "fc0cf5cdf24e2520e46191ba6758fa8d8c981dcac8a0bafe3cb9d5ec9e171247",
+    "preds_3/s3-attn64_ep10.qual.npy": "380fdf5d0f26fce5b671fc4324ef83fb42564705b60ad07c8a59d44193c6e00d",
+    "preds_3/s3-attn64_ep07.probe_3.npy": "21483fb535c9bd02b0369185fe706c17bfeb5aa5c4885a691bbd43fef9bb70db",
+    "preds_3/s3-attn64.qual.npy": "9fd45df8c65cc720a68a096f38ccf5442282d5887b707e751a6599a6bd683d8b",
+    "preds_3/s3-attn64_ep04.probe_3.npy": "ed8ba206534222089c66dfe0125520eb5ecea7a0773fdc86f79beca37f28e4ce",
+    "preds_3/s3-attn64_ep11.probe_3.npy": "53333920d0e02b0696b7abb1713ffd315cc0e64c8634c73e593c732eaf329ad4",
+    "preds_3/s3-attn64_ep08.probe_3.npy": "a010905cedbe003e15d86e63bfec93ed29551ad67d18e06ccb8038265cd42607",
+    "preds_3/s3-attn64_ep01.qual.npy": "4f9e5a7626ca8bd53b700adf63d9c9274facb443afd1b8a0ecd0e4628c84f3ad",
+    "preds_3/s3-attn64_ep01.probe_3.npy": "18b45b04575f395748c09e6492b1f7f79e43b3ac4fb430a481a0ea048dab0b95"
+  },
+  "projected_pairs": [
+    {
+      "name": "s3-attn64",
+      "probex": "artifacts/upstream-split3-next3/s3-attn64.probex.npy",
+      "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64.qual.npy",
+      "probex_sha256": "822973cf5933c9418cb2edb963a1bc37674f2fa94e8ab3a6aa8bf41143c1a0ac",
+      "qual_sha256": "9fd45df8c65cc720a68a096f38ccf5442282d5887b707e751a6599a6bd683d8b"
+    },
+    {
+      "name": "s3-attn64_ep05",
+      "probex": "artifacts/upstream-split3-next3/s3-attn64_ep05.probex.npy",
+      "qual": "artifacts/upstream-split3-next3/source/preds_3/s3-attn64_ep05.qual.npy",
+      "probex_sha256": "1827e25b16edf7d1df7dc5b7d89fb73274fdbeff20db32ec9e4454b60f18cce6",
+      "qual_sha256": "11deba63f31bea8d17cbd96d20dac68bb6396ef721e3a2fae34f88cceeabebd1"
+    }
+  ],
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false
+}

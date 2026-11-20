@@ -1,0 +1,20 @@
+{
+  "pid": 73823,
+  "started": "2026-11-20T00:27:23.389818+00:00",
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm200",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "model_environment": {
+    "EPOCHS": "25",
+    "EPSAVE": "1",
+    "H": "200",
+    "LR": "0.025"
+  }
+}

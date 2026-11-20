@@ -12,6 +12,22 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+Original attention64 is now independently complete12/12:29 native outputs,
+26 finite native query vectors, unchanged source/data and all known-row
+projection checks pass. Its terminal/epoch5 pairs are ready for the queued
+fixed neural comparison. Native RBM200 PID73823 has actually started the
+original25/25 recipe; its logged configuration confirms200 hidden units,
+Softmax visible/Bernoulli hidden units, learning rate0.025 and batch500.
+Temporal100r remains serialized behind it.
+
+The raw epoch20 pair is independently complete at standalone known component
+RMSE0.9999007060, above epoch10. This is not an ensemble gain; original50/50
+training continues at22 with fixed checkpoint selection unchanged. The tree
+has two complete folds and is fitting the third. Current global CV and
+qualifying records remain0.8592309820 and0.8606524657 /0.8616635956.
+
+Earlier observations below are retained as history.
+
 Two original-source follow-ons are now executable and queued. Controller70361
 will add the complete original attention64 terminal/epoch5 pair to the current
 NN recipe, require all15 actual replays, and independently compare both
