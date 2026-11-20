@@ -14,7 +14,7 @@ DEADLINE=2026-11-20T17:44:19Z
 TAG=remote15h-own-20261120
 REPO=mquan/netflix_challenge
 cd $W
-while pgrep -f "upstream-remote15h/execution/driver.sh" >/dev/null; do sleep 60; done
+while pgrep -f "^zsh experiments/upstream-remote15h/execution/driver.sh" >/dev/null; do sleep 60; done
 echo "[$(date -u +%FT%TZ)] assigned driver finished; starting extension"
 mkdir -p $ARC
 
