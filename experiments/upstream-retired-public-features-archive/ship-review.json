@@ -1,0 +1,10 @@
+{
+  "observed": "2026-11-20T09:15:49.161335+00:00",
+  "reviewer": "independent read-only refit_checkpoint_review agent",
+  "findings": [],
+  "reviewed_sources": [
+    "scripts/upstream_retired_public_features_archive.py",
+    "scripts/upstream_retired_public_prediction_archive_v2.py"
+  ],
+  "scope": "Unlink follows full decompression SHA/size proof and archive/catalog storage. Restore checks archive and original hashes. Explicit directories inspected ordinary and not symlinks. Prediction v2 broadens only retired public vector shape and uses separate catalog."
+}

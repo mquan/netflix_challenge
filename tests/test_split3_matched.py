@@ -7,6 +7,15 @@ import upstream_split3_matched_data as data
 import upstream_production_bank as production
 
 class MatchedStudyTests(unittest.TestCase):
+    def test_canonical_score_reclips_float32_boundaries(self):
+        import math
+        from verify_upstream_split3_matched_mps import score
+        predictions=np.array([1.05,np.nextafter(np.float32(4.95),np.float32(np.inf)),3.25],dtype=np.float32)
+        labels=np.array([1,5,3],dtype=np.uint8)
+        expected=math.sqrt(math.fsum([(.05)**2,(-.05)**2,(.25)**2])/3)
+        self.assertAlmostEqual(score(predictions,labels),expected,places=14)
+        self.assertNotEqual(score(predictions,labels),math.sqrt(float(np.mean((predictions.astype(np.float64)-labels)**2))))
+
     def test_all_additional_rows_of_held_user_excluded(self):
         users=np.array([0,1,0,2,1,3,2,4,4,5])
         mapping=np.array([0,1,3,5,7,9]);original=np.array([0,3,4,7,8,1],dtype=np.int8)
