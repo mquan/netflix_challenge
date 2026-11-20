@@ -151,6 +151,20 @@ replay every original query operator, normalization, actual model, seed,
 clipped fold and final bag bit. No qualifying labels or score in this study.
 [Frozen inference-only plan](OWN391_FOLD_BAG_PLAN.md).
 
+A separate full-budget CPU tree follow-up now has reviewed code, bounded
+binary feature transport, four transport tests and explicit Torch/LightGBM
+runtime isolation. It retains all617 features, original31-leaf/min1000/
+max2000pat75/three-seed/five-user-fold recipe, full held-user exclusions
+and a fixed own352 NN partner whose label/user/group hashes exactly match.
+Its first declaration was suspended by the unchanged compressor guard while
+hashing a large inherited legacy cache, before any feature matrix or tree
+fit. The actual process is preserved; the original native job continues.
+Private read-cache-control roundtrip tests preserve bytes/metadata/prior
+policy, but no real input policy or model recipe has been changed. Exact
+process recovery and controlled I/O mitigation remain next work.
+[CPU tree plan](OWN391_CPU_TREE_PLAN.md) ·
+[Actual guard and recovery evidence](OWN391_CPU_TREE_RECOVERY.md).
+
 The separate original1200 preflight now accounts for every58 numeric output
 of the unchanged1,200-factor/100-neighbor/23+23-epoch preset:48 ordinary/epoch
 query arrays,8 component-query arrays and2 complete training arrays. Their

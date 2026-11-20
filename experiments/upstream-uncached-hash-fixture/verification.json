@@ -1,0 +1,31 @@
+{
+  "state": "complete_private_fixture_uncached_hash_bytes_metadata_and_prior_policy_roundtrip",
+  "script_sha256": "95fef64c87cf52e985be031c96342586aa52c0839fb208de58917492c0a41764",
+  "header_sha256": "ebe22134742232b94f282575ff1fd901ac8b834976aab8d988ea0b37b0c52f85",
+  "fixture_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+  "identity": {
+    "device": 16777233,
+    "inode": 55763456,
+    "bytes": 1048576,
+    "mode": 33188,
+    "uid": 501,
+    "gid": 20,
+    "mtime_ns": 1795201764772583193,
+    "flags": 0,
+    "nlink": 1
+  },
+  "prior_global_state": 0,
+  "already_enabled_return": 1,
+  "restore_return": 1,
+  "restored_return": 0,
+  "preopened_descriptor_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+  "new_descriptor_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+  "per_descriptor_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+  "original_bytes_and_metadata_unchanged": true,
+  "prior_global_cache_state_restored": true,
+  "real_research_inputs_modified": false,
+  "real_worker_policy_changed": false,
+  "memory_pressure_reduction_proven": false,
+  "primary_reference": "https://github.com/apple-oss-distributions/xnu/blob/main/bsd/kern/kern_descrip.c",
+  "qualifying_outcomes_read": false
+}
