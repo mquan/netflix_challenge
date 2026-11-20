@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-20T00:48:12.012732+00:00",
-  "display_time": "2026-11-20 00:48 UTC",
+  "observed": "2026-11-20T01:03:58.745622+00:00",
+  "display_time": "2026-11-20 01:03 UTC",
   "best_development_rmse": 0.8592309819864167,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -39,7 +39,7 @@
     },
     {
       "work": "Full154-context matching tree comparison",
-      "state": "Same actual CPU worker60801 under supervisor62158. Two original user folds complete, with six actual saved tree models; third fold fitting. Full five-fold budgets, original source/row identities and all15 actual replay/independent scoring requirements retained. No partial-fold promotion."
+      "state": "Same actual CPU worker60801 under supervisor62158: three original user folds complete, nine saved tree models; fourth fold fitting. New fold2 iterations935/864/1094 and all artifact hashes checked. Partial-fold RMSE0.8610246561 is a diagnostic, not a global CV score. Full five folds, all15 actual saved-model replays and separate scoring still required."
     },
     {
       "work": "Fixed rank1000 item32 /186-context neural comparison",
@@ -47,7 +47,7 @@
     },
     {
       "work": "Fixed item-oriented epoch5/10 virtual nonlinear comparison",
-      "state": "Both actual5/10 paired vectors and saved-model query replays independently checked. Same original coordinator63754 intentionally held by admission controller68129 until all CPU tree fitting/replay/supervision finishes and two readings reserve16GiB under the original24GiB guard. Raw50/50 continues at11. No model/data/fold/seed/stopping/checkpoint/weight change; all original actual replay/score requirements retained."
+      "state": "Both actual5/10 paired vectors and saved-model query replays independently checked. Same original coordinator63754 intentionally held by admission controller68129 until all CPU tree fitting/replay/supervision finishes and two readings reserve16GiB under the original24GiB guard. Raw50/50 is at22, waiting for original memory headroom. No model/data/fold/seed/stopping/checkpoint/weight change; all original actual replay/score requirements retained."
     },
     {
       "work": "Full split3 virtual nonlinear follow-up",
@@ -195,7 +195,7 @@
     },
     {
       "work": "CFNADE96",
-      "state": "Original native phases92864/92865 confirmed live at59/56 of95 epochs at00:22 UTC. Original320-hidden/96-rank capacity and checkpoint lineage retained."
+      "state": "Original native phases92864/92865 are live at61/58 of95 epochs, heartbeat2026-11-20T01:04:07.413468+00:00. Original320-hidden/96-rank capacity and checkpoint lineage retained."
     },
     {
       "work": "CFNADE48 remote continuation",

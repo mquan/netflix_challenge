@@ -12,6 +12,8 @@ qualifying_target_per_recovered_group: 0.85725
 
 ## Current fresh-only reproduction (2026-11-19 UTC)
 
+At2026-11-20 01:03 UTC the unchanged full154-context tree completed its third user fold and started the fourth. All artifacts in the new fold receipt match their recorded hashes. Three of five folds and nine saved tree models are now complete; all15 actual saved-model replays and full independent scoring remain required. No global score or promotion is inferred from a partial fold.
+
 The latest independently verified five-family own blend improves both recovered qualifying groups to **0.8605716962 / 0.8615832225**. All five weights are fitted only on known OOF predictions and the full vector was frozen before audit. Apparent known-fit0.8590716 is not nested CV; the CV best remains0.8592309820. The10% target remains unmet. See [result and complete evidence](OWN5_CALIBRATION_RESULT.md).
 
 Original attention64 is now independently complete12/12:29 native outputs,

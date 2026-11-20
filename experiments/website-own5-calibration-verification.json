@@ -1,0 +1,55 @@
+{
+  "state": "complete_live_byte_verification",
+  "observed": "2026-11-20T00:49:56.412027+00:00",
+  "research_commit": "0e5a9ba",
+  "pages_commit": "214d050aaff1ef158749191c03942e74ea250b93",
+  "url": "https://mquan.github.io/netflix_challenge/",
+  "paths": [
+    {
+      "path": "index.html",
+      "bytes": 149361,
+      "sha256": "7c5c75abbd9ba5aca2bde60a3b0d06bb6aec5cb92ce7a20d761a56bd11737750",
+      "exact": true
+    },
+    {
+      "path": "research_journey.html",
+      "bytes": 149361,
+      "sha256": "7c5c75abbd9ba5aca2bde60a3b0d06bb6aec5cb92ce7a20d761a56bd11737750",
+      "exact": true
+    },
+    {
+      "path": "assets/progress_graph.svg",
+      "bytes": 81156,
+      "sha256": "29566fea0c38c0ed0ecc39fe7be866002e0ad3a8eba3a5caa669e1ea4c69d886",
+      "exact": true
+    },
+    {
+      "path": "assets/progress_graph.png",
+      "bytes": 296083,
+      "sha256": "3eb30cdff195538d176ae73fcbaceb671652be1aced2e39c53e828dfd4e34a3f",
+      "exact": true
+    },
+    {
+      "path": "experiments/fresh-reproduction-status.json",
+      "bytes": 30060,
+      "sha256": "9b81e171b115925aa1857da199fed06e0e669b731ef0913e22f70e5d12ad11c1",
+      "exact": true
+    },
+    {
+      "path": "assets/qualifying_progress.svg",
+      "bytes": 6500,
+      "sha256": "8336fe644198c66af79e82bbcc13f4437600af027e0c14500cdbae5a842efd4d",
+      "exact": true
+    }
+  ],
+  "local_390px_overflow": false,
+  "local_console_errors": false,
+  "live_browser": {
+    "http_status": 200,
+    "viewport_width": 390,
+    "document_scroll_width": 390,
+    "new_score_present": true,
+    "target_unmet_present": true,
+    "console_errors": []
+  }
+}
