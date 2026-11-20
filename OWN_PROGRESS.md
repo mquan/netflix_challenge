@@ -121,7 +121,10 @@ diagnostic with full independent replay. It entered source admission, then
 the compressor-above5GiB guard suspended only its own actual worker in RAM.
 No fit began; recovery must adopt that exact worker after the larger native
 job releases memory, preserving the original3GiB/5GiB limits and avoiding
-a restart. The active original1600 and queued391 neural work keep their
+a restart. The reviewed recovery monitor is live and waits for independent
+original1600 completion, then three stable admission observations before
+continuing the same worker and running full independent replay. The active
+original1600 and queued391 neural work keep their
 recipes and lanes. No new qualifying audit is
 part of this study. [Frozen delta plan](OWN_COMPLETE_CF_DELTA_PLAN.md).
 Original1600 source-pinned build/admission is complete and its
@@ -139,8 +142,15 @@ payload alone is1.156GiB; output storage must be reserved above the native
 18.75GiB disk floor before building or launching. Authorized retirement of
 190 downloaded public prediction inode groups recovered0.799GiB; dataset
 arrays, current own inputs/models/checkpoints and earlier exact archives
-were preserved. This is source/output preparation only; original1200 is
-not yet queued or trained. [Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md).
+were preserved. The reviewed original1200 execution queue is now live,
+waiting for independently completed1600 and paired391H128 before separate
+source/data preparation, isolated build, memory/compute-lane admission,
+full23+23 native execution and independent58-output verification. It has
+not started preparation, build or training. Its disk guards reserve the
+full1.25GiB output allowance through preparation/build and preserve the
+original18.75GiB continuous floor during native writes.
+[Original1200 requirements](ORIGINAL1200_EXECUTION_PLAN.md) ·
+[Frozen execution queue](experiments/upstream-original1200-queue/plan.json).
 
 All149 unused completed local native pairs now passed a complete own330
 ridge evaluation and independent replay. Same canonical rows/folds:

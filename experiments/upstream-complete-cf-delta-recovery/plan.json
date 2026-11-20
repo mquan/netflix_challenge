@@ -1,0 +1,36 @@
+{
+  "source_sha256": {
+    "scripts/upstream_complete_cf_delta_queue.py": "4cd5685e4714486ecc97af9acbb18ac9ba33503d9428a56f1bcf8685a9307f0c",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "OWN_COMPLETE_CF_DELTA_PLAN.md": "18d7d0036e1c3c6cf166a849d1ddaec3824bb4b90b93643ca2c5e38dc477734d",
+    "scripts/upstream_complete_cf_delta.py": "8260fb0832fd01d3c7f7b1d30e14bc264a8caf70887c77ced893cf04b1d0a074",
+    "scripts/verify_upstream_complete_cf_delta.py": "526fe15c9124de8daa7164d8a6e79e24e9a50f8a3424844ba40c886056791bbe",
+    "experiments/upstream-cf96-complete-bank/independent-verification.json": "61b088546c06ea17db9e4340af8b405691a18b0740fe345e0db4d8e41cbb725a",
+    "experiments/upstream-remote15h-ext-return/s3-tx50n-v1/local-verification.json": "efa35febb3c0d6e287adf3bf631873161a775b429e7ce80f3fa0a340e77d3027",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0",
+    "scripts/upstream_complete_cf_delta_recovery.py": "6e32d040f3af5ffb314fa0a59064febbffdc84d508ea3e5b8acdeca193e3eeeb",
+    "experiments/upstream-complete-cf-delta-queue/plan.json": "894647cefd6081d766328250b96af894b535d57f4454a6c2e596e72b39a33761",
+    "experiments/upstream-complete-cf-delta-queue/failure.json": "cd65fe9debb2ca985f11fb8fd82b27160eff8bd6c079485a2c5b64520701447c",
+    "experiments/upstream-complete-cf-delta-queue/monitor.json": "d12aeed8ac5029125188ea4372fe127a76ae9b18d6c467e0e4ba0329c83c37c5"
+  },
+  "adopted_child": {
+    "pid": 35985,
+    "ppid": 30519,
+    "pgid": 35985,
+    "state": "Rs",
+    "started": "Fri Nov 20 10:15:29 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit"
+  },
+  "created": "2026-11-20T18:19:24.732026+00:00",
+  "original_monitor_confirmed_terminal": {
+    "pid": 30519,
+    "ppid": 1,
+    "pgid": 30519,
+    "state": "Ss",
+    "started": "Fri Nov 20 10:07:00 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_queue.py"
+  },
+  "rule": "Wait independently complete original1600, then three consecutive compressor-below4.5GiB/reserve3GiB observations. Resume SAME actual suspended intake process, preserving original source, RAM and guards. Continuous own3GiB/research24GiB/compressor5GiB/swapgrowth128MiB/disk18.75GiB checks. No new intake launch or retry. Actual independent novelty, fixed ridge and independent fit replay follow. Dedicated child/watchdog identity checks; no GPU/primary locks or peer signals."
+}

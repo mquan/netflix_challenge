@@ -1,0 +1,19 @@
+{
+  "source_sha256": {
+    "scripts/upstream_original1200_queue.py": "e9654703f10b391bd03fa41106fca4274d49bcd4ea045e860d030ec0a7ffaf7c",
+    "scripts/upstream_original1200.py": "e00ff58214c5d36655187dfd0b377c608b0c96664eab50174ed72866d2f8d552",
+    "scripts/upstream_high_capacity_original.py": "5ab83ca449a522f282d455d5d9a4e4201da6a898cac3a18379680cb6797da14c",
+    "scripts/verify_upstream_original1200.py": "ae8c8c4bd9786dcf40a117f3a24c3e6a3a79b05a82f256171340b37a313a3ff0",
+    "ORIGINAL1200_EXECUTION_PLAN.md": "2faa8a919cf073e8f507be8b091f8de3dbfe4be3c8fa0a3ab5c9afabc6fac549",
+    "experiments/upstream-original1200-preflight/preflight.json": "3e02483679a75c23f0282fe3c0493e9a1fa666da069da018264e16d5334b5543",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c"
+  },
+  "created": "2026-11-20T18:24:13.619753+00:00",
+  "factors": 1200,
+  "neighbors": 100,
+  "epochs_each": 23,
+  "expected_numeric_outputs": 58,
+  "rule": "Wait independently complete original1600 and paired391H128. CPU preparation/build/admission reserve3GiB,24GiB research,128MiB swapgrowth,comp<4.5GiB admission/5GiB continuous; before preparation/build require20.5GiB free, preserve20GiB through stages for original18.75 floor+1.25output reserve. After build reserve22GiB before nonblocking jointGPU/primary lanes, comp<4.5GiB for3samples;20.125GiB before native start. Native22GiB/24GiB research/128MiB swapgrowth/18.75GiB disk. Original4Rayon/1BLAS. Full23/23 training, all58numericoutputs and separate independent full source/data/build/output verification. Same actual child RAM preserved on guard/monitor loss; no automatic retries or smaller recipe."
+}
