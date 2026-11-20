@@ -1,0 +1,32 @@
+{
+  "state": "complete_independent_serialized_pipeline_and_original_lineage_admission",
+  "observed": "2026-11-20T07:07:02.254968+00:00",
+  "development": "upstream-split3-virtual-mps-context",
+  "records": [
+    {
+      "query": "probex",
+      "rows": 1128164,
+      "bitwise_equal": true,
+      "prediction_sha256": "2d872c711dbc037618cf81f06805a5966ef7ee9b6c313bfa0db97963fee1d221"
+    },
+    {
+      "query": "qual",
+      "rows": 2817131,
+      "bitwise_equal": true,
+      "prediction_sha256": "b47a4168af9894cf59987ffc1b56aee4ecb7cfea80e917768c85a4ac7c85be13"
+    }
+  ],
+  "bindings": {
+    "scripts/verify_upstream_nn_pool6_full_refit.py": "1fbe83f3fa24bd5a5c2d11d79572825b12979b2148a1c5fa485fa17ab23b7746",
+    "experiments/upstream-nn-pool6-full-refit/upstream-split3-virtual-mps-context/plan.json": "37d591d2846fd8cd61cc220fd9a7386e7de0ab9bbf25fa1df89092ff43d8e710",
+    "experiments/upstream-nn-pool6-full-refit/upstream-split3-virtual-mps-context/verification.json": "593c5931cd05b395f5ddc5d55219a8849f2a9bd31fcbc7cdabc28645f17954cd",
+    "experiments/upstream-native-nn-pool6-production/declaration.json": "247502a5adfbdb60026fa85a0a87ccce92297e21f30bd402128e3aa4be09c961",
+    "experiments/upstream-split3-virtual-mps-context/manifest.json": "a79b525c5b0e5c1d0946555fe85b7b2a9e8fa3465d5c23470b8da55bbac32a13"
+  },
+  "original_expected_implementation_hashes_verified_without_overwrite": true,
+  "production_B_manifest_files_and_known_row_identities_verified": true,
+  "actual_saved_ridge_scaler_and_all_models_reopened": true,
+  "qualifying_labels_read": false,
+  "original_declared_budgets_verified": true,
+  "no_new_cv_score_claimed": true
+}

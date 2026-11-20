@@ -20,7 +20,9 @@ The original combined process completed its neural portion, then failed
 when Torch and LightGBM loaded conflicting OpenMP runtimes. Preserve that
 failed entry point as historical evidence; run tree inference separately.
 
-Five new full neural refits are executing serially, using the already
+All five new full neural refits completed their initial worker-level query
+replays at 07:04:44 UTC. Independent serialized-pipeline admission is now
+executing serially. The refits used the already
 declared architectures, seeds and median epoch budgets. They fit the
 existing paired production-known B bank and matching qualifying B bank,
 with the original own native additions. The original A-development score
@@ -51,11 +53,21 @@ currently unchanged. Initial worker
 receipts alone are insufficient for admission. No model promotion or
 qualifying audit is authorized by an initial completion receipt alone.
 
-After all five admissions, remaining work is to assemble the equal six-NN
-pool, the fixed 25% tree154 / 75% pool candidate, and one known-only
-seven-family calibration; independently solve all 127 simplex supports;
-freeze all vectors and coefficients; then run the complete recovered-group
-audit. Apparent calibration fit is not nested CV, and recovered audits
+The frozen assembly queue waits for both completed admission gates, then
+assembles the equal six-NN pool, the fixed 25% tree154 / 75% pool candidate,
+and one known-only seven-family calibration. All vectors and coefficients
+are frozen before independent verification across all127 simplex supports
+and exact candidate arithmetic. Only then can the separate recovered audit
+run. The primary candidate is the known7 calibration; the two fixed candidates
+are predeclared controls, without selecting coefficients from their audits.
+Immediately before outcome access, the audit rechecks the original plan,
+calibration, frozen vector and preaudit proof hashes. Negative tests reject
+changes to either plan/calibration before any prediction or outcome access.
+The solver also recovered a known seven-weight optimum, and the exact-vector
+checker rejected a one-ULP corruption. These preflight tests do not replace
+the full real-data gates.
+
+Apparent calibration fit is not nested CV, and recovered audits
 are adaptive rather than official or untouched Test results.
 
 The remote attention32 producer has returned and passed the frozen v3

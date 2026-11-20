@@ -1,0 +1,14 @@
+No P1 findings. One P2 finding:
+
+- **P2 — Audit does not revalidate the frozen plan and calibration.** In [verify_upstream_nn_pool6_assembly.py:85](/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_nn_pool6_assembly.py:85), `audit()` validates the preaudit receipt, frozen manifest, sources, and predictions, but never checks the current `plan.json` or `calibration.json` against their recorded hashes. Changing either after preaudit still permits qualifying-outcome access and a successful audit, leaving the evidence inconsistent with the certified fit. An in-memory reproduction confirmed this path without opening outcomes. Recheck both hashes before line 96, including the calibration hash recorded in the preaudit receipt.
+
+Otherwise, the reviewed paths look correct:
+
+- Source admission checks both gates, preserves expected hashes, and requires complete independent pipeline replays.
+- Six-source order and float64 addition/division followed by float32 storage are consistent.
+- The independent seven-family solver enumerates all 127 supports with the correct equality-constrained system and inactive KKT sign.
+- The queue freezes all three candidates and completes independent verification before auditing.
+- Audit scoring uses complete groups of 1,408,789 and 1,408,342 rows, float64 clipping, and compensated squared-error sums.
+- Adaptive recovered-group limitations and original A versus paired B remain explicit.
+
+**Recommendation: fix the P2 audit-binding gap before starting assembly.** No other concrete scientific or runtime bugs found. No files edited, training run, or recovered qualifying outcomes read.

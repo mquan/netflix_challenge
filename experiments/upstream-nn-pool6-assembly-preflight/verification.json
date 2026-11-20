@@ -1,0 +1,19 @@
+{
+  "state": "complete_solver_arithmetic_and_audit_binding_preflight",
+  "observed": "2026-11-20T07:04:14.603089+00:00",
+  "tests": [
+    "127-support solver recovers exact seven-weight synthetic optimum within1e-10",
+    "Correct declared float64/f32 vector accepted",
+    "OneULP vector corruption rejected",
+    "Changed frozen plan rejected before prediction/outcome access",
+    "Changed frozen calibration rejected before prediction/outcome access",
+    "All three scripts compile"
+  ],
+  "source_sha256": {
+    "scripts/upstream_nn_pool6_assembly.py": "772cca266275dde54b18931c787c30da368820d3843baca090411efdfe006224",
+    "scripts/verify_upstream_nn_pool6_assembly.py": "9c99798ba5c6014dcd60794cc1209f18c6c2ab8569431bb34e010f2a5c39e9b7",
+    "scripts/upstream_nn_pool6_assembly_queue.py": "a3e423bf7a3c99bd66a2d1fb8a3300b7a0b43621f7b7d16361f1ee20b37097f0"
+  },
+  "review_resolution": "Agent admission-completion gate finding fixed before execution; CLI audit plan/calibration binding finding fixed and both negative cases exercised. Full real-data/source checks remain execution gates.",
+  "qualifying_labels_read": false
+}

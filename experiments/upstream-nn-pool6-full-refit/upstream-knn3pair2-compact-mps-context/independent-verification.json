@@ -1,0 +1,32 @@
+{
+  "state": "complete_independent_serialized_pipeline_and_original_lineage_admission",
+  "observed": "2026-11-20T07:11:29.295417+00:00",
+  "development": "upstream-knn3pair2-compact-mps-context",
+  "records": [
+    {
+      "query": "probex",
+      "rows": 1128164,
+      "bitwise_equal": true,
+      "prediction_sha256": "76df234bbeea5c40e046a7ab42dfb5d822d4d21cb5f7429e826ec6ddcf5d3493"
+    },
+    {
+      "query": "qual",
+      "rows": 2817131,
+      "bitwise_equal": true,
+      "prediction_sha256": "90a252cd1a115fd9f46626df9ec0a063c0a3b9b3a59e4b60dfcf238ccd7b2c63"
+    }
+  ],
+  "bindings": {
+    "scripts/verify_upstream_nn_pool6_full_refit.py": "1fbe83f3fa24bd5a5c2d11d79572825b12979b2148a1c5fa485fa17ab23b7746",
+    "experiments/upstream-nn-pool6-full-refit/upstream-knn3pair2-compact-mps-context/plan.json": "ee734ba618714684fc7eedf7b32cc52d05deb5039c5555d841714d605089950d",
+    "experiments/upstream-nn-pool6-full-refit/upstream-knn3pair2-compact-mps-context/verification.json": "0ece3937e6041fb5c603b67a8201983594faa87b89d89656c5fe5408b1157ffd",
+    "experiments/upstream-native-nn-pool6-production/declaration.json": "247502a5adfbdb60026fa85a0a87ccce92297e21f30bd402128e3aa4be09c961",
+    "experiments/upstream-knn3pair2-compact-mps-context/manifest.json": "982391b188c89416f463007e602afda058a89aef0fe7adca6e34b84dcb6ee683"
+  },
+  "original_expected_implementation_hashes_verified_without_overwrite": true,
+  "production_B_manifest_files_and_known_row_identities_verified": true,
+  "actual_saved_ridge_scaler_and_all_models_reopened": true,
+  "qualifying_labels_read": false,
+  "original_declared_budgets_verified": true,
+  "no_new_cv_score_claimed": true
+}
