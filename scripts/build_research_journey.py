@@ -620,17 +620,25 @@ def validate_fresh_status():
 
 
 def overview_selection(milestones, record):
-    """Keep complete evidence in the ledger and representative points on busy days."""
-    ids = {'H8 full'}
-    days = {'2026-10-31'}
+    """One daily minimum per evaluation series/author; retain the complete ledger."""
+    preferred = set()
     for key in ['development_verification_path', 'latest_qualifying_verification_path']:
         matches = [row for row in milestones if row[9] == record[key]]
         if len(matches) != 1:
             raise ValueError('One exact evidence-bound overview milestone required: ' + key)
-        row = matches[0]
-        ids.add(row[0])
-        days.add(dt.datetime.fromisoformat(row[2]).astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat())
-    return dict(ids=sorted(ids), days=sorted(days))
+        preferred.add(matches[0][0])
+    daily = {}
+    for row in own_training_milestones(milestones):
+        timestamp = dt.datetime.fromisoformat(row[2])
+        day = timestamp.astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat()
+        key = (day, row[4], row[5])
+        # Resolve equal scores deterministically, keeping evidence-bound labels.
+        rank = (float(row[1]), row[0] not in preferred, -timestamp.timestamp(), row[0])
+        if key not in daily or rank < daily[key][0]:
+            daily[key] = (rank, row)
+    return dict(ids=sorted(value[1][0] for value in daily.values()),
+                days=sorted({key[0] for key in daily}),
+                rule='Lowest recorded RMSE per Pacific day, evaluation series and author')
 
 
 def own_training_milestones(rows):

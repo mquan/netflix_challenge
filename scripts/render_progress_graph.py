@@ -23,9 +23,7 @@ STATUS = json.loads((ROOT / "experiments/fresh-reproduction-status.json").read_t
 CURRENT_CV = next(row for row in MILESTONES if row[4] == "fresh_cv" and float(row[1]) == STATUS["best_development_rmse"])
 CURRENT_QUAL = next(row for row in MILESTONES if row[9] == STATUS["latest_qualifying_verification_path"])
 SELECTION = JOURNEY["overview_selection"](MILESTONES, STATUS)
-PLOT_MILESTONES = [row for row in MILESTONES
-    if datetime.fromisoformat(row[2]).astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat() not in SELECTION['days']
-    or row[0] in SELECTION['ids']]
+PLOT_MILESTONES = [row for row in MILESTONES if row[0] in SELECTION['ids']]
 QUAL_GROUPS = STATUS["latest_qualifying_groups"]
 QUAL_WORST = max(row["rmse"] for row in QUAL_GROUPS.values())
 if abs(float(CURRENT_QUAL[1])-QUAL_WORST)>1e-12:
@@ -65,7 +63,7 @@ svg = [
     '<rect width="1600" height="800" fill="#10131d"/>',
     '<rect x="92" y="232" width="1435" height="460" rx="16" fill="#181d29"/>',
     '<text x="94" y="70" fill="#f2f1ed" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700">Can AI win the $1M Netflix Challenge</text>',
-    '<text x="96" y="110" fill="#a8b0c2" font-family="Arial,Helvetica,sans-serif" font-size="23">Score progress by calendar date · lower RMSE is better</text>',
+    '<text x="96" y="110" fill="#a8b0c2" font-family="Arial,Helvetica,sans-serif" font-size="23">Daily best per evaluation series and author · Pacific dates · lower RMSE is better</text>',
 ]
 
 

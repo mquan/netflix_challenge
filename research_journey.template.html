@@ -44,8 +44,8 @@
         <div class="early-records"><strong>Our own training:</strong> the plots and score table track predictors trained by this project and locally fitted ensembles. Completed candidates can be promoted on lower overall RMSE against their comparable control; one worse fold no longer vetoes a gain. HR2a and LC6 improve their own controls without setting chronological overall records. <a href="PROMOTION_POLICY.md">Policy and evidence</a>.<br>Early results use single-model Probe scores; later results use blend CV. Current known-ProbeX development and recovered qualifying audits use different rows. Faded markers are unpromoted screens. The Codex logo identifies our trained qualifying result. <a href="INTERMEDIATE_PROGRESS.md">Intermediate experiment evidence</a>. <a href="RESULTS.md">Full early record</a>.</div>
         <div class="chart-head"><h3>Probe scores and qualifying audit by real date</h3><span class="small">Continuous RMSE scale · 0.850–0.990</span></div>
         <div class="controls strategy-controls" id="strategy-controls" role="group" aria-label="Highlight strategy"></div>
-        <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 530" role="img" aria-label="Single-model Probe results and blend CV through November 19, with own-trained qualifying results and the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
-        <div class="legend"><span>Tap a marker · faded = unpromoted · Codex logo = own qualifying audit</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
+        <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 530" role="img" aria-label="Daily best single-model Probe, blend CV and own-trained qualifying results with the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
+        <div class="legend"><span>Daily best per series and author · Pacific dates · full history below</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
       </div>
       <div class="panel competition-panel">
         <div class="chart-head"><h3>Nearly three years, beside our seven weeks</h3><span class="small">Elapsed calendar time from each start · RMSE ↓</span></div>
@@ -54,7 +54,7 @@
         <div class="competition-key"><span><i></i>Original competition · public Quiz</span><span class="ours"><i></i>Our project · Probe blend CV</span></div>
         <div class="chart-shell competition-shell" id="competition-shell"><svg id="competition-chart" viewBox="0 0 960 390" role="img" aria-label="Original public Quiz, project Probe CV through November, and own-trained qualifying results on an elapsed-day axis"></svg><div class="tooltip" id="competition-tip" role="status"></div></div>
         <div class="competition-detail" id="competition-detail" aria-live="polite"></div>
-        <div class="competition-foot">The historical line joins six sourced snapshots, not a complete daily leaderboard. The historical Probe frontier now includes B5, HR2b and H8. Promoted candidates HR2a and LC6 are shown without advancing the record line. Fresh known-ProbeX and qualifying markers are separate from that original-Probe line. The overview plots show H8 on October 31 and the best fresh development and qualifying results on November 19; all dates are Pacific. Unpromoted screens are omitted from this comparison; the milestones table retains every result. These series cannot establish an official leaderboard position. First-day single-model scores use another protocol and are omitted. <strong>Prize outcome:</strong> The Ensemble led the public Quiz board at 0.8553; BellKor’s Pragmatic Chaos had 0.8554. Both rounded to 0.8567 on hidden Test, so the earlier submission won. The Test baseline and 10% mark were 0.9525 and 0.8572. <a href="https://www.asc.ohio-state.edu/statistics/statgen/joul_aut2009/NetflixAwardsOneMillionPrize2009.pdf">Netflix’s prize announcement</a> · <a href="https://utstat.toronto.edu/andrey/pubs/Netflix.pdf">final Quiz and Test scores</a>.</div>
+        <div class="competition-foot">The historical line joins six sourced snapshots, not a complete daily leaderboard. The historical Probe frontier now includes B5, HR2b and H8. Promoted candidates HR2a and LC6 remain in the full ledger without advancing the record line. Fresh known-ProbeX and qualifying markers are separate from that original-Probe line. The overview plots show one daily best per evaluation series and author, using Pacific dates. Development CV and qualifying audits remain separate. Unpromoted screens are omitted from this comparison; the milestones table retains every result. These series cannot establish an official leaderboard position. First-day single-model scores use another protocol and are omitted. <strong>Prize outcome:</strong> The Ensemble led the public Quiz board at 0.8553; BellKor’s Pragmatic Chaos had 0.8554. Both rounded to 0.8567 on hidden Test, so the earlier submission won. The Test baseline and 10% mark were 0.9525 and 0.8572. <a href="https://www.asc.ohio-state.edu/statistics/statgen/joul_aut2009/NetflixAwardsOneMillionPrize2009.pdf">Netflix’s prize announcement</a> · <a href="https://utstat.toronto.edu/andrey/pubs/Netflix.pdf">final Quiz and Test scores</a>.</div>
       </div>
     </section>
 
@@ -121,13 +121,9 @@
   const runGain = p => `Improvement vs Cinematch Test: ${percentVsCinematch(p[1])}`;
   const strategies = [...new Set(DATA.milestones.map(d=>d.strategy))];
   // Overview plots show representative results; the ledger retains every experiment.
-  const pacificDay = value => new Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value));
   const representativeIds = new Set(DATA.overview.ids);
-  const plotMilestones = DATA.milestones.filter(d => {
-    const day = pacificDay(d.time);
-    return !DATA.overview.days.includes(day) || representativeIds.has(d.id);
-  });
-  let selected = DATA.milestones.find(d=>d.metric==='fresh_cv' && representativeIds.has(d.id));
+  const plotMilestones = DATA.milestones.filter(d => representativeIds.has(d.id));
+  let selected = plotMilestones.filter(d=>d.metric==='fresh_cv').reduce((best,d)=>!best||d.score<best.score?d:best,null);
   let strategy = 'All';
   const dateMin = Date.parse(DATA.milestones[0].time), dateMax = Math.max(...DATA.milestones.map(d=>Date.parse(d.time)))+864e5;
   const sx = t => 72+(Date.parse(t)-dateMin)/(dateMax-dateMin)*830;
