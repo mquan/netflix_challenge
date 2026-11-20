@@ -1,0 +1,295 @@
+{
+  "created": "2026-11-20T06:11:20.403332+00:00",
+  "state": "full_refit_budgets_declared_before_fitting_and_qualifying_outcomes",
+  "development_rmse": 0.8591267885072646,
+  "development_verification_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
+  "independent_development_sha256": "2092d48193a3b13c3351ab55fe4ae79030cf74476e8d3b226248a5748a1a9ef2",
+  "families": [
+    {
+      "development": "upstream-item154-mps-context",
+      "reuse_existing_full_base": true,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own107-item154-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        7,
+        7,
+        8
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "ac2cb6db6d663f498b328327ff7b743c26bdfa4b16a7d1a0b5a40192570115bd",
+      "actual_fold_receipt_sha256": [
+        "665491f76143b9d25806764823df9b16ab1617291e5fa2e7a99a6b753237a5cd",
+        "a3ba39e48a5b812c363889b01a55d597ccb48a59233538596fbd1b914acade44",
+        "be39c54b486f5c48e8fd46f040327f766387d5a5a01dba5a810eb2f201c36bbb",
+        "ac6cb0118a339fd4631d001f235386ed7bf5b9173b8c5c76404aa059f07f2331",
+        "89e28ea5d005be22f38c8122afa3d6fd360e1aa9ea561fe635b035ade01ec24c"
+      ]
+    },
+    {
+      "development": "upstream-split3-virtual-mps-context",
+      "reuse_existing_full_base": false,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own111-item154-virtual-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        6,
+        6,
+        7
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "a79b525c5b0e5c1d0946555fe85b7b2a9e8fa3465d5c23470b8da55bbac32a13",
+      "actual_fold_receipt_sha256": [
+        "8ef8e079772da7a3166913b4b20463ab2530f5d8dfe190bc130f890c03c5c1f6",
+        "754a7a89e0d1bd9c2f7c2e18c93681fd14f07c4658819fee5122f0d6cbd4ce7a",
+        "5cea6945f3cbe17912dfa19ff33884e3f9c6ff828fbf4697f4116273a0695be5",
+        "b1b9bbc2fda932ef5f36df760613926bf1fda270d7b2069f1c7ac07190a215ff",
+        "84b4c97cbac2f1a12c9ea93f76369657e7888211041817cacd30ede20807a3fa"
+      ]
+    },
+    {
+      "development": "upstream-attention2-virtual-mps-context",
+      "reuse_existing_full_base": false,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own109-item154-attention2-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        6,
+        6,
+        7
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "6b43653205cf601adb3ef758d903a5a0239f8cf723abc9d6071c7ac331fe3703",
+      "actual_fold_receipt_sha256": [
+        "945db4550e9670d9e912f78c6789fd96fd5a913a844e7b12ae013e35e8a5dcee",
+        "2e0a60279892a4dfd35ebf2bfde9ed26b4caf844e2cec1929da8430d44c8b9f6",
+        "2b560f943bce326767186c6a7c888e8b2b19649d748b0b1b1fbb61a0d2c51de9",
+        "94483b7c713e161a6928fb283ebda09b7921b6c8a1091048f47f771e6e023212",
+        "9ff07f7169873aa7fb05e851f0cb7d1c623841d15f1539d3498a1f85fdd135a5"
+      ]
+    },
+    {
+      "development": "upstream-knn3pair2-compact-mps-context",
+      "reuse_existing_full_base": false,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own109-item154-knn3pair2-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        6,
+        6,
+        6
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "982391b188c89416f463007e602afda058a89aef0fe7adca6e34b84dcb6ee683",
+      "actual_fold_receipt_sha256": [
+        "7d354fa92d39ea3057acf8b5108a986c67002d69eacce6c204cc9a9c5e1f0151",
+        "ff1202546a0b44e5ca6bb97548f7dd54ca929c75d980ebedaf422ce5f5effc99",
+        "ce6658bcd87eedcbd39146b33d2664c818b3f4c79620c4dbeae11c5aaa648c71",
+        "a1e161447ab90ddb50feb289ccae343834023f1b770b29ab0557d9611d83ebe6",
+        "4220cbf81cb99a63bcb6b6750211dd0365a62b52be513eeded7c6cf28be57bd7"
+      ]
+    },
+    {
+      "development": "upstream-split3eight-compact-mps-context",
+      "reuse_existing_full_base": false,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own115-item154-split3eight-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        6,
+        6,
+        7
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "4a4b644d2089106c9498686d28fcffd8a171a1605b537f21541060f49017e3b6",
+      "actual_fold_receipt_sha256": [
+        "66dd014512fa4d59493b4df48a8380d885fafd4a8003192f5889bdc2dee8f6ab",
+        "008733968810acaa2c876158388ea54c12b9b9a530caf0b592e2f62bcb4c8ad2",
+        "49c01265f19371af43f44a2873100baf417cf7f56b83a8d8bb57f4feb33f8d01",
+        "60eb61dd903094e7aee4f86bb542079e3dd0d70a1fed10408ff69eea5cacc99f",
+        "8bfbb17955e6cb3a6b038c9ca999b6459fd9b08338a8876af118ae0d353181b7"
+      ]
+    },
+    {
+      "development": "upstream-cf96-prefix2030-compact-mps-context",
+      "reuse_existing_full_base": false,
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "context-weighted-residual-own109-item154-cf96-prefix2030-mps-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      },
+      "full_iterations": [
+        6,
+        6,
+        6
+      ],
+      "seeds": [
+        2026,
+        7,
+        13
+      ],
+      "manifest_sha256": "ed1c67fc08e5d9ab7778f2feb70695cc7100fc05600668f8a2c749c13447bbfd",
+      "actual_fold_receipt_sha256": [
+        "14523cafad15657ac2a759b2ae1990bd90c5b2be302975dddbbd7ff40687fb71",
+        "a44c93121238c8828fc8db86ada2db65881c2b41e52f5687c64197ea8355f98f",
+        "ff58d1b3af397c7f2bb4ea1ff95bfe3f7f54a99430a183d528de987d6aee3e09",
+        "d5776943666c329f5a6d9153cc1e9067e97a8d1b1e71375e6fe4be3a6384679e",
+        "c1fdf0d800d9151d58fc5068cb974d3e5f4c9bd48a20d05002f6b30444f971b0"
+      ]
+    }
+  ],
+  "base_full_replay_sha256": "a9b584868d0d4e4ad5b8c2828f3fcabd63b37f813c95331dd5840298a39aa006",
+  "fixed_qualifying_weights": {
+    "tree154": 0.25,
+    "equal_six_nn_pool": 0.75
+  },
+  "seven_family_calibration": "All previous own6 families plus fixed NNpool; known-only SLSQPftol1e-17 and independent127-face simplex verification before any recovered label access. Apparent fit is not nested CV.",
+  "policy": "Five new actual three-seed full refits, reuse actual replayed full baseNN154; exact original architectures/capacity/data/seeds/optimizer/batches and median selected budgets. Stream qualifying blocks; reserve active native disk floor/checkpoint margin. Reopen/replay every new saved model on all known/full queries. Freeze all vectors/weights/source proofs before recovered audit.",
+  "model_fitting_started": false,
+  "qualifying_labels_read": false,
+  "goal_complete": false
+}
