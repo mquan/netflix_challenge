@@ -1,0 +1,15 @@
+{
+  "state": "complete_slot_release_boundary_fixtures",
+  "observed": "2026-11-20T03:44:35.362020+00:00",
+  "script_sha256": "c0e1fb62f5c1453e651e8ed76cc458d082513e11b18fdf349a377a1cd0848ef4",
+  "cases": 5,
+  "checks": [
+    "release after both full independent source proofs",
+    "never interrupt a live native worker",
+    "release when original coordinator and child ended",
+    "retain reservation during short source admission wait",
+    "release after twenty minutes without native admission"
+  ],
+  "native_training_rerun": false,
+  "original_raw_source_or_budget_changed": false
+}

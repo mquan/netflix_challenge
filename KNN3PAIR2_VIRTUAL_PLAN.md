@@ -57,3 +57,7 @@ of incomplete/wrong-parent/source/config/isolation proofs, and refusal to admit
 missing source proofs. Fixtures test admission and array assembly only; they
 are not reduced training runs or performance/accuracy claims. Actual complete
 native output admission and full neural training remain pending.
+
+## Native source admission serialization
+
+A separate scripts/upstream_knn3_source_slot.py coordinator reserves the existing shared GPU epoch lock only after the current raw item-autoencoder worker finishes durably. This leaves its full50-epoch trajectory, optimizer/RNG checkpoints and original source unchanged while the two CPU-only original KNN3 producers use their unchanged native resource gate. The raw coordinator waits naturally for the shared epoch slot; no worker is killed or SIGSTOPed. Release follows both independent original chain proofs, an ended native coordinator with no child, or20 minutes without native admission. The reservation is released automatically when its process closes the lock. Durable raw checkpoint pointers and source identity must remain unchanged over the reservation. Five boundary fixtures cover proof completion, a live native worker, an ended coordinator, a short admission wait and the20-minute idle release. This changes scheduling only; all native and neural capacities/data/budgets remain fixed.
