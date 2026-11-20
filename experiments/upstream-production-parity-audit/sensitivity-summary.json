@@ -1,0 +1,46 @@
+{
+  "state": "complete_separate_scoring_and_original_vector_comparison",
+  "observed": "2026-11-20T06:51:55.804671+00:00",
+  "records": [
+    {
+      "family": "nn",
+      "realization": "A",
+      "rmse": 0.8593837348929272,
+      "prediction_sha256": "04d153881845697fa2018f7a26ff1abcf82cc5e655e6458cd59118b245512599"
+    },
+    {
+      "family": "nn",
+      "realization": "B",
+      "rmse": 0.8593816465437047,
+      "prediction_sha256": "3eb00f11169b4068eb245733f784067667d1dccbb934a3d8b17ecb9e724e452d"
+    },
+    {
+      "family": "tree",
+      "realization": "A",
+      "rmse": 0.8600069538395594,
+      "prediction_sha256": "e7bfc403155631c8762811b4a78aa280b7ec315c31d4dd0b49d83c579e379085"
+    },
+    {
+      "family": "tree",
+      "realization": "B",
+      "rmse": 0.8600074580158965,
+      "prediction_sha256": "cbb20badf812ee07eabaaab2af6154cc913df00a56cc395818f903bebf47161d"
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-item154-realization-sensitivity/nn-A.f32": "04d153881845697fa2018f7a26ff1abcf82cc5e655e6458cd59118b245512599",
+    "artifacts/upstream-item154-realization-sensitivity/nn-B.f32": "3eb00f11169b4068eb245733f784067667d1dccbb934a3d8b17ecb9e724e452d",
+    "artifacts/upstream-item154-tree-realization-sensitivity/A.f32": "e7bfc403155631c8762811b4a78aa280b7ec315c31d4dd0b49d83c579e379085",
+    "artifacts/upstream-item154-tree-realization-sensitivity/B.f32": "cbb20badf812ee07eabaaab2af6154cc913df00a56cc395818f903bebf47161d",
+    "experiments/upstream-item154-realization-sensitivity/nn.json": "fc8510f035b256903160e85985c8d78f4a839d04be3c8a5ac466b56b36783fb9",
+    "experiments/upstream-item154-tree-realization-sensitivity/verification.json": "8897650cdd7474e71cf89252a15ae535393aa165d7cc71cd6a5c581e5b8b683f",
+    "scripts/upstream_item154_realization_sensitivity.py": "0fd67c9e29869d69f03fedf5cdfac2afa0a090a622a9da0be26840bb735e1ba9",
+    "scripts/upstream_item154_tree_realization_sensitivity.py": "8adee3b7d602e46dc0a9738611bce21dc5fb23e51e2598b77cf28386e023b5d3",
+    "experiments/upstream-item154-sensitivity-guard/worker.log": "3d7227069984859047ba1fff0904428399fedbe92edc44189f5559814c416ef6"
+  },
+  "both_original_vectors_bitwise_equal_existing": true,
+  "all_ten_original_fold_replays_reported": true,
+  "models_fitted": 0,
+  "qualifying_labels_read": false,
+  "scope": "Independent compensated scoring and original-vector comparison. NN producer completed five A/B folds before later OpenMP failure during tree initialization; isolated tree producer completed separately. Frozen-model input sensitivity, not matched B-trained CV. Neither difference shows material degradation; this does not explain the qualifying gap."
+}
