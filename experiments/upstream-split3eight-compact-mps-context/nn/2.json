@@ -1,0 +1,22 @@
+{
+  "family": "nn",
+  "fold": 2,
+  "chosen_iterations": [
+    8,
+    7,
+    8
+  ],
+  "rows": 224006,
+  "rmse": 0.8603017847985776,
+  "baseline_rmse": 0.8633590057796938,
+  "seconds": 70.14325270801783,
+  "manifest_sha256": "4a4b644d2089106c9498686d28fcffd8a171a1605b537f21541060f49017e3b6",
+  "outputs": {
+    "nn-13.pt": "f1795b2f4543a9ea1b5d095618ea32303f2cff6e6a0c4553b7ae171200a1fb57",
+    "nn-2026.pt": "dce7b25b02b898fbb754c3d9eea7b645d64c83fbbe2c97e4579df8dabba663e1",
+    "prediction.f32": "fa9b4280505bf241ea2b999c05d02a50e44c00cb75ffd4897ca6a9609092430f",
+    "ridge.npz": "9a16971cdc4429e392ea8f6433d81ffebfba85438a3607753683db72c5a4592f",
+    "nn-7.pt": "50ef2dcd5d49d6c11f73d139f29209f6a8964441da33360663d482f27d87e7bd",
+    "scalers.npz": "20baab4587798131f0d3fd8b971820326f5680dd3dbe43246f6f3f65a1e30ef0"
+  }
+}

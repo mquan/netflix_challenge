@@ -28,3 +28,36 @@ The purpose is to measure combined diversity while native full-budget
 RBM200/CFNADE96/item autoencoder and remote original producers continue.
 No downloaded numerical model output or qualifying outcomes enter fitting
 or candidate selection. Recovered audits remain adaptive, not official Test.
+
+## Execution recovery
+
+The full independent eight-column ridge replay and every assembled source
+column passed. The frozen reference launcher then failed on a renamed
+resource-helper import after launching its transform child. The owned
+incomplete transform child31196 was explicitly stopped, with no neural
+fitting; original scripts, caches, plans and failure logs remain unchanged.
+The separate scaling-recovery supervisor imports the existing verified
+resource helper before launching the unchanged full reference worker. It
+retains the shared epoch lock and original24GiB total/8GiB disk guard.
+Actual supervised worker31828 is observed live with resource telemetry.
+After both complete original-statistic/every-input-bit checks succeed, the
+original declared compact neural queue continues under its original guards.
+
+The recovered unchanged full reference worker completed successfully at
+2026-11-20T05:10:07Z: complete original inner/full eligible statistics and
+every normalized bit of all1,128,164x406 inputs agree. Proof SHA256:
+9df3a311cf1ad1aa3b3dabefcb39be72a2aa01f9689089bea4936b0a1afba168.
+The original complete neural queue is now admitted to scheduling after
+preparing its full recipe; fitting waits for the current raw epoch boundary.
+This proves operator parity, not a score or a full trajectory comparison.
+
+## Complete negative result
+
+Completed2026-11-20T05:18:11Z. All five complete nested user folds and
+15 actual saved-model replays pass, using original reference normalization.
+NN0.8594358912634479; tree50 half mean0.8592734659633272; tree154 half
+mean0.8592426521393607. Both separate exact mean and compensated canonical
+score checks pass. Both exceed the current0.8592012938198756 best.
+No qualifying refit or promotion. All source/model/data/capacity/stopping
+requirements remain unchanged; original failed supervisor and recovery
+evidence are retained. Slot released and raw50/50 trajectory resumed.

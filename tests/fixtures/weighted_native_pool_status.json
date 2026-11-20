@@ -1,0 +1,32 @@
+{
+  "qualifying_status": "audited_miss",
+  "preceding_independent_verification_sha256": "6949edec3884dec754fd7d657a52cb3f6620273fddd636f2292b5280fa21f10e",
+  "development_verification_path": "experiments/upstream-native-nn-pool6-tree31/verification.json",
+  "development_independent_check_path": "experiments/upstream-native-nn-pool6-tree31/independent-verification.json",
+  "independent_verification_sha256": "14641c026f2fd09e7e47993ee05ea6792cfa1cd4c68f02c8a49b2b4db2482ef9",
+  "best_development_rmse": 0.8591267885072646,
+  "development_required_replay_paths": [
+    "experiments/upstream-item154-mps-context/nn-replay.json",
+    "experiments/upstream-split3-virtual-mps-context/nn-replay.json",
+    "experiments/upstream-attention2-virtual-mps-context/nn-replay.json",
+    "experiments/upstream-knn3pair2-compact-mps-context/nn-replay.json",
+    "experiments/upstream-split3eight-compact-mps-context/nn-replay.json",
+    "experiments/upstream-cf96-prefix2030-compact-mps-context/nn-replay.json",
+    "experiments/upstream-item154-tree/tree-replay.json"
+  ],
+  "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
+  "latest_qualifying_verification_path": "experiments/upstream-own6-tight-calibration/independent-verification.json",
+  "latest_qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
+  "qualifying_verification_sha256": "2689a362c541c3a678c4da9755a9b88f8c7b9e05857127d85f15582c8ef0cc86",
+  "latest_qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8605620601761576
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8615662023089099
+    }
+  },
+  "goal_achieved": false
+}

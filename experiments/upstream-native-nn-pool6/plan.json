@@ -1,0 +1,29 @@
+{
+  "created": "2026-11-20T05:33:53.771403+00:00",
+  "origins": [
+    "upstream-item154-mps-context",
+    "upstream-split3-virtual-mps-context",
+    "upstream-attention2-virtual-mps-context",
+    "upstream-knn3pair2-compact-mps-context",
+    "upstream-split3eight-compact-mps-context",
+    "upstream-cf96-prefix2030-compact-mps-context"
+  ],
+  "tree": "upstream-item154-tree",
+  "neural_weights": [
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666,
+    0.16666666666666666
+  ],
+  "tree_pool_weights": [
+    0.5,
+    0.5
+  ],
+  "script_sha256": "ff0b77431ea6c244adee24b3a8e3ad85191c02538a408eed835a6ef422d3efc1",
+  "reference_development_rmse": 0.8592012938198756,
+  "rule": "All six completed MPS H128/rank32 neural variants retaining own107 and exactly154 context columns, with only original-native raw prediction additions. Base,four split3,attention2,KNN2,all-eight split3,CF96prefix20/30. Equal six-NN pool, castfloat32, then fixed half with existingtree154. No subset/weight search, new source/model fitting or qualifying outcomes. Individual negative results remain preserved. CF96 whole95/95 source remains incomplete; only independently verified own prefixes are used.",
+  "qualifying_labels_read": false,
+  "automatic_production": false
+}

@@ -1,0 +1,81 @@
+{
+  "state": "complete_local_compact_remote15h_return_check",
+  "observed": "2026-11-20T05:43:54.434863+00:00",
+  "job": "s3-dnn24",
+  "remote_commit": "ba2b361fdef216abf9d718973fa2bdc74fd09ef8",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "rows": [
+    {
+      "name": "s3-dnn24",
+      "paired_files": {
+        "probex": "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24.probex.npy",
+        "qual": "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "s3-dnn24_ep03",
+      "paired_files": {
+        "probex": "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24_ep03.probex.npy",
+        "qual": "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24_ep03.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "bindings": {
+    "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy": "4f368e191a0faf7773604a629659062426b9872b948cc4e6b4123e453d934650",
+    "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24.probex.npy": "f0acfec64ec91b2f576e9c479b51847502cf627b7416a47b1f1c24b29164c675",
+    "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24.qual.npy": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c",
+    "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24_ep03.probex.npy": "140113d0a8eac02de495548abc1f6838a66cb89d818b94746d341a0ad2b3f26f",
+    "artifacts/remote15h-return/s3-dnn24-v3/s3-dnn24_ep03.qual.npy": "261f9c14e1aca77416ad5971767af62b99e9f106b724e505c4b84e2f214bb76f",
+    "artifacts/remote15h-return/s3-dnn24-export.tar.gz": "9d51366da510c9c8cc582be701a010ccf136b1377e4002adddafab89e364be90",
+    "scripts/verify_upstream_remote15h_return_v3.py": "a0602977a106704d324f4190bb34df1d094f350eaa26376b17e3a2992cc0bbed",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/preparation.json": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/s3-dnn24.log": "e5d839e0b588ba8d3fd36abd8a1b19c4860f1b7c9fbf52ac73944bd9aa6ac661",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/s3-dnn24_ep03.npz": "f209536e124214e2ab0fe887ac0be35b302c6f55bfb79c89e80353a50ce2bfc2",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/plan.json": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/upstream_remote15h.py": "39a663117230166a7c732c08d4458103913e3760e80366583ef68ad3d05907ff",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/s3-dnn24-launch.json": "b835644fe0c60b838de8bede13483b43cd0973cebe9587273b3f2e665bcd2054",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/verification.json": "5382eae7c7093da5860c9247d1e0c63b8dc5922f8dd1d5f40d64001d9aadc2bb",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/s3-dnn24.npz": "debb38243e8916ff17470125d0b202c9160107463deb1db78346ea9c31976d94",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/s3-dnn24-receipt.json": "6f291a9d11be184875ae9691e9735ceac1a2e5741632f6ab5e54b08e67a757e1",
+    "artifacts/remote15h-return/s3-dnn24-v3/export/s3-dnn24/build.log": "8f1c05536758bf1cc3921a7f9da47a2b83f60f030e8adf4feb8ba5adc0822e4b",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/preparation.json": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/s3-dnn24.log": "e5d839e0b588ba8d3fd36abd8a1b19c4860f1b7c9fbf52ac73944bd9aa6ac661",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/plan.json": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/transfer.json": "70bed10d49948de98cf9cdb3f4f2fdc57d8f3bc9cd71ef608b821cfcc70ab44f",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/upstream_remote15h.py": "39a663117230166a7c732c08d4458103913e3760e80366583ef68ad3d05907ff",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/s3-dnn24-launch.json": "b835644fe0c60b838de8bede13483b43cd0973cebe9587273b3f2e665bcd2054",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/verification.json": "5382eae7c7093da5860c9247d1e0c63b8dc5922f8dd1d5f40d64001d9aadc2bb",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/s3-dnn24-receipt.json": "6f291a9d11be184875ae9691e9735ceac1a2e5741632f6ab5e54b08e67a757e1",
+    "experiments/upstream-remote15h-return/s3-dnn24-v3/build.log": "8f1c05536758bf1cc3921a7f9da47a2b83f60f030e8adf4feb8ba5adc0822e4b"
+  },
+  "ignored_archive_appledouble_metadata": [
+    "._s3-dnn24",
+    "s3-dnn24/._preparation.json",
+    "s3-dnn24/._split3.log",
+    "s3-dnn24/._s3-dnn24.log",
+    "s3-dnn24/._s3-dnn24_ep03.npz",
+    "s3-dnn24/._plan.json",
+    "s3-dnn24/._upstream_remote15h.py",
+    "s3-dnn24/._s3-dnn24-launch.json",
+    "s3-dnn24/._verification.json",
+    "s3-dnn24/._s3-dnn24.npz",
+    "s3-dnn24/._s3-dnn24-receipt.json",
+    "s3-dnn24/._build.log"
+  ],
+  "preserved_prior_import_failure": "experiments/upstream-remote15h-return/s3-dnn24/import-attempt1-failure.json",
+  "original_full_epochs_each": 8,
+  "original_recipe_trace_and_immutable_export_verified": true,
+  "local_full_known_map_and_training_disjointness_recomputed": true,
+  "native_qualifying_npy_bytes_reconstructed_exactly": true,
+  "native_npy_header_template": "artifacts/upstream-split3-diversity/source/preds_3/s3-dnn32nm.qual.npy",
+  "original_numpy_header_attempt_preserved": "experiments/upstream-remote15h-return/s3-dnn24-v2/import-attempt2-failure.json",
+  "native_full_probe_projection_recomputed_by_separate_remote_export": true,
+  "native_full_probe_vectors_present_locally": false,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Locally verified original plan/helper/source-export lineage, both full epoch traces, canonical datasets/map/disjointness and complete lossless paired vectors. Remote separate exporter rehashed original binaries/source/data/native outputs and projected every known row; native full-probe vectors remain on remote pending full-output transfer. No new local full-probe inference replay or ensemble/qualifying score claimed."
+}

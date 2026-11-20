@@ -1,0 +1,25 @@
+{
+  "state": "complete_independent_all_bytes_metadata_and_separate_inodes",
+  "observed": "2026-11-20T05:34:35.378568+00:00",
+  "records": [
+    {
+      "report": "experiments/upstream-duplicate-prediction-cow/verification.json",
+      "sha256": "ab351285b1b32c9e17abae3fdd637bd36c9622db8c4af9357456be0963501748",
+      "operations": 263,
+      "logical_bytes_shared": 1966729632,
+      "observed_free_gain_bytes": 1963577344
+    },
+    {
+      "report": "experiments/upstream-secondary-storage-cow/verification.json",
+      "sha256": "6e53c20005992b5fdf1017237fcd46b47fd1ae64bbaebe4006a8a3058bafa0e8",
+      "operations": 332,
+      "logical_bytes_shared": 1252878310,
+      "observed_free_gain_bytes": 1239474176
+    }
+  ],
+  "logical_bytes_shared": 3219607942,
+  "verifier_sha256": "509bfc6951a3b9450c864eae311ae80240da5129e81960aa95514575d0b87d01",
+  "logical_files_removed": 0,
+  "original_values_preserved": true,
+  "scope": "Every original source/destination byte rehashed and compared independently; original modes/owners/mtime/flags/linkcount preserved. Existing APFS clone fixture proves separate-inode write isolation. No datasets or live model files changed. Physical free-space deltas are observations during concurrent jobs."
+}

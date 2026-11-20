@@ -1,0 +1,14 @@
+{
+  "created": "2026-11-20T05:52:05.074842+00:00",
+  "rank_each": 32,
+  "models": [
+    "encoder",
+    "decoder"
+  ],
+  "script_sha256": "7ef15b833f5382aed0d514c415560691f461d4890d5204b0d1b81bf7f285e6f8",
+  "users": 480189,
+  "original_width": 128,
+  "rule": "Final independently complete50/50 own item autoencoder only. ALL trainx encoder user columns transposed and decoder user rows. Fixed top32 centered covariance eigenvectors per matrix; canonical maximum-loading signs and population standard deviation. Same trainx user tables for known and qualifying queries, preserving coordinate identity. No outcome-based epoch/rank/side selection, ratings, raw numerical public output, qualifying labels or score claims. Full predictor/model recipe unchanged.",
+  "qualifying_labels_read": false,
+  "public_numerical_features_read": false
+}

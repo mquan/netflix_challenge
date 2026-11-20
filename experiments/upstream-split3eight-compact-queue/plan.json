@@ -1,0 +1,41 @@
+{
+  "created": "2026-11-20T05:10:23.169532+00:00",
+  "code_sha256": {
+    "scripts/upstream_split3eight_compact_queue.py": "d366904cb0c6914bfb7ae3c942be9df665af638bd584cb61ea3197d242df4e64",
+    "scripts/upstream_split3eight_compact_mps_context.py": "d31d052f2d076a61f88fab9c3e6723c92143fb40da85d88f42d3e5550119aac8",
+    "scripts/upstream_exact_neural_scaling.py": "557d5b2afc31d6be2073288a753ee7120360486d4fda6c804c3c06985e5d867e",
+    "scripts/upstream_rbm50_tree_split3eight_compact_mps.py": "0f192eea2a10ab01132a3b783bfd895edc6afda2799d32f7bec390db0d2a7132",
+    "scripts/upstream_item154_tree_split3eight_compact_mps.py": "d1d0aa092f5438fe1e598aa730e62ddd9ee4bfce5057c10ab1c61141f5bd426a",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4"
+  },
+  "first_declaration_sha256": "4318114fc78aa9414911aa0d8c6859090f5df757d10ac01c7c7d0d3240f608ea",
+  "full_model_manifest_sha256": "4a4b644d2089106c9498686d28fcffd8a171a1605b537f21541060f49017e3b6",
+  "exact_actual_input_scaler_proof_sha256": "9df3a311cf1ad1aa3b3dabefcb39be72a2aa01f9689089bea4936b0a1afba168",
+  "fixed_addition": [
+    "s3-dnn16t",
+    "s3-dnn32nm",
+    "s3-nade12s",
+    "s3-nade12s_ep01",
+    "s3-attn64",
+    "s3-attn64_ep05",
+    "s3-dnn32nm__knn3",
+    "s3-nade12s__knn3"
+  ],
+  "inputs": 406,
+  "hidden": 128,
+  "context_rank": 32,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "predeclared_tree_partners": [
+    "upstream-rbm50-tree",
+    "upstream-item154-tree"
+  ],
+  "reference_development_rmse": 0.8592012938198756,
+  "policy": "Same full neural recipe/data/folds/seeds/optimizer/stopping. Exact cached matrices, float32 input assembly, unchanged eligible statistics and exact block normalization. TenGiB own-RSS guard under unchanged total24GiB/disk8GiB guard; two stable samples below14GiB other RSS while exclusively reserving the GPU slot, release failed reservations immediately. No model/data/budget reduction, coefficient search or qualifying selection.",
+  "models_fitted_before_declaration": false,
+  "numerical_recipe_or_budget_changed": false,
+  "qualifying_labels_read": false,
+  "automatic_production": false
+}

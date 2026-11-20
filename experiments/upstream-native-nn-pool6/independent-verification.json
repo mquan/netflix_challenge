@@ -1,0 +1,55 @@
+{
+  "state": "complete_independent_fixed_six_native_nn_pool",
+  "observed": "2026-11-20T05:35:54.322018+00:00",
+  "verification_sha256": "dfa3e84f73df84a64df51a3ed141b542196d2d871c734a9a2a8c603efe4ed83f",
+  "verifier_sha256": "5f1e49e182eb61df30c43c452cf86732ea2994abfdf3b13e01645e107991a401",
+  "records": [
+    {
+      "arm": "nn-pool",
+      "rmse": 0.85925467756479,
+      "prediction_sha256": "15ed544893432855df7fd0184bf9f22c224cd30a4d8ec21cf812ca9d765989ba"
+    },
+    {
+      "arm": "fixed-half-tree-pool",
+      "rmse": 0.8592096046041212,
+      "prediction_sha256": "e9b5df34dc48c5c4235b05b87e531dbb7b7358ab9754608afb9da144e9368959"
+    }
+  ],
+  "matched_nn_control_rmse": 0.8593837348949167,
+  "matched_nn_improves": true,
+  "matched_nn_fold_results": [
+    {
+      "fold": 0,
+      "control_nn_rmse": 0.8585852478896897,
+      "pooled_nn_rmse": 0.8583847420159932
+    },
+    {
+      "fold": 1,
+      "control_nn_rmse": 0.8567588390184394,
+      "pooled_nn_rmse": 0.8568001132002755
+    },
+    {
+      "fold": 2,
+      "control_nn_rmse": 0.8603288518535566,
+      "pooled_nn_rmse": 0.8601422444919757
+    },
+    {
+      "fold": 3,
+      "control_nn_rmse": 0.8612796771364027,
+      "pooled_nn_rmse": 0.8611148130886946
+    },
+    {
+      "fold": 4,
+      "control_nn_rmse": 0.8599706758073664,
+      "pooled_nn_rmse": 0.8598364432123484
+    }
+  ],
+  "all_five_matched_nn_folds_improve": false,
+  "global_development_best_improved": false,
+  "every_pooled_float32_bit_recomputed_with_compensated_sum": true,
+  "all_original_source_models_and_complete_replay_receipts_rehashed": true,
+  "rows": 1128164,
+  "qualifying_labels_read": false,
+  "qualifying_score_claimed": false,
+  "goal_complete": false
+}

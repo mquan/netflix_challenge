@@ -1,0 +1,26 @@
+{
+  "ready_unused": [
+    {
+      "name": "cfnade-96_ep20",
+      "paired_files": {
+        "probex": "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep20.probex.npy",
+        "qual": "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep20.qual.npy"
+      },
+      "duplicate_of": null
+    },
+    {
+      "name": "cfnade-96_ep30",
+      "paired_files": {
+        "probex": "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep30.probex.npy",
+        "qual": "artifacts/upstream-cf96-prefix2030-source/cfnade-96_ep30.qual.npy"
+      },
+      "duplicate_of": null
+    }
+  ],
+  "fixed_additions": [
+    "cfnade-96_ep20",
+    "cfnade-96_ep30"
+  ],
+  "rule": "Fixed control and BOTH own originalCF96 epoch20/30 side outputs from the reverified own33/31 package. Original320/96/95 trajectory continues unchanged, incomplete95/95 explicitly disclosed. Retain existingep10. Full original user folds and ridge penalty; no subset search or qualifying outcomes.",
+  "qualifying_labels_read": false
+}

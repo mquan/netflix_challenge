@@ -1,0 +1,40 @@
+{
+  "state": "verified_complete_original_remote15h_producer",
+  "observed": "2026-11-20T05:21:33.886533+00:00",
+  "job": "s3-dnn24",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "records": [
+    {
+      "column": "s3-dnn24",
+      "file": "s3-dnn24.npz",
+      "sha256": "debb38243e8916ff17470125d0b202c9160107463deb1db78346ea9c31976d94",
+      "native_probe_sha256": "3063bf3ea5ef35fe67221bb3d7a8a5de9cb4398c37dc1dd4aded20a21c9dad06",
+      "native_qual_sha256": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c"
+    },
+    {
+      "column": "s3-dnn24_ep03",
+      "file": "s3-dnn24_ep03.npz",
+      "sha256": "f209536e124214e2ab0fe887ac0be35b302c6f55bfb79c89e80353a50ce2bfc2",
+      "native_probe_sha256": "1eb6f87c1042e4c2801d03a4a78d747be49594f6ad801c14fa4dfac5b584bf7e",
+      "native_qual_sha256": "261f9c14e1aca77416ad5971767af62b99e9f106b724e505c4b84e2f214bb76f"
+    }
+  ],
+  "source_data_binary_rehashed": true,
+  "both_full_original_epoch_traces": true,
+  "independent_known_projection": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "files_sha256": {
+    "preparation.json": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c",
+    "split3.log": "cb26267be146ca46e2a34534b8d8ce14f12103bde6c2690d8fb69d2aea42edf1",
+    "s3-dnn24.log": "e5d839e0b588ba8d3fd36abd8a1b19c4860f1b7c9fbf52ac73944bd9aa6ac661",
+    "s3-dnn24_ep03.npz": "f209536e124214e2ab0fe887ac0be35b302c6f55bfb79c89e80353a50ce2bfc2",
+    "plan.json": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+    "upstream_remote15h.py": "39a663117230166a7c732c08d4458103913e3760e80366583ef68ad3d05907ff",
+    "s3-dnn24-launch.json": "b835644fe0c60b838de8bede13483b43cd0973cebe9587273b3f2e665bcd2054",
+    "s3-dnn24.npz": "debb38243e8916ff17470125d0b202c9160107463deb1db78346ea9c31976d94",
+    "s3-dnn24-receipt.json": "6f291a9d11be184875ae9691e9735ceac1a2e5741632f6ab5e54b08e67a757e1",
+    "build.log": "8f1c05536758bf1cc3921a7f9da47a2b83f60f030e8adf4feb8ba5adc0822e4b"
+  },
+  "scope": "Own numerical training outputs only. No blend or goal-success claim."
+}

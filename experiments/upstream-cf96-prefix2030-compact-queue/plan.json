@@ -1,0 +1,35 @@
+{
+  "created": "2026-11-20T05:24:17.528549+00:00",
+  "code_sha256": {
+    "scripts/upstream_cf96_prefix2030_compact_queue.py": "b4d59e5265d635ac656d27e8ccf1a3f0e25bb717500939b6c29029e6e4d33df4",
+    "scripts/upstream_cf96_prefix2030_compact_mps_context.py": "44fb8e7c037c42b3067c2681f15ffaa22d6611050ad0613bded33d2a9d6f6a59",
+    "scripts/upstream_exact_neural_scaling.py": "557d5b2afc31d6be2073288a753ee7120360486d4fda6c804c3c06985e5d867e",
+    "scripts/upstream_rbm50_tree_cf96_prefix2030_compact_mps.py": "7bb09f2ade59e5f6ef78a47a649c1a9dfc6de4eba40e13498798ca1db8cb27bb",
+    "scripts/upstream_item154_tree_cf96_prefix2030_compact_mps.py": "17320c31a3421c2b91acc8babab5ebbd43f60fbf84e6e56ee0e5052a4830a7ca",
+    "scripts/verify_upstream_development_mean.py": "c513bd5dcc31000a91f0a710714833a768a0cb97a81f4ec3039886954e9db0d4"
+  },
+  "first_declaration_sha256": "04cb19581c1e7c772cd6773ea705e3dd23300c383ae925cb4b1a9666009a13e6",
+  "full_model_manifest_sha256": "ed1c67fc08e5d9ab7778f2feb70695cc7100fc05600668f8a2c749c13447bbfd",
+  "exact_actual_input_scaler_proof_sha256": "f583044d43adb734569e725fe3c104f088963a30fce316afb8d475454d66db7b",
+  "fixed_addition": [
+    "cfnade-96_ep20",
+    "cfnade-96_ep30"
+  ],
+  "inputs": 400,
+  "hidden": 128,
+  "context_rank": 32,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "predeclared_tree_partners": [
+    "upstream-rbm50-tree",
+    "upstream-item154-tree"
+  ],
+  "reference_development_rmse": 0.8592012938198756,
+  "policy": "Same full neural recipe/data/folds/seeds/optimizer/stopping. Exact cached matrices, float32 input assembly, unchanged eligible statistics and exact block normalization. TenGiB own-RSS guard under unchanged total24GiB/disk8GiB guard; two stable samples below14GiB other RSS while exclusively reserving the GPU slot, release failed reservations immediately. No model/data/budget reduction, coefficient search or qualifying selection.",
+  "models_fitted_before_declaration": false,
+  "numerical_recipe_or_budget_changed": false,
+  "qualifying_labels_read": false,
+  "automatic_production": false
+}

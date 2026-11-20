@@ -1,0 +1,45 @@
+{
+  "created": "2026-11-20T05:31:13.168048+00:00",
+  "old_idle_supervisor": {
+    "pid": 92667,
+    "ppid": 21217,
+    "pgid": 92667,
+    "state": "Ts",
+    "started": "Thu Nov 19 06:32:49 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_cfnade_parallel.py"
+  },
+  "source_sha256": {
+    "scripts/upstream_cf96_disk_resume.py": "cd5a515ccc47f7d142b5670fa005b1dce326b370963d71a866c274154a425f3d",
+    "scripts/upstream_cfnade_parallel.py": "355bc3d1a2a58fa9f12e2086a54fc18bb860e499212f4ef3e2887b0a2b6dd2f3",
+    "scripts/upstream_remote_cf96.py": "9f6c8c13dadc0cdb0fd8f5afeb6722140f4a46c8e70b0b08d664e10107ab222c",
+    "experiments/upstream-cfnade-parallel/plan.json": "6a8fa5063f7f92c1f9f7b140998d88824a70bf91e31f7ef99487044319a7aa19"
+  },
+  "initial_checkpoints": {
+    "x": {
+      "epoch": 74,
+      "tensors": 84,
+      "checkpoint_bytes": 352276415,
+      "state_sha256": "54ea6818700c9034707badbb32b8d0a6fddad9fcadb10a0803bb1d27d109498f",
+      "pointer": {
+        "epoch": 74,
+        "manifest_md5": "f19b1afccfad7e23b9cfcb17cab4409e"
+      },
+      "all84_full_hashes_and_finite_values_verified": true
+    },
+    "qual": {
+      "epoch": 70,
+      "tensors": 84,
+      "checkpoint_bytes": 352276417,
+      "state_sha256": "5a7f6ee48f2c863e3a3ca5c8719a04959aa57c1e6ab02ba58c2c701fdb9dea66",
+      "pointer": {
+        "epoch": 70,
+        "manifest_md5": "5028f8e6901a5571c4d08a00a787725b"
+      },
+      "all84_full_hashes_and_finite_values_verified": true
+    }
+  },
+  "initial_disk_free_bytes": 22363406336,
+  "admission_disk_floor_bytes": 20031905666,
+  "policy": "Authoritative original guards stopped both native handles at exact74/70 checkpoints. Original idle supervisor paused, with no native child. Both full84-array Adam/SWA/RNG/source/data/config states independently rehashed. Resume SAME original binaries/commands/environment and full95/95 budget. Original numerical source untouched. Separate report/lock namespace; initial disk admission uses original16GiB continuous floor plus two measured full checkpoint writes and2GiB extra margin, after lossless CoW storage recovery. Original6GiB memory reserve,26GiB admission,27GiB continuous native RSS and16GiB disk stop guard retained. Other-RSS now includes actual research processes. No smaller model, restart fromzero, partial completion claim or qualifying outcomes.",
+  "qualifying_labels_read": false
+}

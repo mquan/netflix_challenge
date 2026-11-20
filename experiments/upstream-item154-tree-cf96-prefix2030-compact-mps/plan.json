@@ -1,0 +1,20 @@
+{
+  "created": "2026-11-20T05:31:41.705867+00:00",
+  "script_sha256": "17320c31a3421c2b91acc8babab5ebbd43f60fbf84e6e56ee0e5052a4830a7ca",
+  "origins": [
+    [
+      "tree",
+      "upstream-item154-tree"
+    ],
+    [
+      "nn",
+      "upstream-cf96-prefix2030-compact-mps-context"
+    ]
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "selection": "Fixed known-only comparison declared in upstream-cf96-prefix2030-compact-queue/plan.json before this neural study started. Actual saved-model replays are required before evaluation. No weight search, no qualifying outcomes, no new source/NN fitting. Both existing families must preserve identical held-user row assignments.",
+  "production": "No automatic production; requires a separately frozen heterogeneous-family production recipe if better."
+}

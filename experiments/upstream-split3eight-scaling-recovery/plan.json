@@ -1,0 +1,16 @@
+{
+  "created": "2026-11-20T05:08:29.450417+00:00",
+  "bindings": {
+    "scripts/upstream_split3eight_scaling_recovery.py": "bc53f0596c8adcae28772c0e243578e5b5be76d64f57a801affc738e8a28464c",
+    "scripts/upstream_split3eight_scaling_parity.py": "470030ae8a93b28441d2218f040b2d586a7028133bf626487bd8066b162f9ace",
+    "scripts/upstream_knn3pair2_virtual_queue.py": "c98aa4865aabb63c1693cc31425d4f4b1c190f600dfe56ce3fe5eaa021ef2a4e",
+    "experiments/upstream-split3eight-scaling-parity/failure.json": "77d00cd69041f684daf31d77e33f8cbc740ae0f639f9dc73b54decd61e696a8b",
+    "experiments/upstream-split3eight-scaling-parity/plan.json": "441439b05eb713484aae21803c5bd44004526d9d94a271c471c7bd66a793dd27",
+    "experiments/upstream-split3eight-scaling-parity/cache-verification.json": "0feb195cc67ad6080049656c3eb62678371b076988b5e0a6443e9359c26c943e"
+  },
+  "original_child_pid": 31196,
+  "original_child_stopped": true,
+  "models_fitted": 0,
+  "reason": "Frozen run wrapper referenced a nonexistent renamed resource helper after launching its transform child. Stop only owned incomplete transform child and preserve original failure. Import verified existing resource helper BEFORE launching the unchanged frozen --worker. Reuse complete exact caches, same all-row reference statistics and every-bit checks, original total24GiB guard and shared epoch lock. No model/data/budget/source rewrite.",
+  "qualifying_labels_read": false
+}

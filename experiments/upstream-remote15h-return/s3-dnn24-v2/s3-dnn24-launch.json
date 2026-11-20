@@ -1,0 +1,30 @@
+{
+  "job": "s3-dnn24",
+  "pid": 46195,
+  "started": "2026-11-20T03:48:16.382046+00:00",
+  "deadline": "2026-11-20T17:44:19+00:00",
+  "command": [
+    "./target/release/fit",
+    "dnn",
+    "s3-dnn24",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "D": "24",
+    "DECAY": "0.87",
+    "EPOCHS": "8",
+    "EPSAVE": "1",
+    "H1": "96",
+    "H2": "64",
+    "NMF": "256",
+    "SEED": "43"
+  },
+  "plan_sha256": "5febe1ea9134bd37e2f7a63d555ec25a1566639d96ddab14083f74eb580fd25d",
+  "preparation_sha256": "deb0184fd945a73b8218b7fd78be591a76378d7618db530c12eca01b00b9407c"
+}

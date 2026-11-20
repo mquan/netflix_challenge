@@ -1,0 +1,40 @@
+{
+  "state": "complete_independent_itemae50_user_projection_and_all_query_rows",
+  "receipt_sha256": "0bda50bb493d375137a8d2317b12feac5e11c0f2bd88c88379cf5d1cb400d5d6",
+  "verifier_sha256": "da568ab899623bcedead8fd6c2bab2c979893bd94ab3df9824bced40ea1a9c85",
+  "bindings": {
+    "experiments/upstream-mps-item-autorec/pair-00050.json": "577e84c05b77a7cc37ad86b2a0a6164e1c800fb47a0cba17f2ac841ca176b4de",
+    "experiments/upstream-mps-item-autorec/trainx-snapshot-00050.json": "e6d84246ddbfe3617d503b1db0d749110a4df8ea961ac9be6d15a1e672d5becc",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00050/model.pt": "fb5da65bc9773d6c16c66063fe394434fe4b09836880ff8cc3d72e8073a58dbf",
+    "artifacts/upstream-mps-item-autorec/trainx/snapshots/epoch-00050/prediction.npy": "32475f1815e3a9013b186fc945c089053371edd04cc86f4977fe7f4a2f0770ea",
+    "experiments/upstream-mps-item-autorec/fulltrain-snapshot-00050.json": "2b92f3a79cba2503e348bae21bfcb853bd398c1e805ab20f43fb487a93b478c8",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00050/model.pt": "51b5e51a64b994c9991ef549a0e86d2aff41e06de733a97091b8f824948197ed",
+    "artifacts/upstream-mps-item-autorec/fulltrain/snapshots/epoch-00050/prediction.npy": "8a27c58279aec311760c2c0a3edae8d520a858dddb0d695222fa101fdcc5bbee",
+    "artifacts/upstream-repro/fresh/data/probex/ratings.npy": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "scripts/verify_upstream_mps_item_autorec_snapshot.py": "c0fe52457a8c66590f5f4b925ea9461dfd1112f1d52b6c0e8ae109f1cb7908d4",
+    "experiments/upstream-mps-item-autorec/plan.json": "53a95fc2e8d49cabb4d2991b97d816b0a7c6b950079491bcee78ad2c7df4016a",
+    "scripts/upstream_itemae50_user64_support.py": "7ef15b833f5382aed0d514c415560691f461d4890d5204b0d1b81bf7f285e6f8",
+    "experiments/upstream-mps-item-autorec/completion.json": "88c1321be502e56d690360e9c96851893de27c6960a67e087ecef1ce2f6f7759",
+    "experiments/upstream-mps-item-autorec/snapshot-00050-verification.json": "681dff41a6c090e1031d4d5dd27ae94962e48af913462f54a087caf5232d0671",
+    "scripts/upstream_mps_item_autorec.py": "96c54c04de633664c1168223dbf77d3d2694c1ece772a59bccfc805560eba518",
+    "artifacts/upstream-repro/fresh/data/probex/user_idxs.npy": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "artifacts/upstream-repro/fresh/data/qual/user_idxs.npy": "339a2f0d94a3cad02774634ba23a4a75d5c84ace18a5f1ee69da485f8aea19e3",
+    "experiments/upstream-itemae50-user64-support/plan.json": "709cfb78eaac3d8169120285c46278ea44bb3b2850f140db9a1ee8c1da034160",
+    "artifacts/upstream-itemae50-user64-support/user64.npy": "776029ec9f82d6b9cc31500b79629ce2bd75ff63dc6f5ccfdb255a94bd3078fa",
+    "artifacts/upstream-itemae50-user64-support/encoder-projection.npz": "7133291771e1fa58f54f7ad7fe146ac66d7ae95fd78c8d1bb22f885d1afb7bb1",
+    "artifacts/upstream-itemae50-user64-support/decoder-projection.npz": "69c8f305b1119762ee5bd53d4263c06be1fae5909513af5315d685e7af2a7b01",
+    "artifacts/upstream-itemae50-user64-support/probex.npy": "554a546ed5122f955f638fa12ecf56ce4dea05e6e96fdce010921323bd27ea34",
+    "artifacts/upstream-itemae50-user64-support/qual.npy": "e259c10d1b947d2118cc3501184d8660eb727fca68ac64d881117e41d13d3984"
+  },
+  "rows": {
+    "probex": 1128164,
+    "qual": 2817131
+  },
+  "support_columns": 64,
+  "max_eigenpair_residual": 5.204170427930421e-18,
+  "independent_top_spectrum_checked": true,
+  "all_projected_users_and_query_rows_replayed_bitwise": true,
+  "qualifying_labels_read": false,
+  "public_numerical_features_read": false,
+  "scope": "Independent unsupervised projection and full gather check. No nonlinear fitting, ensemble accuracy, qualifying score or public schema parity claim."
+}

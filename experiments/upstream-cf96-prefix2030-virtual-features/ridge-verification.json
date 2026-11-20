@@ -1,0 +1,27 @@
+{
+  "state": "complete",
+  "verifier_sha256": "ddc1717b8f92bb846765e1bdfee6ca730021a3bb8d0c51655b72274d0d8071b6",
+  "screen_sha256": "541a7ab8d13f71e7a85435eb3f363a74f5b93b4030de683f7d1b9f8aef93fe0d",
+  "plan_sha256": "34df75fedc8bbbc4e23a22fbfb99515afb6bf00f98335d16235de0e7a6793919",
+  "records": [
+    {
+      "arm": "control",
+      "rmse": 0.8625801963952328,
+      "max_prediction_error": 5.282885240376345e-12,
+      "prediction_sha256": "b85d403520f7600d4d19a2c12df885fe218da789e53c81acd78d4a283e98fee3"
+    },
+    {
+      "arm": "main",
+      "rmse": 0.8625148884916176,
+      "max_prediction_error": 5.047962048365662e-12,
+      "prediction_sha256": "d4e795eb9e3ff18fbdab6c9e0a2298c559211efce159965d0e4e5e485596de9c"
+    }
+  ],
+  "users_disjoint": true,
+  "rows": 1128164,
+  "independently_recomputed_five_fold_stats": true,
+  "qualifying_labels_read": false,
+  "public_prediction_values_read": false,
+  "scope": "Independent five-fold statistics, ridge solves and stored-vector replay for the fixed complete ownCF96 epoch20/30 prefix addition; full95/95 remains incomplete. Known-ProbeX diagnostic only.",
+  "wrapper_sha256": "2402ee52ce3e29d7777b6c3190b7d0ec6495a7ef311575f4833947bf3b4de2dc"
+}
