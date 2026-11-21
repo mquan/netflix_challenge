@@ -1,0 +1,13 @@
+test_all_cd3_gradients_against_literal_user_loops (test_upstream_factored_rbm_reference.ReferenceTests) ... ok
+test_bias_gradient_conservation (test_upstream_factored_rbm_reference.ReferenceTests) ... ok
+test_bipolar_expectation_and_native_categorical_boundary (test_upstream_factored_rbm_reference.ReferenceTests) ... ok
+test_reject_wrong_day_owner_and_duplicate_conditional_pairs (test_upstream_factored_rbm_reference.ReferenceTests) ... ok
+test_updates_unaveraged_local_bias_and_untouched_shared_momentum (test_upstream_factored_rbm_reference.ReferenceTests) ... ok
+test_all_cd3_states_gradients_and_full_update_against_scalar (test_upstream_factored_rbm_torch.TorchKernelTests) ... ok
+test_exact_categorical_boundaries_and_bipolar_zero (test_upstream_factored_rbm_torch.TorchKernelTests) ... ok
+test_partial_batch_uses_actual_count_and_decays_untouched_items (test_upstream_factored_rbm_torch.TorchKernelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.654s
+
+OK
