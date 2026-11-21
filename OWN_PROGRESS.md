@@ -163,14 +163,17 @@ model was refitted and no qualifying labels were read by that study.
 The new own14 comparison adds that bag to all13 previous own families.
 Its original known-only simplex and ridge10 coefficients are complete;
 all three known and three qualifying candidate vectors are frozen.
-The independent all16383-support/15-equation/six-vector preaudit resumed
-its original process21221, progressed, then its unchanged compressor guard
-preserved it again. Reviewed waiting owner30569 now defers that SAME worker
-until original1200 full23+23/58-output independent completion. No new
-recovered audit has run. Retain unchanged inputs, coefficients,
-math and resource guards. Apparent known fitting error is not nested CV.
+The independent all16383-support/15-equation/six-vector preaudit completed
+in its original process21221 without restart. The original frozen audit26049
+subsequently hit the unchanged compressor guard and remains preserved in RAM.
+Reviewed waiting owner35292 requires full original1200 both23-epoch phases,
+all58 numeric outputs plus its log and independent completion proof before
+continuing that SAME audit. No recovered audit result or canonical score
+exists yet. Inputs, coefficients and mathematics are unchanged; original
+resource limits remain, with a stricter20GiB total ceiling. Apparent known
+fitting error is not nested CV.
 [Original complete comparison plan](OWN14_MATCHED391_CALIBRATION_PLAN.md) ·
-[Exact deferred preaudit](OWN14_NATIVE_DEFERRED.md).
+[Same-audit continuation](OWN14_POST_NATIVE_AUDIT.md).
 
 A separate full-budget CPU tree follow-up now has reviewed code, bounded
 binary feature transport, four transport tests and explicit Torch/LightGBM
@@ -433,3 +436,16 @@ Same run-job73979 waits its original global compressor admission:
 its original swap baseline and recipe; a memory inspection note is ready
 for the remote agent. This is a pinned checkpoint, not a live remote poll.
 [Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md).
+
+The preserved original own14 preaudit21221 completed successfully at01:09UTC:
+all16383 simplex supports,15 ridge equations and all six complete vectors
+independently match before outcomes. Its original source/coefficients and
+RAM continued without restart. The subsequent audit26049 hit the unchanged
+global compressor guard (about8.72GiB versus5GiB) and remains stopped in RAM.
+No audit/canonical result or new qualifying score exists. Reviewed waiting
+owner35292 will continue that SAME audit only after full original1200
+23+23/all58numeric+log independent completion and original admission checks;
+there is no repeated overlap attempt or baseline reset. Native16010 remains
+active at eight first-phase epochs. All89 relevant checks pass.
+[Completed preaudit](experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json) ·
+[Exact same-audit continuation](OWN14_POST_NATIVE_AUDIT.md).
