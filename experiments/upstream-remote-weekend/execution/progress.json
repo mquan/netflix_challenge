@@ -1,7 +1,7 @@
 {
- "observed": "2026-11-21T03:45:31+00:00",
- "training_hours_left": 58.24,
- "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-07:31:32  40:33.60  26576 Ss   /sbin/launchd",
+ "observed": "2026-11-21T04:45:33+00:00",
+ "training_hours_left": 57.24,
+ "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-08:31:35  40:52.44  26832 Ss   /sbin/launchd",
  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 83%",
  "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
  "disk_free_gib": 218.2,
@@ -23,7 +23,7 @@
      },
      "73979": {
       "bytes": 32400998.4,
-      "rss_bytes": 32915456,
+      "rss_bytes": 32948224,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "74003": {
@@ -38,10 +38,10 @@
      }
     },
     "memory": {
-     "compressor_bytes": 10815897600,
+     "compressor_bytes": 10783588352,
      "swap_used_bytes": 376837242.88
     },
-    "observed": "2026-11-21T03:45:19.110638+00:00"
+    "observed": "2026-11-21T04:45:24.948805+00:00"
    },
    "receipt": false,
    "incomplete": false,
