@@ -1,0 +1,22 @@
+{
+  "state": "observed_static_sixteen_family_producer_fifteen_family_freeze_check_mismatch",
+  "observed": "2026-11-21T14:59:15.855996+00:00",
+  "source_path": "scripts/upstream_own16_weekend_trajectory_calibration.py",
+  "source_sha256": "6d4d15c5689008dd4907117a2ece715065abc9b96d9df7908ff4e8ae2d75a2b1",
+  "function": "freeze",
+  "line": 186,
+  "known_declared_families": 16,
+  "freeze_accepts_families": 15,
+  "original_waiting_owner": {
+    "pid": 6075,
+    "ppid": 1,
+    "pgid": 6075,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:45:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py"
+  },
+  "production_code_changed": false,
+  "production_process_signaled": false,
+  "production_failure_not_observed": true,
+  "required_next_action": "Repair using a separately reviewed version/recovery with a positive full16 freeze regression; preserve all models, families, budgets, original evidence and active native work. Never edit original frozen source in place."
+}
