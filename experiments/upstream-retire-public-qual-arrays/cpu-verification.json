@@ -1,0 +1,14 @@
+{
+  "state": "complete_8_private_downloaded_public_qual_array_eligibility_tests",
+  "tests_run": 8,
+  "errors": 0,
+  "failures": 0,
+  "source_sha256": {
+    "scripts/upstream_retire_public_qual_arrays.py": "64066d51e1484cbc53f1d9831cfc003a7fc2f0190965ef629f13f160a6db0f43",
+    "scripts/verify_upstream_public_qual_retirement.py": "497d365871eac169e5663cdefe974b1e636ae160dd7a1f10e8ad232e2760a70e",
+    "scripts/test_public_qual_retirement.py": "e69bfad3434548a73df94fd63f2924d6668dcf88b2c08075796425872df9a2eb"
+  },
+  "independent_review": "No remaining concrete blocker after fixed historical catalog pin and exact prepared journal inspection.",
+  "tests_deleted_production_files": false,
+  "scope": "Private full-size array eligibility and refusal fixtures, no production deletion performed by tests."
+}
