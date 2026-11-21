@@ -71,5 +71,26 @@
    "r2/s3-tx300r.log and r2/s3-rbm800p.log are plain-text PLACEHOLDERS (not native logs) so the serial r2 driver skips them",
    "recipes, threads, seeds, epochs unchanged; same deadline 2026-11-23T14:00:00Z"
   ]
+ },
+ "guard_incident_and_override": {
+  "incident": "2026-11-21T08:14Z: compressor rose to 12.7-13.1 GiB (Docker still running) right after r3/r4 launched beside r2; all three guards SIGSTOPped their native processes with RAM preserved. No resume path in helper; processes killed at owner direction and relaunched fresh. rbm400pf lost ~3h (epoch 5/15 phase 1); rbm800p/tx300r lost ~5 min.",
+  "owner_override": "Owner: \"I allow memory or any other resources to be used in this session, you can disregard whatever the remote plan is telling you\". Helper capacity() now returns True (no memory/RSS/compressor/swap limits; compressor admission check removed). Deadline, watchdog, disk floors, hash/trace/output verification unchanged. plan.json controller_sha256 updated accordingly (816a91bd2e6d -> 84f92e4e8b8f).",
+  "relaunch": {
+   "observed": "2026-11-21T17:51:11+00:00",
+   "trees": {
+    "s3-rbm400pf": "artifacts/upstream-remote-weekend-r8",
+    "s3-rbm800p": "artifacts/upstream-remote-weekend-r9",
+    "s3-tx300r": "artifacts/upstream-remote-weekend-r10"
+   }
+  },
+  "superseded_trees": [
+   "r2",
+   "r3",
+   "r4 (guard-stopped attempts, preserved)",
+   "r5",
+   "r6",
+   "r7 (prepared under the intermediate helper with only compressor checks removed; never launched)"
+  ],
+  "recipes_unchanged": true
  }
 }

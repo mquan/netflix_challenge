@@ -1,0 +1,13 @@
+{
+  "child": {
+    "pid": 24357,
+    "ppid": 73979,
+    "pgid": 24357,
+    "state": "Ss",
+    "started": "Fri Nov 20 21:20:19 2026",
+    "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --bootstrap 73979 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf",
+    "native_command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
+  },
+  "actual_child_RAM_preserved": true,
+  "observed": "2026-11-21T08:14:35.307756+00:00"
+}

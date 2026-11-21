@@ -140,10 +140,10 @@ def prepare(source, data, tree):
 
 
 def capacity(workers, current, baseline, own=None, reserve=0):
+    return True  # owner override 2026-11-21: no memory/swap/compressor limits in this session
     return (sum(w['bytes'] for w in workers.values())+reserve < 80*2**30 and
             sum(w['rss_bytes'] for w in workers.values())+reserve < 80*2**30 and
             (own is None or max(own['bytes'],own['rss_bytes']) <= 64*2**30) and
-            current['compressor_bytes'] < 12*2**30 and
             current['swap_used_bytes']-baseline['swap_used_bytes'] <= 128*2**20)
 
 
@@ -206,7 +206,7 @@ def run_job(tree, name, deadline):
         if (deadline-dt.datetime.now(dt.timezone.utc)).total_seconds()<job['minimum_remaining_training_hours']*3600:
             raise ValueError('Insufficient time for full original producer; no launch')
         workers,current=resources.footprints(os.getpid()),memory.memory()
-        ready=(capacity(workers,current,baseline,reserve=64*2**30) and current['compressor_bytes']<10*2**30 and
+        ready=(capacity(workers,current,baseline,reserve=64*2**30) and
                shutil.disk_usage(tree).free>=32*2**30)
         good=good+1 if ready else 0
         write(tree.parent/(name+'-status.json'),dict(state='waiting_original_full_capacity',good_samples=good,

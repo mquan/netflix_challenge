@@ -8,7 +8,7 @@ while true; do
 import json, re, shutil, subprocess, datetime as dt
 from pathlib import Path
 W = Path.home() / 'workspace/netflix_remote_weekend'
-TREES = {'s3-rbm400pf': 'r2', 's3-tx300r': 'r4', 's3-rbm800p': 'r3'}
+TREES = {'s3-rbm400pf': 'r8', 's3-rbm800p': 'r9', 's3-tx300r': 'r10'}
 now = dt.datetime.now(dt.timezone.utc)
 deadline = dt.datetime(2026, 11, 23, 14, 0, tzinfo=dt.timezone.utc)
 jobs = {}
