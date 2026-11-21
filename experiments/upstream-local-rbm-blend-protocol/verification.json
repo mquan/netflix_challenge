@@ -1,0 +1,46 @@
+{
+  "state": "verified73_synthetic_CPU_RBM_and_local16_blend_protocol_checks_only",
+  "observed": "2026-11-21T14:55:53.314764+00:00",
+  "tests_passed": 73,
+  "new_calibration_protocol_tests": 9,
+  "source_sha256": {
+    "scripts/upstream_local_rbm_blend.py": "44d2b69a71b378281c2f52fb620a5999d0006d0b6d99be6e216ec2e2eaa875d4",
+    "scripts/verify_upstream_local_rbm_blend.py": "3e892ddc23879c8e80a2127c0568fb716d9bfb8811b443a05262fc40aa7cb149",
+    "scripts/upstream_local_rbm_blend_queue.py": "3973adc015a6b28626445b846b97fb5cce4eb6b831bfb0101f73b3798d01d275",
+    "scripts/test_upstream_local_rbm_blend.py": "c3d2c9032589c0ca378f6843fe6a94f532fac210e96396a816b0ed7a7f80e2a8",
+    "OWN_LOCAL_RBM_BLEND_PLAN.md": "5249a38bc0046b8c021db991cf428580fa5919771b72dead3ed1ea25c689c7e8"
+  },
+  "test_log_sha256": "935a89c540b95eff115ceb709ee563266a656e87fc0a32eee38418ddd888040a",
+  "reused_independent_math_sha256": "c881ca382265b1dbc099c96c33488995fce8cdf546dd59b9825b2ae317420295",
+  "prior_full_RBM_execution_protocol_proof_sha256": "25da482da436c6afc879fb72c1b823b027fc31864ec13dd80a69485e4c6feecf",
+  "production_models_fitted": 0,
+  "production_calibration_fitted": false,
+  "recovered_labels_read": false,
+  "actual_MPS_tested": false,
+  "independent_review": {
+    "reviewer": "refit_checkpoint_review",
+    "result": "No remaining concrete blocker; approved sourcefreeze/checkpoint and guarded waiting queue after tests",
+    "resolved": [
+      "Known score float64 reclip at native float32 clipping boundaries",
+      "Original paired and fit preflight digests cannot be replaced by current receipt hashes"
+    ]
+  },
+  "scope": "Real small synthetic full16 SLSQP/ridge17 fit, all65535 supports, all6 frozen-vector arithmetic bits, full fixed synthetic audit and canonical phases; label access gates, changed authenticated vector rejection, FD identity/schema/rowcount, immutable preflight digest, CSV fitting closure rejection, real-process watchdog flock retention and same-stack measurement pause. No production arrays/models/outcomes/MPS execution.",
+  "live_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "live_waiting_RBM_owner": {
+    "pid": 31460,
+    "ppid": 1,
+    "pgid": 31460,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:39:37 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+  },
+  "remaining": "Freeze and arm guarded waiting calibration queue; full original producer prerequisites, real data and MPS admission, full15+15 fits, full16 known-only fit/freeze/preaudit and recovered/canonical audit."
+}

@@ -1,0 +1,64 @@
+{
+  "state": "observed_actual_local16_calibration_owner_and_watchdog_waiting_full_producers",
+  "observed": "2026-11-21T14:56:56.334349+00:00",
+  "execution_plan_sha256": "75b3519be46601999b6d8568a06cd11146f05b9922670711848998209dd2ca39",
+  "owner": {
+    "pid": 45713,
+    "ppid": 1,
+    "pgid": 45713,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:56:16 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start"
+  },
+  "watchdog": {
+    "pid": 45776,
+    "ppid": 45713,
+    "pgid": 45776,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:56:17 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --watch 45713 --lane-fd 3"
+  },
+  "production_calibration_fitted": false,
+  "recovered_labels_read": false,
+  "no_scientific_worker_dispatched": true,
+  "family_ids": [
+    "tree50",
+    "nn50",
+    "nn90",
+    "nn109",
+    "nn154",
+    "tree154",
+    "native:upstream-split3-virtual-mps-context",
+    "native:upstream-attention2-virtual-mps-context",
+    "native:upstream-knn3pair2-compact-mps-context",
+    "native:upstream-split3eight-compact-mps-context",
+    "native:upstream-cf96-prefix2030-compact-mps-context",
+    "nn330",
+    "nn352-fold-bag",
+    "nn391-matched-fold-bag",
+    "nn-complete-trajectory-fold-bag",
+    "own-local-factored-bipolar-rbm400-full15"
+  ],
+  "primary": "local-rbm16-simplex",
+  "candidates": [
+    "local-rbm16-simplex",
+    "local-rbm16-ridge10",
+    "preceding-own15-simplex"
+  ],
+  "live_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "live_original_GPU_waiting_owner": {
+    "pid": 31460,
+    "ppid": 1,
+    "pgid": 31460,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:39:37 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+  }
+}

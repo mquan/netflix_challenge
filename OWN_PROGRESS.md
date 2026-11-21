@@ -523,3 +523,20 @@ original baseline; they never restart or reduce the numerical recipe.
 [Complete saved predictor](OWN_FACTORED_RBM_GPU_TERMINAL.md).
 
 [Same native process at second-phase epoch16](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase16-observation.json).
+
+The local RBM also has a complete reviewed path into score verification, pushed
+at aa528ca. Its separate sixteen-family calibration queue is live with owner
+45713 and a watchdog, waiting for complete own15 and the full local RBM producer.
+All original15 families remain; the new full RBM is the sixteenth. Its declared
+primary uses known-only nonnegative sum-one weights. The released ridge10 control
+retains all17 equations, and the preceding own15 primary is copied exactly as a
+control. All six vectors must be frozen and independently verified before a new
+recovered audit; outcomes never select the primary. The small CPU integration
+passes all65,535 simplex supports, full ridge equations, exact vector arithmetic,
+label-access gates and separate synthetic audits. Together with the RBM checks,
+all73 relevant CPU tests pass. No production calibration, new recovered audit or
+score has occurred. Original source/model/data hashes and unchanged resource
+limits remain mandatory through canonical verification.
+[Complete known-only local RBM blend plan](OWN_LOCAL_RBM_BLEND_PLAN.md) ·
+[73 synthetic CPU checks and review](experiments/upstream-local-rbm-blend-protocol/verification.json) ·
+[Live calibration waiting-owner observation](experiments/upstream-local-rbm-blend-queue/coordinator-waiting-observation.json).
