@@ -1,0 +1,15 @@
+{
+  "state": "observed_full_CF_independent_completion_and_full_trajectory_admission_live",
+  "observed": "2026-11-21T18:48:21.701605+00:00",
+  "CF_completion_sha256": "6717bb9f9cf363418c8d7797d3da50d22cc6046e17bff63a969800ef84f262af",
+  "CF_independent_verification_sha256": "e56429c5a7a154804d9854f15ea0a7c50aa7ca706b72b0ab1169172629502d11",
+  "CF_known_ridge_rmse": 0.861770514815263,
+  "CF_known_parent391_rmse": 0.8618508817095664,
+  "not_a_new_best_development_or_qualifying_score": true,
+  "declared_original_local_scalar_candidates": 519,
+  "actual_process_observation": "  PID  PPID  PGID STARTED                      STAT      TIME COMMAND\n50842     1 50842 Fri Nov 20 15:04:43 2026     Ss     0:15.27 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py\n59079 50842 59079 Sat Nov 21 10:38:25 2026     Ss     2:05.60 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data.py admit\n",
+  "controller_state": "admit",
+  "controller_observed": "2026-11-21T18:48:18.159591+00:00",
+  "admission_complete": false,
+  "qualifying_labels_read": false
+}
