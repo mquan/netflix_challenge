@@ -1,0 +1,47 @@
+{
+  "plan_sha256": "cdbb23357eeb10b87cbe88df13a0c7e4072e3be0fa950d481e5caa6ed5cb49c1",
+  "processes": {
+    "owner": {
+      "pid": 31460,
+      "ppid": 1,
+      "pgid": 31460,
+      "state": "Ss",
+      "started": "Sat Nov 21 06:39:37 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+    },
+    "worker": {
+      "pid": 74972,
+      "ppid": 31460,
+      "pgid": 74972,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:09:48 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --bootstrap 31460 --phase data",
+      "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker.py --phase data"
+    },
+    "watchdog": {
+      "pid": 31465,
+      "ppid": 31460,
+      "pgid": 31465,
+      "state": "Ss",
+      "started": "Sat Nov 21 06:39:37 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --watch 31460 --keep-fds 3 4"
+    },
+    "consumer_owner": {
+      "pid": 45713,
+      "ppid": 1,
+      "pgid": 45713,
+      "state": "Ss",
+      "started": "Sat Nov 21 06:56:16 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start"
+    },
+    "consumer_watchdog": {
+      "pid": 45776,
+      "ppid": 45713,
+      "pgid": 45776,
+      "state": "Ss",
+      "started": "Sat Nov 21 06:56:17 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --watch 45713 --lane-fd 3"
+    }
+  },
+  "observed": "2026-11-21T21:49:19.413279+00:00"
+}

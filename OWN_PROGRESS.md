@@ -2,6 +2,15 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 21:51 UTC: reviewed metadata-only RBM400 recovery completed; old
+owner/data/idle-consumer processes are terminal with original records retained.
+New owner7652/watch7664 and data worker7939 use the fast native observer and
+the exact original baseline, limits and full15+15 recipe. Data validation has
+made substantial CPU progress; no MPS preflight/model/score proof exists yet.
+Consumer7867/watch7878 waits for full paired verification. Resource suspension
+retains the same worker and requires original stable readmission. See
+[actual recovery result](OWN_RBM400_OBSERVER_RECOVERY_RESULT.md).
+
 November21 21:08 UTC: own15 full known-only fit/freeze/preaudit and all three
 fixed audits now have separate canonical verification. New recovered primary
 0.8603412617/0.8613423892 improves both slightly;10% remains unmet. The original

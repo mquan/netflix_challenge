@@ -1,0 +1,75 @@
+{
+  "state": "complete_actual_metadata_only_handoff_and_successor_provenance_check",
+  "observed": "2026-11-21T21:51:53.057937+00:00",
+  "retirement_sha256": "99a1cbadc235b39e2ad2733be08217aa943bc030dbf4e0709dd47e111739a2e7",
+  "old_processes_all_terminal": true,
+  "original_baseline_bytes_equal_for_both_successors": true,
+  "original_namespaces_retained": true,
+  "scientific_worker_ast_equal_except_execution_import": true,
+  "original_full_source_closure_verified": true,
+  "records": {
+    "producer": {
+      "owner": {
+        "pid": 7652,
+        "ppid": 1,
+        "pgid": 7652,
+        "state": "Ss",
+        "started": "Sat Nov 21 13:49:33 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --start"
+      },
+      "watchdog": {
+        "pid": 7664,
+        "ppid": 7652,
+        "pgid": 7664,
+        "state": "Ss",
+        "started": "Sat Nov 21 13:49:33 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --watch 7652 --keep-fds 3 4"
+      },
+      "status": {
+        "state": "same_worker_RAM_preserved_waiting_original_readmission",
+        "phase": "data",
+        "stable_samples": 0,
+        "observed": "2026-11-21T21:51:51.351303+00:00"
+      },
+      "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+      "plan_sha256": "d39966728bf04320ced9a6ce4b450d50d4118b93dad1eb11e85c92d48263f6bb"
+    },
+    "consumer": {
+      "owner": {
+        "pid": 7867,
+        "ppid": 1,
+        "pgid": 7867,
+        "state": "Ss",
+        "started": "Sat Nov 21 13:49:43 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native.py --start"
+      },
+      "watchdog": {
+        "pid": 7878,
+        "ppid": 7867,
+        "pgid": 7878,
+        "state": "Ss",
+        "started": "Sat Nov 21 13:49:44 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native.py --watch 7867 --lane-fd 3"
+      },
+      "status": {
+        "state": "waiting_full_actual_RBM_and_original_own15_verification",
+        "observed": "2026-11-21T21:51:44.301030+00:00"
+      },
+      "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+      "plan_sha256": "3f8cd7e4b44f842284b9bda806fe448dc619517497f5782d040acd5f24843c55"
+    }
+  },
+  "data_worker": {
+    "pid": 7939,
+    "ppid": 7652,
+    "pgid": 7939,
+    "state": "Ts",
+    "started": "Sat Nov 21 13:49:54 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+  },
+  "production_MPS_tested": false,
+  "new_model_completed": false,
+  "new_score_claimed": false,
+  "independent_reviewer": "/root/refit_checkpoint_review",
+  "independent_review_findings": []
+}
