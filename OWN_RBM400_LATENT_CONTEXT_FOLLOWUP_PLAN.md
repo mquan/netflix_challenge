@@ -3,9 +3,13 @@
 Status: array-only mathematical prototype implemented with eight CPU checks;
 read-only extraction core implemented with twelve synthetic CPU checks.
 Array-only operator and neural factories add seven and four CPU checks.
-Authenticated read-only cache IO adds nine CPU checks, for forty combined.
-No production provider declaration, queue, model extraction or training has
-started for this follow-up. Existing frozen producers and own16 plans, source
+Authenticated read-only cache IO adds nine CPU checks. The complete-source
+model adapter adds six, the owned extraction supervisor eight, and extraction/
+alignment/replay orchestration seven, for61 combined CPU checks. The separately
+reviewed supervisor can wait for complete original producers; actual model
+extraction, actual cache proofs and neural studies have not yet run. Its
+declaration must bind the reviewed protocol and every source hash before
+allocating its namespace. Existing frozen producers and own16 plans, source
 files, numerical budgets and execution order stay unchanged.
 
 The current full-trajectory neural study improved development CV by only
@@ -92,7 +96,8 @@ mismatch rejection (literal uint32 bits, including a signed-zero regression),
 source-row ordering/bounds/uniqueness, query-outcome access
 rejection and unchanged model/RNG checks. CPU fixtures explicitly do not admit
 an actual MPS provider. Production model loading, full source/data binding,
-owned extraction queues and independent real-data replay remain unimplemented.
+owned extraction and independent real-data replay now have separate source
+implementations; actual real-data execution remains pending.
 
 `scripts/upstream_rbm400_latent_cache.py` authenticates a separately frozen
 manifest, all eight cache arrays and their source/model/proof references. It
@@ -102,6 +107,32 @@ dual maps, and rehashes the closure even when the caller raises. Nine synthetic
 IO tests cover those guarantees. These checks authenticate declared bytes;
 the caller must still establish scientific provenance, actual model replay
 and original-lane ownership. This module cannot admit a production provider.
+
+`upstream_rbm400_latent_provider.py` requires the complete original paired
+model/source/epoch/native-query proofs and finished own16 canonical lifecycle,
+without using recovered numerical scores for extraction decisions. It rehashes
+the complete frozen source closure and decodes the authenticated terminal file
+descriptor read-only. Six CPU fixtures check lifecycle, environment and FD
+identity contracts; the production adapter has no CPU mode or fit operation.
+
+`upstream_rbm400_latent_execution.py` and its worker implement five owned
+phases: known extraction, qualifying extraction/alignment, two fresh independent
+full-phase cache/native/query-feature replays, then paired assembly. Eight
+controller checks retain the original resource boundaries, same-frame pause,
+two lane locks and watchdog behavior, and reject missing/changed review proofs.
+Seven worker checks include a complete scaled synthetic paired cache workflow,
+reopening both caches and independently reconstructing all query feature bits,
+then rejecting tampered payloads. Device flags in that IO fixture are explicitly
+mocked; it establishes no actual MPS or real-provider acceptance.
+
+Only final known and aligned qualifying caches are stored; raw qualifying
+posterior factors are temporary RAM values, so the two user caches stay about
+200MB combined. Both actual terminal models are reopened by separate replay
+processes. The real verifier must compare every cache/map bit, every native
+prediction and every native query feature. It records a per-query bound from
+the dual-map float64 residual, float32 cache casts and fixed float64 roundoff;
+this measured invariance check supplements the mandatory exact cache-bit check.
+No cache or completed extraction proof alone admits a trained neural provider.
 
 The operator prototype `scripts/upstream_rbm400_latent_operators.py` keeps the
 entire562-column design,712-column nonlinear parent and all original context
