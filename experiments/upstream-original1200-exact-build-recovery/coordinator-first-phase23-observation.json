@@ -1,0 +1,104 @@
+{
+  "state": "observed_first_phase_all23_epochs_and_probex_diagnostic_native_still_live",
+  "observed": "2026-11-21T07:34:27.817569+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1545,
+  "observed_log_prefix_sha256": "fcbca8923a80b47e9793aa6151107b1e76f0e8fea5a3d1e6ab7d5c3d5f326849",
+  "first_phase_epochs": [
+    {
+      "epoch": 1,
+      "diagnostic_rmse": 0.95079
+    },
+    {
+      "epoch": 2,
+      "diagnostic_rmse": 0.92846
+    },
+    {
+      "epoch": 3,
+      "diagnostic_rmse": 0.91667
+    },
+    {
+      "epoch": 4,
+      "diagnostic_rmse": 0.90925
+    },
+    {
+      "epoch": 5,
+      "diagnostic_rmse": 0.90397
+    },
+    {
+      "epoch": 6,
+      "diagnostic_rmse": 0.89972
+    },
+    {
+      "epoch": 7,
+      "diagnostic_rmse": 0.8965
+    },
+    {
+      "epoch": 8,
+      "diagnostic_rmse": 0.89389
+    },
+    {
+      "epoch": 9,
+      "diagnostic_rmse": 0.8918
+    },
+    {
+      "epoch": 10,
+      "diagnostic_rmse": 0.88971
+    },
+    {
+      "epoch": 11,
+      "diagnostic_rmse": 0.88802
+    },
+    {
+      "epoch": 12,
+      "diagnostic_rmse": 0.88653
+    },
+    {
+      "epoch": 13,
+      "diagnostic_rmse": 0.88521
+    },
+    {
+      "epoch": 14,
+      "diagnostic_rmse": 0.88397
+    },
+    {
+      "epoch": 15,
+      "diagnostic_rmse": 0.883
+    },
+    {
+      "epoch": 16,
+      "diagnostic_rmse": 0.88204
+    },
+    {
+      "epoch": 17,
+      "diagnostic_rmse": 0.88119
+    },
+    {
+      "epoch": 18,
+      "diagnostic_rmse": 0.88044
+    },
+    {
+      "epoch": 19,
+      "diagnostic_rmse": 0.87974
+    },
+    {
+      "epoch": 20,
+      "diagnostic_rmse": 0.87922
+    },
+    {
+      "epoch": 21,
+      "diagnostic_rmse": 0.87868
+    },
+    {
+      "epoch": 22,
+      "diagnostic_rmse": 0.87832
+    },
+    {
+      "epoch": 23,
+      "diagnostic_rmse": 0.87775
+    }
+  ],
+  "probex_diagnostic_rmse": 0.87775,
+  "actual_process_observation": "  PID  PPID STAT  ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   10:22:16   2:41.49  35184 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   09:56:09 552:13.87 13284272 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n",
+  "interpretation": "First phase evidence only. Not full producer completion, ensemble score, recovered qualifying audit, or evidence of the ten-percent goal. Preserve the same native process through the full second23-epoch phase and require independent proof of all58 numeric outputs plus original log."
+}
