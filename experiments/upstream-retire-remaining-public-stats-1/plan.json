@@ -1,0 +1,89 @@
+{
+  "state": "declared_three_authorized_obsolete_public_dependent_stat_archive_discards",
+  "observed": "2026-11-21T18:41:10.007664+00:00",
+  "records": [
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/weighted/bank.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658797,
+        "bytes": 537309122,
+        "mtime_ns": 1795164810728069426,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "9a5f2658b38d5de8f7ce8a6132738041517e2dcf8cade06b0526197b68e0463e",
+      "allocated_bytes": 537309184,
+      "matched_downloaded_public_inputs": 536,
+      "original_uncompressed_path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/weighted/bank.stats.npz"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union466-full-tree-s1.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658780,
+        "bytes": 400797724,
+        "mtime_ns": 1795164803603245306,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "98c0d35438c4033dedf4c5810f0025c05dbaf01c394b29a2ecd93060f0d50e80",
+      "allocated_bytes": 400801792,
+      "matched_downloaded_public_inputs": 387,
+      "original_uncompressed_path": "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union466-full-tree-s1.stats.npz"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union-tree-s1.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658777,
+        "bytes": 68248647,
+        "mtime_ns": 1795164801656458886,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "7bad7d2095fa17353387418a9266806dfdb882b68b6516b5970d212e8e4a2842",
+      "allocated_bytes": 68251648,
+      "matched_downloaded_public_inputs": 122,
+      "original_uncompressed_path": "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union-tree-s1.stats.npz"
+    }
+  ],
+  "protected_scientific_proof_sha256": {
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own391-paired-h512-mps/independent-canonical-verification.json": "1da831fb0c80d33d848880123198e4f8e9b38a444e6d752f9dd13bc357b0b95e",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own391-fold-bag/independent-verification.json": "2131caca0f21189742cdbfe78fac946d1a2718640ea0a3b0938c863fe6429c56",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-original1200/independent-verification.json": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-original1200/execution-plan.json": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-cf-delta/input-manifest.json": "328bd0d23a15c2dda68f7afe3ca6a03e7e3b3d421b495a3422e015a68e90fff0",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-cf-delta/input-verification.json": "21d43f0423d2cb847b4c1b900b49b5eae818c67d03ba20c4a7d4fa2ae289e29a",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-cf-delta/fit-manifest.json": "9013baf2deb2f37bce112cc3999d44e3285eacaa05d828203745d3e20e816ee3",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own391-cpu-tree/manifest.json": "78537839a25e00d0216162e15ad21100f192b608e8ec3a4dc4367c2afc3026bf"
+  },
+  "preserved_metadata_sha256": {
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-retired-public-stats-archive/verification.json": "82f77d4ad976817b0c222274dd172e42ca63458decc2a720f8e0fa1dc9261164",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/weighted/bank.inputs.json": "a1bb969712f51a211dd16363def009e752620dad957534ba194f23750e31da1d",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/production-dev-manifest.json": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union466-full-tree-s1.inputs.json": "d78bcb8b0a655ab0fa593ca5d4fac6d5c7b837880d25fca141c665d15808545a",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/merged-manifest.json": "a21e2e93d8f6618f3b8f8b77517ea6a4b611fd21475ca1a8ca4c62cf7b410591",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/union-tree-s1.inputs.json": "bb134af9a3d898c2786f251ce9b1ebdf8015aa8155b3d63524502478c2528985",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-bank/columns/manifest.json": "e65e2b90ce645f7ac6d753475137de137615e9cc87b998618b79b8d7946417bc",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_retire_remaining_public_stats.py": "30e59ddb271962808961ea58c3464be77c1f582b7b370272c73f91d1876c2b4a",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_remaining_public_stat_retirement.py": "afa23eb57386a1e96b9b1d1f5804b4935a1a92e655d29a69c47d6386190c1c1e",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_retire_public_stat_caches.py": "5e8258acd1bbc75bb0c504472088992a440414fae29f458d55ad274accd95be9",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_read_cache_policy.py": "8909fea4a5d17986df587cc0c2cdc46502ac9c96cb9296ee5e73f4e50f28db6a"
+  },
+  "protected_current_inode_count": 31043,
+  "authorization": "User authorized removal of public-bank results because they are not our independent training effort.",
+  "policy": "Intentionally discard only these three public-dependent blending-statistic archives after exact provenance/SHA/inode/closed checks. Preserve every independent model/checkpoint/prediction/dataset, all own working state and all original provenance metadata. No process signals or numerical fitting. These three obsolete public caches cease to be restorable by the historical archive helper."
+}
