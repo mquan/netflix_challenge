@@ -1,0 +1,55 @@
+{
+  "state": "complete_synthetic_CPU_user_rows_and_gradient_prediction_integration_checks_only",
+  "observed": "2026-11-21T13:08:13.134477+00:00",
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_rows.py": "de99725107c0fb8069bc6b82af5844db81397846edebb062bc5b2a40f0f07322",
+    "scripts/test_upstream_factored_rbm_rows.py": "bc8ba652ef18e7a14a51e509829df8d80409bea2674eb2584d64f59871ac08bc",
+    "OWN_FACTORED_RBM_GPU_ROWS.md": "1f3651909189ba2b2b2c0032fa053b98dfd140a732c1a30178f5812776c12898"
+  },
+  "original_kernel_verification_sha256": "bf64bfc93608895074a6a722218b07a22aeaeaaf91db5cd80d574647c6ba557f",
+  "prediction_verification_sha256": "82221c474919273e66b50d749fed58b539c8a4f3401d5021a529af43539cabd8",
+  "original_reference_sha256": {
+    "artifacts/upstream-original1200/source/src/rx.rs": "5bd151642069318592f99eb98ef6de40609dd41e18117a4a9564dc4ef92a4cfc",
+    "artifacts/upstream-original1200/source/src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be",
+    "artifacts/upstream-original1200/source/src/bin/ingest.rs": "167b3acd7f08358f92c7a02c9638cfc9e60fff47afb9efb0d721adb761c8a052",
+    "artifacts/upstream-original1200/source/src/bin/split_3.rs": "3ec0bebd89bf1f72fbdd5230f2da3cd0661b6e7b97f63e17fbb500b00f26f71c"
+  },
+  "original_execution_plan_sha256": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 19,
+  "new_reader_tests": 6,
+  "test_log_sha256": "966eeef89ff74a0602148a58ea64543f4814372756b3fd0288f9242efd23f95b",
+  "devices_tested": [
+    "CPU float64",
+    "CPU float32"
+  ],
+  "actual_MPS_tested": false,
+  "production_data_read": false,
+  "qualifying_labels_read": false,
+  "models_fitted": 0,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "Array-only prototype; no production file binding or full-data replay/disjointness verification.",
+    "Global metadata, source pages and actual model/checkpoint memory require measured admission.",
+    "Full initializer/RNG/epoch runner, MPS checks,15+15 fitting and saved-model full-query replay remain required."
+  ]
+}
