@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T00:18:36.906056+00:00",
-  "display_time": "2026-11-21 00:18 UTC",
+  "observed": "2026-11-21T00:26:12.904206+00:00",
+  "display_time": "2026-11-21 00:26 UTC",
   "best_development_rmse": 0.8589133967520619,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,11 @@
   "verified_development_report_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "independent_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "work": [
+    {
+      "work": "Five obsolete downloaded-public-bank statistic caches retired",
+      "state": "Existing user authorization; exact five public-derived stats.npz.zst only, each pinned to original public manifest/config and536 downloaded inputs. Regular singlelink/untracked/unflagged/closed; no protected own-source inode. Durable pre-deletion SHA/identity journal; separate exactabsence/11proof/12metadatahash replay passes. Recovered2.508GiB; about22.91GiB free. No own model, checkpoint, prediction, data, source or process changed. Intentional discard, not archival; no score claim.",
+      "evidence": "experiments/upstream-retire-public-stat-caches/independent-verification.json"
+    },
     {
       "work": "Weekend full original return intake reviewed and queued",
       "state": "Three waiting perproducer owners87173/87178/87185 require current own15 full canonical completion and pinned complete remote transfer before primary admission. Full compressed/decoded member hashes, every native side/query finite shape, original source/data/split/disjointness and every compact projection bit;2GiB own/24research/5comp/128samebaseline/disk18.75. Eleven intake tests/68 combined pass. No remote output or score admitted.",
@@ -60,8 +65,8 @@
       "evidence": "experiments/upstream-complete-cf-delta-native-deferred/plan.json"
     },
     {
-      "work": "Original1200 full23+23 native training active: five epochs complete",
-      "state": "Same preserved compiler group completed; pinned original build and independent source/data/binary admission pass. Native16010 runs original1200factors/100neighbors/23epochs each phase, under owner8122 and original22GiB own/24GiB research/128MiB swap-growth/18.75GiB disk continuous gates. First five trainx epochs log0.95079/0.92846/0.91667/0.90925/0.90397; early single-model diagnostic is not a blend or qualifying result. All58 numeric outputs and independent verification remain. Unused admitted build cache losslessly archived before deletion; executable and numerical inputs intact.",
+      "work": "Original1200 full23+23 native training active: six epochs complete",
+      "state": "Same preserved compiler group completed; pinned original build and independent source/data/binary admission pass. Native16010 runs original1200factors/100neighbors/23epochs each phase, under owner8122 and original22GiB own/24GiB research/128MiB swap-growth/18.75GiB disk continuous gates. First six trainx epochs log0.95079/0.92846/0.91667/0.90925/0.90397/0.89972; early single-model diagnostic is not a blend or qualifying result. All58 numeric outputs and independent verification remain. Unused admitted build cache losslessly archived before deletion; executable and numerical inputs intact.",
       "evidence": "experiments/upstream-original1200-exact-build-recovery/first-native-baseline.json"
     },
     {
@@ -155,7 +160,7 @@
     "tx50n": "independently_admitted_original22_22",
     "cf_delta": "same_intake_paused_after_serialized_guard",
     "cf_delta_recovery_owner": 30570,
-    "original1200": "original_native23_plus23_active_five_epochs_complete",
+    "original1200": "original_native23_plus23_active_six_epochs_complete",
     "original1200_owner": 8122,
     "original1600_complete_verification_sha256": "f9447449aa00ee9c146bd0cc25c8d98225b586b9e36905d4aa092c3754d89b96",
     "neural_exact_recovery_owner": null,
@@ -168,7 +173,8 @@
       2,
       3,
       4,
-      5
+      5,
+      6
     ],
     "paired391_qualifying_bag": "complete_independent_all_query_streams_and_original_models",
     "own14": "same_preaudit21221_paused_wait_full_native_completion",

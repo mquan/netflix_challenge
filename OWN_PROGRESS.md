@@ -403,3 +403,11 @@ compact/native query bit must pass. Eleven receiving-specific checks and
 remote archives; all complete query and compact pairs are retained locally.
 No new remote output or score has been admitted.
 [Complete return admission](REMOTE_WEEKEND_RETURN_PLAN.md).
+
+Five obsolete public-bank statistics caches have now been retired under
+the existing public-result cleanup authorization, recovering2.508GiB. All11
+current scientific proof hashes and12 preserved metadata/source hashes pass
+a separate read-only replay. Models, predictions, checkpoints, data and
+processes remain unchanged. Free space is about22.91GiB for pending native
+outputs and weekend returns.
+[Bounded public-cache cleanup](PUBLIC_STAT_CACHE_RETIREMENT_RESULT.md).

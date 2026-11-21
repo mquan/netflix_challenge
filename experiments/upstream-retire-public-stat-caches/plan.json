@@ -1,0 +1,120 @@
+{
+  "state": "declared_five_authorized_obsolete_public_bank_statistic_cache_discards",
+  "observed": "2026-11-21T00:24:06.637775+00:00",
+  "records": [
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/late539-bank.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658820,
+        "bytes": 541297115,
+        "mtime_ns": 1795164822216686672,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "e14cc5cce37ed172ef65180df4d4ad2a5fca6c298c7137d6faee86fb3d4b6726",
+      "inputs_sha256": "5f3d359dd4708959e2f7d57070d0c3b7f6329c22b97bd2b7570f39cad4193ed5",
+      "public_manifest_sha256": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/early539-bank.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658826,
+        "bytes": 541295223,
+        "mtime_ns": 1795164826064907177,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "aa98bb11046abf7842bd72b59dd4a2eb7b8b2c3f55f97d28e58e13da636d1aec",
+      "inputs_sha256": "ff179fc0d6833c31f347afec04c1069ab9004a8284d8a8ec763d143cf6894352",
+      "public_manifest_sha256": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/MT8-537-bank.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658810,
+        "bytes": 537308465,
+        "mtime_ns": 1795164818119260959,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "85f739dc7555b6c106e2857a980b7147c6e7887f44b3b55bfaec143e5e51a105",
+      "inputs_sha256": "c35b80e73dc2c96a9245e954a44e41be4d3957f08779cd1afb45587344963d39",
+      "public_manifest_sha256": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/A2h537-bank.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658801,
+        "bytes": 537307243,
+        "mtime_ns": 1795164814365431661,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "ccd0feddeafce914bda4d0bf303e1fb64c039f39ec0c0b8f4265fb35e96580db",
+      "inputs_sha256": "c415fd8ec9a7a6301207932258598a930a8a4d04d58ba20828d5c1b07636ab5e",
+      "public_manifest_sha256": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18"
+    },
+    {
+      "path": "/Users/quan/workspace/netflix_prize/artifacts/public-new/ensemble-tree-s1.stats.npz.zst",
+      "identity": {
+        "device": 16777233,
+        "inode": 55658787,
+        "bytes": 535267655,
+        "mtime_ns": 1795164806990113336,
+        "mode": 33060,
+        "uid": 501,
+        "gid": 20,
+        "flags": 0,
+        "nlink": 1
+      },
+      "sha256": "7e85d0394f15bf58449445026e81e9863b3435a11af8eeef8a37dc8192a2a885",
+      "inputs_sha256": "567b4bc6f395ff786231792e297e8e0abde81326c0e2c8e75306358477b615d5",
+      "public_manifest_sha256": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18"
+    }
+  ],
+  "protected_proof_sha256": {
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own14-matched391-calibration/frozen.json": "3b5503501432e4096816619bcc63dab4a821b5aded026fb65f94cf3d778e224d",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-cf-delta/plan.json": "ed14cb716afe668bd0f9f1a9fc26beb1e69afd01dadb77f4cfba4e9171a8ee65",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-original1200/execution-plan.json": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-trajectory-data-queue/plan.json": "5e8535343f09d95a337f37113b8dc5f4e7b0e060a962eb125176e5a2571958fe",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-trajectory-neural-queue/plan.json": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-complete-trajectory-fold-bag-queue/plan.json": "2b6e0ef43c6bfe82a53d9cbf26ee14a8c4ea0678fd02027c8e7ed6c1fb0ae202",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own15-complete-trajectory-queue/plan.json": "c74b884f1ed95b147c0cd7e6bdcf598a7c27c592ea845b0cd3dd1a812bb4b672",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-remote-weekend-return-queue/s3-rbm400pf/plan.json": "d56882a618b98a85604581b06caa37d3b864d85962c422914b1fef81922c7fae",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-remote-weekend-return-queue/s3-tx300r/plan.json": "343fa1ecf3f27c976dfc3ccb56d15b042fdeaae5068bc566aa4258bc8f9af502",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-remote-weekend-return-queue/s3-rbm800p/plan.json": "76060cbf45263c3bb5f35665ac12f59aff9038e856c817379e103153f5d97386",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own391-cpu-tree/manifest.json": "78537839a25e00d0216162e15ad21100f192b608e8ec3a4dc4367c2afc3026bf"
+  },
+  "preserved_metadata_sha256": {
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_retire_public_stat_caches.py": "5e8258acd1bbc75bb0c504472088992a440414fae29f458d55ad274accd95be9",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/late539-bank.inputs.json": "5f3d359dd4708959e2f7d57070d0c3b7f6329c22b97bd2b7570f39cad4193ed5",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/late539-bank.json": "abb5535cfd18a40731abbc7b3b53ed55106c10840e9dfc7482c7b3f277592e85",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/production-dev-manifest.json": "2ebe131109e01ff6bc05a0c87546740086cb8f4a287162b16a7798d18ca11f18",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/early539-bank.inputs.json": "ff179fc0d6833c31f347afec04c1069ab9004a8284d8a8ec763d143cf6894352",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/early539-bank.json": "91130dbf068ec627ad7ef342514675b9084bf0cd15320330943013b2a5e72dab",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/MT8-537-bank.inputs.json": "c35b80e73dc2c96a9245e954a44e41be4d3957f08779cd1afb45587344963d39",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/MT8-537-bank.json": "2f619df0c86c0195449ce7339ca520c4bddca64e6ef06a5767920aa10e7736ed",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/A2h537-bank.inputs.json": "c415fd8ec9a7a6301207932258598a930a8a4d04d58ba20828d5c1b07636ab5e",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/A2h537-bank.json": "265133cf77d9a7ec0bcff29ee14de3c91f8bbfd4ad768599005468239a9d7786",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/ensemble-tree-s1.inputs.json": "567b4bc6f395ff786231792e297e8e0abde81326c0e2c8e75306358477b615d5",
+    "/Users/quan/workspace/netflix_prize/artifacts/public-new/ensemble-tree-s1.json": "3e6439ca83ad4c1f208617c8e699e664e42b3f071417b461d4f84abb3df6e408"
+  },
+  "authorization": "User explicitly authorized removal of public-bank results because they are not our independent effort.",
+  "policy": "Discard ONLY five named obsolete public-derived stats.npz.zst caches. Preserve original inputs/results/manifests, all models/checkpoints/predictions/data/source, every current own source inode and live process. Full cache SHA/metadata journal fsynced before unlink. No score selection or cache values used in fitting. Intentional discard, not lossless archival."
+}
