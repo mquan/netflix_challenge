@@ -1,0 +1,56 @@
+{
+  "state": "complete_synthetic_CPU_training_state_serialization_and_all_kernel_checks_only",
+  "observed": "2026-11-21T13:14:30.691528+00:00",
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_training.py": "82ab591c741b8e42349992b483676ea14ac02ba96b5c64f3ed8c6c4cd4045572",
+    "scripts/test_upstream_factored_rbm_training.py": "96e4211f899767fc6130f8c554eca31c954902086a93ca371f29874be73a050f",
+    "OWN_FACTORED_RBM_GPU_TRAINING.md": "680e8342f1045e7ddff807edaa320ad84fca3935689d422098490270ed944dad"
+  },
+  "predecessor_verification_sha256": {
+    "verification.json": "bf64bfc93608895074a6a722218b07a22aeaeaaf91db5cd80d574647c6ba557f",
+    "prediction-verification.json": "82221c474919273e66b50d749fed58b539c8a4f3401d5021a529af43539cabd8",
+    "rows-verification.json": "0cd05cece2172af23437d39c75b2ad5aac801a613736b3e2239033538151606e"
+  },
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 26,
+  "new_training_state_tests": 7,
+  "test_log_sha256": "de15364a13867cdd759293acd62a39fe522c10d645996711de43878e497c6d06",
+  "libraries": {
+    "torch": "2.14.0",
+    "numpy": "2.2.6"
+  },
+  "devices_tested": [
+    "CPU float64",
+    "CPU float32"
+  ],
+  "actual_MPS_tested": false,
+  "production_data_read": false,
+  "qualifying_labels_read": false,
+  "production_models_fitted": 0,
+  "synthetic_training_only": true,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "Training-state library only; no admitted production executable or independently verified actual input digest.",
+    "Complete-boundary synthetic serialization does not establish real filesystem durability or production training provenance.",
+    "Full raw-file/map/disjointness admission, actual MPS/resource/ownership checks,15+15 fitting and saved-model full-query replay remain required."
+  ]
+}
