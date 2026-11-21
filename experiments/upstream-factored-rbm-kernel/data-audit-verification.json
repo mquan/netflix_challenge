@@ -1,0 +1,51 @@
+{
+  "state": "complete_synthetic_CPU_independent_data_audit_and37_checks_only",
+  "observed": "2026-11-21T13:33:16.762785+00:00",
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_data_audit.py": "a4ed78b394c56dc6080f40fbd1fef14e86e0d8fd5a2ebd3651ccae7e7157d396",
+    "scripts/test_upstream_factored_rbm_data_audit.py": "3bc31bada3f40cf8ab52037c15ea06e694faa8d13cc4d5fe257b5f814cad6bc0",
+    "OWN_FACTORED_RBM_GPU_DATA_AUDIT.md": "01ea1ab67bb8a1c3f0db98b5ab151d978694e7704c8fd1ab37a4812f74d6effa"
+  },
+  "original_reference_sha256": {
+    "artifacts/upstream-original1200/source/src/rx.rs": "5bd151642069318592f99eb98ef6de40609dd41e18117a4a9564dc4ef92a4cfc",
+    "artifacts/upstream-original1200/source/src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be",
+    "artifacts/upstream-original1200/source/src/bin/ingest.rs": "167b3acd7f08358f92c7a02c9638cfc9e60fff47afb9efb0d721adb761c8a052",
+    "artifacts/upstream-original1200/source/src/bin/split_3.rs": "3ec0bebd89bf1f72fbdd5230f2da3cd0661b6e7b97f63e17fbb500b00f26f71c"
+  },
+  "input_declaration_sha256": "cdb279f63d981a51132948608be4e080a5e6dd22f462d1a19a53b94e91f2a146",
+  "input_declaration_verification_sha256": "10f48ef4513080d1575568cdf4b656a64e6aa38fc01c310c039fb9f54244a5b1",
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 37,
+  "new_data_audit_tests": 7,
+  "test_log_sha256": "a93969d71d547a0b0681f3e92d4f107345344190039012481789aa1830a6e35d",
+  "actual_MPS_tested": false,
+  "production_payloads_read": false,
+  "production_data_admitted": false,
+  "qualifying_labels_read": false,
+  "production_models_fitted": 0,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "Synthetic fixtures only; no actual63-file payload/schema or complete Netflix row replay performed.",
+    "Full native holdout disjointness is implemented/tested, not yet proved for a new actual-data admission.",
+    "Production worker/resource/ownership/durability and MPS/full15+15/model-query replay remain required."
+  ]
+}
