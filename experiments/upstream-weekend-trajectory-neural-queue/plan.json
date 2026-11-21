@@ -1,0 +1,51 @@
+{
+  "source_sha256": {
+    "scripts/upstream_weekend_trajectory_neural_queue.py": "9f486a6434f036b707c1a7bb24dfe75944d29f9c24e90ddda766adb6e2eca781",
+    "scripts/upstream_weekend_trajectory_ops.py": "4f5641a7ae4e0953da77935d62a8891f8d49041fcf30ffd1c9b8dee0c0b3b931",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "WEEKEND_COMPLETE_TRAJECTORY_PLAN.md": "b34e63f950db119af5b53bd1b80db83b476aa93118673466f24751a08ad5d720",
+    "scripts/upstream_weekend_trajectory_mps.py": "5e8427f64ed47e042d10656a71e6eb10c18de41571f56850a33156da8b1c3458",
+    "scripts/verify_upstream_weekend_trajectory_mps.py": "2e661d4264b63ea576245f22c67a5318727b49a4def95fce94eea3b0f51b06a8",
+    "scripts/verify_upstream_weekend_trajectory_canonical.py": "caaf4261656a2bc4abbcf82c430961ebbbda0636ceaa08f949cad8199037a366",
+    "scripts/upstream_exact_weekend_scaler.py": "3c53ed9affa0fae981e6a52b4b05d640ce717fae4f1e546bd1a5e28e7c2cbecb",
+    "scripts/upstream_weekend_trajectory_data.py": "f06b73a323d7a1e601fbd92d831ea465cf286b3f91bb0495393edc8811b037d3",
+    "scripts/verify_upstream_weekend_trajectory_data.py": "4e105f1cd4b2de50cd0d5c54337caaf4c39e98a2ec65302daf068f2ee8e90064",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0"
+  },
+  "created": "2026-11-21T00:45:01.388669+00:00",
+  "phases": {
+    "prepare": [
+      "upstream_weekend_trajectory_mps.py",
+      "--variant",
+      "h128"
+    ],
+    "fit": [
+      "upstream_weekend_trajectory_mps.py",
+      "--variant",
+      "h128",
+      "--worker"
+    ],
+    "actual_model_replay": [
+      "verify_upstream_weekend_trajectory_mps.py",
+      "--variant",
+      "h128"
+    ],
+    "separate_canonical": [
+      "verify_upstream_weekend_trajectory_canonical.py",
+      "--variant",
+      "h128"
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-weekend-trajectory-data-queue/completion.json",
+      "complete_full_weekend_trajectory_admission_ridge_and_independent_replays",
+      "verification_sha256",
+      "upstream-weekend-trajectory-data/independent-verification.json",
+      "complete_independent_all_trajectory_operators_statistics_ridge_and_stored_predictions"
+    ]
+  ],
+  "rule": "Wait complete independently replayed full trajectory input/ridge study. Joint nonblocking primary/GPU ownership then3stable admission with16GiB worker/24GiB research physicalRSS/5GiBcompressor(admit4.5)/128MiB firstscientific swapgrowth/18.75GiBdisk+64MiBoutput reserve. Original H128rank32/5userfolds/3seeds/max40pat4/batch8192/AdamW. Dynamicwidth618+N without truncation, every existingcontextbit and novel scalar, full exact eligible stats/actualmodel/prediction/canonical replay. Preserve same actual childRAM onguard/ownerloss, no retries/refits/budgetchange. No qualifying inference/outcomes here."
+}
