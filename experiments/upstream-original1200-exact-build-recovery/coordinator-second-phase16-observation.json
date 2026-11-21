@@ -1,0 +1,22 @@
+{
+  "state": "observed_first23_complete_second16_complete_same_original_native_live",
+  "observed": "2026-11-21T14:40:51.481255+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1947,
+  "observed_log_prefix_sha256": "8651896c795537a6ff902bb1d6cd49569768ab295187b090ceee4d2d31dc5d44",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 16,
+  "actual_process_observation": "  PID  PPID STAT STARTED                       ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   Fri Nov 20 13:12:11 2026     17:28:40   4:38.18  45392 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   Fri Nov 20 13:38:18 2026     17:02:33 960:06.89 12789936 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 Ts   Fri Nov 20 17:11:15 2026     13:29:36   0:21.33  25328 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n35292     1 Ss   Fri Nov 20 17:24:50 2026     13:16:01   3:11.56 147888 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n",
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "free_bytes": 21875564544,
+  "interpretation": "Same original native is live. Full second23 epochs and independent58numeric+log proof remain required. Phase2 zero-target errors are not accuracy. No new ensemble/qualifying score."
+}

@@ -1,0 +1,36 @@
+{
+  "state": "verified64_synthetic_CPU_checks_and_owned_execution_protocol_only",
+  "observed": "2026-11-21T14:39:13.807620+00:00",
+  "tests_passed": 64,
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_execution.py": "202477085c25bbde59c4d4465557295807d80a38bbc0370e1647fb8100932e00",
+    "scripts/upstream_factored_rbm_worker.py": "8c5194fdfaf8cf5976f8a48bb7ca1d92d59bf2598d6234f5e0198cee01df9cc3",
+    "scripts/test_upstream_factored_rbm_execution.py": "5cea98e882cafc6089da1fb721eb93837c702a6506fdcfa1d41d403c09e8a742",
+    "OWN_FACTORED_RBM_GPU_EXECUTION.md": "1eb2997f27f56df5f896fff4d0e998309268d6b93b7529f525d5192a8688c83f"
+  },
+  "test_log_sha256": "55584803f1a2b22683ffef89da8c386e44737806308e9fb15ba469d68078d0ee",
+  "prior_preflight_proof_sha256": "828d72c6bb8a6ad47eb06f25aeaca1848024cbbc99ae837cd839efa65fbd680e",
+  "production_data_admitted": false,
+  "actual_MPS_tested": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "production_queue_started": false,
+  "independent_review": {
+    "reviewer": "refit_checkpoint_review",
+    "resolved": [
+      "independent physical/RSS full-cap readmission",
+      "owner-loss retains both lane descriptors despite failed evidence writes",
+      "resource measurement failures preserve the same worker call stack"
+    ],
+    "final_result": "No remaining concrete blocker found; source freeze and guarded waiting queue approved; actual production admission and MPS qualification remain mandatory"
+  },
+  "live_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "remaining": "Freeze/arm waiting queue; complete original prerequisite pipeline; actual data and MPS admission; full15+15 fits and saved-model replays; known-label-only blend and frozen recovered-group audit."
+}

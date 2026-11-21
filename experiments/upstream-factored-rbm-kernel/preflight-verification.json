@@ -1,0 +1,47 @@
+{
+  "state": "complete_synthetic_CPU_preflight_contracts_and55_checks_only",
+  "observed": "2026-11-21T14:11:26.950074+00:00",
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_preflight.py": "413adc9f184210a79168f417a907972e312ad735fcab9302be72109cadcd6179",
+    "scripts/test_upstream_factored_rbm_preflight.py": "3647ebac1eac6fa9ec6b3030f7e05b13bdcf1ebd64ed3a00521b430afb72bc39",
+    "OWN_FACTORED_RBM_GPU_PREFLIGHT.md": "a801be7ddaa670e1979f8e2fd78015754d7f324da30cfb9c78b5f7ffa8dd0498"
+  },
+  "input_declaration_sha256": "cdb279f63d981a51132948608be4e080a5e6dd22f462d1a19a53b94e91f2a146",
+  "terminal_verification_sha256": "a9358dab589b51453db0a61073859de85ddacbf6b836c2b31784f7700aa32246",
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 55,
+  "new_preflight_tests": 5,
+  "test_log_sha256": "483c6c455e0cdee076e1d6aa2e28a7aef773bfa24feaf09a60012e744e42260b",
+  "actual_MPS_tested": false,
+  "full_production_stress_executed": false,
+  "passed_for_production_device": false,
+  "production_payloads_read": false,
+  "production_models_fitted": 0,
+  "production_data_admitted": false,
+  "qualifying_labels_read": false,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "CPU small/reduced fixtures only; actualMPS and full500-user400-hidden stress case not run.",
+    "Fresh runtime gate and fixed numerical tolerances do not establish actual production ownership/resource admission.",
+    "Actual data/MPS/memory/disk and complete15+15 fitting/model replay plus worker integration remain required."
+  ]
+}
