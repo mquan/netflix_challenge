@@ -1,0 +1,18 @@
+{
+  "pid": 26049,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py",
+    "audit"
+  ],
+  "owner_sha256": "0e60abcadc2bc9b98cdefaae4a059e1e7f05c7342c1e044deacb93ff7a6aefb4",
+  "watchdog": {
+    "pid": 22759,
+    "ppid": 22751,
+    "pgid": 22759,
+    "state": "Ss",
+    "started": "Fri Nov 20 17:07:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_bounded_sidecar.py --watch 22751"
+  }
+}

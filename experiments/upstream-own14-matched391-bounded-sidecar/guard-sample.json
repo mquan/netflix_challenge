@@ -1,0 +1,174 @@
+{
+  "workers": {
+    "6054": {
+      "bytes": 24431820.8,
+      "rss_bytes": 33931264,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py"
+    },
+    "6056": {
+      "bytes": 24536678.4,
+      "rss_bytes": 33406976,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py --watch 6054"
+    },
+    "6062": {
+      "bytes": 27053260.8,
+      "rss_bytes": 66240512,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py"
+    },
+    "6064": {
+      "bytes": 24641536.0,
+      "rss_bytes": 33488896,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py --watch 6062"
+    },
+    "6067": {
+      "bytes": 25480396.8,
+      "rss_bytes": 67026944,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py"
+    },
+    "6069": {
+      "bytes": 24536678.4,
+      "rss_bytes": 33406976,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py --watch 6067"
+    },
+    "6075": {
+      "bytes": 25899827.2,
+      "rss_bytes": 67010560,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py"
+    },
+    "6077": {
+      "bytes": 24956108.8,
+      "rss_bytes": 33800192,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py --watch 6075"
+    },
+    "8122": {
+      "bytes": 28730982.4,
+      "rss_bytes": 30097408,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py"
+    },
+    "8133": {
+      "bytes": 25480396.8,
+      "rss_bytes": 18481152,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py --watch 8122"
+    },
+    "16010": {
+      "bytes": 14388140441.6,
+      "rss_bytes": 12876939264,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+    },
+    "22751": {
+      "bytes": 25060966.4,
+      "rss_bytes": 114720768,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_bounded_sidecar.py"
+    },
+    "22759": {
+      "bytes": 25375539.2,
+      "rss_bytes": 34226176,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_bounded_sidecar.py --watch 22751"
+    },
+    "26049": {
+      "bytes": 51065651.2,
+      "rss_bytes": 57327616,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit"
+    },
+    "30570": {
+      "bytes": 27158118.4,
+      "rss_bytes": 44089344,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py"
+    },
+    "30576": {
+      "bytes": 24851251.2,
+      "rss_bytes": 26836992,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py --watch 30570"
+    },
+    "35985": {
+      "bytes": 316669952.0,
+      "rss_bytes": 53346304,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit"
+    },
+    "50842": {
+      "bytes": 30828134.4,
+      "rss_bytes": 47366144,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py"
+    },
+    "50847": {
+      "bytes": 24956108.8,
+      "rss_bytes": 21938176,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py --watch 50842"
+    },
+    "56323": {
+      "bytes": 29569843.2,
+      "rss_bytes": 49709056,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py"
+    },
+    "56325": {
+      "bytes": 24326963.2,
+      "rss_bytes": 21741568,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py --watch 56323"
+    },
+    "58980": {
+      "bytes": 32086425.6,
+      "rss_bytes": 47808512,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py"
+    },
+    "58983": {
+      "bytes": 24746393.6,
+      "rss_bytes": 24428544,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py --watch 58980"
+    },
+    "68008": {
+      "bytes": 29360128.0,
+      "rss_bytes": 81231872,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own15_complete_trajectory_queue.py"
+    },
+    "68010": {
+      "bytes": 24536678.4,
+      "rss_bytes": 33374208,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own15_complete_trajectory_queue.py --watch 68008"
+    },
+    "87173": {
+      "bytes": 25060966.4,
+      "rss_bytes": 34471936,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm400pf"
+    },
+    "87176": {
+      "bytes": 24326963.2,
+      "rss_bytes": 33112064,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87173 --job s3-rbm400pf"
+    },
+    "87178": {
+      "bytes": 24851251.2,
+      "rss_bytes": 34242560,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-tx300r"
+    },
+    "87181": {
+      "bytes": 24641536.0,
+      "rss_bytes": 33505280,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87178 --job s3-tx300r"
+    },
+    "87185": {
+      "bytes": 24956108.8,
+      "rss_bytes": 34373632,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm800p"
+    },
+    "87188": {
+      "bytes": 24326963.2,
+      "rss_bytes": 33259520,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87185 --job s3-rbm800p"
+    },
+    "95816": {
+      "bytes": 67423436.8,
+      "rss_bytes": 21381120,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_worker.py"
+    },
+    "97244": {
+      "bytes": 178257920.0,
+      "rss_bytes": 68796416,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_source.py stream"
+    }
+  },
+  "memory": {
+    "compressor_bytes": 9367781376,
+    "swap_used_bytes": 2645032960.0
+  },
+  "phase": "audit"
+}

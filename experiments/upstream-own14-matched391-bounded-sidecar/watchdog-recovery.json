@@ -1,0 +1,13 @@
+{
+  "child": {
+    "pid": 26049,
+    "ppid": 22751,
+    "pgid": 26049,
+    "state": "Ss",
+    "started": "Fri Nov 20 17:11:15 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_bounded_sidecar.py --bootstrap 22751 --phase audit",
+    "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit"
+  },
+  "actual_child_RAM_preserved": true,
+  "observed": "2026-11-21T01:11:42.937290+00:00"
+}
