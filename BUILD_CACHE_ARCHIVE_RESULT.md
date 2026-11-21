@@ -55,3 +55,36 @@ Net measured recovered space: 421.0MiB.
 [Complete inventory](experiments/upstream-shared-build-cache-archive/plan.json) ·
 [Full decoded-member verification](experiments/upstream-shared-build-cache-archive/archive-verification.json) ·
 [Protected-file check](experiments/upstream-shared-build-cache-archive/verification.json).
+
+## Ten additional inactive legacy caches
+
+As free space declined to about20.03GiB, ten distinct remaining legacy
+`target/release/build` caches were preserved with the same unchanged archive
+procedure. They contained10,085 regular single-link files and678,117,565
+original bytes. Canonical paths were deduplicated, and nested dependencies
+from20 current frozen plans/proofs were checked, including aliases. Each
+cache passed the original no-live-compiler, no-open-user and runtime-library
+checks. Every payload was archived, fully decoded and rehashed before unlink;
+the archive and before-unlink evidence were fsynced first.
+
+Net measured space recovered was427.6MiB, bringing free space to about20.46GiB.
+This is the measured free-space change, not a claim that all original logical
+bytes became newly free. The18.75GiB scientific floor remained unchanged.
+
+A separate read-only process then replayed all ten retained archives, full
+gzip integrity checks, every10,085 original payload hash, exact membership,
+expected original absence and54 protected file hashes. The original native
+PID/start/command was independently observed still live after this replay.
+Original scientific sources, executable binaries, models, predictions,
+training data and saved checkpoints were preserved.
+
+The archives are named `artifacts/<cache-name>-legacy-build-cache.tar.gz`;
+the selection record lists all ten names. From the repository root, restore
+an individual cache with `tar -xzf artifacts/<cache-name>-legacy-build-cache.tar.gz`.
+The per-cache plans retain original metadata and nanosecond timestamps;
+restoring files cannot restore their original inode identities.
+
+[Exact selection and protected records](experiments/upstream-legacy-build-cache-archive/selection.json) ·
+[All per-cache completion proofs](experiments/upstream-legacy-build-cache-archive/verification.json) ·
+[Independent retained-payload replay](experiments/upstream-legacy-build-cache-archive/independent-verification.json) ·
+[Original native continuity](experiments/upstream-legacy-build-cache-archive/coordinator-native-continuity.json).

@@ -1,0 +1,90 @@
+{
+  "caches": [
+    {
+      "name": "full-upstream-mapped",
+      "cache": "artifacts/full-upstream-mapped/target/release/build",
+      "files": 988,
+      "bytes": 38465768
+    },
+    {
+      "name": "upstream-aex-backfill",
+      "cache": "artifacts/upstream-aex-backfill/target/release/build",
+      "files": 974,
+      "bytes": 36173136
+    },
+    {
+      "name": "upstream-cfnade-checkpoint",
+      "cache": "artifacts/upstream-cfnade-checkpoint/target/release/build",
+      "files": 1228,
+      "bytes": 335019819
+    },
+    {
+      "name": "upstream-cfnade-fast",
+      "cache": "artifacts/upstream-cfnade-fast/target/release/build",
+      "files": 974,
+      "bytes": 35864351
+    },
+    {
+      "name": "upstream-cfnade-fast-v2",
+      "cache": "artifacts/upstream-cfnade-fast-v2/target/release/build",
+      "files": 974,
+      "bytes": 35899730
+    },
+    {
+      "name": "upstream-cfnade-sparse-rows",
+      "cache": "artifacts/upstream-cfnade-sparse-rows/target/release/build",
+      "files": 1002,
+      "bytes": 42470296
+    },
+    {
+      "name": "upstream-cfnade96-sparse-resume",
+      "cache": "artifacts/upstream-cfnade96-sparse-resume/target/release/build",
+      "files": 988,
+      "bytes": 39300853
+    },
+    {
+      "name": "upstream-grouped-storage",
+      "cache": "artifacts/upstream-grouped-storage/target/release/build",
+      "files": 988,
+      "bytes": 37830281
+    },
+    {
+      "name": "upstream-parallel-mapped",
+      "cache": "artifacts/upstream-parallel-mapped/target/release/build",
+      "files": 981,
+      "bytes": 37349211
+    },
+    {
+      "name": "upstream-qualifying-backfill",
+      "cache": "artifacts/upstream-qualifying-backfill/target/release/build",
+      "files": 988,
+      "bytes": 39744120
+    }
+  ],
+  "protected_sha256": {
+    "experiments/upstream-own14-matched391-calibration/frozen.json": "3b5503501432e4096816619bcc63dab4a821b5aded026fb65f94cf3d778e224d",
+    "experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json": "c1519468cf904f26fffa2a07fb4e78c0bf6083de17915041419fb920746ef5ea",
+    "experiments/upstream-own14-matched391-post-native-audit/plan.json": "8894b25d2d7d88306437c0552093d192b87f2469998bce1cc7ca73e1614ab9f5",
+    "experiments/upstream-complete-cf-delta/plan.json": "ed14cb716afe668bd0f9f1a9fc26beb1e69afd01dadb77f4cfba4e9171a8ee65",
+    "experiments/upstream-original1200/execution-plan.json": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+    "experiments/upstream-original1200-exact-build-recovery/plan.json": "2714eee19203426620e8511dfd4ac6b927128ebbfa4079eaa4ecf246151cf234",
+    "experiments/upstream-complete-trajectory-data-queue/plan.json": "5e8535343f09d95a337f37113b8dc5f4e7b0e060a962eb125176e5a2571958fe",
+    "experiments/upstream-complete-trajectory-neural-queue/plan.json": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+    "experiments/upstream-complete-trajectory-fold-bag-queue/plan.json": "2b6e0ef43c6bfe82a53d9cbf26ee14a8c4ea0678fd02027c8e7ed6c1fb0ae202",
+    "experiments/upstream-own15-complete-trajectory-queue/plan.json": "c74b884f1ed95b147c0cd7e6bdcf598a7c27c592ea845b0cd3dd1a812bb4b672",
+    "experiments/upstream-weekend-trajectory-data-queue/plan.json": "f8cf522908b5323e267bc6c708bb89f152adde4a9c144d8c7db1935678256797",
+    "experiments/upstream-weekend-trajectory-neural-queue/plan.json": "f0782e22c8eeea1d05588346190914046bc0e80938bfd720eaf68a9c80aca38d",
+    "experiments/upstream-weekend-trajectory-fold-bag-queue/plan.json": "05b094de7fc31f41f7455d1e42e9af2b6335aaf32453c040de51dddf4389f024",
+    "experiments/upstream-own16-weekend-trajectory-queue/plan.json": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm400pf/plan.json": "d56882a618b98a85604581b06caa37d3b864d85962c422914b1fef81922c7fae",
+    "experiments/upstream-remote-weekend-return-queue/s3-tx300r/plan.json": "343fa1ecf3f27c976dfc3ccb56d15b042fdeaae5068bc566aa4258bc8f9af502",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/plan.json": "76060cbf45263c3bb5f35665ac12f59aff9038e856c817379e103153f5d97386",
+    "experiments/upstream-complete13-calibration/independent-canonical-verification.json": "75b9d5e6861c1949eb30b62f06b9ea4d3b02ee0ff962e6b6545ac4b91f52d88c",
+    "experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
+    "experiments/upstream-own391-fold-bag/independent-verification.json": "2131caca0f21189742cdbfe78fac946d1a2718640ea0a3b0938c863fe6429c56",
+    "scripts/upstream_archive_legacy_build_caches.py": "e2c7d2c0161eeefa400edafaba315a6595427940010c13f68bd9acc5f38604be",
+    "scripts/upstream_archive_shared_build_cache.py": "35b845309303ae076e4468e3698d7c810f3a991543a52ec844b056e185c9293b"
+  },
+  "procedure_sha256": "35b845309303ae076e4468e3698d7c810f3a991543a52ec844b056e185c9293b",
+  "rule": "Reuse unchanged shared-cache archive procedure per explicit legacy cache. All payload bytes independently replay before unlink; preserve source, models, data, predictions, executables, original metadata and archives."
+}
