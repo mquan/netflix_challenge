@@ -1,0 +1,61 @@
+{
+  "state": "verified_weekend16_original_failure_and_corrected_full_freeze_CPU_checks_only",
+  "observed": "2026-11-21T15:10:49.884644+00:00",
+  "tests_passed": 79,
+  "new_repair_tests": 6,
+  "test_log_sha256": "f25fbe076ebfa6c56a2a800724344e922c5803a7c81fd1a5a3b3fbba88ceed90",
+  "source_sha256": {
+    "scripts/upstream_weekend_own16_freeze_repair.py": "55e46ed491bc78f1e70301d4011c188e098965070b271da863f507371c300264",
+    "scripts/upstream_weekend_own16_queue_v2.py": "41db8307f0cc4a81fa79b74f1a51b353758f753d48b15f7aa0bafdd7552d26d1",
+    "scripts/test_upstream_weekend_own16_freeze_repair.py": "861603366222ac2c56b2004708e88b62841f74221ec353aef82d82623a5695b6",
+    "WEEKEND_OWN16_FREEZE_REPAIR.md": "a8f31336dce29c52fd4282c78d684b0f6a8a596399f9b884ef663f93b54aeffc",
+    "scripts/upstream_own16_weekend_trajectory_calibration.py": "6d4d15c5689008dd4907117a2ece715065abc9b96d9df7908ff4e8ae2d75a2b1",
+    "scripts/upstream_own16_weekend_trajectory_queue.py": "e9bc24474a8c0b0d04f8aae955c17320248d538c5fa6ee7330325aa6c034ffd2",
+    "scripts/verify_upstream_own16_weekend_trajectory_calibration.py": "c881ca382265b1dbc099c96c33488995fce8cdf546dd59b9825b2ae317420295",
+    "experiments/upstream-own16-weekend-trajectory-queue/plan.json": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8"
+  },
+  "original_full16_freeze_rejection_reproduced": true,
+  "corrected_all16_rows_and_all6_prediction_vectors_verified": true,
+  "all_original_known_metadata_and_prediction_hashes_unchanged": true,
+  "original_independent_evidence_gate_accepts_augmented_freeze": true,
+  "actual_synthetic_idle_owner_watchdog_handoff_passed": true,
+  "only_test_owned_control_process_signaled": true,
+  "existing_scientific_namespace_blocks_handoff": true,
+  "independent_review": {
+    "reviewer": "refit_checkpoint_review",
+    "result": "No concrete blocker found; approved checkpoint then exact idle handoff and guarded waiting successor after tests"
+  },
+  "actual_old_coordinator_before_any_retirement": {
+    "owner": {
+      "pid": 6075,
+      "ppid": 1,
+      "pgid": 6075,
+      "state": "Ss",
+      "started": "Fri Nov 20 16:45:01 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py"
+    },
+    "watchdog": {
+      "pid": 6077,
+      "ppid": 6075,
+      "pgid": 6077,
+      "state": "Ss",
+      "started": "Fri Nov 20 16:45:02 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py --watch 6075"
+    },
+    "original_queue_plan_sha256": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8"
+  },
+  "live_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "real_coordinator_retired": false,
+  "production_models_refitted": 0,
+  "production_arrays_read": false,
+  "recovered_labels_read": false,
+  "production_score_computed": false,
+  "remaining": "Commit/push reviewed correction, exact idle-owner-only handoff, freeze/start waiting V2, full original producers/known fit/corrected freeze/preaudit/audits/canonical verification."
+}
