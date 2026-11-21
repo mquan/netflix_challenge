@@ -1,0 +1,20 @@
+{
+  "state": "complete_array_only_latent_math_cpu_checks_actual_provider_not_admitted",
+  "observed": "2026-11-21T22:14:28.404069+00:00",
+  "tests_passed": 7,
+  "factors": 50,
+  "extra_context_coordinates": 150,
+  "item_contrast": "ordered_float64_categories_then_float32",
+  "alignment": "fixed_label_free_float64_ridge1e-6_and_inverse_transpose_then_float32_caches",
+  "full_width_independent_equations_tested": true,
+  "query_order_and_coverage_tested": true,
+  "actual_models_loaded": false,
+  "actual_MPS_tested": false,
+  "production_provider_started": false,
+  "new_score_claimed": false,
+  "source_sha256": {
+    "scripts/upstream_rbm400_latent_context_math.py": "f4c2a25afdd03f569f069195e4b41d6780011cdbdb17337b14a5500a08595b5e",
+    "scripts/test_upstream_rbm400_latent_context_math.py": "79463c1f31c671597163b2f69571f35ca396ac1c96bcb881b317585b2dccd03a",
+    "OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md": "14c0a010368793da0442b4e64f7d3ba2323c07b43e2471f8029fedcaab4c3179"
+  }
+}

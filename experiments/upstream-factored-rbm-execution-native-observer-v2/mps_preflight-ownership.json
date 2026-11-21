@@ -1,0 +1,9 @@
+{
+  "pid": 30740,
+  "ppid": 25071,
+  "pgid": 30740,
+  "state": "Ss",
+  "started": "Sat Nov 21 14:14:49 2026",
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native_v2.py --bootstrap 25071 --phase mps_preflight",
+  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native_v2.py --phase mps_preflight"
+}
