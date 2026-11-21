@@ -1,0 +1,83 @@
+{
+  "state": "pinned_remote_checkpoint_observed_not_live_process_poll",
+  "commit": "d39d9fc559292a85a4082c472a35b6091727faf5",
+  "source_path": "experiments/upstream-remote-weekend/execution/progress.json",
+  "sha256": "f86e58e3056a691b52924670057732afc2a0cc6e73161accb37817cf7038e55f",
+  "record": {
+    "observed": "2026-11-21T02:45:29+00:00",
+    "training_hours_left": 59.24,
+    "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-06:31:30  40:13.46  26080 Ss   /sbin/launchd",
+    "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 82%",
+    "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
+    "disk_free_gib": 217.7,
+    "jobs": {
+      "s3-rbm400pf": {
+        "status": {
+          "state": "waiting_original_full_capacity",
+          "good_samples": 0,
+          "workers": {
+            "73974": {
+              "bytes": 1835008.0,
+              "rss_bytes": 1851392,
+              "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/driver.sh"
+            },
+            "73975": {
+              "bytes": 1179648.0,
+              "rss_bytes": 475136,
+              "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/driver.log"
+            },
+            "73979": {
+              "bytes": 32191283.2,
+              "rss_bytes": 32702464,
+              "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
+            },
+            "74003": {
+              "bytes": 1966080.0,
+              "rss_bytes": 2736128,
+              "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh"
+            },
+            "74004": {
+              "bytes": 1605632.0,
+              "rss_bytes": 770048,
+              "command": "caffeinate -i /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh"
+            }
+          },
+          "memory": {
+            "compressor_bytes": 12118704128,
+            "swap_used_bytes": 376837242.88
+          },
+          "observed": "2026-11-21T02:45:21.349276+00:00"
+        },
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      },
+      "s3-tx300r": {
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      },
+      "s3-rbm800p": {
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      }
+    }
+  },
+  "interpretation": "No native fit process reported. SAME run-job73979 waits original capacity; compressor about11.29GiB exceeds10GiB admission. No completed producer/export/transfer. Preserve same baseline, recipe and guards; PID1 fallback is launchd, not training."
+}

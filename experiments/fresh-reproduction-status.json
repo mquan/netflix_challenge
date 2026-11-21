@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T01:29:56.986085+00:00",
-  "display_time": "2026-11-21 01:29 UTC",
+  "observed": "2026-11-21T03:25:24.028729+00:00",
+  "display_time": "2026-11-21 03:25 UTC",
   "best_development_rmse": 0.8589133967520619,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -11,8 +11,8 @@
   "work": [
     {
       "work": "Remote hourly checkpoint: memory admission still pending",
-      "state": "Pinned3e8ad78 at00:45UTC reports same waitingrun-job73979, no native fit, compressor11.77GiB above original10GiB admission,217.7GiB disk. Coordinator has no direct remote process poll. Preserve sameowner/baseline/recipe; operational memory inspection note prepared. No remote output or score admitted.",
-      "evidence": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T004525.json"
+      "state": "Pinned d39d9fc at02:45UTC reports same waiting run-job73979, no native fit, compressor11.29GiB above original10GiB admission,217.7GiB disk and59.24training hours remaining. Coordinator has no direct remote process poll. Preserve same owner/baseline/recipe; operational memory inspection note remains available. No remote output or score admitted.",
+      "evidence": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T024529.json"
     },
     {
       "work": "Full weekend learning iteration reviewed and queued",
@@ -75,9 +75,9 @@
       "evidence": "experiments/upstream-complete-cf-delta-native-deferred/plan.json"
     },
     {
-      "work": "Original1200 full23+23 native training active: eight epochs complete",
-      "state": "Pinned original build/source/data admission passed; same native16010 runs full1200factors/100neighbors/23epochs each phase under owner8122 and original22GiB own/24research/128MiB swapgrowth/18.75disk gates. First trainx phase has eight completed epochs; latest0.89389 is an early single-model diagnostic, not an ensemble or qualifying result. All58 numeric outputs plus persisted native log and independent replay remain required.",
-      "evidence": "experiments/upstream-original1200-exact-build-recovery/first-native-baseline.json"
+      "work": "Original1200 full23+23 native training active: thirteen epochs complete",
+      "state": "Pinned original build/source/data admission passed; same native16010 runs full1200factors/100neighbors/23epochs each phase under owner8122 and original22GiB own/24research/128MiB swapgrowth/18.75disk gates. First trainx phase has thirteen completed epochs; latest0.88521 is an intermediate single-model diagnostic, not an ensemble or qualifying result. All58 numeric outputs plus persisted native log and independent replay remain required.",
+      "evidence": "experiments/upstream-original1200-exact-build-recovery/coordinator-epoch13-observation.json"
     },
     {
       "work": "Authorized downloaded-public cache retirement",
@@ -154,7 +154,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T01:29:56.986085+00:00",
+    "observed": "2026-11-21T03:25:24.028729+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -170,7 +170,7 @@
     "tx50n": "independently_admitted_original22_22",
     "cf_delta": "same_intake_paused_after_serialized_guard",
     "cf_delta_recovery_owner": 30570,
-    "original1200": "original_native23_plus23_active_eight_epochs_complete",
+    "original1200": "original_native23_plus23_active_thirteen_epochs_complete",
     "original1200_owner": 8122,
     "original1600_complete_verification_sha256": "f9447449aa00ee9c146bd0cc25c8d98225b586b9e36905d4aa092c3754d89b96",
     "neural_exact_recovery_owner": null,
@@ -186,7 +186,12 @@
       5,
       6,
       7,
-      8
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
     ],
     "paired391_qualifying_bag": "complete_independent_all_query_streams_and_original_models",
     "own14": "complete_full_preaudit_same_audit26049_paused_after_compressor_guard_wait_full_native",
@@ -200,7 +205,7 @@
     "complete_trajectory_bag_owner": 58980,
     "own15": "reviewed_queue_waiting_preceding_label_free_proof_and_new_bag",
     "own15_owner": 68008,
-    "remote_weekend_checkpoint_commit": "3e8ad781c7014cdc95f995b6ed74527141e8646e",
+    "remote_weekend_checkpoint_commit": "d39d9fc559292a85a4082c472a35b6091727faf5",
     "remote_weekend_return": "three_reviewed_queues_waiting_current_own15_canonical_completion",
     "remote_weekend_return_owners": {
       "s3-rbm400pf": 87173,
@@ -215,7 +220,9 @@
       "own16": 6075
     },
     "own14_actual_audit_pid": 26049,
-    "own14_independent_preaudit_sha256": "c1519468cf904f26fffa2a07fb4e78c0bf6083de17915041419fb920746ef5ea"
+    "own14_independent_preaudit_sha256": "c1519468cf904f26fffa2a07fb4e78c0bf6083de17915041419fb920746ef5ea",
+    "original1200_observation_path": "experiments/upstream-original1200-exact-build-recovery/coordinator-epoch13-observation.json",
+    "remote_weekend_observation_path": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T024529.json"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
