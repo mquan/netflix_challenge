@@ -674,6 +674,11 @@ def validate_fresh_status():
         mean_ok,replay_ok=validate_complete13_qualifying(latest_path,latest)
     elif latest['state']=='complete_independent_own14_full_source_models_coefficients_and_frozen_group_scores':
         mean_ok,replay_ok=validate_own14_qualifying(latest_path,latest)
+    elif latest['state']=='complete_independent_own15_full_source_models_coefficients_and_frozen_group_scores':
+        base_path=EXPERIMENTS/'upstream-own14-matched391-calibration/independent-canonical-verification.json'
+        validate_own14_qualifying(base_path,json.loads(base_path.read_text()))
+        from own15_publication import validate
+        mean_ok,replay_ok=validate(ROOT,latest_path,latest)
     elif latest['state'] in {'complete_independent_own5_calibration_and_frozen_group_scores', 'complete_independent_own6_calibration_and_frozen_group_scores'}:
         family_count=6 if latest['state']=='complete_independent_own6_calibration_and_frozen_group_scores' else 5
         cal_path=latest_path.parent/'calibration.json';freeze_path=latest_path.parent/'frozen.json'
