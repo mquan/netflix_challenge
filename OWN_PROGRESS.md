@@ -430,14 +430,14 @@ new score has been measured. All three weekend producers must complete;
 missing/partial work cannot silently shrink this declaration.
 [Full weekend iteration](WEEKEND_COMPLETE_TRAJECTORY_PLAN.md).
 
-Remote hourly checkpointd39d9fc at02:45UTC still reports no native fit.
-Same run-job73979 waits its original global compressor admission:
-11.29GiB versus the10GiB cap, with217.7GiB disk and59.24training hours
-remaining. The driver must retain
-its original swap baseline and recipe; a memory inspection note is ready
-for the remote agent. This is a pinned checkpoint, not a live remote poll.
-[Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md) ·
-[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T024529.json).
+Remote hourly checkpointcb81770 at05:45UTC confirms original400pf native
+training24357, started21:20Pacific, elapsed25:17/CPU23:53.24, under the SAME
+run-job73979 and watchdog24356. The original compressor admission passed;
+the snapshot is9.97GiB with unchanged recorded swap376837242.88bytes and
+56.24training hours remaining. Full launch/epoch/source/output verification,
+export and transfer remain pending. This is a pinned checkpoint, not a
+coordinator live remote-process poll; no completed producer or score claim.
+[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T054536.json).
 
 The preserved original own14 preaudit21221 completed successfully at01:09UTC:
 all16383 simplex supports,15 ridge equations and all six complete vectors
@@ -448,9 +448,11 @@ No audit/canonical result or new qualifying score exists. Reviewed waiting
 owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
-active at thirteen first-phase epochs; latest standalone diagnostic0.88521.
+active at eighteen first-phase epochs; latest standalone diagnostic0.88044.
 All89 relevant checks pass.
 [Completed preaudit](experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json) ·
 [Exact same-audit continuation](OWN14_POST_NATIVE_AUDIT.md).
 
 [Live epoch13 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch13-observation.json).
+
+[Live epoch18 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch18-observation.json).

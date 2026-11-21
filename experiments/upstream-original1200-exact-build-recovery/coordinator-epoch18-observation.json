@@ -1,0 +1,89 @@
+{
+  "state": "live_original_native_handle_with_eighteen_completed_first_phase_epochs",
+  "observed": "2026-11-21T05:47:10.976992+00:00",
+  "process_observation": "  PID  PPID  PGID STARTED                      STAT  ELAPSED      TIME    RSS COMMAND\n 6054     1  6054 Fri Nov 20 16:45:01 2026     Ss   05:02:10   0:02.48  28256 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py\n 6062     1  6062 Fri Nov 20 16:45:01 2026     Ss   05:02:10   0:03.37  62832 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py\n 6067     1  6067 Fri Nov 20 16:45:01 2026     Ss   05:02:10   0:03.77  62640 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py\n 6075     1  6075 Fri Nov 20 16:45:01 2026     Ss   05:02:10   0:03.30  58800 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py\n 8122     1  8122 Fri Nov 20 13:12:11 2026     Ss   08:35:00   2:11.10  46496 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 16010 Fri Nov 20 13:38:18 2026     Rs   08:08:53 448:52.06 12601344 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 26049 Fri Nov 20 17:11:15 2026     Ts   04:35:56   0:21.33  38144 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n30570     1 30570 Fri Nov 20 14:21:42 2026     Ss   07:25:29   0:12.89  51120 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py\n35292     1 35292 Fri Nov 20 17:24:50 2026     Ss   04:22:21   1:02.90 142672 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n50842     1 50842 Fri Nov 20 15:04:43 2026     Ss   06:42:28   0:04.11  63408 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py\n56323     1 56323 Fri Nov 20 15:17:32 2026     Ss   06:29:39   0:04.72  58816 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py\n58980     1 58980 Fri Nov 20 15:22:51 2026     Ss   06:24:20   0:04.95  56080 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py\n68008     1 68008 Fri Nov 20 15:43:32 2026     Ss   06:03:39   0:05.24  71360 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own15_complete_trajectory_queue.py\n87173     1 87173 Fri Nov 20 16:17:42 2026     Ss   05:29:29   0:02.59  28208 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm400pf\n87178     1 87178 Fri Nov 20 16:17:43 2026     Ss   05:29:28   0:02.58  28208 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-tx300r\n87185     1 87185 Fri Nov 20 16:17:43 2026     Ss   05:29:28   0:02.57  27984 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm800p\n",
+  "native_pid": 16010,
+  "owner_pid": 8122,
+  "completed_first_phase_epochs": [
+    [
+      1,
+      0.95079
+    ],
+    [
+      2,
+      0.92846
+    ],
+    [
+      3,
+      0.91667
+    ],
+    [
+      4,
+      0.90925
+    ],
+    [
+      5,
+      0.90397
+    ],
+    [
+      6,
+      0.89972
+    ],
+    [
+      7,
+      0.8965
+    ],
+    [
+      8,
+      0.89389
+    ],
+    [
+      9,
+      0.8918
+    ],
+    [
+      10,
+      0.88971
+    ],
+    [
+      11,
+      0.88802
+    ],
+    [
+      12,
+      0.88653
+    ],
+    [
+      13,
+      0.88521
+    ],
+    [
+      14,
+      0.88397
+    ],
+    [
+      15,
+      0.883
+    ],
+    [
+      16,
+      0.88204
+    ],
+    [
+      17,
+      0.88119
+    ],
+    [
+      18,
+      0.88044
+    ]
+  ],
+  "native_log_prefix_bytes": 1405,
+  "native_log_prefix_sha256": "0d0af4e9f1e2631e614fd00db31ce526896f9880ae8a6577e263c199b8f0b4ec",
+  "native_log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "free_disk_bytes": 24346824704,
+  "native_failure_receipt": false,
+  "native_completion_receipt": false,
+  "qualifying_score_claim": false,
+  "note": "Intermediate standalone log diagnostics only. Full original23+23 and independent58numeric+log verification remain required. Same audit26049 remains stopped in RAM under waiting owner35292."
+}
