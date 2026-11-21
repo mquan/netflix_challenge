@@ -1,0 +1,40 @@
+{
+  "state": "complete_private_CPU_policy_context_runtime_and_process_fixtures",
+  "observed": "2026-11-21T19:43:30.524137+00:00",
+  "tests_run": 24,
+  "errors": 0,
+  "failures": 0,
+  "source_sha256": {
+    "scripts/upstream_remote_weekend_override_runtime.py": "6d404499e93f4c98bf75085bbad147ec964656657aaa6f627b44b3f7d9837342",
+    "scripts/upstream_remote_weekend_override_worker.py": "b6fb3f4f12c20427a9f66a9177f31a9093fe4bb98b6fd75d90e232b8433a5ddd",
+    "scripts/upstream_remote_weekend_override_return_queue.py": "815df3073fd53a6875e6f606dc7bfdebde38360f9858d57e5fa512716d5abac2",
+    "scripts/upstream_remote_weekend_override_handoff.py": "cdecc89cad3bbf8ecdf996bc07c1acd3edd3148f28e4ccbd022214804487fa9c",
+    "scripts/upstream_remote_weekend_override_context.py": "168d0c2c72ecb3d494f7b463e5da3bb45c763cd0be1709a689be25e0d6fc4b74",
+    "scripts/upstream_remote_weekend_override_policy.py": "c5eab4ef934dea2a127886fafc63c606144d22245f818e278c9bc73a737fb545",
+    "scripts/upstream_remote_weekend_return.py": "5d04c8c093832b0421adf4c13c12740e7025f9b6a085b54ef5681706a9351f6e",
+    "scripts/verify_upstream_remote_weekend_return.py": "44609cb7563e76ba57a423e4b887bed5b1004f8491515a6c5a111e8f4ea51ace",
+    "scripts/upstream_split3_pilot.py": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b",
+    "scripts/upstream_remote15h_native_stream.py": "64782bdd6d4346bc73df185d351502ea54076919bc84d9339b654624688031fa",
+    "experiments/upstream-remote-weekend/plan.json": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+    "experiments/upstream-remote-weekend-owner-override-policy/remote-plan.json": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+    "scripts/test_remote_weekend_override_runtime.py": "5f457c8b13f4a26b0264b2551267a8e79d44c1985dd6b2226076b75b54da2863",
+    "scripts/test_remote_weekend_override_context.py": "0e6263c5628d571f569fe70c5224f37849bb5695cd356a8b4d7a53934f4feef3",
+    "scripts/test_remote_weekend_override_policy.py": "ab85a27cf51d313a27850e13763a17dc370756a087c587ab98ca515f6bafde23",
+    "REMOTE_WEEKEND_OWNER_OVERRIDE_RETURN_PLAN.md": "ec4bbaaaedd6646ddfd27892ba721fdc76b8da3944f0d44c227b7c61755a68a1"
+  },
+  "production_scientific_processes_launched": false,
+  "production_processes_signalled": false,
+  "numerical_return_admitted": false,
+  "qualifying_labels_read": false,
+  "scientific_wrapper_fixtures_use_stub_verifier": true,
+  "scope": "CPU metadata rejection, fixed local guard and proof orchestration plus real private subprocess lock/owner-loss preservation. No actual archive numerical admission or new score.",
+  "independent_read_only_review": {
+    "reviewer": "/root/refit_checkpoint_review",
+    "result": "no_remaining_concrete_blocker",
+    "resolved_findings": [
+      "Output-size stat failures now preserve same worker/frame and force fresh measurement",
+      "Projection and native-stream helper hashes bound before waiting"
+    ],
+    "scope": "Source freeze, idle-only coordinator handoff and guarded waiting queues. Actual numerical admission still requires full producer transfers and unchanged scientific verification."
+  }
+}

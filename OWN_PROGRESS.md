@@ -2,6 +2,25 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 19:44 UTC execution update: the full519-stream input admission is
+independently verified. Its fixed five-fold ridge fit reports0.8617253441
+against the matched391 control0.8618508817; independent fit replay is running.
+This is a known-fold component diagnostic, not a new development best or a
+qualifying score. Exact paired aliases leave486 raw streams and713 neural
+inputs without dropping any declared candidate before alias verification.
+The subsequent full neural/qualifying/own15 stages remain queued.
+
+The separate owner-override remote-return adapter is implemented, independently
+reviewed and declared with24 passing CPU/metadata/private-process tests. No
+numerical return has been admitted. It preserves all67 remote pairs, original
+scientific validators, immutable source/helper pins and unchanged local guards.
+Only exact idle original return coordinators are eligible for handoff; no
+native training process is signalled. See
+[return protocol](REMOTE_WEEKEND_OWNER_OVERRIDE_RETURN_PLAN.md).
+Remote commit76758c0e29805fd74636ebe1f33aadda364f18bd reports all three remote
+native jobs paused at the owner's request at19:07:27 UTC/11:07:27 Pacific;
+this supersedes the older running snapshot. No remote resume is performed.
+
 Best independently verified known-ProbeX development CV: **0.8589133967520619**.
 The complete matched paired391 H128 NN/tree154 half improves preceding
 own3520.8589160570135321 by only0.0000026602614702. All15 actual618-input

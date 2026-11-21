@@ -53,3 +53,58 @@ private metadata-fixture tests pass, including coherent changes accepted by
 the older metadata layer and rejected by the new context. This library is not
 a production declaration or supervised numerical import; those remain pending.
 [Context prototype verification](experiments/upstream-remote-weekend-override-context-prototype/verification.json).
+
+## Separate supervised production adapter
+
+The separate runtime, worker, return queue and idle-only handoff are implemented
+in `scripts/upstream_remote_weekend_override_{runtime,worker,return_queue,handoff}.py`.
+Their declaration is
+`experiments/upstream-remote-weekend-override-return-protocol/plan.json`.
+The declaration binds both original transport/verifier files, the isolated
+context and policy, the projection and download helpers, this document and the
+CPU verification. Helper changes while queues wait are rejected before execution.
+The original controllers and numerical validators remain unchanged.
+
+Each successor waits for the complete original own15 independent audit, then a
+complete pinned remote transfer. It requires an exact idle-only retirement proof
+for its original return coordinator and an empty scientific namespace. Retirement
+rechecks the frozen idle parent and its sole watchdog child; no scientific process
+is signalled. A failed pre-termination recheck restores only the idle control
+process paused by that handoff attempt. Previously paused owners are refused.
+
+Both import phases retain a live owner/watchdog and the same inherited primary
+lane descriptor. The worker also retains that descriptor if either supervisor
+exits. The watchdog preserves an active worker and holds the lane until that
+worker is terminal, including when its recovery journal cannot be written.
+Local limits stay at 2 GiB per worker, 24 GiB total in both physical and RSS
+domains, compressor below 5 GiB (4.5 GiB for admission), at most 128 MiB swap
+growth against one first-scientific baseline, and 18.75 GiB free plus the remaining
+complete output reserve. Measurement failures preserve the same stack and process;
+continuation requires three stable admission samples and a full new measurement.
+
+The unchanged independent scientific validator writes a pristine result into
+`original-scientific-validator/`. A separate canonical sidecar binds that result,
+the variant context and the complete production declaration. Both explicitly
+disclaim the original remote resource guarantees and preserve all local guards.
+The existing full weekend learner receives its ordinary canonical proof only
+after complete admission, through an append-only original-queue completion bridge.
+No subset, automatic retry, native training, recovered-label fitting or score
+selection is added by this adapter.
+
+CPU coverage includes real private subprocess lock inheritance, stopped-worker
+lock retention, owner loss with a failing recovery journal, exact identity checks,
+both memory domains, the unchanged baseline, live owner/watchdog gates, mutated
+helper pins, idle-only refusal/rollback, and wrapper proof/sidecar binding.
+Wrapper fixtures stub the scientific validator; they prove orchestration and do
+not establish numerical admission. Full numerical validation remains mandatory
+on actual returned archives.
+[CPU verification](experiments/upstream-remote-weekend-override-runtime-cpu/verification.json).
+
+The newer remote checkpoint
+`76758c0e29805fd74636ebe1f33aadda364f18bd` records an owner-requested pause at
+2026-11-21 19:07:27 UTC (11:07:27 Pacific). Reported first-phase progress was
+2/15 (RBM400pf), 5/25 (RBM800p), and 4/24 (TX300r). The preceding hourly
+`progress.json` still describes running jobs at 18:49 UTC and must not override
+this newer pause record. This is a pinned remote report, not a live process poll;
+no remote resume is performed by this adapter. The Monday training/return
+deadlines remain unchanged.
