@@ -2,6 +2,14 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 19:57 UTC storage update:236 original manifest-SHA256/index-MD5
+downloaded public qualifying-prediction inode groups and382 fully accounted
+aliases were retired under the existing public-bank cleanup authorization.
+Separate absence/provenance/protected-proof verification passes; measured
+free gain2.47677GiB leaves about22.29GiB. Seven mismatched groups and unselected
+files remain. All own numerical state, data, archives and processes are retained.
+[Exact public-cache cleanup](PUBLIC_QUAL_CACHE_RETIREMENT.md).
+
 November21 19:44 UTC execution update: the full519-stream input admission is
 independently verified. Its fixed five-fold ridge fit reports0.8617253441
 against the matched391 control0.8618508817; independent fit replay is running.
