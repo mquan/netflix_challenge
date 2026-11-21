@@ -1,6 +1,8 @@
 # RBM400 learned-context follow-up
 
-Status: array-only mathematical prototype implemented with eight CPU checks.
+Status: array-only mathematical prototype implemented with eight CPU checks;
+read-only extraction core implemented with twelve synthetic CPU checks.
+Array-only operator and neural factories add seven and four CPU checks.
 No production provider declaration, queue, model extraction or training has
 started for this follow-up. Existing frozen producers and own16 plans, source
 files, numerical budgets and execution order stay unchanged.
@@ -23,12 +25,13 @@ per-epoch predictive checkpoints. This follow-up must not assume checkpoint
 trajectories exist, restart training or change the producer to create them.
 
 The checked source contracts are
-`scripts/upstream_factored_rbm_terminal.py`,
-`scripts/upstream_factored_rbm_prediction.py` and
-`scripts/upstream_factored_rbm_worker_native_v2.py`, whose numerical worker AST
-matches the original apart from the execution import. The active producer is
-the reviewed original-scope v2 successor and its matching v2 own16 consumer;
-both metadata-only predecessor attempts remain explicit. The model has400 hidden units and
+`scripts/upstream_factored_rbm_terminal_metal.py`,
+`scripts/upstream_factored_rbm_prediction_metal.py` and
+`scripts/upstream_factored_rbm_worker_metal.py`. Worker/training/terminal ASTs
+match the originals under declared imports. The active producer is the reviewed
+deterministic-Metal successor, with matching own16 consumer; all superseded
+metadata and failed-preflight attempts remain explicit. Its ordered single-writer
+reduction passes the actual full MPS device/reference/repeat checks. The model has400 hidden units and
 50 factors. Its prediction routine returns the bipolar `hidden_expected`
 posterior and uses `hidden_expected @ q.T` in its category logits. All
 conditional-item addresses and empty-history behavior must remain exact.
@@ -76,6 +79,37 @@ full-provider verifier must check the declared arithmetic on every real factor
 and query, including measured casting error; these CPU checks do not admit an
 actual terminal model or establish MPS inference/feature-bit agreement.
 
+The read-only extraction core is `scripts/upstream_rbm400_latent_extraction.py`.
+It accepts only complete original400/50/15 terminal records and an external
+ownership/resource guard. It replays every native prediction bit before
+returning query-user posterior factors, centered item factors and an explicit
+coverage mask. Unqueried users remain NaN/uncovered; cold queried users retain
+their original bias/conditional posterior. No model tensor or terminal RNG is
+changed. Twelve CPU tests use an actually trained full-width synthetic terminal
+model, including independent scalar posterior checks for all users, exact bit
+mismatch rejection (literal uint32 bits, including a signed-zero regression),
+source-row ordering/bounds/uniqueness, query-outcome access
+rejection and unchanged model/RNG checks. CPU fixtures explicitly do not admit
+an actual MPS provider. Production model loading, full source/data binding,
+owned extraction queues and independent real-data replay remain unimplemented.
+
+The operator prototype `scripts/upstream_rbm400_latent_operators.py` keeps the
+entire562-column design,712-column nonlinear parent and all original context
+bits, retaining the final intercept. The scalar arm adds only its completely
+paired-admitted prediction; the latent arm appends all150 new coordinates only
+to the nonlinear design. Source admission, alias decisions and arm selection
+are outside this pure component. Seven full-width tests check inherited uint
+bits, raw scalar centering/clipping, intercept, both arms, scalar-alias cases,
+complete coordinate partitions and rejection of missing/nonfinite inputs.
+
+The factory prototype `scripts/upstream_rbm400_latent_neural.py` preserves all
+original H128/rank32 optimizer/seeds/40epoch/patience4/batch8192 settings and
+the zero-residual initialization. Four CPU construction checks cover every
+alias/arm width, exact original parameter initialization when the scalar arm
+aliases the parent, complete input/context buffers and rejection of altered
+recipes. Only declared architecture identities and input/context widths differ.
+This does not prepare real data, fit neural models or establish MPS model replay.
+
 Append the one completed RBM400 prediction pair to the current486 raw streams,
 subject to complete paired-alias checks before any removal. It is a terminal
 pair, not a promised set of epoch predictions. Keep the150 new coordinates in
@@ -113,7 +147,8 @@ an arm, coefficient, family, alignment or epoch.
 
 This needs separate implementation, source declarations, CPU rejection and
 independent numerical tests, review, and original-lane supervised queues before
-execution. Keep all original local limits:3GiB data worker,16GiB neural/bag
+execution. Keep all original local limits:3GiB CPU data worker,8GiB actual-MPS
+extraction worker (the original GPU cap),16GiB neural/bag
 worker,24GiB total in both physical/RSS domains, compressor below5GiB
 (4.5GiB admission),128MiB swap growth from one original baseline per queue,
 18.75GiB disk floor plus complete-output reservations. Preserve the same
