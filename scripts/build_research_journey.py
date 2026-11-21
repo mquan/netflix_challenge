@@ -4,6 +4,7 @@ import base64
 import datetime as dt
 import hashlib
 import json
+import math
 from html import escape
 import pathlib
 import re
@@ -16,6 +17,9 @@ EXPERIMENTS = ROOT / "experiments"
 # These are editorial milestones, not a claim that every experiment was a new best.
 # Calendar dates before timestamped run events are documentation upper bounds.
 MILESTONES = [
+    ('FRESH own14 qualifying', '0.8613681513408222', '2026-11-21T17:46:19.142031+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'promoted', 'Matched391 fold bag adds a small verified qualifying gain', 'The predeclared14-family known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All16383 supports,15ridge equations,six frozen vectors,full original source closure and15 actual new qualifying models independently verify. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725. Adaptive recovered evaluation, not official or untouched Test.', 'experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json', 'all14 ordered families, full16383-support preaudit, original frozen arithmetic, complete15-model query replay and separate compensated canonical scores'),
+    ('FRESH own14 ridge10 qualifying', '0.8613781986131858', '2026-11-21T17:41:55.749100+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Declared own14 signed ridge control trades off recovered groups', 'Known-only ridge10 with unpenalized intercept scores0.8603762149/0.8613781986. It improves source0 but worsens source1 relative to the predeclared simplex primary. All15 equations and frozen predictions verify. No control promotion or outcome-driven revision.', 'experiments/upstream-own14-matched391-calibration/independent-recovered-audit.json', 'predeclared signed ridge control, full known normal equations and separate frozen-group canonical audit'),
+    ('FRESH matched391 fixed-half qualifying', '0.8615957340466804', '2026-11-21T17:41:55.749100+00:00', 'Fresh training', 'fresh_qualifying', 'codex', 'audit', 'Matched391 fixed half remains a negative qualifying control', 'The unchanged half of the full fifteen-model matched391 query bag and historical tree154 scores0.8606336976/0.8615957340, worse on both groups than the preceding complete13 primary. Known development0.8589133968 remains a different evaluation. All original actual models and frozen arithmetic pass; no coefficient or fold selection follows outcomes.', 'experiments/upstream-own14-matched391-calibration/independent-recovered-audit.json', 'complete original15-model qualifying bag, exact declared fixed half and separate canonical recovered audit'),
     ('FRESH paired391 H512 control', '0.8590481464872496', '2026-11-20T21:22:36.756866+00:00', 'Fresh training', 'fresh_cv', 'codex', 'audit', 'Wider matched391 control is fully verified and worse', 'Original618 inputs/5held-user-folds/3seeds/max40pat4 H512rank32 control completes all15 actual models, full eligible preprocessing/normalized input and held prediction replay. Separate canonical NN0.8593153262/fixed-half0.8590481465 both miss H1280.8590533486/0.8589133968. Same paused worker continued without restart or numerical/guard changes. Historical tree154 A/B caveat retained. No H512 qualifying inference; H128 remains selected using known results only.', 'experiments/upstream-own391-paired-h512-mps/independent-canonical-verification.json', 'all15 actual models, original full preprocessing/prediction bits and separate canonical control score'),
     ('FRESH paired391 H128 tree154 half', '0.8589133967520619', '2026-11-20T20:36:27.360415+00:00', 'Fresh training', 'fresh_cv', 'codex', 'promoted', 'Matched391 neural study verifies a negligible development gain', 'All618 inputs,393 signals/225 contexts and original five-user-fold/three-seed H128rank32/max40pat4 recipe retained. All15 actual models, complete eligible scalers/normalized inputs and held predictions independently replay; separate canonical half0.8589133968 improves own352 by only0.0000026603. NN alone0.8590533486 is slightly worse. Original paused worker continued without restart or guard changes. Neural provider matches pairedB on both queries; historical tree154 A/B realization caveat retained. No new qualifying score; target remains unmet.', 'experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json', 'all15 actual models, complete original preprocessing/prediction bits and separate compensated canonical scores'),
     ('FRESH paired391 ridge diagnostic', '0.8618508817095664', '2026-11-20T16:46:03.380540+00:00', 'Fresh training', 'fresh_cv', 'codex', 'screen', 'Matched paired inputs pass; added scalar ridge gain is tiny', 'Both complete matchedB input streams retain the original330parent bits plus22temporal and all39 new eligible native/TX predictors. All467design/617nonlinear operators, ten-group statistics, eligible lambda1000 solves and stored held predictions independently replay. Known pairedB352/B391 ridge0.8618576840 to0.8618508817 gains only0.0000068. This is a data/ridge diagnostic, not a neural or qualifying promotion. Original-budget618-input H128 neural follow-up is queued behind original1600 coverage.', 'experiments/upstream-own391-paired-data/independent-verification.json', 'every complete matched paired input/statistic/eligible solve/stored prediction and canonical known score'),
@@ -485,6 +489,93 @@ def validate_complete13_qualifying(latest_path,latest):
             latest['all_original_development_and_full_family_replays_verified'])
 
 
+def verify_own14_publication_sources(root,bindings):
+    """Check recorded code and the new family's actual model/scaler/bag bytes."""
+    prefixes=('artifacts/upstream-own391-paired-h128-mps/',
+              'artifacts/upstream-own391-fold-bag/',
+              'experiments/upstream-own391-paired-h128-mps/',
+              'experiments/upstream-own391-fold-bag/')
+    counts={name:0 for name in ('code',*prefixes)}
+    for name,expected in bindings.items():
+        relative=pathlib.Path(name)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError('Relative original source paths required')
+        group='code' if relative.suffix=='.py' else next((p for p in prefixes if name.startswith(p)),None)
+        if group is None:continue
+        if hashlib.sha256((root/relative).read_bytes()).hexdigest()!=expected:
+            raise ValueError('Recorded own14 code/model/scaler/bag source changed: '+name)
+        counts[group]+=1
+    if not all(counts.values()):raise ValueError('Complete code and new-family artifact/proof coverage required')
+    return counts
+
+
+def validate_own14_qualifying(latest_path,latest):
+    """Admit the predeclared own14 primary through its complete frozen chain."""
+    digest=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+    report=latest_path.parent
+    names=['plan.json','calibration.json','known-completion.json','frozen.json',
+           'independent-preaudit-verification.json','independent-recovered-audit.json']
+    if set(latest['bindings'])!={str((report/name).relative_to(ROOT)) for name in names}:
+        raise ValueError('Complete own14 metadata binding set required')
+    for key,expected in latest['bindings'].items():
+        if digest(ROOT/key)!=expected:raise ValueError('Own14 frozen evidence changed')
+    plan,cal,known,freeze,pre,audit=[json.loads((report/name).read_text()) for name in names]
+    base_path=EXPERIMENTS/'upstream-complete13-calibration/independent-canonical-verification.json'
+    base=json.loads(base_path.read_text());validate_complete13_qualifying(base_path,base)
+    base_cal=json.loads((base_path.parent/'calibration.json').read_text())
+    candidates=['own14-simplex','own14-ridge10','matched391-fixed-half']
+    weights=cal['simplex_weights']
+    if (latest['state']!='complete_independent_own14_full_source_models_coefficients_and_frozen_group_scores' or
+        any(v['primary']!=candidates[0] for v in (latest,plan,freeze,audit)) or
+        plan['families']!=14 or plan['candidates']!=candidates or
+        cal['family_ids']!=base_cal['family_ids']+['nn391-matched-fold-bag'] or
+        [r['id'] for r in cal['families']]!=cal['family_ids'] or cal['families'][:13]!=base_cal['families'] or
+        len(weights)!=14 or any(not math.isfinite(w) or w<0 for w in weights) or abs(sum(weights)-1)>1e-12 or
+        max(abs(a-b) for a,b in zip(weights,pre['independent_simplex_weights']))>1e-5 or
+        len(pre['independent_simplex_weights'])!=14 or
+        latest['simplex_supports_examined']!=16383 or pre['simplex_supports_examined']!=16383 or
+        latest['ridge_equations']!=15 or pre['ridge_equations']!=15 or
+        any(v['ridge_lambda']!=10. for v in (plan,cal,pre)) or
+        pre['state']!='complete_independent_all16383_supports_ridge15_and_six_vectors_before_audit' or
+        not pre['all_six_candidate_vectors_bitwise'] or not latest['all_six_vectors_independently_verified'] or
+        not latest['full_inherited_source_closure_rehashed'] or latest['actual_new_qualifying_models_reopened']!=15 or
+        latest['source_sha256']!=freeze['source_sha256'] or pre['source_sha256']!=freeze['source_sha256'] or
+        any(freeze['source_sha256'].get(k)!=v for k,v in cal['source_sha256'].items()) or
+        any(v['qualifying_labels_read'] is not False for v in (plan,cal,freeze,pre)) or
+        any(v['qualifying_labels_used_for_fitting_or_selection'] is not False for v in (latest,audit)) or
+        any(v['known_score_is_nested_cross_validation'] is not False for v in (latest,plan,cal,pre)) or
+        latest['official_or_untouched_test'] is not False or audit['official_or_untouched_test'] is not False or
+        pre['freeze_sha256']!=digest(report/'frozen.json') or pre['calibration_sha256']!=digest(report/'calibration.json') or
+        pre['verifier_sha256']!=plan['verifier_sha256'] or
+        freeze['plan_sha256']!=digest(report/'plan.json') or freeze['calibration_sha256']!=digest(report/'calibration.json') or
+        freeze['known_completion_sha256']!=digest(report/'known-completion.json') or
+        audit['preaudit_verification_sha256']!=digest(report/'independent-preaudit-verification.json') or
+        dt.datetime.fromisoformat(pre['observed'])>=dt.datetime.fromisoformat(audit['observed']) or
+        audit['state']!='complete_all_three_original_own14_frozen_candidate_audits' or
+        [v['candidate'] for v in latest['results']]!=candidates or latest['results']!=audit['results'] or
+        latest['groups']!=latest['results'][0]['groups'] or
+        latest['prediction_sha256']!=freeze['predictions'][candidates[0]] or
+        not all(latest['groups'][k]['rmse']<base['groups'][k]['rmse'] for k in ('source0','source1'))):
+        raise ValueError('Full original own14 primary, preaudit and separate canonical evidence required')
+    expected={'known-simplex','known-ridge10','known-fixed-half',*candidates}
+    if set(freeze['predictions'])!=expected:
+        raise ValueError('All six original own14 frozen vectors required')
+    for name,expected_hash in freeze['predictions'].items():
+        if digest(ROOT/'artifacts/upstream-own14-matched391-calibration'/(name+'.f32'))!=expected_hash:
+            raise ValueError('Own14 frozen candidate vector changed')
+    verify_own14_publication_sources(ROOT,freeze['source_sha256'])
+    bag_path=EXPERIMENTS/'upstream-own391-fold-bag/independent-verification.json'
+    bag=json.loads(bag_path.read_text())
+    if (digest(bag_path)!=freeze['source_sha256'][str(bag_path.relative_to(ROOT))] or
+        bag['state']!='complete_independent_matched391_actual_fold_models_all_query_streams_and_bag' or
+        bag['actual_models_reopened']!=15 or bag['seed_slots']!=15 or bag['rows']!=2817131 or
+        not all(bag[k] for k in ('all_original_model_and_input_streams_replayed','uniform_five_fold_bag_bitwise_equal',
+                                'matched_B_raw_operators_on_both_queries','known_OOF_and_qualifying_bag_constructions_distinct')) or
+        bag['qualifying_labels_read'] is not False):
+        raise ValueError('Complete original own391 fifteen-model qualifying bag replay required')
+    return True,True
+
+
 def validate_fresh_status():
     record=json.loads((EXPERIMENTS/'fresh-reproduction-status.json').read_text())
     if record['qualifying_status']!='audited_miss':
@@ -575,6 +666,8 @@ def validate_fresh_status():
         mean_ok,replay_ok=validate_own330_qualifying(latest_path,latest)
     elif latest['state']=='complete_independent_complete13_calibration_and_frozen_group_scores':
         mean_ok,replay_ok=validate_complete13_qualifying(latest_path,latest)
+    elif latest['state']=='complete_independent_own14_full_source_models_coefficients_and_frozen_group_scores':
+        mean_ok,replay_ok=validate_own14_qualifying(latest_path,latest)
     elif latest['state'] in {'complete_independent_own5_calibration_and_frozen_group_scores', 'complete_independent_own6_calibration_and_frozen_group_scores'}:
         family_count=6 if latest['state']=='complete_independent_own6_calibration_and_frozen_group_scores' else 5
         cal_path=latest_path.parent/'calibration.json';freeze_path=latest_path.parent/'frozen.json'

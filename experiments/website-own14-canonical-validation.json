@@ -1,0 +1,33 @@
+{
+  "state": "complete_actual_own14_publication_chain_and_rejection_checks",
+  "observed": "2026-11-21T17:57:33.548497+00:00",
+  "builder_sha256": "7153793edf78ea1ba0d0068d841659c1205820b75d82da3554bb01d53d770e93",
+  "canonical_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+  "checks": [
+    "actual_complete_frozen_chain_accepted",
+    "rejected_primary",
+    "rejected_simplex_supports_examined",
+    "rejected_actual_new_qualifying_models_reopened",
+    "rejected_qualifying_labels_used_for_fitting_or_selection",
+    "rejected_all_six_vectors_independently_verified",
+    "rejected_bindings",
+    "rejected_unbacked_score",
+    "full_fresh_status_integration_accepted"
+  ],
+  "checks_passed": 9,
+  "own_milestones": 94,
+  "daily_plot_markers": 24,
+  "html_root_equals_journey": true,
+  "no_numerical_training_or_candidate_changes": true,
+  "recorded_code_and_new_family_artifacts_rehashed": {
+    "code": 212,
+    "artifacts/upstream-own391-paired-h128-mps/": 35,
+    "artifacts/upstream-own391-fold-bag/": 1,
+    "experiments/upstream-own391-paired-h128-mps/": 8,
+    "experiments/upstream-own391-fold-bag/": 1
+  },
+  "private_fixture_test_methods_passed": 4,
+  "private_fixture_tamper_paths": 7,
+  "private_fixture_test_source_sha256": "fc154e380f4174896bd81cd7181be0d8e5ecd7a64ba40dee873226d72e474d25",
+  "model_reopening_attribution": "Earlier independent full qualifying-bag replay; separate canonical rehashes/reconstructs/scores."
+}
