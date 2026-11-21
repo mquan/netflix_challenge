@@ -1,0 +1,17 @@
+{
+  "pid": 59405,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_complete_trajectory_fold_bag.py"
+  ],
+  "owner_sha256": "d6d16270520bf2cea1c400d4f535a46f15c4b5787e97537d1111505655577b26",
+  "watchdog": {
+    "pid": 58983,
+    "ppid": 58980,
+    "pgid": 58983,
+    "state": "Ss",
+    "started": "Fri Nov 20 15:22:51 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py --watch 58980"
+  }
+}
