@@ -1,0 +1,28 @@
+{
+  "owner": {
+    "pid": 6075,
+    "ppid": 1,
+    "pgid": 6075,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:45:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py"
+  },
+  "watchdog": {
+    "pid": 6077,
+    "ppid": 6075,
+    "pgid": 6077,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:45:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py --watch 6075"
+  },
+  "original_queue_plan_sha256": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8",
+  "state": "complete_retired_original_idle_own16_coordinator_before_any_numerical_dispatch",
+  "observed": "2026-11-21T15:11:06.399794+00:00",
+  "scientific_work_dispatched": false,
+  "models_refitted": 0,
+  "numerical_source_changed": false,
+  "original_owner_and_watchdog_terminal": true,
+  "baseline_reset": false,
+  "only_control_owner_signaled": true,
+  "original_queue_failure_sha256": "bb8e4303d6eb6bd3e672804ee2bcebda77df24b14fcb64ff612fd39164ac0e15"
+}

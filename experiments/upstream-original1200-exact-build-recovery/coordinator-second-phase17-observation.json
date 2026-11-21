@@ -1,0 +1,22 @@
+{
+  "state": "observed_first23_complete_second17_complete_same_original_native_live",
+  "observed": "2026-11-21T15:12:41.374172+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1971,
+  "observed_log_prefix_sha256": "b8ae629ade1eb55afdaf511170a6ed573e2312fdd2ace5e59560d3c26397db5c",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 17,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "actual_process_observation": "  PID  PPID STAT  ELAPSED      TIME COMMAND\n 8122     1 Ss   18:00:30   4:46.57 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   17:34:23 990:14.23 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n31460     1 Ss      33:04   0:01.12 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start\n35292     1 Ss   13:47:51   3:19.13 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n45713     1 Ss      16:25   0:00.85 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start\n59231     1 Ss      01:15   0:00.36 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start\n59294 59231 Ss      01:15   0:00.31 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --watch 59231 --lane-fd 3\n",
+  "free_bytes": 21851795456,
+  "interpretation": "Same original native is live. Complete second23 epochs and independent58numeric+log proof remain required. Qualifying zero-target errors are not accuracy. No new ensemble/recovered score."
+}

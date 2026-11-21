@@ -1,0 +1,35 @@
+{
+  "state": "observed_corrected_weekend16_owner_watchdog_waiting_original_full_producers",
+  "observed": "2026-11-21T15:12:41.363184+00:00",
+  "execution_plan_sha256": "309f4a67c685e8a3b3793cabc72a72bf8993828e1c55938e83dc41592921c235",
+  "owner": {
+    "pid": 59231,
+    "ppid": 1,
+    "pgid": 59231,
+    "state": "Ss",
+    "started": "Sat Nov 21 07:11:26 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start"
+  },
+  "watchdog": {
+    "pid": 59294,
+    "ppid": 59231,
+    "pgid": 59294,
+    "state": "Ss",
+    "started": "Sat Nov 21 07:11:26 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --watch 59231 --lane-fd 3"
+  },
+  "prior_idle_handoff_sha256": "dd5f5ce8879fd5e5cf99248bee29d8fe76f3016016d9aa7987b5237403607eaa",
+  "original_idle_owner_and_watchdog_terminal": true,
+  "no_scientific_worker_dispatched": true,
+  "production_models_refitted": 0,
+  "recovered_labels_read": false,
+  "full_original16_families_preserved": true,
+  "live_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  }
+}

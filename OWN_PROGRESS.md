@@ -470,7 +470,7 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775; its second fulltrain→qual phase has completed16/23 epochs.
+diagnostic0.87775; its second fulltrain→qual phase has completed17/23 epochs.
 Phase-two diagnostic errors use zero-filled qualifying targets and do not
 measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
@@ -540,3 +540,25 @@ limits remain mandatory through canonical verification.
 [Complete known-only local RBM blend plan](OWN_LOCAL_RBM_BLEND_PLAN.md) ·
 [73 synthetic CPU checks and review](experiments/upstream-local-rbm-blend-protocol/verification.json) ·
 [Live calibration waiting-owner observation](experiments/upstream-local-rbm-blend-queue/coordinator-waiting-observation.json).
+
+The weekend16 calibration freeze had a copied15-family validation despite
+its declared full16-family known fit. A small fixture reproduces the rejection;
+the separately reviewed correction now retains all16 families and the original
+coefficients, arithmetic, fixed half control and independent verifier. All79
+relevant CPU checks pass, including exact six-vector arithmetic, original known
+hash preservation, rejection of subsets/invalid populations and a real-process
+idle-owner handoff test. The original frozen modules remain unchanged.
+
+The original idle coordinator6075 and watchdog6077 were retired only after
+proving no scientific namespace, worker or swap baseline existed, then freezing
+and rechecking the exact control owner. No scientific process was signaled or
+refitted. Its reviewed successor59231 and a watchdog are alive, waiting for the
+same original own15 preaudit and complete weekend bag proof. All original67
+remote snapshots and full586-stream weekend neural requirements remain intact.
+No new production calibration or score exists. The original native1200 remains
+active at23/23 first-phase and17/23 second-phase epochs.
+[Full16 freeze correction and safe idle handoff](WEEKEND_OWN16_FREEZE_REPAIR.md) ·
+[79 CPU checks and independent review](experiments/upstream-weekend-own16-freeze-repair/protocol-verification.json) ·
+[Actual idle-only handoff](experiments/upstream-weekend-own16-freeze-repair/idle-handoff.json) ·
+[Corrected waiting-owner observation](experiments/upstream-weekend-own16-trajectory-queue-v2/coordinator-waiting-observation.json) ·
+[Original native second-phase epoch17](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase17-observation.json).
