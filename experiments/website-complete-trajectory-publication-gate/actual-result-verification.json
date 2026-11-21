@@ -1,0 +1,18 @@
+{
+  "state": "complete_actual_original_full_neural_result_publication_admission",
+  "observed": "2026-11-21T20:35:21.907338+00:00",
+  "canonical_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
+  "actual_model_replay_sha256": "a9b6c76fbdbbe3371c9d6ad60b451332a0f9681dad6e122fd803a2990f28721f",
+  "manifest_sha256": "10813424e70b95ae31875c91394ed47c4f72e41872c7e06d6e404a84a203f4b2",
+  "source_sha256": {
+    "scripts/complete_trajectory_publication.py": "9c809c7b6585c63d7709ec641c1f84f5c2231af3cb6d8c735c96b8058339bd1f",
+    "scripts/test_complete_trajectory_publication.py": "ad940277ad596d73c84b8495094fadc3ea677bf94a46f7a558e30342bc5e198b",
+    "scripts/build_research_journey.py": "8dcc77e5fa0559e01a475a36df10ec22195b010d31ae5800808b30e11030d2ec"
+  },
+  "actual_models_required_and_hashed": 15,
+  "new_development_rmse": 0.8588630883643809,
+  "prior_development_rmse": 0.8589133967520619,
+  "strict_improvement": true,
+  "qualifying_benchmark_changed": false,
+  "goal_achieved": false
+}

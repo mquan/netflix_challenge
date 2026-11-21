@@ -1,0 +1,9 @@
+{
+  "pid": 51978,
+  "ppid": 56323,
+  "pgid": 51978,
+  "state": "Ss",
+  "started": "Sat Nov 21 12:29:39 2026",
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py --bootstrap 56323 --phase separate_canonical",
+  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_complete_trajectory_canonical.py --variant h128"
+}

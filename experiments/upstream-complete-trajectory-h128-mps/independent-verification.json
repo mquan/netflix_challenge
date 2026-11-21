@@ -1,0 +1,115 @@
+{
+  "state": "complete_independent_complete_trajectory_actual_models_full_eligible_statistics_and_predictions",
+  "variant": "h128",
+  "manifest_sha256": "10813424e70b95ae31875c91394ed47c4f72e41872c7e06d6e404a84a203f4b2",
+  "verifier_sha256": "258e47c4f8568f5fdf756dd49d24e4f9537ed2c634832804a06385ac6fad481d",
+  "records": [
+    {
+      "fold": 0,
+      "rows": 226746,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-complete-trajectory-h128-mps/nn/0.json",
+      "receipt_sha256": "f5076e5b1e423fa81650f8677d71c11b2a2c195a248068f04842d26b2a5546ec",
+      "outputs": {
+        "nn-13.pt": "81ca87505e111ecf5212729f68a9e3ba60f8431ddd61292c0a72cff7804c065e",
+        "nn-2026.pt": "f21620ded74bf200ad45d956753951ba65fffba4b73123592c021397d63f7fc1",
+        "prediction.f32": "504e0673fd979a1fa6fa8c77e16967e4350dfc3e802ba76e7584a74691c492f4",
+        "ridge.npz": "538ead3fba0d4e596da3fac0bf761d32f621b9e62dfe3bd0f31d08bae9d708e2",
+        "nn-7.pt": "8fb6468eb0c087e521c1fa368c7222105d3bed761f660324fa564ca516bf5d31",
+        "scalers.npz": "45047cdf1a085f55fa503e02876e2b877923d999a12d8e879f8de47c2fa9f396"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8581160619650867
+    },
+    {
+      "fold": 1,
+      "rows": 225899,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-complete-trajectory-h128-mps/nn/1.json",
+      "receipt_sha256": "2b8841c460a604d560de6ce232cc9eff08bc37197115a4eb6280c8a147961dee",
+      "outputs": {
+        "nn-13.pt": "d31936fc9cd3710787a3133163ad5043447ce021350099dbc21778ebd40547a1",
+        "nn-2026.pt": "06c428634cff0ff8ef4f6602caa37f675762ede26869cc096748a49f3b9bae01",
+        "prediction.f32": "46b64b0870fa307c55f5083459f501b5b25b83f1a242b687224f2f75d81ec4ff",
+        "ridge.npz": "cb0480f35d11a30036742250da917ccd2ec76bc271fb59b52be76706ad93a8fa",
+        "nn-7.pt": "7029cee36f7c41c0aa507692da0f50eac68450022963dd367493f0fbc64ad22f",
+        "scalers.npz": "ef5c8fa356f9d8251240b1a13fcfdef44a7d45697f5aeef6fda9992e398952de"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8563430295890099
+    },
+    {
+      "fold": 2,
+      "rows": 224006,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-complete-trajectory-h128-mps/nn/2.json",
+      "receipt_sha256": "4c391c1e62f81529116056041e6e4585d480a0d62f40edc9feb95ffd331e4135",
+      "outputs": {
+        "nn-13.pt": "b7772633db4843513442d40288171ee6cfe95ccc2c77e244995bf336deef10c1",
+        "nn-2026.pt": "9040bf674f9294966b96c7ee07f6f54c97e53c929044cb5bcea71eaede7a4937",
+        "prediction.f32": "816c9a1c9139cf57deef208a94febe1440f6e82a258704fcfc95387d6c4c5c2c",
+        "ridge.npz": "edf629b22efa37492918b26cee4bfcdce29884795f521085b3fa179cb3b2d318",
+        "nn-7.pt": "349561978dc665e64aa93052125e9dcde9221266983aecd5a0faf805b37ec2f1",
+        "scalers.npz": "40475ee3bbab3c1d7beedc2fd3a1decc31b5bf00d26ebf9a0db29c442c03d328"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.860022530512051
+    },
+    {
+      "fold": 3,
+      "rows": 225873,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-complete-trajectory-h128-mps/nn/3.json",
+      "receipt_sha256": "b4ad1eb3b8e147c0891adace9fe6d92b0889815254f8e13540a3a4514fb76df1",
+      "outputs": {
+        "nn-13.pt": "1cfd9c5172ad3a94c8207b31df136c9e2c9a1c0ea81d9b3a05b1c28343656ac6",
+        "nn-2026.pt": "dee6271923d17561f4eec1fd2a8880433a349f929808a83d0621431f61bccf94",
+        "prediction.f32": "b35b3dbf2d5ea0fb0db2b76c6373664bb0e33b704a5ed76ca579e91740f1e79c",
+        "ridge.npz": "abadf71af3fd140fe9114eeb5d991c6ec743bfbe4bac33f0afc06695c09822a8",
+        "nn-7.pt": "5d5146741dcdbfaa3177dfd99c7e1f668beb243f85436300686f8692562b89b9",
+        "scalers.npz": "d744ab8c65496dabd22907f6430cbfc8c02e7efb2451fa1d76f0b5cdc4afe3db"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8610334620466118
+    },
+    {
+      "fold": 4,
+      "rows": 225640,
+      "actual_models_reopened": 3,
+      "receipt_path": "experiments/upstream-complete-trajectory-h128-mps/nn/4.json",
+      "receipt_sha256": "315d878b204fce63cb58404bd286aa9ac787e0f72f28b09a774279e28fcc090f",
+      "outputs": {
+        "nn-13.pt": "9a033b64028bdc8e611233bc9272c33dddeb6f315d4abf9010d3198b5d9ee734",
+        "nn-2026.pt": "36abd7adfb4fb65dfccee94706c05de34d3aeca31f23372eedda3882fd027030",
+        "prediction.f32": "8e05600b732cda9a692daa4720b96c0ebb375cc1470d16fe086468e4e63f5e37",
+        "ridge.npz": "ecf4ffef046297a29d6458ac1f52a5c9487133cd067d32e61b22c656a5fd4916",
+        "nn-7.pt": "3855ec3daa5d86ec102a49bc5a2952820ecb54791bde914238ebf8f708cd9e6a",
+        "scalers.npz": "4b0a14d0ce71852f2319026478d106679357806ab65f81e65daf673f050fe6e1"
+      },
+      "both_complete_eligible_scalers_independently_recomputed": true,
+      "all_normalized_input_bits_equal": true,
+      "actual_saved_pipeline_bitwise_equal": true,
+      "rmse": 0.8595199664983187
+    }
+  ],
+  "complete_original_statistics_bitwise_equal": true,
+  "all_original_models_preserved_without_refitting": true,
+  "matched_B_known_and_qualifying": true,
+  "nn_rmse": 0.8590060211471172,
+  "fixed_half_tree154_rmse": 0.8588630883643809,
+  "nn_sha256": "b9700d8a869d91ed5187286c34be3afda0ca1aa4767b0b52985e3144d54384e6",
+  "fixed_half_sha256": "eccb64583242bc07d52a1b120e33f20b7d8303fd1e2dc85074ae223f8e1b5bec",
+  "declared_global_reference_rmse": 0.8589133967520619,
+  "fixed_half_below_declared_global_reference": true,
+  "qualifying_labels_read": false,
+  "production_started": false,
+  "goal_complete": false
+}

@@ -2,6 +2,11 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 20:32 UTC: the full15-model trajectory study and separate canonical
+score checks are complete. New development best0.8588630883643809; the original
+qualifying-bag coordinator58980 has begun full inference. Qualifying scores
+remain unchanged until the complete bag, own15 known-only freeze and audits.
+
 November21 19:58 UTC scientific update: the complete519-stream input/ridge
 study now passes independent reconstruction of every full operator, statistic,
 coefficient and held prediction. Ridge0.861725344068627 improves the matched391
@@ -42,15 +47,19 @@ Remote commit76758c0e29805fd74636ebe1f33aadda364f18bd reports all three remote
 native jobs paused at the owner's request at19:07:27 UTC/11:07:27 Pacific;
 this supersedes the older running snapshot. No remote resume is performed.
 
-Best independently verified known-ProbeX development CV: **0.8589133967520619**.
-The complete matched paired391 H128 NN/tree154 half improves preceding
-own3520.8589160570135321 by only0.0000026602614702. All15 actual618-input
-models and complete original eligible statistics/scalers/normalized inputs/
-predictions independently replay, with a separate canonical arithmetic and
-score check. The original stopped worker continued without restart or
-numerical/guard change. The neural provider matches pairedB on both queries;
-the tree154 control retains its historical A/B realization caveat.
-[Complete matched391 result](OWN391_PAIRED_NEURAL_RESULT.md).
+Best independently verified known-ProbeX development CV: **0.8588630883643809**.
+The complete713-input H128 NN/tree154 half improves the matched391 benchmark
+0.8589133967520619 by0.0000503083876811. All15 actual original five-user-fold,
+three-seed models and complete eligible statistics/scalers/normalized inputs/
+held predictions independently replay. Separate canonical verification confirms
+NN0.8590060211471172 and the exact fixed-half vector. No qualifying outcome
+entered training or selection. The neural provider matches pairedB on both
+queries; tree154 retains its historical A/B realization caveat.
+[Complete trajectory neural result](OWN_COMPLETE_TRAJECTORY_NEURAL_RESULT.md).
+
+The preceding matched391 result0.8589133967520619 improved own352 by only
+0.0000026602614702; its original source/model/continuation evidence is retained.
+[Preceding matched391 result](OWN391_PAIRED_NEURAL_RESULT.md).
 
 Current independently verified recovered qualifying benchmark:
 
