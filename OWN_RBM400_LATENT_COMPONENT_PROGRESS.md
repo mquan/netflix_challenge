@@ -44,6 +44,14 @@ that those references constitute an admitted scientific provider. The separate
 frozen production declaration, actual supervised extraction proofs and neural
 data/provider admission remain required.
 
+At2026-11-21T23:54UTC the reviewed extraction supervisor was launched as
+PID87109 with live watchdog87113. Its66 frozen source/proof files verify and
+its baseline is byte-identical to the original. It is waiting for complete
+paired RBM and own16 proofs; no scientific child, model extraction or cache
+has been dispatched. The original learned training worker remains PID51842.
+The launch/runtime evidence is in
+experiments/upstream-rbm400-latent-extraction-protocol/.
+
 Proofs are in experiments/upstream-rbm400-latent-component-bundle/. The full
 method remains OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md. The current best
 recovered scores remain0.8603412617/0.8613423892; both still miss0.85725.

@@ -1,0 +1,41 @@
+{
+  "state": "verified_live_waiting_owned_extraction_supervisor",
+  "observed": "2026-11-21T23:54:40.403429+00:00",
+  "owner": {
+    "pid": 87109,
+    "ppid": 1,
+    "pgid": 87109,
+    "state": "Ss",
+    "started": "Sat Nov 21 15:54:05 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_latent_execution.py --start"
+  },
+  "watchdog": {
+    "pid": 87113,
+    "ppid": 87109,
+    "pgid": 87113,
+    "state": "Ss",
+    "started": "Sat Nov 21 15:54:06 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_latent_execution.py --watch 87109 --keep-fds 3 4"
+  },
+  "original_fit_worker": {
+    "pid": 51842,
+    "ppid": 41101,
+    "pgid": 51842,
+    "state": "Rs",
+    "started": "Sat Nov 21 14:41:09 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_known"
+  },
+  "phase_state": {
+    "state": "waiting_full_RBM_paired_replay_and_original_own16_completion",
+    "observed": "2026-11-21T23:54:36.122517+00:00"
+  },
+  "source_files_verified": 66,
+  "execution_plan_sha256": "4e1d0559c82a5fffdd9ca66037c3f59de4d972ddee794631b973b1fd4f887f8e",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "original_baseline_byte_identical": true,
+  "scientific_child_dispatched": false,
+  "actual_MPS_extraction_run": false,
+  "models_fitted": 0,
+  "qualifying_labels_read": false,
+  "production_provider_admitted": false
+}
