@@ -1,0 +1,32 @@
+{
+  "job": "s3-rbm800p",
+  "pid": 68411,
+  "started": "2026-11-21T08:14:15.769455+00:00",
+  "deadline": "2026-11-23T14:00:00+00:00",
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm800p",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "25",
+    "EPSAVE": "1",
+    "H": "800",
+    "HT": "p",
+    "LR": "0.015",
+    "WD": "0.0015"
+  },
+  "plan_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+  "preparation_sha256": "ce79a59c60963d325e5d31a41acc46bc478bfbd105f55ff87cd479425c1d4993",
+  "original_swap_baseline": {
+    "compressor_bytes": 10516905984,
+    "swap_used_bytes": 376837242.88
+  }
+}

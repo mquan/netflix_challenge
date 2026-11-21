@@ -8,12 +8,13 @@ while true; do
 import json, re, shutil, subprocess, datetime as dt
 from pathlib import Path
 W = Path.home() / 'workspace/netflix_remote_weekend'
-R = W / 'artifacts/upstream-remote-weekend-r2'
+TREES = {'s3-rbm400pf': 'r2', 's3-tx300r': 'r4', 's3-rbm800p': 'r3'}
 now = dt.datetime.now(dt.timezone.utc)
 deadline = dt.datetime(2026, 11, 23, 14, 0, tzinfo=dt.timezone.utc)
 jobs = {}
 for name in ['s3-rbm400pf', 's3-tx300r', 's3-rbm800p']:
-    info = {}
+    R = W / f'artifacts/upstream-remote-weekend-{TREES[name]}'
+    info = {'tree': R.name}
     if (R / (name + '-launch.json')).exists():
         info['launch'] = json.loads((R / (name + '-launch.json')).read_text())
     if (R / (name + '-status.json')).exists():
@@ -50,6 +51,6 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- experiments/upstream
       git push -q origin HEAD:research/remote-weekend-execution
     break
   done
-  [[ -n $(pgrep -f 'upstream-remote-weekend/execution/driver.sh') ]] || { echo "driver gone; final progress written"; exit 0; }
+  [[ -n $(pgrep -f 'upstream-remote-weekend/execution/driver') ]] || { echo "driver gone; final progress written"; exit 0; }
   sleep 3600
 done
