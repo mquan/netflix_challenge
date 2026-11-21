@@ -1,0 +1,35 @@
+{
+  "state": "complete_full_metal_production_cpu_equivalence_and_actual_device_prerequisite_checks",
+  "observed": "2026-11-21T22:33:38.583579+00:00",
+  "tests_passed": 25,
+  "test_counts": {
+    "production_source_boundaries": 7,
+    "private_full15_15": 9,
+    "private_all16consumer": 9
+  },
+  "worker_training_terminal_AST_equal_under_declared_imports": true,
+  "original_configuration_phase_runtime_caps_unchanged": true,
+  "actual_device_proof_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "production_models_started": false,
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_execution_metal.py": "aef13278f91a117965f6c4359169b5658b40739fa72d547e1e572e45fc80d87c",
+    "scripts/upstream_factored_rbm_worker_metal.py": "712e06617565fd1091c9be428247f4675c8edecf547393ff7f09459d6ab88e46",
+    "scripts/upstream_factored_rbm_training_metal.py": "385d1be80ffeadc538bbbab8ed0b448c4aa34b0290fce0e4b2f1a13774e0650f",
+    "scripts/upstream_factored_rbm_terminal_metal.py": "aae7f154972e53a6c5c6eb5d8cbec5b5b763b99b136375f474e7d52872715871",
+    "scripts/upstream_factored_rbm_torch_metal.py": "3652bd1883a991bf52aa98794d3bedb5defa974e1001576926c9df310abedb0a",
+    "scripts/upstream_factored_rbm_prediction_metal.py": "4d9c4757451a2614bf9e70f0072facedb29efd7fe7405e2580a4473e1737e3ea",
+    "scripts/upstream_factored_rbm_preflight_metal.py": "89d7fe6ce40c0ff8eb0df97d4624219492a3bc421c8ca4849b209b24d0642faf",
+    "scripts/upstream_factored_rbm_metal_reduction.py": "a97e6c5fbc80081f332a5fcc84af11511bd25c0f58ee01745c05a9d8027b56af",
+    "scripts/upstream_local_rbm_blend_metal.py": "600c4f06f97ada3324d8ae9f5a7683a2afde4e93fb972c87c7d2398c9faa7e8f",
+    "scripts/verify_upstream_local_rbm_blend_metal.py": "a2eb01266c3f28da822f490bca5f926d781ed0c6dbe70fcd0456fae11f180c33",
+    "scripts/upstream_local_rbm_blend_queue_metal.py": "63f788df5a482e1854e103152d82bd73117a2a46b3821da72f39917256c97765",
+    "scripts/upstream_rbm400_metal_declaration.py": "c56be1e6f368aa3746f41ed55d18db2b72400780d05cba687c75afe795eac798",
+    "scripts/test_upstream_rbm400_metal_production.py": "5fbd95c8039ef1bde11b1b93ae4c2c7bccec6e3bcf2dd497d1bca79dea42bad6",
+    "scripts/test_upstream_factored_rbm_execution_metal.py": "fed7b8a1bb927d0bd5338a82c4497dd1ab83b2b45bb074e9572334ddbc763533",
+    "scripts/test_upstream_local_rbm_blend_metal.py": "05e5c93d9caca5fc8f49cd908993d2fd875c0df5b696fcf048de8f7e75dc99fb",
+    "OWN_RBM400_METAL_PRODUCTION.md": "8a223c4d029310119d87817dff7d4cac4103338f65a6a071b732851a281c7361",
+    "OWN_LOCAL_RBM_METAL_BLEND_PLAN.md": "bbb0c6d92b7b1ec3d12f6266a9096c0c87337627e0dbba727c6a32c3b1a94f14",
+    "experiments/upstream-rbm400-metal-production-protocol/idle-retirement-plan.json": "ae8cb154f74944c8c41e731a0a82696a26c60859cade27ebbf2c3eb2e75dc00a"
+  }
+}
