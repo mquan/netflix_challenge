@@ -438,7 +438,21 @@ the snapshot records unchanged swap376837242.88bytes and
 55.24training hours remaining. Full launch/epoch/source/output verification,
 export and transfer remain pending. This is a pinned checkpoint, not a
 coordinator live remote-process poll; no completed producer or score claim.
-[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T064538.json).
+[Earlier pinned training checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T064538.json).
+
+Later execution commitee38c3e supersedes that training-only snapshot:
+following the owner-recorded switch to parallel execution, all three remote
+producers hit the unchanged12GiB compressor guard at08:14UTC. The receipts
+report original native RAM preserved for24357(400pf),68411(800p) and68498(TX300r),
+with compressor12.91/12.67/13.07GiB and unchanged recorded swap. These are
+guard stops, not completed producers. Current stopped identities and recovery
+must be checked on that host; the coordinator has no direct process-control
+session there. No completed export, archive, upload or new score is verified.
+The earlier progress JSON remained stale after the failures. Recovery must
+preserve the same native processes, original baselines, recipes and guards,
+with verified adoption ownership/watchdogs before any continuation.
+[Pinned guard receipts](experiments/upstream-remote-weekend/coordinator-parallel-guard-observation.json) ·
+[Remote same-process recovery instruction](REMOTE_WEEKEND_GUARD_RECOVERY_NOTE.md).
 
 The preserved original own14 preaudit21221 completed successfully at01:09UTC:
 all16383 simplex supports,15 ridge equations and all six complete vectors
@@ -450,7 +464,9 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775. The full second23-epoch phase and independent all-output
+diagnostic0.87775; its second fulltrain→qual phase has completed3/23 epochs.
+Phase-two diagnostic errors use zero-filled qualifying targets and do not
+measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
 All89 relevant checks pass.
 [Completed preaudit](experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json) ·
@@ -461,3 +477,5 @@ All89 relevant checks pass.
 [Live epoch18 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch18-observation.json).
 
 [Completed first23-epoch phase snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-first-phase23-observation.json).
+
+[Same native process at second-phase epoch3](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase3-observation.json).
