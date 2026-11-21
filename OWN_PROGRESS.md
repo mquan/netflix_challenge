@@ -608,3 +608,16 @@ still projects the epoch23 vector around09:33 Pacific, excluding final exports,
 independent verification and calibration. The native, supervisor and watchdog
 remain live, with no recorded guard failure; all scores remain unchanged.
 [Native epoch21 and complete structural inventory](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase21-observation.json).
+
+The original1200 producer has completed both23-epoch phases and exited with
+return code0. Independent verification passed the original source/data/build
+admission, all58 full-size finite numeric outputs and the persisted native log
+(59 output/log hashes). Its completion receipt matches the independent proof.
+The final epoch vector was saved at09:32:35 Pacific; the final full-training
+export then completed before verification. At the recorded handoff, the same
+original own14 audit process26049 had resumed under its existing owner35292,
+with the original baseline and unchanged guards. No new recovered/canonical
+score is established by this checkpoint; scores and plots remain unchanged.
+[Independent original1200 completion](experiments/upstream-original1200/independent-verification.json) ·
+[Completion receipt](experiments/upstream-original1200-exact-build-recovery/completion.json) ·
+[Actual same-audit handoff observation](experiments/upstream-original1200-exact-build-recovery/coordinator-completion-handoff-observation.json).
