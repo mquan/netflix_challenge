@@ -1,0 +1,35 @@
+{
+  "state": "complete_full_trajectory_ridge_handed_to_original_neural_queue",
+  "observed": "2026-11-21T20:01:51.701254+00:00",
+  "source_sha256": {
+    "experiments/upstream-complete-trajectory-data/independent-verification.json": "bed0f6ccac7a4df94602d939a5eb8439592d964b3d3368d817501249bf7d575e",
+    "experiments/upstream-complete-trajectory-data-queue/completion.json": "c00d67ad26647b790b2dd70dc1f9a40edcc943e2c442b21f44bacf3209bc8caa",
+    "experiments/upstream-complete-trajectory-data-queue/owner-release.json": "ef55835e3c2e28439f96dd583b65023625df2bc6811df3e231f39b031e9357dc",
+    "experiments/upstream-complete-trajectory-neural-queue/plan.json": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+    "experiments/upstream-complete-trajectory-neural-queue/monitor.json": "6031e877a23a05a707c13c51f879229e8500f379c8c117f31370184eb993a68b",
+    "experiments/upstream-complete-trajectory-neural-queue/first-scientific-baseline.json": "972b03f4c0f1e89d5ebf8d8a0689c54d1e90ead68e6d37114f0b2a8a69073cb5"
+  },
+  "full_ridge_verification_sha256": "bed0f6ccac7a4df94602d939a5eb8439592d964b3d3368d817501249bf7d575e",
+  "data_owner_terminal": true,
+  "original_neural_owner": {
+    "pid": 56323,
+    "ppid": 1,
+    "pgid": 56323,
+    "state": "Ss",
+    "started": "Fri Nov 20 15:17:32 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py"
+  },
+  "actual_neural_worker": {
+    "pid": 31986,
+    "ppid": 56323,
+    "pgid": 31986,
+    "state": "Rs",
+    "started": "Sat Nov 21 12:00:23 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_mps.py --variant h128"
+  },
+  "neural_status": "prepare",
+  "neural_status_observed": "2026-11-21T20:01:33.062600+00:00",
+  "actual_neural_models_complete": false,
+  "new_development_best_or_qualifying_score": false,
+  "qualifying_labels_read": false
+}

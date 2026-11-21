@@ -2,6 +2,15 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 19:58 UTC scientific update: the complete519-stream input/ridge
+study now passes independent reconstruction of every full operator, statistic,
+coefficient and held prediction. Ridge0.861725344068627 improves the matched391
+control0.8618508817095664 and prior expanded CF ridge0.861770514815263. This is
+a component diagnostic, not a new overall development or recovered score.
+Original coordinator50842 completed; original neural coordinator56323 has begun
+preparing the full713-input H128 study. No new neural score exists yet.
+[Complete trajectory ridge result](OWN_COMPLETE_TRAJECTORY_RIDGE_RESULT.md).
+
 November21 19:57 UTC storage update:236 original manifest-SHA256/index-MD5
 downloaded public qualifying-prediction inode groups and382 fully accounted
 aliases were retired under the existing public-bank cleanup authorization.
