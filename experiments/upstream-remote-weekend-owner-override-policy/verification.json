@@ -1,0 +1,55 @@
+{
+  "state": "verified_pinned_remote_resource_policy_variant_metadata_only",
+  "original_blueprint_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+  "remote_plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+  "original_controller_sha256": "816a91bd2e6d4331dc4433339f6198d318ecca9109c8a56cd2085c87e900ca4c",
+  "remote_controller_sha256": "84f92e4e8b8f6118a5e72a95dd9642a3dd3dbe9d417dba53d66a7d58a8d936f2",
+  "recipes_data_source_and_deadlines_unchanged": true,
+  "jobs": [
+    {
+      "name": "s3-rbm400pf",
+      "epochs_per_phase": 15,
+      "named_pairs": 16,
+      "tree": "artifacts/upstream-remote-weekend-r8"
+    },
+    {
+      "name": "s3-tx300r",
+      "epochs_per_phase": 24,
+      "named_pairs": 25,
+      "tree": "artifacts/upstream-remote-weekend-r10"
+    },
+    {
+      "name": "s3-rbm800p",
+      "epochs_per_phase": 25,
+      "named_pairs": 26,
+      "tree": "artifacts/upstream-remote-weekend-r9"
+    }
+  ],
+  "all67_named_pairs_and_both_full_phases_still_required": true,
+  "original_remote_memory_rss_compressor_swap_guarantees": false,
+  "original_remote_deadline_watchdog_and_disk_checks_retained": true,
+  "coordinator_local_guards_unchanged": true,
+  "preparation_flags_are_declarations_not_full_payload_admission": true,
+  "numerical_returns_admitted": false,
+  "qualifying_labels_read": false,
+  "observed": "2026-11-21T18:09:47.531546+00:00",
+  "remote_commit": "444fa334fede478f1724162e81d6080d4bb1bf21",
+  "source_sha256": {
+    "scripts/upstream_remote_weekend_override_policy.py": "c5eab4ef934dea2a127886fafc63c606144d22245f818e278c9bc73a737fb545",
+    "experiments/upstream-remote-weekend/plan.json": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+    "scripts/upstream_remote_weekend.py": "816a91bd2e6d4331dc4433339f6198d318ecca9109c8a56cd2085c87e900ca4c"
+  },
+  "snapshots_sha256": {
+    "remote-plan.json": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+    "remote-controller.py": "84f92e4e8b8f6118a5e72a95dd9642a3dd3dbe9d417dba53d66a7d58a8d936f2",
+    "remote-start.json": "acf3474b2b118249998cafd578a17fb3297207085cd7222c95f9da3f76a97cc9",
+    "s3-rbm400pf-preparation.json": "4891cd40c95799c732094652f73fa7010427d7f95a0239812b4b2b1227488e77",
+    "s3-rbm800p-preparation.json": "240e1e8685063c064f29b213a9262ce55c38672c3ff29c4abf6a4ddb7c04fc91",
+    "s3-tx300r-preparation.json": "4dd03721671032b88dfdbe7e45598a35d49153e60bb23c2864260a3607526795"
+  },
+  "launch_receipts_observed": {
+    "s3-rbm400pf": false,
+    "s3-rbm800p": false,
+    "s3-tx300r": false
+  }
+}
