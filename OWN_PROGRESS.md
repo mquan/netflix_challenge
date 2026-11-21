@@ -1,6 +1,6 @@
 # Our own Netflix training progress
 
-Updated November20 UTC /November20 Pacific,2026.
+Updated November21 UTC /November20 Pacific,2026.
 
 Best independently verified known-ProbeX development CV: **0.8589133967520619**.
 The complete matched paired391 H128 NN/tree154 half improves preceding
@@ -361,7 +361,11 @@ qualifying score is claimed. [Guarded data execution](OWN_COMPLETE_TRAJECTORY_DA
 The weekend handoff is pushed at8afae5a: full original factorizedRBM400,
 temporal300 and bipolarRBM800, serially on the confirmed M3Max/96GiB until
 Monday08:00Pacific. Every epoch/native output is required; transfer after
-each producer. No remote arrival or new result has been observed yet.
+each producer. Remote execution checkpoint6710d4d now records verified r2
+preparation on the confirmed hardware with190GiB free; the first400pf
+producer waits original compressor admission. No native launch/completion
+or new result is established by that checkpoint. The earlier BLAS linker
+failure remains preserved. [Pinned startup observation](experiments/upstream-remote-weekend/coordinator-startup-observation.json).
 [Weekend instructions](REMOTE_WEEKEND_HANDOFF.md).
 
 The complete-trajectory neural and original-fold qualifying-bag stages now
