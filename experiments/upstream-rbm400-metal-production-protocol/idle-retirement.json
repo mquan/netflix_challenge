@@ -1,0 +1,23 @@
+{
+  "state": "complete_exact_idle_consumer_retirement_no_learned_state",
+  "owner": {
+    "pid": 25257,
+    "ppid": 1,
+    "pgid": 25257,
+    "state": "Ss",
+    "started": "Sat Nov 21 14:09:57 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native_v2.py --start"
+  },
+  "watchdog": {
+    "pid": 25319,
+    "ppid": 25257,
+    "pgid": 25319,
+    "state": "Ss",
+    "started": "Sat Nov 21 14:09:57 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native_v2.py --watch 25257 --lane-fd 3"
+  },
+  "device_proof_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24",
+  "both_lanes_verified_free": true,
+  "learned_state_discarded": false,
+  "observed": "2026-11-21T22:34:54.385302+00:00"
+}

@@ -2,6 +2,15 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 22:37 UTC: the actual FULL deterministic Metal MPS probe passes;
+strict determinism, original500user/400hidden stress, original tolerances and
+baseline/caps remain. Prior v2full63-input admission completed, but its original
+Torch indexed-add MPS preflight failed before training. All prior attempts are
+retained. New full-budget producer41101/watch41170 and data41606 are active;
+consumer41441 waits for complete15+15model/paired replay. Newsource/handoff/
+baseline checks independently pass. No completed model or score gain yet.
+[Actual device proof and new production](OWN_RBM400_DETERMINISTIC_METAL_PROGRESS.md).
+
 November21 22:04 UTC: the first native observer still produces false resource
 pauses from transient OS descendants. A reviewed companion retires only exact
 stopped readonly ps child PIDs; same data worker7939, original limits and

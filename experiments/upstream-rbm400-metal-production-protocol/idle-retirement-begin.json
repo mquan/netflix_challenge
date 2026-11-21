@@ -1,0 +1,24 @@
+{
+  "plan": {
+    "state": "declared_exact_idle_v2_consumer_retirement_before_new_metal_production",
+    "owner": {
+      "pid": 25257,
+      "ppid": 1,
+      "pgid": 25257,
+      "state": "Ss",
+      "started": "Sat Nov 21 14:09:57 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native_v2.py --start"
+    },
+    "watchdog": {
+      "pid": 25319,
+      "ppid": 25257,
+      "pgid": 25319,
+      "state": "Ss",
+      "started": "Sat Nov 21 14:09:57 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native_v2.py --watch 25257 --lane-fd 3"
+    },
+    "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+    "device_proof_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24"
+  },
+  "observed": "2026-11-21T22:34:52.452824+00:00"
+}
