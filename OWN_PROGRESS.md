@@ -2,6 +2,14 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 22:46 UTC: the full deterministic Metal producer completed its
+FIRST known epoch, all480189nonemptyusers and961batches. Same worker51842
+continues the remaining14known epochs; qualifying still requires all15.
+Fresh full-data admission and the repeated actual production MPS preflight
+both passed. Source/config/counter/baseline/live-worker checks pass. No full
+terminal model or new score yet; sourceepoch evidence is
+experiments/upstream-rbm400-metal-production-protocol/first-epoch-verification.json.
+
 November21 22:37 UTC: the actual FULL deterministic Metal MPS probe passes;
 strict determinism, original500user/400hidden stress, original tolerances and
 baseline/caps remain. Prior v2full63-input admission completed, but its original

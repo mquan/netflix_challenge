@@ -1,0 +1,80 @@
+{
+  "state": "complete_device_math_checks_only",
+  "device": "mps",
+  "actual_MPS_tested": true,
+  "full_required_stress_tested": true,
+  "passed_for_production_device": true,
+  "deterministic_algorithms_during_checks": true,
+  "fresh_mps_runtime_import": true,
+  "cases": {
+    "small": {
+      "gradient_max_absolute_errors": {
+        "p": 7.823552907945674e-09,
+        "q": 9.793668345053907e-09,
+        "d": 7.851802208413972e-08,
+        "bv": 0.0,
+        "bh": 5.5257374897976774e-08,
+        "bu": 0.0,
+        "but": 0.0,
+        "visible_state": 0.0,
+        "positive_expected": 6.876973046576751e-08,
+        "negative_expected": 7.710213378864239e-08
+      },
+      "prediction_max_absolute_error": 1.990642881644078e-07,
+      "same_device_prediction_repeats_bitwise_equal": true,
+      "same_device_gradient_repeats_bitwise_equal": true,
+      "query_rows": 8,
+      "cold_user_checked": true,
+      "atol": 2e-05,
+      "rtol": 2e-05,
+      "elapsed_seconds": 0.2994266669265926
+    },
+    "stress": {
+      "gradient_max_absolute_errors": {
+        "p": 8.346423080191762e-08,
+        "q": 1.816709407387318e-05,
+        "d": 9.156931755072151e-07,
+        "bv": 0.0,
+        "bh": 4.439227576424898e-06,
+        "bu": 0.0,
+        "but": 0.0,
+        "visible_state": 0.0,
+        "positive_expected": 4.388879936145784e-06,
+        "negative_expected": 4.287405831693292e-06
+      },
+      "prediction_max_absolute_error": 4.891795155614886e-07,
+      "same_device_prediction_repeats_bitwise_equal": true,
+      "same_device_gradient_repeats_bitwise_equal": true,
+      "query_rows": 1000,
+      "cold_user_checked": false,
+      "atol": 0.0005,
+      "rtol": 5e-05,
+      "elapsed_seconds": 3.1420073329936713,
+      "shape": {
+        "users": 500,
+        "items": 17770,
+        "hidden": 400,
+        "factors": 50,
+        "ordinary_rows": 200,
+        "training_rows": 117570,
+        "conditional_rows": 118069,
+        "query_rows": 1000,
+        "max_user_rows": 17770
+      }
+    }
+  },
+  "mps_memory": {
+    "current_allocated_bytes": 0,
+    "driver_allocated_bytes": 1099563008
+  },
+  "torch_version": "2.14.0",
+  "numpy_version": "2.2.6",
+  "production_data_read": false,
+  "qualifying_labels_read": false,
+  "process_peak_rss_bytes": 1813446656,
+  "limits": "Device preflight only; actual full-data/profile/ownership and15+15 model/query replay remain required.",
+  "execution_plan_sha256": "06842568307a311c9ec2c1ebc4fde4c73c734ad8301a2b2ee8ee7f1f227a48ea",
+  "recovered_outcome_paths_read": false,
+  "producer_pid": 51139,
+  "observed": "2026-11-21T22:40:47.668838+00:00"
+}

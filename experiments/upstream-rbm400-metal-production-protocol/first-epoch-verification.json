@@ -1,0 +1,25 @@
+{
+  "state": "complete_first_original_full_known_epoch_source_counter_and_live_worker_check",
+  "observed": "2026-11-21T22:49:10.237375+00:00",
+  "producer_owner": 41101,
+  "worker": {
+    "pid": 51842,
+    "ppid": 41101,
+    "pgid": 51842,
+    "state": "Ss",
+    "started": "Sat Nov 21 14:41:09 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_known"
+  },
+  "epoch": 1,
+  "epochs_declared_each": 15,
+  "completed_batches": 961,
+  "nonempty_users": 480189,
+  "cd_steps": 1,
+  "epoch_sha256": "9e8711e979be05c69a435d4e3b6b9b062ed1e1531153689182d6d93942521a9a",
+  "data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+  "production_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "source_closure_verified": true,
+  "full_model_completed": false,
+  "new_score_claimed": false
+}

@@ -1,4 +1,11 @@
-# Independent RBM400: device proof and full production launched
+# Independent RBM400: first full known epoch complete
+
+November21 22:46UTC: FIRST full known epoch completed, all480189users and
+961batches, after fresh full data admission and another actual production MPS
+preflight. Same worker51842 continues the declared15known+15qualifying epochs.
+Actualsource/config/batch/user/CD/baseline/live-identity checks pass in
+experiments/upstream-rbm400-metal-production-protocol/first-epoch-verification.json.
+This is a training-progress observation, not a completed predictor or score.
 
 November21,2026,22:37UTC observation. No new score or completed production
 model is claimed. Recovered scores remain0.8603412617/0.8613423892; the worse
