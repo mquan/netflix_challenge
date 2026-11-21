@@ -1,0 +1,9 @@
+{
+  "pid": 41606,
+  "ppid": 41101,
+  "pgid": 41606,
+  "state": "Ss",
+  "started": "Sat Nov 21 14:35:31 2026",
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_metal.py --bootstrap 41101 --phase data",
+  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase data"
+}

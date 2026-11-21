@@ -1,0 +1,31 @@
+{
+  "state": "complete_deterministic_metal_candidate_cpu_parity_and_probe_boundaries_actual_device_pending",
+  "observed": "2026-11-21T22:22:49.072458+00:00",
+  "tests_passed": 17,
+  "test_counts": {
+    "reduction_cpu_and_addresses": 7,
+    "preflight_cpu_only": 5,
+    "owned_probe_boundaries": 5
+  },
+  "original_gradient_update_prediction_CPU_bits_equal": true,
+  "original_full_stress_shape_and_tolerances_unchanged": true,
+  "probe_phase_only": true,
+  "original_resource_and_owner_guard_AST_equal": true,
+  "strict_determinism_required": true,
+  "CPU_floating_numerical_fallback_for_MPS": false,
+  "actual_MPS_tested": false,
+  "production_models_fitted": 0,
+  "new_score_claimed": false,
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_metal_reduction.py": "a97e6c5fbc80081f332a5fcc84af11511bd25c0f58ee01745c05a9d8027b56af",
+    "scripts/upstream_factored_rbm_torch_metal.py": "3652bd1883a991bf52aa98794d3bedb5defa974e1001576926c9df310abedb0a",
+    "scripts/upstream_factored_rbm_prediction_metal.py": "4d9c4757451a2614bf9e70f0072facedb29efd7fe7405e2580a4473e1737e3ea",
+    "scripts/upstream_factored_rbm_preflight_metal.py": "89d7fe6ce40c0ff8eb0df97d4624219492a3bc421c8ca4849b209b24d0642faf",
+    "scripts/upstream_factored_rbm_metal_probe_execution.py": "73cdf2a011f73d8ee7da84bfdf610d0c048accbb4359aba05ab0f275fe0fe782",
+    "scripts/upstream_factored_rbm_metal_probe_worker.py": "b4396ca191bcd887ea5d8a919166f3fb0320249ed3be0ac591aa023d147dcf1c",
+    "scripts/test_upstream_factored_rbm_metal_reduction.py": "6702083035df7a33ed9d7136e262107a0f676e82f49669cb14609a679358621a",
+    "scripts/test_upstream_factored_rbm_preflight_metal.py": "c166625a125cc00db0d2f9ba2febd76d613ba2abc7c5105ca50c89c302b15a3c",
+    "scripts/test_upstream_factored_rbm_metal_probe_execution.py": "88dd4eec71f77bd15dd4c68529f928b9c260df844d4f4e73a446c0df8e5239cc",
+    "OWN_RBM400_DETERMINISTIC_METAL_PROBE.md": "5d354072894776a41672191e85062f1a94c80ccf7a272dd1a0fe68d4af4dcd17"
+  }
+}

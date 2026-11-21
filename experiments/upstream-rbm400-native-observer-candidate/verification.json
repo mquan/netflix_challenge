@@ -1,0 +1,254 @@
+{
+  "state": "native_observer_candidate_cpu_and_actual_counter_checks_only",
+  "observed": "2026-11-21T21:40:45.318188+00:00",
+  "tests_passed": 9,
+  "native_vs_vmmap": [
+    {
+      "pid": 98341,
+      "fixture": true,
+      "fixture_stopped": false,
+      "before": {
+        "bytes": 40191168,
+        "rss_bytes": 44777472,
+        "started": 37905595347570
+      },
+      "after": {
+        "bytes": 40191168,
+        "rss_bytes": 44777472,
+        "started": 37905595347570
+      },
+      "vmmap_physical_bytes": 40160460.8,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 0.0001525001134723425,
+      "vmmap_seconds": 0.6675190839450806
+    },
+    {
+      "pid": 74972,
+      "fixture": false,
+      "fixture_stopped": false,
+      "before": {
+        "bytes": 30361216,
+        "rss_bytes": 60653568,
+        "started": 37861147194496
+      },
+      "after": {
+        "bytes": 30361216,
+        "rss_bytes": 60653568,
+        "started": 37861147194496
+      },
+      "vmmap_physical_bytes": 30408704.0,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 2.166605554521084e-05,
+      "vmmap_seconds": 0.6996326250955462
+    },
+    {
+      "pid": 95816,
+      "fixture": false,
+      "fixture_stopped": false,
+      "before": {
+        "bytes": 67372928,
+        "rss_bytes": 20512768,
+        "started": 35757617988666
+      },
+      "after": {
+        "bytes": 67372928,
+        "rss_bytes": 20512768,
+        "started": 35757617988666
+      },
+      "vmmap_physical_bytes": 67423436.8,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 1.9832979887723923e-05,
+      "vmmap_seconds": 0.9021189580671489
+    },
+    {
+      "pid": 98341,
+      "fixture": true,
+      "fixture_stopped": true,
+      "before": {
+        "bytes": 40191168,
+        "rss_bytes": 44777472,
+        "started": 37905595347570
+      },
+      "after": {
+        "bytes": 40191168,
+        "rss_bytes": 44777472,
+        "started": 37905595347570
+      },
+      "vmmap_physical_bytes": 40160460.8,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 1.9709113985300064e-05,
+      "vmmap_seconds": 0.7032360420562327
+    },
+    {
+      "pid": 74972,
+      "fixture": false,
+      "fixture_stopped": true,
+      "before": {
+        "bytes": 30361216,
+        "rss_bytes": 60653568,
+        "started": 37861147194496
+      },
+      "after": {
+        "bytes": 30361216,
+        "rss_bytes": 60653568,
+        "started": 37861147194496
+      },
+      "vmmap_physical_bytes": 30408704.0,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 2.1790852770209312e-05,
+      "vmmap_seconds": 0.7335918329190463
+    },
+    {
+      "pid": 95816,
+      "fixture": false,
+      "fixture_stopped": true,
+      "before": {
+        "bytes": 67372928,
+        "rss_bytes": 20512768,
+        "started": 35757617988666
+      },
+      "after": {
+        "bytes": 67372928,
+        "rss_bytes": 20512768,
+        "started": 35757617988666
+      },
+      "vmmap_physical_bytes": 67423436.8,
+      "vmmap_rounding_bound_bytes": 53477.376,
+      "native_seconds": 7.354188710451126e-05,
+      "vmmap_seconds": 0.8753042910248041
+    }
+  ],
+  "full_scope_scan_seconds": 0.07880520913749933,
+  "full_scope_processes": 24,
+  "scope_sample": {
+    "6054": {
+      "bytes": 27690688,
+      "rss_bytes": 62095360,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py"
+    },
+    "6056": {
+      "bytes": 24774336,
+      "rss_bytes": 18776064,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py --watch 6054"
+    },
+    "6062": {
+      "bytes": 27985728,
+      "rss_bytes": 52985856,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py"
+    },
+    "6064": {
+      "bytes": 24938176,
+      "rss_bytes": 18956288,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py --watch 6062"
+    },
+    "6067": {
+      "bytes": 26756928,
+      "rss_bytes": 57376768,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py"
+    },
+    "6069": {
+      "bytes": 24921856,
+      "rss_bytes": 18759680,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py --watch 6067"
+    },
+    "15521": {
+      "bytes": 28133504,
+      "rss_bytes": 52903936,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-rbm400pf"
+    },
+    "15525": {
+      "bytes": 25954048,
+      "rss_bytes": 34914304,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm400pf --watch 15521 --lane-fd 3"
+    },
+    "15537": {
+      "bytes": 28051136,
+      "rss_bytes": 53231616,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-tx300r"
+    },
+    "15541": {
+      "bytes": 25642688,
+      "rss_bytes": 34799616,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-tx300r --watch 15537 --lane-fd 3"
+    },
+    "15551": {
+      "bytes": 28100288,
+      "rss_bytes": 52035584,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-rbm800p"
+    },
+    "15558": {
+      "bytes": 25790208,
+      "rss_bytes": 34750464,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm800p --watch 15551 --lane-fd 3"
+    },
+    "31460": {
+      "bytes": 28968768,
+      "rss_bytes": 50200576,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+    },
+    "31465": {
+      "bytes": 27346624,
+      "rss_bytes": 18120704,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --watch 31460 --keep-fds 3 4"
+    },
+    "45713": {
+      "bytes": 51169024,
+      "rss_bytes": 54935552,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start"
+    },
+    "45776": {
+      "bytes": 49563456,
+      "rss_bytes": 33456128,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --watch 45713 --lane-fd 3"
+    },
+    "59231": {
+      "bytes": 53872320,
+      "rss_bytes": 75759616,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start"
+    },
+    "59294": {
+      "bytes": 50087744,
+      "rss_bytes": 33374208,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --watch 59231 --lane-fd 3"
+    },
+    "74972": {
+      "bytes": 30361216,
+      "rss_bytes": 60653568,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker.py --phase data"
+    },
+    "95816": {
+      "bytes": 67372928,
+      "rss_bytes": 20512768,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_worker.py"
+    },
+    "97244": {
+      "bytes": 178276928,
+      "rss_bytes": 68714496,
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_source.py stream"
+    },
+    "98284": {
+      "bytes": 11027840,
+      "rss_bytes": 17989632,
+      "command": ".venv/bin/python -"
+    },
+    "98389": {
+      "bytes": 18942336,
+      "rss_bytes": 31539200,
+      "command": "vmmap -summary 6067"
+    },
+    "98393": {
+      "bytes": 4769344,
+      "rss_bytes": 10321920,
+      "command": "vmmap -summary 59294"
+    }
+  },
+  "scientific_processes_signalled": false,
+  "private_fixture_terminal": true,
+  "production_controller_imports_candidate": false,
+  "no_model_training_claimed": true,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "source_sha256": {
+    "scripts/upstream_research_footprints_native.py": "98ee33573318e12bb5ae9819c18f6f9d9b5e6345dadf2f1939e416c0c5d40ea8",
+    "scripts/test_upstream_research_footprints_native.py": "2c043017529c6a053acaeeffc7767d7d7e3e6e14f37ee4bf53c83daf80df0109"
+  }
+}

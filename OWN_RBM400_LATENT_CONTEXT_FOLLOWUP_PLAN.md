@@ -1,12 +1,13 @@
 # RBM400 learned-context follow-up
 
-Status: design only. No production declaration, queue, model extraction or
-training has started for this follow-up. The existing RBM400 and own16 plans,
-source files, numerical budgets and execution order stay unchanged.
+Status: array-only mathematical prototype implemented with eight CPU checks.
+No production provider declaration, queue, model extraction or training has
+started for this follow-up. Existing frozen producers and own16 plans, source
+files, numerical budgets and execution order stay unchanged.
 
 The current full-trajectory neural study improved development CV by only
 0.00005031. The frozen own15 recovered audit also shows only a small gain,
-with its separate canonical check still pending at this plan's creation.
+with separate canonical verification now complete at0.8603412617/0.8613423892.
 Adding more correlated prediction columns is unlikely to close the remaining
 roughly0.0041 recovered-RMSE gap alone. This experiment tests whether a fresh
 model's learned representation can supply useful conditional information to
@@ -24,7 +25,10 @@ trajectories exist, restart training or change the producer to create them.
 The checked source contracts are
 `scripts/upstream_factored_rbm_terminal.py`,
 `scripts/upstream_factored_rbm_prediction.py` and
-`scripts/upstream_factored_rbm_worker.py`. The model has400 hidden units and
+`scripts/upstream_factored_rbm_worker_native_v2.py`, whose numerical worker AST
+matches the original apart from the execution import. The active producer is
+the reviewed original-scope v2 successor and its matching v2 own16 consumer;
+both metadata-only predecessor attempts remain explicit. The model has400 hidden units and
 50 factors. Its prediction routine returns the bipolar `hidden_expected`
 posterior and uses `hidden_expected @ q.T` in its category logits. All
 conditional-item addresses and empty-history behavior must remain exact.
@@ -59,6 +63,18 @@ alignment against recovered scores. Verify contrast-dot invariance and
 independently reproduce every feature bit under the declared arithmetic.
 This is a proposed construction requiring CPU tests and full data validation,
 not an already validated feature provider.
+
+The mathematical prototype is `scripts/upstream_rbm400_latent_context_math.py`.
+Eight independent CPU checks cover all50factor contrasts, full alignment normal
+equations and inverse maps, dot-product invariance after float32 cache casting,
+rank/condition rejection, exact150coordinate row order and duplicates, explicit
+coverage without zero substitution, invalid/nonfinite addresses or state and
+finite inputs whose float32 cache casts overflow.
+Item contrast accumulates float64 categories in fixed order then stores float32;
+alignment solves in float64 and stores aligned caches in float32. The future
+full-provider verifier must check the declared arithmetic on every real factor
+and query, including measured casting error; these CPU checks do not admit an
+actual terminal model or establish MPS inference/feature-bit agreement.
 
 Append the one completed RBM400 prediction pair to the current486 raw streams,
 subject to complete paired-alias checks before any removal. It is a terminal

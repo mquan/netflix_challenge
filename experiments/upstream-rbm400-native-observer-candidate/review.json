@@ -1,0 +1,14 @@
+{
+  "state": "observer_candidate_review_clean_production_integration_pending",
+  "observed": "2026-11-21T21:41:32.159698+00:00",
+  "reviewer": "/root/refit_checkpoint_review",
+  "findings": [],
+  "review_scope": "Native observer source, nine tests and actual six counter comparisons. Recovery plan retains original baseline and requires separate integration review.",
+  "production_restarted": false,
+  "source_sha256": {
+    "scripts/upstream_research_footprints_native.py": "98ee33573318e12bb5ae9819c18f6f9d9b5e6345dadf2f1939e416c0c5d40ea8",
+    "scripts/test_upstream_research_footprints_native.py": "2c043017529c6a053acaeeffc7767d7d7e3e6e14f37ee4bf53c83daf80df0109",
+    "OWN_RBM400_OBSERVER_RECOVERY_PLAN.md": "1fc8c3e142bdcb3c3c2e2cc98326fa035917c3bc7276a2fa9661343794301492",
+    "experiments/upstream-rbm400-native-observer-candidate/verification.json": "5ede85eec99103d990cc8036d6732f7e6e60b7da0eb38b31ff4de9bc32a49dba"
+  }
+}

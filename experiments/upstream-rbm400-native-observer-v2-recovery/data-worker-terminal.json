@@ -1,0 +1,14 @@
+{
+  "worker": {
+    "pid": 7939,
+    "ppid": 7652,
+    "pgid": 7939,
+    "state": "Ss",
+    "started": "Sat Nov 21 13:49:54 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --bootstrap 7652 --phase data",
+    "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+  },
+  "input_admission_restarted": true,
+  "learned_state_discarded": false,
+  "observed": "2026-11-21T22:09:28.726971+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "plan_sha256": "91227a52d2da13bf15aa757c3657729bc7c04a87371279cb2f30cfce2349a112",
+  "processes": {
+    "owner": {
+      "pid": 7652,
+      "ppid": 1,
+      "pgid": 7652,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:49:33 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --start"
+    },
+    "worker": {
+      "pid": 7939,
+      "ppid": 7652,
+      "pgid": 7939,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:49:54 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --bootstrap 7652 --phase data",
+      "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+    },
+    "watchdog": {
+      "pid": 7664,
+      "ppid": 7652,
+      "pgid": 7664,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:49:33 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --watch 7652 --keep-fds 3 4"
+    },
+    "consumer_owner": {
+      "pid": 7867,
+      "ppid": 1,
+      "pgid": 7867,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:49:43 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native.py --start"
+    },
+    "consumer_watchdog": {
+      "pid": 7878,
+      "ppid": 7867,
+      "pgid": 7878,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:49:44 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_native.py --watch 7867 --lane-fd 3"
+    },
+    "observer_reaper": {
+      "pid": 14532,
+      "ppid": 1,
+      "pgid": 14532,
+      "state": "Ss",
+      "started": "Sat Nov 21 13:59:13 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_observer_child_reaper.py --start"
+    }
+  },
+  "observed": "2026-11-21T22:09:28.648187+00:00"
+}
