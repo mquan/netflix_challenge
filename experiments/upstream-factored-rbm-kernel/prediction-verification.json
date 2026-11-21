@@ -1,0 +1,60 @@
+{
+  "state": "complete_synthetic_CPU_factored_bipolar_prediction_and_gradient_checks_only",
+  "observed": "2026-11-21T13:03:25.551537+00:00",
+  "original_kernel_verification_sha256": "bf64bfc93608895074a6a722218b07a22aeaeaaf91db5cd80d574647c6ba557f",
+  "original_kernel_source_sha256": {
+    "scripts/upstream_factored_rbm_reference.py": "1ecf44cc15b298f9ceb7a8a789a3c96e31fe0ce63758e832554ba3b6ecd0dfea",
+    "scripts/test_upstream_factored_rbm_reference.py": "3a196ac0e4650ca27928840973f7b44ec52871f4394f25da526b697cdab46e76",
+    "scripts/upstream_factored_rbm_torch.py": "994cc3bca34b4d34abe47cbdbd99f299dd229c1c2082092a71e5acc84f43a946",
+    "scripts/test_upstream_factored_rbm_torch.py": "e5379e3a0a462f5411c11d8c3867180e583d4b6a57b548699af4e4b698224f92",
+    "OWN_FACTORED_RBM_GPU_PLAN.md": "1925bc6a79767b17acb01b4cce338aa0b69b82e2b9424e39450390a56eabd0fe"
+  },
+  "prediction_source_sha256": {
+    "scripts/upstream_factored_rbm_prediction.py": "dbfb312fb7eecc0aec44e7a4d97d4abd7bcc05e20c7e8be4b2a8a74d37285018",
+    "scripts/test_upstream_factored_rbm_prediction.py": "62e9085e7190661bbc6d520da42578d6db159093b2cf423cc9ec017d5b87bc35",
+    "OWN_FACTORED_RBM_GPU_PREDICTION.md": "38e0c95186e32c68fc81724e66ae7f9f5bb2bd1931e711d76b71bc5ff41de0cd"
+  },
+  "original_reference_sha256": {
+    "artifacts/upstream-original1200/source/src/rx.rs": "5bd151642069318592f99eb98ef6de40609dd41e18117a4a9564dc4ef92a4cfc",
+    "artifacts/upstream-original1200/source/src/bin/fit.rs": "4912aa79b7415032cb6e00939f0bd9a42b9f30a7d0fd6ae87a75b1720822a046",
+    "artifacts/upstream-original1200/source/src/lib.rs": "a47e578f2fcaa5a9b60b98ffead84848babf12cb5b0de1913d34be6c70a8c4be",
+    "artifacts/upstream-original1200/source/pipeline-3.toml": "67773af9f710053f83d0fc456f2a54feccf2712e529992da852fc0ba57cc154d"
+  },
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 13,
+  "new_prediction_tests": 5,
+  "test_log_sha256": "81c58cdb119fdc967edccc90b8ef6741285a508fb01653b4b706c15e23999ca3",
+  "devices_tested": [
+    "CPU float64",
+    "CPU float32"
+  ],
+  "actual_MPS_tested": false,
+  "production_data_read": false,
+  "qualifying_labels_read": false,
+  "models_fitted": 0,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "Mathematical prototype only, without a production data loader or training runner.",
+    "No native RNG/f32 bit equivalence, MPS support, throughput or training accuracy claim.",
+    "Full validated production data, MPS replay, resource ownership,15+15 fitting and full saved-model query replay remain required."
+  ]
+}
