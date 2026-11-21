@@ -92,5 +92,24 @@
    "r7 (prepared under the intermediate helper with only compressor checks removed; never launched)"
   ],
   "recipes_unchanged": true
- }
+ },
+ "pauses": [
+  {
+   "paused_utc": "2026-11-21T19:07:27+00:00",
+   "reason": "owner leaving; asked to pause all current work",
+   "method": "SIGSTOP on native fit PIDs only; run-job monitors and watchdogs left alive; resume with SIGCONT (same processes, no relaunch)",
+   "pids": {
+    "s3-tx300r": 39636,
+    "s3-rbm800p": 39653,
+    "s3-rbm400pf": 39673
+   },
+   "progress_at_pause": {
+    "s3-rbm400pf": "phase1 epoch 2/15",
+    "s3-rbm800p": "phase1 epoch 5/25",
+    "s3-tx300r": "phase1 epoch 4/24"
+   },
+   "resume_command": "kill -CONT 39636 39653 39673",
+   "note": "training deadline 2026-11-23T14:00:00Z still applies to wall clock; paused time counts against it"
+  }
+ ]
 }
