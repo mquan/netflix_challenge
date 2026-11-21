@@ -47,8 +47,8 @@
         <div class="controls strategy-controls" role="group" aria-label="RMSE range"><button class="pill" id="timeline-focus" aria-pressed="false">Near target</button><button class="pill" id="timeline-full" aria-pressed="true">Full range · Cinematch</button></div>
         <p class="small" id="timeline-view-note" style="padding:8px 22px 0;margin:0" aria-live="polite"></p>
         <div class="controls strategy-controls" id="strategy-controls" role="group" aria-label="Highlight strategy"></div>
-        <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 530" role="img" aria-label="Single-model Probe results and blend CV through November 19, with own-trained qualifying results and the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
-        <div class="legend"><span>Tap a marker · faded = unpromoted · Codex logo = own qualifying audit</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
+        <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 530" role="img" aria-label="Daily best single-model Probe, blend CV and own-trained qualifying results with the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
+        <div class="legend"><span>Initial runs, then daily best per series and author · Pacific dates · full history below</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
       </div>
       <div class="panel competition-panel">
         <div class="chart-head"><h3>Nearly three years, beside our seven weeks</h3><span class="small">Elapsed calendar time from each start · RMSE ↓</span></div>
@@ -94,7 +94,7 @@
 
     <section id="sources" aria-labelledby="sources-title"><div class="section-head"><div><div class="section-num">06 / Source trail</div><h2 id="sources-title">Go deeper</h2></div><p>Project scores come from the repository's records; historical competition scores link to the original leaderboard snapshots and team reports at each chart point. Open the write-ups and machine-readable events to audit our experiments.</p></div><div class="sources"><a href="NNPOOL6_PRODUCTION_PLAN.md">Own-training production plan<span>Full refits and frozen qualifying checks</span></a><a href="OWN6_CALIBRATION_RESULT.md">Own-source qualifying audit<span>Scores, independent verification and remaining gap</span></a><a href="OWN_PROGRESS.md">Progress checkpoint<span>Current best, caveats and next work</span></a><a href="RESULTS.md">Score progression<span>Early runs through the consolidated result</span></a><a href="MERGE_RECORD.md">Branch merge record<span>Methods and result status by remote branch</span></a><a href="ROUND8.md">Round 8<span>Sequence, Bayesian and neural-blend experiments</span></a><a href="ROUND9.md">Round 9<span>K1 latent-feature controlled comparison</span></a><a href="ROUND10.md">Round 10<span>B5 screen and neighbor-feature follow-up</span></a><a href="experiments/TIMING.md">Timing methodology<span>Clock accuracy, proxies and missing active-time data</span></a><a href="experiments/score_timeline.csv">Score timeline CSV<span>Early observations and evaluation labels</span></a><a href="experiments/">Experiment records<span>Manifests, logs and timestamped events</span></a></div></section>
   </main>
-  <footer class="footer">Updated November 19, 2026 Pacific. Current work uses our own freshly trained predictions; its first qualifying audit missed the target; training continues. Probe development and community recovered-label qualifying audits are shown separately. No official Netflix score or untouched private Test result is asserted. Historical competition scores are cited separately.</footer>
+  <footer class="footer">Updated November 20, 2026 Pacific. Current work uses our own freshly trained predictions; the verified qualifying result remains above the target. Matched-input studies and larger original-source training continue. Probe development and community recovered-label qualifying audits are shown separately. No official Netflix score or untouched private Test result is asserted. Historical competition scores are cited separately.</footer>
 </div>
 <script>
 (() => {
@@ -128,14 +128,10 @@
   const runGain = p => `Improvement vs Cinematch Test: ${percentVsCinematch(p[1])}`;
   const strategies = [...new Set(DATA.milestones.map(d=>d.strategy))];
   // Overview plots show representative results; the ledger retains every experiment.
-  const pacificDay = value => new Intl.DateTimeFormat('en-CA', {timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value));
   const initialIds = DATA.milestones.filter(d=>['single','cv'].includes(d.metric)&&Date.parse(d.time)<Date.parse('2026-09-28T00:00:00-07:00')).map(d=>d.id);
   const representativeIds = new Set([...DATA.overview.ids,...initialIds,remoteBatchMilestone.id]);
-  const plotMilestones = DATA.milestones.filter(d => {
-    const day = pacificDay(d.time);
-    return !DATA.overview.days.includes(day) || representativeIds.has(d.id);
-  });
-  let selected = DATA.milestones.find(d=>d.metric==='fresh_cv' && representativeIds.has(d.id));
+  const plotMilestones = DATA.milestones.filter(d => representativeIds.has(d.id));
+  let selected = plotMilestones.filter(d=>d.metric==='fresh_cv').reduce((best,d)=>!best||d.score<best.score?d:best,null);
   let strategy = 'All';
   const dateMin = Date.parse(DATA.milestones[0].time), dateMax = Math.max(...DATA.milestones.map(d=>Date.parse(d.time)))+864e5;
   const sx = t => 72+(Date.parse(t)-dateMin)/(dateMax-dateMin)*830;
