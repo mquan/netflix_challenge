@@ -1,0 +1,17 @@
+{
+  "state": "complete_own14_known_only_freeze_preaudit_and_separate_frozen_canonical_audit",
+  "verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+  "successor_completion": "experiments/upstream-own14-matched391-post-native-audit/completion.json",
+  "successor_completion_sha256": "2fe5ad3c34398d877150cb412fc2f89b683f3104a2229e83da9b3a6e2700622a",
+  "actual_owner": {
+    "pid": 35292,
+    "ppid": 1,
+    "pgid": 35292,
+    "state": "Ss",
+    "started": "Fri Nov 20 17:24:50 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py"
+  },
+  "full_native_completion_verified_before_audit_continuation": true,
+  "original_native_process_signalled": false,
+  "observed": "2026-11-21T17:46:21.686339+00:00"
+}

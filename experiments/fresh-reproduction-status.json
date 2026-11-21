@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T05:47:10.976992+00:00",
-  "display_time": "2026-11-21 05:47 UTC",
+  "observed": "2026-11-21T17:52:14.213689+00:00",
+  "display_time": "2026-11-21 17:52 UTC",
   "best_development_rmse": 0.8589133967520619,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,14 +10,30 @@
   "independent_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "work": [
     {
+      "work": "Own14 predeclared primary independently improves both recovered groups",
+      "state": "The predeclared own14 known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All14 original families,16383 simplex supports,15ridge equations and six complete vectors were independently verified before the fixed recovered audit. The earlier independent qualifying-bag replay reopens all15 actual models. Separate canonical verification rehashes the full source closure and reconstructs/scores the frozen vectors. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725; worse-group gap0.0041181513. Signed ridge10 trades off groups and the fixed-half control worsens both; neither is promoted. Adaptive recovered evaluation, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection. Historical tree154 A/B realization caveat remains.",
+      "evidence": "experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json"
+    },
+    {
+      "work": "Original1200 full23+23 producer independently complete",
+      "state": "Native16010 exited0; independent original source/data/build admission, all58 full-size finite numeric outputs and persisted log pass. Existing own14 audit resumed without restart or changed baseline and is now independently canonical. No target achievement.",
+      "evidence": "experiments/upstream-original1200/independent-verification.json"
+    },
+    {
+      "work": "Same CF intake completes full paired novelty inventory",
+      "state": "Original intake35985 finished all488 pairs;66 novel and31 exact aliases. Owner30570 is running independent novelty replay before fixed-lambda fit. No new CF score or completed expanded ridge claimed.",
+      "evidence": "experiments/upstream-complete-cf-delta/input-manifest.json"
+    },
+    {
       "work": "Remote hourly checkpoint confirms original400pf native training",
-      "state": "Pinned cb81770 at05:45UTC confirms native24357 running original s3-rbm400pf under same run-job73979 and watchdog24356; start21:20Pacific, elapsed25:17/CPU23:53.24. Original compressor admission passed; snapshot9.97GiB and original swap376837242.88bytes.56.24training hours remaining. Coordinator has no direct remote live process poll. Full launch/epoch/source/output/export/transfer verification pending; no completed producer or new score.",
-      "evidence": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T054536.json"
+      "state": "Historical pinned checkpoint; current remote state is summarized in runtime_observation. Pinned cb81770 at05:45UTC confirms native24357 running original s3-rbm400pf under same run-job73979 and watchdog24356; start21:20Pacific, elapsed25:17/CPU23:53.24. Original compressor admission passed; snapshot9.97GiB and original swap376837242.88bytes.56.24training hours remaining. Coordinator has no direct remote live process poll. Full launch/epoch/source/output/export/transfer verification pending; no completed producer or new score.",
+      "evidence": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T054536.json",
+      "historical_checkpoint": true
     },
     {
       "work": "Full weekend learning iteration reviewed and queued",
-      "state": "Separate owners6054/6062/6067/6075 wait full original local study plus all3 independently complete remote producers; all586 scalar candidates before paired aliases, maximum813 inputs, original225contexts/H128/rank32/5folds/3seeds/40pat4/batch8192. Complete input/ridge/model/statistic/scaler/qualifying-bag replays then16known-only families,65535supports/17ridgeequations/six frozen vectors/fixed recovered audits/separate canonical. Both original391 and precedinglocal known reference models/vectors retain original expectedhashes. Ten new/82combined checks pass; no actual new fit or score.",
-      "evidence": "WEEKEND_COMPLETE_TRAJECTORY_PLAN.md"
+      "state": "Current full586-stream/max813-input weekend study remains queued with original folds/seeds/40epochs/patience4/batch8192 and all source expectations. Data/neural/bag owners6054/6062/6067 remain; idle-only handoff retired6075 and its watchdog and installed corrected own16owner59231. The separate freeze correction preserves all16 families and original coefficients/arithmetic;79 relevant CPU checks pass. All3 weekend producer returns and original local proofs remain prerequisites. No weekend fit or score exists.",
+      "evidence": "WEEKEND_OWN16_FREEZE_REPAIR.md"
     },
     {
       "work": "Five obsolete downloaded-public-bank statistic caches retired",
@@ -31,8 +47,9 @@
     },
     {
       "work": "Weekend remote startup independently observed from execution branch",
-      "state": "Remote checkpoint6710d4d reports isolated r2 preparation complete, all original source/data/split/map checks passed, M3Max96GiB confirmed and190GiB free. First400pf producer waits compressor admission; no native training receipt or numeric return yet. Earlier Accelerate linker failure is preserved. This is a pinned remote checkpoint, not a current live remote process poll.",
-      "evidence": "experiments/upstream-remote-weekend/coordinator-startup-observation.json"
+      "state": "Historical pinned checkpoint; current remote state is summarized in runtime_observation. Remote checkpoint6710d4d reports isolated r2 preparation complete, all original source/data/split/map checks passed, M3Max96GiB confirmed and190GiB free. First400pf producer waits compressor admission; no native training receipt or numeric return yet. Earlier Accelerate linker failure is preserved. This is a pinned remote checkpoint, not a current live remote process poll.",
+      "evidence": "experiments/upstream-remote-weekend/coordinator-startup-observation.json",
+      "historical_checkpoint": true
     },
     {
       "work": "Own15 final calibration/audit: complete implementation, reviewed waiting queue",
@@ -55,9 +72,9 @@
       "evidence": "experiments/upstream-own391-paired-h512-mps/independent-canonical-verification.json"
     },
     {
-      "work": "Own14 full preaudit complete; SAME guarded audit deferred behind native",
-      "state": "Exact original21221 continued without restart and completed all16383supports/15ridgeequations/six full vectors before outcomes. Original audit26049 then hit unchanged globalcompressor5GiB guard at8.72GiB, remainsTs with its RAM; boundedowner22751/watch terminal. Reviewed newowner35292 waits full native23+23/all58numeric+log independent proof, terminalnativehandle and original1GiB/20research/5comp/128oldswap/disk18.75 admission, then resumes SAMEaudit and gatedcanonical. No repeated overlap, refit or new qualifying score. Apparent knownfit is not nestedCV.",
-      "evidence": "experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json"
+      "work": "Own14 frozen audit and separate canonical verification complete",
+      "state": "All16383 supports/15ridge equations/six vectors passed preaudit before outcomes. After full native1200 completion, the same guarded audit26049 continued under35292 without numerical, baseline or guard changes. Separate canonical proof now confirms the predeclared primary0.8603797340/0.8613681513; both improve complete13 slightly and still miss0.85725. Both processes are terminal; no new own14 audit is waiting.",
+      "evidence": "experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json"
     },
     {
       "work": "Matched391 CPU tree: full declaration complete, exact fit group paused",
@@ -75,9 +92,9 @@
       "evidence": "experiments/upstream-complete-cf-delta-native-deferred/plan.json"
     },
     {
-      "work": "Original1200 full23+23 native training active: eighteen epochs complete",
-      "state": "Pinned original build/source/data admission passed; same native16010 runs full1200factors/100neighbors/23epochs each phase under owner8122 and original22GiB own/24research/128MiB swapgrowth/18.75disk gates. First trainx phase has eighteen completed epochs; latest0.88044 is an intermediate single-model diagnostic, not an ensemble or qualifying result. All58 numeric outputs plus persisted native log and independent replay remain required.",
-      "evidence": "experiments/upstream-original1200-exact-build-recovery/coordinator-epoch18-observation.json"
+      "work": "Original1200 complete both23 phases and independent all-output verification",
+      "state": "Native16010 exited0 after full1200factors/100neighbors/23+23 recipe. Original source/data/build admission, all58 finite full-size numeric outputs and persisted native log independently verify. Original owner8122 and its watchdog completed. This producer completion supplies the queued trajectory study; it is not an ensemble score.",
+      "evidence": "experiments/upstream-original1200/independent-verification.json"
     },
     {
       "work": "Authorized downloaded-public cache retirement",
@@ -86,7 +103,7 @@
     },
     {
       "work": "Matched paired391 H128 independently complete: negligible new development best",
-      "state": "All five folds and15 actual original models complete. Every eligible scaler, normalized input and held prediction independently replays. Separate canonical NN0.8590533486413229/fixed-half0.8589133967520619; the half improves the preceding best by only0.0000026602614702. Exact original worker continued after guard with tensors/optimizer/RNG and numerical sources unchanged. H512 negative control is complete. Original H128 qualifying bag and separate full numerical replay now complete; own14 study froze all three candidate pairs and completed the full independent preaudit; its same audit26049 is preserved after a compressor guard, with waiting owner35292 requiring full native completion.",
+      "state": "All five folds and15 actual original models complete. Every eligible scaler, normalized input and held prediction independently replays. Separate canonical NN0.8590533486413229/fixed-half0.8589133967520619; the half improves the preceding best by only0.0000026602614702. Exact original worker continued after guard with tensors/optimizer/RNG and numerical sources unchanged. H512 negative control is complete. Original H128 qualifying bag and separate full numerical replay now complete; own14 study froze all three candidate pairs and completed the full independent preaudit; its same audit later continued after full native completion and now has separate canonical own14 scores0.8603797340/0.8613681513. Development best remains0.8589133967520619 on different known rows.",
       "evidence": "experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json"
     },
     {
@@ -141,20 +158,20 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "75b9d5e6861c1949eb30b62f06b9ea4d3b02ee0ff962e6b6545ac4b91f52d88c",
+  "qualifying_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603920746128144
+      "rmse": 0.8603797340342072
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613737959073772
+      "rmse": 0.8613681513408222
     }
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T05:47:10.976992+00:00",
+    "observed": "2026-11-21T17:52:14.213689+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -168,16 +185,16 @@
     ],
     "cf96_bank": "independently_admitted_98_pairs_96_distinct",
     "tx50n": "independently_admitted_original22_22",
-    "cf_delta": "same_intake_paused_after_serialized_guard",
+    "cf_delta": "same_intake_complete_66_new_31_aliases_independent_novelty_running",
     "cf_delta_recovery_owner": 30570,
-    "original1200": "original_native23_plus23_active_eighteen_epochs_complete",
-    "original1200_owner": 8122,
+    "original1200": "complete_independent_original23_23_all58_numeric_outputs_and_log",
+    "original1200_owner": null,
     "original1600_complete_verification_sha256": "f9447449aa00ee9c146bd0cc25c8d98225b586b9e36905d4aa092c3754d89b96",
     "neural_exact_recovery_owner": null,
     "paired391_h512": "complete_independent_negative_control",
     "neural_h512_recovery_owner": null,
     "cpu_tree391": "declared_same_actual_fit_group_paused",
-    "original1200_native_pid": 16010,
+    "original1200_native_pid": null,
     "original1200_epoch_trace": [
       1,
       2,
@@ -196,21 +213,49 @@
       15,
       16,
       17,
-      18
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
     ],
     "paired391_qualifying_bag": "complete_independent_all_query_streams_and_original_models",
-    "own14": "complete_full_preaudit_same_audit26049_paused_after_compressor_guard_wait_full_native",
-    "own14_recovery_owner": 35292,
+    "own14": "complete_independent_full_source_models_coefficients_and_frozen_group_scores",
+    "own14_recovery_owner": null,
     "complete_trajectory_data": "reviewed_queue_waiting_full_original1200_and_CF_proofs",
     "complete_trajectory_data_owner": 50842,
-    "remote_weekend": "pinned_checkpoint_confirms_original400pf_native_training",
+    "remote_weekend": "pinned_checkpoint_all_three_natives_stopped_no_continuation_verified",
     "complete_trajectory_neural": "reviewed_queue_waiting_full_input_ridge_proof",
     "complete_trajectory_neural_owner": 56323,
     "complete_trajectory_bag": "reviewed_queue_waiting_full_actual_neural_models_and_canonical_proof",
     "complete_trajectory_bag_owner": 58980,
     "own15": "reviewed_queue_waiting_preceding_label_free_proof_and_new_bag",
     "own15_owner": 68008,
-    "remote_weekend_checkpoint_commit": "cb81770ecbad36d183849a2fd2086d439a17140f",
+    "remote_weekend_checkpoint_commit": "3d9a2a0da8692f01479927e716c32976938f8695",
     "remote_weekend_return": "three_reviewed_queues_waiting_current_own15_canonical_completion",
     "remote_weekend_return_owners": {
       "s3-rbm400pf": 87173,
@@ -222,27 +267,34 @@
       "data": 6054,
       "neural": 6062,
       "bag": 6067,
-      "own16": 6075
+      "own16": 59231
     },
-    "own14_actual_audit_pid": 26049,
+    "own14_actual_audit_pid": null,
     "own14_independent_preaudit_sha256": "c1519468cf904f26fffa2a07fb4e78c0bf6083de17915041419fb920746ef5ea",
-    "original1200_observation_path": "experiments/upstream-original1200-exact-build-recovery/coordinator-epoch18-observation.json",
-    "remote_weekend_observation_path": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T054536.json",
-    "remote_weekend_native_pid": 24357
+    "original1200_observation_path": "experiments/upstream-original1200-exact-build-recovery/coordinator-completion-handoff-observation.json",
+    "remote_weekend_observation_path": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T091331.json",
+    "remote_weekend_native_pid": 24357,
+    "original1200_completed_native_pid": 16010,
+    "original1200_complete_verification_sha256": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
+    "own14_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+    "local_gpu_rbm": "reviewed_original15_15_queue_waiting_full_own15",
+    "local_gpu_rbm_owner": 31460,
+    "local_rbm_blend": "reviewed_full16_family_queue_waiting_actual_RBM_and_original_own15",
+    "local_rbm_blend_owner": 45713
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603920746128144
+      "rmse": 0.8603797340342072
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613737959073772
+      "rmse": 0.8613681513408222
     }
   },
-  "latest_qualifying_verification_sha256": "75b9d5e6861c1949eb30b62f06b9ea4d3b02ee0ff962e6b6545ac4b91f52d88c",
+  "latest_qualifying_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
   "best_development_arm": "fixed_half_own391_paired_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -258,13 +310,14 @@
   "development_required_replay_paths": [
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
-  "development_narrative": "Matched paired391618-input five-fold/three-seed H128rank32 study completes all15 actual models and full eligible statistics/scalers/normalized-input/prediction replay, followed by separate canonical arithmetic. Fixed-half score0.8589133967520619 improves own3520.8589160570135321 by only0.0000026602614702. NN alone0.8590533486413229 is slightly worse than own352NN. Same original paused worker continued without restart or numerical/guard change. Neural provider matches pairedB across both queries; historical tree154 A/B realization caveat retained. Adaptive known development on different rows from qualifying, not official or untouched Test. Current qualifying primary remains0.8603920746/0.8613737959; target0.85725 remains unmet.",
-  "latest_qualifying_verification_path": "experiments/upstream-complete13-calibration/independent-canonical-verification.json",
-  "qualifying_narrative": "The predeclared complete13-family known-only simplex scores0.8603920746/0.8613737959, only0.0000105/0.0000143 better than own330. All8191 simplex supports, original ridge10 control equations, every frozen vector and separate canonical scores pass; all original source and actual saved-model expectations are rehashed. Both studies froze/preverified before either new recovered audit. Apparent known-fit0.8587382063 is not nested CV. Target0.85725 remains unmet; worse-group gap0.0041237959. All numerical predictors and weights are ours. Original A/B input realization caveat retained. Smaller context FWLS completes0.8603967792/0.8613960266 and misses the primary; its conditional meta-crossfit0.8588517253 is not fully nested end-to-end CV. Full404-signal/5657-coefficient FWLS completes its full independent replay and canonical audit at0.8613295003/0.8623423168, worsening both groups; conditional metaCV0.8602208791 is not fully nested end-to-end CV. Matched pairedB391 input/ridge admission passes with a tiny known gain; original-budget H128 neural follow-up is fully verified at fixed-half development0.8589133967520619, only0.0000026602614702 better than own352; H512 control is independently complete and worse at fixed-half0.8590481464872496. H128 qualifying bag is fully independently verified; own14 candidates remain frozen and the original preaudit is now independently complete across all16383 supports/15ridge equations/six full vectors. Its original audit26049 is preserved after an unchanged compressor guard, with reviewed owner35292 waiting full native completion before same-process continuation. No new qualifying score exists. Original1600 is independently complete. Adaptive recovered groups, not official or untouched Test.",
+  "development_narrative": "Matched paired391618-input five-fold/three-seed H128rank32 study completes all15 actual models and full eligible statistics/scalers/normalized-input/prediction replay, followed by separate canonical arithmetic. Fixed-half score0.8589133967520619 improves own3520.8589160570135321 by only0.0000026602614702. NN alone0.8590533486413229 is slightly worse than own352NN. Same original paused worker continued without restart or numerical/guard change. Neural provider matches pairedB across both queries; historical tree154 A/B realization caveat retained. Adaptive known development on different rows from qualifying, not official or untouched Test. Current qualifying primary is0.8603797340/0.8613681513; target0.85725 remains unmet.",
+  "latest_qualifying_verification_path": "experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json",
+  "qualifying_narrative": "The predeclared own14 known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All14 original families,16383 simplex supports,15ridge equations and six complete vectors were independently verified before the fixed recovered audit. The earlier independent qualifying-bag replay reopens all15 actual models. Separate canonical verification rehashes the full source closure and reconstructs/scores the frozen vectors. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725; worse-group gap0.0041181513. Signed ridge10 trades off groups and the fixed-half control worsens both; neither is promoted. Adaptive recovered evaluation, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection. Historical tree154 A/B realization caveat remains.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/upstream-complete13-calibration/independent-recovered-audit.json",
-  "qualifying_benchmark_rule": "Predeclared complete13 known-only simplex is the primary before outcomes. Both canonical groups improve preceding own330; all8191 supports, original fitted source/model files and every frozen vector independently verify. No qualifying outcomes fit or select weights.",
+  "latest_completed_qualifying_audit_path": "experiments/upstream-own14-matched391-calibration/independent-recovered-audit.json",
+  "qualifying_benchmark_rule": "Predeclared own14 known-only simplex remains the primary fixed before outcomes. Both canonical groups improve preceding complete13. Full16383-support/six-vector preaudit, all original source/model bindings and separate canonical scores pass. No qualifying outcomes fit or select weights.",
   "own330_qualifying_best": false,
-  "complete13_qualifying_best": true,
-  "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7"
+  "complete13_qualifying_best": false,
+  "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
+  "own14_qualifying_best": true
 }

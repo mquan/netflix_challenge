@@ -14,20 +14,19 @@ the tree154 control retains its historical A/B realization caveat.
 
 Current independently verified recovered qualifying benchmark:
 
-- source0: **0.8603920746128144**,1,408,789 rows.
-- source1: **0.8613737959073772**,1,408,342 rows.
+- source0: **0.8603797340342072**,1,408,789 rows.
+- source1: **0.8613681513408222**,1,408,342 rows.
 
-The predeclared complete13-family known-only simplex improves both
-preceding own330 scores0.8604025394/0.8613881328 by only0.0000105/0.0000143.
-All8191 supports, signed ridge10 control equations, every frozen vector
-and separate canonical scores pass. All original saved-model/source
-expectations remain verified, including the complete15-model own352 bag.
-The control trades off groups against the primary. Apparent known-fit
-0.8587382063 is not nested CV.
-[Complete qualifying result](OWN13_QUALIFYING_RESULT.md).
+The predeclared own14-family known-only simplex improves preceding complete13
+by only0.00001234/0.00000564. All16383 supports,15ridge equations,six full
+frozen vectors and complete source/model bindings independently verify; the
+new qualifying family replays all15 original matched391 models. Separate
+canonical verification confirms all three declared candidates. Signed ridge10
+trades off groups; fixed half worsens both. Apparent known-fit0.8587148868
+is not nested CV. [Complete qualifying result](OWN14_QUALIFYING_RESULT.md).
 
 The strict target is below **0.85725 on BOTH groups**; it is still unmet.
-The worse-group gap is0.0041237959. Development and recovered qualifying
+The worse-group gap is0.0041181513. Development and recovered qualifying
 use different rows. Audits are adaptive community evaluation, not official
 or untouched Test. No downloaded pretrained numerical features or
 qualifying outcomes enter fitting or candidate selection.
@@ -621,3 +620,13 @@ score is established by this checkpoint; scores and plots remain unchanged.
 [Independent original1200 completion](experiments/upstream-original1200/independent-verification.json) ·
 [Completion receipt](experiments/upstream-original1200-exact-build-recovery/completion.json) ·
 [Actual same-audit handoff observation](experiments/upstream-original1200-exact-build-recovery/coordinator-completion-handoff-observation.json).
+
+Own14 now passes the separate full canonical verification at
+0.8603797340342072/0.8613681513408222 after continuation of the same original
+frozen audit. Its14-family primary improves both complete13 groups only
+slightly; the10% target remains unmet. The original1200 producer is fully
+verified complete. The same CF intake then finished all488 pairs, finding66
+new signals and31 exact aliases; independent novelty replay is running before
+the original fixed ridge fit. Full trajectory and GPU queues remain guarded.
+[Own14 complete result](OWN14_QUALIFYING_RESULT.md) ·
+[Canonical own14 proof](experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json).
