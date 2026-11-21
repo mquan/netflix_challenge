@@ -1,10 +1,10 @@
 {
- "observed": "2026-11-21T00:45:25+00:00",
- "training_hours_left": 61.24,
- "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-04:31:26  39:34.12  25968 Ss   /sbin/launchd",
- "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 82%",
- "swap": "total = 2048.00M  used = 367.38M  free = 1680.62M  (encrypted)",
- "disk_free_gib": 217.7,
+ "observed": "2026-11-21T01:45:27+00:00",
+ "training_hours_left": 60.24,
+ "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-05:31:28  39:53.61  26016 Ss   /sbin/launchd",
+ "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 81%",
+ "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
+ "disk_free_gib": 217.6,
  "jobs": {
   "s3-rbm400pf": {
    "status": {
@@ -23,12 +23,12 @@
      },
      "73979": {
       "bytes": 32191283.2,
-      "rss_bytes": 32686080,
+      "rss_bytes": 32702464,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "74003": {
       "bytes": 1916928.0,
-      "rss_bytes": 1933312,
+      "rss_bytes": 2686976,
       "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh"
      },
      "74004": {
@@ -38,10 +38,10 @@
      }
     },
     "memory": {
-     "compressor_bytes": 12642205696,
-     "swap_used_bytes": 385225850.88
+     "compressor_bytes": 12370296832,
+     "swap_used_bytes": 376837242.88
     },
-    "observed": "2026-11-21T00:45:13.965573+00:00"
+    "observed": "2026-11-21T01:45:23.479221+00:00"
    },
    "receipt": false,
    "incomplete": false,
