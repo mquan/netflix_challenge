@@ -3,6 +3,7 @@
 Status: array-only mathematical prototype implemented with eight CPU checks;
 read-only extraction core implemented with twelve synthetic CPU checks.
 Array-only operator and neural factories add seven and four CPU checks.
+Authenticated read-only cache IO adds nine CPU checks, for forty combined.
 No production provider declaration, queue, model extraction or training has
 started for this follow-up. Existing frozen producers and own16 plans, source
 files, numerical budgets and execution order stay unchanged.
@@ -92,6 +93,15 @@ source-row ordering/bounds/uniqueness, query-outcome access
 rejection and unchanged model/RNG checks. CPU fixtures explicitly do not admit
 an actual MPS provider. Production model loading, full source/data binding,
 owned extraction queues and independent real-data replay remain unimplemented.
+
+`scripts/upstream_rbm400_latent_cache.py` authenticates a separately frozen
+manifest, all eight cache arrays and their source/model/proof references. It
+maps the authenticated file descriptors read-only, requires exact shapes,
+dtypes and payload sizes, rejects path escapes and symlinks, checks masks and
+dual maps, and rehashes the closure even when the caller raises. Nine synthetic
+IO tests cover those guarantees. These checks authenticate declared bytes;
+the caller must still establish scientific provenance, actual model replay
+and original-lane ownership. This module cannot admit a production provider.
 
 The operator prototype `scripts/upstream_rbm400_latent_operators.py` keeps the
 entire562-column design,712-column nonlinear parent and all original context

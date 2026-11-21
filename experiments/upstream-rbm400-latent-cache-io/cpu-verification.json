@@ -1,0 +1,21 @@
+{
+  "state": "reviewed_synthetic_authenticated_cache_IO_only",
+  "observed": "2026-11-21T23:43:00.956304+00:00",
+  "source_sha256": {
+    "scripts/upstream_rbm400_latent_cache.py": "8677f40b3ebb56d8122864209cb31b9bb79b627f02cb32ad9f4f5bc9bb0cddb9",
+    "scripts/test_upstream_rbm400_latent_cache.py": "668aa8067785a93e1e1a27e4fd5aef20a2087389fff9a74b5d5bc338dc8e7a39",
+    "OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md": "f76f1be3b9eb3cb67fae2b73515218640ba9eb7faa48eec8e80119a9e865ed85"
+  },
+  "test_command": ".venv/bin/python -m unittest discover -s scripts -p test_upstream_rbm400_latent_*.py",
+  "combined_test_count": 40,
+  "cache_test_count": 9,
+  "test_exit_code": 0,
+  "production_data_read": false,
+  "actual_MPS_tested": false,
+  "production_provider_admitted": false,
+  "models_fitted": 0,
+  "qualifying_labels_read": false,
+  "reviewer": "/root/refit_checkpoint_review",
+  "review": "Clean after correcting exceptional-exit rehash omission; normal/exceptional mapping cleanup and integrity rechecks tested.",
+  "test_log_sha256": "6b599285877259c65323fc7feda45526bac1f4654ecbf9f6ad38d71a91f0ddd0"
+}

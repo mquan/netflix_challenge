@@ -1,12 +1,12 @@
 # Next iteration: learned-context components, production admission pending
 
 The full deterministic-Metal RBM400 continues in its original process, with
-seven known epochs completed at this observation. Each covers480189users and
+eleven known epochs completed at this observation. Each covers480189users and
 961batches; the original15known+15qualifying budget, CD schedule, source and
 baseline are unchanged. No completed model or new RMSE is claimed.
 
-The proposed representation experiment now has31 passing CPU checks across
-four independently reviewed components:
+The proposed representation experiment now has40 passing CPU checks across
+five independently reviewed components:
 
 - Mathematical contrasts, label-free alignment and finite cache casts:8.
 - Read-only complete-terminal extraction, literal native prediction bits,
@@ -14,6 +14,8 @@ four independently reviewed components:
 - Both full-width operators, original bits/intercept, complete coordinates
   and explicit scalar-alias cases:7.
 - H128/rank32 factories, original initialization and full training budgets:4.
+- Authenticated read-only cache IO, exact schemas/identity, path confinement,
+  closure rehashes on normal and exceptional exit, and mapping cleanup:9.
 
 Both arms retain all existing features. The scalar arm adds the completed
 RBM400 prediction pair only after both-query source/alias admission. The latent
@@ -32,6 +34,10 @@ owned extraction/alignment, full feature/operator/scaler/model verification,
 the two neural studies, selected query bag and17-family known-only preaudit
 remain ahead. No partial predictor or CPU fixture can supply a production
 feature. No recovered outcomes select alignment, arms, weights or budgets.
+
+The cache loader checks caller-frozen bytes and references; it does not prove
+that those references constitute an admitted scientific provider. The separate
+production declaration and supervised extraction integration remain required.
 
 Proofs are in experiments/upstream-rbm400-latent-component-bundle/. The full
 method remains OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md. The current best
