@@ -430,14 +430,15 @@ new score has been measured. All three weekend producers must complete;
 missing/partial work cannot silently shrink this declaration.
 [Full weekend iteration](WEEKEND_COMPLETE_TRAJECTORY_PLAN.md).
 
-Remote hourly checkpointcb81770 at05:45UTC confirms original400pf native
-training24357, started21:20Pacific, elapsed25:17/CPU23:53.24, under the SAME
-run-job73979 and watchdog24356. The original compressor admission passed;
-the snapshot is9.97GiB with unchanged recorded swap376837242.88bytes and
-56.24training hours remaining. Full launch/epoch/source/output verification,
+Remote hourly checkpointcf93bb4 at06:45UTC confirms original400pf native
+training24357, started21:20Pacific, elapsed1:25:19/CPU80:57.55, under the SAME
+run-job73979 and watchdog24356. Two of fifteen first-phase epochs are logged,
+with standalone diagnostic0.92531. The original compressor admission passed;
+the snapshot records unchanged swap376837242.88bytes and
+55.24training hours remaining. Full launch/epoch/source/output verification,
 export and transfer remain pending. This is a pinned checkpoint, not a
 coordinator live remote-process poll; no completed producer or score claim.
-[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T054536.json).
+[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T064538.json).
 
 The preserved original own14 preaudit21221 completed successfully at01:09UTC:
 all16383 simplex supports,15 ridge equations and all six complete vectors
@@ -448,7 +449,9 @@ No audit/canonical result or new qualifying score exists. Reviewed waiting
 owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
-active at eighteen first-phase epochs; latest standalone diagnostic0.88044.
+active after completing all23 first-phase epochs and the final probex
+diagnostic0.87775. The full second23-epoch phase and independent all-output
+verification remain required; no new ensemble or qualifying score is implied.
 All89 relevant checks pass.
 [Completed preaudit](experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json) ·
 [Exact same-audit continuation](OWN14_POST_NATIVE_AUDIT.md).
@@ -456,3 +459,5 @@ All89 relevant checks pass.
 [Live epoch13 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch13-observation.json).
 
 [Live epoch18 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch18-observation.json).
+
+[Completed first23-epoch phase snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-first-phase23-observation.json).
