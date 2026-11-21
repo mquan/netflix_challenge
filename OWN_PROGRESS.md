@@ -391,3 +391,15 @@ requiring identical coefficients for duplicate predictors. Six new checks
 pass, including alias-provenance and one-bit vector corruption rejection.
 No new known fit or recovered score has run; the target remains unmet.
 [Complete final assembly plan](OWN15_COMPLETE_TRAJECTORY_CALIBRATION_PLAN.md).
+
+The local weekend return intake is now implemented, independently reviewed,
+and queued separately for all three producers. Owners87173/87178/87185
+wait the current own15 canonical completion, then require complete pinned
+remote transfers before acquiring primary resources. Every compressed and
+decoded byte, all native training/factor shapes and values, full local
+source/data/split identities, complete training disjointness and every
+compact/native query bit must pass. Eleven receiving-specific checks and
+68 combined checks pass. Large side arrays remain in verified original
+remote archives; all complete query and compact pairs are retained locally.
+No new remote output or score has been admitted.
+[Complete return admission](REMOTE_WEEKEND_RETURN_PLAN.md).
