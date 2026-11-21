@@ -1,0 +1,17 @@
+{
+  "state": "complete_child_only_observer_cpu_and_actual_private_pipe_checks",
+  "observed": "2026-11-21T21:58:16.251193+00:00",
+  "tests_passed": 5,
+  "private_fixture_full_listing_bytes": 124364,
+  "private_fixture_partial_pipe_bytes": 65536,
+  "private_fixture_child_only_SIGKILL": true,
+  "production_processes_signalled": false,
+  "parent_CONT_never_used": true,
+  "existing_guard_same_frame_resample_and_baseline_verified": true,
+  "plan_sha256": "5e953935f23c59c60bc10da54fbd58a9bf232ebee37e01074674d2bb64eb157a",
+  "source_sha256": {
+    "scripts/upstream_rbm400_observer_child_reaper.py": "d85212f1042d7ee630c345383f7da6eb906db6ef70f8d0f7c13bbc35bc3ab5ee",
+    "scripts/test_upstream_rbm400_observer_child_reaper.py": "3251d450c6ccc25b4edd17bc2c31eecc672eafbdecc5247279c278a2ac69f543",
+    "OWN_RBM400_OBSERVER_CHILD_RETIREMENT.md": "13c1ef500cc736ea66fcda6106e834cd4b4d492d411558cb113da709cdc3dbc1"
+  }
+}
