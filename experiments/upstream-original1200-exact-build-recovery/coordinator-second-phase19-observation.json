@@ -1,0 +1,76 @@
+{
+  "state": "observed_first23_complete_second19_complete_same_original_native_live",
+  "observed": "2026-11-21T16:05:13.445183+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 2019,
+  "observed_log_prefix_sha256": "aa2032cabfdb365f65ffc8332cd143b9212eae77f65ac96b39764deb7f071e7b",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 19,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "recent_saved_qualifying_vectors": [
+    {
+      "epoch": 14,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep14.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795268405.3599277,
+      "mtime_utc": "2026-11-21T13:40:05.359928+00:00"
+    },
+    {
+      "epoch": 15,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep15.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795269960.4375942,
+      "mtime_utc": "2026-11-21T14:06:00.437594+00:00"
+    },
+    {
+      "epoch": 16,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep16.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795271515.1223137,
+      "mtime_utc": "2026-11-21T14:31:55.122314+00:00"
+    },
+    {
+      "epoch": 17,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep17.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795273067.2290673,
+      "mtime_utc": "2026-11-21T14:57:47.229067+00:00"
+    },
+    {
+      "epoch": 18,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep18.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795274612.9224122,
+      "mtime_utc": "2026-11-21T15:23:32.922412+00:00"
+    },
+    {
+      "epoch": 19,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep19.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795276160.0611963,
+      "mtime_utc": "2026-11-21T15:49:20.061196+00:00"
+    }
+  ],
+  "recent_epoch_intervals_seconds": [
+    1555.0776665210724,
+    1554.6847195625305,
+    1552.1067535877228,
+    1545.6933448314667,
+    1547.1387841701508
+  ],
+  "median_recent_epoch_seconds": 1552.1067535877228,
+  "remaining_epochs": 4,
+  "estimated_epoch23_vector_utc": "2026-11-21T17:32:48.488211+00:00",
+  "ETA_excludes_final_exports_verification_calibration_and_scores": true,
+  "actual_process_observation": "  PID  PPID STAT  ELAPSED      TIME COMMAND\n 8122     1 Ss   18:53:02   5:00.19 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   18:26:55 1040:04.54 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n31460     1 Ss   01:25:36   0:02.69 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start\n35292     1 Ss   14:40:23   3:31.79 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n45713     1 Ss   01:08:57   0:02.61 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start\n59231     1 Ss      53:47   0:03.66 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start\n",
+  "interpretation": "Same original native is live at19/23 second phase; observations of vector sizes are not numerical admission. Full second23 and independent58numeric+log proof still required. Phase2 zero-target errors are not accuracy; no new recovered/ensemble score."
+}
