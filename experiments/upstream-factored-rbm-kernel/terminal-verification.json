@@ -1,0 +1,45 @@
+{
+  "state": "complete_synthetic_CPU_complete_terminal_predictor_durability_and50_checks_only",
+  "observed": "2026-11-21T13:57:02.230566+00:00",
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_terminal.py": "810a77d6f45876f1082559bb3b6ef37d70e7d758efade56462eebe1691bd152a",
+    "scripts/test_upstream_factored_rbm_terminal.py": "ebd12e62e2e38b172612f1278993254f006e63729f38954e0dcf27e54942242a",
+    "OWN_FACTORED_RBM_GPU_TERMINAL.md": "a534669cdd61eb67155c37c62c69b7b4232755ef5ca7bf31a4b49830373781dc"
+  },
+  "input_declaration_sha256": "cdb279f63d981a51132948608be4e080a5e6dd22f462d1a19a53b94e91f2a146",
+  "combined_admission_verification_sha256": "099112fe1f2eec235355077cdf515369d2fc5b32f0f9bcb3711a59a52e6148d7",
+  "test_command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_upstream_factored_rbm_*.py",
+    "-v"
+  ],
+  "test_exit_code": 0,
+  "test_count": 50,
+  "new_terminal_tests": 6,
+  "test_log_sha256": "7f7ffbeab7c4d0746dadffe33fe69e98e664fd0f14e19d51418f45f863ffe075",
+  "actual_MPS_tested": false,
+  "production_payloads_read": false,
+  "production_models_fitted": 0,
+  "production_data_admitted": false,
+  "qualifying_labels_read": false,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "limits": [
+    "All learned predictive tensors retained; terminal format explicitly cannot resume/extend training and excludes optimizer state.",
+    "Synthetic CPU fsync/order/serialization checks are not an actual production model or MPS result.",
+    "Worker ownership/original continuous guards, actual data/MPS/memory/disk admission,15+15 fitting and separate model-query replay remain required."
+  ]
+}
