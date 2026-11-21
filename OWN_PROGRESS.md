@@ -563,12 +563,12 @@ active at23/23 first-phase and19/23 second-phase epochs.
 [Corrected waiting-owner observation](experiments/upstream-weekend-own16-trajectory-queue-v2/coordinator-waiting-observation.json) ·
 [Original native second-phase epoch17](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase17-observation.json).
 
-The same native1200 process now has19/23 second-phase epochs and19 full-size
-qualifying epoch-vector files. The most recent five intervals are about25.8–25.9
+At the epoch18 checkpoint, the same native1200 process had18/23 second-phase
+epochs and18 full-size qualifying epoch-vector files. Its five recent intervals were about25.8–25.9
 minutes each. Their median projects the epoch23 vector around09:33 Pacific;
 that estimate excludes final exports, independent verification, calibration and
-new score reporting. It is not an ETA for the10% goal. Current memory, swap and
-disk samples are within the unchanged next-audit admission limits; its owner
+new score reporting. It is not an ETA for the10% goal. The memory, swap and
+disk samples at that checkpoint were within unchanged next-audit limits; its owner
 still waits for full native completion. About20.35GiB is free. A readonly storage
 check retained dense partial numerical state and made no cleanup changes.
 [Native epoch18, measured cadence and handoff readiness](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase18-observation.json).
