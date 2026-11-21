@@ -1,0 +1,32 @@
+{
+  "observed": "2026-11-21T21:59:13.603026+00:00",
+  "parent": {
+    "pid": 7939,
+    "ppid": 7652,
+    "pgid": 7939,
+    "state": "Ss",
+    "started": "Sat Nov 21 13:49:54 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_native.py --bootstrap 7652 --phase data",
+    "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+  },
+  "actual_parent": {
+    "pid": 7939,
+    "ppid": 7652,
+    "pgid": 7939,
+    "state": "Ts",
+    "started": "Sat Nov 21 13:49:54 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+  },
+  "child": {
+    "pid": 9811,
+    "ppid": 7939,
+    "pgid": 7939,
+    "state": "T",
+    "started": "Sat Nov 21 13:51:41 2026",
+    "command": "ps -axo pid=,ppid=,stat=,rss=,lstart=,command="
+  },
+  "phase": "data",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "discarded_state": "readonly OS process listing only",
+  "parent_signal_sent": false
+}

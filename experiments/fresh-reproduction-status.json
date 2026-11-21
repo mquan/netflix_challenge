@@ -186,7 +186,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T21:12:24.195523+00:00",
+    "observed": "2026-11-21T22:04:53.496834+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -292,10 +292,10 @@
     "original1200_completed_native_pid": 16010,
     "original1200_complete_verification_sha256": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
     "own14_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
-    "local_gpu_rbm": "reviewed_original15_15_queue_waiting_full_own15",
-    "local_gpu_rbm_owner": 31460,
-    "local_rbm_blend": "reviewed_full16_family_queue_waiting_actual_RBM_and_original_own15",
-    "local_rbm_blend_owner": 45713,
+    "local_gpu_rbm": "native_observer_successor_data_same_worker_preserved_intermitttent_observation_pauses_original_scope_correction_pending",
+    "local_gpu_rbm_owner": 7652,
+    "local_rbm_blend": "native_observer_consumer_waiting_full_paired_producer",
+    "local_rbm_blend_owner": 7867,
     "cf_delta_fit_pid": null,
     "cf_delta_observation_path": "experiments/upstream-complete-cf-delta-native-deferred/coordinator-novelty-to-fit-observation.json",
     "cf_delta_verification_sha256": "e56429c5a7a154804d9854f15ea0a7c50aa7ca706b72b0ab1169172629502d11",
@@ -341,7 +341,15 @@
         "started": "Sat Nov 21 06:39:37 2026",
         "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
       }
-    }
+    },
+    "local_gpu_rbm_worker": 7939,
+    "local_gpu_rbm_watchdog": 7664,
+    "local_rbm_blend_watchdog": 7878,
+    "local_gpu_rbm_original_metadata_attempt_retired": true,
+    "local_gpu_rbm_original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+    "local_gpu_rbm_observer_reaper": 14532,
+    "local_gpu_rbm_observer_reaper_scope": "only stopped exact readonly OS ps child PID; no parent/group/CONT",
+    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-original-scope-candidate/runtime-observation.json"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

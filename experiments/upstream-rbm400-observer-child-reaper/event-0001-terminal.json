@@ -1,0 +1,24 @@
+{
+  "observed": "2026-11-21T21:59:13.707279+00:00",
+  "child": {
+    "pid": 9811,
+    "ppid": 7939,
+    "pgid": 7939,
+    "state": "T",
+    "started": "Sat Nov 21 13:51:41 2026",
+    "command": "ps -axo pid=,ppid=,stat=,rss=,lstart=,command="
+  },
+  "signal": "SIGKILL_child_PID_only",
+  "listing_succeeded": false,
+  "parent_signal_sent": false,
+  "parent_restart": false,
+  "same_parent_actual": {
+    "pid": 7939,
+    "ppid": 7652,
+    "pgid": 7939,
+    "state": "Ts",
+    "started": "Sat Nov 21 13:49:54 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_native.py --phase data"
+  },
+  "continuation": "Existing owner must obtain original three samples; unchanged guard handles failed observer"
+}
