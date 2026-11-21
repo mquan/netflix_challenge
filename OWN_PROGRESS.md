@@ -1,6 +1,6 @@
 # Our own Netflix training progress
 
-Updated November20 UTC /November20 Pacific,2026.
+Updated November21 UTC /November20 Pacific,2026.
 
 Best independently verified known-ProbeX development CV: **0.8589133967520619**.
 The complete matched paired391 H128 NN/tree154 half improves preceding
@@ -205,7 +205,7 @@ original1200 source/data preparation completed. Isolated compilation began
 but its guard preserved the actual build group94817 in RAM during overlap.
 The same original build subsequently completed under exact recovery, and
 independent source/data/binary admission passed. Native16010 is now running
-the unchanged23+23 phases; its first trainx epoch completed at0.95079. This
+the unchanged23+23 phases; its first four trainx epochs completed at0.95079/0.92846/0.91667/0.90925. This
 early single-model diagnostic is not a qualifying or blend result. Full
 training and separate independent58-output verification remain.
 Unused completed1600 build intermediates were losslessly archived and fully
@@ -349,3 +349,45 @@ five folds/three seeds/max40pat4, full numerical replay and qualifying bag,
 then a known-only15-family simplex with all32767 support checks before
 recovered outcomes. Implementation/review remain; no new result claimed.
 [Full trajectory model plan](OWN_COMPLETE_TRAJECTORY_NEURAL_PLAN.md).
+
+The full trajectory input/ridge implementation and separate verifier now
+pass review and eight operator/resource checks. Waiting owner50842 requires
+full original1200 and complete CF95/TX50n proofs before acquiring primary
+resources. It keeps all519 original/candidate scalar streams before complete
+paired alias checks and verifies all expanded operators, original-width391
+control, full group systems/solves and every held prediction. No neural or
+qualifying score is claimed. [Guarded data execution](OWN_COMPLETE_TRAJECTORY_DATA_EXECUTION.md).
+
+The weekend handoff is pushed at8afae5a: full original factorizedRBM400,
+temporal300 and bipolarRBM800, serially on the confirmed M3Max/96GiB until
+Monday08:00Pacific. Every epoch/native output is required; transfer after
+each producer. Remote execution checkpoint6710d4d now records verified r2
+preparation on the confirmed hardware with190GiB free; the first400pf
+producer waits original compressor admission. No native launch/completion
+or new result is established by that checkpoint. The earlier BLAS linker
+failure remains preserved. [Pinned startup observation](experiments/upstream-remote-weekend/coordinator-startup-observation.json).
+[Weekend instructions](REMOTE_WEEKEND_HANDOFF.md).
+
+The complete-trajectory neural and original-fold qualifying-bag stages now
+pass separate prelaunch review. Waiting owners56323/58980 form the next
+dependency chain. H128/rank32 retains every novel column/all225 contexts,
+all5folds/3seeds/max40pat4/batch8192 and original AdamW. The width-generalized
+scaler matches original618 and independent746-column fixture statistics;
+the zero-addition model initializes bit-identically to established H128.
+The bag preserves zero-budget slots and original float32 seed division/
+float64 accumulation, with a separate full query/model/stream replay.
+Fourteen combined invariant checks pass; no full-fit memory/score or new
+qualifying result is claimed. The separately declared15-family calibration and recovered-audit queue
+is now implemented and reviewed below.
+[Neural execution](OWN_COMPLETE_TRAJECTORY_NEURAL_EXECUTION.md) ·
+[Qualifying bag](OWN_COMPLETE_TRAJECTORY_FOLD_BAG_PLAN.md).
+
+Final waiting owner68008 now implements known-only15-family calibration,
+all six-vector freezing, independent all32767-support/16-equation/arithmetic
+preaudit, three fixed recovered audits and separate canonical scoring. It
+retains all14 existing families plus the new verified full-trajectory NN.
+Equivalent simplex optima are validated by objective/KKT rather than
+requiring identical coefficients for duplicate predictors. Six new checks
+pass, including alias-provenance and one-bit vector corruption rejection.
+No new known fit or recovered score has run; the target remains unmet.
+[Complete final assembly plan](OWN15_COMPLETE_TRAJECTORY_CALIBRATION_PLAN.md).

@@ -39,3 +39,19 @@ without discarding predictions, models, checkpoints or raw training data.
 [Original1200 inventory](experiments/upstream-original1200-build-cache-archive/plan.json) ·
 [Full archive replay](experiments/upstream-original1200-build-cache-archive/archive-verification.json) ·
 [Protected-file check](experiments/upstream-original1200-build-cache-archive/verification.json).
+
+The shared source tree's inactive build intermediates were also preserved:
+3,997 regular single-link files, 1,075,038,964 original bytes
+and 378,520,068 compressed bytes. Every archive member fully
+decoded and matched its original SHA256 before unlink. All23 shared
+executables, frozen closure records and the live original1200 binary and
+admission receipts retain their expected hashes. No live compiler or open
+cache user was observed. Numerical artifacts and original source remain.
+
+Archive: `artifacts/upstream-shared-build-cache.tar.gz`, SHA256
+`38ebd45ff1d5009a8a16560896356358d7172f75b523e44f31731be070dc28a7`. Restore repository-relative members with
+`tar -xzf artifacts/upstream-shared-build-cache.tar.gz` from the root.
+Net measured recovered space: 421.0MiB.
+[Complete inventory](experiments/upstream-shared-build-cache-archive/plan.json) ·
+[Full decoded-member verification](experiments/upstream-shared-build-cache-archive/archive-verification.json) ·
+[Protected-file check](experiments/upstream-shared-build-cache-archive/verification.json).

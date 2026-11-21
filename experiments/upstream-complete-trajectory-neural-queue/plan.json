@@ -1,0 +1,52 @@
+{
+  "source_sha256": {
+    "scripts/upstream_complete_trajectory_neural_queue.py": "69d149ee2b4e074d7d97ca78d6bf515ffd347d48082125c929d8cd5e66eb1712",
+    "scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "OWN_COMPLETE_TRAJECTORY_NEURAL_PLAN.md": "154b5b71f9aa275eb41dc457d650422d43a1b33ff51a97f05b3f71ab25a50b9d",
+    "OWN_COMPLETE_TRAJECTORY_NEURAL_EXECUTION.md": "6f2a2f0dc5f768b65809d0d591d9d84fb553b107792676c32c65b7abee544bdc",
+    "scripts/upstream_complete_trajectory_mps.py": "6b4d107e1c23b464d2bdf0aa5a2e3c41c710c378cffe56b738e4369da5b18ff9",
+    "scripts/verify_upstream_complete_trajectory_mps.py": "258e47c4f8568f5fdf756dd49d24e4f9537ed2c634832804a06385ac6fad481d",
+    "scripts/verify_upstream_complete_trajectory_canonical.py": "e24e0b4ddbe360d53d7adbe2a5c7f1f1761e261cd7fbe3863961b83a856f1999",
+    "scripts/upstream_exact_trajectory_scaler.py": "0517f094c021beb1f10e1488495e16c5a57c48285b1469f7e642dbff4ec49a4c",
+    "scripts/upstream_complete_trajectory_data.py": "59637437c038b9859ac391c7cd392920365ac10e29edc6e68d452e75298e9caf",
+    "scripts/verify_upstream_complete_trajectory_data.py": "1ecca0029db22eb3fb13b1b123a904a4a7f571c347080f36a8ffb7b31cb9758a",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0"
+  },
+  "created": "2026-11-20T23:17:32.389783+00:00",
+  "phases": {
+    "prepare": [
+      "upstream_complete_trajectory_mps.py",
+      "--variant",
+      "h128"
+    ],
+    "fit": [
+      "upstream_complete_trajectory_mps.py",
+      "--variant",
+      "h128",
+      "--worker"
+    ],
+    "actual_model_replay": [
+      "verify_upstream_complete_trajectory_mps.py",
+      "--variant",
+      "h128"
+    ],
+    "separate_canonical": [
+      "verify_upstream_complete_trajectory_canonical.py",
+      "--variant",
+      "h128"
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-complete-trajectory-data-queue/completion.json",
+      "complete_full_trajectory_admission_ridge_and_independent_replays",
+      "verification_sha256",
+      "upstream-complete-trajectory-data/independent-verification.json",
+      "complete_independent_all_trajectory_operators_statistics_ridge_and_stored_predictions"
+    ]
+  ],
+  "rule": "Wait complete independently replayed full trajectory input/ridge study. Joint nonblocking primary/GPU ownership then3stable admission with16GiB worker/24GiB research physicalRSS/5GiBcompressor(admit4.5)/128MiB firstscientific swapgrowth/18.75GiBdisk+64MiBoutput reserve. Original H128rank32/5userfolds/3seeds/max40pat4/batch8192/AdamW. Dynamicwidth618+N without truncation, every existingcontextbit and novel scalar, full exact eligible stats/actualmodel/prediction/canonical replay. Preserve same actual childRAM onguard/ownerloss, no retries/refits/budgetchange. No qualifying inference/outcomes here."
+}
