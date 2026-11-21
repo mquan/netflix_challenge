@@ -411,3 +411,25 @@ a separate read-only replay. Models, predictions, checkpoints, data and
 processes remain unchanged. Free space is about22.91GiB for pending native
 outputs and weekend returns.
 [Bounded public-cache cleanup](PUBLIC_STAT_CACHE_RETIREMENT_RESULT.md).
+
+A separate full weekend learning iteration is now implemented, reviewed and
+queued behind all complete original producers. It examines all586 original
+and candidate scalar streams (391+128local+67remote) before exact paired
+alias checks, with up to813 neural inputs and every225 original context
+position retained. Waiting owners6054/6062/6067/6075 cover complete data/ridge
+replay, original H128 neural/actual-model/canonical replay, full qualifying
+bag/replay and16-family known-only calibration/freeze/audit/canonical checks.
+All65535 simplex supports and17 ridge equations are required. Both the old391
+and preceding local trajectory known references are proof-bound, including
+all original saved model expectations; no recovered outcome selects inputs.
+Ten new checks/82 combined checks pass. No full new fit, remote return or
+new score has been measured. All three weekend producers must complete;
+missing/partial work cannot silently shrink this declaration.
+[Full weekend iteration](WEEKEND_COMPLETE_TRAJECTORY_PLAN.md).
+
+Remote hourly checkpoint3e8ad78 at00:45UTC still reports no native fit.
+Same run-job73979 waits its original global compressor admission:
+11.77GiB versus the10GiB cap, with217.7GiB disk. The driver must retain
+its original swap baseline and recipe; a memory inspection note is ready
+for the remote agent. This is a pinned checkpoint, not a live remote poll.
+[Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md).

@@ -1,0 +1,55 @@
+{
+  "source_sha256": {
+    "scripts/upstream_own16_weekend_trajectory_queue.py": "e9bc24474a8c0b0d04f8aae955c17320248d538c5fa6ee7330325aa6c034ffd2",
+    "scripts/upstream_weekend_trajectory_ops.py": "4f5641a7ae4e0953da77935d62a8891f8d49041fcf30ffd1c9b8dee0c0b3b931",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "WEEKEND_COMPLETE_TRAJECTORY_PLAN.md": "b34e63f950db119af5b53bd1b80db83b476aa93118673466f24751a08ad5d720",
+    "scripts/upstream_own16_weekend_trajectory_calibration.py": "6d4d15c5689008dd4907117a2ece715065abc9b96d9df7908ff4e8ae2d75a2b1",
+    "scripts/verify_upstream_own16_weekend_trajectory_calibration.py": "c881ca382265b1dbc099c96c33488995fce8cdf546dd59b9825b2ae317420295",
+    "scripts/upstream_own15_complete_trajectory_calibration.py": "bb9dd9ca738c190c3fbd42f3ff70e69062a5aa293ddcf3780f5279ec32696160",
+    "scripts/verify_upstream_own15_complete_trajectory_calibration.py": "e1859278ba1175103347aa651d0d142e6094cb3d6aba2e4cdcd37c5f9c917a1e",
+    "experiments/upstream-own391-paired-data/independent-verification.json": "3ae79bdf3b2e8e7cd7cde7c06e5857307a2579cbdb6ef0aa028a7e261de48bb0"
+  },
+  "created": "2026-11-21T00:45:02.012033+00:00",
+  "phases": {
+    "known": [
+      "upstream_own16_weekend_trajectory_calibration.py",
+      "known"
+    ],
+    "freeze": [
+      "upstream_own16_weekend_trajectory_calibration.py",
+      "freeze"
+    ],
+    "independent_preaudit": [
+      "verify_upstream_own16_weekend_trajectory_calibration.py",
+      "preaudit"
+    ],
+    "audit": [
+      "verify_upstream_own16_weekend_trajectory_calibration.py",
+      "audit"
+    ],
+    "separate_canonical": [
+      "verify_upstream_own16_weekend_trajectory_calibration.py",
+      "canonical"
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-own15-complete-trajectory-calibration/independent-preaudit-verification.json",
+      "complete_independent_all32767_supports_ridge16_and_six_vectors_before_audit",
+      "freeze_sha256",
+      "upstream-own15-complete-trajectory-calibration/frozen.json",
+      "complete_all_three_own15_candidates_frozen_before_any_new_audit"
+    ],
+    [
+      "upstream-weekend-trajectory-fold-bag-queue/completion.json",
+      "complete_full_trajectory_qualifying_bag_and_independent_replay",
+      "verification_sha256",
+      "upstream-weekend-trajectory-fold-bag/independent-verification.json",
+      "complete_independent_complete_trajectory_actual_fold_models_all_query_streams_and_bag"
+    ]
+  ],
+  "rule": "Wait full preceding15-family label-free preaudit and new complete-trajectory bag/model proof. Primarylane only,noGPU,2GiB worker/24physicalRSS/5compress(admit4.5)/128MiB firstscientific swapgrowth/18.75GiBdisk+64MiBoutput admission. Retain all16 known-only families, uniformSLSQP simplex65535supports/fullactualKKT andobjective evenifnonunique, defaultlambda10ridge17equations/unpenalizedbias andfixedhalfcontrol. Freezeall6 vectors andfullsourceclosure beforefixedrecoveredlabels, all3frozenaudits andseparatecanonical. No Qweightfit/selection/familydrop. Same owned RAM preserved onguard/ownerloss,noretry/refit/reducedrecipe."
+}

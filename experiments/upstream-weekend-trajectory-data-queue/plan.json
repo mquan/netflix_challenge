@@ -1,0 +1,67 @@
+{
+  "source_sha256": {
+    "scripts/upstream_weekend_trajectory_data_queue.py": "917e239a57edbe20288bfc88cab7c5283bf621264d761e1a1d7f9fd309a38ca4",
+    "scripts/upstream_weekend_trajectory_ops.py": "4f5641a7ae4e0953da77935d62a8891f8d49041fcf30ffd1c9b8dee0c0b3b931",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "WEEKEND_COMPLETE_TRAJECTORY_PLAN.md": "b34e63f950db119af5b53bd1b80db83b476aa93118673466f24751a08ad5d720",
+    "scripts/upstream_weekend_trajectory_data.py": "f06b73a323d7a1e601fbd92d831ea465cf286b3f91bb0495393edc8811b037d3",
+    "scripts/verify_upstream_weekend_trajectory_data.py": "4e105f1cd4b2de50cd0d5c54337caaf4c39e98a2ec65302daf068f2ee8e90064",
+    "scripts/upstream_complete_trajectory_data.py": "59637437c038b9859ac391c7cd392920365ac10e29edc6e68d452e75298e9caf",
+    "scripts/verify_upstream_complete_trajectory_data.py": "1ecca0029db22eb3fb13b1b123a904a4a7f571c347080f36a8ffb7b31cb9758a",
+    "scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "scripts/upstream_remote_weekend_return.py": "5d04c8c093832b0421adf4c13c12740e7025f9b6a085b54ef5681706a9351f6e",
+    "experiments/upstream-remote-weekend/plan.json": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514"
+  },
+  "created": "2026-11-21T00:45:01.075766+00:00",
+  "phases": {
+    "admit": [
+      "upstream_weekend_trajectory_data.py",
+      "admit"
+    ],
+    "independent_admission": [
+      "verify_upstream_weekend_trajectory_data.py",
+      "admit"
+    ],
+    "fit": [
+      "upstream_weekend_trajectory_data.py",
+      "fit"
+    ],
+    "independent_fit": [
+      "verify_upstream_weekend_trajectory_data.py",
+      "fit"
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-complete-trajectory-data-queue/completion.json",
+      "complete_full_trajectory_admission_ridge_and_independent_replays",
+      "verification_sha256",
+      "upstream-complete-trajectory-data/independent-verification.json",
+      "complete_independent_all_trajectory_operators_statistics_ridge_and_stored_predictions"
+    ],
+    [
+      "upstream-remote-weekend-return-queue/s3-rbm400pf/completion.json",
+      "complete_full_weekend_return_transport_and_independent_admission",
+      "verification_sha256",
+      "upstream-remote-weekend-return/s3-rbm400pf/independent-verification.json",
+      "complete_independent_weekend_full_source_queries_projection_disjointness_and_all_compact_bits"
+    ],
+    [
+      "upstream-remote-weekend-return-queue/s3-tx300r/completion.json",
+      "complete_full_weekend_return_transport_and_independent_admission",
+      "verification_sha256",
+      "upstream-remote-weekend-return/s3-tx300r/independent-verification.json",
+      "complete_independent_weekend_full_source_queries_projection_disjointness_and_all_compact_bits"
+    ],
+    [
+      "upstream-remote-weekend-return-queue/s3-rbm800p/completion.json",
+      "complete_full_weekend_return_transport_and_independent_admission",
+      "verification_sha256",
+      "upstream-remote-weekend-return/s3-rbm800p/independent-verification.json",
+      "complete_independent_weekend_full_source_queries_projection_disjointness_and_all_compact_bits"
+    ]
+  ],
+  "rule": "Wait full preceding local trajectory ridge and ALL THREE complete independent weekend return admissions, then primary lane, three stable original3GiB/24GiBphysicalRSS/comp5(admit4.5)/swapgrowth128MiB/disk18.75+64MiBoutput admission. First scientific admission establishes baseline once, never reset afterwards. All391+195 candidates, complete both-query aliases only, full467+N/617+N operators/statistics/fixedridge1000/independentreplays. No GPU lane, labels or score-based input selection. Watchdog-before-bootstrap and explicit live-owner gate prevent unowned model execution; actual RAM preserved on guards/owner loss. No retries or reduced recipes."
+}
