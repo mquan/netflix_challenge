@@ -1,0 +1,144 @@
+{
+  "state": "verified_exact_idle_return_handoffs_and_live_guarded_waiting_successors",
+  "observed": "2026-11-21T19:45:57.314694+00:00",
+  "source_sha256": {
+    "experiments/upstream-remote-weekend-override-return-protocol/plan.json": "ed6fba5e5f04caa8a205ca9215e68ea0067c9d0e025a33786307a5bc625032b2",
+    "experiments/upstream-remote-weekend-override-return-protocol/remote-pause-start.json": "839c57937a83e2038739f85c7ab8047b161e5397e4d5b56ca65469bf6574d4d6",
+    "experiments/upstream-remote-weekend-override-idle-handoff/s3-rbm400pf/verification.json": "ce06ad30105d5ca4ec69f1041924c22fefc1ee1c0dfb901e053b2a4c0d069d3c",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm400pf/plan.json": "e674331bf4d803bfcfda52d465f414f118a672623889ab9c4a1aff93cbd279de",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm400pf/monitor.json": "de9bedbc2df308af8cd2d1a576bda7e6fbf9e8055714048360ffd01427a3eb72",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm400pf/watch-ready.json": "36952112c80cd0090ea1c3d4fcde34d4c2608dc726189315f7619b93aa3f6805",
+    "experiments/upstream-remote-weekend-override-return-protocol/s3-rbm400pf-launch.json": "de22e73dc709596329b120dac475749d54f002e18b81843f63e2ab5254e4b187",
+    "experiments/upstream-remote-weekend-override-idle-handoff/s3-tx300r/verification.json": "96f294674b55ad747b50ab0fa465cf1bbfd2e722b50a62c46acc259fafde7f91",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-tx300r/plan.json": "e294db7c9022866f0590ec29c728a47271f828e1b528092d3b9ddce22c8df09d",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-tx300r/monitor.json": "565fe12fd1e04384bee6065fc25880279326af4405ab69ac7f5b61b9d5104b4a",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-tx300r/watch-ready.json": "c0178b47ef9e69ece766405d9392c75ab31da3314344e38d6795c35a836f706e",
+    "experiments/upstream-remote-weekend-override-return-protocol/s3-tx300r-launch.json": "79dcb62dbc5bfef5e64b28f5bb64da8fb88d1ef64d7bfc74cd385608bc131111",
+    "experiments/upstream-remote-weekend-override-idle-handoff/s3-rbm800p/verification.json": "59c302cb062f2b9106d1673939eeee9fa51d9ce6bcf3b360c26cbeb5f779e7da",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm800p/plan.json": "c553c1419aec4da6dd186a8e7d616d416b20452f0606ed7f154f8ce6a3e6d224",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm800p/monitor.json": "a7ec0cf566071c4524f4c99b16cfd235f0c738be2cdd67bc4e5ad51f091734c4",
+    "experiments/upstream-remote-weekend-override-return-queue/s3-rbm800p/watch-ready.json": "6de4ef8d5536b7d10e3236a6e56451b4dc497f5132e354d317225c1ec4ca5eca",
+    "experiments/upstream-remote-weekend-override-return-protocol/s3-rbm800p-launch.json": "ef7c20d9d9864d7020bd625bcbd75a03a4047c509a712e10106e861a26c5fc16"
+  },
+  "return_queues": {
+    "s3-rbm400pf": {
+      "owner": {
+        "pid": 15521,
+        "ppid": 1,
+        "pgid": 15521,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:41 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-rbm400pf"
+      },
+      "watchdog": {
+        "pid": 15525,
+        "ppid": 15521,
+        "pgid": 15525,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:42 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm400pf --watch 15521 --lane-fd 3"
+      },
+      "status": {
+        "state": "waiting_full_original_own15_independent_completion",
+        "observed": "2026-11-21T19:45:52.972678+00:00"
+      },
+      "scientific_namespace_and_baseline_absent": true
+    },
+    "s3-tx300r": {
+      "owner": {
+        "pid": 15537,
+        "ppid": 1,
+        "pgid": 15537,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:42 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-tx300r"
+      },
+      "watchdog": {
+        "pid": 15541,
+        "ppid": 15537,
+        "pgid": 15541,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:42 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-tx300r --watch 15537 --lane-fd 3"
+      },
+      "status": {
+        "state": "waiting_full_original_own15_independent_completion",
+        "observed": "2026-11-21T19:45:52.935638+00:00"
+      },
+      "scientific_namespace_and_baseline_absent": true
+    },
+    "s3-rbm800p": {
+      "owner": {
+        "pid": 15551,
+        "ppid": 1,
+        "pgid": 15551,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:42 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-rbm800p"
+      },
+      "watchdog": {
+        "pid": 15558,
+        "ppid": 15551,
+        "pgid": 15558,
+        "state": "Ss",
+        "started": "Sat Nov 21 11:44:42 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm800p --watch 15551 --lane-fd 3"
+      },
+      "status": {
+        "state": "waiting_full_original_own15_independent_completion",
+        "observed": "2026-11-21T19:45:52.722462+00:00"
+      },
+      "scientific_namespace_and_baseline_absent": true
+    }
+  },
+  "local_full_trajectory": {
+    "owner": {
+      "pid": 50842,
+      "ppid": 1,
+      "pgid": 50842,
+      "state": "Ss",
+      "started": "Fri Nov 20 15:04:43 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py"
+    },
+    "worker": {
+      "pid": 11278,
+      "ppid": 50842,
+      "pgid": 11278,
+      "state": "Ss",
+      "started": "Sat Nov 21 11:40:50 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_complete_trajectory_data.py fit"
+    },
+    "status": "independent_fit",
+    "observed_status": "2026-11-21T19:45:43.826784+00:00",
+    "input_verification_sha256": "92dc0839908737ce08848c5316c4f18ad18b7bb97f45d38f03bc548c242f43ae",
+    "manifest_sha256": "53d159bf68a5f829e1e8e05dcd8a1a2e49236299f7a1dce6b4e916bfb5199e9b",
+    "fit_state": "complete_all_trajectory_operators_and_known_ridge_pending_independent_replay",
+    "ridge_rmse": 0.861725344068627,
+    "control391_rmse": 0.8618508817095664,
+    "raw_predictions": 486,
+    "nn_inputs": 713,
+    "new_best_or_qualifying_score": false
+  },
+  "remote_commit": "76758c0e29805fd74636ebe1f33aadda364f18bd",
+  "remote_state": "owner_requested_pause_recorded_no_live_poll",
+  "remote_pause": {
+    "paused_utc": "2026-11-21T19:07:27+00:00",
+    "reason": "owner leaving; asked to pause all current work",
+    "method": "SIGSTOP on native fit PIDs only; run-job monitors and watchdogs left alive; resume with SIGCONT (same processes, no relaunch)",
+    "pids": {
+      "s3-tx300r": 39636,
+      "s3-rbm800p": 39653,
+      "s3-rbm400pf": 39673
+    },
+    "progress_at_pause": {
+      "s3-rbm400pf": "phase1 epoch 2/15",
+      "s3-rbm800p": "phase1 epoch 5/25",
+      "s3-tx300r": "phase1 epoch 4/24"
+    },
+    "resume_command": "kill -CONT 39636 39653 39673",
+    "note": "training deadline 2026-11-23T14:00:00Z still applies to wall clock; paused time counts against it"
+  },
+  "remote_processes_signalled": false,
+  "numerical_returns_admitted": false,
+  "goal_achieved": false
+}

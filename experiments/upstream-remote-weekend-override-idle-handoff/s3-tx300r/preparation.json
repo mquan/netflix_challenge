@@ -1,0 +1,27 @@
+{
+  "state": "declared_exact_idle_only_control_retirement",
+  "job": "s3-tx300r",
+  "owner": {
+    "pid": 87178,
+    "ppid": 87115,
+    "pgid": 87178,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:17:43 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-tx300r"
+  },
+  "watchdogs": [
+    {
+      "pid": 87181,
+      "ppid": 87178,
+      "pgid": 87181,
+      "state": "Ss",
+      "started": "Fri Nov 20 16:17:43 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87178 --job s3-tx300r"
+    }
+  ],
+  "no_scientific_namespace_or_baseline": true,
+  "original_monitor_sha256": "515db60f550fc0e035dde7ad1cf6b0309f8afd3aa9c67938ba00191f60d3d350",
+  "original_plan_sha256": "343fa1ecf3f27c976dfc3ccb56d15b042fdeaae5068bc566aa4258bc8f9af502",
+  "protocol_sha256": "ed6fba5e5f04caa8a205ca9215e68ea0067c9d0e025a33786307a5bc625032b2",
+  "observed": "2026-11-21T19:44:23.521229+00:00"
+}

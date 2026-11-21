@@ -1,0 +1,26 @@
+{
+  "owner": {
+    "pid": 15551,
+    "ppid": 15461,
+    "pgid": 15551,
+    "state": "Ss",
+    "started": "Sat Nov 21 11:44:42 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --start --job s3-rbm800p"
+  },
+  "watchdog": {
+    "pid": 15558,
+    "ppid": 15551,
+    "pgid": 15558,
+    "state": "Ss",
+    "started": "Sat Nov 21 11:44:42 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm800p --watch 15551 --lane-fd 3"
+  },
+  "protocol_sha256": "ed6fba5e5f04caa8a205ca9215e68ea0067c9d0e025a33786307a5bc625032b2",
+  "idle_handoff_sha256": "59c302cb062f2b9106d1673939eeee9fa51d9ce6bcf3b360c26cbeb5f779e7da",
+  "observed": "2026-11-21T19:44:42.657706+00:00",
+  "status": {
+    "state": "waiting_full_original_own15_independent_completion",
+    "observed": "2026-11-21T19:44:42.631694+00:00"
+  },
+  "scientific_namespaces_absent": true
+}

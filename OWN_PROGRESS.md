@@ -17,6 +17,10 @@ scientific validators, immutable source/helper pins and unchanged local guards.
 Only exact idle original return coordinators are eligible for handoff; no
 native training process is signalled. See
 [return protocol](REMOTE_WEEKEND_OWNER_OVERRIDE_RETURN_PLAN.md).
+Exact idle-only handoffs have now retired original return owners87173/87178/87185
+and their watchdogs. Successors15521/15537/15551 and live watchdogs wait for
+the original own15 full independent completion; no return scientific namespace
+or first-scientific baseline exists.
 Remote commit76758c0e29805fd74636ebe1f33aadda364f18bd reports all three remote
 native jobs paused at the owner's request at19:07:27 UTC/11:07:27 Pacific;
 this supersedes the older running snapshot. No remote resume is performed.

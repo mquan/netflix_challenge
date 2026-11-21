@@ -1,0 +1,37 @@
+{
+  "state": "complete_exact_idle_original_return_coordinator_handoff",
+  "job": "s3-rbm800p",
+  "owner": {
+    "pid": 87185,
+    "ppid": 87115,
+    "pgid": 87185,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:17:43 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm800p"
+  },
+  "watchdogs": [
+    {
+      "pid": 87188,
+      "ppid": 87185,
+      "pgid": 87188,
+      "state": "Ss",
+      "started": "Fri Nov 20 16:17:43 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87185 --job s3-rbm800p"
+    }
+  ],
+  "all_original_control_processes_terminal": true,
+  "no_scientific_namespace_baseline_or_child_created": true,
+  "source_sha256": {
+    "experiments/upstream-remote-weekend-override-return-protocol/plan.json": "ed6fba5e5f04caa8a205ca9215e68ea0067c9d0e025a33786307a5bc625032b2",
+    "scripts/upstream_remote_weekend_override_handoff.py": "cdecc89cad3bbf8ecdf996bc07c1acd3edd3148f28e4ccbd022214804487fa9c",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/plan.json": "76060cbf45263c3bb5f35665ac12f59aff9038e856c817379e103153f5d97386",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/monitor.json": "024c050aeb8eeb8102b1da200e0e444b7acd49833e3dc9b7c660131a31864f9b",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/status.json": "8793cf0b016f5d7ab9129c56b9c133054641e0ddbbcb685fa480e223db6bc902",
+    "experiments/upstream-remote-weekend-override-idle-handoff/s3-rbm800p/preparation.json": "dc9c336bf35a0deeb63f8183cb2532696a8e141f39bd8e7a86ea35ffcc8fa344",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/failure.json": "02c0a6c0590dc0ddcd90e2e1bc142cd3759708a762cf757724b1be7a716f6330",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/watchdog-recovery.json": "7aa3a089e0e3338068f31172db7d9e541004ea8d9f64829711b2c0dd2606895c"
+  },
+  "scientific_processes_signalled": false,
+  "models_or_numerical_files_changed": false,
+  "observed": "2026-11-21T19:44:26.168642+00:00"
+}

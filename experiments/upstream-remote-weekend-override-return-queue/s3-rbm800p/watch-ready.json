@@ -1,0 +1,13 @@
+{
+  "watchdog": {
+    "pid": 15558,
+    "ppid": 15551,
+    "pgid": 15558,
+    "state": "Ss",
+    "started": "Sat Nov 21 11:44:42 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_override_return_queue.py --job s3-rbm800p --watch 15551 --lane-fd 3"
+  },
+  "owner_sha256": "a7ec0cf566071c4524f4c99b16cfd235f0c738be2cdd67bc4e5ad51f091734c4",
+  "inherited_lane_fd": 3,
+  "observed": "2026-11-21T19:44:42.591721+00:00"
+}
