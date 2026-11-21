@@ -426,3 +426,10 @@ Ten new checks/82 combined checks pass. No full new fit, remote return or
 new score has been measured. All three weekend producers must complete;
 missing/partial work cannot silently shrink this declaration.
 [Full weekend iteration](WEEKEND_COMPLETE_TRAJECTORY_PLAN.md).
+
+Remote hourly checkpoint3e8ad78 at00:45UTC still reports no native fit.
+Same run-job73979 waits its original global compressor admission:
+11.77GiB versus the10GiB cap, with217.7GiB disk. The driver must retain
+its original swap baseline and recipe; a memory inspection note is ready
+for the remote agent. This is a pinned checkpoint, not a live remote poll.
+[Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md).

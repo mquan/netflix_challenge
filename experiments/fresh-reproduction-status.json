@@ -10,6 +10,11 @@
   "independent_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "work": [
     {
+      "work": "Remote hourly checkpoint: memory admission still pending",
+      "state": "Pinned3e8ad78 at00:45UTC reports same waitingrun-job73979, no native fit, compressor11.77GiB above original10GiB admission,217.7GiB disk. Coordinator has no direct remote process poll. Preserve sameowner/baseline/recipe; operational memory inspection note prepared. No remote output or score admitted.",
+      "evidence": "experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T004525.json"
+    },
+    {
       "work": "Full weekend learning iteration reviewed and queued",
       "state": "Separate owners6054/6062/6067/6075 wait full original local study plus all3 independently complete remote producers; all586 scalar candidates before paired aliases, maximum813 inputs, original225contexts/H128/rank32/5folds/3seeds/40pat4/batch8192. Complete input/ridge/model/statistic/scaler/qualifying-bag replays then16known-only families,65535supports/17ridgeequations/six frozen vectors/fixed recovered audits/separate canonical. Both original391 and precedinglocal known reference models/vectors retain original expectedhashes. Ten new/82combined checks pass; no actual new fit or score.",
       "evidence": "WEEKEND_COMPLETE_TRAJECTORY_PLAN.md"
@@ -186,14 +191,14 @@
     "own14_recovery_owner": 30569,
     "complete_trajectory_data": "reviewed_queue_waiting_full_original1200_and_CF_proofs",
     "complete_trajectory_data_owner": 50842,
-    "remote_weekend": "remote_r2_preparation_verified_checkpoint_waiting_memory_admission",
+    "remote_weekend": "hourly_checkpoint_still_waiting_original_global_compressor_admission",
     "complete_trajectory_neural": "reviewed_queue_waiting_full_input_ridge_proof",
     "complete_trajectory_neural_owner": 56323,
     "complete_trajectory_bag": "reviewed_queue_waiting_full_actual_neural_models_and_canonical_proof",
     "complete_trajectory_bag_owner": 58980,
     "own15": "reviewed_queue_waiting_preceding_label_free_proof_and_new_bag",
     "own15_owner": 68008,
-    "remote_weekend_checkpoint_commit": "6710d4d35fbdd08750e97e49d3e10d8d740996a6",
+    "remote_weekend_checkpoint_commit": "3e8ad781c7014cdc95f995b6ed74527141e8646e",
     "remote_weekend_return": "three_reviewed_queues_waiting_current_own15_canonical_completion",
     "remote_weekend_return_owners": {
       "s3-rbm400pf": 87173,
