@@ -1,0 +1,22 @@
+{
+  "owner": {
+    "pid": 6075,
+    "ppid": 1,
+    "pgid": 6075,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:45:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py"
+  },
+  "watchdog": {
+    "pid": 6077,
+    "ppid": 6075,
+    "pgid": 6077,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:45:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own16_weekend_trajectory_queue.py --watch 6075"
+  },
+  "original_queue_plan_sha256": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8",
+  "observed": "2026-11-21T15:11:04.796050+00:00",
+  "scientific_work_dispatched": false,
+  "action": "Stop/recheck only this idle coordinator; request its normal termination; wait both original coordinator and watchdog terminal. No scientific worker signal."
+}
