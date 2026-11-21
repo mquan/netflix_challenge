@@ -1,0 +1,20 @@
+{
+  "pid": 34037,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_mps.py",
+    "--variant",
+    "h128",
+    "--worker"
+  ],
+  "owner_sha256": "6031e877a23a05a707c13c51f879229e8500f379c8c117f31370184eb993a68b",
+  "watchdog": {
+    "pid": 56325,
+    "ppid": 56323,
+    "pgid": 56325,
+    "state": "Ss",
+    "started": "Fri Nov 20 15:17:32 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py --watch 56323"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "state": "complete_verified_neural_promotion_rendering_and_regression_checks",
+  "observed": "2026-11-21T20:39:09.231009+00:00",
+  "source_sha256": {
+    "scripts/build_research_journey.py": "8dcc77e5fa0559e01a475a36df10ec22195b010d31ae5800808b30e11030d2ec",
+    "scripts/complete_trajectory_publication.py": "9c809c7b6585c63d7709ec641c1f84f5c2231af3cb6d8c735c96b8058339bd1f",
+    "scripts/test_complete_trajectory_publication.py": "ad940277ad596d73c84b8495094fadc3ea677bf94a46f7a558e30342bc5e198b",
+    "research_journey.html": "4e4c3ee1d9932ecaae1b8ce956513e37aaa98b3b275396d506d33df03751d21f",
+    "index.html": "4e4c3ee1d9932ecaae1b8ce956513e37aaa98b3b275396d506d33df03751d21f",
+    "assets/progress_graph.svg": "5fff6f0583af0bed3a651f16c3ed8eed2b2816cd81a7140a2a4f8039aef14515",
+    "assets/progress_graph.png": "5322e9412d44dedd09c2fcda7a83bbc9e2166fddb41fb02961cac7c37d2c9ab0",
+    "experiments/fresh-reproduction-status.json": "3696fd6ed2e59d3951869940793189e08415ccfb4408e419257f1bd27527d588"
+  },
+  "tests_passed": 11,
+  "new_publication_rejection_tests": 7,
+  "preceding_own14_source_tests": 4,
+  "actual_publication_admission_sha256": "0c6ba4dbd011478161d2a17fb3605481041fdb50be0d6023d0e4f94fea1d4a86",
+  "own_milestones": 96,
+  "public_bank_milestones": 0,
+  "daily_markers": 25,
+  "one_per_Pacific_day_series_author": true,
+  "original_HTML_controls_and_styles_unchanged": true,
+  "default_root_matches_journey": true,
+  "target_label_below_line": true,
+  "PNG_visually_inspected": true,
+  "independent_read_only_review": "No remaining concrete blocker; exact real proofs, milestone provenance, development/qualifying separation and current bag process confirmed.",
+  "best_development_rmse": 0.8588630883643809,
+  "qualifying_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8603797340342072
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613681513408222
+    }
+  },
+  "goal_achieved": false
+}
