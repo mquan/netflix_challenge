@@ -42,10 +42,13 @@
       <div class="section-head"><div><div class="section-num">01 / Calendar time</div><h2 id="timeline-title">Overall progress · September–November</h2></div></div>
       <div class="panel">
         <div class="early-records"><strong>Our own training:</strong> the plots and score table track predictors trained by this project and locally fitted ensembles. Completed candidates can be promoted on lower overall RMSE against their comparable control; one worse fold no longer vetoes a gain. HR2a and LC6 improve their own controls without setting chronological overall records. <a href="PROMOTION_POLICY.md">Policy and evidence</a>.<br>Early results use single-model Probe scores; later results use blend CV. Current known-ProbeX development and recovered qualifying audits use different rows. Faded markers are unpromoted screens. The Codex logo identifies our trained qualifying result. <a href="INTERMEDIATE_PROGRESS.md">Intermediate experiment evidence</a>. <a href="RESULTS.md">Full early record</a>.</div>
-        <div class="chart-head"><h3>Probe scores and qualifying audit by real date</h3><span class="small">Continuous RMSE scale · 0.850–0.990</span></div>
+        <p class="note" style="margin:14px 22px 0"><strong>November 18–20 · Claude + Codex:</strong> Claude trained base models on the remote laptop; Codex verified the returned predictions and fitted the local ensembles. Adding the November 18 remote batch improved matched development CV from 0.8636585 to 0.8621943, with all five folds improving. <a href="https://github.com/mquan/netflix_challenge/blob/533488c/REMOTE_BATCH_PROGRESS.md">Measured contribution</a>. The later remote snapshots also feed the paired391 ensemble. The Claude logo at 0.8621943 on November 18 credits remote model training; its tooltip identifies Codex’s local blend. Other logos identify the session recording each result.</p>
+        <div class="chart-head"><h3>Probe scores and qualifying audit by real date</h3><span class="small" id="timeline-range">Full range · 0.850–0.990 RMSE</span></div>
+        <div class="controls strategy-controls" role="group" aria-label="RMSE range"><button class="pill" id="timeline-focus" aria-pressed="false">Near target</button><button class="pill" id="timeline-full" aria-pressed="true">Full range · Cinematch</button></div>
+        <p class="small" id="timeline-view-note" style="padding:8px 22px 0;margin:0" aria-live="polite"></p>
         <div class="controls strategy-controls" id="strategy-controls" role="group" aria-label="Highlight strategy"></div>
         <div class="chart-shell" id="timeline-shell"><svg id="timeline-chart" viewBox="0 0 960 530" role="img" aria-label="Daily best single-model Probe, blend CV and own-trained qualifying results with the 0.85725 target; different evaluation populations"></svg><div class="tooltip" id="timeline-tip" role="status"></div></div>
-        <div class="legend"><span>Daily best per series and author · Pacific dates · full history below</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
+        <div class="legend"><span>Initial runs, then daily best per series and author · Pacific dates · full history below</span><span><img class="model-logo" src="__CLAUDE_LOGO__" alt="">Claude</span><span><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt="">Codex</span></div>
       </div>
       <div class="panel competition-panel">
         <div class="chart-head"><h3>Nearly three years, beside our seven weeks</h3><span class="small">Elapsed calendar time from each start · RMSE ↓</span></div>
@@ -54,7 +57,7 @@
         <div class="competition-key"><span><i></i>Original competition · public Quiz</span><span class="ours"><i></i>Our project · Probe blend CV</span></div>
         <div class="chart-shell competition-shell" id="competition-shell"><svg id="competition-chart" viewBox="0 0 960 390" role="img" aria-label="Original public Quiz, project Probe CV through November, and own-trained qualifying results on an elapsed-day axis"></svg><div class="tooltip" id="competition-tip" role="status"></div></div>
         <div class="competition-detail" id="competition-detail" aria-live="polite"></div>
-        <div class="competition-foot">The historical line joins six sourced snapshots, not a complete daily leaderboard. The historical Probe frontier now includes B5, HR2b and H8. Promoted candidates HR2a and LC6 remain in the full ledger without advancing the record line. Fresh known-ProbeX and qualifying markers are separate from that original-Probe line. The overview plots show one daily best per evaluation series and author, using Pacific dates. Development CV and qualifying audits remain separate. Unpromoted screens are omitted from this comparison; the milestones table retains every result. These series cannot establish an official leaderboard position. First-day single-model scores use another protocol and are omitted. <strong>Prize outcome:</strong> The Ensemble led the public Quiz board at 0.8553; BellKor’s Pragmatic Chaos had 0.8554. Both rounded to 0.8567 on hidden Test, so the earlier submission won. The Test baseline and 10% mark were 0.9525 and 0.8572. <a href="https://www.asc.ohio-state.edu/statistics/statgen/joul_aut2009/NetflixAwardsOneMillionPrize2009.pdf">Netflix’s prize announcement</a> · <a href="https://utstat.toronto.edu/andrey/pubs/Netflix.pdf">final Quiz and Test scores</a>.</div>
+        <div class="competition-foot">The historical line joins six sourced snapshots, not a complete daily leaderboard. Our comparison shows four breakthroughs: the first blend (B1), the first result below the 2007 Progress Prize (R7), the best original-Probe blend (H8), and our best recovered qualifying audit. The audit uses a separate evaluation population and is not connected to the Probe line. The progress chart and milestones table retain the detailed results. These series cannot establish an official leaderboard position. First-day single-model scores use another protocol and are omitted. <strong>Prize outcome:</strong> The Ensemble led the public Quiz board at 0.8553; BellKor’s Pragmatic Chaos had 0.8554. Both rounded to 0.8567 on hidden Test, so the earlier submission won. The Test baseline and 10% mark were 0.9525 and 0.8572. <a href="https://www.asc.ohio-state.edu/statistics/statgen/joul_aut2009/NetflixAwardsOneMillionPrize2009.pdf">Netflix’s prize announcement</a> · <a href="https://utstat.toronto.edu/andrey/pubs/Netflix.pdf">final Quiz and Test scores</a>.</div>
       </div>
     </section>
 
@@ -85,7 +88,7 @@
     </section>
 
     <section id="credit" aria-labelledby="credit-title"><div class="section-head"><div><div class="section-num">05 / Who is credited</div><h2 id="credit-title">Claude and Codex</h2></div><p>We checked score-recording commits across the remote branches. Claude labels follow explicit co-author trailers; Codex labels follow your confirmation that Quan-only commits were Codex sessions. The parallel Codex research branch made measured progress from C5 through C12 while Claude's Round 7 work advanced the main frontier.</p></div>
-      <div class="credit-grid"><div class="credit-card claude"><h3><img class="model-logo" src="__CLAUDE_LOGO__" alt=""> Claude co-authored record</h3><p>The Claude mark means the commit recording that score or run has an explicit <code>Co-Authored-By: Claude…</code> trailer. The commit hash appears with the selected result. This does not prove Claude alone caused the gain.</p></div><div class="credit-card codex"><h3><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt=""> Codex · user confirmed</h3><p>The Codex mark identifies results recorded by Quan-only commits. You confirmed these were Codex sessions. The selected result displays the commit hash, including results from the remote branches.</p></div></div>
+      <div class="credit-grid"><div class="credit-card claude"><h3><img class="model-logo" src="__CLAUDE_LOGO__" alt=""> Claude co-authored record</h3><p>The Claude mark means the commit recording that score or run has an explicit <code>Co-Authored-By: Claude…</code> trailer. The commit hash appears with the selected result. This does not prove Claude alone caused the gain.</p><p><strong>November 18–20 remote training:</strong> Claude supplied the <a href="https://github.com/mquan/netflix_challenge/commit/f130172">November 18 batch of 24 unique prediction vectors</a>, <a href="https://github.com/mquan/netflix_challenge/commit/5f38584">completed CF-NADE48 training</a>, and <a href="https://github.com/mquan/netflix_challenge/commit/31c5f65">seven producers with 18 verified prediction pairs on November 20</a>. Codex handled local verification and ensemble fitting. <a href="OWN391_PAIRED_NEURAL_PLAN.md">Remote snapshots in the paired391 ensemble</a>.</p></div><div class="credit-card codex"><h3><img class="model-logo codex-logo" src="__CODEX_LOGO__" alt=""> Codex · user confirmed</h3><p>The Codex mark identifies results recorded by Quan-only commits. You confirmed these were Codex sessions. The selected result displays the commit hash, including results from the remote branches.</p></div></div>
       <p class="small">Attribution identifies the session behind the recording commit. It does not divide credit for all underlying models in an ensemble. C5–C12 were recorded together in the Quan-only <code>c368d4b</code> branch commit after earlier Git staging failed; the experiment records and checkpoint notes document the work. Icon sources: <a href="https://thesvg.org/icon/claude-code">Claude Code</a> and <a href="https://github.com/lobehub/lobe-icons">Codex</a>.</p>
     </section>
 
@@ -97,7 +100,11 @@
 (() => {
   'use strict';
   const DATA = __JOURNEY_DATA__;
+  // Attribute the remote-training contribution separately from local ensemble fitting.
+  const remoteBatchMilestone = {"id":"REMOTE83 Claude + Codex","score":0.8621943362,"time":"2026-11-18T15:55:52.842432+00:00","strategy":"Remote model bank","metric":"fresh_cv","credit":"claude_remote","creditCommit":"f1301728fc9f98a696c00c862f92d8efae3600b2","status":"development","title":"Claude remote models + Codex local blend","note":"Claude trained the remote base models (training commit f130172). Codex independently verified the exports and fitted the local 83-column tree/neural blend (score commit 533488c). The matched CV result improves from 0.8636584760 to 0.8621943362, with all five user folds improving. The Claude logo credits remote model training; this is a shared development result on known-ProbeX, not a qualifying audit.","source":"https://github.com/mquan/netflix_challenge/blob/533488c/REMOTE_BATCH_PROGRESS.md","basis":"independently verified completion timestamp"};
+  if(!DATA.milestones.some(d=>d.id===remoteBatchMilestone.id)){DATA.milestones.push(remoteBatchMilestone);DATA.milestones.sort((a,b)=>Date.parse(a.time)-Date.parse(b.time));}
   const LOGOS = {claude:'__CLAUDE_LOGO__',codex:'__CODEX_LOGO__'};
+  LOGOS.claude_remote = LOGOS.claude;
   const ns = 'http://www.w3.org/2000/svg';
   const $ = id => document.getElementById(id);
   const fmt = n => Number(n).toFixed(7);
@@ -112,7 +119,7 @@
   const clear = node => {while(node.firstChild)node.removeChild(node.firstChild);};
   const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const creditHtml = credit => LOGOS[credit] ? `<img class="model-logo${credit==='codex'?' codex-logo':''}" src="${LOGOS[credit]}" alt=""> ${credits[credit]}` : credits[credit];
-  const credits = {claude:'Claude co-authored record',codex:'Codex · user confirmed',unassigned:'Unassigned'};
+  const credits = {claude:'Claude co-authored record',claude_remote:'Claude remote training · Codex local blend',codex:'Codex · user confirmed',unassigned:'Unassigned'};
   const metric = {single:'Single-model Probe',cv:'Five-user-fold blend CV',cv_parallel:'Parallel five-user-fold blend CV',fresh_cv:'Own trained predictions · five-fold known-ProbeX CV',fresh_qualifying:'Own trained predictions · worse recovered qualifying group'};
   const cinematch = .9525;
   const percentVsCinematch = score => {const gain=100*(cinematch-score)/cinematch;return `${gain>=0?'+':''}${gain.toFixed(4)}%`;};
@@ -121,29 +128,39 @@
   const runGain = p => `Improvement vs Cinematch Test: ${percentVsCinematch(p[1])}`;
   const strategies = [...new Set(DATA.milestones.map(d=>d.strategy))];
   // Overview plots show representative results; the ledger retains every experiment.
-  const representativeIds = new Set(DATA.overview.ids);
+  const initialIds = DATA.milestones.filter(d=>['single','cv'].includes(d.metric)&&Date.parse(d.time)<Date.parse('2026-09-28T00:00:00-07:00')).map(d=>d.id);
+  const representativeIds = new Set([...DATA.overview.ids,...initialIds,remoteBatchMilestone.id]);
   const plotMilestones = DATA.milestones.filter(d => representativeIds.has(d.id));
   let selected = plotMilestones.filter(d=>d.metric==='fresh_cv').reduce((best,d)=>!best||d.score<best.score?d:best,null);
   let strategy = 'All';
   const dateMin = Date.parse(DATA.milestones[0].time), dateMax = Math.max(...DATA.milestones.map(d=>Date.parse(d.time)))+864e5;
   const sx = t => 72+(Date.parse(t)-dateMin)/(dateMax-dateMin)*830;
-  const sy = score => 443-(score-.850)/(.990-.850)*350;
+  let timelineFocus = false;
+  const sy = score => {const min=timelineFocus?.855:.850,max=timelineFocus?.880:.990;return 443-(score-min)/(max-min)*378;};
   function textNode(x,y,value,cls,anchor){const e=svgEl('text',{x,y,class:cls,'text-anchor':anchor||'start'});e.textContent=value;return e;}
   function showTip(tip,shell,text,x,y){tip.innerHTML=text;tip.style.display='block';const sw=shell.clientWidth,tw=tip.offsetWidth;tip.style.left=Math.max(8,Math.min(sw-tw-8,x))+'px';tip.style.top=Math.max(4,y-12-tip.offsetHeight)+'px';}
   function hideTip(tip){tip.style.display='none';}
   function selectMilestone(d,scrollToRow=false){selected=d;hideTip($('timeline-tip'));drawTimeline();renderRows();if(scrollToRow)$('milestone-rows').querySelector('tr.active')?.scrollIntoView({behavior:'smooth',block:'center'});}
-  function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=[.850,.875,.900,.925,.975];
-    svg.append(textNode(72,27,'RMSE ↓ continuous scale · 0.850–0.990','axis-title'));
-    svg.append(svgEl('line',{x1:72,y1:sy(.9525),x2:902,y2:sy(.9525),class:'benchmark-line'}));
-    svg.append(textNode(61,sy(.9525)+4,'0.9525','axis','end'));
-    svg.append(textNode(902,sy(.9525)-14,'Cinematch · Netflix Test reference','benchmark-label','end'));
-    for(const v of ticks){const y=sy(v);svg.append(svgEl('line',{x1:72,y1:y,x2:902,y2:y,class:'grid'}));svg.append(textNode(61,y+4,v.toFixed(3),'axis','end'));}
+  function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=timelineFocus?[.855,.860,.865,.870,.875,.880]:[.850,.875,.900,.925,.975];
+    const range=timelineFocus?'0.855–0.880':'0.850–0.990';
+    $('timeline-range').textContent=`${timelineFocus?'Near target':'Full range'} · ${range} RMSE`;
+    svg.append(textNode(72,27,`RMSE ↓ continuous scale · ${range}`,'axis-title'));
+    const visibleMilestones=plotMilestones.filter(d=>d.score>=(timelineFocus?.855:.850)&&d.score<=(timelineFocus?.880:.990));
+    const omitted=plotMilestones.length-visibleMilestones.length;
+    $('timeline-view-note').textContent=omitted?`${omitted} earlier result${omitted===1?' is':'s are'} outside this view; select Full range to see them.`:'';
+    $('timeline-view-note').hidden=!omitted;
+    if(!timelineFocus){
+      svg.append(svgEl('line',{x1:72,y1:sy(.9525),x2:902,y2:sy(.9525),class:'benchmark-line'}));
+      svg.append(textNode(61,sy(.9525)+4,'0.9525','axis','end'));
+      svg.append(textNode(902,sy(.9525)-14,'Cinematch · Netflix Test reference','benchmark-label','end'));
+    }
+    for(const v of ticks){const y=sy(v);svg.append(svgEl('line',{x1:72,y1:y,x2:902,y2:y,class:'grid'}));svg.append(textNode(61,y+4,v.toFixed(4).replace(/0$/, ''),'axis','end'));}
     svg.append(svgEl('line',{x1:72,y1:sy(.85725),x2:902,y2:sy(.85725),class:'goal-line'}));
     svg.append(textNode(61,sy(.85725)+4,'0.85725','axis','end'));
     svg.append(textNode(902,sy(.85725)+24,'10% target · 0.85725','goal-label','end'));
     const dates=['2026-09-27','2026-10-07','2026-10-17','2026-10-27','2026-11-06','2026-11-19'];for(const s of dates){const x=sx(s+'T12:00:00-07:00');svg.append(textNode(Math.min(x,899),475,new Date(s+'T12:00:00-07:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}),'axis','middle'));}
     svg.append(textNode(902,508,'Calendar date · Pacific','axis-title','end'));
-    plotMilestones.forEach(d=>{const x=sx(d.time),y=sy(d.score),filtered=strategy!=='All'&&d.strategy!==strategy;let mark;
+    visibleMilestones.forEach(d=>{const x=sx(d.time),y=sy(d.score),filtered=strategy!=='All'&&d.strategy!==strategy;let mark;
       if(d.metric==='fresh_qualifying'){mark=qualifyingLogo(x,y);if(filtered)mark.classList.add('dim');if(d===selected)mark.classList.add('selected');}
       else if(LOGOS[d.credit]){
         mark=svgEl('g',{class:`logo-point${filtered?' dim':''}`});
@@ -156,14 +173,19 @@
       mark.setAttribute('role','button');mark.setAttribute('tabindex','0');mark.setAttribute('aria-label',`${d.id}, ${fmt(d.score)} RMSE, ${metric[d.metric]}, ${milestoneStatus(d)}, ${milestoneGain(d)}, ${d.title}`);mark.addEventListener('click',()=>selectMilestone(d,true));mark.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectMilestone(d,true);}});mark.addEventListener('mouseenter',()=>showTip($('timeline-tip'),$('timeline-shell'),`<strong>${esc(d.id)} · ${fmt(d.score)}</strong>${esc(d.title)}<br>${esc(metric[d.metric])}<br>${esc(milestoneStatus(d))}<br>${esc(milestoneGain(d))}<br>${esc(localDate(d.time))} Pacific`,x/960*$('timeline-shell').clientWidth,y/530*$('timeline-shell').clientHeight));mark.addEventListener('mouseleave',()=>hideTip($('timeline-tip')));svg.append(mark);
     });
   }
-  let selectedCompetition = null,selectedOverlay = selected,competitionZoom = false;
+  for(const [id,focus] of [['timeline-focus',true],['timeline-full',false]])$(id).addEventListener('click',()=>{timelineFocus=focus;$('timeline-focus').setAttribute('aria-pressed',String(focus));$('timeline-full').setAttribute('aria-pressed',String(!focus));hideTip($('timeline-tip'));drawTimeline();});
+  let selectedCompetition = null,selectedOverlay = null,competitionZoom = false;
   const historicStart=Date.parse(DATA.competition[0].date+'T00:00:00Z');
   const projectStart=Date.parse(DATA.milestones.find(d=>d.id==='B1').time);
   const elapsedHistoric=d=>(Date.parse(d.date+'T00:00:00Z')-historicStart)/864e5;
   const elapsedProject=d=>(Date.parse(d.time)-projectStart)/864e5;
   const fullDays=elapsedHistoric(DATA.competition.at(-1));
-  const projectCheckpoints=plotMilestones.filter(d=>['B1','R7-MT56-s3','R10 B5','HR2a','HR2b','LC6','N1 full','H8 full','FRESH86 context','FRESH86 matched','FRESH91 tree + NN86','FRESH85 qualifying','FRESH86 qualifying','FRESH91 qualifying','FRESH103 NN qualifying','FRESH107 RBM50 qualifying','FRESH107 RBM50 NN','FRESH107 RBM50 mean','FRESH107 all90 GPU mean','FRESH107 all90 mean qualifying','FRESH AutoRec consensus','FRESH107 item154 mean','FRESH AutoRec consensus qualifying','FRESH107 item154 qualifying','FRESH107 calibrated qualifying','FRESH107 own5 qualifying','FRESH107 quadratic audit','FRESH107 tree154 mean','FRESH107 own6 qualifying'].includes(d.id) || representativeIds.has(d.id));
-  const checkpointLabel=d=>d.metric==='fresh_qualifying'?'Own qualifying audit · target missed':d.metric==='fresh_cv'?'Fresh training · separate known-ProbeX population':d.status==='promoted_candidate'?'Promoted candidate · not new overall record':d.id==='B1'?'First blend score':d.id==='R7-MT56-s3'?'First below the 2007 Progress Prize':d.status==='screen'?'Unpromoted development screen':'Latest Probe development';
+  // Keep the comparison to four breakthroughs; the timeline and ledger retain the detail.
+  const bestQualifying = DATA.milestones.filter(d=>d.metric==='fresh_qualifying'&&['promoted','audit'].includes(d.status)).reduce((best,d)=>!best||d.score<best.score?d:best,null);
+  const breakthroughIds = new Set(['B1','R7-MT56-s3','H8 full',bestQualifying?.id]);
+  const projectCheckpoints = DATA.milestones.filter(d=>breakthroughIds.has(d.id));
+  selectedOverlay = bestQualifying || projectCheckpoints.at(-1);
+  const checkpointLabel=d=>d.metric==='fresh_qualifying'?'Own qualifying audit · target missed':d.metric==='fresh_cv'?'Fresh training · separate known-ProbeX population':d.status==='promoted_candidate'?'Promoted candidate · not new overall record':d.id==='B1'?'First blend score':d.id==='R7-MT56-s3'?'First below the 2007 Progress Prize':d.id==='H8 full'?'Best original-Probe blend':d.status==='screen'?'Unpromoted development screen':'Latest Probe development';
   function setCompetitionDetail(d){selectedCompetition=d;selectedOverlay=null;hideTip($('competition-tip'));const gain=100*(.9514-d.score)/.9514;const detail=$('competition-detail');detail.classList.remove('project');detail.innerHTML=`<strong>${d.score.toFixed(4)}</strong><div><b>${esc(d.title)}</b> · ${esc(d.team)} · ${esc(d.date)}<br><span class="small">${gain.toFixed(2)}% below Cinematch on Quiz</span></div><p>${esc(d.note)}</p><a href="${esc(d.source)}">View source ↗</a>`;drawCompetition();}
   function setOverlayDetail(d){selectedOverlay=d;selectedCompetition=null;hideTip($('competition-tip'));const detail=$('competition-detail');detail.classList.add('project');detail.innerHTML=`<strong>${fmt(d.score)}</strong><div><b>${esc(d.id)} · ${esc(d.title)}</b> · ${esc(localDate(d.time))} Pacific<br><span class="small">${esc(milestoneStatus(d))} · ${esc(milestoneGain(d))}</span></div><p>${esc(d.note)}</p><a href="${encodeURI(d.source)}">Full record ↗</a>`;drawCompetition();}
   function drawCompetition(){const svg=$('competition-chart');clear(svg);const maxDays=competitionZoom?60:fullDays;
@@ -186,8 +208,7 @@
     });
     projectCheckpoints.forEach(d=>{const xx=x(elapsedProject(d)),yy=y(d.score),day=Math.round(elapsedProject(d)),mark=svgEl('g',{role:'button',tabindex:0,'aria-label':`${d.id}, day ${day}, ${metric[d.metric]} RMSE ${fmt(d.score)}, ${checkpointLabel(d)}, ${milestoneStatus(d)}`});
       if(d.status==='screen')mark.classList.add('unpromoted');
-      if(d.metric==='fresh_qualifying')mark.append(qualifyingLogo(xx,yy));
-      else mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?7:5,class:`project-dot${d.status==='screen'?' screen':''}${d===selectedOverlay?' selected':''}`}));mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?13:9,class:'competition-hit'}));
+      mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?7:5,class:`project-dot${d.status==='screen'?' screen':''}${d===selectedOverlay?' selected':''}`}));mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?13:9,class:'competition-hit'}));
       mark.addEventListener('click',()=>setOverlayDetail(d));mark.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setOverlayDetail(d);}});
       mark.addEventListener('mouseenter',()=>{const shell=$('competition-shell');showTip($('competition-tip'),shell,`<strong>${esc(d.id)} · ${fmt(d.score)}</strong>${esc(checkpointLabel(d))}<br>Day ${day} · ${esc(localDate(d.time))} Pacific<br>${esc(milestoneStatus(d))}<br>${esc(milestoneGain(d))}`,xx/960*svg.getBoundingClientRect().width-shell.scrollLeft,yy/390*svg.getBoundingClientRect().height);});mark.addEventListener('mouseleave',()=>hideTip($('competition-tip')));svg.append(mark);
     });
