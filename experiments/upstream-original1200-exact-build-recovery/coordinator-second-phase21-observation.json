@@ -1,0 +1,570 @@
+{
+  "state": "observed_first23_complete_second21_complete_same_original_native_live",
+  "observed": "2026-11-21T16:42:29.620565+00:00",
+  "first_phase_completed_epochs": 23,
+  "second_phase_completed_epochs": 21,
+  "observed_log_prefix_bytes": 2067,
+  "observed_log_prefix_sha256": "04aa0d6294f1e4885eb9e433457f0876932706f0a71b6d094b7b3c5b1da0565d",
+  "actual_process_observation": "  PID  PPID  PGID STARTED                      STAT      TIME COMMAND\n 8122     1  8122 Fri Nov 20 13:12:11 2026     Ss     5:09.74 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n 8133  8122  8133 Fri Nov 20 13:12:11 2026     Ss     0:52.00 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py --watch 8122\n16010  8122 16010 Fri Nov 20 13:38:18 2026     Rs   1075:28.18 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n",
+  "original_native_ownership_sha256": "f2f51d1f3b355019eb0b77bbdbf075664ed22d36dcb0c73ddbd3aa376b6e4271",
+  "existing_outputs_header_and_length_checks": [
+    {
+      "name": "tsvdx5-1200lm.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep01.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep02.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep03.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep04.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep05.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep06.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep07.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep08.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep09.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep10.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep11.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep12.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep13.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep14.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep15.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep16.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep17.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep18.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep19.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep20.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep21.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep22.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep23.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm-bias.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm-mf.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm-nsvd1.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm-nbr.probex.npy",
+      "bytes": 4512784,
+      "rows": 1128164,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep01.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep02.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep03.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep04.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep05.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep06.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep07.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep08.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep09.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep10.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep11.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep12.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep13.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep14.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep15.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep16.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep17.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep18.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep19.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep20.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm_ep21.qual.npy",
+      "bytes": 11268652,
+      "rows": 2817131,
+      "header_and_file_length_match": true
+    },
+    {
+      "name": "tsvdx5-1200lm.trainx.npy",
+      "bytes": 397409500,
+      "rows": 99352343,
+      "header_and_file_length_match": true
+    }
+  ],
+  "remaining_expected_outputs": [
+    "tsvdx5-1200lm.qual.npy",
+    "tsvdx5-1200lm_ep22.qual.npy",
+    "tsvdx5-1200lm_ep23.qual.npy",
+    "tsvdx5-1200lm-bias.qual.npy",
+    "tsvdx5-1200lm-mf.qual.npy",
+    "tsvdx5-1200lm-nsvd1.qual.npy",
+    "tsvdx5-1200lm-nbr.qual.npy",
+    "tsvdx5-1200lm.fulltrain.npy"
+  ],
+  "recent_saved_qualifying_vectors": [
+    {
+      "epoch": 16,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep16.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795271515.1223137
+    },
+    {
+      "epoch": 17,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep17.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795273067.2290673
+    },
+    {
+      "epoch": 18,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep18.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795274612.9224122
+    },
+    {
+      "epoch": 19,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep19.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795276160.0611963
+    },
+    {
+      "epoch": 20,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep20.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795277707.029337
+    },
+    {
+      "epoch": 21,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep21.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795279256.8658953
+    }
+  ],
+  "median_recent_epoch_seconds": 1547.1387841701508,
+  "estimated_epoch23_vector_utc": "2026-11-21T17:32:31.143464+00:00",
+  "ETA_excludes_final_exports_verification_calibration_and_scores": true,
+  "actual_guard_observation": {
+    "state": "native",
+    "pid": 16010,
+    "workers": {
+      "6054": {
+        "bytes": 24851251.2,
+        "rss_bytes": 18087936,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py"
+      },
+      "6056": {
+        "bytes": 24746393.6,
+        "rss_bytes": 18792448,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_data_queue.py --watch 6054"
+      },
+      "6062": {
+        "bytes": 29884416.0,
+        "rss_bytes": 37568512,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py"
+      },
+      "6064": {
+        "bytes": 24956108.8,
+        "rss_bytes": 18923520,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_neural_queue.py --watch 6062"
+      },
+      "6067": {
+        "bytes": 26528972.8,
+        "rss_bytes": 33308672,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py"
+      },
+      "6069": {
+        "bytes": 24956108.8,
+        "rss_bytes": 18628608,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_trajectory_fold_bag_queue.py --watch 6067"
+      },
+      "8122": {
+        "bytes": 27682406.4,
+        "rss_bytes": 29540352,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py"
+      },
+      "8133": {
+        "bytes": 25480396.8,
+        "rss_bytes": 18481152,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py --watch 8122"
+      },
+      "16010": {
+        "bytes": 14602888806.4,
+        "rss_bytes": 13039796224,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+      },
+      "26049": {
+        "bytes": 56623104.0,
+        "rss_bytes": 25935872,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit"
+      },
+      "30570": {
+        "bytes": 27577548.8,
+        "rss_bytes": 32276480,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py"
+      },
+      "30576": {
+        "bytes": 24956108.8,
+        "rss_bytes": 18923520,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py --watch 30570"
+      },
+      "31460": {
+        "bytes": 29569843.2,
+        "rss_bytes": 38191104,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+      },
+      "31465": {
+        "bytes": 27262976.0,
+        "rss_bytes": 25837568,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --watch 31460 --keep-fds 3 4"
+      },
+      "35292": {
+        "bytes": 28206694.4,
+        "rss_bytes": 61325312,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py"
+      },
+      "35297": {
+        "bytes": 25480396.8,
+        "rss_bytes": 18857984,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py --watch 35292"
+      },
+      "35985": {
+        "bytes": 316669952.0,
+        "rss_bytes": 53346304,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit"
+      },
+      "45713": {
+        "bytes": 50855936.0,
+        "rss_bytes": 62750720,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start"
+      },
+      "45776": {
+        "bytes": 49492787.2,
+        "rss_bytes": 44613632,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --watch 45713 --lane-fd 3"
+      },
+      "50842": {
+        "bytes": 30513561.6,
+        "rss_bytes": 37765120,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py"
+      },
+      "50847": {
+        "bytes": 25165824.0,
+        "rss_bytes": 18825216,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_data_queue.py --watch 50842"
+      },
+      "56323": {
+        "bytes": 29150412.8,
+        "rss_bytes": 31932416,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py"
+      },
+      "56325": {
+        "bytes": 24431820.8,
+        "rss_bytes": 18743296,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py --watch 56323"
+      },
+      "58980": {
+        "bytes": 28940697.6,
+        "rss_bytes": 35209216,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py"
+      },
+      "58983": {
+        "bytes": 24851251.2,
+        "rss_bytes": 18874368,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_fold_bag_queue.py --watch 58980"
+      },
+      "59231": {
+        "bytes": 51904512.0,
+        "rss_bytes": 57982976,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start"
+      },
+      "59294": {
+        "bytes": 50017075.2,
+        "rss_bytes": 51380224,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --watch 59231 --lane-fd 3"
+      },
+      "68008": {
+        "bytes": 30618419.2,
+        "rss_bytes": 43761664,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own15_complete_trajectory_queue.py"
+      },
+      "68010": {
+        "bytes": 24536678.4,
+        "rss_bytes": 18923520,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own15_complete_trajectory_queue.py --watch 68008"
+      },
+      "87173": {
+        "bytes": 25270681.6,
+        "rss_bytes": 18415616,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm400pf"
+      },
+      "87176": {
+        "bytes": 24431820.8,
+        "rss_bytes": 18481152,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87173 --job s3-rbm400pf"
+      },
+      "87178": {
+        "bytes": 25165824.0,
+        "rss_bytes": 18563072,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-tx300r"
+      },
+      "87181": {
+        "bytes": 24746393.6,
+        "rss_bytes": 18661376,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87178 --job s3-tx300r"
+      },
+      "87185": {
+        "bytes": 25480396.8,
+        "rss_bytes": 18251776,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm800p"
+      },
+      "87188": {
+        "bytes": 24641536.0,
+        "rss_bytes": 18644992,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87185 --job s3-rbm800p"
+      },
+      "95816": {
+        "bytes": 67423436.8,
+        "rss_bytes": 21381120,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_worker.py"
+      },
+      "97244": {
+        "bytes": 178257920.0,
+        "rss_bytes": 68796416,
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own391_tree_source.py stream"
+      }
+    },
+    "group_memory": {
+      "bytes": 14602888806.4,
+      "rss_bytes": 13039796224
+    },
+    "memory": {
+      "compressor_bytes": 3534635008,
+      "swap_used_bytes": 2148595138.56
+    },
+    "observed": "2026-11-21T16:42:12.036638+00:00"
+  },
+  "original_first_native_baseline_sha256": "a4d17bcad95a81fb36fd25165c4adc2bcc0f94f87a6e0218a649c05f946a2a8e",
+  "swap_growth_from_original_baseline_bytes": -521540730.8800001,
+  "disk_free_bytes": 21604556800,
+  "qualifying_labels_read": false,
+  "numerical_payloads_scanned": false,
+  "no_new_score_or_producer_completion": true,
+  "interpretation": "Header/length inventory only, not numeric admission. Full23+23 and independent58-output plus log verification required. Phase2 zero-target errors are not accuracy. No native source, recipe, baseline, process or cache modified."
+}

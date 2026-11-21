@@ -598,3 +598,13 @@ The latest pinned remote execution branch still ends at3d9a2a0 with stopped
 process observations. The local native and guarded queues continue separately.
 [Complete remote recovery instruction](REMOTE_WEEKEND_SAME_PROCESS_ADOPTION.md) ·
 [13 CPU protocol checks and review](experiments/upstream-remote-weekend-adoption-protocol/verification.json).
+
+The same original native reached21/23 second-phase epochs at08:41 Pacific on
+November21; its23/23 first phase remains complete. A header/length inventory
+finds50 of the required58 arrays present with the planned shapes and float32
+format. The eight remaining outputs are epochs22–23 and the six final exports.
+This structural check is not numerical admission. Recent saved-vector cadence
+still projects the epoch23 vector around09:33 Pacific, excluding final exports,
+independent verification and calibration. The native, supervisor and watchdog
+remain live, with no recorded guard failure; all scores remain unchanged.
+[Native epoch21 and complete structural inventory](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase21-observation.json).
