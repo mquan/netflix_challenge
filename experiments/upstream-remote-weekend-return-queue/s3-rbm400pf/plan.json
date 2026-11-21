@@ -1,0 +1,39 @@
+{
+  "source_sha256": {
+    "scripts/upstream_remote_weekend_return_queue.py": "5b82d6a82ec3a522c717a0554a846261ac0a33eedc2be5e41646e19b0e5d40f7",
+    "scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "REMOTE_WEEKEND_RETURN_PLAN.md": "4a222a55e712dbcc0b43cf1a8619d81ac979b6c47568fcb004d89f40d3758e31",
+    "experiments/upstream-remote-weekend/plan.json": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+    "scripts/upstream_remote_weekend_return.py": "5d04c8c093832b0421adf4c13c12740e7025f9b6a085b54ef5681706a9351f6e",
+    "scripts/verify_upstream_remote_weekend_return.py": "44609cb7563e76ba57a423e4b887bed5b1004f8491515a6c5a111e8f4ea51ace",
+    "scripts/upstream_remote_weekend_return_guard.py": "353324b6c523f414863667e40fce484d46033b1f96ce01108d9e98d9a15a73eb",
+    "scripts/upstream_remote_weekend.py": "816a91bd2e6d4331dc4433339f6198d318ecca9109c8a56cd2085c87e900ca4c",
+    "scripts/upstream_remote15h_native_stream.py": "64782bdd6d4346bc73df185d351502ea54076919bc84d9339b654624688031fa",
+    "scripts/upstream_split3_pilot.py": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b"
+  },
+  "created": "2026-11-21T00:17:42.943028+00:00",
+  "phases": {
+    "transport": [
+      "upstream_remote_weekend_return.py",
+      null
+    ],
+    "independent_admission": [
+      "verify_upstream_remote_weekend_return.py",
+      null
+    ]
+  },
+  "prerequisites": [
+    [
+      "upstream-own15-complete-trajectory-queue/completion.json",
+      "complete_own15_known_only_calibration_freeze_and_independent_recovered_audit",
+      "verification_sha256",
+      "upstream-own15-complete-trajectory-calibration/independent-canonical-verification.json",
+      "complete_independent_own15_full_source_models_coefficients_and_frozen_group_scores"
+    ]
+  ],
+  "job": "s3-rbm400pf",
+  "rule": "All full original completed epoch/terminal pairs, no score selection. Wait current own15 complete independent proof, then pinned complete remote transfer metadata. Never start a native model. Primarylane only,noGPU;2GiB worker/24research/5compress(admit4.5)/128MiB SAME firstscientific baseline/18.75GiBdisk. Reserve complete materialized return before admission. Bootstrap with live watchdog before exec; same RAM preserved on guard; no restart/partial import retry. Full compressed and decoded hashes, every native numerical value, complete source/data/split/map/disjointness and every compact bit independently required. No recovered target input or score claim."
+}
