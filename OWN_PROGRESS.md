@@ -650,3 +650,29 @@ controller30570 has advanced to the declared fixed-lambda1000 ridge fit,
 with process23654 live. No fit completion or new score is yet established.
 [Independent novelty proof](experiments/upstream-complete-cf-delta/input-verification.json) ·
 [Actual fixed-fit handoff](experiments/upstream-complete-cf-delta-native-deferred/coordinator-novelty-to-fit-observation.json).
+
+The expanded CF95/TX50n fixed-lambda study is independently complete. All
+operator/statistic/weight/prediction bits and canonical known scores verify.
+Its known ridge0.8617705148 improves its matched parent391 ridge0.8618508817
+by0.0000803669; this is not the current best development score and no new
+qualifying predictions were generated. Full519-candidate trajectory admission
+is now live in the original queue before its complete ridge/neural stages.
+
+Three additional obsolete public-dependent statistic archives were retired
+under the existing public-bank cleanup authorization after exact full SHA,
+536/387/122 manifest-input matches, closed/single-link/untracked checks and
+a durable pre-deletion journal. Independent scope/absence/provenance and ten
+scientific-proof/twelve metadata-hash replays pass. Measured free-space gain
+is0.93722GiB; about20.02GiB is free. Every independent model, checkpoint,
+prediction, dataset and own working state remains intact. These three public
+cache contents were intentionally discarded and are no longer restorable
+through the older public-cache archive helper.
+[Independent public-cache retirement](experiments/upstream-retire-remaining-public-stats-1/independent-verification.json).
+
+The separate remote-override context library passes six metadata fixture
+checks with the original scientific-validator bytecode and default module
+globals unchanged. Its private plan configuration preserves all67 pairs and
+adds fresh-preparation/binary/deadline/lineage checks. This is a library
+prototype only: production declaration, supervision and actual numerical
+return admission still need completion. No new score is claimed.
+[Library prototype checks](experiments/upstream-remote-weekend-override-context-prototype/verification.json).

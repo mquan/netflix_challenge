@@ -44,3 +44,12 @@ namespace. The local CF/full-trajectory/GPU iteration continues independently.
 
 This checkpoint completes policy admission only. The separate numerical return
 adapter and its supervised execution are still required.
+
+The isolated context library is now implemented and CPU-checked. Fresh module
+instances use the pinned remote plan; default imports and the original full
+scientific-verifier bytecode remain unchanged. Additional checks bind each
+fresh preparation/binary, original deadline and execution lineage. Six
+private metadata-fixture tests pass, including coherent changes accepted by
+the older metadata layer and rejected by the new context. This library is not
+a production declaration or supervised numerical import; those remain pending.
+[Context prototype verification](experiments/upstream-remote-weekend-override-context-prototype/verification.json).
