@@ -1,0 +1,22 @@
+{
+  "state": "observed_first23_complete_second13_complete_same_original_native_live",
+  "observed": "2026-11-21T13:16:11.233896+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1875,
+  "observed_log_prefix_sha256": "583dc86ba1e8eb05f90f77e253c638e167ffd45bcb76d675dab4ade2b40d43ae",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 13,
+  "actual_process_observation": "  PID  PPID STAT STARTED                       ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   Fri Nov 20 13:12:11 2026     16:04:00   4:13.87  45120 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   Fri Nov 20 13:38:18 2026     15:37:53 880:16.95 12990272 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 Ts   Fri Nov 20 17:11:15 2026     12:04:56   0:21.33  25328 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n35292     1 Ss   Fri Nov 20 17:24:50 2026     11:51:21   2:51.04 140032 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n",
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "free_bytes": 21914038272,
+  "interpretation": "Same original native is live. Full second23 epochs and independent all58 numeric outputs plus log remain required. Phase2 zero-target errors are not accuracy. Paused own14 audit and waiting same-process continuation remain preserved. No new ensemble/qualifying score."
+}

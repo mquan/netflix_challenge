@@ -470,7 +470,7 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775; its second fulltrain→qual phase has completed10/23 epochs.
+diagnostic0.87775; its second fulltrain→qual phase has completed13/23 epochs.
 Phase-two diagnostic errors use zero-filled qualifying targets and do not
 measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
@@ -496,3 +496,19 @@ file hashes pass a separate replay. The original native PID/start/command
 remains live; scientific sources, executables, models, data, predictions and
 checkpoints were preserved.
 [Verified legacy-cache archives and restore instructions](BUILD_CACHE_ARCHIVE_RESULT.md).
+
+[Same native process at second-phase epoch13](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase13-observation.json).
+
+A separately named local factored bipolar RBM implementation is being prepared
+as an alternative path while the remote producers remain guard-stopped in their
+last pinned checkpoint. Its mathematical kernels, cold/unseen-day prediction,
+masked-row reader, initialization/epoch loop and complete-epoch state pass26
+synthetic CPU checks, including independent scalar equations and exact CPU
+serialization/next-epoch continuation. No production arrays were scanned, no
+MPS operation or production fit occurred, and no new score is claimed. Full
+source/data admission, MPS/resource checks, durable guarded15+15 execution and
+independent actual-model query replay are still required. Native1200 and the
+existing queues remain unchanged.
+[Separate local RBM plan](OWN_FACTORED_RBM_GPU_PLAN.md) ·
+[Training-state scope and pending gates](OWN_FACTORED_RBM_GPU_TRAINING.md) ·
+[CPU-only verification](experiments/upstream-factored-rbm-kernel/training-verification.json).
