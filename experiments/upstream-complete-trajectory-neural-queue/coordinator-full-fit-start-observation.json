@@ -1,0 +1,58 @@
+{
+  "state": "original_full_713_input_neural_fit_worker_started",
+  "observed": "2026-11-21T20:03:59.853342+00:00",
+  "owner": {
+    "pid": 56323,
+    "ppid": 1,
+    "pgid": 56323,
+    "state": "Ss",
+    "started": "Fri Nov 20 15:17:32 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py"
+  },
+  "worker": {
+    "pid": 34037,
+    "ppid": 56323,
+    "pgid": 34037,
+    "state": "Us",
+    "started": "Sat Nov 21 12:03:14 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_mps.py --variant h128 --worker"
+  },
+  "source_sha256": {
+    "experiments/upstream-complete-trajectory-h128-mps/manifest.json": "10813424e70b95ae31875c91394ed47c4f72e41872c7e06d6e404a84a203f4b2",
+    "experiments/upstream-complete-trajectory-neural-queue/plan.json": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+    "experiments/upstream-complete-trajectory-neural-queue/monitor.json": "6031e877a23a05a707c13c51f879229e8500f379c8c117f31370184eb993a68b",
+    "experiments/upstream-complete-trajectory-neural-queue/first-scientific-baseline.json": "972b03f4c0f1e89d5ebf8d8a0689c54d1e90ead68e6d37114f0b2a8a69073cb5",
+    "experiments/upstream-complete-trajectory-neural-queue/fit-ownership.json": "5920bf9b386423c03dcdc0462bb22029b918a3e65319dce3db19ed45c7005ceb",
+    "experiments/upstream-complete-trajectory-neural-queue/fit-gate.json": "21dcc897c2d7cc140d6a40950c85cee1ed3de0654e25228c7b48724d60e017a0",
+    "experiments/upstream-complete-trajectory-neural-queue/fit-dispatch.json": "fdaeb1d4f6952a6e8b95821c194b53ebfd1b080bc85060b46b5883d9b106693b"
+  },
+  "width": 713,
+  "raw_predictions": 486,
+  "config": {
+    "seeds": [
+      2026,
+      7,
+      13
+    ],
+    "threads": 2,
+    "tree_rounds": 2000,
+    "tree_patience": 75,
+    "tree_leaves": 31,
+    "tree_min_leaf": 1000,
+    "tree_lr": 0.03,
+    "nn_epochs": 40,
+    "nn_patience": 4,
+    "nn_hidden": 128,
+    "nn_batch": 8192,
+    "nn_lr": 0.0003,
+    "nn_dropout": 0.2,
+    "nn_weight_decay": 0.01,
+    "ridge_lambda": 1000,
+    "architecture": "context-weighted-residual-complete-trajectory-h128-v1",
+    "context_rank": 32,
+    "neural_backend": "torch-mps-float32"
+  },
+  "qualifying_labels_read": false,
+  "no_new_neural_score_yet": true,
+  "no_models_or_numerical_budgets_changed": true
+}
