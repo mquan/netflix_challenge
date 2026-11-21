@@ -1,12 +1,13 @@
 {
- "observed": "2026-11-21T07:45:40+00:00",
- "training_hours_left": 54.24,
- "native_process": "PID STARTED                       ELAPSED      TIME    RSS STAT COMMAND\n24357 Fri Nov 20 21:20:19 2026     02:25:21 138:02.77 8238320 Rs   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+ "observed": "2026-11-21T08:13:29+00:00",
+ "training_hours_left": 53.78,
+ "native_process": "PID STARTED                       ELAPSED      TIME    RSS STAT COMMAND\n24357 Fri Nov 20 21:20:19 2026     02:53:10 164:25.17 8238320 Rs   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3\n68057 Sat Nov 21 00:13:29 2026        00:00   0:00.01   3584 Ss   /bin/zsh -c source /Users/quan/.claude/shell-snapshots/snapshot-zsh-1795217771166-olfllu.sh 2>/dev/null || true && \\builtin setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL NO_BRACE_CCL NO_MAGIC_EQUAL_SUBST NO_EQUALS 2>/dev/null || true && { \\builtin unalias -- 'which'; \\builtin unset -f -- 'which'; } >/dev/null 2>&1 || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'tmux respawn-window -k -t remote-weekend:progress \"caffeinate -i ~/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh; exec zsh\"; sleep 45; A=~/workspace/netflix_remote_weekend/artifacts; for r in r3:s3-rbm800p r4:s3-tx300r; do t=${r%%:*}; j=${r##*:}; python3 -c \"\\012import json;d=json.load(open('\"'\"'$A/upstream-remote-weekend-$t/$j-status.json'\"'\"'));print('\"'\"'$j'\"'\"',d['\"'\"'state'\"'\"'],d.get('\"'\"'good_samples'\"'\"'),d.get('\"'\"'pid'\"'\"'),round(d['\"'\"'memory'\"'\"']['\"'\"'compressor_bytes'\"'\"']/2**30,2),{k:round(v['\"'\"'bytes'\"'\"']/2**30,1) for k,v in d['\"'\"'workers'\"'\"'].items() if v['\"'\"'bytes'\"'\"']>2**28})\"; done; ps -o pid,state,etime -p 24357; pgrep -fl '\"'\"'target/release/fit'\"'\"'' < /dev/null && pwd -P >| /tmp/claude-8b64-cwd",
  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 83%",
  "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
- "disk_free_gib": 214.4,
+ "disk_free_gib": 210.5,
  "jobs": {
   "s3-rbm400pf": {
+   "tree": "upstream-remote-weekend-r2",
    "launch": {
     "job": "s3-rbm400pf",
     "pid": 24357,
@@ -64,8 +65,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/driver.log"
      },
      "73979": {
-      "bytes": 32505856.0,
-      "rss_bytes": 39223296,
+      "bytes": 32610713.6,
+      "rss_bytes": 39387136,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "74003": {
@@ -80,17 +81,17 @@
      }
     },
     "memory": {
-     "compressor_bytes": 10606723072,
+     "compressor_bytes": 10516905984,
      "swap_used_bytes": 376837242.88
     },
-    "observed": "2026-11-21T07:45:32.617701+00:00"
+    "observed": "2026-11-21T08:13:23.687801+00:00"
    },
-   "epoch_lines": 4,
-   "last_epoch": 4,
+   "epoch_lines": 5,
+   "last_epoch": 5,
    "phase": "train_3->probe_3",
    "log_tail": [
-    "Epoch 03 | RMSE 0.91961",
-    "Epoch 04 | RMSE 0.92066"
+    "Epoch 04 | RMSE 0.92066",
+    "Epoch 05 | RMSE 0.91586"
    ],
    "receipt": false,
    "incomplete": false,
@@ -102,6 +103,7 @@
    "uploaded": false
   },
   "s3-tx300r": {
+   "tree": "upstream-remote-weekend-r4",
    "receipt": false,
    "incomplete": false,
    "failure": false,
@@ -112,6 +114,7 @@
    "uploaded": false
   },
   "s3-rbm800p": {
+   "tree": "upstream-remote-weekend-r3",
    "receipt": false,
    "incomplete": false,
    "failure": false,
