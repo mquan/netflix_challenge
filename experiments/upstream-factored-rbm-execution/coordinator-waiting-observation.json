@@ -1,0 +1,32 @@
+{
+  "state": "observed_actual_owned_GPU_RBM_queue_waiting_original_native_and_own15",
+  "observed": "2026-11-21T14:40:51.459178+00:00",
+  "execution_plan_sha256": "48fc8377c22e2b5bbbe9a1ef22881c4b0ee94a4ff0c3b2aedbcfe99548c980c2",
+  "owner": {
+    "pid": 31460,
+    "ppid": 1,
+    "pgid": 31460,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:39:37 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+  },
+  "watchdog": {
+    "pid": 31465,
+    "ppid": 31460,
+    "pgid": 31465,
+    "state": "Ss",
+    "started": "Sat Nov 21 06:39:37 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --watch 31460 --keep-fds 3 4"
+  },
+  "qualifying_labels_read": false,
+  "production_data_admitted": false,
+  "actual_MPS_tested": false,
+  "production_models_fitted": 0,
+  "no_scientific_worker_dispatched": true,
+  "waiting_for": [
+    "complete original1200 23+23/all58numeric+log independent verification",
+    "complete original own15 trajectory calibration and canonical verification"
+  ],
+  "remote_execution_tip": "3d9a2a0da8692f01479927e716c32976938f8695",
+  "remote_execution_tip_is_not_a_current_process_poll": true
+}

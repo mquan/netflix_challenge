@@ -1,6 +1,6 @@
 # Our own Netflix training progress
 
-Updated November21 UTC /November20 Pacific,2026.
+Updated November21 UTC /November21 Pacific,2026.
 
 Best independently verified known-ProbeX development CV: **0.8589133967520619**.
 The complete matched paired391 H128 NN/tree154 half improves preceding
@@ -470,7 +470,7 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775; its second fulltrain→qual phase has completed13/23 epochs.
+diagnostic0.87775; its second fulltrain→qual phase has completed16/23 epochs.
 Phase-two diagnostic errors use zero-filled qualifying targets and do not
 measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
@@ -499,16 +499,27 @@ checkpoints were preserved.
 
 [Same native process at second-phase epoch13](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase13-observation.json).
 
-A separately named local factored bipolar RBM implementation is being prepared
-as an alternative path while the remote producers remain guard-stopped in their
-last pinned checkpoint. Its mathematical kernels, cold/unseen-day prediction,
-masked-row reader, initialization/epoch loop and complete-epoch state pass26
-synthetic CPU checks, including independent scalar equations and exact CPU
-serialization/next-epoch continuation. No production arrays were scanned, no
-MPS operation or production fit occurred, and no new score is claimed. Full
-source/data admission, MPS/resource checks, durable guarded15+15 execution and
-independent actual-model query replay are still required. Native1200 and the
-existing queues remain unchanged.
-[Separate local RBM plan](OWN_FACTORED_RBM_GPU_PLAN.md) ·
-[Training-state scope and pending gates](OWN_FACTORED_RBM_GPU_TRAINING.md) ·
-[CPU-only verification](experiments/upstream-factored-rbm-kernel/training-verification.json).
+The separately named local factored bipolar RBM now has a reviewed full-budget
+execution controller and worker, committed and pushed at49191de. Its real owner
+31460 and watchdog31465 are alive, waiting for complete original1200 and own15
+verification before any numerical dispatch. Both15-epoch fits, saved-model
+replays and paired assembly pass on small synthetic CPU fixtures; all64 relevant
+checks pass. They include real-process inherited-lane retention after journal
+failure, independent physical/RSS admission, preserved worker measurement
+failures and rejection of altered authenticated predictions.
+
+The recipe retains H400/rank50/500 users/seed128, every original row and all15+15
+epochs. Full original63 payload/header/semantic admission, actual fresh-MPS
+full-width stress qualification and original resource guards remain mandatory.
+No production arrays have been scanned by this new implementation, no actual
+MPS work or production fit has occurred, and no new score is claimed. Resource
+stops preserve the same process, RNG/model/write stack, owner/watchdog, lanes and
+original baseline; they never restart or reduce the numerical recipe.
+[Owned execution and resource protocol](OWN_FACTORED_RBM_GPU_EXECUTION.md) ·
+[Live waiting-owner observation](experiments/upstream-factored-rbm-execution/coordinator-waiting-observation.json) ·
+[64 CPU checks and independent review](experiments/upstream-factored-rbm-kernel/execution-verification.json) ·
+[Full original-data admission](OWN_FACTORED_RBM_GPU_ADMISSION.md) ·
+[Fresh actual-MPS qualification](OWN_FACTORED_RBM_GPU_PREFLIGHT.md) ·
+[Complete saved predictor](OWN_FACTORED_RBM_GPU_TERMINAL.md).
+
+[Same native process at second-phase epoch16](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase16-observation.json).
