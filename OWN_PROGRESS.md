@@ -2,6 +2,14 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 23:20 UTC: seven full known epochs are complete in the same
+deterministic-Metal worker51842;15known+15qualifying and the original CD/batch/
+source/baseline remain. The learned-context extraction/operator/H128factory
+prototypes pass31CPU checks and independent review. Real-source/cache/MPS
+feature admission and both neural studies have not started. Known user IDs
+match the canonical model coordinates on all1128164rows. No new score yet.
+[Follow-up implementation status](OWN_RBM400_LATENT_COMPONENT_PROGRESS.md).
+
 November21 22:46 UTC: the full deterministic Metal producer completed its
 FIRST known epoch, all480189nonemptyusers and961batches. Same worker51842
 continues the remaining14known epochs; qualifying still requires all15.

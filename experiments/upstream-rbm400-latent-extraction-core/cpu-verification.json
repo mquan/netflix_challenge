@@ -1,0 +1,28 @@
+{
+  "state": "complete_readonly_terminal_representation_extraction_synthetic_CPU_checks_actual_provider_pending",
+  "observed": "2026-11-21T23:02:24.705852+00:00",
+  "tests_passed": 12,
+  "synthetic_model_original_config": true,
+  "synthetic_model_epochs": 15,
+  "synthetic_hidden": 400,
+  "synthetic_factors": 50,
+  "synthetic_users": 4,
+  "synthetic_queries": 6,
+  "all_query_prediction_bits_replayed": true,
+  "all_user_factors_independently_checked": true,
+  "cold_posteriors_and_unqueried_coverage_checked": true,
+  "model_tensors_and_rng_unchanged": true,
+  "one_bit_prediction_changes_rejected": true,
+  "invalid_rows_and_partial_model_rejected": true,
+  "production_models_loaded": false,
+  "actual_MPS_tested": false,
+  "production_provider_admitted": false,
+  "source_sha256": {
+    "scripts/upstream_rbm400_latent_extraction.py": "187f7a77a73c1b1ca303668a06a20f73fd9ce5ca5a9285161e5748b5b1718945",
+    "scripts/test_upstream_rbm400_latent_extraction.py": "8d02b10b201123187da9036f5f073b4de5fb6192b7add1759c77562f888dafcf",
+    "scripts/upstream_rbm400_latent_context_math.py": "dc61c0ed922897e43fdc102c97d9691d6549e3678aa2c0e37bd7762daeb7900f",
+    "OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md": "8ef3da1c2498bb288723a006bf648b2d08ea51de8feb7711df9432b9e18123e3"
+  },
+  "literal_uint32_prediction_bits_checked": true,
+  "signed_zero_regression_checked": true
+}

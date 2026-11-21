@@ -1,0 +1,43 @@
+{
+  "state": "complete_combined_CPU_representation_operator_and_factory_prototypes_actual_provider_pending",
+  "observed": "2026-11-21T23:14:10.209251+00:00",
+  "tests_passed": 31,
+  "test_counts": {
+    "math": 8,
+    "extraction": 12,
+    "operators": 7,
+    "neural_factories": 4
+  },
+  "real_production_models_loaded": false,
+  "actual_MPS_provider_tested": false,
+  "full_actual_operator_replay_tested": false,
+  "actual_neural_models_fitted": 0,
+  "production_provider_admitted": false,
+  "original_signals_and_contexts_preserved": true,
+  "scalar_max_dimensions": {
+    "raw": 487,
+    "design": 563,
+    "nonlinear": 713,
+    "neural": 714,
+    "contexts": 225
+  },
+  "latent_max_dimensions": {
+    "raw": 487,
+    "design": 563,
+    "nonlinear": 863,
+    "neural": 864,
+    "contexts": 375
+  },
+  "all_original_h128_training_hyperparameters_preserved": true,
+  "source_sha256": {
+    "scripts/upstream_rbm400_latent_context_math.py": "dc61c0ed922897e43fdc102c97d9691d6549e3678aa2c0e37bd7762daeb7900f",
+    "scripts/test_upstream_rbm400_latent_context_math.py": "e22d86f9038e2abdb14b9f38f0ae2fb60480d04ed9297576e7d719166f7de86c",
+    "scripts/upstream_rbm400_latent_extraction.py": "187f7a77a73c1b1ca303668a06a20f73fd9ce5ca5a9285161e5748b5b1718945",
+    "scripts/test_upstream_rbm400_latent_extraction.py": "8d02b10b201123187da9036f5f073b4de5fb6192b7add1759c77562f888dafcf",
+    "scripts/upstream_rbm400_latent_operators.py": "6e49960dd83fcb1d68c0b06e0a79fbc2faafce27350f8f99fecb9f63fa440495",
+    "scripts/test_upstream_rbm400_latent_operators.py": "def0b267e368e4c4e305ee643beb7b226b208983194121b7277ed8bbb4c1d475",
+    "scripts/upstream_rbm400_latent_neural.py": "c445356d98b9df1e25fe649c435c97dc0ca7ecb6032d75d33af49ebb76f611ef",
+    "scripts/test_upstream_rbm400_latent_neural.py": "dc86143111af15908fac19bc403793837e9acd675040082552bb8ee3db313027",
+    "OWN_RBM400_LATENT_CONTEXT_FOLLOWUP_PLAN.md": "c6f51bd6310f41307d1c68253613615206f8c84a67685b4c18f9260d693b74f8"
+  }
+}
