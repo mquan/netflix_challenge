@@ -1,0 +1,106 @@
+{
+  "state": "observed_first23_complete_second18_complete_same_original_native_live",
+  "observed": "2026-11-21T15:26:18.884920+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1995,
+  "observed_log_prefix_sha256": "7f7eac60d879f683bc2c127285e3a98d56553c0daa108ee632055b5847cc0f17",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 18,
+  "native_same_original_identity": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Ss",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "original_native_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "actual_process_observation": "  PID  PPID STAT  ELAPSED      TIME COMMAND\n 8122     1 Ss   18:14:07   4:50.08 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Ss   17:48:00 1003:13.29 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 Ts   14:15:03   0:21.33 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n31460     1 Ss      46:41   0:01.52 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start\n35292     1 Ss   14:01:28   3:22.43 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n45713     1 Ss      30:02   0:01.30 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue.py --start\n59231     1 Ss      14:52   0:01.21 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_weekend_own16_queue_v2.py --start\n",
+  "observed_native_epoch_vector_sizes_without_numeric_admission": true,
+  "recent_saved_qualifying_vectors": [
+    {
+      "epoch": 13,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep13.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795266851.647141,
+      "mtime_utc": "2026-11-21T13:14:11.647141+00:00"
+    },
+    {
+      "epoch": 14,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep14.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795268405.3599277,
+      "mtime_utc": "2026-11-21T13:40:05.359928+00:00"
+    },
+    {
+      "epoch": 15,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep15.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795269960.4375942,
+      "mtime_utc": "2026-11-21T14:06:00.437594+00:00"
+    },
+    {
+      "epoch": 16,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep16.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795271515.1223137,
+      "mtime_utc": "2026-11-21T14:31:55.122314+00:00"
+    },
+    {
+      "epoch": 17,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep17.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795273067.2290673,
+      "mtime_utc": "2026-11-21T14:57:47.229067+00:00"
+    },
+    {
+      "epoch": 18,
+      "path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm_ep18.qual.npy",
+      "bytes": 11268652,
+      "mtime": 1795274612.9224122,
+      "mtime_utc": "2026-11-21T15:23:32.922412+00:00"
+    }
+  ],
+  "recent_epoch_intervals_seconds": [
+    1553.7127866744995,
+    1555.0776665210724,
+    1554.6847195625305,
+    1552.1067535877228,
+    1545.6933448314667
+  ],
+  "median_recent_epoch_seconds": 1553.7127866744995,
+  "remaining_epochs": 5,
+  "estimated_epoch23_vector_utc": "2026-11-21T17:33:01.486346+00:00",
+  "ETA_excludes_final_exports_independent_verification_calibration_and_scores": true,
+  "current_memory": {
+    "compressor_bytes": 3507453952,
+    "swap_used_bytes": 2156983746.56
+  },
+  "free_bytes": 21834596352,
+  "original_next_audit_baseline": {
+    "compressor_bytes": 2216837120,
+    "swap_used_bytes": 2670135869.44
+  },
+  "current_compressor_below_original_admission_limit": true,
+  "current_swap_within_original_next_audit_growth_limit": true,
+  "current_disk_above_original_floor_and_reserve": true,
+  "latest_live_native_owner_sample_observed": "2026-11-21T15:26:10.584310+00:00",
+  "latest_live_native_owner_group_memory": {
+    "bytes": 14602888806.4,
+    "rss_bytes": 13091389440
+  },
+  "maintenance": {
+    "additional_direct_release_build_deps_incremental_cache_payloads_found": 0,
+    "numerical_state_deleted": false,
+    "cleanup_performed": false,
+    "retained_orphan_mapping": "artifacts/full-upstream-mapped/training-scratch/tx-23689-3.f32",
+    "retained_mapping_bytes": 10368024600,
+    "original_mapping_creator_PID_absent": true,
+    "open_users_observed": false,
+    "sampled_4KiB_zero_blocks": 0,
+    "sampled_4KiB_blocks": 1024,
+    "scope": "Readonly candidate inspection only; dense partial numerical state and every existing archive/model/source/data/prediction remain retained."
+  },
+  "interpretation": "Same original native is actively producing the complete trajectory. Full second23 epochs and all58 numeric outputs plus log still require separate verification. Phase2 zero-target errors are not accuracy. No new recovered or ensemble score."
+}
