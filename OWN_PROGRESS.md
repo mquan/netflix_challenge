@@ -630,3 +630,23 @@ new signals and31 exact aliases; independent novelty replay is running before
 the original fixed ridge fit. Full trajectory and GPU queues remain guarded.
 [Own14 complete result](OWN14_QUALIFYING_RESULT.md) ·
 [Canonical own14 proof](experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json).
+
+The newly fetched remote checkpoint444fa33 records a reported owner override
+of remote memory/RSS/compressor/swap guards and fresh r8/r9/r10 preparations.
+A separate executable policy check confirms an exact controller-only plan
+change and exact capacity/compressor patch; every numerical recipe, dataset
+expectation, thread/seed/epoch budget and all67 required pairs remain original.
+Deadline, watchdog and disk checks remain in the source. The old stopped
+attempts were terminated according to that checkpoint. No new launch receipt
+or completed numerical return appears in the pinned commit, so no current
+remote process or score is claimed. All coordinator guards and frozen intake
+expectations remain unchanged. A separately declared return adapter is needed
+for this new policy variant.
+[Remote policy variant and full-return requirements](REMOTE_WEEKEND_OWNER_OVERRIDE_RETURN_PLAN.md).
+
+The completed CF novelty inventory now passes the separate independent replay
+of all488 pairs:66 new signals and31 exact aliases. The original deferred
+controller30570 has advanced to the declared fixed-lambda1000 ridge fit,
+with process23654 live. No fit completion or new score is yet established.
+[Independent novelty proof](experiments/upstream-complete-cf-delta/input-verification.json) ·
+[Actual fixed-fit handoff](experiments/upstream-complete-cf-delta-native-deferred/coordinator-novelty-to-fit-observation.json).

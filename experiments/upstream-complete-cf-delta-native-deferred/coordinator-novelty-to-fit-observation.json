@@ -1,0 +1,13 @@
+{
+  "state": "observed_complete_independent_CF_novelty_and_original_fixed_fit_live",
+  "observed": "2026-11-21T18:13:09.748278+00:00",
+  "input_manifest_sha256": "328bd0d23a15c2dda68f7afe3ca6a03e7e3b3d421b495a3422e015a68e90fff0",
+  "input_verification_sha256": "21d43f0423d2cb847b4c1b900b49b5eae818c67d03ba20c4a7d4fa2ae289e29a",
+  "all488_scalar_pairs_independently_verified": true,
+  "retained_new_pairs": 66,
+  "exact_alias_pairs": 31,
+  "actual_fit_process_observation": "  PID  PPID  PGID STARTED                      STAT      TIME COMMAND\n23654 30570 23654 Sat Nov 21 10:05:50 2026     Ss     1:18.30 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py fit\n30570     1 30570 Fri Nov 20 14:21:42 2026     Ss     0:41.09 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py\n",
+  "fit_complete": false,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false
+}
