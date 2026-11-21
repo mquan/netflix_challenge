@@ -1,16 +1,58 @@
 {
- "observed": "2026-11-21T04:45:33+00:00",
- "training_hours_left": 57.24,
- "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n    1 Tue Nov 17 12:13:59 2026     03-08:31:35  40:52.44  26832 Ss   /sbin/launchd",
+ "observed": "2026-11-21T05:45:36+00:00",
+ "training_hours_left": 56.24,
+ "native_process": "PID STARTED                      ELAPSED      TIME    RSS STAT COMMAND\n24357 Fri Nov 20 21:20:19 2026       25:17  23:53.24 7373472 Rs   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
  "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 83%",
  "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
- "disk_free_gib": 218.2,
+ "disk_free_gib": 215.5,
  "jobs": {
   "s3-rbm400pf": {
+   "launch": {
+    "job": "s3-rbm400pf",
+    "pid": 24357,
+    "started": "2026-11-21T05:20:20.029032+00:00",
+    "deadline": "2026-11-23T14:00:00+00:00",
+    "command": [
+     "./target/release/fit",
+     "rbm",
+     "s3-rbm400pf",
+     "-p",
+     "pipeline-3.toml",
+     "--final",
+     "--preds",
+     "preds_3"
+    ],
+    "environment": {
+     "RAYON_NUM_THREADS": "4",
+     "OPENBLAS_NUM_THREADS": "4",
+     "EPOCHS": "15",
+     "EPSAVE": "1",
+     "H": "400",
+     "HT": "p",
+     "LR": "0.02",
+     "NFACT": "50"
+    },
+    "plan_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+    "preparation_sha256": "746a9d52ad13b6688ccdc4195e2607a30bc6d1aa5ab8c7a1cde37ac1a7bfb3a1",
+    "original_swap_baseline": {
+     "compressor_bytes": 11144314880,
+     "swap_used_bytes": 393614458.88
+    }
+   },
    "status": {
-    "state": "waiting_original_full_capacity",
-    "good_samples": 0,
+    "state": "full_original_native_training",
+    "pid": 24357,
     "workers": {
+     "24356": {
+      "bytes": 27262976.0,
+      "rss_bytes": 39223296,
+      "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 73979 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf"
+     },
+     "24357": {
+      "bytes": 7516192768.0,
+      "rss_bytes": 7550435328,
+      "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
+     },
      "73974": {
       "bytes": 1835008.0,
       "rss_bytes": 1851392,
@@ -22,8 +64,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/driver.log"
      },
      "73979": {
-      "bytes": 32400998.4,
-      "rss_bytes": 32948224,
+      "bytes": 32505856.0,
+      "rss_bytes": 33685504,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "74003": {
@@ -38,11 +80,18 @@
      }
     },
     "memory": {
-     "compressor_bytes": 10783588352,
+     "compressor_bytes": 10706845696,
      "swap_used_bytes": 376837242.88
     },
-    "observed": "2026-11-21T04:45:24.948805+00:00"
+    "observed": "2026-11-21T05:45:32.599748+00:00"
    },
+   "epoch_lines": 0,
+   "last_epoch": null,
+   "phase": "train_3->probe_3",
+   "log_tail": [
+    "RxConfig { hidden_type: Bipolar, visible_type: Softmax, temperature: 1.0, n_hidden: 400, n_epochs: 15, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.02, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: true, save_ufeat: false, n_factors: Some(50), n_freq_bins: 8, lr_bif: 0.0, wd_bif: 0.01 }",
+    "train_3 => probe_3"
+   ],
    "receipt": false,
    "incomplete": false,
    "failure": false,
