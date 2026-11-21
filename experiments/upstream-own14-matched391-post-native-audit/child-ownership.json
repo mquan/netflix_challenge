@@ -1,9 +1,9 @@
 {
-  "pid": 26049,
-  "ppid": 22751,
-  "pgid": 26049,
+  "pid": 97058,
+  "ppid": 35292,
+  "pgid": 97058,
   "state": "Ss",
-  "started": "Fri Nov 20 17:11:15 2026",
-  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_bounded_sidecar.py --bootstrap 22751 --phase audit",
-  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit"
+  "started": "Sat Nov 21 09:43:28 2026",
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py --bootstrap 35292 --phase separate_canonical",
+  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py canonical"
 }
