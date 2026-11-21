@@ -470,7 +470,7 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775; its second fulltrain→qual phase has completed18/23 epochs.
+diagnostic0.87775; its second fulltrain→qual phase has completed19/23 epochs.
 Phase-two diagnostic errors use zero-filled qualifying targets and do not
 measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
@@ -556,19 +556,45 @@ refitted. Its reviewed successor59231 and a watchdog are alive, waiting for the
 same original own15 preaudit and complete weekend bag proof. All original67
 remote snapshots and full586-stream weekend neural requirements remain intact.
 No new production calibration or score exists. The original native1200 remains
-active at23/23 first-phase and18/23 second-phase epochs.
+active at23/23 first-phase and19/23 second-phase epochs.
 [Full16 freeze correction and safe idle handoff](WEEKEND_OWN16_FREEZE_REPAIR.md) ·
 [79 CPU checks and independent review](experiments/upstream-weekend-own16-freeze-repair/protocol-verification.json) ·
 [Actual idle-only handoff](experiments/upstream-weekend-own16-freeze-repair/idle-handoff.json) ·
 [Corrected waiting-owner observation](experiments/upstream-weekend-own16-trajectory-queue-v2/coordinator-waiting-observation.json) ·
 [Original native second-phase epoch17](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase17-observation.json).
 
-The same native1200 process now has18/23 second-phase epochs and18 full-size
-qualifying epoch-vector files. The most recent five intervals are about25.8–25.9
+At the epoch18 checkpoint, the same native1200 process had18/23 second-phase
+epochs and18 full-size qualifying epoch-vector files. Its five recent intervals were about25.8–25.9
 minutes each. Their median projects the epoch23 vector around09:33 Pacific;
 that estimate excludes final exports, independent verification, calibration and
-new score reporting. It is not an ETA for the10% goal. Current memory, swap and
-disk samples are within the unchanged next-audit admission limits; its owner
+new score reporting. It is not an ETA for the10% goal. The memory, swap and
+disk samples at that checkpoint were within unchanged next-audit limits; its owner
 still waits for full native completion. About20.35GiB is free. A readonly storage
 check retained dense partial numerical state and made no cleanup changes.
 [Native epoch18, measured cadence and handoff readiness](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase18-observation.json).
+
+The same original native has now reached19/23 second-phase epochs, with all19
+full-size qualifying epoch-vector files observed. The original23/23 first
+phase remains complete. No recovered/ensemble score or producer completion is
+claimed before the remaining epochs and independent all-output verification.
+[Original native epoch19 checkpoint](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase19-observation.json).
+
+A reviewed remote same-process adoption package is now pushed on
+`research/remote-weekend-recovery` at39ac3cc. Its13 targeted CPU checks pass,
+including24 immutable pre-recovery control expectations, baseline rewrite
+rejection, real test-owned pause/continuation and inherited-lock checks,
+explicit post-stop requests, full synthetic15+15/all-native-output validation,
+and truthful unknown orphan exit status. A continuation intent cannot count as
+resumed work; separate actual running evidence gates the400-first ordering.
+The helper requires the original96GiB host, exact original stopped processes,
+terminal old owners/watchdogs and unchanged original source/data/binary,
+environment, first baseline, capacities and deadline. It never launches a model.
+The original frozen training/export/return helpers remain unchanged.
+
+The remote agent must fetch that branch into a separate worktree and run the
+host-side validation/adopter. This coordinator has no direct session on that
+host; no remote adoption or continuation is established by these CPU tests.
+The latest pinned remote execution branch still ends at3d9a2a0 with stopped
+process observations. The local native and guarded queues continue separately.
+[Complete remote recovery instruction](REMOTE_WEEKEND_SAME_PROCESS_ADOPTION.md) ·
+[13 CPU protocol checks and review](experiments/upstream-remote-weekend-adoption-protocol/verification.json).

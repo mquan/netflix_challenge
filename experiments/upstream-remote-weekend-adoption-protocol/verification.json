@@ -1,0 +1,35 @@
+{
+  "state": "verified_remote_adoption_synthetic_protocol_only",
+  "observed": "2026-11-21T15:59:39.201284+00:00",
+  "tests_passed": 13,
+  "source_sha256": {
+    "scripts/upstream_remote_weekend_adopt.py": "ead6df06daf5374edb9d0c88f6dcd806205800d8c123052300148fee46d050f7",
+    "scripts/test_upstream_remote_weekend_adopt.py": "94daf1a3c708cf89b66aa4c0c1ed8bb0c8b98445a6a9f1b0ebc00ad21cfda10d",
+    "REMOTE_WEEKEND_SAME_PROCESS_ADOPTION.md": "76e1bd362be6259ba6d5145e353dc41382be467fd056514a798230224122bbc3"
+  },
+  "test_log_sha256": "69b92694e1538ea18af827ce282dff38a98c29fbbf4ddf88e058f2ef40836a32",
+  "original_weekend_plan_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+  "original_control_metadata_source_commit": "ee38c3ec91e8160250d159c423e1581640c96700",
+  "original_control_expectations": 24,
+  "independent_review": {
+    "reviewer": "refit_checkpoint_review",
+    "result": "No remaining concrete blocker; approved remotehost-only recovery package checkpoint/instructions",
+    "resolved": "A continuation intent cannot gate400-first ordering; separate post-SIGCONT same-native non-T observation or verified terminal proof is required."
+  },
+  "actual_remote_adoption": false,
+  "remote_process_control_attempted": false,
+  "actual_original_native_resumed": false,
+  "models_started_or_restarted": 0,
+  "recovered_labels_read": false,
+  "production_score_computed": false,
+  "tests_scope": "Original24control Git hashes and immutablebaseline checks; exactnative identity/owner gates; separatephysical/RSS reservations and oldcaps; syntheticfull15+15/allnativefiles/unknownexitstatus receipt; rejectionmissing/nan/changedterminal; realtest-ownedprocess CONT then STOPwithoutautomaticCONT; actualinheritedflock retention despiteownerloss/journalerror; failedsignal neverclaimsrun; 400-firstrequiresconfirmedrunning; non96hostrefusedbeforeSession/signals.",
+  "remaining": "Remote agent must fetch recovery branch into separate worktree, validate actual original96GiBhost and originalstoppednative handles, pass alloriginalsource/data/binary/resource gates and requestsameprocess adoption. No coordinator access to that host is established.",
+  "live_local_original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  }
+}
