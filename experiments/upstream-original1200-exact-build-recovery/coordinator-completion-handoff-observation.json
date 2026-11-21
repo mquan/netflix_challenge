@@ -1,0 +1,22 @@
+{
+  "state": "observed_full_original1200_independent_completion_and_same_own14_audit_continuation",
+  "observed": "2026-11-21T17:40:49.248196+00:00",
+  "native_pid16010_confirmed_terminal": true,
+  "native_returncode": 0,
+  "first_phase_completed_epochs": 23,
+  "second_phase_completed_epochs": 23,
+  "numeric_outputs": 58,
+  "independent_output_and_log_hashes": 59,
+  "independent_verification_path": "experiments/upstream-original1200/independent-verification.json",
+  "independent_verification_sha256": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
+  "completion_path": "experiments/upstream-original1200-exact-build-recovery/completion.json",
+  "completion_sha256": "1cc21f88fc49cac7123a2235da3d3159685ec6bfcc5dcde3e06ea5362f6fdda4",
+  "native_run_sha256": "ab329330b5696d90d898fbafd6049aff4e9f41d48c4e1c806c89da1e89502f67",
+  "own14_continuation_path": "experiments/upstream-own14-matched391-post-native-audit/continuation.json",
+  "own14_continuation_sha256": "85fce0d52b741b2a798d8c176c21dce84e8f24d208e493b70dae293043aaa9d5",
+  "actual_process_observation": "  PID  PPID  PGID STARTED                      STAT      TIME COMMAND\n26049     1 26049 Fri Nov 20 17:11:15 2026     Rs     1:26.35 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n30570     1 30570 Fri Nov 20 14:21:42 2026     Ss     0:34.08 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta_native_deferred.py\n35292     1 35292 Fri Nov 20 17:24:50 2026     Ss     3:55.58 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n35297 35292 35297 Fri Nov 20 17:24:50 2026     Ss     0:44.44 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py --watch 35292\n35985     1 35985 Fri Nov 20 10:15:29 2026     Ts     2:50.79 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_cf_delta.py admit\n",
+  "disk_free_bytes": 20590469120,
+  "qualifying_labels_read": false,
+  "no_new_score_claim": true,
+  "interpretation": "Full native recipe completed and independent source/data/build plus all58 numeric output validation passed. The original paused own14 audit is now continued under its existing owner and original baseline. Its recovered/canonical result is not yet established by this observation. No native restart, budget/cap/baseline change or plot/score promotion."
+}
