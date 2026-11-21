@@ -1,0 +1,32 @@
+{
+  "pid": 68498,
+  "command": [
+    "./target/release/fit",
+    "tx",
+    "s3-tx300r",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "24",
+    "EPSAVE": "1",
+    "F": "300",
+    "LR_I": "0.006",
+    "LR_U": "0.0045",
+    "LR_W": "0.001",
+    "LR_WD": "0.0005",
+    "LR_Y": "0.00075",
+    "NBR": "100",
+    "REG_I": "0.015",
+    "REG_U": "0.06",
+    "REG_WD": "0.002",
+    "RESET": "12"
+  },
+  "plan_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+  "observed": "2026-11-21T08:14:21.651066+00:00"
+}

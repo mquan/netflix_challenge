@@ -1,0 +1,15 @@
+{
+  "error": "RuntimeError('Weekend resource/watchdog guard; actual child RAM preserved')",
+  "child": {
+    "pid": 68498,
+    "ppid": 67991,
+    "pgid": 68498,
+    "state": "Ss",
+    "started": "Sat Nov 21 00:14:21 2026",
+    "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --bootstrap 67991 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r4/source --job s3-tx300r",
+    "native_command": "./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3"
+  },
+  "actual_child_RAM_preserved": true,
+  "no_automatic_retry": true,
+  "observed": "2026-11-21T08:14:39.976295+00:00"
+}

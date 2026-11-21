@@ -1,0 +1,22 @@
+{
+  "pid": 68498,
+  "command": [
+    "./target/release/fit",
+    "tx",
+    "s3-tx300r",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "owner_sha256": "ecd429b69ecb8844b05dd03b3b0b01b61c9ba442b0d2ebfe7e501c811e8817ac",
+  "watchdog": {
+    "pid": 68497,
+    "ppid": 67991,
+    "pgid": 68497,
+    "state": "Ss",
+    "started": "Sat Nov 21 00:14:21 2026",
+    "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 67991 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r4/source --job s3-tx300r"
+  }
+}
