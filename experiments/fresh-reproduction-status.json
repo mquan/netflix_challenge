@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T20:35:21.907338+00:00",
-  "display_time": "2026-11-21 20:35 UTC",
+  "observed": "2026-11-21T21:12:24.195523+00:00",
+  "display_time": "2026-11-21 21:12 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -25,8 +25,8 @@
       "evidence": "experiments/upstream-remote-weekend-override-return-protocol/coordinator-runtime-observation.json"
     },
     {
-      "work": "Own14 predeclared primary independently improves both recovered groups",
-      "state": "The predeclared own14 known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All14 original families,16383 simplex supports,15ridge equations and six complete vectors were independently verified before the fixed recovered audit. The earlier independent qualifying-bag replay reopens all15 actual models. Separate canonical verification rehashes the full source closure and reconstructs/scores the frozen vectors. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725; worse-group gap0.0041181513. Signed ridge10 trades off groups and the fixed-half control worsens both; neither is promoted. Adaptive recovered evaluation, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection. Historical tree154 A/B realization caveat remains.",
+      "work": "Preceding own14 primary remains independently verified",
+      "state": "The predeclared own14 known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All14 original families,16383 simplex supports,15ridge equations and six complete vectors were independently verified before the fixed recovered audit. The earlier independent qualifying-bag replay reopens all15 actual models. Separate canonical verification rehashes the full source closure and reconstructs/scores the frozen vectors. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725; worse-group gap0.0041181513. Signed ridge10 trades off groups and the fixed-half control worsens both; neither is promoted. Adaptive recovered evaluation, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection. Historical tree154 A/B realization caveat remains. The completed own15 primary now improves both groups to0.8603412617/0.8613423892.",
       "evidence": "experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json"
     },
     {
@@ -67,13 +67,13 @@
       "historical_checkpoint": true
     },
     {
-      "work": "Own15 final calibration/audit: complete implementation, reviewed waiting queue",
-      "state": "The preceding14-family label-free preaudit is now complete. Owner68008 waits the fully verified new neural qualifying bag. All14 old families plus one new NN, known-only15-way simplex, default ridge10/unpenalizedbias16equations and fixed-half control; all32767 supports and actual KKT/objective checks allow nonunique optima. All six stored vectors must independently replay before any new labels, then three frozen audits and separate canonical scores. Six tests pass. New2GiB worker cap, original24research/5compress/128swap/disk guards; preceding14 study unchanged. No new fit or audit has run.",
-      "evidence": "experiments/upstream-own15-complete-trajectory-queue/plan.json"
+      "work": "Own15 primary independently improves both recovered groups slightly",
+      "state": "The predeclared own15 known-only simplex scores0.8603412616628533/0.8613423892425344, improving own14 by0.0000384724/0.0000257621. All15 original families,32767 simplex supports with actual KKT/objective verification,16ridge equations and six complete frozen vectors verify before the fixed recovered audit. The earlier qualifying-bag replay reopens all15 actual new neural models. Separate canonical verification rehashes the full source closure and reconstructs/scores all three fixed candidates. Apparent known-fit0.8586688834719848 is not nested CV. Both groups still miss0.85725; worse-group gap0.0040923892. Adaptive recovered evaluation, not official or untouched Test. Historical tree154 A/B caveat retained.",
+      "evidence": "experiments/upstream-own15-complete-trajectory-calibration/independent-canonical-verification.json"
     },
     {
       "work": "Full trajectory H128 independently complete: small new development best",
-      "state": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
+      "state": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed. Its full qualifying bag now independently replays all15 actual models and is included in the separately verified own15 primary.",
       "evidence": "experiments/upstream-complete-trajectory-h128-mps/independent-canonical-verification.json"
     },
     {
@@ -173,20 +173,20 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+  "qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603797340342072
+      "rmse": 0.8603412616628533
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613681513408222
+      "rmse": 0.8613423892425344
     }
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T20:35:21.907338+00:00",
+    "observed": "2026-11-21T21:12:24.195523+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -266,10 +266,10 @@
     "remote_weekend": "pinned_owner_requested_pause_20261121T190727Z_no_live_remote_poll",
     "complete_trajectory_neural": "complete_full_actual15_model_replay_and_separate_canonical_development_scores",
     "complete_trajectory_neural_owner": null,
-    "complete_trajectory_bag": "full_original_fold_bag_inference",
-    "complete_trajectory_bag_owner": 58980,
-    "own15": "reviewed_queue_waiting_preceding_label_free_proof_and_new_bag",
-    "own15_owner": 68008,
+    "complete_trajectory_bag": "complete_full_trajectory_qualifying_bag_and_independent_replay",
+    "complete_trajectory_bag_owner": null,
+    "own15": "complete_known_only_freeze_full_preaudit_and_separate_canonical_audits",
+    "own15_owner": null,
     "remote_weekend_checkpoint_commit": "76758c0e29805fd74636ebe1f33aadda364f18bd",
     "remote_weekend_return": "reviewed_variant_successors_live_waiting_own15_exact_idle_handoffs_complete_no_numeric_admission",
     "remote_weekend_return_owners": {
@@ -324,21 +324,38 @@
     "complete_trajectory_data_verification_sha256": "bed0f6ccac7a4df94602d939a5eb8439592d964b3d3368d817501249bf7d575e",
     "complete_trajectory_neural_worker": null,
     "complete_trajectory_neural_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
-    "complete_trajectory_bag_worker": 54622
+    "complete_trajectory_bag_worker": null,
+    "own15_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
+    "factored_rbm_latest_observation": {
+      "observed": "2026-11-21T21:12:24.195523+00:00",
+      "status": {
+        "state": "data",
+        "pid": 74972,
+        "observed": "2026-11-21T21:12:18.161569+00:00"
+      },
+      "owner": {
+        "pid": 31460,
+        "ppid": 1,
+        "pgid": 31460,
+        "state": "Ss",
+        "started": "Sat Nov 21 06:39:37 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+      }
+    }
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603797340342072
+      "rmse": 0.8603412616628533
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613681513408222
+      "rmse": 0.8613423892425344
     }
   },
-  "latest_qualifying_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
+  "latest_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
   "best_development_arm": "fixed_half_complete_trajectory_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -355,14 +372,15 @@
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
-  "latest_qualifying_verification_path": "experiments/upstream-own14-matched391-calibration/independent-canonical-verification.json",
-  "qualifying_narrative": "The predeclared own14 known-only simplex scores0.8603797340/0.8613681513, improving complete13 by only0.00001234/0.00000564. All14 original families,16383 simplex supports,15ridge equations and six complete vectors were independently verified before the fixed recovered audit. The earlier independent qualifying-bag replay reopens all15 actual models. Separate canonical verification rehashes the full source closure and reconstructs/scores the frozen vectors. Apparent known-fit0.8587148868 is not nested CV. Both groups still miss0.85725; worse-group gap0.0041181513. Signed ridge10 trades off groups and the fixed-half control worsens both; neither is promoted. Adaptive recovered evaluation, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection. Historical tree154 A/B realization caveat remains.",
+  "latest_qualifying_verification_path": "experiments/upstream-own15-complete-trajectory-calibration/independent-canonical-verification.json",
+  "qualifying_narrative": "The predeclared own15 known-only simplex scores0.8603412616628533/0.8613423892425344, improving own14 by0.0000384724/0.0000257621. All15 original families,32767 simplex supports with actual KKT/objective verification,16ridge equations and six complete frozen vectors verify before the fixed recovered audit. The earlier qualifying-bag replay reopens all15 actual new neural models. Separate canonical verification rehashes the full source closure and reconstructs/scores all three fixed candidates. Apparent known-fit0.8586688834719848 is not nested CV. Both groups still miss0.85725; worse-group gap0.0040923892. Adaptive recovered evaluation, not official or untouched Test. Historical tree154 A/B caveat retained.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/upstream-own14-matched391-calibration/independent-recovered-audit.json",
-  "qualifying_benchmark_rule": "Predeclared own14 known-only simplex remains the primary fixed before outcomes. Both canonical groups improve preceding complete13. Full16383-support/six-vector preaudit, all original source/model bindings and separate canonical scores pass. No qualifying outcomes fit or select weights.",
+  "latest_completed_qualifying_audit_path": "experiments/upstream-own15-complete-trajectory-calibration/independent-recovered-audit.json",
+  "qualifying_benchmark_rule": "Original own15-simplex primary was declared and frozen before outcomes. Both full canonical groups improve the preceding own14 primary. Complete32767-support actualKKT/16equation/six-vector preaudit, original source/model bindings and separate canonical group scores pass. Neither fixed control replaces the primary; no qualifying outcome enters fitting or candidate selection.",
   "own330_qualifying_best": false,
   "complete13_qualifying_best": false,
   "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
-  "own14_qualifying_best": true,
-  "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7"
+  "own14_qualifying_best": false,
+  "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
+  "own15_qualifying_best": true
 }

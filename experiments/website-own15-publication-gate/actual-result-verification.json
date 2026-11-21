@@ -1,0 +1,39 @@
+{
+  "state": "complete_actual_own15_publication_admission",
+  "observed": "2026-11-21T21:12:24.195523+00:00",
+  "canonical_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
+  "known_only_primary": "own15-simplex",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8603412616628533
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613423892425344
+    }
+  },
+  "previous_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8603797340342072
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613681513408222
+    }
+  },
+  "improvement_each_group": {
+    "source0": 3.847237135390369e-05,
+    "source1": 2.5762098287862578e-05
+  },
+  "both_previous_groups_improved": true,
+  "strict_target_both_groups_met": false,
+  "actual_new_model_bag_replay_sha256": "877e980f03c12463ef22bbf44b305e11e3b6c537555d0e3db088f85ef6c96f96",
+  "source_sha256": {
+    "scripts/own15_publication.py": "c0c23147286f033245b86d921f603ee694a9aff0b2df107353fda4c294fe28cc",
+    "scripts/test_own15_publication.py": "d1f47f266d8df1850f12f63b2411430f9d3b723fc5a749c5e0ee1bec33fd13db",
+    "scripts/build_research_journey.py": "18c7ac63156346c2dcd1f9b00d8005efb36a2213130b347a6a717bf1ccbbb5a6"
+  },
+  "scope": "Complete actual scientific chain admitted. Canonical own15 reconstructs arithmetic and scores; model reopening was performed by the earlier independent bag replay."
+}

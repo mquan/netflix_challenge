@@ -30,13 +30,13 @@ separate canonical arithmetic and strict improvement. Seven private rejection
 tests and independent read-only review cover the gate. Its synthetic fixtures
 do not establish scientific replay; the real completed proof chain also passed.
 
-The recovered benchmark is unchanged at0.8603797340342072/0.8613681513408222.
-The strict goal below0.85725 on BOTH recovered groups remains unmet. No
-downloaded pretrained numerical features or qualifying outcomes enter fitting
-or selection. The original full qualifying bag has begun inference; complete
-saved-model/operator replay and the known-only own15 calibration/freeze/audit
-are still required. Recovered audits are adaptive community evaluation,
-not official or untouched Test.
+The following full qualifying bag and own15 known-only freeze/preaudit/audits
+have now independently completed. The own15 primary scores
+0.8603412616628533/0.8613423892425344, a small improvement on both preceding
+groups. See [own15 result](OWN15_COMPLETE_TRAJECTORY_RESULT.md). The strict goal
+below0.85725 on BOTH groups remains unmet. No downloaded pretrained numerical
+features or qualifying outcomes enter fitting or selection. Recovered audits
+are adaptive community evaluation, not official or untouched Test.
 
 - [Actual15-model replay](experiments/upstream-complete-trajectory-h128-mps/independent-verification.json)
 - [Separate canonical check](experiments/upstream-complete-trajectory-h128-mps/independent-canonical-verification.json)

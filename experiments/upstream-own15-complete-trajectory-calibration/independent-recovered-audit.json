@@ -1,0 +1,56 @@
+{
+  "state": "complete_all_three_original_own15_frozen_candidate_audits",
+  "observed": "2026-11-21T21:04:13.402701+00:00",
+  "primary": "own15-simplex",
+  "results": [
+    {
+      "candidate": "own15-simplex",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603412616628533
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613423892425344
+        }
+      },
+      "prediction_sha256": "bd21757618b62e021847fdb7d99e0cddcd4abbd4686aed0876c602c0e50f503f",
+      "both_groups_below_target": false
+    },
+    {
+      "candidate": "own15-ridge10",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603412898241656
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.861355957638163
+        }
+      },
+      "prediction_sha256": "53475b6101c1bae51ccc3c35481fb7934506c8bbb5901d8aa250860e1bbb2ce6",
+      "both_groups_below_target": false
+    },
+    {
+      "candidate": "complete-trajectory-fixed-half",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.860602073870548
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8615750068133421
+        }
+      },
+      "prediction_sha256": "f2f840500c68fd8b0c51e35ac97d7127e5c9966695a57edb769539edd7c50e56",
+      "both_groups_below_target": false
+    }
+  ],
+  "preaudit_verification_sha256": "8559711519943f37a1b53617ffe629ca408f0df8eb042208bbda15ba06aa2316",
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "official_or_untouched_test": false
+}
