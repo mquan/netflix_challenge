@@ -186,7 +186,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T22:37:35.183067+00:00",
+    "observed": "2026-11-21T22:49:10.237375+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -292,7 +292,7 @@
     "original1200_completed_native_pid": 16010,
     "original1200_complete_verification_sha256": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
     "own14_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
-    "local_gpu_rbm": "full_deterministic_metal_production_fresh_data_admission_after_actual_full_MPS_probe",
+    "local_gpu_rbm": "full_deterministic_metal_known_fit_epoch1_of15_complete_same_worker_active",
     "local_gpu_rbm_owner": 41101,
     "local_rbm_blend": "deterministic_metal_full16_family_consumer_waiting_complete_actual15_15_paired_proof",
     "local_rbm_blend_owner": 41441,
@@ -342,18 +342,22 @@
         "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
       }
     },
-    "local_gpu_rbm_worker": 41606,
+    "local_gpu_rbm_worker": 51842,
     "local_gpu_rbm_watchdog": 41170,
     "local_rbm_blend_watchdog": 41502,
     "local_gpu_rbm_original_metadata_attempt_retired": true,
     "local_gpu_rbm_original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
     "local_gpu_rbm_observer_reaper": null,
     "local_gpu_rbm_observer_reaper_scope": "only stopped exact readonly OS ps child PID; no parent/group/CONT",
-    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-metal-production-protocol/handoff-verification.json",
+    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-metal-production-protocol/first-epoch-verification.json",
     "local_gpu_rbm_device_probe_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24",
     "local_gpu_rbm_full_synthetic_MPS_probe_passed": true,
     "local_gpu_rbm_v2_prior_data_admission_sha256": "5deecda9e00cd104cf102c491ad62acdc81b4aeeefc13a81cea104f2e611a79d",
-    "local_gpu_rbm_v2_preflight_failed_before_fitting": true
+    "local_gpu_rbm_v2_preflight_failed_before_fitting": true,
+    "local_gpu_rbm_known_completed_epochs": 1,
+    "local_gpu_rbm_qualifying_completed_epochs": 0,
+    "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+    "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
