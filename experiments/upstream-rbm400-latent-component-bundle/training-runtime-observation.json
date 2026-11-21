@@ -1,0 +1,31 @@
+{
+  "state": "live_full_original_Metal_known_fit_with_reviewed_CPU_followup_components",
+  "observed": "2026-11-21T23:23:10.381682+00:00",
+  "worker": {
+    "pid": 51842,
+    "ppid": 41101,
+    "pgid": 51842,
+    "state": "Rs",
+    "started": "Sat Nov 21 14:41:09 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_known"
+  },
+  "completed_known_epochs": 7,
+  "epochs_required_each": 15,
+  "completed_qualifying_epochs": 0,
+  "all_recorded_epochs_full_population": true,
+  "batches_each": 961,
+  "users_each": 480189,
+  "epochs_sha256": {
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-01.json": "9e8711e979be05c69a435d4e3b6b9b062ed1e1531153689182d6d93942521a9a",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-02.json": "2effd774527415d80cb90940e7acdf1dc6e4e2376c29e315f93e64be5878e0ec",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-03.json": "2074b7a21a18e9007edd83f7468c06a2acb87e2a87ea749b1240a985936e79ff",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-04.json": "5f8877a2af031d42eeeaba26820e5df201db59c691da57837151473030d981f1",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-05.json": "c387c5cded39f3a2d63e8125305899f5ea2b3408e90931107eb3e646553e7adb",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-06.json": "82f91fad0a7c8b6360e4ae16b3f0ef833fa4a5f1ed65acac174858bec6894714",
+    "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-07.json": "8943f84d6d54019b0f2d168b8d9ec05d2b65650916fc712c5446508d9210c5bb"
+  },
+  "full_model_complete": false,
+  "new_score_claimed": false,
+  "followup_CPU_tests": 31,
+  "followup_actual_MPS_provider_admitted": false
+}
