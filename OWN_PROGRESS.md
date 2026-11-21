@@ -487,3 +487,12 @@ All89 relevant checks pass.
 [Same native process at second-phase epoch3](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase3-observation.json).
 
 [Same native process at second-phase epoch10](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase10-observation.json).
+
+Disk subsequently declined to about20.03GiB. Ten inactive legacy build caches
+have now been preserved in lossless archives, recovering427.6MiB net measured
+space and restoring about20.46GiB free above the unchanged18.75GiB floor.
+All10,085 retained payloads, gzip integrity, original absence and54 protected
+file hashes pass a separate replay. The original native PID/start/command
+remains live; scientific sources, executables, models, data, predictions and
+checkpoints were preserved.
+[Verified legacy-cache archives and restore instructions](BUILD_CACHE_ARCHIVE_RESULT.md).

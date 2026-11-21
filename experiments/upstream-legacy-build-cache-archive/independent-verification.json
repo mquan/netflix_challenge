@@ -1,0 +1,128 @@
+{
+  "state": "complete_independent_all10_retained_archives_every_original_payload_CRC_absence_and_protected_hashes",
+  "files": 10085,
+  "original_bytes": 678117565,
+  "archives": [
+    {
+      "name": "full-upstream-mapped",
+      "archive_sha256": "031f78d499ebc3abb531c38ed15459264975a7b55bb95ed0a01ebf09177b07bc",
+      "original_files": 988,
+      "original_bytes": 38465768
+    },
+    {
+      "name": "upstream-aex-backfill",
+      "archive_sha256": "df4253805f641435db0093fa378536cdbe666a9b7b1d7b1f7a555f95c44aee12",
+      "original_files": 974,
+      "original_bytes": 36173136
+    },
+    {
+      "name": "upstream-cfnade-checkpoint",
+      "archive_sha256": "2b5b3571fb216f8ec6106204eb67c58659f4f24de4fbdfcdb64dc0ca308b67bc",
+      "original_files": 1228,
+      "original_bytes": 335019819
+    },
+    {
+      "name": "upstream-cfnade-fast",
+      "archive_sha256": "a7234c7777ce83a453f3ab32a1cc6bb2487cbc55d3d9fc001b8e9d4b572693a6",
+      "original_files": 974,
+      "original_bytes": 35864351
+    },
+    {
+      "name": "upstream-cfnade-fast-v2",
+      "archive_sha256": "7eadf4edc25309c9eb0930f6aa1aebdb35ff142e465c3b9b454a473c68314555",
+      "original_files": 974,
+      "original_bytes": 35899730
+    },
+    {
+      "name": "upstream-cfnade-sparse-rows",
+      "archive_sha256": "49fc833795f92d53c3be38ebd67424130f8887587d7a4384c34a882d8007b617",
+      "original_files": 1002,
+      "original_bytes": 42470296
+    },
+    {
+      "name": "upstream-cfnade96-sparse-resume",
+      "archive_sha256": "4e40ce74d37ad6af00ec0ee2c0f1a1388ba6748898e809f561bd4118a51cfb43",
+      "original_files": 988,
+      "original_bytes": 39300853
+    },
+    {
+      "name": "upstream-grouped-storage",
+      "archive_sha256": "5216e34838da4647bf7ea58a7d7bfe166addf4281fc7514691e498067cfdbf4d",
+      "original_files": 988,
+      "original_bytes": 37830281
+    },
+    {
+      "name": "upstream-parallel-mapped",
+      "archive_sha256": "de01ad2c0c6481ee68bd9ec9ac8e21124d89c17389ac9bbf6add27eda652297c",
+      "original_files": 981,
+      "original_bytes": 37349211
+    },
+    {
+      "name": "upstream-qualifying-backfill",
+      "archive_sha256": "a7f9e6d989f4dfc3c1ca171ecae61290e8371a4e31a99430501ca67cf202e125",
+      "original_files": 988,
+      "original_bytes": 39744120
+    }
+  ],
+  "protected_files": 54,
+  "protected_sha256": {
+    "experiments/upstream-own14-matched391-calibration/frozen.json": "3b5503501432e4096816619bcc63dab4a821b5aded026fb65f94cf3d778e224d",
+    "experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json": "c1519468cf904f26fffa2a07fb4e78c0bf6083de17915041419fb920746ef5ea",
+    "experiments/upstream-own14-matched391-post-native-audit/plan.json": "8894b25d2d7d88306437c0552093d192b87f2469998bce1cc7ca73e1614ab9f5",
+    "experiments/upstream-complete-cf-delta/plan.json": "ed14cb716afe668bd0f9f1a9fc26beb1e69afd01dadb77f4cfba4e9171a8ee65",
+    "experiments/upstream-original1200/execution-plan.json": "2e69af9b887042f06bbdbff02411e32f9f4f365226eeb599022c4b4a750f3a04",
+    "experiments/upstream-original1200-exact-build-recovery/plan.json": "2714eee19203426620e8511dfd4ac6b927128ebbfa4079eaa4ecf246151cf234",
+    "experiments/upstream-complete-trajectory-data-queue/plan.json": "5e8535343f09d95a337f37113b8dc5f4e7b0e060a962eb125176e5a2571958fe",
+    "experiments/upstream-complete-trajectory-neural-queue/plan.json": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+    "experiments/upstream-complete-trajectory-fold-bag-queue/plan.json": "2b6e0ef43c6bfe82a53d9cbf26ee14a8c4ea0678fd02027c8e7ed6c1fb0ae202",
+    "experiments/upstream-own15-complete-trajectory-queue/plan.json": "c74b884f1ed95b147c0cd7e6bdcf598a7c27c592ea845b0cd3dd1a812bb4b672",
+    "experiments/upstream-weekend-trajectory-data-queue/plan.json": "f8cf522908b5323e267bc6c708bb89f152adde4a9c144d8c7db1935678256797",
+    "experiments/upstream-weekend-trajectory-neural-queue/plan.json": "f0782e22c8eeea1d05588346190914046bc0e80938bfd720eaf68a9c80aca38d",
+    "experiments/upstream-weekend-trajectory-fold-bag-queue/plan.json": "05b094de7fc31f41f7455d1e42e9af2b6335aaf32453c040de51dddf4389f024",
+    "experiments/upstream-own16-weekend-trajectory-queue/plan.json": "5623ed897b0dae1ba341e59fa9426f034c7b16326d2bf8e6c74bbeb21198a8e8",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm400pf/plan.json": "d56882a618b98a85604581b06caa37d3b864d85962c422914b1fef81922c7fae",
+    "experiments/upstream-remote-weekend-return-queue/s3-tx300r/plan.json": "343fa1ecf3f27c976dfc3ccb56d15b042fdeaae5068bc566aa4258bc8f9af502",
+    "experiments/upstream-remote-weekend-return-queue/s3-rbm800p/plan.json": "76060cbf45263c3bb5f35665ac12f59aff9038e856c817379e103153f5d97386",
+    "experiments/upstream-complete13-calibration/independent-canonical-verification.json": "75b9d5e6861c1949eb30b62f06b9ea4d3b02ee0ff962e6b6545ac4b91f52d88c",
+    "experiments/upstream-own391-paired-h128-mps/independent-canonical-verification.json": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
+    "experiments/upstream-own391-fold-bag/independent-verification.json": "2131caca0f21189742cdbfe78fac946d1a2718640ea0a3b0938c863fe6429c56",
+    "scripts/upstream_archive_legacy_build_caches.py": "e2c7d2c0161eeefa400edafaba315a6595427940010c13f68bd9acc5f38604be",
+    "scripts/upstream_archive_shared_build_cache.py": "35b845309303ae076e4468e3698d7c810f3a991543a52ec844b056e185c9293b",
+    "artifacts/full-upstream-mapped/target/release/tsvdx5-new": "a8c152c24458267084ca719cee719c7fb477862042a3e233e44f81a5842223b3",
+    "artifacts/full-upstream-mapped/target/release/tsvdx5-new-qual": "a57e18c960ade7582f6309e2ed8579e7d4bf1473d03593fd84ce10ea2c71e934",
+    "artifacts/full-upstream-mapped/target/release/tx-storage-parity": "fa3ca7847bd0cd73dede09c1af1ec2ad0f9967ce2930c4772b01826d67d263b2",
+    "experiments/upstream-original1200/independent-admission.json": "df1821587d4acfa1bc7f862e203e08b6c767583d4dd91e4697e968f55182e370",
+    "experiments/upstream-original1200/original-build-receipt.json": "6bd3eb3c53d5d2f968cc4400d0aa76a43d9bb5cf3baa20bf5a6fc915d1db9c0a",
+    "artifacts/upstream-original1200/target/release/tsvdx5-new": "d5a4a62dba375622ecb831f45f657b157c3528eed493018efe93d4940419f168",
+    "artifacts/upstream-aex-backfill/target/release/aex-new": "bf2dd6df5d47cf6e0cc99f58c2461e8f5481972176d284e48e92363dc2b9304c",
+    "artifacts/upstream-aex-backfill/target/release/run": "054444d82eb92689ebce8e7a5de053be8261b59bd8837b8688cfa42ea69d66ac",
+    "artifacts/upstream-cfnade-checkpoint/target/release/cfnade-checkpoint-proof": "848d1cbba66f0ad1d0ac1592727c1f459e69ef3262326d5652ca8410eeacfa83",
+    "artifacts/upstream-cfnade-checkpoint/target/release/cfnade-export-raw": "0a994563532a01872b00d728bdc9824204dc760750fbdad44ab9fbb61efda95a",
+    "artifacts/upstream-cfnade-checkpoint/target/release/cfnade-fast-parity": "d7ab578c103e083a365215007d831c2d3fca67eef18a8f4c3355982957817953",
+    "artifacts/upstream-cfnade-checkpoint/target/release/cfnade-new": "18a9c58ee4250cddd9f10f26451c5376a06e8973ca4cf3bcb84a106b50b9421f",
+    "artifacts/upstream-cfnade-checkpoint/target/release/cfnade-stage": "2db49b1028e4da8ec21a164afff8fd3736f8a1e26e9d919c7b8adee99a3d6481",
+    "artifacts/upstream-cfnade-fast/target/release/cfnade-fast-parity": "02b579abb664517623ff5ce5e1893ccb09243096ad081930e24110e85db12620",
+    "artifacts/upstream-cfnade-fast-v2/target/release/cfnade-fast-parity": "da755dfd1cb135b61199282e45aec7f518b80f6e5c9b9adece8ab5f2a890fc55",
+    "artifacts/upstream-cfnade-sparse-rows/target/release/cfnade-checkpoint-proof": "c0da246d7e8ca2b9af0d5593bdf46167c088ba02519e47997f23706e48bc3a8a",
+    "artifacts/upstream-cfnade-sparse-rows/target/release/cfnade-fast-parity": "b52a51aeca258c69cae9534fac905d7db1b628f3a36501784b18f3392342eac3",
+    "artifacts/upstream-cfnade-sparse-rows/target/release/cfnade-sparse-benchmark": "592c287a9e2b2c33fcde51a866f19938daa7a6c6048ac94ce512ae95c4dbd10a",
+    "artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-parity": "4d3becd04a39a467a822449c5030add89853dcb77437b8e9c261acd9a6a0c2db",
+    "artifacts/upstream-cfnade-sparse-rows/target/release/cfnade48-stage": "0a239de36f5ce926ae6463788f6c88c651be65b903c6e4a90ed0639ebfbf68b2",
+    "artifacts/upstream-cfnade96-sparse-resume/target/release/cfnade-fast-parity": "926f5ab1fdcbc11b9f93459d74962826a09bf379f47fd291a5a1e6e26bdfee11",
+    "artifacts/upstream-cfnade96-sparse-resume/target/release/cfnade96-baseline-parity": "397613268b6527c81242630c1b9434bc6dd11401514ebe7b981d07ae40ae5267",
+    "artifacts/upstream-cfnade96-sparse-resume/target/release/cfnade96-sparse-stage": "c738b4189accbf5b8135113c0b2c5840340075f63aa5b54da88ed322d4de1f89",
+    "artifacts/upstream-grouped-storage/target/release/grouped-storage-benchmark": "83536bf6b7d13481e4c0c9f7b0c48fa495d3882e1d4245ca876e201500fe3e4c",
+    "artifacts/upstream-grouped-storage/target/release/tsvdx4p-storage-parity": "142371edc899f63557b3f462224c86998ab35754f1f378a8210ffa9dffc38125",
+    "artifacts/upstream-grouped-storage/target/release/tx-storage-parity": "7469613dae967a83b0d543314ef4f8273750583768986f3f759926249dd0f0db",
+    "artifacts/upstream-parallel-mapped/target/release/tsvdx4p-new": "e42c1b736e692c2fe35f84eff91b4da36e1c1e8f09e77e768c5c95caa40d7f55",
+    "artifacts/upstream-parallel-mapped/target/release/tsvdx4p-storage-parity": "0b5232d995a6bf6d5b854844adadc6101b8efa729d40dc77b6940fb3c0b50d32",
+    "artifacts/upstream-qualifying-backfill/target/release/dnn": "56be430d91c926de8063b1b3df9d63521c8daa24eb229a6cf1b2889f4ccb2cc9",
+    "artifacts/upstream-qualifying-backfill/target/release/rbmx2-new": "e1e40d3e7ce146081a3ae3badb6e0f6eaaf732c1be850e6d69b3a7ddb43acfa0",
+    "artifacts/upstream-qualifying-backfill/target/release/run": "054444d82eb92689ebce8e7a5de053be8261b59bd8837b8688cfa42ea69d66ac",
+    "artifacts/upstream-qualifying-backfill/target/release/tsvdx4-new": "573ecc982cb7ab2339384fd9988050584722cdbe57dcd00e927b2b6e89521b0f"
+  },
+  "completion_sha256": "4666b944532c31a3f8edbc1ef43517ab857c0ef5aaf80000924159aaa295c8c7",
+  "selection_sha256": "53b9c663c5a53ba54f750017288ad0a85744292306cadadce7d3738e0e3ade3d",
+  "verifier_sha256": "517b5daa4bdade4bd3185a7e7236eccb351ca1c9680695bb328a25254d3bed85",
+  "recovered_qualifying_labels_read": false
+}

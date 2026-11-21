@@ -1,0 +1,25 @@
+{
+  "state": "observed_same_original_native_live_after_all10_archive_independent_replay",
+  "observed": "2026-11-21T12:13:10.408988+00:00",
+  "original_ownership_path": "experiments/upstream-own14-matched391-bounded-sidecar/native-ownership.json",
+  "original_ownership_sha256": "84708b344740a060b60d9bed3cec8ece436d37b5778911ad7624824c58e8ecd5",
+  "original_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "actual_native": {
+    "pid": 16010,
+    "ppid": 8122,
+    "pgid": 16010,
+    "state": "Rs",
+    "started": "Fri Nov 20 13:38:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm"
+  },
+  "actual_process_observation": "  PID  PPID STAT STARTED                       ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   Fri Nov 20 13:12:11 2026     15:00:59   3:55.99  42944 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   Fri Nov 20 13:38:18 2026     14:34:52 820:47.86 12986192 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 Ts   Fri Nov 20 17:11:15 2026     11:01:55   0:21.33  25328 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n35292     1 Ss   Fri Nov 20 17:24:50 2026     10:48:20   2:35.80 141632 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n",
+  "independent_archive_verification_sha256": "9a6eb203f9530e5c074de13db3968c9c7ee4c197ccb211694b8c5dce7449d15c",
+  "interpretation": "Actual original PID/start/command matches; native remains live after every retained archive payload/CRC and all54 protected files independently replayed. No model restart, recipe change, training-output retirement or new qualifying score."
+}
