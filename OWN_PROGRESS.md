@@ -2,6 +2,12 @@
 
 Updated November21 UTC /November21 Pacific,2026.
 
+November21 21:08 UTC: own15 full known-only fit/freeze/preaudit and all three
+fixed audits now have separate canonical verification. New recovered primary
+0.8603412617/0.8613423892 improves both slightly;10% remains unmet. The original
+RBM400 coordinator31460 has begun data admission. The proposed learned-context
+follow-up is design only and does not alter or restart that producer.
+
 November21 20:32 UTC: the full15-model trajectory study and separate canonical
 score checks are complete. New development best0.8588630883643809; the original
 qualifying-bag coordinator58980 has begun full inference. Qualifying scores
@@ -63,19 +69,24 @@ The preceding matched391 result0.8589133967520619 improved own352 by only
 
 Current independently verified recovered qualifying benchmark:
 
-- source0: **0.8603797340342072**,1,408,789 rows.
-- source1: **0.8613681513408222**,1,408,342 rows.
+- source0: **0.8603412616628533**,1,408,789 rows.
+- source1: **0.8613423892425344**,1,408,342 rows.
 
-The predeclared own14-family known-only simplex improves preceding complete13
-by only0.00001234/0.00000564. All16383 supports,15ridge equations,six full
-frozen vectors and complete source/model bindings independently verify; the
-new qualifying family replays all15 original matched391 models. Separate
-canonical verification confirms all three declared candidates. Signed ridge10
-trades off groups; fixed half worsens both. Apparent known-fit0.8587148868
-is not nested CV. [Complete qualifying result](OWN14_QUALIFYING_RESULT.md).
+The predeclared own15 known-only simplex improves own14 by only
+0.0000384724/0.0000257621. All32767 supports,actual KKT/objective conditions,
+16ridge equations and six full frozen vectors independently verify before
+labels. The preceding full qualifying-bag replay reopens all15 actual new
+models; separate canonical verification rehashes the source closure and
+reconstructs/scores all three candidates. Apparent known-fit0.8586688835
+is not nested CV. Both fixed controls are worse than the primary on both
+groups and remain controls. [Complete own15 result](OWN15_COMPLETE_TRAJECTORY_RESULT.md).
+
+The preceding own14 primary0.8603797340/0.8613681513 and its complete source/
+model/16383-support/frozen-vector/canonical proofs remain preserved.
+[Preceding own14 result](OWN14_QUALIFYING_RESULT.md).
 
 The strict target is below **0.85725 on BOTH groups**; it is still unmet.
-The worse-group gap is0.0041181513. Development and recovered qualifying
+The worse-group gap is0.0040923892. Development and recovered qualifying
 use different rows. Audits are adaptive community evaluation, not official
 or untouched Test. No downloaded pretrained numerical features or
 qualifying outcomes enter fitting or candidate selection.
