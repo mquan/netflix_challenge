@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T19:58:01.078210+00:00",
-  "display_time": "2026-11-21 19:58 UTC",
+  "observed": "2026-11-21T20:01:51.701254+00:00",
+  "display_time": "2026-11-21 20:01 UTC",
   "best_development_rmse": 0.8589133967520619,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -36,7 +36,7 @@
     },
     {
       "work": "Expanded CF known ridge independently complete",
-      "state": "Full independent operator/statistic/weight/prediction replay confirms66 new scalar pairs and known ridge0.8617705148 versus matched parent0.8618508817. No new development best or qualifying prediction. Full519-stream successor passed independent input admission and its fixed ridge fit is now being independently replayed.",
+      "state": "Full independent operator/statistic/weight/prediction replay confirms66 new scalar pairs and known ridge0.8617705148 versus matched parent0.8618508817. Its full519-stream successor now independently verifies at0.8617253441. Neither is a new overall development best or recovered score; the successor full neural preparation has started.",
       "evidence": "experiments/upstream-complete-cf-delta/independent-verification.json"
     },
     {
@@ -72,14 +72,14 @@
       "evidence": "experiments/upstream-own15-complete-trajectory-queue/plan.json"
     },
     {
-      "work": "Full trajectory H128 and qualifying bag: reviewed waiting queues",
-      "state": "Neural owner56323 waits independently complete input/ridge proof, then runs original H128rank32/all5held-user-folds/3seeds/max40pat4/batch8192 and full scaler/model/canonical replay. Bag owner58980 waits that full proof, then reuses every original pipeline with no refits or new-known-record gate, verifying every qualifying operator/normalized/seed/fold/final bit separately. Dynamic widths preserve every admitted scalar and all225 contexts. Fourteen new invariant tests pass; full-run memory and scores remain unmeasured. No new score.",
-      "evidence": "experiments/upstream-complete-trajectory-neural-queue/plan.json"
+      "work": "Full trajectory H128 preparation active; qualifying bag queued",
+      "state": "Original neural owner56323 admitted full independently verified input/ridge proof and began source-bound H128 preparation. All5held-user-folds/3seeds/max40pat4/batch8192 and complete scaler/model/canonical replay remain required. Bag owner58980 still waits that full actual-model proof; all operators,225 contexts and fixed candidate roles retained. No new neural score or qualifying bag exists.",
+      "evidence": "experiments/upstream-complete-trajectory-data-queue/coordinator-ridge-to-neural-observation.json"
     },
     {
-      "work": "Full trajectory inputs independently verified; ridge replay running",
-      "state": "All519 declared scalar pairs and both operators independently verify. Exact paired aliases yield486 raw streams/562 ridge columns/713 NN inputs. Fixed fivefold ridge fit0.8617253441 versus matched391control0.8618508817; separate full replay currently under original owner50842, observed worker11278. This is not a new overall development best or recovered score. Full neural/bag/own15 stages still wait complete proof.",
-      "evidence": "experiments/upstream-remote-weekend-override-return-protocol/coordinator-runtime-observation.json"
+      "work": "Full trajectory ridge independently complete; neural preparation started",
+      "state": "All519 candidate pairs and both operators independently verify. Exact paired aliases yield486 raw streams/562 ridge columns/713 NN inputs. Fixed fivefold ridge0.8617253441 versus matched391control0.8618508817; every full statistic, coefficient and held prediction bit independently replays. Original data owner50842 completed; original neural owner56323 now prepares the full original-budget H128 study. No new neural, overall development-best or recovered score.",
+      "evidence": "experiments/upstream-complete-trajectory-data-queue/coordinator-ridge-to-neural-observation.json"
     },
     {
       "work": "Predeclared H512: independently complete negative control",
@@ -103,7 +103,7 @@
     },
     {
       "work": "Expanded CF known ridge independently complete",
-      "state": "Full independent operator/statistic/weight/prediction replay confirms66 new scalar pairs and known ridge0.8617705148 versus matched parent0.8618508817. No new development best or qualifying prediction. Full519-stream successor passed independent input admission and its fixed ridge fit is now being independently replayed.",
+      "state": "Full independent operator/statistic/weight/prediction replay confirms66 new scalar pairs and known ridge0.8617705148 versus matched parent0.8618508817. Its full519-stream successor now independently verifies at0.8617253441. Neither is a new overall development best or recovered score; the successor full neural preparation has started.",
       "evidence": "experiments/upstream-complete-cf-delta/independent-verification.json"
     },
     {
@@ -186,7 +186,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T19:58:01.078210+00:00",
+    "observed": "2026-11-21T20:01:51.701254+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -261,10 +261,10 @@
     "paired391_qualifying_bag": "complete_independent_all_query_streams_and_original_models",
     "own14": "complete_independent_full_source_models_coefficients_and_frozen_group_scores",
     "own14_recovery_owner": null,
-    "complete_trajectory_data": "all519_input_admission_independently_complete_ridge_fit_pending_independent_replay",
-    "complete_trajectory_data_owner": 50842,
+    "complete_trajectory_data": "complete_independent_all_trajectory_operators_statistics_ridge_and_stored_predictions",
+    "complete_trajectory_data_owner": null,
     "remote_weekend": "pinned_owner_requested_pause_20261121T190727Z_no_live_remote_poll",
-    "complete_trajectory_neural": "reviewed_queue_waiting_full_input_ridge_proof",
+    "complete_trajectory_neural": "original_full713_input_H128_preparation_running",
     "complete_trajectory_neural_owner": 56323,
     "complete_trajectory_bag": "reviewed_queue_waiting_full_actual_neural_models_and_canonical_proof",
     "complete_trajectory_bag_owner": 58980,
@@ -299,8 +299,8 @@
     "cf_delta_fit_pid": null,
     "cf_delta_observation_path": "experiments/upstream-complete-cf-delta-native-deferred/coordinator-novelty-to-fit-observation.json",
     "cf_delta_verification_sha256": "e56429c5a7a154804d9854f15ea0a7c50aa7ca706b72b0ab1169172629502d11",
-    "complete_trajectory_data_worker": 11278,
-    "complete_trajectory_data_observation_path": "experiments/upstream-remote-weekend-override-return-protocol/coordinator-runtime-observation.json",
+    "complete_trajectory_data_worker": null,
+    "complete_trajectory_data_observation_path": "experiments/upstream-complete-trajectory-data-queue/coordinator-ridge-to-neural-observation.json",
     "remote_override_context": "production_protocol_declared_24_CPU_checks_review_pass_waiting_queues_live",
     "public_qual_cache_retirement": {
       "state": "complete_independent_public_qual_prediction_absence_provenance_and_protected_proof_check",
@@ -310,17 +310,27 @@
       "measured_free_gain": 2659414016
     },
     "complete_trajectory_latest_live_observation": {
-      "observed": "2026-11-21T19:58:01.078210+00:00",
-      "worker": {
-        "pid": 11278,
-        "ppid": 50842,
-        "pgid": 11278,
-        "state": "Rs",
-        "started": "Sat Nov 21 11:40:50 2026",
-        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_complete_trajectory_data.py fit"
+      "observed": "2026-11-21T20:01:51.701254+00:00",
+      "owner": {
+        "pid": 56323,
+        "ppid": 1,
+        "pgid": 56323,
+        "state": "Ss",
+        "started": "Fri Nov 20 15:17:32 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_neural_queue.py"
       },
-      "status": "independent_fit"
-    }
+      "worker": {
+        "pid": 31986,
+        "ppid": 56323,
+        "pgid": 31986,
+        "state": "Rs",
+        "started": "Sat Nov 21 12:00:23 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_complete_trajectory_mps.py --variant h128"
+      },
+      "status": "prepare"
+    },
+    "complete_trajectory_data_verification_sha256": "bed0f6ccac7a4df94602d939a5eb8439592d964b3d3368d817501249bf7d575e",
+    "complete_trajectory_neural_worker": 31986
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
