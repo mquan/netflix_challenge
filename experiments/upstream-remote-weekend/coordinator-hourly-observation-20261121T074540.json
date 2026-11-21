@@ -1,0 +1,132 @@
+{
+  "state": "pinned_remote_hourly_observation",
+  "commit": "56aa7069f4f212180d38a2fff3fb78dd9fbafa4a",
+  "source_path": "experiments/upstream-remote-weekend/execution/progress.json",
+  "sha256": "1e8d2318352c5ae0cdedd0528a113753c2e2e8177bb89ad45d14ff2c84992a3e",
+  "record": {
+    "observed": "2026-11-21T07:45:40+00:00",
+    "training_hours_left": 54.24,
+    "native_process": "PID STARTED                       ELAPSED      TIME    RSS STAT COMMAND\n24357 Fri Nov 20 21:20:19 2026     02:25:21 138:02.77 8238320 Rs   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+    "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 83%",
+    "swap": "total = 2048.00M  used = 359.38M  free = 1688.62M  (encrypted)",
+    "disk_free_gib": 214.4,
+    "jobs": {
+      "s3-rbm400pf": {
+        "launch": {
+          "job": "s3-rbm400pf",
+          "pid": 24357,
+          "started": "2026-11-21T05:20:20.029032+00:00",
+          "deadline": "2026-11-23T14:00:00+00:00",
+          "command": [
+            "./target/release/fit",
+            "rbm",
+            "s3-rbm400pf",
+            "-p",
+            "pipeline-3.toml",
+            "--final",
+            "--preds",
+            "preds_3"
+          ],
+          "environment": {
+            "RAYON_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "4",
+            "EPOCHS": "15",
+            "EPSAVE": "1",
+            "H": "400",
+            "HT": "p",
+            "LR": "0.02",
+            "NFACT": "50"
+          },
+          "plan_sha256": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+          "preparation_sha256": "746a9d52ad13b6688ccdc4195e2607a30bc6d1aa5ab8c7a1cde37ac1a7bfb3a1",
+          "original_swap_baseline": {
+            "compressor_bytes": 11144314880,
+            "swap_used_bytes": 393614458.88
+          }
+        },
+        "status": {
+          "state": "full_original_native_training",
+          "pid": 24357,
+          "workers": {
+            "24356": {
+              "bytes": 27262976.0,
+              "rss_bytes": 39223296,
+              "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 73979 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf"
+            },
+            "24357": {
+              "bytes": 8482560409.6,
+              "rss_bytes": 8436039680,
+              "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
+            },
+            "73974": {
+              "bytes": 1835008.0,
+              "rss_bytes": 1851392,
+              "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/driver.sh"
+            },
+            "73975": {
+              "bytes": 1179648.0,
+              "rss_bytes": 475136,
+              "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/driver.log"
+            },
+            "73979": {
+              "bytes": 32505856.0,
+              "rss_bytes": 39223296,
+              "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r2/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
+            },
+            "74003": {
+              "bytes": 1966080.0,
+              "rss_bytes": 2736128,
+              "command": "/bin/zsh /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh"
+            },
+            "74004": {
+              "bytes": 1605632.0,
+              "rss_bytes": 770048,
+              "command": "caffeinate -i /Users/quan/workspace/netflix_remote_weekend/experiments/upstream-remote-weekend/execution/progress.sh"
+            }
+          },
+          "memory": {
+            "compressor_bytes": 10606723072,
+            "swap_used_bytes": 376837242.88
+          },
+          "observed": "2026-11-21T07:45:32.617701+00:00"
+        },
+        "epoch_lines": 4,
+        "last_epoch": 4,
+        "phase": "train_3->probe_3",
+        "log_tail": [
+          "Epoch 03 | RMSE 0.91961",
+          "Epoch 04 | RMSE 0.92066"
+        ],
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      },
+      "s3-tx300r": {
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      },
+      "s3-rbm800p": {
+        "receipt": false,
+        "incomplete": false,
+        "failure": false,
+        "guard-sample": false,
+        "watchdog-recovery": false,
+        "exported": false,
+        "archived": false,
+        "uploaded": false
+      }
+    }
+  },
+  "interpretation": "Pinned remote checkpoint only, not a direct current remote process poll. Preserve the original native process, full serial recipes and fixed deadlines. Individual diagnostic values are not ensemble or qualifying scores; no completion or eligibility is inferred from partial epochs."
+}
