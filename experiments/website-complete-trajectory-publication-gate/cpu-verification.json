@@ -1,0 +1,21 @@
+{
+  "state": "complete_7_private_publication_gate_tests_and_existing_live_result_integration",
+  "observed": "2026-11-21T20:28:44.390965+00:00",
+  "source_sha256": {
+    "scripts/complete_trajectory_publication.py": "9c809c7b6585c63d7709ec641c1f84f5c2231af3cb6d8c735c96b8058339bd1f",
+    "scripts/test_complete_trajectory_publication.py": "ad940277ad596d73c84b8495094fadc3ea677bf94a46f7a558e30342bc5e198b",
+    "scripts/build_research_journey.py": "bd6ac8c6efe84f42e40d9ffa36aa18b225da42400ce203eea4709740fb49afa1"
+  },
+  "tests_run": 7,
+  "errors": 0,
+  "failures": 0,
+  "independent_read_only_review": "No remaining blocker; exact original contexts and mechanically expanded signals confirmed against frozen study. Actual score publication still requires both scientific proofs and a real-chain admission pass.",
+  "original_queue_sha256": "a063d39ca733345884cf430a59b07067dd99209cbba747ebc418ee02ad498968",
+  "original_reference_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
+  "existing_best_development_rmse": 0.8589133967520619,
+  "existing_recovered_benchmark_unchanged": true,
+  "score_or_milestone_promoted": false,
+  "scientific_code_or_jobs_modified": false,
+  "synthetic_fixtures_are_not_numerical_admission": true,
+  "actual_new_canonical_proof_admission_tested": false
+}

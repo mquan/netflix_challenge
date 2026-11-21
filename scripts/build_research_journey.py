@@ -613,13 +613,17 @@ def validate_fresh_status():
     own330=kind=='complete_separate_original330_tree_half_arithmetic_and_full_canonical_score'
     own352=kind=='complete_separate_bounded_original352_tree_half_arithmetic_and_full_canonical_score'
     own391=kind=='complete_separate_matched_B391_canonical_neural_and_fixed_half_scores'
-    specialized=own330 or own352 or own391
+    complete_trajectory=kind=='complete_separate_complete_trajectory_canonical_neural_and_fixed_half_scores'
+    specialized=own330 or own352 or own391 or complete_trajectory
     if own330:
         validate_own330_development(record,current_path,current,independent_path,independent)
     elif own352:
         validate_own352_development(record,current_path,current,independent_path,independent)
     elif own391:
         validate_own391_development(record,current_path,current,independent_path,independent)
+    elif complete_trajectory:
+        from complete_trajectory_publication import validate
+        validate(ROOT,record,current_path,current,independent_path,independent)
     elif kind=='complete_fixed_post_study_consensus':
         checked_state='complete_independent_consensus_and_score';checked_flag='stored_consensus_bitwise_equal'
     elif kind=='complete_verified_fixed_combination':
