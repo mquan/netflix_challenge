@@ -1,0 +1,12 @@
+{
+  "state": "observed_first23_complete_second3_complete_same_original_native_live",
+  "observed": "2026-11-21T08:56:14.637143+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1635,
+  "observed_log_prefix_sha256": "7afecbed8778fc408eb9b794a5f9bff0e7cfcc5d137f6fdafefd0cca00b6d1c9",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 3,
+  "actual_process_observation": "  PID  PPID STAT  ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   11:44:03   3:02.38  36336 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   11:17:56 635:09.55 13204208 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n",
+  "interpretation": "Original native PID16010 is still live. Full second23 epochs and independent all58 numeric outputs plus original log remain required. Phase2 diagnostics compare to zero-filled qualifying targets and are not accuracy measurements. No new ensemble or recovered qualifying score."
+}
