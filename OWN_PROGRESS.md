@@ -454,6 +454,12 @@ with verified adoption ownership/watchdogs before any continuation.
 [Pinned guard receipts](experiments/upstream-remote-weekend/coordinator-parallel-guard-observation.json) ·
 [Remote same-process recovery instruction](REMOTE_WEEKEND_GUARD_RECOVERY_NOTE.md).
 
+Execution checkpoint3d9a2a0 at09:13UTC separately confirms all three original
+native PIDs in`Ts`(stopped) state. No recovery, complete producer or transfer
+was established there. The coordinator's latest fetch still finds that same
+checkpoint; it is a pinned observation, not a current remote process poll.
+[Stopped native process checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T091331.json).
+
 The preserved original own14 preaudit21221 completed successfully at01:09UTC:
 all16383 simplex supports,15 ridge equations and all six complete vectors
 independently match before outcomes. Its original source/coefficients and
@@ -464,7 +470,7 @@ owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
 active after completing all23 first-phase epochs and the final probex
-diagnostic0.87775; its second fulltrain→qual phase has completed3/23 epochs.
+diagnostic0.87775; its second fulltrain→qual phase has completed10/23 epochs.
 Phase-two diagnostic errors use zero-filled qualifying targets and do not
 measure accuracy. The full second23-epoch phase and independent all-output
 verification remain required; no new ensemble or qualifying score is implied.
@@ -479,3 +485,5 @@ All89 relevant checks pass.
 [Completed first23-epoch phase snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-first-phase23-observation.json).
 
 [Same native process at second-phase epoch3](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase3-observation.json).
+
+[Same native process at second-phase epoch10](experiments/upstream-original1200-exact-build-recovery/coordinator-second-phase10-observation.json).

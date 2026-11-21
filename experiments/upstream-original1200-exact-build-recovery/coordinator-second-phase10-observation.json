@@ -1,0 +1,12 @@
+{
+  "state": "observed_first23_complete_second10_complete_same_original_native_live",
+  "observed": "2026-11-21T11:57:55.753034+00:00",
+  "log_path": "artifacts/upstream-original1200/source/preds_new/tsvdx5-1200lm.out",
+  "observed_log_prefix_bytes": 1803,
+  "observed_log_prefix_sha256": "0391c6d874c3e277fcf79ce689fc6b542a4578643d5354caf5727358ba97849a",
+  "first_phase_completed_epochs": 23,
+  "first_phase_probex_diagnostic_rmse": 0.87775,
+  "second_phase_completed_epochs": 10,
+  "actual_process_observation": "  PID  PPID STAT STARTED                       ELAPSED      TIME    RSS COMMAND\n 8122     1 Ss   Fri Nov 20 13:12:11 2026     14:45:44   3:51.77  43536 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_original1200_exact_build_recovery.py\n16010  8122 Rs   Fri Nov 20 13:38:18 2026     14:19:37 806:28.92 13145120 /Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-original1200/target/release/tsvdx5-new tsvdx5-1200lm\n26049     1 Ts   Fri Nov 20 17:11:15 2026     10:46:40   0:21.33  25328 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_own14_matched391_calibration.py audit\n35292     1 Ss   Fri Nov 20 17:24:50 2026     10:33:05   2:32.15 145040 /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_own14_matched391_post_native_audit.py\n",
+  "interpretation": "Original native16010 and supervisor8122 remain live; paused audit26049 and waiting continuation35292 are preserved. Full second23 epochs and independent all58 numeric outputs plus original log remain required. Phase2 diagnostic errors compare to zero-filled qualifying targets and are not accuracy results. No new ensemble or qualifying score."
+}
