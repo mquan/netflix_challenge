@@ -1,0 +1,74 @@
+{
+  "state": "declared_full_weekend_owner_override_return_adapter",
+  "created": "2026-11-21T19:43:43.037765+00:00",
+  "jobs": [
+    "s3-rbm400pf",
+    "s3-tx300r",
+    "s3-rbm800p"
+  ],
+  "phases": [
+    "transport",
+    "independent_admission"
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "2",
+    "VECLIB_MAXIMUM_THREADS": "2",
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "worker_cap_bytes": 2147483648,
+  "total_cap_bytes": 25769803776,
+  "disk_floor_bytes": 20132659200,
+  "numpy_version": "2.2.6",
+  "source_sha256": {
+    "scripts/upstream_remote_weekend_override_policy.py": "c5eab4ef934dea2a127886fafc63c606144d22245f818e278c9bc73a737fb545",
+    "experiments/upstream-remote-weekend/plan.json": "2b8194eba4356db9a67af6d2b69fdb71816d2ba0b95df939b1cf122e86319514",
+    "scripts/upstream_remote_weekend.py": "816a91bd2e6d4331dc4433339f6198d318ecca9109c8a56cd2085c87e900ca4c",
+    "experiments/upstream-remote-weekend-owner-override-policy/remote-plan.json": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+    "experiments/upstream-remote-weekend-owner-override-policy/remote-controller.py": "84f92e4e8b8f6118a5e72a95dd9642a3dd3dbe9d417dba53d66a7d58a8d936f2",
+    "experiments/upstream-remote-weekend-owner-override-policy/remote-start.json": "acf3474b2b118249998cafd578a17fb3297207085cd7222c95f9da3f76a97cc9",
+    "experiments/upstream-remote-weekend-owner-override-policy/s3-rbm400pf-preparation.json": "4891cd40c95799c732094652f73fa7010427d7f95a0239812b4b2b1227488e77",
+    "experiments/upstream-remote-weekend-owner-override-policy/s3-rbm800p-preparation.json": "240e1e8685063c064f29b213a9262ce55c38672c3ff29c4abf6a4ddb7c04fc91",
+    "experiments/upstream-remote-weekend-owner-override-policy/s3-tx300r-preparation.json": "4dd03721671032b88dfdbe7e45598a35d49153e60bb23c2864260a3607526795",
+    "scripts/upstream_remote_weekend_return.py": "5d04c8c093832b0421adf4c13c12740e7025f9b6a085b54ef5681706a9351f6e",
+    "scripts/verify_upstream_remote_weekend_return.py": "44609cb7563e76ba57a423e4b887bed5b1004f8491515a6c5a111e8f4ea51ace",
+    "experiments/upstream-remote-weekend-owner-override-policy/verification.json": "b4e091be216bcf0cbca232f501bfcf5b0daccb389a8186e8607d0fb2a52a0bc0",
+    "scripts/upstream_remote_weekend_override_context.py": "168d0c2c72ecb3d494f7b463e5da3bb45c763cd0be1709a689be25e0d6fc4b74",
+    "scripts/upstream_remote_weekend_override_return_queue.py": "815df3073fd53a6875e6f606dc7bfdebde38360f9858d57e5fa512716d5abac2",
+    "scripts/upstream_remote_weekend_override_runtime.py": "6d404499e93f4c98bf75085bbad147ec964656657aaa6f627b44b3f7d9837342",
+    "scripts/upstream_remote_weekend_override_worker.py": "b6fb3f4f12c20427a9f66a9177f31a9093fe4bb98b6fd75d90e232b8433a5ddd",
+    "scripts/upstream_remote_weekend_override_handoff.py": "cdecc89cad3bbf8ecdf996bc07c1acd3edd3148f28e4ccbd022214804487fa9c",
+    "scripts/test_remote_weekend_override_runtime.py": "5f457c8b13f4a26b0264b2551267a8e79d44c1985dd6b2226076b75b54da2863",
+    "experiments/upstream-remote-weekend-override-runtime-cpu/verification.json": "a89a05829fd0020b28b18394538983b354f2047ca14287f17c558f64167566d6",
+    "scripts/upstream_remote_weekend_return_queue.py": "5b82d6a82ec3a522c717a0554a846261ac0a33eedc2be5e41646e19b0e5d40f7",
+    "scripts/upstream_split3_pilot.py": "5c6d5ef026dead110fb60ff012c8e2aac9a11633e8f91ec975987ff67ff4e49b",
+    "scripts/upstream_remote15h_native_stream.py": "64782bdd6d4346bc73df185d351502ea54076919bc84d9339b654624688031fa",
+    "REMOTE_WEEKEND_OWNER_OVERRIDE_RETURN_PLAN.md": "ec4bbaaaedd6646ddfd27892ba721fdc76b8da3944f0d44c227b7c61755a68a1",
+    "scripts/upstream_repro.py": "02920d2d4628abb40dda29787f7e2202f5f8a5c11856f5c81df993b5f25df63a",
+    "scripts/upstream_complete_trajectory_ops.py": "4631e37584164c467afbd6bceca31b81c849c5dcc3e67dd5af54aa4795bf63ca",
+    "scripts/upstream_cf96_primary_lane.py": "4ecfc8cc3a6217224abcb159ada1c0094d85218122767a478fa7c39c96217a6c",
+    "scripts/upstream_cf96_memory_resume.py": "e27b27aa691504c7fd6649198206c32fb267c9a3f7aaa5887391a1f5d49456ac",
+    "scripts/upstream_research_footprints.py": "ed9d1d272eb283ebdbbdc4fd6307a0b03bade0e9d582e749a96026a22c2369c4"
+  },
+  "prerequisite": [
+    "upstream-own15-complete-trajectory-queue/completion.json",
+    "complete_own15_known_only_calibration_freeze_and_independent_recovered_audit",
+    "upstream-own15-complete-trajectory-calibration/independent-canonical-verification.json",
+    "complete_independent_own15_full_source_models_coefficients_and_frozen_group_scores"
+  ],
+  "policy": {
+    "compressor_bytes": 5368709120,
+    "admission_compressor_bytes": 4831838208.0,
+    "swap_growth_bytes": 134217728,
+    "stable_samples": 3,
+    "one_first_scientific_baseline": true,
+    "primary_lane_only": true,
+    "watchdog_and_worker_inherit_lane": true,
+    "no_native_training": true,
+    "no_numerical_subset": true,
+    "no_automatic_retry": true,
+    "original_remote_resource_guarantees": false,
+    "coordinator_local_guards_unchanged": true
+  }
+}

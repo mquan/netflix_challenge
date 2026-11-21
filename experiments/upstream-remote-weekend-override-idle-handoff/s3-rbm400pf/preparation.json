@@ -1,0 +1,27 @@
+{
+  "state": "declared_exact_idle_only_control_retirement",
+  "job": "s3-rbm400pf",
+  "owner": {
+    "pid": 87173,
+    "ppid": 87115,
+    "pgid": 87173,
+    "state": "Ss",
+    "started": "Fri Nov 20 16:17:42 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --job s3-rbm400pf"
+  },
+  "watchdogs": [
+    {
+      "pid": 87176,
+      "ppid": 87173,
+      "pgid": 87176,
+      "state": "Ss",
+      "started": "Fri Nov 20 16:17:42 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_remote_weekend_return_queue.py --watch 87173 --job s3-rbm400pf"
+    }
+  ],
+  "no_scientific_namespace_or_baseline": true,
+  "original_monitor_sha256": "72bcd647bf2294d17f5fecc87de823f61d1eb30399dead586a5e9da68478b4ae",
+  "original_plan_sha256": "d56882a618b98a85604581b06caa37d3b864d85962c422914b1fef81922c7fae",
+  "protocol_sha256": "ed6fba5e5f04caa8a205ca9215e68ea0067c9d0e025a33786307a5bc625032b2",
+  "observed": "2026-11-21T19:44:22.500036+00:00"
+}
