@@ -56,5 +56,20 @@
    "state": "prepare: complete",
    "fix": ".cargo/config.toml (rustflags link Accelerate) in the tree parent, outside the hash-verified source; same fix as remote15h-r2"
   }
- ]
+ ],
+ "parallel_change": {
+  "observed": "2026-11-21T08:14:36+00:00",
+  "decision": "owner instructed parallel execution after observing ~1 core / 8 GB use per job (machine otherwise idle); supersedes the serial order",
+  "trees": {
+   "s3-rbm400pf": "artifacts/upstream-remote-weekend-r2",
+   "s3-rbm800p": "artifacts/upstream-remote-weekend-r3",
+   "s3-tx300r": "artifacts/upstream-remote-weekend-r4"
+  },
+  "notes": [
+   "r3/r4 prepared with the same helper, source and data hashes, and row map ffc16cb88b14; fit binary sha differs per build (path embedded), each recorded in its own preparation.json",
+   "helper admission/guards unchanged (64 GiB reserve, 80 GiB research total, compressor <10 admit / <12 run); all three admitted by the helper gate",
+   "r2/s3-tx300r.log and r2/s3-rbm800p.log are plain-text PLACEHOLDERS (not native logs) so the serial r2 driver skips them",
+   "recipes, threads, seeds, epochs unchanged; same deadline 2026-11-23T14:00:00Z"
+  ]
+ }
 }
