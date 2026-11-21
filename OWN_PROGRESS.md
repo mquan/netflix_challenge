@@ -430,12 +430,14 @@ new score has been measured. All three weekend producers must complete;
 missing/partial work cannot silently shrink this declaration.
 [Full weekend iteration](WEEKEND_COMPLETE_TRAJECTORY_PLAN.md).
 
-Remote hourly checkpoint3e8ad78 at00:45UTC still reports no native fit.
+Remote hourly checkpointd39d9fc at02:45UTC still reports no native fit.
 Same run-job73979 waits its original global compressor admission:
-11.77GiB versus the10GiB cap, with217.7GiB disk. The driver must retain
+11.29GiB versus the10GiB cap, with217.7GiB disk and59.24training hours
+remaining. The driver must retain
 its original swap baseline and recipe; a memory inspection note is ready
 for the remote agent. This is a pinned checkpoint, not a live remote poll.
-[Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md).
+[Remote memory note](REMOTE_WEEKEND_MEMORY_NOTE.md) ·
+[Latest pinned checkpoint](experiments/upstream-remote-weekend/coordinator-hourly-observation-20261121T024529.json).
 
 The preserved original own14 preaudit21221 completed successfully at01:09UTC:
 all16383 simplex supports,15 ridge equations and all six complete vectors
@@ -446,6 +448,9 @@ No audit/canonical result or new qualifying score exists. Reviewed waiting
 owner35292 will continue that SAME audit only after full original1200
 23+23/all58numeric+log independent completion and original admission checks;
 there is no repeated overlap attempt or baseline reset. Native16010 remains
-active at eight first-phase epochs. All89 relevant checks pass.
+active at thirteen first-phase epochs; latest standalone diagnostic0.88521.
+All89 relevant checks pass.
 [Completed preaudit](experiments/upstream-own14-matched391-calibration/independent-preaudit-verification.json) ·
 [Exact same-audit continuation](OWN14_POST_NATIVE_AUDIT.md).
+
+[Live epoch13 process snapshot](experiments/upstream-original1200-exact-build-recovery/coordinator-epoch13-observation.json).
