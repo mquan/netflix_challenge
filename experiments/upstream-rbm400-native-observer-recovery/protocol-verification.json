@@ -1,0 +1,38 @@
+{
+  "state": "complete_successor_cpu_protocol_and_equivalence_checks_production_not_started",
+  "observed": "2026-11-21T21:47:37.277351+00:00",
+  "test_counts": {
+    "recovery": 12,
+    "native_producer_boundaries_and_synthetic_full15_15": 9,
+    "native_consumer_boundaries_and_synthetic_all16": 9,
+    "native_observer": 9
+  },
+  "tests_passed": 39,
+  "worker_ast_equal_except_execution_import": true,
+  "consumer_scientific_functions_equal_under_explicit_namespace_map": true,
+  "original_source_closure_rehashed": true,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "original_plan_sha256": "48fc8377c22e2b5bbbe9a1ef22881c4b0ee94a4ff0c3b2aedbcfe99548c980c2",
+  "original_limits_unchanged": true,
+  "original_epochs_each": 15,
+  "actual_MPS_production_tested": false,
+  "production_started": false,
+  "source_sha256": {
+    "scripts/upstream_factored_rbm_execution_native.py": "4dc849522215e4f6a0596abb376b64c11426c8bb65884cfd9ddf2673fa7007fd",
+    "scripts/upstream_factored_rbm_worker_native.py": "c8338efe2f6a5ce5e81d3df33cb7807efeeb48cabea3ba0116405e86d7001590",
+    "scripts/upstream_local_rbm_blend_native.py": "8e04a6a395c31631fbfb91b888cd3e417da1f3a0034f1afc572ddb3f82a16fa9",
+    "scripts/verify_upstream_local_rbm_blend_native.py": "92f9c91d3df97e91517c0d7d15b2edd6aedd3197c17ac764109f2c360737c66a",
+    "scripts/upstream_local_rbm_blend_queue_native.py": "6835f120a56ff7b1f9a4aa682a037a497e4b817a6d8c216e9cbe750c70346c1e",
+    "scripts/upstream_rbm400_observer_recovery.py": "2b326c0e2bf990f7a57efa15e9cb627d8639525ce36306b699ff46680da33946",
+    "scripts/upstream_rbm400_metadata_retirement.py": "26ac64dd85808b0df785160e62b9df19b3e323f755f726bedd0ed4bf7d90b4b5",
+    "scripts/test_upstream_rbm400_observer_recovery.py": "888a36a94415ea93fd52ce3af251b32cb237a1c8560cea6aa588dd92544e5987",
+    "scripts/test_upstream_factored_rbm_execution_native.py": "be987db70e68f382ba69913fd245101685ac0b9498126f4b8ea777655617d6ea",
+    "scripts/test_upstream_local_rbm_blend_native.py": "a3227856d1ecdabbd73e7aeee96010d89a68fe428b3efd88de035b7cb7cd06d5",
+    "scripts/upstream_research_footprints_native.py": "98ee33573318e12bb5ae9819c18f6f9d9b5e6345dadf2f1939e416c0c5d40ea8",
+    "scripts/test_upstream_research_footprints_native.py": "2c043017529c6a053acaeeffc7767d7d7e3e6e14f37ee4bf53c83daf80df0109",
+    "OWN_RBM400_NATIVE_OBSERVER_EXECUTION.md": "5d6a4fe99a1b5a796ce31d7c2ecc81eba8f85493378f62176155f8c7ec0c55ee",
+    "OWN_LOCAL_RBM_NATIVE_OBSERVER_BLEND_PLAN.md": "1c9b33d5efe318483fd2314275fced2da5237ca0c502bc5f440f649bbd8931e4",
+    "OWN_RBM400_OBSERVER_RECOVERY_PLAN.md": "1fc8c3e142bdcb3c3c2e2cc98326fa035917c3bc7276a2fa9661343794301492",
+    "experiments/upstream-rbm400-native-observer-recovery/retirement-plan.json": "cdbb23357eeb10b87cbe88df13a0c7e4072e3be0fa950d481e5caa6ed5cb49c1"
+  }
+}
