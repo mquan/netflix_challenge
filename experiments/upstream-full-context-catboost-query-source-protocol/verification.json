@@ -1,0 +1,26 @@
+{
+  "state": "complete_original_qualifying_source_adapter_component_checks_only",
+  "observed": "2026-11-22T05:26:15.764344+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_query_producer.py": "58fff1ea3623ef77f2550fd00f4e0688c54e2817642c50231c02dac615b8e683",
+    "scripts/test_upstream_full_context_catboost_query_producer.py": "d120d6366858bece2d41b2d61b24bc3a7cb0737763d2b8a6760ada7ec9434dbf",
+    "OWN_FULL_CONTEXT_CATBOOST_QUERY_SOURCE_PROGRESS.md": "36ba00e28140011c8c9361c89dfc4a57e64726363da9cc672e188f9336843c50"
+  },
+  "combined_tree_component_checks_passed": 66,
+  "duration_seconds": 42.715,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p 'test*upstream_full_context_catboost*.py'",
+  "both_complete_feature_widths_checked": [
+    714,
+    864
+  ],
+  "actual_full_width_ten_eligible_ridge_solves_and_streamed_baseline_bits_checked": true,
+  "fixture_known_rows": 100,
+  "fixture_qualifying_rows": 103,
+  "query_specific_source_declaration_and_record_sets_match": true,
+  "changed_weights_source_and_qualifying_row_contract_rejected": true,
+  "CPU_proof_source_and_reduced_row_declarations_are_synthetic": true,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned controller/bootstrap/watchdog/resource gates; full paired tree studies and replays/selection; selected qualifying bag assembly/replay and own18 fixed audits after original conditional start rule."
+}
