@@ -1,0 +1,17 @@
+{
+  "state": "launched_reviewed_conditional_owned_tree_known_studies_owner",
+  "observed": "2026-11-22T06:19:01.875023+00:00",
+  "pid": 66664,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_execution_v1.py",
+    "--start"
+  ],
+  "execution_source_sha256": "1be20d2d55f7635ffd93b31c9e4b6b2ecd4ec0edf7d3ebb3b4d7547b6ec509f9",
+  "review_protocol_sha256": "f766c513691c1872d99a0524d2d4c8e2314fcebe030a8d1b1664b988003f7ee1",
+  "frozen_source_files": 364,
+  "starts_only_after_complete_own17_primary_misses": true,
+  "production_model_fitting_claimed": false,
+  "qualifying_labels_read": false
+}
