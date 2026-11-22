@@ -1,0 +1,9 @@
+{
+  "pid": 39653,
+  "ppid": 39079,
+  "pgid": 39653,
+  "state": "Ss",
+  "started": "Sat Nov 21 09:50:36 2026",
+  "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --bootstrap 39079 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p",
+  "native_command": "./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3"
+}

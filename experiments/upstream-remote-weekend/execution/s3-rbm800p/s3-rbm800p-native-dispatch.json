@@ -1,0 +1,25 @@
+{
+  "pid": 39653,
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm800p",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "25",
+    "EPSAVE": "1",
+    "H": "800",
+    "HT": "p",
+    "LR": "0.015",
+    "WD": "0.0015"
+  },
+  "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+  "observed": "2026-11-21T17:50:36.787602+00:00"
+}
