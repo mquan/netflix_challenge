@@ -1,0 +1,27 @@
+{
+  "execution_plan_sha256": "2d8cae16eeb99c14f2b4ceabbda9c93f277d5409c29876c460355e258a8b18d8",
+  "qualifying_labels_read": false,
+  "models_fitted": 0,
+  "production_provider_admitted": false,
+  "observed": "2026-11-22T03:00:32.687614+00:00",
+  "actual_MPS_predictions_replayed": true,
+  "all_native_prediction_bits_match": true,
+  "state": "complete_full_original_paired_latent_cache_and_independent_native_and_feature_replays",
+  "manifest": {
+    "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-rbm400-latent-provider/cache-manifest.json",
+    "bytes": 740730,
+    "sha256": "5b56947fbdd1508327287297e5371ce0ae448ae4d16dff32678346dbc14dced6"
+  },
+  "proof_sha256": {
+    "experiments/upstream-rbm400-reference-replay/known-extraction.json": "c0bb4742e51a7b43e736716b6356ab71f62b7f7a5af4f1cfc6bee3667bb511a4",
+    "experiments/upstream-rbm400-reference-replay/qualifying-extraction.json": "6c5d79a057612d08f4be663edec5915ab886cc6817de683afcd0b3feac952957",
+    "experiments/upstream-rbm400-reference-replay/known-independent-verification.json": "4138ad2d1ee8493fd5331872f5a5a40d0b6f7a210c88796efbaae4c0baceac2e",
+    "experiments/upstream-rbm400-reference-replay/qualifying-independent-verification.json": "87780b69871f5aee92b2e21e7c9046dc6bf3479f498616437321978ab5b380fb"
+  },
+  "adoption_sha256": "74688e91e7d4da2b4ee2a4b5bcd39fd67cf6818a3a84393d4bc7d2e0c7e7a228",
+  "actual_complete_models_reopened": 2,
+  "independent_full_phase_replays": 2,
+  "retained_cache_arrays_rewritten": false,
+  "original_failure_preserved": true,
+  "remaining": "Versioned full context-data/neural/bag/own17 successors must consume this actual proof"
+}

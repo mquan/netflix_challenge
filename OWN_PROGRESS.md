@@ -2,6 +2,19 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 03:15 UTC: the full saved RBM400 models and extracted learned
+features now pass independent recovery replay on both query sets. The original
+verifier stopped because it rejected 18 pre-existing source-path aliases;
+models, cache arrays and the original failed execution remain preserved.
+A versioned reader accepts only those exact aliases with matching canonical
+hashes. Recovery pair proof:485edc77ff298b96bae12019df755a7a123ecc08d3e3d95633fce5eaf1695a0b.
+Actual CPU data assembly worker55097 is running under owner46613. The new
+neural52731, qualifying-bag60568 and own17 blend62038 owners are live and
+waiting for complete predecessor verification. Full study budgets and the
+original resource baseline are unchanged. No new neural model or recovered
+score is admitted. Own16 remains0.8603409488/0.8613420939; target unmet.
+[Verified recovery and live chain](experiments/upstream-rbm400-reference-chain-runtime/verification.json).
+
 November22 02:03 UTC: the completed own16 simplex primary independently
 scores0.8603409488199526/0.8613420938772931. Both groups improve by only
 about0.0000003; this is a tiny gain and still misses0.85725. All65535

@@ -1,0 +1,15 @@
+{
+  "error": "RuntimeError('Scientific phase terminal failure; no retry: verify_known')",
+  "child": {
+    "pid": 20950,
+    "ppid": 87109,
+    "pgid": 20950,
+    "state": "Ss",
+    "started": "Sat Nov 21 18:08:44 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_latent_execution.py --bootstrap 87109 --phase verify_known",
+    "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_latent_worker.py --phase verify_known"
+  },
+  "actual_child_RAM_preserved": false,
+  "no_automatic_retry": true,
+  "observed": "2026-11-22T02:14:04.898474+00:00"
+}
