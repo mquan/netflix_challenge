@@ -13,7 +13,7 @@ import upstream_rbm400_neural_study as study
 
 class StudyTests(unittest.TestCase):
     @contextmanager
-    def fixture(self):
+    def fixture(self,full_operators=False):
         with tempfile.TemporaryDirectory() as folder,ExitStack() as stack:
             root=Path(folder).resolve();base_art=root/'base-art';base_report=root/'base-report'
             base_art.mkdir();base_report.mkdir();(root/'artifacts').mkdir();(root/'experiments').mkdir()
@@ -26,12 +26,24 @@ class StudyTests(unittest.TestCase):
             arrays={'labels.npy':np.full(100,5.,dtype='<f8'),'users.npy':np.arange(100,dtype='<i4'),
                 'groups.npy':(np.arange(100)%10).astype('i1'),'gram.npy':np.tile(np.eye(563),(10,1,1)),
                 'rhs.npy':np.zeros((10,563))}
+            if full_operators:
+                rng=np.random.default_rng(128);z=rng.normal(size=(100,563));z[:,-1]=1
+                features=rng.normal(size=(100,863)).astype('<f4')
+                for group in range(10):
+                    keep=arrays['groups.npy']==group;a=z[keep]
+                    arrays['gram.npy'][group]=a.T@a;arrays['rhs.npy'][group]=a.T@arrays['labels.npy'][keep]
             for name,value in arrays.items():np.save(base_art/name,value)
             sha=study.inputs.cpu.inputs.sha
             required=list(base_art.iterdir())+list(base_report.iterdir())+[root/'tree.f32',tree_manifest,root/'fixture-code.py']
             bindings={str(p.relative_to(root)):sha(p) for p in required}
             manifest=dict(alias={'retain_scalar':True},arms={arm:study.architecture.ops.dimensions(True,arm=='latent') for arm in study.ARMS},
                 prepared={name:dict(path=str(base_art/name),sha256=sha(base_art/name)) for name in arrays})
+            if full_operators:
+                import hashlib
+                manifest['_fixture_operators']={'z':z,'f':features}
+                manifest['virtual_c_order_sha256']={'probex':{'arm_operator_sha256':{
+                    arm:[hashlib.sha256(z.tobytes()).hexdigest(),hashlib.sha256(np.ascontiguousarray(features[:,:713 if arm=='scalar' else 863]).tobytes()).hexdigest()]
+                    for arm in study.ARMS}}}
             def sources(guard):
                 declaration={'source_sha256':dict(bindings)}
                 return declaration,copy.deepcopy(manifest),study.inputs.cpu.inputs.verify_files(root,bindings,guard)

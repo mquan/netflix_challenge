@@ -1,0 +1,20 @@
+{
+  "observed": "2026-11-22T00:51:40.707692+00:00",
+  "current_phase": {
+    "state": "fit_qualifying",
+    "pid": 19951,
+    "observed": "2026-11-22T00:51:38.865660+00:00"
+  },
+  "actual_worker": {
+    "pid": 19951,
+    "ppid": 41101,
+    "pgid": 19951,
+    "state": "Ss",
+    "started": "Sat Nov 21 16:11:19 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
+  },
+  "known_completed_epochs": 15,
+  "qualifying_completed_epochs": 7,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "new_score_computed": false
+}

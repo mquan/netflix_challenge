@@ -1,0 +1,42 @@
+{
+  "state": "reviewed_unexecuted_full_independent_neural_model_preprocessing_and_prediction_replay_prototype",
+  "observed": "2026-11-22T00:51:40.693088+00:00",
+  "test_count": 23,
+  "test_exit_code": 0,
+  "test_log_sha256": "1643c7f2fc7d65855325cb9a7c32e00ae1f1874e2df37c9ecc5d08c4336fd2a6",
+  "source_sha256": {
+    "OWN_RBM400_NEURAL_EXECUTION_PLAN.md": "3e1be98de0b0b80ac85f025d5984259553f7b11c391e1347e65ea1fe31d623aa",
+    "OWN_RBM400_NEURAL_REPLAY_PROGRESS.md": "635394b497f633cf408fbf4181e29c8a59c76e8a217ea0923e316b4950c4036e",
+    "scripts/test_upstream_rbm400_neural_fold.py": "ff4468e83b917acdc8731ce3155c51df0cc8ab56cc3ad86905fa65a7df457d35",
+    "scripts/test_upstream_rbm400_neural_inputs.py": "b22ebd54fa03cb3ff1a1d6fe044c705d636732aa214fc213ae60a1aafc7c47d3",
+    "scripts/test_upstream_rbm400_neural_scaler.py": "6960f33e1290a7188a4f7a03e147817903d41e47d4979b0bce89405dbbe85c0b",
+    "scripts/test_upstream_rbm400_neural_study.py": "2df7d8edf608db51ca39c030004cc44d57d515218c8c701960ebae982ca600f6",
+    "scripts/test_verify_upstream_rbm400_neural_study.py": "825ce97ff07af56f869a03f45624dfd24c2acbd7545d5bca2481d19221281dd3",
+    "scripts/upstream_complete_trajectory_mps.py": "6b4d107e1c23b464d2bdf0aa5a2e3c41c710c378cffe56b738e4369da5b18ff9",
+    "scripts/upstream_mps_context.py": "809c2d640c54b3db6fb7c13b799ff6e56c21b814728fa2c61194e8def300e713",
+    "scripts/upstream_nonlinear.py": "dc350b0c25301064eca690a19f8aff44ad7bae66645d6e5c6cb73860ca98c2f0",
+    "scripts/upstream_rbm400_latent_neural.py": "c445356d98b9df1e25fe649c435c97dc0ca7ecb6032d75d33af49ebb76f611ef",
+    "scripts/upstream_rbm400_latent_operators.py": "6e49960dd83fcb1d68c0b06e0a79fbc2faafce27350f8f99fecb9f63fa440495",
+    "scripts/upstream_rbm400_neural_fold.py": "58f27107355ecaa43edfe36ebbb414c7a36adf3ec6057c4ce049ec173eec7637",
+    "scripts/upstream_rbm400_neural_inputs.py": "b03f554d60b280cf18075d1d4172ac9a559f7e9cace4e3e1ec7af8a8322f52e8",
+    "scripts/upstream_rbm400_neural_scaler.py": "a8770551638e6452485e882b079ca3a9d7f5aa897288e0b61e0b3938f26a81f8",
+    "scripts/upstream_rbm400_neural_study.py": "43bd1abb90432252cf82fb43bf9947a955b2f2375c7792cc718c4af3038d2a00",
+    "scripts/verify_upstream_rbm400_neural_study.py": "10e5b8c204bc9453c8a0f01ec4bc5e8e149cd7ba24cfb81b06fa0ec9df426d1f"
+  },
+  "libraries": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0",
+    "scipy": "1.15.3"
+  },
+  "reviewer": "/root/refit_checkpoint_review",
+  "independent_review": "clean",
+  "review_scope": "Independent raw/scaler/model-state/held-prediction implementation, CPU helper and synthetic full-five-fold IO/replay checks only. Source/device/training gates explicitly mocked; no actual MPS/source acceptance or peak RAM proof.",
+  "actual_MPS_tested": false,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "CPU_fixture_models_trained": true,
+  "production_provider_admitted": false,
+  "actual_peak_RAM_verified": false,
+  "qualifying_labels_read": false,
+  "all_four_active_frozen_source_closures_unchanged": true
+}

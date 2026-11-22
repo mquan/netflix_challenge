@@ -36,7 +36,8 @@ def paths(arm):
 def code_bindings():
     files=[Path(__file__),Path(inputs.__file__),Path(folds.__file__),Path(folds.scaling.__file__),
            Path(architecture.__file__),Path(architecture.ops.__file__),Path(backend.__file__),
-           Path(architecture.original.__file__),Path(backend.n.__file__),DECL]
+           Path(architecture.original.__file__),Path(backend.n.__file__),DECL,
+           ROOT/'scripts/verify_upstream_rbm400_neural_study.py']
     return {str(p.relative_to(ROOT)):inputs.cpu.inputs.sha(p) for p in files}
 
 
