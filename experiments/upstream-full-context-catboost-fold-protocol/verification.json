@@ -1,0 +1,19 @@
+{
+  "state": "complete_known_only_tree_schedule_component_checks_only",
+  "observed": "2026-11-22T03:20:50.871420+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_fold.py": "159db41b9692d6d5aa202aa8acff90b7378513e2f16f7508c12e1aff7091c766",
+    "scripts/test_upstream_full_context_catboost_fold.py": "4a5da711110c0637f0ed00019b9fff59f243780234dc5ab38b4809f63f6ed6fc",
+    "scripts/upstream_full_context_catboost.py": "d195c4357cc070bd4f0ab7751df1619f9278c8e2b56f374710f2d921f1b93eef",
+    "scripts/upstream_full_context_catboost_stream.py": "2cc6006d99230dbb59ef17e7a5b1f6e0f4b257ad725d52c44fbf498a1b9a2ab8"
+  },
+  "combined_backend_stream_fold_tests_passed": 15,
+  "actual_CPU_synthetic_inner_and_fresh_full_refits_checked": true,
+  "held_outcome_perturbation_barrier_checked": true,
+  "all_inner_selections_before_full_refits_checked": true,
+  "zero_seed_slot_denominator_checked": true,
+  "actual_full_dataset_study_admitted": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned source-authenticated durable full-data producer/consumer, full five-fold paired-arm studies, independent actual-model/canonical replay, known-only selection, full qualifying bag and own18 audit remain required."
+}
