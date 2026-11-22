@@ -1,0 +1,55 @@
+{
+  "state": "observed_three_live_owned_successor_queues_and_original_qualifying_training",
+  "observed": "2026-11-22T01:16:44.634337+00:00",
+  "current_phase": {
+    "state": "fit_qualifying",
+    "pid": 19951,
+    "observed": "2026-11-22T01:16:43.021392+00:00"
+  },
+  "actual_original_worker": {
+    "pid": 19951,
+    "ppid": 41101,
+    "pgid": 19951,
+    "state": "Rs",
+    "started": "Sat Nov 21 16:11:19 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
+  },
+  "known_completed_epochs": 15,
+  "qualifying_completed_epochs": 11,
+  "extraction_owner": {
+    "pid": 87109,
+    "ppid": 1,
+    "pgid": 87109,
+    "state": "Ss",
+    "started": "Sat Nov 21 15:54:05 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_latent_execution.py --start"
+  },
+  "CPU_data_owner": {
+    "pid": 30414,
+    "ppid": 1,
+    "pgid": 30414,
+    "state": "Ss",
+    "started": "Sat Nov 21 16:16:37 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_execution.py --start"
+  },
+  "neural_owner": {
+    "pid": 37638,
+    "ppid": 1,
+    "pgid": 37638,
+    "state": "Ss",
+    "started": "Sat Nov 21 17:13:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution.py --start"
+  },
+  "neural_watchdog": {
+    "pid": 37712,
+    "ppid": 37638,
+    "pgid": 37712,
+    "state": "Ss",
+    "started": "Sat Nov 21 17:13:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution.py --watch 37638 --keep-fds 3 4"
+  },
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "actual_neural_scientific_child_dispatched": false,
+  "new_score_computed": false,
+  "qualifying_labels_read": false
+}
