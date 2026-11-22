@@ -2,6 +2,20 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 04:23 UTC: the full data proof47c137... remains complete and
+unchanged. Neural preparation15925 stopped before fitting because its manifest
+builder still read the old data directory for the separate replay proof. The
+failed preparation and its empty partial directories are preserved. The new
+single proof locator is used for admission, preparation and loading; full
+fixtures now keep different actual/stale proof files in separate directories.
+New neural owner24039/worker24317 is preparing under238 frozen files after39
+checks. New qualifying-bag25553 and own1726473 wait under265/299 frozen files
+after17/16 checks. Original math, budgets, guards and baseline are unchanged.
+No neural model or new score is admitted; own16 remains0.8603409488/0.8613420939,
+and0.85725 is unmet. The versioned future tree producer passes45 combined
+component checks, including the separate-proof regression.
+[Failure and active corrected chain](experiments/upstream-rbm400-proof-locator-recovery-runtime/verification.json).
+
 November22 04:12 UTC: the complete corrected data replay passed at04:09.
 Proof47c137371b06c02f7c840c3a8bd0c31755e6807ecd8bad3e5b5d65f19f3751d9
 covers both full query sets, all scalar/context operators, all group statistics,

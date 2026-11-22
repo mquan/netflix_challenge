@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T04:12:52.450629+00:00",
-  "display_time": "2026-11-22 04:12 UTC",
+  "observed": "2026-11-22T04:24:01.200065+00:00",
+  "display_time": "2026-11-22 04:23 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "single-CPU-proof-locator-neural-recovery",
+      "work": "Data replay remains complete; versioned neural preparation active after stale proof-path correction",
+      "state": "Full context proof47c137... remains valid. Previous neural prepare15925 failed before fitting on an old data-report proof path; failure and empty partial namespaces preserved. Admission/preparation/load and versioned tree producer now share the correct proof locator, with distinct actual/stale proof regression fixtures. Neural24039/24317 active with238 source files after39 checks; bag25553 and own1726473 wait with265/299 files after17/16 checks. Original full budgets/math/guards/baseline retained. Future tree components pass45 checks; no production tree study or new neural/recovered score admitted. Target unmet.",
+      "evidence": "experiments/upstream-rbm400-proof-locator-recovery-runtime/verification.json"
+    },
     {
       "work_id": "complete-full-context-replay-neural-active",
       "work": "Full corrected data replay complete; neural successor active",
