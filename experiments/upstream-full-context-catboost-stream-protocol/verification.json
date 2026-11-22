@@ -1,0 +1,21 @@
+{
+  "state": "complete_CPU_numerical_stream_component_checks_only",
+  "observed": "2026-11-22T03:17:50.173189+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_stream.py": "2cc6006d99230dbb59ef17e7a5b1f6e0f4b257ad725d52c44fbf498a1b9a2ab8",
+    "scripts/test_upstream_full_context_catboost_stream.py": "df16224cd021d379a0de8a88e1ee818649d4a8d2a27a96e0a89ce1579dd506cf"
+  },
+  "tests_passed": 4,
+  "checked_widths": [
+    713,
+    714,
+    863,
+    864
+  ],
+  "checked_ridge_populations": 10,
+  "block_boundary_fixture_rows": 8193,
+  "actual_production_data_admitted": false,
+  "models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned durable source-authenticated producer and Torch-isolated consumer, full population masks/training/study/replay/selection/qualifying bag/own18 remain required."
+}
