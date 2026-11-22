@@ -1,0 +1,41 @@
+{
+  "state": "verified_complete_actual_neural_preparation_and_live_first_full_scalar_training_phase",
+  "observed": "2026-11-22T04:29:58.026479+00:00",
+  "prepare_receipt_sha256": "761cf7bbcdf51c747a51d59bb4b6aee9a23f636e9966cda4a73a5b53d106e651",
+  "prepared_manifests": {
+    "scalar": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/manifest.json",
+      "bytes": 766120,
+      "sha256": "f1487760e65c8eb96366503946de5cd629f2e1f464944b84460c794beddb3111"
+    },
+    "latent": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-own-rbm400-latent-h128-mps-reference-v4/manifest.json",
+      "bytes": 767770,
+      "sha256": "b20bde68ca39da631ddca91c38c1169e8fe080e2243a17ffaed9100e50d907a2"
+    }
+  },
+  "actual_worker": {
+    "pid": 32127,
+    "ppid": 24039,
+    "pgid": 32127,
+    "state": "Rs",
+    "started": "Sat Nov 21 20:28:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar"
+  },
+  "original_scalar_and_latent_inputs": [
+    714,
+    864
+  ],
+  "original_context_counts": [
+    225,
+    375
+  ],
+  "original_folds": 5,
+  "original_seed_slots_per_fold": 3,
+  "original_max_epochs": 40,
+  "original_source_files": 238,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "epoch_or_fold_completion_not_proven_by_process_state": true,
+  "new_neural_or_recovered_score_claimed": false,
+  "qualifying_labels_read": false
+}
