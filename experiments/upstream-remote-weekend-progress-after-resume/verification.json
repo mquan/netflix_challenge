@@ -1,0 +1,53 @@
+{
+  "state": "inspected_newer_pushed_remote_training_progress_no_completed_return_admitted",
+  "observed": "2026-11-22T06:31:15.254866+00:00",
+  "remote_branch": "research/remote-weekend-execution",
+  "remote_commit": "9c9c1c7b27b1b01a9e3721a05c7bf5360734c0b6",
+  "original_progress_git_blob": "f139e39186631605d981d111f0aba300240ab4cc",
+  "original_progress_sha256": "aa5a28820ef7cbf72d1080143d2520f02aa013ca2333471decc8d815fa7e6c3a",
+  "remote_report_observed": "2026-11-22T05:34:37+00:00",
+  "remote_reported_training_hours_left": 32.42,
+  "jobs": {
+    "s3-rbm400pf": {
+      "reported_pid": 39673,
+      "reported_native_state": "full_original_native_training",
+      "reported_last_epoch": 4,
+      "original_epoch_budget": 15,
+      "reported_phase": "train_3->probe_3",
+      "completed_receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false
+    },
+    "s3-tx300r": {
+      "reported_pid": 39636,
+      "reported_native_state": "full_original_native_training",
+      "reported_last_epoch": 8,
+      "original_epoch_budget": 24,
+      "reported_phase": "train_3->probe_3",
+      "completed_receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false
+    },
+    "s3-rbm800p": {
+      "reported_pid": 39653,
+      "reported_native_state": "full_original_native_training",
+      "reported_last_epoch": 9,
+      "original_epoch_budget": 25,
+      "reported_phase": "train_3->probe_3",
+      "completed_receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false
+    }
+  },
+  "remote_side_resume_commit": "e52830bad2f1eddb81721ab7f01125aa1d45dbbe",
+  "remote_job_control_actions_performed_here": false,
+  "remote_live_processes_polled_here": false,
+  "complete_prediction_pairs_received": 0,
+  "independent_pair_admission_run": false,
+  "new_score_claimed": false,
+  "qualifying_outcomes_read": false,
+  "interpretation": "This is the latest pushed Git snapshot, not a current remote process observation. All jobs still lack full exported paired outputs and independent local verification."
+}
