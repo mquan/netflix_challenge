@@ -1,0 +1,55 @@
+{
+  "state": "verified_actual_MPS_first_fold_inner_selection_logs_all_three_seeds_pending_full_refits",
+  "observed": "2026-11-22T04:51:35.859985+00:00",
+  "actual_worker": {
+    "pid": 32127,
+    "ppid": 24039,
+    "pgid": 32127,
+    "state": "Rs",
+    "started": "Sat Nov 21 20:28:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar"
+  },
+  "frozen_plan_sha256": "53ad906b91e7f29edd8df73f7e382e2152e8898dfe98328caee02cc511121d47",
+  "log_prefix_bytes": 5809,
+  "log_prefix_sha256": "f3460e9a63e247f4bc541a7aa269d3d4ed72dd783071cf58ffcd2bfb1fda2f48",
+  "inner_pipeline_sha256": "59cb472c8df514acb51d09cf19f3f5d229957c503c521cfa81df269177d45d32",
+  "first_fold": 0,
+  "last_inner_epoch_records": {
+    "2026": {
+      "utc": "2026-11-22T04:42:36.454614+00:00",
+      "stage": "nn_epoch",
+      "seed": 2026,
+      "epoch": 10,
+      "inner_mse": 0.7380698414713573,
+      "chosen": 6,
+      "backend": "mps_float32"
+    },
+    "7": {
+      "utc": "2026-11-22T04:42:50.703572+00:00",
+      "stage": "nn_epoch",
+      "seed": 7,
+      "epoch": 15,
+      "inner_mse": 0.7386038433229773,
+      "chosen": 11,
+      "backend": "mps_float32"
+    },
+    "13": {
+      "utc": "2026-11-22T04:43:01.339306+00:00",
+      "stage": "nn_epoch",
+      "seed": 13,
+      "epoch": 11,
+      "inner_mse": 0.738523439773334,
+      "chosen": 7,
+      "backend": "mps_float32"
+    }
+  },
+  "chosen_counts_in_original_seed_order": [
+    6,
+    11,
+    7
+  ],
+  "inner_metric_is_not_complete_CV_or_recovered_score": true,
+  "full_refit_or_model_replay_not_established_by_this_log_check": true,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false
+}
