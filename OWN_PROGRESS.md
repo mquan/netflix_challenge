@@ -2,6 +2,19 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 06:21 UTC: four of five scalar folds have completed,
+with twelve fresh saved MPS models. The fourth selected epochs are[9,9,5];
+every output byte in its immutable receipt has been rehashed. Worker32127
+continues on the final scalar fold. Full scalar/latent replays and canonical
+comparison, selected NN qualifying bag and own17 audits remain pending.
+The tree owner66664/watchdog66674 are now live, waiting for the completed own17
+primary under364 frozen files after89 checks. It starts both full tree arms
+only if that primary misses the target. No tree model or new score is admitted.
+Development0.8588630884 and recovered0.8603409488/0.8613420939 are unchanged;
+strict0.85725 on both groups remains unmet.
+[Fourth completed scalar fold](experiments/upstream-rbm400-fourth-scalar-fold-complete/verification.json).
+[Reviewed live tree queue](OWN_FULL_CONTEXT_CATBOOST_OWNED_KNOWN_PROGRESS_V1.md).
+
 November22 05:48 UTC: three of five scalar outer folds are complete,
 with nine fresh saved MPS models. Selected epoch counts are[6,11,7], [9,5,5]
 and[5,8,6]; every output byte in the completed fold receipts has been rehashed.

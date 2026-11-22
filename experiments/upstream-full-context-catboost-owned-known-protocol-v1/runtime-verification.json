@@ -1,0 +1,32 @@
+{
+  "state": "verified_live_reviewed_conditional_owned_tree_owner_waiting_original_own17_primary",
+  "observed": "2026-11-22T06:20:00.211790+00:00",
+  "actual_owner": {
+    "pid": 66664,
+    "ppid": 1,
+    "pgid": 66664,
+    "state": "Ss",
+    "started": "Sat Nov 21 22:19:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_execution_v1.py --start"
+  },
+  "actual_watchdog": {
+    "pid": 66674,
+    "ppid": 66664,
+    "pgid": 66674,
+    "state": "Ss",
+    "started": "Sat Nov 21 22:19:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_execution_v1.py --watch 66664 --keep-fds 3 4"
+  },
+  "observed_status": {
+    "state": "waiting_complete_original_own17_primary_canonical_condition",
+    "observed": "2026-11-22T06:19:52.909594+00:00"
+  },
+  "execution_plan_sha256": "38654f755e5e8f621d9851c0180bef8635a4b1fdb16f6932ced42c426a7ade7f",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "frozen_source_files_verified": 364,
+  "complete_output_reserve_bytes": 2818572288,
+  "scientific_root_started": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "current_neural_worker_retained": 32127
+}

@@ -1,10 +1,12 @@
-# Remaining integration for the full tree execution owner
+# Owned tree execution implementation notes
 
 This is an implementation handoff for the existing full-context follow-up,
 not authorization to start early or a replacement for its complete scope.
-The neural/own17 chain retains priority. The source, pipeline and supervision
-components are implemented; the external execution owner and role worker
-still need to be written, tested and frozen before a production launch.
+The neural/own17 chain retains priority. Version1 now implements the external
+owner and role worker after89 checks and a364-file frozen review. The live
+conditional owner waits for the completed own17 primary; no tree fitting has
+started. The remaining design notes below document its phase/role contract.
+See [current queue evidence](experiments/upstream-full-context-catboost-owned-known-protocol-v1/runtime-verification.json).
 
 ## Fixed predecessor condition
 
@@ -90,9 +92,9 @@ physical/RSS samples and observed peaks; component fixtures do not prove them.
 
 The output budget must cover both complete arms, thirty saved-model slots in
 total, at the existing64MiB per-model maximum, all known and qualifying vectors,
-metadata, and staging/reserve. A conservative2GiB payload budget plus64MiB
-reserve covers the declared components; confirm the explicit inventory in the
-owner's frozen plan. Subtract only authenticated owned output bytes, counting
+metadata, and staging/reserve. Version1 conservatively reserves the complete2688MiB inventory, including
+all thirty maximum-size model slots, vectors, metadata and staging/reserve.
+The exact inventory is recorded in its frozen plan. Subtract only authenticated owned output bytes, counting
 an inode once; unknown files cannot reduce remaining-output reservation.
 An accounting failure must preserve a conservative complete reservation and
 stop the same frames. Never reset the swap baseline or relax caps to readmit.
