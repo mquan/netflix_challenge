@@ -1,0 +1,19 @@
+{
+  "state": "complete_durable_actual_CPU_model_save_and_independent_fold_replay_component_checks",
+  "observed": "2026-11-22T03:27:15.826006+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_artifacts.py": "1b25192db99e851aaf7713ac8dccfeaefb8630bb9c284b5a83369623cdf53bfc",
+    "scripts/test_upstream_full_context_catboost_artifacts.py": "ce59b7843f67102f1c12ecdefe5ca0aa361c3a7c41028ffc71f6f5ca2e9fa856",
+    "scripts/verify_upstream_full_context_catboost_fold.py": "bf7939769d359ace2cc209aa28b7c873ba2aadc027483d62e2b480ec4b3ffe93",
+    "scripts/test_verify_upstream_full_context_catboost_fold.py": "d6946908087b536fd25eb15907cc97eaaace397c0b50d6ee891e1c9c7e160918"
+  },
+  "combined_tree_component_tests_passed": 22,
+  "exclusive_FD_native_save_and_authenticated_reload_checked": true,
+  "native_failure_staging_preserved_and_retry_rejected": true,
+  "every_synthetic_actual_held_prediction_bit_reconstructed": true,
+  "changed_model_digest_slot_inventory_raw_operator_baseline_and_one_prediction_bit_rejected": true,
+  "production_study_admitted": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned complete source-authenticated full-data producer/consumer, both full studies and full operator/model/canonical replay, qualifying bag, own18 calibration and fixed audits remain required."
+}
