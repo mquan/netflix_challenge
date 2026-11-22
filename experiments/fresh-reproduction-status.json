@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T01:49:54.062210+00:00",
-  "display_time": "2026-11-22 01:50 UTC",
+  "observed": "2026-11-22T02:03:19.879103+00:00",
+  "display_time": "2026-11-22 02:03 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "local-rbm16-canonical-complete",
+      "work": "Own16 canonical recovered audit complete with a tiny gain",
+      "state": "The predeclared own16 primary improves both groups by only about0.0000003 to0.8603409488/0.8613420939. All65535 supports/17ridge equations/six frozen vectors and separate full source/model/canonical checks pass. Target0.85725 remains missed; development best0.8588630884 is unchanged. Learned-context extraction worker12216 is active under original owner87109; later CPUdata/neural/bag/own17 owners wait complete predecessor proofs.",
+      "evidence": "experiments/upstream-local-rbm-blend-deterministic-metal/independent-canonical-verification.json"
+    },
     {
       "work_id": "rbm400-complete-pair-own17-queue",
       "work": "Full RBM400 pair verified; own16 vectors frozen; own17 audit pipeline queued",
@@ -203,7 +209,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
+  "qualifying_verification_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
@@ -396,7 +402,7 @@
     "local_gpu_rbm_qualifying_completed_epochs": 15,
     "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
     "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
-    "local_rbm_latent_followup": "owned_full_extraction_and_CPU_data_queues_live_waiting_no_neural_study_yet",
+    "local_rbm_latent_followup": "actual_known_model_context_extraction_running_after_complete_RBM_pair_and_own16_canonical",
     "local_rbm_latent_owner": 87109,
     "local_rbm_latent_watchdog": 87113,
     "local_rbm_context_data_owner": 30414,
@@ -416,21 +422,22 @@
     "local_gpu_rbm_qualifying_replay_sha256": "677210ac00f53bfdb4a0aa2a61176f0cc33646eeea192525f614a84470d1babc",
     "local_rbm_own17_owner": 4412,
     "local_rbm_own17_watchdog": 4494,
-    "local_rbm_own17_state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay"
+    "local_rbm_own17_state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay",
+    "local_rbm_latent_worker": 12216
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603412616628533
+      "rmse": 0.8603409488199526
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613423892425344
+      "rmse": 0.8613420938772931
     }
   },
-  "latest_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
+  "latest_qualifying_verification_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
   "best_development_arm": "fixed_half_complete_trajectory_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -447,16 +454,18 @@
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
-  "latest_qualifying_verification_path": "experiments/upstream-own15-complete-trajectory-calibration/independent-canonical-verification.json",
-  "qualifying_narrative": "The predeclared own15 known-only simplex scores0.8603412616628533/0.8613423892425344, improving own14 by0.0000384724/0.0000257621. All15 original families,32767 simplex supports with actual KKT/objective verification,16ridge equations and six complete frozen vectors verify before the fixed recovered audit. The earlier qualifying-bag replay reopens all15 actual new neural models. Separate canonical verification rehashes the full source closure and reconstructs/scores all three fixed candidates. Apparent known-fit0.8586688834719848 is not nested CV. Both groups still miss0.85725; worse-group gap0.0040923892. Adaptive recovered evaluation, not official or untouched Test. Historical tree154 A/B caveat retained.",
+  "latest_qualifying_verification_path": "experiments/upstream-local-rbm-blend-deterministic-metal/independent-canonical-verification.json",
+  "qualifying_narrative": "The predeclared sixteen-family known-only simplex independently scores0.8603409488199526/0.8613420938772931, only0.000000312843/0.000000295365 better than own15. Both original full15-epoch RBM models and all full native/projection predictions replay on MPS. All65535 supports, actual coefficient KKT/objective,17ridge equations and six frozen vectors verify before outcomes. Separate canonical reconstruction, full inherited source rehash and compensated group scoring pass. Both groups still miss0.85725; gap on the worse group0.0040920938772931. Apparent known fitted blend scores are not nested CV. Adaptive community-recovered audit, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection; historical tree154 A/B caveat remains.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/upstream-own15-complete-trajectory-calibration/independent-recovered-audit.json",
-  "qualifying_benchmark_rule": "Original own15-simplex primary was declared and frozen before outcomes. Both full canonical groups improve the preceding own14 primary. Complete32767-support actualKKT/16equation/six-vector preaudit, original source/model bindings and separate canonical group scores pass. Neither fixed control replaces the primary; no qualifying outcome enters fitting or candidate selection.",
+  "latest_completed_qualifying_audit_path": "experiments/upstream-local-rbm-blend-deterministic-metal/independent-recovered-audit.json",
+  "qualifying_benchmark_rule": "The original local-rbm16-simplex primary was declared and frozen before outcomes. Its separate canonical full-group scores improve both preceding own15 groups. Neither fixed ridge10 nor preceding-primary control replaces it. Full65535-support actualKKT/17-equation/six-vector preaudit, original own15 lineage and complete new RBM15+15 actual-model query replays pass. No qualifying fitting or candidate selection.",
   "own330_qualifying_best": false,
   "complete13_qualifying_best": false,
   "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "own14_qualifying_best": false,
   "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
-  "own15_qualifying_best": true,
-  "last_score_status_observed": "2026-11-21T21:12:24.195523+00:00"
+  "own15_qualifying_best": false,
+  "last_score_status_observed": "2026-11-22T01:56:55.243095+00:00",
+  "preceding_own15_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
+  "local_rbm16_qualifying_best": true
 }

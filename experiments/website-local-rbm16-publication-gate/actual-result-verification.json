@@ -1,0 +1,30 @@
+{
+  "state": "complete_actual_full_source_and_original_local_RBM16_canonical_publication_admission",
+  "observed": "2026-11-22T02:03:23.984667+00:00",
+  "canonical_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
+  "queue_sha256": "958db8f3131e3db4ad57cbd317d7fa8ae58c87c5879d747b3fc554ea5591bd57",
+  "complete_RBM_pair_sha256": "3e8d2ecdbb40d0c953f98b24601c2e84a9353bb45ca23d74fea26797a814199a",
+  "all_inherited_source_model_and_vector_hashes_rechecked": true,
+  "all_six_metadata_bindings_and_frozen_vector_bytes_verified": true,
+  "primary_improves_both_preceding_groups": true,
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8603409488199526
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613420938772931
+    }
+  },
+  "both_groups_below_target": false,
+  "development_score_unchanged": true,
+  "qualifying_labels_read_for_publication": false,
+  "official_or_untouched_test": false,
+  "CPU_metadata_tests": 9,
+  "source_sha256": {
+    "scripts/own16_local_publication.py": "8a25047e150cc208c9ac464273e97f6060295395c98b2666e01c420511e9f998",
+    "scripts/test_own16_local_publication.py": "0d3c7adbb215e3ac6d0b7ec29f18bc0e692ad87ce84c7493a7d3d97f79806264",
+    "scripts/build_research_journey.py": "25395b9ebcfd532095497ab7fec4a184f8faedce4efb937554891225bbb026d1"
+  }
+}
