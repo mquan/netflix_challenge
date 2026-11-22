@@ -88,8 +88,8 @@ original5GiB compressor bound,4.5GiB admission bound,128MiB maximum swap growth,
 between three stable readmission samples. Record actual production family
 physical/RSS samples and observed peaks; component fixtures do not prove them.
 
-The output budget must cover both complete thirty-model inventories at the
-existing64MiB per-model maximum, all complete known and qualifying vectors,
+The output budget must cover both complete arms, thirty saved-model slots in
+total, at the existing64MiB per-model maximum, all known and qualifying vectors,
 metadata, and staging/reserve. A conservative2GiB payload budget plus64MiB
 reserve covers the declared components; confirm the explicit inventory in the
 owner's frozen plan. Subtract only authenticated owned output bytes, counting
