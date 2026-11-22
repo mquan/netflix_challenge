@@ -1,0 +1,18 @@
+{
+  "state": "complete_all_five_original_budget_RBM400_neural_folds_pending_actual_model_replay",
+  "arm": "scalar",
+  "manifest_sha256": "f1487760e65c8eb96366503946de5cd629f2e1f464944b84460c794beddb3111",
+  "fold_proof_sha256": {
+    "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/0.json": "78d521292c62a693dcbb761beedcf62f56c932f0a14d65313c0f52f8ff549654",
+    "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/1.json": "dd57d1459e855b799df15927f495db78c89e569aead10412c62f3dccf0e63fe6",
+    "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2.json": "f1ac9f1c494c9a4df7d582024dd3fda3da63127bae0f1f36211fb5e75455d1d3",
+    "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/3.json": "d3ab40c0b076a5be99073d185251426b8288740b3c43ee01780bac8d21dbe451",
+    "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/4.json": "ee958c043051050cd75cfd9ad1410299fe7b1535b8911bfeb485bfa467bfa151"
+  },
+  "all_five_folds_complete": true,
+  "all_three_seed_slots_each_fold": true,
+  "actual_MPS_fit": true,
+  "selected_zero_iteration_slots_retained": true,
+  "qualifying_labels_read": false,
+  "remaining": "Full independent actual-model/scaler/input/prediction replay and canonical known-only scoring"
+}

@@ -1,0 +1,21 @@
+{
+  "state": "verified_complete_actual_scalar_fit_all_five_folds_fifteen_saved_models_and_live_separate_replay",
+  "observed": "2026-11-22T07:05:24.291383+00:00",
+  "fit_completion_sha256": "d95fa3c8afa4d4d8870764cd80cb54cb48bfe08c27ad5f5979e42eb4140e4fec",
+  "owned_fit_wrapper_sha256": "2479f1018c734e596e008eee7f7390bc8102e6dbb3ee9738f5aeb17a83d73c45",
+  "actual_completed_scalar_folds": 5,
+  "actual_saved_MPS_models": 15,
+  "every_completed_fold_receipt_and_model_preprocessing_prediction_output_byte_rehashed": true,
+  "actual_replay_worker": {
+    "pid": 27425,
+    "ppid": 24039,
+    "pgid": 27425,
+    "state": "Rs",
+    "started": "Sat Nov 21 23:00:00 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase replay_scalar"
+  },
+  "independent_full_replay_complete": false,
+  "canonical_score_complete": false,
+  "new_development_or_recovered_score_claimed": false,
+  "qualifying_labels_read": false
+}
