@@ -1,0 +1,15 @@
+{
+  "error": "ValueError('Invalid float32 prediction: /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source/preds_3/s3-rbm400pf.qual.npy')",
+  "child": {
+    "pid": 39673,
+    "ppid": 39078,
+    "pgid": 39673,
+    "state": "Ss",
+    "started": "Sat Nov 21 09:50:37 2026",
+    "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --bootstrap 39078 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf",
+    "native_command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
+  },
+  "actual_child_RAM_preserved": false,
+  "no_automatic_retry": true,
+  "observed": "2026-11-22T19:57:01.513207+00:00"
+}

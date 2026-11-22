@@ -1,0 +1,22 @@
+{
+  "pid": 39673,
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm400pf",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "owner_sha256": "67f52ded9767c4a8071071cfd2803d0b66e5e6543de6ca3e183334dd2ee3c239",
+  "watchdog": {
+    "pid": 39671,
+    "ppid": 39078,
+    "pgid": 39671,
+    "state": "Ss",
+    "started": "Sat Nov 21 09:50:37 2026",
+    "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39078 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf"
+  }
+}

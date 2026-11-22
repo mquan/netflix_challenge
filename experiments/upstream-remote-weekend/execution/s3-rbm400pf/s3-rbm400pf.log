@@ -1,0 +1,39 @@
+[s3-rbm400pf]
+target = "rtg"
+RxConfig { hidden_type: Bipolar, visible_type: Softmax, temperature: 1.0, n_hidden: 400, n_epochs: 15, seed: 128, shuffle_users: true, init_sigma: 0.01, batch_size: 500, lr: 0.02, momentum: 0.9, weight_decay: 0.001, lr_bu: 0.001, wd_bu: 0.01, lr_but: 0.0005, wd_but: 0.01, cd_start: 1, cd_inc_every: 5, cd_inc_by: 1, cd_max: 5, use_conditional: true, r_include_pr_all: true, save_w: true, save_ufeat: false, n_factors: Some(50), n_freq_bins: 8, lr_bif: 0.0, wd_bif: 0.01 }
+train_3 => probe_3
+Epoch 01 | RMSE 0.93902
+Epoch 02 | RMSE 0.92531
+Epoch 03 | RMSE 0.91961
+Epoch 04 | RMSE 0.92066
+Epoch 05 | RMSE 0.91586
+Epoch 06 | RMSE 0.91721
+Epoch 07 | RMSE 0.91447
+Epoch 08 | RMSE 0.91287
+Epoch 09 | RMSE 0.91109
+Epoch 10 | RMSE 0.91153
+Epoch 11 | RMSE 0.91213
+Epoch 12 | RMSE 0.91279
+Epoch 13 | RMSE 0.91103
+Epoch 14 | RMSE 0.90928
+Epoch 15 | RMSE 0.90763
+probe_3 RMSE 0.90763
+Saved W matrix to preds_3/s3-rbm400pf.ifeat.train_3.npy
+fulltrain => qual
+Epoch 01 | RMSE 3.73061
+Epoch 02 | RMSE 3.73092
+Epoch 03 | RMSE 3.75453
+Epoch 04 | RMSE 3.72764
+Epoch 05 | RMSE 3.73219
+Epoch 06 | RMSE NaN
+Epoch 07 | RMSE NaN
+Epoch 08 | RMSE NaN
+Epoch 09 | RMSE NaN
+Epoch 10 | RMSE NaN
+Epoch 11 | RMSE NaN
+Epoch 12 | RMSE NaN
+Epoch 13 | RMSE NaN
+Epoch 14 | RMSE NaN
+Epoch 15 | RMSE NaN
+Saved W matrix to preds_3/s3-rbm400pf.ifeat.fulltrain.npy
+

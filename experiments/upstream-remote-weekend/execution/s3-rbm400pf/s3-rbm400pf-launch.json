@@ -1,0 +1,32 @@
+{
+  "job": "s3-rbm400pf",
+  "pid": 39673,
+  "started": "2026-11-21T17:50:37.254631+00:00",
+  "deadline": "2026-11-23T14:00:00+00:00",
+  "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm400pf",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "15",
+    "EPSAVE": "1",
+    "H": "400",
+    "HT": "p",
+    "LR": "0.02",
+    "NFACT": "50"
+  },
+  "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+  "preparation_sha256": "4891cd40c95799c732094652f73fa7010427d7f95a0239812b4b2b1227488e77",
+  "original_swap_baseline": {
+    "compressor_bytes": 11477909504,
+    "swap_used_bytes": 376837242.88
+  }
+}
