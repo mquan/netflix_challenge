@@ -1,0 +1,25 @@
+{
+  "state": "verified_retained_full_assembly_and_live_corrected_owned_replay_and_neural_successor",
+  "observed": "2026-11-22T03:49:10.745271+00:00",
+  "actual_processes": {
+    "replay_owner": "92207     1 Ss   Sat Nov 21 19:44:43 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_execution.py --start",
+    "actual_replay_worker": "92399 92207 Rs   Sat Nov 21 19:45:04 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_worker.py --phase verify",
+    "neural_owner": "94683     1 Ss   Sat Nov 21 19:47:38 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution_reference_v3.py --start"
+  },
+  "original_full_assembly_manifest_sha256": "3119fb2bc14de9703876c87022b0fa8a53cc42d38ca7bee7aedfcc3deba90ecd",
+  "all_seven_retained_outputs_rehashed": true,
+  "original_failure_sha256": "64702100e9ae299479ace1f9dfdb4afdc71b8f5beba1dc1e6f52516108a2c66e",
+  "original_failed_log_sha256": "7486164efbdd28bbdba29482c6106e1ef8e46ae987b4e9f485f753a2c227402d",
+  "root_cause": "Original verifier captured two additional original code-file records but passed the smaller base source declaration to the query reader; reader compared different key sets.",
+  "strict_full_scaled_original_failure_reproduced": true,
+  "corrected_full_scaled_replay_and_output_tamper_checked": true,
+  "recovery_source_files": 174,
+  "neural_successor_source_files": 221,
+  "recovery_CPU_checks": 7,
+  "neural_CPU_checks": 39,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "new_neural_models_fitted": 0,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false,
+  "remaining": "Complete corrected actual data replay; full neural studies; versioned selected qualifying bag and own17 contracts; fixed audits."
+}

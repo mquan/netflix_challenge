@@ -1,0 +1,23 @@
+{
+  "pid": 92399,
+  "phase": "verify",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_worker.py",
+    "--phase",
+    "verify"
+  ],
+  "execution_plan_sha256": "b8ae364f437090c525bf12a302276f1a97d6645e0f50a26a28fbe939a5555000",
+  "owner_sha256": "77094b64e481dca3cd0bc92f09777a5333b542f03de4b61a511b189eb670b32e",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "watchdog": {
+    "pid": 92210,
+    "ppid": 92207,
+    "pgid": 92210,
+    "state": "Ss",
+    "started": "Sat Nov 21 19:44:44 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_execution.py --watch 92207 --keep-fds 3 4"
+  },
+  "predecessor_sha256": {}
+}

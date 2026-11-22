@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_worker_reference_v2.py", line 36, in <module>
+    main(parser.parse_args().phase)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_worker_reference_v2.py", line 18, in main
+    result=verification.verify(guard);proof=data.REPORT/'independent-verification.json'
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_rbm400_context_data_reference_v2.py", line 136, in verify
+    with inputs.open_query(query,declaration,source_records,guard,retain_scalar=keep,latent=True) as reader:
+  File "/Users/quan/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_inputs_reference_v2.py", line 201, in open_query
+    raise ValueError('Complete source identity must remain unchanged through query use')
+ValueError: Complete source identity must remain unchanged through query use
