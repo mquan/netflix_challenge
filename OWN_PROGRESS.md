@@ -2,6 +2,17 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 01:50 UTC: both original fifteen-epoch RBM400 models are saved
+and independently replay every full native query and the known projection
+on MPS. The complete pair proof is3e8d2ecdbb40d0c953f98b24601c2e84a9353bb45ca23d74fea26797a814199a.
+The own16 known-only fit and all six vectors are frozen; independent coefficient/
+vector preaudit and fixed recovered audits remain pending. The new own17
+owner4412 is live, waiting for the fully verified selected NN-only pair, after
+all16 CPU checks and review. All173 frozen files and the byte-identical original
+baseline verify. No new numerical score or plot point.
+See [own17 plan](OWN_RBM400_OWN17_CALIBRATION_PLAN.md) and
+[complete RBM pair evidence](experiments/upstream-factored-rbm-gpu400-deterministic-metal/paired-verification.json).
+
 November22 01:38 UTC: RBM400 qualifying training has completed 14/15 epochs
 in the original worker19951. The selected neural qualifying-bag owner84612
 is now live, waiting for both full neural arms and known-only canonical
