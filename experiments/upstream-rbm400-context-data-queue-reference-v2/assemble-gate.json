@@ -1,0 +1,23 @@
+{
+  "pid": 55097,
+  "phase": "assemble",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_worker_reference_v2.py",
+    "--phase",
+    "assemble"
+  ],
+  "execution_plan_sha256": "e3f52046ba4be1d2152aa257c18ef467d306c55f44325f6757f491632d01120d",
+  "owner_sha256": "25f9be4d93b6ad629dadab8b01d3381d55ccbfae370770004ba185adf1c9f93c",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "watchdog": {
+    "pid": 46681,
+    "ppid": 46613,
+    "pgid": 46681,
+    "state": "Ss",
+    "started": "Sat Nov 21 18:49:20 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_execution_reference_v2.py --watch 46613 --keep-fds 3 4"
+  },
+  "predecessor_sha256": {}
+}

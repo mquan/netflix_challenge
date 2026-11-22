@@ -1,0 +1,26 @@
+{
+  "execution_plan_sha256": "2d8cae16eeb99c14f2b4ceabbda9c93f277d5409c29876c460355e258a8b18d8",
+  "qualifying_labels_read": false,
+  "models_fitted": 0,
+  "production_provider_admitted": false,
+  "observed": "2026-11-22T02:35:20.752509+00:00",
+  "actual_MPS_predictions_replayed": false,
+  "all_native_prediction_bits_match": false,
+  "state": "complete_retained_original_RBM400_extractions_authenticated_without_retraining",
+  "copies": {
+    "known": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-rbm400-reference-replay/known-extraction.json",
+      "bytes": 740724,
+      "sha256": "c0bb4742e51a7b43e736716b6356ab71f62b7f7a5af4f1cfc6bee3667bb511a4"
+    },
+    "qualifying": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/experiments/upstream-rbm400-reference-replay/qualifying-extraction.json",
+      "bytes": 741560,
+      "sha256": "6c5d79a057612d08f4be663edec5915ab886cc6817de683afcd0b3feac952957"
+    }
+  },
+  "cache_arrays_rewritten": false,
+  "models_retrained": false,
+  "original_failure_preserved": true,
+  "remaining": "Both complete actual saved-model/native/cache/query-feature replays required"
+}

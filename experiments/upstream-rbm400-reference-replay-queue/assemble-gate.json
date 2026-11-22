@@ -1,0 +1,27 @@
+{
+  "pid": 51849,
+  "phase": "assemble",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_reference_replay_worker.py",
+    "--phase",
+    "assemble"
+  ],
+  "execution_plan_sha256": "2d8cae16eeb99c14f2b4ceabbda9c93f277d5409c29876c460355e258a8b18d8",
+  "owner_sha256": "1d66eab0661e4ea73139ba36e97f9044302a6791ba91f5e049255f6b0c9043bb",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "watchdog": {
+    "pid": 36220,
+    "ppid": 36151,
+    "pgid": 36220,
+    "state": "Ss",
+    "started": "Sat Nov 21 18:34:59 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_reference_replay_execution.py --watch 36151 --keep-fds 3 4"
+  },
+  "predecessor_sha256": {
+    "experiments/upstream-rbm400-reference-replay/adoption.json": "74688e91e7d4da2b4ee2a4b5bcd39fd67cf6818a3a84393d4bc7d2e0c7e7a228",
+    "experiments/upstream-rbm400-reference-replay/known-independent-verification.json": "4138ad2d1ee8493fd5331872f5a5a40d0b6f7a210c88796efbaae4c0baceac2e",
+    "experiments/upstream-rbm400-reference-replay/qualifying-independent-verification.json": "87780b69871f5aee92b2e21e7c9046dc6bf3479f498616437321978ab5b380fb"
+  }
+}
