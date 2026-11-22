@@ -1,10 +1,10 @@
 {
- "observed": "2026-11-22T15:34:59+00:00",
- "training_hours_left": 22.42,
- "native_process": "PID STARTED                       ELAPSED      TIME    RSS STAT COMMAND\n39636 Sat Nov 21 09:50:36 2026     21:44:23 607:53.87 11052528 Rs   ./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3\n39653 Sat Nov 21 09:50:36 2026     21:44:23 682:23.59 2832064 Rs   ./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3\n39673 Sat Nov 21 09:50:37 2026     21:44:22 703:32.76 2928592 Rs   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
- "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 39%",
- "swap": "total = 14336.00M  used = 13299.56M  free = 1036.44M  (encrypted)",
- "disk_free_gib": 179.5,
+ "observed": "2026-11-22T16:35:01+00:00",
+ "training_hours_left": 21.42,
+ "native_process": "PID STARTED                       ELAPSED      TIME    RSS STAT COMMAND\n39636 Sat Nov 21 09:50:36 2026     22:44:25 654:22.21 16066512 Rs   ./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3\n39653 Sat Nov 21 09:50:36 2026     22:44:25 736:39.47 6234800 Rs   ./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3\n39673 Sat Nov 21 09:50:37 2026     22:44:24 758:28.15 2300496 Ss   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+ "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 48%",
+ "swap": "total = 14336.00M  used = 13563.56M  free = 772.44M  (encrypted)",
+ "disk_free_gib": 179.3,
  "jobs": {
   "s3-rbm400pf": {
    "tree": "upstream-remote-weekend-r8",
@@ -46,32 +46,32 @@
     "workers": {
      "39635": {
       "bytes": 27262976.0,
-      "rss_bytes": 17203200,
+      "rss_bytes": 17219584,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39082 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r"
      },
      "39636": {
       "bytes": 54975581388.8,
-      "rss_bytes": 11745017856,
+      "rss_bytes": 15845572608,
       "command": "./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3"
      },
      "39652": {
       "bytes": 27053260.8,
-      "rss_bytes": 17104896,
+      "rss_bytes": 17088512,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39079 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p"
      },
      "39653": {
       "bytes": 11059540787.2,
-      "rss_bytes": 2990391296,
+      "rss_bytes": 6288097280,
       "command": "./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3"
      },
      "39671": {
-      "bytes": 27158118.4,
+      "bytes": 27262976.0,
       "rss_bytes": 16973824,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39078 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf"
      },
      "39673": {
       "bytes": 8697308774.4,
-      "rss_bytes": 2921119744,
+      "rss_bytes": 2238758912,
       "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
      },
      "39054": {
@@ -101,7 +101,7 @@
      },
      "39078": {
       "bytes": 28521267.2,
-      "rss_bytes": 24297472,
+      "rss_bytes": 25821184,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39057": {
@@ -130,8 +130,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/driver.log"
      },
      "39079": {
-      "bytes": 28835840.0,
-      "rss_bytes": 24838144,
+      "bytes": 28521267.2,
+      "rss_bytes": 25608192,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39061": {
@@ -161,7 +161,7 @@
      },
      "39082": {
       "bytes": 28626124.8,
-      "rss_bytes": 25772032,
+      "rss_bytes": 26247168,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39069": {
@@ -181,17 +181,17 @@
      }
     },
     "memory": {
-     "compressor_bytes": 56288739328,
-     "swap_used_bytes": 13970765250.56
+     "compressor_bytes": 47227125760,
+     "swap_used_bytes": 14222423490.56
     },
-    "observed": "2026-11-22T15:34:31.322917+00:00"
+    "observed": "2026-11-22T16:34:45.694815+00:00"
    },
-   "epoch_lines": 22,
-   "last_epoch": 7,
+   "epoch_lines": 23,
+   "last_epoch": 8,
    "phase": "fulltrain->qual",
    "log_tail": [
-    "Epoch 06 | RMSE NaN",
-    "Epoch 07 | RMSE NaN"
+    "Epoch 07 | RMSE NaN",
+    "Epoch 08 | RMSE NaN"
    ],
    "receipt": false,
    "incomplete": false,
@@ -249,32 +249,32 @@
     "workers": {
      "39635": {
       "bytes": 27262976.0,
-      "rss_bytes": 17203200,
+      "rss_bytes": 17219584,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39082 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r"
      },
      "39636": {
       "bytes": 54975581388.8,
-      "rss_bytes": 11044601856,
+      "rss_bytes": 15712714752,
       "command": "./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3"
      },
      "39652": {
       "bytes": 27053260.8,
-      "rss_bytes": 17055744,
+      "rss_bytes": 17088512,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39079 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p"
      },
      "39653": {
       "bytes": 11059540787.2,
-      "rss_bytes": 2816098304,
+      "rss_bytes": 6264373248,
       "command": "./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3"
      },
      "39671": {
-      "bytes": 27158118.4,
-      "rss_bytes": 16957440,
+      "bytes": 27262976.0,
+      "rss_bytes": 16973824,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39078 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf"
      },
      "39673": {
       "bytes": 8697308774.4,
-      "rss_bytes": 2940420096,
+      "rss_bytes": 2211479552,
       "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
      },
      "39054": {
@@ -304,7 +304,7 @@
      },
      "39078": {
       "bytes": 28521267.2,
-      "rss_bytes": 24100864,
+      "rss_bytes": 25821184,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39057": {
@@ -333,8 +333,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/driver.log"
      },
      "39079": {
-      "bytes": 28835840.0,
-      "rss_bytes": 24920064,
+      "bytes": 28730982.4,
+      "rss_bytes": 25608192,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39061": {
@@ -363,8 +363,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/driver.log"
      },
      "39082": {
-      "bytes": 28730982.4,
-      "rss_bytes": 25706496,
+      "bytes": 28521267.2,
+      "rss_bytes": 26296320,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39069": {
@@ -384,17 +384,17 @@
      }
     },
     "memory": {
-     "compressor_bytes": 55297114112,
-     "swap_used_bytes": 13945599426.56
+     "compressor_bytes": 47326674944,
+     "swap_used_bytes": 14222423490.56
     },
-    "observed": "2026-11-22T15:34:54.109131+00:00"
+    "observed": "2026-11-22T16:34:39.235769+00:00"
    },
-   "epoch_lines": 41,
-   "last_epoch": 17,
+   "epoch_lines": 44,
+   "last_epoch": 20,
    "phase": "fulltrain->qual",
    "log_tail": [
-    "Epoch 16 | RMSE 3.73312",
-    "Epoch 17 | RMSE 3.73364"
+    "Epoch 19 | RMSE 3.73422",
+    "Epoch 20 | RMSE 3.73856"
    ],
    "receipt": false,
    "incomplete": false,
@@ -445,32 +445,32 @@
     "workers": {
      "39635": {
       "bytes": 27262976.0,
-      "rss_bytes": 17203200,
+      "rss_bytes": 17219584,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39082 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r"
      },
      "39636": {
       "bytes": 54975581388.8,
-      "rss_bytes": 11628625920,
+      "rss_bytes": 16025223168,
       "command": "./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3"
      },
      "39652": {
       "bytes": 27053260.8,
-      "rss_bytes": 17104896,
+      "rss_bytes": 17088512,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39079 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p"
      },
      "39653": {
       "bytes": 11059540787.2,
-      "rss_bytes": 2954084352,
+      "rss_bytes": 6319046656,
       "command": "./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3"
      },
      "39671": {
-      "bytes": 27158118.4,
+      "bytes": 27262976.0,
       "rss_bytes": 16973824,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --watch 39078 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf"
      },
      "39673": {
       "bytes": 8697308774.4,
-      "rss_bytes": 2880749568,
+      "rss_bytes": 2274836480,
       "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
      },
      "39054": {
@@ -499,8 +499,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/driver.log"
      },
      "39078": {
-      "bytes": 28626124.8,
-      "rss_bytes": 24248320,
+      "bytes": 28521267.2,
+      "rss_bytes": 25772032,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r8/source --job s3-rbm400pf --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39057": {
@@ -529,8 +529,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/driver.log"
      },
      "39079": {
-      "bytes": 28835840.0,
-      "rss_bytes": 24526848,
+      "bytes": 29045555.2,
+      "rss_bytes": 25657344,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39061": {
@@ -559,8 +559,8 @@
       "command": "tee -a /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/driver.log"
      },
      "39082": {
-      "bytes": 28835840.0,
-      "rss_bytes": 25772032,
+      "bytes": 28626124.8,
+      "rss_bytes": 26247168,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39069": {
@@ -580,17 +580,17 @@
      }
     },
     "memory": {
-     "compressor_bytes": 55419781120,
-     "swap_used_bytes": 13945599426.56
+     "compressor_bytes": 46926200832,
+     "swap_used_bytes": 14222423490.56
     },
-    "observed": "2026-11-22T15:34:42.271881+00:00"
+    "observed": "2026-11-22T16:34:55.774881+00:00"
    },
-   "epoch_lines": 34,
-   "last_epoch": 9,
+   "epoch_lines": 37,
+   "last_epoch": 12,
    "phase": "fulltrain->qual",
    "log_tail": [
-    "Epoch 08 | RMSE 3.72024",
-    "Epoch 09 | RMSE 3.72063"
+    "Epoch 11 | RMSE 3.72890",
+    "Epoch 12 | RMSE 3.72885"
    ],
    "receipt": false,
    "incomplete": false,
