@@ -1,0 +1,25 @@
+{
+  "state": "complete_whole_family_guard_readmission_and_lane_watchdog_component_checks_only",
+  "observed": "2026-11-22T05:48:20.397831+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_supervision.py": "0f098521a5c9bfb6a0e9d1f051e97805908c339c4a37920e69e1d51a90f03f08",
+    "scripts/test_upstream_full_context_catboost_supervision.py": "bc5f03056c3a699ba732fa28f002dae8aa34f57909325f5b522935c86ac62d0b",
+    "OWN_FULL_CONTEXT_CATBOOST_SUPERVISION_PROGRESS.md": "dfa26111603edb8c4a915eaadd91ecd32cc4483ec77edd03c3732f9303cfec7a"
+  },
+  "combined_tree_component_checks_passed": 76,
+  "duration_seconds": 54.723,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p 'test*upstream_full_context_catboost*.py'",
+  "actual_dedicated_group_SIGSTOP_SIGCONT_same_PID_objects_local_batch_and_RNG_checked": true,
+  "resource_samples_in_frame_resume_fixture_are_synthetic": true,
+  "production_optimizer_resume_tested": false,
+  "actual_inherited_POSIX_lane_lock_retention_until_original_helper_terminal_checked": true,
+  "three_consecutive_full_reservations_and_failure_reset_checked": true,
+  "baseline_replacement_and_insufficient_remaining_output_reservation_rejected": true,
+  "uncertain_or_missing_current_pointer_keeps_previously_captured_live_family": true,
+  "original_observer_scope_and_caps_unchanged": true,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "production_resource_peak_established": false,
+  "qualifying_labels_read": false,
+  "remaining": "Full external owner/phase/role integration and frozen review; full paired tree studies/replays/selection; selected qualifying bag/replay and own18 fixed audits after original conditional start."
+}
