@@ -1,0 +1,25 @@
+{
+  "state": "reviewed_unexecuted_context_input_and_complete_data_assembly_source_checkpoint",
+  "observed": "2026-11-22T00:04:35.353776+00:00",
+  "source_sha256": {
+    "scripts/upstream_rbm400_context_inputs.py": "bf27ea99ede2b030f5ca4d9a8781df2c5944462686629541913af5749bbdde8f",
+    "scripts/test_upstream_rbm400_context_inputs.py": "3ba3fb251679957db900db08354ee8cfc8ff1162d974e240bdbc762a79a05aac",
+    "scripts/upstream_rbm400_context_data.py": "a431fd12539b81c2f00401fddf0bae01b7678345235b7d719532a29ac067ee12",
+    "scripts/test_upstream_rbm400_context_data.py": "547448e9568b1e674717a5436bf2a1936e4f7e574df36e96d6319ba023640a7a",
+    "OWN_RBM400_CONTEXT_DATA_PROGRESS.md": "843f0e8ecc04cb0952ab751a332e0c2f3985b752a68400b3bbfb0f6fbfdfafbe"
+  },
+  "test_count": 11,
+  "test_exit_code": 0,
+  "test_log_sha256": "501cfde9a9c7e3334fddbf06212caeedd5f3e0f24493a482ce2bf4a6448b5064",
+  "reviewer": "/root/refit_checkpoint_review",
+  "independent_review": "clean",
+  "review_scope": "Source/full-width synthetic operator, paired-alias, group-statistics, held-label and immutable-copy checks only. Independent full-data verifier and ownedCPUqueue remain unimplemented; no actualsource/admission/assembly run.",
+  "actual_MPS_tested": false,
+  "production_models_fitted": 0,
+  "production_data_admission_run": false,
+  "production_provider_admitted": false,
+  "qualifying_labels_read": false,
+  "original_training_source_closure_unchanged": true,
+  "own16_source_closure_unchanged": true,
+  "active_extraction_source_closure_unchanged": true
+}

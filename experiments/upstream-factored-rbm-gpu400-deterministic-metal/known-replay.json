@@ -1,0 +1,80 @@
+{
+  "execution_plan_sha256": "06842568307a311c9ec2c1ebc4fde4c73c734ad8301a2b2ee8ee7f1f227a48ea",
+  "qualifying_labels_read": false,
+  "recovered_outcome_paths_read": false,
+  "producer_pid": 16227,
+  "observed": "2026-11-22T00:10:57.483086+00:00",
+  "state": "complete_independent_own_gpu_rbm_phase_actual_model_and_all_native_queries",
+  "phase": "known",
+  "fit_sha256": "8b16fc52e636986b4086df1dff6121bc0af36f19c0802efcc8d3443e47a8b537",
+  "data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+  "epoch_sha256": {
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-01.json": "9e8711e979be05c69a435d4e3b6b9b062ed1e1531153689182d6d93942521a9a",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-02.json": "2effd774527415d80cb90940e7acdf1dc6e4e2376c29e315f93e64be5878e0ec",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-03.json": "2074b7a21a18e9007edd83f7468c06a2acb87e2a87ea749b1240a985936e79ff",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-04.json": "5f8877a2af031d42eeeaba26820e5df201db59c691da57837151473030d981f1",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-05.json": "c387c5cded39f3a2d63e8125305899f5ea2b3408e90931107eb3e646553e7adb",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-06.json": "82f91fad0a7c8b6360e4ae16b3f0ef833fa4a5f1ed65acac174858bec6894714",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-07.json": "8943f84d6d54019b0f2d168b8d9ec05d2b65650916fc712c5446508d9210c5bb",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-08.json": "c86f7252af20fb4bd2eb47df8f415bb0d3d73694ebe074521832b55d941fce00",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-09.json": "2d7799140996b1e565b02812cc2bd9d8e3f62da1024ee684a5106c3f88717c3b",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-10.json": "a8d933714ec48858e7bb9759b5f71c6979e8c7a21a097efd4a454be227460d51",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-11.json": "f76e51e164610a1328a4d04725994d3843728bc3d2b168569b9ca1651d67d669",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-12.json": "d375bfb8395c95d09bf9a6149bad9c8caf85041bb7121d6cac87ce6774d913a2",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-13.json": "43562492277876b688ecb93268bd1deb12617b2f226f24401220ed0ade2c5448",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-14.json": "37a1fb34ccf78f1f815fc9fc9a1d25f639c502783631be05da5a76685886d5dc",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-epoch-15.json": "b32a298b2b2365e22e56881fe146bbf204a9b2a55eb5b477391eac1f1c1d8304"
+  },
+  "native_rows": 1760494,
+  "all_native_prediction_bits_match": true,
+  "known_projection_bits_match": true,
+  "actual_model_payloads": {
+    "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known.pt": {
+      "sha256": "38c0675e7ef868bc7eb8c42befa731e771b13a9a569e86c32934e174c4258c46",
+      "bytes": 387560525,
+      "identity": [
+        16777233,
+        56248111,
+        387560525,
+        1795306026132035411,
+        1795306026133214109
+      ]
+    },
+    "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known-native.npy": {
+      "sha256": "3bee3a993cc39b5b2d240317a5c0aef75de824794b5846508ee411c2be9a2019",
+      "bytes": 7042104,
+      "identity": [
+        16777233,
+        56249200,
+        7042104,
+        1795306124066131939,
+        1795306124067625342
+      ]
+    },
+    "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known.npy": {
+      "sha256": "b85617beed19c6233338ab83b5019429ff9775c6f07e9ffa63aaee7826a83ee2",
+      "bytes": 4512784,
+      "identity": [
+        16777233,
+        56249203,
+        4512784,
+        1795306124082321296,
+        1795306124083661784
+      ]
+    }
+  },
+  "device": "mps",
+  "configuration": {
+    "hidden": 400,
+    "factors": 50,
+    "epochs": 15,
+    "batch_users": 500,
+    "seed": 128,
+    "lr": 0.02,
+    "momentum": 0.9,
+    "decay": 0.001,
+    "lr_bu": 0.001,
+    "lr_but": 0.0005,
+    "tile_rows": 16384
+  }
+}
