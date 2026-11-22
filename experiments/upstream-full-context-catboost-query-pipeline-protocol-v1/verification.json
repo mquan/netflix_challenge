@@ -1,0 +1,29 @@
+{
+  "state": "complete_selected_tree_query_pipeline_component_checks_pending_owned_controller_and_real_execution",
+  "observed": "2026-11-22T07:17:28.813267+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_bag_pipeline_v1.py": "2aa673e051af9d771b5e805deb8ce6c7aab70ca5ab45ef3dd8860aeaef0c56eb",
+    "scripts/test_upstream_full_context_catboost_bag_pipeline_v1.py": "9653c545131638133ce4eb72233b500eec56f8d30fba93b6dba5224004fd799e",
+    "OWN_FULL_CONTEXT_CATBOOST_QUERY_PIPELINE_PROGRESS_V1.md": "5c0b303daeeb2ea80e3c247bc8c303e3613554f0b9759b13e8131793122c8c98",
+    "experiments/upstream-full-context-catboost-selected-bag-protocol-v1/verification.json": "e1cca60f31e915d568cd6b2a9da7365aa3f1d0a2b2df290904d96b782a746745"
+  },
+  "combined_tree_component_checks_passed": 104,
+  "duration_seconds": 78.46,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p '*test*upstream_full_context_catboost*.py' -v",
+  "test_exit_code": 0,
+  "new_actual_source_lifecycle_checks": 4,
+  "scientific_pipeline_bodies_and_data_admission_mocked": true,
+  "actual_dedicated_process_group_and_Torch_source_pipe": true,
+  "actual_parent_reaped_zero_exit_before_fixture_publication": true,
+  "nonzero_exit_after_complete_EOF_rejected": true,
+  "source_changed_authorization_rejected": true,
+  "live_source_handle_and_channels_preserved_on_missing_authorization": true,
+  "logical_metadata_and_file_hashes_distinct": true,
+  "existing_known_owner_frozen_sources_verified": 364,
+  "known_owner_plan_sha256": "38654f755e5e8f621d9851c0180bef8635a4b1fdb16f6932ced42c426a7ade7f",
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_outcomes_read": false,
+  "production_score_established": false,
+  "remaining": "Owned qualifying controller/source bootstrap/resource gates/final admission; full real pair inference/replay; own18 full calibration, independent preaudit and fixed recovered canonical audits."
+}

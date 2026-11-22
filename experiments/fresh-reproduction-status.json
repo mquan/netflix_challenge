@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T07:07:56.851452+00:00",
-  "display_time": "2026-11-22 07:07 UTC",
+  "observed": "2026-11-22T07:33:11.529682+00:00",
+  "display_time": "2026-11-22 07:33 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,18 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "owned-complete-tree-query-pair-queued",
+      "work": "Full selected-tree qualifying controller reviewed and queued; neural replay active",
+      "state": "Owner75543/watchdog75552 live waiting both complete known tree arms and known-only selection under383 frozen files after119 checks. Full prepare/infer/replay/admit pipeline preserves original whole-family policy and every original fold/seed/row. Known-tree owner66664/watchdog66674 unchanged364-file snapshot waits own17 primary. Scalar neural replay27425/owner24039 remains active after15 models fit; latent, NN bag and own17 pending. No new score; strict0.85725 target on both groups remains unmet. Own18 still pending.",
+      "evidence": "experiments/upstream-full-context-catboost-owned-bag-protocol-v1/runtime-verification.json"
+    },
+    {
+      "work_id": "remote-weekend-0634-training-snapshot",
+      "work": "Remote pushed report advances all three original training jobs; no returned pair",
+      "state": "Latest inspected Git reportaa3eac9 observed06:34UTC: TX30012/24, RBM80012/25, RBM4006/15, all known train_3->probe_3. No completed receipt/export/archive/upload. Snapshot only; no current remote process poll, remote control or admitted pair. No new score.",
+      "evidence": "experiments/upstream-remote-weekend-progress-0634/verification.json"
+    },
     {
       "work_id": "complete-scalar-fit-and-live-independent-replay",
       "work": "All five scalar folds fit; actual independent model replay active",

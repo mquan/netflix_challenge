@@ -1,0 +1,36 @@
+{
+  "state": "verified_live_owned_selected_tree_pair_owner_waiting_original_known_selection",
+  "observed": "2026-11-22T07:32:24.950806+00:00",
+  "owner": {
+    "pid": 75543,
+    "ppid": 1,
+    "pgid": 75543,
+    "state": "Ss",
+    "started": "Sat Nov 21 23:31:52 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_bag_execution_v1.py --start"
+  },
+  "watchdog": {
+    "pid": 75552,
+    "ppid": 75543,
+    "pgid": 75552,
+    "state": "Ss",
+    "started": "Sat Nov 21 23:31:52 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_bag_execution_v1.py --watch 75543 --keep-fds 3 4"
+  },
+  "status": {
+    "state": "waiting_both_complete_tree_arms_and_known_only_selection",
+    "observed": "2026-11-22T07:32:22.485540+00:00"
+  },
+  "frozen_source_count": 383,
+  "execution_plan_sha256": "dea2de80dbbdbafc5c0cbbf7842710bc0ee645b5197e23a210990984670c5365",
+  "review_sha256": "988df4d34eeb1cd232a489162e6d8329d9fd9f37fe5e7667907071402f95b542",
+  "original_known_owner_frozen_source_count": 364,
+  "original_known_owner_plan_sha256": "38654f755e5e8f621d9851c0180bef8635a4b1fdb16f6932ced42c426a7ade7f",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "test_count": 119,
+  "production_scientific_root_started": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "production_score_established": false,
+  "remaining": "Complete neural studies/NN bag/own17 and conditional known-tree studies precede actual full qualifying tree pair and own18 audits."
+}
