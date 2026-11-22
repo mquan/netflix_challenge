@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T04:41:53.538965+00:00",
-  "display_time": "2026-11-22 04:41 UTC",
+  "observed": "2026-11-22T05:18:05.810962+00:00",
+  "display_time": "2026-11-22 05:18 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-scalar-two-complete-folds",
+      "work": "Two complete scalar folds and six fresh saved MPS models; training continues",
+      "state": "Actual scalar folds0/1 complete with selected epochs[6,11,7]/[9,5,5]; every frozen fold output byte rehashed. Worker32127 remains live under owner24039. Three scalar folds, complete latent study, independent replays/canonical comparison, qualifying bag and own17 audits remain pending. Development0.8588630884 and recovered0.8603409488/0.8613420939 unchanged; target0.85725 on both groups unmet. Tree follow-up components pass61 combined plus2 focused actual-model inference checks on synthetic sources; no production tree study admitted.",
+      "evidence": "experiments/upstream-rbm400-second-scalar-fold-complete/verification.json"
+    },
     {
       "work_id": "first-complete-context-scalar-phase-live",
       "work": "Actual neural preparation complete; full scalar training phase live",
@@ -459,7 +465,15 @@
     "local_rbm_own17_owner": 4412,
     "local_rbm_own17_watchdog": 4494,
     "local_rbm_own17_state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay",
-    "local_rbm_latent_worker": 12216
+    "local_rbm_latent_worker": 12216,
+    "current_neural_observation": "2026-11-22T05:18:05.810962+00:00",
+    "current_neural_worker_pid": 32127,
+    "current_neural_worker_actual_process": "32127 Rs   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar",
+    "current_scalar_completed_folds": 2,
+    "current_scalar_saved_models": 6,
+    "current_neural_state": "actual_full_scalar_fit_live_two_of_five_folds_complete_pending_full_replay",
+    "current_qualifying_bag_state": "waiting_both_complete_neural_replays_and_known_canonical_selection",
+    "current_own17_state": "waiting_complete_selected_matched_neural_pair_and_full_qualifying_replay"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

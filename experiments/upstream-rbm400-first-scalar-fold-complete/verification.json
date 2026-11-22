@@ -1,0 +1,24 @@
+{
+  "state": "verified_actual_first_scalar_fold_receipt_and_all_saved_output_bytes_pending_full_model_replay",
+  "observed": "2026-11-22T04:54:04.677101+00:00",
+  "actual_worker": {
+    "pid": 32127,
+    "ppid": 24039,
+    "pgid": 32127,
+    "state": "Rs",
+    "started": "Sat Nov 21 20:28:18 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar"
+  },
+  "fold_receipt_sha256": "78d521292c62a693dcbb761beedcf62f56c932f0a14d65313c0f52f8ff549654",
+  "chosen_iterations": [
+    6,
+    11,
+    7
+  ],
+  "actual_saved_models": 3,
+  "every_frozen_fold_output_byte_rehashed": true,
+  "complete_original_scalar_folds_required": 5,
+  "full_model_replay_and_canonical_score_pending": true,
+  "new_neural_or_recovered_score_claimed": false,
+  "qualifying_labels_read": false
+}

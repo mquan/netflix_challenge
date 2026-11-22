@@ -1,0 +1,23 @@
+{
+  "state": "complete_independent_full_arm_tree_replay_and_canonical_component_checks_only",
+  "observed": "2026-11-22T05:11:06.428507+00:00",
+  "source_sha256": {
+    "scripts/verify_upstream_full_context_catboost_study.py": "adf3149da184bd0d06dbc57fd045a6b5659f17b39cf928cb7ab9fc5114f6ebe1",
+    "scripts/test_verify_upstream_full_context_catboost_study.py": "0e78282f66bb63bafc3bad2248e6a0da9efa25f11acf34f08df23950264fc851",
+    "scripts/upstream_full_context_catboost_canonical.py": "ea2af92b59f42166b5da764850c01b3f344c967f7da5495c972ff655a3ac094e",
+    "scripts/test_upstream_full_context_catboost_canonical.py": "ecb9db49e21a89bc560c3c05c141ab1ec6270905d3f9917b2d230b949e82e5ae",
+    "OWN_FULL_CONTEXT_CATBOOST_REPLAY_PROGRESS.md": "7edbb5ee9be7127881ecd437ffcee0610421b474dccb3c495ab0ea5eb9457881"
+  },
+  "combined_tree_component_checks_passed": 54,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p 'test*upstream_full_context_catboost*.py' -v",
+  "test_duration_seconds": 36.568,
+  "actual_small_CPU_models_fitted_saved_reloaded_and_all_five_fold_predictions_replayed": true,
+  "full_ten_ridge_equations_and_coefficient_bits_checked": true,
+  "canonical_float64_reclip_and_compensated_accumulation_checked": true,
+  "source_ownership_and_raw_stream_boundary_are_synthetic": true,
+  "fixture_known_rows": 20,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned controller/roles/exit/resource gates; full original paired studies/replays/canonical selection; selected qualifying bag/replay and own18 fixed audits."
+}
