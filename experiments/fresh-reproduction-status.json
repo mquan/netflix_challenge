@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T00:18:46.760905+00:00",
-  "display_time": "2026-11-22 00:18 UTC",
+  "observed": "2026-11-22T01:16:44.634337+00:00",
+  "display_time": "2026-11-22 01:16 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -10,9 +10,15 @@
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
     {
+      "work_id": "rbm400-owned-neural-queue",
+      "work": "Owned full-budget scalar and learned-context neural comparison queued",
+      "state": "Actualqualifyingworker19951 isactiveat11/15epochs;known15savedmodelandallnative/projectedbitsverified. Neuralowner37638/watch37712 islivewaitingcompleteCPUdata+independentreplay. All38CPUchecks,cleanreview,157frozenfilesandbyte-identicaloriginalbaselineverify. Originalfivefolds/threeseeds/max40/pat4/b8192/AdamW/ridge1000 preserved. Actualneuralfits,canonicalknownscores/selection,selectedQbagandown17auditsremainpending. No newscore.",
+      "evidence": "experiments/upstream-rbm400-neural-execution-protocol/runtime-verification.json"
+    },
+    {
       "work_id": "rbm400-known-model-replayed",
       "work": "Complete RBM400 known model saved and independently replayed",
-      "state": "All15known epochs complete; actual saved model replays every1760494 native query prediction and the1128164-row known projection bitwise on MPS. Qualifying fitting is active at1/15completed epochs. Originalfullrecipe,source,baseline andcaps unchanged. No fullpairedprovider or newscoreyet.",
+      "state": "All15known epochs complete; actualsavedmodel replays every1760494nativequerypredictionand1128164knownprojection bitwiseonMPS. Qualifyingfitactiveat11/15completeepochs. Originalrecipe/source/baseline/capsunchanged. No completepairedprovider ornewscoreyet.",
       "evidence": "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-replay.json"
     },
     {
@@ -198,7 +204,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-22T00:18:46.760905+00:00",
+    "observed": "2026-11-22T01:16:44.634337+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -339,11 +345,19 @@
     "complete_trajectory_bag_worker": null,
     "own15_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
     "factored_rbm_latest_observation": {
-      "observed": "2026-11-22T00:18:46.760905+00:00",
+      "observed": "2026-11-22T01:16:44.634337+00:00",
       "status": {
         "state": "fit_qualifying",
         "pid": 19951,
-        "observed": "2026-11-22T00:18:46.680451+00:00"
+        "observed": "2026-11-22T01:16:43.021392+00:00"
+      },
+      "worker": {
+        "pid": 19951,
+        "ppid": 41101,
+        "pgid": 19951,
+        "state": "Rs",
+        "started": "Sat Nov 21 16:11:19 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
       },
       "owner": {
         "pid": 41101,
@@ -352,14 +366,6 @@
         "state": "Ss",
         "started": "Sat Nov 21 14:35:08 2026",
         "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_metal.py --start"
-      },
-      "worker": {
-        "pid": 19951,
-        "ppid": 41101,
-        "pgid": 19951,
-        "state": "Ss",
-        "started": "Sat Nov 21 16:11:19 2026",
-        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
       }
     },
     "local_gpu_rbm_worker": 19951,
@@ -369,13 +375,13 @@
     "local_gpu_rbm_original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
     "local_gpu_rbm_observer_reaper": null,
     "local_gpu_rbm_observer_reaper_scope": "only stopped exact readonly OS ps child PID; no parent/group/CONT",
-    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-context-data-protocol/publication-observation.json",
+    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-neural-execution-protocol/publication-observation.json",
     "local_gpu_rbm_device_probe_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24",
     "local_gpu_rbm_full_synthetic_MPS_probe_passed": true,
     "local_gpu_rbm_v2_prior_data_admission_sha256": "5deecda9e00cd104cf102c491ad62acdc81b4aeeefc13a81cea104f2e611a79d",
     "local_gpu_rbm_v2_preflight_failed_before_fitting": true,
     "local_gpu_rbm_known_completed_epochs": 15,
-    "local_gpu_rbm_qualifying_completed_epochs": 1,
+    "local_gpu_rbm_qualifying_completed_epochs": 11,
     "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
     "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
     "local_rbm_latent_followup": "owned_full_extraction_and_CPU_data_queues_live_waiting_no_neural_study_yet",
@@ -384,7 +390,12 @@
     "local_rbm_context_data_owner": 30414,
     "local_rbm_context_data_watchdog": 30424,
     "local_rbm_context_data_CPU_test_count": 24,
-    "local_rbm_known_replay_sha256": "9a87f8ba6fda7ee1c22d515e89c4072aeb350bd68b13235e262e248ab025838a"
+    "local_rbm_known_replay_sha256": "9a87f8ba6fda7ee1c22d515e89c4072aeb350bd68b13235e262e248ab025838a",
+    "local_rbm_neural_owner": 37638,
+    "local_rbm_neural_watchdog": 37712,
+    "local_rbm_neural_CPU_test_count": 38,
+    "local_rbm_neural_source_files_verified": 157,
+    "local_rbm_neural_state": "owned_both_arm_original_budget_neural_supervisor_waiting_full_CPU_data_proof"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

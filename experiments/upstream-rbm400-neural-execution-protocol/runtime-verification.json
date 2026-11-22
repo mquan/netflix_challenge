@@ -1,0 +1,41 @@
+{
+  "state": "verified_live_waiting_owned_original_budget_two_arm_neural_supervisor",
+  "observed": "2026-11-22T01:14:02.904818+00:00",
+  "owner": {
+    "pid": 37638,
+    "ppid": 1,
+    "pgid": 37638,
+    "state": "Ss",
+    "started": "Sat Nov 21 17:13:01 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution.py --start"
+  },
+  "watchdog": {
+    "pid": 37712,
+    "ppid": 37638,
+    "pgid": 37712,
+    "state": "Ss",
+    "started": "Sat Nov 21 17:13:02 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution.py --watch 37638 --keep-fds 3 4"
+  },
+  "original_qualifying_fit_worker": {
+    "pid": 19951,
+    "ppid": 41101,
+    "pgid": 19951,
+    "state": "Ss",
+    "started": "Sat Nov 21 16:11:19 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
+  },
+  "source_files_verified": 154,
+  "execution_plan_sha256": "15437803bd1e439bf8438f44799e0cd394635973254b49c690d15814c59f0c26",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "original_baseline_byte_identical": true,
+  "scientific_child_dispatched": false,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "actual_peak_RAM_verified": false,
+  "phase_state": {
+    "state": "waiting_complete_both_arm_CPU_data_and_independent_replay",
+    "observed": "2026-11-22T01:14:02.232361+00:00"
+  }
+}

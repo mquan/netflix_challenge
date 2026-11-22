@@ -2,6 +2,15 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 01:16 UTC: qualifying RBM400worker19951 has completed
+11/15originalepochs; its known15model and allpredictionbits alreadyreplay.
+Neuralowner37638/watch37712 isnowlivewaitingthecompleteCPUdataproof, after
+all38CPUchecks,cleanreview,157frozenfiles andoriginalbaselineverification.
+BothfullH128arms retain5folds/3seeds/max40/pat4/b8192; actualneuralfits,
+canonicalknownscores/selection,selectedwholeQbag andown17auditsremainpending.
+No numericalscoreorplotpointchanges. See
+[ownedneuralqueue](OWN_RBM400_NEURAL_QUEUE_PROGRESS.md).
+
 November22 00:18 UTC: the full15-epoch known RBM400 model is saved and
 independently replays all1760494 native predictions and its known projection
 bitwise on MPS. Qualifying worker19951 is active with1/15 epochs complete.
