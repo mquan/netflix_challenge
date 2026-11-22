@@ -2,6 +2,18 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 04:41 UTC: both actual neural arm manifests now bind the completed
+47c137... replay proof and the correct714/864 inputs with225/375 contexts.
+Owned preparation completed at04:27; the full scalar training worker32127 is
+live under owner24039, with no complete fold or new score yet. The latent arm,
+qualifying replay25553 and own1726473 follow their complete predecessor gates.
+All original five folds/three seeds/max40epochs/guards/baseline remain. The new
+full-arm tree wrapper passes49 component checks with actual small saved models
+in synthetic scheduling fixtures; its owned full study remains pending.
+Development0.8588630884 and recovered0.8603409488/0.8613420939 are unchanged;
+strict0.85725 on both recovered groups remains unmet.
+[Active scalar phase](experiments/upstream-rbm400-first-scalar-live-progress/verification.json).
+
 November22 04:23 UTC: the full data proof47c137... remains complete and
 unchanged. Neural preparation15925 stopped before fitting because its manifest
 builder still read the old data directory for the separate replay proof. The
