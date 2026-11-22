@@ -247,3 +247,19 @@ completion. Resume the original objective without redefining it.
 
 Skill used for this handoff: context-save,
 `/Users/quan/.agents/skills/gstack/context-save/SKILL.md`.
+
+### Final observation superseding the earlier running-worker snapshot
+
+At2026-11-22T07:44:50UTC, actual worker27425 was stateTs, CPU37:50.30,
+with owner24039 and watchdog24046 still live. Official neural status is
+`same_worker_RAM_preserved_waiting_original_readmission`, phase replay_scalar,
+stable_samples0. The agent did NOT signal or stop this scientific worker.
+Its07:44:39 resource request shows free_bytes20440154112 and required output
+reserve319607647; original18.75GiB floor +reserve is20452266847, about11.55MiB
+above sampled free disk. Compressor2580004864 and swap1972371456 bytes;
+no GPU/disk accounting error. See
+`experiments/upstream-rbm400-neural-execution-reference-v4/replay_scalar-worker-resource-request.json`.
+The same original numerical frame/RAM is preserved. Reinspect actual status,
+free disk and supervisor readmission first on resume. Do not restart the model,
+relax the reserve/floor, reset the baseline or delete own learned/data artifacts.
+This is an observed resource wait, not a terminal failure or target achievement.
