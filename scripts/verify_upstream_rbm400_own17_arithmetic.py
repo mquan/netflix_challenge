@@ -54,5 +54,3 @@ def stored(path,arrays,weights,intercept=0.):
         expected=np.asarray(np.clip(expected,1.05,4.95),dtype='<f4')
         if not np.array_equal(actual[lo:hi].view('u4'),expected.view('u4')):raise ValueError('Every actual stored arithmetic bit must replay')
     return actual
-
-
