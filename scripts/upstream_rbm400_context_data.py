@@ -86,7 +86,8 @@ def admit(guard):
     if REPORT.exists() or ART.exists():raise ValueError('Prior complete/partial numerical attempt preserved; no automatic retry')
     declaration,records=inputs.source_declaration(guard)
     bindings=declaration['source_sha256']
-    for name in ('scripts/upstream_rbm400_context_data.py','scripts/upstream_rbm400_context_inputs.py'):
+    for name in ('scripts/upstream_rbm400_context_data.py','scripts/upstream_rbm400_context_inputs.py',
+                 'scripts/verify_upstream_rbm400_context_data.py'):
         inputs.bind(bindings,ROOT/name)
     # New local implementation is authenticated too, before any output exists.
     records=inputs.provider.original.verify_bindings(bindings,guard)

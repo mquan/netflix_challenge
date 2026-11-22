@@ -2,8 +2,10 @@
 
 The new source/model join and data/ridge assembly are implemented in separate
 files. Every source file used by the running RBM and extraction queues stays
-unchanged. The current model has completed fourteen known-phase epochs at this
-observation; neither its complete paired predictor nor a new score is claimed.
+unchanged. All fifteen known-phase epochs are complete. The saved model has
+independently replayed all1760494 native predictions and its known projection
+bitwise on MPS. Qualifying fitting is active as PID19951. The complete paired
+predictor and a new score are still pending.
 
 `scripts/upstream_rbm400_context_inputs.py` requires the complete original519
 stream admission,486-column operator proof and full actual paired cache/model/
@@ -22,16 +24,21 @@ held prediction's coverage and finiteness. Prepared labels/users/groups are
 copied from authenticated descriptors into new files, preserving frozen input
 inode identity, modification/change timestamps and hardlink counts.
 
-Eleven CPU checks cover both full-width joins/alias cases,519-to486 ordering,
+Twenty-four CPU checks cover both full-width joins/alias cases,519-to486 ordering,
 both-query aliases, full8201-row scans across the8192-row boundary, every
 operator/scalar hash, independent whole-group contractions, all five ridge
 equations and held-label exclusion, canonical coordinates and byte-preserving
-copies with distinct output inodes. These are fixture checks. They do not
+copies with distinct output inodes, independent complete synthetic assembly/
+replay and tamper rejection, canonical float64 clipping, source-bound review
+gates, owned scientific receipts and resource/watchdog behavior. These are
+fixture checks. They do not
 establish real source admission, actual MPS extraction or neural training.
 
-The independent full-data verifier and owned3GiB CPU queue remain to be
-implemented and reviewed before actual assembly. Neural preparation, exact
-scalers and two full original-budget H128 studies follow. Both arms retain all
+The independent full-data verifier and owned3GiB CPU queue are implemented and
+reviewed, with all24 checks passing. The queue can wait for the complete actual
+paired cache/model/feature proofs; actual CPU assembly and independent
+verification have not run yet. Neural preparation, exact scalers and two full
+original-budget H128 studies follow. Both arms retain all
 five folds, three seeds, max40 epochs, patience4 and batch8192. Known-only arm
 selection, the selected qualifying bag and own17 freeze/preaudit/audits remain
 required. No recovered outcome selects an arm, feature, alignment or weight.
