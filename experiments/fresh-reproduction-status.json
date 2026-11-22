@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T03:15:43.640306+00:00",
-  "display_time": "2026-11-22 03:15 UTC",
+  "observed": "2026-11-22T03:27:51.331535+00:00",
+  "display_time": "2026-11-22 03:27 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-reference-full-assembly-complete",
+      "work": "Full scalar and learned-context data assembly complete; separate replay active",
+      "state": "Both original-budget arms assembled with714/864 neural inputs and225/375 contexts. All seven prepared outputs rehashed against actual assembly records. Independent full-data verifier77143 is live under owner46613; neural52731, bag60568 and own1762038 wait complete predecessor proofs. No neural model or new score admitted. Tree follow-up numerical/durable-save/independent-fold-replay components pass22 CPU checks; full production study still requires owned source/data/model admission.",
+      "evidence": "experiments/upstream-rbm400-reference-assembly-runtime/verification.json"
+    },
     {
       "work_id": "rbm400-reference-recovery-and-live-full-chain",
       "work": "Complete independent cache recovery; full data assembly active",

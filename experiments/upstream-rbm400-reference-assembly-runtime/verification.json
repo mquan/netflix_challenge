@@ -1,0 +1,97 @@
+{
+  "state": "complete_original_budget_both_arm_assembly_independent_verifier_live",
+  "observed": "2026-11-22T03:27:15.824832+00:00",
+  "manifest_sha256": "3119fb2bc14de9703876c87022b0fa8a53cc42d38ca7bee7aedfcc3deba90ecd",
+  "dimensions": {
+    "scalar": {
+      "raw_predictions": 487,
+      "design_columns": 563,
+      "nonlinear_columns": 713,
+      "nn_inputs": 714,
+      "context_columns": 225
+    },
+    "latent": {
+      "raw_predictions": 487,
+      "design_columns": 563,
+      "nonlinear_columns": 863,
+      "nn_inputs": 864,
+      "context_columns": 375
+    }
+  },
+  "every_prepared_output_byte_rehashed": true,
+  "prepared": {
+    "labels.npy": {
+      "bytes": 9025440,
+      "sha256": "a6520ddb172d6c11d605fea532cc0680e704e433214a951425f2379787b0c885"
+    },
+    "users.npy": {
+      "bytes": 4512784,
+      "sha256": "7ae6f5cc9ddc57b2309ff4a553460a18a72c4ea1c98af210b97a43f4c5ec5f70"
+    },
+    "groups.npy": {
+      "bytes": 1128292,
+      "sha256": "ef5c9b61e10f41f784352560e7d32cbbb25a99c6c30e761cffc360ee8a53aeb5"
+    },
+    "gram.npy": {
+      "bytes": 25357648,
+      "sha256": "6c01f1414a12d6c9beff81ab7444675eec6e343cff52cdace12ca2d99fd42803"
+    },
+    "rhs.npy": {
+      "bytes": 45168,
+      "sha256": "1fd8a7f0adfd59d0919bbb2c8d3c3a7595a85e89be97b0681290f447f9b06d62"
+    },
+    "weights.npy": {
+      "bytes": 22648,
+      "sha256": "546a4d3937452a571543cb64a32273af681cbae9ccbb10dac0c99d11cc52e175"
+    },
+    "ridge.npy": {
+      "bytes": 4512784,
+      "sha256": "11617e56209ee2696befa86b4041d4ff6e948c182defadfeb5eb76099ed10604"
+    }
+  },
+  "coordinators": {
+    "data": {
+      "owner": "46613     1 Ss   Sat Nov 21 18:49:19 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_execution_reference_v2.py --start",
+      "source_files_verified": 161,
+      "plan_sha256": "e3f52046ba4be1d2152aa257c18ef467d306c55f44325f6757f491632d01120d",
+      "state": {
+        "state": "verify",
+        "pid": 77143,
+        "observed": "2026-11-22T03:27:12.814627+00:00"
+      }
+    },
+    "neural": {
+      "owner": "52731     1 Ss   Sat Nov 21 18:57:36 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution_reference_v2.py --start",
+      "source_files_verified": 194,
+      "plan_sha256": "50919b8909c0996c79f0c8f61474aeb0f89d45527c09e1067cc8ad7832f81493",
+      "state": {
+        "state": "waiting_complete_both_arm_CPU_data_and_independent_replay",
+        "observed": "2026-11-22T03:27:10.603006+00:00"
+      }
+    },
+    "bag": {
+      "owner": "60568     1 Ss   Sat Nov 21 19:08:11 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_bag_execution_reference_v2.py --start",
+      "source_files_verified": 203,
+      "plan_sha256": "2bdcf6bab841f1e7da6b32b922eda5d90e6344b61a5a7345f6b76872b8d32b15",
+      "state": {
+        "state": "waiting_complete_both_neural_arms_replay_canonical_known_selection",
+        "observed": "2026-11-22T03:27:14.461631+00:00"
+      }
+    },
+    "own17": {
+      "owner": "62038     1 Ss   Sat Nov 21 19:10:15 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_own17_execution_reference_v2.py --start",
+      "source_files_verified": 219,
+      "plan_sha256": "880e98e4aef385cf9c7e1e3fd13f434b2e8ab57f9bb411375c11a278d0068a1a",
+      "state": {
+        "state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay",
+        "observed": "2026-11-22T03:27:08.554920+00:00"
+      }
+    }
+  },
+  "actual_independent_verifier": "77143 46613 Rs   Sat Nov 21 19:26:25 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_worker_reference_v2.py --phase verify",
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "independent_full_data_replay_complete": false,
+  "neural_models_fitted": 0,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false
+}

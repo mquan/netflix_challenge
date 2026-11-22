@@ -2,6 +2,17 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 03:27 UTC: full original-budget data assembly has completed.
+The scalar arm retains714 neural inputs/225 contexts and the learned-context
+arm864 inputs/375 contexts. All seven prepared outputs were independently
+rehashed against their assembly records. The separate full-data verifier77143
+is live under owner46613; neural52731, bag60568 and own1762038 continue waiting
+for complete predecessor proofs. No neural fit or new score is admitted.
+Tree follow-up components now pass22 CPU checks, including durable actual-model
+saves and independent synthetic-fold reconstruction; their production study
+and complete source admission remain pending.
+[Assembly and live verification evidence](experiments/upstream-rbm400-reference-assembly-runtime/verification.json).
+
 November22 03:15 UTC: the full saved RBM400 models and extracted learned
 features now pass independent recovery replay on both query sets. The original
 verifier stopped because it rejected 18 pre-existing source-path aliases;
