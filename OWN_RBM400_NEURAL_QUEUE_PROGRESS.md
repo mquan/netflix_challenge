@@ -40,7 +40,11 @@ output stat failure. Device/source/training gates in the synthetic workflows
 are explicitly mocked. No check establishes production MPS execution, actual
 source acceptance, learned score improvement or total peak RAM.
 
-After final source/proof sealing the supervisor can run in waiting mode.
+After source/proof sealing, supervisor37638 and watchdog37712 were launched
+at2026-11-22T01:13UTC. Runtime verification confirms all157 frozen files and
+the byte-identical original baseline. The owner waits for complete CPU data;
+no scientific child, arm artifact or selection namespace exists. Evidence is
+in experiments/upstream-rbm400-neural-execution-protocol/.
 Actual preparation/fits/replays/known scores and selection still need complete
 owned evidence. The selected full qualifying bag, query replay and own17
 calibration/freeze/preaudit/fixed recovered audits remain ahead. The full
