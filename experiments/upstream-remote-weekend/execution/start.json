@@ -124,5 +124,21 @@
   ],
   "best_salvaged_probe_3": "ep05 0.91586 (phase-1 final ep15 was 0.90763)",
   "original_run": "PID 39673 left running to complete its trace; its helper export is expected to fail"
+ },
+ "rbm400pf_lr015_rerun": {
+  "launched_utc": "2026-11-22T18:45:51Z",
+  "owner_request": "start it (LR=0.015 rerun)",
+  "tree": "artifacts/upstream-remote-weekend-r11 (APFS clone of r8 source; identical fit binary sha 0d3b3e11...)",
+  "recipe_change": {
+   "LR": "0.015 (plan 0.02)",
+   "RAYON_NUM_THREADS/OPENBLAS_NUM_THREADS": "8 (plan 4)"
+  },
+  "run_outside_helper": "plan.json untouched so live s3-rbm800p export binding stays valid",
+  "driver": "execution/driver_lr015.sh (tmux window s3-rbm400pf-lr015-r11): fit -> export_rbm400pf_lr015.py -> upload_release.py -> push",
+  "release_names": [
+   "s3-rbm400pf-lr015-part01.tar.gz",
+   "s3-rbm400pf-lr015-index.json"
+  ],
+  "eta": "~16h at 3-parallel pace -> ~2026-11-23T11:00Z, deadline 14:00Z"
  }
 }
