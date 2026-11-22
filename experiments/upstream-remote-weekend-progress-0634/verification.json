@@ -1,0 +1,41 @@
+{
+  "state": "read_only_remote_git_snapshot_three_original_jobs_training_no_complete_pair",
+  "observed_locally": "2026-11-22T07:33:11.165598+00:00",
+  "remote_report_observed": "2026-11-22T06:34:39+00:00",
+  "remote_commit": "aa3eac9a4d278f7a819697160f05b8c09f57f664",
+  "remote_blob_sha1": "12e4a12d0e32c210693f8a1cc5949e46b8b7da32",
+  "original_report_sha256": "c4fc360caa8ef450451b6b59c8b123da54e3848ba3fc3f4149cc9b52d3156d21",
+  "jobs": {
+    "s3-rbm400pf": {
+      "last_epoch": 6,
+      "phase": "train_3->probe_3",
+      "receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false,
+      "original_budget_epochs": 15
+    },
+    "s3-tx300r": {
+      "last_epoch": 12,
+      "phase": "train_3->probe_3",
+      "receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false,
+      "original_budget_epochs": 24
+    },
+    "s3-rbm800p": {
+      "last_epoch": 12,
+      "phase": "train_3->probe_3",
+      "receipt": false,
+      "exported": false,
+      "archived": false,
+      "uploaded": false,
+      "original_budget_epochs": 25
+    }
+  },
+  "current_remote_process_poll_performed": false,
+  "remote_job_control_performed": false,
+  "completed_returned_pair_admitted": false,
+  "new_score_established": false
+}

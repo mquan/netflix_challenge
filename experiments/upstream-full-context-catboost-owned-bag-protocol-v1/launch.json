@@ -1,0 +1,15 @@
+{
+  "state": "launched_reviewed_owned_selected_tree_pair_controller_pending_actual_predecessors",
+  "observed": "2026-11-22T07:31:52.099439+00:00",
+  "pid": 75543,
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/upstream_full_context_catboost_bag_execution_v1.py",
+    "--start"
+  ],
+  "review_sha256": "988df4d34eeb1cd232a489162e6d8329d9fd9f37fe5e7667907071402f95b542",
+  "source_commit": "9c235d74e17dce375d316604498bd73967558a71",
+  "production_scientific_root_started": false,
+  "qualifying_labels_read": false
+}

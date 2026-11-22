@@ -2,6 +2,25 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 07:33 UTC: the full selected-tree qualifying controller is now
+live as owner75543/watchdog75552, waiting the complete original two-arm known
+selection under its separate383-file snapshot after119 combined checks. It
+covers preparation, full qualifying inference, independent raw/ridge/model/bag
+replay and final pair checks, preserving the original resource policy and all
+fold/seed/row budgets. The original known-tree owner66664/watchdog66674 remains
+unchanged under364 frozen files, waiting completed own17 primary. Scalar
+neural replay27425/owner24039 is active after all15 models finished fitting;
+latent, selected NN bag and own17 remain pending. No tree model or new score is
+admitted. Development0.8588630884 and recovered0.8603409488/0.8613420939 remain
+unchanged; strict0.85725 on both groups remains unmet. Full own18 is still pending.
+[Reviewed queued full tree pair](OWN_FULL_CONTEXT_CATBOOST_OWNED_BAG_PROGRESS_V1.md).
+
+The newer remote pushed reportaa3eac9, observed06:34 UTC, reports TX30012/24,
+RBM80012/25 and RBM4006/15 in known train_3->probe_3. No completed receipt,
+export, archive or upload exists. This is a Git snapshot, not a live remote
+process poll; no remote control was issued and no returned pair is admitted.
+[Remote snapshot](experiments/upstream-remote-weekend-progress-0634/verification.json).
+
 November22 07:07 UTC: the full scalar neural fit completed at06:59,
 with all five original outer folds and fifteen fresh saved MPS models. Every
 fold receipt and its model/preprocessing/prediction payloads was rehashed.
