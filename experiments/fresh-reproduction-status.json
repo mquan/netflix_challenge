@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T05:18:05.810962+00:00",
-  "display_time": "2026-11-22 05:18 UTC",
+  "observed": "2026-11-22T05:48:49.228445+00:00",
+  "display_time": "2026-11-22 05:48 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-scalar-three-complete-folds",
+      "work": "Three complete scalar folds and nine saved MPS models; training continues",
+      "state": "Actual scalar folds0/1/2 complete with selected epochs[6,11,7]/[9,5,5]/[5,8,6]; all frozen completed-fold output bytes rehashed. Worker32127 remains live under owner24039. Two scalar folds, full latent study, independent replays/canonical comparison, selected qualifying bag and own17 audits remain pending. Development0.8588630884 and recovered0.8603409488/0.8613420939 unchanged; strict0.85725 target unmet. Tree components pass76 combined checks with actual process/group/lock tests; external full controller/role integration and production admission remain pending under the original conditional start.",
+      "evidence": "experiments/upstream-rbm400-third-scalar-fold-complete/verification.json"
+    },
     {
       "work_id": "rbm400-scalar-two-complete-folds",
       "work": "Two complete scalar folds and six fresh saved MPS models; training continues",
@@ -466,12 +472,12 @@
     "local_rbm_own17_watchdog": 4494,
     "local_rbm_own17_state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay",
     "local_rbm_latent_worker": 12216,
-    "current_neural_observation": "2026-11-22T05:18:05.810962+00:00",
+    "current_neural_observation": "2026-11-22T05:48:49.228445+00:00",
     "current_neural_worker_pid": 32127,
     "current_neural_worker_actual_process": "32127 Rs   /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar",
-    "current_scalar_completed_folds": 2,
-    "current_scalar_saved_models": 6,
-    "current_neural_state": "actual_full_scalar_fit_live_two_of_five_folds_complete_pending_full_replay",
+    "current_scalar_completed_folds": 3,
+    "current_scalar_saved_models": 9,
+    "current_neural_state": "actual_full_scalar_fit_live_three_of_five_folds_complete_pending_full_replay",
     "current_qualifying_bag_state": "waiting_both_complete_neural_replays_and_known_canonical_selection",
     "current_own17_state": "waiting_complete_selected_matched_neural_pair_and_full_qualifying_replay"
   },

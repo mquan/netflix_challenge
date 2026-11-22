@@ -1,0 +1,132 @@
+{
+  "fold": 2,
+  "chosen_iterations": [
+    5,
+    8,
+    6
+  ],
+  "preprocessing": {
+    "inner": {
+      "raw": {
+        "operator_sha256": [
+          "ec7a9681130b0e35f982dd6fb4214bfa4e4ac36c8c1411485c0553d0bcf85ef4",
+          "7df64f7a5b5a6e5346f52fd83a9a1cc34f69e4f1d61ac5805483310483c79b7b"
+        ],
+        "raw_neural_input_sha256": "2e21c41aaf579d93465002f3b8479a4d175a3b13ccdd4f32eb84c94232fb7112",
+        "rows": 1128164,
+        "width": 714,
+        "baseline_stored_in_input_as_float32": true
+      },
+      "normalized_input_sha256": "eae0a6e098a588ce636d7c92c7fbd911825e0d925332b13cc272162ad9896612",
+      "eligible_rows": 723880
+    },
+    "full": {
+      "raw": {
+        "operator_sha256": [
+          "ec7a9681130b0e35f982dd6fb4214bfa4e4ac36c8c1411485c0553d0bcf85ef4",
+          "7df64f7a5b5a6e5346f52fd83a9a1cc34f69e4f1d61ac5805483310483c79b7b"
+        ],
+        "raw_neural_input_sha256": "b3ced2cf529127bcd7a27087feeb98feec20613fcc5e4257e7d1b84c71444a37",
+        "rows": 1128164,
+        "width": 714,
+        "baseline_stored_in_input_as_float32": true
+      },
+      "normalized_input_sha256": "7d8d63baa899c101cea8730db392bdf760dbbcf3d859bc104e707f42dc813fb9",
+      "eligible_rows": 904158
+    }
+  },
+  "seed_order": [
+    2026,
+    7,
+    13
+  ],
+  "seed_offset": 2,
+  "schedule": "all_original_independent_inner_selections_then_fresh_outer_refits",
+  "full_representation_matrices_resident_at_once": 1,
+  "manifest_sha256": "f1487760e65c8eb96366503946de5cd629f2e1f464944b84460c794beddb3111",
+  "outputs": {
+    "inner-weights.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-weights.npy",
+      "bytes": 4632,
+      "sha256": "3a24de21f922a1234e2c76ce78ca7f8866678407c145103898d16ddfce8d3ad3"
+    },
+    "inner-lo.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-lo.npy",
+      "bytes": 5840,
+      "sha256": "0c06f2f4692dcadfb8db63bfe3974f058aa428bc62b8bf6c1a4b61f2c24a0b14"
+    },
+    "inner-hi.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-hi.npy",
+      "bytes": 5840,
+      "sha256": "05855cd5bbb8b6b68583efa77c4557ec9a0f170ecb3ffed5562c05cd96fc24bf"
+    },
+    "inner-mean.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-mean.npy",
+      "bytes": 5840,
+      "sha256": "5f12d72e9a02f2ac4bb4b9a28b24959c471828e8b953a85b700ad3f6f7adc23e"
+    },
+    "inner-std.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-std.npy",
+      "bytes": 5840,
+      "sha256": "72761ffe6ec5d1f705c7fdfbc8f2cbb4b51274683e03f0311d794982eb037a5b"
+    },
+    "inner-pipeline.json": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/inner-pipeline.json",
+      "bytes": 508,
+      "sha256": "34958429b0e2d9ce81444b1245b970e7d8f4d8fc5ac833e49b0fd33cfb3dc82d"
+    },
+    "full-weights.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-weights.npy",
+      "bytes": 4632,
+      "sha256": "4129fa5611343ad24dbc7f264b38ae58b38f831213cc39a5fa8fe9c7f880871a"
+    },
+    "full-lo.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-lo.npy",
+      "bytes": 5840,
+      "sha256": "907cc4664343f3cad071dcaaa8d922dbb5a832a3614b2763cf7dcd982b4293fd"
+    },
+    "full-hi.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-hi.npy",
+      "bytes": 5840,
+      "sha256": "eb86144554b59d9826e690ba24186c29330c390e1d3fea318c1039409f0e21cd"
+    },
+    "full-mean.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-mean.npy",
+      "bytes": 5840,
+      "sha256": "5ffd319bed2445e73babe814bf84c8366489b05edaa3e645e560472d20d70649"
+    },
+    "full-std.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-std.npy",
+      "bytes": 5840,
+      "sha256": "0c54c2c2d225e3604367a3348136e6465e5087b1b990b5c0b4e5d25929f7be7c"
+    },
+    "full-pipeline.json": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/full-pipeline.json",
+      "bytes": 508,
+      "sha256": "1a643e49505b544ef9ff8b575b940d0cca0df8acae69b0a313bb0ef8ef59b1b9"
+    },
+    "nn-2026.pt": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/nn-2026.pt",
+      "bytes": 638204,
+      "sha256": "9c54cc0bad2b0f5bf53bd82bfe7544ad2161cfb94481d7b210fef020d6061dfc"
+    },
+    "nn-7.pt": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/nn-7.pt",
+      "bytes": 638204,
+      "sha256": "8dc1ba58fffbf925cd33f0920383a6818d63cc2c04ed063ddc745879d4a7d07e"
+    },
+    "nn-13.pt": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/nn-13.pt",
+      "bytes": 638204,
+      "sha256": "bc0482fb4450e8e002bbc356ea21bc569e33b35ece510dee3ced53455f642877"
+    },
+    "prediction.npy": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-own-rbm400-scalar-h128-mps-reference-v4/nn/2/prediction.npy",
+      "bytes": 896152,
+      "sha256": "a6cfdfb8b5dc97d0095c74ab11b9d83a818a63f48c122b0fc67daa02c3c35178"
+    }
+  },
+  "actual_MPS_fit": true,
+  "actual_saved_model_count": 3,
+  "qualifying_labels_read": false
+}

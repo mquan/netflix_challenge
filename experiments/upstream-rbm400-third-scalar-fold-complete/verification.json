@@ -1,0 +1,19 @@
+{
+  "state": "verified_actual_third_scalar_fold_receipt_and_all_saved_output_bytes_pending_full_model_replay",
+  "observed": "2026-11-22T05:45:39.575850+00:00",
+  "actual_worker_ps": "32127 24039 32127 Rs   Sat Nov 21 20:28:18 2026     /Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_worker_reference_v4.py --phase fit_scalar",
+  "fold_receipt_sha256": "f1ac9f1c494c9a4df7d582024dd3fda3da63127bae0f1f36211fb5e75455d1d3",
+  "chosen_iterations": [
+    5,
+    8,
+    6
+  ],
+  "actual_saved_models_this_fold": 3,
+  "complete_scalar_folds_observed": 3,
+  "total_saved_scalar_models_observed": 9,
+  "every_frozen_fold_output_byte_rehashed": true,
+  "complete_original_scalar_folds_required": 5,
+  "full_model_replay_and_canonical_score_pending": true,
+  "new_neural_or_recovered_score_claimed": false,
+  "qualifying_labels_read": false
+}

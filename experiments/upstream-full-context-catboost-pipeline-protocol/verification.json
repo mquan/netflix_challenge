@@ -1,0 +1,26 @@
+{
+  "state": "complete_actual_isolated_source_to_tree_study_pipeline_component_checks_only",
+  "observed": "2026-11-22T05:36:16.030922+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_pipeline.py": "04844f6195620f89f74107f30adeb576293f03c9dcd65a2d641c81ff17477f12",
+    "scripts/test_upstream_full_context_catboost_pipeline.py": "7ced403519a640b254199b8d230e8f1db4c9346978193859dc25d419841d6d75",
+    "OWN_FULL_CONTEXT_CATBOOST_PIPELINE_PROGRESS.md": "601d735c7c79385eef17b5a00169b9fe8ecc76dd712b348adfbf255adcfe4e5f"
+  },
+  "combined_tree_component_checks_passed": 70,
+  "duration_seconds": 51.949,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p 'test*upstream_full_context_catboost*.py'",
+  "actual_dedicated_root_and_Torch_producer_lifetimes_captured": true,
+  "complete_small_five_fold_CPU_fit_with_fifteen_slots_checked": true,
+  "actual_saved_study_binding_and_stream_exit_gates_checked_for_replay_orchestration": true,
+  "replay_numerical_body_mocked_only_in_pipeline_orchestration_fixture": true,
+  "original_ten_system_and_saved_model_numerical_replay_covered_by_separate_complete_study_suite": true,
+  "failed_exit_or_mutated_authorization_prevents_tree_fit": true,
+  "failed_initial_authorization_keeps_actual_live_helper_and_channels_for_preservation_hook": true,
+  "source_CPU_proof_ownership_and_reduced_row_declarations_are_synthetic": true,
+  "fixture_known_rows": 20,
+  "fixture_qualifying_rows": 23,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "External owned controller/bootstrap/watchdog/resource/lane/reservation gates; full paired studies and replays/selection; selected qualifying bag and independent replay; own18 fixed audits after original conditional start."
+}

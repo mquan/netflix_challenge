@@ -2,6 +2,20 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 05:48 UTC: three of five scalar outer folds are complete,
+with nine fresh saved MPS models. Selected epoch counts are[6,11,7], [9,5,5]
+and[5,8,6]; every output byte in the completed fold receipts has been rehashed.
+Worker32127 continues under owner24039. Two scalar folds, the full latent arm,
+independent replays/canonical comparison, selected qualifying bag and own17
+audits remain pending. Development0.8588630884 and recovered0.8603409488/
+0.8613420939 are unchanged; strict0.85725 on both groups is still unmet.
+Tree follow-up components now pass76 combined checks, including actual isolated
+producer-to-fit orchestration, same-PID group stop/continue and inherited lane
+lock retention. Resource/source/ownership fixtures remain synthetic; external
+full controller and role integration are still pending. The current neural
+chain retains priority and the original conditional tree-start rule remains.
+[Third completed scalar fold](experiments/upstream-rbm400-third-scalar-fold-complete/verification.json).
+
 November22 05:18 UTC: the scalar neural study has completed two of five
 outer folds and saved six fresh MPS models. Their selected epoch counts are
 [6,11,7] and [9,5,5]; all frozen model, preprocessing and prediction output
