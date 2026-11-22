@@ -1,0 +1,30 @@
+{
+  "state": "complete_selected_tree_pair_source_gate_assembly_and_independent_replay_component_checks_only",
+  "observed": "2026-11-22T07:06:55.060477+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_selected_sources.py": "5e62daefbe274c569e6ea39f8992e366587c3f3553e9d8816e7487841f123967",
+    "scripts/test_upstream_full_context_catboost_selected_sources.py": "27ef3232cad368e6f23cbb7e7b2e75f0711b4cbe28a47b49a736e063965401e1",
+    "scripts/upstream_full_context_catboost_bag_v1.py": "c22d8e29805f32c92fc01efb60f28e923c53aeed830b5e15775c5cf81ef0171e",
+    "scripts/test_upstream_full_context_catboost_bag_v1.py": "e018c758d5d0f59350fc3dfb81d5165758c4da21fcd00b89a150e251fc0ea797",
+    "scripts/verify_upstream_full_context_catboost_bag_v1.py": "c91de4d9e8975ea9a8062b9d97ac6b0c59e48d2fbfb6475901640fe52f07ee1f",
+    "scripts/test_verify_upstream_full_context_catboost_bag_v1.py": "21fde2e49cbd15387afbc834f449b8145a2260c98440e9fd277dee6d719e83b8",
+    "OWN_FULL_CONTEXT_CATBOOST_SELECTED_BAG_PROGRESS_V1.md": "3bb9bd0cbbf85dcb66cff23b406cc61734974e210bcc39b3b3f33e01939c1614"
+  },
+  "combined_tree_component_checks_passed": 100,
+  "duration_seconds": 73.558,
+  "test_command": "env OPENBLAS_NUM_THREADS=2 VECLIB_MAXIMUM_THREADS=2 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m unittest discover -s scripts -p 'test*upstream_full_context_catboost*.py'",
+  "fixture_known_rows": 20,
+  "fixture_qualifying_rows": 23,
+  "known_owner_and_data_admission_are_synthetic_and_mocked": true,
+  "actual_saved_small_CPU_models_replayed_per_pair_fixture": 5,
+  "actual_ten_full_width_ridge_systems_solved_and_checked": true,
+  "actual_isolated_Torch_source_pipe_and_parent_observed_exit_checked": true,
+  "logical_source_admission_hash_distinguished_from_saved_metadata_file_hash": true,
+  "rehashed_one_ULP_fold_bag_or_known_vector_changes_rejected": true,
+  "production_predict_not_used_by_independent_arithmetic": true,
+  "qualifying_outcomes_read": false,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "production_score_established": false,
+  "remaining": "Owned full qualifying controller/roles/resource/final admission; actual full pair inference/replay; own18 full calibration/preaudit/fixed recovered canonical audits."
+}

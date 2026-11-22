@@ -2,6 +2,22 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 07:07 UTC: the full scalar neural fit completed at06:59,
+with all five original outer folds and fifteen fresh saved MPS models. Every
+fold receipt and its model/preprocessing/prediction payloads was rehashed.
+Separate actual-model replay worker27425 is active under owner24039. Canonical
+scalar scoring, the full latent arm, selected NN qualifying bag and own17 are
+still pending. No new development or recovered score is admitted.
+The selected tree source gate, full pair assembly and separate ridge/model/bag
+replay components pass100 combined checks, including real saved models/pipes,
+ten full-width ridge systems and rehashed one-ULP mutation rejection. Their
+owned qualifying controller and actual full-data run remain pending. The live
+known-tree owner66664/watchdog66674 retains its original364-file/89-check plan
+and waits the complete own17 primary condition. Development0.8588630884 and
+recovered0.8603409488/0.8613420939 remain unchanged; strict0.85725 remains unmet.
+[Complete scalar fit and live replay](experiments/upstream-rbm400-complete-scalar-fit-live-replay/verification.json).
+[Selected tree pair components](OWN_FULL_CONTEXT_CATBOOST_SELECTED_BAG_PROGRESS_V1.md).
+
 November22 06:31 UTC: a fresh remote-branch inspection finds report
 9c9c1c7, observed05:34 UTC, after the remote-side resume commit. It reports
 TX300 at8/24 epochs, RBM800 at9/25 and RBM400 at4/15, all still in the known
