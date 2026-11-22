@@ -1,0 +1,38 @@
+{
+  "state": "reviewed_neural_scaler_materialization_and_single_matrix_schedule_prototypes_only",
+  "observed": "2026-11-22T00:31:54.315008+00:00",
+  "test_count": 12,
+  "test_exit_code": 0,
+  "test_log_sha256": "ce5281322ee61edc8cb7d74889c760898885acc4ec759f24f99bbb3b44a9ad0f",
+  "source_sha256": {
+    "scripts/upstream_rbm400_neural_scaler.py": "a8770551638e6452485e882b079ca3a9d7f5aa897288e0b61e0b3938f26a81f8",
+    "scripts/test_upstream_rbm400_neural_scaler.py": "6960f33e1290a7188a4f7a03e147817903d41e47d4979b0bce89405dbbe85c0b",
+    "scripts/upstream_rbm400_neural_inputs.py": "b03f554d60b280cf18075d1d4172ac9a559f7e9cace4e3e1ec7af8a8322f52e8",
+    "scripts/test_upstream_rbm400_neural_inputs.py": "b22ebd54fa03cb3ff1a1d6fe044c705d636732aa214fc213ae60a1aafc7c47d3",
+    "scripts/upstream_rbm400_neural_fold.py": "58f27107355ecaa43edfe36ebbb414c7a36adf3ec6057c4ce049ec173eec7637",
+    "scripts/test_upstream_rbm400_neural_fold.py": "ff4468e83b917acdc8731ce3155c51df0cc8ab56cc3ad86905fa65a7df457d35",
+    "OWN_RBM400_NEURAL_EXECUTION_PLAN.md": "3e1be98de0b0b80ac85f025d5984259553f7b11c391e1347e65ea1fe31d623aa",
+    "OWN_RBM400_NEURAL_FOUNDATION_PROGRESS.md": "2e578b954ca57bb4e18cd3389ec45e32c0bf31cb994e387f23fe4de24609e8c5",
+    "scripts/upstream_rbm400_latent_neural.py": "c445356d98b9df1e25fe649c435c97dc0ca7ecb6032d75d33af49ebb76f611ef",
+    "scripts/upstream_rbm400_latent_operators.py": "6e49960dd83fcb1d68c0b06e0a79fbc2faafce27350f8f99fecb9f63fa440495",
+    "scripts/upstream_complete_trajectory_mps.py": "6b4d107e1c23b464d2bdf0aa5a2e3c41c710c378cffe56b738e4369da5b18ff9",
+    "scripts/upstream_exact_trajectory_scaler.py": "0517f094c021beb1f10e1488495e16c5a57c48285b1469f7e642dbff4ec49a4c",
+    "scripts/upstream_exact_neural_scaling.py": "557d5b2afc31d6be2073288a753ee7120360486d4fda6c804c3c06985e5d867e",
+    "scripts/upstream_mps_context.py": "809c2d640c54b3db6fb7c13b799ff6e56c21b814728fa2c61194e8def300e713"
+  },
+  "libraries": {
+    "numpy": "2.2.6",
+    "torch": "2.14.0"
+  },
+  "reviewer": "/root/refit_checkpoint_review",
+  "independent_review": "clean",
+  "review": "Exact scaler/layout/fold/seed/refit/zero-slot contracts reviewed; CPU full-width model parity and one-matrix-lifetime fixtures do not establish actual MPS or total peak RAM. Actual full owned16GiB neural execution and independent saved-model/scaler/bag/own17 proofs remain pending.",
+  "actual_MPS_tested": false,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "CPU_fixture_models_trained": true,
+  "production_provider_admitted": false,
+  "actual_peak_RAM_verified": false,
+  "qualifying_labels_read": false,
+  "all_four_active_frozen_source_closures_unchanged": true
+}
