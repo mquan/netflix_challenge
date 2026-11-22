@@ -2,6 +2,16 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 01:38 UTC: RBM400 qualifying training has completed 14/15 epochs
+in the original worker19951. The selected neural qualifying-bag owner84612
+is now live, waiting for both full neural arms and known-only canonical
+selection. All16 CPU implementation checks and independent review pass;
+163 frozen files and the byte-identical original baseline verify. The bag
+and replay preserve every qualifying row, all five folds and three seed
+slots. The NN-only family remains separate from the fixed-half ranking
+and control. Actual bag inference/replay and own17 calibration are pending.
+No new score or plot point. See [selected bag plan](OWN_RBM400_SELECTED_BAG_PLAN.md).
+
 November22 01:16 UTC: qualifying RBM400worker19951 has completed
 11/15originalepochs; its known15model and allpredictionbits alreadyreplay.
 Neuralowner37638/watch37712 isnowlivewaitingthecompleteCPUdataproof, after
