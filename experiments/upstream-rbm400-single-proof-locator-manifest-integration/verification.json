@@ -1,0 +1,80 @@
+{
+  "state": "complete_actual_both_arm_prepared_manifests_use_completed_separate_CPU_replay_proof",
+  "observed": "2026-11-22T04:27:51.895871+00:00",
+  "arms": {
+    "scalar": {
+      "path": "experiments/upstream-own-rbm400-scalar-h128-mps-reference-v4/manifest.json",
+      "sha256": "f1487760e65c8eb96366503946de5cd629f2e1f464944b84460c794beddb3111",
+      "dimensions": {
+        "raw_predictions": 487,
+        "design_columns": 563,
+        "nonlinear_columns": 713,
+        "nn_inputs": 714,
+        "context_columns": 225
+      },
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "own-rbm400-scalar-h128-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      }
+    },
+    "latent": {
+      "path": "experiments/upstream-own-rbm400-latent-h128-mps-reference-v4/manifest.json",
+      "sha256": "b20bde68ca39da631ddca91c38c1169e8fe080e2243a17ffaed9100e50d907a2",
+      "dimensions": {
+        "raw_predictions": 487,
+        "design_columns": 563,
+        "nonlinear_columns": 863,
+        "nn_inputs": 864,
+        "context_columns": 375
+      },
+      "config": {
+        "seeds": [
+          2026,
+          7,
+          13
+        ],
+        "threads": 2,
+        "tree_rounds": 2000,
+        "tree_patience": 75,
+        "tree_leaves": 31,
+        "tree_min_leaf": 1000,
+        "tree_lr": 0.03,
+        "nn_epochs": 40,
+        "nn_patience": 4,
+        "nn_hidden": 128,
+        "nn_batch": 8192,
+        "nn_lr": 0.0003,
+        "nn_dropout": 0.2,
+        "nn_weight_decay": 0.01,
+        "ridge_lambda": 1000,
+        "architecture": "own-rbm400-latent-h128-v1",
+        "context_rank": 32,
+        "neural_backend": "torch-mps-float32"
+      }
+    }
+  },
+  "completed_CPU_proof_sha256": "47c137371b06c02f7c840c3a8bd0c31755e6807ecd8bad3e5b5d65f19f3751d9",
+  "actual_neural_fit_or_model_replay_not_established_by_this_check": true,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false
+}
