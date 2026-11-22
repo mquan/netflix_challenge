@@ -1,0 +1,9 @@
+{
+  "pid": 39636,
+  "ppid": 39082,
+  "pgid": 39636,
+  "state": "Ss",
+  "started": "Sat Nov 21 09:50:36 2026",
+  "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -u /Users/quan/workspace/netflix_remote_weekend/scripts/upstream_remote_weekend.py --bootstrap 39082 --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source --job s3-tx300r",
+  "native_command": "./target/release/fit tx s3-tx300r -p pipeline-3.toml --final --preds preds_3"
+}

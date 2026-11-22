@@ -1,0 +1,39 @@
+{
+  "job": "s3-tx300r",
+  "pid": 39636,
+  "started": "2026-11-21T17:50:36.166091+00:00",
+  "deadline": "2026-11-23T14:00:00+00:00",
+  "command": [
+    "./target/release/fit",
+    "tx",
+    "s3-tx300r",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+  ],
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "24",
+    "EPSAVE": "1",
+    "F": "300",
+    "LR_I": "0.006",
+    "LR_U": "0.0045",
+    "LR_W": "0.001",
+    "LR_WD": "0.0005",
+    "LR_Y": "0.00075",
+    "NBR": "100",
+    "REG_I": "0.015",
+    "REG_U": "0.06",
+    "REG_WD": "0.002",
+    "RESET": "12"
+  },
+  "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+  "preparation_sha256": "4dd03721671032b88dfdbe7e45598a35d49153e60bb23c2864260a3607526795",
+  "original_swap_baseline": {
+    "compressor_bytes": 11477909504,
+    "swap_used_bytes": 376837242.88
+  }
+}

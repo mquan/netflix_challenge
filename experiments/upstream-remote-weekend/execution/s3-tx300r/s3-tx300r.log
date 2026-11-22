@@ -1,0 +1,55 @@
+[s3-tx300r]
+target = "rtg"
+TxConfig { n_feat: 300, n_epochs: 24, seed: 42, shuffle_users: true, n_time_bins: 32, beta: 0.3, n_freq_bins: 16, lr_u: 0.0045, lr_ud: 0.00125, lr_u2: 7e-6, lr_ub: 0.0031, lr_ubd: 0.003, lr_i: 0.006, lr_ib: 0.0036, lr_y: 0.00075, lr_yb: 2.5e-5, lr_yd: 0.000267, lr_tu: 0.0, lr_ti: 0.000225, lr_ta: 2.25e-5, lr_ibf: 5e-5, lr_iqf: 5e-6, lr_cu: 0.002, reg_iqf: 0.007, reg_cu: 0.01, reg_u: 0.06, reg_u2: 0.4, reg_ud: 0.04, reg_i: 0.015, reg_y: 0.04, reg_yd: 0.02667, sigma_iqf: 0.005, sigma_u: 0.0015, sigma_i: 0.005, sigma_y: 0.00333, sigma_yd: 0.009, reset_u_epoch: 12, max_neighbors: 100, lr_w: 0.001, lr_c: 0.001, reg_w: 0.002, reg_c: 0.002, lr_w_day: 0.0005, lr_c_day: 0.0005, reg_w_day: 0.002, reg_c_day: 0.002, w_bias: 1.0, w_factor: 1.0, w_nbr: 1.0, sum_err_bug: false, lambda1: 25.0, lambda2: 10.0, ordinal_head: None, save_ifeat: false, save_ufeat: false, low_memory: false, full_su: true, lazy_day: false, ud_dim: None }
+train_3 => probe_3
+Epoch 01 | RMSE 0.93708
+Epoch 02 | RMSE 0.91681
+Epoch 03 | RMSE 0.90636
+Epoch 04 | RMSE 0.90000
+Epoch 05 | RMSE 0.89531
+Epoch 06 | RMSE 0.89169
+Epoch 07 | RMSE 0.88883
+Epoch 08 | RMSE 0.88671
+Epoch 09 | RMSE 0.88513
+Epoch 10 | RMSE 0.88354
+Epoch 11 | RMSE 0.88228
+Epoch 12 | RMSE 0.89258
+Epoch 13 | RMSE 0.88909
+Epoch 14 | RMSE 0.88666
+Epoch 15 | RMSE 0.88484
+Epoch 16 | RMSE 0.88324
+Epoch 17 | RMSE 0.88205
+Epoch 18 | RMSE 0.88109
+Epoch 19 | RMSE 0.88030
+Epoch 20 | RMSE 0.87968
+Epoch 21 | RMSE 0.87922
+Epoch 22 | RMSE 0.87881
+Epoch 23 | RMSE 0.87847
+Epoch 24 | RMSE 0.87834
+probe_3 RMSE 0.87834
+fulltrain => qual
+Epoch 01 | RMSE 3.71146
+Epoch 02 | RMSE 3.70968
+Epoch 03 | RMSE 3.72537
+Epoch 04 | RMSE 3.72502
+Epoch 05 | RMSE 3.72519
+Epoch 06 | RMSE 3.72297
+Epoch 07 | RMSE 3.72942
+Epoch 08 | RMSE 3.72922
+Epoch 09 | RMSE 3.72909
+Epoch 10 | RMSE 3.72984
+Epoch 11 | RMSE 3.73171
+Epoch 12 | RMSE 3.72566
+Epoch 13 | RMSE 3.72720
+Epoch 14 | RMSE 3.72970
+Epoch 15 | RMSE 3.73131
+Epoch 16 | RMSE 3.73312
+Epoch 17 | RMSE 3.73364
+Epoch 18 | RMSE 3.73396
+Epoch 19 | RMSE 3.73422
+Epoch 20 | RMSE 3.73856
+Epoch 21 | RMSE 3.73912
+Epoch 22 | RMSE 3.73654
+Epoch 23 | RMSE 3.73998
+Epoch 24 | RMSE 3.73985
+
