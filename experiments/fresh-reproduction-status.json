@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-21T21:12:24.195523+00:00",
-  "display_time": "2026-11-21 21:12 UTC",
+  "observed": "2026-11-22T00:18:46.760905+00:00",
+  "display_time": "2026-11-22 00:18 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,18 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-known-model-replayed",
+      "work": "Complete RBM400 known model saved and independently replayed",
+      "state": "All15known epochs complete; actual saved model replays every1760494 native query prediction and the1128164-row known projection bitwise on MPS. Qualifying fitting is active at1/15completed epochs. Originalfullrecipe,source,baseline andcaps unchanged. No fullpairedprovider or newscoreyet.",
+      "evidence": "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-replay.json"
+    },
+    {
+      "work_id": "rbm400-context-successors",
+      "work": "Owned learned-context extraction and full CPU data replay queued",
+      "state": "Live extractionowner87109/watch87113 waits for complete paired models andown16. LiveCPUdataowner30414/watch30424 then waits for actualcompletecache/native/query-feature replays. Full3GiB CPUassembly andindependentreplay protocol passes24checks andcleanreview;131sourcefiles andbyte-identicaloriginalbaselineverify. Actualcache/dataassembly andbothfullneuralstudies remainpending; noCPUfixtureadmitsaproductionprovider.",
+      "evidence": "experiments/upstream-rbm400-context-data-protocol/runtime-verification.json"
+    },
     {
       "work": "Downloaded public qualifying-prediction cache retired",
       "state": "236 original catalog/manifest-exact downloaded public prediction inode groups and all382 public aliases removed;2.47677GiB measured recovered, about22.29GiB free. Full durable journal committed before deletion;8 private tests and independent review pass. Separate absence/provenance/protected-proof verification passes; absent bytes cannot be rehashed afterward. Seven mismatched groups retained. All own models/checkpoints/predictions/data/archives/working state preserved; no scientific process signalled. No score claim.",
@@ -186,7 +198,7 @@
   },
   "goal_achieved": false,
   "runtime_observation": {
-    "observed": "2026-11-21T23:23:10.381682+00:00",
+    "observed": "2026-11-22T00:18:46.760905+00:00",
     "cf96_training": "complete95/95_both_phases_raw_export_original_finalizer",
     "original1600_state": "complete_independent_both_original_phases_and_native_outputs",
     "original1600_owner": 61480,
@@ -292,7 +304,7 @@
     "original1200_completed_native_pid": 16010,
     "original1200_complete_verification_sha256": "8cea8b41f7897880d5b2a2b1b7bd8dcfe22c6dd7a16d104580654d21ebcfd496",
     "own14_verification_sha256": "4bee06e3d9fb81aa8b5148a401e706156030acab8c3d804d540084ea4da312bc",
-    "local_gpu_rbm": "full_deterministic_metal_known_fit_same_worker_active",
+    "local_gpu_rbm": "known15_saved_and_independent_MPS_replay_complete_qualifying_fit_active",
     "local_gpu_rbm_owner": 41101,
     "local_rbm_blend": "deterministic_metal_full16_family_consumer_waiting_complete_actual15_15_paired_proof",
     "local_rbm_blend_owner": 41441,
@@ -327,38 +339,52 @@
     "complete_trajectory_bag_worker": null,
     "own15_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
     "factored_rbm_latest_observation": {
-      "observed": "2026-11-21T21:12:24.195523+00:00",
+      "observed": "2026-11-22T00:18:46.760905+00:00",
       "status": {
-        "state": "data",
-        "pid": 74972,
-        "observed": "2026-11-21T21:12:18.161569+00:00"
+        "state": "fit_qualifying",
+        "pid": 19951,
+        "observed": "2026-11-22T00:18:46.680451+00:00"
       },
       "owner": {
-        "pid": 31460,
+        "pid": 41101,
         "ppid": 1,
-        "pgid": 31460,
+        "pgid": 41101,
         "state": "Ss",
-        "started": "Sat Nov 21 06:39:37 2026",
-        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution.py --start"
+        "started": "Sat Nov 21 14:35:08 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_metal.py --start"
+      },
+      "worker": {
+        "pid": 19951,
+        "ppid": 41101,
+        "pgid": 19951,
+        "state": "Ss",
+        "started": "Sat Nov 21 16:11:19 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_worker_metal.py --phase fit_qualifying"
       }
     },
-    "local_gpu_rbm_worker": 51842,
+    "local_gpu_rbm_worker": 19951,
     "local_gpu_rbm_watchdog": 41170,
     "local_rbm_blend_watchdog": 41502,
     "local_gpu_rbm_original_metadata_attempt_retired": true,
     "local_gpu_rbm_original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
     "local_gpu_rbm_observer_reaper": null,
     "local_gpu_rbm_observer_reaper_scope": "only stopped exact readonly OS ps child PID; no parent/group/CONT",
-    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-latent-component-bundle/training-runtime-observation.json",
+    "local_gpu_rbm_observation_path": "experiments/upstream-rbm400-context-data-protocol/publication-observation.json",
     "local_gpu_rbm_device_probe_sha256": "a8ab47ca345a93213de0dd7c9cdb94d0cdeca2b87fb05d8f241a8a1572c40a24",
     "local_gpu_rbm_full_synthetic_MPS_probe_passed": true,
     "local_gpu_rbm_v2_prior_data_admission_sha256": "5deecda9e00cd104cf102c491ad62acdc81b4aeeefc13a81cea104f2e611a79d",
     "local_gpu_rbm_v2_preflight_failed_before_fitting": true,
-    "local_gpu_rbm_known_completed_epochs": 7,
-    "local_gpu_rbm_qualifying_completed_epochs": 0,
+    "local_gpu_rbm_known_completed_epochs": 15,
+    "local_gpu_rbm_qualifying_completed_epochs": 1,
     "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
     "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
-    "local_rbm_latent_followup": "reviewed31_CPU_component_prototypes_actual_provider_and_neural_studies_pending"
+    "local_rbm_latent_followup": "owned_full_extraction_and_CPU_data_queues_live_waiting_no_neural_study_yet",
+    "local_rbm_latent_owner": 87109,
+    "local_rbm_latent_watchdog": 87113,
+    "local_rbm_context_data_owner": 30414,
+    "local_rbm_context_data_watchdog": 30424,
+    "local_rbm_context_data_CPU_test_count": 24,
+    "local_rbm_known_replay_sha256": "9a87f8ba6fda7ee1c22d515e89c4072aeb350bd68b13235e262e248ab025838a"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
@@ -399,5 +425,6 @@
   "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "own14_qualifying_best": false,
   "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
-  "own15_qualifying_best": true
+  "own15_qualifying_best": true,
+  "last_score_status_observed": "2026-11-21T21:12:24.195523+00:00"
 }

@@ -1,6 +1,16 @@
 # Our own Netflix training progress
 
-Updated November21 UTC /November21 Pacific,2026.
+Updated November22 UTC /November21 Pacific,2026.
+
+November22 00:18 UTC: the full15-epoch known RBM400 model is saved and
+independently replays all1760494 native predictions and its known projection
+bitwise on MPS. Qualifying worker19951 is active with1/15 epochs complete.
+Owned extraction87109/watch87113 and CPUdata30414/watch30424 wait for their
+complete predecessor proofs. The full3GiB CPUassembly/independent replay
+protocol passes24checks and review; all131source files and the exact original
+baseline verify. Actualcache/data admission and both neural studies remain
+pending. No new development or recovered score. See
+[full data pipeline status](OWN_RBM400_CONTEXT_DATA_PROGRESS.md).
 
 November21 23:20 UTC: seven full known epochs are complete in the same
 deterministic-Metal worker51842;15known+15qualifying and the original CD/batch/

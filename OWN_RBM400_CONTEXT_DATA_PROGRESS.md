@@ -43,5 +43,14 @@ five folds, three seeds, max40 epochs, patience4 and batch8192. Known-only arm
 selection, the selected qualifying bag and own17 freeze/preaudit/audits remain
 required. No recovered outcome selects an arm, feature, alignment or weight.
 
+The CPU supervisor is live as PID30414 with watchdog30424, waiting for the
+complete original extraction/cache/native/query-feature proof. Runtime checks
+verify all131 source/proof files and the byte-identical original baseline;
+no CPU scientific child or data artifact namespace has been created. The
+extraction supervisor87109/watch87113 also remains live and waiting. Qualifying
+worker19951 has completed its first original epoch at the latest publication
+observation. The source/launch/runtime proofs are in
+experiments/upstream-rbm400-context-data-protocol/.
+
 The best verified recovered scores remain0.8603412617/0.8613423892. Both miss
 the strict0.85725 goal; no new development or recovered score is promoted.
