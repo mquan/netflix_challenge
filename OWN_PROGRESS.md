@@ -2,6 +2,16 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 02:03 UTC: the completed own16 simplex primary independently
+scores0.8603409488199526/0.8613420938772931. Both groups improve by only
+about0.0000003; this is a tiny gain and still misses0.85725. All65535
+simplex supports,17 ridge equations and six frozen vectors pass the preaudit;
+separate full-source canonical reconstruction and compensated scores agree.
+Development best remains0.8588630884. Learned-context extraction worker12216
+is now active under the original owner87109; the complete CPUdata, neural,
+qualifying-bag and own17 queues remain in place.
+[Own16 result](OWN_LOCAL_RBM400_RESULT.md).
+
 November22 01:50 UTC: both original fifteen-epoch RBM400 models are saved
 and independently replay every full native query and the known projection
 on MPS. The complete pair proof is3e8d2ecdbb40d0c953f98b24601c2e84a9353bb45ca23d74fea26797a814199a.
