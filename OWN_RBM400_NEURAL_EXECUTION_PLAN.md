@@ -44,6 +44,16 @@ the one-matrix construction is not a claim that actual peak RAM is verified.
 Preserve the same process and frames on pressure. No restart, smaller fold/
 seed/epoch budget, changed baseline or discarded own output is permitted.
 
+The owned local queue runs preparation, scalar fit/replay/canonical scoring,
+latent fit/replay/canonical scoring, then selection. It waits for complete
+CPU data assembly and independent verification before acquiring either lane.
+Before allocating its namespace it must authenticate a clean38-test CPU-only
+protocol review and every frozen source/declaration hash. CPU phases retain
+the3GiB cap; actual fitting/replay uses16GiB with MPS driver/cache accounting.
+Unknown output-file accounting invalidates admission, retains the complete
+conservative output reserve and suspends the same worker/frame for recheck.
+The review protocol is not evidence that actual models or peak RAM passed.
+
 Complete the selected arm's whole qualifying bag and independent actual-model/
 operator/scaler/query replay even if neither arm sets a development record.
 Append that provider to all original16 own families. Fit known-only17-family

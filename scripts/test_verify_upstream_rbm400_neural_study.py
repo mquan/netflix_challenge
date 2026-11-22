@@ -15,7 +15,8 @@ import test_upstream_rbm400_neural_study as study_fixtures
 
 
 class ReplayTests(unittest.TestCase):
-    def test_complete_synthetic_fit_scalers_inputs_saved_models_and_full_replay(self):
+    @contextmanager
+    def complete_fixture(self,arms=('latent',)):
         # Source/device/training are mocked in this temporary fixture. Real
         # materialization, all eligible scalers, durable tensors, every fold,
         # independent reconstruction and forward predictions run on CPU.
@@ -54,15 +55,21 @@ class ReplayTests(unittest.TestCase):
             with patch.object(study,'runtime',return_value=torch),patch.object(study.inputs.context,'open_query',side_effect=query),\
                  patch.object(study.backend,'train_nn',side_effect=train),patch.object(study.backend,'predict',side_effect=predict),\
                  patch.object(study.architecture,'model_factory',side_effect=DeviceFixture),patch.object(torch.mps,'empty_cache'):
-                study.fit('latent',lambda **kw:None)
-                result=verification.verify('latent',lambda **kw:None)
-                self.assertEqual(result['state'],verification.STATE);self.assertEqual(result['actual_saved_models_reopened'],10)
-                self.assertTrue(result['every_held_prediction_bit_equal']);self.assertEqual(len(result['records']),5)
-                run,report=study.paths('latent')
-                nn=np.load(run/'nn.npy',allow_pickle=False);half=np.load(run/'fixed-half-tree154.npy',allow_pickle=False)
-                expected=np.clip(.5*nn.astype(np.float64)+.5*np.float32(3.6),1.05,4.95).astype('<f4')
-                self.assertEqual(half.tobytes(),expected.tobytes())
-                with self.assertRaises(ValueError):verification.verify('latent',lambda **kw:None)
+                results={}
+                for arm in arms:
+                    study.fit(arm,lambda **kw:None);results[arm]=verification.verify(arm,lambda **kw:None)
+                yield root,results
+
+    def test_complete_synthetic_fit_scalers_inputs_saved_models_and_full_replay(self):
+        with self.complete_fixture() as (root,results):
+            result=results['latent']
+            self.assertEqual(result['state'],verification.STATE);self.assertEqual(result['actual_saved_models_reopened'],10)
+            self.assertTrue(result['every_held_prediction_bit_equal']);self.assertEqual(len(result['records']),5)
+            run,report=study.paths('latent')
+            nn=np.load(run/'nn.npy',allow_pickle=False);half=np.load(run/'fixed-half-tree154.npy',allow_pickle=False)
+            expected=np.clip(.5*nn.astype(np.float64)+.5*np.float32(3.6),1.05,4.95).astype('<f4')
+            self.assertEqual(half.tobytes(),expected.tobytes())
+            with self.assertRaises(ValueError):verification.verify('latent',lambda **kw:None)
 
     def test_independent_full_width_eligible_scalers_match_every_original_bit(self):
         rng=np.random.default_rng(128)

@@ -12,6 +12,19 @@ import upstream_rbm400_neural_study as study
 
 
 class StudyTests(unittest.TestCase):
+    def test_execution_sources_pin_owner_prepare_and_baseline_without_result_cycle(self):
+        import upstream_rbm400_neural_execution as execution
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder).resolve();report=root/'control';report.mkdir()
+            names=('plan.json','monitor.json','first-scientific-baseline.json','prerequisites.json','prepare-gate.json','prepare-ownership.json')
+            for name in names:(report/name).write_text('{}')
+            (report/'prepare.json').write_text('{"later_result_must_not_be_an_input":true}')
+            protocol=root/'experiments/upstream-rbm400-neural-execution-protocol/verification.json';protocol.parent.mkdir(parents=True);protocol.write_text('{}')
+            with patch.object(study,'ROOT',root),patch.object(execution,'REPORT',report),patch.object(execution,'check_sources'):
+                bindings=study.execution_bindings()
+            self.assertEqual(set(bindings),{str((report/name).relative_to(root)) for name in names}|{str(protocol.relative_to(root))})
+            self.assertNotIn('control/prepare.json',bindings)
+
     @contextmanager
     def fixture(self,full_operators=False):
         with tempfile.TemporaryDirectory() as folder,ExitStack() as stack:
@@ -52,6 +65,7 @@ class StudyTests(unittest.TestCase):
                 (study.inputs.context.provider.original,'ROOT',root)]:stack.enter_context(patch.object(module,name,value))
             stack.enter_context(patch.object(study.inputs,'sources',side_effect=sources))
             stack.enter_context(patch.object(study,'code_bindings',return_value={'fixture-code.py':sha(root/'fixture-code.py')}))
+            stack.enter_context(patch.object(study,'execution_bindings',return_value={}))
             yield root,manifest,tree
 
     def test_prepare_both_arm_manifests_and_load_exact_contracts(self):

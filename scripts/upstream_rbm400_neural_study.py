@@ -37,7 +37,9 @@ def code_bindings():
     files=[Path(__file__),Path(inputs.__file__),Path(folds.__file__),Path(folds.scaling.__file__),
            Path(architecture.__file__),Path(architecture.ops.__file__),Path(backend.__file__),
            Path(architecture.original.__file__),Path(backend.n.__file__),DECL,
-           ROOT/'scripts/verify_upstream_rbm400_neural_study.py']
+           ROOT/'scripts/verify_upstream_rbm400_neural_study.py',
+           ROOT/'scripts/upstream_rbm400_neural_canonical.py',
+           ROOT/'scripts/upstream_rbm400_neural_execution.py',ROOT/'scripts/upstream_rbm400_neural_worker.py']
     return {str(p.relative_to(ROOT)):inputs.cpu.inputs.sha(p) for p in files}
 
 
@@ -53,10 +55,23 @@ def save_array(path,value,guard):
     return terminal.durable_payload(path,lambda stream:np.save(stream,value,allow_pickle=False),ROOT,guard)
 
 
+def execution_bindings():
+    # These immutable owner/prepare records already exist when the authorized
+    # prepare worker starts. Do not bind its later result (which would make a
+    # cycle through the two manifests being prepared).
+    import upstream_rbm400_neural_execution as execution
+    execution.check_sources(execution.read(execution.REPORT/'plan.json'))
+    paths=[execution.REPORT/name for name in ('plan.json','monitor.json','first-scientific-baseline.json',
+        'prerequisites.json','prepare-gate.json','prepare-ownership.json')]
+    paths.append(ROOT/'experiments/upstream-rbm400-neural-execution-protocol/verification.json')
+    return {str(p.relative_to(ROOT)):execution.inputs.sha(p) for p in paths}
+
+
 def prepared_sources(guard):
     declaration,manifest,_=inputs.sources(guard)
     bindings=dict(declaration['source_sha256'])
     for name,digest in code_bindings().items():inputs.context.bind(bindings,ROOT/name,digest)
+    for name,digest in execution_bindings().items():inputs.context.bind(bindings,ROOT/name,digest)
     tree_manifest=inputs.cpu.read(TREE_MANIFEST)
     controls=[row for row in tree_manifest['controls'] if row['id']=='tree154']
     if len(controls)!=1:raise ValueError('Original single tree154 OOF control required')
