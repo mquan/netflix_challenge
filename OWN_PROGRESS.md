@@ -2,6 +2,18 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 04:12 UTC: the complete corrected data replay passed at04:09.
+Proof47c137371b06c02f7c840c3a8bd0c31755e6807ecd8bad3e5b5d65f19f3751d9
+covers both full query sets, all scalar/context operators, all group statistics,
+2815 ridge equations and every held ridge prediction. All seven original
+prepared outputs remain unchanged; the earlier failure stays preserved.
+The neural successor is now active inprepare, worker15925; qualifying-bag
+owner99302 and own17owner99996 wait for its complete proofs. Full source
+contracts221/239/264, original budgets, baseline and resource limits remain.
+No new neural or recovered score is admitted. Development best0.8588630884
+and own16 recovered0.8603409488/0.8613420939 are unchanged; target unmet.
+[Completed replay and active successor evidence](experiments/upstream-rbm400-complete-context-replay-runtime/verification.json).
+
 November22 03:49 UTC: the separate data verifier stopped at03:38 because
 it authenticated two additional original code files without updating the source
 declaration passed into its query reader. The strict full-width fixture now

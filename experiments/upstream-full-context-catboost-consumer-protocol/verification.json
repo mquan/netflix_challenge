@@ -1,0 +1,19 @@
+{
+  "state": "complete_isolated_consumer_metadata_exit_and_known_fold_dispatch_component_checks_only",
+  "observed": "2026-11-22T04:01:17.354358+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_consumer.py": "c3c9cdf405b6a7322e16455aa52844e990a77e13dc8eac8df04514451812f569",
+    "scripts/test_upstream_full_context_catboost_consumer.py": "63ef9d4eb1d6869507277150bf05d8ef709a9fd94f7f4f871b42416363c724c4"
+  },
+  "combined_tree_component_tests_passed": 35,
+  "actual_reaped_child_and_still_live_PID_exit_barriers_checked": true,
+  "exec_command_change_cannot_bypass_original_live_lifetime_barrier": true,
+  "all_five_fold_dispatches_checked": true,
+  "temporary_CPU_parent_proofs_and_reduced_row_counts_are_synthetic": true,
+  "consumer_remains_Torch_free": true,
+  "changed_sources_inputs_exit_status_dimensions_paths_and_parent_flags_rejected": true,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned full-data producer/consumer control and role/exit/resource gates; both original full studies, independent full model/operator/canonical replay, qualifying bag and own18 fixed audits."
+}

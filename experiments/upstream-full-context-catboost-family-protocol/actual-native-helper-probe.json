@@ -1,0 +1,56 @@
+{
+  "state": "complete_actual_three_helper_process_family_native_observation_only",
+  "observed": "2026-11-22T04:06:47.099156+00:00",
+  "captured_root": {
+    "pid": 13115,
+    "ppid": 13053,
+    "pgid": 13115,
+    "state": "Ss",
+    "started": "Sat Nov 21 20:06:46 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u -c import json,subprocess,sys\\012children=[subprocess.Popen([sys.executable,'-c','import time; time.sleep(30)']) for _ in range(2)]\\012try:\\012 print(json.dumps([p.pid for p in children]),flush=True)\\012 sys.stdin.readline()\\012finally:\\012 for child in children:\\012  if child.poll() is None:child.terminate()\\012 for child in children:child.wait()\\012"
+  },
+  "captured_roles": {
+    "producer": {
+      "pid": 13117,
+      "ppid": 13115,
+      "pgid": 13115,
+      "state": "R",
+      "started": "Sat Nov 21 20:06:46 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -c import time; time.sleep(30)"
+    },
+    "consumer": {
+      "pid": 13118,
+      "ppid": 13115,
+      "pgid": 13115,
+      "state": "S",
+      "started": "Sat Nov 21 20:06:46 2026",
+      "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -c import time; time.sleep(30)"
+    }
+  },
+  "actual_group_members": [
+    13115,
+    13117,
+    13118
+  ],
+  "group_usage": {
+    "bytes": 20483200,
+    "rss_bytes": 34684928
+  },
+  "aggregate_usage": {
+    "bytes": 3369782336,
+    "rss_bytes": 5511299072
+  },
+  "current_memory": {
+    "compressor_bytes": 2333212672,
+    "swap_used_bytes": 2073097666.56
+  },
+  "free_bytes": 23032913920,
+  "original_observer_scope_unchanged": true,
+  "transient_observation_attempts": [],
+  "full_family_cap_readmission_at_observation": true,
+  "original_full_cap_bytes": 17179869184,
+  "original_aggregate_cap_bytes": 25769803776,
+  "production_training_or_budget_admission_run": false,
+  "models_fitted": 0,
+  "qualifying_labels_read": false
+}

@@ -1,0 +1,93 @@
+{
+  "state": "verified_live_complete_source_aligned_data_neural_bag_own17_chain",
+  "observed": "2026-11-22T03:54:20.870192+00:00",
+  "coordinators": {
+    "data": {
+      "actual_owner": {
+        "pid": 92207,
+        "ppid": 1,
+        "pgid": 92207,
+        "state": "Ss",
+        "started": "Sat Nov 21 19:44:43 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_execution.py --start"
+      },
+      "status": {
+        "state": "verify",
+        "pid": 92399,
+        "observed": "2026-11-22T03:54:19.213665+00:00"
+      },
+      "actual_scientific_child": {
+        "pid": 92399,
+        "ppid": 92207,
+        "pgid": 92399,
+        "state": "Rs",
+        "started": "Sat Nov 21 19:45:04 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_context_source_alignment_worker.py --phase verify"
+      },
+      "source_files_verified": 174,
+      "plan_sha256": "b8ae364f437090c525bf12a302276f1a97d6645e0f50a26a28fbe939a5555000"
+    },
+    "neural": {
+      "actual_owner": {
+        "pid": 94683,
+        "ppid": 1,
+        "pgid": 94683,
+        "state": "Ss",
+        "started": "Sat Nov 21 19:47:38 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_neural_execution_reference_v3.py --start"
+      },
+      "status": {
+        "state": "waiting_complete_both_arm_CPU_data_and_independent_replay",
+        "observed": "2026-11-22T03:54:20.451214+00:00"
+      },
+      "actual_scientific_child": null,
+      "source_files_verified": 221,
+      "plan_sha256": "97f756144ef2433957194d1f0eb7844050237d750772201c1a0b631d85b0eecb"
+    },
+    "bag": {
+      "actual_owner": {
+        "pid": 99302,
+        "ppid": 1,
+        "pgid": 99302,
+        "state": "Ss",
+        "started": "Sat Nov 21 19:52:40 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_bag_execution_reference_v3.py --start"
+      },
+      "status": {
+        "state": "waiting_complete_both_neural_arms_replay_canonical_known_selection",
+        "observed": "2026-11-22T03:54:12.110332+00:00"
+      },
+      "actual_scientific_child": null,
+      "source_files_verified": 239,
+      "plan_sha256": "75037a63ad5568c55e20c52d6ce43983836e6c15d7bba82aa87b4d2c1060d9c7"
+    },
+    "own17": {
+      "actual_owner": {
+        "pid": 99996,
+        "ppid": 1,
+        "pgid": 99996,
+        "state": "Ss",
+        "started": "Sat Nov 21 19:53:27 2026",
+        "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_rbm400_own17_execution_reference_v3.py --start"
+      },
+      "status": {
+        "state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay",
+        "observed": "2026-11-22T03:54:18.615017+00:00"
+      },
+      "actual_scientific_child": null,
+      "source_files_verified": 264,
+      "plan_sha256": "b9269876dc46f1da9682f3d4947dff8567b08620acc55c79ba50513c633d602d"
+    }
+  },
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "actual_new_neural_models_fitted": 0,
+  "new_score_claimed": false,
+  "qualifying_labels_read": false,
+  "CPU_component_checks": {
+    "replay": 7,
+    "neural": 39,
+    "bag": 17,
+    "own17": 16
+  },
+  "original_failed_and_waiting_namespaces_preserved": true
+}
