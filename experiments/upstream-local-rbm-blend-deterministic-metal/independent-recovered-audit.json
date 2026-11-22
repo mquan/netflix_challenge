@@ -1,0 +1,57 @@
+{
+  "state": "complete_all_three_fixed_local_rbm16_recovered_audits",
+  "observed": "2026-11-22T01:54:46.598058+00:00",
+  "primary": "local-rbm16-simplex",
+  "results": [
+    {
+      "candidate": "local-rbm16-simplex",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603409488199526
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613420938772932
+        }
+      },
+      "prediction_sha256": "a802c83763651a24f2fe28bc4d9a9df934a5ab0dbf146f8f9ad2c01e8ae99320",
+      "both_groups_below_target": false
+    },
+    {
+      "candidate": "local-rbm16-ridge10",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603399172592097
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613555317652924
+        }
+      },
+      "prediction_sha256": "dfbfc02edd23197bbcf93220306e1590689b8d352e77a1576f07e1aa5fea66fe",
+      "both_groups_below_target": false
+    },
+    {
+      "candidate": "preceding-own15-simplex",
+      "groups": {
+        "source0": {
+          "rows": 1408789,
+          "rmse": 0.8603412616628533
+        },
+        "source1": {
+          "rows": 1408342,
+          "rmse": 0.8613423892425344
+        }
+      },
+      "prediction_sha256": "bd21757618b62e021847fdb7d99e0cddcd4abbd4686aed0876c602c0e50f503f",
+      "both_groups_below_target": false
+    }
+  ],
+  "label_git_blob": "47ed4788ffba11aad029854a8e60d4dee04fc899",
+  "preaudit_sha256": "da316f0c063e20716763de75f8e21790258e40b35711ee3730c5e2a8d82ff724",
+  "qualifying_labels_read": true,
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "official_or_untouched_test": false
+}

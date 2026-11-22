@@ -1,0 +1,23 @@
+{
+  "state": "complete_original16_local_rbm_known_only_coefficients",
+  "plan_sha256": "47f722bec3f9fa066c40730d95d3af332c0c443b9090c9fe138edb5a4bbc879f",
+  "calibration_sha256": "e4c2b55a87c965555009bd9c952390a7906145d3d70ec16960c960009bcc52cb",
+  "outputs": {
+    "known-simplex": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-local-rbm-blend-deterministic-metal/known-simplex.f32",
+      "bytes": 4512656,
+      "sha256": "cf49eecb8d06f49c1224d10364a6fe92870a3884f04b15b79d873138a0ec1de6"
+    },
+    "known-ridge10": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-local-rbm-blend-deterministic-metal/known-ridge10.f32",
+      "bytes": 4512656,
+      "sha256": "717691aaa6e4f0933f09f41bbeb227c2d7dfbb033312ca12b26aee8ea3502182"
+    },
+    "known-control": {
+      "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-local-rbm-blend-deterministic-metal/known-control.f32",
+      "bytes": 4512656,
+      "sha256": "a1e2163c86e625af21e070454a0bdfae0a7d41efd25a273eb203c80fd51bc621"
+    }
+  },
+  "qualifying_labels_read": false
+}

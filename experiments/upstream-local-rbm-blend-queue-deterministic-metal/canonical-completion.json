@@ -1,0 +1,16 @@
+{
+  "phase": "canonical",
+  "result_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
+  "execution_plan_sha256": "958db8f3131e3db4ad57cbd317d7fa8ae58c87c5879d747b3fc554ea5591bd57",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "worker": {
+    "pid": 9632,
+    "ppid": 41441,
+    "pgid": 9632,
+    "state": "Ss",
+    "started": "Sat Nov 21 17:55:07 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_metal.py --bootstrap 41441 --phase canonical",
+    "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_local_rbm_blend_metal.py canonical"
+  },
+  "observed": "2026-11-22T01:56:56.607881+00:00"
+}

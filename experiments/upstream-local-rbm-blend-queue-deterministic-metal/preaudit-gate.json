@@ -1,0 +1,25 @@
+{
+  "pid": 4815,
+  "phase": "preaudit",
+  "command": [
+    "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python",
+    "-u",
+    "/Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_local_rbm_blend_metal.py",
+    "preaudit"
+  ],
+  "execution_plan_sha256": "958db8f3131e3db4ad57cbd317d7fa8ae58c87c5879d747b3fc554ea5591bd57",
+  "owner_sha256": "5ae380be063c379b16ba7e09e69ae1461e7d91dbb39bb67a3c3e956d9fa49077",
+  "baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168",
+  "watchdog": {
+    "pid": 41502,
+    "ppid": 41441,
+    "pgid": 41502,
+    "state": "Ss",
+    "started": "Sat Nov 21 14:35:21 2026",
+    "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_metal.py --watch 41441 --lane-fd 3"
+  },
+  "predecessor_sha256": {
+    "experiments/upstream-local-rbm-blend-deterministic-metal/known-completion.json": "7e74bd6772676be2d1573e7f0f9f5b615636c826ce4dc0a34c5720441506169a",
+    "experiments/upstream-local-rbm-blend-deterministic-metal/frozen.json": "939252c36c3163ee0e78adb95e6a4d55f67a5a6e3ae3b85a8bb93c1d2fcb5eaa"
+  }
+}

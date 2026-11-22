@@ -1,0 +1,9 @@
+{
+  "pid": 4815,
+  "ppid": 41441,
+  "pgid": 4815,
+  "state": "Ss",
+  "started": "Sat Nov 21 17:49:15 2026",
+  "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_local_rbm_blend_queue_metal.py --bootstrap 41441 --phase preaudit",
+  "worker_command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/verify_upstream_local_rbm_blend_metal.py preaudit"
+}
