@@ -1,0 +1,27 @@
+{
+  "state": "complete_parent_observed_producer_exit_and_bounded_query_inference_components_only",
+  "observed": "2026-11-22T05:17:09.882055+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_exit.py": "369efc01db53dd25ce0bbeaee825ca6d4ce3eaccb3ce40d6ab2089b760e0bcda",
+    "scripts/test_upstream_full_context_catboost_exit.py": "feb08b8611425c0ca8146729e325afd76d520b2337192b82748afbccd6e81db1",
+    "scripts/upstream_full_context_catboost_query_stream.py": "560fc8d276bc7297e8cbdb16f0ef0f6ee71cebb3868940733f455ce8c7f935bc",
+    "scripts/test_upstream_full_context_catboost_query_stream.py": "b42d50e2b72c46dd5c494558928873c0ea43831279cb9e6d9e9a3d270fdb5649",
+    "scripts/upstream_full_context_catboost_query_prediction.py": "0eec7af5a9f489347209a74b1e6fb1cbda9246b58694f5fa90380eace69c9617",
+    "scripts/test_upstream_full_context_catboost_query_prediction.py": "bbcd11ebd8b14c25b4c3e00fb65986079c1466bc477b1849c1dc335593ecea08",
+    "OWN_FULL_CONTEXT_CATBOOST_QUERY_COMPONENT_PROGRESS.md": "8623e0dfb3839681e6fc6203b9b142420c3a6d0b464d98cf24fea38a4a284d0f"
+  },
+  "combined_tree_component_checks_passed": 61,
+  "combined_duration_seconds": 41.502,
+  "additional_focused_actual_saved_query_prediction_checks_passed": 2,
+  "focused_duration_seconds": 0.82,
+  "actual_real_child_EOF_before_exit_does_not_authorize_receipt": true,
+  "actual_reaped_nonzero_exit_never_publishes_success": true,
+  "bounded_receiver_all_four_original_widths_and_8193_row_boundary_checked": true,
+  "actual_small_CPU_saved_models_reloaded_for_query_inference": 5,
+  "zero_slots_and_seed_three_fold_five_denominators_checked": true,
+  "source_ownership_and_query_fixtures_are_synthetic": true,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned controller/bootstrap/watchdog/resource gates; qualifying source adapter and full selected bag/replay; own18 calibration and fixed audits after original own17 condition."
+}
