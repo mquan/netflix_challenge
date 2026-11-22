@@ -1,0 +1,18 @@
+{
+  "state": "complete_durable_full_arm_tree_study_wrapper_component_checks_only",
+  "observed": "2026-11-22T04:39:58.621035+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_study.py": "b726dd3e44081835fbd90a984643a4a3c92d775349d2b2323f8f7d387e376daf",
+    "scripts/test_upstream_full_context_catboost_study.py": "2c55d56120406a7747326c9634e3e678337b51b3dee2c7ace58ae2b5cb85ed96"
+  },
+  "combined_tree_component_checks_passed": 49,
+  "complete_five_fold_inventory_with_ten_actual_small_CPU_models_and_fifteen_seed_slots_checked": true,
+  "source_and_ownership_admission_and_iteration_selection_are_synthetic_in_wrapper_fixture": true,
+  "deferred_producer_exit_gate_called_after_complete_stream_before_fitting": true,
+  "original_baseline_and_full_model_configuration_enforced": true,
+  "changed_weights_source_bindings_manifests_and_partial_namespace_reuse_rejected": true,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned controller/role/exit/resource gates; full paired studies and independent full replays/canonical scoring, qualifying bag and own18 fixed audits."
+}
