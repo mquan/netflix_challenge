@@ -1,9 +1,9 @@
 {
- "observed": "2026-11-22T20:35:09+00:00",
- "training_hours_left": 17.41,
- "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n39653 Sat Nov 21 09:50:36 2026     01-02:44:33 957:27.53 8118496 Rs   ./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3\n58935 Sun Nov 22 10:45:51 2026        01:49:18 103:28.30 8238128 R+   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
- "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 89%",
- "swap": "total = 12288.00M  used = 10782.25M  free = 1505.75M  (encrypted)",
+ "observed": "2026-11-22T21:35:11+00:00",
+ "training_hours_left": 16.41,
+ "native_process": "PID STARTED                          ELAPSED      TIME    RSS STAT COMMAND\n39653 Sat Nov 21 09:50:36 2026     01-03:44:35 1014:39.44 8118496 Rs   ./target/release/fit rbm s3-rbm800p -p pipeline-3.toml --final --preds preds_3\n58935 Sun Nov 22 10:45:51 2026        02:49:20 161:22.96 8238160 R+   ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+ "memory": "The system has 103079215104 (6291456 pages with a page size of 16384).\nSystem-wide memory free percentage: 91%",
+ "swap": "total = 12288.00M  used = 10662.25M  free = 1625.75M  (encrypted)",
  "disk_free_gib": 176.1,
  "jobs": {
   "s3-rbm400pf": {
@@ -313,7 +313,7 @@
      },
      "39079": {
       "bytes": 27577548.8,
-      "rss_bytes": 27590656,
+      "rss_bytes": 27607040,
       "command": "/opt/homebrew/Cellar/python@3.12/3.12.9/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python scripts/upstream_remote_weekend.py run-job --tree /Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source --job s3-rbm800p --deadline-utc 2026-11-23T14:00:00Z"
      },
      "39069": {
@@ -343,22 +343,22 @@
      },
      "58935": {
       "bytes": 8482560409.6,
-      "rss_bytes": 8435843072,
+      "rss_bytes": 8435875840,
       "command": "./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3"
      }
     },
     "memory": {
-     "compressor_bytes": 3835215872,
-     "swap_used_bytes": 11306008576.0
+     "compressor_bytes": 3736633344,
+     "swap_used_bytes": 11180179456.0
     },
-    "observed": "2026-11-22T20:34:52.870651+00:00"
+    "observed": "2026-11-22T21:35:05.476169+00:00"
    },
-   "epoch_lines": 46,
-   "last_epoch": 21,
+   "epoch_lines": 48,
+   "last_epoch": 23,
    "phase": "fulltrain->qual",
    "log_tail": [
-    "Epoch 20 | RMSE 3.74020",
-    "Epoch 21 | RMSE 3.74376"
+    "Epoch 22 | RMSE 3.73628",
+    "Epoch 23 | RMSE 3.74292"
    ],
    "receipt": false,
    "incomplete": false,
