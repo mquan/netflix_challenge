@@ -1,0 +1,27 @@
+{
+  "state": "complete_bounded_binary_handoff_and_actual_Torch_isolated_process_fixture_checks_only",
+  "observed": "2026-11-22T03:35:58.885990+00:00",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost_wire.py": "224661ff2136b3ba9e9fee68f59b3ef7dacf5f894ab5572307279b489db0fbab",
+    "scripts/test_upstream_full_context_catboost_wire.py": "7126956fd9f5380647802aba88eb11239de380a3d1cbc9dfb4ce56e1b5ec08c9",
+    "scripts/upstream_full_context_catboost_stream.py": "2cc6006d99230dbb59ef17e7a5b1f6e0f4b257ad725d52c44fbf498a1b9a2ab8",
+    "scripts/test_upstream_full_context_catboost_stream.py": "df16224cd021d379a0de8a88e1ee818649d4a8d2a27a96e0a89ce1579dd506cf"
+  },
+  "combined_tree_component_tests_passed": 27,
+  "actual_producer_imported_Torch_and_receiver_remained_Torch_free": true,
+  "full_widths_checked": [
+    713,
+    714,
+    863,
+    864
+  ],
+  "ridge_populations_checked": 10,
+  "cross_block_fixture_rows": 8193,
+  "partial_IO_and_preallocation_header_barriers_checked": true,
+  "changed_weights_sources_features_truncation_and_trailing_bytes_rejected": true,
+  "actual_production_producer_exit_verified": false,
+  "production_study_admitted": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "remaining": "Owned original full-data producer and receiver with verified actual producer zero-exit gate, complete source/runtime/budget supervision; both full studies, independent full model/canonical replay, qualifying bag and own18 fixed audits."
+}

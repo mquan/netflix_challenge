@@ -2,6 +2,19 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 03:49 UTC: the separate data verifier stopped at03:38 because
+it authenticated two additional original code files without updating the source
+declaration passed into its query reader. The strict full-width fixture now
+reproduces that failure and passes with aligned declarations. All seven original
+assembled outputs remain unchanged. New replay owner92207/worker92399 is live
+under the original3GiB/24GiB/baseline/lane limits after7 recovery checks. New
+neural owner94683 waits its complete proof after39 checks and221 frozen files;
+no neural fit has started. Older waiting namespaces and the failed verifier
+remain intact. The tree producer adapter passes30 combined component checks;
+its full owned study and the versioned bag/own17 successors still require work.
+No new score: own16 remains0.8603409488/0.8613420939 and target0.85725 is unmet.
+[Failure, regression and live recovery evidence](experiments/upstream-rbm400-context-source-alignment-runtime/verification.json).
+
 November22 03:27 UTC: full original-budget data assembly has completed.
 The scalar arm retains714 neural inputs/225 contexts and the learned-context
 arm864 inputs/375 contexts. All seven prepared outputs were independently
