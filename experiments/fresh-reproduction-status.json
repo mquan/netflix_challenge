@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T03:49:10.745271+00:00",
-  "display_time": "2026-11-22 03:49 UTC",
+  "observed": "2026-11-22T04:12:52.450629+00:00",
+  "display_time": "2026-11-22 04:12 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "complete-full-context-replay-neural-active",
+      "work": "Full corrected data replay complete; neural successor active",
+      "state": "Actual full proof47c137... passes both complete query sets, all scalar/context operators/group statistics,2815 ridge equations and every stored held prediction; all seven original outputs unchanged. Neural phaseprepare worker15925 active. Selected bag99302 and own1799996 wait complete predecessor proofs;221/239/264 frozen source contracts and original budgets/guards retained. No new neural or recovered score; development0.8588630884 and own16 recovered0.8603409488/0.8613420939 remain unchanged. Target unmet.",
+      "evidence": "experiments/upstream-rbm400-complete-context-replay-runtime/verification.json"
+    },
     {
       "work_id": "context-source-set-alignment-recovery",
       "work": "Corrected readonly data replay active; full neural successor waiting",
