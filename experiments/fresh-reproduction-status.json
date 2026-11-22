@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T01:37:43.031105+00:00",
-  "display_time": "2026-11-22 01:38 UTC",
+  "observed": "2026-11-22T01:49:54.062210+00:00",
+  "display_time": "2026-11-22 01:50 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-complete-pair-own17-queue",
+      "work": "Full RBM400 pair verified; own16 vectors frozen; own17 audit pipeline queued",
+      "state": "Both original fifteen-epoch RBM400 models and every native/projection prediction have completed actual saved-model MPS replay. Pair proof3e8d2e... verified; no qualifying labels read. Own16 known-only fit and all six frozen vectors are complete; independent preaudit and fixed recovered audit pending. Own17 owner4412 is live waiting the verified neural NN-only pair; all16 CPU tests/review pass,173 frozen files and exact original baseline verify. No new score or plot point.",
+      "evidence": "experiments/upstream-rbm400-own17-execution-protocol/runtime-verification.json"
+    },
     {
       "work_id": "rbm400-owned-selected-bag-queue",
       "work": "Owned full qualifying NN-only bag and separate replay queued",
@@ -374,7 +380,7 @@
         "command": "/Users/quan/workspace/netflix_upstream_repro/.venv/bin/python -u /Users/quan/workspace/netflix_upstream_repro/scripts/upstream_factored_rbm_execution_metal.py --start"
       }
     },
-    "local_gpu_rbm_worker": 19951,
+    "local_gpu_rbm_worker": null,
     "local_gpu_rbm_watchdog": 41170,
     "local_rbm_blend_watchdog": 41502,
     "local_gpu_rbm_original_metadata_attempt_retired": true,
@@ -387,7 +393,7 @@
     "local_gpu_rbm_v2_prior_data_admission_sha256": "5deecda9e00cd104cf102c491ad62acdc81b4aeeefc13a81cea104f2e611a79d",
     "local_gpu_rbm_v2_preflight_failed_before_fitting": true,
     "local_gpu_rbm_known_completed_epochs": 15,
-    "local_gpu_rbm_qualifying_completed_epochs": 14,
+    "local_gpu_rbm_qualifying_completed_epochs": 15,
     "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
     "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
     "local_rbm_latent_followup": "owned_full_extraction_and_CPU_data_queues_live_waiting_no_neural_study_yet",
@@ -404,7 +410,13 @@
     "local_rbm_neural_state": "owned_both_arm_original_budget_neural_supervisor_waiting_full_CPU_data_proof",
     "local_rbm_selected_bag_owner": 84612,
     "local_rbm_selected_bag_watchdog": 84687,
-    "local_rbm_selected_bag_state": "waiting_complete_both_neural_arms_replay_canonical_known_selection"
+    "local_rbm_selected_bag_state": "waiting_complete_both_neural_arms_replay_canonical_known_selection",
+    "local_gpu_rbm_state": "complete_full_own_gpu_rbm400_original15_15_and_independent_queries",
+    "local_gpu_rbm_complete_pair_sha256": "3e8d2ecdbb40d0c953f98b24601c2e84a9353bb45ca23d74fea26797a814199a",
+    "local_gpu_rbm_qualifying_replay_sha256": "677210ac00f53bfdb4a0aa2a61176f0cc33646eeea192525f614a84470d1babc",
+    "local_rbm_own17_owner": 4412,
+    "local_rbm_own17_watchdog": 4494,
+    "local_rbm_own17_state": "waiting_complete_actual_selected_NN_pair_and_full_query_replay"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",

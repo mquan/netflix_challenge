@@ -1,0 +1,28 @@
+{
+  "execution_plan_sha256": "06842568307a311c9ec2c1ebc4fde4c73c734ad8301a2b2ee8ee7f1f227a48ea",
+  "qualifying_labels_read": false,
+  "recovered_outcome_paths_read": false,
+  "producer_pid": 19951,
+  "observed": "2026-11-22T01:33:17.762770+00:00",
+  "state": "complete_original_full_nonempty_user_epoch",
+  "phase": "qualifying",
+  "epoch": 14,
+  "configuration": {
+    "hidden": 400,
+    "factors": 50,
+    "epochs": 15,
+    "batch_users": 500,
+    "seed": 128,
+    "lr": 0.02,
+    "momentum": 0.9,
+    "decay": 0.001,
+    "lr_bu": 0.001,
+    "lr_but": 0.0005,
+    "tile_rows": 16384
+  },
+  "data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+  "completed_batches": 961,
+  "nonempty_users": 480189,
+  "cd_steps": 3,
+  "original_baseline_sha256": "689232383581ed51cbdffc8a1da5ae047ee94d690ea51b64bccbbab20b447168"
+}

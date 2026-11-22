@@ -1,0 +1,69 @@
+{
+  "execution_plan_sha256": "06842568307a311c9ec2c1ebc4fde4c73c734ad8301a2b2ee8ee7f1f227a48ea",
+  "qualifying_labels_read": false,
+  "recovered_outcome_paths_read": false,
+  "producer_pid": 95372,
+  "observed": "2026-11-22T01:44:00.883577+00:00",
+  "state": "complete_independent_own_gpu_rbm_phase_actual_model_and_all_native_queries",
+  "phase": "qualifying",
+  "fit_sha256": "5ec072745d92037fa6125b999bb56183eb272bc0475122d8f9e6a763cd0161c7",
+  "data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+  "epoch_sha256": {
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-01.json": "43fd19e622bf47c3f5dd3f87e1c0b65a2a73c710fe06d8f70030ef356678e612",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-02.json": "6aae476ed6ceafb132b5b9e194bccd48072ec9a826bcd56a2bbb4e1592794e6b",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-03.json": "553aa5b06896daf00a37655f80221a93ac7b71d5a8cfba983845276288c45d30",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-04.json": "111b75ebec7d5376dd4888ec39d61e1334919503188ad76c4e7904636be1d5f5",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-05.json": "ca189ce56b97179562631ca061277f71bc27401464056de76c6280c7a1f651de",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-06.json": "010a48a5bffe54ada5594dfcf2018a7c3c428a197fdee38208599540c2a79840",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-07.json": "84a056e40b21355e89a64ebae2fa81b83ea61bf1d9bd7bf63d1ed671d39c752e",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-08.json": "b5552fd6182352ef30fe4c9205aa7d7ba426496c8dafc61d091e995d58d7208e",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-09.json": "92c71ad7f4f9bcb670032a5af14827cf694907d2dcdcd90ae61c17c1d7e93209",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-10.json": "fa5c215d1d86deb963fe8667091586e2f34ec66cd50e95fee8b0bf5c86394a1c",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-11.json": "ada94e89da174aad003eb0374d9b24b00f0fea2f50fd61059f28d157008a7f84",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-12.json": "9b92e9efc7a591d4c754320bce7e78926bda5f3e3d9d91732d1e4ddc93ba4e46",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-13.json": "1328ade0c5c7b1b89ab714e8885efcead6f9c43c9b163c76c97ef3a826f4bc2c",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-14.json": "ad74e6571e4a408977c8c5d5585c2a83ed60bf2538d066efb1956eddf5c49d66",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-epoch-15.json": "b54ae606aa0f400ae4f9c569d755f7a77d4ecbc524756d0741d890ea7520f9c7"
+  },
+  "native_rows": 2817131,
+  "all_native_prediction_bits_match": true,
+  "known_projection_bits_match": false,
+  "actual_model_payloads": {
+    "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/qualifying.pt": {
+      "sha256": "150cde92ad573b701e83821fa075d2174348fb5aba03be33707cb1b8818686dd",
+      "bytes": 401852429,
+      "identity": [
+        16777233,
+        56457570,
+        401852429,
+        1795311586277441398,
+        1795311586280035212
+      ]
+    },
+    "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-native.npy": {
+      "sha256": "13f702c27d8a7fa57345101789a5915b7da100b8d4d23fd972538c29b2e2b453",
+      "bytes": 11268652,
+      "identity": [
+        16777233,
+        56458708,
+        11268652,
+        1795311698204549162,
+        1795311698206430025
+      ]
+    }
+  },
+  "device": "mps",
+  "configuration": {
+    "hidden": 400,
+    "factors": 50,
+    "epochs": 15,
+    "batch_users": 500,
+    "seed": 128,
+    "lr": 0.02,
+    "momentum": 0.9,
+    "decay": 0.001,
+    "lr_bu": 0.001,
+    "lr_but": 0.0005,
+    "tile_rows": 16384
+  }
+}

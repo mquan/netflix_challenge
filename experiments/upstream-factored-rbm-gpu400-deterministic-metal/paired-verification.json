@@ -1,0 +1,102 @@
+{
+  "execution_plan_sha256": "06842568307a311c9ec2c1ebc4fde4c73c734ad8301a2b2ee8ee7f1f227a48ea",
+  "qualifying_labels_read": false,
+  "recovered_outcome_paths_read": false,
+  "producer_pid": 99709,
+  "observed": "2026-11-22T01:44:24.759903+00:00",
+  "state": "complete_own_gpu_rbm400_full15_15_models_and_paired_queries_no_outcomes",
+  "configuration": {
+    "hidden": 400,
+    "factors": 50,
+    "epochs": 15,
+    "batch_users": 500,
+    "seed": 128,
+    "lr": 0.02,
+    "momentum": 0.9,
+    "decay": 0.001,
+    "lr_bu": 0.001,
+    "lr_but": 0.0005,
+    "tile_rows": 16384
+  },
+  "data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
+  "preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
+  "replay_sha256": {
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/known-replay.json": "9a87f8ba6fda7ee1c22d515e89c4072aeb350bd68b13235e262e248ab025838a",
+    "experiments/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-replay.json": "677210ac00f53bfdb4a0aa2a61176f0cc33646eeea192525f614a84470d1babc"
+  },
+  "actual_model_payloads": {
+    "known": {
+      "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known.pt": {
+        "sha256": "38c0675e7ef868bc7eb8c42befa731e771b13a9a569e86c32934e174c4258c46",
+        "bytes": 387560525,
+        "identity": [
+          16777233,
+          56248111,
+          387560525,
+          1795306026132035411,
+          1795306026133214109
+        ]
+      },
+      "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known-native.npy": {
+        "sha256": "3bee3a993cc39b5b2d240317a5c0aef75de824794b5846508ee411c2be9a2019",
+        "bytes": 7042104,
+        "identity": [
+          16777233,
+          56249200,
+          7042104,
+          1795306124066131939,
+          1795306124067625342
+        ]
+      },
+      "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known.npy": {
+        "sha256": "b85617beed19c6233338ab83b5019429ff9775c6f07e9ffa63aaee7826a83ee2",
+        "bytes": 4512784,
+        "identity": [
+          16777233,
+          56249203,
+          4512784,
+          1795306124082321296,
+          1795306124083661784
+        ]
+      }
+    },
+    "qualifying": {
+      "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/qualifying.pt": {
+        "sha256": "150cde92ad573b701e83821fa075d2174348fb5aba03be33707cb1b8818686dd",
+        "bytes": 401852429,
+        "identity": [
+          16777233,
+          56457570,
+          401852429,
+          1795311586277441398,
+          1795311586280035212
+        ]
+      },
+      "artifacts/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-native.npy": {
+        "sha256": "13f702c27d8a7fa57345101789a5915b7da100b8d4d23fd972538c29b2e2b453",
+        "bytes": 11268652,
+        "identity": [
+          16777233,
+          56458708,
+          11268652,
+          1795311698204549162,
+          1795311698206430025
+        ]
+      }
+    }
+  },
+  "known": {
+    "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-factored-rbm-gpu400-deterministic-metal/known.npy",
+    "rows": 1128164,
+    "sha256": "b85617beed19c6233338ab83b5019429ff9775c6f07e9ffa63aaee7826a83ee2"
+  },
+  "qualifying": {
+    "path": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-factored-rbm-gpu400-deterministic-metal/qualifying-native.npy",
+    "rows": 2817131,
+    "sha256": "13f702c27d8a7fa57345101789a5915b7da100b8d4d23fd972538c29b2e2b453"
+  },
+  "models_fitted": 2,
+  "epochs_each": 15,
+  "score_computed": false,
+  "remaining": "Known-label-only blend integration and independent frozen recovered-group audit; no score has been claimed."
+}
