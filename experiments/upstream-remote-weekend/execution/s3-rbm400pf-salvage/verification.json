@@ -1,0 +1,57 @@
+{
+ "state": "owner_approved_partial_salvage_finite_epoch_pairs",
+ "observed": "2026-11-22T16:44:54.197805+00:00",
+ "job": "s3-rbm400pf",
+ "tree": "artifacts/upstream-remote-weekend-r8",
+ "epochs_exported": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "reason": "fulltrain->qual phase diverged: ep06+ qual all NaN; helper export requires finite terminal pair",
+ "ep06_qual_nan_count": 2817131,
+ "records": [
+  {
+   "column": "s3-rbm400pf_ep01",
+   "file": "s3-rbm400pf_ep01.npz",
+   "sha256": "2a9d2486c1e893e9b2e7729d1ca170773ebc1c24df4804d872d4c1d098ce7fac",
+   "native_probe_sha256": "2ed758753778f988a4251ad6cd448e824abcb2bdafc7c1720b22cd3d30768da1",
+   "native_qual_sha256": "2c3fc325ad26220f3471e8860e14a412453e28ea3790c9b3a83a961e765484e7"
+  },
+  {
+   "column": "s3-rbm400pf_ep02",
+   "file": "s3-rbm400pf_ep02.npz",
+   "sha256": "74fb4aaf048c9862174cba69732aec5c05e392599818b8ed71a95a115e8c72ae",
+   "native_probe_sha256": "5e52cc3f4c94767a9c49289ba454b75f8fb342c575667265c3173d6f2bdf45f9",
+   "native_qual_sha256": "23a783e67b75a921e19df2113ef6e136c4991b6959b2afd963ec15110543b64b"
+  },
+  {
+   "column": "s3-rbm400pf_ep03",
+   "file": "s3-rbm400pf_ep03.npz",
+   "sha256": "cc5d8cacd2b96ecca21326e93371bb78b023953798be0f4ac9109f39ee567bbd",
+   "native_probe_sha256": "45fe43ba20806c2e9bcb4b65fe45671b8cd880aa6747c8826614240209bdcfd8",
+   "native_qual_sha256": "edf99d490be9530ba59d34c8b1de52e6ed165516a1af5ea903a2f845b9e3ec90"
+  },
+  {
+   "column": "s3-rbm400pf_ep04",
+   "file": "s3-rbm400pf_ep04.npz",
+   "sha256": "f7e8d95c946f87d461faf22f85e53a6315e9401bed6541ee3d2ba1a500417eb1",
+   "native_probe_sha256": "e58d5221cedfbad1ae1defed8302909bd675aca3422539795611dc57306e790c",
+   "native_qual_sha256": "f31ab65d757dc3c2ed4602578db078dbbf3bd38c6a7e1bc14597277a2470dd2c"
+  },
+  {
+   "column": "s3-rbm400pf_ep05",
+   "file": "s3-rbm400pf_ep05.npz",
+   "sha256": "642365f781fd4979cf5759d4791c975070bbb259584b9dececc6dbe0fcee84ea",
+   "native_probe_sha256": "a1c39226d7cf693e04c26170f29f13548a9285c954d0fe530e8afb0fafe54dff",
+   "native_qual_sha256": "bba4967b9db4d9445c9a33303f3f8428ae87eac23c0f2a754b4cf459b676fe73"
+  }
+ ],
+ "trace_sha256": "75537af056adac5948bf322bcc41b5c49e4d2106174c88dea81e3bd5a79f46fe",
+ "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+ "independent_known_projection": true,
+ "qualifying_labels_read": false,
+ "scope": "Own numerical outputs, partial (epochs 1-5 of 15). No blend claim."
+}

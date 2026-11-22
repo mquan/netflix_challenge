@@ -112,5 +112,17 @@
    "note": "training deadline 2026-11-23T14:00:00Z still applies to wall clock; paused time counts against it",
    "resumed_utc": "2026-11-22T04:26:01+00:00"
   }
- ]
+ ],
+ "rbm400pf_nan_salvage": {
+  "observed": "2026-11-22T16:45Z",
+  "issue": "s3-rbm400pf (r8) fulltrain->qual phase diverged to NaN at epoch 6 (lr 0.02, mom 0.9, NFACT 50, no clipping); ep06+ qual all NaN; helper export will refuse terminal pair",
+  "owner_decision": "option 1: salvage finite epoch pairs ep01-ep05 only; no rerun",
+  "export": "artifacts/exports/s3-rbm400pf-salvage via execution/salvage_rbm400pf.py (helper npz format, independent probex projection)",
+  "release_assets": [
+   "s3-rbm400pf-salvage-part01.tar.gz",
+   "s3-rbm400pf-salvage-index.json"
+  ],
+  "best_salvaged_probe_3": "ep05 0.91586 (phase-1 final ep15 was 0.90763)",
+  "original_run": "PID 39673 left running to complete its trace; its helper export is expected to fail"
+ }
 }

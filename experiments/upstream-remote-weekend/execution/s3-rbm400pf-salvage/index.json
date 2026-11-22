@@ -1,0 +1,25 @@
+{
+ "state": "owner_approved_partial_salvage_finite_epoch_pairs",
+ "job": "s3-rbm400pf-salvage",
+ "source_verification_sha256": "473492d6f491912fbaa733ed88536ef734f35de9ee0b44a881e457c19ad2f85e",
+ "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+ "parts": [
+  {
+   "file": "s3-rbm400pf-salvage-part01.tar.gz",
+   "bytes": 66660897,
+   "sha256": "fa78dac3a3a2ba692422976492e6b464e65a8fcf5f2106cce80368ad640d03a1",
+   "members_sha256": {
+    "s3-rbm400pf.out": "75537af056adac5948bf322bcc41b5c49e4d2106174c88dea81e3bd5a79f46fe",
+    "s3-rbm400pf_ep01.npz": "2a9d2486c1e893e9b2e7729d1ca170773ebc1c24df4804d872d4c1d098ce7fac",
+    "s3-rbm400pf_ep02.npz": "74fb4aaf048c9862174cba69732aec5c05e392599818b8ed71a95a115e8c72ae",
+    "s3-rbm400pf_ep03.npz": "cc5d8cacd2b96ecca21326e93371bb78b023953798be0f4ac9109f39ee567bbd",
+    "s3-rbm400pf_ep04.npz": "f7e8d95c946f87d461faf22f85e53a6315e9401bed6541ee3d2ba1a500417eb1",
+    "s3-rbm400pf_ep05.npz": "642365f781fd4979cf5759d4791c975070bbb259584b9dececc6dbe0fcee84ea",
+    "verification.json": "473492d6f491912fbaa733ed88536ef734f35de9ee0b44a881e457c19ad2f85e"
+   }
+  }
+ ],
+ "raw_dataset_uploaded": false,
+ "qualifying_labels_read": false,
+ "observed": "2026-11-22T16:44:55.422097+00:00"
+}
