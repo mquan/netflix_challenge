@@ -2,6 +2,14 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 06:31 UTC: a fresh remote-branch inspection finds report
+9c9c1c7, observed05:34 UTC, after the remote-side resume commit. It reports
+TX300 at8/24 epochs, RBM800 at9/25 and RBM400 at4/15, all still in the known
+train_3->probe_3 phase. No completed receipt, export, archive or upload exists.
+This is a pushed snapshot, not a current remote process poll; no remote job
+control was issued here. No returned pair or new score is admitted.
+[Original snapshot and scope](experiments/upstream-remote-weekend-progress-after-resume/verification.json).
+
 November22 06:21 UTC: four of five scalar folds have completed,
 with twelve fresh saved MPS models. The fourth selected epochs are[9,9,5];
 every output byte in its immutable receipt has been rehashed. Worker32127

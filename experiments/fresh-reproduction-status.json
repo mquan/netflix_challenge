@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T06:21:17.218300+00:00",
-  "display_time": "2026-11-22 06:21 UTC",
+  "observed": "2026-11-22T06:31:15.254866+00:00",
+  "display_time": "2026-11-22 06:31 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "remote-weekend-newer-pushed-report-after-remote-resume",
+      "work": "Remote snapshot reports three progressing original jobs; no returned pair",
+      "state": "Latest pushed report9c9c1c7 observed05:34UTC shows TX3008/24, RBM8009/25, RBM4004/15, all known train_3->probe_3. The remote side resumed its original PIDs; no completed receipt/export/archive/upload or independently admitted pair exists. Snapshot only, no current remote process poll or remote control from this machine. No new score.",
+      "evidence": "experiments/upstream-remote-weekend-progress-after-resume/verification.json"
+    },
     {
       "work_id": "rbm400-scalar-four-folds-and-live-conditional-tree-owner",
       "work": "Four complete scalar folds; reviewed full tree owner waiting own17 primary",
@@ -353,7 +359,7 @@
     "own14_recovery_owner": null,
     "complete_trajectory_data": "complete_independent_all_trajectory_operators_statistics_ridge_and_stored_predictions",
     "complete_trajectory_data_owner": null,
-    "remote_weekend": "pinned_owner_requested_pause_20261121T190727Z_no_live_remote_poll",
+    "remote_weekend": "newer_pushed_report_after_remote_side_resume_no_completed_return",
     "complete_trajectory_neural": "complete_full_actual15_model_replay_and_separate_canonical_development_scores",
     "complete_trajectory_neural_owner": null,
     "complete_trajectory_bag": "complete_full_trajectory_qualifying_bag_and_independent_replay",
@@ -490,7 +496,16 @@
     "conditional_tree_watchdog": 66674,
     "conditional_tree_state": "reviewed_live_waiting_complete_original_own17_primary_canonical_condition",
     "conditional_tree_source_files": 364,
-    "conditional_tree_test_count": 89
+    "conditional_tree_test_count": 89,
+    "remote_weekend_latest_report_observed": "2026-11-22T05:34:37+00:00",
+    "remote_weekend_latest_commit": "9c9c1c7b27b1b01a9e3721a05c7bf5360734c0b6",
+    "remote_weekend_reported_known_epochs": {
+      "s3-rbm400pf": 4,
+      "s3-tx300r": 8,
+      "s3-rbm800p": 9
+    },
+    "remote_weekend_current_live_poll": false,
+    "remote_weekend_complete_returned_pairs": 0
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
