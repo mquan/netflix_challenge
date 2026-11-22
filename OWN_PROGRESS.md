@@ -2,6 +2,20 @@
 
 Updated November22 UTC /November21 Pacific,2026.
 
+November22 05:18 UTC: the scalar neural study has completed two of five
+outer folds and saved six fresh MPS models. Their selected epoch counts are
+[6,11,7] and [9,5,5]; all frozen model, preprocessing and prediction output
+bytes in both receipts have been rehashed. Worker32127 remains active under
+owner24039. Complete scalar/latent replay and canonical comparison, the full
+selected qualifying bag, and own17 calibration/audits are still pending.
+Development0.8588630884 and recovered0.8603409488/0.8613420939 remain unchanged;
+the strict0.85725 target on both recovered groups is unmet. The planned tree
+follow-up now has full-study replay/canonical, actual producer-exit, bounded
+query receiver and saved-model block-inference components. Its61 combined
+checks plus two additional real-model inference checks pass on synthetic
+sources; the owned full tree run remains pending under its original condition.
+[Second completed scalar fold](experiments/upstream-rbm400-second-scalar-fold-complete/verification.json).
+
 November22 04:41 UTC: both actual neural arm manifests now bind the completed
 47c137... replay proof and the correct714/864 inputs with225/375 contexts.
 Owned preparation completed at04:27; the full scalar training worker32127 is
