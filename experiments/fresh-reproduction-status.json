@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T01:16:44.634337+00:00",
-  "display_time": "2026-11-22 01:16 UTC",
+  "observed": "2026-11-22T01:37:43.031105+00:00",
+  "display_time": "2026-11-22 01:38 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "rbm400-owned-selected-bag-queue",
+      "work": "Owned full qualifying NN-only bag and separate replay queued",
+      "state": "Liveowner84612/watch84687 waits for both complete neural arms, full actual model replays and canonical known-only selection. All16CPUchecks/review pass;163sourcefiles and exact original baseline verify. Full2817131rows/original8192chunks/5folds/3slots/16GiBcap/24GiBaggregate/twolanes retained. NN-onlyprovider and fixed-halfcontrol have explicit matched roles. Actualbag and own17 calibration/audits pending. QualifyingRBM400fit completed14/15epochs. No newscore.",
+      "evidence": "experiments/upstream-rbm400-bag-execution-protocol/runtime-verification.json"
+    },
     {
       "work_id": "rbm400-owned-neural-queue",
       "work": "Owned full-budget scalar and learned-context neural comparison queued",
@@ -381,7 +387,7 @@
     "local_gpu_rbm_v2_prior_data_admission_sha256": "5deecda9e00cd104cf102c491ad62acdc81b4aeeefc13a81cea104f2e611a79d",
     "local_gpu_rbm_v2_preflight_failed_before_fitting": true,
     "local_gpu_rbm_known_completed_epochs": 15,
-    "local_gpu_rbm_qualifying_completed_epochs": 11,
+    "local_gpu_rbm_qualifying_completed_epochs": 14,
     "local_gpu_rbm_current_data_admission_sha256": "edc444d70abdd3c0062755d5047ba24cb2b1a37344e0173b0d7a44bc1c7d61a9",
     "local_gpu_rbm_current_MPS_preflight_sha256": "e689575bac5a948d423ffe3e3404030ebd3788a4ca7770b8efcf83db26ea0167",
     "local_rbm_latent_followup": "owned_full_extraction_and_CPU_data_queues_live_waiting_no_neural_study_yet",
@@ -395,7 +401,10 @@
     "local_rbm_neural_watchdog": 37712,
     "local_rbm_neural_CPU_test_count": 38,
     "local_rbm_neural_source_files_verified": 157,
-    "local_rbm_neural_state": "owned_both_arm_original_budget_neural_supervisor_waiting_full_CPU_data_proof"
+    "local_rbm_neural_state": "owned_both_arm_original_budget_neural_supervisor_waiting_full_CPU_data_proof",
+    "local_rbm_selected_bag_owner": 84612,
+    "local_rbm_selected_bag_watchdog": 84687,
+    "local_rbm_selected_bag_state": "waiting_complete_both_neural_arms_replay_canonical_known_selection"
   },
   "first85_completion_verification_sha256": "f15c68cb6778f5b7e761330c0c0ca867d3bb504659f8360cdcba9512529eea67",
   "matching86_qualifying_verification_sha256": "49b1e832d28bdfdde140702bb9c3ffa2ecd4e3295840476a1e7bff2f7c214131",
