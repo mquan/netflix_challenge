@@ -1,0 +1,21 @@
+{
+  "state": "reviewed_small_real_CPU_backend_checkpoint_no_full_data_study_admission",
+  "observed": "2026-11-22T02:25:24.922431+00:00",
+  "test_exit_code": 0,
+  "test_count": 7,
+  "test_seconds": 0.685,
+  "actual_CatBoost_CPU_tested": true,
+  "full_data_study_implemented": false,
+  "production_source_admission_run": false,
+  "production_models_fitted": 0,
+  "qualifying_labels_read": false,
+  "independent_review": "clean",
+  "reviewer": "/root/refit_checkpoint_review",
+  "scope": "Small synthetic713-column CPU fits with2/4trees and temporary16-round inner selection; actual saved-model authenticated FD replay over8193 synthetic query rows, zero-slot/invalid-input/process-isolation and exceptional-load/body identity checks. Production budgets stay2000/pat100; no full-source provider/owned scientific study/canonical score admitted.",
+  "reload_behavior": "Pinned CatBoost1.2.10 n_features_in_ becomes0 and get_all_params rounds floats after reload. Exact persisted flat_parameters, feature_names and tree_count signature plus complete predictionbits match; no numeric tolerance introduced.",
+  "source_sha256": {
+    "scripts/upstream_full_context_catboost.py": "d195c4357cc070bd4f0ab7751df1619f9278c8e2b56f374710f2d921f1b93eef",
+    "scripts/test_upstream_full_context_catboost.py": "d97dec97d6142ae700b69dbb2638042aceff34bf282840895bccec39a9fb5821",
+    "OWN_FULL_CONTEXT_CATBOOST_FOLLOWUP_PLAN.md": "7c32ee8c21ac069dc63b5243544fc8d2e69171309f3b1fe2b2111b65fdf446a9"
+  }
+}
