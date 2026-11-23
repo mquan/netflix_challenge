@@ -1,0 +1,148 @@
+{
+ "state": "complete_lr015_rerun",
+ "observed": "2026-11-23T09:04:45.148348+00:00",
+ "job": "s3-rbm400pf-lr015",
+ "tree": "artifacts/upstream-remote-weekend-r11",
+ "recipe_change": {
+  "LR": "0.015 (plan: 0.02)",
+  "RAYON_NUM_THREADS": "8 (plan: 4)"
+ },
+ "reason": "plan recipe diverged to NaN in fulltrain->qual phase at epoch 6 (r8)",
+ "binary_sha256": "0d3b3e1130ae75005834a179effe3ed11988bd4dcc2055adcab408829aff4466",
+ "records": [
+  {
+   "column": "s3-rbm400pf-lr015",
+   "native": "s3-rbm400pf",
+   "file": "s3-rbm400pf-lr015.npz",
+   "sha256": "92d1cccaed4e59033e952a0d9d27e45b4503e6131d69349fb28b0e1fcd871f69",
+   "native_probe_sha256": "3b927b03ee4c9454a2c96a49de67c9d733c48011a0094443a1d44fdcdafebaae",
+   "native_qual_sha256": "da3e9553c751a2e9766bdb8370ceabb5995581c571b08eeec19a1d54d75092ef"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep01",
+   "native": "s3-rbm400pf_ep01",
+   "file": "s3-rbm400pf-lr015_ep01.npz",
+   "sha256": "e772d1294fe53f242c51fb68a8d42cd36de7c38a7e8756ba101abdd6a4014024",
+   "native_probe_sha256": "68aff77b633fc87832f658b689cb51d173703cb75328ed5cbf1f391a42b0100c",
+   "native_qual_sha256": "95a1204c26ab46af61998e52a335c932c7702932294def4e408b204dac15a043"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep02",
+   "native": "s3-rbm400pf_ep02",
+   "file": "s3-rbm400pf-lr015_ep02.npz",
+   "sha256": "51059ba6278ef414728bf64f89357906b876b2d592075b572cec88f22e6525d2",
+   "native_probe_sha256": "276191ab12932ac2a330db5c3efe9d4be31605e87a84788de737ad66592fc247",
+   "native_qual_sha256": "6237a8076fd08ec32f44d45370247975213b9709c9343ec0c74cfeb1768c83f8"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep03",
+   "native": "s3-rbm400pf_ep03",
+   "file": "s3-rbm400pf-lr015_ep03.npz",
+   "sha256": "5314af13ce7bf3cf96100c9b8d110f3b057552fbc21611caa973438ce8987ec0",
+   "native_probe_sha256": "efe2cbbbd7a418d28fbaa58aeeb641a31cf59640b2ee045a6ecb470ffb966b23",
+   "native_qual_sha256": "1b284abda270928b6a719b868aae1a5563227cb7890ee7de5c34bd05e9bc42ed"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep04",
+   "native": "s3-rbm400pf_ep04",
+   "file": "s3-rbm400pf-lr015_ep04.npz",
+   "sha256": "a03020dc542d8da2516e7c9effa8a2325e640a46f24df5298ee505ace9af4aae",
+   "native_probe_sha256": "72d284277a3e8b7a06869046e9044c1e0dc1399fa5c37fccdaee30e3015247a2",
+   "native_qual_sha256": "a1ecdc6f55e7f14272bf825fd6fda1d48937e8911c70eb61270ffc9e63fc57ef"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep05",
+   "native": "s3-rbm400pf_ep05",
+   "file": "s3-rbm400pf-lr015_ep05.npz",
+   "sha256": "39b87c774d829a22ebe1c10c68d27826e46ed467f2913e2355792f759b39e8fe",
+   "native_probe_sha256": "ab8492aa90ec3a02b40817a527aded3c20083b3a87edfff4d4e10a2de434dc0e",
+   "native_qual_sha256": "9515b2550260110da75248b679df193d0de2eedc00da7d3059639e865250e7ac"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep06",
+   "native": "s3-rbm400pf_ep06",
+   "file": "s3-rbm400pf-lr015_ep06.npz",
+   "sha256": "43a47e93265e6d072e953ff394e661bdc2095e06b1d7c2a340b21babdcd897fc",
+   "native_probe_sha256": "2c8d4c9aba11283d6f62ccd0ab41a72cd88a01c1072754d7276e3b956592c9e3",
+   "native_qual_sha256": "cf03d63398eac9115975b6df4ead2412ac2a3caf3a51558c1bd9446c27ff3eb1"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep07",
+   "native": "s3-rbm400pf_ep07",
+   "file": "s3-rbm400pf-lr015_ep07.npz",
+   "sha256": "dbcb66246a302687e3e10ae327bf053b66952cf16b591ce8f102e68954737f2e",
+   "native_probe_sha256": "854248874ef26d647f6b755d872c68cc7b5c60dc709717ffe6f7d44ae8be30bf",
+   "native_qual_sha256": "99ec6c4fbc80aed5cdf3dd9f4cbb412ad45c0882c6d7a3f0eec8ec03d217ef2c"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep08",
+   "native": "s3-rbm400pf_ep08",
+   "file": "s3-rbm400pf-lr015_ep08.npz",
+   "sha256": "dde92b3eca3450be216aa746ce249bb0ce2538ab62f17f77863951f422748dde",
+   "native_probe_sha256": "693f3612c533b604f0dce6640316cd5f0856b378fdac3fd08031581308d12ea4",
+   "native_qual_sha256": "7fcad8aca8dfb63d29b26249a4fe06148c76bb0470ed07ac30fc2ae6035956ad"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep09",
+   "native": "s3-rbm400pf_ep09",
+   "file": "s3-rbm400pf-lr015_ep09.npz",
+   "sha256": "1a7f44456c6c5add6e3a9dec9a96764cb60cd749de41397ddfd781d05aded07f",
+   "native_probe_sha256": "72502a7bd015eca6ca5440b3b95daec21821a89033253c6d204f02c1dac6f7dd",
+   "native_qual_sha256": "2fcd2bacaeddaf949f93ae83073f55146e09a122ce18e36f32e0b2cee7cd6606"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep10",
+   "native": "s3-rbm400pf_ep10",
+   "file": "s3-rbm400pf-lr015_ep10.npz",
+   "sha256": "f8e1eb573017cfceb518c9ea9115e4ba06b6428e010b85ab6c37f29c3cc4701e",
+   "native_probe_sha256": "51c64f3de22abe189cd8dfeef944d6a20556a1ab04f3211864f9dcf4e22a6d87",
+   "native_qual_sha256": "b7309c1b93c1d2b7b18e30991d832bb18c84eaf83cdd56138a744c59ab3f5010"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep11",
+   "native": "s3-rbm400pf_ep11",
+   "file": "s3-rbm400pf-lr015_ep11.npz",
+   "sha256": "b8aa0e34e715166412ce6b12638f006bb60f3cab1e3d7f4ed55c47c3b41283be",
+   "native_probe_sha256": "ecaa6a096ab9ddcc4e9e6fdf833b64519b8e7f1b6a6a04846740e98567997f46",
+   "native_qual_sha256": "8191a61b0637737dd07fb6287ef11297e28b8da70be80c20ffc30566111eecdc"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep12",
+   "native": "s3-rbm400pf_ep12",
+   "file": "s3-rbm400pf-lr015_ep12.npz",
+   "sha256": "71e2053ff1519cd1c86d548f781b1a1ce7b3a8062f5cf56170d34b73639aa297",
+   "native_probe_sha256": "dad659d18f11be588c8204bfb160e25d7197587902af145f84ee2b86392debcd",
+   "native_qual_sha256": "9a765b46202bb9b5673e587ea1be9728cb5b1e28696cddeb4e5113bc3472165b"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep13",
+   "native": "s3-rbm400pf_ep13",
+   "file": "s3-rbm400pf-lr015_ep13.npz",
+   "sha256": "3a5a6e48a252b5aab46c8e4828715752481ac808f1d60b17304b63c0846133fa",
+   "native_probe_sha256": "522f540bae0525914fac573aeb1154e394b6ba76664f41bf2439b60b45ed866a",
+   "native_qual_sha256": "0469addb9d0ea6da15f3f715337e7616e5501dbfefb572e7e838d328229353b4"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep14",
+   "native": "s3-rbm400pf_ep14",
+   "file": "s3-rbm400pf-lr015_ep14.npz",
+   "sha256": "561e1b276a718a42b8ec4934309008e2bedf3d1122c0348c744c10a6f4ee4600",
+   "native_probe_sha256": "c8ddd71172cef65721d82bca88e1f943efc7c78699c0747c4d44f0d5f7b511ea",
+   "native_qual_sha256": "78bbb2fd5a1d20a0ae6a94d554e8a5681e25f21b2cf2983f079d64a002e6f954"
+  },
+  {
+   "column": "s3-rbm400pf-lr015_ep15",
+   "native": "s3-rbm400pf_ep15",
+   "file": "s3-rbm400pf-lr015_ep15.npz",
+   "sha256": "92d1cccaed4e59033e952a0d9d27e45b4503e6131d69349fb28b0e1fcd871f69",
+   "native_probe_sha256": "3b927b03ee4c9454a2c96a49de67c9d733c48011a0094443a1d44fdcdafebaae",
+   "native_qual_sha256": "da3e9553c751a2e9766bdb8370ceabb5995581c571b08eeec19a1d54d75092ef"
+  }
+ ],
+ "skipped_nonfinite": [],
+ "trace_sha256": "7205ecadfc03d1fa274ed2fa6282000b0540e2aaf568e97630e6ea1d529630c7",
+ "plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+ "independent_known_projection": true,
+ "qualifying_labels_read": false,
+ "scope": "Own numerical outputs. No blend claim."
+}
