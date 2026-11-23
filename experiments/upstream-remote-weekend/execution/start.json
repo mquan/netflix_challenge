@@ -140,5 +140,16 @@
    "s3-rbm400pf-lr015-index.json"
   ],
   "eta": "~16h at 3-parallel pace -> ~2026-11-23T11:00Z, deadline 14:00Z"
+ },
+ "completion": {
+  "observed": "2026-11-23T15:46Z",
+  "state": "all training finished before 14:00Z deadline; all uploads on draft release (still draft)",
+  "producers": {
+   "s3-tx300r": "complete, probe_3 0.87834",
+   "s3-rbm800p": "complete, probe_3 0.90547",
+   "s3-rbm400pf": "plan recipe NaN from qual ep06; ep01-05 salvaged (best ep05 0.91586)",
+   "s3-rbm400pf-lr015": "complete 15+15, all 16 columns finite, probe_3 0.90477 (fit done 09:04Z)"
+  },
+  "no_processes_running": true
  }
 }
