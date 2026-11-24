@@ -1,0 +1,668 @@
+{
+ "version": "v2",
+ "columns": [
+  {
+   "column": "als8-8",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/als8-8.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/als8-8.qual.npy",
+   "map": null,
+   "known_sha256": "1d2a24670e53e073a9affb9ff7fc7846e111dff4f738a8ce12c78981e9ca7ec2",
+   "qual_sha256": "f75e11b2488ff6d4c3e7ee0f8a2af4efe83b35ac30768fe885e76561548eb51d",
+   "map_sha256": null
+  },
+  {
+   "column": "als8-8__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/als8-8__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "8892ecb6aa638516c2a6f9f19195dbae091a16b4382a89c3797e18c125650784",
+   "qual_sha256": "4250f130352e5ffb1d91909daa536349d77a6dbf73151445391998c094b4b15a",
+   "map_sha256": null
+  },
+  {
+   "column": "bknbrx-100",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/bknbrx-100.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/bknbrx-100.qual.npy",
+   "map": null,
+   "known_sha256": "3e840eb48f091a7da3e056195695a836211901eae78f46ae69a1d6ba1630e7ee",
+   "qual_sha256": "9d4cb4ee94581a9ce7fcdea7ef5703aa8a77338b87e19c3958d0715e786e83f2",
+   "map_sha256": null
+  },
+  {
+   "column": "bknbrx-50",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/bknbrx-50.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/bknbrx-50.qual.npy",
+   "map": null,
+   "known_sha256": "f97a21ffe9d397757078494ea798d98ecbb91b43a88a8e1c3ca58d6c900b9188",
+   "qual_sha256": "79ddf85048b97e8fae700ab08390f9f5e304e8fc11844f8fa1558ea502ce4b2b",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24.qual.npy",
+   "map": null,
+   "known_sha256": "07c544013e9e429b3737c8e3eb755cf30df85fe40bd6929c02719aa61d44504f",
+   "qual_sha256": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24-base",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24-base.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24-base.qual.npy",
+   "map": null,
+   "known_sha256": "10dc4ba3472150951054486881100f98eb62a4fbcff972299228d5255beddc1f",
+   "qual_sha256": "42d70256bba988d8c7f7f3bd567ef62507234ab2301b5b2058b27a699e6f0f97",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24-net",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24-net.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24-net.qual.npy",
+   "map": null,
+   "known_sha256": "8c73e10bfceb586a1b36fd686ef093e5d4964a64ecf8cf907d8fd4bebe1a002c",
+   "qual_sha256": "d1d8d2864192a6172832e2091a90306df12bc825937c35f2ec4abb8b71ae11dd",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "2e9f601f89dceb268c07c8082f6f38dcca69f670c3ef982a6e654c4f6debce56",
+   "qual_sha256": "5cf0cc49b43cfdacff60176494fa103d744b188a4ba77f4f89689d5734e06acc",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__asym-16p75",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75.qual.npy",
+   "map": null,
+   "known_sha256": "cbbb113fcd1a22a90f4bcadd5c66ffc07f529256d2da3a9bdcba32af21471d17",
+   "qual_sha256": "1923b00b3d04986ac05c6b745da149c443d646cf9db8869b906ad1fc62ad367f",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__asym-16p75__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__asym-16p75__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "131f02f1b72675dd8d6c64caaa976fb40243826fc4eb14b1e613141cfc147038",
+   "qual_sha256": "916286b93d2306a0c037c19691b43488e8101ae69b7e14579c70e1bca33a64b2",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16.qual.npy",
+   "map": null,
+   "known_sha256": "d21bebb3c99831bc4ad428f2926ce0ce445681b8eb68a4b0d8527e39f58b9dd6",
+   "qual_sha256": "f80603618a6f395135dd2a7b97d277990c4a349256a115982203de8b10593431",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "c3ca50b75475f72335b24f67d8a0906064cfc844732455a58d17ae0a2b1e09d1",
+   "qual_sha256": "62537e01fece53662c3775bd1fdab90ec16b47823d1676f3c645ee522a217320",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50.qual.npy",
+   "map": null,
+   "known_sha256": "0386a952f49113013a1039dbc3edccc1a151cc9a60b6936b90e0f1ae6cecc3cc",
+   "qual_sha256": "2b7ed37dd516a291aeee125d382b663fcfbae926783fe495f72c44e79fe7a7b3",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "4f9a92baf0710375f7f0e98f7743db9cd8f1175aa4576cb80bc7c01e7d052713",
+   "qual_sha256": "e0f6ec33cc20791ffadda22e32ce76e4d11c89877dd38e5a36fef30ebc699634",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50__asym-16p50",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p50.qual.npy",
+   "map": null,
+   "known_sha256": "1c129b73cee09715dbe59c6f480d31877aad456b7b4a432bd0a1046a214d0c2b",
+   "qual_sha256": "96f91b355c23c4818943141c835e681c918743363dfdcc47115da90576bd8d6f",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50__asym-16p75",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75.qual.npy",
+   "map": null,
+   "known_sha256": "2f572c19a219c3ea3beeecdadba6abd95af6510dd990f8d0d0e21c56482a861b",
+   "qual_sha256": "93affa18fa72afe1ad36fe377194e7d98c505055d69d0fed844d0a6ac5741033",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50__asym-16p75__knn3b",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3b.qual.npy",
+   "map": null,
+   "known_sha256": "210b8a00a9c14fbeb2e5f824376188aac13e35d53097b10b000a057bfbe4781e",
+   "qual_sha256": "9a97668a5b9c052b9bd93b305622996731168237306f76b0a76b3cd700dc114c",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-16p50__asym-16p75__knn3c",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-16p50__asym-16p75__knn3c.qual.npy",
+   "map": null,
+   "known_sha256": "a2457efd645b7e6d978ba2b35a43f648d7be2a6c60a3765ff37fae20efb3fb53",
+   "qual_sha256": "4632669077cc2cc64048f96ba1f420c39653f84dab18a16e9fbe976e72282351",
+   "map_sha256": null
+  },
+  {
+   "column": "dnn-24__dnn-24p50",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/dnn-24__dnn-24p50.qual.npy",
+   "map": null,
+   "known_sha256": "d9e6d63c45c5420aa6d4f334019e070af107fb3446ce8f7de55aa735803cd65e",
+   "qual_sha256": "6923989b2f7d7bbd237f999852842b25b6539f3840f3a904d7257f4766499aad",
+   "map_sha256": null
+  },
+  {
+   "column": "mf-60",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/mf-60.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/mf-60.qual.npy",
+   "map": null,
+   "known_sha256": "996c1e716e4385bd8ae0a5175384449f8f03fe5e0ee602321b841bc2e5f7d0db",
+   "qual_sha256": "d32a7a3f880764e4bdf81760fb5017f06351772eef2d0983c11ca1a9edd7ff0e",
+   "map_sha256": null
+  },
+  {
+   "column": "mf-60__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/mf-60__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "379f506a793531cc678601cdf0eb84ced26f7d3275b4190dd2b73160c2bb844d",
+   "qual_sha256": "1767e740d3bac6af2bf848e159d0b6a45481cb31ebce469b15d5ae083f4928f7",
+   "map_sha256": null
+  },
+  {
+   "column": "rbmx2-40",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/rbmx2-40.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/rbmx2-40.qual.npy",
+   "map": null,
+   "known_sha256": "a22f3f1256f1b56269d542cb03aacac71593a0232fe194a5f66ceaabe5b49a69",
+   "qual_sha256": "b414e9e1b50128357442dc7ada649dcb33610dc0e0983fd4eedc9ee2cc771127",
+   "map_sha256": null
+  },
+  {
+   "column": "rbmx2-40__knn3",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/rbmx2-40__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "8931215ade4911b57e11b94200ead6b5ef7f36ae989e2f80c904a5f1841152da",
+   "qual_sha256": "ecc863e2b577cdd1893d1d3a3060d2e6bb9fb108160f9e196b2188567c9a575c",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx4-60",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx4-60.qual.npy",
+   "map": null,
+   "known_sha256": "1db4f350bf783d3890e6c760a5646d836ab0ee7ff66180e215987a34aef9c70f",
+   "qual_sha256": "2db0bf0be468461cf6e7cafdc5a8ca262765b73f29d56be7d9a602ce3f5c86ff",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx4-60__knns",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx4-60__knns.qual.npy",
+   "map": null,
+   "known_sha256": "a5739031761d86ff398b4604b5fb69df48d4d3f2c0637ac978a133dd285d80eb",
+   "qual_sha256": "b3841a416458d72faee0b97c481f6a91dd7a4be324fb5eee5a8579b0c0eecdb2",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o.qual.npy",
+   "map": null,
+   "known_sha256": "e1b513c9534f339cae0b22ee0a8db76e30516a5242ea72d39dfab20b827b19ae",
+   "qual_sha256": "ded3626dac90d529d7d0b2fbc1c811555e16f0c1609ce1547e846627837075ef",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o-bias",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-bias.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-bias.qual.npy",
+   "map": null,
+   "known_sha256": "ed1e2c018b1c78abb491600d27cbda757d70da4371ab6233cacb2aef44dcfec4",
+   "qual_sha256": "d0caa10420f681e03a7698f8ff03f8316248a89612254d2673b3aca8ef09bf56",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o-mf",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-mf.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-mf.qual.npy",
+   "map": null,
+   "known_sha256": "41c94bcacb81335b759643aa60c4dd7754daf82d7f9166cf56c337e0afd26cab",
+   "qual_sha256": "4c60ff9eba08ba59d06d3d4987e2e1230ae6f44ba8297121ff4c70c8db099fdc",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o-nbr",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-nbr.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-nbr.qual.npy",
+   "map": null,
+   "known_sha256": "578879e0e68a6ed447c0708524972db4dce04dc44eb16d1d9f36083e13b03d80",
+   "qual_sha256": "c099d2720de29c20b7aff032c48e35694f0d38bccb03ec07a0812b541a2645eb",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o-nsvd1",
+   "kind": "split-new trainx->probex",
+   "known": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-nsvd1.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh/preds_new/tsvdx5-150o-nsvd1.qual.npy",
+   "map": null,
+   "known_sha256": "c6aa11087b88bee9eca9ac996069280cfdf755a3da8aeab6ad62639eba6c39d6",
+   "qual_sha256": "67f29f85c5984441905ca2f6daafcbf013f60f8a6d6fac6de9e9dbd6101b5c29",
+   "map_sha256": null
+  },
+  {
+   "column": "cfnade-48",
+   "kind": "split-new trainx->probex (remote9h)",
+   "known": "/Users/quan/workspace/netflix_remote9h/artifacts/upstream-remote9h/cfnade48-package/native-source/preds_preset48/cfnade-48.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_remote9h/artifacts/upstream-remote9h/cfnade48-package/native-source/preds_preset48/cfnade-48.qual.npy",
+   "map": null,
+   "known_sha256": "353ecdbf96a74ec36ee71d4b6c1454901da4ecf7c5ba74b2b14d02637c842edc",
+   "qual_sha256": "9043511f13319acf2d4d6e8136afd7f06edee904481b6dd4c9a4f56497dd8f68",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx4-60__knn3",
+   "kind": "split-new trainx->probex chain (rcb wave)",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx4-60__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx4-60__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "05e33f6e835754081fc9d54b89cc7a71f8dc2014e052230189c8ee653dfddba4",
+   "qual_sha256": "92e3e37f1e422ac2b7569673dae377eeb419dcf2084220c8e863ecd87d6376f0",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx4-60__knn3d",
+   "kind": "split-new trainx->probex chain (rcb wave)",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx4-60__knn3d.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx4-60__knn3d.qual.npy",
+   "map": null,
+   "known_sha256": "99fea4b9864d4372945b55ff18b94d6d3fdccb34d3b836cb6e516867a4d909ee",
+   "qual_sha256": "286d559e9bd8cf2a02e2df78544b31b2a191b7e9c101c74ae56834edc09ba84e",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o__knn3",
+   "kind": "split-new trainx->probex chain (rcb wave)",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx5-150o__knn3.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx5-150o__knn3.qual.npy",
+   "map": null,
+   "known_sha256": "8fcdf4a190b4de41ae348aeccd89307ce570ae22b520bdf58b3fe7edcc0a3b94",
+   "qual_sha256": "b21372984e459cdd701eb687c47a229a508151a4570dc66b738127925e52a987",
+   "map_sha256": null
+  },
+  {
+   "column": "tsvdx5-150o__knn3d",
+   "kind": "split-new trainx->probex chain (rcb wave)",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx5-150o__knn3d.probex.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_new/tsvdx5-150o__knn3d.qual.npy",
+   "map": null,
+   "known_sha256": "b6b8a64b777f5e9e7f232c3d96ad1708f6a674413fbefed992a6b6b197b1c974",
+   "qual_sha256": "4ae5eda687e510cc4bcbe7eafa427cde4c7e9fdfb28961691dedcc35360b1688",
+   "map_sha256": null
+  },
+  {
+   "column": "s3-attn32",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-attn32.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-attn32.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/probex-row-map.npy",
+   "known_sha256": "9c024388df0c7d6765cb7cacecb30dcfcc77ad9c380bd742c729331e09a3c2b6",
+   "qual_sha256": "1a0268a5d3c531041d1a3a01d25c92ad0c9d78f89a353c1ece800f5a9c634963",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-dnn24",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-dnn24.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-dnn24.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/probex-row-map.npy",
+   "known_sha256": "3063bf3ea5ef35fe67221bb3d7a8a5de9cb4398c37dc1dd4aded20a21c9dad06",
+   "qual_sha256": "c9a1c6b11e13dd282000e72647ec1eb727aa8b3bddc9c4bc774cc7a2cd921e4c",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm200e",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-rbm200e.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/source/preds_3/s3-rbm200e.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-r2/probex-row-map.npy",
+   "known_sha256": "7c03679a3b72b940f17d86c3fffdcd94ee317d16dba421a098dc9c1f67c562c4",
+   "qual_sha256": "27c6b7d4c29e0530ba77acd26f168338ee25cc7ce5b8a19e45264a3817083750",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx50n",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-tx50n.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-tx50n.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/probex-row-map.npy",
+   "known_sha256": "bedd14c0c916d41068e4e76aefe345362862c718b7e7245001addfaa126aab14",
+   "qual_sha256": "531ea5b9ce41944f432a0610ca053585318ae74dcd380abea4ffd27dc2d540d9",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx60o",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-tx60o.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-tx60o.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/probex-row-map.npy",
+   "known_sha256": "63af24999092ec15a623aea5bdf35913f2b3125784123b1583297323ef597a14",
+   "qual_sha256": "55d3e0d257f950197981796e663c43a12b50add78b4260b5400221a06ea521fa",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-mfrbmx-60h",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-mfrbmx-60h.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-mfrbmx-60h.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/probex-row-map.npy",
+   "known_sha256": "d6b61d14c899769fed1414f407946221d98ca4fab6e4a9a77165c1c2812cbc69",
+   "qual_sha256": "02f3ae4cb93048477e0b3344bd808e91df2abcc3444e2604e7c685cae55fb67a",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-bknbrx-100w",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-bknbrx-100w.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/source/preds_3/s3-bknbrx-100w.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote15h/artifacts/upstream-remote15h-ext/probex-row-map.npy",
+   "known_sha256": "251f2028123936b815af7bf44dac70bc42ec0c8531033f42df913183b7d64514",
+   "qual_sha256": "79bfb4b9a4650e8495200980c3861206fa39e8a87fe8adc4aaebdd7e97575bbf",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx300r",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source/preds_3/s3-tx300r.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/source/preds_3/s3-tx300r.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10/probex-row-map.npy",
+   "known_sha256": "afa89dbdb79491f2c84c8dc28bda1288921c5f415f0b83d8bea51b11d3b558f1",
+   "qual_sha256": "c5fab03cbdee029d4a61e5677d22daec5ab644eade2777d6fdab6a57159b5434",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm800p",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source/preds_3/s3-rbm800p.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/source/preds_3/s3-rbm800p.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9/probex-row-map.npy",
+   "known_sha256": "ae33368d271f5cda21371c256be60fc25f1cc3a298c945401e1deebd395f8282",
+   "qual_sha256": "96f70c0d7619d3c271e53db220c874b3d13a2500783a5512618567ace9bba75c",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm400pf-lr015",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r11/source/preds_3/s3-rbm400pf.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r11/source/preds_3/s3-rbm400pf.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r11/probex-row-map.npy",
+   "known_sha256": "3b927b03ee4c9454a2c96a49de67c9d733c48011a0094443a1d44fdcdafebaae",
+   "qual_sha256": "da3e9553c751a2e9766bdb8370ceabb5995581c571b08eeec19a1d54d75092ef",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx300r__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx300r__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx300r__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "f5fa21cda5e393ba70418c71e7cd595e1d9881e1397535fab6d93809839d5424",
+   "qual_sha256": "d9c9f4e11e47f1cd25f766aeb24bc456a0c464e54c4e71e70fb34fc829dd9557",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx300r__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx300r__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx300r__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "468ab36b629c9eb31c25062e03823f22607af7a58f000848a7f68ff01db666eb",
+   "qual_sha256": "0d34fe9bb1538c4b341c24373fea86b2311054c3445128a11fcd96c447cd3440",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx50n__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx50n__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx50n__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "e6e56fd8c067b652f234c06b4621095283d602b00efcaee81b6ed8fdec1c6442",
+   "qual_sha256": "4f3653f1f48d7ba093c2daa12f2427c1bcd5ab3687ccce3ce5e95af5e71b68cb",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx50n__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx50n__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx50n__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "6eda26832a6ba689b96cc2327e6263bfea2c7bc44a5bada5382ef054d8685324",
+   "qual_sha256": "fcf2a573b99f768279370340d91e39b7614f0c811f0c5da712a6e7c544510a6c",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx60o__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx60o__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx60o__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "63d3f13ebe9a6ca65b7cabe4d9da31dc8c72db4316d5987c8a0ecaf29fad2446",
+   "qual_sha256": "13fb5a73ec62fc989efe71dd32b9f592f0c7d4e26e9b90bd18f88b2def5bbced",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-tx60o__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx60o__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-tx60o__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "2446dbaaf369bbe3dd7ca36f0e699fa85abcf7877f61b12ae5e7a7fc07a7a8c7",
+   "qual_sha256": "e95e7964948a2073cbb652c7453f0b354a59f9c73acedb2e3469c1e3ed1d4e14",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm800p__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm800p__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm800p__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "b6c7bf47f6b9ec1eb2e5966fcd3e670baeb6aa9b100606a8d3c1309dd11c1787",
+   "qual_sha256": "550fb840128ebb910f3186f9024ea8f8b008c5a2df7ed46cda24c180a93142b0",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm800p__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm800p__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm800p__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "4da034da69ae0dc41a3130d452047003001cb4c67f0a50c7b7fa46ee8d874a2e",
+   "qual_sha256": "57611f5ab72c283b4d54f5a0ee35374664c40e57337cd375f0c364438af66086",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-dnn24__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-dnn24__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-dnn24__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "48f2d820da86e9ed10d6ffbfb1af0b24ed932226b9d174dca195107a77e4cb53",
+   "qual_sha256": "5cf0cc49b43cfdacff60176494fa103d744b188a4ba77f4f89689d5734e06acc",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-dnn24__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-dnn24__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-dnn24__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "79e78d4a0aabd158cf84c05fdab12b271d4054944e417420742514c7ff2c907e",
+   "qual_sha256": "da52c059a0862270e53a22ed2e64cb636f761076e13e985752d4a12d9ae18c28",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-attn32__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-attn32__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-attn32__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "55a75df85308d302b1c240e45243b9ada40111f1ca085e06158fbd3466a4d1a9",
+   "qual_sha256": "5071d0df760f02c967c24e1c3b3dc72fff3949b140440b64deb060cf092ef6d1",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-attn32__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-attn32__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-attn32__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "cc07b3a29387feb0d4c8c1b057f337d450497292e0c9971e3b9e19df7c99ab3a",
+   "qual_sha256": "6d5cdc45033c98a4d7ecc75be036a2574fb0cea381f03d423dc0ce37b7e1f0b3",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm200e__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm200e__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm200e__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "8001b7d88a77690c3848a549484a0bf2cb3fec6d573bae16f2bfc8abed3dadfc",
+   "qual_sha256": "d1df5ad10f14bf59576d6bd32f06d22728483b3364cfb351b64afafbd7ed914a",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm200e__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm200e__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm200e__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "92071771c73c7a47b0e86b024c162c21bc07d25743ff42401163e54e3a014443",
+   "qual_sha256": "220880afce48bee0928826b89e9901582f402dd5094df3d9f894519507f13f54",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-bknbrx-100w__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-bknbrx-100w__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-bknbrx-100w__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "7edb567a08507b7706f21413471261673234c0ff18310235e241b8c561bf2296",
+   "qual_sha256": "d28d028e659052dd85fdd5bad09d482ce7a376d513dd399ce7e932b5c0e212f9",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-bknbrx-100w__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-bknbrx-100w__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-bknbrx-100w__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "4644ae38b90a066ea383e8f0a78bbb83d526d42e7c72212a73d33884a2fb1663",
+   "qual_sha256": "9ac608869b9b132dfbf7b0b2c3dda4a819962e1f22a2c551dfd14ec02d096ca4",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-mfrbmx-60h__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-mfrbmx-60h__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-mfrbmx-60h__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "c9498b53438480da37e8a9b7f9111c3c06933bb3b626ba623c6960cf12a16887",
+   "qual_sha256": "6ca53cc5201ee686dcc4f882089398cc7ecba0ca2f546ae21ab680c422bb9b27",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-mfrbmx-60h__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-mfrbmx-60h__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-mfrbmx-60h__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "467be9965b6d506585dd8ea32c9f38e2122c5a128c93c4e2da09e8a649a3c820",
+   "qual_sha256": "eecdefe05274cb71633006865944137995c031e61309d409ad6e112a0dd95faf",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm400pf-lr015__knn3",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm400pf__knn3.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm400pf__knn3.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "0708592c24387cf4f7ab83e5d7ae04d81b7ca115ce9323d166901e587249c94d",
+   "qual_sha256": "aeb52be001c8c9ecad440c927a2159193ccfb607c86e26fb558c523010725425",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  },
+  {
+   "column": "s3-rbm400pf-lr015__knn3d",
+   "kind": "split-3 train_3->probe_3 projected",
+   "known": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm400pf__knn3d.probe_3.npy",
+   "qual": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/source/preds_3/s3-rbm400pf__knn3d.qual.npy",
+   "map": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-r1/probex-row-map.npy",
+   "known_sha256": "6abae7e966607ce475dc20ba75eae0e2cd93ab47194d55ca460b4757f2484713",
+   "qual_sha256": "dc4d8bd0a656058563e0eddbb0fd1627ba202e32c660e20ba4bbd4de6795d9e5",
+   "map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+  }
+ ],
+ "n_known": 1128164,
+ "n_qual": 2817131,
+ "include_new": true,
+ "known_sha256": "bdca4cad095c0b4c9138c8c01455139d1c6cfb00c00f880f54bde52f87b8fb83",
+ "qual_sha256": "a3b14df58ca67b8ca2a7db055de07ae676c87525cc2f9347c3a2767c32bbb657",
+ "known_ctx_sha256": "80fa34764eb0f1c43af5300da72487d80e91633932a90ec56ec190e658cf0dd1",
+ "qual_ctx_sha256": "de509de38044e8fa6f6c2908d8d92fd202c70a8eb7eae98618b5cd1cbc337152",
+ "context_sources": {
+  "known": "fresh/data/trainx -> probex",
+  "qual": "fresh/data/fulltrain -> qual"
+ },
+ "excluded": "epoch snapshots, rbm400pf LR0.02 partial, all reference/downloaded vectors, probex-fitted blends",
+ "qualifying_labels_read": false
+}
