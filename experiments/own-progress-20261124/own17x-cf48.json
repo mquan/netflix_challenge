@@ -1,0 +1,34 @@
+{
+  "observed": "2026-11-24T20:22:48.400473+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8597137169550381
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8607242649603297
+    }
+  },
+  "matched_control_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8598430735045893
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8608490720618297
+    }
+  },
+  "paired_delta": {
+    "source0": -0.00012935654955126275,
+    "source1": -0.00012480710149997964
+  },
+  "prediction_sha256": "175ae308072e946eb5e85c0aa7f05c31aba1617a9c65e1771b3737fd528bfb68",
+  "correction_weight": 0.3053281775229853,
+  "target": 0.85725,
+  "canonical_source_sha256": "2495c5373a2dfe5078bce6a76f39343d1e45c63740fa03ae8717c1413e28eb3d",
+  "qualifying_labels_used_for_fitting": false,
+  "official_or_untouched_test": false,
+  "known_fit_is_nested": false
+}

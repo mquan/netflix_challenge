@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-24T19:39:24.375326+00:00",
-  "display_time": "2026-11-24 19:39 UTC",
+  "observed": "2026-11-24T21:08:31.846641+00:00",
+  "display_time": "2026-11-24 21:08 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,18 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "own17x-cf48-tree-recovered-audit",
+      "work": "CF48 and CatBoost corrections audited",
+      "state": "0.8596527172 / 0.8606702376 RMSE. Both groups improved against CF48-adjusted Own17x.",
+      "evidence": "experiments/own-progress-20261124/own17x-cf48-tree.json"
+    },
+    {
+      "work_id": "own17x-cf48-recovered-audit",
+      "work": "CF48 correction audited",
+      "state": "0.8597137170 / 0.8607242650 RMSE. Both groups improved against Own17x global.",
+      "evidence": "experiments/own-progress-20261124/own17x-cf48.json"
+    },
     {
       "work_id": "own17x-recovered-audit",
       "work": "Own17x qualifying audit complete",
@@ -299,7 +311,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "37622fa31b32fb4b0e33370fabd4496909f840eecfda1abf270cc9657e78a928",
+  "qualifying_verification_sha256": "389e4b50b53490f67f30c703a2c1b28d7b465439ca7772c017f35abcbc9d82b5",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
@@ -544,14 +556,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8598430735045893
+      "rmse": 0.8596527171523628
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8608490720618297
+      "rmse": 0.8606702376098258
     }
   },
-  "latest_qualifying_verification_sha256": "37622fa31b32fb4b0e33370fabd4496909f840eecfda1abf270cc9657e78a928",
+  "latest_qualifying_verification_sha256": "389e4b50b53490f67f30c703a2c1b28d7b465439ca7772c017f35abcbc9d82b5",
   "best_development_arm": "fixed_half_complete_trajectory_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -568,19 +580,20 @@
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
-  "latest_qualifying_verification_path": "experiments/own-progress-20261124/own17x.json",
-  "qualifying_narrative": "Own17x global improves both recovered groups by about 0.00049 RMSE against the matched Own17 global control. The target remains unmet.",
+  "latest_qualifying_verification_path": "experiments/own-progress-20261124/own17x-cf48-tree.json",
+  "qualifying_narrative": "Known-only CF48 and CatBoost corrections improve both Own17x qualifying groups. The 10% target remains unmet.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/own-progress-20261124/own17x.json",
-  "qualifying_benchmark_rule": "Compare frozen known-only global blends on the two complete community-recovered groups.",
+  "latest_completed_qualifying_audit_path": "experiments/own-progress-20261124/own17x-cf48-tree.json",
+  "qualifying_benchmark_rule": "Compare each frozen known-only correction with its matched control on the two complete recovered groups.",
   "own330_qualifying_best": false,
   "complete13_qualifying_best": false,
   "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "own14_qualifying_best": false,
   "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "own15_qualifying_best": false,
-  "last_score_status_observed": "2026-11-24T19:39:24.375326+00:00",
+  "last_score_status_observed": "2026-11-24T21:08:31.846641+00:00",
   "preceding_own15_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
   "local_rbm16_qualifying_best": false,
-  "own17x_qualifying_best": true
+  "own17x_qualifying_best": false,
+  "own17x_cf48_tree_qualifying_best": true
 }
