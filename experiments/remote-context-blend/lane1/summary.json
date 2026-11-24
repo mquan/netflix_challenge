@@ -1,0 +1,128 @@
+{
+ "bank": "bank-v2 (65 cols) + 4 cfnade-48 chains",
+ "ridge_lambda": 1000,
+ "folds": [
+  {
+   "fold": 0,
+   "no-cf48": 0.8630497832028785,
+   "base": 0.86257016561382,
+   "base+knn3": 0.8624065560890237,
+   "base+knn3d": 0.8624375911386982,
+   "base+knn-25c": 0.8622041777686495,
+   "base+knn-25m": 0.8623767464034598,
+   "base+all": 0.8620213282365584
+  },
+  {
+   "fold": 1,
+   "no-cf48": 0.8610037843141181,
+   "base": 0.8605459123563719,
+   "base+knn3": 0.8604099864511454,
+   "base+knn3d": 0.8604349595004985,
+   "base+knn-25c": 0.8602557793724449,
+   "base+knn-25m": 0.8603484393938199,
+   "base+all": 0.8600724739704491
+  },
+  {
+   "fold": 2,
+   "no-cf48": 0.8642507303901099,
+   "base": 0.8639080501081031,
+   "base+knn3": 0.8637798024549798,
+   "base+knn3d": 0.8638011554420097,
+   "base+knn-25c": 0.8636458611058679,
+   "base+knn-25m": 0.8637428207785485,
+   "base+all": 0.8634879365240827
+  },
+  {
+   "fold": 3,
+   "no-cf48": 0.8652456735957222,
+   "base": 0.864826012154058,
+   "base+knn3": 0.864704150222979,
+   "base+knn3d": 0.864723365425545,
+   "base+knn-25c": 0.8646571370686074,
+   "base+knn-25m": 0.8646114945691297,
+   "base+all": 0.8644459668990389
+  },
+  {
+   "fold": 4,
+   "no-cf48": 0.8643243151813964,
+   "base": 0.8639289542717716,
+   "base+knn3": 0.8637995712870641,
+   "base+knn3d": 0.8638359814294989,
+   "base+knn-25c": 0.8636825235002816,
+   "base+knn-25m": 0.8636714047202926,
+   "base+all": 0.8634559987147922
+  }
+ ],
+ "pooled": {
+  "no-cf48": 0.8635743581047161,
+  "base": 0.8631551888911544,
+  "base+knn3": 0.8630193599923439,
+  "base+knn3d": 0.8630459656320106,
+  "base+knn-25c": 0.8628884495350875,
+  "base+knn-25m": 0.8629494931370265,
+  "base+all": 0.8626960378628151
+ },
+ "delta_vs_base": {
+  "no-cf48": 0.00041916921356166537,
+  "base": 0.0,
+  "base+knn3": -0.000135828898810475,
+  "base+knn3d": -0.00010922325914375364,
+  "base+knn-25c": -0.000266739356066914,
+  "base+knn-25m": -0.000205695754127877,
+  "base+all": -0.00045915102833926635
+ },
+ "folds_better_than_base": {
+  "no-cf48": 0,
+  "base": 0,
+  "base+knn3": 5,
+  "base+knn3d": 5,
+  "base+knn-25c": 5,
+  "base+knn-25m": 5,
+  "base+all": 5
+ },
+ "standalone_probex": {
+  "cfnade-48": 0.8949594701086175,
+  "cfnade-48__knn3": 0.8826484862842474,
+  "cfnade-48__knn3d": 0.8817063610495385,
+  "cfnade-48__knn-25c": 0.9291042336798809,
+  "cfnade-48__knn-25m": 0.8915821853333531
+ },
+ "final": {
+  "no-cf48": {
+   "qual_sha256": "c2ea087e404eac11d5def3f5b8a11e6ac20c8dd33191ae5fd55a58f4a51a125c",
+   "known_sha256": "6ad726b90a1cfd9251c9463274aa866def6d134f72217e704428d6713efbfd22",
+   "coef_sha256": "72e45992473aa3672e39257b2d958aaf56e0f631f9f46461c24a373f4533739e"
+  },
+  "base": {
+   "qual_sha256": "3cb2f0f1f93ed27a7bd939025bcd89bb5095d84413f1cd3eb97faae3064ca033",
+   "known_sha256": "297cd38433bfc2c233bbc65a7e84d5320158b53d08e57deb53d1a01de26365b5",
+   "coef_sha256": "cc8a404f77646c2b389f16d6301952ccd00dc1dc3cb49ead55660836d46dfccb"
+  },
+  "base+knn3": {
+   "qual_sha256": "8ec45a4f72401dbeeb7dd10c763e2b3551393e084c3bdebcbc74971392b62e7e",
+   "known_sha256": "c40e4f8e2fcf1e7fcb62ee9fac0aa29602791271e6784a98437a40a9b1973a68",
+   "coef_sha256": "5a197f334267573ab244880431d846446e54afaf724c358cfa0b8bff402f9cbe"
+  },
+  "base+knn3d": {
+   "qual_sha256": "776ea0f53bf4502c379256c7d04099545fef19e9fa90b5780e2cd738f72abbb4",
+   "known_sha256": "bc6e281d494c6f369186a53dd9f0c0a024cd84ffd90a809399364f72e95fc17f",
+   "coef_sha256": "4baee34074e3a70d00f14d4bd70f943b1d7430fa0ff632bddcefeed3c0892d2b"
+  },
+  "base+knn-25c": {
+   "qual_sha256": "435275292806561a03d6172a7678065ded4aa05e200a7ce5697899eb2a8961e6",
+   "known_sha256": "8e6ef5062dc435cb68692da9e3c206c933bfdf3acd499d596693d767118b1863",
+   "coef_sha256": "0cf4fb3c79f7bab62190b5706b6d9d5bae36c634c0ee41456fefb55f46d53951"
+  },
+  "base+knn-25m": {
+   "qual_sha256": "6eb5232d9b3c1ef606604c6fc012abe002c28f7f113b40389288f7152dbe2ae2",
+   "known_sha256": "be8e4a42782c073c5383affeaaaea7823cdc62f700038f3b10d29435fd2ca22a",
+   "coef_sha256": "f17097f4892eb67d6ced21b358c186a24013c7c7cbdce996b23f7a049fe9bd8f"
+  },
+  "base+all": {
+   "qual_sha256": "19fc659206d6fdbced7bbea7dba161a2423ba52386f342488875c62421d7cd73",
+   "known_sha256": "e264d876a7422b478e35163fad95e15b7d613c28bb245a2c825a6f9f8c95f9e2",
+   "coef_sha256": "cff070cd6bb02c7babb14b225f365a6eb35576cdacde0962a369c1b377936dc4"
+  }
+ },
+ "qualifying_labels_read": false
+}
