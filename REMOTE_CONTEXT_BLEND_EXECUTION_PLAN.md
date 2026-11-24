@@ -204,3 +204,30 @@ the rcb-r1 build (sha 13cd19df…).
 (i) standalone B vs C; (ii) bank v2 + B vs bank v2 + C (single-split vs second-split, each with one new seed);
 (iii) bank v2 + A + B vs bank v2 + A + C. B vs C differ only in the split.
 Threads: 5 per arm (RAYON/OPENBLAS). ETA ≈ 8–10 h per phase, so C ≈ 9 h and B ≈ 18 h.
+
+## Amendment 2026-11-24 — Own17x full-bank refit with CF-NADE residual columns (declared before any fit)
+
+Source note: `coordinator-own17x-full-bank-followup-20261124.md`. The CF96 terminal pair (`own-cf96-terminal-pair-20261124.json`)
+is verified: 4/4 sha256 match, float32, finite, native row counts; probex RMSE 0.89327, trainx 0.77561. It is
+not an exact duplicate of any Own17x column (max corr 0.9936, with cfnade-48). Its probex vector is byte-identical to
+the upstream reference `cfnade-96_ep95`; this is consistent with the coordinator's statement that our own CF96 run
+replays the published recipe bitwise. The upstream file itself is not used.
+**CF96 chains** use the lane-1 recipe unchanged with base `cfnade-96`: `knn3`, `knn3d` (a=0.5, τ=30), `knn-25c`, `knn-25m`,
+plus stats `cfnade-96_prod` and `cfnade-96_diff2`; `rtg_supp` is reused (it depends only on the ratings).
+**Arms**, all global ridge λ=1000, clip [0,6]→[1.05,4.95], 5 user folds seed 20261116, final fit on all known rows:
+
+| arm | columns |
+|---|---|
+| X0 | Own17x control (82), recreated; must reproduce pooled 0.858340 and qual sha `717f9afa…` |
+| X1 | X0 + 4 CF48 chains |
+| X2 | X0 + CF96 terminal |
+| X3 | X0 + CF96 + 4 CF96 chains |
+| X4 | X0 + CF96 + 4 CF96 chains + 4 CF48 chains |
+
+The native-held-out companion runs the same arms N0–N4 on bank v2 (65) in place of Own17x. Exact duplicate columns,
+byte-identical in both the known and qual arrays, are dropped before fitting and reported; every original control
+column is kept.
+**Known-only selection rule:** the candidate is the lowest-pooled Own17x arm among X1–X4 that improves on X0 in ≥4/5
+folds **and** whose native companion Nk improves on N0 in ≥4/5 folds. If none qualifies, X0 stays. Every arm's
+qual vector is frozen once and returned. Own17x CV is non-nested (as before); the native companion is the
+held-out evidence.
