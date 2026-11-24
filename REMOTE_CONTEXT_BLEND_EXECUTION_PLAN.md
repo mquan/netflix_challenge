@@ -149,3 +149,15 @@ and `scripts/rcb_tree_combine.py`.
 **Rule:** the tree arm replaces context v2 as primary only if it improves pooled known
 RMSE by ≥ 0.001 over context v2 **and** improves ≥ 4/5 folds, on identical rows. Context
 v2 and global stay frozen as comparisons.
+
+## Amendment 2026-11-24 — own17 rerun (declared before any own17 fit)
+
+Input: coordinator assets `own17-bank-known.npy` (sha `6c267209…`), `own17-bank-qual.npy` (`9fdf753b…`),
+`own17-bank-columns.json` (`a6b172c8…`). All 17 per-column hashes were verified, the probex label hash
+`5a554ca0…` matches ours, and per-column RMSE (≈0.859) confirms canonical row order.
+**Caveat:** 16 of the 17 columns are user-fold OOF outputs of probex-fitted models (one is native-holdout).
+Their non-held rows were fitted with outer-fold labels, so known-row CV here is **non-nested** and
+optimistic for every arm. It is reported only as relative evidence; the recovered audit decides.
+Runs: `rcb_blend.py` unchanged (v2 grid {1e2…1e5}, same folds, contexts, cutoffs, seeds, rule):
+(a) bank `own17` (17 columns); (b) bank `own17x` = own17 + bank v2 (82 columns, incl. tx300r
+knn3/knn3d and the wave). Contexts are the bank-v2 context files (same rows). No tree arm.
