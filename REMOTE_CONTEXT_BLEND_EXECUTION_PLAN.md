@@ -161,3 +161,25 @@ optimistic for every arm. It is reported only as relative evidence; the recovere
 Runs: `rcb_blend.py` unchanged (v2 grid {1e2…1e5}, same folds, contexts, cutoffs, seeds, rule):
 (a) bank `own17` (17 columns); (b) bank `own17x` = own17 + bank v2 (82 columns, incl. tx300r
 knn3/knn3d and the wave). Contexts are the bank-v2 context files (same rows). No tree arm.
+
+## Amendment 2026-11-24 — Lane 1: CF-NADE residual neighbourhoods (declared before any chain fit)
+
+Coordinator note `coordinator-next-work-v2-20261124.md` (release asset). **Base: own CFNADE48** (remote9h, 160 hidden /
+rank 48 / 95 epochs, not in the knn3d wave). Own CF96 vectors are **not on this machine**. Only the upstream reference
+`cfnade-96*` vectors are here, and they are excluded. See the missing-input list in `lane1/README.md`.
+Training-row predictions came from the epoch-95 checkpoint with `cfnade48-export` (`cfnade48-stage` with only
+`save_train=true`, preds dir `preds_export48`, 0 training epochs). **Replay gate passed:** the re-predicted probex and qual
+vectors are byte-identical to the saved terminal vectors (sha `353ecdbf…`, `9043511f…`). The exports are
+`cfnade-48.trainx.npy` (99,352,343 rows, sha `a05150f4…`) and `cfnade-48.fulltrain.npy` (100,480,507 rows, `bb02c1a9…`).
+All data/{trainx,probex,fulltrain,qual} arrays are byte-identical to the rcb-r1 tree.
+Chains (split new trainx→probex and fulltrain→qual, both phases, same `fit` binary as the wave):
+* `cfnade-48__knn3`: regression residual chain (reference), defaults;
+* `cfnade-48__knn3d`: date kernel a=0.5, τ=30 (as in the wave);
+* `cfnade-48__knn-25c`: cosine, `KN_K=25 KN_SCALE=2.5 KN_SIM=cosine KN_STAT0=rtg_supp KN_STAT2=cfnade-48_prod KN_TAU=0.05`;
+* `cfnade-48__knn-25m`: MSE, `KN_K=25 KN_SCALE=7.5 KN_SIM=mse KN_STAT0=rtg_supp KN_STAT2=cfnade-48_diff2 KN_TAU=0.05`.
+The 25c/25m knobs are the published split-1 `s1-als8-8__knn-25c/25m` recipes, unchanged; split-new and split-3 have no
+knn-25 recipe. Stats: `fit nbstats {rtg_supp, cfnade-48_prod, cfnade-48_diff2}`.
+**Comparison** on the native-held-out bank v2 (65 cols) with the same 5 user folds and global ridge λ=1000. Arms: bank v2
+without CF48 (CF48 is already a column, so it is dropped), with the base only, base + knn3, base + knn3d, base + 25c,
+base + 25m, and base + all. Every column is a native trainx→probex or train_3→probe_3 output, so no probex outcome enters
+any base or residual fit. Standalone probex RMSE is also reported.
