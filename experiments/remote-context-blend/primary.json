@@ -84,5 +84,49 @@
     "replaces_primary": false
    }
   }
+ },
+ "own17_rerun": {
+  "release_asset": "rcb-own17-blends.tar.gz",
+  "asset_sha256": "032bf314dc4c9f46de8c9d3a10d87c63083ff5b1a00237d153a37ecc2a96f877",
+  "cv_note": "non-nested (own17 columns are user-fold OOF stacks); relative evidence only",
+  "recommended_audit": {
+   "candidate": "own17x global",
+   "control": "own17 global"
+  },
+  "banks": {
+   "own17": {
+    "pooled": {
+     "global": 0.8586752482171031,
+     "context": 0.8586915801545794
+    },
+    "rule_primary": "global",
+    "qual_sha256": {
+     "glob": "2e61003e5742a2acc71815a6413a235fde66ced2d9ae5b40783c27aa9ace5d33",
+     "context": "1ec6540e4451206cb0f71db41e8a43949f22d78dbf239fa59a9f93cfeccd4dc6"
+    },
+    "paths": {
+     "glob": "blend-own17/qual-global.f32",
+     "context": "blend-own17/qual-context.f32"
+    }
+   },
+   "own17x": {
+    "pooled": {
+     "global": 0.8583396548288618,
+     "global-no-new": 0.8583422361907891,
+     "global-plus-knn3": 0.858341610429081,
+     "global-plus-knn3d": 0.8583394735967531,
+     "context": 0.8583399531641396
+    },
+    "rule_primary": "global",
+    "qual_sha256": {
+     "glob": "717f9afab2901055331f1865ea3cef8bcd9998ed5a6e6d7d67a59ac296243927",
+     "context": "a632f5b967a56c050634537ab835f9938cf7361d4c0b8839af3ea36753c18430"
+    },
+    "paths": {
+     "glob": "blend-own17x/qual-global.f32",
+     "context": "blend-own17x/qual-context.f32"
+    }
+   }
+  }
  }
 }
