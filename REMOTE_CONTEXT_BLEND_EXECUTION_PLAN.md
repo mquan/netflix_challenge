@@ -183,3 +183,24 @@ knn-25 recipe. Stats: `fit nbstats {rtg_supp, cfnade-48_prod, cfnade-48_diff2}`.
 without CF48 (CF48 is already a column, so it is dropped), with the base only, base + knn3, base + knn3d, base + 25c,
 base + 25m, and base + all. Every column is a native trainx→probex or train_3→probe_3 output, so no probex outcome enters
 any base or residual fit. Standalone probex RMSE is also reported.
+
+## Amendment 2026-11-24 — Lane 2: fresh TX300 on a second split (declared before launch)
+
+**Split.** `split_3 20261124 2`, the same generator and K as split-3; only the generator seed differs. This writes
+`data/{train,probe}_3s20261124` in tree `artifacts/rcb-l2/source`, an APFS clone of rcb-r1. The generator is verified:
+at its default seed it reproduces `train_3` and `probe_3` byte for byte. The new probe has 1,760,494 rows; 307,627 of
+them differ from probe_3. **Probex ⊂ probe_3s and probex ∩ train_3s = ∅**, with dates matching. Row map:
+`artifacts/rcb-l2/probex-row-map-3s.npy`. Probex is therefore held out from every TX arm below, and from every other
+bank column.
+**Recipe.** `s3-tx300r` exactly (EPOCHS=24 F=300 LR_I=0.006 LR_U=0.0045 LR_W=0.001 LR_WD=0.0005 LR_Y=0.00075 NBR=100
+REG_I=0.015 REG_U=0.06 REG_WD=0.002 RESET=12, EPSAVE=1) except **SEED=20261124** in both new arms. The `fit` binary is
+the rcb-r1 build (sha 13cd19df…).
+* **A**: the existing s3-tx300r (split-3, seed 42), not retrained.
+* **B, the matched single-split control**: split-3, SEED=20261124, both phases (`--final`), preds `preds_3b`.
+* **C, the second-split arm**: split-3s, SEED=20261124, known phase only (train_3s→probe_3s), preds `preds_3s`.
+  Its fulltrain→qual phase would be B's phase-2 recipe on identical data, so **C's qual vector is B's**. This is
+  declared now, and is the only way the known-side split effect can be paired with a qual vector.
+**Comparison** on probex rows with the same 5 user folds, global ridge λ=1000, inner-fold fitting only:
+(i) standalone B vs C; (ii) bank v2 + B vs bank v2 + C (single-split vs second-split, each with one new seed);
+(iii) bank v2 + A + B vs bank v2 + A + C. B vs C differ only in the split.
+Threads: 5 per arm (RAYON/OPENBLAS). ETA ≈ 8–10 h per phase, so C ≈ 9 h and B ≈ 18 h.
