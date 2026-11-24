@@ -101,3 +101,12 @@ Frozen primary + matched global control: config, coefficients, all 2,817,131
 qualifying predictions, known vectors and fold receipts. Large files go to a
 draft GitHub release (transfer only); git gets code, manifests and receipts.
 No recovered labels are read on this machine.
+
+## Amendment 2026-11-24 — context v2 (declared after v1, before running v2)
+
+v1 is final and unchanged (global primary). v1's λ_ctx was 1e4, the grid floor,
+in all 5 folds. v2 changes **only** the grid to {1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 1e5}
+(tie → larger). Same bank, folds, contexts, bins, cutoffs, inner seeds and
+primary rule (≥0.001 pooled and ≥4/5 folds vs the same global blend). Because v2
+is chosen after seeing v1, a v2 win is reported as adaptive known-row evidence
+and the coordinator decides whether it replaces the v1 primary.

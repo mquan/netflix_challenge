@@ -15,7 +15,8 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 BANK = ROOT / 'artifacts/bank'
 GLOBAL_LAMBDA = 1000.0
-CTX_GRID = [1e4, 3e4, 1e5, 3e5, 1e6]
+import os
+CTX_GRID = [float(v) for v in os.environ.get("RCB_CTX_GRID", "1e4,3e4,1e5,3e5,1e6").split(",")]
 CTX_NAMES = ['log_user_support', 'log_item_support', 'days_since_last_train']
 BINS = 4
 CHUNK = 65536
