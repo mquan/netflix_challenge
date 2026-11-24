@@ -1,0 +1,65 @@
+{
+ "job": "s3-tx300r__knn3-native",
+ "observed": "2026-11-24T06:59:17.366767+00:00",
+ "tree": "artifacts/rcb-r1",
+ "lineage": {
+  "job": "s3-tx300r__knn3",
+  "plan": "experiments/remote-context-blend/plan.json",
+  "tree": "artifacts/rcb-r1",
+  "binary_sha256": "13cd19df7329e2e8638098b108ad181878138ee689a6802d5d1d60776891ca10",
+  "base": "s3-tx300r (weekend r10)",
+  "qualifying_targets_zero": true
+ },
+ "native_query_arrays": {
+  "s3-tx300r__knn3.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-tx300r__knn3.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  }
+ },
+ "canonical_pairs": [
+  "s3-tx300r__knn3.npz"
+ ],
+ "parts": [
+  {
+   "file": "s3-tx300r__knn3-native-part01.tar.gz",
+   "bytes": 29115885,
+   "sha256": "49c53afe6f510747c11e14e04c530c8c4e9815a636a80fdb6eb78b39a11a5acc",
+   "members": {
+    "native/s3-tx300r__knn3.out": {
+     "bytes": 592,
+     "sha256": "3f3a5c518f28344b3203a7359b9eefdca151f305e1f4839d773454c1f38d4e80"
+    },
+    "native/s3-tx300r__knn3.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "f5fa21cda5e393ba70418c71e7cd595e1d9881e1397535fab6d93809839d5424"
+    },
+    "native/s3-tx300r__knn3.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "d9c9f4e11e47f1cd25f766aeb24bc456a0c464e54c4e71e70fb34fc829dd9557"
+    },
+    "extra/s3-tx300r__knn3.log": {
+     "bytes": 1369,
+     "sha256": "819e5d1a5a22df9c95e75979be4ff0b09db57aed1e3c3e8de9c3a7edcd0cc1bd"
+    },
+    "extra/knn3d.rs": {
+     "bytes": 15809,
+     "sha256": "26e5112370a8d3a17f9cce4e71ce982806aa71ec7998b2b4ef7b18d298251b92"
+    },
+    "extra/fit.rs": {
+     "bytes": 46405,
+     "sha256": "78dc06209fe6c8444cfbf62a420fcc65f523b16a3862c8e79d410edf652f1269"
+    },
+    "canonical/s3-tx300r__knn3.npz": {
+     "bytes": 13396362,
+     "sha256": "2bdae42c5e62a7a7ad3fe0f4537ed26ec701b2191863a941b3017be3779bbab2"
+    }
+   }
+  }
+ ],
+ "all_members_decoded_and_rehashed": true,
+ "qualifying_labels_read": false
+}

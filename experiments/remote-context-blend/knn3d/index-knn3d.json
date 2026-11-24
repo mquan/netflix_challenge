@@ -1,0 +1,65 @@
+{
+ "job": "s3-tx300r__knn3d-native",
+ "observed": "2026-11-24T06:59:18.750046+00:00",
+ "tree": "artifacts/rcb-r1",
+ "lineage": {
+  "job": "s3-tx300r__knn3d",
+  "plan": "experiments/remote-context-blend/plan.json",
+  "tree": "artifacts/rcb-r1",
+  "binary_sha256": "13cd19df7329e2e8638098b108ad181878138ee689a6802d5d1d60776891ca10",
+  "base": "s3-tx300r (weekend r10)",
+  "qualifying_targets_zero": true
+ },
+ "native_query_arrays": {
+  "s3-tx300r__knn3d.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-tx300r__knn3d.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  }
+ },
+ "canonical_pairs": [
+  "s3-tx300r__knn3d.npz"
+ ],
+ "parts": [
+  {
+   "file": "s3-tx300r__knn3d-native-part01.tar.gz",
+   "bytes": 29116233,
+   "sha256": "96887e23f9463aa7346cddc2d9c6f6fa295daa1deaa7b516fbd76a29845d01d3",
+   "members": {
+    "native/s3-tx300r__knn3d.out": {
+     "bytes": 629,
+     "sha256": "b54975cea60a5faa3e346f728815c9ec482902757c189da6b22509127f611463"
+    },
+    "native/s3-tx300r__knn3d.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "468ab36b629c9eb31c25062e03823f22607af7a58f000848a7f68ff01db666eb"
+    },
+    "native/s3-tx300r__knn3d.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "0d34fe9bb1538c4b341c24373fea86b2311054c3445128a11fcd96c447cd3440"
+    },
+    "extra/s3-tx300r__knn3d.log": {
+     "bytes": 1406,
+     "sha256": "b9c24ef0a3c30b5908e3782e11c0c248fcc0f2fe84d14fcc988fa77cfc379d97"
+    },
+    "extra/knn3d.rs": {
+     "bytes": 15809,
+     "sha256": "26e5112370a8d3a17f9cce4e71ce982806aa71ec7998b2b4ef7b18d298251b92"
+    },
+    "extra/fit.rs": {
+     "bytes": 46405,
+     "sha256": "78dc06209fe6c8444cfbf62a420fcc65f523b16a3862c8e79d410edf652f1269"
+    },
+    "canonical/s3-tx300r__knn3d.npz": {
+     "bytes": 13395875,
+     "sha256": "1dc0a8ad963860da153ad2cb8f8eb2303455223da389fa00ecb7aa123116cca2"
+    }
+   }
+  }
+ ],
+ "all_members_decoded_and_rehashed": true,
+ "qualifying_labels_read": false
+}
