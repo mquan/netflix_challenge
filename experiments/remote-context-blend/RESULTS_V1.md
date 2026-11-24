@@ -24,3 +24,16 @@ Frozen qualifying vectors (2,817,131 rows), coefficients and held known vectors:
 draft release `remote-context-blend-20261124`, asset `rcb-blend-v1.tar.gz`
 (hashes in `blend/files.sha256`, `blend/archive.sha256`). Recovered audit pending
 on the coordinator.
+
+## v2 (declared after v1: λ_ctx grid {1e2…1e5} only)
+
+| Arm | Pooled | Fold 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|---|
+| global (unchanged) | 0.863340 | 0.86275 | 0.86076 | 0.86408 | 0.86493 | 0.86418 |
+| context v2 | 0.862355 | 0.86157 | 0.85979 | 0.86323 | 0.86401 | 0.86318 |
+
+Gain −0.000985 pooled, 5/5 folds (0.00085–0.00118): **just short of the 0.001 bar,
+so global stays primary under the frozen rule.** λ_ctx again picked the grid floor
+(1e2) everywhere: the interactions are effectively unshrunk. I stopped extending
+the grid because each extension is another adaptive choice. The owner/coordinator
+decides whether to admit context v2 as primary. Asset `rcb-blend-v2.tar.gz`.
