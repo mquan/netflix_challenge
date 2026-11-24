@@ -20,3 +20,14 @@ no recovered outcomes are needed or wanted. On arrival this machine runs the
 frozen `scripts/rcb_blend.py` (global λ=1000; context v2 grid {1e2…1e5}) unchanged,
 plus `own17 + knn3d` as the incremental column test, and returns frozen
 qualifying vectors for both candidates.
+
+## Also requested: full-context CatBoost closure (owner-approved latent arm)
+
+The latent CatBoost arm (`upstream-full-context-catboost-execution-v1`, 364 sources)
+needs its data closure (~110 GiB: `upstream-rbm400-context-data-reference-v2`,
+`upstream-rbm400-latent-provider`, own16 operator inputs). All 364 code sources are
+present here; **no data inputs are**. CatBoost 1.2.10 / numpy 2.2.6 is installed
+(Python 3.10.19 vs plan 3.10.20). Measured here: 0.19 s/iter at 2 threads on 1.13M×47
+features; outputs are identical at 2 and 8 threads. Please upload the closure
+manifest (path, bytes, sha256) first. This machine will report which parts are
+missing, and only those need to be sent.

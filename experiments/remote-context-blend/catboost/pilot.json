@@ -1,0 +1,24 @@
+{
+ "train_rows": 901418,
+ "features": 47,
+ "runs": [
+  {
+   "threads": 2,
+   "iterations": 200,
+   "seconds": 38.7,
+   "sec_per_iter": 0.193,
+   "eval_rmse_after_200": 0.8618292696036512
+  },
+  {
+   "threads": 8,
+   "iterations": 200,
+   "seconds": 24.7,
+   "sec_per_iter": 0.123,
+   "eval_rmse_after_200": 0.8618292696036521
+  }
+ ],
+ "peak_rss_bytes": 2078605312,
+ "catboost": "1.2.10",
+ "note": "throughput pilot only; local 43-col bank, not the full-context closure",
+ "full_arm_estimate_note": "2 arms x 5 folds x 3 seeds x (inner fit + refit) at <=2000 iters"
+}
