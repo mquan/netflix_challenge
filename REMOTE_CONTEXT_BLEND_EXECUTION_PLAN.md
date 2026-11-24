@@ -121,3 +121,13 @@ and the coordinator decides whether it replaces the v1 primary.
    available here.
 3. Run more knn3d temporal chains on other temporal bases and the fresh full
    latent CatBoost arm.
+
+## Amendment 2026-11-24 — knn3d wave (declared before launch)
+
+Same `knn3d` (a = 0.5, τ = 30) and `knn3` control, unchanged binary, on every other
+base with training predictions on this machine: split-3 tx50n, tx60o, rbm800p,
+dnn24, attn32, rbm200e, bknbrx-100w, mfrbmx-60h, rbm400pf (LR 0.015 run); split-new
+tsvdx4-60, tsvdx5-150o (`data/trainx` cloned from the fresh tree, byte-checked).
+22 jobs, both phases, 3 concurrent × 4 threads (`knn3d/wave.sh`). All 22 columns
+enter a bank v2; the v2 blends (global control, context v2 primary) are rerun
+unchanged on bank v2 and reported as an adaptive follow-up.

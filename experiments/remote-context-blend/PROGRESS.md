@@ -12,3 +12,4 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 | 2026-11-24T07:00:55Z | blend v2 | Context v2 0.862355 vs global 0.863340 (−0.000985, 5/5) — misses 0.001 bar by 0.000015; global stays primary. Uploaded `rcb-blend-v2.tar.gz`. Owner decision pending. |
 | 2026-11-24T16:10:41Z | decision | Owner admitted **context v2 as primary** (global = control); asked to rerun on coordinator own17 bank, and to run more knn3d chains + fresh latent CatBoost. `primary.json` written. |
 | 2026-11-24T16:11:14Z | own17 bank | Coordinator not reachable from this machine; arrays only exist there. Request pushed: `REQUEST_OWN17_BANK.md`. Waiting on upload. |
+| 2026-11-24T16:12:02Z | knn3d wave | Declared + launched 22 chain jobs (11 bases × knn3/knn3d) in tmux `context-blend:wave`. |
