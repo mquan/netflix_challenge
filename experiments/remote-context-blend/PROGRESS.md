@@ -16,3 +16,4 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 | 2026-11-24T16:15:33Z | catboost | Env ready (`artifacts/venv-cb`, CatBoost 1.2.10). Throughput pilot: 0.19 s/iter @2 thr, 0.12 @8 thr, ~1 GB RSS, thread-invariant output. Full-context closure is not on this machine; added to the coordinator request. Local tree-residual arm on bank v2 will be declared next. |
 | 2026-11-24T17:12:25Z | knn3d wave | 22 jobs finished, 0 non-zero exits; logs + output hashes in knn3d/wave/ |
 | 2026-11-24T17:12:33Z | bank v2 | built: bank 65 columns |
+| 2026-11-24T17:13:28Z | blend bank2 | {"pooled": {"global": 0.8631551888911532, "global-no-new": 0.8631608569382332, "global-plus-knn3": 0.8631587406826176, "global-plus-knn3d": 0.8631540712961634, "context": 0.8621969850303761}, "primary": "global", "fold_gain": [0.001156432444465616, 0.0009336142341882514, 0.0008149985122022363, 0.000 |
