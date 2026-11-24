@@ -1,5 +1,13 @@
 # Our own Netflix training progress
 
+## November 24, 2026
+
+The Own17x global blend combines 17 existing families with 65 predictors trained on the remote Mac. The frozen predictions score **0.85984307 / 0.86084907 RMSE** on the two complete community-recovered groups. That improves the matched Own17 global control by **0.000488 / 0.000486**. The harder group remains **0.003599 RMSE** above the **0.85725** target. The remote known-row blend comparison used reused out-of-fold inputs and was non-nested. [Qualifying audit evidence](experiments/own-progress-20261124/own17x.json).
+
+The earlier [Own17 simplex audit](experiments/own-progress-20261124/own17.json) scored **0.86032634 / 0.86132655**.
+
+## Earlier progress
+
 Updated November22 UTC /November21 Pacific,2026.
 
 November22 07:33 UTC: the full selected-tree qualifying controller is now

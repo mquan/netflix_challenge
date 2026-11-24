@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-22T07:33:11.529682+00:00",
-  "display_time": "2026-11-22 07:33 UTC",
+  "observed": "2026-11-24T19:39:24.375326+00:00",
+  "display_time": "2026-11-24 19:39 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,18 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "own17x-recovered-audit",
+      "work": "Own17x qualifying audit complete",
+      "state": "0.8598430735 / 0.8608490721 RMSE. Both groups improved against the matched global control; target unmet.",
+      "evidence": "experiments/own-progress-20261124/own17x.json"
+    },
+    {
+      "work_id": "own17-canonical-complete",
+      "work": "Own17 simplex qualifying audit complete",
+      "state": "0.8603263416 / 0.8613265493 RMSE on the complete recovered groups.",
+      "evidence": "experiments/own-progress-20261124/own17.json"
+    },
     {
       "work_id": "owned-complete-tree-query-pair-queued",
       "work": "Full selected-tree qualifying controller reviewed and queued; neural replay active",
@@ -287,7 +299,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
+  "qualifying_verification_sha256": "37622fa31b32fb4b0e33370fabd4496909f840eecfda1abf270cc9657e78a928",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
@@ -532,14 +544,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8603409488199526
+      "rmse": 0.8598430735045893
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.8613420938772931
+      "rmse": 0.8608490720618297
     }
   },
-  "latest_qualifying_verification_sha256": "d646e5b449052126fdfae87978578d741a4e58a85ce0a8ec524406a2caa9d1e0",
+  "latest_qualifying_verification_sha256": "37622fa31b32fb4b0e33370fabd4496909f840eecfda1abf270cc9657e78a928",
   "best_development_arm": "fixed_half_complete_trajectory_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -556,18 +568,19 @@
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
-  "latest_qualifying_verification_path": "experiments/upstream-local-rbm-blend-deterministic-metal/independent-canonical-verification.json",
-  "qualifying_narrative": "The predeclared sixteen-family known-only simplex independently scores0.8603409488199526/0.8613420938772931, only0.000000312843/0.000000295365 better than own15. Both original full15-epoch RBM models and all full native/projection predictions replay on MPS. All65535 supports, actual coefficient KKT/objective,17ridge equations and six frozen vectors verify before outcomes. Separate canonical reconstruction, full inherited source rehash and compensated group scoring pass. Both groups still miss0.85725; gap on the worse group0.0040920938772931. Apparent known fitted blend scores are not nested CV. Adaptive community-recovered audit, not official or untouched Test. No numerical public predictors or qualifying outcomes enter fitting or selection; historical tree154 A/B caveat remains.",
+  "latest_qualifying_verification_path": "experiments/own-progress-20261124/own17x.json",
+  "qualifying_narrative": "Own17x global improves both recovered groups by about 0.00049 RMSE against the matched Own17 global control. The target remains unmet.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/upstream-local-rbm-blend-deterministic-metal/independent-recovered-audit.json",
-  "qualifying_benchmark_rule": "The original local-rbm16-simplex primary was declared and frozen before outcomes. Its separate canonical full-group scores improve both preceding own15 groups. Neither fixed ridge10 nor preceding-primary control replaces it. Full65535-support actualKKT/17-equation/six-vector preaudit, original own15 lineage and complete new RBM15+15 actual-model query replays pass. No qualifying fitting or candidate selection.",
+  "latest_completed_qualifying_audit_path": "experiments/own-progress-20261124/own17x.json",
+  "qualifying_benchmark_rule": "Compare frozen known-only global blends on the two complete community-recovered groups.",
   "own330_qualifying_best": false,
   "complete13_qualifying_best": false,
   "preceding_own352_development_verification_sha256": "81f234f4877072982260ef0317f70698c8a2f6ef46686a3badd562971a02dcf7",
   "own14_qualifying_best": false,
   "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "own15_qualifying_best": false,
-  "last_score_status_observed": "2026-11-22T01:56:55.243095+00:00",
+  "last_score_status_observed": "2026-11-24T19:39:24.375326+00:00",
   "preceding_own15_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
-  "local_rbm16_qualifying_best": true
+  "local_rbm16_qualifying_best": false,
+  "own17x_qualifying_best": true
 }

@@ -1,0 +1,35 @@
+{
+  "observed": "2026-11-24T19:39:24.375326+00:00",
+  "groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8598430735045893
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8608490720618297
+    }
+  },
+  "matched_control_groups": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8603310396726406
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8613353753029599
+    }
+  },
+  "prediction_sha256": "717f9afab2901055331f1865ea3cef8bcd9998ed5a6e6d7d67a59ac296243927",
+  "paired_delta": {
+    "source0": -0.00048796616805124593,
+    "source1": -0.00048630324113019263
+  },
+  "target": 0.85725,
+  "remote_commit": "ef507da",
+  "archive_sha256": "032bf314dc4c9f46de8c9d3a10d87c63083ff5b1a00237d153a37ecc2a96f877",
+  "verified_members": 19,
+  "canonical_source_sha256": "6d2848d2fda72fdef7e30661060338472dfa213ec797a6071fbdb1a7e8138e5f",
+  "qualifying_labels_used_for_fitting": false,
+  "official_or_untouched_test": false
+}
