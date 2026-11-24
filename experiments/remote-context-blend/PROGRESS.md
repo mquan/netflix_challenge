@@ -14,3 +14,4 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 | 2026-11-24T16:11:14Z | own17 bank | Coordinator not reachable from this machine; arrays only exist there. Request pushed: `REQUEST_OWN17_BANK.md`. Waiting on upload. |
 | 2026-11-24T16:12:02Z | knn3d wave | Declared + launched 22 chain jobs (11 bases × knn3/knn3d) in tmux `context-blend:wave`. |
 | 2026-11-24T16:15:33Z | catboost | Env ready (`artifacts/venv-cb`, CatBoost 1.2.10). Throughput pilot: 0.19 s/iter @2 thr, 0.12 @8 thr, ~1 GB RSS, thread-invariant output. Full-context closure is not on this machine; added to the coordinator request. Local tree-residual arm on bank v2 will be declared next. |
+| 2026-11-24T17:12:25Z | knn3d wave | 22 jobs finished, 0 non-zero exits; logs + output hashes in knn3d/wave/ |
