@@ -1,0 +1,28 @@
+{
+ "release_tag": "remote-context-blend-20261124",
+ "draft": true,
+ "target": "research/remote-context-blend-execution",
+ "assets": [
+  {
+   "name": "s3-rbm400pf-lr015-native-part01.tar.gz",
+   "bytes": 919179081,
+   "sha256": "3fdb73e47914097ab0d9986f9eb80050abf87f2e09b9e6f8351a48800fcff2ad",
+   "state": "uploaded"
+  },
+  {
+   "name": "s3-rbm400pf-lr015-native-part02.tar.gz",
+   "bytes": 262081296,
+   "sha256": "3c0c5540a584ce746279f66091240e01e4acf360cf137a1a3e620e20a1c82366",
+   "state": "uploaded"
+  },
+  {
+   "name": "s3-rbm400pf-lr015-native-index.json",
+   "note": "copy of index.json"
+  }
+ ],
+ "early_part_roundtrip": {
+  "part": "s3-rbm400pf-lr015-native-part01.tar.gz",
+  "downloaded_sha256_matches": true
+ },
+ "numeric_arrays_in_git": false
+}

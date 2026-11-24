@@ -1,0 +1,104 @@
+{
+ "job": "s3-rbm400pf-lr015",
+ "state": "complete_both_phases_15+15",
+ "native_name": "s3-rbm400pf",
+ "tree": "netflix_remote_weekend/artifacts/upstream-remote-weekend-r11 (APFS clone of r8 source)",
+ "weekend_plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+ "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+ "source_files_verified": 114,
+ "source_files_absent": {
+  "files": [
+   ".gitignore"
+  ],
+  "note": ".gitignore not copied into the r11 clone; not a build input"
+ },
+ "data_files_verified": 62,
+ "binary_sha256": "0d3b3e1130ae75005834a179effe3ed11988bd4dcc2055adcab408829aff4466",
+ "row_map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6",
+ "row_map_file_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6",
+ "command": "env RAYON_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 EPOCHS=15 EPSAVE=1 H=400 HT=p LR=0.015 NFACT=50 ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+ "recipe_change_vs_plan": {
+  "LR": "0.015 (plan 0.02, which diverged to NaN at qual epoch 6 in r8)",
+  "threads": "8 (plan 4)"
+ },
+ "plan_job": {
+  "name": "s3-rbm400pf",
+  "kind": "rbm",
+  "epochs_per_phase": 15,
+  "environment": {
+   "RAYON_NUM_THREADS": "4",
+   "OPENBLAS_NUM_THREADS": "4",
+   "EPOCHS": "15",
+   "EPSAVE": "1",
+   "H": "400",
+   "HT": "p",
+   "LR": "0.02",
+   "NFACT": "50"
+  },
+  "command": [
+   "./target/release/fit",
+   "rbm",
+   "s3-rbm400pf",
+   "-p",
+   "pipeline-3.toml",
+   "--final",
+   "--preds",
+   "preds_3"
+  ],
+  "published_columns": [
+   "s3-rbm400pf",
+   "s3-rbm400pf_ep01",
+   "s3-rbm400pf_ep02",
+   "s3-rbm400pf_ep03",
+   "s3-rbm400pf_ep04",
+   "s3-rbm400pf_ep05",
+   "s3-rbm400pf_ep06",
+   "s3-rbm400pf_ep07",
+   "s3-rbm400pf_ep08",
+   "s3-rbm400pf_ep09",
+   "s3-rbm400pf_ep10",
+   "s3-rbm400pf_ep11",
+   "s3-rbm400pf_ep12",
+   "s3-rbm400pf_ep13",
+   "s3-rbm400pf_ep14",
+   "s3-rbm400pf_ep15"
+  ],
+  "original_registry_job": {
+   "command": "cargo build --release --bin fit && RAYON_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 EPOCHS=15 EPSAVE=1 H=400 HT=p LR=0.02 NFACT=50 ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3 ",
+   "inputs": [
+    "src/bin/fit.rs"
+   ],
+   "inputs_from": [
+    "ingest",
+    "split_3"
+   ],
+   "outputs": [
+    "preds_3/s3-rbm400pf.probe_3.npy",
+    "preds_3/s3-rbm400pf.qual.npy",
+    "preds_3/s3-rbm400pf.train_3.npy",
+    "preds_3/s3-rbm400pf.fulltrain.npy",
+    "preds_3/s3-rbm400pf.out",
+    "preds_3/s3-rbm400pf_ep01.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep02.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep03.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep09.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep10.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep14.probe_3.npy",
+    "preds_3/s3-rbm400pf_ep01.qual.npy",
+    "preds_3/s3-rbm400pf_ep02.qual.npy",
+    "preds_3/s3-rbm400pf_ep03.qual.npy",
+    "preds_3/s3-rbm400pf_ep09.qual.npy",
+    "preds_3/s3-rbm400pf_ep10.qual.npy",
+    "preds_3/s3-rbm400pf_ep14.qual.npy"
+   ]
+  },
+  "minimum_remaining_training_hours": 10
+ },
+ "timing": {
+  "fit_start": "2026-11-22T18:45:51Z",
+  "fit_exit0": "2026-11-23T09:04:35Z"
+ },
+ "qualifying_targets_zero": true,
+ "qualifying_labels_read": false,
+ "prior_compact_export": "draft release remote-weekend-20261120 asset s3-rbm400pf-lr015-part01.tar.gz sha256 cb858a17165ed17b34a656dc56ecfdf04711d1a9b5ce54af9a88e5e0463e5734 (16 finite pairs)"
+}

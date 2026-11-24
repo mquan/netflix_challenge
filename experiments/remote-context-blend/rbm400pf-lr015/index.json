@@ -1,0 +1,499 @@
+{
+ "job": "s3-rbm400pf-lr015-native",
+ "observed": "2026-11-24T06:54:43.177661+00:00",
+ "tree": "/Users/quan/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r11",
+ "lineage": {
+  "job": "s3-rbm400pf-lr015",
+  "state": "complete_both_phases_15+15",
+  "native_name": "s3-rbm400pf",
+  "tree": "netflix_remote_weekend/artifacts/upstream-remote-weekend-r11 (APFS clone of r8 source)",
+  "weekend_plan_sha256": "9f75c1e35ae5cf833a5857d72c32c4e4ee45a4dc092c8d07a124e34bf83d066f",
+  "source_pin": "49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c",
+  "source_files_verified": 114,
+  "source_files_absent": {
+   "files": [
+    ".gitignore"
+   ],
+   "note": ".gitignore not copied into the r11 clone; not a build input"
+  },
+  "data_files_verified": 62,
+  "binary_sha256": "0d3b3e1130ae75005834a179effe3ed11988bd4dcc2055adcab408829aff4466",
+  "row_map_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6",
+  "row_map_file_sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6",
+  "command": "env RAYON_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 EPOCHS=15 EPSAVE=1 H=400 HT=p LR=0.015 NFACT=50 ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3",
+  "recipe_change_vs_plan": {
+   "LR": "0.015 (plan 0.02, which diverged to NaN at qual epoch 6 in r8)",
+   "threads": "8 (plan 4)"
+  },
+  "plan_job": {
+   "name": "s3-rbm400pf",
+   "kind": "rbm",
+   "epochs_per_phase": 15,
+   "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "EPOCHS": "15",
+    "EPSAVE": "1",
+    "H": "400",
+    "HT": "p",
+    "LR": "0.02",
+    "NFACT": "50"
+   },
+   "command": [
+    "./target/release/fit",
+    "rbm",
+    "s3-rbm400pf",
+    "-p",
+    "pipeline-3.toml",
+    "--final",
+    "--preds",
+    "preds_3"
+   ],
+   "published_columns": [
+    "s3-rbm400pf",
+    "s3-rbm400pf_ep01",
+    "s3-rbm400pf_ep02",
+    "s3-rbm400pf_ep03",
+    "s3-rbm400pf_ep04",
+    "s3-rbm400pf_ep05",
+    "s3-rbm400pf_ep06",
+    "s3-rbm400pf_ep07",
+    "s3-rbm400pf_ep08",
+    "s3-rbm400pf_ep09",
+    "s3-rbm400pf_ep10",
+    "s3-rbm400pf_ep11",
+    "s3-rbm400pf_ep12",
+    "s3-rbm400pf_ep13",
+    "s3-rbm400pf_ep14",
+    "s3-rbm400pf_ep15"
+   ],
+   "original_registry_job": {
+    "command": "cargo build --release --bin fit && RAYON_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 EPOCHS=15 EPSAVE=1 H=400 HT=p LR=0.02 NFACT=50 ./target/release/fit rbm s3-rbm400pf -p pipeline-3.toml --final --preds preds_3 ",
+    "inputs": [
+     "src/bin/fit.rs"
+    ],
+    "inputs_from": [
+     "ingest",
+     "split_3"
+    ],
+    "outputs": [
+     "preds_3/s3-rbm400pf.probe_3.npy",
+     "preds_3/s3-rbm400pf.qual.npy",
+     "preds_3/s3-rbm400pf.train_3.npy",
+     "preds_3/s3-rbm400pf.fulltrain.npy",
+     "preds_3/s3-rbm400pf.out",
+     "preds_3/s3-rbm400pf_ep01.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep02.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep03.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep09.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep10.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep14.probe_3.npy",
+     "preds_3/s3-rbm400pf_ep01.qual.npy",
+     "preds_3/s3-rbm400pf_ep02.qual.npy",
+     "preds_3/s3-rbm400pf_ep03.qual.npy",
+     "preds_3/s3-rbm400pf_ep09.qual.npy",
+     "preds_3/s3-rbm400pf_ep10.qual.npy",
+     "preds_3/s3-rbm400pf_ep14.qual.npy"
+    ]
+   },
+   "minimum_remaining_training_hours": 10
+  },
+  "timing": {
+   "fit_start": "2026-11-22T18:45:51Z",
+   "fit_exit0": "2026-11-23T09:04:35Z"
+  },
+  "qualifying_targets_zero": true,
+  "qualifying_labels_read": false,
+  "prior_compact_export": "draft release remote-weekend-20261120 asset s3-rbm400pf-lr015-part01.tar.gz sha256 cb858a17165ed17b34a656dc56ecfdf04711d1a9b5ce54af9a88e5e0463e5734 (16 finite pairs)"
+ },
+ "native_query_arrays": {
+  "s3-rbm400pf.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep01.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep01.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep02.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep02.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep03.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep03.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep04.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep04.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep05.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep05.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep06.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep06.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep07.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep07.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep08.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep08.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep09.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep09.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep10.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep10.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep11.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep11.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep12.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep12.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep13.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep13.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep14.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep14.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  },
+  "s3-rbm400pf_ep15.probe_3.npy": {
+   "split": "probe_3",
+   "rows": 1760494
+  },
+  "s3-rbm400pf_ep15.qual.npy": {
+   "split": "qual",
+   "rows": 2817131
+  }
+ },
+ "canonical_pairs": [
+  "s3-rbm400pf.npz",
+  "s3-rbm400pf_ep01.npz",
+  "s3-rbm400pf_ep02.npz",
+  "s3-rbm400pf_ep03.npz",
+  "s3-rbm400pf_ep04.npz",
+  "s3-rbm400pf_ep05.npz",
+  "s3-rbm400pf_ep06.npz",
+  "s3-rbm400pf_ep07.npz",
+  "s3-rbm400pf_ep08.npz",
+  "s3-rbm400pf_ep09.npz",
+  "s3-rbm400pf_ep10.npz",
+  "s3-rbm400pf_ep11.npz",
+  "s3-rbm400pf_ep12.npz",
+  "s3-rbm400pf_ep13.npz",
+  "s3-rbm400pf_ep14.npz",
+  "s3-rbm400pf_ep15.npz"
+ ],
+ "parts": [
+  {
+   "file": "s3-rbm400pf-lr015-native-part01.tar.gz",
+   "bytes": 919179081,
+   "sha256": "3fdb73e47914097ab0d9986f9eb80050abf87f2e09b9e6f8351a48800fcff2ad",
+   "members": {
+    "native/s3-rbm400pf.fulltrain.npy": {
+     "bytes": 401922156,
+     "sha256": "dfedf2b3a750afb9c89159ea65dda2ad5276325b0cedc603dfc1c18b01f6f9ec"
+    },
+    "native/s3-rbm400pf.ifeat.fulltrain.npy": {
+     "bytes": 17770128,
+     "sha256": "89a5d00523d6b36f9684d3342755daa821b6c7c32b784ab6759811513d5b47d2"
+    },
+    "native/s3-rbm400pf.ifeat.train_3.npy": {
+     "bytes": 17770128,
+     "sha256": "16d2213bc979ac6abd951217a9cbd4f4865f7f208fd8da465d337bdc4cba881b"
+    },
+    "native/s3-rbm400pf.out": {
+     "bytes": 1396,
+     "sha256": "7205ecadfc03d1fa274ed2fa6282000b0540e2aaf568e97630e6ea1d529630c7"
+    },
+    "native/s3-rbm400pf.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "3b927b03ee4c9454a2c96a49de67c9d733c48011a0094443a1d44fdcdafebaae"
+    },
+    "native/s3-rbm400pf.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "da3e9553c751a2e9766bdb8370ceabb5995581c571b08eeec19a1d54d75092ef"
+    },
+    "native/s3-rbm400pf.train_3.npy": {
+     "bytes": 394880180,
+     "sha256": "850e91d49f84e353118825414b0d1064050a4bf7acd9dad8e57fdb4cc1998bb6"
+    },
+    "native/s3-rbm400pf_ep01.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "68aff77b633fc87832f658b689cb51d173703cb75328ed5cbf1f391a42b0100c"
+    },
+    "native/s3-rbm400pf_ep01.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "95a1204c26ab46af61998e52a335c932c7702932294def4e408b204dac15a043"
+    },
+    "native/s3-rbm400pf_ep02.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "276191ab12932ac2a330db5c3efe9d4be31605e87a84788de737ad66592fc247"
+    },
+    "native/s3-rbm400pf_ep02.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "6237a8076fd08ec32f44d45370247975213b9709c9343ec0c74cfeb1768c83f8"
+    },
+    "native/s3-rbm400pf_ep03.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "efe2cbbbd7a418d28fbaa58aeeb641a31cf59640b2ee045a6ecb470ffb966b23"
+    },
+    "native/s3-rbm400pf_ep03.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "1b284abda270928b6a719b868aae1a5563227cb7890ee7de5c34bd05e9bc42ed"
+    },
+    "native/s3-rbm400pf_ep04.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "72d284277a3e8b7a06869046e9044c1e0dc1399fa5c37fccdaee30e3015247a2"
+    },
+    "native/s3-rbm400pf_ep04.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "a1ecdc6f55e7f14272bf825fd6fda1d48937e8911c70eb61270ffc9e63fc57ef"
+    },
+    "native/s3-rbm400pf_ep05.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "ab8492aa90ec3a02b40817a527aded3c20083b3a87edfff4d4e10a2de434dc0e"
+    },
+    "native/s3-rbm400pf_ep05.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "9515b2550260110da75248b679df193d0de2eedc00da7d3059639e865250e7ac"
+    },
+    "native/s3-rbm400pf_ep06.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "2c8d4c9aba11283d6f62ccd0ab41a72cd88a01c1072754d7276e3b956592c9e3"
+    },
+    "native/s3-rbm400pf_ep06.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "cf03d63398eac9115975b6df4ead2412ac2a3caf3a51558c1bd9446c27ff3eb1"
+    },
+    "native/s3-rbm400pf_ep07.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "854248874ef26d647f6b755d872c68cc7b5c60dc709717ffe6f7d44ae8be30bf"
+    },
+    "native/s3-rbm400pf_ep07.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "99ec6c4fbc80aed5cdf3dd9f4cbb412ad45c0882c6d7a3f0eec8ec03d217ef2c"
+    },
+    "native/s3-rbm400pf_ep08.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "693f3612c533b604f0dce6640316cd5f0856b378fdac3fd08031581308d12ea4"
+    },
+    "native/s3-rbm400pf_ep08.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "7fcad8aca8dfb63d29b26249a4fe06148c76bb0470ed07ac30fc2ae6035956ad"
+    },
+    "native/s3-rbm400pf_ep09.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "72502a7bd015eca6ca5440b3b95daec21821a89033253c6d204f02c1dac6f7dd"
+    },
+    "native/s3-rbm400pf_ep09.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "2fcd2bacaeddaf949f93ae83073f55146e09a122ce18e36f32e0b2cee7cd6606"
+    },
+    "native/s3-rbm400pf_ep10.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "51c64f3de22abe189cd8dfeef944d6a20556a1ab04f3211864f9dcf4e22a6d87"
+    },
+    "native/s3-rbm400pf_ep10.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "b7309c1b93c1d2b7b18e30991d832bb18c84eaf83cdd56138a744c59ab3f5010"
+    },
+    "native/s3-rbm400pf_ep11.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "ecaa6a096ab9ddcc4e9e6fdf833b64519b8e7f1b6a6a04846740e98567997f46"
+    },
+    "native/s3-rbm400pf_ep11.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "8191a61b0637737dd07fb6287ef11297e28b8da70be80c20ffc30566111eecdc"
+    },
+    "native/s3-rbm400pf_ep12.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "dad659d18f11be588c8204bfb160e25d7197587902af145f84ee2b86392debcd"
+    },
+    "native/s3-rbm400pf_ep12.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "9a765b46202bb9b5673e587ea1be9728cb5b1e28696cddeb4e5113bc3472165b"
+    }
+   }
+  },
+  {
+   "file": "s3-rbm400pf-lr015-native-part02.tar.gz",
+   "bytes": 262081296,
+   "sha256": "3c0c5540a584ce746279f66091240e01e4acf360cf137a1a3e620e20a1c82366",
+   "members": {
+    "native/s3-rbm400pf_ep13.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "522f540bae0525914fac573aeb1154e394b6ba76664f41bf2439b60b45ed866a"
+    },
+    "native/s3-rbm400pf_ep13.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "0469addb9d0ea6da15f3f715337e7616e5501dbfefb572e7e838d328229353b4"
+    },
+    "native/s3-rbm400pf_ep14.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "c8ddd71172cef65721d82bca88e1f943efc7c78699c0747c4d44f0d5f7b511ea"
+    },
+    "native/s3-rbm400pf_ep14.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "78bbb2fd5a1d20a0ae6a94d554e8a5681e25f21b2cf2983f079d64a002e6f954"
+    },
+    "native/s3-rbm400pf_ep15.probe_3.npy": {
+     "bytes": 7042104,
+     "sha256": "3b927b03ee4c9454a2c96a49de67c9d733c48011a0094443a1d44fdcdafebaae"
+    },
+    "native/s3-rbm400pf_ep15.qual.npy": {
+     "bytes": 11268652,
+     "sha256": "da3e9553c751a2e9766bdb8370ceabb5995581c571b08eeec19a1d54d75092ef"
+    },
+    "extra/s3-rbm400pf-lr015.log": {
+     "bytes": 1396,
+     "sha256": "7205ecadfc03d1fa274ed2fa6282000b0540e2aaf568e97630e6ea1d529630c7"
+    },
+    "extra/driver.log": {
+     "bytes": 257,
+     "sha256": "6f1da5834775d7e309559f583ac632a516d4f43ce26e30e2ab03ef48feb26161"
+    },
+    "extra/probex-row-map.npy": {
+     "bytes": 9025440,
+     "sha256": "ffc16cb88b145084eef11476c025d4e98f43003192323b3d97763bd45234ecc6"
+    },
+    "canonical/s3-rbm400pf.npz": {
+     "bytes": 13349054,
+     "sha256": "92d1cccaed4e59033e952a0d9d27e45b4503e6131d69349fb28b0e1fcd871f69"
+    },
+    "canonical/s3-rbm400pf_ep01.npz": {
+     "bytes": 13309608,
+     "sha256": "e772d1294fe53f242c51fb68a8d42cd36de7c38a7e8756ba101abdd6a4014024"
+    },
+    "canonical/s3-rbm400pf_ep02.npz": {
+     "bytes": 13328163,
+     "sha256": "51059ba6278ef414728bf64f89357906b876b2d592075b572cec88f22e6525d2"
+    },
+    "canonical/s3-rbm400pf_ep03.npz": {
+     "bytes": 13339616,
+     "sha256": "5314af13ce7bf3cf96100c9b8d110f3b057552fbc21611caa973438ce8987ec0"
+    },
+    "canonical/s3-rbm400pf_ep04.npz": {
+     "bytes": 13341224,
+     "sha256": "a03020dc542d8da2516e7c9effa8a2325e640a46f24df5298ee505ace9af4aae"
+    },
+    "canonical/s3-rbm400pf_ep05.npz": {
+     "bytes": 13341394,
+     "sha256": "39b87c774d829a22ebe1c10c68d27826e46ed467f2913e2355792f759b39e8fe"
+    },
+    "canonical/s3-rbm400pf_ep06.npz": {
+     "bytes": 13332903,
+     "sha256": "43a47e93265e6d072e953ff394e661bdc2095e06b1d7c2a340b21babdcd897fc"
+    },
+    "canonical/s3-rbm400pf_ep07.npz": {
+     "bytes": 13344680,
+     "sha256": "dbcb66246a302687e3e10ae327bf053b66952cf16b591ce8f102e68954737f2e"
+    },
+    "canonical/s3-rbm400pf_ep08.npz": {
+     "bytes": 13334876,
+     "sha256": "dde92b3eca3450be216aa746ce249bb0ce2538ab62f17f77863951f422748dde"
+    },
+    "canonical/s3-rbm400pf_ep09.npz": {
+     "bytes": 13341981,
+     "sha256": "1a7f44456c6c5add6e3a9dec9a96764cb60cd749de41397ddfd781d05aded07f"
+    },
+    "canonical/s3-rbm400pf_ep10.npz": {
+     "bytes": 13346353,
+     "sha256": "f8e1eb573017cfceb518c9ea9115e4ba06b6428e010b85ab6c37f29c3cc4701e"
+    },
+    "canonical/s3-rbm400pf_ep11.npz": {
+     "bytes": 13350634,
+     "sha256": "b8aa0e34e715166412ce6b12638f006bb60f3cab1e3d7f4ed55c47c3b41283be"
+    },
+    "canonical/s3-rbm400pf_ep12.npz": {
+     "bytes": 13348217,
+     "sha256": "71e2053ff1519cd1c86d548f781b1a1ce7b3a8062f5cf56170d34b73639aa297"
+    },
+    "canonical/s3-rbm400pf_ep13.npz": {
+     "bytes": 13338973,
+     "sha256": "3a5a6e48a252b5aab46c8e4828715752481ac808f1d60b17304b63c0846133fa"
+    },
+    "canonical/s3-rbm400pf_ep14.npz": {
+     "bytes": 13345615,
+     "sha256": "561e1b276a718a42b8ec4934309008e2bedf3d1122c0348c744c10a6f4ee4600"
+    },
+    "canonical/s3-rbm400pf_ep15.npz": {
+     "bytes": 13349054,
+     "sha256": "92d1cccaed4e59033e952a0d9d27e45b4503e6131d69349fb28b0e1fcd871f69"
+    }
+   }
+  }
+ ],
+ "all_members_decoded_and_rehashed": true,
+ "qualifying_labels_read": false
+}
