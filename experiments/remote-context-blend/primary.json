@@ -59,5 +59,30 @@
  "qual_primary": "blend-v2-out/qual-context.f32",
  "qual_control": "blend-v2-out/qual-global.f32",
  "recovered_audit": "pending on coordinator",
- "qualifying_labels_read": false
+ "qualifying_labels_read": false,
+ "adaptive_followups": {
+  "note": "declared after v1/v2 results; not primary under the declared rules; returned for the coordinator audit",
+  "release_asset": "rcb-bank2-blend-tree.tar.gz",
+  "asset_sha256": "d99cf925e17a0c853617d8929112bb1576ad8c995f476f5e7fb5a03ed6ef352a",
+  "candidates": {
+   "context-v2-bank2": {
+    "pooled": 0.8621969850303761,
+    "path": "blend/qual-context.f32",
+    "qual_sha256": "5a37bb032c046ad0a0113ca034ff0d7e76cf6fdfe58b1f9073d884c96caba41f"
+   },
+   "global-bank2": {
+    "pooled": 0.8631551888911532,
+    "path": "blend/qual-global.f32",
+    "qual_sha256": "18fb5b89639a52512da2b311d4269b0a221b2b6b5cd84203c4bf4f892d2a41a9"
+   },
+   "tree-bank2": {
+    "pooled": 0.8617917848309753,
+    "path": "tree/combined-final/qual-tree.f32",
+    "qual_sha256": "cf5404f5fb6666f753ceb4a4dee1f52afa348870249ab0d1b7ff9bf5b22130dc",
+    "vs_context_bank2": 0.0004052002078691608,
+    "folds_improved": 5,
+    "replaces_primary": false
+   }
+  }
+ }
 }

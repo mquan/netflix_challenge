@@ -60,7 +60,14 @@ ridge baseline). Receipts: `tree-bank2/*.json`, `tree-bank2/combined-summary.jso
 The three `final` (all-known → qual) units first crashed on a code bug: the ridge baseline indexed
 the known matrix instead of the qual matrix (`f66e542`). For fold units the two are the same
 matrix, so fold results are unaffected. The crashed outputs are kept in
-`artifacts/tree-bank2/crashed-final-v1`. Only the 3 final units were rerun.
+`artifacts/tree-bank2/crashed-final-v1`. Only the 3 final units were rerun: they selected 785, 1093
+and 991 iterations. The qual tree vector has sha256 `cf5404f5…30dc`, is finite, and is clipped to
+[1.05, 4.95]. Its RMS distance from qual context-bank2 is 0.0462, against 0.0475 on known rows.
+
+Release asset `rcb-bank2-blend-tree.tar.gz` (201,454,793 B, sha256 `d99cf925…f352a`) holds the
+bank-v2 global/context known and qual vectors and coefficients, all tree units (models, corrections,
+receipts) and the combined known/qual tree vectors. Members: `tree-bank2/package-members.sha256`.
+`primary.json` lists these as `adaptive_followups`.
 
 ## 4. Standing
 
