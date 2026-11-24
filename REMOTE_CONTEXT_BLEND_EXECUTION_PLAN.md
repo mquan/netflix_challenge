@@ -131,3 +131,21 @@ tsvdx4-60, tsvdx5-150o (`data/trainx` cloned from the fresh tree, byte-checked).
 22 jobs, both phases, 3 concurrent × 4 threads (`knn3d/wave.sh`). All 22 columns
 enter a bank v2; the v2 blends (global control, context v2 primary) are rerun
 unchanged on bank v2 and reported as an adaptive follow-up.
+
+## Amendment 2026-11-24 — local CatBoost tree-residual arm (declared before any full fit)
+
+The full-context latent CatBoost arm is blocked here on its ~110 GiB data closure, which
+has been requested from the coordinator. In the meantime, the same recipe runs on this
+machine's bank v2: CPU CatBoost 1.2.10, RMSE, depth 8, lr 0.03, l2 10, border 64,
+Bernoulli 0.8, rsm 0.9, SymmetricTree, thread_count 2, max 2000 with patience 100.
+It keeps all 5 outer user folds and 3 seed slots (2026/7/13 + fold; +99 for the final
+all-known fit). The inner split is user-index parity inside the outer-training users.
+Features: clipped bank columns, the 3 contexts, and the global-ridge baseline as the
+last feature. Target: the residual from that baseline. The inner baseline is refit on
+inner-train rows. A slot that doesn't beat the zero correction keeps 0 iterations;
+otherwise a fresh refit on all outer-training rows uses best_iteration+1.
+Prediction = clip(baseline + mean of the 3 slot corrections). Code: `scripts/rcb_tree.py`
+and `scripts/rcb_tree_combine.py`.
+**Rule:** the tree arm replaces context v2 as primary only if it improves pooled known
+RMSE by ≥ 0.001 over context v2 **and** improves ≥ 4/5 folds, on identical rows. Context
+v2 and global stay frozen as comparisons.
