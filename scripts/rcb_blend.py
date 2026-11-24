@@ -8,12 +8,13 @@ users (splitmix seed 20261116+1+outer) with the same cutoffs. Writes fold
 receipts, held-out known vectors and (with --final) the frozen qualifying
 predictions of both candidates. Never reads qualifying labels.
 """
-import argparse, hashlib, json
+import argparse, hashlib, json, os
 from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-BANK = ROOT / 'artifacts/bank'
+BANK = ROOT / os.environ.get('RCB_BANK_DIR', 'artifacts/bank')
+BANK_JSON = os.environ.get('RCB_BANK_JSON', 'bank.json')
 GLOBAL_LAMBDA = 1000.0
 import os
 CTX_GRID = [float(v) for v in os.environ.get("RCB_CTX_GRID", "1e4,3e4,1e5,3e5,1e6").split(",")]
@@ -106,7 +107,7 @@ def main():
     ap.add_argument('--out', type=Path, default=ROOT / 'experiments/remote-context-blend/blend')
     ap.add_argument('--final', action='store_true', help='also fit on all known rows and write qual predictions')
     a = ap.parse_args(); a.out.mkdir(parents=True, exist_ok=True)
-    bank = json.loads((ROOT / 'experiments/remote-context-blend/bank.json').read_text())
+    bank = json.loads((ROOT / 'experiments/remote-context-blend' / BANK_JSON).read_text())
     names = [c['column'] for c in bank['columns']]
     X = np.load(BANK / 'known.npy', mmap_mode='r'); y = np.load(BANK / 'known_y.npy'); users = np.load(BANK / 'known_users.npy')
     ctx = dict(np.load(BANK / 'known_ctx.npz'))
