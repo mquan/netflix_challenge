@@ -1,0 +1,25 @@
+{
+ "arrival_utc": "2026-11-24T06:47:28Z",
+ "branch": "research/remote-context-blend-execution",
+ "base_commit": "32a6404bb4962e0469e9cbd33f2c97eb20258be3",
+ "worktree": "~/workspace/netflix_remote_context_blend (worktree of ~/workspace/netflix-independent)",
+ "hardware": {"cpu": "Apple M3 Max", "ncpu": 14, "memsize_bytes": 103079215104, "power": "AC, battery 100%"},
+ "disk_free_gib": 156.0,
+ "swap": "total 4096M, used 2876M",
+ "live_processes": {
+  "netflix_research_jobs": "none (no fit/python research processes)",
+  "tmux": "remote-weekend session alive (driver/progress windows only; all weekend producers finished per start.json completion 2026-11-23T15:46Z)"
+ },
+ "runtimes": {
+  "python": "~/workspace/netflix_upstream_repro/.venv/bin/python 3.12.9, numpy present; no torch/scipy/sklearn/lightgbm/catboost in that venv",
+  "rust": "rustc 1.93.0"
+ },
+ "owned_inputs_found": {
+  "upstream_source_tree": "~/workspace/netflix_upstream_repro/artifacts/upstream-repro/fresh (hash-verified original source + data)",
+  "rbm400pf_lr015_native": "~/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r11/source/preds_3 (15 epoch pairs + terminal, fulltrain/train_3/ifeat side arrays, .out trace; 1.0 GiB)",
+  "tx300r_native": "~/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r10 (completed s3-tx300r reference)",
+  "rbm800p_native": "~/workspace/netflix_remote_weekend/artifacts/upstream-remote-weekend-r9"
+ },
+ "label_policy": "data/qual_ratings exists in the upstream source tree; it is never opened by this study. Producers use synthetic zero qualifying targets.",
+ "preserved": "No existing job, tree, model, export or checkout is modified, switched or cleaned."
+}
