@@ -42,7 +42,7 @@ def main():
     seed = SEEDS[a.slot] + (99 if final else int(a.fold))
 
     def feats(M, c, idx, d, w):
-        return np.column_stack([np.clip(M[idx], 0, 6), *[c[n][idx] for n in b.CTX_NAMES], d.predict(idx, w)]).astype(np.float32)
+        return np.column_stack([np.clip(M[idx], 0, 6), *[c[n][idx] for n in b.CTX_NAMES], b.Design(M, None, None, d.cols).predict(idx, w)]).astype(np.float32)
 
     t0 = time.time()
     odd = (users[tr] % 2).astype(bool); itr, iho = tr[~odd], tr[odd]
@@ -62,7 +62,7 @@ def main():
         for s in range(0, len(te), 262144):
             idx = te[s:s + 262144]; corr[s:s + len(idx)] = r.predict(feats(Xte, cte, idx, do, wo))
     np.save(a.out / f'{tag}.corr.npy', corr)
-    base = do.predict(te, wo); np.save(a.out / f'{a.fold}.base.npy', base) if a.slot == 0 else None
+    base = b.Design(Xte, None, None, do.cols).predict(te, wo); np.save(a.out / f'{a.fold}.base.npy', base) if a.slot == 0 else None
     rec = dict(unit=tag, seed=seed, inner_train=len(itr), inner_held=len(iho), inner_zero_rmse=zero, inner_best_rmse=best,
                selected_iterations=n_it, rows=len(te), seconds=round(time.time() - t0, 1),
                corr_sha256=b.sha_arr(corr), qualifying_labels_read=False)
