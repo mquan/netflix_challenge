@@ -110,3 +110,14 @@ in all 5 folds. v2 changes **only** the grid to {1e2, 3e2, 1e3, 3e3, 1e4, 3e4, 1
 primary rule (≥0.001 pooled and ≥4/5 folds vs the same global blend). Because v2
 is chosen after seeing v1, a v2 win is reported as adaptive known-row evidence
 and the coordinator decides whether it replaces the v1 primary.
+
+## Owner decision 2026-11-24 (recorded before any further comparison)
+
+1. **Context v2 is admitted as the primary** (owner: "yes"), overriding the 0.001
+   bar for this bank: −0.000985 pooled, 5/5 folds. Global ridge stays frozen as the
+   matched control. Qualifying vectors: `rcb-blend-v2.tar.gz` (`qual-context.f32`
+   primary, `qual-global.f32` control).
+2. Rerun both blends on the coordinator's own17 known/qualifying bank once it is
+   available here.
+3. Run more knn3d temporal chains on other temporal bases and the fresh full
+   latent CatBoost arm.
