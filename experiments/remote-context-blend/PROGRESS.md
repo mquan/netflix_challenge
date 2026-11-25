@@ -36,3 +36,6 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 ## 2026-11-25T17:50Z
 - TX300 B done 09:07Z; qual package on release (sha 3dc518a7…). Lane 2 complete.
 - 4800lm phase 1 epoch 11/27, ~71 min/epoch, single core, 34 GB. ETA phase 1 12:30Z Nov 26, phase 2 ~21:00Z Nov 27.
+
+## 2026-11-25T22:30Z — NLPP300 prep
+- REMOTE_NLPP300_HANDOFF.md: tree rcb-nlpp300 at pin, tsvdx5-new 27d17253…, data identical, qual zero. Launcher armed in cf-lanes:nlpp300 after the 4800lm package. lane-nlpp300/PREP.md.
