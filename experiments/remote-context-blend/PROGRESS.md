@@ -28,3 +28,7 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 | 2026-11-24T20:35:35Z | lane 2 ETA | Measured 20.5 min/epoch (both arms, 5 threads, 16.8 GB each). C (known phase, 24 epochs) ETA ≈ 04:30Z Nov 25. B phase 1 ≈ 04:30Z, phase 2 (fulltrain→qual) ≈ 13:30Z Nov 25. Epoch 2: B 0.91676, C 0.91688 (probe_3 / probe_3s). |
 | 2026-11-24T21:23:51Z | own17x full bank | X0 reproduces own17x global (717f9afa…). X1 +CF48 ch −0.000180; X2 +CF96 −0.000009; **X3 +CF96+chains −0.000209 (5/5; native −0.000564 5/5) selected**, qual 4b11dff0…; X4 ≈ X3. Uploaded `rcb-own17x-fullbank-cf.tar.gz` (sha bf0c5983…). Lane 2 TX arms running (ETA C 04:30Z, B 13:30Z). |
 | 2026-11-24T22:06:04Z | 4800lm prep | Pinned tree + fresh build (tsvdx4-new 8d0ab459…); deps resolved; storage ≈4 GB (9 GB with knn-d); RBM800 + wave asset hashes listed. `run4800.sh` armed in tmux cf-lanes:4800, starts when TX300 arm C exits (≈04:30Z), guard kills only 4800lm if memory free <8%. See lane4800/PREP.md. |
+
+## 2026-11-25T03:55Z — Lane 2 C done; 4800lm started
+- C exit 0 03:46:57Z. bank+C vs bank+B −0.000019 (5/5); bank+C vs bank −0.000043 (5/5). lane2/README.md. Known package on release (sha 037c9642…).
+- B in qual phase. tsvdx4-4800lm started 03:47Z (PID 41015, 8 threads); fit-PID memory in logs/tsvdx4-4800lm.fit-resources.
