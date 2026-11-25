@@ -2,6 +2,8 @@
 
 ## November 24, 2026
 
+The CF96 refit with context and CatBoost corrections improved both recovered groups to **0.85956670 / 0.86059917 RMSE**. Claude Code ran the remote CF96 experiments and Own17x refit. Codex fitted the final correction weights on known ratings and verified the frozen predictions. The harder group remains **0.003349 RMSE** above the 10% target. [CF96 audit](experiments/own-progress-20261124/OWN17X-cf96-context-tree-20261124.json).
+
 The CF48 residual correction improved Own17x to **0.85971372 / 0.86072426 RMSE**. Adding the CatBoost correction lowered both groups further to **0.85965272 / 0.86067024 RMSE**. Both weights were fitted on known ratings, and the harder group remains **0.003420 RMSE** above the 10% target. [CF48 audit](experiments/own-progress-20261124/own17x-cf48.json) · [CatBoost audit](experiments/own-progress-20261124/own17x-cf48-tree.json).
 
 The Own17x global blend combines 17 existing families with 65 predictors trained on the remote Mac. The frozen predictions score **0.85984307 / 0.86084907 RMSE** on the two complete community-recovered groups. That improves the matched Own17 global control by **0.000488 / 0.000486**. The harder group remains **0.003599 RMSE** above the **0.85725** target. The remote known-row blend comparison used reused out-of-fold inputs and was non-nested. [Qualifying audit evidence](experiments/own-progress-20261124/own17x.json).
