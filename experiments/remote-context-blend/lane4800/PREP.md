@@ -50,3 +50,10 @@ Starting 4800lm next to both TX300 arms would risk them, so `run4800.sh` (tmux `
 | `rcb-knn3d-wave.tar.gz` (remote-context-blend-20261124) | 818,104,142 | `4784440bbc17fd48bd2c36909ed81e50986c21e58bf37e8e533760874ad0d5b8` |
 
 Wave package members are listed in `knn3d/wave/package-members.sha256`.
+
+## Measured (2026-11-25T17:46Z)
+Started 03:47Z. Phase 1 epoch 11/27 at 17:26Z (probex 0.88326). Epoch time ≈71 min (epochs 4–11 at 70–71 min;
+the first ones ran at 80 min next to TX300 B). Footprint 34 GB RSS (4.5 GB compressed) since B exited; it peaked near
+34 GB + 31 GB compressed while B was running. Process CPU ≈100%: this preset's training loop runs on one core,
+so the 8-thread setting does not speed it up. Disk 48 MB so far.
+ETA: phase 1 ends ≈12:30Z Nov 26; phase 2 (27 epochs, ≈72 min) ≈21:00Z Nov 27; then knnf+knns in parallel.

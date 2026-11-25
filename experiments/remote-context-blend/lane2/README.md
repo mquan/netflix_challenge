@@ -32,3 +32,11 @@ Frozen known-side package: release asset `rcb-lane2-tx300-known.tar.gz` (830,013
 snapshots, log, start/end receipts and row map, plus B's probe_3 and train_3 vectors. Members:
 `known-package-members.sha256`. B's qual vector (= C's qual by declaration) follows when B's
 second phase ends. Summary: `summary.json`, script `scripts/rcb_lane2_compare.py`.
+
+## Arm B final (qual phase), 2026-11-25
+B exited 0 at 09:07:21Z; peak footprint 55.3 GB. Qual vector `s3-tx300r.qual.npy` sha256
+`169d16948ca7cb5f275f10ca4204df64b87731130a0464ad362d3ae8a9189747` (2,817,131 float32, finite, raw range
+−2.96..8.33 before clipping); fulltrain `13803aa7…8039`. Correlation with A's qual vector 0.99594, matching the
+known-side A–B 0.99559. By declaration this is also C's qual vector. Release asset `rcb-lane2-tx300-B-final.tar.gz`
+(724,189,228 B, sha256 `3dc518a762cbd4db3297d03f32493f541332c95ef695f596e8772949e17e2f08`): qual and fulltrain
+vectors, 24 qual/fulltrain epoch snapshots, log, receipts. Members: `B-final-package-members.sha256`.

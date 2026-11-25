@@ -32,3 +32,7 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 ## 2026-11-25T03:55Z — Lane 2 C done; 4800lm started
 - C exit 0 03:46:57Z. bank+C vs bank+B −0.000019 (5/5); bank+C vs bank −0.000043 (5/5). lane2/README.md. Known package on release (sha 037c9642…).
 - B in qual phase. tsvdx4-4800lm started 03:47Z (PID 41015, 8 threads); fit-PID memory in logs/tsvdx4-4800lm.fit-resources.
+
+## 2026-11-25T17:50Z
+- TX300 B done 09:07Z; qual package on release (sha 3dc518a7…). Lane 2 complete.
+- 4800lm phase 1 epoch 11/27, ~71 min/epoch, single core, 34 GB. ETA phase 1 12:30Z Nov 26, phase 2 ~21:00Z Nov 27.
