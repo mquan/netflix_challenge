@@ -39,3 +39,6 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 
 ## 2026-11-25T22:30Z — NLPP300 prep
 - REMOTE_NLPP300_HANDOFF.md: tree rcb-nlpp300 at pin, tsvdx5-new 27d17253…, data identical, qual zero. Launcher armed in cf-lanes:nlpp300 after the 4800lm package. lane-nlpp300/PREP.md.
+
+## 2026-11-26T13:30Z — 4800lm phase 1 done
+- probex 0.87698; bank v2 + base −0.000384 (5/5), + published snapshots −0.000428, + all epochs −0.000489 (known-only diagnostic). Qual phase ETA ~21:00Z Nov 27. Driver + heartbeat running.

@@ -1,0 +1,741 @@
+{
+ "preds_dir": "artifacts/rcb-4800/source/preds_new",
+ "groups": {
+  "base": [
+   "tsvdx4-4800lm"
+  ],
+  "snaps": [
+   "tsvdx4-4800lm_ep03",
+   "tsvdx4-4800lm_ep13",
+   "tsvdx4-4800lm_ep21",
+   "tsvdx4-4800lm_ep24"
+  ],
+  "allep": [
+   "tsvdx4-4800lm_ep01",
+   "tsvdx4-4800lm_ep02",
+   "tsvdx4-4800lm_ep04",
+   "tsvdx4-4800lm_ep05",
+   "tsvdx4-4800lm_ep06",
+   "tsvdx4-4800lm_ep07",
+   "tsvdx4-4800lm_ep08",
+   "tsvdx4-4800lm_ep09",
+   "tsvdx4-4800lm_ep10",
+   "tsvdx4-4800lm_ep11",
+   "tsvdx4-4800lm_ep12",
+   "tsvdx4-4800lm_ep14",
+   "tsvdx4-4800lm_ep15",
+   "tsvdx4-4800lm_ep16",
+   "tsvdx4-4800lm_ep17",
+   "tsvdx4-4800lm_ep18",
+   "tsvdx4-4800lm_ep19",
+   "tsvdx4-4800lm_ep20",
+   "tsvdx4-4800lm_ep22",
+   "tsvdx4-4800lm_ep23",
+   "tsvdx4-4800lm_ep25",
+   "tsvdx4-4800lm_ep26",
+   "tsvdx4-4800lm_ep27"
+  ]
+ },
+ "missing_groups": [],
+ "columns": {
+  "tsvdx4-4800lm": {
+   "group": "base",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm.probex.npy",
+    "sha256": "5a948f71ccab107f14ec908044fcc5e72e54918bc4c5d9255ec1475fcf7226eb",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T12:25:17Z",
+    "min": -0.27836108207702637,
+    "max": 6.396598815917969
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8765017986297607
+  },
+  "tsvdx4-4800lm_ep03": {
+   "group": "snaps",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep03.probex.npy",
+    "sha256": "eef58ad841f58e9256694807c3e5a60dd44f8568f83e3b98d571804b51f6f750",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T07:48:37Z",
+    "min": 0.35010480880737305,
+    "max": 5.8512725830078125
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.92071533203125
+  },
+  "tsvdx4-4800lm_ep13": {
+   "group": "snaps",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep13.probex.npy",
+    "sha256": "ccf367b549e6e78aab9a739f8f5e74b32b2f0922345967c60410606f96aa9c2d",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T19:49:37Z",
+    "min": 0.21045947074890137,
+    "max": 6.714073657989502
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9105004072189331
+  },
+  "tsvdx4-4800lm_ep21": {
+   "group": "snaps",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep21.probex.npy",
+    "sha256": "bbddaba8ab15ad4f3c265a817ab88df3afab28b388b9c177bcfaffc3142ce617",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T05:19:13Z",
+    "min": -0.09966325759887695,
+    "max": 6.803184986114502
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8803027272224426
+  },
+  "tsvdx4-4800lm_ep24": {
+   "group": "snaps",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep24.probex.npy",
+    "sha256": "27b5e78dc089542845cc5fc1ad1f2003bf08bdb641c6b18bada07f2319d1a80c",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T08:52:13Z",
+    "min": -0.15131688117980957,
+    "max": 6.56640625
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8776810765266418
+  },
+  "tsvdx4-4800lm_ep01": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep01.probex.npy",
+    "sha256": "7fa2e1f359e660b458f0419a8c80232816de250b644528be665670a053c6f3d0",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T05:04:55Z",
+    "min": 0.3872986137866974,
+    "max": 5.957056999206543
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9572892785072327
+  },
+  "tsvdx4-4800lm_ep02": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep02.probex.npy",
+    "sha256": "18ec243d7abdbcb45a71fad3810caa8da6afccae00d2a45d2f29496f7978d12e",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T06:27:02Z",
+    "min": 0.27690231800079346,
+    "max": 5.920673847198486
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9340860247612
+  },
+  "tsvdx4-4800lm_ep04": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep04.probex.npy",
+    "sha256": "dcf914b6b87c632b45ea9ebf5b5aeb97765ed228578a00c6d71bb7331605eec7",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T09:08:55Z",
+    "min": 0.3190814256668091,
+    "max": 6.090538024902344
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9109269380569458
+  },
+  "tsvdx4-4800lm_ep05": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep05.probex.npy",
+    "sha256": "fa233999474a334c766aa73595b860357dcf147c38c7a4c7087102b49d4b8820",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T10:20:02Z",
+    "min": 0.20085060596466064,
+    "max": 6.274001121520996
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9036619067192078
+  },
+  "tsvdx4-4800lm_ep06": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep06.probex.npy",
+    "sha256": "8fbd4f182f1341a48bb45096c670a7bdfb38cf5cbe5d6b4ebfdc28d2f178f2cd",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T11:31:03Z",
+    "min": 0.10593080520629883,
+    "max": 6.583642959594727
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8984743356704712
+  },
+  "tsvdx4-4800lm_ep07": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep07.probex.npy",
+    "sha256": "dfb1b0023bffa51058a46681658a81ec700bcdbbad606fc67690121401ecc355",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T12:42:13Z",
+    "min": 0.11270040273666382,
+    "max": 6.51734733581543
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8940008878707886
+  },
+  "tsvdx4-4800lm_ep08": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep08.probex.npy",
+    "sha256": "ed7a5eb567112789b951670ebf83c90a5f6c491f9264d0f504b3c1b02c3edd8c",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T13:53:17Z",
+    "min": -0.01133507490158081,
+    "max": 6.560371398925781
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8905037641525269
+  },
+  "tsvdx4-4800lm_ep09": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep09.probex.npy",
+    "sha256": "da4218c68c8c1b30d83f370bdd427b5d1b6f490bdfe57101220707ab8213490d",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T15:04:20Z",
+    "min": -0.04757368564605713,
+    "max": 6.485272407531738
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8873334527015686
+  },
+  "tsvdx4-4800lm_ep10": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep10.probex.npy",
+    "sha256": "a0538775e235df6fef7033173dacc117584c8e121a2e62cedb9389e29f836e95",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T16:15:26Z",
+    "min": -0.0869063138961792,
+    "max": 6.545346736907959
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8850064873695374
+  },
+  "tsvdx4-4800lm_ep11": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep11.probex.npy",
+    "sha256": "a56daca817903a6ab0241d3cc38a4a5beb1f7adc1675f9c3efa2e2ca13edc784",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T17:26:29Z",
+    "min": -0.04990255832672119,
+    "max": 6.510089874267578
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8829204440116882
+  },
+  "tsvdx4-4800lm_ep12": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep12.probex.npy",
+    "sha256": "b6bac50ce7305dee2754990d28cd09b2bd038b37595fcaba07f3a118a0cc4952",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T18:38:26Z",
+    "min": -0.15340113639831543,
+    "max": 6.7173919677734375
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8813283443450928
+  },
+  "tsvdx4-4800lm_ep14": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep14.probex.npy",
+    "sha256": "0a9fd26d987dd2e2a97dea7893ccd91110125c574eae6829bd6572bc3e5ce68f",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T21:00:45Z",
+    "min": 0.21859723329544067,
+    "max": 6.526811122894287
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.9027230143547058
+  },
+  "tsvdx4-4800lm_ep15": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep15.probex.npy",
+    "sha256": "763fb88d0f76d9fef8d0b37812d524accf56596ff86de778be12f25936a6a9e5",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T22:12:13Z",
+    "min": 0.08819311857223511,
+    "max": 6.451807975769043
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8969719409942627
+  },
+  "tsvdx4-4800lm_ep16": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep16.probex.npy",
+    "sha256": "4516ded680e5d3f2a39d6766fbd80e526ff847fec661d15d92bd6a619187218d",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-25T23:23:16Z",
+    "min": 0.1206507682800293,
+    "max": 6.504885673522949
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8925500512123108
+  },
+  "tsvdx4-4800lm_ep17": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep17.probex.npy",
+    "sha256": "80cf9163d4cf7ef3f2adec56efe577989a08f4484e556d813d0700f07e16fd76",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T00:34:34Z",
+    "min": -0.017005503177642822,
+    "max": 6.776695251464844
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8887873291969299
+  },
+  "tsvdx4-4800lm_ep18": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep18.probex.npy",
+    "sha256": "f3cb70e38e853c8c20d60a9e055672b4147ba3b0d0fcc390d36b8967537d4e7a",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T01:45:50Z",
+    "min": -0.09762537479400635,
+    "max": 6.796302795410156
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8859707713127136
+  },
+  "tsvdx4-4800lm_ep19": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep19.probex.npy",
+    "sha256": "f3d2565ac1480042bdcf9fce9d328778a5e0f2a8bf096bca41abaf5a3fa60468",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T02:56:54Z",
+    "min": -0.09342116117477417,
+    "max": 6.979106426239014
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8836563229560852
+  },
+  "tsvdx4-4800lm_ep20": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep20.probex.npy",
+    "sha256": "bc844105c079832de13d749d2058602863a1f8b97c3f9bc798b97a2aded93798",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T04:07:54Z",
+    "min": -0.14257144927978516,
+    "max": 6.916565895080566
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8817976117134094
+  },
+  "tsvdx4-4800lm_ep22": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep22.probex.npy",
+    "sha256": "bcb6d31ab9eb55ef2e1bf3d295cb05d9bde356c940222047f30f4f66c1387304",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T06:30:13Z",
+    "min": -0.10609632730484009,
+    "max": 6.809788703918457
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8792457580566406
+  },
+  "tsvdx4-4800lm_ep23": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep23.probex.npy",
+    "sha256": "ccbf394717997949df954d49739073053c7bc8a9bb0a5dcea857066266eefbb2",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T07:41:18Z",
+    "min": -0.17176908254623413,
+    "max": 6.707425117492676
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8782557249069214
+  },
+  "tsvdx4-4800lm_ep25": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep25.probex.npy",
+    "sha256": "94df6161f8945b858881f195beaaedee5785c51e3d2a9761581405030e5a4166",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T10:03:17Z",
+    "min": -0.17296481132507324,
+    "max": 6.470815181732178
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8773046731948853
+  },
+  "tsvdx4-4800lm_ep26": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep26.probex.npy",
+    "sha256": "89e8ff247ec8390f332c4ae31d168816d41e8349cc376cd9886cf1f7198d43b0",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T11:14:14Z",
+    "min": -0.24375784397125244,
+    "max": 6.477810859680176
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8767219185829163
+  },
+  "tsvdx4-4800lm_ep27": {
+   "group": "allep",
+   "probex": {
+    "path": "artifacts/rcb-4800/source/preds_new/tsvdx4-4800lm_ep27.probex.npy",
+    "sha256": "5a948f71ccab107f14ec908044fcc5e72e54918bc4c5d9255ec1475fcf7226eb",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-26T12:25:16Z",
+    "min": -0.27836108207702637,
+    "max": 6.396598815917969
+   },
+   "qual": {
+    "ok": true,
+    "skipped": "known-only diagnostic"
+   },
+   "probex_rmse_raw": 0.8765017986297607
+  }
+ },
+ "pooled": {
+  "bank": 0.8631551888911532,
+  "bank+base": 0.8627707094649987,
+  "bank+base+snaps": 0.8627268400910879,
+  "bank+base+snaps+allep": 0.8626666502018588
+ },
+ "per_fold": {
+  "bank": [
+   0.8625701656138197,
+   0.8605459123563716,
+   0.8639080501081021,
+   0.864826012154056,
+   0.8639289542717694
+  ],
+  "bank+base": [
+   0.8621215589204194,
+   0.8601866278986553,
+   0.8635104641856922,
+   0.8645508703800789,
+   0.8634871224247989
+  ],
+  "bank+base+snaps": [
+   0.8620813752808083,
+   0.8601558472800205,
+   0.8634546284026787,
+   0.864503034583685,
+   0.8634423563689707
+  ],
+  "bank+base+snaps+allep": [
+   0.8620189941710767,
+   0.8600886378079898,
+   0.8633815038877102,
+   0.8644613104781038,
+   0.8633856986524717
+  ]
+ },
+ "steps": {
+  "bank+base vs bank": {
+   "delta": -0.0003844794261544937,
+   "fold_deltas": [
+    -0.0004486066934002997,
+    -0.00035928445771626905,
+    -0.0003975859224099043,
+    -0.0002751417739770279,
+    -0.0004418318469705529
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snaps vs bank+base": {
+   "delta": -4.38693739107654e-05,
+   "fold_deltas": [
+    -4.0183639611113264e-05,
+    -3.078061863481807e-05,
+    -5.583578301349146e-05,
+    -4.783579639389135e-05,
+    -4.47660558281493e-05
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snaps+allep vs bank+base+snaps": {
+   "delta": -6.018988922906754e-05,
+   "fold_deltas": [
+    -6.238110973155742e-05,
+    -6.720947203064931e-05,
+    -7.312451496854777e-05,
+    -4.1724105581231186e-05,
+    -5.6657716498986765e-05
+   ],
+   "folds_better": 5
+  }
+ },
+ "vs_bank": {
+  "bank+base vs bank": {
+   "delta": -0.0003844794261544937,
+   "fold_deltas": [
+    -0.0004486066934002997,
+    -0.00035928445771626905,
+    -0.0003975859224099043,
+    -0.0002751417739770279,
+    -0.0004418318469705529
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snaps vs bank": {
+   "delta": -0.0004283488000652591,
+   "fold_deltas": [
+    -0.000488790333011413,
+    -0.0003900650763510871,
+    -0.00045342170542339577,
+    -0.00032297757037091923,
+    -0.0004865979027987022
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snaps+allep vs bank": {
+   "delta": -0.0004885386892943266,
+   "fold_deltas": [
+    -0.0005511714427429704,
+    -0.0004572745483817364,
+    -0.0005265462203919435,
+    -0.0003647016759521504,
+    -0.000543255619297689
+   ],
+   "folds_better": 5
+  }
+ },
+ "bank": "bank v2 (65 native columns), known probex rows",
+ "rows": 1128164,
+ "protocol": "global ridge lambda=1000, unpenalized intercept, 5 user folds seed 20261116, outer-train fit only",
+ "qualifying_labels_read": false,
+ "generated_utc": "2026-11-26T12:57:23Z"
+}

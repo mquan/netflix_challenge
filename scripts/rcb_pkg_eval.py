@@ -43,11 +43,13 @@ def main():
     users = np.load(ROOT / 'artifacts/bank-v2/known_users.npy'); folds = b.splitmix_folds(users, 20261116, 5)
     nb = X0.shape[1]; cols, manifest, idx, missing = [], {}, {}, []
     for g, names in groups:
-        have = all((preds / f'{c}.probex.npy').exists() and (preds / f'{c}.qual.npy').exists() for c in names)
+        KO = os.environ.get('RCB_KNOWN_ONLY') == '1'  # diagnostic: probex side only, before the qual phase exists
+        have = all((preds / f'{c}.probex.npy').exists() and (KO or (preds / f'{c}.qual.npy').exists()) for c in names)
         if not have: missing.append(g); continue
         idx[g] = []
         for c in names:
-            vk, mk = check(preds / f'{c}.probex.npy', NK); vq, mq = check(preds / f'{c}.qual.npy', NQ)
+            vk, mk = check(preds / f'{c}.probex.npy', NK)
+            vq, mq = (None, dict(ok=True, skipped='known-only diagnostic')) if KO else check(preds / f'{c}.qual.npy', NQ)
             if not (mk['ok'] and mq['ok']): raise SystemExit(f'bad vector {c}: {mk} {mq}')
             manifest[c] = dict(group=g, probex=mk, qual=mq, probex_rmse_raw=float(np.sqrt(np.mean((np.clip(vk, 1.05, 4.95) - y) ** 2))))
             idx[g].append(nb + len(cols)); cols.append(vk)
