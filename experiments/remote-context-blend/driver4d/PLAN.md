@@ -33,3 +33,5 @@ targets in these trees are zeros. The coordinator does the recovered-group audit
 `rcb-tsvdx5-300__nlpp_paropt`, `rcb-tsvdx5-300__nlpp`, `rcb-tsvdx5-300__nlpp__knn3` (and the same for 400). Each is a `.tar.gz`,
 split into `.part-aa…` above 1.9 GB. Member hashes are in `driver4d/<name>.members.sha256`; asset sizes and hashes are in `<name>.assets.txt`.
 A failed stage still has its partial outputs and logs released.
+
+Owner approved item 4 (tsvdx5-400 chain) on 2026-11-26T04:52:42Z.
