@@ -42,3 +42,7 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 
 ## 2026-11-26T13:30Z — 4800lm phase 1 done
 - probex 0.87698; bank v2 + base −0.000384 (5/5), + published snapshots −0.000428, + all epochs −0.000489 (known-only diagnostic). Qual phase ETA ~21:00Z Nov 27. Driver + heartbeat running.
+
+## 2026-11-27T21:25Z — 4800lm package complete; NLPP300 base running
+- 4800lm exit 0 (peak 37.1 GB); knnf/knns/diff1/knn-d all exit 0. Bank v2: +base −0.000384, +snaps −0.000428, +knnf/knns −0.000786, +knn-d −0.000822 (all 5/5). Assets rcb-4800lm-{base,parents,resid,knnd} on release (driver4d/*.assets.txt).
+- tsvdx5-300 started 21:02Z: ≈9.3 min/epoch, 46 GB footprint, 88% free. ETA base both phases ≈05:00Z Nov 28; paropt/nlpp/knn3 after (paropt time unmeasured).
