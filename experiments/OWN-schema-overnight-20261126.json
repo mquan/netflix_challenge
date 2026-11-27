@@ -1,0 +1,389 @@
+{
+  "as_of": "2026-11-26T04:34:16.868282-08:00",
+  "stage": "schema-13",
+  "selected_at": "schema-13",
+  "target": 0.85725,
+  "scope": "Predictions from models trained locally on the Netflix ratings and their own-model descendants.",
+  "branch_reason": "The earlier distribution stack processed 14 history statistics as absolute rating forecasts. This branch resumes at the preceding checkpoint and excludes its trained descendants.",
+  "parent_before_schema_correction": "stage-24",
+  "selection_rule": "Lower pooled ProbeX RMSE and improvement in at least four of five fixed user folds.",
+  "qualifying_labels_used_for_fitting_or_selection": false,
+  "known_comparison_is_nested": false,
+  "recovered_labels_are_official_evaluation": false,
+  "selected_probe": {
+    "pooled": 0.8527375408525499,
+    "folds": [
+      0.8517060826837298,
+      0.8498566098060364,
+      0.8531042140932775,
+      0.8555753296010463,
+      0.8534429599155137
+    ]
+  },
+  "qualifying": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8571722376643947
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8581749691148287
+    }
+  },
+  "baseline": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8595667040460814
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.860599165562367
+    }
+  },
+  "baseline_receipt": "experiments/OWN17X-cf96-context-tree-20261124.json",
+  "improvement_over_baseline": {
+    "source0": 0.0023944663816867218,
+    "source1": 0.0024241964475383293
+  },
+  "distance_above_target": {
+    "source0": -7.776233560530255e-05,
+    "source1": 0.0009249691148287553
+  },
+  "qualifying_vector": "artifacts/own-overnight-blend-20261126/schema-13/selected.f32",
+  "sha256": "1f6087bbd0d69ab3e141eef67bc752e44fea976e9df70ef6d6e163b07b6bef9e",
+  "freeze_sha256": "58475a855124aefd3c56ce108b3493cdd0486cebe715d8ac4c5354dc687da62b",
+  "excluded_directions": {
+    "own-distribution-stack-20261126": "Forecast matrix included 14 virtual statistics in rating units.",
+    "own-suffix-factors-20261126": "Derived from forecast-matrix branch stage-25",
+    "own-suffix-impute-20261126": "Derived from forecast-matrix branch stage-25"
+  },
+  "stages": [
+    {
+      "stage": "schema-01",
+      "added": [
+        "own-late-boost-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 4
+    },
+    {
+      "stage": "schema-02",
+      "added": [
+        "own-aligned-forecasts-20261126"
+      ],
+      "selected": "parent",
+      "improved_folds": 4
+    },
+    {
+      "stage": "schema-03",
+      "added": [
+        "own-transition-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 4
+    },
+    {
+      "stage": "schema-04",
+      "added": [
+        "own-schema-suffix-factors-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 4
+    },
+    {
+      "stage": "schema-05",
+      "added": [
+        "own-suffix-attention-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-06",
+      "added": [
+        "own-choice-factors-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-07",
+      "added": [
+        "attention:own-cf-temporal-attention-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-08",
+      "added": [
+        "own-sparse-cohort-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-09",
+      "added": [
+        "own-cohort-boost-20261126"
+      ],
+      "selected": "parent",
+      "improved_folds": 3
+    },
+    {
+      "stage": "schema-10",
+      "added": [
+        "attention:own-temporal-continuation-20261126",
+        "own-verified-distribution-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-11",
+      "added": [
+        "own-title-neighbors-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 5
+    },
+    {
+      "stage": "schema-12",
+      "added": [
+        "own-hybrid-attention-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 4
+    },
+    {
+      "stage": "schema-13",
+      "added": [
+        "own-multichannel-ease-20261126"
+      ],
+      "selected": "candidate",
+      "improved_folds": 4
+    }
+  ],
+  "prediction_sources": {
+    "retained": {
+      "path": "artifacts/own-retained-history-20261126/qual.npy",
+      "sha256": "ba9c05c50069c361c50250536eb869c25ee7520a0f643b896b7670038f91c3a9",
+      "width": 5
+    },
+    "anchor": {
+      "path": "artifacts/own-anchor-context-20261126/qual-correction.npy",
+      "sha256": "d1c55c72bf7f28e38843d0cd8e9768b7e13f1a86e96b0b93b4655ccc357f3679",
+      "width": 1
+    },
+    "pairs": {
+      "path": "artifacts/own-session-pairs-20261126/qual-correction.npy",
+      "sha256": "df585e108899ee3b64b7da9991b55f1af17d85aad985942770f46a368424d6b8",
+      "width": 1
+    },
+    "own-anchor-covariance-20261126": {
+      "path": "artifacts/own-anchor-covariance-20261126/qual-correction.npy",
+      "sha256": "b32fc71513481d8755adf09dce2828bc1f724a1371b2cc5b90ec65709476602f",
+      "width": 1
+    },
+    "own-user-gp-20261126": {
+      "path": "artifacts/own-user-gp-20261126/qual-correction.npy",
+      "sha256": "74f2c4a5dc40f0eaa428ec470852beb72ffb1f509032c43620b6592c6a45f0d8",
+      "width": 1
+    },
+    "own-movie-calibration-20261126": {
+      "path": "artifacts/own-movie-calibration-20261126/qual-correction.npy",
+      "sha256": "aae26ceae5faf6306be59beaa400ecb342882ab4441177792c5f4b805754e010",
+      "width": 1
+    },
+    "attention": {
+      "path": "artifacts/own-masked-attention-20261126/qual.npy",
+      "sha256": "fe69515e4bbcbfbbd55e39c9119f8cb4b39ed7d104a3614d05038efbfdb8fd28",
+      "width": 1
+    },
+    "own-conditional-gates-20261126": {
+      "path": "artifacts/own-conditional-gates-20261126/qual-correction.npy",
+      "sha256": "4ffec886476c68d47040a4406edb80b92588b5edd647239d67fb4ff187674c2c",
+      "width": 1
+    },
+    "own-masked-trajectory-20261126": {
+      "path": "artifacts/own-masked-trajectory-20261126/qual-correction.npy",
+      "sha256": "7ba591bbff6b8a8c11ab1fe174aa26695ff322717df455acb20607a7c6c4b9fb",
+      "width": 1
+    },
+    "shallow": {
+      "path": "artifacts/own-full-context-20261126/shallow/qual-correction.npy",
+      "sha256": "86b06568663b8416298feead98bef1901d59cefbf7b84f349820d57bb332698a",
+      "width": 1
+    },
+    "own-kernel-family-20261126": {
+      "path": "artifacts/own-kernel-family-20261126/qual-correction.npy",
+      "sha256": "befc8512aef000fc4a0c1b8ebbe4c695821e4bdfcae95e5d2bc864cc286865b6",
+      "width": 1
+    },
+    "own-ordinal-profile-20261126": {
+      "path": "artifacts/own-ordinal-profile-20261126/qual-correction.npy",
+      "sha256": "0706547c437f418f93c0e4c5a7cce659787fa5ff4b541f7968e3ec5264147aa3",
+      "width": 1
+    },
+    "own-other-raters-20261126": {
+      "path": "artifacts/own-other-raters-20261126/qual-correction.npy",
+      "sha256": "c6b4616796c7333d20b67270d402ce15f21d0ca9a27bc12426854d1aff9c9579",
+      "width": 1
+    },
+    "own-drift-filter-20261126": {
+      "path": "artifacts/own-drift-filter-20261126/qual-correction.npy",
+      "sha256": "235d5e3e71fc865b8ce9850877172b7211a4f244cd66c1b8e44d3762503d5dbc",
+      "width": 1
+    },
+    "own-latent-gates-20261126": {
+      "path": "artifacts/own-latent-gates-20261126/qual-correction.npy",
+      "sha256": "0cd18db711e42f6386084a529488810998a3bd1d120d057a76d6391cc59b66f9",
+      "width": 1
+    },
+    "own-temporal-pairs-20261126": {
+      "path": "artifacts/own-temporal-pairs-20261126/qual-correction.npy",
+      "sha256": "6da942d2f5175fcbb79de251f288d0f816b81f66a1bc2f53d44d20ce275d5256",
+      "width": 1
+    },
+    "own-query-peers-20261126": {
+      "path": "artifacts/own-query-peers-20261126/qual-correction.npy",
+      "sha256": "f7448cb34cf59c2f3cbf45aece5922c1ed163366b2c9cf4a570c822cd03427cf",
+      "width": 1
+    },
+    "deep": {
+      "path": "artifacts/own-full-context-20261126/deep/qual-correction.npy",
+      "sha256": "480cb98da6dcb22e1ec0af154cb664dcf47abc69f4435315d97fb8be27bdb769",
+      "width": 1
+    },
+    "own-cf-messages-20261126": {
+      "path": "artifacts/own-cf-messages-20261126/qual-correction.npy",
+      "sha256": "b1f358f20753c490360dadc8534ab10c9338dbdde6d707f0ac3dbf4b630dc0eb",
+      "width": 1
+    },
+    "attention:own-temporal-attention-20261126": {
+      "path": "artifacts/own-temporal-attention-20261126/qual.npy",
+      "sha256": "d316b5d6eefccb76493f8b89c22f58f47a2e3284fc0badce1b9c44f5d62134c9",
+      "width": 1
+    },
+    "own-cohort-profile-20261126": {
+      "path": "artifacts/own-cohort-profile-20261126/qual-correction.npy",
+      "sha256": "b39646a06336443a929e6c0fd86adbf17ab09976382ca760f368d83364c26cfc",
+      "width": 1
+    },
+    "own-joint-experts-20261126": {
+      "path": "artifacts/own-joint-experts-20261126/qual-correction.npy",
+      "sha256": "edbb76daf8e66f49ad5633b47842e82e6f35be5f195dd813c2a69a9a701b7f37",
+      "width": 1
+    },
+    "bayes": {
+      "path": "artifacts/own-retained-history-20261126/bayes/model.f32",
+      "sha256": "e3d42142389ce7ab11ad1bfbfe35905e7bf4145e5ea9741d200a7d0486734ac0",
+      "width": 1
+    },
+    "own-cf-cohort-20261126": {
+      "path": "artifacts/own-cf-cohort-20261126/qual-correction.npy",
+      "sha256": "07ba2d7514d86b0f101176261a1614f9295fa4b909d97219397c04148d770464",
+      "width": 1
+    },
+    "own-cf-teacher-20261126": {
+      "path": "artifacts/own-cf-teacher-20261126/qual-correction.npy",
+      "sha256": "3497745ffa93f801f0f307d4bcf63c983faf2e67b641b31cb2f8004e58c1b9f3",
+      "width": 1
+    },
+    "own-late-joint-20261126": {
+      "path": "artifacts/own-late-joint-20261126/qual-correction.npy",
+      "sha256": "90f7441f0d6070c913e425d0855c7281b5019850bc22316767552f8553e495a8",
+      "width": 1
+    },
+    "own-joint-jacobian-20261126": {
+      "path": "artifacts/own-joint-jacobian-20261126/qual-correction.npy",
+      "sha256": "59650b81270fe2f83d2f02c1d78293bb995404e2fe03e759afe59a5b9dcb61d6",
+      "width": 1
+    },
+    "own-exact-attention-20261126": {
+      "path": "artifacts/own-exact-attention-20261126/qual-correction.npy",
+      "sha256": "2c46e4b86d881928f4337ca8451fff986f51a2c9e02b4b82cc397e9918d22874",
+      "width": 1
+    },
+    "own-late-boost-20261126": {
+      "path": "artifacts/own-late-boost-20261126/qual-correction.npy",
+      "sha256": "eef73477dbf2d67dfc736f77dfda23d500e0900f65d720ef0d58cbb916388c77",
+      "width": 1
+    },
+    "own-aligned-forecasts-20261126": {
+      "path": "artifacts/own-aligned-forecasts-20261126/qual-correction.npy",
+      "sha256": "b52691dca0685d2afe2e73fad67433480cb0e694fa45d327bd90ab3407eb9ede",
+      "width": 1
+    },
+    "own-transition-20261126": {
+      "path": "artifacts/own-transition-20261126/qual-correction.npy",
+      "sha256": "92e745763c72d0ee9cc7be67ffe6bb8681c70d4db70be81aab21af960725694e",
+      "width": 1
+    },
+    "own-schema-suffix-factors-20261126": {
+      "path": "artifacts/own-schema-suffix-factors-20261126/qual-correction.npy",
+      "sha256": "19ead6300caf44f11882bdcf33292da5656c55494f110539bcec37f24094177f",
+      "width": 1
+    },
+    "own-suffix-attention-20261126": {
+      "path": "artifacts/own-suffix-attention-20261126/qual-correction.npy",
+      "sha256": "27b401719d7d6da488c1ca3473ae39ba8a4fdcad5fee55f2f7c8c2f91857102e",
+      "width": 1
+    },
+    "own-choice-factors-20261126": {
+      "path": "artifacts/own-choice-factors-20261126/qual-correction.npy",
+      "sha256": "60244800acbd28af206e1a7ae53ef8ffde9e859b1c91e9b7e050668a20f9987d",
+      "width": 1
+    },
+    "attention:own-cf-temporal-attention-20261126": {
+      "path": "artifacts/own-cf-temporal-attention-20261126/qual.npy",
+      "sha256": "d2f83a44567a213eca3c0cf1e36a495b0b889d85b37deacf7ea1f408624e0203",
+      "width": 1
+    },
+    "own-sparse-cohort-20261126": {
+      "path": "artifacts/own-sparse-cohort-20261126/qual-correction.npy",
+      "sha256": "ec68fa91f564f83a252c3e64305aa5787d2c5073d889eceedf4f23324a4952d4",
+      "width": 1
+    },
+    "own-cohort-boost-20261126": {
+      "path": "artifacts/own-cohort-boost-20261126/qual-correction.npy",
+      "sha256": "e29f13900fece704048efad5d9f6da9b660d1d11c216ca38667d91ad75a107e4",
+      "width": 1
+    },
+    "attention:own-temporal-continuation-20261126": {
+      "path": "artifacts/own-temporal-continuation-20261126/qual.npy",
+      "sha256": "0850fbf73033dfc92d87383a2b9d04112f116fc99650498c9bb65065c83c970a",
+      "width": 1
+    },
+    "own-verified-distribution-20261126": {
+      "path": "artifacts/own-verified-distribution-20261126/qual-correction.npy",
+      "sha256": "fcfd0a72a8df90d51ef50d55570b01013cad7201960357e8ad15b398bc5a2d4c",
+      "width": 1
+    },
+    "own-title-neighbors-20261126": {
+      "path": "artifacts/own-title-neighbors-20261126/qual-correction.npy",
+      "sha256": "d192bd3b8f02b3f36926e5da2353bd58a7a32895a7e467a5f6289a9af86846b0",
+      "width": 1
+    },
+    "own-hybrid-attention-20261126": {
+      "path": "artifacts/own-hybrid-attention-20261126/qual-correction.npy",
+      "sha256": "c8dd0c699fd782b1c05d5c0c029057d7a07fa884c152d410648c70c78b4c9c58",
+      "width": 1
+    },
+    "own-multichannel-ease-20261126": {
+      "path": "artifacts/own-multichannel-ease-20261126/qual-correction.npy",
+      "sha256": "e739b89649d90dec625800ba0ed6ea0727d9e9322e392cd6348d58e351c30d59",
+      "width": 1
+    }
+  },
+  "independent_verifier": "artifacts/rank1000-knnf-20261125/evaluate.py",
+  "verifier_sha256": "44703eb105aac7dd98365e8e7140168449ffd18d7697f0932471dbb5fcc9674e",
+  "data_and_schema_checks": {
+    "artifacts/own-split-diagnostics-20261126/report.json": "1b4ace6f51a492a9276066369336de6f235af6f093819ac0581de8ab366075e2",
+    "artifacts/own-aligned-forecasts-20261126/schema.json": "fd6130e3c98ec1d06fd0513c10fff7fd19f3c94a6fd1f19b9a4602cc847ee3b3",
+    "artifacts/own-peer-replay-20261126/manifest.json": "d5a12ab6bca5bc5f8b0d7f292be04705f8b068a272a7bf5b8a9eda57adc8d17d",
+    "artifacts/own-peer-cf-20261126/manifest.json": "69a2df8e5ea546093bd72c880f3771be9e8d59eb7ebb87a2e96a96fcf022845b",
+    "artifacts/own-extra-joint-20261126/manifest.json": "1c3d6c4b6559f566ec0bcfb0c7adf523820ae6ec48637eb834069573962ff2da",
+    "artifacts/own-suffix-attention-20261126/chronology.json": "3b130e414fa9260a46349d7cc7ee62f28c30b28e9caddc7425f75874670a2734"
+  }
+}

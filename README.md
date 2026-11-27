@@ -17,7 +17,34 @@ The image covers September–November on a continuous RMSE scale, with faded
 unpromoted screens and a separate recovered qualifying audit. Click it for the
 interactive graphs and experiment evidence.
 
-## The 10% target reached
+## Models trained on the Netflix ratings
+
+The target is **0.85725 RMSE on each recovered qualifying group** using
+predictions from models we trained on the Netflix ratings.
+
+| Frozen model | Source0 RMSE | Source1 RMSE |
+| --- | ---: | ---: |
+| Own17x + CF96 starting point | 0.85956670 | 0.86059917 |
+| Prespecified primary, including the 202-forecast neural stack | 0.85716467 | 0.85824108 |
+| Prespecified comparison, omitting that stack | 0.85647508 | 0.85755131 |
+| Exploratory blend using forecast contrasts with similar variance on ProbeX and qualifying | **0.85644155** | **0.85752135** |
+
+The exploratory blend clears source0 and is **0.00027135 above target on
+source1**. The primary and its comparison used pooled ProbeX RMSE and five
+user folds to admit new forecasts before scoring frozen qualifying predictions.
+Every ProbeX target had at most one visible original Probe rating from the
+same user. About 80% of qualifying targets had two or more, which limits how
+well the development folds test performance for those users.
+
+Repeating the exploratory fit from its recorded inputs reproduced all
+2,817,131 qualifying predictions byte for byte. The
+[final experiment receipt](experiments/OWN-final-overnight-20261126.json)
+records the frozen vectors, independent scores and comparison protocol.
+The [input audit and training inventory](experiments/OWN-paired-overnight-20261126.json)
+trace the predictions and identify 13 pairs of distinct development forecasts
+that produced identical qualifying vectors. Scores use community-recovered labels.
+
+## Historical 619-input target crossing
 
 The target-crossing solution is a **619-input contextual ridge blend**.
 Its frozen predictions score **0.85719 RMSE** on recovered source1, below
@@ -34,7 +61,45 @@ adaptive audit with community-recovered labels, not official Netflix scoring
 or an untouched private Test. Source group counts conflict with published
 Quiz/Test counts, so their original source0/source1 names are preserved.
 
-### The solution
+**Upstream attribution:** this result builds on
+[gtakacs/netflix_prize](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/README.md#check-that-it-reproduces), which already reports **0.855944** in its
+README example; the pinned [cross3 manifest](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/ensembles.toml) records **0.855883**.
+Our corresponding source0 score is **0.8561542082**, so we have not beaten
+those reported results. We reused 536 individual predictions and 77
+pretrained intermediate blends. This is a reuse-based local threshold
+crossing, not a new state of the art. The upstream final blend uses a different
+fitting protocol; see [the baseline comparison](UPSTREAM_COMPARISON.md).
+
+### How the upstream project improves its score
+
+The public bank contains the outputs of a substantial modeling and ensembling
+project. Its methods include:
+
+- **Temporal factor models:** TimeSVD++ variants combine user/movie factors
+  with changing preferences, daily activity effects and neighborhood terms.
+  See [the temporal model implementation](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/src/tx.rs).
+- **Complementary model families:** RBMs, neural predictors, matrix
+  factorization and neighborhood models contribute different error patterns.
+  Models can also be chained to learn residuals left by another predictor.
+- **Several layers of blending:** LightGBM, neural networks and
+  feature-weighted linear stacking combine base predictions with contextual
+  features. Context-dependent blending is already an upstream method.
+  See [the training and blending pipeline](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/pipeline-new.toml).
+- **Cross-split diversity and measured selection:** the final upstream
+  ensemble combines outputs from three training/development splits. Candidate
+  models are judged by their incremental ensemble gain, not just standalone
+  RMSE; a more accurate but redundant model can add almost nothing.
+  See [the ensemble definitions](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/ensembles.toml)
+  and [research notes](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/NOTES.md).
+
+The upstream headline cross-split ridge uses an offline simulation of rounded
+RMSE feedback derived from the full recovered qualifying labels to determine
+its fitting statistics. Its reported score therefore uses a different fitting
+protocol from our development-fitted stack. We exclude those final
+qualifying-fitted ridge outputs; the 77 imported intermediate blends fit
+Probe/ProbeX labels. See [the upstream ridge fitting code](https://github.com/gtakacs/netflix_prize/blob/49c9b3676e6bab90fdf77e9a2da984edbfe4fe5c/src/bin/ridge.rs#L1928).
+
+### Our local blend and upstream foundation
 
 The final ridge combines **619 prediction columns**, with complementary
 individual predictors and already-trained nonlinear blends:
@@ -46,6 +111,20 @@ individual predictors and already-trained nonlinear blends:
 | Local fitted 385-input neural blend | 1 |
 | Local A2h (epochs 4–8 mean), MT3, MT8, MT1 and MH3 predictions | 5 |
 | **Total** | **619** |
+
+**613 of the 619 prediction columns are imported upstream outputs.** The
+remaining six include five local history-model predictions and NN385, a
+locally fitted neural blend that itself uses public predictions. Our final
+solution is primarily another stacking layer over their pretrained work.
+Our local contribution includes row alignment and provenance checks, local
+model additions, contextual ridge fitting, and reproducibility verification.
+
+A matched refit at the same ridge penalty shows that the six local columns
+together improve recovered source0 by **0.0004328564 RMSE** and source1 by
+**0.0004266784 RMSE**. The public-only stack scores **0.8576170265** on
+source1. The six-column addition brings it below 0.85725. NN385 contributes
+as part of this group and uses released predictions as inputs.
+[Ablation and upstream comparison](UPSTREAM_COMPARISON.md#what-the-local-columns-add).
 
 Five contexts let the weights vary with user and movie activity: a constant,
 transformed user rating count, movie popularity, query date relative to the

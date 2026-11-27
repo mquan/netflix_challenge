@@ -1,0 +1,28 @@
+{
+  "scores": {
+    "source0": {
+      "rows": 1408789,
+      "public613": 0.85658706459631,
+      "original619": 0.8561542082012507
+    },
+    "source1": {
+      "rows": 1408342,
+      "public613": 0.8576170264521547,
+      "original619": 0.8571903480630092
+    }
+  },
+  "development_rows": 1128164,
+  "recipe": {
+    "context": "context",
+    "alpha": 0.001
+  },
+  "public613_prediction_sha256": "e0a52ff657759a1da807865e40e1f439b58d1c14c55f1196371b09856ce23bac",
+  "original619_prediction_sha256": "81dbd9bcf366e6496422e647e4ee0941f9cf0b3b05a851d8746050a5d768cb6c",
+  "development_stats_sha256": "83beff6808ab0a405c6efbe7ecb790ffc90c666002badd19c70f770eb2ff9ff4",
+  "label_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "independent_score_check": "stdlib csv, float32 prediction artifact, math.fsum squared errors, agreement within 1e-12",
+  "selection": "Remove columns 613 through 618 (zero-based) from each of five context blocks and refit the remaining 613 with the original fixed alpha.",
+  "public613_prediction_artifact": "artifacts/verification/public613-fixed-recipe-ablation/public613.f32",
+  "control_replay_max_per_row_tolerance": 5e-07,
+  "qualifying_labels_used_for_fitting": false
+}

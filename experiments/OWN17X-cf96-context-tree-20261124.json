@@ -1,0 +1,207 @@
+{
+  "observed_utc": "2026-11-24T21:59:18.015850+00:00",
+  "status": "complete",
+  "source_commit": "5dfb573ba781d0e45e80fcd67c0a3999b07fdadc",
+  "transfer_release": "mquan/netflix_challenge/remote-context-blend-20261124",
+  "transfer_archive_sha256": {
+    "rcb-own17x-fullbank-cf.tar.gz": "bf0c5983e709c0cabfe8d23681f4fcef90c835fd5e62d0f1ef5d0ae87051df65",
+    "rcb-bank2-blend-tree.tar.gz": "d99cf925e17a0c853617d8929112bb1576ad8c995f476f5e7fb5a03ed6ef352a"
+  },
+  "replay_script": "scripts/own17x_cf96_followup.py",
+  "replay_script_sha256": "d54bcfb32ea81404bd50e3022021723d5e599c2c5ea821dc07411c51a0cbec39",
+  "freeze_sha256": "e3bfea5e7b562d15344e4bfd4c7bf92922e5df0373b1796a110ce4909b2f4f27",
+  "freeze_replay_identical": true,
+  "label_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "audit_verified_with_independent_csv_and_compensated_summation": true,
+  "official_or_untouched_test": false,
+  "previous_best": {
+    "source_commit": "2f19abd",
+    "prediction_sha256": "3019a806cd4e2bd344e5673c3192b3ab74b79d7ae0eade16043ab60849b4f820",
+    "groups": {
+      "source0": {
+        "rows": 1408789,
+        "rmse": 0.8596527171523628
+      },
+      "source1": {
+        "rows": 1408342,
+        "rmse": 0.8606702376098258
+      }
+    }
+  },
+  "selection": {
+    "known_rows": 1128164,
+    "fold_rows": [
+      226746,
+      225899,
+      224006,
+      225873,
+      225640
+    ],
+    "known_ratings_sha256": "5a554ca04854b25a0422771b40a02415e488212513a475f3eda10c01238fa2f7",
+    "known_users_sha256": "d961f5966fc6af74a3a00754068929e689a4d86b0d749f211e70582183bd7b06",
+    "known_comparison_is_nested": false,
+    "selection_rule": "Lowest pooled RMSE among arms improving on CF96 in at least four folds and pooled, otherwise CF96",
+    "selected": "separate_context_and_tree",
+    "known": {
+      "own17x": {
+        "pooled": 0.8583396549289788,
+        "folds": [
+          0.8574388893722263,
+          0.8558288236371908,
+          0.859210843932836,
+          0.8603249423238689,
+          0.8588992602383972
+        ]
+      },
+      "cf96": {
+        "pooled": 0.8581304645928894,
+        "folds": [
+          0.8571564515239994,
+          0.8556196844800822,
+          0.8590037622962706,
+          0.8601845411714434,
+          0.8586924238486381
+        ]
+      },
+      "context_shift": {
+        "pooled": 0.8580719929690767,
+        "folds": [
+          0.8570518521497735,
+          0.8555769959894006,
+          0.8589825016965251,
+          0.8601255134776854,
+          0.8586280784037144
+        ],
+        "fold_weights": [
+          [
+            0.19681658367538726
+          ],
+          [
+            0.22983247063024628
+          ],
+          [
+            0.23976112067882172
+          ],
+          [
+            0.22233258393175465
+          ],
+          [
+            0.2191516678416845
+          ]
+        ],
+        "folds_improved": 5
+      },
+      "tree_shift": {
+        "pooled": 0.8580554712855953,
+        "folds": [
+          0.8570174011950663,
+          0.855548858078875,
+          0.8589724877345678,
+          0.8601215591010843,
+          0.8586220629576354
+        ],
+        "fold_weights": [
+          [
+            0.2505843120503675
+          ],
+          [
+            0.28717679890234726
+          ],
+          [
+            0.3118054714195668
+          ],
+          [
+            0.2959696492326575
+          ],
+          [
+            0.2910602836036872
+          ]
+        ],
+        "folds_improved": 5
+      },
+      "separate_context_and_tree": {
+        "pooled": 0.8580341692233134,
+        "folds": [
+          0.8569800745548799,
+          0.8555368102204388,
+          0.8589658883297661,
+          0.8600971923245366,
+          0.8585960728242041
+        ],
+        "fold_weights": [
+          [
+            0.3226777391312233,
+            0.19304286389787348
+          ],
+          [
+            0.3730538361540047,
+            0.21961647532196124
+          ],
+          [
+            0.39876619500986593,
+            0.2409756449853377
+          ],
+          [
+            0.37473252220596553,
+            0.2318442442592299
+          ],
+          [
+            0.369051109965141,
+            0.22811522908633403
+          ]
+        ],
+        "folds_improved": 5,
+        "final_weights": {
+          "context": 0.3673337385815151,
+          "tree_increment": 0.22240916189743262
+        }
+      }
+    },
+    "qualifying_hashes": {
+      "own17x": "717f9afab2901055331f1865ea3cef8bcd9998ed5a6e6d7d67a59ac296243927",
+      "cf96": "4b11dff09d234faf3b8ffb94eea72fe6ebffbbba87f015442a7c009ce1f453db",
+      "separate_context_and_tree": "3edd951c97519a568f17a572d4363c6351a358db626bff11d2a29d750dccd2d1"
+    },
+    "qualifying_labels_used_for_fitting": false
+  },
+  "audit": {
+    "own17x": {
+      "source0": {
+        "rows": 1408789,
+        "rmse": 0.8598430735055478
+      },
+      "source1": {
+        "rows": 1408342,
+        "rmse": 0.8608490720633912
+      }
+    },
+    "cf96": {
+      "source0": {
+        "rows": 1408789,
+        "rmse": 0.8596574212297741
+      },
+      "source1": {
+        "rows": 1408342,
+        "rmse": 0.8606730130279157
+      }
+    },
+    "separate_context_and_tree": {
+      "source0": {
+        "rows": 1408789,
+        "rmse": 0.8595667040460814
+      },
+      "source1": {
+        "rows": 1408342,
+        "rmse": 0.860599165562367
+      }
+    }
+  },
+  "delta_vs_previous_best": {
+    "source0": -8.6013106281424e-05,
+    "source1": -7.107204745870899e-05
+  },
+  "target_rmse": 0.85725,
+  "both_recovered_groups_below_target": false,
+  "margin_above_target": 0.0033491655623670846,
+  "improvement_vs_0_9525_percent": 9.648381568255427
+}
