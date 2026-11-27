@@ -16,3 +16,4 @@
 - 2026-11-27T16:56:58Z | jobs: tsvdx4-new tsvdx4-4800lm (02-13:09:52) |  tsvdx4-4800lm: Epoch 23 | RMSE 3.72044; | mem free 91% | disk free 184Gi
 - 2026-11-27T18:57:01Z | jobs: tsvdx4-new tsvdx4-4800lm (02-15:09:55) |  tsvdx4-4800lm: Epoch 25 | RMSE 3.72122; | mem free 91% | disk free 184Gi
 - 2026-11-27T20:57:03Z | jobs: tsvdx4-new tsvdx4-4800lm__knns (01:59);tsvdx4-new tsvdx4-4800lm__knnf (01:59) |  tsvdx4-4800lm__knnf: fulltrain => qual; tsvdx4-4800lm__knns: trainx => probex; tsvdx4-4800lm: Epoch 27 | RMSE 3.72174; | mem free 91% | disk free 182Gi
+- 2026-11-27T22:57:05Z | jobs: tsvdx5-new tsvdx5-300 (01:54:35) |  tsvdx4-4800lm__knn-d: fulltrain => qual; tsvdx4-4800lm__knnf: fulltrain => qual; tsvdx4-4800lm__knns: fulltrain => qual; tsvdx4-4800lm: Epoch 27 | RMSE 3.72174; tsvdx5-300: Epoch 12 | RMSE 0.88957; | mem free 88% | disk free 180Gi
