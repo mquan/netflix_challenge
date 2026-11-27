@@ -11,3 +11,4 @@
 - 2026-11-27T06:56:46Z | jobs: tsvdx4-new tsvdx4-4800lm (02-03:09:40) |  tsvdx4-4800lm: Epoch 15 | RMSE 3.71123; | mem free 92% | disk free 185Gi
 - 2026-11-27T08:56:48Z | jobs: tsvdx4-new tsvdx4-4800lm (02-05:09:42) |  tsvdx4-4800lm: Epoch 17 | RMSE 3.71596; | mem free 92% | disk free 185Gi
 - 2026-11-27T10:56:51Z | jobs: tsvdx4-new tsvdx4-4800lm (02-07:09:45) |  tsvdx4-4800lm: Epoch 18 | RMSE 3.72067; | mem free 92% | disk free 184Gi
+- 2026-11-27T12:56:53Z | jobs: tsvdx4-new tsvdx4-4800lm (02-09:09:47) |  tsvdx4-4800lm: Epoch 20 | RMSE 3.71904; | mem free 92% | disk free 184Gi
