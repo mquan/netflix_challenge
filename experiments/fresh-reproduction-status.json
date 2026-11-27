@@ -1,6 +1,6 @@
 {
-  "observed": "2026-11-24T21:59:18.015850+00:00",
-  "display_time": "2026-11-24 21:59 UTC",
+  "observed": "2026-11-26T04:55:55.079532-08:00",
+  "display_time": "2026-11-26 12:55 UTC",
   "best_development_rmse": 0.8588630883643809,
   "qualifying_status": "audited_miss",
   "target_each_recovered_group": 0.85725,
@@ -9,6 +9,12 @@
   "verified_development_report_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "independent_verification_sha256": "aa9385d900f2c8a4844c1fc4d2413fddb418340c8e07c37472624ba4912f23b8",
   "work": [
+    {
+      "work_id": "own-stable-subspace-qualifying",
+      "work": "Own-trained qualifying blend and independent refit",
+      "state": "Source0 reached 0.856442 RMSE (10.0849% below Cinematch). Source1 reached 0.857521 (9.9715%), leaving 0.000271 RMSE to the 0.857250 target.",
+      "evidence": "experiments/own-progress-20261126/OWN-final-overnight-20261126.json"
+    },
     {
       "work_id": "own17x-cf96-context-tree-recovered-audit",
       "work": "CF96, context and CatBoost corrections audited",
@@ -317,7 +323,7 @@
     }
   ],
   "scope": "Static snapshot of own freshly trained reproduction. Original source code is reused; historical public-pretrained-bank results are a separate effort. No official/untouched Test claim.",
-  "qualifying_verification_sha256": "802bd2ff0caeb5eb8ad05ab3b55b60576afdc5bda5bdb6b6ee3c7f6e3abf8faf",
+  "qualifying_verification_sha256": "c65be1abacb80133adcd2de183a121253e47ee2c465c2a56926194f6b549d2a3",
   "qualifying_groups": {
     "source0": {
       "rows": 1408789,
@@ -562,14 +568,14 @@
   "latest_qualifying_groups": {
     "source0": {
       "rows": 1408789,
-      "rmse": 0.8595667040460814
+      "rmse": 0.8564415541184192
     },
     "source1": {
       "rows": 1408342,
-      "rmse": 0.860599165562367
+      "rmse": 0.8575213531192543
     }
   },
-  "latest_qualifying_verification_sha256": "802bd2ff0caeb5eb8ad05ab3b55b60576afdc5bda5bdb6b6ee3c7f6e3abf8faf",
+  "latest_qualifying_verification_sha256": "c65be1abacb80133adcd2de183a121253e47ee2c465c2a56926194f6b549d2a3",
   "best_development_arm": "fixed_half_complete_trajectory_h128_and_tree154",
   "own103_development_complete": true,
   "own103_fixed_mean_rmse": 0.8595400254184109,
@@ -586,10 +592,10 @@
     "experiments/upstream-item154-tree/tree-replay.json"
   ],
   "development_narrative": "All519 declared paired streams were checked before33 exact aliases, retaining486 raw predictors and713 neural inputs with all225 contexts. All15 actual original H128/rank32 five-user-fold/three-seed models and full eligible statistics/scalers/normalized inputs/predictions independently replay. Separate canonical fixed half0.8588630883643809 improves the matched391 reference0.8589133967520619 by0.0000503084; NN0.8590060211471172. The fixed tree154 retains its historical A/B realization caveat. This is a separate known-ProbeX population; no new recovered qualifying score or target achievement is claimed.",
-  "latest_qualifying_verification_path": "experiments/own-progress-20261124/OWN17X-cf96-context-tree-20261124.json",
-  "qualifying_narrative": "Own17x with CF96, context and CatBoost corrections improves both recovered groups. The 10% target remains unmet.",
+  "latest_qualifying_verification_path": "experiments/own-progress-20261126/OWN-final-overnight-20261126.json",
+  "qualifying_narrative": "Source0 reached 0.856442 RMSE (10.0849% below Cinematch). Source1 reached 0.857521 (9.9715%), leaving 0.000271 RMSE to the 0.857250 target.",
   "legacy_verified_development_report_sha256": "d2d0026355f83051ef3eaf7a07645259325b4f439d8092a4945871302e188703",
-  "latest_completed_qualifying_audit_path": "experiments/own-progress-20261124/OWN17X-cf96-context-tree-20261124.json",
+  "latest_completed_qualifying_audit_path": "experiments/own-progress-20261126/OWN-final-overnight-20261126.json",
   "qualifying_benchmark_rule": "Compare each frozen known-only correction with its matched control on the two complete recovered groups.",
   "own330_qualifying_best": false,
   "complete13_qualifying_best": false,
@@ -597,10 +603,11 @@
   "own14_qualifying_best": false,
   "preceding_own391_development_verification_sha256": "ce7ae633d328f8e0a79055146b0cb15efa5af18bf6a4760f328640557fbe79e7",
   "own15_qualifying_best": false,
-  "last_score_status_observed": "2026-11-24T21:59:18.015850+00:00",
+  "last_score_status_observed": "2026-11-26T04:55:55.079532-08:00",
   "preceding_own15_qualifying_verification_sha256": "31819116d19ca1ede79de90c477cbdd43b8116ebefb3c443ee0c2ae186f911a3",
   "local_rbm16_qualifying_best": false,
   "own17x_qualifying_best": false,
   "own17x_cf48_tree_qualifying_best": false,
-  "own17x_cf96_context_tree_qualifying_best": true
+  "own17x_cf96_context_tree_qualifying_best": false,
+  "stable_subspace_qualifying_best": true
 }

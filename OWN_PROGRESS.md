@@ -1,5 +1,21 @@
 # Our own Netflix training progress
 
+## November 26, 2026
+
+Source0 reached 0.856442 RMSE (10.0849% below Cinematch). Source1 reached 0.857521 (9.9715%), leaving 0.000271 RMSE to the 0.857250 target. These are community-recovered qualifying scores from models trained by the project on Netflix ratings. An independent refit reproduced all 2,817,131 qualifying predictions byte for byte.
+
+| Checkpoint | Source1 RMSE |
+| --- | ---: |
+| November 24 Own17x + CF96 | 0.860599 |
+| History models and corrections from other observed ratings | 0.859566 |
+| Blend weights adjusted to each viewer’s context | 0.859017 |
+| CF96 with inferred ratings and temporal attention | 0.858073 |
+| Related-title neighborhood added | 0.857693 |
+| Prespecified comparison omitting the 202-forecast neural stack | 0.857551 |
+| Exploratory blend retaining forecast differences with similar variance on both splits | 0.857521 |
+
+Each row measures a cumulative blend. The steps show when gains appeared. Models added together share credit. The prespecified primary blend including the neural stack scored 0.858241 on source1. The exploratory result followed inspection of earlier recovered scores. [Final audit](experiments/own-progress-20261126/OWN-final-overnight-20261126.json) · [Intermediate scores](experiments/own-progress-20261126/intermediate-scores.json).
+
 ## November 24, 2026
 
 The CF96 refit with context and CatBoost corrections improved both recovered groups to **0.85956670 / 0.86059917 RMSE**. Claude Code ran the remote CF96 experiments and Own17x refit. Codex fitted the final correction weights on known ratings and verified the frozen predictions. The harder group remains **0.003349 RMSE** above the 10% target. [CF96 audit](experiments/own-progress-20261124/OWN17X-cf96-context-tree-20261124.json).
