@@ -23,11 +23,12 @@
     .strategy-head{display:block}.strategy-head h2{white-space:nowrap}.strategy-head p{max-width:none;margin-top:8px}
     @media(max-width:840px){.runtime-layout,.arc,.detours,.credit-grid,.sources{grid-template-columns:1fr 1fr}.runtime-layout .panel{grid-column:1/-1}.section-head{display:block}.section-head p{margin-top:10px}}@media(max-width:610px){.wrap{width:min(100% - 24px,1200px)}.topbar{display:block}.topnav{margin-top:12px}.hero{padding:42px 0}.scoreline,.arc,.detours,.credit-grid,.sources,.runtime-layout{grid-template-columns:1fr}.runtime-layout .panel{grid-column:auto}.scorebox{padding:16px}.section-head{margin-bottom:14px}.chart-head{padding:16px 14px 0}.chart-shell{padding:0 2px}.legend{padding:0 14px 14px}.chart-shell .axis{font-size:11px}.strategy-head h2{white-space:normal}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     .explanation-panel{padding:24px;margin-bottom:24px}.explanation-panel>:first-child{margin-top:0}.explanation-panel>:last-child{margin-bottom:0}@media(max-width:610px){.explanation-panel{padding:20px}}
+      #milestones > summary { cursor: pointer; padding: 1rem 0; font-size: 1.25rem; font-weight: 700; }
   </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar"><div class="brand">NETFLIX PRIZE</div><nav class="topnav" aria-label="Sections"><a href="#timeline">Progress</a><a href="#runtime">Runtime lab</a><a href="#strategies">Strategies</a><a href="#integration">Integration</a><a href="#credit">Model credit</a><a href="#sources">Evidence</a> <a href="https://github.com/mquan/netflix_challenge">GitHub</a></nav></div>
+  <div class="topbar"><div class="brand">NETFLIX PRIZE</div><nav class="topnav" aria-label="Sections"><a href="#timeline">Progress</a><a href="#milestones">Milestones</a><a href="#runtime">Runtime lab</a><a href="#strategies">Strategies</a><a href="#integration">Integration</a><a href="#credit">Model credit</a><a href="#sources">Evidence</a> <a href="https://github.com/mquan/netflix_challenge">GitHub</a></nav></div>
   <header class="hero">
     <div class="eyebrow">September 27 → November 19, 2026 · Research progress</div>
     <h1>Can AI win the $1M Netflix Challenge</h1>
@@ -62,7 +63,10 @@
     </section>
 
 
+    <details id="milestones">
+      <summary>Research milestones</summary>
       <div class="ledger-wrap"><table class="ledger"><thead><tr><th>When (Pacific)</th><th>Milestone</th><th>Strategy</th><th>Evaluation</th><th>RMSE</th><th>Credit evidence</th></tr></thead><tbody id="milestone-rows"></tbody></table></div>
+    </details>
 
     <section id="runtime" aria-labelledby="runtime-title">
       <div class="section-head"><div><div class="section-num">02 / Recorded run time</div><h2 id="runtime-title">Inside the training runs</h2></div><p>Here the clock resets at each run's recorded start. Choose a model to see how its standalone Probe score changed as computation accumulated. This is elapsed run time, not total project work or a model cost comparison.</p></div>
@@ -140,7 +144,16 @@
   function textNode(x,y,value,cls,anchor){const e=svgEl('text',{x,y,class:cls,'text-anchor':anchor||'start'});e.textContent=value;return e;}
   function showTip(tip,shell,text,x,y){tip.innerHTML=text;tip.style.display='block';const sw=shell.clientWidth,tw=tip.offsetWidth;tip.style.left=Math.max(8,Math.min(sw-tw-8,x))+'px';tip.style.top=Math.max(4,y-12-tip.offsetHeight)+'px';}
   function hideTip(tip){tip.style.display='none';}
-  function selectMilestone(d,scrollToRow=false){selected=d;hideTip($('timeline-tip'));drawTimeline();renderRows();if(scrollToRow)$('milestone-rows').querySelector('tr.active')?.scrollIntoView({behavior:'smooth',block:'center'});}
+  const milestoneTable = $('milestones');
+  function openLinkedMilestones() {
+    if (location.hash === '#milestones') milestoneTable.open = true;
+  }
+  document.querySelector('.topnav a[href="#milestones"]').addEventListener('click', () => {
+    milestoneTable.open = true;
+  });
+  window.addEventListener('hashchange', openLinkedMilestones);
+  openLinkedMilestones();
+  function selectMilestone(d,scrollToRow=false){selected=d;hideTip($('timeline-tip'));drawTimeline();renderRows();if(scrollToRow){milestoneTable.open=true;$('milestone-rows').querySelector('tr.active')?.scrollIntoView({behavior:'smooth',block:'center'});}}
   function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=timelineFocus?[.855,.860,.865,.870,.875,.880]:[.850,.875,.900,.925,.975];
     const range=timelineFocus?'0.855–0.880':'0.850–0.990';
     $('timeline-range').textContent=`${timelineFocus?'Near target':'Full range'} · ${range} RMSE`;
