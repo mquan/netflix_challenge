@@ -156,7 +156,6 @@
     milestoneTable.open = true;
   });
   window.addEventListener('hashchange', openLinkedMilestones);
-  openLinkedMilestones();
   function selectMilestone(d,scrollToRow=false){selected=d;hideTip($('timeline-tip'));drawTimeline();renderRows();if(scrollToRow){milestoneTable.open=true;$('milestone-rows').querySelector('tr.active')?.scrollIntoView({behavior:'smooth',block:'center'});}}
   function drawTimeline(){const svg=$('timeline-chart');clear(svg);const ticks=timelineFocus?[.855,.860,.865,.870,.875,.880]:[.850,.875,.900,.925,.975];
     const range=timelineFocus?'0.855–0.880':'0.850–0.990';
