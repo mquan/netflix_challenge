@@ -23,6 +23,7 @@
     .strategy-head{display:block}.strategy-head h2{white-space:nowrap}.strategy-head p{max-width:none;margin-top:8px}
     @media(max-width:840px){.runtime-layout,.arc,.detours,.credit-grid,.sources{grid-template-columns:1fr 1fr}.runtime-layout .panel{grid-column:1/-1}.section-head{display:block}.section-head p{margin-top:10px}}@media(max-width:610px){.wrap{width:min(100% - 24px,1200px)}.topbar{display:block}.topnav{margin-top:12px}.hero{padding:42px 0}.scoreline,.arc,.detours,.credit-grid,.sources,.runtime-layout{grid-template-columns:1fr}.runtime-layout .panel{grid-column:auto}.scorebox{padding:16px}.section-head{margin-bottom:14px}.chart-head{padding:16px 14px 0}.chart-shell{padding:0 2px}.legend{padding:0 14px 14px}.chart-shell .axis{font-size:11px}.strategy-head h2{white-space:normal}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     .explanation-panel{padding:24px;margin-bottom:24px}.explanation-panel>:first-child{margin-top:0}.explanation-panel>:last-child{margin-bottom:0}@media(max-width:610px){.explanation-panel{padding:20px}}
+      .journey-recap{margin:18px 22px 12px;max-width:84ch}.journey-recap h3{margin:0 0 8px}.journey-recap p{margin:0 0 9px}.journey-recap details{margin:10px 0}.journey-recap summary{color:var(--cyan);cursor:pointer}.journey-recap details[open] summary{margin-bottom:8px}
   </style>
 </head>
 <body>
@@ -41,10 +42,17 @@
     <section id="timeline" aria-labelledby="timeline-title">
       <div class="section-head"><div><div class="section-num">01 / Calendar time</div><h2 id="timeline-title">Overall progress · September–November</h2></div></div>
       <div class="panel">
-        <div class="early-records"><strong>Our own training:</strong> the plots and score table track predictors trained by this project and locally fitted ensembles. Completed candidates can be promoted on lower overall RMSE against their comparable control; one worse fold no longer vetoes a gain. HR2a and LC6 improve their own controls without setting chronological overall records. <a href="PROMOTION_POLICY.md">Policy and evidence</a>.<br>Early results use single-model Probe scores; later results use blend CV. Current known-ProbeX development and recovered qualifying audits use different rows. Faded markers are unpromoted screens. Qualifying markers use the logo of the credited agent. <a href="INTERMEDIATE_PROGRESS.md">Intermediate experiment evidence</a>. <a href="RESULTS.md">Full early record</a>.</div>
-        <p class="note" style="margin:14px 22px 0"><strong>November 18–20 · Claude + Codex:</strong> Claude trained base models on the remote laptop; Codex verified the returned predictions and fitted the local ensembles. Adding the November 18 remote batch improved matched development CV from 0.8636585 to 0.8621943, with all five folds improving. <a href="https://github.com/mquan/netflix_challenge/blob/533488c/REMOTE_BATCH_PROGRESS.md">Measured contribution</a>. The later remote snapshots also feed the paired391 ensemble. The Claude logo at 0.8621943 on November 18 credits remote model training; its tooltip identifies Codex’s local blend. Milestone tooltips show the recorded credit.</p>
-        <p class="note" style="margin:14px 22px 0"><strong>November 27 · Both recovered qualifying groups clear the 10% target.</strong> Our frozen ensemble scored <strong>0.85614526 RMSE on source0</strong> and <strong>0.85724395 on source1</strong>. The final correction used the stars a viewer gave neighboring movies before and after the query date. An independent audit matched all 2,817,131 predictions to the original query addresses and verified both scores. <a href="experiments/own-progress-20261127/OWN-direction-target-verification-20261127.json">Independent audit</a> · <a href="experiments/own-progress-20261127/OWN-implicit-explicit-direction-20261127.json">Ensemble result</a>.</p>
-        <p class="note" style="margin:10px 22px 0"><strong>How source1 improved.</strong> The November 24 Own17x + CF96 blend scored 0.860599. Combining history models brought it to 0.859566. Adjusting weights by viewer context and modeling the timing of ratings brought it to 0.858073. Later model additions and blend changes brought it to 0.857521 on November 26. The directional neighborhood correction brought it to 0.85724395 on November 27. <a href="OWN_PROGRESS.md">Checkpoint breakdown</a>.</p>
+        <div class="journey-recap">
+          <h3>What moved the score?</h3>
+          <p><strong>September to mid-October · Combine different predictions.</strong> The first blend scored 0.89369 on the original Probe. Models that predicted missing ratings from a viewer’s history, followed by features describing the viewer and movie, helped bring it to 0.86687 by October 10.</p>
+          <p><strong>Mid-October to mid-November · The plateau was partly real.</strong> An October blend used the other movies a viewer chose around the prediction date. It improved all five folds and lowered overall RMSE by 0.000220. The cutoff was 0.000300, so the gain went uncredited at the time. But a November 8 test of 25 alternatives found a best gain of just 0.000020, with two folds worse.</p>
+          <p><strong>November 18–27 · Add models, then study the errors they still share.</strong> Adding 19 newly trained predictors to the same blending recipe cut RMSE from 0.863658 to 0.862194 on a separate development set. The last qualifying gain came from distinguishing the stars a viewer gave neighboring movies before and after the query date. The frozen ensemble scored <strong>0.85614526</strong> and <strong>0.85724395</strong> on the two recovered groups, clearing 0.85725 on both.</p>
+          <details><summary>What did revisiting older models actually buy?</summary>
+            <p>The November 18 policy revision recognized earlier gains, including the October blend’s 0.866485. It changed which results counted as records. Early November also went into refitting models for qualifying predictions. Those runs produced no new plotted score on their own. On November 18, adding factor, neighborhood and neural predictions to the 64-predictor blend improved every fold in the matched 83-predictor test.</p>
+            <p>Later training was useful in a narrower sense. The rank-64 model’s own Probe RMSE worsened from 0.894582 at epoch 23 to 0.895234 at epoch 32. Yet giving the <em>change</em> between those checkpoints a small weight improved the ensemble on both recovered groups. On source1 it moved from 0.85727759 to 0.85727367. The model itself never had to rebound for its later predictions to help.</p>
+            <p class="small"><a href="PROMOTION_POLICY.md">October promotion decisions</a> · <a href="experiments/journey-history/H8-full-independent-comparison-20261031.json">Five-fold comparison</a> · <a href="experiments/journey-history/nov08-bank-diagnostic.json">November 8 experiments</a> · <a href="experiments/journey-history/nov18-remote-batch.md">November 18 matched blend</a> · <a href="experiments/own-progress-20261127/rank64-probe-checkpoints.txt">Checkpoint scores</a> · <a href="experiments/own-progress-20261127/OWN-regularization-continuation-20261127.json">Checkpoint blend</a> · <a href="experiments/own-progress-20261127/OWN-direction-target-verification-20261127.json">Final audit</a></p>
+          </details>
+        </div>
         <div class="chart-head"><h3>Probe scores and qualifying audit by real date</h3><span class="small" id="timeline-range">Full range · 0.850–0.990 RMSE</span></div>
         <div class="controls strategy-controls" role="group" aria-label="RMSE range"><button class="pill" id="timeline-focus" aria-pressed="false">Near target</button><button class="pill" id="timeline-full" aria-pressed="true">Full range · Cinematch</button></div>
         <p class="small" id="timeline-view-note" style="padding:8px 22px 0;margin:0" aria-live="polite"></p>
@@ -112,10 +120,15 @@
   const fmt = n => Number(n).toFixed(7);
   const localDate = value => new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(value));
   const svgEl = (tag, attrs={}) => {const node=document.createElementNS(ns,tag);for(const [key,value] of Object.entries(attrs))node.setAttribute(key,String(value));return node;};
-  const qualifyingLogo = (x,y,credit,size=17) => {
+  const firstBothGroups = d => d.id === 'FRESH directional neighborhood ensemble';
+  const qualifyingLogo = (x,y,d,size=17) => {
     const mark=svgEl('g',{class:'logo-point qualifying-point','data-metric':'fresh_qualifying'});
     mark.append(svgEl('circle',{cx:x,cy:y,r:size/2+3,fill:'transparent'}));
-    mark.append(svgEl('image',{x:x-size/2,y:y-size/2,width:size,height:size,href:LOGOS[credit] || LOGOS.codex}));
+    mark.append(svgEl('image',{x:x-size/2,y:y-size/2,width:size,height:size,href:LOGOS[d.credit] || LOGOS.codex}));
+    if(firstBothGroups(d)){
+      const crown=svgEl('path',{class:'milestone-crown',transform:`translate(${x},${y-size/2-2})`,d:'M-8 -9 L-4 -5 L0 -11 L4 -5 L8 -9 L6 0 H-6 Z',fill:'#ffda42',stroke:'#231b0a','stroke-width':1.2,'stroke-linejoin':'round','aria-hidden':'true'});
+      mark.append(crown);
+    }
     return mark;
   };
   const clear = node => {while(node.firstChild)node.removeChild(node.firstChild);};
@@ -166,7 +179,7 @@
     const dates=['2026-09-27','2026-10-07','2026-10-17','2026-10-27','2026-11-06','2026-11-16','2026-11-26'];for(const s of dates){const x=sx(s+'T12:00:00-07:00');svg.append(textNode(Math.min(x,899),475,new Date(s+'T12:00:00-07:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}),'axis','middle'));}
     svg.append(textNode(902,508,'Calendar date · Pacific','axis-title','end'));
     visibleMilestones.forEach(d=>{const x=sx(d.time),y=sy(d.score),filtered=strategy!=='All'&&d.strategy!==strategy;let mark;
-      if(d.metric==='fresh_qualifying'){mark=qualifyingLogo(x,y,d.credit);if(filtered)mark.classList.add('dim');if(d===selected)mark.classList.add('selected');}
+      if(d.metric==='fresh_qualifying'){mark=qualifyingLogo(x,y,d);if(filtered)mark.classList.add('dim');if(d===selected)mark.classList.add('selected');}
       else if(LOGOS[d.credit]){
         mark=svgEl('g',{class:`logo-point${filtered?' dim':''}`});
         const size=d.credit==='codex'?17:19;
@@ -213,7 +226,8 @@
     });
     projectCheckpoints.forEach(d=>{const xx=x(elapsedProject(d)),yy=y(d.score),day=Math.round(elapsedProject(d)),mark=svgEl('g',{role:'button',tabindex:0,'aria-label':`${d.id}, day ${day}, ${metric[d.metric]} RMSE ${fmt(d.score)}, ${checkpointLabel(d)}, ${milestoneStatus(d)}`});
       if(d.status==='screen')mark.classList.add('unpromoted');
-      mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?7:5,class:`project-dot${d.status==='screen'?' screen':''}${d===selectedOverlay?' selected':''}`}));mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?13:9,class:'competition-hit'}));
+      if(firstBothGroups(d))mark.append(qualifyingLogo(xx,yy,d));
+      else mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?7:5,class:`project-dot${d.status==='screen'?' screen':''}${d===selectedOverlay?' selected':''}`}));mark.append(svgEl('circle',{cx:xx,cy:yy,r:competitionZoom?13:9,class:'competition-hit'}));
       mark.addEventListener('click',()=>setOverlayDetail(d));mark.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setOverlayDetail(d);}});
       mark.addEventListener('mouseenter',()=>{const shell=$('competition-shell');showTip($('competition-tip'),shell,`<strong>${esc(d.id)} · ${fmt(d.score)}</strong>${esc(checkpointLabel(d))}<br>Day ${day} · ${esc(localDate(d.time))} Pacific<br>${esc(milestoneStatus(d))}<br>${esc(milestoneGain(d))}`,xx/960*svg.getBoundingClientRect().width-shell.scrollLeft,yy/390*svg.getBoundingClientRect().height);});mark.addEventListener('mouseleave',()=>hideTip($('competition-tip')));svg.append(mark);
     });

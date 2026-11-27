@@ -1,0 +1,51 @@
+{
+  "model": "Epoch32 minus epoch23 integrated continuation",
+  "parent_sha256": "280990f4ef4221b950c762075b520606e26e6626adfff22442d53516314a8e6e",
+  "development": {
+    "pooled": 0.8533653959272369,
+    "folds": [
+      0.8522424180173863,
+      0.8508406421558241,
+      0.8538617565144577,
+      0.8559332892334793,
+      0.8539495265174604
+    ]
+  },
+  "control": {
+    "pooled": 0.8533707555141048,
+    "folds": [
+      0.8522515507375726,
+      0.8508460249409586,
+      0.8538683842394786,
+      0.8559316164607668,
+      0.8539568760790612
+    ]
+  },
+  "accepted": true,
+  "weights": [
+    0.07414026616758256,
+    0.01065259214492406,
+    -0.009400677107578661,
+    0.0010510165030881047
+  ],
+  "probe_sha256": "98d08cda9a4ee3ac1de64f8515d300c0817ec8ababb5a1a9ade2918950ff2d73",
+  "qualifying_hashes": {
+    "selected": "2a59d464b98b6c7b259f3f1f44a9a7572c0d77b789085e123361593a7c77f743"
+  },
+  "selected_sha256": "2a59d464b98b6c7b259f3f1f44a9a7572c0d77b789085e123361593a7c77f743",
+  "qualifying_vector": "artifacts/own-regularization-continuation-20261127/selected.f32",
+  "known_vector": "artifacts/own-regularization-continuation-20261127/known-selected.npy",
+  "known_sha256": "e04439ebe210212985942eb327190cb626a5b087ffda36eafca69aa0a036941e",
+  "qualifying": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.856170220036071
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8572736689386299
+    }
+  },
+  "reconstructed_rows": 2817131,
+  "different_float32_values": 0
+}
