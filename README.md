@@ -15,7 +15,7 @@ not the complete winning ensemble.
 
 ## The 10% target reached
 
-Exactly two months after we started, our ensemble scored **0.85669 RMSE** across 2,817,131 recovered contest ratings, beating the Netflix Prize’s 10% improvement target of **0.85725**. We trained the models ourselves on the Netflix ratings. The scores below come from community-recovered ratings evaluated after the competition.
+Exactly two months after we started, our ensemble beat the Netflix Prize’s 10% improvement target on both sets of recovered contest ratings. The higher of the two error scores was **0.857244 RMSE**, just below the 0.85725 target. We trained the models ourselves on the Netflix ratings. The scores below come from community-recovered ratings evaluated after the competition.
 
 | Recovered ratings | Count | RMSE ↓ |
 | --- | ---: | ---: |
