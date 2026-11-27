@@ -1,0 +1,54 @@
+{
+  "model": "Earlier minus later observed neighbor rating residuals",
+  "parent_sha256": "48b1e1de0e26b31b18280d9764eb35a621a46f1eaf6c8c1176e185f6d2ef5530",
+  "control": {
+    "pooled": 0.8533572209745828,
+    "folds": [
+      0.8522386407468729,
+      0.8508182074297421,
+      0.8538542645242844,
+      0.855934930907361,
+      0.8539406375192355
+    ]
+  },
+  "development": {
+    "pooled": 0.8533473321144653,
+    "folds": [
+      0.8522709899665377,
+      0.8507956529827618,
+      0.8538418454348903,
+      0.8558955475320388,
+      0.8539331257183056
+    ]
+  },
+  "weights": [
+    -0.036145071749893475,
+    0.06138287715193101,
+    0.012229271535029042,
+    -0.03037192346913859
+  ],
+  "accepted": true,
+  "native_effect_check_max": 5.960464477539062e-07,
+  "native_effect_check_rows": 4225526,
+  "development_nonzero": 903606,
+  "qualifying_nonzero": 2317197,
+  "qualifying_hashes": {
+    "selected": "3e85972af79a2782c77991c8203e8fcb7deeb40d2a6d31868cdadc7e46f11a33"
+  },
+  "selected_sha256": "3e85972af79a2782c77991c8203e8fcb7deeb40d2a6d31868cdadc7e46f11a33",
+  "qualifying_vector": "artifacts/own-implicit-explicit-direction-20261127/selected.f32",
+  "known_vector": "artifacts/own-implicit-explicit-direction-20261127/known-selected.npy",
+  "known_sha256": "38e5141fa27c30b634f2e7fe96c9981e68ab5d1f416ede90f262f240440ef468",
+  "qualifying": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8561452551627131
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8572439540741819
+    }
+  },
+  "reconstructed_rows": 2817131,
+  "different_float32_values": 0
+}

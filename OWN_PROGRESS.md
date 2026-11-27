@@ -1,5 +1,16 @@
 # Our own Netflix training progress
 
+## November 27, 2026
+
+The frozen Own17x + CF96 successor met the 0.85725 RMSE target on both recovered qualifying groups. The final correction used earlier versus later ratings of neighboring movies to adjust the prediction for a viewer on the query date.
+
+| Recovered group | Ratings | RMSE |
+| --- | ---: | ---: |
+| Source0 | 1,408,789 | **0.85614526** |
+| Source1 | 1,408,342 | **0.85724395** |
+
+Source1 cleared the target by 0.00000605 RMSE. All 2,817,131 frozen predictions replayed exactly. The independent audit checked every original query address and recomputed both scores. These figures describe an exploratory evaluation on community-recovered labels. [Ensemble result](experiments/own-progress-20261127/OWN-implicit-explicit-direction-20261127.json) · [Independent verification](experiments/own-progress-20261127/OWN-direction-target-verification-20261127.json).
+
 ## November 26, 2026
 
 Source0 reached 0.856442 RMSE (10.0849% below Cinematch). Source1 reached 0.857521 (9.9715%), leaving 0.000271 RMSE to the 0.857250 target. These are community-recovered qualifying scores from models trained by the project on Netflix ratings. An independent refit reproduced all 2,817,131 qualifying predictions byte for byte.
