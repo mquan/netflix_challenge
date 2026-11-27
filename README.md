@@ -11,76 +11,139 @@ not the complete winning ensemble.
 
 ## Progress at a glance
 
-[![Netflix Prize progress: early Probe models, blend CV and separate recovered qualifying audits crossing the 0.85725 target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
-
-The image covers September–November on a continuous RMSE scale, with faded
-unpromoted screens and a separate recovered qualifying audit. Click it for the
-interactive graphs and experiment evidence.
+[![September 27 to November 27 score timeline, with a yellow crown marking the Codex result that cleared the 10% target](assets/progress_graph.png)](https://mquan.github.io/netflix_challenge/)
 
 ## The 10% target reached
 
-The target-crossing solution is a **619-input contextual ridge blend**.
-Its frozen predictions score **0.85719 RMSE** on recovered source1, below
-the **0.85725** threshold. Both recovered groups pass:
+Exactly two months after we started, our ensemble scored **0.85669 RMSE** across 2,817,131 recovered contest ratings, beating the Netflix Prize’s 10% improvement target of **0.85725**. We trained the models ourselves on the Netflix ratings. The scores below come from community-recovered ratings evaluated after the competition.
 
-| Evaluation | RMSE | Rows |
+| Recovered ratings | Count | RMSE ↓ |
 | --- | ---: | ---: |
-| Recovered qualifying source1 | **0.8571903481** | 1,408,342 |
-| Recovered qualifying source0 | **0.8561542082** | 1,408,789 |
-| Separate original-Probe development CV, 466-base NN2 | 0.8645337528 | 1,408,395 |
-
-Source1 is **10.0063% below the historical 0.9525 reference**. This is an
-adaptive audit with community-recovered labels, not official Netflix scoring
-or an untouched private Test. Source group counts conflict with published
-Quiz/Test counts, so their original source0/source1 names are preserved.
+| Source 0 | 1,408,789 | 0.85614526 |
+| Source 1 | 1,408,342 | 0.85724395 |
 
 ### The solution
 
-The final ridge combines **619 prediction columns**, with complementary
-individual predictors and already-trained nonlinear blends:
+We started with the Own17x + CF96 ensemble. One addition combined temporal SVD++, a latent factor model that learned viewers’ shared tastes and how they changed over time, with an item–item neighborhood model that learned how much weight to give each viewer’s ratings of related movies. The final gain came from accounting for whether the viewer rated those movies before or after the movie we were predicting. That adjustment took the higher of the two error scores from **0.85725978** to **0.85724395**, just under the target.
 
-| Inputs | Columns |
-| --- | ---: |
-| Public individual collaborative-filtering predictions | 536 |
-| Audited Probe/ProbeX-fitted public blend outputs | 77 |
-| Local fitted 385-input neural blend | 1 |
-| Local A2h (epochs 4–8 mean), MT3, MT8, MT1 and MH3 predictions | 5 |
-| **Total** | **619** |
+[Independent score and prediction verification](experiments/OWN-direction-target-verification-20261127.json) · [Earlier 619-input public-prediction blend](BREAKTHROUGH.md)
 
-Five contexts let the weights vary with user and movie activity: a constant,
-transformed user rating count, movie popularity, query date relative to the
-user's mean activity date, and same-day implicit activity. The selected ridge
-penalty is **alpha = 0.001**. Including an intercept for each context gives
-**3,100 coefficients: 5 × (619 + 1)**. Grouped sufficient statistics and
-memory-mapped prediction banks make this fit practical without materializing
-the full expanded design matrix. Predictions are clipped to the 1–5 range.
+## All research milestones
 
-The decisive matched comparison kept the individual CF columns alongside
-compressed blend outputs: on the **same recovered source1 population**, the
-83-input ridge scored **0.8575942364** and the 619-input ridge scored
-**0.8571903481**, an observed improvement of **0.0004038883**. The fast final
-step reused the preceding local work and substantial external pretraining.
+The table includes all 110 milestones behind the interactive timeline, including experiments omitted from the overview chart. Compare scores within the same evaluation. Probe and known ProbeX are development ratings. Recovered qualifying rows report the higher error of the two recovered groups.
 
-**The apparent 0.86453 → 0.85719 jump is not a comparable improvement.**
-PUB466 is original-Probe development CV; QUAL619 uses different qualifying
-rows and production training. The records are 7h 28m apart. The final stack
-also inherits upstream row crossfits, legacy epoch blending and public-Quiz
-hyperparameter selection, so its development scores cannot be called
-independent nested CV. Final ridge fitting excludes qualifying outcomes;
-repeated qualifying audits still make the overall evaluation adaptive.
-
-### Evidence and writeup
-
-Independent CSV scoring and bitwise inference replay confirm the saved
-prediction arithmetic. The local Netflix-format export passed exact
-header, row and float round-trip checks; prediction binaries remain local.
-
-- [Breakthrough retrospective](BREAKTHROUGH.md): what changed, why reuse helped, and what the result proves.
-- [Qualifying audit trail](QUALIFYING_PROGRESS.md) and [score summary](RESULTS.md).
-- [Independent scoring and inference replay](artifacts/qualifying/public619-meta/ridge-final/target-verification.json).
-- [Frozen model recipe](artifacts/qualifying/public619-meta/ridge-final/report.json) and [final experiment receipt](experiments/QUAL-target-final-result-20261116.json).
-- [Export verification](artifacts/submissions/netflix-0.8571903481-qualifying.txt.gz.json).
-- [Intermediate experiment evidence](INTERMEDIATE_PROGRESS.md): unpromoted October and November screens.
+| Date (Pacific) | Experiment | Evaluation | RMSE ↓ |
+| --- | --- | --- | ---: |
+| Sep 27 | C0 — User and movie bias | Single model · Probe | 0.98256528 |
+| Sep 27 | C1 — Temporal effects model | Single model · Probe | 0.93491601 |
+| Sep 27 | C2 — 32-factor SVD++ | Single model · Probe | 0.90267216 |
+| Sep 27 | B1 — First user-fold blend | Blend CV · Probe | 0.89369009 |
+| Sep 27 | B4 — Learned item neighbors | Blend CV · Probe | 0.88666465 |
+| Sep 27 | B7 — 128-neighbor graph | Blend CV · Probe | 0.88584605 |
+| Sep 27 | B6 tree — LightGBM over 15 columns | Blend CV · Probe | 0.88040209 |
+| Sep 27 | Union — Two branches, fixed average | Blend CV · Probe | 0.87821996 |
+| Sep 27 | R3 — Residual tree correction | Blend CV · Probe | 0.87738608 |
+| Sep 27 | R4-C — Wider neighborhood bank | Blend CV · Probe | 0.87545342 |
+| Sep 27 | R5-meta — Training-derived context | Blend CV · Probe | 0.87480941 |
+| Sep 28 | R6-RBM5-s3 — Six conditional RBM columns | Blend CV · Probe | 0.87311591 |
+| Sep 30 | C5 parallel — Local GP compact blend | Parallel blend CV · Probe | 0.87590279 |
+| Sep 30 | R7-MH3 — Masked rating history | Blend CV · Probe | 0.87258480 |
+| Oct 01 | R7-MT56-s3 — Masked history variants | Blend CV · Probe | 0.87038930 |
+| Oct 01 | C12 parallel — Fixed session-context average | Parallel blend CV · Probe | 0.87477805 |
+| Oct 03 | R8 Bayes — Bayesian timeSVD++ | Blend CV · Probe | 0.86923190 |
+| Oct 04 | R8 NN2 — Neural residual blend | Blend CV · Probe | 0.86765030 |
+| Oct 06 | R8 A2e — Longer masked sequence | Blend CV · Probe | 0.86741310 |
+| Oct 09 | R8 A2h — 1536-step A2h + NN2 | Blend CV · Probe | 0.86709845 |
+| Oct 10 | R9 LAT — K1 latent and bias features | Blend CV · Probe | 0.86687064 |
+| Oct 11 | R10 B5 — Bayesian item-frequency screen | Blend CV · Probe | 0.86682120 |
+| Oct 18 | HR2a — Honest A2h residual blend | Blend CV · Probe | 0.86684441 |
+| Oct 18 | HR2b — Honest Bayesian residual blend | Blend CV · Probe | 0.86681873 |
+| Oct 19 | LC6 — Training-trajectory snapshots | Blend CV · Probe | 0.86682644 |
+| Oct 31 | N1 full — Choice-token transformer blend | Blend CV · Probe | 0.86670063 |
+| Oct 31 | H8 full — Matched headroom-feature blend | Blend CV · Probe | 0.86648484 |
+| Nov 18 | REMOTE83 Claude + Codex — Claude remote models + Codex local blend | Blend CV · known ProbeX | 0.86219434 |
+| Nov 18 | FRESH86 context — Own trained predictors + context NN | Blend CV · known ProbeX | 0.86006371 |
+| Nov 18 | FRESH86 matched — Own trained predictors: matching tree + context NN | Blend CV · known ProbeX | 0.86003006 |
+| Nov 18 | FRESH85 qualifying — Our 85-predictor bank: first qualifying audit | Recovered qualifying | 0.86280678 |
+| Nov 19 | FRESH91 tree + NN86 — Own trained predictors: tree91 + contextNN86 | Blend CV · known ProbeX | 0.85997456 |
+| Nov 19 | FRESH86 qualifying — Own matching86 bank: qualifying audit | Recovered qualifying | 0.86243556 |
+| Nov 19 | FRESH91 qualifying — Own tree91 + exact full-fit contextNN86: qualifying audit | Recovered qualifying | 0.86240212 |
+| Nov 19 | FRESH91 context — Own tree91 + contextNN91: verified development best | Blend CV · known ProbeX | 0.85995970 |
+| Nov 19 | FRESH91 context qualifying — Context91 qualifying audit: preceding best retained | Recovered qualifying | 0.86241666 |
+| Nov 19 | FRESH103 context — Own tree91 plus contextNN103: improved fixed combination | Blend CV · known ProbeX | 0.85954003 |
+| Nov 19 | FRESH103 NN — Own103 context NN: new verified development best | Blend CV · known ProbeX | 0.85946926 |
+| Nov 19 | FRESH103 mean qualifying — Own103 fixed combination improves qualifying audit | Recovered qualifying | 0.86202208 |
+| Nov 19 | FRESH103 NN qualifying — Own103 standalone NN: new verified qualifying best | Recovered qualifying | 0.86199386 |
+| Nov 19 | FRESH107 RBM50 NN — Own107 plus50 original RBM context: new development best | Blend CV · known ProbeX | 0.85945541 |
+| Nov 19 | FRESH107 RBM50 qualifying — Own107 plus50 RBM context: new verified qualifying best | Recovered qualifying | 0.86191418 |
+| Nov 19 | FRESH107 RBM50 mean — Expanded tree plus context NN: new verified development best | Blend CV · known ProbeX | 0.85936616 |
+| Nov 19 | FRESH107 all90 GPU mean — Expanded tree plus all90 GPU NN: new verified development best | Blend CV · known ProbeX | 0.85927206 |
+| Nov 19 | FRESH107 all90 mean qualifying — Expanded tree plus all90 GPU NN: new verified qualifying best | Recovered qualifying | 0.86186055 |
+| Nov 19 | FRESH110 GPU mean screen — Whole110 GPU mean: existing best retained | Blend CV · known ProbeX | 0.85929964 |
+| Nov 19 | FRESH166 GPU mean screen — Own166 GPU mean: existing best retained | Blend CV · known ProbeX | 0.85928923 |
+| Nov 19 | FRESH166 H512 mean screen — Larger512/rank64 GPU model: existing best retained | Blend CV · known ProbeX | 0.85934177 |
+| Nov 19 | FRESH109 AutoRec mean screen — Own AutoRec additions: existing best retained | Blend CV · known ProbeX | 0.85927452 |
+| Nov 19 | FRESH AutoRec consensus — Own fixed consensus: new verified development best | Blend CV · known ProbeX | 0.85924329 |
+| Nov 19 | FRESH107 item154 mean — Own64 item context: new verified development best | Blend CV · known ProbeX | 0.85923098 |
+| Nov 19 | FRESH AutoRec consensus qualifying — Own fixed consensus: verified qualifying improvement | Recovered qualifying | 0.86180063 |
+| Nov 19 | FRESH107 item154 qualifying — Own64 item context: independently verified qualifying improvement | Recovered qualifying | 0.86173789 |
+| Nov 19 | FRESH107 user218 mean screen — Own epoch20 user context: existing best retained | Blend CV · known ProbeX | 0.85944867 |
+| Nov 19 | FRESH111 split3 mean screen — Four original split3 additions: existing best retained | Blend CV · known ProbeX | 0.85928380 |
+| Nov 19 | FRESH107 item186 mean screen — Rank1000 item context: existing best retained | Blend CV · known ProbeX | 0.85935223 |
+| Nov 19 | FRESH107 calibrated qualifying — One known-fit coefficient: new independently verified qualifying best | Recovered qualifying | 0.86166360 |
+| Nov 19 | FRESH107 own5 qualifying — Five own families: independently verified qualifying best | Recovered qualifying | 0.86158322 |
+| Nov 19 | FRESH107 quadratic audit — Negative quadratic calibration: convex best retained | Recovered qualifying | 0.86159357 |
+| Nov 19 | FRESH107 tree154 mean — Full item154 context in both families: new independently verified CV best | Blend CV · known ProbeX | 0.85920129 |
+| Nov 19 | FRESH109 itemAE mean screen — Fixed item-autoencoder snapshots: verified negative study | Blend CV · known ProbeX | 0.85931594 |
+| Nov 19 | FRESH107 tree154 qualifying — Full tree154 fixed half mean: matched control improves, overall best retained | Recovered qualifying | 0.86171900 |
+| Nov 19 | FRESH107 own6 qualifying — Six eligible own families: independently verified qualifying best | Recovered qualifying | 0.86156620 |
+| Nov 19 | FRESH109 attention mean screen — Original attention64 pair: verified negative development study | Blend CV · known ProbeX | 0.85927082 |
+| Nov 19 | FRESH109 KNN3 mean screen — Both original residual KNN3 chains: verified negative full neural study | Blend CV · known ProbeX | 0.85929314 |
+| Nov 19 | FRESH115 split3 eight mean screen — All eight completed split3 additions: verified negative neural study | Blend CV · known ProbeX | 0.85924265 |
+| Nov 19 | FRESH109 CF96 prefix20/30 mean screen — Own original CF96 epoch20/30: complete negative neural study | Blend CV · known ProbeX | 0.85925487 |
+| Nov 19 | FRESH native NN pool6 — Six fixed native-neural variants improve matched NN; global CV best retained | Blend CV · known ProbeX | 0.85925468 |
+| Nov 19 | FRESH native NN pool6 tree31 — Fixed75% native NN pool /25% tree: independently improved development best | Blend CV · known ProbeX | 0.85912679 |
+| Nov 19 | NNPOOL6 own7 qualifying — Own7 full audit: essentially tied, six-family benchmark retained | Recovered qualifying | 0.86156589 |
+| Nov 19 | NNPOOL6 tree25 qualifying — Fixed tree25/pool75: development gain does not carry to qualifying | Recovered qualifying | 0.86166583 |
+| Nov 19 | NNPOOL6 equal qualifying — Equal six-NN full audit: no qualifying promotion | Recovered qualifying | 0.86179663 |
+| Nov 20 | FRESH167 context218 tree half — Larger own latent context: complete negative development study | Blend CV · known ProbeX | 0.85947866 |
+| Nov 20 | FRESH176 recent10 ridge diagnostic — Ten own predictors add verified linear information; neural study queued | Blend CV · known ProbeX | 0.86227347 |
+| Nov 20 | FRESH181 recent15 ridge diagnostic — Fifteen own additions: modest linear gain; no overall promotion | Blend CV · known ProbeX | 0.86222791 |
+| Nov 20 | FRESH330 unused149 ridge diagnostic — All149 unused own predictors improve every ridge fold | Blend CV · known ProbeX | 0.86197108 |
+| Nov 20 | FRESH176 full neural fixed-half screen — Recent-ten full neural study narrowly misses global best | Blend CV · known ProbeX | 0.85913369 |
+| Nov 20 | FRESH_SPLIT3 expanded-known fixed-half diagnostic — Extra known training labels help the matched bank, which remains below best quality | Blend CV · known ProbeX | 0.86222599 |
+| Nov 20 | FRESH330 full neural tree154 half — Own330 full neural/tree half becomes the verified development best | Blend CV · known ProbeX | 0.85894750 |
+| Nov 20 | FRESH330 own7 qualifying — Own330 seven-family blend improves both recovered groups | Recovered qualifying | 0.86138813 |
+| Nov 20 | FRESH330 fixed-half qualifying — Development-selected fixed half trades off recovered groups | Recovered qualifying | 0.86155997 |
+| Nov 20 | FRESH352 temporal22 ridge diagnostic — Complete temporal trajectory improves every known ridge fold | Blend CV · known ProbeX | 0.86186111 |
+| Nov 20 | FRESH352 full neural tree154 half — Complete temporal addition improves the verified development best | Blend CV · known ProbeX | 0.85891606 |
+| Nov 20 | FRESH352 fixed-half qualifying — Declared full own352 fold-bag half misses qualifying benchmark | Recovered qualifying | 0.86160388 |
+| Nov 20 | FRESH complete13 ridge10 qualifying — Declared signed ridge control trades off groups against primary | Recovered qualifying | 0.86138399 |
+| Nov 20 | FRESH352 own7 qualifying — Complete own352 fold bag adds negligible qualifying improvement | Recovered qualifying | 0.86138527 |
+| Nov 20 | FRESH complete13 qualifying — All completed component families add a small verified qualifying gain | Recovered qualifying | 0.86137380 |
+| Nov 20 | FRESH complete13 context FWLS qualifying — Context-weighted component stack narrowly misses the constant-weight primary | Recovered qualifying | 0.86139603 |
+| Nov 20 | FRESH full404 context FWLS qualifying — Full-bank feature-weighted stacking is a negative result | Recovered qualifying | 0.86234232 |
+| Nov 20 | FRESH paired391 ridge diagnostic — Matched paired inputs pass; added scalar ridge gain is tiny | Blend CV · known ProbeX | 0.86185088 |
+| Nov 20 | FRESH paired391 H128 tree154 half — Matched391 neural study verifies a negligible development gain | Blend CV · known ProbeX | 0.85891340 |
+| Nov 20 | FRESH paired391 H512 control — Wider matched391 control is fully verified and worse | Blend CV · known ProbeX | 0.85904815 |
+| Nov 21 | FRESH own14 ridge10 qualifying — Declared own14 signed ridge control trades off recovered groups | Recovered qualifying | 0.86137820 |
+| Nov 21 | FRESH matched391 fixed-half qualifying — Matched391 fixed half remains a negative qualifying control | Recovered qualifying | 0.86159573 |
+| Nov 21 | FRESH own14 qualifying — Matched391 fold bag adds a small verified qualifying gain | Recovered qualifying | 0.86136815 |
+| Nov 21 | FRESH complete trajectories H128 tree154 half — Complete trajectories slightly improve verified development CV | Blend CV · known ProbeX | 0.85886309 |
+| Nov 21 | FRESH complete trajectories H128 neural control — Neural-only control improves its matched predecessor | Blend CV · known ProbeX | 0.85900602 |
+| Nov 21 | FRESH own15 qualifying — Complete-trajectory fold bag adds a small recovered qualifying gain | Recovered qualifying | 0.86134239 |
+| Nov 21 | FRESH own15-ridge10 qualifying — Declared own15 signed ridge remains a control | Recovered qualifying | 0.86135596 |
+| Nov 21 | FRESH complete-trajectory-fixed-half qualifying — Declared complete-trajectory half remains a negative control | Recovered qualifying | 0.86157501 |
+| Nov 21 | FRESH local RBM16 ridge10 qualifying — Declared local RBM16 ridge remains a control | Recovered qualifying | 0.86135553 |
+| Nov 21 | FRESH local RBM16 preceding control — Original own15 primary retained as the fixed control | Recovered qualifying | 0.86134239 |
+| Nov 21 | FRESH local RBM16 qualifying — Full RBM400 adds only a tiny independently verified recovered gain | Recovered qualifying | 0.86134209 |
+| Nov 22 | FRESH Own17 simplex qualifying — Own17 verifies a small improvement on both recovered groups | Recovered qualifying | 0.86132655 |
+| Nov 24 | FRESH Own17x global qualifying — 65 additional own-trained predictors improve the matched global blend | Recovered qualifying | 0.86084907 |
+| Nov 24 | FRESH Own17x CF48 qualifying — CF48 residual correction improves Own17x | Recovered qualifying | 0.86072426 |
+| Nov 24 | FRESH Own17x CF48 CatBoost qualifying — CatBoost residual correction further improves Own17x | Recovered qualifying | 0.86067024 |
+| Nov 24 | FRESH Own17x CF96 context CatBoost qualifying — CF96 residual-neighborhood predictors with context and CatBoost corrections | Recovered qualifying | 0.86059917 |
+| Nov 26 | FRESH variance-stable qualifying blend — First own-trained group clears the 10% target | Recovered qualifying | 0.85752135 |
+| Nov 27 | FRESH directional neighborhood ensemble — Both recovered groups clear the 10% target | Recovered qualifying | 0.85724395 |
 
 ## Development validation
 

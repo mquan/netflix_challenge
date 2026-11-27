@@ -1,0 +1,173 @@
+{
+  "target": 0.85725,
+  "both_recovered_groups_meet_target": true,
+  "qualifying": {
+    "source0": {
+      "rows": 1408789,
+      "rmse": 0.8561452551627128
+    },
+    "source1": {
+      "rows": 1408342,
+      "rmse": 0.8572439540741819
+    }
+  },
+  "frozen_vector": "artifacts/own-implicit-explicit-direction-20261127/selected.f32",
+  "selected_sha256": "3e85972af79a2782c77991c8203e8fcb7deeb40d2a6d31868cdadc7e46f11a33",
+  "freeze_sha256": "2157d6dabb75a24bda65e6b5e581872c9cd20ec332b26510c21bfbe93555bd58",
+  "checked_original_query_addresses": 2817131,
+  "labels_sha256": "f52ba6e3d5a86818502d374e2a03bf95cf9b756f82d5c644450ee5171d592ec5",
+  "original_qualifying_txt_sha256": "62b3bbc22ff5531a0f61dfa8db658b7cff29da51402da5463f2230b3fbb1532b",
+  "final_recipe_replay_float32_mismatches": 0,
+  "independent_score_method": "math.fsum of squared errors by recovered group, after rowwise original-address checks",
+  "lineage": {
+    "distinct_fresh_producer_receipts": 44,
+    "checked_paired_producer_columns": 232,
+    "checked_paired_trajectory_columns": 228,
+    "checked_native_factor_sources": 5,
+    "verified_prediction_receipts": {
+      "3e85972af79a2782c77991c8203e8fcb7deeb40d2a6d31868cdadc7e46f11a33": {
+        "receipt": "experiments/OWN-implicit-explicit-direction-20261127.json",
+        "receipt_sha256": "d96022c123b512c8d3a85599ccbc12339a81c23eefc2c88f03a496577d960959"
+      },
+      "48b1e1de0e26b31b18280d9764eb35a621a46f1eaf6c8c1176e185f6d2ef5530": {
+        "receipt": "experiments/OWN-implicit-same-day-20261127.json",
+        "receipt_sha256": "272d64d200b47b642ae226bb504c6b4ebbdf9c2c3333d8476dcebcf5afd9065f"
+      },
+      "ae0707d98afdcc76ba0a6e6e5d4439e4169fca50f984caaf9a4aa19ca8aff588": {
+        "receipt": "experiments/OWN-neighbor-omit-implicit-20261127.json",
+        "receipt_sha256": "95e2c2ff12e2970b88f96d985a3aab6d612924128da644191d9db7f214dc5611"
+      },
+      "2a59d464b98b6c7b259f3f1f44a9a7572c0d77b789085e123361593a7c77f743": {
+        "receipt": "experiments/OWN-regularization-continuation-20261127.json",
+        "receipt_sha256": "6d9f55e6c2a90c4286b95e54cf42ee5fbe59c7d43fb4e613bde289b972318190"
+      },
+      "280990f4ef4221b950c762075b520606e26e6626adfff22442d53516314a8e6e": {
+        "receipt": "experiments/OWN-epoch23-factor-regularization-20261127.json",
+        "receipt_sha256": "fae25fad4e828b2e57e1c97ff520b96fce08cba4da62cf8528c56fa290438ae2"
+      },
+      "b59e7e729f8f186a2b3c822f3741a111c2e337aaa2ce3049d3ee60c715e84aef": {
+        "receipt": "experiments/OWN-epoch23-frequency-factors-20261127.json",
+        "receipt_sha256": "7f5f98fe14045d2592f6839e15a1b7765429c02e7eae4f59c3a8427f87dd6e08"
+      },
+      "c097447ab24d4297c062aaf03548a08bffa8c67918970864373f041b16edf885": {
+        "receipt": "experiments/OWN-epoch23-k1-neighbors-20261127.json",
+        "receipt_sha256": "18c17e387b8948b1b44fe368f53d59394ee27a3933ae6ce7119244d9bfa058f8"
+      },
+      "695b86f8a6badca73ccbe9556eee8b9b89b497df998585e6a8de7bb00a834ecd": {
+        "receipt": "experiments/OWN-integrated-activity-epoch23-20261127.json",
+        "receipt_sha256": "3e4d3a5c44786a32255f1c1389c7f3252fbd60e4471469238333f1eb42d2367c"
+      },
+      "e8aee426d738caf64aded686f2a4dab548af0d12bd41c9a97d9b489bb8609083": {
+        "receipt": "experiments/OWN-ordinal-peer-affinity-20261127.json",
+        "receipt_sha256": "859d82d656877ed42f11c43440ad7f62c93703fd49ae2811ae9e06d353dffea6"
+      },
+      "470687b7ea99010c18000725e3da3d3d31e29557afcd7dd0814e98d74eb9f6cb": {
+        "receipt": "experiments/OWN-cosine-affinity-20261127.json",
+        "receipt_sha256": "381faec163625e66da4a03d464bc80ee85baba9d3cca5c2299d04ea0a69d8e7c"
+      },
+      "3637e713b43ca2d879f94e68adf6e253e066d838398eef11c8ea9199d473c4bb": {
+        "receipt": "experiments/OWN-dated-neighbors-20261127.json",
+        "receipt_sha256": "726309408672406c37d83ef47d2c839a83ecd14bb215f11f44c625348bcc27d7"
+      },
+      "466e438ae050d56dffb2fe9d902ec0a9bb6b8f16a275ebf98b459d9c0e60d6e7": {
+        "receipt": "experiments/OWN-similar-history-20261127.json",
+        "receipt_sha256": "ca641d624b926026491364a60428476a1a1482c0fcc0f06a4ed56f2fe8539eab"
+      },
+      "3afda9c3b4d52fb7ae3e9cf7aeb823120404cc6cbc29934ad247556705ad9f54": {
+        "receipt": "experiments/OWN-local-calibration-weights-20261127.json",
+        "receipt_sha256": "aeea5c4be598b8fc1a5b6c2a1d7f2c24e12281d95d66b21ab41ade5af0c42471"
+      },
+      "1e2d53b04daa05d88b402437afe91845bf323d04ac63cf48e2bc891d6167683a": {
+        "receipt": "experiments/OWN-local-ordinal-20261127.json",
+        "receipt_sha256": "93a8ab8cf04990acccbd6840b103b248b0093ca9c798316fa8433a762363dffa"
+      },
+      "3dc2ffed5553777167c7197cc694e6149ee1814ebd8afcb7a004b39743c4873a": {
+        "receipt": "experiments/OWN-popularity-response-20261127.json",
+        "receipt_sha256": "de8dd0f0b14d9ec902fd729fdc15d3d967525afaead2aed56672f3140a9d9c10"
+      },
+      "248ea15c87dc6914ddc44c1237470a6e08ec2acd9ac3ea66b01bb6438a7b57b8": {
+        "receipt": "experiments/OWN-recent-taste-20261127.json",
+        "receipt_sha256": "aa0c51aa9e83310c4ae30b6ef635f3ec9b642fb0fa89bac4f9b2a6f2c883c69a"
+      },
+      "8242e86fe15ec0ade7071c025397f26772b45c9d555337229870e517a646a1b3": {
+        "receipt": "experiments/OWN-calibration-peer-union-20261127.json",
+        "receipt_sha256": "ed5e49e8844a7c44f79864d2e01f3131276f3e18b93ed6b316f20dfd79b634e7"
+      },
+      "6dc2b569d3696dd80ae786ef799557131e55db3990ae86c25c8c6c5a2afc1b31": {
+        "receipt": "experiments/OWN-calibration-groups-20261127.json",
+        "receipt_sha256": "514c32b8c11a84c580e930f45042d84ebdb9e4b5e9ef1ee80ef5f6f80fdbc7e8"
+      },
+      "619dbc0f4f6a085b34038b3542646131f5d336701925948aa7a1e1d57ac9ce87": {
+        "receipt": "experiments/OWN-factor-coordinate-moments-20261127.json",
+        "receipt_sha256": "c2d6f87f40e7889550466a3ea0c1c9e900810d52428bfb80f50384e98c49766c"
+      },
+      "5918e149ca98c1c5e6bbbee993f5fba0b3cca80e0626e07398f9fcf2383a0c4d": {
+        "receipt": "experiments/OWN-taste-moments-20261127.json",
+        "receipt_sha256": "a9499f816e0220afd735ee93e847cb78cddece338f738d0ea5cd436b7c46120a"
+      },
+      "fe7e09524918e7a79e87c06d262476212b8eb5ca1e16a6aaf906f4b5d2478bab": {
+        "receipt": "experiments/OWN-slate-nonlinear-pair-20261127.json",
+        "receipt_sha256": "dcac63e319c4588e41154e532fdb1eb37ecdb2ecc23ecd1bc9be6be95f8cdd7c"
+      },
+      "43ce34afe40c8008d972bff9c371cbebf2c4eb182167217e928d198d98d5c772": {
+        "receipt": "experiments/OWN-neighbor-moments-20261127.json",
+        "receipt_sha256": "6d6dcd854ceb89713fc5f18b3ef13ad842465ebf3fbe0621308b2211ee391ac1"
+      },
+      "4ed777eab14634409555ee76ff23ce2f886efbfeb7817a1a8de0bb2987ed5a76": {
+        "receipt": "experiments/OWN-profile-gp-20261127.json",
+        "receipt_sha256": "4871dee4cac3a53a0dc0ca4975af3bf39a373c0bb8d10a66dac8a3fd2774d13f"
+      },
+      "c617ff15c47e2e63c2d18c19cb6badb2b3fa4d5cbce019758e5a1bcd82bb7938": {
+        "receipt": "experiments/OWN-profile-pair-20261127.json",
+        "receipt_sha256": "5f6ad558e88b505e273e6cdc51482f2ce98473d63af2c016da26678d1c9c38b3"
+      },
+      "b46089b9eb2c28a8ebaa3568335b12abfb2ffd887fad0bbd423ad0db30934719": {
+        "receipt": "experiments/OWN-k1-session-20261127.json",
+        "receipt_sha256": "4c315dff69973b491fdee6087e0f5e897a88b36ed69fba2afbb810c506bdee39"
+      },
+      "73f8dacbb90505d5bcc48884b41e64060a11e29f7a030676001a35fab76645f0": {
+        "receipt": "experiments/OWN-session-moments-20261127.json",
+        "receipt_sha256": "226fb4265822d224fd99e401c6463dfa8f6895e61b5fde1d366bbbe6bc2d1dc2"
+      },
+      "1ec574184e5112f0b6f8e2b854f54c0a81640620e35047a0e8b2412d87de162b": {
+        "receipt": "experiments/OWN-calibration-dose-20261127.json",
+        "receipt_sha256": "322467424daba14d99eadc2691087ebf74ad0d4ae3b88b3e210851a41c4ad252"
+      },
+      "72cc34557094415407dfb1da0d8761e01f137365bb3ccf8d68bab331ef267011": {
+        "receipt": "experiments/OWN-peer-moments-20261127.json",
+        "receipt_sha256": "2054717253cbb9be3f51eb2ec6d5539fef269400e2bde3f8c8a27d390e7c9116"
+      },
+      "e80151905178fcf9a1625fa9e30fedbe4290dc50ca36c9d9048a2b2ab980e6ff": {
+        "receipt": "experiments/OWN-forecast-moments-20261127.json",
+        "receipt_sha256": "403bf0cc2beefcd6108877f627ccda62634d2a4011c4d68db108543b1df2b6df"
+      },
+      "4f2649233605214fc7b8a9f4db5134fc6f0d0825377450877494440098c17dbb": {
+        "receipt": "experiments/OWN-cohort-calibration-20261127.json",
+        "receipt_sha256": "ed9ad27c5ed80e9310d96c7f55ee4d1aa0e9e7bcc4e026e41686e41a33857ac5"
+      },
+      "bf5b51d8e84d1734c3c1de38c0f0d3c6747ca8f40c10d6da7b14e4e0244a8588": {
+        "receipt": "experiments/OWN-integrated-activity-20261127.json",
+        "receipt_sha256": "c94beb6c075f26a62496270fe33db202eb76af9dd1b2a8460c896a5a2fdff802"
+      },
+      "8226693778ecca111619c65ac752258f526c9c01b66a8a31585a94786a963ac1": {
+        "receipt": "experiments/OWN-integrated-epoch17-20261127.json",
+        "receipt_sha256": "eacb45ed3e0718fdb7576ff0cfe3376190727f6f1ddf638c55e6921b79a80a4c"
+      }
+    },
+    "stable_subspace_sha256": "3a2a078cf1b29e30e7f02a255aa51b0d86e0d7082638304108db1250ae31b9f3",
+    "stable_parent": "artifacts/own-overnight-blend-20261126/ablation-06",
+    "checked_ablation_sources": 44,
+    "training_inventories": {
+      "artifacts/rank1000-knnf-20261125/inputs.json": "e942db7b0e9292667d079db1da6879f2106ef2c44771344ad963f4564a93a92a",
+      "../netflix_upstream_repro/experiments/upstream-cf96-complete-bank/manifest.json": "be259a6f49f1b6d2fa2dca505988a9dc343fa7af1e467aa2c8c8a9a66a3c47c3",
+      "../netflix_upstream_repro/experiments/upstream-factored-rbm-gpu400-deterministic-metal/paired-verification.json": "3e8d2ecdbb40d0c953f98b24601c2e84a9353bb45ca23d74fea26797a814199a",
+      "artifacts/own-joint-cohort-source-20261126/manifest.json": "a65e00109c6d95c6b62a04f66d3a216c437dca83e1beb681bc0991f075ecf9e7",
+      "artifacts/own-producer-bank-20261126/sources.json": "2cee24de4afb81b652193d6e477726397d9c7586ec69f665e04ce87d4bec5740",
+      "artifacts/own-trajectory-bank-20261126/sources.json": "2b82942560e21ce29e11fe384b690003060a21660b2e0baebdee9e88822ac419",
+      "experiments/QUAL-B2-fixed128-recipe-20261116.json": "2156c63f4d09edc4bb71a1455c4005a317aace0c6d6155f6a1caedd249869577"
+    },
+    "foundation": "experiments/OWN17X-cf96-context-tree-20261124.json",
+    "foundation_receipt_sha256": "802bd2ff0caeb5eb8ad05ab3b55b60576afdc5bda5bdb6b6ee3c7f6e3abf8faf"
+  },
+  "official_or_untouched_evaluation": false
+}
