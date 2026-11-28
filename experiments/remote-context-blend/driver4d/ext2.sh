@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Extension queue 2 (declared 2026-11-28T18:55Z in PLAN.md): E3 rbmx2-500 → __knnf → __knn3, then E4 rbmx2-600. Small-memory RBMs, run beside tsvdx6-300.
+# Extension queue 2 (declared 2026-11-28T18:38Z in PLAN.md): E3 rbmx2-500 → __knnf → __knn3, then E4 rbmx2-600. Small-memory RBMs, run beside tsvdx6-300.
 # Never starts work outside the declared queue; never touches other sessions' jobs or trees.
 # Pause: touch $D/STOP (checked before each new launch). Every step logs to $D/driver.log and pushes.
 set -u; setopt NULL_GLOB

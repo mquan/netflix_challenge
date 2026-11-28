@@ -50,7 +50,7 @@ unresolved `rbmx2-500__knn-w`:
 The same return and measurement rules apply: release asset per package, members and hashes, and a bank v2 control with cumulative groups.
 STOP is honoured before each launch.
 
-## Amendment 2026-11-28T18:55Z — extension queue 2 (declared before these jobs run)
+## Amendment 2026-11-28T18:38Z — extension queue 2 (declared before these jobs run)
 The 400 chain finished at 15:19Z (+knn3 −0.000161 vs bank v2, 5/5). rbmx2-500bp→knnf finished at 17:55Z (−0.000548, 5/5). The RBM family is
 paying more than extra Tx capacity. tsvdx6-300 (E2) started at 17:57Z (≈12 min/epoch, 49 GB, ETA ≈03:30Z Nov 29). `ext2.sh` (tmux
 `cf-lanes:ext2`) takes the next resolved, feasible items from the screen ranking. Both are small-memory RBMs, so they run beside tsvdx6-300:
