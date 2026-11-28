@@ -54,6 +54,11 @@ RUNS = [
     ("R2-rbm100-fast", "RBM", "probe_rmse", "epoch", "Conditional RBM learning", "claude"),
     ("P2-rbm200-condbias-scratch", "RBM + context", "probe_rmse", "epoch", "Contextual RBM continuation", "claude"),
     ("B3-full-r128", "Bayesian factors", "mean_probe_rmse", "sweep", "Posterior-mean factor learning", "claude"),
+    ("N2-learned-neighborhood128", "N2 · 128 movie neighbors", "probe_rmse", "epoch", "Learning weights for 128 neighboring movies", "codex"),
+    ("N3-temporal-neighborhood64", "N3 · Time-weighted neighbors", "probe_rmse", "epoch", "Giving more weight to nearby rating dates", "codex"),
+    ("A3-autorec512-reg", "A3 · Denoising AutoRec", "probe_rmse", "epoch", "Reconstructing viewer ratings with a 512-unit autoencoder", "claude"),
+    ("K1-joint256-reg02-d97-mt", "K1 · Temporal SVD++", "probe_rmse", "epoch", "Learning viewer tastes over time with 256 factors", "claude"),
+    ("B4r-full-r128", "B4r · Bayesian factors, resumed", "mean_probe_rmse", "sweep", "Bayesian factors with temporal drift, resumed after sweep 32", "claude"),
 ]
 
 # Selected public Quiz leaderboard observations, not a continuous reconstruction.
@@ -81,6 +86,9 @@ COMPETITION = [
 
 # Score or run-recording commits with an explicit Claude co-author trailer.
 CLAUDE_RECORDS = {
+    "B4r-full-r128": "67ee7a9b03a3a2b5afebdb48c78878c29d163f47",
+    "K1-joint256-reg02-d97-mt": "6c3807c18151e172a1859f35c69a4345506e9662",
+    "A3-autorec512-reg": "f456a7d8c1410506c7be6bc1d9ac7d450738c9b5",
     "B6 tree": "325366559b2e4d6395e160d8c47ac8386b805730",
     "R4-C": "909ff0305d0093b115acdd0c9be9ba501c224eab",
     "R5-meta": "1314dfd4304ee1626b200363e543999f06ef7a3f",
@@ -99,6 +107,8 @@ CLAUDE_RECORDS = {
 
 # Quan-only score commits; the user confirmed these were Codex sessions.
 CODEX_RECORDS = {
+    "N3-temporal-neighborhood64": "700fbeb9af146e73c4d4c0f7387c0e0d5a9581e2",
+    "N2-learned-neighborhood128": "700fbeb9af146e73c4d4c0f7387c0e0d5a9581e2",
     "C0": "4e7f65636a8e3f448e591cb8490ebcb56d513d34",
     "C1": "4e7f65636a8e3f448e591cb8490ebcb56d513d34",
     "C2": "66591d002dbaa4a45524457e162ce49ffa255c29",
