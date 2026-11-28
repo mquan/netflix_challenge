@@ -1,0 +1,11 @@
+# How the winning blend was trained
+
+We trained the component models on Netflix ratings and combined their predictions. The final blend reached **0.85669 RMSE** across 2,817,131 community-recovered qualifying ratings.
+
+**Learn from viewers and movies.** Temporal SVD++ learned shared tastes and how a viewer’s preferences changed over time. An item–item neighborhood model used the viewer’s ratings of related movies to predict the target rating. These were two components of a larger ensemble. The Own17x blend brought together 17 model families and 65 additional predictors trained by the project. Adding CF96 and fitting corrections on known ratings brought the harder qualifying group to 0.860599 RMSE. [Training milestones](https://github.com/mquan/netflix_challenge/blob/gh-pages/OWN_PROGRESS.md)
+
+**Combine the predictions.** Later versions adjusted the blend weights to the viewer’s rating history and added temporal attention and related-title predictions. By November 26 the harder group had reached 0.857521. Several models entered together, so each checkpoint measures the combined change. [November 26 audit](https://mquan.github.io/netflix_challenge/experiments/own-progress-20261126/OWN-final-overnight-20261126.json)
+
+**Use the order of the ratings.** For the final adjustment, we separated related movies the viewer rated before the target date from those rated afterward. We fitted weights on known ratings to account for how much those neighboring ratings differed from their predictions. This adjustment changed 2,317,197 qualifying predictions and brought the harder group to **0.85724395**, just below the 0.85725 target. The other group scored **0.85614526**. [Final model and fitted weights](https://mquan.github.io/netflix_challenge/experiments/own-progress-20261127/OWN-implicit-explicit-direction-20261127.json)
+
+**Verify the result.** An independent audit matched all 2,817,131 predictions to the original qualifying queries, replayed the frozen predictions exactly, and recomputed RMSE separately for each recovered group. These are retrospective scores on community-recovered labels. [Independent score verification](https://mquan.github.io/netflix_challenge/experiments/own-progress-20261127/OWN-direction-target-verification-20261127.json)
