@@ -49,3 +49,14 @@ unresolved `rbmx2-500__knn-w`:
   runs alone after the 400 chain ends. `tsvdx6-300-new` sha256 `d7a41ecc…baa4`.
 The same return and measurement rules apply: release asset per package, members and hashes, and a bank v2 control with cumulative groups.
 STOP is honoured before each launch.
+
+## Amendment 2026-11-28T18:55Z — extension queue 2 (declared before these jobs run)
+The 400 chain finished at 15:19Z (+knn3 −0.000161 vs bank v2, 5/5). rbmx2-500bp→knnf finished at 17:55Z (−0.000548, 5/5). The RBM family is
+paying more than extra Tx capacity. tsvdx6-300 (E2) started at 17:57Z (≈12 min/epoch, 49 GB, ETA ≈03:30Z Nov 29). `ext2.sh` (tmux
+`cf-lanes:ext2`) takes the next resolved, feasible items from the screen ranking. Both are small-memory RBMs, so they run beside tsvdx6-300:
+* **E3 `rbmx2-500` → `__knnf` → `__knn3`** (bundle #10 −0.001317; knnf and knn3 are marked verified upstream). Eval groups base, knnf, knn3.
+* **E4 `rbmx2-600`** (#24 rbmx2-600_ep27 −0.001100; 27 epochs, so ep27 is the terminal vector). Eval group base.
+Skipped: `tsvdx5-1000` NLPP chain (#1). Extrapolating 300→53.5 GB and 400→67.2 GB puts it at about 150 GB, more than the 96 GB machine.
+`rbmx2-800bp` (#16): the pinned source sets `n_epochs: 3`, but the pipeline keeps epochs 3/24/27, so the screened bundle is not reproducible
+from the pin. `rbmx2-500__knn-w`/`__knn-m` are unresolved. Same rules as before: same tree and binary (`rbmx2-new` 9c34678f…1a03), STOP honoured,
+one release asset per package, and a bank v2 control.
