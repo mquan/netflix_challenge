@@ -61,3 +61,9 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 - Bank v2 control 0.863155, cumulative (lane-nlpp400/*/table.md): +base −0.000044, +nlpp −0.000136, +knn3 −0.000161, all 5/5. Slightly better than the 300 chain (−0.000126). Paropt saw all probex labels, so the nlpp/knn3 rows are development diagnostics.
 - Release assets: rcb-tsvdx5-400 (695,231,635 B, e4430ac9…a2da), rcb-tsvdx5-400__nlpp_paropt (8,342 B, b3ddd35b…fe34), rcb-tsvdx5-400__nlpp (695,768,260 B, 147c1021…ff8c), rcb-tsvdx5-400__nlpp__knn3 (13,403,947 B, 4bc17969…d989). Members: driver4d/*.members.sha256.
 - rbmx2-500bp: phase 1 probex 0.89955 (best epoch 16 at 0.89673, then overfits); phase 2 at epoch 20/30 at 15:12Z. It slowed to ≈17 min/epoch while tsvdx5-400 ran. ext.sh then runs knnf, then tsvdx6-300 (8 threads).
+
+### 2026-11-28T18:00Z — rbmx2-500bp → knnf complete (ext E1)
+- rbmx2-500bp exited 0 at 17:54Z, and __knnf exited 0 at 17:55Z. Phase 1 probex 0.89955.
+- Bank v2 control 0.863155, cumulative (lane-ext/rbmx2-500bp/table.md): +base −0.000222, +snap ep29 −0.000243, +knnf −0.000548, all 5/5. This is the largest gain from one parent after 4800lm (−0.000822). The RBM's diversity pays more than the extra tsvdx5 capacity.
+- Release assets: rcb-rbmx2-500bp (427,791,351 B, 8ad612ed…8db4), rcb-rbmx2-500bp-parents (1,010,623,265 B, e3532311…f6818).
+- tsvdx6-300 (ext E2, 8 threads) started at 17:57Z.
