@@ -67,7 +67,7 @@
 
 
     <details id="milestones">
-      <summary>Research milestones</summary>
+      <summary id="milestones-summary">Research milestones (110)</summary>
       <div class="ledger-wrap"><table class="ledger"><thead><tr><th>When (Pacific)</th><th>Milestone</th><th>Strategy</th><th>Evaluation</th><th>RMSE</th><th>Credit evidence</th></tr></thead><tbody id="milestone-rows"></tbody></table></div>
     </details>
 
@@ -155,6 +155,7 @@
   function textNode(x,y,value,cls,anchor){const e=svgEl('text',{x,y,class:cls,'text-anchor':anchor||'start'});e.textContent=value;return e;}
   function showTip(tip,shell,text,x,y){tip.innerHTML=text;tip.style.display='block';const sw=shell.clientWidth,tw=tip.offsetWidth;tip.style.left=Math.max(8,Math.min(sw-tw-8,x))+'px';tip.style.top=Math.max(4,y-12-tip.offsetHeight)+'px';}
   function hideTip(tip){tip.style.display='none';}
+  document.getElementById("milestones-summary").textContent = `Research milestones (${DATA.milestones.length})`;
   const milestoneTable = $('milestones');
   function openLinkedMilestones() {
     if (location.hash === '#milestones') milestoneTable.open = true;
