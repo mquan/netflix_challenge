@@ -50,3 +50,8 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 ## 2026-11-28T04:30Z — NLPP300 chain done; 400 chain + extension queue running
 - tsvdx5-300 probex 0.87646 (peak 53.5 GB), nlpp 0.87412, knn3 0.87040; bank v2 +base −0.000025, +nlpp −0.000097, +knn3 −0.000126 (5/5, post-paropt diagnostics). All four stage assets released.
 - tsvdx5-400 chain started 04:21Z. Extension (driver4d/PLAN.md amendment): rbmx2-500bp→knnf running beside it; tsvdx6-300 after the 400 chain.
+
+## 2026-11-28T04:50Z — cadence
+- tsvdx5-400: ≈12 min/epoch, 60 GB footprint (+38 GB compressed), 47% free. Base ETA ≈15:00Z Nov 28; chain ≈15:15Z.
+- rbmx2-500bp: ≈6.5 min/epoch, 8.5 GB. ETA both phases ≈11:00Z Nov 28, then knnf (minutes).
+- tsvdx6-300 after the 400 chain: ≈3.6 h/phase by analogy with tsvdx5-300 → ≈23:00Z Nov 28.
