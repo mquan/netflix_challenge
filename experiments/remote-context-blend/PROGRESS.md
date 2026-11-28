@@ -55,3 +55,9 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 - tsvdx5-400: ≈12 min/epoch, 60 GB footprint (+38 GB compressed), 47% free. Base ETA ≈15:00Z Nov 28; chain ≈15:15Z.
 - rbmx2-500bp: ≈6.5 min/epoch, 8.5 GB. ETA both phases ≈11:00Z Nov 28, then knnf (minutes).
 - tsvdx6-300 after the 400 chain: ≈3.6 h/phase by analogy with tsvdx5-300 → ≈23:00Z Nov 28.
+
+### 2026-11-28T15:30Z — tsvdx5-400 NLPP chain complete (driver4d step 4)
+- tsvdx5-400 04:22Z → 15:09Z, exit 0, max RSS 67.2 GB, probex 0.87538 (tsvdx5-300: 0.87646). paropt exit 0 (6.4 GB); __nlpp probex 0.87330 (8.8 GB); __nlpp__knn3 probex 0.87018 (5.5 GB). No guard trips.
+- Bank v2 control 0.863155, cumulative (lane-nlpp400/*/table.md): +base −0.000044, +nlpp −0.000136, +knn3 −0.000161, all 5/5. Slightly better than the 300 chain (−0.000126). Paropt saw all probex labels, so the nlpp/knn3 rows are development diagnostics.
+- Release assets: rcb-tsvdx5-400 (695,231,635 B, e4430ac9…a2da), rcb-tsvdx5-400__nlpp_paropt (8,342 B, b3ddd35b…fe34), rcb-tsvdx5-400__nlpp (695,768,260 B, 147c1021…ff8c), rcb-tsvdx5-400__nlpp__knn3 (13,403,947 B, 4bc17969…d989). Members: driver4d/*.members.sha256.
+- rbmx2-500bp: phase 1 probex 0.89955 (best epoch 16 at 0.89673, then overfits); phase 2 at epoch 20/30 at 15:12Z. It slowed to ≈17 min/epoch while tsvdx5-400 ran. ext.sh then runs knnf, then tsvdx6-300 (8 threads).
