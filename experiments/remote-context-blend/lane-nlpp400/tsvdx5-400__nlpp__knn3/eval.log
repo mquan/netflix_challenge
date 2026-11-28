@@ -1,0 +1,11 @@
+0 {'bank': 0.86257, 'bank+base': 0.862524, 'bank+base+nlpp': 0.862434, 'bank+base+nlpp+knn3': 0.862405}
+1 {'bank': 0.860546, 'bank+base': 0.860509, 'bank+base+nlpp': 0.860409, 'bank+base+nlpp+knn3': 0.860383}
+2 {'bank': 0.863908, 'bank+base': 0.863847, 'bank+base+nlpp': 0.863782, 'bank+base+nlpp+knn3': 0.86376}
+3 {'bank': 0.864826, 'bank+base': 0.864795, 'bank+base+nlpp': 0.864684, 'bank+base+nlpp+knn3': 0.864661}
+4 {'bank': 0.863929, 'bank+base': 0.863882, 'bank+base+nlpp': 0.863791, 'bank+base+nlpp+knn3': 0.863763}
+| arm | pooled | Δ vs bank | folds better |
+|---|---|---|---|
+| bank | 0.863155 |  |  |
+| bank+base | 0.863111 | -0.000044 | 5/5 |
+| bank+base+nlpp | 0.863019 | -0.000136 | 5/5 |
+| bank+base+nlpp+knn3 | 0.862994 | -0.000161 | 5/5 |
