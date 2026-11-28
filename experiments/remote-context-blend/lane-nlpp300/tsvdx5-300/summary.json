@@ -1,0 +1,92 @@
+{
+ "preds_dir": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new",
+ "groups": {
+  "base": [
+   "tsvdx5-300"
+  ]
+ },
+ "missing_groups": [],
+ "columns": {
+  "tsvdx5-300": {
+   "group": "base",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300.probex.npy",
+    "sha256": "077d4c64768afdf8e3704a92ffc19559c39d0a99b9068c04a65a713537562b62",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T00:35:41Z",
+    "min": -0.21136276423931122,
+    "max": 6.447295188903809
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300.qual.npy",
+    "sha256": "1a7666359b1d3d80d0b4941891cb6905d9b5d9e52a06b1873452dc27d03eef7a",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T04:11:25Z",
+    "min": -0.9492641687393188,
+    "max": 6.50208854675293
+   },
+   "probex_rmse_raw": 0.8757419586181641
+  }
+ },
+ "pooled": {
+  "bank": 0.8631551888911532,
+  "bank+base": 0.8631301498550968
+ },
+ "per_fold": {
+  "bank": [
+   0.8625701656138197,
+   0.8605459123563716,
+   0.8639080501081021,
+   0.864826012154056,
+   0.8639289542717694
+  ],
+  "bank+base": [
+   0.8625463809712861,
+   0.8605207947133261,
+   0.863873130505335,
+   0.8648078594169505,
+   0.8639056430026587
+  ]
+ },
+ "steps": {
+  "bank+base vs bank": {
+   "delta": -2.5039036056329067e-05,
+   "fold_deltas": [
+    -2.378464253360857e-05,
+    -2.511764304546915e-05,
+    -3.4919602767136126e-05,
+    -1.8152737105481265e-05,
+    -2.3311269110704025e-05
+   ],
+   "folds_better": 5
+  }
+ },
+ "vs_bank": {
+  "bank+base vs bank": {
+   "delta": -2.5039036056329067e-05,
+   "fold_deltas": [
+    -2.378464253360857e-05,
+    -2.511764304546915e-05,
+    -3.4919602767136126e-05,
+    -1.8152737105481265e-05,
+    -2.3311269110704025e-05
+   ],
+   "folds_better": 5
+  }
+ },
+ "bank": "bank v2 (65 native columns), known probex rows",
+ "rows": 1128164,
+ "protocol": "global ridge lambda=1000, unpenalized intercept, 5 user folds seed 20261116, outer-train fit only",
+ "qualifying_labels_read": false,
+ "generated_utc": "2026-11-28T04:15:52Z"
+}
