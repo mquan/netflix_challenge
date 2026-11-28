@@ -1,0 +1,67 @@
+{
+  "name": "K1-joint256-reg02-d97-mt",
+  "strategy": "Round 6: converged timeSVD++ family. 256 factors, reg .02, slow decay .97, up to 80 epochs; Hogwild 6-thread SGD (new --threads) so long schedules fit in wall time",
+  "command": [
+    "build/netflix",
+    "joint",
+    "--data",
+    "data/processed/netflix.bin",
+    "--model",
+    "artifacts/K1-joint256.bin",
+    "--predictions",
+    "artifacts/K1-joint256.f32",
+    "--factors",
+    "256",
+    "--iterations",
+    "80",
+    "--learning-rate",
+    ".008",
+    "--regularization",
+    ".02",
+    "--decay",
+    ".97",
+    "--patience",
+    "8",
+    "--threads",
+    "6"
+  ],
+  "started_utc": "2026-09-28T05:05:06.418945+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "git_commit": "8ff19b018d6232056af6af5bc39692b49ac6fbe7",
+  "sources": {
+    "src/moonshot_user_kernel.cpp": "494f0749477fb179609b11df2e405d718aebf53947a4ca04826f543e913fa4f4",
+    "src/neighborhood.hpp": "849fc95edc9f4057f6d103452550fb193095b747430b81d2e74dc9b0f06d95b6",
+    "src/integrated.hpp": "95f7dfbf82a20bb1d730535149cf3066188c4b52dbaf5217c1292248e4df5860",
+    "src/rbm.hpp": "11738e119277d942d5c7840469076a7083a3696e7144e44fc3cd160f10af23b7",
+    "src/netflix.cpp": "14a954ccddf653795cda9a5d87b1f2091e500df0dc1125de6f1cd6a56f76695c",
+    "src/ensemble.hpp": "9c32c60c188cde52994f5c7015b441d2074697c31665e077a58c9a5fb3466872",
+    "src/moonshot_local.cpp": "3f7d8fe74d8f6c2c5aa9afaac8f0bed146b4daf844001a40ccf19e81ca5f130b",
+    "src/moonshot_gp.cpp": "da3072d8a5a44637cd36183086ed60a116ecbb10cce925741e50db8f452d0fe0",
+    "src/joint.hpp": "53f4b3b4115d8014027e2cab230f1e6ed1daca85f69044f94e5b2dbb895c8acc"
+  },
+  "binary_sha256": "03e662e9621a6db83841a819ff5b892246a74b20feeaa64837d01cebd6e8cdcb",
+  "metric": "Full Netflix probe development RMSE; no independent test claim",
+  "inputs": {
+    "data/processed/netflix.bin": {
+      "sha256": "08b417f7601339c95727cd02af4f839b6043c326a5fb0350245a1f6f2054c673",
+      "bytes": 933134948
+    }
+  },
+  "launched_utc": "2026-09-28T05:05:07.155904+00:00",
+  "events_path": "experiments/K1-joint256-reg02-d97-mt.events.jsonl",
+  "exit_code": 0,
+  "elapsed_seconds": 3518.6030086250394,
+  "finished_utc": "2026-09-28T06:03:45.775877+00:00",
+  "log_sha256": "9940aa4e90167b21bb35c758e879a3d40edbd385f5b7adf5fe3705f8f998018c",
+  "events_sha256": "20e1287048d1605f730d1312aac856c1cfba6b0d36fd157c34171c4d9ba30455",
+  "model_artifact": {
+    "path": "artifacts/K1-joint256.bin",
+    "sha256": "e4dc4609f7d01b2bc6b8b3bf74e6b0bdc136c26c41092ab7c50e57d6406fb6d7",
+    "bytes": 1173446408
+  },
+  "predictions_artifact": {
+    "path": "artifacts/K1-joint256.f32",
+    "sha256": "3dcc954bf930056631e0e95201b7d234ac0ad9e98dddde9e62fdaec8b5b84ac3",
+    "bytes": 5633580
+  }
+}
