@@ -1,0 +1,155 @@
+{
+ "preds_dir": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new",
+ "groups": {
+  "base": [
+   "tsvdx5-300"
+  ],
+  "nlpp": [
+   "tsvdx5-300__nlpp"
+  ]
+ },
+ "missing_groups": [],
+ "columns": {
+  "tsvdx5-300": {
+   "group": "base",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300.probex.npy",
+    "sha256": "077d4c64768afdf8e3704a92ffc19559c39d0a99b9068c04a65a713537562b62",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T00:35:41Z",
+    "min": -0.21136276423931122,
+    "max": 6.447295188903809
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300.qual.npy",
+    "sha256": "1a7666359b1d3d80d0b4941891cb6905d9b5d9e52a06b1873452dc27d03eef7a",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T04:11:25Z",
+    "min": -0.9492641687393188,
+    "max": 6.50208854675293
+   },
+   "probex_rmse_raw": 0.8757419586181641
+  },
+  "tsvdx5-300__nlpp": {
+   "group": "nlpp",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300__nlpp.probex.npy",
+    "sha256": "350935551c3aa7894728f74c23bb19d5221d29e07613de9ef397d4e764713a7a",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T04:18:10Z",
+    "min": -2.808777093887329,
+    "max": 6.195204734802246
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-nlpp300/source/preds_new/tsvdx5-300__nlpp.qual.npy",
+    "sha256": "84dcac62ee0c282e614fb56678f4bfa43cb59343ff476dd31c0c593c52de0adf",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T04:18:22Z",
+    "min": -6.6899824142456055,
+    "max": 6.301336765289307
+   },
+   "probex_rmse_raw": 0.8736512660980225
+  }
+ },
+ "pooled": {
+  "bank": 0.8631551888911532,
+  "bank+base": 0.8631301498550968,
+  "bank+base+nlpp": 0.863058227874761
+ },
+ "per_fold": {
+  "bank": [
+   0.8625701656138197,
+   0.8605459123563716,
+   0.8639080501081021,
+   0.864826012154056,
+   0.8639289542717694
+  ],
+  "bank+base": [
+   0.8625463809712861,
+   0.8605207947133261,
+   0.863873130505335,
+   0.8648078594169505,
+   0.8639056430026587
+  ],
+  "bank+base+nlpp": [
+   0.8624744823888901,
+   0.8604517167694525,
+   0.8638282548432321,
+   0.8647092676156731,
+   0.8638307358195618
+  ]
+ },
+ "steps": {
+  "bank+base vs bank": {
+   "delta": -2.5039036056329067e-05,
+   "fold_deltas": [
+    -2.378464253360857e-05,
+    -2.511764304546915e-05,
+    -3.4919602767136126e-05,
+    -1.8152737105481265e-05,
+    -2.3311269110704025e-05
+   ],
+   "folds_better": 5
+  },
+  "bank+base+nlpp vs bank+base": {
+   "delta": -7.192198033578734e-05,
+   "fold_deltas": [
+    -7.189858239597946e-05,
+    -6.907794387356336e-05,
+    -4.4875662102872305e-05,
+    -9.8591801277359e-05,
+    -7.490718309688393e-05
+   ],
+   "folds_better": 5
+  }
+ },
+ "vs_bank": {
+  "bank+base vs bank": {
+   "delta": -2.5039036056329067e-05,
+   "fold_deltas": [
+    -2.378464253360857e-05,
+    -2.511764304546915e-05,
+    -3.4919602767136126e-05,
+    -1.8152737105481265e-05,
+    -2.3311269110704025e-05
+   ],
+   "folds_better": 5
+  },
+  "bank+base+nlpp vs bank": {
+   "delta": -9.69610163921164e-05,
+   "fold_deltas": [
+    -9.568322492958803e-05,
+    -9.419558691903251e-05,
+    -7.979526487000843e-05,
+    -0.00011674453838284027,
+    -9.821845220758796e-05
+   ],
+   "folds_better": 5
+  }
+ },
+ "bank": "bank v2 (65 native columns), known probex rows",
+ "rows": 1128164,
+ "protocol": "global ridge lambda=1000, unpenalized intercept, 5 user folds seed 20261116, outer-train fit only",
+ "qualifying_labels_read": false,
+ "generated_utc": "2026-11-28T04:21:06Z"
+}
