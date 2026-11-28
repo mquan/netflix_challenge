@@ -126,6 +126,23 @@ CODEX_RECORDS = {
 RECORD_COMMITS = {**CLAUDE_RECORDS, **CODEX_RECORDS}
 
 
+def integrated_rank64_curve():
+    source = "experiments/own-progress-20261127/integrated-rank64-epochs.log"
+    points = []
+    seconds = 0.0
+    for line in (ROOT / source).read_text().splitlines():
+        if line.startswith("epoch="):
+            fields = dict(field.split("=", 1) for field in line.split())
+            seconds += float(fields["seconds"])
+            points.append([round(seconds / 3600, 4), float(fields["probe_rmse"]), int(fields["epoch"])])
+    if [p[2] for p in points] != list(range(1, 24)):
+        raise ValueError("Expected integrated training epochs 1 through 23")
+    return dict(id="integrated-rank64", label="Winning blend component · temporal SVD++ and neighbors",
+                description="64-factor temporal SVD++ with learned item neighbors", metric="probe_rmse",
+                step="epoch", points=points, elapsedHours=seconds / 3600, source=source,
+                epochClock=True)
+
+
 def run_curve(name, label, metric, step_key, description, credit):
     manifest = json.loads((EXPERIMENTS / (name + ".json")).read_text())
     start = dt.datetime.fromisoformat(manifest["started_utc"])
@@ -204,7 +221,7 @@ def main():
         raise ValueError("Main journey must descend; document screens separately")
     if any(before["score"] <= after["score"] for before, after in zip(COMPETITION, COMPETITION[1:])):
         raise ValueError("Selected competition leaderboard milestones must descend")
-    payload = dict(milestones=items, runs=[run_curve(*run) for run in RUNS], competition=COMPETITION)
+    payload = dict(milestones=items, runs=[integrated_rank64_curve()] + [run_curve(*run) for run in RUNS], competition=COMPETITION)
     template = (ROOT / "research_journey.template.html").read_text()
     marker = "__JOURNEY_DATA__"
     if template.count(marker) != 1:
