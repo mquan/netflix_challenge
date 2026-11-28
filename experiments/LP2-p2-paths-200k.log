@@ -1,0 +1,200 @@
+building training index: 97664546 ratings
+index_seconds=2.57; extracting 200000 queries
+queries=2000 seconds=1.7
+queries=4000 seconds=3.3
+queries=6000 seconds=5.0
+queries=8000 seconds=6.6
+queries=10000 seconds=8.2
+queries=12000 seconds=9.8
+queries=14000 seconds=11.3
+queries=16000 seconds=12.9
+queries=18000 seconds=14.5
+queries=20000 seconds=16.1
+queries=22000 seconds=17.7
+queries=24000 seconds=19.4
+queries=26000 seconds=21.2
+queries=28000 seconds=22.9
+queries=30000 seconds=24.6
+queries=32000 seconds=26.2
+queries=34000 seconds=27.9
+queries=36000 seconds=29.7
+queries=38000 seconds=31.5
+queries=40000 seconds=33.3
+queries=42000 seconds=35.0
+queries=44000 seconds=36.7
+queries=46000 seconds=38.5
+queries=48000 seconds=40.2
+queries=50000 seconds=41.9
+queries=52000 seconds=43.6
+queries=54000 seconds=45.4
+queries=56000 seconds=47.1
+queries=58000 seconds=48.9
+queries=60000 seconds=50.6
+queries=62000 seconds=52.4
+queries=64000 seconds=54.2
+queries=66000 seconds=55.9
+queries=68000 seconds=57.7
+queries=70000 seconds=59.3
+queries=72000 seconds=61.0
+queries=74000 seconds=62.5
+queries=76000 seconds=64.3
+queries=78000 seconds=66.0
+queries=80000 seconds=67.7
+queries=82000 seconds=69.3
+queries=84000 seconds=71.0
+queries=86000 seconds=72.7
+queries=88000 seconds=74.4
+queries=90000 seconds=76.1
+queries=92000 seconds=77.9
+queries=94000 seconds=79.6
+queries=96000 seconds=81.3
+queries=98000 seconds=83.1
+queries=100000 seconds=84.8
+queries=102000 seconds=86.7
+queries=104000 seconds=88.5
+queries=106000 seconds=90.4
+queries=108000 seconds=92.2
+queries=110000 seconds=94.0
+queries=112000 seconds=95.8
+queries=114000 seconds=97.6
+queries=116000 seconds=99.4
+queries=118000 seconds=101.0
+queries=120000 seconds=102.7
+queries=122000 seconds=104.3
+queries=124000 seconds=105.9
+queries=126000 seconds=107.5
+queries=128000 seconds=109.2
+queries=130000 seconds=110.7
+queries=132000 seconds=112.3
+queries=134000 seconds=114.0
+queries=136000 seconds=115.6
+queries=138000 seconds=117.3
+queries=140000 seconds=119.1
+queries=142000 seconds=120.8
+queries=144000 seconds=122.4
+queries=146000 seconds=123.9
+queries=148000 seconds=125.4
+queries=150000 seconds=126.9
+queries=152000 seconds=128.4
+queries=154000 seconds=129.9
+queries=156000 seconds=131.5
+queries=158000 seconds=133.1
+queries=160000 seconds=134.6
+queries=162000 seconds=136.2
+queries=164000 seconds=137.8
+queries=166000 seconds=139.2
+queries=168000 seconds=140.8
+queries=170000 seconds=142.1
+queries=172000 seconds=143.6
+queries=174000 seconds=145.0
+queries=176000 seconds=146.3
+queries=178000 seconds=147.8
+queries=180000 seconds=149.3
+queries=182000 seconds=150.7
+queries=184000 seconds=152.1
+queries=186000 seconds=153.5
+queries=188000 seconds=154.7
+queries=190000 seconds=156.1
+queries=192000 seconds=157.2
+queries=194000 seconds=158.6
+queries=196000 seconds=159.5
+queries=198000 seconds=160.5
+queries=200000 seconds=161.3
+{
+  "arguments": {
+    "data": "artifacts/validation/train-matched-20260927.bin",
+    "output": "artifacts/local-paths/LP2-p2-200k",
+    "queries": 200000,
+    "history": 32,
+    "neighbors": 32,
+    "candidates": 256,
+    "seed": 20261013
+  },
+  "data_sha256": "94932220829f3ed80e1396688ba5a670f61dd6a44ff0f89a551e1e7fae9b44b8",
+  "source_sha256": {
+    "/Users/quan/workspace/netflix_challenge/scripts/local_paths_pilot.py": "c0a817ed89c6b6c0ef6370b5bd624d7b1b50e7d4e1d1ff35d2268443b6bcada4",
+    "/Users/quan/workspace/netflix_challenge/scripts/gbdt_blend.py": "f2c2779fed04f9de2dad19311bf10cf901cc2aaadaad5784c99cd219bcfc5f9c",
+    "/Users/quan/workspace/netflix_challenge/scripts/train_holdout.py": "dec221c0b3c0feb7e1d1d68103477a301582587e53d62ca87b3102d1f7a449d2"
+  },
+  "metric": "training-only P2 pilot; no original-probe or ensemble improvement claim",
+  "query_count": 200000,
+  "full_query_count": 1407566,
+  "index_seconds": 2.565120541024953,
+  "extraction_seconds": 161.29495141597,
+  "signal_seconds": 0.8701938329031691,
+  "queries_per_second": 1239.964414535282,
+  "projected_full_extraction_seconds": 1135.1664479238561,
+  "peak_rss_bytes": 3336421376,
+  "index_bytes": 781600712,
+  "path_coverage": 0.999925,
+  "retained_intersection_density": 0.6293328627722204,
+  "history": {
+    "mean": 28.485085,
+    "p50": 32.0,
+    "p95": 32.0,
+    "max": 32
+  },
+  "neighbors": {
+    "mean": 31.97259,
+    "p50": 32.0,
+    "p95": 32.0,
+    "max": 32
+  },
+  "paths": {
+    "mean": 573.58815,
+    "p50": 603.0,
+    "p95": 848.0,
+    "max": 1012
+  },
+  "candidates": {
+    "mean": 254.46495,
+    "p50": 256.0,
+    "p95": 256.0,
+    "max": 256
+  },
+  "signal": {
+    "protocol": "P2 user folds 2-4 fit, 1 select, 0 evaluate; refit on 1-4",
+    "fit_rows": 120195,
+    "selection_rows": 39918,
+    "evaluation_rows": 39887,
+    "evaluation_users": 33109,
+    "models": {
+      "pooled_knn": {
+        "selected_regularization": 100.0,
+        "selection_rmse": {
+          "1": 0.9490130487444588,
+          "10": 0.9490116601841778,
+          "100": 0.949009853468022,
+          "1000": 0.9492072743600874
+        },
+        "evaluation_rmse": 0.9432224793528791
+      },
+      "pooled_knn_paths": {
+        "selected_regularization": 100.0,
+        "selection_rmse": {
+          "1": 0.9429806806320841,
+          "10": 0.9429782194673768,
+          "100": 0.942967737650885,
+          "1000": 0.9434323585125812
+        },
+        "evaluation_rmse": 0.9375359904048982
+      }
+    },
+    "matched_knn_rmse": 0.9542557004973625,
+    "delta_rmse": -0.00568648894798085,
+    "delta_mse": -0.010694912252098872,
+    "cluster_normal_95_mse_interval": [
+      -0.013102249735490772,
+      -0.008287574768706972
+    ],
+    "history_le_20": {
+      "evaluation_rows": 5736,
+      "delta_rmse": -0.004115642027305855
+    },
+    "history_gt_20": {
+      "evaluation_rows": 34151,
+      "delta_rmse": -0.0059760824014026825
+    }
+  },
+  "sample_sha256": "2572b2168e69e420e5b2423c7bbc6c075e10b5bcbb5bd91af938383ed86e6661"
+}
