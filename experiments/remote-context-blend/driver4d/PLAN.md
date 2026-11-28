@@ -35,3 +35,17 @@ split into `.part-aa…` above 1.9 GB. Member hashes are in `driver4d/<name>.mem
 A failed stage still has its partial outputs and logs released.
 
 Owner approved item 4 (tsvdx5-400 chain) on 2026-11-26T04:52:42Z.
+
+## Amendment 2026-11-28T04:45Z — extension queue (declared before these jobs run)
+The NLPP300 chain finished about 1.5 days earlier than planned. Base, paropt, nlpp and knn3 all exited 0. Against bank v2:
++base −0.000025, +nlpp −0.000097, +knn3 −0.000126 (5/5; probex diagnostics after paropt). The 400 chain started
+04:21Z Nov 28. To keep the machine busy through Nov 30, `ext.sh` (tmux `cf-lanes:ext`) adds the next resolved pinned
+packages from the coordinator's screen ranking (`experiments/upstream-missing-screen`), in order, skipping the
+unresolved `rbmx2-500__knn-w`:
+* **E1 `rbmx2-500bp` → `__knnf`** (screen #6, −0.001359). This is an RBM family, so it is decorrelated from the Tx
+  parents. Its memory is small, so it runs beside the 400 chain with 6 threads. Tree `artifacts/rcb-rbm500bp` (pin, data identical),
+  `rbmx2-new` sha256 `9c34678f…1a03`.
+* **E2 `tsvdx6-300`** (screen #10 bundle, −0.001280; columns: base + epochs 3/12/20). The source-derived floor is 50.17 GB, so it
+  runs alone after the 400 chain ends. `tsvdx6-300-new` sha256 `d7a41ecc…baa4`.
+The same return and measurement rules apply: release asset per package, members and hashes, and a bank v2 control with cumulative groups.
+STOP is honoured before each launch.

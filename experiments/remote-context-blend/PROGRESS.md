@@ -46,3 +46,7 @@ Next: RBM400 LR 0.015 native repackage; bank inventory (`bank.json`); blend code
 ## 2026-11-27T21:25Z — 4800lm package complete; NLPP300 base running
 - 4800lm exit 0 (peak 37.1 GB); knnf/knns/diff1/knn-d all exit 0. Bank v2: +base −0.000384, +snaps −0.000428, +knnf/knns −0.000786, +knn-d −0.000822 (all 5/5). Assets rcb-4800lm-{base,parents,resid,knnd} on release (driver4d/*.assets.txt).
 - tsvdx5-300 started 21:02Z: ≈9.3 min/epoch, 46 GB footprint, 88% free. ETA base both phases ≈05:00Z Nov 28; paropt/nlpp/knn3 after (paropt time unmeasured).
+
+## 2026-11-28T04:30Z — NLPP300 chain done; 400 chain + extension queue running
+- tsvdx5-300 probex 0.87646 (peak 53.5 GB), nlpp 0.87412, knn3 0.87040; bank v2 +base −0.000025, +nlpp −0.000097, +knn3 −0.000126 (5/5, post-paropt diagnostics). All four stage assets released.
+- tsvdx5-400 chain started 04:21Z. Extension (driver4d/PLAN.md amendment): rbmx2-500bp→knnf running beside it; tsvdx6-300 after the 400 chain.
