@@ -1,0 +1,218 @@
+{
+ "preds_dir": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new",
+ "groups": {
+  "base": [
+   "rbmx2-500bp"
+  ],
+  "snap": [
+   "rbmx2-500bp_ep29"
+  ],
+  "knnf": [
+   "rbmx2-500bp__knnf"
+  ]
+ },
+ "missing_groups": [],
+ "columns": {
+  "rbmx2-500bp": {
+   "group": "base",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp.probex.npy",
+    "sha256": "814884073e2c2f1efc42c3fdcde1be407bfb5461f852e382ef1c3495222a3a57",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T11:10:13Z",
+    "min": 1.0,
+    "max": 5.0
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp.qual.npy",
+    "sha256": "c538f1a4118602febe4fc73033072e604610124a8da7e7106b984f9bffbefb64",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T17:53:34Z",
+    "min": 1.0,
+    "max": 5.0
+   },
+   "probex_rmse_raw": 0.899540901184082
+  },
+  "rbmx2-500bp_ep29": {
+   "group": "snap",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp_ep29.probex.npy",
+    "sha256": "ca326bb1dec086882ae4439f49c070e41b738f36a135c04737a7cdcafc2308b3",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T10:53:42Z",
+    "min": 1.0,
+    "max": 5.0
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp_ep29.qual.npy",
+    "sha256": "1138406c784e46865dbbbff3cffb5f6e3aa898458da208501e675bf465d20fed",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T17:37:38Z",
+    "min": 1.0,
+    "max": 5.0
+   },
+   "probex_rmse_raw": 0.8990898132324219
+  },
+  "rbmx2-500bp__knnf": {
+   "group": "knnf",
+   "probex": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp__knnf.probex.npy",
+    "sha256": "ed1dd67d18b775f914957cef6615e837e3b84077ca6d09d0542dad5173faf1ac",
+    "shape": [
+     1128164
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T17:54:32Z",
+    "min": -0.10913193225860596,
+    "max": 6.083095550537109
+   },
+   "qual": {
+    "path": "/Users/quan/workspace/netflix_remote_context_blend/artifacts/rcb-rbm500bp/source/preds_new/rbmx2-500bp__knnf.qual.npy",
+    "sha256": "59138b40837a1647c82da261e04cc4c4f6212b18d0b3cb0151aead51e3149954",
+    "shape": [
+     2817131
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "ok": true,
+    "mtime_utc": "2026-11-28T17:55:32Z",
+    "min": -0.898688793182373,
+    "max": 5.839146614074707
+   },
+   "probex_rmse_raw": 0.8922317624092102
+  }
+ },
+ "pooled": {
+  "bank": 0.8631551888911532,
+  "bank+base": 0.8629335693836183,
+  "bank+base+snap": 0.862911888513527,
+  "bank+base+snap+knnf": 0.8626072189020217
+ },
+ "per_fold": {
+  "bank": [
+   0.8625701656138197,
+   0.8605459123563716,
+   0.8639080501081021,
+   0.864826012154056,
+   0.8639289542717694
+  ],
+  "bank+base": [
+   0.862364913184735,
+   0.8603207275280643,
+   0.8636897800687294,
+   0.8646040028439053,
+   0.8636915322796854
+  ],
+  "bank+base+snap": [
+   0.8623577467982505,
+   0.8602929939972578,
+   0.8636555342855173,
+   0.8645904516316748,
+   0.8636656509462135
+  ],
+  "bank+base+snap+knnf": [
+   0.8620663985984556,
+   0.8599639225923247,
+   0.863358266872993,
+   0.8642449527617576,
+   0.8634055110991892
+  ]
+ },
+ "steps": {
+  "bank+base vs bank": {
+   "delta": -0.0002216195075348537,
+   "fold_deltas": [
+    -0.00020525242908475683,
+    -0.0002251848283072455,
+    -0.00021827003937269218,
+    -0.0002220093101507059,
+    -0.00023742199208398596
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snap vs bank+base": {
+   "delta": -2.168087009135622e-05,
+   "fold_deltas": [
+    -7.166386484458442e-06,
+    -2.773353080653962e-05,
+    -3.4245783212094594e-05,
+    -1.3551212230455967e-05,
+    -2.588133347192212e-05
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snap+knnf vs bank+base+snap": {
+   "delta": -0.000304669611505215,
+   "fold_deltas": [
+    -0.00029134819979492743,
+    -0.00032907140493310116,
+    -0.00029726741252433797,
+    -0.0003454988699171935,
+    -0.0002601398470243321
+   ],
+   "folds_better": 5
+  }
+ },
+ "vs_bank": {
+  "bank+base vs bank": {
+   "delta": -0.0002216195075348537,
+   "fold_deltas": [
+    -0.00020525242908475683,
+    -0.0002251848283072455,
+    -0.00021827003937269218,
+    -0.0002220093101507059,
+    -0.00023742199208398596
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snap vs bank": {
+   "delta": -0.00024330037762620993,
+   "fold_deltas": [
+    -0.00021241881556921527,
+    -0.00025291835911378513,
+    -0.0002525158225847868,
+    -0.00023556052238116187,
+    -0.0002633033255559081
+   ],
+   "folds_better": 5
+  },
+  "bank+base+snap+knnf vs bank": {
+   "delta": -0.0005479699891314249,
+   "fold_deltas": [
+    -0.0005037670153641427,
+    -0.0005819897640468863,
+    -0.0005497832351091247,
+    -0.0005810593922983553,
+    -0.0005234431725802402
+   ],
+   "folds_better": 5
+  }
+ },
+ "bank": "bank v2 (65 native columns), known probex rows",
+ "rows": 1128164,
+ "protocol": "global ridge lambda=1000, unpenalized intercept, 5 user folds seed 20261116, outer-train fit only",
+ "qualifying_labels_read": false,
+ "generated_utc": "2026-11-28T17:57:21Z"
+}
